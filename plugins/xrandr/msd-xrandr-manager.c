@@ -77,7 +77,7 @@
 #define MSD_XRANDR_ICON_NAME "msd-xrandr"
 
 /* executable of the control center's display configuration capplet */
-#define MSD_XRANDR_DISPLAY_CAPPLET "mate-control-center display"
+#define MSD_XRANDR_DISPLAY_CAPPLET "mate-display-properties"
 
 #define MSD_DBUS_PATH "/org/mate/SettingsDaemon"
 #define MSD_DBUS_NAME "org.mate.SettingsDaemon"
