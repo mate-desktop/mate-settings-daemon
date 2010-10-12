@@ -77,7 +77,7 @@
 #define GSD_XRANDR_ICON_NAME "gsd-xrandr"
 
 /* executable of the control center's display configuration capplet */
-#define GSD_XRANDR_DISPLAY_CAPPLET "mate-control-center display"
+#define GSD_XRANDR_DISPLAY_CAPPLET "mate-display-properties"
 
 #define GSD_DBUS_PATH "/org/mate/SettingsDaemon"
 #define GSD_DBUS_NAME "org.mate.SettingsDaemon"
