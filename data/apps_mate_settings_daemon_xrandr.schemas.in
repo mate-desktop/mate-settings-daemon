@@ -19,7 +19,7 @@
 	    <applyto>/apps/mate_settings_daemon/xrandr/use_xorg_monitor_settings</applyto>
             <owner>mate</owner>
 	    <type>bool</type>
-            <default>false</default>
+            <default>true</default>
             <locale name="C">
 	        <short>Do not touch monitor configuration</short>
 		<long>Usually, mate-settings-daemon configures internal and
