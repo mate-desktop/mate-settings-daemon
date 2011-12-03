@@ -1,5 +1,5 @@
 pkgname=mate-settings-daemon
-pkgver=2011.11.16
+pkgver=2011.12.01
 pkgrel=2
 pkgdesc="The MATE Settings daemon"
 arch=('i686' 'x86_64')
