@@ -456,32 +456,32 @@ dnl - Show summary
 dnl ---------------------------------------------------------------------------
 
 echo "
-                    mate-settings-daemon $VERSION
-                    =============================
+                mate-settings-daemon $VERSION
+                =============================
 
-	prefix:                   ${prefix}
-	exec_prefix:              ${exec_prefix}
-        libdir:                   ${libdir}
-        bindir:                   ${bindir}
-        sbindir:                  ${sbindir}
-        sysconfdir:               ${sysconfdir}
-        sysconfsubdir:            ${sysconfsubdir}
-        localstatedir:            ${localstatedir}
-        plugindir:                ${plugindir}
-        datadir:                  ${datadir}
-	source code location:	  ${srcdir}
-	compiler:		  ${CC}
-	cflags:		          ${CFLAGS}
-        Maintainer mode:          ${USE_MAINTAINER_MODE}
+    prefix:                   ${prefix}
+    exec_prefix:              ${exec_prefix}
+    libdir:                   ${libdir}
+    bindir:                   ${bindir}
+    sbindir:                  ${sbindir}
+    sysconfdir:               ${sysconfdir}
+    sysconfsubdir:            ${sysconfsubdir}
+    localstatedir:            ${localstatedir}
+    plugindir:                ${plugindir}
+    datadir:                  ${datadir}
+    source code location:     ${srcdir}
+    compiler:                 ${CC}
+    cflags:                   ${CFLAGS}
+    Maintainer mode:          ${USE_MAINTAINER_MODE}
 
-        dbus-1 system.d dir:      ${DBUS_SYS_DIR}
-        PolicyKit support:        ${HAVE_POLKIT}
+    dbus-1 system.d dir:      ${DBUS_SYS_DIR}
+    PolicyKit support:        ${HAVE_POLKIT}
 
-        Libmatenotify support:        ${have_libmatenotify}
-        PulseAudio support:       ${have_pulse}
-        Smartcard support:        ${have_smartcard_support}
+    Libmatenotify support:    ${have_libmatenotify}
+    PulseAudio support:       ${have_pulse}
+    Smartcard support:        ${have_smartcard_support}
 ${NSS_DATABASE:+\
-        System nssdb:             ${NSS_DATABASE}
+    System nssdb:             ${NSS_DATABASE}
 }\
-        Profiling support:        ${enable_profiling}
+    Profiling support:        ${enable_profiling}
 "
