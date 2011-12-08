@@ -66,7 +66,7 @@ update_property (GString *props, const gchar* key, const gchar* value)
         needle_len = strlen (needle);
         if (g_str_has_prefix (props->str, needle))
                 found = props->str;
-        else 
+        else
             found = strstr (props->str, needle);
 
         if (found) {
@@ -132,25 +132,26 @@ load_xcursor_theme (MateConfClient *client)
         mate_settings_profile_end (NULL);
 }
 
-static char*
-setup_dir (const char *font_dir_name, gboolean create)
+static char* setup_dir(const char* font_dir_name, gboolean create)
 {
-        char *font_dir;
+	char* font_dir = g_build_path(G_DIR_SEPARATOR_S, g_get_home_dir(), ".config", "mate", "share", font_dir_name, NULL);
 
-        font_dir = g_build_path (G_DIR_SEPARATOR_S, g_get_home_dir (), ".mate2", "share", font_dir_name, NULL);
+	if (create)
+	{
+		if (g_mkdir_with_parents(font_dir, 0755) != 0)
+		{
+			g_warning("Cannot create needed directory \"%s\".", font_dir);
+			g_free(font_dir);
+			font_dir = NULL;
+		}
+	}
+	else if (!g_file_test(font_dir, G_FILE_TEST_EXISTS))
+	{
+		g_free (font_dir);
+		font_dir = NULL;
+	}
 
-        if (create) {
-                if (g_mkdir_with_parents (font_dir, 0755) != 0) {
-                        g_warning ("Cannot create needed directory \"%s\".", font_dir);
-                        g_free (font_dir);
-                        font_dir = NULL;
-                }
-        } else if (! g_file_test (font_dir, G_FILE_TEST_EXISTS)) {
-                g_free (font_dir);
-                font_dir = NULL;
-        }
-
-        return font_dir;
+	return font_dir;
 }
 
 static char *
