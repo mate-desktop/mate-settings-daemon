@@ -20,7 +20,7 @@ build() {
         --prefix=/usr \
         --sysconfdir=/etc \
         --localstatedir=/var \
-        --libexecdir=/usr/bin/${pkgname} \
+        --libexecdir=/usr/lib/mate-settings-daemon \
         --disable-static \
         --disable-pulse \
         --disable-schemas-install \

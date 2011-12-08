@@ -30,13 +30,11 @@
 #include <libxklavier/xklavier.h>
 #include "gsd-keyboard-manager.h"
 
-void gsd_keyboard_xkb_init (MateConfClient *client, GsdKeyboardManager *manager);
-void gsd_keyboard_xkb_shutdown (void);
+void gsd_keyboard_xkb_init(MateConfClient* client, GsdKeyboardManager* manager);
+void gsd_keyboard_xkb_shutdown(void);
 
-typedef void (*PostActivationCallback) (void *userData);
+typedef void (*PostActivationCallback) (void* userData);
 
-void
-gsd_keyboard_xkb_set_post_activation_callback (PostActivationCallback fun,
-                                               void                  *userData);
+void gsd_keyboard_xkb_set_post_activation_callback(PostActivationCallback fun, void* userData);
 
 #endif

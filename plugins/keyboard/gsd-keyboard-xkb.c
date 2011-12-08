@@ -44,10 +44,10 @@
 
 #define GTK_RESPONSE_PRINT 2
 
-static GsdKeyboardManager *manager = NULL;
+static GsdKeyboardManager* manager = NULL;
 
-static XklEngine *xkl_engine;
-static XklConfigRegistry *xkl_registry = NULL;
+static XklEngine* xkl_engine;
+static XklConfigRegistry* xkl_registry = NULL;
 
 static MatekbdDesktopConfig current_config;
 static MatekbdKeyboardConfig current_kbd_config;
@@ -63,47 +63,41 @@ static guint notify_keyboard = 0;
 static PostActivationCallback pa_callback = NULL;
 static void *pa_callback_user_data = NULL;
 
-static const char KNOWN_FILES_KEY[] =
-    "/desktop/mate/peripherals/keyboard/general/known_file_list";
+static const char KNOWN_FILES_KEY[] = "/desktop/mate/peripherals/keyboard/general/known_file_list";
 
-static const char DISABLE_INDICATOR_KEY[] =
-    "/desktop/mate/peripherals/keyboard/general/disable_indicator";
+static const char DISABLE_INDICATOR_KEY[] = "/desktop/mate/peripherals/keyboard/general/disable_indicator";
 
-static const char DUPLICATE_LEDS_KEY[] =
-    "/desktop/mate/peripherals/keyboard/general/duplicate_leds";
+static const char DUPLICATE_LEDS_KEY[] = "/desktop/mate/peripherals/keyboard/general/duplicate_leds";
 
-static const char *mdm_keyboard_layout = NULL;
+static const char* mdm_keyboard_layout = NULL;
 
-static GtkStatusIcon *icon = NULL;
+static GtkStatusIcon* icon = NULL;
 
-static GHashTable *preview_dialogs = NULL;
+static GHashTable* preview_dialogs = NULL;
 
 static Atom caps_lock;
 static Atom num_lock;
 static Atom scroll_lock;
 
-static GtkStatusIcon *indicator_icons[3];
-static const gchar *indicator_on_icon_names[] = {
+static GtkStatusIcon* indicator_icons[3];
+static const gchar* indicator_on_icon_names[] = {
 	"kbd-scrolllock-on",
 	"kbd-numlock-on",
 	"kbd-capslock-on"
 };
 
-static const gchar *indicator_off_icon_names[] = {
+static const gchar* indicator_off_icon_names[] = {
 	"kbd-scrolllock-off",
 	"kbd-numlock-off",
 	"kbd-capslock-off"
 };
 
-#define noGSDKX
+//#define noGSDKX
 
 #ifdef GSDKX
 static FILE *logfile;
 
-static void
-gsd_keyboard_log_appender (const char file[],
-			   const char function[],
-			   int level, const char format[], va_list args)
+static void gsd_keyboard_log_appender(const char file[], const char function[], int level, const char format[], va_list args)
 {
 	time_t now = time (NULL);
 	fprintf (logfile, "[%08ld,%03d,%s:%s/] \t", now,
@@ -116,8 +110,8 @@ gsd_keyboard_log_appender (const char file[],
 static void
 activation_error (void)
 {
-	char const *vendor = ServerVendor (GDK_DISPLAY ());
-	int release = VendorRelease (GDK_DISPLAY ());
+	char const *vendor = ServerVendor (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()));
+	int release = VendorRelease (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()));
 	GtkWidget *dialog;
 	gboolean badXFree430Release;
 
@@ -212,7 +206,7 @@ static void
 popup_menu_show_layout ()
 {
 	GtkWidget *dialog;
-	XklEngine *engine = xkl_engine_get_instance (GDK_DISPLAY ());
+	XklEngine *engine = xkl_engine_get_instance (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()));
 	XklState *xkl_state = xkl_engine_get_current_state (engine);
 	gpointer p = g_hash_table_lookup (preview_dialogs,
 					  GINT_TO_POINTER
@@ -258,7 +252,7 @@ popup_menu_set_group (GtkMenuItem * item, gpointer param)
 		xkl_engine_save_state (engine,
 				       xkl_engine_get_current_window
 				       (engine), &st);
-/*    XSetInputFocus( GDK_DISPLAY(), cur, RevertToNone, CurrentTime );*/
+/*    XSetInputFocus(GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), cur, RevertToNone, CurrentTime );*/
 	} else {
 		xkl_debug (150,
 			   "??? Enforcing the state %d for unknown window\n",
@@ -737,7 +731,7 @@ gsd_keyboard_update_indicator_icons ()
 {
 	Bool state;
 	int new_state, i;
-	Display *display = GDK_DISPLAY ();
+	Display *display = GDK_DISPLAY_XDISPLAY(gdk_display_get_default());
 	XkbGetNamedIndicator (display, caps_lock, NULL, &state,
 			      NULL, NULL);
 	new_state = state ? 1 : 0;
@@ -780,7 +774,7 @@ gsd_keyboard_xkb_init (MateConfClient * client,
 		       GsdKeyboardManager * kbd_manager)
 {
 	int i;
-	Display *display = GDK_DISPLAY ();
+	Display *display = GDK_DISPLAY_XDISPLAY(gdk_display_get_default());
 	mate_settings_profile_start (NULL);
 
 	gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),

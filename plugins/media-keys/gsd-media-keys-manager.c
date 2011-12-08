@@ -327,60 +327,67 @@ update_kbd_cb (MateConfClient         *client,
                 g_warning ("Grab failed for some keys, another application may already have access the them.");
 }
 
-static void
-init_kbd (GsdMediaKeysManager *manager)
+static void init_kbd(GsdMediaKeysManager* manager)
 {
-        int i;
-        gboolean need_flush = FALSE;
+	int i;
+	gboolean need_flush = FALSE;
 
-        mate_settings_profile_start (NULL);
+	mate_settings_profile_start(NULL);
 
-        gdk_error_trap_push ();
+	gdk_error_trap_push();
 
-        for (i = 0; i < HANDLED_KEYS; i++) {
-                char *tmp;
-                Key  *key;
+	for (i = 0; i < HANDLED_KEYS; i++)
+	{
+		char* tmp;
+		Key* key;
 
-                manager->priv->notify[i] =
-                        mateconf_client_notify_add (manager->priv->conf_client,
-                                                 keys[i].mateconf_key,
-                                                 (MateConfClientNotifyFunc) update_kbd_cb,
-                                                 manager,
-                                                 NULL,
-                                                 NULL);
+		manager->priv->notify[i] = mateconf_client_notify_add(manager->priv->conf_client,
+			keys[i].mateconf_key,
+			(MateConfClientNotifyFunc) update_kbd_cb,
+			manager,
+			NULL,
+			NULL);
 
-                tmp = mateconf_client_get_string (manager->priv->conf_client,
-                                               keys[i].mateconf_key,
-                                               NULL);
+		tmp = mateconf_client_get_string(manager->priv->conf_client,
+			keys[i].mateconf_key,
+			NULL);
 
-                if (!is_valid_shortcut (tmp)) {
-                        g_debug ("Not a valid shortcut: '%s'", tmp);
-                        g_free (tmp);
-                        continue;
-                }
+		if (!is_valid_shortcut(tmp))
+		{
+			g_debug("Not a valid shortcut: '%s'", tmp);
+			g_free(tmp);
+			continue;
+		}
 
-                key = g_new0 (Key, 1);
-                if (!egg_accelerator_parse_virtual (tmp, &key->keysym, &key->keycodes, &key->state)) {
-                        g_debug ("Unable to parse: '%s'", tmp);
-                        g_free (tmp);
-                        g_free (key);
-                        continue;
-                }
+		key = g_new0(Key, 1);
 
-                g_free (tmp);
+		if (!egg_accelerator_parse_virtual(tmp, &key->keysym, &key->keycodes, &key->state))
+		{
+			g_debug("Unable to parse: '%s'", tmp);
+			g_free(tmp);
+			g_free(key);
+			continue;
+		}
 
-                keys[i].key = key;
+		g_free(tmp);
 
-                need_flush = TRUE;
-                grab_key_unsafe (key, TRUE, manager->priv->screens);
-        }
+		keys[i].key = key;
 
-        if (need_flush)
-                gdk_flush ();
-        if (gdk_error_trap_pop ())
-                g_warning ("Grab failed for some keys, another application may already have access the them.");
+		need_flush = TRUE;
+		grab_key_unsafe(key, TRUE, manager->priv->screens);
+	}
 
-        mate_settings_profile_end (NULL);
+	if (need_flush)
+	{
+		gdk_flush();
+	}
+
+	if (gdk_error_trap_pop ())
+	{
+		g_warning("Grab failed for some keys, another application may already have access the them.");
+	}
+
+	mate_settings_profile_end(NULL);
 }
 
 static void

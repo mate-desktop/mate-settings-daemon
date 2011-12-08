@@ -4,9 +4,11 @@ m4_define([gsd_api_version_major],[2011])
 m4_define([gsd_api_version_minor],[12])
 m4_define([gsd_api_version_micro],[01])
 m4_define([gsd_api_version],
-        [gsd_api_version_major.gsd_api_version_minor.gsd_api_version_micro])
+	[gsd_api_version_major.gsd_api_version_minor.gsd_api_version_micro])
 
-AC_INIT([mate-settings-daemon], [2.32.0], [https://github.com/perberos/mate-desktop-environment])
+AC_INIT([mate-settings-daemon],
+	[gsd_api_version_major.gsd_api_version_minor.gsd_api_version_micro],
+	[https://github.com/perberos/mate-desktop-environment])
 
 AC_CONFIG_SRCDIR([mate-settings-daemon/mate-settings-manager.c])
 
@@ -55,20 +57,20 @@ LIBMATENOTIFY_REQUIRED_VERSION=0.4.3
 EXTRA_COMPILE_WARNINGS(yes)
 
 PKG_CHECK_MODULES(SETTINGS_DAEMON,
-        glib-2.0 >= $GLIB_REQUIRED_VERSION
-        gtk+-2.0 >= $GTK_REQUIRED_VERSION
-        mateconf-2.0 >= $MATECONF_REQUIRED_VERSION
-        gmodule-2.0
-        gthread-2.0
-        dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
+	glib-2.0 >= $GLIB_REQUIRED_VERSION
+	gtk+-2.0 >= $GTK_REQUIRED_VERSION
+	mateconf-2.0 >= $MATECONF_REQUIRED_VERSION
+	gmodule-2.0
+	gthread-2.0
+	dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
 )
 
 PKG_CHECK_MODULES(SETTINGS_PLUGIN,
-        gtk+-2.0 >= $GTK_REQUIRED_VERSION
-        mateconf-2.0 >= $MATECONF_REQUIRED_VERSION
-        mate-desktop-2.0 >= $MATE_DESKTOP_REQUIRED_VERSION
-        gio-2.0 >= $GIO_REQUIRED_VERSION
-        dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
+	gtk+-2.0 >= $GTK_REQUIRED_VERSION
+	mateconf-2.0 >= $MATECONF_REQUIRED_VERSION
+	mate-desktop-2.0 >= $MATE_DESKTOP_REQUIRED_VERSION
+	gio-2.0 >= $GIO_REQUIRED_VERSION
+	dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
 )
 
 GSD_PLUGIN_LDFLAGS="-export_dynamic -module -avoid-version -no-undefined"

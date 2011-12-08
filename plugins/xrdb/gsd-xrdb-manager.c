@@ -44,15 +44,14 @@
 
 #define SYSTEM_AD_DIR    DATADIR "/xrdb"
 #define GENERAL_AD       SYSTEM_AD_DIR "/General.ad"
-#define USER_AD_DIR      ".mate2/xrdb"
+#define USER_AD_DIR      ".config/mate/xrdb"
 #define USER_X_RESOURCES ".Xresources"
 #define USER_X_DEFAULTS  ".Xdefaults"
 
 #define GTK_THEME_KEY "/desktop/mate/interface/gtk_theme"
 
-struct GsdXrdbManagerPrivate
-{
-        GtkWidget *widget;
+struct GsdXrdbManagerPrivate {
+	GtkWidget* widget;
 };
 
 static void     gsd_xrdb_manager_class_init  (GsdXrdbManagerClass *klass);
