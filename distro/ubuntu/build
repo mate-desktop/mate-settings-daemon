@@ -2,7 +2,7 @@
 
 # fill it
 pkgname=mate-settings-daemon
-pkgver=2011.12.01
+pkgver=1.1.0
 pkgrel=1
 pkgdesc="Common libraries for MATE"
 depends=('libmatekbd' 'mate-desktop' 'libmatenotify' 'hicolor-icon-theme')

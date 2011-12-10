@@ -1,8 +1,8 @@
 AC_PREREQ([2.60])
 
-m4_define([gsd_api_version_major],[2011])
-m4_define([gsd_api_version_minor],[12])
-m4_define([gsd_api_version_micro],[01])
+m4_define([gsd_api_version_major],[1])
+m4_define([gsd_api_version_minor],[1])
+m4_define([gsd_api_version_micro],[0])
 m4_define([gsd_api_version],
 	[gsd_api_version_major.gsd_api_version_minor.gsd_api_version_micro])
 
@@ -49,10 +49,10 @@ dnl ---------------------------------------------------------------------------
 DBUS_GLIB_REQUIRED_VERSION=0.74
 GLIB_REQUIRED_VERSION=2.17.3
 GTK_REQUIRED_VERSION=2.21.2
-MATECONF_REQUIRED_VERSION=2.6.1
+MATECONF_REQUIRED_VERSION=1.1.0
 GIO_REQUIRED_VERSION=2.17.3
-MATE_DESKTOP_REQUIRED_VERSION=2.29.92
-LIBMATENOTIFY_REQUIRED_VERSION=0.4.3
+MATE_DESKTOP_REQUIRED_VERSION=1.1.0
+LIBMATENOTIFY_REQUIRED_VERSION=1.1.0
 
 EXTRA_COMPILE_WARNINGS(yes)
 
