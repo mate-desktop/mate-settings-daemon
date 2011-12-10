@@ -213,7 +213,7 @@ AC_CHECK_X_LIB(Xxf86misc, XF86MiscQueryExtension, [
 AC_SUBST(XF86MISC_LIBS)
 AC_CHECK_X_HEADERS([X11/extensions/XKB.h])
 
-PKG_CHECK_MODULES(LIBMATEKBDUI, [libmatekbdui >= 2.31.2 libmatekbd >= 2.29.5 libxklavier >= 5.0])
+PKG_CHECK_MODULES(LIBMATEKBDUI, [libmatekbdui >= 1.1.0 libmatekbd >= 1.1.0 libxklavier >= 5.0])
 AC_SUBST(LIBMATEKBDUI_CFLAGS)
 AC_SUBST(LIBMATEKBDUI_LIBS)
 
