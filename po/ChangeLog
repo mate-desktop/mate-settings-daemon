@@ -47,7 +47,7 @@
 
 	* el.po: Updated Greek Translation by Jennie Petoumenou.
 
-2009-03-14  Mișu Moldovan  <dumol@mate.ro>
+2009-03-14  Mișu Moldovan  <dumol@gnome.ro>
 
 	* ro.po: Updated Romanian translation by Adi Roiban
 
@@ -167,11 +167,11 @@
 
 	* nl.po: Updated Dutch translation by Wouter Bolsterlee.
 
-2009-02-23  Gabor Kelemen  <kelemeng@mate.hu>
+2009-02-23  Gabor Kelemen  <kelemeng@gnome.hu>
 
 	* hu.po: Translation updated.
 
-2009-02-23  Gabor Kelemen  <kelemeng@mate.hu>
+2009-02-23  Gabor Kelemen  <kelemeng@gnome.hu>
 
 	* POTFILES.in: add forgotten files, fix bug #572905
 
@@ -208,7 +208,7 @@
 
 	* eu.po: Updated Basque translation.
 
-2009-02-17  Gabor Kelemen  <kelemeng@mate.hu>
+2009-02-17  Gabor Kelemen  <kelemeng@gnome.hu>
 
 	* hu.po: Translation updated.
 
@@ -302,11 +302,11 @@
 
 	* es.po: Updated Spanish translation.
 
-2009-02-01  Gabor Kelemen  <kelemeng@mate.hu>
+2009-02-01  Gabor Kelemen  <kelemeng@gnome.hu>
 
 	* hu.po: Translation updated.
 
-2009-02-01  Gabor Kelemen  <kelemeng@mate.hu>
+2009-02-01  Gabor Kelemen  <kelemeng@gnome.hu>
 
 	* POTFILES.in: Updated, fixing bug #570093
 
@@ -314,7 +314,7 @@
 
 	* sv.po: Updated Swedish translation.
 
-2009-01-29  Priit Laes  <plaes at svn dot mate dot org>
+2009-01-29  Priit Laes  <plaes at svn dot gnome dot org>
 
 	* et.po: Translation updated by Mattias Põldaru
 
@@ -362,11 +362,11 @@
 
 	* it.po: Updated Italian translation.
 
-2008-12-01  Rodrigo Moya <rodrigo@mate-db.org>
+2008-12-01  Rodrigo Moya <rodrigo@gnome-db.org>
 
 	* POTFILES.in: added missing file
 
-2008-11-04  Rodrigo Moya <rodrigo@mate-db.org>
+2008-11-04  Rodrigo Moya <rodrigo@gnome-db.org>
 
 	* POTFILES.in: removed no longer existing files.
 
@@ -379,11 +379,11 @@
 
 	* sk.po: Updated Slovak translation by Pavol Šimo.
 
-2008-10-07  Priit Laes  <plaes at svn dot mate dot org>
+2008-10-07  Priit Laes  <plaes at svn dot gnome dot org>
 
 	* et.po: Translation updated by Ivar Smolin
 
-2008-09-30  Priit Laes  <plaes at svn dot mate dot org>
+2008-09-30  Priit Laes  <plaes at svn dot gnome dot org>
 
 	* et.po: Translation updated by Ivar Smolin
 
@@ -403,16 +403,16 @@
 
 	* af.po: Updated Afrikaans translation by Friedel Wolff.
 
-2008-09-22  Mugurel Tudor  <mugurelu@mate.ro>
+2008-09-22  Mugurel Tudor  <mugurelu@gnome.ro>
 
 	* ro.po: Updated Romanian translation by
-	Mişu Moldovan <dumol@mate.ro>
+	Mişu Moldovan <dumol@gnome.ro>
 
 2008-09-21  Wadim Dziedzic  <wdziedzic@aviary.pl>
 
 	* pl.po: Updated Polish translation
 
-2008-09-21  Gabor Kelemen  <kelemeng@mate.hu>
+2008-09-21  Gabor Kelemen  <kelemeng@gnome.hu>
 
 	* hu.po: Translation updated.
 
@@ -424,7 +424,7 @@
 
 	* el.po: Updated Greek Translation.
 
-2008-09-20  Priit Laes  <plaes at svn dot mate dot org>
+2008-09-20  Priit Laes  <plaes at svn dot gnome dot org>
 
 	* et.po: Translation updated by Ivar Smolin
 
@@ -445,7 +445,7 @@
 
 	* ca.po: Minor update to Catalan translation by Joan Duran.
 
-2008-09-16  Gabor Kelemen  <kelemeng@mate.hu>
+2008-09-16  Gabor Kelemen  <kelemeng@gnome.hu>
 
 	* hu.po: Translation updated.
 
@@ -461,7 +461,7 @@
 
 	* ta.po:  Tamil Translation updated by Tirumurthi Vasudevan
 
-2008-09-14  Priit Laes  <plaes at svn dot mate dot org>
+2008-09-14  Priit Laes  <plaes at svn dot gnome dot org>
 
 	* et.po: Translation updated by Ivar Smolin
 
@@ -601,7 +601,7 @@
 	* pt_BR.po: Brazilian Portuguese translation updated by Djavan
 	Fagundes.
 
-2008-08-13  Priit Laes  <plaes at svn dot mate dot org>
+2008-08-13  Priit Laes  <plaes at svn dot gnome dot org>
 
 	* et.po: Translation updated by Ivar Smolin
 
@@ -679,7 +679,7 @@
 
 	* es.po: Updated Spanish translation
 
-2008-07-10  Matej Urbančič  <mateju@svn.gnome.org>
+2008-07-10  Matej Urbančič  <gnomeju@svn.gnome.org>
 
 	* sl.po: Updated Slovenian translation.
 
@@ -691,7 +691,7 @@
 
 	* th.po: Updated Thai translation.
 
-2008-07-04  Priit Laes  <plaes at svn dot mate dot org>
+2008-07-04  Priit Laes  <plaes at svn dot gnome dot org>
 
 	* et.po: Translation updated by Ivar Smolin
 
@@ -771,7 +771,7 @@
 
 	* es.po: Updated Spanish translation
 
-2008-04-01  Priit Laes  <plaes at svn dot mate dot org>
+2008-04-01  Priit Laes  <plaes at svn dot gnome dot org>
 
 	* et.po: Translation updated by Ivar Smolin
 
@@ -783,7 +783,7 @@
 
 	* es.po: Updated Spanish translation
 
-2008-03-23  Priit Laes  <plaes at svn dot mate dot org>
+2008-03-23  Priit Laes  <plaes at svn dot gnome dot org>
 
 	* et.po: Translation updated by Ivar Smolin
 
@@ -821,7 +821,7 @@
 
 	* lt.po: Updated Lithuanian translation.
 
-2008-03-09  Gabor Kelemen  <kelemeng@mate.hu>
+2008-03-09  Gabor Kelemen  <kelemeng@gnome.hu>
 
 	* hu.po: Translation updated
 
@@ -842,7 +842,7 @@
 
 	* mk.po: Updated Macedonian translation.
 
-2008-03-05  Priit Laes  <plaes at svn dot mate dot org>
+2008-03-05  Priit Laes  <plaes at svn dot gnome dot org>
 
 	* et.po: Translation updated by Ivar Smolin
 
@@ -889,7 +889,7 @@
 
 	* ar.po: Updated Arabic Translation by Djihed Afifi.
 
-2008-02-24  Hendrik Brandt  <heb@mate-de.org>
+2008-02-24  Hendrik Brandt  <heb@gnome-de.org>
 
 	* de.po: Updated German translation.
 
@@ -998,7 +998,7 @@
 
 	* th.po: Updated Thai translation.
 
-2008-02-11  Rodrigo Moya <rodrigo@mate-db.org>
+2008-02-11  Rodrigo Moya <rodrigo@gnome-db.org>
 
 	* POTFILES.in: removed default-editor related files.
 
@@ -1056,7 +1056,7 @@
 	* it.po: Updated Italian translation.
 	* ChangeLog: fix some wrong newlines.
 
-2008-02-04  Priit Laes  <plaes at svn dot mate dot org>
+2008-02-04  Priit Laes  <plaes at svn dot gnome dot org>
 
 	* et.po: Translation updated by Ivar Smolin
 
@@ -1092,7 +1092,7 @@
 
 	* nb.po: Updated Norwegian bokmål translation.
 
-2008-01-27  Priit Laes  <plaes at svn dot mate dot org>
+2008-01-27  Priit Laes  <plaes at svn dot gnome dot org>
 
 	* et.po: Translation updated by Ivar Smolin
 
@@ -1121,7 +1121,7 @@
 	* POTFILES.in: Add missing file.
 	* nb.po: Updated Norwegian bokmål translation.
 
-2008-01-15  Rodrigo Moya <rodrigo@mate-db.org>
+2008-01-15  Rodrigo Moya <rodrigo@gnome-db.org>
 
 	Fixes #509651
 
