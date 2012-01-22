@@ -53,6 +53,8 @@
 #ifdef HAVE_PULSE
 #include <canberra-gtk.h>
 #include "gvc-mixer-control.h"
+#elif defined(HAVE_GSTREAMER)
+#include "gvc-gstreamer-acme-vol.h"
 #endif /* HAVE_PULSE */
 
 #define GSD_DBUS_PATH "/org/mate/SettingsDaemon"
@@ -78,6 +80,8 @@ struct GsdMediaKeysManagerPrivate
         /* Volume bits */
         GvcMixerControl *volume;
         GvcMixerStream  *stream;
+#elif defined(HAVE_GSTREAMER)
+        AcmeVolume      *volume;
 #endif /* HAVE_PULSE */
         GtkWidget       *dialog;
         MateConfClient     *conf_client;
@@ -682,7 +686,9 @@ update_dialog (GsdMediaKeysManager *manager,
                                         CA_PROP_APPLICATION_ID, "org.mate.VolumeControl",
                                         NULL);
 }
-
+#endif /* HAVE_PULSE */
+ 
+#if defined(HAVE_PULSE) || defined(HAVE_GSTREAMER)
 static void
 do_sound_action (GsdMediaKeysManager *manager,
                  int                  type)
@@ -692,8 +698,13 @@ do_sound_action (GsdMediaKeysManager *manager,
         int vol_step;
         gboolean sound_changed;
 
+#ifdef HAVE_PULSE
         if (manager->priv->stream == NULL)
                 return;
+#elif defined(HAVE_GSTREAMER)
+        if (manager->priv->volume == NULL)
+                return;
+#endif
 
         vol_step = mateconf_client_get_int (manager->priv->conf_client,
                                          MATECONF_MISC_DIR "/volume_step",
@@ -702,20 +713,36 @@ do_sound_action (GsdMediaKeysManager *manager,
         if (vol_step <= 0 || vol_step > 100)
                 vol_step = VOLUME_STEP;
 
+#ifdef HAVE_PULSE
         norm_vol_step = PA_VOLUME_NORM * vol_step / 100;
 
         /* FIXME: this is racy */
         vol = gvc_mixer_stream_get_volume (manager->priv->stream);
         muted = gvc_mixer_stream_get_is_muted (manager->priv->stream);
+#else
+        if (vol_step > 0) {
+                gint threshold = acme_volume_get_threshold (manager->priv->volume);
+                if (vol_step < threshold)
+                        vol_step = threshold;
+                g_debug ("Using volume step of %d", vol_step);
+        }
+        vol = acme_volume_get_volume (manager->priv->volume);
+        muted = acme_volume_get_mute (manager->priv->volume);
+#endif
         sound_changed = FALSE;
 
         switch (type) {
         case MUTE_KEY:
+#ifdef HAVE_PULSE
                 muted = !muted;
                 gvc_mixer_stream_change_is_muted (manager->priv->stream, muted);
                 sound_changed = TRUE;
+#else
+                acme_volume_mute_toggle (manager->priv->volume);
+#endif
                 break;
         case VOLUME_DOWN_KEY:
+#ifdef HAVE_PULSE
                 if (!muted && (vol <= norm_vol_step)) {
                         muted = !muted;
                         vol = 0;
@@ -731,11 +758,17 @@ do_sound_action (GsdMediaKeysManager *manager,
                                 sound_changed = TRUE;
                         }
                 }
+#else
+                if (!muted && (vol <= vol_step))
+                        acme_volume_mute_toggle (manager->priv->volume);
+                acme_volume_set_volume (manager->priv->volume, vol - vol_step);
+#endif
                 break;
         case VOLUME_UP_KEY:
                 if (muted) {
                         muted = !muted;
                         if (vol == 0) {
+#ifdef HAVE_PULSE
                                vol = vol + norm_vol_step;
                                gvc_mixer_stream_change_is_muted (manager->priv->stream, muted);
                                if (gvc_mixer_stream_set_volume (manager->priv->stream, vol) != FALSE) {
@@ -746,7 +779,14 @@ do_sound_action (GsdMediaKeysManager *manager,
                                 gvc_mixer_stream_change_is_muted (manager->priv->stream, muted);
                                 sound_changed = TRUE;
                         }
+else
+                                /* We need to unmute otherwise vol is blocked (and muted) */
+                                acme_volume_set_mute   (manager->priv->volume, FALSE);
+                        }
+                        acme_volume_set_volume (manager->priv->volume, vol + vol_step);
+#endif
                 } else {
+#ifdef HAVE_PULSE
                         if (vol < MAX_VOLUME) {
                                 if (vol + norm_vol_step >= MAX_VOLUME) {
                                         vol = MAX_VOLUME;
@@ -758,13 +798,34 @@ do_sound_action (GsdMediaKeysManager *manager,
                                         sound_changed = TRUE;
                                 }
                         }
+#else
+                        acme_volume_set_volume (manager->priv->volume, vol + vol_step);
+#endif
                 }
                 break;
         }
 
+#ifdef HAVE_PULSE
         update_dialog (manager, vol, muted, sound_changed);
-}
+#else
+        muted = acme_volume_get_mute (manager->priv->volume);
+        vol = acme_volume_get_volume (manager->priv->volume);
 
+        /* FIXME: AcmeVolume should probably emit signals
+           instead of doing it like this */
+        dialog_init (manager);
+        gsd_media_keys_window_set_volume_muted (GSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
+                                                muted);
+        gsd_media_keys_window_set_volume_level (GSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
+                                                vol);
+        gsd_media_keys_window_set_action (GSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
+                                          GSD_MEDIA_KEYS_WINDOW_ACTION_VOLUME);
+        dialog_show (manager);
+#endif /* HAVE_PULSE */
+}
+#endif /* defined(HAVE_PULSE) || defined(HAVE_GSTREAMER) */
+
+#ifdef HAVE_PULSE
 static void
 update_default_sink (GsdMediaKeysManager *manager)
 {
@@ -926,9 +987,9 @@ do_action (GsdMediaKeysManager *manager,
         case MUTE_KEY:
         case VOLUME_DOWN_KEY:
         case VOLUME_UP_KEY:
-#ifdef HAVE_PULSE
+#if defined(HAVE_PULSE) || defined(HAVE_GSTREAMER)
                 do_sound_action (manager, type);
-#endif /* HAVE_PULSE */
+#endif /* HAVE_PULSE || HAVE_GSTREAMER */
                 break;
         case POWER_KEY:
                 do_exit_action (manager);
@@ -1129,6 +1190,10 @@ gsd_media_keys_manager_start (GsdMediaKeysManager *manager,
         gvc_mixer_control_open (manager->priv->volume);
 
         mate_settings_profile_end ("gvc_mixer_control_new");
+#elif defined(HAVE_GSTREAMER)
+        mate_settings_profile_start ("acme_volume_new");
+        manager->priv->volume = acme_volume_new ();
+        mate_settings_profile_end ("acme_volume_new");
 #endif /* HAVE_PULSE */
         g_idle_add ((GSourceFunc) start_media_keys_idle_cb, manager);
 
@@ -1206,12 +1271,14 @@ gsd_media_keys_manager_stop (GsdMediaKeysManager *manager)
                 g_object_unref (priv->stream);
                 priv->stream = NULL;
         }
+#endif /* HAVE_PULSE */
 
+#if defined(HAVE_PULSE) || defined(HAVE_GSTREAMER)
         if (priv->volume) {
                 g_object_unref (priv->volume);
                 priv->volume = NULL;
         }
-#endif /* HAVE_PULSE */
+#endif /* defined(HAVE_PULSE) || defined(HAVE_GSTREAMER) */
 
         if (priv->dialog != NULL) {
                 gtk_widget_destroy (priv->dialog);

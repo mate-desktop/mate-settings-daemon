@@ -3,13 +3,8 @@ context = actions
 
 NULL =
 
-SUBDIRS =
-plugin_LTLIBRARIES =
-
-if HAVE_PULSE
 SUBDIRS += cut-n-paste
 plugin_LTLIBRARIES += libmedia-keys.la
-endif
 
 BUILT_SOURCES = 			\
 	gsd-media-keys-manager-glue.h	\
@@ -108,9 +103,7 @@ libmedia_keys_la_LIBADD  = 		\
 plugin_in_files = 		\
 	media-keys.mate-settings-plugin.in
 
-if HAVE_PULSE
 plugin_DATA = $(plugin_in_files:.mate-settings-plugin.in=.mate-settings-plugin)
-endif
 
 noinst_PROGRAMS =				\
 	test-media-keys				\
@@ -176,9 +169,7 @@ test_media_keys_LDADD = \
 	$(GST_LIBS)				\
 	-lm
 
-if HAVE_PULSE
 test_media_keys_LDADD += $(top_builddir)/plugins/media-keys/cut-n-paste/libgvc.la
-endif
 
 gtkbuilderdir = $(pkgdatadir)
 gtkbuilder_DATA =	\
