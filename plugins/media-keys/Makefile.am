@@ -3,8 +3,8 @@ context = actions
 
 NULL =
 
-SUBDIRS += cut-n-paste
-plugin_LTLIBRARIES += libmedia-keys.la
+SUBDIRS = cut-n-paste
+plugin_LTLIBRARIES = libmedia-keys.la
 
 BUILT_SOURCES = 			\
 	gsd-media-keys-manager-glue.h	\
