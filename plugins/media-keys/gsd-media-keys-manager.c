@@ -779,7 +779,7 @@ do_sound_action (GsdMediaKeysManager *manager,
                                 gvc_mixer_stream_change_is_muted (manager->priv->stream, muted);
                                 sound_changed = TRUE;
                         }
-else
+#else
                                 /* We need to unmute otherwise vol is blocked (and muted) */
                                 acme_volume_set_mute   (manager->priv->volume, FALSE);
                         }

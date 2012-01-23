@@ -21,7 +21,7 @@ libgvc_la_LIBADD +=		\
 	$(VOLUME_CONTROL_LIBS)	\
 	$(PULSE_LIBS)
 
-libgvc_la_SOURCES +=		
+libgvc_la_SOURCES +=		\
 	gvc-mixer-stream.h		\
 	gvc-mixer-stream.c		\
 	gvc-channel-map.h		\
