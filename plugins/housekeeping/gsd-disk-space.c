@@ -607,7 +607,7 @@ gsd_ldsm_get_config ()
                                                    MATECONF_HOUSEKEEPING_DIR "/" MATECONF_MIN_NOTIFY_PERIOD,
                                                    &error);
          if (error != NULL) {
-                 g_warning ("Error reading configuration from MateConf: %s", error->message ? error->message : "Unkown error");
+                 g_warning ("Error reading configuration from MateConf: %s", error->message ? error->message : "Unknown error");
                  g_clear_error (&error);
          }
 
@@ -619,7 +619,7 @@ gsd_ldsm_get_config ()
                                                MATECONF_HOUSEKEEPING_DIR "/" MATECONF_IGNORE_PATHS,
                                                MATECONF_VALUE_STRING, &error);
          if (error != NULL) {
-                 g_warning ("Error reading configuration from MateConf: %s", error->message ? error->message : "Unkown error");
+                 g_warning ("Error reading configuration from MateConf: %s", error->message ? error->message : "Unknown error");
                  g_clear_error (&error);
          } else {
                 /* Make sure we dont leave stale entries in ldsm_notified_hash */
