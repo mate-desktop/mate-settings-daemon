@@ -134,7 +134,11 @@ load_xcursor_theme (MateConfClient *client)
 
 static char* setup_dir(const char* font_dir_name, gboolean create)
 {
-	char* font_dir = g_build_path(G_DIR_SEPARATOR_S, g_get_home_dir(), ".config", "mate", "share", font_dir_name, NULL);
+	#if GLIB_CHECK_VERSION(2, 6, 0)
+		char* font_dir = g_build_path(G_DIR_SEPARATOR_S, g_get_user_config_dir(), "mate", "share", font_dir_name, NULL);
+	#else // glib version < 2.6.0
+		char* font_dir = g_build_path(G_DIR_SEPARATOR_S, g_get_home_dir(), ".config", "mate", "share", font_dir_name, NULL);
+	#endif
 
 	if (create)
 	{
