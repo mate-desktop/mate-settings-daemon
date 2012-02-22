@@ -9,10 +9,10 @@ plugin_LTLIBRARIES = \
 	$(NULL)
 
 libxrdb_la_SOURCES = 		\
-	gsd-xrdb-plugin.h	\
-	gsd-xrdb-plugin.c	\
-	gsd-xrdb-manager.h	\
-	gsd-xrdb-manager.c	\
+	msd-xrdb-plugin.h	\
+	msd-xrdb-plugin.c	\
+	msd-xrdb-manager.h	\
+	msd-xrdb-manager.c	\
 	$(NULL)
 
 libxrdb_la_CPPFLAGS = \
@@ -26,7 +26,7 @@ libxrdb_la_CFLAGS = \
 	$(AM_CFLAGS)
 
 libxrdb_la_LDFLAGS = 		\
-	$(GSD_PLUGIN_LDFLAGS)	\
+	$(MSD_PLUGIN_LDFLAGS)	\
 	$(NULL)
 
 libxrdb_la_LIBADD  = 		\
@@ -51,4 +51,4 @@ DISTCLEANFILES =		\
 	$(plugin_DATA)		\
 	$(NULL)
 
-@GSD_INTLTOOL_PLUGIN_RULE@
+@MSD_INTLTOOL_PLUGIN_RULE@

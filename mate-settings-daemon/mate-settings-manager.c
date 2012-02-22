@@ -38,7 +38,7 @@
 #include "mate-settings-manager-glue.h"
 #include "mate-settings-profile.h"
 
-#define GSD_MANAGER_DBUS_PATH "/org/mate/SettingsDaemon"
+#define MSD_MANAGER_DBUS_PATH "/org/mate/SettingsDaemon"
 
 #define DEFAULT_SETTINGS_PREFIX "/apps/mate_settings_daemon/plugins"
 
@@ -310,7 +310,7 @@ register_manager (MateSettingsManager *manager)
                 return FALSE;
         }
 
-        dbus_g_connection_register_g_object (manager->priv->connection, GSD_MANAGER_DBUS_PATH, G_OBJECT (manager));
+        dbus_g_connection_register_g_object (manager->priv->connection, MSD_MANAGER_DBUS_PATH, G_OBJECT (manager));
 
         return TRUE;
 }

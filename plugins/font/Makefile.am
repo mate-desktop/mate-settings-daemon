@@ -5,10 +5,10 @@ plugin_LTLIBRARIES = \
 	$(NULL)
 
 libfont_la_SOURCES = 		\
-	gsd-font-plugin.h	\
-	gsd-font-plugin.c	\
-	gsd-font-manager.h	\
-	gsd-font-manager.c	\
+	msd-font-plugin.h	\
+	msd-font-plugin.c	\
+	msd-font-manager.h	\
+	msd-font-manager.c	\
 	delayed-dialog.h	\
 	delayed-dialog.c	\
 	$(NULL)
@@ -23,7 +23,7 @@ libfont_la_CFLAGS = \
 	$(AM_CFLAGS)
 
 libfont_la_LDFLAGS = 		\
-	$(GSD_PLUGIN_LDFLAGS)	\
+	$(MSD_PLUGIN_LDFLAGS)	\
 	$(NULL)
 
 libfont_la_LIBADD  = 		\
@@ -48,4 +48,4 @@ DISTCLEANFILES =		\
 	$(plugin_DATA)		\
 	$(NULL)
 
-@GSD_INTLTOOL_PLUGIN_RULE@
+@MSD_INTLTOOL_PLUGIN_RULE@

@@ -27,14 +27,14 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
-#include "gsd-a11y-preferences-dialog.h"
+#include "msd-a11y-preferences-dialog.h"
 
 static void
 test_window (void)
 {
         GtkWidget *window;
 
-        window = gsd_a11y_preferences_dialog_new ();
+        window = msd_a11y_preferences_dialog_new ();
         gtk_dialog_run (GTK_DIALOG (window));
 }
 

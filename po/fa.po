@@ -408,20 +408,20 @@ msgstr "_دسترسی‌پذیری"
 msgid "Accessibility keyboard plugin"
 msgstr "_دسترسی‌پذیری"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:393
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:393
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "در نمایش راهنمای: %sخطایی وجود داشت"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:445
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:445
 msgid "Do you want to activate Slow Keys?"
 msgstr "آیا می‌خواهید کلیدهای آهسته را فعال کنید؟"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:446
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:446
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "آیا می‌خواهید کلیدهای آهسته را غیرفعال کنید؟"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:449
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:449
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -429,39 +429,39 @@ msgstr ""
 "شما کلید مبدل را برای ۸ ثانیه نگه داشتید.  این میانبری به امکانات کلیدهای "
 "آهسته است، که کارکرد صفحه‌کلید شما را تحت تأثیر قرار می‌دهد."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:456
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:508
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:456
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:508
 msgid "Do_n't activate"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:456
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:508
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:456
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:508
 msgid "Do_n't deactivate"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:459
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:511
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:459
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:511
 msgid "_Activate"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:459
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:511
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:459
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:511
 msgid "_Deactivate"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:463
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:463
 msgid "Slow Keys Alert"
 msgstr "هشدار کلیدهای آهسته"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:495
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:495
 msgid "Do you want to activate Sticky Keys?"
 msgstr "آیا می‌خواهید کلیدهای چسبان را فعال کنید؟"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:496
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:496
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "آیا می‌خواهید کلیدهای چسبان را غیرفعال کنید؟"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:499
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:499
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -469,7 +469,7 @@ msgstr ""
 "شما کلید مبدل را ۵ بار پشت سر هم فشار دادید. این میانبری بهامکانات کلیدهای "
 "چسبان است، که کارکرد صفحه‌کلید شما را تحت تأثیر قرار می‌دهد."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:501
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:501
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -479,7 +479,7 @@ msgstr ""
 "دهید. با این‌کار امکانات کلیدهای چسبان از کار می‌افتد ، که در کارکرد صفحه‌کلید "
 "شما موثر است."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:515
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:515
 msgid "Sticky Keys Alert"
 msgstr "هشدار کلیدهای چسبان"
 
@@ -516,7 +516,7 @@ msgstr "قلم"
 msgid "Font plugin"
 msgstr ""
 
-#: ../plugins/font/gsd-font-manager.c:208
+#: ../plugins/font/msd-font-manager.c:208
 #, c-format
 msgid ""
 "Cannot create the directory \"%s\".\n"
@@ -525,7 +525,7 @@ msgstr ""
 "نمی‌توان شاخه‌ی «%s» را ایجاد کرد.\n"
 "این کار برای امکان تغییر تم مکان‌نما لازم است."
 
-#: ../plugins/font/gsd-font-manager.c:231
+#: ../plugins/font/msd-font-manager.c:231
 #, c-format
 msgid ""
 "Cannot create the directory \"%s\".\n"
@@ -534,37 +534,37 @@ msgstr ""
 "نمی‌توان شاخه‌ی «%s» را ایجاد کرد.\n"
 "این کار برای امکان تغییر مکان‌نما لازم است."
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:195
+#: ../plugins/keybindings/msd-keybindings-manager.c:195
 #, c-format
 msgid "Key Binding (%s) has its action defined multiple times\n"
 msgstr "کلید مقید (%s) چند بار کنشش را تعریف کرده است\n"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:202
+#: ../plugins/keybindings/msd-keybindings-manager.c:202
 #, c-format
 msgid "Key Binding (%s) has its binding defined multiple times\n"
 msgstr "کلید مقید (%s) چند بار مقیدسازی‌اش را تعریف کرده است\n"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:211
+#: ../plugins/keybindings/msd-keybindings-manager.c:211
 #, c-format
 msgid "Key Binding (%s) is incomplete\n"
 msgstr "کلید مقید (%s) ناتمام است\n"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:239
+#: ../plugins/keybindings/msd-keybindings-manager.c:239
 #, c-format
 msgid "Key Binding (%s) is invalid\n"
 msgstr "کلید مقید (%s) نامعتبر است\n"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:292
+#: ../plugins/keybindings/msd-keybindings-manager.c:292
 #, fuzzy, c-format
 msgid "It seems that another application already has access to key '%u'."
 msgstr "به نظر می‌رسد برنامه‌ی دیگری از قبل به کلید «%Iu» دست یافته باشد."
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:365
+#: ../plugins/keybindings/msd-keybindings-manager.c:365
 #, c-format
 msgid "Key Binding (%s) is already in use\n"
 msgstr "کلید مقید (%s) از قبل مورد استفاده است\n"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:502
+#: ../plugins/keybindings/msd-keybindings-manager.c:502
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -618,13 +618,13 @@ msgstr "_فایل‌های بار ‌شده:"
 msgid "Volume"
 msgstr "بلندی"
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:200
+#: ../plugins/media-keys/msd-media-keys-manager.c:200
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is "
 "set and points to a valid application."
 msgstr ""
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:240
+#: ../plugins/media-keys/msd-media-keys-manager.c:240
 #, fuzzy, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -633,7 +633,7 @@ msgstr ""
 "نمی‌توان فرمان: %s را را اجرا کرد\n"
 "تایید کنید این‌که این فرمان وجود دارد."
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:256
+#: ../plugins/media-keys/msd-media-keys-manager.c:256
 msgid ""
 "Couldn't put the machine to sleep.\n"
 "Verify that the machine is correctly configured."
@@ -650,18 +650,18 @@ msgstr "کلید‌های موشی"
 msgid "Media keys plugin"
 msgstr ""
 
-#: ../plugins/mouse/gsd-mouse-manager.c:566
+#: ../plugins/mouse/msd-mouse-manager.c:566
 #, fuzzy
 msgid "Could not enable mouse accessibility features"
 msgstr "_به کار انداختن امکانات دسترسی‌پذیری صفحه‌کلید"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:568
+#: ../plugins/mouse/msd-mouse-manager.c:568
 msgid ""
 "Mouse accessibility requires the mousetweaks daemon to be installed on your "
 "system."
 msgstr ""
 
-#: ../plugins/mouse/gsd-mouse-manager.c:571
+#: ../plugins/mouse/msd-mouse-manager.c:571
 msgid "Mouse Preferences"
 msgstr "ترجیحات موشی"
 
@@ -673,7 +673,7 @@ msgstr "موشی"
 msgid "Mouse plugin"
 msgstr ""
 
-#: ../plugins/screensaver/gsd-screensaver-manager.c:151
+#: ../plugins/screensaver/msd-screensaver-manager.c:151
 #, c-format
 msgid ""
 "There was an error starting up the screensaver:\n"
@@ -688,7 +688,7 @@ msgstr ""
 "\n"
 "محافظ صفحه نمایش در این نشست کار نمی‌کند."
 
-#: ../plugins/screensaver/gsd-screensaver-manager.c:160
+#: ../plugins/screensaver/msd-screensaver-manager.c:160
 msgid "_Do not show this message again"
 msgstr "_این پیغام دوباره نشان داده نشود"
 
@@ -702,7 +702,7 @@ msgstr "آغاز محافظ صفحه‌نمایش"
 msgid "Screensaver plugin"
 msgstr "اجرای محافظ صفحه‌نمایش هنگام ورود به سیستم"
 
-#: ../plugins/sound/gsd-sound-manager.c:164
+#: ../plugins/sound/msd-sound-manager.c:164
 #, c-format
 msgid "Couldn't load sound file %s as sample %s"
 msgstr "بار کردن پرونده‌ی صدای %s به عنوان نمونه‌ی %s ممکن نبود"
@@ -802,8 +802,8 @@ msgstr ""
 msgid "XRandR"
 msgstr ""
 
-#: ../plugins/xrdb/gsd-xrdb-manager.c:258
-#: ../plugins/xrdb/gsd-xrdb-manager.c:327
+#: ../plugins/xrdb/msd-xrdb-manager.c:258
+#: ../plugins/xrdb/msd-xrdb-manager.c:327
 msgid "Cannot determine user's home directory"
 msgstr "نمی‌توان شاخه‌ی آغاز کاربر را معین کرد"
 
@@ -815,7 +815,7 @@ msgstr ""
 msgid "X Resource Database"
 msgstr ""
 
-#: ../plugins/xsettings/gsd-xsettings-manager.c:551
+#: ../plugins/xsettings/msd-xsettings-manager.c:551
 #, c-format
 msgid "MateConf key %s set to type %s but its expected type was %s\n"
 msgstr ""

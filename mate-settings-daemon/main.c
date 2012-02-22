@@ -38,7 +38,7 @@
 #include "mate-settings-manager.h"
 #include "mate-settings-profile.h"
 
-#define GSD_DBUS_NAME         "org.mate.SettingsDaemon"
+#define MSD_DBUS_NAME         "org.mate.SettingsDaemon"
 
 #define MATE_SESSION_DBUS_NAME      "org.mate.SessionManager"
 #define MATE_SESSION_DBUS_OBJECT    "/org/mate/SessionManager"
@@ -92,27 +92,27 @@ acquire_name_on_proxy (DBusGProxy *bus_proxy)
         res = dbus_g_proxy_call (bus_proxy,
                                  "RequestName",
                                  &error,
-                                 G_TYPE_STRING, GSD_DBUS_NAME,
+                                 G_TYPE_STRING, MSD_DBUS_NAME,
                                  G_TYPE_UINT, 0,
                                  G_TYPE_INVALID,
                                  G_TYPE_UINT, &result,
                                  G_TYPE_INVALID);
         if (! res) {
                 if (error != NULL) {
-                        g_warning ("Failed to acquire %s: %s", GSD_DBUS_NAME, error->message);
+                        g_warning ("Failed to acquire %s: %s", MSD_DBUS_NAME, error->message);
                         g_error_free (error);
                 } else {
-                        g_warning ("Failed to acquire %s", GSD_DBUS_NAME);
+                        g_warning ("Failed to acquire %s", MSD_DBUS_NAME);
                 }
                 goto out;
         }
 
         if (result != DBUS_REQUEST_NAME_REPLY_PRIMARY_OWNER) {
                 if (error != NULL) {
-                        g_warning ("Failed to acquire %s: %s", GSD_DBUS_NAME, error->message);
+                        g_warning ("Failed to acquire %s: %s", MSD_DBUS_NAME, error->message);
                         g_error_free (error);
                 } else {
-                        g_warning ("Failed to acquire %s", GSD_DBUS_NAME);
+                        g_warning ("Failed to acquire %s", MSD_DBUS_NAME);
                 }
                 goto out;
         }
@@ -289,7 +289,7 @@ set_session_over_handler (DBusGConnection *bus, MateSettingsManager *manager)
 }
 
 static void
-gsd_log_default_handler (const gchar   *log_domain,
+msd_log_default_handler (const gchar   *log_domain,
                          GLogLevelFlags log_level,
                          const gchar   *message,
                          gpointer       unused_data)
@@ -455,7 +455,7 @@ main (int argc, char *argv[])
 
         daemon_detach ();
 
-        g_log_set_default_handler (gsd_log_default_handler, NULL);
+        g_log_set_default_handler (msd_log_default_handler, NULL);
 
         bus = get_session_bus ();
         if (bus == NULL) {

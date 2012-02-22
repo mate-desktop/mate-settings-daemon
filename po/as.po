@@ -662,23 +662,23 @@ msgstr "সহায়ক প্ৰযুক্তি বিশিষ্ট চা
 msgid "Accessibility keyboard plugin"
 msgstr "সহায়ক প্ৰযুক্তি বিশিষ্ট চাবিৰ ফলকৰ প্লাগ-ইন"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:388
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:388
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "সহায়িকা প্ৰদৰ্শনত সমস্যা: %s"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:519
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:585
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:519
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:585
 msgid "Do you want to activate Slow Keys?"
 msgstr "আপুনি কি ধীৰ কী  সক্ৰিয় কৰিবলৈ চান?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:520
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:586
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:520
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:586
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "আপুনি কি ধীৰ কী  নিষ্ক্ৰিয় কৰিবলৈ চান?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:521
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:587
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:521
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:587
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -687,66 +687,66 @@ msgstr ""
 "সক্ৰিয়কাৰক ছৰ্টকাট যা সম্পূৰ্ণ কীবোৰ্ড ব্যৱস্থা কীভাবে কাম কৰবে সেইটো নিৰ্ধাৰণ কৰি  "
 "।"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:546
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:685
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:546
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:685
 msgid "Don't activate"
 msgstr "সক্ৰিয় কৰা ন'হ'ব"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:546
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:685
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:546
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:685
 msgid "Don't deactivate"
 msgstr "নিষ্ক্ৰিয় কৰা ন'হ'ব"
 
 #
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:552
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:691
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:552
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:691
 msgid "Activate"
 msgstr "সক্ৰিয় কৰা হ'ব"
 
 #
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:552
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:691
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:552
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:691
 msgid "Deactivate"
 msgstr "নিষ্ক্ৰিয় কৰক"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:608
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:749
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:608
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Do_n't activate"
 msgstr "সক্ৰিয় কৰো না (_n)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:608
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:749
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:608
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Do_n't deactivate"
 msgstr "নিষ্ক্ৰিয় কৰো না (_n)"
 
 #
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:611
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:752
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:611
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:752
 msgid "_Activate"
 msgstr "সক্ৰিয় কৰক (_A)"
 
 #
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:611
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:752
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:611
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:752
 msgid "_Deactivate"
 msgstr "নিষ্ক্ৰিয় কৰো (_D)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:615
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:615
 msgid "Slow Keys Alert"
 msgstr "ধীৰ কী  সম্পৰ্কিত সতৰ্কবাণী"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:655
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:723
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:655
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:723
 msgid "Do you want to activate Sticky Keys?"
 msgstr "আপুনি কি স্টিকি কী  সক্ৰিয় কৰিবলৈ চান?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:656
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:724
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:724
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "আপুনি কি স্টিকি কী  নিষ্ক্ৰিয় কৰিবলৈ চান?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:658
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:726
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:658
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:726
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -755,8 +755,8 @@ msgstr ""
 "সক্ৰিয়কাৰক ছৰ্টকাট যা সম্পূৰ্ণ কীবোৰ্ড ব্যৱস্থা কীভাবে কাম কৰবে সেইটো নিৰ্ধাৰণ কৰি  "
 "।"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:660
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:728
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:660
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:728
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -766,44 +766,44 @@ msgstr ""
 " ।  এৰ ফলে স্টিকি কী  নিষ্ক্ৰিয় হৈ যায় যা সম্পূৰ্ণ কীবোৰ্ড ব্যৱস্থা কীভাবে কাম কৰবে "
 "সেইটো নিৰ্ধাৰণ কৰি  ।"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:756
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:756
 msgid "Sticky Keys Alert"
 msgstr "স্টিকি কী  সম্পৰ্কিত সতৰ্কবাণী"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.c:920
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:4
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:920
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:4
 msgid "Universal Access Preferences"
 msgstr "সাৰ্বজনীন ব্যৱহাৰ সংক্ৰান্ত পছন্দ"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:1
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Enhance _contrast in colors"
 msgstr "ৰঙেৰ তাৰতম্য বৃদ্ধি কৰা হ'ব (_c)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:2
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
 msgid "Make _text larger and easier to read"
 msgstr "সহজে পাঠ কৰাৰ বাবে হৰফেৰ মাপ বৃদ্ধি কৰা হ'ব (_t)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:3
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:3
 msgid "Press and _hold keys to accept them (Slow Keys)"
 msgstr "কি গ্ৰহণ কৰা বাবে সেসমূহজ টিপে ৰাখুন (ধীৰগতিৰ কি) (_h)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:5
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:5
 msgid "Use on-screen _keyboard"
 msgstr "পৰ্দাত উপস্থিত চাবিৰ ফলক প্ৰয়োগ কৰা হ'ব (_k)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:6
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:6
 msgid "Use screen _magnifier"
 msgstr "পৰ্দাৰ বিবৰ্ধক ব্যৱহাৰ কৰা হ'ব (_m)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:7
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "Use screen _reader"
 msgstr "পৰ্দা পাঠৰ ব্যৱস্থা ব্যৱহাৰ কৰা হ'ব (_r)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:8
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
 msgstr "শীঘ্ৰে কৰা দ্বৈত চাবি টিপা অগ্ৰাহ্য কৰক (Bounce Keys) (_I)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:9
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
 msgstr "চাবিৰ ফলকৰ ছ'ৰ্টকাট একে সময়ত এটাই টিপিব (Sticky Keys) (_P)"
 
@@ -841,26 +841,26 @@ msgstr "ফন্ট"
 msgid "Font plugin"
 msgstr "ফন্ট প্লাগ-ইন"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:64
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:64
 msgid "Don't show any warnings again for this filesystem"
 msgstr "এই নথিপত্ৰ-প্ৰণালীৰ বাবে কোনো সতৰ্কবাৰ্তা প্ৰদৰ্শন কৰা ন'হ'ব"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:66
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:66
 #| msgid "_Do not show this message again"
 msgid "Don't show any warnings again"
 msgstr "পুনৰায় সতৰ্কবাৰ্তা প্ৰদৰ্শন কৰা ন'হ'ব"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:79
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:79
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr "\"%s\" ভলিউমত অকল %s স্থান ডিস্কত অৱশিষ্ট আছে ।"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:82
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:82
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr "এই কম্পিউটাৰত অকল %s স্থান ডিস্কত অৱশিষ্ট আছে ।"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:98
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:98
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
@@ -870,7 +870,7 @@ msgstr ""
 "স্থান বৃদ্ধি "
 "কৰা যাব ।"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:101
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:101
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
@@ -878,7 +878,7 @@ msgstr ""
 "অব্যৱহৃত প্ৰোগ্ৰাম, নথিপত্ৰ আঁতৰাই আৰু অন্য কোনো ডিস্ক অথবা বিভাজনত নথিপত্ৰ আঁতৰাই "
 "ডিস্কৰ স্থান বৃদ্ধি কৰা যাব ।"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:106
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:106
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
@@ -887,7 +887,7 @@ msgstr ""
 "প্ৰোগ্ৰাম, নথিপত্ৰ আঁতৰাই আৰু কোনো বহিস্থিত ডিস্কত নথিপত্ৰ আঁতৰাইও ডিস্কৰ স্থান "
 "বৃদ্ধি কৰা যাব ।"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:109
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:109
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
@@ -897,50 +897,50 @@ msgstr ""
 "বৃদ্ধি কৰা যাব ।"
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:204
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:204
 msgid "Low Disk Space"
 msgstr "কম ডিষ্ক স্থান"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:439
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:439
 msgid "Empty Trash"
 msgstr "আবৰ্জনাৰ বক্স ৰিক্ত কৰক"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:447
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:447
 msgid "Examine..."
 msgstr "পৰীক্ষা কৰক..."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:454
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:454
 msgid "Ignore"
 msgstr "অগ্ৰাহ্য কৰা হ'ব"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:96
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:96
 #, c-format
 msgid "Removing item %lu of %lu"
 msgstr "%lu বস্তু আঁতৰুৱা হৈছে, সৰ্বমোট %lu"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:116
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:116
 #, c-format
 msgid "<i>Removing: %s</i>"
 msgstr "<i>আঁতৰুৱা হৈছে: %s</i>"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:244
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:293
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:244
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:293
 msgid "Emptying the trash"
 msgstr "আবৰ্জনাৰ বক্স ৰিক্ত কৰা হৈছে"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:269
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:269
 msgid "Preparing to empty trash..."
 msgstr "আবৰ্জনা আঁতৰুৱাৰ প্ৰস্তুতি চলিছে..."
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:295
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:295
 msgid "From: "
 msgstr "-ৰ পৰা:"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:356
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:356
 msgid "Empty all of the items from the trash?"
 msgstr "আবৰ্জনাৰ বক্সত উপস্থিত সামগ্ৰীসমূহজ আঁতৰুৱা হ'ব নেকি ?"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:359
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:359
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
@@ -948,21 +948,21 @@ msgstr ""
 "আবৰ্জনাৰ বক্স ৰিক্ত কৰা হ'লে ইয়াত উপস্থিত সামগ্ৰী স্থায়ীৰূপে বৰ্জন কৰা হ'ব । "
 "মন কৰিব, এই বস্তুসমূহজ পৃথক ৰূপেও আঁতৰুৱা যাব ।"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:366
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:366
 msgid "_Empty Trash"
 msgstr "আবৰ্জনা ৰিক্ত কৰক (_E)"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:139
+#: ../plugins/keybindings/msd-keybindings-manager.c:139
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "কি-বাইন্ডিং (%s) বৈধ নয়"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:197
+#: ../plugins/keybindings/msd-keybindings-manager.c:197
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "কি-বাইন্ডিং (%s) অসম্পূৰ্ণ"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:493
+#: ../plugins/keybindings/msd-keybindings-manager.c:493
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -1013,7 +1013,7 @@ msgstr "ভাৰ(_L)"
 msgid "_Loaded files:"
 msgstr "লোড কৰা নথিপত্ৰ (_L):"
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:203
+#: ../plugins/media-keys/msd-media-keys-manager.c:203
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is "
 "set and points to a valid application."
@@ -1021,7 +1021,7 @@ msgstr ""
 "অবিকল্পিত টাৰ্মিনেল পোৱা ন'গ'ল  । আপোনাৰ অবিকল্পিত টাৰ্মিনেল নিৰ্ধাৰিত থকা আৰু এটা "
 "বৈধ অনুপ্ৰয়োগলৈ আঙুলিয়াই ধৰা নিশ্চিত কৰক  ।"
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:243
+#: ../plugins/media-keys/msd-media-keys-manager.c:243
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1030,7 +1030,7 @@ msgstr ""
 "চিহ্নিত আদেশটি চলোৱা নাযায়: %s\n"
 "আদেশৰ বৈধতা নিশ্চিত কৰক  ।"
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:259
+#: ../plugins/media-keys/msd-media-keys-manager.c:259
 msgid ""
 "Couldn't put the machine to sleep.\n"
 "Verify that the machine is correctly configured."
@@ -1074,16 +1074,16 @@ msgstr "মিডিয়া কি"
 msgid "Media keys plugin"
 msgstr "মিডিয়া-কি প্লাগ-ইন"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:891
+#: ../plugins/mouse/msd-mouse-manager.c:891
 msgid "Could not enable mouse accessibility features"
 msgstr "মাউছ ব্যৱহাৰৰ বিশেষ সহায়ক বৈশিষ্ট্য সক্ৰিয় কৰিবলৈ ব্যৰ্থ"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:893
+#: ../plugins/mouse/msd-mouse-manager.c:893
 msgid "Mouse accessibility requires mousetweaks to be installed on your system."
 msgstr ""
 "মাউছ অভিগম্যতাৰ বাবে আপোনাৰ ব্যৱস্থাপ্ৰণালীত mousetweaks সংস্থাপিত হোৱাৰ প্ৰয়োজন  ।"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:896
+#: ../plugins/mouse/msd-mouse-manager.c:896
 msgid "Mouse Preferences"
 msgstr "মাউছ সম্পৰ্কিত পছন্দ"
 
@@ -1112,15 +1112,15 @@ msgstr "পৰ্দ্দাৰ আকাৰ আৰু ৰ'টেছনৰ প�
 msgid "XRandR"
 msgstr "XRandR"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:208
+#: ../plugins/xrandr/msd-xrandr-manager.c:208
 msgid "Could not restore the display's configuration"
 msgstr "প্ৰদৰ্শনৰ বিন্যাস পুনঃস্থাপন কৰিব নোৱাৰি"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:233
+#: ../plugins/xrandr/msd-xrandr-manager.c:233
 msgid "Could not restore the display's configuration from a backup"
 msgstr "বেকআপৰ পৰা প্ৰদৰ্শনৰ বিন্যাস পুনঃস্থাপন কৰিব নোৱাৰি"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:254
+#: ../plugins/xrandr/msd-xrandr-manager.c:254
 #, c-format
 #| msgid ""
 #| "The display will be reset to its previous configuration in %d seconds"
@@ -1129,77 +1129,77 @@ msgid_plural "The display will be reset to its previous configuration in %d seco
 msgstr[0] "%d ছেকেণ্ড পিছত প্ৰদৰ্শনৰ পূৰ্ববৰ্তী বিন্যাস পুনৰায় স্থাপন কৰা হ'ব"
 msgstr[1] "%d ছেকেণ্ডৰ প্ৰদৰ্শনক আগৰ বিন্যাসলৈ পুনঃ স্থাপিত কৰা হ'ব"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:303
+#: ../plugins/xrandr/msd-xrandr-manager.c:303
 msgid "Does the display look OK?"
 msgstr "প্ৰদৰ্শন ঠিক নে ?"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:309
+#: ../plugins/xrandr/msd-xrandr-manager.c:309
 msgid "_Restore Previous Configuration"
 msgstr "আগৰ বিন্যাস পুনঃ স্থাপিত কৰক (_R)"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:310
+#: ../plugins/xrandr/msd-xrandr-manager.c:310
 msgid "_Keep This Configuration"
 msgstr "এই বিন্যাস ৰাখক (_K)"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:391
+#: ../plugins/xrandr/msd-xrandr-manager.c:391
 msgid "The selected configuration for displays could not be applied"
 msgstr "প্ৰদৰ্শনৰ কাৰণে নিৰ্বাচিত বিন্যাস প্ৰয়োগ কৰিব নোৱাৰি"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:945
+#: ../plugins/xrandr/msd-xrandr-manager.c:945
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "পৰ্দ্দাৰ তথ্য সতেজ কৰিব নোৱাৰি: %s"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:948
+#: ../plugins/xrandr/msd-xrandr-manager.c:948
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "মণিটৰৰ বিন্যাস তথাপিও চুৱিচ কৰিবলৈ চেষ্টা কৰা হৈছে  ।"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:982
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1148
+#: ../plugins/xrandr/msd-xrandr-manager.c:982
+#: ../plugins/xrandr/msd-xrandr-manager.c:1148
 msgid "Could not switch the monitor configuration"
 msgstr "মণিটৰৰ বিন্যাস চুৱিচ কৰিব নোৱাৰি"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1541
+#: ../plugins/xrandr/msd-xrandr-manager.c:1541
 msgid "<i>Rotation not supported</i>"
 msgstr "<i>ঘূৰুৱা সমৰ্থিত নহয়</i>"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1595
+#: ../plugins/xrandr/msd-xrandr-manager.c:1595
 msgid "Could not save monitor configuration"
 msgstr "মণিটৰৰ বিন্যাস ৰক্ষা কৰিব নোৱাৰি"
 
 #
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1613
+#: ../plugins/xrandr/msd-xrandr-manager.c:1613
 msgid "Normal"
 msgstr "স্বাভাবিক"
 
 #
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1614
+#: ../plugins/xrandr/msd-xrandr-manager.c:1614
 msgid "Left"
 msgstr "বাওঁফালে"
 
 #
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1615
+#: ../plugins/xrandr/msd-xrandr-manager.c:1615
 msgid "Right"
 msgstr "সোঁফালে"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1616
+#: ../plugins/xrandr/msd-xrandr-manager.c:1616
 msgid "Upside Down"
 msgstr "ওলোটা"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1735
+#: ../plugins/xrandr/msd-xrandr-manager.c:1735
 msgid "_Configure Display Settings ..."
 msgstr "পৰ্দা সংক্ৰান্ত বৈশিষ্ট্য পৰিবৰ্তন কৰক... (_C)"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1776
+#: ../plugins/xrandr/msd-xrandr-manager.c:1776
 msgid "Configure display settings"
 msgstr "পৰ্দা সংক্ৰান্ত বৈশিষ্ট্য পৰিবৰ্তন কৰক"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1830
+#: ../plugins/xrandr/msd-xrandr-manager.c:1830
 msgid "Could not apply the stored configuration for monitors"
 msgstr "মণিটৰৰ কাৰণে ৰক্ষা কৰা বিন্যাস প্ৰয়োগ কৰিব নোৱাৰি"
 
-#: ../plugins/xrdb/gsd-xrdb-manager.c:255
-#: ../plugins/xrdb/gsd-xrdb-manager.c:324
+#: ../plugins/xrdb/msd-xrdb-manager.c:255
+#: ../plugins/xrdb/msd-xrdb-manager.c:324
 msgid "Cannot determine user's home directory"
 msgstr "ব্যৱহাৰকাৰীৰ ব্যক্তিগত ডিৰেক্টৰি (Home) খুঁজে পাওয়া যাচ্ছে না"
 
@@ -1211,7 +1211,7 @@ msgstr "X ৰিসোৰ্সেৰ ডাটাবেস পৰিচাল�
 msgid "X Resource Database"
 msgstr "X ৰিসোৰ্স ডাটাবেস"
 
-#: ../plugins/xsettings/gsd-xsettings-manager.c:644
+#: ../plugins/xsettings/msd-xsettings-manager.c:644
 #, c-format
 msgid "MateConf key %s set to type %s but its expected type was %s\n"
 msgstr "জীকন্‌ফ কী  %s এৰ মান %s কৰা হ'লেও সেইটো %s হোৱাৰ কথা\n"

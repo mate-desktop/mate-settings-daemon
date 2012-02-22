@@ -655,23 +655,23 @@ msgstr "Технології доступності"
 msgid "Accessibility keyboard plugin"
 msgstr "Модуль технологій доступності клавіатури"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:388
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:388
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Помилка відображення довідки: %s"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:519
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:585
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:519
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:585
 msgid "Do you want to activate Slow Keys?"
 msgstr "Бажаєте ввімкнути режим \"Повільні клавіші\"?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:520
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:586
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:520
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:586
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Бажаєте вимкнути режим \"Повільні клавіші\"?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:521
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:587
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:521
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:587
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -680,62 +680,62 @@ msgstr ""
 "для ввімкнення режиму \"Повільні клавіші\", який впливає на роботу "
 "клавіатури."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:546
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:685
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:546
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:685
 msgid "Don't activate"
 msgstr "Не активувати"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:546
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:685
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:546
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:685
 msgid "Don't deactivate"
 msgstr "Не деактивувати"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:552
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:691
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:552
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:691
 msgid "Activate"
 msgstr "Активувати"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:552
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:691
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:552
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:691
 msgid "Deactivate"
 msgstr "Деактивувати"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:608
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:749
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:608
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Do_n't activate"
 msgstr "Н_е запускати"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:608
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:749
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:608
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Do_n't deactivate"
 msgstr "_Не вимикати"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:611
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:752
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:611
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:752
 msgid "_Activate"
 msgstr "_Увімкнути"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:611
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:752
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:611
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:752
 msgid "_Deactivate"
 msgstr "_Вимкнути"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:615
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:615
 msgid "Slow Keys Alert"
 msgstr "Сповіщення про режим \"Повільні клавіші\""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:655
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:723
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:655
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:723
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Бажаєте ввімкнути режим \"Липкі клавіші\"?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:656
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:724
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:724
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Бажаєте вимкнути режим \"Повільні клавіші\"?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:658
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:726
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:658
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:726
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -743,8 +743,8 @@ msgstr ""
 "Ви щойно утримували натиснутою клавішу Shift протягом 5 секунд. Це сигнал "
 "для ввімкнення режиму \"Липкі клавіші\", який впливає на роботу клавіатури."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:660
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:728
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:660
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:728
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -754,44 +754,44 @@ msgstr ""
 "Shift протягом 5 секунд. Це сигнал для вимкнення режиму \"Липкі клавіші\", "
 "який впливає на роботу клавіатури."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:756
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:756
 msgid "Sticky Keys Alert"
 msgstr "Сповіщення про режим \"Липкі клавіші\""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.c:920
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:4
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:920
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:4
 msgid "Universal Access Preferences"
 msgstr "Параметри універсального доступу"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:1
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Enhance _contrast in colors"
 msgstr "Покращений _контраст у кольорах"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:2
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
 msgid "Make _text larger and easier to read"
 msgstr "Зробити _текст більшим та простішим для читання"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:3
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:3
 msgid "Press and _hold keys to accept them (Slow Keys)"
 msgstr "Приймати клавіші лише після т_ривалого натискання (Повільні клавіші)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:5
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:5
 msgid "Use on-screen _keyboard"
 msgstr "Використовувати _екранну клавіатуру"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:6
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:6
 msgid "Use screen _magnifier"
 msgstr "Використовувати _збільшувач екрану"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:7
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "Use screen _reader"
 msgstr "Використовувати _читання екрану"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:8
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
 msgstr "_Ігнорувати швидкі повторні натискання клавіш (Пружні клавіші)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:9
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
 msgstr ""
 "Вводити комбінації клавіш _почерговим натисканням клавіш (Липкі клавіші)"
@@ -828,25 +828,25 @@ msgstr "Шрифт"
 msgid "Font plugin"
 msgstr "Модуль шрифту"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:64
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:64
 msgid "Don't show any warnings again for this filesystem"
 msgstr "Не показувати  будь-які попередження для цієї файлової системи"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:66
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:66
 msgid "Don't show any warnings again"
 msgstr "Не показувати більше це повідомлення"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:79
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:79
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr "На томі \"%s\" залишилось лише %s дискового простору."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:82
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:82
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr "На комп'ютері залишилось лише %s дискового простору."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:98
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:98
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
@@ -854,7 +854,7 @@ msgstr ""
 "Ви можете звільнити дисковий простір очищаючи Смітник, видаляючи зайві "
 "програми чи файли, або переміщенням файлів на інший диск чи розділ."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:101
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:101
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
@@ -862,7 +862,7 @@ msgstr ""
 "Ви можете звільнити дисковий простір видаленням зайвих програми чи файлів, "
 "або переміщенням файлів на інший диск чи розділ."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:106
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:106
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
@@ -870,7 +870,7 @@ msgstr ""
 "Ви можете звільнити дисковий простір очищаючи Смітник, видаляючи зайві "
 "програми чи файли, або переміщенням файлів на зовнішній диск."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:109
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:109
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
@@ -879,51 +879,51 @@ msgstr ""
 "або переміщенням файлів на зовнішній диск."
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:204
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:204
 msgid "Low Disk Space"
 msgstr "Мало місця на файловій системі"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:439
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:439
 msgid "Empty Trash"
 msgstr "Очистити смітник"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:447
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:447
 msgid "Examine..."
 msgstr "Аналізувати..."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:454
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:454
 msgid "Ignore"
 msgstr "Ігнорувати"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:96
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:96
 #, c-format
 msgid "Removing item %lu of %lu"
 msgstr "Видалення елементу %lu з %lu"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:116
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:116
 #, c-format
 msgid "<i>Removing: %s</i>"
 msgstr "<i>Видалення: %s</i>"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:244
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:293
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:244
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:293
 msgid "Emptying the trash"
 msgstr "Очищується смітник"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:269
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:269
 msgid "Preparing to empty trash..."
 msgstr "Підготовка до очищення смітника..."
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:296
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:296
 msgid "From: "
 msgstr "З:"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:357
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:357
 msgid "Empty all of the items from the trash?"
 msgstr "Видалити весь вміст смітника?"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:360
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:360
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
@@ -931,21 +931,21 @@ msgstr ""
 "Якщо ви очистите смітник, весь його вміст буде остаточно втрачено. Зверніть "
 "увагу, ви також можете видалити їх окремо."
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:367
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:367
 msgid "_Empty Trash"
 msgstr "О_чистити смітник"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:139
+#: ../plugins/keybindings/msd-keybindings-manager.c:139
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "Комбінація клавіш (%s) неправильна"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:197
+#: ../plugins/keybindings/msd-keybindings-manager.c:197
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "Комбінації клавіш (%s) не завершена"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:493
+#: ../plugins/keybindings/msd-keybindings-manager.c:493
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -970,7 +970,7 @@ msgstr "Клавіатура"
 msgid "Keyboard plugin"
 msgstr "Модуль клавіатури"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:114
+#: ../plugins/keyboard/msd-keyboard-xkb.c:114
 #, c-format
 msgid ""
 "Error activating XKB configuration.\n"
@@ -1001,7 +1001,7 @@ msgstr ""
 "- Результат <b>%s</b>\n"
 "- Результат <b>%s</b>"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:128
+#: ../plugins/keyboard/msd-keyboard-xkb.c:128
 msgid ""
 "You are using XFree 4.3.0.\n"
 "There are known problems with complex XKB configurations.\n"
@@ -1013,24 +1013,24 @@ msgstr ""
 "Попробуйте використати більше просту конфігурацію або встановити свіжішу "
 "версію XFree."
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:200
+#: ../plugins/keyboard/msd-keyboard-xkb.c:200
 msgid "Unknown"
 msgstr "Невідомо"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:269
+#: ../plugins/keyboard/msd-keyboard-xkb.c:269
 #, c-format
 msgid "Keyboard Layout \"%s\""
 msgstr "Розкладка клавіатури \"%s\""
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:392
+#: ../plugins/keyboard/msd-keyboard-xkb.c:392
 msgid "_Groups"
 msgstr "_Групи"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:399
+#: ../plugins/keyboard/msd-keyboard-xkb.c:399
 msgid "Keyboard _Preferences"
 msgstr "Параметри _клавіатури"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:405
+#: ../plugins/keyboard/msd-keyboard-xkb.c:405
 msgid "Show Current _Layout"
 msgstr "Показати поточну _розкладу"
 
@@ -1062,7 +1062,7 @@ msgstr "_Завантажено файлів:"
 msgid "Keyboard Layout"
 msgstr "Розкладка клавіатури"
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:195
+#: ../plugins/media-keys/msd-media-keys-manager.c:195
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is "
 "set and points to a valid application."
@@ -1070,7 +1070,7 @@ msgstr ""
 "Не вдається отримати типовий термінал. Перевірте, що обрана вами типова "
 "термінальна програма справді вказує типову програму."
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:235
+#: ../plugins/media-keys/msd-media-keys-manager.c:235
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1117,18 +1117,18 @@ msgstr "Мультимедійний клавіші"
 msgid "Media keys plugin"
 msgstr "Модуль мультимедійних клавіш"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:882
+#: ../plugins/mouse/msd-mouse-manager.c:882
 msgid "Could not enable mouse accessibility features"
 msgstr "Не вдається увімкнути спеціальні можливості миші"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:884
+#: ../plugins/mouse/msd-mouse-manager.c:884
 msgid ""
 "Mouse accessibility requires mousetweaks to be installed on your system."
 msgstr ""
 "Щоб активувати спеціальні можливості миші, треба встановити у систему службу "
 "mousetweaks."
 
-#: ../plugins/mouse/gsd-mouse-manager.c:887
+#: ../plugins/mouse/msd-mouse-manager.c:887
 msgid "Mouse Preferences"
 msgstr "Параметри миші"
 
@@ -1156,19 +1156,19 @@ msgstr "Встановити розмір екрану та параметри �
 msgid "XRandR"
 msgstr "XRandR"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:222
+#: ../plugins/xrandr/msd-xrandr-manager.c:222
 msgid "Could not switch the monitor configuration"
 msgstr "Не вдається застосувати конфігурацію моніторів"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:246
+#: ../plugins/xrandr/msd-xrandr-manager.c:246
 msgid "Could not restore the display's configuration"
 msgstr "Не вдається відновити конфігурацію моніторів"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:271
+#: ../plugins/xrandr/msd-xrandr-manager.c:271
 msgid "Could not restore the display's configuration from a backup"
 msgstr "Не вдається відновити конфігурацію моніторів з резервної копії"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:292
+#: ../plugins/xrandr/msd-xrandr-manager.c:292
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
@@ -1177,69 +1177,69 @@ msgstr[0] "Попередню конфігурацію дисплею буде �
 msgstr[1] "Попередню конфігурацію дисплею буде повернуто через %d секунди"
 msgstr[2] "Попередню конфігурацію дисплею буде повернуто через %d секунд"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:341
+#: ../plugins/xrandr/msd-xrandr-manager.c:341
 msgid "Does the display look OK?"
 msgstr "Конфігурація влаштовує?"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:347
+#: ../plugins/xrandr/msd-xrandr-manager.c:347
 msgid "_Restore Previous Configuration"
 msgstr "_Відновити попередню конфігурацію"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:348
+#: ../plugins/xrandr/msd-xrandr-manager.c:348
 msgid "_Keep This Configuration"
 msgstr "_Застосувати поточну конфігурацію"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:429
+#: ../plugins/xrandr/msd-xrandr-manager.c:429
 msgid "The selected configuration for displays could not be applied"
 msgstr "Не вдається застосувати обрану конфігурацію моніторів"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:967
+#: ../plugins/xrandr/msd-xrandr-manager.c:967
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "Не вдається оновити інформацію про екран: %s"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:970
+#: ../plugins/xrandr/msd-xrandr-manager.c:970
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Конфігурація моніторів застосовується примусово."
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1679
+#: ../plugins/xrandr/msd-xrandr-manager.c:1679
 msgid "<i>Rotation not supported</i>"
 msgstr "<i>Обертання не підтримується</i>"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1733
+#: ../plugins/xrandr/msd-xrandr-manager.c:1733
 msgid "Could not save monitor configuration"
 msgstr "Не вдається зберегти конфігурацію мониторів"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1751
+#: ../plugins/xrandr/msd-xrandr-manager.c:1751
 msgid "Normal"
 msgstr "Звичайне"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1752
+#: ../plugins/xrandr/msd-xrandr-manager.c:1752
 msgid "Left"
 msgstr "Ліворуч"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1753
+#: ../plugins/xrandr/msd-xrandr-manager.c:1753
 msgid "Right"
 msgstr "Праворуч"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1754
+#: ../plugins/xrandr/msd-xrandr-manager.c:1754
 msgid "Upside Down"
 msgstr "Догори ногами"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1874
+#: ../plugins/xrandr/msd-xrandr-manager.c:1874
 msgid "_Configure Display Settings ..."
 msgstr "_Налаштувати параметри екрану ..."
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1915
+#: ../plugins/xrandr/msd-xrandr-manager.c:1915
 msgid "Configure display settings"
 msgstr "Налаштувати параметри екрану"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1972
+#: ../plugins/xrandr/msd-xrandr-manager.c:1972
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Не вдається застосувати збережену конфігурацію моніторів"
 
-#: ../plugins/xrdb/gsd-xrdb-manager.c:255
-#: ../plugins/xrdb/gsd-xrdb-manager.c:324
+#: ../plugins/xrdb/msd-xrdb-manager.c:255
+#: ../plugins/xrdb/msd-xrdb-manager.c:324
 msgid "Cannot determine user's home directory"
 msgstr "Не вдається визначити домашній каталог користувача"
 
@@ -1251,7 +1251,7 @@ msgstr "Керування базою даних ресурсів X"
 msgid "X Resource Database"
 msgstr "База даних ресурсів X"
 
-#: ../plugins/xsettings/gsd-xsettings-manager.c:596
+#: ../plugins/xsettings/msd-xsettings-manager.c:596
 #, c-format
 msgid "MateConf key %s set to type %s but its expected type was %s\n"
 msgstr "Ключ MateConf %s встановлено в тип %s, а очікувався тип %s\n"

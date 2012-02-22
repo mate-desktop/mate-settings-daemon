@@ -409,20 +409,20 @@ msgstr "_Açesibiliteti"
 msgid "Accessibility keyboard plugin"
 msgstr "_Açesibiliteti"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:393
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:393
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "U verifikua një gabim gjatë shfaqjes së ndihmës: %s"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:445
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:445
 msgid "Do you want to activate Slow Keys?"
 msgstr "Aktivizon ngadalsimin e tasteve?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:446
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:446
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Çaktivon ngadalsimin e tasteve?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:449
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:449
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -431,39 +431,39 @@ msgstr ""
 "për funksionin e ngadalsimit të tasteve, që ndryshon funksionimin aktual të "
 "tastierës."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:456
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:508
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:456
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:508
 msgid "Do_n't activate"
 msgstr "Mo_s aktivizo"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:456
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:508
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:456
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:508
 msgid "Do_n't deactivate"
 msgstr "Mo_s çaktivizo"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:459
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:511
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:459
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:511
 msgid "_Activate"
 msgstr "_Aktivo"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:459
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:511
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:459
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:511
 msgid "_Deactivate"
 msgstr "Ç_aktivo"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:463
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:463
 msgid "Slow Keys Alert"
 msgstr "Paralajmërim ngadalsimi i tasteve"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:495
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:495
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Aktivon qendrimin e tasteve?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:496
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:496
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Çaktivon qendrimin e tasteve?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:499
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:499
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -472,7 +472,7 @@ msgstr ""
 "funksionin e qendrimit të tasteve, që ndryshon funksionimin aktual të "
 "tastierës."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:501
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:501
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -482,7 +482,7 @@ msgstr ""
 "rradhazi.··Kjo·çaktivon funksionin e qendrimit të tasteve, që ndryshon "
 "funksionimin aktual të tastierës."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:515
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:515
 msgid "Sticky Keys Alert"
 msgstr "Paralajmërim qendrimi i tasteve"
 
@@ -519,7 +519,7 @@ msgstr "Gërmat"
 msgid "Font plugin"
 msgstr ""
 
-#: ../plugins/font/gsd-font-manager.c:208
+#: ../plugins/font/msd-font-manager.c:208
 #, c-format
 msgid ""
 "Cannot create the directory \"%s\".\n"
@@ -528,7 +528,7 @@ msgstr ""
 "I pamundur krijimi kartelës \"%s\".\n"
 "Nevoitet për të mundësuar ndryshimin e temës së kursorit."
 
-#: ../plugins/font/gsd-font-manager.c:231
+#: ../plugins/font/msd-font-manager.c:231
 #, c-format
 msgid ""
 "Cannot create the directory \"%s\".\n"
@@ -537,37 +537,37 @@ msgstr ""
 "I pamundur krijimi kartelës \"%s\".\n"
 "Nevoitet për të mundësuar ndryshimin e kursorëve."
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:195
+#: ../plugins/keybindings/msd-keybindings-manager.c:195
 #, c-format
 msgid "Key Binding (%s) has its action defined multiple times\n"
 msgstr "Veprimi i shtegut (%s) është përdorur njëherë\n"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:202
+#: ../plugins/keybindings/msd-keybindings-manager.c:202
 #, c-format
 msgid "Key Binding (%s) has its binding defined multiple times\n"
 msgstr "Kombinimi i tasteve të shtegut (%s) është përdorur njëherë\n"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:211
+#: ../plugins/keybindings/msd-keybindings-manager.c:211
 #, c-format
 msgid "Key Binding (%s) is incomplete\n"
 msgstr "Shtegu (%s) është i paplotë\n"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:239
+#: ../plugins/keybindings/msd-keybindings-manager.c:239
 #, c-format
 msgid "Key Binding (%s) is invalid\n"
 msgstr "Shtegu (%s) është i pavlefshëm\n"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:292
+#: ../plugins/keybindings/msd-keybindings-manager.c:292
 #, c-format
 msgid "It seems that another application already has access to key '%u'."
 msgstr "Mesa duket një program tjetër përdor rregullisht tastin '%u'."
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:365
+#: ../plugins/keybindings/msd-keybindings-manager.c:365
 #, c-format
 msgid "Key Binding (%s) is already in use\n"
 msgstr "Shtegu (%s) është rregullisht në përdorim\n"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:502
+#: ../plugins/keybindings/msd-keybindings-manager.c:502
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -621,13 +621,13 @@ msgstr "File-t e nga_rkuar:"
 msgid "Volume"
 msgstr "Volumi"
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:200
+#: ../plugins/media-keys/msd-media-keys-manager.c:200
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is "
 "set and points to a valid application."
 msgstr ""
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:240
+#: ../plugins/media-keys/msd-media-keys-manager.c:240
 #, fuzzy, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -636,7 +636,7 @@ msgstr ""
 "I pamundur ekzekutimi i komandës: %s\n"
 "Verifiko që kjo komandë ekziston."
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:256
+#: ../plugins/media-keys/msd-media-keys-manager.c:256
 msgid ""
 "Couldn't put the machine to sleep.\n"
 "Verify that the machine is correctly configured."
@@ -653,18 +653,18 @@ msgstr "Pulsantet e Miut"
 msgid "Media keys plugin"
 msgstr ""
 
-#: ../plugins/mouse/gsd-mouse-manager.c:566
+#: ../plugins/mouse/msd-mouse-manager.c:566
 #, fuzzy
 msgid "Could not enable mouse accessibility features"
 msgstr "_Aktivizo karakteristikat e açesibilitetit të tastierës"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:568
+#: ../plugins/mouse/msd-mouse-manager.c:568
 msgid ""
 "Mouse accessibility requires the mousetweaks daemon to be installed on your "
 "system."
 msgstr ""
 
-#: ../plugins/mouse/gsd-mouse-manager.c:571
+#: ../plugins/mouse/msd-mouse-manager.c:571
 msgid "Mouse Preferences"
 msgstr "Preferimet e miut"
 
@@ -676,7 +676,7 @@ msgstr "Miu"
 msgid "Mouse plugin"
 msgstr ""
 
-#: ../plugins/screensaver/gsd-screensaver-manager.c:151
+#: ../plugins/screensaver/msd-screensaver-manager.c:151
 #, c-format
 msgid ""
 "There was an error starting up the screensaver:\n"
@@ -691,7 +691,7 @@ msgstr ""
 "\n"
 "Funksioni i ruajtes së ekranit nuk do punojë për këtë seancë."
 
-#: ../plugins/screensaver/gsd-screensaver-manager.c:160
+#: ../plugins/screensaver/msd-screensaver-manager.c:160
 msgid "_Do not show this message again"
 msgstr "_Mos shfaq më këtë mesazh"
 
@@ -705,7 +705,7 @@ msgstr "Fillo ruajtësin e ekranit"
 msgid "Screensaver plugin"
 msgstr "Ekzekuto ruajtësin e ekranit në hyrje"
 
-#: ../plugins/sound/gsd-sound-manager.c:164
+#: ../plugins/sound/msd-sound-manager.c:164
 #, c-format
 msgid "Couldn't load sound file %s as sample %s"
 msgstr "I pamundur ngarkimi i tingullit %s si shembull %s"
@@ -797,8 +797,8 @@ msgstr ""
 msgid "XRandR"
 msgstr ""
 
-#: ../plugins/xrdb/gsd-xrdb-manager.c:258
-#: ../plugins/xrdb/gsd-xrdb-manager.c:327
+#: ../plugins/xrdb/msd-xrdb-manager.c:258
+#: ../plugins/xrdb/msd-xrdb-manager.c:327
 msgid "Cannot determine user's home directory"
 msgstr "I pamundur përcaktimi i directory shtëpi të përdoruesit"
 
@@ -810,7 +810,7 @@ msgstr ""
 msgid "X Resource Database"
 msgstr ""
 
-#: ../plugins/xsettings/gsd-xsettings-manager.c:551
+#: ../plugins/xsettings/msd-xsettings-manager.c:551
 #, c-format
 msgid "MateConf key %s set to type %s but its expected type was %s\n"
 msgstr "Çelësi MateConf %s është caktuar si lloj %s por duhet të jetë %s\n"

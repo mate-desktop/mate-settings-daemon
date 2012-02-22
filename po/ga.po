@@ -595,135 +595,135 @@ msgstr "Mearchlár Inrochtaineachta"
 msgid "Accessibility keyboard plugin"
 msgstr "Breiseán an mhéarchlár inrochtaineachta"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:388
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:388
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Bhí earraid ag taispeáin cabhair: %s"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:519
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:585
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:519
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:585
 msgid "Do you want to activate Slow Keys?"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:520
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:586
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:520
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:586
 msgid "Do you want to deactivate Slow Keys?"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:521
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:587
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:521
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:587
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:546
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:685
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:546
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:685
 msgid "Don't activate"
 msgstr "Ná gníomhachtaigh"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:546
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:685
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:546
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:685
 msgid "Don't deactivate"
 msgstr "Ná díghníomhachtaigh"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:552
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:691
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:552
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:691
 msgid "Activate"
 msgstr "Gníomhachtaigh"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:552
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:691
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:552
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:691
 msgid "Deactivate"
 msgstr "Díghníomhachtaigh"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:608
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:749
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:608
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Do_n't activate"
 msgstr "_Ná gníomhachtaigh"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:608
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:749
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:608
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Do_n't deactivate"
 msgstr "_Ná díghníomhachtaigh"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:611
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:752
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:611
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:752
 msgid "_Activate"
 msgstr "_Gníomhachtaigh"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:611
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:752
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:611
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:752
 msgid "_Deactivate"
 msgstr "_Díghníomhachtaigh"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:615
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:615
 msgid "Slow Keys Alert"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:655
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:723
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:655
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:723
 msgid "Do you want to activate Sticky Keys?"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:656
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:724
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:724
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:658
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:726
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:658
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:726
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:660
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:728
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:660
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:728
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:756
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:756
 msgid "Sticky Keys Alert"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.c:920
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:4
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:920
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:4
 msgid "Universal Access Preferences"
 msgstr "Sainroghanna Rochtana Uilíche"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:1
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Enhance _contrast in colors"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:2
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
 msgid "Make _text larger and easier to read"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:3
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:3
 msgid "Press and _hold keys to accept them (Slow Keys)"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:5
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:5
 msgid "Use on-screen _keyboard"
 msgstr "Úsáid an _méarchlár scáileáin"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:6
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:6
 msgid "Use screen _magnifier"
 msgstr "Úsáid an _formhéadaitheoir scáileáin"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:7
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "Use screen _reader"
 msgstr "Úsáid an _léitheoir scáileáin"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:8
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:9
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
 msgstr ""
 
@@ -759,113 +759,113 @@ msgstr "Cló"
 msgid "Font plugin"
 msgstr "Breiseán cló"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:64
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:64
 msgid "Don't show any warnings again for this filesystem"
 msgstr "Ná taispeáin aon rabhadh arís don chóras comhad seo"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:66
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:66
 msgid "Don't show any warnings again"
 msgstr "Ná taispeáin aon rabhadh arís"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:79
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:79
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr "Níl ach %2$s spáis diosca fágtha ag an imleabhar \"%1$s\"."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:82
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:82
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr "Níl ach %s spáis diosca fágtha ag an ríomhaire seo."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:98
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:98
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
 msgstr ""
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:101
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:101
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
 msgstr ""
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:106
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:106
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
 msgstr ""
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:109
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:109
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
 msgstr ""
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:204
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:204
 msgid "Low Disk Space"
 msgstr "Spás Diosca Gann"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:439
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:439
 msgid "Empty Trash"
 msgstr "Folmhaigh Bruscar"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:447
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:447
 msgid "Examine..."
 msgstr "Scrúdaigh..."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:454
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:454
 msgid "Ignore"
 msgstr "Déan Neamhaird Air"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:96
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:96
 #, c-format
 msgid "Removing item %lu of %lu"
 msgstr "Mír %lu as %lu á baint"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:116
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:116
 #, c-format
 msgid "<i>Removing: %s</i>"
 msgstr "<i>Á bhaint: %s</i>"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:244
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:293
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:244
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:293
 msgid "Emptying the trash"
 msgstr "Bruscar á fholmhú"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:269
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:269
 msgid "Preparing to empty trash..."
 msgstr ""
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:295
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:295
 msgid "From: "
 msgstr "Ó:"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:356
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:356
 msgid "Empty all of the items from the trash?"
 msgstr ""
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:359
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:359
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
 msgstr ""
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:366
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:366
 msgid "_Empty Trash"
 msgstr "_Folmhaigh Bruscar"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:139
+#: ../plugins/keybindings/msd-keybindings-manager.c:139
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "Tá an ceangal eochrach (%s) neamhbhailí"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:197
+#: ../plugins/keybindings/msd-keybindings-manager.c:197
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "Tá an ceangal eochrach (%s) neamhiomlán"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:493
+#: ../plugins/keybindings/msd-keybindings-manager.c:493
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -912,20 +912,20 @@ msgstr "_Luchtaigh"
 msgid "_Loaded files:"
 msgstr "Comhaid _luchtaithe:"
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:206
+#: ../plugins/media-keys/msd-media-keys-manager.c:206
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is "
 "set and points to a valid application."
 msgstr ""
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:246
+#: ../plugins/media-keys/msd-media-keys-manager.c:246
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
 msgstr ""
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:262
+#: ../plugins/media-keys/msd-media-keys-manager.c:262
 msgid ""
 "Couldn't put the machine to sleep.\n"
 "Verify that the machine is correctly configured."
@@ -977,16 +977,16 @@ msgstr "Eochracha meán"
 msgid "Media keys plugin"
 msgstr "Breiseán eochracha meán"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:891
+#: ../plugins/mouse/msd-mouse-manager.c:891
 msgid "Could not enable mouse accessibility features"
 msgstr ""
 
-#: ../plugins/mouse/gsd-mouse-manager.c:893
+#: ../plugins/mouse/msd-mouse-manager.c:893
 msgid ""
 "Mouse accessibility requires mousetweaks to be installed on your system."
 msgstr ""
 
-#: ../plugins/mouse/gsd-mouse-manager.c:896
+#: ../plugins/mouse/msd-mouse-manager.c:896
 msgid "Mouse Preferences"
 msgstr "Sainroghanna na Luiche"
 
@@ -1014,15 +1014,15 @@ msgstr ""
 msgid "XRandR"
 msgstr "XRandR"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:208
+#: ../plugins/xrandr/msd-xrandr-manager.c:208
 msgid "Could not restore the display's configuration"
 msgstr ""
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:233
+#: ../plugins/xrandr/msd-xrandr-manager.c:233
 msgid "Could not restore the display's configuration from a backup"
 msgstr ""
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:254
+#: ../plugins/xrandr/msd-xrandr-manager.c:254
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
@@ -1033,74 +1033,74 @@ msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:303
+#: ../plugins/xrandr/msd-xrandr-manager.c:303
 msgid "Does the display look OK?"
 msgstr ""
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:309
+#: ../plugins/xrandr/msd-xrandr-manager.c:309
 msgid "_Restore Previous Configuration"
 msgstr "_Athchóirigh an Chumraíocht Roimhe Seo"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:310
+#: ../plugins/xrandr/msd-xrandr-manager.c:310
 msgid "_Keep This Configuration"
 msgstr "_Coinnigh an Chumraíocht Seo"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:391
+#: ../plugins/xrandr/msd-xrandr-manager.c:391
 msgid "The selected configuration for displays could not be applied"
 msgstr ""
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:945
+#: ../plugins/xrandr/msd-xrandr-manager.c:945
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr ""
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:948
+#: ../plugins/xrandr/msd-xrandr-manager.c:948
 msgid "Trying to switch the monitor configuration anyway."
 msgstr ""
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:982
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1148
+#: ../plugins/xrandr/msd-xrandr-manager.c:982
+#: ../plugins/xrandr/msd-xrandr-manager.c:1148
 msgid "Could not switch the monitor configuration"
 msgstr ""
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1541
+#: ../plugins/xrandr/msd-xrandr-manager.c:1541
 msgid "<i>Rotation not supported</i>"
 msgstr "<i>Rothlú gan tacaíocht</i>"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1595
+#: ../plugins/xrandr/msd-xrandr-manager.c:1595
 msgid "Could not save monitor configuration"
 msgstr ""
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1613
+#: ../plugins/xrandr/msd-xrandr-manager.c:1613
 msgid "Normal"
 msgstr "Gnách"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1614
+#: ../plugins/xrandr/msd-xrandr-manager.c:1614
 msgid "Left"
 msgstr "Ar Chlé"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1615
+#: ../plugins/xrandr/msd-xrandr-manager.c:1615
 msgid "Right"
 msgstr "Ar Dheis"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1616
+#: ../plugins/xrandr/msd-xrandr-manager.c:1616
 msgid "Upside Down"
 msgstr "Bunoscionn"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1735
+#: ../plugins/xrandr/msd-xrandr-manager.c:1735
 msgid "_Configure Display Settings ..."
 msgstr "_Cumraigh Socruithe Taispeána..."
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1776
+#: ../plugins/xrandr/msd-xrandr-manager.c:1776
 msgid "Configure display settings"
 msgstr "Cumraigh socruithe taispeána"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1830
+#: ../plugins/xrandr/msd-xrandr-manager.c:1830
 msgid "Could not apply the stored configuration for monitors"
 msgstr ""
 
-#: ../plugins/xrdb/gsd-xrdb-manager.c:255
-#: ../plugins/xrdb/gsd-xrdb-manager.c:324
+#: ../plugins/xrdb/msd-xrdb-manager.c:255
+#: ../plugins/xrdb/msd-xrdb-manager.c:324
 msgid "Cannot determine user's home directory"
 msgstr ""
 
@@ -1112,7 +1112,7 @@ msgstr "Bainistigh an bunachar sonraí acmhainní X"
 msgid "X Resource Database"
 msgstr "Bunachar Sonraí Acmhainní X"
 
-#: ../plugins/xsettings/gsd-xsettings-manager.c:644
+#: ../plugins/xsettings/msd-xsettings-manager.c:644
 #, c-format
 msgid "MateConf key %s set to type %s but its expected type was %s\n"
 msgstr ""

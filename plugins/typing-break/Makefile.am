@@ -5,10 +5,10 @@ plugin_LTLIBRARIES = \
 	$(NULL)
 
 libtyping_break_la_SOURCES = 		\
-	gsd-typing-break-plugin.h	\
-	gsd-typing-break-plugin.c	\
-	gsd-typing-break-manager.h	\
-	gsd-typing-break-manager.c	\
+	msd-typing-break-plugin.h	\
+	msd-typing-break-plugin.c	\
+	msd-typing-break-manager.h	\
+	msd-typing-break-manager.c	\
 	$(NULL)
 
 libtyping_break_la_CPPFLAGS = \
@@ -21,7 +21,7 @@ libtyping_break_la_CFLAGS = \
 	$(AM_CFLAGS)
 
 libtyping_break_la_LDFLAGS = 		\
-	$(GSD_PLUGIN_LDFLAGS)	\
+	$(MSD_PLUGIN_LDFLAGS)	\
 	$(NULL)
 
 libtyping_break_la_LIBADD  = 		\
@@ -46,4 +46,4 @@ DISTCLEANFILES =		\
 	$(plugin_DATA)		\
 	$(NULL)
 
-@GSD_INTLTOOL_PLUGIN_RULE@
+@MSD_INTLTOOL_PLUGIN_RULE@

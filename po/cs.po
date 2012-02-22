@@ -685,23 +685,23 @@ msgstr "Zpřístupnění klávesnice"
 msgid "Accessibility keyboard plugin"
 msgstr "Zásuvný modul zpřístupnění klávesnice"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:388
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:388
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Při zobrazování nápovědy došlo k chybě: %s"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:519
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:585
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:519
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:585
 msgid "Do you want to activate Slow Keys?"
 msgstr "Chcete aktivovat Pomalé klávesy?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:520
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:586
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:520
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:586
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Chcete deaktivovat Pomalé klávesy?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:521
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:587
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:521
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:587
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -709,62 +709,62 @@ msgstr ""
 "Právě jste na 8 sekund podrželi klávesu Shift. To je zkratka funkce Pomalé "
 "klávesy, která má vliv na způsob fungování vaší klávesnice."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:546
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:685
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:546
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:685
 msgid "Don't activate"
 msgstr "Neaktivovat"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:546
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:685
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:546
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:685
 msgid "Don't deactivate"
 msgstr "Nedeaktivovat"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:552
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:691
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:552
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:691
 msgid "Activate"
 msgstr "Aktivovat"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:552
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:691
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:552
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:691
 msgid "Deactivate"
 msgstr "Deaktivovat"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:608
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:749
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:608
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Do_n't activate"
 msgstr "_Neaktivovat"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:608
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:749
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:608
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Do_n't deactivate"
 msgstr "_Nedeaktivovat"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:611
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:752
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:611
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:752
 msgid "_Activate"
 msgstr "_Aktivovat"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:611
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:752
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:611
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:752
 msgid "_Deactivate"
 msgstr "_Deaktivovat"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:615
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:615
 msgid "Slow Keys Alert"
 msgstr "Upozornění na Pomalé klávesy"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:655
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:723
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:655
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:723
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Chcete aktivovat Lepící klávesy?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:656
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:724
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:724
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Chcete deaktivovat Lepící klávesy?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:658
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:726
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:658
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:726
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -772,8 +772,8 @@ msgstr ""
 "Právě jste pětkrát za sebou stiskli klávesu Shift. To je zkratka funkce "
 "Lepící klávesy, která má vliv na způsob fungování vaší klávesnice."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:660
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:728
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:660
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:728
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -783,45 +783,45 @@ msgstr ""
 "klávesu Shift. To vypíná funkci Lepící klávesy, která má vliv na způsob "
 "fungování vaší klávesnice."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:756
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:756
 msgid "Sticky Keys Alert"
 msgstr "Lepící klávesy"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.c:920
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:4
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:920
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:4
 msgid "Universal Access Preferences"
 msgstr "Předvolby zpřístupnění"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:1
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Enhance _contrast in colors"
 msgstr "Zvýšit kontrast _barev"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:2
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
 msgid "Make _text larger and easier to read"
 msgstr "Zvětšit _text a zvýšit jeho čitelnost"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:3
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:3
 msgid "Press and _hold keys to accept them (Slow Keys)"
 msgstr ""
 "_Stisknutím a podržením kláves dojde k jejich přijmutí (pomalé klávesy)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:5
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:5
 msgid "Use on-screen _keyboard"
 msgstr "Používat _klávesnici na obrazovce"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:6
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:6
 msgid "Use screen _magnifier"
 msgstr "Používat _lupu obrazovky"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:7
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "Use screen _reader"
 msgstr "P_oužívat čtení obrazovky"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:8
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
 msgstr "_Ignorovat vícenásobné stisky kláves"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:9
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
 msgstr ""
 "Za_dávat klávesové zkratky postupným stisknutím kláves (lepící klávesy)"
@@ -858,25 +858,25 @@ msgstr "Písmo"
 msgid "Font plugin"
 msgstr "Zásuvný modul písem"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:64
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:64
 msgid "Don't show any warnings again for this filesystem"
 msgstr "U tohoto systému souborů nezobrazovat znovu žádná varování"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:66
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:66
 msgid "Don't show any warnings again"
 msgstr "Nezobrazovat znovu žádná varování"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:79
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:79
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr "Svazku \"%s\" zbývá pouze %s volného místa."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:82
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:82
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr "Počítači zbývá pouze %s volného místa na disku."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:98
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:98
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
@@ -884,7 +884,7 @@ msgstr ""
 "Místo na disku můžete uvolnit vyprázdněním koše, odstraněním nepotřebných "
 "programů nebo souborů, či přesunutím souborů na jiný disk nebo oddíl."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:101
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:101
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
@@ -892,7 +892,7 @@ msgstr ""
 "Místo na disku můžete uvolnit odstraněním nepotřebných programů nebo "
 "souborů, či přesunutím souborů na jiný disk nebo oddíl."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:106
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:106
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
@@ -900,7 +900,7 @@ msgstr ""
 "Místo na disku můžete uvolnit vyprázdněním koše, odstraněním nepotřebných "
 "programů nebo souborů, či přesunutím souborů na externí disk."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:109
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:109
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
@@ -909,50 +909,50 @@ msgstr ""
 "souborů, či přesunutím souborů na externí disk."
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:204
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:204
 msgid "Low Disk Space"
 msgstr "Nedostatek místa na disku"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:439
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:439
 msgid "Empty Trash"
 msgstr "Vyprázdnit koš"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:447
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:447
 msgid "Examine..."
 msgstr "Zkontrolovat..."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:454
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:454
 msgid "Ignore"
 msgstr "Ignorovat"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:96
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:96
 #, c-format
 msgid "Removing item %lu of %lu"
 msgstr "Odstraňování položky %lu z %lu"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:116
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:116
 #, c-format
 msgid "<i>Removing: %s</i>"
 msgstr "<i>Odstraňování: %s</i>"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:244
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:293
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:244
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:293
 msgid "Emptying the trash"
 msgstr "Vyprazdňování koše"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:269
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:269
 msgid "Preparing to empty trash..."
 msgstr "Připravuje se vyprazdňování koše..."
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:295
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:295
 msgid "From: "
 msgstr "Z: "
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:356
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:356
 msgid "Empty all of the items from the trash?"
 msgstr "Odstranit všechny položky z koše?"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:359
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:359
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
@@ -960,21 +960,21 @@ msgstr ""
 "Pokud se rozhodnete vyprázdnit koš, budou položky natrvalo odstraněny. "
 "Všimněte si, že je také můžete odstranit po jedné."
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:366
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:366
 msgid "_Empty Trash"
 msgstr "Vyprázdnit _koš"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:139
+#: ../plugins/keybindings/msd-keybindings-manager.c:139
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "Svázání s klávesami (%s) není platné"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:197
+#: ../plugins/keybindings/msd-keybindings-manager.c:197
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "Svázání s klávesami (%s) není úplné"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:493
+#: ../plugins/keybindings/msd-keybindings-manager.c:493
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -999,7 +999,7 @@ msgstr "Klávesnice"
 msgid "Keyboard plugin"
 msgstr "Zásuvný modul klávesnice"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:112
+#: ../plugins/keyboard/msd-keyboard-xkb.c:112
 #, c-format
 msgid ""
 "Error activating XKB configuration.\n"
@@ -1030,7 +1030,7 @@ msgstr ""
 "- Výstup <b>%s</b>\n"
 "- Výstup <b>%s</b>"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:126
+#: ../plugins/keyboard/msd-keyboard-xkb.c:126
 msgid ""
 "You are using XFree 4.3.0.\n"
 "There are known problems with complex XKB configurations.\n"
@@ -1042,24 +1042,24 @@ msgstr ""
 "Zkuste použít jednodušší konfiguraci, nebo si opatřete aktuálnější verzi "
 "XFree."
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:197
+#: ../plugins/keyboard/msd-keyboard-xkb.c:197
 msgid "Unknown"
 msgstr "Neznámé"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:266
+#: ../plugins/keyboard/msd-keyboard-xkb.c:266
 #, c-format
 msgid "Keyboard Layout \"%s\""
 msgstr "Rozložení klávesnice \"%s\""
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:389
+#: ../plugins/keyboard/msd-keyboard-xkb.c:389
 msgid "_Groups"
 msgstr "_Skupiny"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:396
+#: ../plugins/keyboard/msd-keyboard-xkb.c:396
 msgid "Keyboard _Preferences"
 msgstr "Př_edvolby klávesnice"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:402
+#: ../plugins/keyboard/msd-keyboard-xkb.c:402
 msgid "Show Current _Layout"
 msgstr "Zobrazit _aktuální rozložení"
 
@@ -1091,7 +1091,7 @@ msgstr "_Načtené soubory:"
 msgid "Keyboard Layout"
 msgstr "Rozložení klávesnice"
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:200
+#: ../plugins/media-keys/msd-media-keys-manager.c:200
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is "
 "set and points to a valid application."
@@ -1099,7 +1099,7 @@ msgstr ""
 "Nelze nalézt výchozí terminál. Ověřte prosím, zda je zadán příkaz výchozího "
 "terminálu a zda směřuje k platné aplikaci."
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:240
+#: ../plugins/media-keys/msd-media-keys-manager.c:240
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1108,7 +1108,7 @@ msgstr ""
 "Nelze spustit příkaz: %s\n"
 "Ověřte prosím platnost příkazu."
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:256
+#: ../plugins/media-keys/msd-media-keys-manager.c:256
 msgid ""
 "Couldn't put the machine to sleep.\n"
 "Verify that the machine is correctly configured."
@@ -1154,18 +1154,18 @@ msgstr "Multimediální klávesy"
 msgid "Media keys plugin"
 msgstr "Zásuvný modul multimediálních kláves"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:874
+#: ../plugins/mouse/msd-mouse-manager.c:874
 msgid "Could not enable mouse accessibility features"
 msgstr "Nezdařilo se povolení vlastností zpřístupnění myši"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:876
+#: ../plugins/mouse/msd-mouse-manager.c:876
 msgid ""
 "Mouse accessibility requires mousetweaks to be installed on your system."
 msgstr ""
 "Zpřístupnění myši vyžaduje, aby byla v systému instalována aplikace "
 "mousetweaks."
 
-#: ../plugins/mouse/gsd-mouse-manager.c:879
+#: ../plugins/mouse/msd-mouse-manager.c:879
 msgid "Mouse Preferences"
 msgstr "Předvolby myši"
 
@@ -1193,19 +1193,19 @@ msgstr "Zvolit velikost obrazovky a nastavení otočení"
 msgid "XRandR"
 msgstr "XRandR"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:226
+#: ../plugins/xrandr/msd-xrandr-manager.c:226
 msgid "Could not switch the monitor configuration"
 msgstr "Nelze přepnout nastavení monitoru"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:250
+#: ../plugins/xrandr/msd-xrandr-manager.c:250
 msgid "Could not restore the display's configuration"
 msgstr "Nelze obnovit nastavení displeje"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:275
+#: ../plugins/xrandr/msd-xrandr-manager.c:275
 msgid "Could not restore the display's configuration from a backup"
 msgstr "Ze zálohy nelze obnovit nastavení displeje"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:296
+#: ../plugins/xrandr/msd-xrandr-manager.c:296
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
@@ -1217,69 +1217,69 @@ msgstr[1] ""
 msgstr[2] ""
 "Nastavení displeje bude resetováno na původní konfiguraci za %d sekund"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:345
+#: ../plugins/xrandr/msd-xrandr-manager.c:345
 msgid "Does the display look OK?"
 msgstr "Vypadá displej v pořádku?"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:351
+#: ../plugins/xrandr/msd-xrandr-manager.c:351
 msgid "_Restore Previous Configuration"
 msgstr "_Obnovit předchozí nastavení"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:352
+#: ../plugins/xrandr/msd-xrandr-manager.c:352
 msgid "_Keep This Configuration"
 msgstr "Z_achovat toto nastavení"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:433
+#: ../plugins/xrandr/msd-xrandr-manager.c:433
 msgid "The selected configuration for displays could not be applied"
 msgstr "Vybrané nastavení displejů nemůže být použito"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:979
+#: ../plugins/xrandr/msd-xrandr-manager.c:979
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "Nelze obnovit informace o obrazovce: %s"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:982
+#: ../plugins/xrandr/msd-xrandr-manager.c:982
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Přesto probíhá pokus o přepnutí nastavení monitoru."
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1691
+#: ../plugins/xrandr/msd-xrandr-manager.c:1691
 msgid "<i>Rotation not supported</i>"
 msgstr "<i>Otáčení nepodporováno</i>"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1745
+#: ../plugins/xrandr/msd-xrandr-manager.c:1745
 msgid "Could not save monitor configuration"
 msgstr "Nelze uložit nastavení monitoru"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1763
+#: ../plugins/xrandr/msd-xrandr-manager.c:1763
 msgid "Normal"
 msgstr "Běžné"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1764
+#: ../plugins/xrandr/msd-xrandr-manager.c:1764
 msgid "Left"
 msgstr "Vlevo"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1765
+#: ../plugins/xrandr/msd-xrandr-manager.c:1765
 msgid "Right"
 msgstr "Vpravo"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1766
+#: ../plugins/xrandr/msd-xrandr-manager.c:1766
 msgid "Upside Down"
 msgstr "Převrátit"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1886
+#: ../plugins/xrandr/msd-xrandr-manager.c:1886
 msgid "_Configure Display Settings ..."
 msgstr "_Konfigurovat nastavení displeje..."
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1927
+#: ../plugins/xrandr/msd-xrandr-manager.c:1927
 msgid "Configure display settings"
 msgstr "Konfigurovat nastavení displeje"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1984
+#: ../plugins/xrandr/msd-xrandr-manager.c:1984
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Nelze použít uložené nastavení monitorů"
 
-#: ../plugins/xrdb/gsd-xrdb-manager.c:255
-#: ../plugins/xrdb/gsd-xrdb-manager.c:324
+#: ../plugins/xrdb/msd-xrdb-manager.c:255
+#: ../plugins/xrdb/msd-xrdb-manager.c:324
 msgid "Cannot determine user's home directory"
 msgstr "Nelze určit domovský adresář uživatele"
 
@@ -1291,7 +1291,7 @@ msgstr "Spravovat databázi zdrojů X"
 msgid "X Resource Database"
 msgstr "Databáze zdrojů X"
 
-#: ../plugins/xsettings/gsd-xsettings-manager.c:644
+#: ../plugins/xsettings/msd-xsettings-manager.c:644
 #, c-format
 msgid "MateConf key %s set to type %s but its expected type was %s\n"
 msgstr "Klíč systému MateConf %s je typu %s, ale byl očekáván typ %s\n"

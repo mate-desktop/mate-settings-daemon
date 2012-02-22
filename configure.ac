@@ -1,13 +1,13 @@
 AC_PREREQ([2.60])
 
-m4_define([gsd_api_version_major],[1])
-m4_define([gsd_api_version_minor],[1])
-m4_define([gsd_api_version_micro],[1])
-m4_define([gsd_api_version],
-	[gsd_api_version_major.gsd_api_version_minor.gsd_api_version_micro])
+m4_define([msd_api_version_major],[1])
+m4_define([msd_api_version_minor],[1])
+m4_define([msd_api_version_micro],[1])
+m4_define([msd_api_version],
+	[msd_api_version_major.msd_api_version_minor.msd_api_version_micro])
 
 AC_INIT([mate-settings-daemon],
-	[gsd_api_version_major.gsd_api_version_minor.gsd_api_version_micro],
+	[msd_api_version_major.msd_api_version_minor.msd_api_version_micro],
 	[https://github.com/perberos/mate-desktop-environment])
 
 AC_CONFIG_SRCDIR([mate-settings-daemon/mate-settings-manager.c])
@@ -35,8 +35,8 @@ AM_GLIB_GNU_GETTEXT
 
 AS_AC_EXPAND(LIBEXECDIR, "$libexecdir")
 
-GSD_INTLTOOL_PLUGIN_RULE='%.mate-settings-plugin:   %.mate-settings-plugin.in   $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; LC_ALL=C $(INTLTOOL_MERGE) -d -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@'
-AC_SUBST([GSD_INTLTOOL_PLUGIN_RULE])
+MSD_INTLTOOL_PLUGIN_RULE='%.mate-settings-plugin:   %.mate-settings-plugin.in   $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; LC_ALL=C $(INTLTOOL_MERGE) -d -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@'
+AC_SUBST([MSD_INTLTOOL_PLUGIN_RULE])
 
  dnl Unconditionally use this dir to avoid a circular dep with matecc
 MATE_KEYBINDINGS_KEYSDIR="${datadir}/mate-control-center/keybindings"
@@ -73,13 +73,13 @@ PKG_CHECK_MODULES(SETTINGS_PLUGIN,
 	dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
 )
 
-GSD_PLUGIN_LDFLAGS="-export_dynamic -module -avoid-version -no-undefined"
+MSD_PLUGIN_LDFLAGS="-export_dynamic -module -avoid-version -no-undefined"
 case $host_os in
   darwin*)
-    GSD_PLUGIN_LDFLAGS="${GSD_PLUGIN_LDFLAGS} -Wl,-bundle_loader,\$(top_builddir)/mate-settings-daemon/mate-settings-daemon"
+    MSD_PLUGIN_LDFLAGS="${MSD_PLUGIN_LDFLAGS} -Wl,-bundle_loader,\$(top_builddir)/mate-settings-daemon/mate-settings-daemon"
     ;;
 esac
-AC_SUBST([GSD_PLUGIN_LDFLAGS])
+AC_SUBST([MSD_PLUGIN_LDFLAGS])
 
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 
@@ -398,7 +398,7 @@ fi
 # Plugins
 # ---------------------------------------------------------------------------
 
-plugindir='$(libdir)/mate-settings-daemon-gsd_api_version'
+plugindir='$(libdir)/mate-settings-daemon-msd_api_version'
 AC_SUBST([plugindir])
 
 dnl ---------------------------------------------------------------------------

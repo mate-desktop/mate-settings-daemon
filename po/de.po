@@ -433,7 +433,7 @@ msgstr "Setzen Sie dies auf »WAHR«, um alle Touchpads zu aktivieren."
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
-msgstr "MATE-Einstellungsdienst"
+msgstr "MATE-Einstellunmsdienst"
 
 #: ../data/mate-settings-daemon.schemas.in.h:1
 msgid "Binding to toggle the magnifier."
@@ -648,7 +648,7 @@ msgid ""
 "will be shown in the keyboard shortcut preferences dialog."
 msgstr ""
 "Dies ist der Name des Tastenkürzels zum Ein- und Ausschalten der "
-"Bildschirmlupe. Dieser Name wird im Einstellungsdialog der Tastatur angezeigt."
+"Bildschirmlupe. Dieser Name wird im Einstellunmsdialog der Tastatur angezeigt."
 
 #: ../data/mate-settings-daemon.schemas.in.h:48
 msgid ""
@@ -656,7 +656,7 @@ msgid ""
 "This name will be shown in the keyboard shortcut preferences dialog."
 msgstr ""
 "Dies ist der Name des Tastenkürzels zum Ein- und Ausschalten der "
-"Bildschirmtastatur. Dieser Name wird im Einstellungsdialog der Tastatur "
+"Bildschirmtastatur. Dieser Name wird im Einstellunmsdialog der Tastatur "
 "angezeigt."
 
 #: ../data/mate-settings-daemon.schemas.in.h:49
@@ -665,7 +665,7 @@ msgid ""
 "name will be shown in the keyboard shortcut preferences dialog."
 msgstr ""
 "Dies ist der Name des Tastenkürzels zum Ein- und Ausschalten des "
-"Bildschirmlesers. Dieser Name wird im Einstellungsdialog der Tastatur "
+"Bildschirmlesers. Dieser Name wird im Einstellunmsdialog der Tastatur "
 "angezeigt."
 
 #: ../data/mate-settings-daemon.schemas.in.h:50
@@ -753,23 +753,23 @@ msgstr "Barrierefreie Tastatur"
 msgid "Accessibility keyboard plugin"
 msgstr "Modul für barrierefreie Tastatur"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:388
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:388
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Fehler beim Anzeigen der Hilfe: %s"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:519
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:585
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:519
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:585
 msgid "Do you want to activate Slow Keys?"
 msgstr "Wollen Sie die Tastenverzögerung aktivieren?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:520
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:586
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:520
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:586
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Wollen Sie die Tastenverzögerung deaktivieren?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:521
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:587
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:521
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:587
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for the "
 "Slow Keys feature, which affects the way your keyboard works."
@@ -778,62 +778,62 @@ msgstr ""
 "Tastenkombination für die Tastenverzögerungsfunktion, die das Verhalten Ihrer "
 "Tastatur beeinflusst."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:546
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:685
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:546
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:685
 msgid "Don't activate"
 msgstr "Nicht aktivieren"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:546
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:685
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:546
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:685
 msgid "Don't deactivate"
 msgstr "Nicht deaktivieren"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:552
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:691
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:552
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:691
 msgid "Activate"
 msgstr "Aktivieren"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:552
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:691
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:552
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:691
 msgid "Deactivate"
 msgstr "Deaktivieren"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:608
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:749
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:608
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Do_n't activate"
 msgstr "_Nicht aktivieren"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:608
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:749
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:608
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Do_n't deactivate"
 msgstr "_Nicht deaktivieren"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:611
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:752
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:611
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:752
 msgid "_Activate"
 msgstr "_Aktivieren"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:611
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:752
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:611
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:752
 msgid "_Deactivate"
 msgstr "_Deaktivieren"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:615
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:615
 msgid "Slow Keys Alert"
 msgstr "Tastenverzögerungsalarm"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:655
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:723
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:655
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:723
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Wollen Sie klebrige Tasten aktivieren?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:656
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:724
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:724
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Wollen Sie klebrige Tasten deaktivieren?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:658
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:726
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:658
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:726
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -842,8 +842,8 @@ msgstr ""
 "Tastenkombination für die Funktion »klebrige Tasten«, die das Verhalten Ihrer "
 "Tastatur beeinflusst."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:660
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:728
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:660
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:728
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -853,44 +853,44 @@ msgstr ""
 "gedrückt. Dies ist die Tastenkombination für die Funktion »klebrige Tasten«, "
 "die das Verhalten Ihrer Tastatur beeinflusst."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:756
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:756
 msgid "Sticky Keys Alert"
 msgstr "Klebrige Tasten-Alarm"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.c:920
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:4
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:920
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:4
 msgid "Universal Access Preferences"
 msgstr "Allgemeine Einstellungen für Barrierefreiheit"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:1
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Enhance _contrast in colors"
 msgstr "Farb_kontrast erhöhen"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:2
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
 msgid "Make _text larger and easier to read"
 msgstr "_Text größer darstellen"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:3
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:3
 msgid "Press and _hold keys to accept them (Slow Keys)"
 msgstr "Nur lan_ge Tastenanschläge akzeptieren (Tastenverzögerung)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:5
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:5
 msgid "Use on-screen _keyboard"
 msgstr "_Bildschirmtastatur verwenden"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:6
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:6
 msgid "Use screen _magnifier"
 msgstr "Bildschirml_upe verwenden"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:7
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "Use screen _reader"
 msgstr "Bildschirmlese_programm verwenden"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:8
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
 msgstr "Schnelle _doppelte Tastenanschläge ignorieren (Springende Tasten)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:9
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
 msgstr ""
 "Tastenkürzel durch _einzelnes Drücken der Tasten ausführen (Klebrige Tasten)"
@@ -927,25 +927,25 @@ msgstr "Schrift"
 msgid "Font plugin"
 msgstr "Schriftenmodul"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:64
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:64
 msgid "Don't show any warnings again for this file system"
 msgstr "Für dieses Dateisystem keine Warnungen mehr anzeigen"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:66
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:66
 msgid "Don't show any warnings again"
 msgstr "Keine Warnungen mehr anzeigen"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:79
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:79
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr "Auf dem Datenträger »%s« ist nur noch %s Plattenplatz verfügbar."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:82
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:82
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr "Auf diesem Rechner ist nur noch %s Plattenplatz verfügbar."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:98
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:98
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs or "
 "files, or moving files to another disk or partition."
@@ -954,7 +954,7 @@ msgstr ""
 "Programme oder Dateien löschen oder Dateien auf eine andere Festplatte oder "
 "eine andere Partition verschieben."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:101
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:101
 msgid ""
 "You can free up disk space by removing unused programs or files, or by moving "
 "files to another disk or partition."
@@ -963,7 +963,7 @@ msgstr ""
 "Dateien löschen oder Dateien auf eine andere Festplatte oder eine andere "
 "Partition verschieben."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:106
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:106
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs or "
 "files, or moving files to an external disk."
@@ -972,7 +972,7 @@ msgstr ""
 "Programme oder Dateien löschen oder Dateien auf einen externen Datenträger "
 "verschieben."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:109
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:109
 msgid ""
 "You can free up disk space by removing unused programs or files, or by moving "
 "files to an external disk."
@@ -981,51 +981,51 @@ msgstr ""
 "Dateien löschen oder Dateien auf einen externen Datenträger verschieben."
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:204
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:204
 msgid "Low Disk Space"
 msgstr "Zu wenig Speicherplatz"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:439
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:439
 msgid "Empty Trash"
 msgstr "Müll leeren"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:447
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:447
 msgid "Examine…"
 msgstr "Überprüfen …"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:454
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:454
 msgid "Ignore"
 msgstr "Ignorieren"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:97
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:97
 #, c-format
 msgid "Removing item %lu of %lu"
 msgstr "Objekt %lu von %lu wird gelöscht"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:117
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 msgid "Removing: %s"
 msgstr "Entfernt wird: %s"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:296
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:296
 msgid "Emptying the trash"
 msgstr "Mülleimer wird geleert"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:272
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:272
 msgid "Preparing to empty trash…"
 msgstr "Leeren des Mülleimers wird vorbereitet …"
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:299
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:299
 msgid "From: "
 msgstr "Von:"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:360
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:360
 msgid "Empty all of the items from the trash?"
 msgstr "Möchten Sie alle Objekte aus dem Mülleimer löschen?"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:363
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:363
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
@@ -1034,21 +1034,21 @@ msgstr ""
 "gelöscht. Bitte beachten Sie, dass Objekte auch einzeln gelöscht werden "
 "können."
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:370
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:370
 msgid "_Empty Trash"
 msgstr "_Müll leeren"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:139
+#: ../plugins/keybindings/msd-keybindings-manager.c:139
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "Tastenkombination (%s) ist ungültig"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:197
+#: ../plugins/keybindings/msd-keybindings-manager.c:197
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "Tastenkombination (%s) ist unvollständig"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:493
+#: ../plugins/keybindings/msd-keybindings-manager.c:493
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -1073,7 +1073,7 @@ msgstr "Tastatur"
 msgid "Keyboard plugin"
 msgstr "Tastaturmodul"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:137
+#: ../plugins/keyboard/msd-keyboard-xkb.c:137
 #, c-format
 msgid ""
 "Error activating XKB configuration.\n"
@@ -1104,7 +1104,7 @@ msgstr ""
 " • das Ergebnis von <b>%s</b>\n"
 " • das Ergebnis von <b>%s</b>"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:151
+#: ../plugins/keyboard/msd-keyboard-xkb.c:151
 msgid ""
 "You are using XFree 4.3.0.\n"
 "There are known problems with complex XKB configurations.\n"
@@ -1116,15 +1116,15 @@ msgstr ""
 "Versuchen Sie eine einfachere Konfiguration zu benutzen oder\n"
 "eine neuere Version der XFree-Software."
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:279
+#: ../plugins/keyboard/msd-keyboard-xkb.c:279
 msgid "_Layouts"
 msgstr "Be_legungen"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:286
+#: ../plugins/keyboard/msd-keyboard-xkb.c:286
 msgid "Keyboard _Preferences"
 msgstr "_Tastatureinstellungen"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:292
+#: ../plugins/keyboard/msd-keyboard-xkb.c:292
 msgid "Show _Current Layout"
 msgstr "Aktuelle _Belegung anzeigen"
 
@@ -1153,7 +1153,7 @@ msgstr "_Laden"
 msgid "_Loaded files:"
 msgstr "_Geladene Dateien:"
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:195
+#: ../plugins/media-keys/msd-media-keys-manager.c:195
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is "
 "set and points to a valid application."
@@ -1162,7 +1162,7 @@ msgstr ""
 "der Befehl für \n"
 "den Vorgabeterminal gesetzt ist und auf eine installierte Anwendung verweist."
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:235
+#: ../plugins/media-keys/msd-media-keys-manager.c:235
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1207,17 +1207,17 @@ msgstr "Medientasten"
 msgid "Media keys plugin"
 msgstr "Medientastenmodul"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:882
+#: ../plugins/mouse/msd-mouse-manager.c:882
 msgid "Could not enable mouse accessibility features"
 msgstr "Barrierefreie Maushilfen konnten nicht aktiviert werden"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:884
+#: ../plugins/mouse/msd-mouse-manager.c:884
 msgid "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 "Eine barrierefreie Maus setzt das Programm »Mousetweaks« auf Ihrem System "
 "voraus."
 
-#: ../plugins/mouse/gsd-mouse-manager.c:887
+#: ../plugins/mouse/msd-mouse-manager.c:887
 msgid "Mouse Preferences"
 msgstr "Mauseinstellungen"
 
@@ -1245,21 +1245,21 @@ msgstr "Bildschirmgröße und -rotation einstellen"
 msgid "XRandR"
 msgstr "XRandR"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:225
+#: ../plugins/xrandr/msd-xrandr-manager.c:225
 msgid "Could not switch the monitor configuration"
 msgstr "Bildschirmkonfiguration konnte nicht geändert werden"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:249
+#: ../plugins/xrandr/msd-xrandr-manager.c:249
 msgid "Could not restore the display's configuration"
 msgstr "Bildschirmkonfiguration konnte nicht wiederhergestellt werden"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:274
+#: ../plugins/xrandr/msd-xrandr-manager.c:274
 msgid "Could not restore the display's configuration from a backup"
 msgstr ""
-"Bildschirmkonfiguration konnte nicht aus einer Sicherungsdatei "
+"Bildschirmkonfiguration konnte nicht aus einer Sicherunmsdatei "
 "wiederhergestellt werden"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:295
+#: ../plugins/xrandr/msd-xrandr-manager.c:295
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
@@ -1269,69 +1269,69 @@ msgstr[0] ""
 msgstr[1] ""
 "Diese Anzeige wird in %d Sekunden auf die vorherige Einstellung zurückgesetzt"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:344
+#: ../plugins/xrandr/msd-xrandr-manager.c:344
 msgid "Does the display look OK?"
 msgstr "Ist die Bildschirmanzeige in Ordnung?"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:350
+#: ../plugins/xrandr/msd-xrandr-manager.c:350
 msgid "_Restore Previous Configuration"
 msgstr "_Vorherige Einstellungen wiederherstellen"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:351
+#: ../plugins/xrandr/msd-xrandr-manager.c:351
 msgid "_Keep This Configuration"
 msgstr "_Diese Einstellungen beibehalten"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:432
+#: ../plugins/xrandr/msd-xrandr-manager.c:432
 msgid "The selected configuration for displays could not be applied"
 msgstr "Die gewählte Bildschirmkonfiguration konnte nicht angewendet werden"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:970
+#: ../plugins/xrandr/msd-xrandr-manager.c:970
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "Bildschirminformationen konnten nicht aktualisiert werden: %s"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:973
+#: ../plugins/xrandr/msd-xrandr-manager.c:973
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Es wird trotzdem versucht, die Bildschirmkonfiguration zu ändern."
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1703
+#: ../plugins/xrandr/msd-xrandr-manager.c:1703
 msgid "Rotation not supported"
 msgstr "Rotation wird nicht unterstützt"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1759
+#: ../plugins/xrandr/msd-xrandr-manager.c:1759
 msgid "Could not save monitor configuration"
 msgstr "Bildschirmkonfiguration konnte nicht gespeichert werden"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1777
+#: ../plugins/xrandr/msd-xrandr-manager.c:1777
 msgid "Normal"
 msgstr "Normal"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1778
+#: ../plugins/xrandr/msd-xrandr-manager.c:1778
 msgid "Left"
 msgstr "Links"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1779
+#: ../plugins/xrandr/msd-xrandr-manager.c:1779
 msgid "Right"
 msgstr "Rechts"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1780
+#: ../plugins/xrandr/msd-xrandr-manager.c:1780
 msgid "Upside Down"
 msgstr "Kopfüber"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1900
+#: ../plugins/xrandr/msd-xrandr-manager.c:1900
 msgid "_Configure Display Settings…"
 msgstr "_Bildschirmeinstellungen …"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1941
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Configure display settings"
 msgstr "Bildschirmeinstellungen festlegen"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:2001
+#: ../plugins/xrandr/msd-xrandr-manager.c:2001
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Die gespeicherte Bildschirmkonfiguration konnte nicht angewendet werden"
 
-#: ../plugins/xrdb/gsd-xrdb-manager.c:255
-#: ../plugins/xrdb/gsd-xrdb-manager.c:324
+#: ../plugins/xrdb/msd-xrdb-manager.c:255
+#: ../plugins/xrdb/msd-xrdb-manager.c:324
 msgid "Cannot determine user's home directory"
 msgstr "Persönlicher Ordner des Benutzers konnte nicht ermittelt werden"
 
@@ -1343,7 +1343,7 @@ msgstr "Die X-Ressourcendatenbank verwalten"
 msgid "X Resource Database"
 msgstr "X-Ressourcendatenbank"
 
-#: ../plugins/xsettings/gsd-xsettings-manager.c:596
+#: ../plugins/xsettings/msd-xsettings-manager.c:596
 #, c-format
 msgid "MateConf key %s set to type %s but its expected type was %s\n"
 msgstr ""
@@ -1357,96 +1357,96 @@ msgstr "X-Einstellungen verwalten"
 msgid "X Settings"
 msgstr "X-Einstellungen"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:167
+#: ../plugins/smartcard/msd-smartcard-manager.c:167
 msgid "Module Path"
 msgstr "Modulpfad"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:168
+#: ../plugins/smartcard/msd-smartcard-manager.c:168
 msgid "path to smartcard PKCS #11 driver"
 msgstr "Pfad zum Smartcard PKCS #11-Treiber"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:504
+#: ../plugins/smartcard/msd-smartcard-manager.c:504
 msgid "received error or hang up from event source"
 msgstr "Fehler empfangen oder Abbruch seitens der Ereignisquelle"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:593
+#: ../plugins/smartcard/msd-smartcard-manager.c:593
 #, c-format
 msgid "NSS security system could not be initialized"
 msgstr "Das NSS-Sicherheitssystem konnte nicht initialisiert werden"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:662
+#: ../plugins/smartcard/msd-smartcard-manager.c:662
 #, c-format
 msgid "no suitable smartcard driver could be found"
 msgstr "Es konnte kein passender Smartcard-Treiber gefunden werden"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:682
+#: ../plugins/smartcard/msd-smartcard-manager.c:682
 #, c-format
 msgid "smartcard driver '%s' could not be loaded"
 msgstr "Smartcard-Treiber »%s« konnte nicht geladen werden"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:771
+#: ../plugins/smartcard/msd-smartcard-manager.c:771
 #, c-format
 msgid "could not watch for incoming card events - %s"
 msgstr "Überwachung auf eingehende Karten-Ereignisse ist fehlgeschlagen - %s"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:1124
+#: ../plugins/smartcard/msd-smartcard-manager.c:1124
 #, c-format
 msgid "encountered unexpected error while waiting for smartcard events"
 msgstr ""
 "Unerwarteter Fehler trat beim Warten auf eingehende Karten-Ereignisse auf"
 
-#: ../plugins/smartcard/gsd-smartcard.c:154
+#: ../plugins/smartcard/msd-smartcard.c:154
 msgid "Slot ID"
 msgstr "Slot-Kennung"
 
-#: ../plugins/smartcard/gsd-smartcard.c:155
+#: ../plugins/smartcard/msd-smartcard.c:155
 msgid "The slot the card is in"
 msgstr "Der Slot, in welchem sich die Karte befindet"
 
-#: ../plugins/smartcard/gsd-smartcard.c:161
+#: ../plugins/smartcard/msd-smartcard.c:161
 msgid "Slot Series"
 msgstr "Slot-Reihe"
 
-#: ../plugins/smartcard/gsd-smartcard.c:162
+#: ../plugins/smartcard/msd-smartcard.c:162
 msgid "per-slot card identifier"
 msgstr "Slotweise Kartenbezeichnung"
 
-#: ../plugins/smartcard/gsd-smartcard.c:168
-#: ../plugins/smartcard/gsd-smartcard.c:169
+#: ../plugins/smartcard/msd-smartcard.c:168
+#: ../plugins/smartcard/msd-smartcard.c:169
 msgid "name"
 msgstr "Name"
 
-#: ../plugins/smartcard/gsd-smartcard.c:173
+#: ../plugins/smartcard/msd-smartcard.c:173
 msgid "Module"
 msgstr "Modul"
 
-#: ../plugins/smartcard/gsd-smartcard.c:174
+#: ../plugins/smartcard/msd-smartcard.c:174
 msgid "smartcard driver"
 msgstr "Smartcard-Treiber"
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:1
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:1
 msgid "Change system time"
 msgstr "Systemzeit ändern"
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:2
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:2
 msgid "Change system time zone"
 msgstr "Zeitzone des Systems ändern"
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:3
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:3
 msgid "Configure hardware clock"
 msgstr "Hardware-Uhr konfigurieren"
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:4
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:4
 msgid "Privileges are required to change the system time zone."
 msgstr ""
 "Systemverwalterrechte sind erforderlich, um die Zeitzone des Systems zu "
 "ändern."
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:5
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:5
 msgid "Privileges are required to change the system time."
 msgstr "Systemverwalterrechte sind erforderlich, um die Systemzeit zu ändern."
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:6
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:6
 msgid "Privileges are required to configure the hardware clock."
 msgstr ""
 "Systemverwalterrechte sind erforderlich, um die Hardware-Uhr zu konfigurieren."

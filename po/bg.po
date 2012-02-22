@@ -736,23 +736,23 @@ msgstr "Достъпност на клавиатурата"
 msgid "Accessibility keyboard plugin"
 msgstr "Приставка за достъпност на клавиатурата"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:460
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:460
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Възникна грешка при показването на помощта: %s"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:591
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:657
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:591
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Do you want to activate Slow Keys?"
 msgstr "Искате ли да включите функцията „Бавни клавиши“?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:592
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:658
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:592
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:658
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Искате ли да изключите функцията „Бавни клавиши“?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:593
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:659
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:593
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -760,62 +760,62 @@ msgstr ""
 "Току що задържахте клавиша Shift за 8 секунди. Това е бърз клавиш за "
 "функцията „Бавни клавиши“, която влияе върху работата на клавиатурата ви."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:618
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:757
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:618
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:757
 msgid "Don't activate"
 msgstr "Да не се активира"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:618
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:757
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:618
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:757
 msgid "Don't deactivate"
 msgstr "Да не се деактивира"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:624
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:763
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:624
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Activate"
 msgstr "Активиране"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:624
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:763
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:624
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Deactivate"
 msgstr "Деактивиране"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:680
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:821
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:680
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:821
 msgid "Do_n't activate"
 msgstr "Да н_е се активира"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:680
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:821
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:680
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:821
 msgid "Do_n't deactivate"
 msgstr "Да н_е се деактивира"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:683
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:824
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:683
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:824
 msgid "_Activate"
 msgstr "_Активиране"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:683
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:824
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:683
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:824
 msgid "_Deactivate"
 msgstr "_Деактивиране"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:687
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:687
 msgid "Slow Keys Alert"
 msgstr "Сигнал за бавни клавиши"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:727
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:795
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:727
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:795
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Искате ли да включите функцията „Лепкави клавиши“?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:728
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:796
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:728
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Искате ли да изключите функцията „Лепкави клавиши“?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:730
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:798
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:730
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -824,8 +824,8 @@ msgstr ""
 "клавиш за функцията „Лепкави клавиши“, която влияе върху работата на "
 "клавиатурата ви."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:732
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:800
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:732
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -835,45 +835,45 @@ msgstr ""
 "подред. Това изключва функцията „Лепкави клавиши“, която влияе върху "
 "работата на клавиатурата ви."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:828
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:828
 msgid "Sticky Keys Alert"
 msgstr "Сигнал за лепкави клавиши"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.c:920
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:4
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:920
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:4
 msgid "Universal Access Preferences"
 msgstr "Настройки за универсален достъп"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:1
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Enhance _contrast in colors"
 msgstr "_Увеличен цветови контраст"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:2
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
 msgid "Make _text larger and easier to read"
 msgstr "_Едър и лесен за четене шрифт"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:3
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:3
 msgid "Press and _hold keys to accept them (Slow Keys)"
 msgstr "_Задържане на клавишите след натискане (бавни клавиши)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:5
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:5
 msgid "Use on-screen _keyboard"
 msgstr "Ползване на _екранна клавиатура"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:6
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:6
 msgid "Use screen _magnifier"
 msgstr "Ползване на _лупа"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:7
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "Use screen _reader"
 msgstr "Ползване на екранен _четец"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:8
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
 msgstr ""
 "_Пренебрегване на повторните натискания на клавиши (подскачащи клавиши)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:9
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
 msgstr ""
 "_Клавишните комбинации да са клавишни последователности (лепкави клавиши)"
@@ -910,26 +910,26 @@ msgstr "Шрифтове"
 msgid "Font plugin"
 msgstr "Приставка за шрифтове"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:64
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:64
 msgid "Don't show any warnings again for this file system"
 msgstr ""
 "Повече да не се показват никакви предупреждения за тази файлова система"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:66
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:66
 msgid "Don't show any warnings again"
 msgstr "Повече да не се показват никакви предупреждения"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:79
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:79
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr "В „%s“ са останали свободни само %s."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:82
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:82
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr "На компютъра са останали свободни само %s."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:98
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:98
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
@@ -938,7 +938,7 @@ msgstr ""
 "неизползваните програми и файлове или като преместите част от нещата на друг "
 "диск или дял."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:101
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:101
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
@@ -946,7 +946,7 @@ msgstr ""
 "Можете да освободите място като изтриете неизползваните програми и файлове "
 "или като преместите част от нещата на друг диск или дял."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:106
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:106
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
@@ -955,7 +955,7 @@ msgstr ""
 "неизползваните програми и файлове или като преместите част от нещата на "
 "външен диск."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:109
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:109
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
@@ -964,51 +964,51 @@ msgstr ""
 "или като преместите част от нещата на външен диск."
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:204
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:204
 msgid "Low Disk Space"
 msgstr "Дисковото пространство привършва"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:439
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:439
 msgid "Empty Trash"
 msgstr "Изчистване на кошчето"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:447
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:447
 msgid "Examine…"
 msgstr "Проверка…"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:454
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:454
 msgid "Ignore"
 msgstr "Пренебрегване"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:97
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:97
 #, c-format
 msgid "Removing item %lu of %lu"
 msgstr "Изтриване на обект %lu от общо %lu"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:117
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 msgid "Removing: %s"
 msgstr "Изтриване: %s"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:296
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:296
 msgid "Emptying the trash"
 msgstr "Изчистване на кошчето"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:272
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:272
 msgid "Preparing to empty trash…"
 msgstr "Подготовка за изчистване на кошчето…"
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:299
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:299
 msgid "From: "
 msgstr "От:"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:360
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:360
 msgid "Empty all of the items from the trash?"
 msgstr "Да се изтрият ли всички обекти в кошчето?"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:363
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:363
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
@@ -1016,21 +1016,21 @@ msgstr ""
 "Ако решите за изчистите кошчето, всички обекти в него ще бъдат безвъзвратно "
 "изтрити. Можете да изтривате обекти и поотделно."
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:370
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:370
 msgid "_Empty Trash"
 msgstr "_Изчистване на кошчето"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:139
+#: ../plugins/keybindings/msd-keybindings-manager.c:139
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "Клавишната комбинация (%s) е грешна"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:197
+#: ../plugins/keybindings/msd-keybindings-manager.c:197
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "Клавишната комбинация (%s) е непълна"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:493
+#: ../plugins/keybindings/msd-keybindings-manager.c:493
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -1055,7 +1055,7 @@ msgstr "Клавиатура"
 msgid "Keyboard plugin"
 msgstr "Приставка за клавиатурата"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:137
+#: ../plugins/keyboard/msd-keyboard-xkb.c:137
 #, c-format
 msgid ""
 "Error activating XKB configuration.\n"
@@ -1086,7 +1086,7 @@ msgstr ""
 " • резултата от <b>%s</b>;\n"
 " • резултата от <b>%s</b>."
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:151
+#: ../plugins/keyboard/msd-keyboard-xkb.c:151
 msgid ""
 "You are using XFree 4.3.0.\n"
 "There are known problems with complex XKB configurations.\n"
@@ -1097,15 +1097,15 @@ msgstr ""
 "Този софтуер има проблеми при сложни настройки на XKB.\n"
 "Или пробвайте с по-прости настройки, или обновете версията на XFree."
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:279
+#: ../plugins/keyboard/msd-keyboard-xkb.c:279
 msgid "_Layouts"
 msgstr "_Подредби"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:286
+#: ../plugins/keyboard/msd-keyboard-xkb.c:286
 msgid "Keyboard _Preferences"
 msgstr "Настройки на _клавиатурата"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:292
+#: ../plugins/keyboard/msd-keyboard-xkb.c:292
 msgid "Show _Current Layout"
 msgstr "Показване на _текущата подредба"
 
@@ -1133,7 +1133,7 @@ msgstr "_Зареждане"
 msgid "_Loaded files:"
 msgstr "_Заредени файлове:"
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:195
+#: ../plugins/media-keys/msd-media-keys-manager.c:195
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is "
 "set and points to a valid application."
@@ -1141,7 +1141,7 @@ msgstr ""
 "Стандартният терминал не може да бъде открит. Проверете дали командата за "
 "терминала е зададена и дали тя съответства на правилна програма."
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:235
+#: ../plugins/media-keys/msd-media-keys-manager.c:235
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1186,17 +1186,17 @@ msgstr "Мултимедийни клавиши"
 msgid "Media keys plugin"
 msgstr "Приставка за мултимедийни клавиши"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:882
+#: ../plugins/mouse/msd-mouse-manager.c:882
 msgid "Could not enable mouse accessibility features"
 msgstr "Неуспех при включване на функциите за достъпност на мишката"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:884
+#: ../plugins/mouse/msd-mouse-manager.c:884
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 "За достъпност на мишката на системата трябва да е инсталиран Mousetweaks."
 
-#: ../plugins/mouse/gsd-mouse-manager.c:887
+#: ../plugins/mouse/msd-mouse-manager.c:887
 msgid "Mouse Preferences"
 msgstr "Настройки на мишката"
 
@@ -1224,19 +1224,19 @@ msgstr "Настройки за размер на екрана и ротация
 msgid "XRandR"
 msgstr "XRandR"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:371
+#: ../plugins/xrandr/msd-xrandr-manager.c:371
 msgid "Could not switch the monitor configuration"
 msgstr "Настройките на екрана не могат да бъдат сменени"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:395
+#: ../plugins/xrandr/msd-xrandr-manager.c:395
 msgid "Could not restore the display's configuration"
 msgstr "Настройките на екрана не могат да бъдат възстановени"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:420
+#: ../plugins/xrandr/msd-xrandr-manager.c:420
 msgid "Could not restore the display's configuration from a backup"
 msgstr "Настройките на екрана не могат да бъдат възстановени от резервно копие"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:441
+#: ../plugins/xrandr/msd-xrandr-manager.c:441
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
@@ -1244,69 +1244,69 @@ msgid_plural ""
 msgstr[0] "След %d секунда ще бъдат върнати старите настройки на екрана"
 msgstr[1] "След %d секунди ще бъдат върнати старите настройки на екрана"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:490
+#: ../plugins/xrandr/msd-xrandr-manager.c:490
 msgid "Does the display look OK?"
 msgstr "Наред ли е екрана?"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:496
+#: ../plugins/xrandr/msd-xrandr-manager.c:496
 msgid "_Restore Previous Configuration"
 msgstr "_Възстановяване на предишните настройки"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:497
+#: ../plugins/xrandr/msd-xrandr-manager.c:497
 msgid "_Keep This Configuration"
 msgstr "_Запазване на тези настройки"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:578
+#: ../plugins/xrandr/msd-xrandr-manager.c:578
 msgid "The selected configuration for displays could not be applied"
 msgstr "Избраните настройки на екраните не могат да бъдат приложени"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1142
+#: ../plugins/xrandr/msd-xrandr-manager.c:1142
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "Информацията за екрана не може да бъде обновена: %s"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1146
+#: ../plugins/xrandr/msd-xrandr-manager.c:1146
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Опит за смяна на настройките на екрана въпреки това."
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1877
+#: ../plugins/xrandr/msd-xrandr-manager.c:1877
 msgid "Rotation not supported"
 msgstr "Не се поддържа завъртане"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1933
+#: ../plugins/xrandr/msd-xrandr-manager.c:1933
 msgid "Could not save monitor configuration"
 msgstr "Настройките на екрана не мотат да бъдат запазени"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1951
+#: ../plugins/xrandr/msd-xrandr-manager.c:1951
 msgid "Normal"
 msgstr "нормално"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1952
+#: ../plugins/xrandr/msd-xrandr-manager.c:1952
 msgid "Left"
 msgstr "наляво"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1953
+#: ../plugins/xrandr/msd-xrandr-manager.c:1953
 msgid "Right"
 msgstr "надясно"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1954
+#: ../plugins/xrandr/msd-xrandr-manager.c:1954
 msgid "Upside Down"
 msgstr "обратно"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:2074
+#: ../plugins/xrandr/msd-xrandr-manager.c:2074
 msgid "_Configure Display Settings…"
 msgstr "_Настройване на екрана…"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:2115
+#: ../plugins/xrandr/msd-xrandr-manager.c:2115
 msgid "Configure display settings"
 msgstr "Настройване на екрана"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:2175
+#: ../plugins/xrandr/msd-xrandr-manager.c:2175
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Запазените настройките на екраните не можаха да бъдат приложени"
 
-#: ../plugins/xrdb/gsd-xrdb-manager.c:255
-#: ../plugins/xrdb/gsd-xrdb-manager.c:324
+#: ../plugins/xrdb/msd-xrdb-manager.c:255
+#: ../plugins/xrdb/msd-xrdb-manager.c:324
 msgid "Cannot determine user's home directory"
 msgstr "Не може да се разбере коя е домашната папка на потребителя"
 
@@ -1318,7 +1318,7 @@ msgstr "Управление на базата от данни с ресурси
 msgid "X Resource Database"
 msgstr "База от данни с ресурси за X"
 
-#: ../plugins/xsettings/gsd-xsettings-manager.c:596
+#: ../plugins/xsettings/msd-xsettings-manager.c:596
 #, c-format
 msgid "MateConf key %s set to type %s but its expected type was %s\n"
 msgstr "Клавишът на MateConf %s е зададен с вид %s, но се очакваше вид %s\n"
@@ -1331,92 +1331,92 @@ msgstr "Управление на настройките на X"
 msgid "X Settings"
 msgstr "Настройки на X"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:167
+#: ../plugins/smartcard/msd-smartcard-manager.c:167
 msgid "Module Path"
 msgstr "Път до модула"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:168
+#: ../plugins/smartcard/msd-smartcard-manager.c:168
 msgid "path to smartcard PKCS #11 driver"
 msgstr "път до драйвера за PKCS #11 на чип-картата"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:504
+#: ../plugins/smartcard/msd-smartcard-manager.c:504
 msgid "received error or hang up from event source"
 msgstr "получена е грешка или прекъсване при комуникация с чип-картата"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:593
+#: ../plugins/smartcard/msd-smartcard-manager.c:593
 #, c-format
 msgid "NSS security system could not be initialized"
 msgstr "Неуспех при инициализиране на системата за сигурност NSS"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:662
+#: ../plugins/smartcard/msd-smartcard-manager.c:662
 #, c-format
 msgid "no suitable smartcard driver could be found"
 msgstr "не е намерен подходящ драйвер за чип-картата"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:682
+#: ../plugins/smartcard/msd-smartcard-manager.c:682
 #, c-format
 msgid "smartcard driver '%s' could not be loaded"
 msgstr "неуспех при зареждане на драйвера за чип-карти „%s“"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:771
+#: ../plugins/smartcard/msd-smartcard-manager.c:771
 #, c-format
 msgid "could not watch for incoming card events - %s"
 msgstr "неуспех при получаване на данни от картата – %s"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:1124
+#: ../plugins/smartcard/msd-smartcard-manager.c:1124
 #, c-format
 msgid "encountered unexpected error while waiting for smartcard events"
 msgstr "неочаквана грешка при изчакване на информация от чип-картата"
 
-#: ../plugins/smartcard/gsd-smartcard.c:154
+#: ../plugins/smartcard/msd-smartcard.c:154
 msgid "Slot ID"
 msgstr "Номер на слот"
 
-#: ../plugins/smartcard/gsd-smartcard.c:155
+#: ../plugins/smartcard/msd-smartcard.c:155
 msgid "The slot the card is in"
 msgstr "Слотът, в който е картата"
 
-#: ../plugins/smartcard/gsd-smartcard.c:161
+#: ../plugins/smartcard/msd-smartcard.c:161
 msgid "Slot Series"
 msgstr "Серия на слота"
 
-#: ../plugins/smartcard/gsd-smartcard.c:162
+#: ../plugins/smartcard/msd-smartcard.c:162
 msgid "per-slot card identifier"
 msgstr "номер на картата в слота"
 
-#: ../plugins/smartcard/gsd-smartcard.c:168
-#: ../plugins/smartcard/gsd-smartcard.c:169
+#: ../plugins/smartcard/msd-smartcard.c:168
+#: ../plugins/smartcard/msd-smartcard.c:169
 msgid "name"
 msgstr "име"
 
-#: ../plugins/smartcard/gsd-smartcard.c:173
+#: ../plugins/smartcard/msd-smartcard.c:173
 msgid "Module"
 msgstr "Модул"
 
-#: ../plugins/smartcard/gsd-smartcard.c:174
+#: ../plugins/smartcard/msd-smartcard.c:174
 msgid "smartcard driver"
 msgstr "драйвер за чип-карта"
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:1
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:1
 msgid "Change system time"
 msgstr "Промяна на системното време"
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:2
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:2
 msgid "Change system time zone"
 msgstr "Промяна на системния часови пояс"
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:3
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:3
 msgid "Configure hardware clock"
 msgstr "Сверяване на хардуерния часовник"
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:4
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:4
 msgid "Privileges are required to change the system time zone."
 msgstr "За промяна на системния часови пояс се изискват специални права."
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:5
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:5
 msgid "Privileges are required to change the system time."
 msgstr "За промяна на системното време се изискват специални права."
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:6
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:6
 msgid "Privileges are required to configure the hardware clock."
 msgstr "За промяна на хардуерния часовник се изискват специални права."

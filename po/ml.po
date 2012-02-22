@@ -655,23 +655,23 @@ msgstr "സാമീപ്യത കീബോര്‍ഡ്"
 msgid "Accessibility keyboard plugin"
 msgstr "സാമീപ്യത കീബോര്‍ഡ് സമ്യോജകം"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:388
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:388
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "സഹായം കാണിയ്ക്കുന്നതില്‍ തെറ്റുണ്ടായി: %s"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:519
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:585
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:519
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:585
 msgid "Do you want to activate Slow Keys?"
 msgstr "നിങ്ങള്‍ക്ക് വേഗത കുറഞ്ഞ കീ പ്രവര്‍ത്തിപ്പിക്കണമോ?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:520
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:586
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:520
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:586
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "നിങ്ങള്‍ക്ക് വേഗത കുറഞ്ഞ കീ പ്രവര്‍ത്തന രഹിതമാക്കണമോ?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:521
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:587
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:521
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:587
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -679,62 +679,62 @@ msgstr ""
 "നിങ്ങള്‍ ഷിഫ്റ്റ് കീ 8 സെക്കന്റ് നേരത്തേക്ക് അമര്‍ത്തിപ്പിടിച്ചു. ഇത് സ്ലോ കീ സൌകര്യത്തിനുള്ള കുറുക്കു "
 "കീ ആണ്. കീബോര്‍ഡ് പ്രവര്‍ത്തിക്കുന്ന രീതിയെ ഇത് ബാധിക്കും. "
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:546
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:685
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:546
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:685
 msgid "Don't activate"
 msgstr "സജ്ജമാക്കേണ്ടതില്ല"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:546
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:685
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:546
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:685
 msgid "Don't deactivate"
 msgstr "സജ്ജമാക്കാതിരിക്കേണ്ടതില്ല"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:552
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:691
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:552
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:691
 msgid "Activate"
 msgstr "സജ്ജമാക്കുക"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:552
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:691
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:552
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:691
 msgid "Deactivate"
 msgstr "നിര്‍ത്തുക"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:608
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:749
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:608
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Do_n't activate"
 msgstr "പ്രവര്‍ത്തനം _സജ്ജമാക്കേണ്ടതില്ല"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:608
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:749
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:608
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Do_n't deactivate"
 msgstr "പ്രവര്‍ത്തനം നിര്‍ത്തേണ്ട_തില്ല"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:611
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:752
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:611
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:752
 msgid "_Activate"
 msgstr "_സജീവമാക്കുക"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:611
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:752
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:611
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:752
 msgid "_Deactivate"
 msgstr "പ്രവര്‍ത്തനം _നിര്‍ത്തുക"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:615
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:615
 msgid "Slow Keys Alert"
 msgstr "വേഗത കുറഞ്ഞ കീ അറിയിപ്പ്"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:655
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:723
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:655
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:723
 msgid "Do you want to activate Sticky Keys?"
 msgstr "നിങ്ങള്‍ക്ക് സ്റ്റിക്കി കീകള്‍ സജ്ജമാക്കണമോ?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:656
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:724
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:724
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "നിങ്ങള്‍ക്ക് സ്റ്റിക്കി കീകളുടെ പ്രവര്‍ത്തനം നിര്‍ത്തണമോ?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:658
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:726
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:658
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:726
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -742,8 +742,8 @@ msgstr ""
 "നിങ്ങള്‍ ഷിഫ്റ്റ് കീ 5 തവണ ഒരു വരിയില്‍ അമര്‍ത്തിപ്പിടിച്ചു. ഇത് സ്റ്റിക്കി കീ സൌകര്യത്തിനുള്ള കുറുക്കു "
 "കീ ആണ്. കീബോര്‍ഡ് പ്രവര്‍ത്തിക്കുന്ന രീതിയെ ഇത് ബാധിക്കും. "
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:660
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:728
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:660
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:728
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -753,44 +753,44 @@ msgstr ""
 "അമര്‍ത്തിപ്പിടിച്ചു. ഇത് സ്റ്റിക്കി കീ സൌകര്യം നിര്‍ത്താനുള്ള കുറുക്കു കീ ആണ്. കീബോര്‍ഡ് പ്രവര്‍ത്തിക്കുന്ന "
 "രീതിയെ ഇത് ബാധിക്കും. "
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:756
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:756
 msgid "Sticky Keys Alert"
 msgstr "സ്റ്റിക്കി കീ അറിയിപ്പ്"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.c:920
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:4
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:920
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:4
 msgid "Universal Access Preferences"
 msgstr "ആഗോള സമീപന മുന്‍ഗണനകള്‍"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:1
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Enhance _contrast in colors"
 msgstr "(_)നിറ-വ്യത്യാസം കൂട്ടുക"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:2
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
 msgid "Make _text larger and easier to read"
 msgstr "(_t)അക്ഷരങ്ങള്‍ വലുതും വായിക്കാന്‍ എളുപ്പവും ആക്കുക"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:3
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:3
 msgid "Press and _hold keys to accept them (Slow Keys)"
 msgstr "കീകള്‍ അമര്‍ത്തി (_h)പിടിക്കുക അവ അംഗീകരിക്കാന്‍ (പതുക്കെയുള്ള കീകള്‍)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:5
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:5
 msgid "Use on-screen _keyboard"
 msgstr "ഓണ്‍ സ്ക്രീന്‍ (_k)കീബോര്‍ഡ് ഉപയോഗിക്കുക"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:6
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:6
 msgid "Use screen _magnifier"
 msgstr "സ്ക്രീന്‍ (_m)വലിപ്പം കൂട്ടാനുള്ള ഉപകരണം ഉപയോഗിക്കുക"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:7
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "Use screen _reader"
 msgstr "സ്ക്രീന്‍ (_r)വായനക്കാരന്‍"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:8
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
 msgstr "ഈ സമയത്തിനിടയിലെ ഇരട്ട കീ അമര്‍ത്തലുകളെ അവഗണിക്കുക(_I)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:9
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
 msgstr ""
 "കീബോര്‍ട് ചുരുക്കവഴി-കീകള്‍ ഓരോന്നായി അമര്‍ത്തുക (സ്റ്റിക്കി കീകള്‍)_Press keyboard shortcuts "
@@ -828,32 +828,32 @@ msgstr "ലിപി"
 msgid "Font plugin"
 msgstr "ലിപി സംയോജകം"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:64
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:64
 msgid "Don't show any warnings again for this filesystem"
 msgstr "ഈ ഫയല്‍സിസ്റ്റത്തിനായി ഇനി ഒരു മുന്നറിയിപ്പുകളും കാണിക്കേണ്ട"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:66
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:66
 #| msgid "_Do not show this message again"
 msgid "Don't show any warnings again"
 msgstr " ഈ മുന്നറിയിപ്പുകള് ഇനി കാണിക്കരുതു്ല"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:79
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:79
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr "വോള്യം \"%s\"-നു് %s ഡിസ്ക് സ്പെയിസ് മാത്രമേ ബാക്കിയുള്ളൂ."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:82
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:82
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr "%s ഡിസ്ക് സ്പെയിസ് മാത്രമേ ഈ കമ്പ്യൂട്ടറില്‍ ബാക്കിയുള്ളൂ."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:98
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:98
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
 msgstr "ചവറ്റുകുട്ട കാലിയാക്കി അല്ലെങ്കില്‍ ഉപയോഗിക്കാത്ത പ്രോഗ്രാമുകള്‍ അല്ലെങ്കില്‍ ഫയലുകള്‍ നീക്കം ചെയ്തു് അല്ലെങ്കില്‍ പുറമേയുള്ളൊരു ഡിസ്ക് അല്ലെങ്കില്‍ പാര്‍ട്ടീഷനിലേക്ക് ഫയലുകള്‍ മാറ്റി നിങ്ങള്‍ക്കു് ഡിസ്കില്‍ സ്ഥലം ലഭ്യമാക്കാം."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:101
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:101
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
@@ -861,7 +861,7 @@ msgstr ""
 "ഉപയോഗിക്കാത്ത പ്രോഗ്രാമുകള്‍ അല്ലെങ്കില്‍ ഫയലുകള്‍ നീക്കം ചെയ്തു് അല്ലെങ്കില്‍ പുറമേയുള്ളൊരു "
 "ഡിസ്ക് അല്ലെങ്കില്‍ പാര്‍ട്ടീഷനിലേക്ക് ഫയലുകള്‍ മാറ്റി നിങ്ങള്‍ക്കു് ഡിസ്കില്‍ സ്ഥലം ലഭ്യമാക്കാം."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:106
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:106
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
@@ -869,7 +869,7 @@ msgstr ""
 "ചവറ്റുകുട്ട കാലിയാക്കി അല്ലെങ്കില്‍ ഉപയോഗിക്കാത്ത പ്രോഗ്രാമുകള്‍ അല്ലെങ്കില്‍ ഫയലുകള്‍ നീക്കം "
 "ചെയ്തു് അല്ലെങ്കില്‍ പുറമേയുള്ളൊരു ഡിസ്കിലേക്ക് ഫയലുകള്‍ മാറ്റി നിങ്ങള്‍ക്കു് ഡിസ്കില്‍ സ്ഥലം ലഭ്യമാക്കാം."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:109
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:109
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
@@ -878,50 +878,50 @@ msgstr ""
 "പുറമേയുള്ളൊരു ഡിസ്കിലേക്ക് ഫയലുകള്‍ മാറ്റി നിങ്ങള്‍ക്കു് ഡിസ്കില്‍ സ്ഥലം ലഭ്യമാക്കാം."
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:204
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:204
 msgid "Low Disk Space"
 msgstr "കുറഞ്ഞ ഡിസ്ക് സ്ഥലം"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:439
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:439
 msgid "Empty Trash"
 msgstr "ചവറ്റുകുട്ട കാലിയാക്കുക"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:447
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:447
 msgid "Examine..."
 msgstr "പരിശോധിക്കുക..."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:454
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:454
 msgid "Ignore"
 msgstr "അവഗണിക്കുക"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:96
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:96
 #, c-format
 msgid "Removing item %lu of %lu"
 msgstr "%lu/%lu വസ്തു നീക്കം ചെയ്യുന്നു"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:116
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:116
 #, c-format
 msgid "<i>Removing: %s</i>"
 msgstr "<i>നീക്കം ചെയ്യുന്നു: %s</i>"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:244
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:293
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:244
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:293
 msgid "Emptying the trash"
 msgstr "ചവറ്റുകുട്ട കാലിയാക്കുന്നു"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:269
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:269
 msgid "Preparing to empty trash..."
 msgstr "ചവറ്റുകുട്ട കാലിയാക്കുന്നതിനു് തയ്യാറാകുന്നു..."
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:295
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:295
 msgid "From: "
 msgstr "എവിടെ നിന്നു്:"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:356
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:356
 msgid "Empty all of the items from the trash?"
 msgstr "ചവറ്റുകുട്ടയില്‍ നിന്നും എല്ലാ വസ്തുക്കളും കാലിയാക്കണമോ?"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:359
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:359
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
@@ -929,21 +929,21 @@ msgstr ""
 "ചവറ്റുകട്ട കാലിയാക്കിയാല്‍, എല്ലാ വസ്തുക്കളും എന്നേക്കുമായി നഷ്ടമാകുന്നു. "
 "നിങ്ങള്‍ക്കിവ വേവ്വേറയായും വെട്ടി നീക്കുവാന്‍ സാധ്യമാണു് എന്നു് പ്രത്യേകം ഓര്‍ക്കുക."
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:366
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:366
 msgid "_Empty Trash"
 msgstr "ചവറ്റുകുട്ട _കാലിയാക്കുക"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:139
+#: ../plugins/keybindings/msd-keybindings-manager.c:139
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "കീ ബന്ധനം(%s) അസാധുവാണ്"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:197
+#: ../plugins/keybindings/msd-keybindings-manager.c:197
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "കീ ബന്ധനം(%s) അപൂര്‍ണ്ണമാണ്"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:493
+#: ../plugins/keybindings/msd-keybindings-manager.c:493
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -992,7 +992,7 @@ msgstr "_ചേര്‍ക്കുക"
 msgid "_Loaded files:"
 msgstr "_ചേര്‍ത്ത ഫയലുകള്‍:"
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:203
+#: ../plugins/media-keys/msd-media-keys-manager.c:203
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is "
 "set and points to a valid application."
@@ -1000,7 +1000,7 @@ msgstr ""
 "സഹജമായ ടെര്‍മിനല്‍ കിട്ടിയില്ല. സഹജമായ ടെര്‍മിനലിനുള്ള  ആജ്ഞ ക്രമീകരിച്ചിരിക്കുന്നുവെന്നും, അത് "
 "ശരിയായ പ്രയോഗത്തിലേയ്ക്കാണ് ചൂണ്ടുന്നതെന്നും ഉറപ്പുവരുത്തുക"
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:243
+#: ../plugins/media-keys/msd-media-keys-manager.c:243
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1009,7 +1009,7 @@ msgstr ""
 "ആജ്ഞ നടപ്പിലാക്കാന്‍ പറ്റിയില്ല.:  %s\n"
 " ഈ ആജ്ഞ നിലവിലുണ്ടെന്ന് ഉറപ്പുവരുത്തുക"
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:259
+#: ../plugins/media-keys/msd-media-keys-manager.c:259
 msgid ""
 "Couldn't put the machine to sleep.\n"
 "Verify that the machine is correctly configured."
@@ -1053,15 +1053,15 @@ msgstr "മാധ്യമ സംയോജകം"
 msgid "Media keys plugin"
 msgstr " സംയോജകം"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:891
+#: ../plugins/mouse/msd-mouse-manager.c:891
 msgid "Could not enable mouse accessibility features"
 msgstr "മൌസ് ഉപയുക്തി സവിശേഷതകള്‍  പ്രാവര്‍ത്തികമാക്കാനായില്ല"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:893
+#: ../plugins/mouse/msd-mouse-manager.c:893
 msgid "Mouse accessibility requires mousetweaks to be installed on your system."
 msgstr "മൌസ് സാമീപ്യത മൌസ്-ട്വീക്സ് നിങ്ങളുടെ സിസ്റ്റത്തില്‍ ഉണ്ടാവണം എന്ന് ആവശ്യപെടുന്നു."
 
-#: ../plugins/mouse/gsd-mouse-manager.c:896
+#: ../plugins/mouse/msd-mouse-manager.c:896
 msgid "Mouse Preferences"
 msgstr "മൌസ് മുന്‍‌ഗണനകള്‍"
 
@@ -1089,15 +1089,15 @@ msgstr "സ്ക്രീന്‍ വലിപ്പവും തിരിക�
 msgid "XRandR"
 msgstr "XRandR(എക്സ്-റാന്റ്-ആര്‍)"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:208
+#: ../plugins/xrandr/msd-xrandr-manager.c:208
 msgid "Could not restore the display's configuration"
 msgstr "പ്രദര്‍ശനത്തിനുള്ള ക്രമീകരണം വീണ്ടെടുക്കുവാന്‍ സാധ്യമല്ല"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:233
+#: ../plugins/xrandr/msd-xrandr-manager.c:233
 msgid "Could not restore the display's configuration from a backup"
 msgstr "ഒരു ബാക്കപ്പില്‍ നിന്നും പ്രദര്‍ശനത്തിനുള്ള ക്രമീകരണം വീണ്ടെടുക്കുവാന്‍ സാധ്യമല്ല"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:254
+#: ../plugins/xrandr/msd-xrandr-manager.c:254
 #, c-format
 #| msgid ""
 #| "The display will be reset to its previous configuration in %d seconds"
@@ -1106,74 +1106,74 @@ msgid_plural "The display will be reset to its previous configuration in %d seco
 msgstr[0] "%d സെക്കന്‍ഡില്‍ ഡിസ്പ്ലെ മുമ്പുള്ള ക്രമീകരണത്തിലേക്കു് സജ്ജമാക്കപ്പെടുന്നു."
 msgstr[1] "%d സെക്കന്‍ഡില്‍ ഡിസ്പ്ലെ മുമ്പുള്ള ക്രമീകരണത്തിലേക്കു് സജ്ജമാക്കപ്പെടുന്നു."
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:303
+#: ../plugins/xrandr/msd-xrandr-manager.c:303
 msgid "Does the display look OK?"
 msgstr "പ്രദര്‍ശനം ശരിയാണോ?"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:309
+#: ../plugins/xrandr/msd-xrandr-manager.c:309
 msgid "_Restore Previous Configuration"
 msgstr "മുമ്പുള്ള ക്രമീകരണം _വീണ്ടെടുക്കുക"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:310
+#: ../plugins/xrandr/msd-xrandr-manager.c:310
 msgid "_Keep This Configuration"
 msgstr "ഈ ക്രമീകരണം _സൂക്ഷിക്കുക"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:391
+#: ../plugins/xrandr/msd-xrandr-manager.c:391
 msgid "The selected configuration for displays could not be applied"
 msgstr "പ്രദര്‍ശനത്തിനായി തെരഞ്ഞെടുത്ത ക്രമീകരണം പ്രായോഗികമാക്കാനായില്ല"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:945
+#: ../plugins/xrandr/msd-xrandr-manager.c:945
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "സ്ക്രീന്‍ വിവരം പുതുക്കുവാന്‍ സാധ്യമായില്ല: %s"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:948
+#: ../plugins/xrandr/msd-xrandr-manager.c:948
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "മോണിറ്റര്‍ ക്രമീകരണം എങ്ങനെയെങ്കിലും സ്വിച്ച് ചെയ്യുവാന്‍ ശ്രമിക്കുക."
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:982
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1148
+#: ../plugins/xrandr/msd-xrandr-manager.c:982
+#: ../plugins/xrandr/msd-xrandr-manager.c:1148
 msgid "Could not switch the monitor configuration"
 msgstr "മോണിറ്റര്‍ ക്രമീകരണം സ്വിച്ച് ചെയ്യുവാന്‍ സാധ്യമായില്ല"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1541
+#: ../plugins/xrandr/msd-xrandr-manager.c:1541
 msgid "<i>Rotation not supported</i>"
 msgstr "<i>തിരിയ്ക്കുന്നതിനുള്ള പിന്തുണയില്ല</i>"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1595
+#: ../plugins/xrandr/msd-xrandr-manager.c:1595
 msgid "Could not save monitor configuration"
 msgstr "മോണിറ്റര്‍ ക്രമീകരണം സൂക്ഷിക്കുവാന്‍ സാധ്യമായില്ല"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1613
+#: ../plugins/xrandr/msd-xrandr-manager.c:1613
 msgid "Normal"
 msgstr "സാധാരണ"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1614
+#: ../plugins/xrandr/msd-xrandr-manager.c:1614
 msgid "Left"
 msgstr "ഇടത്"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1615
+#: ../plugins/xrandr/msd-xrandr-manager.c:1615
 msgid "Right"
 msgstr "വലത്ത്"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1616
+#: ../plugins/xrandr/msd-xrandr-manager.c:1616
 msgid "Upside Down"
 msgstr "തല തിരിച്ചു്"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1735
+#: ../plugins/xrandr/msd-xrandr-manager.c:1735
 msgid "_Configure Display Settings ..."
 msgstr "അവതരണ സജ്ജീകരണങ്ങള്‍ _ക്രമീകരിക്കുക..."
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1776
+#: ../plugins/xrandr/msd-xrandr-manager.c:1776
 msgid "Configure display settings"
 msgstr "അവതരണ സജ്ജീകരണങ്ങള്‍ ക്രമീകരിക്കുക"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1830
+#: ../plugins/xrandr/msd-xrandr-manager.c:1830
 msgid "Could not apply the stored configuration for monitors"
 msgstr "മോണിറ്ററുകള്‍ക്കുള്ള സൂക്ഷിച്ചിട്ടുള്ള ക്രമീകരണം പ്രായോഗികമാക്കുവാന്‍ സാധ്യമായില്ല"
 
-#: ../plugins/xrdb/gsd-xrdb-manager.c:255
-#: ../plugins/xrdb/gsd-xrdb-manager.c:324
+#: ../plugins/xrdb/msd-xrdb-manager.c:255
+#: ../plugins/xrdb/msd-xrdb-manager.c:324
 msgid "Cannot determine user's home directory"
 msgstr "ഉപയോക്താവിന്റെ സ്വന്തം തട്ട് ലഭ്യമല്ല"
 
@@ -1185,7 +1185,7 @@ msgstr "എക്സ്-വിഭവ വിവരസംഭരണി കയ്ക
 msgid "X Resource Database"
 msgstr "എക്സ്-വിഭവ വിവരസംഭരണി"
 
-#: ../plugins/xsettings/gsd-xsettings-manager.c:644
+#: ../plugins/xsettings/msd-xsettings-manager.c:644
 #, c-format
 msgid "MateConf key %s set to type %s but its expected type was %s\n"
 msgstr "MateConf കീ %s %s തരമായി സെറ്റ് ചെയ്തിരിക്കുന്നു,പ്രതീക്ഷിച്ചത് %s തരമാണ്\n"

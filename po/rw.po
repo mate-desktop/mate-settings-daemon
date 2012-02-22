@@ -431,22 +431,22 @@ msgstr "Ubushobozi bwo gukoreshwa"
 msgid "Accessibility keyboard plugin"
 msgstr "Ubushobozi bwo gukoreshwa"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:393
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:393
 #, fuzzy, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Ikosa Ifashayobora"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:445
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:445
 #, fuzzy
 msgid "Do you want to activate Slow Keys?"
 msgstr "Kuri Kureka bigakora"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:446
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:446
 #, fuzzy
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Kuri Kubuza gukora"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:449
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:449
 #, fuzzy
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
@@ -455,41 +455,41 @@ msgstr ""
 "Hasi i Urufunguzo kugirango 8 amasogonda ni i Iy'ibusamo kugirango i i "
 "Mwandikisho"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:456
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:508
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:456
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:508
 msgid "Do_n't activate"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:456
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:508
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:456
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:508
 msgid "Do_n't deactivate"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:459
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:511
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:459
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:511
 msgid "_Activate"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:459
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:511
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:459
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:511
 msgid "_Deactivate"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:463
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:463
 msgid "Slow Keys Alert"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:495
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:495
 #, fuzzy
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Kuri Kureka bigakora"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:496
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:496
 #, fuzzy
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Kuri Kubuza gukora"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:499
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:499
 #, fuzzy
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
@@ -497,7 +497,7 @@ msgid ""
 msgstr ""
 "i Urufunguzo 5 Times in a Urubariro ni i Iy'ibusamo kugirango i i Mwandikisho"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:501
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:501
 #, fuzzy
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
@@ -507,7 +507,7 @@ msgstr ""
 "Utubuto ku Rimwe Cyangwa i Urufunguzo 5 Times in a Urubariro Bidakora i i "
 "Mwandikisho"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:515
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:515
 msgid "Sticky Keys Alert"
 msgstr ""
 
@@ -543,51 +543,51 @@ msgstr "Intego-nyuguti"
 msgid "Font plugin"
 msgstr ""
 
-#: ../plugins/font/gsd-font-manager.c:208
+#: ../plugins/font/msd-font-manager.c:208
 #, fuzzy, c-format
 msgid ""
 "Cannot create the directory \"%s\".\n"
 "This is needed to allow changing the mouse pointer theme."
 msgstr "Kurema i bushyinguro ni Kuri Kwemerera"
 
-#: ../plugins/font/gsd-font-manager.c:231
+#: ../plugins/font/msd-font-manager.c:231
 #, fuzzy, c-format
 msgid ""
 "Cannot create the directory \"%s\".\n"
 "This is needed to allow changing cursors."
 msgstr "Kurema i bushyinguro ni Kuri Kwemerera"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:195
+#: ../plugins/keybindings/msd-keybindings-manager.c:195
 #, fuzzy, c-format
 msgid "Key Binding (%s) has its action defined multiple times\n"
 msgstr "Igikorwa Igikubo"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:202
+#: ../plugins/keybindings/msd-keybindings-manager.c:202
 #, fuzzy, c-format
 msgid "Key Binding (%s) has its binding defined multiple times\n"
 msgstr "Bifatanya Igikubo"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:211
+#: ../plugins/keybindings/msd-keybindings-manager.c:211
 #, fuzzy, c-format
 msgid "Key Binding (%s) is incomplete\n"
 msgstr "ni"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:239
+#: ../plugins/keybindings/msd-keybindings-manager.c:239
 #, fuzzy, c-format
 msgid "Key Binding (%s) is invalid\n"
 msgstr "ni"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:292
+#: ../plugins/keybindings/msd-keybindings-manager.c:292
 #, fuzzy, c-format
 msgid "It seems that another application already has access to key '%u'."
 msgstr "Porogaramu Kuri Urufunguzo"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:365
+#: ../plugins/keybindings/msd-keybindings-manager.c:365
 #, fuzzy, c-format
 msgid "Key Binding (%s) is already in use\n"
 msgstr "ni in"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:502
+#: ../plugins/keybindings/msd-keybindings-manager.c:502
 #, fuzzy, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -650,20 +650,20 @@ msgstr "Idosiye"
 msgid "Volume"
 msgstr "Igice"
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:200
+#: ../plugins/media-keys/msd-media-keys-manager.c:200
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is "
 "set and points to a valid application."
 msgstr ""
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:240
+#: ../plugins/media-keys/msd-media-keys-manager.c:240
 #, fuzzy, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
 msgstr "Gukora Komandi: iyi Komandi:"
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:256
+#: ../plugins/media-keys/msd-media-keys-manager.c:256
 #, fuzzy
 msgid ""
 "Couldn't put the machine to sleep.\n"
@@ -678,18 +678,18 @@ msgstr ""
 msgid "Media keys plugin"
 msgstr ""
 
-#: ../plugins/mouse/gsd-mouse-manager.c:566
+#: ../plugins/mouse/msd-mouse-manager.c:566
 #, fuzzy
 msgid "Could not enable mouse accessibility features"
 msgstr "Mwandikisho Ubushobozi bwo gukoreshwa Ibiranga"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:568
+#: ../plugins/mouse/msd-mouse-manager.c:568
 msgid ""
 "Mouse accessibility requires the mousetweaks daemon to be installed on your "
 "system."
 msgstr ""
 
-#: ../plugins/mouse/gsd-mouse-manager.c:571
+#: ../plugins/mouse/msd-mouse-manager.c:571
 msgid "Mouse Preferences"
 msgstr ""
 
@@ -702,7 +702,7 @@ msgstr "Imbeba"
 msgid "Mouse plugin"
 msgstr ""
 
-#: ../plugins/screensaver/gsd-screensaver-manager.c:151
+#: ../plugins/screensaver/msd-screensaver-manager.c:151
 #, fuzzy, c-format
 msgid ""
 "There was an error starting up the screensaver:\n"
@@ -712,7 +712,7 @@ msgid ""
 "Screensaver functionality will not work in this session."
 msgstr "Ikosa Hejuru i OYA Akazi in iyi Umukoro"
 
-#: ../plugins/screensaver/gsd-screensaver-manager.c:160
+#: ../plugins/screensaver/msd-screensaver-manager.c:160
 #, fuzzy
 msgid "_Do not show this message again"
 msgstr "OYA Garagaza iyi Ubutumwa"
@@ -727,7 +727,7 @@ msgstr "Gutangira"
 msgid "Screensaver plugin"
 msgstr "ku Ifashayinjira"
 
-#: ../plugins/sound/gsd-sound-manager.c:164
+#: ../plugins/sound/msd-sound-manager.c:164
 #, fuzzy, c-format
 msgid "Couldn't load sound file %s as sample %s"
 msgstr "Ibirimo Ijwi IDOSIYE Nka Urugero"
@@ -829,8 +829,8 @@ msgstr ""
 msgid "XRandR"
 msgstr ""
 
-#: ../plugins/xrdb/gsd-xrdb-manager.c:258
-#: ../plugins/xrdb/gsd-xrdb-manager.c:327
+#: ../plugins/xrdb/msd-xrdb-manager.c:258
+#: ../plugins/xrdb/msd-xrdb-manager.c:327
 #, fuzzy
 msgid "Cannot determine user's home directory"
 msgstr "Ku Ntangiriro bushyinguro"
@@ -843,7 +843,7 @@ msgstr ""
 msgid "X Resource Database"
 msgstr ""
 
-#: ../plugins/xsettings/gsd-xsettings-manager.c:551
+#: ../plugins/xsettings/msd-xsettings-manager.c:551
 #, fuzzy, c-format
 msgid "MateConf key %s set to type %s but its expected type was %s\n"
 msgstr "Urufunguzo Gushyiraho Kuri Ubwoko Ikitezwe: Ubwoko"

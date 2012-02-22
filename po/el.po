@@ -661,128 +661,128 @@ msgstr "Προσιτότητα πληκτρολογίου"
 msgid "Accessibility keyboard plugin"
 msgstr "Πρόσθετη λειτουργία προσιτότητας πληκτρολογίου"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:460
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:460
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Σφάλμα προβολής βοήθειας: %s "
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:591
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:657
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:591
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Do you want to activate Slow Keys?"
 msgstr "Θέλετε να ενεργοποίησετε τα Αργά πλήκτρα;"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:592
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:658
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:592
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:658
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Θέλετε να απενεργοποιήσετε τα Αργά πλήκτρα;"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:593
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:659
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:593
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
 msgid "You just held down the Shift key for 8 seconds.  This is the shortcut for the Slow Keys feature, which affects the way your keyboard works."
 msgstr "Πατήσατε το πλήκτρο Shift για 8 δευτερόλεπτα. Αυτή είναι η συντόμευση για τη λειτουργία Αργά πλήκτρα, που επηρεάζει τον τρόπο λειτουργίας του πληκτρολογίου σας."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:618
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:757
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:618
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:757
 msgid "Don't activate"
 msgstr "Να μην γίνει ενεργοποίηση"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:618
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:757
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:618
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:757
 msgid "Don't deactivate"
 msgstr "Να μην γίνει απενεργοποίηση"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:624
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:763
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:624
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Activate"
 msgstr "Ενεργοποίηση"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:624
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:763
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:624
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Deactivate"
 msgstr "Απενεργοποίηση"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:680
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:821
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:680
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:821
 msgid "Do_n't activate"
 msgstr "Να _μην γίνει ενεργοποίηση"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:680
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:821
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:680
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:821
 msgid "Do_n't deactivate"
 msgstr "Να _μην γίνει απενεργοποίηση"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:683
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:824
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:683
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:824
 msgid "_Activate"
 msgstr "Ε_νεργοποίηση"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:683
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:824
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:683
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:824
 msgid "_Deactivate"
 msgstr "Α_πενεργοποίηση"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:687
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:687
 msgid "Slow Keys Alert"
 msgstr "Ειδοποίηση Αργών πλήκτρων"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:727
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:795
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:727
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:795
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Θέλετε να ενεργοποιήσετε τα Sticky Keys;"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:728
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:796
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:728
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Θέλετε να απενεργοποιήσετε τα Sticky Keys;"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:730
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:798
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:730
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
 msgid "You just pressed the Shift key 5 times in a row.  This is the shortcut for the Sticky Keys feature, which affects the way your keyboard works."
 msgstr "Πατήσατε το πλήκτρο Shift 5 φορές στη σειρά. Αυτό είναι μια συντόμευση για τη λειτουργία Sticky Keys, που επηρεάζει τον τρόπο λειτουργίας του πληκτρολογίου σας."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:732
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:800
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:732
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
 msgid "You just pressed two keys at once, or pressed the Shift key 5 times in a row.  This turns off the Sticky Keys feature, which affects the way your keyboard works."
 msgstr "Πατήσατε 2 πλήκτρα με μιάς, ή πατήσατε το πλήκτρο Shift 5 φορές στη σειρά . Αυτό είναι μια συντόμευση για τη λειτουργία Sticky Keys, που επηρεάζει τον τρόπο λειτουργίας του πληκτρολογίου σας."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:828
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:828
 msgid "Sticky Keys Alert"
 msgstr "Ειδοποίηση Sticky Keys"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.c:920
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:4
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:920
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:4
 msgid "Universal Access Preferences"
 msgstr "Προτιμήσεις καθολικής πρόσβασης"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:1
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Enhance _contrast in colors"
 msgstr "Αύξηση αντί_θεσης στα χρώματα"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:2
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
 msgid "Make _text larger and easier to read"
 msgstr "Μεγέθυνση _κειμένου για εύκολη ανάγνωση"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:3
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:3
 msgid "Press and _hold keys to accept them (Slow Keys)"
 msgstr "Πατήστε και _κρατήστε τα πλήκτρα πατημένα για αποδοχή (Αργά πλήκτρα)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:5
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:5
 msgid "Use on-screen _keyboard"
 msgstr "Χρήση _πληκτρολογίου οθόνης "
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:6
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:6
 msgid "Use screen _magnifier"
 msgstr "Χρήση μεγε_θυντή οθόνης"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:7
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "Use screen _reader"
 msgstr "Χρήση _αναγνώστη οθόνης"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:8
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
 msgstr "Να α_γνοούνται τα διπλά πατήματα πλήκτρων:"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:9
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
 msgstr "_Πατήστε ένα πλήκτρο την φορά στις συντομεύσεις πληκτρολογίου (Κολλημένα πλήκτρα)"
 
@@ -818,108 +818,108 @@ msgstr "Γραμματοσειρά"
 msgid "Font plugin"
 msgstr "Πρόσθετη λειτουργία γραμματοσειράς"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:64
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:64
 #| msgid "Don't show any warnings again for this filesystem"
 msgid "Don't show any warnings again for this file system"
 msgstr "Να μην εμφανιστούν ξανά προειδοποιήσεις για αυτό το σύστημα αρχείων"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:66
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:66
 msgid "Don't show any warnings again"
 msgstr "Να μην εμφανιστούν ξανά προειδοποιήσεις"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:79
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:79
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr "Ο τόμος \"%s\" έχει μόνο %s ελεύθερο χώρο."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:82
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:82
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr "Αυτός ο υπολογιστής έχει μόνο %s ελεύθερο χώρο στο δίσκο."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:98
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:98
 msgid "You can free up disk space by emptying the Trash, removing unused programs or files, or moving files to another disk or partition."
 msgstr "Μπορείτε να ελευθερώσετε χώρο στον δίσκο αδειάζοντας τα Απορρίμματα, διαγράφοντας προγράμματα ή αρχεία που δεν χρησιμοποιείτε, ή μετακινώντας αρχεία σε έναν άλλο δίσκο ή κατάτμηση."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:101
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:101
 msgid "You can free up disk space by removing unused programs or files, or by moving files to another disk or partition."
 msgstr "Μπορείτε να ελευθερώσετε χώρο στον δίσκο διαγράφοντας προγράμματα ή αρχεία που δεν χρησιμοποιείτε, ή μετακινώντας αρχεία σε έναν άλλο δίσκο ή κατάτμηση."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:106
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:106
 msgid "You can free up disk space by emptying the Trash, removing unused programs or files, or moving files to an external disk."
 msgstr "Μπορείτε να ελευθερώσετε χώρο στον δίσκο αδειάζοντας τα Απορρίμματα, διαγράφοντας προγράμματα ή αρχεία που δεν χρησιμοποιείτε, ή μετακινώντας αρχεία σε έναν εξωτερικό δίσκο."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:109
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:109
 msgid "You can free up disk space by removing unused programs or files, or by moving files to an external disk."
 msgstr "Μπορείτε να ελευθερώσετε χώρο στον δίσκο διαγράφοντας προγράμματα ή αρχεία που δεν χρησιμοποιείτε, ή μετακινώντας αρχεία σε έναν εξωτερικό δίσκο."
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:204
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:204
 msgid "Low Disk Space"
 msgstr "Λίγος χώρος στο δίσκο"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:439
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:439
 msgid "Empty Trash"
 msgstr "Άδειασμα απορριμάτων"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:447
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:447
 #| msgid "Examine…"
 msgid "Examine…"
 msgstr "Εξέταση…"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:454
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:454
 msgid "Ignore"
 msgstr "Αγνόηση"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:97
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:97
 #, c-format
 msgid "Removing item %lu of %lu"
 msgstr "Διαγραφή αντικειμένου %lu από %lu"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:117
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 #| msgid "<i>Removing: %s</i>"
 msgid "Removing: %s"
 msgstr "Διαγραφή: %s"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:296
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:296
 msgid "Emptying the trash"
 msgstr "Άδειασμα των απορριμμάτων"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:272
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:272
 #| msgid "Preparing to empty trash…"
 msgid "Preparing to empty trash…"
 msgstr "Προετοιμασία για άδειασμα απορριμμάτων…"
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:299
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:299
 msgid "From: "
 msgstr "Από: "
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:360
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:360
 msgid "Empty all of the items from the trash?"
 msgstr "Άδειασμα όλων των αντικειμένων από τα απορρίμματα;"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:363
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:363
 msgid "If you choose to empty the trash, all items in it will be permanently lost. Please note that you can also delete them separately."
 msgstr "Αν επιλέξετε να αδειάσετε τα απορρίμματα, όλα τα αντικείμενα που βρίσκονται στον κάδο θα χαθούν οριστικά. Παρακαλούμε σημειώστε πως μπορείτε επίσης να τα διαγράψετε επιλεκτικά."
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:370
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:370
 msgid "_Empty Trash"
 msgstr "Άδ_ειασμα απορριμμάτων"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:139
+#: ../plugins/keybindings/msd-keybindings-manager.c:139
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "Ο συνδυασμός πλήκτρων (%s) δεν είναι έγκυρος"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:197
+#: ../plugins/keybindings/msd-keybindings-manager.c:197
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "Ο συνδυασμός πλήκτρων (%s) δεν είναι ολοκληρωμένος"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:493
+#: ../plugins/keybindings/msd-keybindings-manager.c:493
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -944,7 +944,7 @@ msgstr "Πληκτρολόγιο"
 msgid "Keyboard plugin"
 msgstr "Πρόσθετη λειτουργία πληκτρολογίου"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:137
+#: ../plugins/keyboard/msd-keyboard-xkb.c:137
 #, c-format
 #| msgid ""
 #| "Error activating XKB configuration.\n"
@@ -989,7 +989,7 @@ msgstr ""
 "- Το αποτέλεσμα του <b>%s</b>\n"
 "- Το αποτέλεσμα του <b>%s</b>"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:151
+#: ../plugins/keyboard/msd-keyboard-xkb.c:151
 #| msgid ""
 #| "You are using XFree 4.3.0.\n"
 #| "There are known problems with complex XKB configurations.\n"
@@ -1004,15 +1004,15 @@ msgstr ""
 "Υπάρχουν γνωστά προβλήματα με πολύπλοκες διαμορφώσεις του XKB.\n"
 "Χρησιμοποιήστε μια απλούστερη διαμόρφωση ή χρησιμοποιήστε μια νεότερη έκδοση λογισμικού του XFree."
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:279
+#: ../plugins/keyboard/msd-keyboard-xkb.c:279
 msgid "_Layouts"
 msgstr "_Διατάξεις"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:286
+#: ../plugins/keyboard/msd-keyboard-xkb.c:286
 msgid "Keyboard _Preferences"
 msgstr "Προτιμήσεις πληκτρολογίου"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:292
+#: ../plugins/keyboard/msd-keyboard-xkb.c:292
 #| msgid "Show Current _Layout"
 msgid "Show _Current Layout"
 msgstr "Προβολή _τρέχουσας διάταξης"
@@ -1042,11 +1042,11 @@ msgstr "_Φόρτωση"
 msgid "_Loaded files:"
 msgstr "_Φορτωμένα αρχεία:"
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:195
+#: ../plugins/media-keys/msd-media-keys-manager.c:195
 msgid "Could not get default terminal. Verify that your default terminal command is set and points to a valid application."
 msgstr "Αδυναμία λήψης προεπιλεγμένου τερματικού. Βεβαιωθείτε ότι έχει ορισθεί η εντολή προεπιλεγμένου τερματικού και ότι δείχνει σε έγκυρη εφαρμογή."
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:235
+#: ../plugins/media-keys/msd-media-keys-manager.c:235
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1091,17 +1091,17 @@ msgstr "Πλήκτρα πολυμέσων"
 msgid "Media keys plugin"
 msgstr "Πρόσθετη λειτουργία πλήκτρων πολυμέσων"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:882
+#: ../plugins/mouse/msd-mouse-manager.c:882
 msgid "Could not enable mouse accessibility features"
 msgstr "Αδυναμία ενεργοποίησης χαρακτηριστικών προσιτότητας ποντικιού"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:884
+#: ../plugins/mouse/msd-mouse-manager.c:884
 #| msgid ""
 #| "Mouse accessibility requires mousetweaks to be installed on your system."
 msgid "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr "Η προσιτότητα ποντικιού απαιτεί το mousetweaks να είναι εγκατεστημένο στο σύστημα σας."
 
-#: ../plugins/mouse/gsd-mouse-manager.c:887
+#: ../plugins/mouse/msd-mouse-manager.c:887
 msgid "Mouse Preferences"
 msgstr "Προτιμήσεις ποντικιού"
 
@@ -1129,90 +1129,90 @@ msgstr "Ρύθμιση μεγέθους οθόνης και περιστροφή
 msgid "XRandR"
 msgstr "XRandR"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:225
+#: ../plugins/xrandr/msd-xrandr-manager.c:225
 msgid "Could not switch the monitor configuration"
 msgstr "Αδυναμία αλλαγής των ρυθμίσεων της οθόνης"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:249
+#: ../plugins/xrandr/msd-xrandr-manager.c:249
 msgid "Could not restore the display's configuration"
 msgstr "Αδυναμία επαναφοράς των ρυθμίσεων της οθόνης"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:274
+#: ../plugins/xrandr/msd-xrandr-manager.c:274
 msgid "Could not restore the display's configuration from a backup"
 msgstr "Αδυναμία επαναφοράς των ρυθμίσεων της οθόνης από αντίγραφο ασφαλείας"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:295
+#: ../plugins/xrandr/msd-xrandr-manager.c:295
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural "The display will be reset to its previous configuration in %d seconds"
 msgstr[0] "Οι προηγούμενες ρυθμίσεις της οθόνης θα επαναφερθούν σε %d δευτερόλεπτο"
 msgstr[1] "Οι προηγούμενες ρυθμίσεις της οθόνης θα επαναφερθούν σε %d δευτερόλεπτα"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:344
+#: ../plugins/xrandr/msd-xrandr-manager.c:344
 msgid "Does the display look OK?"
 msgstr "Είναι ικανοποιητική η εμφάνιση της οθόνης;"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:350
+#: ../plugins/xrandr/msd-xrandr-manager.c:350
 msgid "_Restore Previous Configuration"
 msgstr "Επαναφο_ρά προηγούμενων ρυθμίσεων"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:351
+#: ../plugins/xrandr/msd-xrandr-manager.c:351
 msgid "_Keep This Configuration"
 msgstr "_Διατήρηση αυτών των ρυθμίσεων"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:432
+#: ../plugins/xrandr/msd-xrandr-manager.c:432
 msgid "The selected configuration for displays could not be applied"
 msgstr "Αδυναμία εφαρμογής των επιλεγμένων ρυθμίσεων στις οθόνες"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:970
+#: ../plugins/xrandr/msd-xrandr-manager.c:970
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "Αδυναμία ανανέωσης των πληροφοριών οθόνης: %s"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:973
+#: ../plugins/xrandr/msd-xrandr-manager.c:973
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Γίνεται παρόλα αυτά προσπάθεια αλλαγής των ρυθμίσεων της οθόνης."
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1703
+#: ../plugins/xrandr/msd-xrandr-manager.c:1703
 #| msgid "<i>Rotation not supported</i>"
 msgid "Rotation not supported"
 msgstr "Η περιστροφή δεν υποστηρίζεται"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1759
+#: ../plugins/xrandr/msd-xrandr-manager.c:1759
 msgid "Could not save monitor configuration"
 msgstr "Αδυναμία αποθήκευσης των ρυθμίσεων της οθόνης"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1777
+#: ../plugins/xrandr/msd-xrandr-manager.c:1777
 msgid "Normal"
 msgstr "Κανονική"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1778
+#: ../plugins/xrandr/msd-xrandr-manager.c:1778
 msgid "Left"
 msgstr "Αριστερά"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1779
+#: ../plugins/xrandr/msd-xrandr-manager.c:1779
 msgid "Right"
 msgstr "Δεξιά"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1780
+#: ../plugins/xrandr/msd-xrandr-manager.c:1780
 msgid "Upside Down"
 msgstr "Αντιστροφή"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1900
+#: ../plugins/xrandr/msd-xrandr-manager.c:1900
 #| msgid "_Configure Display Settings …"
 msgid "_Configure Display Settings…"
 msgstr "_Ρύθμιση οθόνης…"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1941
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Configure display settings"
 msgstr "Ρύθμιση οθόνης"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:2001
+#: ../plugins/xrandr/msd-xrandr-manager.c:2001
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Αδυναμία εφαρμογής των αποθηκευμένων ρυθμίσεων για τις οθόνες"
 
-#: ../plugins/xrdb/gsd-xrdb-manager.c:255
-#: ../plugins/xrdb/gsd-xrdb-manager.c:324
+#: ../plugins/xrdb/msd-xrdb-manager.c:255
+#: ../plugins/xrdb/msd-xrdb-manager.c:324
 msgid "Cannot determine user's home directory"
 msgstr "Δεν είναι δυνατός ο εντοπισμός του αρχικού καταλόγου χρήστη"
 
@@ -1224,7 +1224,7 @@ msgstr "Διαχείριση της βάσης δεδομένων πόρων X"
 msgid "X Resource Database"
 msgstr "Βάση δεδομένων πόρων X"
 
-#: ../plugins/xsettings/gsd-xsettings-manager.c:596
+#: ../plugins/xsettings/msd-xsettings-manager.c:596
 #, c-format
 msgid "MateConf key %s set to type %s but its expected type was %s\n"
 msgstr "Το κλειδί MateConf %s ορίστηκε σε τύπο %s ενώ ο αναμενόμενος τύπος ήταν %s\n"
@@ -1237,96 +1237,96 @@ msgstr "Διαχείριση ρυθμίσεων X"
 msgid "X Settings"
 msgstr "Ρυθμίσεις X"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:167
+#: ../plugins/smartcard/msd-smartcard-manager.c:167
 msgid "Module Path"
 msgstr "Διαδρομή αρθρώματος"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:168
+#: ../plugins/smartcard/msd-smartcard-manager.c:168
 msgid "path to smartcard PKCS #11 driver"
 msgstr "διαδρομή για τον οδηγό έξυπνης κάρτας PKCS #11"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:504
+#: ../plugins/smartcard/msd-smartcard-manager.c:504
 msgid "received error or hang up from event source"
 msgstr "ελήφθη σφάλμα ή αποσύνδεση από την πηγή του γεγονότος"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:593
+#: ../plugins/smartcard/msd-smartcard-manager.c:593
 #, c-format
 msgid "NSS security system could not be initialized"
 msgstr "Αδυναμία αρχικοποίησης του συστήματος ασφαλείας NSS"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:662
+#: ../plugins/smartcard/msd-smartcard-manager.c:662
 #, c-format
 msgid "no suitable smartcard driver could be found"
 msgstr "δεν βρέθηκε κατάλληλος οδηγός έξυπνης κάρτας"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:682
+#: ../plugins/smartcard/msd-smartcard-manager.c:682
 #, c-format
 msgid "smartcard driver '%s' could not be loaded"
 msgstr "αδυναμία φόρτωσης του οδηγού έξυπνης κάρτας «%s»"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:771
+#: ../plugins/smartcard/msd-smartcard-manager.c:771
 #, c-format
 msgid "could not watch for incoming card events - %s"
 msgstr "αδυναμία παρακολούθησης εισερχομένων γεγονότων κάρτας - %s"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:1124
+#: ../plugins/smartcard/msd-smartcard-manager.c:1124
 #, c-format
 msgid "encountered unexpected error while waiting for smartcard events"
 msgstr "συνέβη μη αναμενόμενο σφάλμα κατά την αναμονή γεγονότων έξυπνης κάρτας"
 
-#: ../plugins/smartcard/gsd-smartcard.c:154
+#: ../plugins/smartcard/msd-smartcard.c:154
 msgid "Slot ID"
 msgstr "ID υποδοχής κάρτας"
 
-#: ../plugins/smartcard/gsd-smartcard.c:155
+#: ../plugins/smartcard/msd-smartcard.c:155
 msgid "The slot the card is in"
 msgstr "Η υποδοχή στην οποία βρίσκεται η κάρτα"
 
-#: ../plugins/smartcard/gsd-smartcard.c:161
+#: ../plugins/smartcard/msd-smartcard.c:161
 #| msgid "Slow keys"
 msgid "Slot Series"
 msgstr "Σειρά υποδοχής"
 
-#: ../plugins/smartcard/gsd-smartcard.c:162
+#: ../plugins/smartcard/msd-smartcard.c:162
 msgid "per-slot card identifier"
 msgstr "ταυτοποιητής κάρτας ανά υποδοχή"
 
-#: ../plugins/smartcard/gsd-smartcard.c:168
-#: ../plugins/smartcard/gsd-smartcard.c:169
+#: ../plugins/smartcard/msd-smartcard.c:168
+#: ../plugins/smartcard/msd-smartcard.c:169
 #| msgid "filename"
 msgid "name"
 msgstr "όνομα"
 
-#: ../plugins/smartcard/gsd-smartcard.c:173
+#: ../plugins/smartcard/msd-smartcard.c:173
 #| msgid "Mouse"
 msgid "Module"
 msgstr "Άρθρωμα"
 
-#: ../plugins/smartcard/gsd-smartcard.c:174
+#: ../plugins/smartcard/msd-smartcard.c:174
 msgid "smartcard driver"
 msgstr "οδηγός έξυπνης κάρτας"
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:1
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:1
 msgid "Change system time"
 msgstr "Αλλαγή ώρας συστήματος"
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:2
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:2
 msgid "Change system time zone"
 msgstr "Αλλαγή χρονικής ζώνης συστήματος"
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:3
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:3
 msgid "Configure hardware clock"
 msgstr "Διαμόρφωση ρολογιού υπολογιστή"
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:4
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:4
 msgid "Privileges are required to change the system time zone."
 msgstr "Απαιτούνται προνόμια διαχειριστή για να αλλάξει η χρονική ζώνη του συστήματος."
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:5
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:5
 msgid "Privileges are required to change the system time."
 msgstr "Απαιτούνται προνόμια διαχειριστή για αλλαγή της ώρας του συστήματος."
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:6
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:6
 msgid "Privileges are required to configure the hardware clock."
 msgstr "Απαιτούνται προνόμια διαχειριστή για διαμόρφωση του ρολογιού του υπολογιστή."
 

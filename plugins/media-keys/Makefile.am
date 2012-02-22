@@ -7,9 +7,9 @@ SUBDIRS = cut-n-paste
 plugin_LTLIBRARIES = libmedia-keys.la
 
 BUILT_SOURCES = 			\
-	gsd-media-keys-manager-glue.h	\
-	gsd-marshal.h			\
-	gsd-marshal.c			\
+	msd-media-keys-manager-glue.h	\
+	msd-marshal.h			\
+	msd-marshal.c			\
 	$(NULL)
 
 ICON_FILES = 			\
@@ -55,24 +55,24 @@ uninstall-local:
 	rm -f $(DESTDIR)$(icondir)/32x32/$(context)/touchpad-disabled.png
 	rm -f $(DESTDIR)$(icondir)/scalable/$(context)/touchpad-disabled.svg
 
-gsd-media-keys-manager-glue.h: gsd-media-keys-manager.xml Makefile
-	dbus-binding-tool --prefix=gsd_media_keys_manager --mode=glib-server $< > xgen-$(@F) \
+msd-media-keys-manager-glue.h: msd-media-keys-manager.xml Makefile
+	dbus-binding-tool --prefix=msd_media_keys_manager --mode=glib-server $< > xgen-$(@F) \
 	&& ( cmp -s xgen-$(@F) $@ || cp xgen-$(@F) $@ ) \
 	&& rm -f xgen-$(@F)
 
-gsd-marshal.c: gsd-marshal.list
-	$(GLIB_GENMARSHAL) --prefix=gsd_marshal $< --header --body --internal > $@
+msd-marshal.c: msd-marshal.list
+	$(GLIB_GENMARSHAL) --prefix=msd_marshal $< --header --body --internal > $@
 
-gsd-marshal.h: gsd-marshal.list
-	$(GLIB_GENMARSHAL) --prefix=gsd_marshal $< --header --internal > $@
+msd-marshal.h: msd-marshal.list
+	$(GLIB_GENMARSHAL) --prefix=msd_marshal $< --header --internal > $@
 
 libmedia_keys_la_SOURCES = 		\
-	gsd-media-keys-plugin.h		\
-	gsd-media-keys-plugin.c		\
-	gsd-media-keys-manager.h	\
-	gsd-media-keys-manager.c	\
-	gsd-media-keys-window.h		\
-	gsd-media-keys-window.c		\
+	msd-media-keys-plugin.h		\
+	msd-media-keys-plugin.c		\
+	msd-media-keys-manager.h	\
+	msd-media-keys-manager.c	\
+	msd-media-keys-window.h		\
+	msd-media-keys-window.c		\
 	acme.h				\
 	$(BUILT_SOURCES)		\
 	$(NULL)
@@ -91,7 +91,7 @@ libmedia_keys_la_CFLAGS = \
 	$(AM_CFLAGS)
 
 libmedia_keys_la_LDFLAGS = 		\
-	$(GSD_PLUGIN_LDFLAGS)
+	$(MSD_PLUGIN_LDFLAGS)
 
 libmedia_keys_la_LIBADD  = 		\
 	$(top_builddir)/plugins/common/libcommon.la			\
@@ -111,8 +111,8 @@ noinst_PROGRAMS =				\
 	$(NULL)
 
 test_media_window_SOURCES =			\
-	gsd-media-keys-window.c			\
-	gsd-media-keys-window.h			\
+	msd-media-keys-window.c			\
+	msd-media-keys-window.h			\
 	test-media-window.c			\
 	$(NULL)
 
@@ -139,10 +139,10 @@ test_media_window_LDADD = \
 	-lm
 
 test_media_keys_SOURCES =			\
-	gsd-media-keys-manager.c		\
-	gsd-media-keys-manager.h		\
-	gsd-media-keys-window.h			\
-	gsd-media-keys-window.c			\
+	msd-media-keys-manager.c		\
+	msd-media-keys-manager.h		\
+	msd-media-keys-window.h			\
+	msd-media-keys-window.c			\
 	test-media-keys.c			\
 	$(BUILT_SOURCES)			\
 	$(NULL)
@@ -161,7 +161,7 @@ test_media_keys_CFLAGS = \
 	$(AM_CFLAGS)
 
 test_media_keys_LDADD = \
-	$(top_builddir)/mate-settings-daemon/libgsd-profile.la		\
+	$(top_builddir)/mate-settings-daemon/libmsd-profile.la		\
 	$(top_builddir)/plugins/common/libcommon.la			\
 	$(SETTINGS_DAEMON_LIBS)			\
 	$(SETTINGS_PLUGIN_LIBS)			\
@@ -179,8 +179,8 @@ gtkbuilder_DATA =	\
 DIST_SUBDIRS = cut-n-paste
 
 EXTRA_DIST = 				\
-	gsd-media-keys-manager.xml	\
-	gsd-marshal.list		\
+	msd-media-keys-manager.xml	\
+	msd-marshal.list		\
 	$(plugin_in_files)		\
 	$(gtkbuilder_DATA)		\
 	$(pixmaps_DATA)			\
@@ -195,4 +195,4 @@ CLEANFILES = 			\
 DISTCLEANFILES =		\
 	$(plugin_DATA)
 
-@GSD_INTLTOOL_PLUGIN_RULE@
+@MSD_INTLTOOL_PLUGIN_RULE@

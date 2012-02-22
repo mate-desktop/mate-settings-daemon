@@ -1,16 +1,16 @@
 plugin_LTLIBRARIES = libhousekeeping.la
 
 libhousekeeping_la_SOURCES = 		\
-	gsd-ldsm-dialog.c	\
-	gsd-ldsm-dialog.h	\
-	gsd-ldsm-trash-empty.c	\
-	gsd-ldsm-trash-empty.h	\
-	gsd-disk-space.c		\
-	gsd-disk-space.h		\
-	gsd-housekeeping-manager.c	\
-	gsd-housekeeping-manager.h	\
-	gsd-housekeeping-plugin.c	\
-	gsd-housekeeping-plugin.h
+	msd-ldsm-dialog.c	\
+	msd-ldsm-dialog.h	\
+	msd-ldsm-trash-empty.c	\
+	msd-ldsm-trash-empty.h	\
+	msd-disk-space.c		\
+	msd-disk-space.h		\
+	msd-housekeeping-manager.c	\
+	msd-housekeeping-manager.h	\
+	msd-housekeeping-plugin.c	\
+	msd-housekeeping-plugin.h
 
 libhousekeeping_la_CPPFLAGS = 					\
 	-I$(top_srcdir)/mate-settings-daemon			\
@@ -23,7 +23,7 @@ libhousekeeping_la_CFLAGS = 		\
 	$(LIBMATENOTIFY_CFLAGS)		\
 	$(AM_CFLAGS)
 
-libhousekeeping_la_LDFLAGS = $(GSD_PLUGIN_LDFLAGS)
+libhousekeeping_la_LDFLAGS = $(MSD_PLUGIN_LDFLAGS)
 
 libhousekeeping_la_LIBADD = $(SETTINGS_PLUGIN_LIBS) $(GIOUNIX_LIBS) $(LIBMATENOTIFY_LIBS)
 
@@ -37,4 +37,4 @@ CLEANFILES = $(plugin_DATA)
 
 DISTCLEANFILES = (plugin_DATA)
 
-@GSD_INTLTOOL_PLUGIN_RULE@
+@MSD_INTLTOOL_PLUGIN_RULE@
