@@ -27,18 +27,18 @@
  *
  */
 
-/* GsdOsdWindow is an "on-screen-display" window (OSD).  It is the cute,
+/* MsdOsdWindow is an "on-screen-display" window (OSD).  It is the cute,
  * semi-transparent, curved popup that appears when you press a hotkey global to
  * the desktop, such as to change the volume, switch your monitor's parameters,
  * etc.
  *
- * You can create a GsdOsdWindow and use it as a normal GtkWindow.  It will
+ * You can create a MsdOsdWindow and use it as a normal GtkWindow.  It will
  * automatically center itself, figure out if it needs to be composited, etc.
  * Just pack your widgets in it, sit back, and enjoy the ride.
  */
 
-#ifndef GSD_OSD_WINDOW_H
-#define GSD_OSD_WINDOW_H
+#ifndef MSD_OSD_WINDOW_H
+#define MSD_OSD_WINDOW_H
 
 #include <glib-object.h>
 #include <gtk/gtk.h>
@@ -48,39 +48,39 @@ extern "C" {
 #endif
 
 /* Alpha value to be used for foreground objects drawn in an OSD window */
-#define GSD_OSD_WINDOW_FG_ALPHA 1.0
+#define MSD_OSD_WINDOW_FG_ALPHA 1.0
 
-#define GSD_TYPE_OSD_WINDOW            (gsd_osd_window_get_type ())
-#define GSD_OSD_WINDOW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj),  GSD_TYPE_OSD_WINDOW, GsdOsdWindow))
-#define GSD_OSD_WINDOW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),   GSD_TYPE_OSD_WINDOW, GsdOsdWindowClass))
-#define GSD_IS_OSD_WINDOW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj),  GSD_TYPE_OSD_WINDOW))
-#define GSD_IS_OSD_WINDOW_CLASS(klass) (G_TYPE_INSTANCE_GET_CLASS ((klass), GSD_TYPE_OSD_WINDOW))
-#define GSD_OSD_WINDOW_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), GSD_TYPE_OSD_WINDOW, GsdOsdWindowClass))
+#define MSD_TYPE_OSD_WINDOW            (msd_osd_window_get_type ())
+#define MSD_OSD_WINDOW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj),  MSD_TYPE_OSD_WINDOW, MsdOsdWindow))
+#define MSD_OSD_WINDOW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),   MSD_TYPE_OSD_WINDOW, MsdOsdWindowClass))
+#define MSD_IS_OSD_WINDOW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj),  MSD_TYPE_OSD_WINDOW))
+#define MSD_IS_OSD_WINDOW_CLASS(klass) (G_TYPE_INSTANCE_GET_CLASS ((klass), MSD_TYPE_OSD_WINDOW))
+#define MSD_OSD_WINDOW_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), MSD_TYPE_OSD_WINDOW, MsdOsdWindowClass))
 
-typedef struct GsdOsdWindow                   GsdOsdWindow;
-typedef struct GsdOsdWindowClass              GsdOsdWindowClass;
-typedef struct GsdOsdWindowPrivate            GsdOsdWindowPrivate;
+typedef struct MsdOsdWindow                   MsdOsdWindow;
+typedef struct MsdOsdWindowClass              MsdOsdWindowClass;
+typedef struct MsdOsdWindowPrivate            MsdOsdWindowPrivate;
 
-struct GsdOsdWindow {
+struct MsdOsdWindow {
         GtkWindow                   parent;
 
-        GsdOsdWindowPrivate  *priv;
+        MsdOsdWindowPrivate  *priv;
 };
 
-struct GsdOsdWindowClass {
+struct MsdOsdWindowClass {
         GtkWindowClass parent_class;
 
-        void (* expose_when_composited) (GsdOsdWindow *window, cairo_t *cr);
+        void (* expose_when_composited) (MsdOsdWindow *window, cairo_t *cr);
 };
 
-GType                 gsd_osd_window_get_type          (void);
+GType                 msd_osd_window_get_type          (void);
 
-GtkWidget *           gsd_osd_window_new               (void);
-gboolean              gsd_osd_window_is_composited     (GsdOsdWindow      *window);
-gboolean              gsd_osd_window_is_valid          (GsdOsdWindow      *window);
-void                  gsd_osd_window_update_and_hide   (GsdOsdWindow      *window);
+GtkWidget *           msd_osd_window_new               (void);
+gboolean              msd_osd_window_is_composited     (MsdOsdWindow      *window);
+gboolean              msd_osd_window_is_valid          (MsdOsdWindow      *window);
+void                  msd_osd_window_update_and_hide   (MsdOsdWindow      *window);
 
-void                  gsd_osd_window_draw_rounded_rectangle (cairo_t *cr,
+void                  msd_osd_window_draw_rounded_rectangle (cairo_t *cr,
                                                              gdouble  aspect,
                                                              gdouble  x,
                                                              gdouble  y,
@@ -88,7 +88,7 @@ void                  gsd_osd_window_draw_rounded_rectangle (cairo_t *cr,
                                                              gdouble  width,
                                                              gdouble  height);
 
-void                  gsd_osd_window_color_reverse          (const GdkColor *a,
+void                  msd_osd_window_color_reverse          (const GdkColor *a,
                                                              GdkColor       *b);
 
 #ifdef __cplusplus

@@ -24,38 +24,38 @@
 #include <gmodule.h>
 
 #include "mate-settings-plugin.h"
-#include "gsd-xrandr-plugin.h"
-#include "gsd-xrandr-manager.h"
+#include "msd-xrandr-plugin.h"
+#include "msd-xrandr-manager.h"
 
-struct GsdXrandrPluginPrivate {
-        GsdXrandrManager *manager;
+struct MsdXrandrPluginPrivate {
+        MsdXrandrManager *manager;
 };
 
-#define GSD_XRANDR_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), GSD_TYPE_XRANDR_PLUGIN, GsdXrandrPluginPrivate))
+#define MSD_XRANDR_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), MSD_TYPE_XRANDR_PLUGIN, MsdXrandrPluginPrivate))
 
-MATE_SETTINGS_PLUGIN_REGISTER (GsdXrandrPlugin, gsd_xrandr_plugin)
+MATE_SETTINGS_PLUGIN_REGISTER (MsdXrandrPlugin, msd_xrandr_plugin)
 
 static void
-gsd_xrandr_plugin_init (GsdXrandrPlugin *plugin)
+msd_xrandr_plugin_init (MsdXrandrPlugin *plugin)
 {
-        plugin->priv = GSD_XRANDR_PLUGIN_GET_PRIVATE (plugin);
+        plugin->priv = MSD_XRANDR_PLUGIN_GET_PRIVATE (plugin);
 
-        g_debug ("GsdXrandrPlugin initializing");
+        g_debug ("MsdXrandrPlugin initializing");
 
-        plugin->priv->manager = gsd_xrandr_manager_new ();
+        plugin->priv->manager = msd_xrandr_manager_new ();
 }
 
 static void
-gsd_xrandr_plugin_finalize (GObject *object)
+msd_xrandr_plugin_finalize (GObject *object)
 {
-        GsdXrandrPlugin *plugin;
+        MsdXrandrPlugin *plugin;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GSD_IS_XRANDR_PLUGIN (object));
+        g_return_if_fail (MSD_IS_XRANDR_PLUGIN (object));
 
-        g_debug ("GsdXrandrPlugin finalizing");
+        g_debug ("MsdXrandrPlugin finalizing");
 
-        plugin = GSD_XRANDR_PLUGIN (object);
+        plugin = MSD_XRANDR_PLUGIN (object);
 
         g_return_if_fail (plugin->priv != NULL);
 
@@ -63,7 +63,7 @@ gsd_xrandr_plugin_finalize (GObject *object)
                 g_object_unref (plugin->priv->manager);
         }
 
-        G_OBJECT_CLASS (gsd_xrandr_plugin_parent_class)->finalize (object);
+        G_OBJECT_CLASS (msd_xrandr_plugin_parent_class)->finalize (object);
 }
 
 static void
@@ -75,7 +75,7 @@ impl_activate (MateSettingsPlugin *plugin)
         g_debug ("Activating xrandr plugin");
 
         error = NULL;
-        res = gsd_xrandr_manager_start (GSD_XRANDR_PLUGIN (plugin)->priv->manager, &error);
+        res = msd_xrandr_manager_start (MSD_XRANDR_PLUGIN (plugin)->priv->manager, &error);
         if (! res) {
                 g_warning ("Unable to start xrandr manager: %s", error->message);
                 g_error_free (error);
@@ -86,19 +86,19 @@ static void
 impl_deactivate (MateSettingsPlugin *plugin)
 {
         g_debug ("Deactivating xrandr plugin");
-        gsd_xrandr_manager_stop (GSD_XRANDR_PLUGIN (plugin)->priv->manager);
+        msd_xrandr_manager_stop (MSD_XRANDR_PLUGIN (plugin)->priv->manager);
 }
 
 static void
-gsd_xrandr_plugin_class_init (GsdXrandrPluginClass *klass)
+msd_xrandr_plugin_class_init (MsdXrandrPluginClass *klass)
 {
         GObjectClass           *object_class = G_OBJECT_CLASS (klass);
         MateSettingsPluginClass *plugin_class = MATE_SETTINGS_PLUGIN_CLASS (klass);
 
-        object_class->finalize = gsd_xrandr_plugin_finalize;
+        object_class->finalize = msd_xrandr_plugin_finalize;
 
         plugin_class->activate = impl_activate;
         plugin_class->deactivate = impl_deactivate;
 
-        g_type_class_add_private (klass, sizeof (GsdXrandrPluginPrivate));
+        g_type_class_add_private (klass, sizeof (MsdXrandrPluginPrivate));
 }

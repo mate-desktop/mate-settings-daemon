@@ -27,9 +27,9 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
-#include "gsd-media-keys-manager.h"
+#include "msd-media-keys-manager.h"
 
-static GsdMediaKeysManager *manager = NULL;
+static MsdMediaKeysManager *manager = NULL;
 
 int
 main (int    argc,
@@ -53,10 +53,10 @@ main (int    argc,
                 exit (1);
         }
 
-        manager = gsd_media_keys_manager_new ();
+        manager = msd_media_keys_manager_new ();
 
         error = NULL;
-        res = gsd_media_keys_manager_start (manager, &error);
+        res = msd_media_keys_manager_start (manager, &error);
 
         gtk_main ();
 

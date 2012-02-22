@@ -40,12 +40,12 @@
 #include <pulse/pulseaudio.h>
 #endif
 
-#include "gsd-sound-manager.h"
+#include "msd-sound-manager.h"
 #include "mate-settings-profile.h"
 
-#define GSD_SOUND_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSD_TYPE_SOUND_MANAGER, GsdSoundManagerPrivate))
+#define MSD_SOUND_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_SOUND_MANAGER, MsdSoundManagerPrivate))
 
-struct GsdSoundManagerPrivate
+struct MsdSoundManagerPrivate
 {
         guint mateconf_notify;
         GList* monitors;
@@ -54,11 +54,11 @@ struct GsdSoundManagerPrivate
 
 #define MATECONF_SOUND_DIR "/desktop/mate/sound"
 
-static void gsd_sound_manager_class_init (GsdSoundManagerClass *klass);
-static void gsd_sound_manager_init (GsdSoundManager *sound_manager);
-static void gsd_sound_manager_finalize (GObject *object);
+static void msd_sound_manager_class_init (MsdSoundManagerClass *klass);
+static void msd_sound_manager_init (MsdSoundManager *sound_manager);
+static void msd_sound_manager_finalize (GObject *object);
 
-G_DEFINE_TYPE (GsdSoundManager, gsd_sound_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE (MsdSoundManager, msd_sound_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -185,7 +185,7 @@ fail:
 }
 
 static gboolean
-flush_cb (GsdSoundManager *manager)
+flush_cb (MsdSoundManager *manager)
 {
         flush_cache ();
         manager->priv->timeout = 0;
@@ -193,7 +193,7 @@ flush_cb (GsdSoundManager *manager)
 }
 
 static void
-trigger_flush (GsdSoundManager *manager)
+trigger_flush (MsdSoundManager *manager)
 {
 
         if (manager->priv->timeout)
@@ -208,13 +208,13 @@ static void
 mateconf_client_notify_cb (MateConfClient *client,
                         guint cnxn_id,
                         MateConfEntry *entry,
-                        GsdSoundManager *manager)
+                        MsdSoundManager *manager)
 {
         trigger_flush (manager);
 }
 
 static gboolean
-register_config_callback (GsdSoundManager *manager, GError **error)
+register_config_callback (MsdSoundManager *manager, GError **error)
 {
         MateConfClient *client;
         gboolean succ;
@@ -239,14 +239,14 @@ file_monitor_changed_cb (GFileMonitor *monitor,
                          GFile *file,
                          GFile *other_file,
                          GFileMonitorEvent event,
-                         GsdSoundManager *manager)
+                         MsdSoundManager *manager)
 {
         g_debug ("Theme dir changed");
         trigger_flush (manager);
 }
 
 static gboolean
-register_directory_callback (GsdSoundManager *manager,
+register_directory_callback (MsdSoundManager *manager,
                              const char *path,
                              GError **error)
 {
@@ -276,7 +276,7 @@ register_directory_callback (GsdSoundManager *manager,
 #endif
 
 gboolean
-gsd_sound_manager_start (GsdSoundManager *manager,
+msd_sound_manager_start (MsdSoundManager *manager,
                          GError **error)
 {
 
@@ -326,7 +326,7 @@ gsd_sound_manager_start (GsdSoundManager *manager,
 }
 
 void
-gsd_sound_manager_stop (GsdSoundManager *manager)
+msd_sound_manager_stop (MsdSoundManager *manager)
 {
         g_debug ("Stopping sound manager");
 
@@ -356,17 +356,17 @@ gsd_sound_manager_stop (GsdSoundManager *manager)
 }
 
 static GObject *
-gsd_sound_manager_constructor (
+msd_sound_manager_constructor (
                 GType type,
                 guint n_construct_properties,
                 GObjectConstructParam *construct_properties)
 {
-        GsdSoundManager *m;
-        GsdSoundManagerClass *klass;
+        MsdSoundManager *m;
+        MsdSoundManagerClass *klass;
 
-        klass = GSD_SOUND_MANAGER_CLASS (g_type_class_peek (GSD_TYPE_SOUND_MANAGER));
+        klass = MSD_SOUND_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_SOUND_MANAGER));
 
-        m = GSD_SOUND_MANAGER (G_OBJECT_CLASS (gsd_sound_manager_parent_class)->constructor (
+        m = MSD_SOUND_MANAGER (G_OBJECT_CLASS (msd_sound_manager_parent_class)->constructor (
                                                            type,
                                                            n_construct_properties,
                                                            construct_properties));
@@ -375,59 +375,59 @@ gsd_sound_manager_constructor (
 }
 
 static void
-gsd_sound_manager_dispose (GObject *object)
+msd_sound_manager_dispose (GObject *object)
 {
-        GsdSoundManager *manager;
+        MsdSoundManager *manager;
 
-        manager = GSD_SOUND_MANAGER (object);
+        manager = MSD_SOUND_MANAGER (object);
 
-        gsd_sound_manager_stop (manager);
+        msd_sound_manager_stop (manager);
 
-        G_OBJECT_CLASS (gsd_sound_manager_parent_class)->dispose (object);
+        G_OBJECT_CLASS (msd_sound_manager_parent_class)->dispose (object);
 }
 
 static void
-gsd_sound_manager_class_init (GsdSoundManagerClass *klass)
+msd_sound_manager_class_init (MsdSoundManagerClass *klass)
 {
         GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->constructor = gsd_sound_manager_constructor;
-        object_class->dispose = gsd_sound_manager_dispose;
-        object_class->finalize = gsd_sound_manager_finalize;
+        object_class->constructor = msd_sound_manager_constructor;
+        object_class->dispose = msd_sound_manager_dispose;
+        object_class->finalize = msd_sound_manager_finalize;
 
-        g_type_class_add_private (klass, sizeof (GsdSoundManagerPrivate));
+        g_type_class_add_private (klass, sizeof (MsdSoundManagerPrivate));
 }
 
 static void
-gsd_sound_manager_init (GsdSoundManager *manager)
+msd_sound_manager_init (MsdSoundManager *manager)
 {
-        manager->priv = GSD_SOUND_MANAGER_GET_PRIVATE (manager);
+        manager->priv = MSD_SOUND_MANAGER_GET_PRIVATE (manager);
 }
 
 static void
-gsd_sound_manager_finalize (GObject *object)
+msd_sound_manager_finalize (GObject *object)
 {
-        GsdSoundManager *sound_manager;
+        MsdSoundManager *sound_manager;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GSD_IS_SOUND_MANAGER (object));
+        g_return_if_fail (MSD_IS_SOUND_MANAGER (object));
 
-        sound_manager = GSD_SOUND_MANAGER (object);
+        sound_manager = MSD_SOUND_MANAGER (object);
 
         g_return_if_fail (sound_manager->priv);
 
-        G_OBJECT_CLASS (gsd_sound_manager_parent_class)->finalize (object);
+        G_OBJECT_CLASS (msd_sound_manager_parent_class)->finalize (object);
 }
 
-GsdSoundManager *
-gsd_sound_manager_new (void)
+MsdSoundManager *
+msd_sound_manager_new (void)
 {
         if (manager_object) {
                 g_object_ref (manager_object);
         } else {
-                manager_object = g_object_new (GSD_TYPE_SOUND_MANAGER, NULL);
+                manager_object = g_object_new (MSD_TYPE_SOUND_MANAGER, NULL);
                 g_object_add_weak_pointer (manager_object, (gpointer *) &manager_object);
         }
 
-        return GSD_SOUND_MANAGER (manager_object);
+        return MSD_SOUND_MANAGER (manager_object);
 }

@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef __GSD_BACKGROUND_PLUGIN_H__
-#define __GSD_BACKGROUND_PLUGIN_H__
+#ifndef __MSD_BACKGROUND_PLUGIN_H__
+#define __MSD_BACKGROUND_PLUGIN_H__
 
 #include <glib.h>
 #include <glib-object.h>
@@ -31,27 +31,27 @@
 extern "C" {
 #endif
 
-#define GSD_TYPE_BACKGROUND_PLUGIN                (gsd_background_plugin_get_type ())
-#define GSD_BACKGROUND_PLUGIN(o)                  (G_TYPE_CHECK_INSTANCE_CAST ((o), GSD_TYPE_BACKGROUND_PLUGIN, GsdBackgroundPlugin))
-#define GSD_BACKGROUND_PLUGIN_CLASS(k)            (G_TYPE_CHECK_CLASS_CAST((k), GSD_TYPE_BACKGROUND_PLUGIN, GsdBackgroundPluginClass))
-#define GSD_IS_BACKGROUND_PLUGIN(o)               (G_TYPE_CHECK_INSTANCE_TYPE ((o), GSD_TYPE_BACKGROUND_PLUGIN))
-#define GSD_IS_BACKGROUND_PLUGIN_CLASS(k)         (G_TYPE_CHECK_CLASS_TYPE ((k), GSD_TYPE_BACKGROUND_PLUGIN))
-#define GSD_BACKGROUND_PLUGIN_GET_CLASS(o)        (G_TYPE_INSTANCE_GET_CLASS ((o), GSD_TYPE_BACKGROUND_PLUGIN, GsdBackgroundPluginClass))
+#define MSD_TYPE_BACKGROUND_PLUGIN                (msd_background_plugin_get_type ())
+#define MSD_BACKGROUND_PLUGIN(o)                  (G_TYPE_CHECK_INSTANCE_CAST ((o), MSD_TYPE_BACKGROUND_PLUGIN, MsdBackgroundPlugin))
+#define MSD_BACKGROUND_PLUGIN_CLASS(k)            (G_TYPE_CHECK_CLASS_CAST((k), MSD_TYPE_BACKGROUND_PLUGIN, MsdBackgroundPluginClass))
+#define MSD_IS_BACKGROUND_PLUGIN(o)               (G_TYPE_CHECK_INSTANCE_TYPE ((o), MSD_TYPE_BACKGROUND_PLUGIN))
+#define MSD_IS_BACKGROUND_PLUGIN_CLASS(k)         (G_TYPE_CHECK_CLASS_TYPE ((k), MSD_TYPE_BACKGROUND_PLUGIN))
+#define MSD_BACKGROUND_PLUGIN_GET_CLASS(o)        (G_TYPE_INSTANCE_GET_CLASS ((o), MSD_TYPE_BACKGROUND_PLUGIN, MsdBackgroundPluginClass))
 
-typedef struct GsdBackgroundPluginPrivate GsdBackgroundPluginPrivate;
+typedef struct MsdBackgroundPluginPrivate MsdBackgroundPluginPrivate;
 
 typedef struct
 {
         MateSettingsPlugin    parent;
-        GsdBackgroundPluginPrivate *priv;
-} GsdBackgroundPlugin;
+        MsdBackgroundPluginPrivate *priv;
+} MsdBackgroundPlugin;
 
 typedef struct
 {
         MateSettingsPluginClass parent_class;
-} GsdBackgroundPluginClass;
+} MsdBackgroundPluginClass;
 
-GType   gsd_background_plugin_get_type            (void) G_GNUC_CONST;
+GType   msd_background_plugin_get_type            (void) G_GNUC_CONST;
 
 /* All the plugins must implement this function */
 G_MODULE_EXPORT GType register_mate_settings_plugin (GTypeModule *module);
@@ -60,4 +60,4 @@ G_MODULE_EXPORT GType register_mate_settings_plugin (GTypeModule *module);
 }
 #endif
 
-#endif /* __GSD_BACKGROUND_PLUGIN_H__ */
+#endif /* __MSD_BACKGROUND_PLUGIN_H__ */

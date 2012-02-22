@@ -41,7 +41,7 @@
 #include <mateconf/mateconf-client.h>
 
 #include "mate-settings-profile.h"
-#include "gsd-xsettings-manager.h"
+#include "msd-xsettings-manager.h"
 #include "xsettings-manager.h"
 #ifdef HAVE_FONTCONFIG
 #include "fontconfig-monitor.h"
@@ -100,10 +100,10 @@ struct MateXSettingsManagerPrivate
 #endif /* HAVE_FONTCONFIG */
 };
 
-#define GSD_XSETTINGS_ERROR gsd_xsettings_error_quark ()
+#define MSD_XSETTINGS_ERROR msd_xsettings_error_quark ()
 
 enum {
-        GSD_XSETTINGS_ERROR_INIT
+        MSD_XSETTINGS_ERROR_INIT
 };
 
 static void     mate_xsettings_manager_class_init  (MateXSettingsManagerClass *klass);
@@ -115,9 +115,9 @@ G_DEFINE_TYPE (MateXSettingsManager, mate_xsettings_manager, G_TYPE_OBJECT)
 static gpointer manager_object = NULL;
 
 static GQuark
-gsd_xsettings_error_quark (void)
+msd_xsettings_error_quark (void)
 {
-        return g_quark_from_static_string ("gsd-xsettings-error-quark");
+        return g_quark_from_static_string ("msd-xsettings-error-quark");
 }
 
 static void
@@ -802,8 +802,8 @@ mate_xsettings_manager_start (MateXSettingsManager *manager,
         mate_settings_profile_start (NULL);
 
         if (!setup_xsettings_managers (manager)) {
-                g_set_error (error, GSD_XSETTINGS_ERROR,
-                             GSD_XSETTINGS_ERROR_INIT,
+                g_set_error (error, MSD_XSETTINGS_ERROR,
+                             MSD_XSETTINGS_ERROR_INIT,
                              "Could not initialize xsettings manager.");
                 return FALSE;
         }

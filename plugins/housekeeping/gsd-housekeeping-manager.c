@@ -25,8 +25,8 @@
 #include <string.h>
 
 #include "mate-settings-profile.h"
-#include "gsd-housekeeping-manager.h"
-#include "gsd-disk-space.h"
+#include "msd-housekeeping-manager.h"
+#include "msd-disk-space.h"
 
 
 /* General */
@@ -42,19 +42,19 @@
 #define MATECONF_THUMB_BINDING_DIR "/desktop/mate/thumbnail_cache"
 
 
-struct GsdHousekeepingManagerPrivate {
+struct MsdHousekeepingManagerPrivate {
         guint long_term_cb;
         guint short_term_cb;
         guint mateconf_notify;
 };
 
 
-#define GSD_HOUSEKEEPING_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSD_TYPE_HOUSEKEEPING_MANAGER, GsdHousekeepingManagerPrivate))
+#define MSD_HOUSEKEEPING_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_HOUSEKEEPING_MANAGER, MsdHousekeepingManagerPrivate))
 
-static void     gsd_housekeeping_manager_class_init  (GsdHousekeepingManagerClass *klass);
-static void     gsd_housekeeping_manager_init        (GsdHousekeepingManager      *housekeeping_manager);
+static void     msd_housekeeping_manager_class_init  (MsdHousekeepingManagerClass *klass);
+static void     msd_housekeeping_manager_init        (MsdHousekeepingManager      *housekeeping_manager);
 
-G_DEFINE_TYPE (GsdHousekeepingManager, gsd_housekeeping_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE (MsdHousekeepingManager, msd_housekeeping_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -241,7 +241,7 @@ purge_thumbnail_cache (void)
 
 
 static gboolean
-do_cleanup (GsdHousekeepingManager *manager)
+do_cleanup (MsdHousekeepingManager *manager)
 {
         purge_thumbnail_cache ();
         return TRUE;
@@ -249,7 +249,7 @@ do_cleanup (GsdHousekeepingManager *manager)
 
 
 static gboolean
-do_cleanup_once (GsdHousekeepingManager *manager)
+do_cleanup_once (MsdHousekeepingManager *manager)
 {
         do_cleanup (manager);
         manager->priv->short_term_cb = 0;
@@ -258,7 +258,7 @@ do_cleanup_once (GsdHousekeepingManager *manager)
 
 
 static void
-do_cleanup_soon (GsdHousekeepingManager *manager)
+do_cleanup_soon (MsdHousekeepingManager *manager)
 {
         if (manager->priv->short_term_cb == 0) {
                 g_debug ("housekeeping: will tidy up in 2 minutes");
@@ -273,14 +273,14 @@ static void
 bindings_callback (MateConfClient            *client,
                    guint                   cnxn_id,
                    MateConfEntry             *entry,
-                   GsdHousekeepingManager *manager)
+                   MsdHousekeepingManager *manager)
 {
         do_cleanup_soon (manager);
 }
 
 
 static guint
-register_config_callback (GsdHousekeepingManager *manager,
+register_config_callback (MsdHousekeepingManager *manager,
                           const char             *path,
                           MateConfClientNotifyFunc   func)
 {
@@ -297,13 +297,13 @@ register_config_callback (GsdHousekeepingManager *manager,
 
 
 gboolean
-gsd_housekeeping_manager_start (GsdHousekeepingManager *manager,
+msd_housekeeping_manager_start (MsdHousekeepingManager *manager,
                                 GError                **error)
 {
         g_debug ("Starting housekeeping manager");
         mate_settings_profile_start (NULL);
 
-        gsd_ldsm_setup (FALSE);
+        msd_ldsm_setup (FALSE);
 
         manager->priv->mateconf_notify = register_config_callback (manager,
                                       MATECONF_THUMB_BINDING_DIR,
@@ -323,9 +323,9 @@ gsd_housekeeping_manager_start (GsdHousekeepingManager *manager,
 
 
 void
-gsd_housekeeping_manager_stop (GsdHousekeepingManager *manager)
+msd_housekeeping_manager_stop (MsdHousekeepingManager *manager)
 {
-        GsdHousekeepingManagerPrivate *p = manager->priv;
+        MsdHousekeepingManagerPrivate *p = manager->priv;
 
         g_debug ("Stopping housekeeping manager");
 
@@ -356,34 +356,34 @@ gsd_housekeeping_manager_stop (GsdHousekeepingManager *manager)
                 }
         }
 
-        gsd_ldsm_clean ();
+        msd_ldsm_clean ();
 }
 
 
 static void
-gsd_housekeeping_manager_class_init (GsdHousekeepingManagerClass *klass)
+msd_housekeeping_manager_class_init (MsdHousekeepingManagerClass *klass)
 {
-        g_type_class_add_private (klass, sizeof (GsdHousekeepingManagerPrivate));
+        g_type_class_add_private (klass, sizeof (MsdHousekeepingManagerPrivate));
 }
 
 
 static void
-gsd_housekeeping_manager_init (GsdHousekeepingManager *manager)
+msd_housekeeping_manager_init (MsdHousekeepingManager *manager)
 {
-        manager->priv = GSD_HOUSEKEEPING_MANAGER_GET_PRIVATE (manager);
+        manager->priv = MSD_HOUSEKEEPING_MANAGER_GET_PRIVATE (manager);
 }
 
 
-GsdHousekeepingManager *
-gsd_housekeeping_manager_new (void)
+MsdHousekeepingManager *
+msd_housekeeping_manager_new (void)
 {
         if (manager_object != NULL) {
                 g_object_ref (manager_object);
         } else {
-                manager_object = g_object_new (GSD_TYPE_HOUSEKEEPING_MANAGER, NULL);
+                manager_object = g_object_new (MSD_TYPE_HOUSEKEEPING_MANAGER, NULL);
                 g_object_add_weak_pointer (manager_object,
                                            (gpointer *) &manager_object);
         }
 
-        return GSD_HOUSEKEEPING_MANAGER (manager_object);
+        return MSD_HOUSEKEEPING_MANAGER (manager_object);
 }

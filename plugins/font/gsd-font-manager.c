@@ -44,13 +44,13 @@
 #include <mateconf/mateconf-client.h>
 
 #include "mate-settings-profile.h"
-#include "gsd-font-manager.h"
+#include "msd-font-manager.h"
 #include "delayed-dialog.h"
 
-static void     gsd_font_manager_class_init  (GsdFontManagerClass *klass);
-static void     gsd_font_manager_init        (GsdFontManager      *font_manager);
+static void     msd_font_manager_class_init  (MsdFontManagerClass *klass);
+static void     msd_font_manager_init        (MsdFontManager      *font_manager);
 
-G_DEFINE_TYPE (GsdFontManager, gsd_font_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE (MsdFontManager, msd_font_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -338,7 +338,7 @@ done:
 }
 
 gboolean
-gsd_font_manager_start (GsdFontManager *manager,
+msd_font_manager_start (MsdFontManager *manager,
                         GError        **error)
 {
         MateConfClient *client;
@@ -359,20 +359,20 @@ gsd_font_manager_start (GsdFontManager *manager,
 }
 
 void
-gsd_font_manager_stop (GsdFontManager *manager)
+msd_font_manager_stop (MsdFontManager *manager)
 {
         g_debug ("Stopping font manager");
 }
 
 static void
-gsd_font_manager_set_property (GObject        *object,
+msd_font_manager_set_property (GObject        *object,
                                guint           prop_id,
                                const GValue   *value,
                                GParamSpec     *pspec)
 {
-        GsdFontManager *self;
+        MsdFontManager *self;
 
-        self = GSD_FONT_MANAGER (object);
+        self = MSD_FONT_MANAGER (object);
 
         switch (prop_id) {
         default:
@@ -382,14 +382,14 @@ gsd_font_manager_set_property (GObject        *object,
 }
 
 static void
-gsd_font_manager_get_property (GObject        *object,
+msd_font_manager_get_property (GObject        *object,
                                guint           prop_id,
                                GValue         *value,
                                GParamSpec     *pspec)
 {
-        GsdFontManager *self;
+        MsdFontManager *self;
 
-        self = GSD_FONT_MANAGER (object);
+        self = MSD_FONT_MANAGER (object);
 
         switch (prop_id) {
         default:
@@ -399,16 +399,16 @@ gsd_font_manager_get_property (GObject        *object,
 }
 
 static GObject *
-gsd_font_manager_constructor (GType                  type,
+msd_font_manager_constructor (GType                  type,
                               guint                  n_construct_properties,
                               GObjectConstructParam *construct_properties)
 {
-        GsdFontManager      *font_manager;
-        GsdFontManagerClass *klass;
+        MsdFontManager      *font_manager;
+        MsdFontManagerClass *klass;
 
-        klass = GSD_FONT_MANAGER_CLASS (g_type_class_peek (GSD_TYPE_FONT_MANAGER));
+        klass = MSD_FONT_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_FONT_MANAGER));
 
-        font_manager = GSD_FONT_MANAGER (G_OBJECT_CLASS (gsd_font_manager_parent_class)->constructor (type,
+        font_manager = MSD_FONT_MANAGER (G_OBJECT_CLASS (msd_font_manager_parent_class)->constructor (type,
                                                                                                       n_construct_properties,
                                                                                                       construct_properties));
 
@@ -416,30 +416,30 @@ gsd_font_manager_constructor (GType                  type,
 }
 
 static void
-gsd_font_manager_class_init (GsdFontManagerClass *klass)
+msd_font_manager_class_init (MsdFontManagerClass *klass)
 {
         GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->get_property = gsd_font_manager_get_property;
-        object_class->set_property = gsd_font_manager_set_property;
-        object_class->constructor = gsd_font_manager_constructor;
+        object_class->get_property = msd_font_manager_get_property;
+        object_class->set_property = msd_font_manager_set_property;
+        object_class->constructor = msd_font_manager_constructor;
 }
 
 static void
-gsd_font_manager_init (GsdFontManager *manager)
+msd_font_manager_init (MsdFontManager *manager)
 {
 }
 
-GsdFontManager *
-gsd_font_manager_new (void)
+MsdFontManager *
+msd_font_manager_new (void)
 {
         if (manager_object != NULL) {
                 g_object_ref (manager_object);
         } else {
-                manager_object = g_object_new (GSD_TYPE_FONT_MANAGER, NULL);
+                manager_object = g_object_new (MSD_TYPE_FONT_MANAGER, NULL);
                 g_object_add_weak_pointer (manager_object,
                                            (gpointer *) &manager_object);
         }
 
-        return GSD_FONT_MANAGER (manager_object);
+        return MSD_FONT_MANAGER (manager_object);
 }

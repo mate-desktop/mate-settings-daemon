@@ -5,10 +5,10 @@ plugin_LTLIBRARIES = \
 	$(NULL)
 
 libxsettings_la_SOURCES = 	\
-	gsd-xsettings-plugin.h	\
-	gsd-xsettings-plugin.c	\
-	gsd-xsettings-manager.h	\
-	gsd-xsettings-manager.c	\
+	msd-xsettings-plugin.h	\
+	msd-xsettings-plugin.c	\
+	msd-xsettings-manager.h	\
+	msd-xsettings-manager.c	\
 	xsettings-common.h	\
 	xsettings-common.c	\
 	xsettings-manager.h	\
@@ -25,7 +25,7 @@ libxsettings_la_CFLAGS = \
 	$(AM_CFLAGS)
 
 libxsettings_la_LDFLAGS = 	\
-	$(GSD_PLUGIN_LDFLAGS)	\
+	$(MSD_PLUGIN_LDFLAGS)	\
 	$(NULL)
 
 libxsettings_la_LIBADD  = 	\
@@ -62,4 +62,4 @@ DISTCLEANFILES =		\
 	$(plugin_DATA)		\
 	$(NULL)
 
-@GSD_INTLTOOL_PLUGIN_RULE@
+@MSD_INTLTOOL_PLUGIN_RULE@

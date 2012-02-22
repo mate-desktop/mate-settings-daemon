@@ -37,14 +37,14 @@
 #include <libmatekbd/matekbd-keyboard-config.h>
 #include <libmatekbd/matekbd-util.h>
 
-#include "gsd-xmodmap.h"
-#include "gsd-keyboard-xkb.h"
+#include "msd-xmodmap.h"
+#include "msd-keyboard-xkb.h"
 #include "delayed-dialog.h"
 #include "mate-settings-profile.h"
 
 #define GTK_RESPONSE_PRINT 2
 
-static GsdKeyboardManager* manager = NULL;
+static MsdKeyboardManager* manager = NULL;
 
 static XklEngine* xkl_engine;
 static XklConfigRegistry* xkl_registry = NULL;
@@ -92,12 +92,12 @@ static const gchar* indicator_off_icon_names[] = {
 	"kbd-capslock-off"
 };
 
-//#define noGSDKX
+//#define noMSDKX
 
-#ifdef GSDKX
+#ifdef MSDKX
 static FILE *logfile;
 
-static void gsd_keyboard_log_appender(const char file[], const char function[], int level, const char format[], va_list args)
+static void msd_keyboard_log_appender(const char file[], const char function[], int level, const char format[], va_list args)
 {
 	time_t now = time (NULL);
 	fprintf (logfile, "[%08ld,%03d,%s:%s/] \t", now,
@@ -150,7 +150,7 @@ activation_error (void)
 						     "mateconftool-2 -R /desktop/mate/peripherals/keyboard/kbd");
 	g_signal_connect (dialog, "response",
 			  G_CALLBACK (gtk_widget_destroy), NULL);
-	gsd_delayed_show_dialog (dialog);
+	msd_delayed_show_dialog (dialog);
 }
 
 static void
@@ -162,7 +162,7 @@ apply_desktop_settings (void)
 	if (!inited_ok)
 		return;
 
-	gsd_keyboard_manager_apply_settings (manager);
+	msd_keyboard_manager_apply_settings (manager);
 	matekbd_desktop_config_load_from_mateconf (&current_config);
 	/* again, probably it would be nice to compare things
 	   before activating them */
@@ -600,7 +600,7 @@ apply_xkb_settings (void)
 }
 
 static void
-gsd_keyboard_xkb_analyze_sysconfig (void)
+msd_keyboard_xkb_analyze_sysconfig (void)
 {
 	MateConfClient *conf_client;
 
@@ -616,7 +616,7 @@ gsd_keyboard_xkb_analyze_sysconfig (void)
 }
 
 static gboolean
-gsd_chk_file_list (void)
+msd_chk_file_list (void)
 {
 	GDir *home_dir;
 	const char *fname;
@@ -684,16 +684,16 @@ gsd_chk_file_list (void)
 }
 
 static void
-gsd_keyboard_xkb_chk_lcl_xmm (void)
+msd_keyboard_xkb_chk_lcl_xmm (void)
 {
-	if (gsd_chk_file_list ()) {
-		gsd_modmap_dialog_call ();
+	if (msd_chk_file_list ()) {
+		msd_modmap_dialog_call ();
 	}
-	gsd_load_modmap_files ();
+	msd_load_modmap_files ();
 }
 
 void
-gsd_keyboard_xkb_set_post_activation_callback (PostActivationCallback fun,
+msd_keyboard_xkb_set_post_activation_callback (PostActivationCallback fun,
 					       void *user_data)
 {
 	pa_callback = fun;
@@ -701,7 +701,7 @@ gsd_keyboard_xkb_set_post_activation_callback (PostActivationCallback fun,
 }
 
 static GdkFilterReturn
-gsd_keyboard_xkb_evt_filter (GdkXEvent * xev, GdkEvent * event)
+msd_keyboard_xkb_evt_filter (GdkXEvent * xev, GdkEvent * event)
 {
 	XEvent *xevent = (XEvent *) xev;
 	xkl_engine_filter_events (xkl_engine, xevent);
@@ -720,14 +720,14 @@ register_config_callback (MateConfClient * client,
 
 /* When new Keyboard is plugged in - reload the settings */
 static void
-gsd_keyboard_new_device (XklEngine * engine)
+msd_keyboard_new_device (XklEngine * engine)
 {
 	apply_desktop_settings ();
 	apply_xkb_settings ();
 }
 
 static void
-gsd_keyboard_update_indicator_icons ()
+msd_keyboard_update_indicator_icons ()
 {
 	Bool state;
 	int new_state, i;
@@ -758,20 +758,20 @@ gsd_keyboard_update_indicator_icons ()
 }
 
 static void
-gsd_keyboard_state_changed (XklEngine * engine, XklEngineStateChange type,
+msd_keyboard_state_changed (XklEngine * engine, XklEngineStateChange type,
 			    gint new_group, gboolean restore)
 {
 	xkl_debug (160,
 		   "State changed: type %d, new group: %d, restore: %d.\n",
 		   type, new_group, restore);
 	if (type == INDICATORS_CHANGED) {
-		gsd_keyboard_update_indicator_icons ();
+		msd_keyboard_update_indicator_icons ();
 	}
 }
 
 void
-gsd_keyboard_xkb_init (MateConfClient * client,
-		       GsdKeyboardManager * kbd_manager)
+msd_keyboard_xkb_init (MateConfClient * client,
+		       MsdKeyboardManager * kbd_manager)
 {
 	int i;
 	Display *display = GDK_DISPLAY_XDISPLAY(gdk_display_get_default());
@@ -792,12 +792,12 @@ gsd_keyboard_xkb_init (MateConfClient * client,
 		    (indicator_off_icon_names[i]);
 	}
 
-	gsd_keyboard_update_indicator_icons ();
+	msd_keyboard_update_indicator_icons ();
 
-#ifdef GSDKX
+#ifdef MSDKX
 	xkl_set_debug_level (200);
-	logfile = fopen ("/tmp/gsdkx.log", "a");
-	xkl_set_log_appender (gsd_keyboard_log_appender);
+	logfile = fopen ("/tmp/msdkx.log", "a");
+	xkl_set_log_appender (msd_keyboard_log_appender);
 #endif
 	manager = kbd_manager;
 	mate_settings_profile_start ("xkl_engine_get_instance");
@@ -813,12 +813,12 @@ gsd_keyboard_xkb_init (MateConfClient * client,
 		matekbd_keyboard_config_init (&current_kbd_config,
 					   client, xkl_engine);
 		xkl_engine_backup_names_prop (xkl_engine);
-		gsd_keyboard_xkb_analyze_sysconfig ();
+		msd_keyboard_xkb_analyze_sysconfig ();
 		mate_settings_profile_start
-		    ("gsd_keyboard_xkb_chk_lcl_xmm");
-		gsd_keyboard_xkb_chk_lcl_xmm ();
+		    ("msd_keyboard_xkb_chk_lcl_xmm");
+		msd_keyboard_xkb_chk_lcl_xmm ();
 		mate_settings_profile_end
-		    ("gsd_keyboard_xkb_chk_lcl_xmm");
+		    ("msd_keyboard_xkb_chk_lcl_xmm");
 
 		notify_desktop =
 		    register_config_callback (client,
@@ -833,16 +833,16 @@ gsd_keyboard_xkb_init (MateConfClient * client,
 					      apply_xkb_settings);
 
 		gdk_window_add_filter (NULL, (GdkFilterFunc)
-				       gsd_keyboard_xkb_evt_filter, NULL);
+				       msd_keyboard_xkb_evt_filter, NULL);
 
 		if (xkl_engine_get_features (xkl_engine) &
 		    XKLF_DEVICE_DISCOVERY)
 			g_signal_connect (xkl_engine, "X-new-device",
 					  G_CALLBACK
-					  (gsd_keyboard_new_device), NULL);
+					  (msd_keyboard_new_device), NULL);
 		g_signal_connect (xkl_engine, "X-state-changed",
 				  G_CALLBACK
-				  (gsd_keyboard_state_changed), NULL);
+				  (msd_keyboard_state_changed), NULL);
 
 		mate_settings_profile_start ("xkl_engine_start_listen");
 		xkl_engine_start_listen (xkl_engine,
@@ -863,7 +863,7 @@ gsd_keyboard_xkb_init (MateConfClient * client,
 }
 
 void
-gsd_keyboard_xkb_shutdown (void)
+msd_keyboard_xkb_shutdown (void)
 {
 	MateConfClient *client;
 	int i;
@@ -888,7 +888,7 @@ gsd_keyboard_xkb_shutdown (void)
 				XKLL_MANAGE_WINDOW_STATES);
 
 	gdk_window_remove_filter (NULL, (GdkFilterFunc)
-				  gsd_keyboard_xkb_evt_filter, NULL);
+				  msd_keyboard_xkb_evt_filter, NULL);
 
 	client = mateconf_client_get_default ();
 

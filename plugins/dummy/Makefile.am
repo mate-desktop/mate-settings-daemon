@@ -2,10 +2,10 @@ plugin_LTLIBRARIES = \
 	libdummy.la
 
 libdummy_la_SOURCES = 		\
-	gsd-dummy-manager.c	\
-	gsd-dummy-manager.h	\
-	gsd-dummy-plugin.c	\
-	gsd-dummy-plugin.h
+	msd-dummy-manager.c	\
+	msd-dummy-manager.h	\
+	msd-dummy-plugin.c	\
+	msd-dummy-plugin.h
 
 libdummy_la_CPPFLAGS = \
 	-I$(top_srcdir)/mate-settings-daemon		\
@@ -17,7 +17,7 @@ libdummy_la_CFLAGS = \
 	$(AM_CFLAGS)
 
 libdummy_la_LDFLAGS = 		\
-	$(GSD_PLUGIN_LDFLAGS)
+	$(MSD_PLUGIN_LDFLAGS)
 
 libdummy_la_LIBADD  = 		\
 	$(SETTINGS_PLUGIN_LIBS)
@@ -36,7 +36,7 @@ CLEANFILES = 			\
 DISTCLEANFILES =		\
 	$(plugin_DATA)
 
-@GSD_INTLTOOL_PLUGIN_RULE@
+@MSD_INTLTOOL_PLUGIN_RULE@
 
 # override to _not_ install the test plugin
 # do not copy into your plugin

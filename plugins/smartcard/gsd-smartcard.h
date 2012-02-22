@@ -17,8 +17,8 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
  * 02111-1307, USA.
  */
-#ifndef GSD_SMARTCARD_H
-#define GSD_SMARTCARD_H
+#ifndef MSD_SMARTCARD_H
+#define MSD_SMARTCARD_H
 
 #include <glib.h>
 #include <glib-object.h>
@@ -28,71 +28,71 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-#define GSD_TYPE_SMARTCARD            (gsd_smartcard_get_type ())
-#define GSD_SMARTCARD(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GSD_TYPE_SMARTCARD, GsdSmartcard))
-#define GSD_SMARTCARD_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), GSD_TYPE_SMARTCARD, GsdSmartcardClass))
-#define GSD_IS_SMARTCARD(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GSD_TYPE_SMARTCARD))
-#define GSD_IS_SMARTCARD_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), GSD_TYPE_SMARTCARD))
-#define GSD_SMARTCARD_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj), GSD_TYPE_SMARTCARD, GsdSmartcardClass))
-#define GSD_SMARTCARD_ERROR           (gsd_smartcard_error_quark ())
-typedef struct _GsdSmartcardClass GsdSmartcardClass;
-typedef struct _GsdSmartcard GsdSmartcard;
-typedef struct _GsdSmartcardPrivate GsdSmartcardPrivate;
-typedef enum _GsdSmartcardError GsdSmartcardError;
-typedef enum _GsdSmartcardState GsdSmartcardState;
+#define MSD_TYPE_SMARTCARD            (msd_smartcard_get_type ())
+#define MSD_SMARTCARD(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), MSD_TYPE_SMARTCARD, MsdSmartcard))
+#define MSD_SMARTCARD_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), MSD_TYPE_SMARTCARD, MsdSmartcardClass))
+#define MSD_IS_SMARTCARD(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), MSD_TYPE_SMARTCARD))
+#define MSD_IS_SMARTCARD_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), MSD_TYPE_SMARTCARD))
+#define MSD_SMARTCARD_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj), MSD_TYPE_SMARTCARD, MsdSmartcardClass))
+#define MSD_SMARTCARD_ERROR           (msd_smartcard_error_quark ())
+typedef struct _MsdSmartcardClass MsdSmartcardClass;
+typedef struct _MsdSmartcard MsdSmartcard;
+typedef struct _MsdSmartcardPrivate MsdSmartcardPrivate;
+typedef enum _MsdSmartcardError MsdSmartcardError;
+typedef enum _MsdSmartcardState MsdSmartcardState;
 
-typedef struct _GsdSmartcardRequest GsdSmartcardRequest;
+typedef struct _MsdSmartcardRequest MsdSmartcardRequest;
 
-struct _GsdSmartcard {
+struct _MsdSmartcard {
     GObject parent;
 
     /*< private > */
-    GsdSmartcardPrivate *priv;
+    MsdSmartcardPrivate *priv;
 };
 
-struct _GsdSmartcardClass {
+struct _MsdSmartcardClass {
     GObjectClass parent_class;
 
-    void (* inserted) (GsdSmartcard *card);
-    void (* removed)  (GsdSmartcard *card);
+    void (* inserted) (MsdSmartcard *card);
+    void (* removed)  (MsdSmartcard *card);
 };
 
-enum _GsdSmartcardError {
-    GSD_SMARTCARD_ERROR_GENERIC = 0,
+enum _MsdSmartcardError {
+    MSD_SMARTCARD_ERROR_GENERIC = 0,
 };
 
-enum _GsdSmartcardState {
-    GSD_SMARTCARD_STATE_INSERTED = 0,
-    GSD_SMARTCARD_STATE_REMOVED,
+enum _MsdSmartcardState {
+    MSD_SMARTCARD_STATE_INSERTED = 0,
+    MSD_SMARTCARD_STATE_REMOVED,
 };
 
-GType gsd_smartcard_get_type (void) G_GNUC_CONST;
-GQuark gsd_smartcard_error_quark (void) G_GNUC_CONST;
+GType msd_smartcard_get_type (void) G_GNUC_CONST;
+GQuark msd_smartcard_error_quark (void) G_GNUC_CONST;
 
-CK_SLOT_ID gsd_smartcard_get_slot_id (GsdSmartcard *card);
-gint gsd_smartcard_get_slot_series (GsdSmartcard *card);
-GsdSmartcardState gsd_smartcard_get_state (GsdSmartcard *card);
+CK_SLOT_ID msd_smartcard_get_slot_id (MsdSmartcard *card);
+gint msd_smartcard_get_slot_series (MsdSmartcard *card);
+MsdSmartcardState msd_smartcard_get_state (MsdSmartcard *card);
 
-char *gsd_smartcard_get_name (GsdSmartcard *card);
-gboolean gsd_smartcard_is_login_card (GsdSmartcard *card);
+char *msd_smartcard_get_name (MsdSmartcard *card);
+gboolean msd_smartcard_is_login_card (MsdSmartcard *card);
 
-gboolean gsd_smartcard_unlock (GsdSmartcard *card,
+gboolean msd_smartcard_unlock (MsdSmartcard *card,
                                const char   *password);
 
 /* don't under any circumstances call these functions */
-#ifdef GSD_SMARTCARD_ENABLE_INTERNAL_API
+#ifdef MSD_SMARTCARD_ENABLE_INTERNAL_API
 
-GsdSmartcard *_gsd_smartcard_new (SECMODModule *module,
+MsdSmartcard *_msd_smartcard_new (SECMODModule *module,
                                   CK_SLOT_ID    slot_id,
                                   gint          slot_series);
-GsdSmartcard *_gsd_smartcard_new_from_name (SECMODModule *module,
+MsdSmartcard *_msd_smartcard_new_from_name (SECMODModule *module,
                                             const char   *name);
 
-void _gsd_smartcard_set_state (GsdSmartcard      *card,
-                               GsdSmartcardState  state);
+void _msd_smartcard_set_state (MsdSmartcard      *card,
+                               MsdSmartcardState  state);
 #endif
 
 #ifdef __cplusplus
 }
 #endif
-#endif                                /* GSD_SMARTCARD_H */
+#endif                                /* MSD_SMARTCARD_H */

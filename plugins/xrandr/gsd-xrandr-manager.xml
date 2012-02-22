@@ -1,7 +1,7 @@
 <!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
 <node>
   <interface name="org.mate.SettingsDaemon.XRANDR">
-    <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="gsd_xrandr_manager"/>
+    <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="msd_xrandr_manager"/>
     <method name="ApplyConfiguration">
       <!-- This method is implemented, but deprecated in favor of the
       same method in the XRANDR-2 interface defined below. -->
@@ -9,7 +9,7 @@
   </interface>
 
   <interface name="org.mate.SettingsDaemon.XRANDR_2">
-    <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="gsd_xrandr_manager_2"/>
+    <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="msd_xrandr_manager_2"/>
     <method name="ApplyConfiguration">
       <!-- transient-parent window for the confirmation dialog; use 0
       for no parent -->

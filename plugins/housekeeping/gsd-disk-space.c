@@ -21,7 +21,7 @@
  *
  */
 
-/* gcc -DHAVE_LIBMATENOTIFY -DTEST -Wall `pkg-config --cflags --libs gobject-2.0 gio-unix-2.0 glib-2.0 gtk+-2.0 libmatenotify` -o gsd-disk-space-test gsd-disk-space.c */
+/* gcc -DHAVE_LIBMATENOTIFY -DTEST -Wall `pkg-config --cflags --libs gobject-2.0 gio-unix-2.0 glib-2.0 gtk+-2.0 libmatenotify` -o msd-disk-space-test msd-disk-space.c */
 
 #include "config.h"
 
@@ -37,9 +37,9 @@
 #include <gtk/gtk.h>
 #include <mateconf/mateconf-client.h>
 
-#include "gsd-disk-space.h"
-#include "gsd-ldsm-dialog.h"
-#include "gsd-ldsm-trash-empty.h"
+#include "msd-disk-space.h"
+#include "msd-ldsm-dialog.h"
+#include "msd-ldsm-trash-empty.h"
 
 
 #define GIGABYTE                   1024 * 1024 * 1024
@@ -72,7 +72,7 @@ static unsigned int       min_notify_period = 10;
 static GSList            *ignore_paths = NULL;
 static unsigned int       mateconf_notify_id;
 static MateConfClient       *client = NULL;
-static GsdLdsmDialog     *dialog = NULL;
+static MsdLdsmDialog     *dialog = NULL;
 static guint64           *time_read;
 
 static gchar*
@@ -196,7 +196,7 @@ ldsm_notify_for_mount (LdsmMountInfo *mount,
         has_disk_analyzer = (program != NULL);
         g_free (program);
 
-        dialog = gsd_ldsm_dialog_new (other_usable_volumes,
+        dialog = msd_ldsm_dialog_new (other_usable_volumes,
                                       multiple_volumes,
                                       has_disk_analyzer,
                                       has_trash,
@@ -216,13 +216,13 @@ ldsm_notify_for_mount (LdsmMountInfo *mount,
         case GTK_RESPONSE_CANCEL:
                 retval = FALSE;
                 break;
-        case GSD_LDSM_DIALOG_RESPONSE_ANALYZE:
+        case MSD_LDSM_DIALOG_RESPONSE_ANALYZE:
                 retval = FALSE;
                 ldsm_analyze_path (g_unix_mount_get_mount_path (mount->mount));
                 break;
-        case GSD_LDSM_DIALOG_RESPONSE_EMPTY_TRASH:
+        case MSD_LDSM_DIALOG_RESPONSE_EMPTY_TRASH:
                 retval = TRUE;
-                gsd_ldsm_trash_empty ();
+                msd_ldsm_trash_empty ();
                 break;
         case GTK_RESPONSE_NONE:
         case GTK_RESPONSE_DELETE_EVENT:
@@ -566,7 +566,7 @@ ldsm_is_hash_item_in_ignore_paths (gpointer key,
 }
 
 static void
-gsd_ldsm_get_config ()
+msd_ldsm_get_config ()
 {
         GError *error = NULL;
 
@@ -629,16 +629,16 @@ gsd_ldsm_get_config ()
 }
 
 static void
-gsd_ldsm_update_config (MateConfClient *client,
+msd_ldsm_update_config (MateConfClient *client,
                         guint cnxn_id,
                         MateConfEntry *entry,
                         gpointer user_data)
 {
-        gsd_ldsm_get_config ();
+        msd_ldsm_get_config ();
 }
 
 void
-gsd_ldsm_setup (gboolean check_now)
+msd_ldsm_setup (gboolean check_now)
 {
         GError          *error = NULL;
 
@@ -653,10 +653,10 @@ gsd_ldsm_setup (gboolean check_now)
 
         client = mateconf_client_get_default ();
         if (client != NULL) {
-                gsd_ldsm_get_config ();
+                msd_ldsm_get_config ();
                 mateconf_notify_id = mateconf_client_notify_add (client,
                                                            MATECONF_HOUSEKEEPING_DIR,
-                                                           (MateConfClientNotifyFunc) gsd_ldsm_update_config,
+                                                           (MateConfClientNotifyFunc) msd_ldsm_update_config,
                                                            NULL, NULL, &error);
                 if (error != NULL) {
                         g_warning ("Cannot register callback for MateConf notification");
@@ -680,7 +680,7 @@ gsd_ldsm_setup (gboolean check_now)
 }
 
 void
-gsd_ldsm_clean (void)
+msd_ldsm_clean (void)
 {
         if (ldsm_timeout_id)
                 g_source_remove (ldsm_timeout_id);
@@ -721,11 +721,11 @@ main (int    argc,
 
         loop = g_main_loop_new (NULL, FALSE);
 
-        gsd_ldsm_setup (TRUE);
+        msd_ldsm_setup (TRUE);
 
         g_main_loop_run (loop);
 
-        gsd_ldsm_clean ();
+        msd_ldsm_clean ();
         g_main_loop_unref (loop);
 
         return 0;

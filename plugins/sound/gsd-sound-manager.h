@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef __GSD_SOUND_MANAGER_H
-#define __GSD_SOUND_MANAGER_H
+#ifndef __MSD_SOUND_MANAGER_H
+#define __MSD_SOUND_MANAGER_H
 
 #include <glib.h>
 #include <glib-object.h>
@@ -28,34 +28,34 @@
 extern "C" {
 #endif
 
-#define GSD_TYPE_SOUND_MANAGER         (gsd_sound_manager_get_type ())
-#define GSD_SOUND_MANAGER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GSD_TYPE_SOUND_MANAGER, GsdSoundManager))
-#define GSD_SOUND_MANAGER_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST ((k), GSD_TYPE_SOUND_MANAGER, GsdSoundManagerClass))
-#define GSD_IS_SOUND_MANAGER(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), GSD_TYPE_SOUND_MANAGER))
-#define GSD_IS_SOUND_MANAGER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), GSD_TYPE_SOUND_MANAGER))
-#define GSD_SOUND_MANAGER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), GSD_TYPE_SOUND_MANAGER, GsdSoundManagerClass))
+#define MSD_TYPE_SOUND_MANAGER         (msd_sound_manager_get_type ())
+#define MSD_SOUND_MANAGER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), MSD_TYPE_SOUND_MANAGER, MsdSoundManager))
+#define MSD_SOUND_MANAGER_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST ((k), MSD_TYPE_SOUND_MANAGER, MsdSoundManagerClass))
+#define MSD_IS_SOUND_MANAGER(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), MSD_TYPE_SOUND_MANAGER))
+#define MSD_IS_SOUND_MANAGER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), MSD_TYPE_SOUND_MANAGER))
+#define MSD_SOUND_MANAGER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), MSD_TYPE_SOUND_MANAGER, MsdSoundManagerClass))
 
-typedef struct GsdSoundManagerPrivate GsdSoundManagerPrivate;
+typedef struct MsdSoundManagerPrivate MsdSoundManagerPrivate;
 
 typedef struct
 {
         GObject parent;
-        GsdSoundManagerPrivate *priv;
-} GsdSoundManager;
+        MsdSoundManagerPrivate *priv;
+} MsdSoundManager;
 
 typedef struct
 {
         GObjectClass parent_class;
-} GsdSoundManagerClass;
+} MsdSoundManagerClass;
 
-GType gsd_sound_manager_get_type (void) G_GNUC_CONST;
+GType msd_sound_manager_get_type (void) G_GNUC_CONST;
 
-GsdSoundManager *gsd_sound_manager_new (void);
-gboolean gsd_sound_manager_start (GsdSoundManager *manager, GError **error);
-void gsd_sound_manager_stop (GsdSoundManager *manager);
+MsdSoundManager *msd_sound_manager_new (void);
+gboolean msd_sound_manager_start (MsdSoundManager *manager, GError **error);
+void msd_sound_manager_stop (MsdSoundManager *manager);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __GSD_SOUND_MANAGER_H */
+#endif /* __MSD_SOUND_MANAGER_H */

@@ -409,20 +409,20 @@ msgstr "_Pristupačnost"
 msgid "Accessibility keyboard plugin"
 msgstr "_Pristupačnost"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:393
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:393
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Dogodila se greška pri prikazivanju pomoći: %s"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:445
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:445
 msgid "Do you want to activate Slow Keys?"
 msgstr "Želite li aktivirati spore tipke?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:446
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:446
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Želite li deaktivirati spore tipke?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:449
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:449
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -430,39 +430,39 @@ msgstr ""
 "Upravo ste držali pritisnutim tipku Shift 8 sekundi.  Ovo je kratica za "
 "osobinu spore tipke koja utječe na rad vaše tastature."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:456
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:508
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:456
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:508
 msgid "Do_n't activate"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:456
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:508
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:456
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:508
 msgid "Do_n't deactivate"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:459
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:511
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:459
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:511
 msgid "_Activate"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:459
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:511
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:459
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:511
 msgid "_Deactivate"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:463
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:463
 msgid "Slow Keys Alert"
 msgstr "Upozorenje na spore tipke"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:495
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:495
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Da li želite aktivirati ljepljive tipke?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:496
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:496
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Da li želite deaktivirati ljepljive tipke?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:499
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:499
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -470,7 +470,7 @@ msgstr ""
 "Upravo ste pritisnuli tipku Shift 5 puta za redom.  Ovo je kratica za "
 "osobinu ljepljive tipke koja utječe na rad vaše tastature."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:501
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:501
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -480,7 +480,7 @@ msgstr ""
 "5 puta za redom. Ovo isključuje osobinu ljepljive tipke koja utječe na rad "
 "vaše tastature."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:515
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:515
 msgid "Sticky Keys Alert"
 msgstr "Upozorenje na ljepljive tipke"
 
@@ -517,7 +517,7 @@ msgstr "Font"
 msgid "Font plugin"
 msgstr ""
 
-#: ../plugins/font/gsd-font-manager.c:208
+#: ../plugins/font/msd-font-manager.c:208
 #, fuzzy, c-format
 msgid ""
 "Cannot create the directory \"%s\".\n"
@@ -526,7 +526,7 @@ msgstr ""
 "Ne mogu napraviti direktorij \"%s\".\n"
 "Ovo je potrebno za mogućnost mijenjanja kursora."
 
-#: ../plugins/font/gsd-font-manager.c:231
+#: ../plugins/font/msd-font-manager.c:231
 #, c-format
 msgid ""
 "Cannot create the directory \"%s\".\n"
@@ -535,37 +535,37 @@ msgstr ""
 "Ne mogu napraviti direktorij \"%s\".\n"
 "Ovo je potrebno za mogućnost mijenjanja kursora."
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:195
+#: ../plugins/keybindings/msd-keybindings-manager.c:195
 #, c-format
 msgid "Key Binding (%s) has its action defined multiple times\n"
 msgstr "Akcija kratice (%s) je definirana više puta\n"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:202
+#: ../plugins/keybindings/msd-keybindings-manager.c:202
 #, c-format
 msgid "Key Binding (%s) has its binding defined multiple times\n"
 msgstr "Kratica (%s) je definirana više puta\n"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:211
+#: ../plugins/keybindings/msd-keybindings-manager.c:211
 #, c-format
 msgid "Key Binding (%s) is incomplete\n"
 msgstr "Kratica (%s) je nepotpuna\n"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:239
+#: ../plugins/keybindings/msd-keybindings-manager.c:239
 #, c-format
 msgid "Key Binding (%s) is invalid\n"
 msgstr "Kratica (%s) je nevažeća\n"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:292
+#: ../plugins/keybindings/msd-keybindings-manager.c:292
 #, fuzzy, c-format
 msgid "It seems that another application already has access to key '%u'."
 msgstr "Izgleda da neka druga aplikacija već koristi tipku '%d'."
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:365
+#: ../plugins/keybindings/msd-keybindings-manager.c:365
 #, c-format
 msgid "Key Binding (%s) is already in use\n"
 msgstr "Kratica (%s) je već u upotrebi\n"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:502
+#: ../plugins/keybindings/msd-keybindings-manager.c:502
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -622,13 +622,13 @@ msgstr "Model"
 msgid "Volume"
 msgstr "Jačina zvuka"
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:200
+#: ../plugins/media-keys/msd-media-keys-manager.c:200
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is "
 "set and points to a valid application."
 msgstr ""
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:240
+#: ../plugins/media-keys/msd-media-keys-manager.c:240
 #, fuzzy, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -637,7 +637,7 @@ msgstr ""
 "Nisam mogao izvršiti naredbu: %s\n"
 "Provjerite da li ova naredba postoji."
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:256
+#: ../plugins/media-keys/msd-media-keys-manager.c:256
 msgid ""
 "Couldn't put the machine to sleep.\n"
 "Verify that the machine is correctly configured."
@@ -654,18 +654,18 @@ msgstr "Tipke miša"
 msgid "Media keys plugin"
 msgstr ""
 
-#: ../plugins/mouse/gsd-mouse-manager.c:566
+#: ../plugins/mouse/msd-mouse-manager.c:566
 #, fuzzy
 msgid "Could not enable mouse accessibility features"
 msgstr "_Omogući osobine pristupačnosti tastature"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:568
+#: ../plugins/mouse/msd-mouse-manager.c:568
 msgid ""
 "Mouse accessibility requires the mousetweaks daemon to be installed on your "
 "system."
 msgstr ""
 
-#: ../plugins/mouse/gsd-mouse-manager.c:571
+#: ../plugins/mouse/msd-mouse-manager.c:571
 msgid "Mouse Preferences"
 msgstr "Osobine miša"
 
@@ -677,7 +677,7 @@ msgstr "Miš"
 msgid "Mouse plugin"
 msgstr ""
 
-#: ../plugins/screensaver/gsd-screensaver-manager.c:151
+#: ../plugins/screensaver/msd-screensaver-manager.c:151
 #, c-format
 msgid ""
 "There was an error starting up the screensaver:\n"
@@ -692,7 +692,7 @@ msgstr ""
 "\n"
 "Zaštita ekrana neće raditi u ovoj sesiji."
 
-#: ../plugins/screensaver/gsd-screensaver-manager.c:160
+#: ../plugins/screensaver/msd-screensaver-manager.c:160
 msgid "_Do not show this message again"
 msgstr "_Nemoj više prikazivati ovu poruku"
 
@@ -706,7 +706,7 @@ msgstr "Pokreni XScreenSaver"
 msgid "Screensaver plugin"
 msgstr "Pokreni XScreenSaver pri prijavi"
 
-#: ../plugins/sound/gsd-sound-manager.c:164
+#: ../plugins/sound/msd-sound-manager.c:164
 #, c-format
 msgid "Couldn't load sound file %s as sample %s"
 msgstr "Nisam mogao učitati zvučnu datoteku %s kao uzorak %s"
@@ -807,8 +807,8 @@ msgstr ""
 msgid "XRandR"
 msgstr ""
 
-#: ../plugins/xrdb/gsd-xrdb-manager.c:258
-#: ../plugins/xrdb/gsd-xrdb-manager.c:327
+#: ../plugins/xrdb/msd-xrdb-manager.c:258
+#: ../plugins/xrdb/msd-xrdb-manager.c:327
 msgid "Cannot determine user's home directory"
 msgstr "Ne mogu odrediti početni direktorij korisnika"
 
@@ -820,7 +820,7 @@ msgstr ""
 msgid "X Resource Database"
 msgstr ""
 
-#: ../plugins/xsettings/gsd-xsettings-manager.c:551
+#: ../plugins/xsettings/msd-xsettings-manager.c:551
 #, c-format
 msgid "MateConf key %s set to type %s but its expected type was %s\n"
 msgstr "MateConf ključ %s je postavljen na tip %s, a očekivani tip je %s\n"

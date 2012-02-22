@@ -5,10 +5,10 @@ plugin_LTLIBRARIES = \
 	$(NULL)
 
 libkeybindings_la_SOURCES = 		\
-	gsd-keybindings-plugin.h	\
-	gsd-keybindings-plugin.c	\
-	gsd-keybindings-manager.h	\
-	gsd-keybindings-manager.c	\
+	msd-keybindings-plugin.h	\
+	msd-keybindings-plugin.c	\
+	msd-keybindings-manager.h	\
+	msd-keybindings-manager.c	\
 	$(NULL)
 
 libkeybindings_la_CPPFLAGS = \
@@ -22,7 +22,7 @@ libkeybindings_la_CFLAGS = \
 	$(AM_CFLAGS)
 
 libkeybindings_la_LDFLAGS = 		\
-	$(GSD_PLUGIN_LDFLAGS)	\
+	$(MSD_PLUGIN_LDFLAGS)	\
 	$(NULL)
 
 libkeybindings_la_LIBADD  = 		\
@@ -48,4 +48,4 @@ DISTCLEANFILES =		\
 	$(plugin_DATA)		\
 	$(NULL)
 
-@GSD_INTLTOOL_PLUGIN_RULE@
+@MSD_INTLTOOL_PLUGIN_RULE@

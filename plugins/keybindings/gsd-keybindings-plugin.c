@@ -24,38 +24,38 @@
 #include <gmodule.h>
 
 #include "mate-settings-plugin.h"
-#include "gsd-keybindings-plugin.h"
-#include "gsd-keybindings-manager.h"
+#include "msd-keybindings-plugin.h"
+#include "msd-keybindings-manager.h"
 
-struct GsdKeybindingsPluginPrivate {
-        GsdKeybindingsManager *manager;
+struct MsdKeybindingsPluginPrivate {
+        MsdKeybindingsManager *manager;
 };
 
-#define GSD_KEYBINDINGS_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), GSD_TYPE_KEYBINDINGS_PLUGIN, GsdKeybindingsPluginPrivate))
+#define MSD_KEYBINDINGS_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), MSD_TYPE_KEYBINDINGS_PLUGIN, MsdKeybindingsPluginPrivate))
 
-MATE_SETTINGS_PLUGIN_REGISTER (GsdKeybindingsPlugin, gsd_keybindings_plugin)
+MATE_SETTINGS_PLUGIN_REGISTER (MsdKeybindingsPlugin, msd_keybindings_plugin)
 
 static void
-gsd_keybindings_plugin_init (GsdKeybindingsPlugin *plugin)
+msd_keybindings_plugin_init (MsdKeybindingsPlugin *plugin)
 {
-        plugin->priv = GSD_KEYBINDINGS_PLUGIN_GET_PRIVATE (plugin);
+        plugin->priv = MSD_KEYBINDINGS_PLUGIN_GET_PRIVATE (plugin);
 
-        g_debug ("GsdKeybindingsPlugin initializing");
+        g_debug ("MsdKeybindingsPlugin initializing");
 
-        plugin->priv->manager = gsd_keybindings_manager_new ();
+        plugin->priv->manager = msd_keybindings_manager_new ();
 }
 
 static void
-gsd_keybindings_plugin_finalize (GObject *object)
+msd_keybindings_plugin_finalize (GObject *object)
 {
-        GsdKeybindingsPlugin *plugin;
+        MsdKeybindingsPlugin *plugin;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GSD_IS_KEYBINDINGS_PLUGIN (object));
+        g_return_if_fail (MSD_IS_KEYBINDINGS_PLUGIN (object));
 
-        g_debug ("GsdKeybindingsPlugin finalizing");
+        g_debug ("MsdKeybindingsPlugin finalizing");
 
-        plugin = GSD_KEYBINDINGS_PLUGIN (object);
+        plugin = MSD_KEYBINDINGS_PLUGIN (object);
 
         g_return_if_fail (plugin->priv != NULL);
 
@@ -63,7 +63,7 @@ gsd_keybindings_plugin_finalize (GObject *object)
                 g_object_unref (plugin->priv->manager);
         }
 
-        G_OBJECT_CLASS (gsd_keybindings_plugin_parent_class)->finalize (object);
+        G_OBJECT_CLASS (msd_keybindings_plugin_parent_class)->finalize (object);
 }
 
 static void
@@ -75,7 +75,7 @@ impl_activate (MateSettingsPlugin *plugin)
         g_debug ("Activating keybindings plugin");
 
         error = NULL;
-        res = gsd_keybindings_manager_start (GSD_KEYBINDINGS_PLUGIN (plugin)->priv->manager, &error);
+        res = msd_keybindings_manager_start (MSD_KEYBINDINGS_PLUGIN (plugin)->priv->manager, &error);
         if (! res) {
                 g_warning ("Unable to start keybindings manager: %s", error->message);
                 g_error_free (error);
@@ -86,19 +86,19 @@ static void
 impl_deactivate (MateSettingsPlugin *plugin)
 {
         g_debug ("Deactivating keybindings plugin");
-        gsd_keybindings_manager_stop (GSD_KEYBINDINGS_PLUGIN (plugin)->priv->manager);
+        msd_keybindings_manager_stop (MSD_KEYBINDINGS_PLUGIN (plugin)->priv->manager);
 }
 
 static void
-gsd_keybindings_plugin_class_init (GsdKeybindingsPluginClass *klass)
+msd_keybindings_plugin_class_init (MsdKeybindingsPluginClass *klass)
 {
         GObjectClass           *object_class = G_OBJECT_CLASS (klass);
         MateSettingsPluginClass *plugin_class = MATE_SETTINGS_PLUGIN_CLASS (klass);
 
-        object_class->finalize = gsd_keybindings_plugin_finalize;
+        object_class->finalize = msd_keybindings_plugin_finalize;
 
         plugin_class->activate = impl_activate;
         plugin_class->deactivate = impl_deactivate;
 
-        g_type_class_add_private (klass, sizeof (GsdKeybindingsPluginPrivate));
+        g_type_class_add_private (klass, sizeof (MsdKeybindingsPluginPrivate));
 }

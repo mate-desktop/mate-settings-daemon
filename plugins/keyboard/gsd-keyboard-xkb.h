@@ -21,20 +21,20 @@
  * 02111-1307, USA.
  */
 
-#ifndef __GSD_KEYBOARD_XKB_H
-#define __GSD_KEYBOARD_XKB_H
+#ifndef __MSD_KEYBOARD_XKB_H
+#define __MSD_KEYBOARD_XKB_H
 
 #include <mateconf/mateconf.h>
 #include <mateconf/mateconf-client.h>
 
 #include <libxklavier/xklavier.h>
-#include "gsd-keyboard-manager.h"
+#include "msd-keyboard-manager.h"
 
-void gsd_keyboard_xkb_init(MateConfClient* client, GsdKeyboardManager* manager);
-void gsd_keyboard_xkb_shutdown(void);
+void msd_keyboard_xkb_init(MateConfClient* client, MsdKeyboardManager* manager);
+void msd_keyboard_xkb_shutdown(void);
 
 typedef void (*PostActivationCallback) (void* userData);
 
-void gsd_keyboard_xkb_set_post_activation_callback(PostActivationCallback fun, void* userData);
+void msd_keyboard_xkb_set_post_activation_callback(PostActivationCallback fun, void* userData);
 
 #endif

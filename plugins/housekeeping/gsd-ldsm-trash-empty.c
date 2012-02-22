@@ -1,15 +1,15 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
  *
- * gsd-ldsm-trash-empty.c
+ * msd-ldsm-trash-empty.c
  * Copyright (C) Chris Coulson 2009 <chrisccoulson@googlemail.com>
  *	     (C) Ryan Lortie 2008
  *
- * gsd-ldsm-trash-empty.c is free software: you can redistribute it and/or modify it
+ * msd-ldsm-trash-empty.c is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
  * Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * gsd-ldsm-trash-empty.c is distributed in the hope that it will be useful, but
+ * msd-ldsm-trash-empty.c is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
@@ -22,7 +22,7 @@
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 
-#include "gsd-ldsm-trash-empty.h"
+#include "msd-ldsm-trash-empty.h"
 
 #define CAJA_CONFIRM_TRASH_KEY "/apps/caja/preferences/confirm_trash"
 
@@ -387,7 +387,7 @@ trash_empty_show_confirmation_dialog ()
 }
 
 void
-gsd_ldsm_trash_empty ()
+msd_ldsm_trash_empty ()
 {
         if (trash_empty_confirm_dialog)
                 gtk_window_present (GTK_WINDOW (trash_empty_confirm_dialog));

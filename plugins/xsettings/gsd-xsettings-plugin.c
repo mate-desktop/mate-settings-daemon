@@ -24,8 +24,8 @@
 #include <gmodule.h>
 
 #include "mate-settings-plugin.h"
-#include "gsd-xsettings-plugin.h"
-#include "gsd-xsettings-manager.h"
+#include "msd-xsettings-plugin.h"
+#include "msd-xsettings-manager.h"
 
 struct MateXSettingsPluginPrivate {
         MateXSettingsManager *manager;

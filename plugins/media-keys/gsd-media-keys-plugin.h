@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef __GSD_MEDIA_KEYS_PLUGIN_H__
-#define __GSD_MEDIA_KEYS_PLUGIN_H__
+#ifndef __MSD_MEDIA_KEYS_PLUGIN_H__
+#define __MSD_MEDIA_KEYS_PLUGIN_H__
 
 #include <glib.h>
 #include <glib-object.h>
@@ -31,27 +31,27 @@
 extern "C" {
 #endif
 
-#define GSD_TYPE_MEDIA_KEYS_PLUGIN                (gsd_media_keys_plugin_get_type ())
-#define GSD_MEDIA_KEYS_PLUGIN(o)                  (G_TYPE_CHECK_INSTANCE_CAST ((o), GSD_TYPE_MEDIA_KEYS_PLUGIN, GsdMediaKeysPlugin))
-#define GSD_MEDIA_KEYS_PLUGIN_CLASS(k)            (G_TYPE_CHECK_CLASS_CAST((k), GSD_TYPE_MEDIA_KEYS_PLUGIN, GsdMediaKeysPluginClass))
-#define GSD_IS_MEDIA_KEYS_PLUGIN(o)               (G_TYPE_CHECK_INSTANCE_TYPE ((o), GSD_TYPE_MEDIA_KEYS_PLUGIN))
-#define GSD_IS_MEDIA_KEYS_PLUGIN_CLASS(k)         (G_TYPE_CHECK_CLASS_TYPE ((k), GSD_TYPE_MEDIA_KEYS_PLUGIN))
-#define GSD_MEDIA_KEYS_PLUGIN_GET_CLASS(o)        (G_TYPE_INSTANCE_GET_CLASS ((o), GSD_TYPE_MEDIA_KEYS_PLUGIN, GsdMediaKeysPluginClass))
+#define MSD_TYPE_MEDIA_KEYS_PLUGIN                (msd_media_keys_plugin_get_type ())
+#define MSD_MEDIA_KEYS_PLUGIN(o)                  (G_TYPE_CHECK_INSTANCE_CAST ((o), MSD_TYPE_MEDIA_KEYS_PLUGIN, MsdMediaKeysPlugin))
+#define MSD_MEDIA_KEYS_PLUGIN_CLASS(k)            (G_TYPE_CHECK_CLASS_CAST((k), MSD_TYPE_MEDIA_KEYS_PLUGIN, MsdMediaKeysPluginClass))
+#define MSD_IS_MEDIA_KEYS_PLUGIN(o)               (G_TYPE_CHECK_INSTANCE_TYPE ((o), MSD_TYPE_MEDIA_KEYS_PLUGIN))
+#define MSD_IS_MEDIA_KEYS_PLUGIN_CLASS(k)         (G_TYPE_CHECK_CLASS_TYPE ((k), MSD_TYPE_MEDIA_KEYS_PLUGIN))
+#define MSD_MEDIA_KEYS_PLUGIN_GET_CLASS(o)        (G_TYPE_INSTANCE_GET_CLASS ((o), MSD_TYPE_MEDIA_KEYS_PLUGIN, MsdMediaKeysPluginClass))
 
-typedef struct GsdMediaKeysPluginPrivate GsdMediaKeysPluginPrivate;
+typedef struct MsdMediaKeysPluginPrivate MsdMediaKeysPluginPrivate;
 
 typedef struct
 {
         MateSettingsPlugin    parent;
-        GsdMediaKeysPluginPrivate *priv;
-} GsdMediaKeysPlugin;
+        MsdMediaKeysPluginPrivate *priv;
+} MsdMediaKeysPlugin;
 
 typedef struct
 {
         MateSettingsPluginClass parent_class;
-} GsdMediaKeysPluginClass;
+} MsdMediaKeysPluginClass;
 
-GType   gsd_media_keys_plugin_get_type            (void) G_GNUC_CONST;
+GType   msd_media_keys_plugin_get_type            (void) G_GNUC_CONST;
 
 /* All the plugins must implement this function */
 G_MODULE_EXPORT GType register_mate_settings_plugin (GTypeModule *module);
@@ -60,4 +60,4 @@ G_MODULE_EXPORT GType register_mate_settings_plugin (GTypeModule *module);
 }
 #endif
 
-#endif /* __GSD_MEDIA_KEYS_PLUGIN_H__ */
+#endif /* __MSD_MEDIA_KEYS_PLUGIN_H__ */

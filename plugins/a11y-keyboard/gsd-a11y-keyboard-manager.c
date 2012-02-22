@@ -51,15 +51,15 @@
 #endif /* HAVE_LIBMATENOTIFY */
 
 #include "mate-settings-profile.h"
-#include "gsd-a11y-keyboard-manager.h"
-#include "gsd-a11y-preferences-dialog.h"
+#include "msd-a11y-keyboard-manager.h"
+#include "msd-a11y-preferences-dialog.h"
 
 #define CONFIG_ROOT "/desktop/mate/accessibility/keyboard"
 #define NOTIFICATION_TIMEOUT 30
 
-#define GSD_A11Y_KEYBOARD_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSD_TYPE_A11Y_KEYBOARD_MANAGER, GsdA11yKeyboardManagerPrivate))
+#define MSD_A11Y_KEYBOARD_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_A11Y_KEYBOARD_MANAGER, MsdA11yKeyboardManagerPrivate))
 
-struct GsdA11yKeyboardManagerPrivate
+struct MsdA11yKeyboardManagerPrivate
 {
         int        xkbEventBase;
         gboolean   stickykeys_shortcut_val;
@@ -77,14 +77,14 @@ struct GsdA11yKeyboardManagerPrivate
 #endif /* HAVE_LIBMATENOTIFY */
 };
 
-static void     gsd_a11y_keyboard_manager_class_init  (GsdA11yKeyboardManagerClass *klass);
-static void     gsd_a11y_keyboard_manager_init        (GsdA11yKeyboardManager      *a11y_keyboard_manager);
-static void     gsd_a11y_keyboard_manager_finalize    (GObject             *object);
-static void     gsd_a11y_keyboard_manager_ensure_status_icon (GsdA11yKeyboardManager *manager);
-static void     set_server_from_mateconf (GsdA11yKeyboardManager *manager,
+static void     msd_a11y_keyboard_manager_class_init  (MsdA11yKeyboardManagerClass *klass);
+static void     msd_a11y_keyboard_manager_init        (MsdA11yKeyboardManager      *a11y_keyboard_manager);
+static void     msd_a11y_keyboard_manager_finalize    (GObject             *object);
+static void     msd_a11y_keyboard_manager_ensure_status_icon (MsdA11yKeyboardManager *manager);
+static void     set_server_from_mateconf (MsdA11yKeyboardManager *manager,
 				       MateConfClient            *client);
 
-G_DEFINE_TYPE (GsdA11yKeyboardManager, gsd_a11y_keyboard_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE (MsdA11yKeyboardManager, msd_a11y_keyboard_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -133,7 +133,7 @@ supports_xinput_devices (void)
 }
 
 static void
-set_devicepresence_handler (GsdA11yKeyboardManager *manager)
+set_devicepresence_handler (MsdA11yKeyboardManager *manager)
 {
         Display *display;
         XEventClass class_presence;
@@ -161,7 +161,7 @@ set_devicepresence_handler (GsdA11yKeyboardManager *manager)
 #endif
 
 static gboolean
-xkb_enabled (GsdA11yKeyboardManager *manager)
+xkb_enabled (MsdA11yKeyboardManager *manager)
 {
         gboolean have_xkb;
         int opcode, errorBase, major, minor;
@@ -178,7 +178,7 @@ xkb_enabled (GsdA11yKeyboardManager *manager)
 }
 
 static XkbDescRec *
-get_xkb_desc_rec (GsdA11yKeyboardManager *manager)
+get_xkb_desc_rec (MsdA11yKeyboardManager *manager)
 {
         XkbDescRec *desc;
         Status      status = Success;
@@ -265,7 +265,7 @@ set_ctrl_from_mateconf (XkbDescRec   *desc,
 }
 
 static void
-set_server_from_mateconf (GsdA11yKeyboardManager *manager,
+set_server_from_mateconf (MsdA11yKeyboardManager *manager,
                        MateConfClient            *client)
 {
         XkbDescRec      *desc;
@@ -404,7 +404,7 @@ set_server_from_mateconf (GsdA11yKeyboardManager *manager,
 }
 
 static gboolean
-ax_response_callback (GsdA11yKeyboardManager *manager,
+ax_response_callback (MsdA11yKeyboardManager *manager,
                       GtkWindow              *parent,
                       gint                    response_id,
                       guint                   revert_controls_mask,
@@ -475,7 +475,7 @@ ax_response_callback (GsdA11yKeyboardManager *manager,
 static void
 ax_stickykeys_response (GtkDialog              *dialog,
                         gint                    response_id,
-                        GsdA11yKeyboardManager *manager)
+                        MsdA11yKeyboardManager *manager)
 {
         if (ax_response_callback (manager, GTK_WINDOW (dialog),
                                   response_id, XkbStickyKeysMask,
@@ -487,7 +487,7 @@ ax_stickykeys_response (GtkDialog              *dialog,
 static void
 ax_slowkeys_response (GtkDialog              *dialog,
                       gint                    response_id,
-                      GsdA11yKeyboardManager *manager)
+                      MsdA11yKeyboardManager *manager)
 {
         if (ax_response_callback (manager, GTK_WINDOW (dialog),
                                   response_id, XkbSlowKeysMask,
@@ -497,7 +497,7 @@ ax_slowkeys_response (GtkDialog              *dialog,
 }
 
 static void
-maybe_show_status_icon (GsdA11yKeyboardManager *manager)
+maybe_show_status_icon (MsdA11yKeyboardManager *manager)
 {
         gboolean     show;
         MateConfClient *client;
@@ -510,14 +510,14 @@ maybe_show_status_icon (GsdA11yKeyboardManager *manager)
         if (!show && manager->priv->status_icon == NULL)
                 return;
 
-        gsd_a11y_keyboard_manager_ensure_status_icon (manager);
+        msd_a11y_keyboard_manager_ensure_status_icon (manager);
         gtk_status_icon_set_visible (manager->priv->status_icon, show);
 }
 
 #ifdef HAVE_LIBMATENOTIFY
 static void
 on_notification_closed (NotifyNotification     *notification,
-                        GsdA11yKeyboardManager *manager)
+                        MsdA11yKeyboardManager *manager)
 {
         g_object_unref (manager->priv->notification);
         manager->priv->notification = NULL;
@@ -526,7 +526,7 @@ on_notification_closed (NotifyNotification     *notification,
 static void
 on_slow_keys_action (NotifyNotification     *notification,
                      const char             *action,
-                     GsdA11yKeyboardManager *manager)
+                     MsdA11yKeyboardManager *manager)
 {
         gboolean res;
         int      response_id;
@@ -552,7 +552,7 @@ on_slow_keys_action (NotifyNotification     *notification,
 static void
 on_sticky_keys_action (NotifyNotification     *notification,
                        const char             *action,
-                       GsdA11yKeyboardManager *manager)
+                       MsdA11yKeyboardManager *manager)
 {
         gboolean res;
         int      response_id;
@@ -578,7 +578,7 @@ on_sticky_keys_action (NotifyNotification     *notification,
 #endif /* HAVE_LIBMATENOTIFY */
 
 static gboolean
-ax_slowkeys_warning_post_bubble (GsdA11yKeyboardManager *manager,
+ax_slowkeys_warning_post_bubble (MsdA11yKeyboardManager *manager,
                                  gboolean                enabled)
 {
 #ifdef HAVE_LIBMATENOTIFY
@@ -605,7 +605,7 @@ ax_slowkeys_warning_post_bubble (GsdA11yKeyboardManager *manager,
                 notify_notification_close (manager->priv->notification, NULL);
         }
 
-        gsd_a11y_keyboard_manager_ensure_status_icon (manager);
+        msd_a11y_keyboard_manager_ensure_status_icon (manager);
         manager->priv->notification = notify_notification_new (title,
                                                                message,
                                                                "preferences-desktop-accessibility",
@@ -634,7 +634,7 @@ ax_slowkeys_warning_post_bubble (GsdA11yKeyboardManager *manager,
         error = NULL;
         res = notify_notification_show (manager->priv->notification, &error);
         if (! res) {
-                g_warning ("GsdA11yKeyboardManager: unable to show notification: %s", error->message);
+                g_warning ("MsdA11yKeyboardManager: unable to show notification: %s", error->message);
                 g_error_free (error);
                 notify_notification_close (manager->priv->notification, NULL);
         }
@@ -647,7 +647,7 @@ ax_slowkeys_warning_post_bubble (GsdA11yKeyboardManager *manager,
 
 
 static void
-ax_slowkeys_warning_post_dialog (GsdA11yKeyboardManager *manager,
+ax_slowkeys_warning_post_dialog (MsdA11yKeyboardManager *manager,
                                  gboolean                enabled)
 {
         const char *title;
@@ -701,7 +701,7 @@ ax_slowkeys_warning_post_dialog (GsdA11yKeyboardManager *manager,
 }
 
 static void
-ax_slowkeys_warning_post (GsdA11yKeyboardManager *manager,
+ax_slowkeys_warning_post (MsdA11yKeyboardManager *manager,
                           gboolean                enabled)
 {
 
@@ -714,7 +714,7 @@ ax_slowkeys_warning_post (GsdA11yKeyboardManager *manager,
 }
 
 static gboolean
-ax_stickykeys_warning_post_bubble (GsdA11yKeyboardManager *manager,
+ax_stickykeys_warning_post_bubble (MsdA11yKeyboardManager *manager,
                                    gboolean                enabled)
 {
 #ifdef HAVE_LIBMATENOTIFY
@@ -744,7 +744,7 @@ ax_stickykeys_warning_post_bubble (GsdA11yKeyboardManager *manager,
                 notify_notification_close (manager->priv->notification, NULL);
         }
 
-        gsd_a11y_keyboard_manager_ensure_status_icon (manager);
+        msd_a11y_keyboard_manager_ensure_status_icon (manager);
         manager->priv->notification = notify_notification_new (title,
                                                                message,
                                                                "preferences-desktop-accessibility",
@@ -773,7 +773,7 @@ ax_stickykeys_warning_post_bubble (GsdA11yKeyboardManager *manager,
         error = NULL;
         res = notify_notification_show (manager->priv->notification, &error);
         if (! res) {
-                g_warning ("GsdA11yKeyboardManager: unable to show notification: %s", error->message);
+                g_warning ("MsdA11yKeyboardManager: unable to show notification: %s", error->message);
                 g_error_free (error);
                 notify_notification_close (manager->priv->notification, NULL);
         }
@@ -785,7 +785,7 @@ ax_stickykeys_warning_post_bubble (GsdA11yKeyboardManager *manager,
 }
 
 static void
-ax_stickykeys_warning_post_dialog (GsdA11yKeyboardManager *manager,
+ax_stickykeys_warning_post_dialog (MsdA11yKeyboardManager *manager,
                                    gboolean                enabled)
 {
         const char *title;
@@ -842,7 +842,7 @@ ax_stickykeys_warning_post_dialog (GsdA11yKeyboardManager *manager,
 }
 
 static void
-ax_stickykeys_warning_post (GsdA11yKeyboardManager *manager,
+ax_stickykeys_warning_post (MsdA11yKeyboardManager *manager,
                             gboolean                enabled)
 {
 
@@ -855,7 +855,7 @@ ax_stickykeys_warning_post (GsdA11yKeyboardManager *manager,
 }
 
 static void
-set_mateconf_from_server (GsdA11yKeyboardManager *manager)
+set_mateconf_from_server (MsdA11yKeyboardManager *manager)
 {
         MateConfClient    *client;
         MateConfChangeSet *cs;
@@ -1003,7 +1003,7 @@ set_mateconf_from_server (GsdA11yKeyboardManager *manager)
 static GdkFilterReturn
 cb_xkb_event_filter (GdkXEvent              *xevent,
                      GdkEvent               *ignored1,
-                     GsdA11yKeyboardManager *manager)
+                     MsdA11yKeyboardManager *manager)
 {
         XEvent   *xev   = (XEvent *) xevent;
         XkbEvent *xkbEv = (XkbEvent *) xevent;
@@ -1031,14 +1031,14 @@ static void
 keyboard_callback (MateConfClient            *client,
                    guint                   cnxn_id,
                    MateConfEntry             *entry,
-                   GsdA11yKeyboardManager *manager)
+                   MsdA11yKeyboardManager *manager)
 {
         set_server_from_mateconf (manager, client);
         maybe_show_status_icon (manager);
 }
 
 static void
-register_config_callback (GsdA11yKeyboardManager  *manager,
+register_config_callback (MsdA11yKeyboardManager  *manager,
                           MateConfClient             *client,
                           const char              *path,
                           MateConfClientNotifyFunc    func,
@@ -1049,7 +1049,7 @@ register_config_callback (GsdA11yKeyboardManager  *manager,
 }
 
 static gboolean
-start_a11y_keyboard_idle_cb (GsdA11yKeyboardManager *manager)
+start_a11y_keyboard_idle_cb (MsdA11yKeyboardManager *manager)
 {
         guint        event_mask;
         MateConfClient *client;
@@ -1104,7 +1104,7 @@ start_a11y_keyboard_idle_cb (GsdA11yKeyboardManager *manager)
 
 
 gboolean
-gsd_a11y_keyboard_manager_start (GsdA11yKeyboardManager *manager,
+msd_a11y_keyboard_manager_start (MsdA11yKeyboardManager *manager,
                                  GError                **error)
 {
         mate_settings_profile_start (NULL);
@@ -1117,7 +1117,7 @@ gsd_a11y_keyboard_manager_start (GsdA11yKeyboardManager *manager,
 }
 
 static void
-restore_server_xkb_config (GsdA11yKeyboardManager *manager)
+restore_server_xkb_config (MsdA11yKeyboardManager *manager)
 {
         gdk_error_trap_push ();
         XkbSetControls (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
@@ -1142,9 +1142,9 @@ restore_server_xkb_config (GsdA11yKeyboardManager *manager)
 }
 
 void
-gsd_a11y_keyboard_manager_stop (GsdA11yKeyboardManager *manager)
+msd_a11y_keyboard_manager_stop (MsdA11yKeyboardManager *manager)
 {
-        GsdA11yKeyboardManagerPrivate *p = manager->priv;
+        MsdA11yKeyboardManagerPrivate *p = manager->priv;
 
         g_debug ("Stopping a11y_keyboard manager");
 
@@ -1182,14 +1182,14 @@ gsd_a11y_keyboard_manager_stop (GsdA11yKeyboardManager *manager)
 }
 
 static void
-gsd_a11y_keyboard_manager_set_property (GObject        *object,
+msd_a11y_keyboard_manager_set_property (GObject        *object,
                                         guint           prop_id,
                                         const GValue   *value,
                                         GParamSpec     *pspec)
 {
-        GsdA11yKeyboardManager *self;
+        MsdA11yKeyboardManager *self;
 
-        self = GSD_A11Y_KEYBOARD_MANAGER (object);
+        self = MSD_A11Y_KEYBOARD_MANAGER (object);
 
         switch (prop_id) {
         default:
@@ -1199,14 +1199,14 @@ gsd_a11y_keyboard_manager_set_property (GObject        *object,
 }
 
 static void
-gsd_a11y_keyboard_manager_get_property (GObject        *object,
+msd_a11y_keyboard_manager_get_property (GObject        *object,
                                         guint           prop_id,
                                         GValue         *value,
                                         GParamSpec     *pspec)
 {
-        GsdA11yKeyboardManager *self;
+        MsdA11yKeyboardManager *self;
 
-        self = GSD_A11Y_KEYBOARD_MANAGER (object);
+        self = MSD_A11Y_KEYBOARD_MANAGER (object);
 
         switch (prop_id) {
         default:
@@ -1216,16 +1216,16 @@ gsd_a11y_keyboard_manager_get_property (GObject        *object,
 }
 
 static GObject *
-gsd_a11y_keyboard_manager_constructor (GType                  type,
+msd_a11y_keyboard_manager_constructor (GType                  type,
                                        guint                  n_construct_properties,
                                        GObjectConstructParam *construct_properties)
 {
-        GsdA11yKeyboardManager      *a11y_keyboard_manager;
-        GsdA11yKeyboardManagerClass *klass;
+        MsdA11yKeyboardManager      *a11y_keyboard_manager;
+        MsdA11yKeyboardManagerClass *klass;
 
-        klass = GSD_A11Y_KEYBOARD_MANAGER_CLASS (g_type_class_peek (GSD_TYPE_A11Y_KEYBOARD_MANAGER));
+        klass = MSD_A11Y_KEYBOARD_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_A11Y_KEYBOARD_MANAGER));
 
-        a11y_keyboard_manager = GSD_A11Y_KEYBOARD_MANAGER (G_OBJECT_CLASS (gsd_a11y_keyboard_manager_parent_class)->constructor (type,
+        a11y_keyboard_manager = MSD_A11Y_KEYBOARD_MANAGER (G_OBJECT_CLASS (msd_a11y_keyboard_manager_parent_class)->constructor (type,
                                                                                                       n_construct_properties,
                                                                                                       construct_properties));
 
@@ -1233,33 +1233,33 @@ gsd_a11y_keyboard_manager_constructor (GType                  type,
 }
 
 static void
-gsd_a11y_keyboard_manager_dispose (GObject *object)
+msd_a11y_keyboard_manager_dispose (GObject *object)
 {
-        GsdA11yKeyboardManager *a11y_keyboard_manager;
+        MsdA11yKeyboardManager *a11y_keyboard_manager;
 
-        a11y_keyboard_manager = GSD_A11Y_KEYBOARD_MANAGER (object);
+        a11y_keyboard_manager = MSD_A11Y_KEYBOARD_MANAGER (object);
 
-        G_OBJECT_CLASS (gsd_a11y_keyboard_manager_parent_class)->dispose (object);
+        G_OBJECT_CLASS (msd_a11y_keyboard_manager_parent_class)->dispose (object);
 }
 
 static void
-gsd_a11y_keyboard_manager_class_init (GsdA11yKeyboardManagerClass *klass)
+msd_a11y_keyboard_manager_class_init (MsdA11yKeyboardManagerClass *klass)
 {
         GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->get_property = gsd_a11y_keyboard_manager_get_property;
-        object_class->set_property = gsd_a11y_keyboard_manager_set_property;
-        object_class->constructor = gsd_a11y_keyboard_manager_constructor;
-        object_class->dispose = gsd_a11y_keyboard_manager_dispose;
-        object_class->finalize = gsd_a11y_keyboard_manager_finalize;
+        object_class->get_property = msd_a11y_keyboard_manager_get_property;
+        object_class->set_property = msd_a11y_keyboard_manager_set_property;
+        object_class->constructor = msd_a11y_keyboard_manager_constructor;
+        object_class->dispose = msd_a11y_keyboard_manager_dispose;
+        object_class->finalize = msd_a11y_keyboard_manager_finalize;
 
-        g_type_class_add_private (klass, sizeof (GsdA11yKeyboardManagerPrivate));
+        g_type_class_add_private (klass, sizeof (MsdA11yKeyboardManagerPrivate));
 }
 
 static void
 on_preferences_dialog_response (GtkDialog              *dialog,
                                 int                     response,
-                                GsdA11yKeyboardManager *manager)
+                                MsdA11yKeyboardManager *manager)
 {
         g_signal_handlers_disconnect_by_func (dialog,
                                               on_preferences_dialog_response,
@@ -1271,10 +1271,10 @@ on_preferences_dialog_response (GtkDialog              *dialog,
 
 static void
 on_status_icon_activate (GtkStatusIcon          *status_icon,
-                         GsdA11yKeyboardManager *manager)
+                         MsdA11yKeyboardManager *manager)
 {
         if (manager->priv->preferences_dialog == NULL) {
-                manager->priv->preferences_dialog = gsd_a11y_preferences_dialog_new ();
+                manager->priv->preferences_dialog = msd_a11y_preferences_dialog_new ();
                 g_signal_connect (manager->priv->preferences_dialog,
                                   "response",
                                   G_CALLBACK (on_preferences_dialog_response),
@@ -1291,7 +1291,7 @@ on_status_icon_activate (GtkStatusIcon          *status_icon,
 }
 
 static void
-gsd_a11y_keyboard_manager_ensure_status_icon (GsdA11yKeyboardManager *manager)
+msd_a11y_keyboard_manager_ensure_status_icon (MsdA11yKeyboardManager *manager)
 {
         mate_settings_profile_start (NULL);
 
@@ -1308,9 +1308,9 @@ gsd_a11y_keyboard_manager_ensure_status_icon (GsdA11yKeyboardManager *manager)
 }
 
 static void
-gsd_a11y_keyboard_manager_init (GsdA11yKeyboardManager *manager)
+msd_a11y_keyboard_manager_init (MsdA11yKeyboardManager *manager)
 {
-        manager->priv = GSD_A11Y_KEYBOARD_MANAGER_GET_PRIVATE (manager);
+        manager->priv = MSD_A11Y_KEYBOARD_MANAGER_GET_PRIVATE (manager);
 
 #ifdef HAVE_LIBMATENOTIFY
         notify_init ("mate-settings-daemon");
@@ -1318,30 +1318,30 @@ gsd_a11y_keyboard_manager_init (GsdA11yKeyboardManager *manager)
 }
 
 static void
-gsd_a11y_keyboard_manager_finalize (GObject *object)
+msd_a11y_keyboard_manager_finalize (GObject *object)
 {
-        GsdA11yKeyboardManager *a11y_keyboard_manager;
+        MsdA11yKeyboardManager *a11y_keyboard_manager;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GSD_IS_A11Y_KEYBOARD_MANAGER (object));
+        g_return_if_fail (MSD_IS_A11Y_KEYBOARD_MANAGER (object));
 
-        a11y_keyboard_manager = GSD_A11Y_KEYBOARD_MANAGER (object);
+        a11y_keyboard_manager = MSD_A11Y_KEYBOARD_MANAGER (object);
 
         g_return_if_fail (a11y_keyboard_manager->priv != NULL);
 
-        G_OBJECT_CLASS (gsd_a11y_keyboard_manager_parent_class)->finalize (object);
+        G_OBJECT_CLASS (msd_a11y_keyboard_manager_parent_class)->finalize (object);
 }
 
-GsdA11yKeyboardManager *
-gsd_a11y_keyboard_manager_new (void)
+MsdA11yKeyboardManager *
+msd_a11y_keyboard_manager_new (void)
 {
         if (manager_object != NULL) {
                 g_object_ref (manager_object);
         } else {
-                manager_object = g_object_new (GSD_TYPE_A11Y_KEYBOARD_MANAGER, NULL);
+                manager_object = g_object_new (MSD_TYPE_A11Y_KEYBOARD_MANAGER, NULL);
                 g_object_add_weak_pointer (manager_object,
                                            (gpointer *) &manager_object);
         }
 
-        return GSD_A11Y_KEYBOARD_MANAGER (manager_object);
+        return MSD_A11Y_KEYBOARD_MANAGER (manager_object);
 }

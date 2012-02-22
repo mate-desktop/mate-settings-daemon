@@ -39,7 +39,7 @@
 #include <dbus/dbus-glib-lowlevel.h>
 
 
-#include "gsd-datetime-mechanism.h"
+#include "msd-datetime-mechanism.h"
 
 static DBusGProxy *
 get_bus_proxy (DBusGConnection *connection)
@@ -123,7 +123,7 @@ int
 main (int argc, char **argv)
 {
         GMainLoop             *loop;
-        GsdDatetimeMechanism  *mechanism;
+        MsdDatetimeMechanism  *mechanism;
         DBusGProxy            *bus_proxy;
         DBusGConnection       *connection;
         int                    ret;
@@ -152,7 +152,7 @@ main (int argc, char **argv)
                 goto out;
         }
 
-        mechanism = gsd_datetime_mechanism_new ();
+        mechanism = msd_datetime_mechanism_new ();
 
         if (mechanism == NULL) {
                 goto out;

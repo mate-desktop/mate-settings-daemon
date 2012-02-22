@@ -11,32 +11,32 @@ INCLUDES = \
 	$(NULL)
 
 noinst_LTLIBRARIES = 			\
-	libgsd-profile.la		\
+	libmsd-profile.la		\
 	$(NULL)
 
-libgsd_profile_la_SOURCES =		\
+libmsd_profile_la_SOURCES =		\
 	mate-settings-profile.c	\
 	mate-settings-profile.h	\
 	$(NULL)
 
-libgsd_profile_la_CPPFLAGS = 		\
+libmsd_profile_la_CPPFLAGS = 		\
 	$(DISABLE_DEPRECATED_CFLAGS)	\
 	$(NULL)
 
-libgsd_profile_la_CFLAGS =		\
+libmsd_profile_la_CFLAGS =		\
 	$(SIMPLE_GREETER_CFLAGS)	\
 	$(NULL)
 
-libgsd_profile_la_LIBADD =		\
+libmsd_profile_la_LIBADD =		\
 	$(NULL)
 
-libgsd_profile_la_LDFLAGS = 	\
+libmsd_profile_la_LDFLAGS = 	\
 	-export-dynamic 	\
 	$(NULL)
 
-gsddir = $(libexecdir)
+msddir = $(libexecdir)
 
-gsd_PROGRAMS = \
+msd_PROGRAMS = \
 	mate-settings-daemon
 
 mate-settings-manager-glue.h: mate-settings-manager.xml Makefile.am
@@ -77,7 +77,7 @@ mate_settings_daemon_LDFLAGS = 	\
 	$(AM_LDFLAGS)
 
 mate_settings_daemon_LDADD = 		\
-	libgsd-profile.la		\
+	libmsd-profile.la		\
 	$(SETTINGS_DAEMON_LIBS)
 
 EXTRA_DIST = 				\

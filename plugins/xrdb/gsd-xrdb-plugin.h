@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef __GSD_XRDB_PLUGIN_H__
-#define __GSD_XRDB_PLUGIN_H__
+#ifndef __MSD_XRDB_PLUGIN_H__
+#define __MSD_XRDB_PLUGIN_H__
 
 #include <glib.h>
 #include <glib-object.h>
@@ -31,27 +31,27 @@
 extern "C" {
 #endif
 
-#define GSD_TYPE_XRDB_PLUGIN                (gsd_xrdb_plugin_get_type ())
-#define GSD_XRDB_PLUGIN(o)                  (G_TYPE_CHECK_INSTANCE_CAST ((o), GSD_TYPE_XRDB_PLUGIN, GsdXrdbPlugin))
-#define GSD_XRDB_PLUGIN_CLASS(k)            (G_TYPE_CHECK_CLASS_CAST((k), GSD_TYPE_XRDB_PLUGIN, GsdXrdbPluginClass))
-#define GSD_IS_XRDB_PLUGIN(o)               (G_TYPE_CHECK_INSTANCE_TYPE ((o), GSD_TYPE_XRDB_PLUGIN))
-#define GSD_IS_XRDB_PLUGIN_CLASS(k)         (G_TYPE_CHECK_CLASS_TYPE ((k), GSD_TYPE_XRDB_PLUGIN))
-#define GSD_XRDB_PLUGIN_GET_CLASS(o)        (G_TYPE_INSTANCE_GET_CLASS ((o), GSD_TYPE_XRDB_PLUGIN, GsdXrdbPluginClass))
+#define MSD_TYPE_XRDB_PLUGIN                (msd_xrdb_plugin_get_type ())
+#define MSD_XRDB_PLUGIN(o)                  (G_TYPE_CHECK_INSTANCE_CAST ((o), MSD_TYPE_XRDB_PLUGIN, MsdXrdbPlugin))
+#define MSD_XRDB_PLUGIN_CLASS(k)            (G_TYPE_CHECK_CLASS_CAST((k), MSD_TYPE_XRDB_PLUGIN, MsdXrdbPluginClass))
+#define MSD_IS_XRDB_PLUGIN(o)               (G_TYPE_CHECK_INSTANCE_TYPE ((o), MSD_TYPE_XRDB_PLUGIN))
+#define MSD_IS_XRDB_PLUGIN_CLASS(k)         (G_TYPE_CHECK_CLASS_TYPE ((k), MSD_TYPE_XRDB_PLUGIN))
+#define MSD_XRDB_PLUGIN_GET_CLASS(o)        (G_TYPE_INSTANCE_GET_CLASS ((o), MSD_TYPE_XRDB_PLUGIN, MsdXrdbPluginClass))
 
-typedef struct GsdXrdbPluginPrivate GsdXrdbPluginPrivate;
+typedef struct MsdXrdbPluginPrivate MsdXrdbPluginPrivate;
 
 typedef struct
 {
         MateSettingsPlugin   parent;
-        GsdXrdbPluginPrivate *priv;
-} GsdXrdbPlugin;
+        MsdXrdbPluginPrivate *priv;
+} MsdXrdbPlugin;
 
 typedef struct
 {
         MateSettingsPluginClass parent_class;
-} GsdXrdbPluginClass;
+} MsdXrdbPluginClass;
 
-GType   gsd_xrdb_plugin_get_type            (void) G_GNUC_CONST;
+GType   msd_xrdb_plugin_get_type            (void) G_GNUC_CONST;
 
 /* All the plugins must implement this function */
 G_MODULE_EXPORT GType register_mate_settings_plugin (GTypeModule *module);
@@ -60,4 +60,4 @@ G_MODULE_EXPORT GType register_mate_settings_plugin (GTypeModule *module);
 }
 #endif
 
-#endif /* __GSD_XRDB_PLUGIN_H__ */
+#endif /* __MSD_XRDB_PLUGIN_H__ */

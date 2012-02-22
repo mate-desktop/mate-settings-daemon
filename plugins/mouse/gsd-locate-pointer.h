@@ -19,6 +19,6 @@
 
 #include <gdk/gdk.h>
 
-void gsd_locate_pointer (GdkScreen *screen);
+void msd_locate_pointer (GdkScreen *screen);
 
 #endif

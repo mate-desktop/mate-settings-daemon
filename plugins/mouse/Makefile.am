@@ -1,10 +1,10 @@
 plugin_LTLIBRARIES = libmouse.la
 
 libmouse_la_SOURCES = 		\
-	gsd-mouse-plugin.h	\
-	gsd-mouse-plugin.c	\
-	gsd-mouse-manager.h	\
-	gsd-mouse-manager.c
+	msd-mouse-plugin.h	\
+	msd-mouse-plugin.c	\
+	msd-mouse-manager.h	\
+	msd-mouse-manager.c
 
 libmouse_la_CPPFLAGS = \
 	-I$(top_srcdir)/mate-settings-daemon		\
@@ -17,7 +17,7 @@ libmouse_la_CFLAGS = \
 	$(AM_CFLAGS)
 
 libmouse_la_LDFLAGS = 		\
-	$(GSD_PLUGIN_LDFLAGS)
+	$(MSD_PLUGIN_LDFLAGS)
 
 libmouse_la_LIBADD  = 		\
 	$(SETTINGS_PLUGIN_LIBS)	\
@@ -28,19 +28,19 @@ plugin_in_files = mouse.mate-settings-plugin.in
 
 plugin_DATA = $(plugin_in_files:.mate-settings-plugin.in=.mate-settings-plugin)
 
-libexec_PROGRAMS = gsd-locate-pointer
+libexec_PROGRAMS = msd-locate-pointer
 
-gsd_locate_pointer_SOURCES = 	\
-	gsd-locate-pointer.h	\
-	gsd-locate-pointer.c	\
-	gsd-timeline.h		\
-	gsd-timeline.c
+msd_locate_pointer_SOURCES = 	\
+	msd-locate-pointer.h	\
+	msd-locate-pointer.c	\
+	msd-timeline.h		\
+	msd-timeline.c
 
-gsd_locate_pointer_CFLAGS = \
+msd_locate_pointer_CFLAGS = \
 	$(SETTINGS_PLUGIN_CFLAGS)	\
 	$(AM_CFLAGS)
 
-gsd_locate_pointer_LDADD  = 		\
+msd_locate_pointer_LDADD  = 		\
 	$(SETTINGS_PLUGIN_LIBS)		\
 	$(X11_LIBS)			\
 	-lm
@@ -49,4 +49,4 @@ EXTRA_DIST = $(plugin_in_files)
 CLEANFILES = $(plugin_DATA)
 DISTCLEANFILES = $(plugin_DATA)
 
-@GSD_INTLTOOL_PLUGIN_RULE@
+@MSD_INTLTOOL_PLUGIN_RULE@

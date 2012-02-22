@@ -48,9 +48,9 @@
 #include <mateconf/mateconf-client.h>
 
 #include "mate-settings-profile.h"
-#include "gsd-mouse-manager.h"
+#include "msd-mouse-manager.h"
 
-#define GSD_MOUSE_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSD_TYPE_MOUSE_MANAGER, GsdMouseManagerPrivate))
+#define MSD_MOUSE_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_MOUSE_MANAGER, MsdMouseManagerPrivate))
 
 #define MATECONF_MOUSE_DIR         "/desktop/mate/peripherals/mouse"
 #define MATECONF_MOUSE_A11Y_DIR    "/desktop/mate/accessibility/mouse"
@@ -70,7 +70,7 @@
 #define KEY_TOUCHPAD_ENABLED    MATECONF_TOUCHPAD_DIR "/touchpad_enabled"
 #endif
 
-struct GsdMouseManagerPrivate
+struct MsdMouseManagerPrivate
 {
         guint notify;
         guint notify_a11y;
@@ -83,28 +83,28 @@ struct GsdMouseManagerPrivate
 	GPid locate_pointer_pid;
 };
 
-static void     gsd_mouse_manager_class_init  (GsdMouseManagerClass *klass);
-static void     gsd_mouse_manager_init        (GsdMouseManager      *mouse_manager);
-static void     gsd_mouse_manager_finalize    (GObject             *object);
-static void     set_mouse_settings            (GsdMouseManager      *manager);
+static void     msd_mouse_manager_class_init  (MsdMouseManagerClass *klass);
+static void     msd_mouse_manager_init        (MsdMouseManager      *mouse_manager);
+static void     msd_mouse_manager_finalize    (GObject             *object);
+static void     set_mouse_settings            (MsdMouseManager      *manager);
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
 static int      set_tap_to_click              (gboolean state, gboolean left_handed);
 static XDevice* device_is_touchpad            (XDeviceInfo deviceinfo);
 #endif
 
-G_DEFINE_TYPE (GsdMouseManager, gsd_mouse_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE (MsdMouseManager, msd_mouse_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
 static void
-gsd_mouse_manager_set_property (GObject        *object,
+msd_mouse_manager_set_property (GObject        *object,
                                guint           prop_id,
                                const GValue   *value,
                                GParamSpec     *pspec)
 {
-        GsdMouseManager *self;
+        MsdMouseManager *self;
 
-        self = GSD_MOUSE_MANAGER (object);
+        self = MSD_MOUSE_MANAGER (object);
 
         switch (prop_id) {
         default:
@@ -114,14 +114,14 @@ gsd_mouse_manager_set_property (GObject        *object,
 }
 
 static void
-gsd_mouse_manager_get_property (GObject        *object,
+msd_mouse_manager_get_property (GObject        *object,
                                guint           prop_id,
                                GValue         *value,
                                GParamSpec     *pspec)
 {
-        GsdMouseManager *self;
+        MsdMouseManager *self;
 
-        self = GSD_MOUSE_MANAGER (object);
+        self = MSD_MOUSE_MANAGER (object);
 
         switch (prop_id) {
         default:
@@ -131,16 +131,16 @@ gsd_mouse_manager_get_property (GObject        *object,
 }
 
 static GObject *
-gsd_mouse_manager_constructor (GType                  type,
+msd_mouse_manager_constructor (GType                  type,
                               guint                  n_construct_properties,
                               GObjectConstructParam *construct_properties)
 {
-        GsdMouseManager      *mouse_manager;
-        GsdMouseManagerClass *klass;
+        MsdMouseManager      *mouse_manager;
+        MsdMouseManagerClass *klass;
 
-        klass = GSD_MOUSE_MANAGER_CLASS (g_type_class_peek (GSD_TYPE_MOUSE_MANAGER));
+        klass = MSD_MOUSE_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_MOUSE_MANAGER));
 
-        mouse_manager = GSD_MOUSE_MANAGER (G_OBJECT_CLASS (gsd_mouse_manager_parent_class)->constructor (type,
+        mouse_manager = MSD_MOUSE_MANAGER (G_OBJECT_CLASS (msd_mouse_manager_parent_class)->constructor (type,
                                                                                                       n_construct_properties,
                                                                                                       construct_properties));
 
@@ -148,27 +148,27 @@ gsd_mouse_manager_constructor (GType                  type,
 }
 
 static void
-gsd_mouse_manager_dispose (GObject *object)
+msd_mouse_manager_dispose (GObject *object)
 {
-        GsdMouseManager *mouse_manager;
+        MsdMouseManager *mouse_manager;
 
-        mouse_manager = GSD_MOUSE_MANAGER (object);
+        mouse_manager = MSD_MOUSE_MANAGER (object);
 
-        G_OBJECT_CLASS (gsd_mouse_manager_parent_class)->dispose (object);
+        G_OBJECT_CLASS (msd_mouse_manager_parent_class)->dispose (object);
 }
 
 static void
-gsd_mouse_manager_class_init (GsdMouseManagerClass *klass)
+msd_mouse_manager_class_init (MsdMouseManagerClass *klass)
 {
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->get_property = gsd_mouse_manager_get_property;
-        object_class->set_property = gsd_mouse_manager_set_property;
-        object_class->constructor = gsd_mouse_manager_constructor;
-        object_class->dispose = gsd_mouse_manager_dispose;
-        object_class->finalize = gsd_mouse_manager_finalize;
+        object_class->get_property = msd_mouse_manager_get_property;
+        object_class->set_property = msd_mouse_manager_set_property;
+        object_class->constructor = msd_mouse_manager_constructor;
+        object_class->dispose = msd_mouse_manager_dispose;
+        object_class->finalize = msd_mouse_manager_finalize;
 
-        g_type_class_add_private (klass, sizeof (GsdMouseManagerPrivate));
+        g_type_class_add_private (klass, sizeof (MsdMouseManagerPrivate));
 }
 
 
@@ -386,13 +386,13 @@ devicepresence_filter (GdkXEvent *xevent,
         {
             XDevicePresenceNotifyEvent *dpn = (XDevicePresenceNotifyEvent *) xev;
             if (dpn->devchange == DeviceEnabled)
-                set_mouse_settings ((GsdMouseManager *) data);
+                set_mouse_settings ((MsdMouseManager *) data);
         }
         return GDK_FILTER_CONTINUE;
 }
 
 static void
-set_devicepresence_handler (GsdMouseManager *manager)
+set_devicepresence_handler (MsdMouseManager *manager)
 {
         Display *display;
         XEventClass class_presence;
@@ -416,7 +416,7 @@ set_devicepresence_handler (GsdMouseManager *manager)
 #endif
 
 static void
-set_left_handed (GsdMouseManager *manager,
+set_left_handed (MsdMouseManager *manager,
                  gboolean         left_handed)
 {
         guchar *buttons ;
@@ -462,7 +462,7 @@ set_left_handed (GsdMouseManager *manager,
 }
 
 static void
-set_motion_acceleration (GsdMouseManager *manager,
+set_motion_acceleration (MsdMouseManager *manager,
                          gfloat           motion_acceleration)
 {
         gint numerator, denominator;
@@ -498,7 +498,7 @@ set_motion_acceleration (GsdMouseManager *manager,
 }
 
 static void
-set_motion_threshold (GsdMouseManager *manager,
+set_motion_threshold (MsdMouseManager *manager,
                       int              motion_threshold)
 {
         XChangePointerControl (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), False, True,
@@ -543,7 +543,7 @@ device_is_touchpad (XDeviceInfo deviceinfo)
 #endif
 
 static int
-set_disable_w_typing (GsdMouseManager *manager, gboolean state)
+set_disable_w_typing (MsdMouseManager *manager, gboolean state)
 {
 
         if (state) {
@@ -805,7 +805,7 @@ set_touchpad_enabled (gboolean state)
 #endif
 
 static void
-set_locate_pointer (GsdMouseManager *manager,
+set_locate_pointer (MsdMouseManager *manager,
                     gboolean         state)
 {
         if (state) {
@@ -815,7 +815,7 @@ set_locate_pointer (GsdMouseManager *manager,
                 if (manager->priv->locate_pointer_spawned)
                         return;
 
-                args[0] = LIBEXECDIR "/gsd-locate-pointer";
+                args[0] = LIBEXECDIR "/msd-locate-pointer";
                 args[1] = NULL;
 
                 g_spawn_async (NULL, args, NULL,
@@ -841,7 +841,7 @@ set_locate_pointer (GsdMouseManager *manager,
 }
 
 static void
-set_mousetweaks_daemon (GsdMouseManager *manager,
+set_mousetweaks_daemon (MsdMouseManager *manager,
                         gboolean         dwell_enable,
                         gboolean         delay_enable)
 {
@@ -896,7 +896,7 @@ set_mousetweaks_daemon (GsdMouseManager *manager,
 }
 
 static void
-set_mouse_settings (GsdMouseManager *manager)
+set_mouse_settings (MsdMouseManager *manager)
 {
         MateConfClient *client = mateconf_client_get_default ();
         gboolean left_handed = mateconf_client_get_bool (client, KEY_LEFT_HANDED, NULL);
@@ -920,7 +920,7 @@ static void
 mouse_callback (MateConfClient        *client,
                 guint               cnxn_id,
                 MateConfEntry         *entry,
-                GsdMouseManager    *manager)
+                MsdMouseManager    *manager)
 {
         if (! strcmp (entry->key, KEY_LEFT_HANDED)) {
                 if (entry->value->type == MATECONF_VALUE_BOOL) {
@@ -978,7 +978,7 @@ mouse_callback (MateConfClient        *client,
 }
 
 static guint
-register_config_callback (GsdMouseManager         *manager,
+register_config_callback (MsdMouseManager         *manager,
                           MateConfClient             *client,
                           const char              *path,
                           MateConfClientNotifyFunc    func)
@@ -988,13 +988,13 @@ register_config_callback (GsdMouseManager         *manager,
 }
 
 static void
-gsd_mouse_manager_init (GsdMouseManager *manager)
+msd_mouse_manager_init (MsdMouseManager *manager)
 {
-        manager->priv = GSD_MOUSE_MANAGER_GET_PRIVATE (manager);
+        manager->priv = MSD_MOUSE_MANAGER_GET_PRIVATE (manager);
 }
 
 static gboolean
-gsd_mouse_manager_idle_cb (GsdMouseManager *manager)
+msd_mouse_manager_idle_cb (MsdMouseManager *manager)
 {
         MateConfClient *client;
 
@@ -1045,12 +1045,12 @@ gsd_mouse_manager_idle_cb (GsdMouseManager *manager)
 }
 
 gboolean
-gsd_mouse_manager_start (GsdMouseManager *manager,
+msd_mouse_manager_start (MsdMouseManager *manager,
                          GError         **error)
 {
         mate_settings_profile_start (NULL);
 
-        g_idle_add ((GSourceFunc) gsd_mouse_manager_idle_cb, manager);
+        g_idle_add ((GSourceFunc) msd_mouse_manager_idle_cb, manager);
 
         mate_settings_profile_end (NULL);
 
@@ -1058,9 +1058,9 @@ gsd_mouse_manager_start (GsdMouseManager *manager,
 }
 
 void
-gsd_mouse_manager_stop (GsdMouseManager *manager)
+msd_mouse_manager_stop (MsdMouseManager *manager)
 {
-        GsdMouseManagerPrivate *p = manager->priv;
+        MsdMouseManagerPrivate *p = manager->priv;
         MateConfClient *client;
 
         g_debug ("Stopping mouse manager");
@@ -1095,30 +1095,30 @@ gsd_mouse_manager_stop (GsdMouseManager *manager)
 }
 
 static void
-gsd_mouse_manager_finalize (GObject *object)
+msd_mouse_manager_finalize (GObject *object)
 {
-        GsdMouseManager *mouse_manager;
+        MsdMouseManager *mouse_manager;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GSD_IS_MOUSE_MANAGER (object));
+        g_return_if_fail (MSD_IS_MOUSE_MANAGER (object));
 
-        mouse_manager = GSD_MOUSE_MANAGER (object);
+        mouse_manager = MSD_MOUSE_MANAGER (object);
 
         g_return_if_fail (mouse_manager->priv != NULL);
 
-        G_OBJECT_CLASS (gsd_mouse_manager_parent_class)->finalize (object);
+        G_OBJECT_CLASS (msd_mouse_manager_parent_class)->finalize (object);
 }
 
-GsdMouseManager *
-gsd_mouse_manager_new (void)
+MsdMouseManager *
+msd_mouse_manager_new (void)
 {
         if (manager_object != NULL) {
                 g_object_ref (manager_object);
         } else {
-                manager_object = g_object_new (GSD_TYPE_MOUSE_MANAGER, NULL);
+                manager_object = g_object_new (MSD_TYPE_MOUSE_MANAGER, NULL);
                 g_object_add_weak_pointer (manager_object,
                                            (gpointer *) &manager_object);
         }
 
-        return GSD_MOUSE_MANAGER (manager_object);
+        return MSD_MOUSE_MANAGER (manager_object);
 }

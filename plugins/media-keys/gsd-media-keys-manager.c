@@ -42,13 +42,13 @@
 #include <dbus/dbus-glib-lowlevel.h>
 
 #include "mate-settings-profile.h"
-#include "gsd-marshal.h"
-#include "gsd-media-keys-manager.h"
-#include "gsd-media-keys-manager-glue.h"
+#include "msd-marshal.h"
+#include "msd-media-keys-manager.h"
+#include "msd-media-keys-manager-glue.h"
 
 #include "eggaccelerators.h"
 #include "acme.h"
-#include "gsd-media-keys-window.h"
+#include "msd-media-keys-window.h"
 
 #ifdef HAVE_PULSE
 #include <canberra-gtk.h>
@@ -57,24 +57,24 @@
 #include "gvc-gstreamer-acme-vol.h"
 #endif /* HAVE_PULSE */
 
-#define GSD_DBUS_PATH "/org/mate/SettingsDaemon"
-#define GSD_DBUS_NAME "org.mate.SettingsDaemon"
-#define GSD_MEDIA_KEYS_DBUS_PATH GSD_DBUS_PATH "/MediaKeys"
-#define GSD_MEDIA_KEYS_DBUS_NAME GSD_DBUS_NAME ".MediaKeys"
+#define MSD_DBUS_PATH "/org/mate/SettingsDaemon"
+#define MSD_DBUS_NAME "org.mate.SettingsDaemon"
+#define MSD_MEDIA_KEYS_DBUS_PATH MSD_DBUS_PATH "/MediaKeys"
+#define MSD_MEDIA_KEYS_DBUS_NAME MSD_DBUS_NAME ".MediaKeys"
 
 #define TOUCHPAD_ENABLED_KEY "/desktop/mate/peripherals/touchpad/touchpad_enabled"
 
 #define VOLUME_STEP 6           /* percents for one volume button press */
 #define MAX_VOLUME 65536.0
 
-#define GSD_MEDIA_KEYS_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSD_TYPE_MEDIA_KEYS_MANAGER, GsdMediaKeysManagerPrivate))
+#define MSD_MEDIA_KEYS_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_MEDIA_KEYS_MANAGER, MsdMediaKeysManagerPrivate))
 
 typedef struct {
         char   *application;
         guint32 time;
 } MediaPlayer;
 
-struct GsdMediaKeysManagerPrivate
+struct MsdMediaKeysManagerPrivate
 {
 #ifdef HAVE_PULSE
         /* Volume bits */
@@ -104,17 +104,17 @@ enum {
 
 static guint signals[LAST_SIGNAL] = { 0 };
 
-static void     gsd_media_keys_manager_class_init  (GsdMediaKeysManagerClass *klass);
-static void     gsd_media_keys_manager_init        (GsdMediaKeysManager      *media_keys_manager);
-static void     gsd_media_keys_manager_finalize    (GObject                  *object);
+static void     msd_media_keys_manager_class_init  (MsdMediaKeysManagerClass *klass);
+static void     msd_media_keys_manager_init        (MsdMediaKeysManager      *media_keys_manager);
+static void     msd_media_keys_manager_finalize    (GObject                  *object);
 
-G_DEFINE_TYPE (GsdMediaKeysManager, gsd_media_keys_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE (MsdMediaKeysManager, msd_media_keys_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
 
 static void
-init_screens (GsdMediaKeysManager *manager)
+init_screens (MsdMediaKeysManager *manager)
 {
         GdkDisplay *display;
         int i;
@@ -154,7 +154,7 @@ acme_error (char * msg)
 }
 
 static char *
-get_term_command (GsdMediaKeysManager *manager)
+get_term_command (MsdMediaKeysManager *manager)
 {
         char *cmd_term;
         char *cmd = NULL;
@@ -180,7 +180,7 @@ get_term_command (GsdMediaKeysManager *manager)
 }
 
 static void
-execute (GsdMediaKeysManager *manager,
+execute (MsdMediaKeysManager *manager,
          char                *cmd,
          gboolean             sync,
          gboolean             need_term)
@@ -247,16 +247,16 @@ execute (GsdMediaKeysManager *manager,
 }
 
 static void
-dialog_init (GsdMediaKeysManager *manager)
+dialog_init (MsdMediaKeysManager *manager)
 {
         if (manager->priv->dialog != NULL
-            && !gsd_osd_window_is_valid (GSD_OSD_WINDOW (manager->priv->dialog))) {
+            && !msd_osd_window_is_valid (MSD_OSD_WINDOW (manager->priv->dialog))) {
                 gtk_widget_destroy (manager->priv->dialog);
                 manager->priv->dialog = NULL;
         }
 
         if (manager->priv->dialog == NULL) {
-                manager->priv->dialog = gsd_media_keys_window_new ();
+                manager->priv->dialog = msd_media_keys_window_new ();
         }
 }
 
@@ -277,7 +277,7 @@ static void
 update_kbd_cb (MateConfClient         *client,
                guint                id,
                MateConfEntry          *entry,
-               GsdMediaKeysManager *manager)
+               MsdMediaKeysManager *manager)
 {
         int      i;
         gboolean need_flush = TRUE;
@@ -331,7 +331,7 @@ update_kbd_cb (MateConfClient         *client,
                 g_warning ("Grab failed for some keys, another application may already have access the them.");
 }
 
-static void init_kbd(GsdMediaKeysManager* manager)
+static void init_kbd(MsdMediaKeysManager* manager)
 {
 	int i;
 	gboolean need_flush = FALSE;
@@ -395,7 +395,7 @@ static void init_kbd(GsdMediaKeysManager* manager)
 }
 
 static void
-dialog_show (GsdMediaKeysManager *manager)
+dialog_show (MsdMediaKeysManager *manager)
 {
         int            orig_w;
         int            orig_h;
@@ -463,7 +463,7 @@ dialog_show (GsdMediaKeysManager *manager)
 }
 
 static void
-do_unknown_action (GsdMediaKeysManager *manager,
+do_unknown_action (MsdMediaKeysManager *manager,
                    const char          *url)
 {
         char *string;
@@ -484,7 +484,7 @@ do_unknown_action (GsdMediaKeysManager *manager,
 }
 
 static void
-do_help_action (GsdMediaKeysManager *manager)
+do_help_action (MsdMediaKeysManager *manager)
 {
         char *string;
 
@@ -505,7 +505,7 @@ do_help_action (GsdMediaKeysManager *manager)
 }
 
 static void
-do_mail_action (GsdMediaKeysManager *manager)
+do_mail_action (MsdMediaKeysManager *manager)
 {
         char *string;
 
@@ -527,7 +527,7 @@ do_mail_action (GsdMediaKeysManager *manager)
 }
 
 static void
-do_media_action (GsdMediaKeysManager *manager)
+do_media_action (MsdMediaKeysManager *manager)
 {
         char *command;
 
@@ -544,7 +544,7 @@ do_media_action (GsdMediaKeysManager *manager)
 }
 
 static void
-do_www_action (GsdMediaKeysManager *manager,
+do_www_action (MsdMediaKeysManager *manager,
                const char          *url)
 {
         char *string;
@@ -575,7 +575,7 @@ do_www_action (GsdMediaKeysManager *manager,
 }
 
 static void
-do_exit_action (GsdMediaKeysManager *manager)
+do_exit_action (MsdMediaKeysManager *manager)
 {
         execute (manager, "mate-session-save --shutdown-dialog", FALSE, FALSE);
 }
@@ -583,7 +583,7 @@ do_exit_action (GsdMediaKeysManager *manager)
 static void
 do_eject_action_cb (GDrive              *drive,
                     GAsyncResult        *res,
-                    GsdMediaKeysManager *manager)
+                    MsdMediaKeysManager *manager)
 {
         g_drive_eject_with_operation_finish (drive, res, NULL);
 }
@@ -592,7 +592,7 @@ do_eject_action_cb (GDrive              *drive,
 #define SCORE_CAN_EJECT 50
 #define SCORE_HAS_MEDIA 100
 static void
-do_eject_action (GsdMediaKeysManager *manager)
+do_eject_action (MsdMediaKeysManager *manager)
 {
         GList *drives, *l;
         GDrive *fav_drive;
@@ -624,7 +624,7 @@ do_eject_action (GsdMediaKeysManager *manager)
 
         /* Show the dialogue */
         dialog_init (manager);
-        gsd_media_keys_window_set_action_custom (GSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
+        msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
                                                  "media-eject",
                                                  FALSE);
         dialog_show (manager);
@@ -647,13 +647,13 @@ do_eject_action (GsdMediaKeysManager *manager)
 }
 
 static void
-do_touchpad_action (GsdMediaKeysManager *manager)
+do_touchpad_action (MsdMediaKeysManager *manager)
 {
         MateConfClient *client = manager->priv->conf_client;
         gboolean state = mateconf_client_get_bool (client, TOUCHPAD_ENABLED_KEY, NULL);
 
         dialog_init (manager);
-        gsd_media_keys_window_set_action_custom (GSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
+        msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
                                                  (!state) ? "touchpad-enabled" : "touchpad-disabled",
                                                  FALSE);
         dialog_show (manager);
@@ -663,7 +663,7 @@ do_touchpad_action (GsdMediaKeysManager *manager)
 
 #ifdef HAVE_PULSE
 static void
-update_dialog (GsdMediaKeysManager *manager,
+update_dialog (MsdMediaKeysManager *manager,
                guint vol,
                gboolean muted,
                gboolean sound_changed)
@@ -672,11 +672,11 @@ update_dialog (GsdMediaKeysManager *manager,
         vol = CLAMP (vol, 0, 100);
 
         dialog_init (manager);
-        gsd_media_keys_window_set_volume_muted (GSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
+        msd_media_keys_window_set_volume_muted (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
                                                 muted);
-        gsd_media_keys_window_set_volume_level (GSD_MEDIA_KEYS_WINDOW (manager->priv->dialog), vol);
-        gsd_media_keys_window_set_action (GSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
-                                          GSD_MEDIA_KEYS_WINDOW_ACTION_VOLUME);
+        msd_media_keys_window_set_volume_level (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog), vol);
+        msd_media_keys_window_set_action (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
+                                          MSD_MEDIA_KEYS_WINDOW_ACTION_VOLUME);
         dialog_show (manager);
 
         if (sound_changed != FALSE && muted == FALSE)
@@ -690,7 +690,7 @@ update_dialog (GsdMediaKeysManager *manager,
  
 #if defined(HAVE_PULSE) || defined(HAVE_GSTREAMER)
 static void
-do_sound_action (GsdMediaKeysManager *manager,
+do_sound_action (MsdMediaKeysManager *manager,
                  int                  type)
 {
         gboolean muted;
@@ -814,12 +814,12 @@ do_sound_action (GsdMediaKeysManager *manager,
         /* FIXME: AcmeVolume should probably emit signals
            instead of doing it like this */
         dialog_init (manager);
-        gsd_media_keys_window_set_volume_muted (GSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
+        msd_media_keys_window_set_volume_muted (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
                                                 muted);
-        gsd_media_keys_window_set_volume_level (GSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
+        msd_media_keys_window_set_volume_level (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
                                                 vol);
-        gsd_media_keys_window_set_action (GSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
-                                          GSD_MEDIA_KEYS_WINDOW_ACTION_VOLUME);
+        msd_media_keys_window_set_action (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
+                                          MSD_MEDIA_KEYS_WINDOW_ACTION_VOLUME);
         dialog_show (manager);
 #endif /* HAVE_PULSE */
 }
@@ -827,7 +827,7 @@ do_sound_action (GsdMediaKeysManager *manager,
 
 #ifdef HAVE_PULSE
 static void
-update_default_sink (GsdMediaKeysManager *manager)
+update_default_sink (MsdMediaKeysManager *manager)
 {
         GvcMixerStream *stream;
 
@@ -849,7 +849,7 @@ update_default_sink (GsdMediaKeysManager *manager)
 
 static void
 on_control_ready (GvcMixerControl     *control,
-                  GsdMediaKeysManager *manager)
+                  MsdMediaKeysManager *manager)
 {
         update_default_sink (manager);
 }
@@ -857,7 +857,7 @@ on_control_ready (GvcMixerControl     *control,
 static void
 on_control_default_sink_changed (GvcMixerControl     *control,
                                  guint                id,
-                                 GsdMediaKeysManager *manager)
+                                 MsdMediaKeysManager *manager)
 {
         update_default_sink (manager);
 }
@@ -886,7 +886,7 @@ find_by_time (gconstpointer a,
  * events only nobody is interested.
  */
 gboolean
-gsd_media_keys_manager_grab_media_player_keys (GsdMediaKeysManager *manager,
+msd_media_keys_manager_grab_media_player_keys (MsdMediaKeysManager *manager,
                                                const char          *application,
                                                guint32              time,
                                                GError             **error)
@@ -928,7 +928,7 @@ gsd_media_keys_manager_grab_media_player_keys (GsdMediaKeysManager *manager,
 }
 
 gboolean
-gsd_media_keys_manager_release_media_player_keys (GsdMediaKeysManager *manager,
+msd_media_keys_manager_release_media_player_keys (MsdMediaKeysManager *manager,
                                                   const char          *application,
                                                   GError             **error)
 {
@@ -949,7 +949,7 @@ gsd_media_keys_manager_release_media_player_keys (GsdMediaKeysManager *manager,
 }
 
 static gboolean
-gsd_media_player_key_pressed (GsdMediaKeysManager *manager,
+msd_media_player_key_pressed (MsdMediaKeysManager *manager,
                               const char          *key)
 {
         const char *application = NULL;
@@ -967,14 +967,14 @@ gsd_media_player_key_pressed (GsdMediaKeysManager *manager,
 }
 
 static gboolean
-do_multimedia_player_action (GsdMediaKeysManager *manager,
+do_multimedia_player_action (MsdMediaKeysManager *manager,
                              const char          *key)
 {
-        return gsd_media_player_key_pressed (manager, key);
+        return msd_media_player_key_pressed (manager, key);
 }
 
 static gboolean
-do_action (GsdMediaKeysManager *manager,
+do_action (MsdMediaKeysManager *manager,
            int                  type)
 {
         char *cmd;
@@ -1062,7 +1062,7 @@ do_action (GsdMediaKeysManager *manager,
 }
 
 static GdkScreen *
-acme_get_screen_from_event (GsdMediaKeysManager *manager,
+acme_get_screen_from_event (MsdMediaKeysManager *manager,
                             XAnyEvent           *xanyev)
 {
         GdkWindow *window;
@@ -1085,7 +1085,7 @@ acme_get_screen_from_event (GsdMediaKeysManager *manager,
 static GdkFilterReturn
 acme_filter_events (GdkXEvent           *xevent,
                     GdkEvent            *event,
-                    GsdMediaKeysManager *manager)
+                    MsdMediaKeysManager *manager)
 {
         XEvent    *xev = (XEvent *) xevent;
         XAnyEvent *xany = (XAnyEvent *) xevent;
@@ -1126,7 +1126,7 @@ acme_filter_events (GdkXEvent           *xevent,
 }
 
 static gboolean
-start_media_keys_idle_cb (GsdMediaKeysManager *manager)
+start_media_keys_idle_cb (MsdMediaKeysManager *manager)
 {
         GSList *l;
 
@@ -1162,7 +1162,7 @@ start_media_keys_idle_cb (GsdMediaKeysManager *manager)
 }
 
 gboolean
-gsd_media_keys_manager_start (GsdMediaKeysManager *manager,
+msd_media_keys_manager_start (MsdMediaKeysManager *manager,
                               GError             **error)
 {
         mate_settings_profile_start (NULL);
@@ -1203,9 +1203,9 @@ gsd_media_keys_manager_start (GsdMediaKeysManager *manager,
 }
 
 void
-gsd_media_keys_manager_stop (GsdMediaKeysManager *manager)
+msd_media_keys_manager_stop (MsdMediaKeysManager *manager)
 {
-        GsdMediaKeysManagerPrivate *priv = manager->priv;
+        MsdMediaKeysManagerPrivate *priv = manager->priv;
         GSList *ls;
         GList *l;
         int i;
@@ -1295,14 +1295,14 @@ gsd_media_keys_manager_stop (GsdMediaKeysManager *manager)
 }
 
 static void
-gsd_media_keys_manager_set_property (GObject        *object,
+msd_media_keys_manager_set_property (GObject        *object,
                                guint           prop_id,
                                const GValue   *value,
                                GParamSpec     *pspec)
 {
-        GsdMediaKeysManager *self;
+        MsdMediaKeysManager *self;
 
-        self = GSD_MEDIA_KEYS_MANAGER (object);
+        self = MSD_MEDIA_KEYS_MANAGER (object);
 
         switch (prop_id) {
         default:
@@ -1312,14 +1312,14 @@ gsd_media_keys_manager_set_property (GObject        *object,
 }
 
 static void
-gsd_media_keys_manager_get_property (GObject        *object,
+msd_media_keys_manager_get_property (GObject        *object,
                                guint           prop_id,
                                GValue         *value,
                                GParamSpec     *pspec)
 {
-        GsdMediaKeysManager *self;
+        MsdMediaKeysManager *self;
 
-        self = GSD_MEDIA_KEYS_MANAGER (object);
+        self = MSD_MEDIA_KEYS_MANAGER (object);
 
         switch (prop_id) {
         default:
@@ -1329,16 +1329,16 @@ gsd_media_keys_manager_get_property (GObject        *object,
 }
 
 static GObject *
-gsd_media_keys_manager_constructor (GType                  type,
+msd_media_keys_manager_constructor (GType                  type,
                               guint                  n_construct_properties,
                               GObjectConstructParam *construct_properties)
 {
-        GsdMediaKeysManager      *media_keys_manager;
-        GsdMediaKeysManagerClass *klass;
+        MsdMediaKeysManager      *media_keys_manager;
+        MsdMediaKeysManagerClass *klass;
 
-        klass = GSD_MEDIA_KEYS_MANAGER_CLASS (g_type_class_peek (GSD_TYPE_MEDIA_KEYS_MANAGER));
+        klass = MSD_MEDIA_KEYS_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_MEDIA_KEYS_MANAGER));
 
-        media_keys_manager = GSD_MEDIA_KEYS_MANAGER (G_OBJECT_CLASS (gsd_media_keys_manager_parent_class)->constructor (type,
+        media_keys_manager = MSD_MEDIA_KEYS_MANAGER (G_OBJECT_CLASS (msd_media_keys_manager_parent_class)->constructor (type,
                                                                                                       n_construct_properties,
                                                                                                       construct_properties));
 
@@ -1346,68 +1346,68 @@ gsd_media_keys_manager_constructor (GType                  type,
 }
 
 static void
-gsd_media_keys_manager_dispose (GObject *object)
+msd_media_keys_manager_dispose (GObject *object)
 {
-        GsdMediaKeysManager *media_keys_manager;
+        MsdMediaKeysManager *media_keys_manager;
 
-        media_keys_manager = GSD_MEDIA_KEYS_MANAGER (object);
+        media_keys_manager = MSD_MEDIA_KEYS_MANAGER (object);
 
-        G_OBJECT_CLASS (gsd_media_keys_manager_parent_class)->dispose (object);
+        G_OBJECT_CLASS (msd_media_keys_manager_parent_class)->dispose (object);
 }
 
 static void
-gsd_media_keys_manager_class_init (GsdMediaKeysManagerClass *klass)
+msd_media_keys_manager_class_init (MsdMediaKeysManagerClass *klass)
 {
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->get_property = gsd_media_keys_manager_get_property;
-        object_class->set_property = gsd_media_keys_manager_set_property;
-        object_class->constructor = gsd_media_keys_manager_constructor;
-        object_class->dispose = gsd_media_keys_manager_dispose;
-        object_class->finalize = gsd_media_keys_manager_finalize;
+        object_class->get_property = msd_media_keys_manager_get_property;
+        object_class->set_property = msd_media_keys_manager_set_property;
+        object_class->constructor = msd_media_keys_manager_constructor;
+        object_class->dispose = msd_media_keys_manager_dispose;
+        object_class->finalize = msd_media_keys_manager_finalize;
 
        signals[MEDIA_PLAYER_KEY_PRESSED] =
                g_signal_new ("media-player-key-pressed",
                              G_OBJECT_CLASS_TYPE (klass),
                              G_SIGNAL_RUN_LAST,
-                             G_STRUCT_OFFSET (GsdMediaKeysManagerClass, media_player_key_pressed),
+                             G_STRUCT_OFFSET (MsdMediaKeysManagerClass, media_player_key_pressed),
                              NULL,
                              NULL,
-                             gsd_marshal_VOID__STRING_STRING,
+                             msd_marshal_VOID__STRING_STRING,
                              G_TYPE_NONE,
                              2,
                              G_TYPE_STRING,
                              G_TYPE_STRING);
 
-        dbus_g_object_type_install_info (GSD_TYPE_MEDIA_KEYS_MANAGER, &dbus_glib_gsd_media_keys_manager_object_info);
+        dbus_g_object_type_install_info (MSD_TYPE_MEDIA_KEYS_MANAGER, &dbus_glib_msd_media_keys_manager_object_info);
 
-        g_type_class_add_private (klass, sizeof (GsdMediaKeysManagerPrivate));
+        g_type_class_add_private (klass, sizeof (MsdMediaKeysManagerPrivate));
 }
 
 static void
-gsd_media_keys_manager_init (GsdMediaKeysManager *manager)
+msd_media_keys_manager_init (MsdMediaKeysManager *manager)
 {
-        manager->priv = GSD_MEDIA_KEYS_MANAGER_GET_PRIVATE (manager);
+        manager->priv = MSD_MEDIA_KEYS_MANAGER_GET_PRIVATE (manager);
 
 }
 
 static void
-gsd_media_keys_manager_finalize (GObject *object)
+msd_media_keys_manager_finalize (GObject *object)
 {
-        GsdMediaKeysManager *media_keys_manager;
+        MsdMediaKeysManager *media_keys_manager;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GSD_IS_MEDIA_KEYS_MANAGER (object));
+        g_return_if_fail (MSD_IS_MEDIA_KEYS_MANAGER (object));
 
-        media_keys_manager = GSD_MEDIA_KEYS_MANAGER (object);
+        media_keys_manager = MSD_MEDIA_KEYS_MANAGER (object);
 
         g_return_if_fail (media_keys_manager->priv != NULL);
 
-        G_OBJECT_CLASS (gsd_media_keys_manager_parent_class)->finalize (object);
+        G_OBJECT_CLASS (msd_media_keys_manager_parent_class)->finalize (object);
 }
 
 static gboolean
-register_manager (GsdMediaKeysManager *manager)
+register_manager (MsdMediaKeysManager *manager)
 {
         GError *error = NULL;
 
@@ -1420,20 +1420,20 @@ register_manager (GsdMediaKeysManager *manager)
                 return FALSE;
         }
 
-        dbus_g_connection_register_g_object (manager->priv->connection, GSD_MEDIA_KEYS_DBUS_PATH, G_OBJECT (manager));
+        dbus_g_connection_register_g_object (manager->priv->connection, MSD_MEDIA_KEYS_DBUS_PATH, G_OBJECT (manager));
 
         return TRUE;
 }
 
-GsdMediaKeysManager *
-gsd_media_keys_manager_new (void)
+MsdMediaKeysManager *
+msd_media_keys_manager_new (void)
 {
         if (manager_object != NULL) {
                 g_object_ref (manager_object);
         } else {
                 gboolean res;
 
-                manager_object = g_object_new (GSD_TYPE_MEDIA_KEYS_MANAGER, NULL);
+                manager_object = g_object_new (MSD_TYPE_MEDIA_KEYS_MANAGER, NULL);
                 g_object_add_weak_pointer (manager_object,
                                            (gpointer *) &manager_object);
                 res = register_manager (manager_object);
@@ -1443,5 +1443,5 @@ gsd_media_keys_manager_new (void)
                 }
         }
 
-        return GSD_MEDIA_KEYS_MANAGER (manager_object);
+        return MSD_MEDIA_KEYS_MANAGER (manager_object);
 }

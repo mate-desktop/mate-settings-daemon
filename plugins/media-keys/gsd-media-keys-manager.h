@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef __GSD_MEDIA_KEYS_MANAGER_H
-#define __GSD_MEDIA_KEYS_MANAGER_H
+#ifndef __MSD_MEDIA_KEYS_MANAGER_H
+#define __MSD_MEDIA_KEYS_MANAGER_H
 
 #include <glib-object.h>
 
@@ -27,41 +27,41 @@
 extern "C" {
 #endif
 
-#define GSD_TYPE_MEDIA_KEYS_MANAGER         (gsd_media_keys_manager_get_type ())
-#define GSD_MEDIA_KEYS_MANAGER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GSD_TYPE_MEDIA_KEYS_MANAGER, GsdMediaKeysManager))
-#define GSD_MEDIA_KEYS_MANAGER_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), GSD_TYPE_MEDIA_KEYS_MANAGER, GsdMediaKeysManagerClass))
-#define GSD_IS_MEDIA_KEYS_MANAGER(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), GSD_TYPE_MEDIA_KEYS_MANAGER))
-#define GSD_IS_MEDIA_KEYS_MANAGER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), GSD_TYPE_MEDIA_KEYS_MANAGER))
-#define GSD_MEDIA_KEYS_MANAGER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), GSD_TYPE_MEDIA_KEYS_MANAGER, GsdMediaKeysManagerClass))
+#define MSD_TYPE_MEDIA_KEYS_MANAGER         (msd_media_keys_manager_get_type ())
+#define MSD_MEDIA_KEYS_MANAGER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), MSD_TYPE_MEDIA_KEYS_MANAGER, MsdMediaKeysManager))
+#define MSD_MEDIA_KEYS_MANAGER_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), MSD_TYPE_MEDIA_KEYS_MANAGER, MsdMediaKeysManagerClass))
+#define MSD_IS_MEDIA_KEYS_MANAGER(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), MSD_TYPE_MEDIA_KEYS_MANAGER))
+#define MSD_IS_MEDIA_KEYS_MANAGER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), MSD_TYPE_MEDIA_KEYS_MANAGER))
+#define MSD_MEDIA_KEYS_MANAGER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), MSD_TYPE_MEDIA_KEYS_MANAGER, MsdMediaKeysManagerClass))
 
-typedef struct GsdMediaKeysManagerPrivate GsdMediaKeysManagerPrivate;
+typedef struct MsdMediaKeysManagerPrivate MsdMediaKeysManagerPrivate;
 
 typedef struct
 {
         GObject                     parent;
-        GsdMediaKeysManagerPrivate *priv;
-} GsdMediaKeysManager;
+        MsdMediaKeysManagerPrivate *priv;
+} MsdMediaKeysManager;
 
 typedef struct
 {
         GObjectClass   parent_class;
-        void          (* media_player_key_pressed) (GsdMediaKeysManager *manager,
+        void          (* media_player_key_pressed) (MsdMediaKeysManager *manager,
                                                     const char          *application,
                                                     const char          *key);
-} GsdMediaKeysManagerClass;
+} MsdMediaKeysManagerClass;
 
-GType                 gsd_media_keys_manager_get_type                  (void);
+GType                 msd_media_keys_manager_get_type                  (void);
 
-GsdMediaKeysManager * gsd_media_keys_manager_new                       (void);
-gboolean              gsd_media_keys_manager_start                     (GsdMediaKeysManager *manager,
+MsdMediaKeysManager * msd_media_keys_manager_new                       (void);
+gboolean              msd_media_keys_manager_start                     (MsdMediaKeysManager *manager,
                                                                         GError             **error);
-void                  gsd_media_keys_manager_stop                      (GsdMediaKeysManager *manager);
+void                  msd_media_keys_manager_stop                      (MsdMediaKeysManager *manager);
 
-gboolean              gsd_media_keys_manager_grab_media_player_keys    (GsdMediaKeysManager *manager,
+gboolean              msd_media_keys_manager_grab_media_player_keys    (MsdMediaKeysManager *manager,
                                                                         const char          *application,
                                                                         guint32              time,
                                                                         GError             **error);
-gboolean              gsd_media_keys_manager_release_media_player_keys (GsdMediaKeysManager *manager,
+gboolean              msd_media_keys_manager_release_media_player_keys (MsdMediaKeysManager *manager,
                                                                         const char          *application,
                                                                         GError             **error);
 
@@ -69,4 +69,4 @@ gboolean              gsd_media_keys_manager_release_media_player_keys (GsdMedia
 }
 #endif
 
-#endif /* __GSD_MEDIA_KEYS_MANAGER_H */
+#endif /* __MSD_MEDIA_KEYS_MANAGER_H */

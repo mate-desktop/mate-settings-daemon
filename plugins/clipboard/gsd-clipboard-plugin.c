@@ -24,38 +24,38 @@
 #include <gmodule.h>
 
 #include "mate-settings-plugin.h"
-#include "gsd-clipboard-plugin.h"
-#include "gsd-clipboard-manager.h"
+#include "msd-clipboard-plugin.h"
+#include "msd-clipboard-manager.h"
 
-struct GsdClipboardPluginPrivate {
-        GsdClipboardManager *manager;
+struct MsdClipboardPluginPrivate {
+        MsdClipboardManager *manager;
 };
 
-#define GSD_CLIPBOARD_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), GSD_TYPE_CLIPBOARD_PLUGIN, GsdClipboardPluginPrivate))
+#define MSD_CLIPBOARD_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), MSD_TYPE_CLIPBOARD_PLUGIN, MsdClipboardPluginPrivate))
 
-MATE_SETTINGS_PLUGIN_REGISTER (GsdClipboardPlugin, gsd_clipboard_plugin)
+MATE_SETTINGS_PLUGIN_REGISTER (MsdClipboardPlugin, msd_clipboard_plugin)
 
 static void
-gsd_clipboard_plugin_init (GsdClipboardPlugin *plugin)
+msd_clipboard_plugin_init (MsdClipboardPlugin *plugin)
 {
-        plugin->priv = GSD_CLIPBOARD_PLUGIN_GET_PRIVATE (plugin);
+        plugin->priv = MSD_CLIPBOARD_PLUGIN_GET_PRIVATE (plugin);
 
-        g_debug ("GsdClipboardPlugin initializing");
+        g_debug ("MsdClipboardPlugin initializing");
 
-        plugin->priv->manager = gsd_clipboard_manager_new ();
+        plugin->priv->manager = msd_clipboard_manager_new ();
 }
 
 static void
-gsd_clipboard_plugin_finalize (GObject *object)
+msd_clipboard_plugin_finalize (GObject *object)
 {
-        GsdClipboardPlugin *plugin;
+        MsdClipboardPlugin *plugin;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GSD_IS_CLIPBOARD_PLUGIN (object));
+        g_return_if_fail (MSD_IS_CLIPBOARD_PLUGIN (object));
 
-        g_debug ("GsdClipboardPlugin finalizing");
+        g_debug ("MsdClipboardPlugin finalizing");
 
-        plugin = GSD_CLIPBOARD_PLUGIN (object);
+        plugin = MSD_CLIPBOARD_PLUGIN (object);
 
         g_return_if_fail (plugin->priv != NULL);
 
@@ -63,7 +63,7 @@ gsd_clipboard_plugin_finalize (GObject *object)
                 g_object_unref (plugin->priv->manager);
         }
 
-        G_OBJECT_CLASS (gsd_clipboard_plugin_parent_class)->finalize (object);
+        G_OBJECT_CLASS (msd_clipboard_plugin_parent_class)->finalize (object);
 }
 
 static void
@@ -75,7 +75,7 @@ impl_activate (MateSettingsPlugin *plugin)
         g_debug ("Activating clipboard plugin");
 
         error = NULL;
-        res = gsd_clipboard_manager_start (GSD_CLIPBOARD_PLUGIN (plugin)->priv->manager, &error);
+        res = msd_clipboard_manager_start (MSD_CLIPBOARD_PLUGIN (plugin)->priv->manager, &error);
         if (! res) {
                 g_warning ("Unable to start clipboard manager: %s", error->message);
                 g_error_free (error);
@@ -86,19 +86,19 @@ static void
 impl_deactivate (MateSettingsPlugin *plugin)
 {
         g_debug ("Deactivating clipboard plugin");
-        gsd_clipboard_manager_stop (GSD_CLIPBOARD_PLUGIN (plugin)->priv->manager);
+        msd_clipboard_manager_stop (MSD_CLIPBOARD_PLUGIN (plugin)->priv->manager);
 }
 
 static void
-gsd_clipboard_plugin_class_init (GsdClipboardPluginClass *klass)
+msd_clipboard_plugin_class_init (MsdClipboardPluginClass *klass)
 {
         GObjectClass           *object_class = G_OBJECT_CLASS (klass);
         MateSettingsPluginClass *plugin_class = MATE_SETTINGS_PLUGIN_CLASS (klass);
 
-        object_class->finalize = gsd_clipboard_plugin_finalize;
+        object_class->finalize = msd_clipboard_plugin_finalize;
 
         plugin_class->activate = impl_activate;
         plugin_class->deactivate = impl_deactivate;
 
-        g_type_class_add_private (klass, sizeof (GsdClipboardPluginPrivate));
+        g_type_class_add_private (klass, sizeof (MsdClipboardPluginPrivate));
 }

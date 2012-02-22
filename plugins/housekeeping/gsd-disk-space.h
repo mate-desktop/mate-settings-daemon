@@ -21,8 +21,8 @@
  *
  */
 
-#ifndef __GSD_DISK_SPACE_H
-#define __GSD_DISK_SPACE_H
+#ifndef __MSD_DISK_SPACE_H
+#define __MSD_DISK_SPACE_H
 
 #include <glib.h>
 
@@ -30,11 +30,11 @@
 extern "C" {
 #endif
 
-void gsd_ldsm_setup (gboolean check_now);
-void gsd_ldsm_clean (void);
+void msd_ldsm_setup (gboolean check_now);
+void msd_ldsm_clean (void);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __GSD_DISK_SPACE_H */
+#endif /* __MSD_DISK_SPACE_H */

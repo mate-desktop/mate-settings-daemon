@@ -39,15 +39,15 @@
 #include <mateconf/mateconf-client.h>
 
 #include "mate-settings-profile.h"
-#include "gsd-keybindings-manager.h"
+#include "msd-keybindings-manager.h"
 
-#include "gsd-keygrab.h"
+#include "msd-keygrab.h"
 #include "eggaccelerators.h"
 
 #define MATECONF_BINDING_DIR "/desktop/mate/keybindings"
 #define ALLOWED_KEYS_KEY MATECONF_BINDING_DIR "/allowed_keys"
 
-#define GSD_KEYBINDINGS_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSD_TYPE_KEYBINDINGS_MANAGER, GsdKeybindingsManagerPrivate))
+#define MSD_KEYBINDINGS_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_KEYBINDINGS_MANAGER, MsdKeybindingsManagerPrivate))
 
 typedef struct {
         char *binding_str;
@@ -57,7 +57,7 @@ typedef struct {
         Key   previous_key;
 } Binding;
 
-struct GsdKeybindingsManagerPrivate
+struct MsdKeybindingsManagerPrivate
 {
         GSList *binding_list;
 	GSList *allowed_keys;
@@ -65,11 +65,11 @@ struct GsdKeybindingsManagerPrivate
         guint   notify;
 };
 
-static void     gsd_keybindings_manager_class_init  (GsdKeybindingsManagerClass *klass);
-static void     gsd_keybindings_manager_init        (GsdKeybindingsManager      *keybindings_manager);
-static void     gsd_keybindings_manager_finalize    (GObject             *object);
+static void     msd_keybindings_manager_class_init  (MsdKeybindingsManagerClass *klass);
+static void     msd_keybindings_manager_init        (MsdKeybindingsManager      *keybindings_manager);
+static void     msd_keybindings_manager_finalize    (GObject             *object);
 
-G_DEFINE_TYPE (GsdKeybindingsManager, gsd_keybindings_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE (MsdKeybindingsManager, msd_keybindings_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -152,7 +152,7 @@ compare_bindings (gconstpointer a,
 }
 
 static gboolean
-bindings_get_entry (GsdKeybindingsManager *manager,
+bindings_get_entry (MsdKeybindingsManager *manager,
                     MateConfClient           *client,
                     const char            *subdir)
 {
@@ -278,7 +278,7 @@ same_key (const Key *key, const Key *other)
 }
 
 static gboolean
-key_already_used (GsdKeybindingsManager *manager,
+key_already_used (MsdKeybindingsManager *manager,
                   Binding               *binding)
 {
         GSList *li;
@@ -297,7 +297,7 @@ key_already_used (GsdKeybindingsManager *manager,
 }
 
 static void
-binding_unregister_keys (GsdKeybindingsManager *manager)
+binding_unregister_keys (MsdKeybindingsManager *manager)
 {
         GSList *li;
         gboolean need_flush = FALSE;
@@ -319,7 +319,7 @@ binding_unregister_keys (GsdKeybindingsManager *manager)
 }
 
 static void
-binding_register_keys (GsdKeybindingsManager *manager)
+binding_register_keys (MsdKeybindingsManager *manager)
 {
         GSList *li;
         gboolean need_flush = FALSE;
@@ -448,7 +448,7 @@ get_exec_environment (XEvent *xevent)
 static GdkFilterReturn
 keybindings_filter (GdkXEvent             *gdk_xevent,
                     GdkEvent              *event,
-                    GsdKeybindingsManager *manager)
+                    MsdKeybindingsManager *manager)
 {
         XEvent *xevent = (XEvent *) gdk_xevent;
         GSList *li;
@@ -510,7 +510,7 @@ static void
 bindings_callback (MateConfClient           *client,
                    guint                  cnxn_id,
                    MateConfEntry            *entry,
-                   GsdKeybindingsManager *manager)
+                   MsdKeybindingsManager *manager)
 {
         char** key_elems;
         char* binding_entry;
@@ -541,7 +541,7 @@ bindings_callback (MateConfClient           *client,
 }
 
 static guint
-register_config_callback (GsdKeybindingsManager   *manager,
+register_config_callback (MsdKeybindingsManager   *manager,
                           MateConfClient             *client,
                           const char              *path,
                           MateConfClientNotifyFunc    func)
@@ -551,7 +551,7 @@ register_config_callback (GsdKeybindingsManager   *manager,
 }
 
 gboolean
-gsd_keybindings_manager_start (GsdKeybindingsManager *manager,
+msd_keybindings_manager_start (MsdKeybindingsManager *manager,
                                GError               **error)
 {
         MateConfClient *client;
@@ -606,9 +606,9 @@ gsd_keybindings_manager_start (GsdKeybindingsManager *manager,
 }
 
 void
-gsd_keybindings_manager_stop (GsdKeybindingsManager *manager)
+msd_keybindings_manager_stop (MsdKeybindingsManager *manager)
 {
-        GsdKeybindingsManagerPrivate *p = manager->priv;
+        MsdKeybindingsManagerPrivate *p = manager->priv;
         GSList *l;
 
         g_debug ("Stopping keybindings manager");
@@ -647,14 +647,14 @@ gsd_keybindings_manager_stop (GsdKeybindingsManager *manager)
 }
 
 static void
-gsd_keybindings_manager_set_property (GObject        *object,
+msd_keybindings_manager_set_property (GObject        *object,
                                guint           prop_id,
                                const GValue   *value,
                                GParamSpec     *pspec)
 {
-        GsdKeybindingsManager *self;
+        MsdKeybindingsManager *self;
 
-        self = GSD_KEYBINDINGS_MANAGER (object);
+        self = MSD_KEYBINDINGS_MANAGER (object);
 
         switch (prop_id) {
         default:
@@ -664,14 +664,14 @@ gsd_keybindings_manager_set_property (GObject        *object,
 }
 
 static void
-gsd_keybindings_manager_get_property (GObject        *object,
+msd_keybindings_manager_get_property (GObject        *object,
                                guint           prop_id,
                                GValue         *value,
                                GParamSpec     *pspec)
 {
-        GsdKeybindingsManager *self;
+        MsdKeybindingsManager *self;
 
-        self = GSD_KEYBINDINGS_MANAGER (object);
+        self = MSD_KEYBINDINGS_MANAGER (object);
 
         switch (prop_id) {
         default:
@@ -681,16 +681,16 @@ gsd_keybindings_manager_get_property (GObject        *object,
 }
 
 static GObject *
-gsd_keybindings_manager_constructor (GType                  type,
+msd_keybindings_manager_constructor (GType                  type,
                               guint                  n_construct_properties,
                               GObjectConstructParam *construct_properties)
 {
-        GsdKeybindingsManager      *keybindings_manager;
-        GsdKeybindingsManagerClass *klass;
+        MsdKeybindingsManager      *keybindings_manager;
+        MsdKeybindingsManagerClass *klass;
 
-        klass = GSD_KEYBINDINGS_MANAGER_CLASS (g_type_class_peek (GSD_TYPE_KEYBINDINGS_MANAGER));
+        klass = MSD_KEYBINDINGS_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_KEYBINDINGS_MANAGER));
 
-        keybindings_manager = GSD_KEYBINDINGS_MANAGER (G_OBJECT_CLASS (gsd_keybindings_manager_parent_class)->constructor (type,
+        keybindings_manager = MSD_KEYBINDINGS_MANAGER (G_OBJECT_CLASS (msd_keybindings_manager_parent_class)->constructor (type,
                                                                                                       n_construct_properties,
                                                                                                       construct_properties));
 
@@ -698,61 +698,61 @@ gsd_keybindings_manager_constructor (GType                  type,
 }
 
 static void
-gsd_keybindings_manager_dispose (GObject *object)
+msd_keybindings_manager_dispose (GObject *object)
 {
-        GsdKeybindingsManager *keybindings_manager;
+        MsdKeybindingsManager *keybindings_manager;
 
-        keybindings_manager = GSD_KEYBINDINGS_MANAGER (object);
+        keybindings_manager = MSD_KEYBINDINGS_MANAGER (object);
 
-        G_OBJECT_CLASS (gsd_keybindings_manager_parent_class)->dispose (object);
+        G_OBJECT_CLASS (msd_keybindings_manager_parent_class)->dispose (object);
 }
 
 static void
-gsd_keybindings_manager_class_init (GsdKeybindingsManagerClass *klass)
+msd_keybindings_manager_class_init (MsdKeybindingsManagerClass *klass)
 {
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->get_property = gsd_keybindings_manager_get_property;
-        object_class->set_property = gsd_keybindings_manager_set_property;
-        object_class->constructor = gsd_keybindings_manager_constructor;
-        object_class->dispose = gsd_keybindings_manager_dispose;
-        object_class->finalize = gsd_keybindings_manager_finalize;
+        object_class->get_property = msd_keybindings_manager_get_property;
+        object_class->set_property = msd_keybindings_manager_set_property;
+        object_class->constructor = msd_keybindings_manager_constructor;
+        object_class->dispose = msd_keybindings_manager_dispose;
+        object_class->finalize = msd_keybindings_manager_finalize;
 
-        g_type_class_add_private (klass, sizeof (GsdKeybindingsManagerPrivate));
+        g_type_class_add_private (klass, sizeof (MsdKeybindingsManagerPrivate));
 }
 
 static void
-gsd_keybindings_manager_init (GsdKeybindingsManager *manager)
+msd_keybindings_manager_init (MsdKeybindingsManager *manager)
 {
-        manager->priv = GSD_KEYBINDINGS_MANAGER_GET_PRIVATE (manager);
+        manager->priv = MSD_KEYBINDINGS_MANAGER_GET_PRIVATE (manager);
 
 }
 
 static void
-gsd_keybindings_manager_finalize (GObject *object)
+msd_keybindings_manager_finalize (GObject *object)
 {
-        GsdKeybindingsManager *keybindings_manager;
+        MsdKeybindingsManager *keybindings_manager;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GSD_IS_KEYBINDINGS_MANAGER (object));
+        g_return_if_fail (MSD_IS_KEYBINDINGS_MANAGER (object));
 
-        keybindings_manager = GSD_KEYBINDINGS_MANAGER (object);
+        keybindings_manager = MSD_KEYBINDINGS_MANAGER (object);
 
         g_return_if_fail (keybindings_manager->priv != NULL);
 
-        G_OBJECT_CLASS (gsd_keybindings_manager_parent_class)->finalize (object);
+        G_OBJECT_CLASS (msd_keybindings_manager_parent_class)->finalize (object);
 }
 
-GsdKeybindingsManager *
-gsd_keybindings_manager_new (void)
+MsdKeybindingsManager *
+msd_keybindings_manager_new (void)
 {
         if (manager_object != NULL) {
                 g_object_ref (manager_object);
         } else {
-                manager_object = g_object_new (GSD_TYPE_KEYBINDINGS_MANAGER, NULL);
+                manager_object = g_object_new (MSD_TYPE_KEYBINDINGS_MANAGER, NULL);
                 g_object_add_weak_pointer (manager_object,
                                            (gpointer *) &manager_object);
         }
 
-        return GSD_KEYBINDINGS_MANAGER (manager_object);
+        return MSD_KEYBINDINGS_MANAGER (manager_object);
 }

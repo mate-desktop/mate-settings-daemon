@@ -1,14 +1,14 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
  *
- * gsd-ldsm-dialog.c
+ * msd-ldsm-dialog.c
  * Copyright (C) Chris Coulson 2009 <chrisccoulson@googlemail.com>
  * 
- * gsd-ldsm-dialog.c is free software: you can redistribute it and/or modify it
+ * msd-ldsm-dialog.c is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
  * Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  * 
- * gsd-ldsm-dialog.c is distributed in the hope that it will be useful, but
+ * msd-ldsm-dialog.c is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
@@ -20,7 +20,7 @@
 #include <glib/gi18n.h>
 #include <mateconf/mateconf-client.h>
 
-#include "gsd-ldsm-dialog.h"
+#include "msd-ldsm-dialog.h"
 
 #define MATECONF_CLIENT_IGNORE_PATHS "/apps/mate_settings_daemon/plugins/housekeeping/ignore_paths"
 
@@ -35,7 +35,7 @@ enum
         PROP_MOUNT_PATH
 };
 
-struct GsdLdsmDialogPrivate
+struct MsdLdsmDialogPrivate
 {
         GtkWidget *primary_label;
         GtkWidget *secondary_label;
@@ -48,17 +48,17 @@ struct GsdLdsmDialogPrivate
         gchar *mount_path;
 };
 
-#define GSD_LDSM_DIALOG_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSD_TYPE_LDSM_DIALOG, GsdLdsmDialogPrivate))
+#define MSD_LDSM_DIALOG_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_LDSM_DIALOG, MsdLdsmDialogPrivate))
 
-static void     gsd_ldsm_dialog_class_init  (GsdLdsmDialogClass *klass);
-static void     gsd_ldsm_dialog_init        (GsdLdsmDialog      *dialog);
+static void     msd_ldsm_dialog_class_init  (MsdLdsmDialogClass *klass);
+static void     msd_ldsm_dialog_init        (MsdLdsmDialog      *dialog);
 
-G_DEFINE_TYPE (GsdLdsmDialog, gsd_ldsm_dialog, GTK_TYPE_DIALOG);
+G_DEFINE_TYPE (MsdLdsmDialog, msd_ldsm_dialog, GTK_TYPE_DIALOG);
 
 static const gchar*
-gsd_ldsm_dialog_get_checkbutton_text (GsdLdsmDialog *dialog)
+msd_ldsm_dialog_get_checkbutton_text (MsdLdsmDialog *dialog)
 {
-        g_return_val_if_fail (GSD_IS_LDSM_DIALOG (dialog), NULL);
+        g_return_val_if_fail (MSD_IS_LDSM_DIALOG (dialog), NULL);
         
         if (dialog->priv->other_partitions)
                 return _("Don't show any warnings again for this file system");
@@ -67,11 +67,11 @@ gsd_ldsm_dialog_get_checkbutton_text (GsdLdsmDialog *dialog)
 }
 
 static gchar*
-gsd_ldsm_dialog_get_primary_text (GsdLdsmDialog *dialog)
+msd_ldsm_dialog_get_primary_text (MsdLdsmDialog *dialog)
 {
         gchar *primary_text, *free_space;
 	
-        g_return_val_if_fail (GSD_IS_LDSM_DIALOG (dialog), NULL);
+        g_return_val_if_fail (MSD_IS_LDSM_DIALOG (dialog), NULL);
 	
         free_space = g_format_size_for_display (dialog->priv->space_remaining);
 	
@@ -89,9 +89,9 @@ gsd_ldsm_dialog_get_primary_text (GsdLdsmDialog *dialog)
 }
 
 static const gchar*
-gsd_ldsm_dialog_get_secondary_text (GsdLdsmDialog *dialog)
+msd_ldsm_dialog_get_secondary_text (MsdLdsmDialog *dialog)
 {
-        g_return_val_if_fail (GSD_IS_LDSM_DIALOG (dialog), NULL);
+        g_return_val_if_fail (MSD_IS_LDSM_DIALOG (dialog), NULL);
 	
         if (dialog->priv->other_usable_partitions) {
                 if (dialog->priv->has_trash) {
@@ -148,7 +148,7 @@ static void
 ignore_check_button_toggled_cb (GtkToggleButton *button,
                                 gpointer user_data)
 {
-        GsdLdsmDialog *dialog = (GsdLdsmDialog *)user_data;
+        MsdLdsmDialog *dialog = (MsdLdsmDialog *)user_data;
         MateConfClient *client;
         GSList *ignore_paths;
         GError *error = NULL;
@@ -191,12 +191,12 @@ ignore_check_button_toggled_cb (GtkToggleButton *button,
 }
 
 static void
-gsd_ldsm_dialog_init (GsdLdsmDialog *dialog)
+msd_ldsm_dialog_init (MsdLdsmDialog *dialog)
 {
         GtkWidget *main_vbox, *text_vbox, *hbox;
         GtkWidget *image;
 	
-        dialog->priv = GSD_LDSM_DIALOG_GET_PRIVATE (dialog);
+        dialog->priv = MSD_LDSM_DIALOG_GET_PRIVATE (dialog);
         
         main_vbox = gtk_dialog_get_content_area (GTK_DIALOG (dialog));
 
@@ -261,14 +261,14 @@ gsd_ldsm_dialog_init (GsdLdsmDialog *dialog)
 }
 
 static void
-gsd_ldsm_dialog_finalize (GObject *object)
+msd_ldsm_dialog_finalize (GObject *object)
 {
-        GsdLdsmDialog *self;
+        MsdLdsmDialog *self;
 	
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GSD_IS_LDSM_DIALOG (object));
+        g_return_if_fail (MSD_IS_LDSM_DIALOG (object));
 
-        self = GSD_LDSM_DIALOG (object);
+        self = MSD_LDSM_DIALOG (object);
 	
         if (self->priv->partition_name)
                 g_free (self->priv->partition_name);
@@ -276,17 +276,17 @@ gsd_ldsm_dialog_finalize (GObject *object)
         if (self->priv->mount_path)
                 g_free (self->priv->mount_path);
 	
-        G_OBJECT_CLASS (gsd_ldsm_dialog_parent_class)->finalize (object);
+        G_OBJECT_CLASS (msd_ldsm_dialog_parent_class)->finalize (object);
 }
 
 static void
-gsd_ldsm_dialog_set_property (GObject *object, guint prop_id, const GValue *value, GParamSpec *pspec)
+msd_ldsm_dialog_set_property (GObject *object, guint prop_id, const GValue *value, GParamSpec *pspec)
 {
-        GsdLdsmDialog *self;
+        MsdLdsmDialog *self;
 	
-        g_return_if_fail (GSD_IS_LDSM_DIALOG (object));
+        g_return_if_fail (MSD_IS_LDSM_DIALOG (object));
 	
-        self = GSD_LDSM_DIALOG (object);
+        self = MSD_LDSM_DIALOG (object);
 
         switch (prop_id)
         {
@@ -315,13 +315,13 @@ gsd_ldsm_dialog_set_property (GObject *object, guint prop_id, const GValue *valu
 }
 
 static void
-gsd_ldsm_dialog_get_property (GObject *object, guint prop_id, GValue *value, GParamSpec *pspec)
+msd_ldsm_dialog_get_property (GObject *object, guint prop_id, GValue *value, GParamSpec *pspec)
 {
-        GsdLdsmDialog *self;
+        MsdLdsmDialog *self;
 	
-        g_return_if_fail (GSD_IS_LDSM_DIALOG (object));
+        g_return_if_fail (MSD_IS_LDSM_DIALOG (object));
 	
-        self = GSD_LDSM_DIALOG (object);
+        self = MSD_LDSM_DIALOG (object);
 
         switch (prop_id)
         {
@@ -350,13 +350,13 @@ gsd_ldsm_dialog_get_property (GObject *object, guint prop_id, GValue *value, GPa
 }
 
 static void
-gsd_ldsm_dialog_class_init (GsdLdsmDialogClass *klass)
+msd_ldsm_dialog_class_init (MsdLdsmDialogClass *klass)
 {
         GObjectClass* object_class = G_OBJECT_CLASS (klass);
 
-        object_class->finalize = gsd_ldsm_dialog_finalize;
-        object_class->set_property = gsd_ldsm_dialog_set_property;
-        object_class->get_property = gsd_ldsm_dialog_get_property;
+        object_class->finalize = msd_ldsm_dialog_finalize;
+        object_class->set_property = msd_ldsm_dialog_set_property;
+        object_class->get_property = msd_ldsm_dialog_get_property;
 
         g_object_class_install_property (object_class,
                                          PROP_OTHER_USABLE_PARTITIONS,
@@ -406,11 +406,11 @@ gsd_ldsm_dialog_class_init (GsdLdsmDialogClass *klass)
                                                               "Unknown",
                                                               G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
 
-        g_type_class_add_private (klass, sizeof (GsdLdsmDialogPrivate));
+        g_type_class_add_private (klass, sizeof (MsdLdsmDialogPrivate));
 }
 
-GsdLdsmDialog*
-gsd_ldsm_dialog_new (gboolean     other_usable_partitions,
+MsdLdsmDialog*
+msd_ldsm_dialog_new (gboolean     other_usable_partitions,
                      gboolean     other_partitions,
                      gboolean     display_baobab,
                      gboolean     display_empty_trash,
@@ -418,13 +418,13 @@ gsd_ldsm_dialog_new (gboolean     other_usable_partitions,
                      const gchar *partition_name,
                      const gchar *mount_path)
 {
-        GsdLdsmDialog *dialog;
+        MsdLdsmDialog *dialog;
         GtkWidget *button_empty_trash, *button_ignore, *button_analyze;
         GtkWidget *empty_trash_image, *analyze_image, *ignore_image;
         gchar *primary_text, *primary_text_markup;
         const gchar *secondary_text, *checkbutton_text;
 	
-        dialog = GSD_LDSM_DIALOG (g_object_new (GSD_TYPE_LDSM_DIALOG,
+        dialog = MSD_LDSM_DIALOG (g_object_new (MSD_TYPE_LDSM_DIALOG,
                                                 "other-usable-partitions", other_usable_partitions,
                                                 "other-partitions", other_partitions,
                                                 "has-trash", display_empty_trash,
@@ -437,7 +437,7 @@ gsd_ldsm_dialog_new (gboolean     other_usable_partitions,
         if (dialog->priv->has_trash) {
                 button_empty_trash = gtk_dialog_add_button (GTK_DIALOG (dialog),
                                                             _("Empty Trash"),
-                                                            GSD_LDSM_DIALOG_RESPONSE_EMPTY_TRASH);
+                                                            MSD_LDSM_DIALOG_RESPONSE_EMPTY_TRASH);
                 empty_trash_image = gtk_image_new_from_stock (GTK_STOCK_CLEAR, GTK_ICON_SIZE_BUTTON);
                 gtk_button_set_image (GTK_BUTTON (button_empty_trash), empty_trash_image);
         }
@@ -445,7 +445,7 @@ gsd_ldsm_dialog_new (gboolean     other_usable_partitions,
         if (display_baobab) {
                 button_analyze = gtk_dialog_add_button (GTK_DIALOG (dialog),
                                                         _("Examine…"),
-                                                        GSD_LDSM_DIALOG_RESPONSE_ANALYZE);
+                                                        MSD_LDSM_DIALOG_RESPONSE_ANALYZE);
                 analyze_image = gtk_image_new_from_icon_name ("baobab", GTK_ICON_SIZE_BUTTON);
                 gtk_button_set_image (GTK_BUTTON (button_analyze), analyze_image);
         }
@@ -459,14 +459,14 @@ gsd_ldsm_dialog_new (gboolean     other_usable_partitions,
         gtk_widget_grab_default (button_ignore);
 	
         /* Set the label text */	
-        primary_text = gsd_ldsm_dialog_get_primary_text (dialog);
+        primary_text = msd_ldsm_dialog_get_primary_text (dialog);
         primary_text_markup = g_markup_printf_escaped ("<big><b>%s</b></big>", primary_text);
         gtk_label_set_markup (GTK_LABEL (dialog->priv->primary_label), primary_text_markup);
 
-        secondary_text = gsd_ldsm_dialog_get_secondary_text (dialog);
+        secondary_text = msd_ldsm_dialog_get_secondary_text (dialog);
         gtk_label_set_text (GTK_LABEL (dialog->priv->secondary_label), secondary_text);
         
-        checkbutton_text = gsd_ldsm_dialog_get_checkbutton_text (dialog);
+        checkbutton_text = msd_ldsm_dialog_get_checkbutton_text (dialog);
         gtk_button_set_label (GTK_BUTTON (dialog->priv->ignore_check_button), checkbutton_text);
         
         g_free (primary_text);

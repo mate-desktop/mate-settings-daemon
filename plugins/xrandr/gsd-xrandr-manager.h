@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef __GSD_XRANDR_MANAGER_H
-#define __GSD_XRANDR_MANAGER_H
+#ifndef __MSD_XRANDR_MANAGER_H
+#define __MSD_XRANDR_MANAGER_H
 
 #include <glib-object.h>
 
@@ -27,35 +27,35 @@
 extern "C" {
 #endif
 
-#define GSD_TYPE_XRANDR_MANAGER         (gsd_xrandr_manager_get_type ())
-#define GSD_XRANDR_MANAGER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GSD_TYPE_XRANDR_MANAGER, GsdXrandrManager))
-#define GSD_XRANDR_MANAGER_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), GSD_TYPE_XRANDR_MANAGER, GsdXrandrManagerClass))
-#define GSD_IS_XRANDR_MANAGER(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), GSD_TYPE_XRANDR_MANAGER))
-#define GSD_IS_XRANDR_MANAGER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), GSD_TYPE_XRANDR_MANAGER))
-#define GSD_XRANDR_MANAGER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), GSD_TYPE_XRANDR_MANAGER, GsdXrandrManagerClass))
+#define MSD_TYPE_XRANDR_MANAGER         (msd_xrandr_manager_get_type ())
+#define MSD_XRANDR_MANAGER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), MSD_TYPE_XRANDR_MANAGER, MsdXrandrManager))
+#define MSD_XRANDR_MANAGER_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), MSD_TYPE_XRANDR_MANAGER, MsdXrandrManagerClass))
+#define MSD_IS_XRANDR_MANAGER(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), MSD_TYPE_XRANDR_MANAGER))
+#define MSD_IS_XRANDR_MANAGER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), MSD_TYPE_XRANDR_MANAGER))
+#define MSD_XRANDR_MANAGER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), MSD_TYPE_XRANDR_MANAGER, MsdXrandrManagerClass))
 
-typedef struct GsdXrandrManagerPrivate GsdXrandrManagerPrivate;
+typedef struct MsdXrandrManagerPrivate MsdXrandrManagerPrivate;
 
 typedef struct
 {
         GObject                     parent;
-        GsdXrandrManagerPrivate *priv;
-} GsdXrandrManager;
+        MsdXrandrManagerPrivate *priv;
+} MsdXrandrManager;
 
 typedef struct
 {
         GObjectClass   parent_class;
-} GsdXrandrManagerClass;
+} MsdXrandrManagerClass;
 
-GType                   gsd_xrandr_manager_get_type            (void);
+GType                   msd_xrandr_manager_get_type            (void);
 
-GsdXrandrManager *       gsd_xrandr_manager_new                 (void);
-gboolean                gsd_xrandr_manager_start               (GsdXrandrManager *manager,
+MsdXrandrManager *       msd_xrandr_manager_new                 (void);
+gboolean                msd_xrandr_manager_start               (MsdXrandrManager *manager,
                                                                GError         **error);
-void                    gsd_xrandr_manager_stop                (GsdXrandrManager *manager);
+void                    msd_xrandr_manager_stop                (MsdXrandrManager *manager);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __GSD_XRANDR_MANAGER_H */
+#endif /* __MSD_XRANDR_MANAGER_H */

@@ -39,13 +39,13 @@
 #include <mateconf/mateconf-client.h>
 
 #include "mate-settings-profile.h"
-#include "gsd-typing-break-manager.h"
+#include "msd-typing-break-manager.h"
 
-#define GSD_TYPING_BREAK_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSD_TYPE_TYPING_BREAK_MANAGER, GsdTypingBreakManagerPrivate))
+#define MSD_TYPING_BREAK_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_TYPING_BREAK_MANAGER, MsdTypingBreakManagerPrivate))
 
 #define MATECONF_BREAK_DIR           "/desktop/mate/typing_break"
 
-struct GsdTypingBreakManagerPrivate
+struct MsdTypingBreakManagerPrivate
 {
         GPid  typing_monitor_pid;
         guint typing_monitor_idle_id;
@@ -54,16 +54,16 @@ struct GsdTypingBreakManagerPrivate
         guint notify;
 };
 
-static void     gsd_typing_break_manager_class_init  (GsdTypingBreakManagerClass *klass);
-static void     gsd_typing_break_manager_init        (GsdTypingBreakManager      *typing_break_manager);
-static void     gsd_typing_break_manager_finalize    (GObject             *object);
+static void     msd_typing_break_manager_class_init  (MsdTypingBreakManagerClass *klass);
+static void     msd_typing_break_manager_init        (MsdTypingBreakManager      *typing_break_manager);
+static void     msd_typing_break_manager_finalize    (GObject             *object);
 
-G_DEFINE_TYPE (GsdTypingBreakManager, gsd_typing_break_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE (MsdTypingBreakManager, msd_typing_break_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
 static gboolean
-typing_break_timeout (GsdTypingBreakManager *manager)
+typing_break_timeout (MsdTypingBreakManager *manager)
 {
         if (manager->priv->typing_monitor_pid > 0) {
                 kill (manager->priv->typing_monitor_pid, SIGKILL);
@@ -77,7 +77,7 @@ typing_break_timeout (GsdTypingBreakManager *manager)
 static void
 child_watch (GPid                   pid,
              int                    status,
-             GsdTypingBreakManager *manager)
+             MsdTypingBreakManager *manager)
 {
         if (pid == manager->priv->typing_monitor_pid) {
                 manager->priv->typing_monitor_pid = 0;
@@ -86,7 +86,7 @@ child_watch (GPid                   pid,
 }
 
 static void
-setup_typing_break (GsdTypingBreakManager *manager,
+setup_typing_break (MsdTypingBreakManager *manager,
                     gboolean               enabled)
 {
         mate_settings_profile_start (NULL);
@@ -140,7 +140,7 @@ static void
 typing_break_callback (MateConfClient           *client,
                        guint                  cnxn_id,
                        MateConfEntry            *entry,
-                       GsdTypingBreakManager *manager)
+                       MsdTypingBreakManager *manager)
 {
         if (! strcmp (entry->key, "/desktop/mate/typing_break/enabled")) {
                 if (entry->value->type == MATECONF_VALUE_BOOL) {
@@ -150,7 +150,7 @@ typing_break_callback (MateConfClient           *client,
 }
 
 static gboolean
-really_setup_typing_break (GsdTypingBreakManager *manager)
+really_setup_typing_break (MsdTypingBreakManager *manager)
 {
         setup_typing_break (manager, TRUE);
         manager->priv->setup_id = 0;
@@ -158,7 +158,7 @@ really_setup_typing_break (GsdTypingBreakManager *manager)
 }
 
 gboolean
-gsd_typing_break_manager_start (GsdTypingBreakManager *manager,
+msd_typing_break_manager_start (MsdTypingBreakManager *manager,
                                 GError               **error)
 {
         MateConfClient *client;
@@ -191,9 +191,9 @@ gsd_typing_break_manager_start (GsdTypingBreakManager *manager,
 }
 
 void
-gsd_typing_break_manager_stop (GsdTypingBreakManager *manager)
+msd_typing_break_manager_stop (MsdTypingBreakManager *manager)
 {
-        GsdTypingBreakManagerPrivate *p = manager->priv;
+        MsdTypingBreakManagerPrivate *p = manager->priv;
 
         g_debug ("Stopping typing_break manager");
 
@@ -228,14 +228,14 @@ gsd_typing_break_manager_stop (GsdTypingBreakManager *manager)
 }
 
 static void
-gsd_typing_break_manager_set_property (GObject        *object,
+msd_typing_break_manager_set_property (GObject        *object,
                                guint           prop_id,
                                const GValue   *value,
                                GParamSpec     *pspec)
 {
-        GsdTypingBreakManager *self;
+        MsdTypingBreakManager *self;
 
-        self = GSD_TYPING_BREAK_MANAGER (object);
+        self = MSD_TYPING_BREAK_MANAGER (object);
 
         switch (prop_id) {
         default:
@@ -245,14 +245,14 @@ gsd_typing_break_manager_set_property (GObject        *object,
 }
 
 static void
-gsd_typing_break_manager_get_property (GObject        *object,
+msd_typing_break_manager_get_property (GObject        *object,
                                guint           prop_id,
                                GValue         *value,
                                GParamSpec     *pspec)
 {
-        GsdTypingBreakManager *self;
+        MsdTypingBreakManager *self;
 
-        self = GSD_TYPING_BREAK_MANAGER (object);
+        self = MSD_TYPING_BREAK_MANAGER (object);
 
         switch (prop_id) {
         default:
@@ -262,16 +262,16 @@ gsd_typing_break_manager_get_property (GObject        *object,
 }
 
 static GObject *
-gsd_typing_break_manager_constructor (GType                  type,
+msd_typing_break_manager_constructor (GType                  type,
                               guint                  n_construct_properties,
                               GObjectConstructParam *construct_properties)
 {
-        GsdTypingBreakManager      *typing_break_manager;
-        GsdTypingBreakManagerClass *klass;
+        MsdTypingBreakManager      *typing_break_manager;
+        MsdTypingBreakManagerClass *klass;
 
-        klass = GSD_TYPING_BREAK_MANAGER_CLASS (g_type_class_peek (GSD_TYPE_TYPING_BREAK_MANAGER));
+        klass = MSD_TYPING_BREAK_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_TYPING_BREAK_MANAGER));
 
-        typing_break_manager = GSD_TYPING_BREAK_MANAGER (G_OBJECT_CLASS (gsd_typing_break_manager_parent_class)->constructor (type,
+        typing_break_manager = MSD_TYPING_BREAK_MANAGER (G_OBJECT_CLASS (msd_typing_break_manager_parent_class)->constructor (type,
                                                                                                       n_construct_properties,
                                                                                                       construct_properties));
 
@@ -279,61 +279,61 @@ gsd_typing_break_manager_constructor (GType                  type,
 }
 
 static void
-gsd_typing_break_manager_dispose (GObject *object)
+msd_typing_break_manager_dispose (GObject *object)
 {
-        GsdTypingBreakManager *typing_break_manager;
+        MsdTypingBreakManager *typing_break_manager;
 
-        typing_break_manager = GSD_TYPING_BREAK_MANAGER (object);
+        typing_break_manager = MSD_TYPING_BREAK_MANAGER (object);
 
-        G_OBJECT_CLASS (gsd_typing_break_manager_parent_class)->dispose (object);
+        G_OBJECT_CLASS (msd_typing_break_manager_parent_class)->dispose (object);
 }
 
 static void
-gsd_typing_break_manager_class_init (GsdTypingBreakManagerClass *klass)
+msd_typing_break_manager_class_init (MsdTypingBreakManagerClass *klass)
 {
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->get_property = gsd_typing_break_manager_get_property;
-        object_class->set_property = gsd_typing_break_manager_set_property;
-        object_class->constructor = gsd_typing_break_manager_constructor;
-        object_class->dispose = gsd_typing_break_manager_dispose;
-        object_class->finalize = gsd_typing_break_manager_finalize;
+        object_class->get_property = msd_typing_break_manager_get_property;
+        object_class->set_property = msd_typing_break_manager_set_property;
+        object_class->constructor = msd_typing_break_manager_constructor;
+        object_class->dispose = msd_typing_break_manager_dispose;
+        object_class->finalize = msd_typing_break_manager_finalize;
 
-        g_type_class_add_private (klass, sizeof (GsdTypingBreakManagerPrivate));
+        g_type_class_add_private (klass, sizeof (MsdTypingBreakManagerPrivate));
 }
 
 static void
-gsd_typing_break_manager_init (GsdTypingBreakManager *manager)
+msd_typing_break_manager_init (MsdTypingBreakManager *manager)
 {
-        manager->priv = GSD_TYPING_BREAK_MANAGER_GET_PRIVATE (manager);
+        manager->priv = MSD_TYPING_BREAK_MANAGER_GET_PRIVATE (manager);
 
 }
 
 static void
-gsd_typing_break_manager_finalize (GObject *object)
+msd_typing_break_manager_finalize (GObject *object)
 {
-        GsdTypingBreakManager *typing_break_manager;
+        MsdTypingBreakManager *typing_break_manager;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GSD_IS_TYPING_BREAK_MANAGER (object));
+        g_return_if_fail (MSD_IS_TYPING_BREAK_MANAGER (object));
 
-        typing_break_manager = GSD_TYPING_BREAK_MANAGER (object);
+        typing_break_manager = MSD_TYPING_BREAK_MANAGER (object);
 
         g_return_if_fail (typing_break_manager->priv != NULL);
 
-        G_OBJECT_CLASS (gsd_typing_break_manager_parent_class)->finalize (object);
+        G_OBJECT_CLASS (msd_typing_break_manager_parent_class)->finalize (object);
 }
 
-GsdTypingBreakManager *
-gsd_typing_break_manager_new (void)
+MsdTypingBreakManager *
+msd_typing_break_manager_new (void)
 {
         if (manager_object != NULL) {
                 g_object_ref (manager_object);
         } else {
-                manager_object = g_object_new (GSD_TYPE_TYPING_BREAK_MANAGER, NULL);
+                manager_object = g_object_new (MSD_TYPE_TYPING_BREAK_MANAGER, NULL);
                 g_object_add_weak_pointer (manager_object,
                                            (gpointer *) &manager_object);
         }
 
-        return GSD_TYPING_BREAK_MANAGER (manager_object);
+        return MSD_TYPING_BREAK_MANAGER (manager_object);
 }

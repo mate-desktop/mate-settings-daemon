@@ -45,13 +45,13 @@
 #include <X11/Xatom.h>
 
 #include "mate-settings-profile.h"
-#include "gsd-background-manager.h"
+#include "msd-background-manager.h"
 
 #define CAJA_SHOW_DESKTOP_KEY "/apps/caja/preferences/show_desktop"
 
-#define GSD_BACKGROUND_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSD_TYPE_BACKGROUND_MANAGER, GsdBackgroundManagerPrivate))
+#define MSD_BACKGROUND_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_BACKGROUND_MANAGER, MsdBackgroundManagerPrivate))
 
-struct GsdBackgroundManagerPrivate
+struct MsdBackgroundManagerPrivate
 {
         MateConfClient *client;
         MateBG     *bg;
@@ -61,11 +61,11 @@ struct GsdBackgroundManagerPrivate
         DBusConnection *dbus_connection;
 };
 
-static void     gsd_background_manager_class_init  (GsdBackgroundManagerClass *klass);
-static void     gsd_background_manager_init        (GsdBackgroundManager      *background_manager);
-static void     gsd_background_manager_finalize    (GObject             *object);
+static void     msd_background_manager_class_init  (MsdBackgroundManagerClass *klass);
+static void     msd_background_manager_init        (MsdBackgroundManager      *background_manager);
+static void     msd_background_manager_finalize    (GObject             *object);
 
-G_DEFINE_TYPE (GsdBackgroundManager, gsd_background_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE (MsdBackgroundManager, msd_background_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -161,7 +161,7 @@ caja_is_running (void)
 }
 
 static void
-draw_background (GsdBackgroundManager *manager,
+draw_background (MsdBackgroundManager *manager,
                  gboolean              use_crossfade)
 {
         GdkDisplay *display;
@@ -210,14 +210,14 @@ draw_background (GsdBackgroundManager *manager,
 
 static void
 on_bg_changed (MateBG              *bg,
-               GsdBackgroundManager *manager)
+               MsdBackgroundManager *manager)
 {
         draw_background (manager, TRUE);
 }
 
 static void
 on_bg_transitioned (MateBG              *bg,
-                    GsdBackgroundManager *manager)
+                    MsdBackgroundManager *manager)
 {
         draw_background (manager, FALSE);
 }
@@ -226,14 +226,14 @@ static void
 mateconf_changed_callback (MateConfClient          *client,
                         guint                 cnxn_id,
                         MateConfEntry           *entry,
-                        GsdBackgroundManager *manager)
+                        MsdBackgroundManager *manager)
 {
         mate_bg_load_from_preferences (manager->priv->bg,
                                         manager->priv->client);
 }
 
 static void
-watch_bg_preferences (GsdBackgroundManager *manager)
+watch_bg_preferences (MsdBackgroundManager *manager)
 {
         g_assert (manager->priv->bg_notify_id == 0);
 
@@ -250,7 +250,7 @@ watch_bg_preferences (GsdBackgroundManager *manager)
 }
 
 static void
-setup_bg (GsdBackgroundManager *manager)
+setup_bg (MsdBackgroundManager *manager)
 {
         g_return_if_fail (manager->priv->bg == NULL);
 
@@ -272,7 +272,7 @@ setup_bg (GsdBackgroundManager *manager)
 }
 
 static gboolean
-queue_draw_background (GsdBackgroundManager *manager)
+queue_draw_background (MsdBackgroundManager *manager)
 {
         manager->priv->timeout_id = 0;
         if (caja_is_running ()) {
@@ -288,7 +288,7 @@ on_bus_message (DBusConnection *connection,
                 DBusMessage    *message,
                 void           *user_data)
 {
-        GsdBackgroundManager *manager = user_data;
+        MsdBackgroundManager *manager = user_data;
 
         if (dbus_message_is_signal (message,
                                     "org.mate.SessionManager",
@@ -315,7 +315,7 @@ on_bus_message (DBusConnection *connection,
 }
 
 static void
-draw_background_after_session_loads (GsdBackgroundManager *manager)
+draw_background_after_session_loads (MsdBackgroundManager *manager)
 {
         DBusConnection *connection;
 
@@ -334,7 +334,7 @@ draw_background_after_session_loads (GsdBackgroundManager *manager)
 
 static void
 on_screen_size_changed (GdkScreen            *screen,
-                        GsdBackgroundManager *manager)
+                        MsdBackgroundManager *manager)
 {
         gboolean caja_show_desktop;
 
@@ -351,7 +351,7 @@ on_screen_size_changed (GdkScreen            *screen,
 }
 
 static void
-disconnect_screen_signals (GsdBackgroundManager *manager)
+disconnect_screen_signals (MsdBackgroundManager *manager)
 {
         GdkDisplay *display;
         int         i;
@@ -370,7 +370,7 @@ disconnect_screen_signals (GsdBackgroundManager *manager)
 }
 
 static void
-connect_screen_signals (GsdBackgroundManager *manager)
+connect_screen_signals (MsdBackgroundManager *manager)
 {
         GdkDisplay *display;
         int         i;
@@ -394,7 +394,7 @@ connect_screen_signals (GsdBackgroundManager *manager)
 }
 
 gboolean
-gsd_background_manager_start (GsdBackgroundManager *manager,
+msd_background_manager_start (MsdBackgroundManager *manager,
                               GError              **error)
 {
         gboolean caja_show_desktop;
@@ -429,9 +429,9 @@ gsd_background_manager_start (GsdBackgroundManager *manager,
 }
 
 void
-gsd_background_manager_stop (GsdBackgroundManager *manager)
+msd_background_manager_stop (MsdBackgroundManager *manager)
 {
-        GsdBackgroundManagerPrivate *p = manager->priv;
+        MsdBackgroundManagerPrivate *p = manager->priv;
 
         g_debug ("Stopping background manager");
 
@@ -469,14 +469,14 @@ gsd_background_manager_stop (GsdBackgroundManager *manager)
 }
 
 static void
-gsd_background_manager_set_property (GObject        *object,
+msd_background_manager_set_property (GObject        *object,
                                      guint           prop_id,
                                      const GValue   *value,
                                      GParamSpec     *pspec)
 {
-        GsdBackgroundManager *self;
+        MsdBackgroundManager *self;
 
-        self = GSD_BACKGROUND_MANAGER (object);
+        self = MSD_BACKGROUND_MANAGER (object);
 
         switch (prop_id) {
         default:
@@ -486,14 +486,14 @@ gsd_background_manager_set_property (GObject        *object,
 }
 
 static void
-gsd_background_manager_get_property (GObject        *object,
+msd_background_manager_get_property (GObject        *object,
                                      guint           prop_id,
                                      GValue         *value,
                                      GParamSpec     *pspec)
 {
-        GsdBackgroundManager *self;
+        MsdBackgroundManager *self;
 
-        self = GSD_BACKGROUND_MANAGER (object);
+        self = MSD_BACKGROUND_MANAGER (object);
 
         switch (prop_id) {
         default:
@@ -503,16 +503,16 @@ gsd_background_manager_get_property (GObject        *object,
 }
 
 static GObject *
-gsd_background_manager_constructor (GType                  type,
+msd_background_manager_constructor (GType                  type,
                                     guint                  n_construct_properties,
                                     GObjectConstructParam *construct_properties)
 {
-        GsdBackgroundManager      *background_manager;
-        GsdBackgroundManagerClass *klass;
+        MsdBackgroundManager      *background_manager;
+        MsdBackgroundManagerClass *klass;
 
-        klass = GSD_BACKGROUND_MANAGER_CLASS (g_type_class_peek (GSD_TYPE_BACKGROUND_MANAGER));
+        klass = MSD_BACKGROUND_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_BACKGROUND_MANAGER));
 
-        background_manager = GSD_BACKGROUND_MANAGER (G_OBJECT_CLASS (gsd_background_manager_parent_class)->constructor (type,
+        background_manager = MSD_BACKGROUND_MANAGER (G_OBJECT_CLASS (msd_background_manager_parent_class)->constructor (type,
                                                                                                                         n_construct_properties,
                                                                                                                         construct_properties));
 
@@ -520,60 +520,60 @@ gsd_background_manager_constructor (GType                  type,
 }
 
 static void
-gsd_background_manager_dispose (GObject *object)
+msd_background_manager_dispose (GObject *object)
 {
-        GsdBackgroundManager *background_manager;
+        MsdBackgroundManager *background_manager;
 
-        background_manager = GSD_BACKGROUND_MANAGER (object);
+        background_manager = MSD_BACKGROUND_MANAGER (object);
 
-        G_OBJECT_CLASS (gsd_background_manager_parent_class)->dispose (object);
+        G_OBJECT_CLASS (msd_background_manager_parent_class)->dispose (object);
 }
 
 static void
-gsd_background_manager_class_init (GsdBackgroundManagerClass *klass)
+msd_background_manager_class_init (MsdBackgroundManagerClass *klass)
 {
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->get_property = gsd_background_manager_get_property;
-        object_class->set_property = gsd_background_manager_set_property;
-        object_class->constructor = gsd_background_manager_constructor;
-        object_class->dispose = gsd_background_manager_dispose;
-        object_class->finalize = gsd_background_manager_finalize;
+        object_class->get_property = msd_background_manager_get_property;
+        object_class->set_property = msd_background_manager_set_property;
+        object_class->constructor = msd_background_manager_constructor;
+        object_class->dispose = msd_background_manager_dispose;
+        object_class->finalize = msd_background_manager_finalize;
 
-        g_type_class_add_private (klass, sizeof (GsdBackgroundManagerPrivate));
+        g_type_class_add_private (klass, sizeof (MsdBackgroundManagerPrivate));
 }
 
 static void
-gsd_background_manager_init (GsdBackgroundManager *manager)
+msd_background_manager_init (MsdBackgroundManager *manager)
 {
-        manager->priv = GSD_BACKGROUND_MANAGER_GET_PRIVATE (manager);
+        manager->priv = MSD_BACKGROUND_MANAGER_GET_PRIVATE (manager);
 }
 
 static void
-gsd_background_manager_finalize (GObject *object)
+msd_background_manager_finalize (GObject *object)
 {
-        GsdBackgroundManager *background_manager;
+        MsdBackgroundManager *background_manager;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GSD_IS_BACKGROUND_MANAGER (object));
+        g_return_if_fail (MSD_IS_BACKGROUND_MANAGER (object));
 
-        background_manager = GSD_BACKGROUND_MANAGER (object);
+        background_manager = MSD_BACKGROUND_MANAGER (object);
 
         g_return_if_fail (background_manager->priv != NULL);
 
-        G_OBJECT_CLASS (gsd_background_manager_parent_class)->finalize (object);
+        G_OBJECT_CLASS (msd_background_manager_parent_class)->finalize (object);
 }
 
-GsdBackgroundManager *
-gsd_background_manager_new (void)
+MsdBackgroundManager *
+msd_background_manager_new (void)
 {
         if (manager_object != NULL) {
                 g_object_ref (manager_object);
         } else {
-                manager_object = g_object_new (GSD_TYPE_BACKGROUND_MANAGER, NULL);
+                manager_object = g_object_new (MSD_TYPE_BACKGROUND_MANAGER, NULL);
                 g_object_add_weak_pointer (manager_object,
                                            (gpointer *) &manager_object);
         }
 
-        return GSD_BACKGROUND_MANAGER (manager_object);
+        return MSD_BACKGROUND_MANAGER (manager_object);
 }

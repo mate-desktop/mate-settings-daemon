@@ -17,8 +17,8 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#ifndef __GSD_COMMON_KEYGRAB_H
-#define __GSD_COMMON_KEYGRAB_H
+#ifndef __MSD_COMMON_KEYGRAB_H
+#define __MSD_COMMON_KEYGRAB_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -48,4 +48,4 @@ gboolean        key_uses_keycode (const Key *key,
 }
 #endif
 
-#endif /* __GSD_COMMON_KEYGRAB_H */
+#endif /* __MSD_COMMON_KEYGRAB_H */

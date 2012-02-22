@@ -6,8 +6,8 @@ noinst_PROGRAMS = 			\
 
 test_background_SOURCES = 		\
 	test-background.c		\
-	gsd-background-manager.h	\
-	gsd-background-manager.c	\
+	msd-background-manager.h	\
+	msd-background-manager.c	\
 	$(NULL)
 
 test_background_CPPFLAGS = \
@@ -20,7 +20,7 @@ test_background_CFLAGS = \
 	$(AM_CFLAGS)
 
 test_background_LDADD =		\
-	$(top_builddir)/mate-settings-daemon/libgsd-profile.la	\
+	$(top_builddir)/mate-settings-daemon/libmsd-profile.la	\
 	$(SETTINGS_PLUGIN_LIBS)	\
 	$(X11_LIBS) \
 	$(NULL)
@@ -30,10 +30,10 @@ plugin_LTLIBRARIES = \
 	$(NULL)
 
 libbackground_la_SOURCES = 		\
-	gsd-background-plugin.h	\
-	gsd-background-plugin.c	\
-	gsd-background-manager.h	\
-	gsd-background-manager.c	\
+	msd-background-plugin.h	\
+	msd-background-plugin.c	\
+	msd-background-manager.h	\
+	msd-background-manager.c	\
 	$(NULL)
 
 libbackground_la_CPPFLAGS = \
@@ -47,7 +47,7 @@ libbackground_la_CFLAGS = \
 	$(AM_CFLAGS)
 
 libbackground_la_LDFLAGS = 		\
-	$(GSD_PLUGIN_LDFLAGS)	\
+	$(MSD_PLUGIN_LDFLAGS)	\
 	$(NULL)
 
 libbackground_la_LIBADD  = 		\
@@ -72,4 +72,4 @@ DISTCLEANFILES =		\
 	$(plugin_DATA)		\
 	$(NULL)
 
-@GSD_INTLTOOL_PLUGIN_RULE@
+@MSD_INTLTOOL_PLUGIN_RULE@

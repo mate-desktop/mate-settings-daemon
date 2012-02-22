@@ -20,56 +20,56 @@
  *
  */
 
-#ifndef GSD_MEDIA_KEYS_WINDOW_H
-#define GSD_MEDIA_KEYS_WINDOW_H
+#ifndef MSD_MEDIA_KEYS_WINDOW_H
+#define MSD_MEDIA_KEYS_WINDOW_H
 
 #include <glib-object.h>
 #include <gtk/gtk.h>
 
-#include "gsd-osd-window.h"
+#include "msd-osd-window.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#define GSD_TYPE_MEDIA_KEYS_WINDOW            (gsd_media_keys_window_get_type ())
-#define GSD_MEDIA_KEYS_WINDOW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj),  GSD_TYPE_MEDIA_KEYS_WINDOW, GsdMediaKeysWindow))
-#define GSD_MEDIA_KEYS_WINDOW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),   GSD_TYPE_MEDIA_KEYS_WINDOW, GsdMediaKeysWindowClass))
-#define GSD_IS_MEDIA_KEYS_WINDOW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj),  GSD_TYPE_MEDIA_KEYS_WINDOW))
-#define GSD_IS_MEDIA_KEYS_WINDOW_CLASS(klass) (G_TYPE_INSTANCE_GET_CLASS ((klass), GSD_TYPE_MEDIA_KEYS_WINDOW))
+#define MSD_TYPE_MEDIA_KEYS_WINDOW            (msd_media_keys_window_get_type ())
+#define MSD_MEDIA_KEYS_WINDOW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj),  MSD_TYPE_MEDIA_KEYS_WINDOW, MsdMediaKeysWindow))
+#define MSD_MEDIA_KEYS_WINDOW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),   MSD_TYPE_MEDIA_KEYS_WINDOW, MsdMediaKeysWindowClass))
+#define MSD_IS_MEDIA_KEYS_WINDOW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj),  MSD_TYPE_MEDIA_KEYS_WINDOW))
+#define MSD_IS_MEDIA_KEYS_WINDOW_CLASS(klass) (G_TYPE_INSTANCE_GET_CLASS ((klass), MSD_TYPE_MEDIA_KEYS_WINDOW))
 
-typedef struct GsdMediaKeysWindow                   GsdMediaKeysWindow;
-typedef struct GsdMediaKeysWindowClass              GsdMediaKeysWindowClass;
-typedef struct GsdMediaKeysWindowPrivate            GsdMediaKeysWindowPrivate;
+typedef struct MsdMediaKeysWindow                   MsdMediaKeysWindow;
+typedef struct MsdMediaKeysWindowClass              MsdMediaKeysWindowClass;
+typedef struct MsdMediaKeysWindowPrivate            MsdMediaKeysWindowPrivate;
 
-struct GsdMediaKeysWindow {
-        GsdOsdWindow parent;
+struct MsdMediaKeysWindow {
+        MsdOsdWindow parent;
 
-        GsdMediaKeysWindowPrivate  *priv;
+        MsdMediaKeysWindowPrivate  *priv;
 };
 
-struct GsdMediaKeysWindowClass {
-        GsdOsdWindowClass parent_class;
+struct MsdMediaKeysWindowClass {
+        MsdOsdWindowClass parent_class;
 };
 
 typedef enum {
-        GSD_MEDIA_KEYS_WINDOW_ACTION_VOLUME,
-        GSD_MEDIA_KEYS_WINDOW_ACTION_CUSTOM
-} GsdMediaKeysWindowAction;
+        MSD_MEDIA_KEYS_WINDOW_ACTION_VOLUME,
+        MSD_MEDIA_KEYS_WINDOW_ACTION_CUSTOM
+} MsdMediaKeysWindowAction;
 
-GType                 gsd_media_keys_window_get_type          (void);
+GType                 msd_media_keys_window_get_type          (void);
 
-GtkWidget *           gsd_media_keys_window_new               (void);
-void                  gsd_media_keys_window_set_action        (GsdMediaKeysWindow      *window,
-                                                               GsdMediaKeysWindowAction action);
-void                  gsd_media_keys_window_set_action_custom (GsdMediaKeysWindow      *window,
+GtkWidget *           msd_media_keys_window_new               (void);
+void                  msd_media_keys_window_set_action        (MsdMediaKeysWindow      *window,
+                                                               MsdMediaKeysWindowAction action);
+void                  msd_media_keys_window_set_action_custom (MsdMediaKeysWindow      *window,
                                                                const char              *icon_name,
                                                                gboolean                 show_level);
-void                  gsd_media_keys_window_set_volume_muted  (GsdMediaKeysWindow      *window,
+void                  msd_media_keys_window_set_volume_muted  (MsdMediaKeysWindow      *window,
                                                                gboolean                 muted);
-void                  gsd_media_keys_window_set_volume_level  (GsdMediaKeysWindow      *window,
+void                  msd_media_keys_window_set_volume_level  (MsdMediaKeysWindow      *window,
                                                                int                      level);
-gboolean              gsd_media_keys_window_is_valid          (GsdMediaKeysWindow      *window);
+gboolean              msd_media_keys_window_is_valid          (MsdMediaKeysWindow      *window);
 
 #ifdef __cplusplus
 }

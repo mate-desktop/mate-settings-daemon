@@ -23,7 +23,7 @@
 #ifndef XMODMAP_H
 #define XMODMAP_H
 
-void gsd_load_modmap_files (void);
-void gsd_modmap_dialog_call (void);
+void msd_load_modmap_files (void);
+void msd_modmap_dialog_call (void);
 
 #endif

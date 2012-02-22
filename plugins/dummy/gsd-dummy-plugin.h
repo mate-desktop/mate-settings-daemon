@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef __GSD_DUMMY_PLUGIN_H__
-#define __GSD_DUMMY_PLUGIN_H__
+#ifndef __MSD_DUMMY_PLUGIN_H__
+#define __MSD_DUMMY_PLUGIN_H__
 
 #include <glib.h>
 #include <glib-object.h>
@@ -31,27 +31,27 @@
 extern "C" {
 #endif
 
-#define GSD_TYPE_DUMMY_PLUGIN                (gsd_dummy_plugin_get_type ())
-#define GSD_DUMMY_PLUGIN(o)                  (G_TYPE_CHECK_INSTANCE_CAST ((o), GSD_TYPE_DUMMY_PLUGIN, GsdDummyPlugin))
-#define GSD_DUMMY_PLUGIN_CLASS(k)            (G_TYPE_CHECK_CLASS_CAST((k), GSD_TYPE_DUMMY_PLUGIN, GsdDummyPluginClass))
-#define GSD_IS_DUMMY_PLUGIN(o)               (G_TYPE_CHECK_INSTANCE_TYPE ((o), GSD_TYPE_DUMMY_PLUGIN))
-#define GSD_IS_DUMMY_PLUGIN_CLASS(k)         (G_TYPE_CHECK_CLASS_TYPE ((k), GSD_TYPE_DUMMY_PLUGIN))
-#define GSD_DUMMY_PLUGIN_GET_CLASS(o)        (G_TYPE_INSTANCE_GET_CLASS ((o), GSD_TYPE_DUMMY_PLUGIN, GsdDummyPluginClass))
+#define MSD_TYPE_DUMMY_PLUGIN                (msd_dummy_plugin_get_type ())
+#define MSD_DUMMY_PLUGIN(o)                  (G_TYPE_CHECK_INSTANCE_CAST ((o), MSD_TYPE_DUMMY_PLUGIN, MsdDummyPlugin))
+#define MSD_DUMMY_PLUGIN_CLASS(k)            (G_TYPE_CHECK_CLASS_CAST((k), MSD_TYPE_DUMMY_PLUGIN, MsdDummyPluginClass))
+#define MSD_IS_DUMMY_PLUGIN(o)               (G_TYPE_CHECK_INSTANCE_TYPE ((o), MSD_TYPE_DUMMY_PLUGIN))
+#define MSD_IS_DUMMY_PLUGIN_CLASS(k)         (G_TYPE_CHECK_CLASS_TYPE ((k), MSD_TYPE_DUMMY_PLUGIN))
+#define MSD_DUMMY_PLUGIN_GET_CLASS(o)        (G_TYPE_INSTANCE_GET_CLASS ((o), MSD_TYPE_DUMMY_PLUGIN, MsdDummyPluginClass))
 
-typedef struct GsdDummyPluginPrivate GsdDummyPluginPrivate;
+typedef struct MsdDummyPluginPrivate MsdDummyPluginPrivate;
 
 typedef struct
 {
         MateSettingsPlugin    parent;
-        GsdDummyPluginPrivate *priv;
-} GsdDummyPlugin;
+        MsdDummyPluginPrivate *priv;
+} MsdDummyPlugin;
 
 typedef struct
 {
         MateSettingsPluginClass parent_class;
-} GsdDummyPluginClass;
+} MsdDummyPluginClass;
 
-GType   gsd_dummy_plugin_get_type            (void) G_GNUC_CONST;
+GType   msd_dummy_plugin_get_type            (void) G_GNUC_CONST;
 
 /* All the plugins must implement this function */
 G_MODULE_EXPORT GType register_mate_settings_plugin (GTypeModule *module);
@@ -60,4 +60,4 @@ G_MODULE_EXPORT GType register_mate_settings_plugin (GTypeModule *module);
 }
 #endif
 
-#endif /* __GSD_DUMMY_PLUGIN_H__ */
+#endif /* __MSD_DUMMY_PLUGIN_H__ */

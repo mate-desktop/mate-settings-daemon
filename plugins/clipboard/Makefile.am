@@ -5,10 +5,10 @@ plugin_LTLIBRARIES = \
 	$(NULL)
 
 libclipboard_la_SOURCES = 	\
-	gsd-clipboard-plugin.h	\
-	gsd-clipboard-plugin.c	\
-	gsd-clipboard-manager.h	\
-	gsd-clipboard-manager.c	\
+	msd-clipboard-plugin.h	\
+	msd-clipboard-plugin.c	\
+	msd-clipboard-manager.h	\
+	msd-clipboard-manager.c	\
 	xutils.h		\
 	xutils.c		\
 	list.h			\
@@ -25,7 +25,7 @@ libclipboard_la_CFLAGS = \
 	$(AM_CFLAGS)
 
 libclipboard_la_LDFLAGS = 	\
-	$(GSD_PLUGIN_LDFLAGS)	\
+	$(MSD_PLUGIN_LDFLAGS)	\
 	$(NULL)
 
 libclipboard_la_LIBADD  = 	\
@@ -50,4 +50,4 @@ DISTCLEANFILES =		\
 	$(plugin_DATA)		\
 	$(NULL)
 
-@GSD_INTLTOOL_PLUGIN_RULE@
+@MSD_INTLTOOL_PLUGIN_RULE@

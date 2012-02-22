@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef __GSD_FONT_MANAGER_H
-#define __GSD_FONT_MANAGER_H
+#ifndef __MSD_FONT_MANAGER_H
+#define __MSD_FONT_MANAGER_H
 
 #include <glib-object.h>
 
@@ -27,35 +27,35 @@
 extern "C" {
 #endif
 
-#define GSD_TYPE_FONT_MANAGER         (gsd_font_manager_get_type ())
-#define GSD_FONT_MANAGER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GSD_TYPE_FONT_MANAGER, GsdFontManager))
-#define GSD_FONT_MANAGER_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), GSD_TYPE_FONT_MANAGER, GsdFontManagerClass))
-#define GSD_IS_FONT_MANAGER(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), GSD_TYPE_FONT_MANAGER))
-#define GSD_IS_FONT_MANAGER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), GSD_TYPE_FONT_MANAGER))
-#define GSD_FONT_MANAGER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), GSD_TYPE_FONT_MANAGER, GsdFontManagerClass))
+#define MSD_TYPE_FONT_MANAGER         (msd_font_manager_get_type ())
+#define MSD_FONT_MANAGER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), MSD_TYPE_FONT_MANAGER, MsdFontManager))
+#define MSD_FONT_MANAGER_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), MSD_TYPE_FONT_MANAGER, MsdFontManagerClass))
+#define MSD_IS_FONT_MANAGER(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), MSD_TYPE_FONT_MANAGER))
+#define MSD_IS_FONT_MANAGER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), MSD_TYPE_FONT_MANAGER))
+#define MSD_FONT_MANAGER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), MSD_TYPE_FONT_MANAGER, MsdFontManagerClass))
 
-typedef struct GsdFontManagerPrivate GsdFontManagerPrivate;
+typedef struct MsdFontManagerPrivate MsdFontManagerPrivate;
 
 typedef struct
 {
         GObject                parent;
-        GsdFontManagerPrivate *priv;
-} GsdFontManager;
+        MsdFontManagerPrivate *priv;
+} MsdFontManager;
 
 typedef struct
 {
         GObjectClass   parent_class;
-} GsdFontManagerClass;
+} MsdFontManagerClass;
 
-GType                   gsd_font_manager_get_type            (void);
+GType                   msd_font_manager_get_type            (void);
 
-GsdFontManager *        gsd_font_manager_new                 (void);
-gboolean                gsd_font_manager_start               (GsdFontManager *manager,
+MsdFontManager *        msd_font_manager_new                 (void);
+gboolean                msd_font_manager_start               (MsdFontManager *manager,
                                                               GError        **error);
-void                    gsd_font_manager_stop                (GsdFontManager *manager);
+void                    msd_font_manager_stop                (MsdFontManager *manager);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __GSD_FONT_MANAGER_H */
+#endif /* __MSD_FONT_MANAGER_H */

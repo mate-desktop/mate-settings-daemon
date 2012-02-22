@@ -28,7 +28,7 @@
 #include <gtk/gtk.h>
 #include <mateconf/mateconf-client.h>
 
-#include "gsd-xmodmap.h"
+#include "msd-xmodmap.h"
 
 static const char DISABLE_XMM_WARNING_KEY[] =
     "/desktop/mate/peripherals/keyboard/disable_xmm_and_xkb_warning";
@@ -54,7 +54,7 @@ check_button_callback (GtkWidget *chk_button,
 }
 
 void
-gsd_load_modmap_files (void)
+msd_load_modmap_files (void)
 {
         MateConfClient *client;
         GSList      *tmp;
@@ -90,7 +90,7 @@ response_callback (GtkWidget *dialog,
         if (id == GTK_RESPONSE_OK) {
                 GtkWidget *chk_button = g_object_get_data (G_OBJECT (dialog), "check_button");
                 check_button_callback (chk_button, NULL);
-                gsd_load_modmap_files ();
+                msd_load_modmap_files ();
         }
         gtk_widget_destroy (dialog);
 }
@@ -256,7 +256,7 @@ out:
 }
 
 void
-gsd_modmap_dialog_call (void)
+msd_modmap_dialog_call (void)
 {
         GtkBuilder        *builder;
         guint              res;

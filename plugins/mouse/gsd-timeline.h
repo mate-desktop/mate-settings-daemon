@@ -1,4 +1,4 @@
-/* gsdtimeline.c
+/* msdtimeline.c
  *
  * Copyright (C) 2008 Carlos Garnacho  <carlos@imendio.com>
  *
@@ -17,8 +17,8 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#ifndef __GSD_TIMELINE_H__
-#define __GSD_TIMELINE_H__
+#ifndef __MSD_TIMELINE_H__
+#define __MSD_TIMELINE_H__
 
 #include <glib-object.h>
 #include <gdk/gdk.h>
@@ -27,101 +27,101 @@
 extern "C" {
 #endif
 
-#define GSD_TYPE_TIMELINE_DIRECTION       (gsd_timeline_direction_get_type ())
-#define GSD_TYPE_TIMELINE_PROGRESS_TYPE   (gsd_timeline_progress_type_get_type ())
-#define GSD_TYPE_TIMELINE                 (gsd_timeline_get_type ())
-#define GSD_TIMELINE(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GSD_TYPE_TIMELINE, GsdTimeline))
-#define GSD_TIMELINE_CLASS(klass)         (G_TYPE_CHECK_CLASS_CAST ((klass),  GSD_TYPE_TIMELINE, GsdTimelineClass))
-#define GSD_IS_TIMELINE(obj)              (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GSD_TYPE_TIMELINE))
-#define GSD_IS_TIMELINE_CLASS(klass)      (G_TYPE_CHECK_CLASS_TYPE ((klass),  GSD_TYPE_TIMELINE))
-#define GSD_TIMELINE_GET_CLASS(obj)       (G_TYPE_INSTANCE_GET_CLASS ((obj),  GSD_TYPE_TIMELINE, GsdTimelineClass))
+#define MSD_TYPE_TIMELINE_DIRECTION       (msd_timeline_direction_get_type ())
+#define MSD_TYPE_TIMELINE_PROGRESS_TYPE   (msd_timeline_progress_type_get_type ())
+#define MSD_TYPE_TIMELINE                 (msd_timeline_get_type ())
+#define MSD_TIMELINE(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), MSD_TYPE_TIMELINE, MsdTimeline))
+#define MSD_TIMELINE_CLASS(klass)         (G_TYPE_CHECK_CLASS_CAST ((klass),  MSD_TYPE_TIMELINE, MsdTimelineClass))
+#define MSD_IS_TIMELINE(obj)              (G_TYPE_CHECK_INSTANCE_TYPE ((obj), MSD_TYPE_TIMELINE))
+#define MSD_IS_TIMELINE_CLASS(klass)      (G_TYPE_CHECK_CLASS_TYPE ((klass),  MSD_TYPE_TIMELINE))
+#define MSD_TIMELINE_GET_CLASS(obj)       (G_TYPE_INSTANCE_GET_CLASS ((obj),  MSD_TYPE_TIMELINE, MsdTimelineClass))
 
 typedef enum {
-  GSD_TIMELINE_DIRECTION_FORWARD,
-  GSD_TIMELINE_DIRECTION_BACKWARD
-} GsdTimelineDirection;
+  MSD_TIMELINE_DIRECTION_FORWARD,
+  MSD_TIMELINE_DIRECTION_BACKWARD
+} MsdTimelineDirection;
 
 typedef enum {
-  GSD_TIMELINE_PROGRESS_LINEAR,
-  GSD_TIMELINE_PROGRESS_SINUSOIDAL,
-  GSD_TIMELINE_PROGRESS_EXPONENTIAL
-} GsdTimelineProgressType;
+  MSD_TIMELINE_PROGRESS_LINEAR,
+  MSD_TIMELINE_PROGRESS_SINUSOIDAL,
+  MSD_TIMELINE_PROGRESS_EXPONENTIAL
+} MsdTimelineProgressType;
 
-typedef struct GsdTimeline      GsdTimeline;
-typedef struct GsdTimelineClass GsdTimelineClass;
+typedef struct MsdTimeline      MsdTimeline;
+typedef struct MsdTimelineClass MsdTimelineClass;
 
-struct GsdTimeline
+struct MsdTimeline
 {
   GObject parent_instance;
 };
 
-struct GsdTimelineClass
+struct MsdTimelineClass
 {
   GObjectClass parent_class;
 
-  void (* started)           (GsdTimeline *timeline);
-  void (* finished)          (GsdTimeline *timeline);
-  void (* paused)            (GsdTimeline *timeline);
+  void (* started)           (MsdTimeline *timeline);
+  void (* finished)          (MsdTimeline *timeline);
+  void (* paused)            (MsdTimeline *timeline);
 
-  void (* frame)             (GsdTimeline *timeline,
+  void (* frame)             (MsdTimeline *timeline,
 			      gdouble      progress);
 
-  void (* __gsd_reserved1) (void);
-  void (* __gsd_reserved2) (void);
-  void (* __gsd_reserved3) (void);
-  void (* __gsd_reserved4) (void);
+  void (* __msd_reserved1) (void);
+  void (* __msd_reserved2) (void);
+  void (* __msd_reserved3) (void);
+  void (* __msd_reserved4) (void);
 };
 
-typedef gdouble (*GsdTimelineProgressFunc) (gdouble progress);
+typedef gdouble (*MsdTimelineProgressFunc) (gdouble progress);
 
 
-GType                   gsd_timeline_get_type           (void) G_GNUC_CONST;
-GType                   gsd_timeline_direction_get_type (void) G_GNUC_CONST;
-GType                   gsd_timeline_progress_type_get_type (void) G_GNUC_CONST;
+GType                   msd_timeline_get_type           (void) G_GNUC_CONST;
+GType                   msd_timeline_direction_get_type (void) G_GNUC_CONST;
+GType                   msd_timeline_progress_type_get_type (void) G_GNUC_CONST;
 
-GsdTimeline            *gsd_timeline_new                (guint                    duration);
-GsdTimeline            *gsd_timeline_new_for_screen     (guint                    duration,
+MsdTimeline            *msd_timeline_new                (guint                    duration);
+MsdTimeline            *msd_timeline_new_for_screen     (guint                    duration,
 							 GdkScreen               *screen);
 
-void                    gsd_timeline_start              (GsdTimeline             *timeline);
-void                    gsd_timeline_pause              (GsdTimeline             *timeline);
-void                    gsd_timeline_rewind             (GsdTimeline             *timeline);
+void                    msd_timeline_start              (MsdTimeline             *timeline);
+void                    msd_timeline_pause              (MsdTimeline             *timeline);
+void                    msd_timeline_rewind             (MsdTimeline             *timeline);
 
-gboolean                gsd_timeline_is_running         (GsdTimeline             *timeline);
+gboolean                msd_timeline_is_running         (MsdTimeline             *timeline);
 
-guint                   gsd_timeline_get_fps            (GsdTimeline             *timeline);
-void                    gsd_timeline_set_fps            (GsdTimeline             *timeline,
+guint                   msd_timeline_get_fps            (MsdTimeline             *timeline);
+void                    msd_timeline_set_fps            (MsdTimeline             *timeline,
 							 guint                    fps);
 
-gboolean                gsd_timeline_get_loop           (GsdTimeline             *timeline);
-void                    gsd_timeline_set_loop           (GsdTimeline             *timeline,
+gboolean                msd_timeline_get_loop           (MsdTimeline             *timeline);
+void                    msd_timeline_set_loop           (MsdTimeline             *timeline,
 							 gboolean                 loop);
 
-guint                   gsd_timeline_get_duration       (GsdTimeline             *timeline);
-void                    gsd_timeline_set_duration       (GsdTimeline             *timeline,
+guint                   msd_timeline_get_duration       (MsdTimeline             *timeline);
+void                    msd_timeline_set_duration       (MsdTimeline             *timeline,
 							 guint                    duration);
 
-GdkScreen              *gsd_timeline_get_screen         (GsdTimeline             *timeline);
-void                    gsd_timeline_set_screen         (GsdTimeline             *timeline,
+GdkScreen              *msd_timeline_get_screen         (MsdTimeline             *timeline);
+void                    msd_timeline_set_screen         (MsdTimeline             *timeline,
 							 GdkScreen               *screen);
 
-GsdTimelineDirection    gsd_timeline_get_direction      (GsdTimeline             *timeline);
-void                    gsd_timeline_set_direction      (GsdTimeline             *timeline,
-							 GsdTimelineDirection     direction);
+MsdTimelineDirection    msd_timeline_get_direction      (MsdTimeline             *timeline);
+void                    msd_timeline_set_direction      (MsdTimeline             *timeline,
+							 MsdTimelineDirection     direction);
 
-GsdTimelineProgressType gsd_timeline_get_progress_type  (GsdTimeline             *timeline);
-void                    gsd_timeline_set_progress_type  (GsdTimeline             *timeline,
-							 GsdTimelineProgressType  type);
-void                    gsd_timeline_get_progress_func  (GsdTimeline             *timeline);
+MsdTimelineProgressType msd_timeline_get_progress_type  (MsdTimeline             *timeline);
+void                    msd_timeline_set_progress_type  (MsdTimeline             *timeline,
+							 MsdTimelineProgressType  type);
+void                    msd_timeline_get_progress_func  (MsdTimeline             *timeline);
 
-void                    gsd_timeline_set_progress_func  (GsdTimeline             *timeline,
-							 GsdTimelineProgressFunc  progress_func);
+void                    msd_timeline_set_progress_func  (MsdTimeline             *timeline,
+							 MsdTimelineProgressFunc  progress_func);
 
-gdouble                 gsd_timeline_get_progress       (GsdTimeline             *timeline);
+gdouble                 msd_timeline_get_progress       (MsdTimeline             *timeline);
 
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __GSD_TIMELINE_H__ */
+#endif /* __MSD_TIMELINE_H__ */

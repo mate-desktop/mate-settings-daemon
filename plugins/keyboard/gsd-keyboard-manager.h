@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef __GSD_KEYBOARD_MANAGER_H
-#define __GSD_KEYBOARD_MANAGER_H
+#ifndef __MSD_KEYBOARD_MANAGER_H
+#define __MSD_KEYBOARD_MANAGER_H
 
 #include <glib-object.h>
 
@@ -27,36 +27,36 @@
 extern "C" {
 #endif
 
-#define GSD_TYPE_KEYBOARD_MANAGER         (gsd_keyboard_manager_get_type ())
-#define GSD_KEYBOARD_MANAGER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GSD_TYPE_KEYBOARD_MANAGER, GsdKeyboardManager))
-#define GSD_KEYBOARD_MANAGER_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), GSD_TYPE_KEYBOARD_MANAGER, GsdKeyboardManagerClass))
-#define GSD_IS_KEYBOARD_MANAGER(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), GSD_TYPE_KEYBOARD_MANAGER))
-#define GSD_IS_KEYBOARD_MANAGER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), GSD_TYPE_KEYBOARD_MANAGER))
-#define GSD_KEYBOARD_MANAGER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), GSD_TYPE_KEYBOARD_MANAGER, GsdKeyboardManagerClass))
+#define MSD_TYPE_KEYBOARD_MANAGER         (msd_keyboard_manager_get_type ())
+#define MSD_KEYBOARD_MANAGER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), MSD_TYPE_KEYBOARD_MANAGER, MsdKeyboardManager))
+#define MSD_KEYBOARD_MANAGER_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), MSD_TYPE_KEYBOARD_MANAGER, MsdKeyboardManagerClass))
+#define MSD_IS_KEYBOARD_MANAGER(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), MSD_TYPE_KEYBOARD_MANAGER))
+#define MSD_IS_KEYBOARD_MANAGER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), MSD_TYPE_KEYBOARD_MANAGER))
+#define MSD_KEYBOARD_MANAGER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), MSD_TYPE_KEYBOARD_MANAGER, MsdKeyboardManagerClass))
 
-typedef struct GsdKeyboardManagerPrivate GsdKeyboardManagerPrivate;
+typedef struct MsdKeyboardManagerPrivate MsdKeyboardManagerPrivate;
 
 typedef struct
 {
         GObject                     parent;
-        GsdKeyboardManagerPrivate *priv;
-} GsdKeyboardManager;
+        MsdKeyboardManagerPrivate *priv;
+} MsdKeyboardManager;
 
 typedef struct
 {
         GObjectClass   parent_class;
-} GsdKeyboardManagerClass;
+} MsdKeyboardManagerClass;
 
-GType                   gsd_keyboard_manager_get_type            (void);
+GType                   msd_keyboard_manager_get_type            (void);
 
-GsdKeyboardManager *       gsd_keyboard_manager_new                 (void);
-gboolean                gsd_keyboard_manager_start               (GsdKeyboardManager *manager,
+MsdKeyboardManager *       msd_keyboard_manager_new                 (void);
+gboolean                msd_keyboard_manager_start               (MsdKeyboardManager *manager,
                                                                GError         **error);
-void                    gsd_keyboard_manager_stop                (GsdKeyboardManager *manager);
-void                    gsd_keyboard_manager_apply_settings      (GsdKeyboardManager *manager);
+void                    msd_keyboard_manager_stop                (MsdKeyboardManager *manager);
+void                    msd_keyboard_manager_apply_settings      (MsdKeyboardManager *manager);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __GSD_KEYBOARD_MANAGER_H */
+#endif /* __MSD_KEYBOARD_MANAGER_H */

@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef __GSD_SOUND_PLUGIN_H__
-#define __GSD_SOUND_PLUGIN_H__
+#ifndef __MSD_SOUND_PLUGIN_H__
+#define __MSD_SOUND_PLUGIN_H__
 
 #include <glib.h>
 #include <glib-object.h>
@@ -31,27 +31,27 @@
 extern "C" {
 #endif
 
-#define GSD_TYPE_SOUND_PLUGIN                (gsd_sound_plugin_get_type ())
-#define GSD_SOUND_PLUGIN(o)                  (G_TYPE_CHECK_INSTANCE_CAST ((o), GSD_TYPE_SOUND_PLUGIN, GsdSoundPlugin))
-#define GSD_SOUND_PLUGIN_CLASS(k)            (G_TYPE_CHECK_CLASS_CAST ((k), GSD_TYPE_SOUND_PLUGIN, GsdSoundPluginClass))
-#define GSD_IS_SOUND_PLUGIN(o)               (G_TYPE_CHECK_INSTANCE_TYPE ((o), GSD_TYPE_SOUND_PLUGIN))
-#define GSD_IS_SOUND_PLUGIN_CLASS(k)         (G_TYPE_CHECK_CLASS_TYPE ((k), GSD_TYPE_SOUND_PLUGIN))
-#define GSD_SOUND_PLUGIN_GET_CLASS(o)        (G_TYPE_INSTANCE_GET_CLASS ((o), GSD_TYPE_SOUND_PLUGIN, GsdSoundPluginClass))
+#define MSD_TYPE_SOUND_PLUGIN                (msd_sound_plugin_get_type ())
+#define MSD_SOUND_PLUGIN(o)                  (G_TYPE_CHECK_INSTANCE_CAST ((o), MSD_TYPE_SOUND_PLUGIN, MsdSoundPlugin))
+#define MSD_SOUND_PLUGIN_CLASS(k)            (G_TYPE_CHECK_CLASS_CAST ((k), MSD_TYPE_SOUND_PLUGIN, MsdSoundPluginClass))
+#define MSD_IS_SOUND_PLUGIN(o)               (G_TYPE_CHECK_INSTANCE_TYPE ((o), MSD_TYPE_SOUND_PLUGIN))
+#define MSD_IS_SOUND_PLUGIN_CLASS(k)         (G_TYPE_CHECK_CLASS_TYPE ((k), MSD_TYPE_SOUND_PLUGIN))
+#define MSD_SOUND_PLUGIN_GET_CLASS(o)        (G_TYPE_INSTANCE_GET_CLASS ((o), MSD_TYPE_SOUND_PLUGIN, MsdSoundPluginClass))
 
-typedef struct GsdSoundPluginPrivate GsdSoundPluginPrivate;
+typedef struct MsdSoundPluginPrivate MsdSoundPluginPrivate;
 
 typedef struct
 {
         MateSettingsPlugin parent;
-        GsdSoundPluginPrivate *priv;
-} GsdSoundPlugin;
+        MsdSoundPluginPrivate *priv;
+} MsdSoundPlugin;
 
 typedef struct
 {
         MateSettingsPluginClass parent_class;
-} GsdSoundPluginClass;
+} MsdSoundPluginClass;
 
-GType gsd_sound_plugin_get_type (void) G_GNUC_CONST;
+GType msd_sound_plugin_get_type (void) G_GNUC_CONST;
 
 /* All the plugins must implement this function */
 G_MODULE_EXPORT GType register_mate_settings_plugin (GTypeModule *module);
@@ -60,4 +60,4 @@ G_MODULE_EXPORT GType register_mate_settings_plugin (GTypeModule *module);
 }
 #endif
 
-#endif /* __GSD_SOUND_PLUGIN_H__ */
+#endif /* __MSD_SOUND_PLUGIN_H__ */

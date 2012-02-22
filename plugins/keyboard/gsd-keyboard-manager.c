@@ -47,42 +47,42 @@
 #endif
 
 #include "mate-settings-profile.h"
-#include "gsd-keyboard-manager.h"
+#include "msd-keyboard-manager.h"
 
-#include "gsd-keyboard-xkb.h"
-#include "gsd-xmodmap.h"
+#include "msd-keyboard-xkb.h"
+#include "msd-xmodmap.h"
 
-#define GSD_KEYBOARD_MANAGER_GET_PRIVATE(o) \
-	(G_TYPE_INSTANCE_GET_PRIVATE((o), GSD_TYPE_KEYBOARD_MANAGER, GsdKeyboardManagerPrivate))
+#define MSD_KEYBOARD_MANAGER_GET_PRIVATE(o) \
+	(G_TYPE_INSTANCE_GET_PRIVATE((o), MSD_TYPE_KEYBOARD_MANAGER, MsdKeyboardManagerPrivate))
 
 #ifndef HOST_NAME_MAX
 	#define HOST_NAME_MAX 255
 #endif
 
-#define GSD_KEYBOARD_KEY "/desktop/mate/peripherals/keyboard"
+#define MSD_KEYBOARD_KEY "/desktop/mate/peripherals/keyboard"
 
-#define KEY_REPEAT        GSD_KEYBOARD_KEY "/repeat"
-#define KEY_CLICK         GSD_KEYBOARD_KEY "/click"
-#define KEY_RATE          GSD_KEYBOARD_KEY "/rate"
-#define KEY_DELAY         GSD_KEYBOARD_KEY "/delay"
-#define KEY_CLICK_VOLUME  GSD_KEYBOARD_KEY "/click_volume"
+#define KEY_REPEAT        MSD_KEYBOARD_KEY "/repeat"
+#define KEY_CLICK         MSD_KEYBOARD_KEY "/click"
+#define KEY_RATE          MSD_KEYBOARD_KEY "/rate"
+#define KEY_DELAY         MSD_KEYBOARD_KEY "/delay"
+#define KEY_CLICK_VOLUME  MSD_KEYBOARD_KEY "/click_volume"
 
-#define KEY_BELL_VOLUME   GSD_KEYBOARD_KEY "/bell_volume"
-#define KEY_BELL_PITCH    GSD_KEYBOARD_KEY "/bell_pitch"
-#define KEY_BELL_DURATION GSD_KEYBOARD_KEY "/bell_duration"
-#define KEY_BELL_MODE     GSD_KEYBOARD_KEY "/bell_mode"
+#define KEY_BELL_VOLUME   MSD_KEYBOARD_KEY "/bell_volume"
+#define KEY_BELL_PITCH    MSD_KEYBOARD_KEY "/bell_pitch"
+#define KEY_BELL_DURATION MSD_KEYBOARD_KEY "/bell_duration"
+#define KEY_BELL_MODE     MSD_KEYBOARD_KEY "/bell_mode"
 
-struct GsdKeyboardManagerPrivate {
+struct MsdKeyboardManagerPrivate {
 	gboolean have_xkb;
 	gint     xkb_event_base;
 	guint    notify;
 };
 
-static void     gsd_keyboard_manager_class_init  (GsdKeyboardManagerClass* klass);
-static void     gsd_keyboard_manager_init        (GsdKeyboardManager*      keyboard_manager);
-static void     gsd_keyboard_manager_finalize    (GObject*                 object);
+static void     msd_keyboard_manager_class_init  (MsdKeyboardManagerClass* klass);
+static void     msd_keyboard_manager_init        (MsdKeyboardManager*      keyboard_manager);
+static void     msd_keyboard_manager_finalize    (GObject*                 object);
 
-G_DEFINE_TYPE (GsdKeyboardManager, gsd_keyboard_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE (MsdKeyboardManager, msd_keyboard_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -126,7 +126,7 @@ static gboolean xkb_set_keyboard_autorepeat_rate(int delay, int rate)
 }
 #endif
 
-static char* gsd_keyboard_get_hostname_key (const char *subkey)
+static char* msd_keyboard_get_hostname_key (const char *subkey)
 {
         char hostname[HOST_NAME_MAX + 1];
 
@@ -137,7 +137,7 @@ static char* gsd_keyboard_get_hostname_key (const char *subkey)
                 char *key;
 
                 escaped = mateconf_escape_key (hostname, -1);
-                key = g_strconcat (GSD_KEYBOARD_KEY
+                key = g_strconcat (MSD_KEYBOARD_KEY
                                    "/host-",
                                    escaped,
                                    "/0/",
@@ -158,7 +158,7 @@ typedef enum {
 } NumLockState;
 
 static void
-numlock_xkb_init (GsdKeyboardManager *manager)
+numlock_xkb_init (MsdKeyboardManager *manager)
 {
         Display *dpy = GDK_DISPLAY_XDISPLAY (gdk_display_get_default ());
         gboolean have_xkb;
@@ -206,7 +206,7 @@ numlock_set_xkb_state (NumLockState new_state)
 static char *
 numlock_mateconf_state_key (void)
 {
-        char *key = gsd_keyboard_get_hostname_key ("numlock_on");
+        char *key = msd_keyboard_get_hostname_key ("numlock_on");
         if (!key) {
                 g_message ("NumLock remembering disabled because hostname is set to \"localhost\"");
         }
@@ -274,7 +274,7 @@ numlock_xkb_callback (GdkXEvent *xev_,
 }
 
 static void
-numlock_install_xkb_callback (GsdKeyboardManager *manager)
+numlock_install_xkb_callback (MsdKeyboardManager *manager)
 {
         if (!manager->priv->have_xkb)
                 return;
@@ -290,7 +290,7 @@ static void
 apply_settings (MateConfClient        *client,
                 guint               cnxn_id,
                 MateConfEntry         *entry,
-                GsdKeyboardManager *manager)
+                MsdKeyboardManager *manager)
 {
         XKeyboardControl kbdcontrol;
         gboolean         repeat;
@@ -322,7 +322,7 @@ apply_settings (MateConfClient        *client,
         g_free (volume_string);
 
 #ifdef HAVE_X11_EXTENSIONS_XKB_H
-        rnumlock      = mateconf_client_get_bool  (client, GSD_KEYBOARD_KEY "/remember_numlock_state", NULL);
+        rnumlock      = mateconf_client_get_bool  (client, MSD_KEYBOARD_KEY "/remember_numlock_state", NULL);
 #endif /* HAVE_X11_EXTENSIONS_XKB_H */
 
         gdk_error_trap_push ();
@@ -370,7 +370,7 @@ apply_settings (MateConfClient        *client,
 }
 
 void
-gsd_keyboard_manager_apply_settings (GsdKeyboardManager *manager)
+msd_keyboard_manager_apply_settings (MsdKeyboardManager *manager)
 {
         MateConfClient *client;
 
@@ -380,7 +380,7 @@ gsd_keyboard_manager_apply_settings (GsdKeyboardManager *manager)
 }
 
 static gboolean
-start_keyboard_idle_cb (GsdKeyboardManager *manager)
+start_keyboard_idle_cb (MsdKeyboardManager *manager)
 {
         MateConfClient *client;
 
@@ -391,20 +391,20 @@ start_keyboard_idle_cb (GsdKeyboardManager *manager)
         manager->priv->have_xkb = 0;
         client = mateconf_client_get_default ();
 
-        mateconf_client_add_dir (client, GSD_KEYBOARD_KEY, MATECONF_CLIENT_PRELOAD_RECURSIVE, NULL);
+        mateconf_client_add_dir (client, MSD_KEYBOARD_KEY, MATECONF_CLIENT_PRELOAD_RECURSIVE, NULL);
 
         /* Essential - xkb initialization should happen before */
-        gsd_keyboard_xkb_set_post_activation_callback ((PostActivationCallback) gsd_load_modmap_files, NULL);
-        gsd_keyboard_xkb_init (client, manager);
+        msd_keyboard_xkb_set_post_activation_callback ((PostActivationCallback) msd_load_modmap_files, NULL);
+        msd_keyboard_xkb_init (client, manager);
 
 #ifdef HAVE_X11_EXTENSIONS_XKB_H
         numlock_xkb_init (manager);
 #endif /* HAVE_X11_EXTENSIONS_XKB_H */
 
         /* apply current settings before we install the callback */
-        gsd_keyboard_manager_apply_settings (manager);
+        msd_keyboard_manager_apply_settings (manager);
 
-        manager->priv->notify = mateconf_client_notify_add (client, GSD_KEYBOARD_KEY,
+        manager->priv->notify = mateconf_client_notify_add (client, MSD_KEYBOARD_KEY,
                                                          (MateConfClientNotifyFunc) apply_settings, manager,
                                                          NULL, NULL);
 
@@ -420,7 +420,7 @@ start_keyboard_idle_cb (GsdKeyboardManager *manager)
 }
 
 gboolean
-gsd_keyboard_manager_start (GsdKeyboardManager *manager,
+msd_keyboard_manager_start (MsdKeyboardManager *manager,
                             GError            **error)
 {
         mate_settings_profile_start (NULL);
@@ -433,15 +433,15 @@ gsd_keyboard_manager_start (GsdKeyboardManager *manager,
 }
 
 void
-gsd_keyboard_manager_stop (GsdKeyboardManager *manager)
+msd_keyboard_manager_stop (MsdKeyboardManager *manager)
 {
-        GsdKeyboardManagerPrivate *p = manager->priv;
+        MsdKeyboardManagerPrivate *p = manager->priv;
 
         g_debug ("Stopping keyboard manager");
 
         if (p->notify != 0) {
                 MateConfClient *client = mateconf_client_get_default ();
-                mateconf_client_remove_dir (client, GSD_KEYBOARD_KEY, NULL);
+                mateconf_client_remove_dir (client, MSD_KEYBOARD_KEY, NULL);
                 mateconf_client_notify_remove (client, p->notify);
                 g_object_unref (client);
                 p->notify = 0;
@@ -455,18 +455,18 @@ gsd_keyboard_manager_stop (GsdKeyboardManager *manager)
         }
 #endif /* HAVE_X11_EXTENSIONS_XKB_H */
 
-        gsd_keyboard_xkb_shutdown ();
+        msd_keyboard_xkb_shutdown ();
 }
 
 static void
-gsd_keyboard_manager_set_property (GObject        *object,
+msd_keyboard_manager_set_property (GObject        *object,
                                    guint           prop_id,
                                    const GValue   *value,
                                    GParamSpec     *pspec)
 {
-        GsdKeyboardManager *self;
+        MsdKeyboardManager *self;
 
-        self = GSD_KEYBOARD_MANAGER (object);
+        self = MSD_KEYBOARD_MANAGER (object);
 
         switch (prop_id) {
         default:
@@ -476,14 +476,14 @@ gsd_keyboard_manager_set_property (GObject        *object,
 }
 
 static void
-gsd_keyboard_manager_get_property (GObject        *object,
+msd_keyboard_manager_get_property (GObject        *object,
                                    guint           prop_id,
                                    GValue         *value,
                                    GParamSpec     *pspec)
 {
-        GsdKeyboardManager *self;
+        MsdKeyboardManager *self;
 
-        self = GSD_KEYBOARD_MANAGER (object);
+        self = MSD_KEYBOARD_MANAGER (object);
 
         switch (prop_id) {
         default:
@@ -493,16 +493,16 @@ gsd_keyboard_manager_get_property (GObject        *object,
 }
 
 static GObject *
-gsd_keyboard_manager_constructor (GType                  type,
+msd_keyboard_manager_constructor (GType                  type,
                                   guint                  n_construct_properties,
                                   GObjectConstructParam *construct_properties)
 {
-        GsdKeyboardManager      *keyboard_manager;
-        GsdKeyboardManagerClass *klass;
+        MsdKeyboardManager      *keyboard_manager;
+        MsdKeyboardManagerClass *klass;
 
-        klass = GSD_KEYBOARD_MANAGER_CLASS (g_type_class_peek (GSD_TYPE_KEYBOARD_MANAGER));
+        klass = MSD_KEYBOARD_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_KEYBOARD_MANAGER));
 
-        keyboard_manager = GSD_KEYBOARD_MANAGER (G_OBJECT_CLASS (gsd_keyboard_manager_parent_class)->constructor (type,
+        keyboard_manager = MSD_KEYBOARD_MANAGER (G_OBJECT_CLASS (msd_keyboard_manager_parent_class)->constructor (type,
                                                                                                       n_construct_properties,
                                                                                                       construct_properties));
 
@@ -510,60 +510,60 @@ gsd_keyboard_manager_constructor (GType                  type,
 }
 
 static void
-gsd_keyboard_manager_dispose (GObject *object)
+msd_keyboard_manager_dispose (GObject *object)
 {
-        GsdKeyboardManager *keyboard_manager;
+        MsdKeyboardManager *keyboard_manager;
 
-        keyboard_manager = GSD_KEYBOARD_MANAGER (object);
+        keyboard_manager = MSD_KEYBOARD_MANAGER (object);
 
-        G_OBJECT_CLASS (gsd_keyboard_manager_parent_class)->dispose (object);
+        G_OBJECT_CLASS (msd_keyboard_manager_parent_class)->dispose (object);
 }
 
 static void
-gsd_keyboard_manager_class_init (GsdKeyboardManagerClass *klass)
+msd_keyboard_manager_class_init (MsdKeyboardManagerClass *klass)
 {
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->get_property = gsd_keyboard_manager_get_property;
-        object_class->set_property = gsd_keyboard_manager_set_property;
-        object_class->constructor = gsd_keyboard_manager_constructor;
-        object_class->dispose = gsd_keyboard_manager_dispose;
-        object_class->finalize = gsd_keyboard_manager_finalize;
+        object_class->get_property = msd_keyboard_manager_get_property;
+        object_class->set_property = msd_keyboard_manager_set_property;
+        object_class->constructor = msd_keyboard_manager_constructor;
+        object_class->dispose = msd_keyboard_manager_dispose;
+        object_class->finalize = msd_keyboard_manager_finalize;
 
-        g_type_class_add_private (klass, sizeof (GsdKeyboardManagerPrivate));
+        g_type_class_add_private (klass, sizeof (MsdKeyboardManagerPrivate));
 }
 
 static void
-gsd_keyboard_manager_init (GsdKeyboardManager *manager)
+msd_keyboard_manager_init (MsdKeyboardManager *manager)
 {
-        manager->priv = GSD_KEYBOARD_MANAGER_GET_PRIVATE (manager);
+        manager->priv = MSD_KEYBOARD_MANAGER_GET_PRIVATE (manager);
 }
 
 static void
-gsd_keyboard_manager_finalize (GObject *object)
+msd_keyboard_manager_finalize (GObject *object)
 {
-        GsdKeyboardManager *keyboard_manager;
+        MsdKeyboardManager *keyboard_manager;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GSD_IS_KEYBOARD_MANAGER (object));
+        g_return_if_fail (MSD_IS_KEYBOARD_MANAGER (object));
 
-        keyboard_manager = GSD_KEYBOARD_MANAGER (object);
+        keyboard_manager = MSD_KEYBOARD_MANAGER (object);
 
         g_return_if_fail (keyboard_manager->priv != NULL);
 
-        G_OBJECT_CLASS (gsd_keyboard_manager_parent_class)->finalize (object);
+        G_OBJECT_CLASS (msd_keyboard_manager_parent_class)->finalize (object);
 }
 
-GsdKeyboardManager *
-gsd_keyboard_manager_new (void)
+MsdKeyboardManager *
+msd_keyboard_manager_new (void)
 {
         if (manager_object != NULL) {
                 g_object_ref (manager_object);
         } else {
-                manager_object = g_object_new (GSD_TYPE_KEYBOARD_MANAGER, NULL);
+                manager_object = g_object_new (MSD_TYPE_KEYBOARD_MANAGER, NULL);
                 g_object_add_weak_pointer (manager_object,
                                            (gpointer *) &manager_object);
         }
 
-        return GSD_KEYBOARD_MANAGER (manager_object);
+        return MSD_KEYBOARD_MANAGER (manager_object);
 }

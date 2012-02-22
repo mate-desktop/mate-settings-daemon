@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef __GSD_HOUSEKEEPING_PLUGIN_H__
-#define __GSD_HOUSEKEEPING_PLUGIN_H__
+#ifndef __MSD_HOUSEKEEPING_PLUGIN_H__
+#define __MSD_HOUSEKEEPING_PLUGIN_H__
 
 #include <glib.h>
 #include <glib-object.h>
@@ -31,25 +31,25 @@
 extern "C" {
 #endif
 
-#define GSD_TYPE_HOUSEKEEPING_PLUGIN                (gsd_housekeeping_plugin_get_type ())
-#define GSD_HOUSEKEEPING_PLUGIN(o)                  (G_TYPE_CHECK_INSTANCE_CAST ((o), GSD_TYPE_HOUSEKEEPING_PLUGIN, GsdHousekeepingPlugin))
-#define GSD_HOUSEKEEPING_PLUGIN_CLASS(k)            (G_TYPE_CHECK_CLASS_CAST((k), GSD_TYPE_HOUSEKEEPING_PLUGIN, GsdHousekeepingPluginClass))
-#define GSD_IS_HOUSEKEEPING_PLUGIN(o)               (G_TYPE_CHECK_INSTANCE_TYPE ((o), GSD_TYPE_HOUSEKEEPING_PLUGIN))
-#define GSD_IS_HOUSEKEEPING_PLUGIN_CLASS(k)         (G_TYPE_CHECK_CLASS_TYPE ((k), GSD_TYPE_HOUSEKEEPING_PLUGIN))
-#define GSD_HOUSEKEEPING_PLUGIN_GET_CLASS(o)        (G_TYPE_INSTANCE_GET_CLASS ((o), GSD_TYPE_HOUSEKEEPING_PLUGIN, GsdHousekeepingPluginClass))
+#define MSD_TYPE_HOUSEKEEPING_PLUGIN                (msd_housekeeping_plugin_get_type ())
+#define MSD_HOUSEKEEPING_PLUGIN(o)                  (G_TYPE_CHECK_INSTANCE_CAST ((o), MSD_TYPE_HOUSEKEEPING_PLUGIN, MsdHousekeepingPlugin))
+#define MSD_HOUSEKEEPING_PLUGIN_CLASS(k)            (G_TYPE_CHECK_CLASS_CAST((k), MSD_TYPE_HOUSEKEEPING_PLUGIN, MsdHousekeepingPluginClass))
+#define MSD_IS_HOUSEKEEPING_PLUGIN(o)               (G_TYPE_CHECK_INSTANCE_TYPE ((o), MSD_TYPE_HOUSEKEEPING_PLUGIN))
+#define MSD_IS_HOUSEKEEPING_PLUGIN_CLASS(k)         (G_TYPE_CHECK_CLASS_TYPE ((k), MSD_TYPE_HOUSEKEEPING_PLUGIN))
+#define MSD_HOUSEKEEPING_PLUGIN_GET_CLASS(o)        (G_TYPE_INSTANCE_GET_CLASS ((o), MSD_TYPE_HOUSEKEEPING_PLUGIN, MsdHousekeepingPluginClass))
 
-typedef struct GsdHousekeepingPluginPrivate GsdHousekeepingPluginPrivate;
+typedef struct MsdHousekeepingPluginPrivate MsdHousekeepingPluginPrivate;
 
 typedef struct {
         MateSettingsPlugin		 parent;
-        GsdHousekeepingPluginPrivate	*priv;
-} GsdHousekeepingPlugin;
+        MsdHousekeepingPluginPrivate	*priv;
+} MsdHousekeepingPlugin;
 
 typedef struct {
         MateSettingsPluginClass parent_class;
-} GsdHousekeepingPluginClass;
+} MsdHousekeepingPluginClass;
 
-GType   gsd_housekeeping_plugin_get_type		(void) G_GNUC_CONST;
+GType   msd_housekeeping_plugin_get_type		(void) G_GNUC_CONST;
 
 /* All the plugins must implement this function */
 G_MODULE_EXPORT GType register_mate_settings_plugin	(GTypeModule *module);
@@ -58,4 +58,4 @@ G_MODULE_EXPORT GType register_mate_settings_plugin	(GTypeModule *module);
 }
 #endif
 
-#endif /* __GSD_HOUSEKEEPING_PLUGIN_H__ */
+#endif /* __MSD_HOUSEKEEPING_PLUGIN_H__ */

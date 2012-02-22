@@ -24,38 +24,38 @@
 #include <gmodule.h>
 
 #include "mate-settings-plugin.h"
-#include "gsd-font-plugin.h"
-#include "gsd-font-manager.h"
+#include "msd-font-plugin.h"
+#include "msd-font-manager.h"
 
-struct GsdFontPluginPrivate {
-        GsdFontManager *manager;
+struct MsdFontPluginPrivate {
+        MsdFontManager *manager;
 };
 
-#define GSD_FONT_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), GSD_TYPE_FONT_PLUGIN, GsdFontPluginPrivate))
+#define MSD_FONT_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), MSD_TYPE_FONT_PLUGIN, MsdFontPluginPrivate))
 
-MATE_SETTINGS_PLUGIN_REGISTER (GsdFontPlugin, gsd_font_plugin)
+MATE_SETTINGS_PLUGIN_REGISTER (MsdFontPlugin, msd_font_plugin)
 
 static void
-gsd_font_plugin_init (GsdFontPlugin *plugin)
+msd_font_plugin_init (MsdFontPlugin *plugin)
 {
-        plugin->priv = GSD_FONT_PLUGIN_GET_PRIVATE (plugin);
+        plugin->priv = MSD_FONT_PLUGIN_GET_PRIVATE (plugin);
 
-        g_debug ("GsdFontPlugin initializing");
+        g_debug ("MsdFontPlugin initializing");
 
-        plugin->priv->manager = gsd_font_manager_new ();
+        plugin->priv->manager = msd_font_manager_new ();
 }
 
 static void
-gsd_font_plugin_finalize (GObject *object)
+msd_font_plugin_finalize (GObject *object)
 {
-        GsdFontPlugin *plugin;
+        MsdFontPlugin *plugin;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GSD_IS_FONT_PLUGIN (object));
+        g_return_if_fail (MSD_IS_FONT_PLUGIN (object));
 
-        g_debug ("GsdFontPlugin finalizing");
+        g_debug ("MsdFontPlugin finalizing");
 
-        plugin = GSD_FONT_PLUGIN (object);
+        plugin = MSD_FONT_PLUGIN (object);
 
         g_return_if_fail (plugin->priv != NULL);
 
@@ -63,7 +63,7 @@ gsd_font_plugin_finalize (GObject *object)
                 g_object_unref (plugin->priv->manager);
         }
 
-        G_OBJECT_CLASS (gsd_font_plugin_parent_class)->finalize (object);
+        G_OBJECT_CLASS (msd_font_plugin_parent_class)->finalize (object);
 }
 
 static void
@@ -75,7 +75,7 @@ impl_activate (MateSettingsPlugin *plugin)
         g_debug ("Activating font plugin");
 
         error = NULL;
-        res = gsd_font_manager_start (GSD_FONT_PLUGIN (plugin)->priv->manager, &error);
+        res = msd_font_manager_start (MSD_FONT_PLUGIN (plugin)->priv->manager, &error);
         if (! res) {
                 g_warning ("Unable to start font manager: %s", error->message);
                 g_error_free (error);
@@ -86,19 +86,19 @@ static void
 impl_deactivate (MateSettingsPlugin *plugin)
 {
         g_debug ("Deactivating font plugin");
-        gsd_font_manager_stop (GSD_FONT_PLUGIN (plugin)->priv->manager);
+        msd_font_manager_stop (MSD_FONT_PLUGIN (plugin)->priv->manager);
 }
 
 static void
-gsd_font_plugin_class_init (GsdFontPluginClass *klass)
+msd_font_plugin_class_init (MsdFontPluginClass *klass)
 {
         GObjectClass           *object_class = G_OBJECT_CLASS (klass);
         MateSettingsPluginClass *plugin_class = MATE_SETTINGS_PLUGIN_CLASS (klass);
 
-        object_class->finalize = gsd_font_plugin_finalize;
+        object_class->finalize = msd_font_plugin_finalize;
 
         plugin_class->activate = impl_activate;
         plugin_class->deactivate = impl_deactivate;
 
-        g_type_class_add_private (klass, sizeof (GsdFontPluginPrivate));
+        g_type_class_add_private (klass, sizeof (MsdFontPluginPrivate));
 }

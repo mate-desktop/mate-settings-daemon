@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef __GSD_MOUSE_PLUGIN_H__
-#define __GSD_MOUSE_PLUGIN_H__
+#ifndef __MSD_MOUSE_PLUGIN_H__
+#define __MSD_MOUSE_PLUGIN_H__
 
 #include <glib.h>
 #include <glib-object.h>
@@ -31,27 +31,27 @@
 extern "C" {
 #endif
 
-#define GSD_TYPE_MOUSE_PLUGIN                (gsd_mouse_plugin_get_type ())
-#define GSD_MOUSE_PLUGIN(o)                  (G_TYPE_CHECK_INSTANCE_CAST ((o), GSD_TYPE_MOUSE_PLUGIN, GsdMousePlugin))
-#define GSD_MOUSE_PLUGIN_CLASS(k)            (G_TYPE_CHECK_CLASS_CAST((k), GSD_TYPE_MOUSE_PLUGIN, GsdMousePluginClass))
-#define GSD_IS_MOUSE_PLUGIN(o)               (G_TYPE_CHECK_INSTANCE_TYPE ((o), GSD_TYPE_MOUSE_PLUGIN))
-#define GSD_IS_MOUSE_PLUGIN_CLASS(k)         (G_TYPE_CHECK_CLASS_TYPE ((k), GSD_TYPE_MOUSE_PLUGIN))
-#define GSD_MOUSE_PLUGIN_GET_CLASS(o)        (G_TYPE_INSTANCE_GET_CLASS ((o), GSD_TYPE_MOUSE_PLUGIN, GsdMousePluginClass))
+#define MSD_TYPE_MOUSE_PLUGIN                (msd_mouse_plugin_get_type ())
+#define MSD_MOUSE_PLUGIN(o)                  (G_TYPE_CHECK_INSTANCE_CAST ((o), MSD_TYPE_MOUSE_PLUGIN, MsdMousePlugin))
+#define MSD_MOUSE_PLUGIN_CLASS(k)            (G_TYPE_CHECK_CLASS_CAST((k), MSD_TYPE_MOUSE_PLUGIN, MsdMousePluginClass))
+#define MSD_IS_MOUSE_PLUGIN(o)               (G_TYPE_CHECK_INSTANCE_TYPE ((o), MSD_TYPE_MOUSE_PLUGIN))
+#define MSD_IS_MOUSE_PLUGIN_CLASS(k)         (G_TYPE_CHECK_CLASS_TYPE ((k), MSD_TYPE_MOUSE_PLUGIN))
+#define MSD_MOUSE_PLUGIN_GET_CLASS(o)        (G_TYPE_INSTANCE_GET_CLASS ((o), MSD_TYPE_MOUSE_PLUGIN, MsdMousePluginClass))
 
-typedef struct GsdMousePluginPrivate GsdMousePluginPrivate;
+typedef struct MsdMousePluginPrivate MsdMousePluginPrivate;
 
 typedef struct
 {
         MateSettingsPlugin    parent;
-        GsdMousePluginPrivate *priv;
-} GsdMousePlugin;
+        MsdMousePluginPrivate *priv;
+} MsdMousePlugin;
 
 typedef struct
 {
         MateSettingsPluginClass parent_class;
-} GsdMousePluginClass;
+} MsdMousePluginClass;
 
-GType   gsd_mouse_plugin_get_type            (void) G_GNUC_CONST;
+GType   msd_mouse_plugin_get_type            (void) G_GNUC_CONST;
 
 /* All the plugins must implement this function */
 G_MODULE_EXPORT GType register_mate_settings_plugin (GTypeModule *module);
@@ -60,4 +60,4 @@ G_MODULE_EXPORT GType register_mate_settings_plugin (GTypeModule *module);
 }
 #endif
 
-#endif /* __GSD_MOUSE_PLUGIN_H__ */
+#endif /* __MSD_MOUSE_PLUGIN_H__ */

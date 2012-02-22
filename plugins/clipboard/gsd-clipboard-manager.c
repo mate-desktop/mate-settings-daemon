@@ -45,11 +45,11 @@
 #include "list.h"
 
 #include "mate-settings-profile.h"
-#include "gsd-clipboard-manager.h"
+#include "msd-clipboard-manager.h"
 
-#define GSD_CLIPBOARD_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSD_TYPE_CLIPBOARD_MANAGER, GsdClipboardManagerPrivate))
+#define MSD_CLIPBOARD_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_CLIPBOARD_MANAGER, MsdClipboardManagerPrivate))
 
-struct GsdClipboardManagerPrivate
+struct MsdClipboardManagerPrivate
 {
         Display *display;
         Window   window;
@@ -82,17 +82,17 @@ typedef struct
         int         offset;
 } IncrConversion;
 
-static void     gsd_clipboard_manager_class_init  (GsdClipboardManagerClass *klass);
-static void     gsd_clipboard_manager_init        (GsdClipboardManager      *clipboard_manager);
-static void     gsd_clipboard_manager_finalize    (GObject                  *object);
+static void     msd_clipboard_manager_class_init  (MsdClipboardManagerClass *klass);
+static void     msd_clipboard_manager_init        (MsdClipboardManager      *clipboard_manager);
+static void     msd_clipboard_manager_finalize    (GObject                  *object);
 
-static void     clipboard_manager_watch_cb        (GsdClipboardManager *manager,
+static void     clipboard_manager_watch_cb        (MsdClipboardManager *manager,
                                                    Window               window,
                                                    Bool                 is_start,
                                                    long                 mask,
                                                    void                *cb_data);
 
-G_DEFINE_TYPE (GsdClipboardManager, gsd_clipboard_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE (MsdClipboardManager, msd_clipboard_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -127,7 +127,7 @@ conversion_free (IncrConversion *rdata)
 }
 
 static void
-send_selection_notify (GsdClipboardManager *manager,
+send_selection_notify (MsdClipboardManager *manager,
                        Bool                 success)
 {
         XSelectionEvent notify;
@@ -155,7 +155,7 @@ send_selection_notify (GsdClipboardManager *manager,
 }
 
 static void
-finish_selection_request (GsdClipboardManager *manager,
+finish_selection_request (MsdClipboardManager *manager,
                           XEvent              *xev,
                           Bool                 success)
 {
@@ -195,7 +195,7 @@ clipboard_bytes_per_item (int format)
 }
 
 static void
-save_targets (GsdClipboardManager *manager,
+save_targets (MsdClipboardManager *manager,
               Atom                *save_targets,
               int                  nitems)
 {
@@ -263,7 +263,7 @@ find_conversion_requestor (IncrConversion *rdata,
 
 static void
 get_property (TargetData          *tdata,
-              GsdClipboardManager *manager)
+              MsdClipboardManager *manager)
 {
         Atom           type;
         int            format;
@@ -300,7 +300,7 @@ get_property (TargetData          *tdata,
 }
 
 static Bool
-receive_incrementally (GsdClipboardManager *manager,
+receive_incrementally (MsdClipboardManager *manager,
                        XEvent              *xev)
 {
         List          *list;
@@ -359,7 +359,7 @@ receive_incrementally (GsdClipboardManager *manager,
 }
 
 static Bool
-send_incrementally (GsdClipboardManager *manager,
+send_incrementally (MsdClipboardManager *manager,
                     XEvent              *xev)
 {
         List           *list;
@@ -397,7 +397,7 @@ send_incrementally (GsdClipboardManager *manager,
 }
 
 static void
-convert_clipboard_manager (GsdClipboardManager *manager,
+convert_clipboard_manager (MsdClipboardManager *manager,
                            XEvent              *xev)
 {
         Atom          type = None;
@@ -486,7 +486,7 @@ convert_clipboard_manager (GsdClipboardManager *manager,
 
 static void
 convert_clipboard_target (IncrConversion      *rdata,
-                          GsdClipboardManager *manager)
+                          MsdClipboardManager *manager)
 {
         TargetData       *tdata;
         Atom             *targets;
@@ -561,7 +561,7 @@ convert_clipboard_target (IncrConversion      *rdata,
 
 static void
 collect_incremental (IncrConversion      *rdata,
-                     GsdClipboardManager *manager)
+                     MsdClipboardManager *manager)
 {
         if (rdata->offset >= 0)
                 manager->priv->conversions = list_prepend (manager->priv->conversions, rdata);
@@ -575,7 +575,7 @@ collect_incremental (IncrConversion      *rdata,
 }
 
 static void
-convert_clipboard (GsdClipboardManager *manager,
+convert_clipboard (MsdClipboardManager *manager,
                    XEvent              *xev)
 {
         List           *list;
@@ -656,7 +656,7 @@ convert_clipboard (GsdClipboardManager *manager,
 }
 
 static Bool
-clipboard_manager_process_event (GsdClipboardManager *manager,
+clipboard_manager_process_event (MsdClipboardManager *manager,
                                  XEvent              *xev)
 {
         Atom          type;
@@ -805,7 +805,7 @@ clipboard_manager_process_event (GsdClipboardManager *manager,
 static GdkFilterReturn
 clipboard_manager_event_filter (GdkXEvent           *xevent,
                                 GdkEvent            *event,
-                                GsdClipboardManager *manager)
+                                MsdClipboardManager *manager)
 {
         if (clipboard_manager_process_event (manager, (XEvent *)xevent)) {
                 return GDK_FILTER_REMOVE;
@@ -815,7 +815,7 @@ clipboard_manager_event_filter (GdkXEvent           *xevent,
 }
 
 static void
-clipboard_manager_watch_cb (GsdClipboardManager *manager,
+clipboard_manager_watch_cb (MsdClipboardManager *manager,
                             Window               window,
                             Bool                 is_start,
                             long                 mask,
@@ -849,7 +849,7 @@ clipboard_manager_watch_cb (GsdClipboardManager *manager,
 }
 
 static gboolean
-start_clipboard_idle_cb (GsdClipboardManager *manager)
+start_clipboard_idle_cb (MsdClipboardManager *manager)
 {
         XClientMessageEvent xev;
 
@@ -924,7 +924,7 @@ start_clipboard_idle_cb (GsdClipboardManager *manager)
 }
 
 gboolean
-gsd_clipboard_manager_start (GsdClipboardManager *manager,
+msd_clipboard_manager_start (MsdClipboardManager *manager,
                              GError             **error)
 {
         mate_settings_profile_start (NULL);
@@ -937,7 +937,7 @@ gsd_clipboard_manager_start (GsdClipboardManager *manager,
 }
 
 void
-gsd_clipboard_manager_stop (GsdClipboardManager *manager)
+msd_clipboard_manager_stop (MsdClipboardManager *manager)
 {
         g_debug ("Stopping clipboard manager");
 
@@ -956,14 +956,14 @@ gsd_clipboard_manager_stop (GsdClipboardManager *manager)
 }
 
 static void
-gsd_clipboard_manager_set_property (GObject        *object,
+msd_clipboard_manager_set_property (GObject        *object,
                                     guint           prop_id,
                                     const GValue   *value,
                                     GParamSpec     *pspec)
 {
-        GsdClipboardManager *self;
+        MsdClipboardManager *self;
 
-        self = GSD_CLIPBOARD_MANAGER (object);
+        self = MSD_CLIPBOARD_MANAGER (object);
 
         switch (prop_id) {
         default:
@@ -973,14 +973,14 @@ gsd_clipboard_manager_set_property (GObject        *object,
 }
 
 static void
-gsd_clipboard_manager_get_property (GObject        *object,
+msd_clipboard_manager_get_property (GObject        *object,
                                     guint           prop_id,
                                     GValue         *value,
                                     GParamSpec     *pspec)
 {
-        GsdClipboardManager *self;
+        MsdClipboardManager *self;
 
-        self = GSD_CLIPBOARD_MANAGER (object);
+        self = MSD_CLIPBOARD_MANAGER (object);
 
         switch (prop_id) {
         default:
@@ -990,16 +990,16 @@ gsd_clipboard_manager_get_property (GObject        *object,
 }
 
 static GObject *
-gsd_clipboard_manager_constructor (GType                  type,
+msd_clipboard_manager_constructor (GType                  type,
                                    guint                  n_construct_properties,
                                    GObjectConstructParam *construct_properties)
 {
-        GsdClipboardManager      *clipboard_manager;
-        GsdClipboardManagerClass *klass;
+        MsdClipboardManager      *clipboard_manager;
+        MsdClipboardManagerClass *klass;
 
-        klass = GSD_CLIPBOARD_MANAGER_CLASS (g_type_class_peek (GSD_TYPE_CLIPBOARD_MANAGER));
+        klass = MSD_CLIPBOARD_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_CLIPBOARD_MANAGER));
 
-        clipboard_manager = GSD_CLIPBOARD_MANAGER (G_OBJECT_CLASS (gsd_clipboard_manager_parent_class)->constructor (type,
+        clipboard_manager = MSD_CLIPBOARD_MANAGER (G_OBJECT_CLASS (msd_clipboard_manager_parent_class)->constructor (type,
                                                                                                       n_construct_properties,
                                                                                                       construct_properties));
 
@@ -1007,63 +1007,63 @@ gsd_clipboard_manager_constructor (GType                  type,
 }
 
 static void
-gsd_clipboard_manager_dispose (GObject *object)
+msd_clipboard_manager_dispose (GObject *object)
 {
-        GsdClipboardManager *clipboard_manager;
+        MsdClipboardManager *clipboard_manager;
 
-        clipboard_manager = GSD_CLIPBOARD_MANAGER (object);
+        clipboard_manager = MSD_CLIPBOARD_MANAGER (object);
 
-        G_OBJECT_CLASS (gsd_clipboard_manager_parent_class)->dispose (object);
+        G_OBJECT_CLASS (msd_clipboard_manager_parent_class)->dispose (object);
 }
 
 static void
-gsd_clipboard_manager_class_init (GsdClipboardManagerClass *klass)
+msd_clipboard_manager_class_init (MsdClipboardManagerClass *klass)
 {
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->get_property = gsd_clipboard_manager_get_property;
-        object_class->set_property = gsd_clipboard_manager_set_property;
-        object_class->constructor = gsd_clipboard_manager_constructor;
-        object_class->dispose = gsd_clipboard_manager_dispose;
-        object_class->finalize = gsd_clipboard_manager_finalize;
+        object_class->get_property = msd_clipboard_manager_get_property;
+        object_class->set_property = msd_clipboard_manager_set_property;
+        object_class->constructor = msd_clipboard_manager_constructor;
+        object_class->dispose = msd_clipboard_manager_dispose;
+        object_class->finalize = msd_clipboard_manager_finalize;
 
-        g_type_class_add_private (klass, sizeof (GsdClipboardManagerPrivate));
+        g_type_class_add_private (klass, sizeof (MsdClipboardManagerPrivate));
 }
 
 static void
-gsd_clipboard_manager_init (GsdClipboardManager *manager)
+msd_clipboard_manager_init (MsdClipboardManager *manager)
 {
-        manager->priv = GSD_CLIPBOARD_MANAGER_GET_PRIVATE (manager);
+        manager->priv = MSD_CLIPBOARD_MANAGER_GET_PRIVATE (manager);
 
         manager->priv->display = GDK_DISPLAY_XDISPLAY (gdk_display_get_default ());
 
 }
 
 static void
-gsd_clipboard_manager_finalize (GObject *object)
+msd_clipboard_manager_finalize (GObject *object)
 {
-        GsdClipboardManager *clipboard_manager;
+        MsdClipboardManager *clipboard_manager;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GSD_IS_CLIPBOARD_MANAGER (object));
+        g_return_if_fail (MSD_IS_CLIPBOARD_MANAGER (object));
 
-        clipboard_manager = GSD_CLIPBOARD_MANAGER (object);
+        clipboard_manager = MSD_CLIPBOARD_MANAGER (object);
 
         g_return_if_fail (clipboard_manager->priv != NULL);
 
-        G_OBJECT_CLASS (gsd_clipboard_manager_parent_class)->finalize (object);
+        G_OBJECT_CLASS (msd_clipboard_manager_parent_class)->finalize (object);
 }
 
-GsdClipboardManager *
-gsd_clipboard_manager_new (void)
+MsdClipboardManager *
+msd_clipboard_manager_new (void)
 {
         if (manager_object != NULL) {
                 g_object_ref (manager_object);
         } else {
-                manager_object = g_object_new (GSD_TYPE_CLIPBOARD_MANAGER, NULL);
+                manager_object = g_object_new (MSD_TYPE_CLIPBOARD_MANAGER, NULL);
                 g_object_add_weak_pointer (manager_object,
                                            (gpointer *) &manager_object);
         }
 
-        return GSD_CLIPBOARD_MANAGER (manager_object);
+        return MSD_CLIPBOARD_MANAGER (manager_object);
 }

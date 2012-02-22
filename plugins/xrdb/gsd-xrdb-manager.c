@@ -38,9 +38,9 @@
 #include <gtk/gtk.h>
 
 #include "mate-settings-profile.h"
-#include "gsd-xrdb-manager.h"
+#include "msd-xrdb-manager.h"
 
-#define GSD_XRDB_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSD_TYPE_XRDB_MANAGER, GsdXrdbManagerPrivate))
+#define MSD_XRDB_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_XRDB_MANAGER, MsdXrdbManagerPrivate))
 
 #define SYSTEM_AD_DIR    DATADIR "/xrdb"
 #define GENERAL_AD       SYSTEM_AD_DIR "/General.ad"
@@ -50,15 +50,15 @@
 
 #define GTK_THEME_KEY "/desktop/mate/interface/gtk_theme"
 
-struct GsdXrdbManagerPrivate {
+struct MsdXrdbManagerPrivate {
 	GtkWidget* widget;
 };
 
-static void     gsd_xrdb_manager_class_init  (GsdXrdbManagerClass *klass);
-static void     gsd_xrdb_manager_init        (GsdXrdbManager      *xrdb_manager);
-static void     gsd_xrdb_manager_finalize    (GObject             *object);
+static void     msd_xrdb_manager_class_init  (MsdXrdbManagerClass *klass);
+static void     msd_xrdb_manager_init        (MsdXrdbManager      *xrdb_manager);
+static void     msd_xrdb_manager_finalize    (GObject             *object);
 
-G_DEFINE_TYPE (GsdXrdbManager, gsd_xrdb_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE (MsdXrdbManager, msd_xrdb_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 static void
@@ -207,7 +207,7 @@ compare_basenames (gconstpointer a,
  * right order for processing.
  */
 static GSList*
-scan_for_files (GsdXrdbManager *manager,
+scan_for_files (MsdXrdbManager *manager,
                 GError        **error)
 {
         const char *home_dir;
@@ -420,7 +420,7 @@ spawn_with_input (const char *command,
 }
 
 static void
-apply_settings (GsdXrdbManager *manager,
+apply_settings (MsdXrdbManager *manager,
                 GtkStyle       *style)
 {
         const char *command;
@@ -480,13 +480,13 @@ apply_settings (GsdXrdbManager *manager,
 static void
 theme_changed (GtkSettings    *settings,
                GParamSpec     *pspec,
-               GsdXrdbManager *manager)
+               MsdXrdbManager *manager)
 {
         apply_settings (manager, gtk_widget_get_style (manager->priv->widget));
 }
 
 gboolean
-gsd_xrdb_manager_start (GsdXrdbManager *manager,
+msd_xrdb_manager_start (MsdXrdbManager *manager,
                         GError        **error)
 {
         mate_settings_profile_start (NULL);
@@ -509,9 +509,9 @@ gsd_xrdb_manager_start (GsdXrdbManager *manager,
 }
 
 void
-gsd_xrdb_manager_stop (GsdXrdbManager *manager)
+msd_xrdb_manager_stop (MsdXrdbManager *manager)
 {
-        GsdXrdbManagerPrivate *p = manager->priv;
+        MsdXrdbManagerPrivate *p = manager->priv;
 
         g_debug ("Stopping xrdb manager");
 
@@ -526,14 +526,14 @@ gsd_xrdb_manager_stop (GsdXrdbManager *manager)
 }
 
 static void
-gsd_xrdb_manager_set_property (GObject        *object,
+msd_xrdb_manager_set_property (GObject        *object,
                                guint           prop_id,
                                const GValue   *value,
                                GParamSpec     *pspec)
 {
-        GsdXrdbManager *self;
+        MsdXrdbManager *self;
 
-        self = GSD_XRDB_MANAGER (object);
+        self = MSD_XRDB_MANAGER (object);
 
         switch (prop_id) {
         default:
@@ -543,14 +543,14 @@ gsd_xrdb_manager_set_property (GObject        *object,
 }
 
 static void
-gsd_xrdb_manager_get_property (GObject        *object,
+msd_xrdb_manager_get_property (GObject        *object,
                                guint           prop_id,
                                GValue         *value,
                                GParamSpec     *pspec)
 {
-        GsdXrdbManager *self;
+        MsdXrdbManager *self;
 
-        self = GSD_XRDB_MANAGER (object);
+        self = MSD_XRDB_MANAGER (object);
 
         switch (prop_id) {
         default:
@@ -560,16 +560,16 @@ gsd_xrdb_manager_get_property (GObject        *object,
 }
 
 static GObject *
-gsd_xrdb_manager_constructor (GType                  type,
+msd_xrdb_manager_constructor (GType                  type,
                               guint                  n_construct_properties,
                               GObjectConstructParam *construct_properties)
 {
-        GsdXrdbManager      *xrdb_manager;
-        GsdXrdbManagerClass *klass;
+        MsdXrdbManager      *xrdb_manager;
+        MsdXrdbManagerClass *klass;
 
-        klass = GSD_XRDB_MANAGER_CLASS (g_type_class_peek (GSD_TYPE_XRDB_MANAGER));
+        klass = MSD_XRDB_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_XRDB_MANAGER));
 
-        xrdb_manager = GSD_XRDB_MANAGER (G_OBJECT_CLASS (gsd_xrdb_manager_parent_class)->constructor (type,
+        xrdb_manager = MSD_XRDB_MANAGER (G_OBJECT_CLASS (msd_xrdb_manager_parent_class)->constructor (type,
                                                                                                       n_construct_properties,
                                                                                                       construct_properties));
 
@@ -577,61 +577,61 @@ gsd_xrdb_manager_constructor (GType                  type,
 }
 
 static void
-gsd_xrdb_manager_dispose (GObject *object)
+msd_xrdb_manager_dispose (GObject *object)
 {
-        GsdXrdbManager *xrdb_manager;
+        MsdXrdbManager *xrdb_manager;
 
-        xrdb_manager = GSD_XRDB_MANAGER (object);
+        xrdb_manager = MSD_XRDB_MANAGER (object);
 
-        G_OBJECT_CLASS (gsd_xrdb_manager_parent_class)->dispose (object);
+        G_OBJECT_CLASS (msd_xrdb_manager_parent_class)->dispose (object);
 }
 
 static void
-gsd_xrdb_manager_class_init (GsdXrdbManagerClass *klass)
+msd_xrdb_manager_class_init (MsdXrdbManagerClass *klass)
 {
         GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->get_property = gsd_xrdb_manager_get_property;
-        object_class->set_property = gsd_xrdb_manager_set_property;
-        object_class->constructor = gsd_xrdb_manager_constructor;
-        object_class->dispose = gsd_xrdb_manager_dispose;
-        object_class->finalize = gsd_xrdb_manager_finalize;
+        object_class->get_property = msd_xrdb_manager_get_property;
+        object_class->set_property = msd_xrdb_manager_set_property;
+        object_class->constructor = msd_xrdb_manager_constructor;
+        object_class->dispose = msd_xrdb_manager_dispose;
+        object_class->finalize = msd_xrdb_manager_finalize;
 
-        g_type_class_add_private (klass, sizeof (GsdXrdbManagerPrivate));
+        g_type_class_add_private (klass, sizeof (MsdXrdbManagerPrivate));
 }
 
 static void
-gsd_xrdb_manager_init (GsdXrdbManager *manager)
+msd_xrdb_manager_init (MsdXrdbManager *manager)
 {
-        manager->priv = GSD_XRDB_MANAGER_GET_PRIVATE (manager);
+        manager->priv = MSD_XRDB_MANAGER_GET_PRIVATE (manager);
 
 }
 
 static void
-gsd_xrdb_manager_finalize (GObject *object)
+msd_xrdb_manager_finalize (GObject *object)
 {
-        GsdXrdbManager *xrdb_manager;
+        MsdXrdbManager *xrdb_manager;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GSD_IS_XRDB_MANAGER (object));
+        g_return_if_fail (MSD_IS_XRDB_MANAGER (object));
 
-        xrdb_manager = GSD_XRDB_MANAGER (object);
+        xrdb_manager = MSD_XRDB_MANAGER (object);
 
         g_return_if_fail (xrdb_manager->priv != NULL);
 
-        G_OBJECT_CLASS (gsd_xrdb_manager_parent_class)->finalize (object);
+        G_OBJECT_CLASS (msd_xrdb_manager_parent_class)->finalize (object);
 }
 
-GsdXrdbManager *
-gsd_xrdb_manager_new (void)
+MsdXrdbManager *
+msd_xrdb_manager_new (void)
 {
         if (manager_object != NULL) {
                 g_object_ref (manager_object);
         } else {
-                manager_object = g_object_new (GSD_TYPE_XRDB_MANAGER, NULL);
+                manager_object = g_object_new (MSD_TYPE_XRDB_MANAGER, NULL);
                 g_object_add_weak_pointer (manager_object,
                                            (gpointer *) &manager_object);
         }
 
-        return GSD_XRDB_MANAGER (manager_object);
+        return MSD_XRDB_MANAGER (manager_object);
 }

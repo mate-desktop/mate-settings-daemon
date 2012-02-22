@@ -630,23 +630,23 @@ msgstr "Bàn phím khả năng truy cập"
 msgid "Accessibility keyboard plugin"
 msgstr "Phần mở rộng bàn phím khả năng truy cập"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:388
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:388
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Gặp lỗi khi hiển thị trợ giúp: %s"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:519
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:585
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:519
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:585
 msgid "Do you want to activate Slow Keys?"
 msgstr "Bạn có muốn kích hoạt Phím Chậm không?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:520
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:586
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:520
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:586
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Bạn có muốn bỏ kích hoạt Phím Chậm không?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:521
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:587
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:521
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:587
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -654,62 +654,62 @@ msgstr ""
 "Bạn vừa mới ấn giữ phím Shift trong vòng 8 giây. Đây là phím tắt của tính "
 "năng Phím Chậm, mà ảnh hưởng đến hoạt động của bàn phím."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:546
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:685
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:546
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:685
 msgid "Don't activate"
 msgstr "Không bật"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:546
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:685
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:546
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:685
 msgid "Don't deactivate"
 msgstr "Không tắt"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:552
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:691
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:552
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:691
 msgid "Activate"
 msgstr "Bật"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:552
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:691
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:552
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:691
 msgid "Deactivate"
 msgstr "Tắt"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:608
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:749
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:608
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Do_n't activate"
 msgstr "Khô_ng bật"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:608
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:749
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:608
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Do_n't deactivate"
 msgstr "Khô_ng tắt"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:611
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:752
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:611
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:752
 msgid "_Activate"
 msgstr "_Bật"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:611
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:752
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:611
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:752
 msgid "_Deactivate"
 msgstr "_Tắt"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:615
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:615
 msgid "Slow Keys Alert"
 msgstr "Báo động Phím Chậm"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:655
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:723
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:655
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:723
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Bạn có muốn kích hoạt Phím Dính không?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:656
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:724
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:724
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Bạn có muốn bỏ kích hoạt Phím Dính không?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:658
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:726
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:658
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:726
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -717,8 +717,8 @@ msgstr ""
 "Bạn vừa mới ấn phím Shift 5 lần liên tiếp. Đây là phím tắt của tính năng "
 "Phím Dính, mà ảnh hưởng đến hoạt động của bàn phím."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:660
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:728
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:660
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:728
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -727,44 +727,44 @@ msgstr ""
 "Bạn vừa mới ấn hai phím đồng thời, hoặc ấn phím Shift 5 lần liên tiếp. Phím "
 "tắt này tắt tính năng Phím Dính, mà ảnh hưởng đến hoạt động của bàn phím"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:756
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:756
 msgid "Sticky Keys Alert"
 msgstr "Báo động Phím Dính"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.c:920
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:4
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:920
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:4
 msgid "Universal Access Preferences"
 msgstr "Tùy thích truy cập chung"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:1
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Enhance _contrast in colors"
 msgstr "Cải thiện độ _tương phản màu sắc"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:2
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
 msgid "Make _text larger and easier to read"
 msgstr "Phóng to _chữ nhằm dễ đọc hơn"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:3
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:3
 msgid "Press and _hold keys to accept them (Slow Keys)"
 msgstr "Nhấn và _giữ phím để chấp nhận (Phím chậm)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:5
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:5
 msgid "Use on-screen _keyboard"
 msgstr "Dùng _bàn phím _màn hình"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:6
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:6
 msgid "Use screen _magnifier"
 msgstr "Dùng _kính lúp màn hình"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:7
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "Use screen _reader"
 msgstr "Dùng _bộ đọc màn hình"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:8
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
 msgstr "_Bỏ qua phím nhấn bị trùng (Phím nảy)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:9
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
 msgstr "_Nhấn phím tắt bàn phím mỗi lần một phím (Phím dính)"
 
@@ -800,114 +800,114 @@ msgstr "Phông"
 msgid "Font plugin"
 msgstr "Phần mở rộng phông chữ"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:64
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:64
 msgid "Don't show any warnings again for this filesystem"
 msgstr "Đừng hiện bất kỳ cảnh báo nào lần nữa đối với hệ tập tin này"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:66
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:66
 #| msgid "Do _not show this warning again."
 msgid "Don't show any warnings again"
 msgstr "Đừng hiện cảnh báo này lần nữa"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:79
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:79
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr "Khối \"%s\" chỉ còn %s vùng đĩa trống."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:82
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:82
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr "Máy này chỉ còn %s vùng đĩa trống."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:98
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:98
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
 msgstr "Bạn có thể tăng vùng đĩa trống bằng cách đổ sạch Sọt rác, loại bỏ những ứng dụng hoặc tập tin không dùng, hoặc chuyển tập tin sang đĩa hoặc phân vùng khác."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:101
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:101
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
 msgstr "Bạn có thể tăng vùng đĩa trống bằng cách loại bỏ những chươong trình hoặc tập tin không dùng, hoặc chuyển tập tin sang đĩa hoặc phân vùng khác."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:106
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:106
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
 msgstr "Bạn có thể tăng vùng đĩa trống bằng cách đổ sạch Sọt rác, loại bỏ những ứng dụng hoặc tập tin không dùng, hoặc chuyển tập tin sang đĩa ở ngoài."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:109
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:109
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
 msgstr "fBạn có thể tăng vùng đĩa trống bằng cách loại bỏ những ứng dụng hoặc tập tin không dùng, hoặc chuyển tập tin sang đĩa ở ngoài."
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:204
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:204
 msgid "Low Disk Space"
 msgstr "Ít chỗ đĩa"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:439
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:439
 msgid "Empty Trash"
 msgstr "Đổ sọt rác"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:447
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:447
 msgid "Examine..."
 msgstr "Kiểm tra..."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:454
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:454
 msgid "Ignore"
 msgstr "Bỏ qua"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:96
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:96
 #, c-format
 msgid "Removing item %lu of %lu"
 msgstr "Đang loại bỏ %lu trên %lu"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:116
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:116
 #, c-format
 msgid "<i>Removing: %s</i>"
 msgstr "<i>Đang loại bỏ: %s</i>"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:244
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:293
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:244
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:293
 msgid "Emptying the trash"
 msgstr "Đang đổ rác"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:269
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:269
 msgid "Preparing to empty trash..."
 msgstr "Đang chuẩn bị đổ rác..."
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:295
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:295
 msgid "From: "
 msgstr "Từ: "
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:356
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:356
 msgid "Empty all of the items from the trash?"
 msgstr "Bỏ tất cả các mục trong sọt rác chứ?"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:359
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:359
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
 msgstr "Nếu bạn chọn làm sạch sọt rác, mọi mục trong đó sẽ mất mãi mãi. Nhớ rằng bạn có thể xoá chúng riêng từng cái nếu muốn."
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:366
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:366
 msgid "_Empty Trash"
 msgstr "Đổ _sọt rác"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:139
+#: ../plugins/keybindings/msd-keybindings-manager.c:139
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "Tổ hợp phím (%s) không hợp lệ"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:197
+#: ../plugins/keybindings/msd-keybindings-manager.c:197
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "Tổ hợp phím (%s) chưa hoàn toàn"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:493
+#: ../plugins/keybindings/msd-keybindings-manager.c:493
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -956,7 +956,7 @@ msgstr "_Nạp"
 msgid "_Loaded files:"
 msgstr "Tập tin đã _nạp:"
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:198
+#: ../plugins/media-keys/msd-media-keys-manager.c:198
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is "
 "set and points to a valid application."
@@ -964,7 +964,7 @@ msgstr ""
 "Không thể lấy thiết bị cuối mặc định. Hãy kiểm tra xem câu lệnh thiết bị "
 "cuối mặc định đã được đặt và chỉ tới một ứng dụng hợp lệ."
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:238
+#: ../plugins/media-keys/msd-media-keys-manager.c:238
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -973,7 +973,7 @@ msgstr ""
 "Không thể thực hiện câu lệnh: %s\n"
 "Hãy kiểm tra xem nó là một câu lệnh hợp lệ."
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:254
+#: ../plugins/media-keys/msd-media-keys-manager.c:254
 msgid ""
 "Couldn't put the machine to sleep.\n"
 "Verify that the machine is correctly configured."
@@ -1015,18 +1015,18 @@ msgstr "Phím nhạc/phim"
 msgid "Media keys plugin"
 msgstr "Phần mở rộng phím nhạc/phim"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:801
+#: ../plugins/mouse/msd-mouse-manager.c:801
 msgid "Could not enable mouse accessibility features"
 msgstr "Không thể hiệu lực các tính năng khả năng truy cập bàn phím"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:803
+#: ../plugins/mouse/msd-mouse-manager.c:803
 msgid ""
 "Mouse accessibility requires mousetweaks to be installed on your system."
 msgstr ""
 "Khả năng truy cập con chuột cần trình nền mousetweaks được cài đặt vào hệ "
 "thống của bạn."
 
-#: ../plugins/mouse/gsd-mouse-manager.c:806
+#: ../plugins/mouse/msd-mouse-manager.c:806
 msgid "Mouse Preferences"
 msgstr "Tùy thích con chuột"
 
@@ -1054,15 +1054,15 @@ msgstr "Thiết lập kích cỡ màn hình và chức năng xoay"
 msgid "XRandR"
 msgstr "XRandR"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:226
+#: ../plugins/xrandr/msd-xrandr-manager.c:226
 msgid "Could not restore the display's configuration"
 msgstr "Không thể phục hồi cấu hình của bộ trình bày"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:251
+#: ../plugins/xrandr/msd-xrandr-manager.c:251
 msgid "Could not restore the display's configuration from a backup"
 msgstr "Không thể phục hồi cấu hình của bộ trình bày từ bản sao lưu"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:272
+#: ../plugins/xrandr/msd-xrandr-manager.c:272
 #, c-format
 #| msgid ""
 #| "The display will be reset to its previous configuration in %d seconds"
@@ -1071,77 +1071,77 @@ msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
 msgstr[0] "Bộ trình bày sẽ bị đặt lại về cấu hình trước đó sau %d giây"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:321
+#: ../plugins/xrandr/msd-xrandr-manager.c:321
 msgid "Does the display look OK?"
 msgstr "Bộ trình bày đẹp chưa?"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:327
+#: ../plugins/xrandr/msd-xrandr-manager.c:327
 #| msgid "Restore the previous configuration"
 msgid "_Restore Previous Configuration"
 msgstr "_Phục hồi cấu hình trước"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:328
+#: ../plugins/xrandr/msd-xrandr-manager.c:328
 #| msgid "Keep this configuration"
 msgid "_Keep This Configuration"
 msgstr "_Giữ cấu hình này"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:409
+#: ../plugins/xrandr/msd-xrandr-manager.c:409
 msgid "The selected configuration for displays could not be applied"
 msgstr "Không thể áp dụng cấu hình đã chọn cho bộ trình bày"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:963
+#: ../plugins/xrandr/msd-xrandr-manager.c:963
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "Không thể cập nhật thông tin màn hình: %s"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:966
+#: ../plugins/xrandr/msd-xrandr-manager.c:966
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Vẫn đang thử chuyển đổi cấu hình của thiết bị hiển thị."
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1000
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1114
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1281
+#: ../plugins/xrandr/msd-xrandr-manager.c:1000
+#: ../plugins/xrandr/msd-xrandr-manager.c:1114
+#: ../plugins/xrandr/msd-xrandr-manager.c:1281
 msgid "Could not switch the monitor configuration"
 msgstr "Không thể chuyển đổi cấu hình của thiết bị hiển thị"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1689
+#: ../plugins/xrandr/msd-xrandr-manager.c:1689
 msgid "<i>Rotation not supported</i>"
 msgstr "<i>Không hỗ trợ quay</i>"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1743
+#: ../plugins/xrandr/msd-xrandr-manager.c:1743
 msgid "Could not save monitor configuration"
 msgstr "Không thể lưu cấu hình của thiết bị hiển thị"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1761
+#: ../plugins/xrandr/msd-xrandr-manager.c:1761
 msgid "Normal"
 msgstr "Thường"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1762
+#: ../plugins/xrandr/msd-xrandr-manager.c:1762
 msgid "Left"
 msgstr "Trái"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1763
+#: ../plugins/xrandr/msd-xrandr-manager.c:1763
 msgid "Right"
 msgstr "Phải"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1764
+#: ../plugins/xrandr/msd-xrandr-manager.c:1764
 msgid "Upside Down"
 msgstr "Trên xuống"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1884
+#: ../plugins/xrandr/msd-xrandr-manager.c:1884
 msgid "_Configure Display Settings ..."
 msgstr "_Cấu hình thiết lập màn hình ..."
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1925
+#: ../plugins/xrandr/msd-xrandr-manager.c:1925
 msgid "Configure display settings"
 msgstr "_Cấu hình thiết lập màn hình"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1982
+#: ../plugins/xrandr/msd-xrandr-manager.c:1982
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Không thể áp dụng cấu hình đã lưu cho thiết bị hiển thị"
 
-#: ../plugins/xrdb/gsd-xrdb-manager.c:255
-#: ../plugins/xrdb/gsd-xrdb-manager.c:324
+#: ../plugins/xrdb/msd-xrdb-manager.c:255
+#: ../plugins/xrdb/msd-xrdb-manager.c:324
 msgid "Cannot determine user's home directory"
 msgstr "Không thể xác định thư mục Nhà của người dùng"
 
@@ -1153,7 +1153,7 @@ msgstr "Quản lý cơ sở dữ liệu tài nguyên X"
 msgid "X Resource Database"
 msgstr "Cơ sở dữ liệu tài nguyên X"
 
-#: ../plugins/xsettings/gsd-xsettings-manager.c:644
+#: ../plugins/xsettings/msd-xsettings-manager.c:644
 #, c-format
 msgid "MateConf key %s set to type %s but its expected type was %s\n"
 msgstr "Khoá MateConf %s được đặt thành kiểu %s nhưng lẽ ra phải dùng kiểu %s\n"

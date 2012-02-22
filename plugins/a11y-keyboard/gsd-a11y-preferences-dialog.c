@@ -34,16 +34,16 @@
 
 #include <mateconf/mateconf-client.h>
 
-#include "gsd-a11y-preferences-dialog.h"
+#include "msd-a11y-preferences-dialog.h"
 
 #define SM_DBUS_NAME      "org.mate.SessionManager"
 #define SM_DBUS_PATH      "/org/mate/SessionManager"
 #define SM_DBUS_INTERFACE "org.mate.SessionManager"
 
 
-#define GSD_A11Y_PREFERENCES_DIALOG_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSD_TYPE_A11Y_PREFERENCES_DIALOG, GsdA11yPreferencesDialogPrivate))
+#define MSD_A11Y_PREFERENCES_DIALOG_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_A11Y_PREFERENCES_DIALOG, MsdA11yPreferencesDialogPrivate))
 
-#define GTKBUILDER_UI_FILE "gsd-a11y-preferences-dialog.ui"
+#define GTKBUILDER_UI_FILE "msd-a11y-preferences-dialog.ui"
 
 #define KEY_A11Y_DIR              "/desktop/mate/accessibility"
 #define KEY_STICKY_KEYS_ENABLED   KEY_A11Y_DIR "/keyboard/stickykeys_enable"
@@ -83,7 +83,7 @@
 
 #define HIGH_CONTRAST_THEME    "HighContrast"
 
-struct GsdA11yPreferencesDialogPrivate
+struct MsdA11yPreferencesDialogPrivate
 {
         GtkWidget *sticky_keys_checkbutton;
         GtkWidget *slow_keys_checkbutton;
@@ -97,21 +97,21 @@ struct GsdA11yPreferencesDialogPrivate
         GtkWidget *screen_magnifier_checkbutton;
 
         guint      a11y_dir_cnxn;
-        guint      gsd_a11y_dir_cnxn;
+        guint      msd_a11y_dir_cnxn;
 };
 
 enum {
         PROP_0,
 };
 
-static void     gsd_a11y_preferences_dialog_class_init  (GsdA11yPreferencesDialogClass *klass);
-static void     gsd_a11y_preferences_dialog_init        (GsdA11yPreferencesDialog      *a11y_preferences_dialog);
-static void     gsd_a11y_preferences_dialog_finalize    (GObject                       *object);
+static void     msd_a11y_preferences_dialog_class_init  (MsdA11yPreferencesDialogClass *klass);
+static void     msd_a11y_preferences_dialog_init        (MsdA11yPreferencesDialog      *a11y_preferences_dialog);
+static void     msd_a11y_preferences_dialog_finalize    (GObject                       *object);
 
-G_DEFINE_TYPE (GsdA11yPreferencesDialog, gsd_a11y_preferences_dialog, GTK_TYPE_DIALOG)
+G_DEFINE_TYPE (MsdA11yPreferencesDialog, msd_a11y_preferences_dialog, GTK_TYPE_DIALOG)
 
 static void
-gsd_a11y_preferences_dialog_set_property (GObject        *object,
+msd_a11y_preferences_dialog_set_property (GObject        *object,
                                           guint           prop_id,
                                           const GValue   *value,
                                           GParamSpec     *pspec)
@@ -124,7 +124,7 @@ gsd_a11y_preferences_dialog_set_property (GObject        *object,
 }
 
 static void
-gsd_a11y_preferences_dialog_get_property (GObject        *object,
+msd_a11y_preferences_dialog_get_property (GObject        *object,
                                           guint           prop_id,
                                           GValue         *value,
                                           GParamSpec     *pspec)
@@ -137,13 +137,13 @@ gsd_a11y_preferences_dialog_get_property (GObject        *object,
 }
 
 static GObject *
-gsd_a11y_preferences_dialog_constructor (GType                  type,
+msd_a11y_preferences_dialog_constructor (GType                  type,
                                          guint                  n_construct_properties,
                                          GObjectConstructParam *construct_properties)
 {
-        GsdA11yPreferencesDialog      *a11y_preferences_dialog;
+        MsdA11yPreferencesDialog      *a11y_preferences_dialog;
 
-        a11y_preferences_dialog = GSD_A11Y_PREFERENCES_DIALOG (G_OBJECT_CLASS (gsd_a11y_preferences_dialog_parent_class)->constructor (type,
+        a11y_preferences_dialog = MSD_A11Y_PREFERENCES_DIALOG (G_OBJECT_CLASS (msd_a11y_preferences_dialog_parent_class)->constructor (type,
                                                                                                                                        n_construct_properties,
                                                                                                                                        construct_properties));
 
@@ -151,27 +151,27 @@ gsd_a11y_preferences_dialog_constructor (GType                  type,
 }
 
 static void
-gsd_a11y_preferences_dialog_dispose (GObject *object)
+msd_a11y_preferences_dialog_dispose (GObject *object)
 {
-        G_OBJECT_CLASS (gsd_a11y_preferences_dialog_parent_class)->dispose (object);
+        G_OBJECT_CLASS (msd_a11y_preferences_dialog_parent_class)->dispose (object);
 }
 
 static void
-gsd_a11y_preferences_dialog_class_init (GsdA11yPreferencesDialogClass *klass)
+msd_a11y_preferences_dialog_class_init (MsdA11yPreferencesDialogClass *klass)
 {
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->get_property = gsd_a11y_preferences_dialog_get_property;
-        object_class->set_property = gsd_a11y_preferences_dialog_set_property;
-        object_class->constructor = gsd_a11y_preferences_dialog_constructor;
-        object_class->dispose = gsd_a11y_preferences_dialog_dispose;
-        object_class->finalize = gsd_a11y_preferences_dialog_finalize;
+        object_class->get_property = msd_a11y_preferences_dialog_get_property;
+        object_class->set_property = msd_a11y_preferences_dialog_set_property;
+        object_class->constructor = msd_a11y_preferences_dialog_constructor;
+        object_class->dispose = msd_a11y_preferences_dialog_dispose;
+        object_class->finalize = msd_a11y_preferences_dialog_finalize;
 
-        g_type_class_add_private (klass, sizeof (GsdA11yPreferencesDialogPrivate));
+        g_type_class_add_private (klass, sizeof (MsdA11yPreferencesDialogPrivate));
 }
 
 static void
-on_response (GsdA11yPreferencesDialog *dialog,
+on_response (MsdA11yPreferencesDialog *dialog,
              gint                      response_id)
 {
         switch (response_id) {
@@ -293,7 +293,7 @@ config_get_large_print (gboolean *is_writable)
 
         g_object_unref (client);
 
-        g_debug ("GsdA11yPreferences: got x-dpi=%f user-dpi=%f", x_dpi, u_dpi);
+        g_debug ("MsdA11yPreferences: got x-dpi=%f user-dpi=%f", x_dpi, u_dpi);
 
         ret = (((double)DPI_FACTOR_LARGE * x_dpi) < u_dpi);
 
@@ -314,7 +314,7 @@ config_set_large_print (gboolean enabled)
                 x_dpi = get_dpi_from_x_server ();
                 u_dpi = (double)DPI_FACTOR_LARGER * x_dpi;
 
-                g_debug ("GsdA11yPreferences: setting x-dpi=%f user-dpi=%f", x_dpi, u_dpi);
+                g_debug ("MsdA11yPreferences: setting x-dpi=%f user-dpi=%f", x_dpi, u_dpi);
 
                 mateconf_client_set_float (client, KEY_FONT_DPI, u_dpi, NULL);
         } else {
@@ -501,62 +501,62 @@ config_set_at_screen_magnifier (gboolean enabled)
 
 static void
 on_sticky_keys_checkbutton_toggled (GtkToggleButton          *button,
-                                    GsdA11yPreferencesDialog *dialog)
+                                    MsdA11yPreferencesDialog *dialog)
 {
         config_set_sticky_keys (gtk_toggle_button_get_active (button));
 }
 
 static void
 on_bounce_keys_checkbutton_toggled (GtkToggleButton          *button,
-                                 GsdA11yPreferencesDialog *dialog)
+                                 MsdA11yPreferencesDialog *dialog)
 {
         config_set_bounce_keys (gtk_toggle_button_get_active (button));
 }
 
 static void
 on_slow_keys_checkbutton_toggled (GtkToggleButton          *button,
-                                  GsdA11yPreferencesDialog *dialog)
+                                  MsdA11yPreferencesDialog *dialog)
 {
         config_set_slow_keys (gtk_toggle_button_get_active (button));
 }
 
 static void
 on_high_contrast_checkbutton_toggled (GtkToggleButton          *button,
-                                      GsdA11yPreferencesDialog *dialog)
+                                      MsdA11yPreferencesDialog *dialog)
 {
         config_set_high_contrast (gtk_toggle_button_get_active (button));
 }
 
 static void
 on_at_screen_reader_checkbutton_toggled (GtkToggleButton          *button,
-                                         GsdA11yPreferencesDialog *dialog)
+                                         MsdA11yPreferencesDialog *dialog)
 {
         config_set_at_screen_reader (gtk_toggle_button_get_active (button));
 }
 
 static void
 on_at_screen_keyboard_checkbutton_toggled (GtkToggleButton          *button,
-                                           GsdA11yPreferencesDialog *dialog)
+                                           MsdA11yPreferencesDialog *dialog)
 {
         config_set_at_screen_keyboard (gtk_toggle_button_get_active (button));
 }
 
 static void
 on_at_screen_magnifier_checkbutton_toggled (GtkToggleButton          *button,
-                                            GsdA11yPreferencesDialog *dialog)
+                                            MsdA11yPreferencesDialog *dialog)
 {
         config_set_at_screen_magnifier (gtk_toggle_button_get_active (button));
 }
 
 static void
 on_large_print_checkbutton_toggled (GtkToggleButton          *button,
-                                    GsdA11yPreferencesDialog *dialog)
+                                    MsdA11yPreferencesDialog *dialog)
 {
         config_set_large_print (gtk_toggle_button_get_active (button));
 }
 
 static void
-ui_set_sticky_keys (GsdA11yPreferencesDialog *dialog,
+ui_set_sticky_keys (MsdA11yPreferencesDialog *dialog,
                     gboolean                  enabled)
 {
         gboolean active;
@@ -568,7 +568,7 @@ ui_set_sticky_keys (GsdA11yPreferencesDialog *dialog,
 }
 
 static void
-ui_set_bounce_keys (GsdA11yPreferencesDialog *dialog,
+ui_set_bounce_keys (MsdA11yPreferencesDialog *dialog,
                     gboolean                  enabled)
 {
         gboolean active;
@@ -580,7 +580,7 @@ ui_set_bounce_keys (GsdA11yPreferencesDialog *dialog,
 }
 
 static void
-ui_set_slow_keys (GsdA11yPreferencesDialog *dialog,
+ui_set_slow_keys (MsdA11yPreferencesDialog *dialog,
                   gboolean                  enabled)
 {
         gboolean active;
@@ -592,7 +592,7 @@ ui_set_slow_keys (GsdA11yPreferencesDialog *dialog,
 }
 
 static void
-ui_set_high_contrast (GsdA11yPreferencesDialog *dialog,
+ui_set_high_contrast (MsdA11yPreferencesDialog *dialog,
                       gboolean                  enabled)
 {
         gboolean active;
@@ -604,7 +604,7 @@ ui_set_high_contrast (GsdA11yPreferencesDialog *dialog,
 }
 
 static void
-ui_set_at_screen_reader (GsdA11yPreferencesDialog *dialog,
+ui_set_at_screen_reader (MsdA11yPreferencesDialog *dialog,
                          gboolean                  enabled)
 {
         gboolean active;
@@ -616,7 +616,7 @@ ui_set_at_screen_reader (GsdA11yPreferencesDialog *dialog,
 }
 
 static void
-ui_set_at_screen_keyboard (GsdA11yPreferencesDialog *dialog,
+ui_set_at_screen_keyboard (MsdA11yPreferencesDialog *dialog,
                            gboolean                  enabled)
 {
         gboolean active;
@@ -628,7 +628,7 @@ ui_set_at_screen_keyboard (GsdA11yPreferencesDialog *dialog,
 }
 
 static void
-ui_set_at_screen_magnifier (GsdA11yPreferencesDialog *dialog,
+ui_set_at_screen_magnifier (MsdA11yPreferencesDialog *dialog,
                             gboolean                  enabled)
 {
         gboolean active;
@@ -640,7 +640,7 @@ ui_set_at_screen_magnifier (GsdA11yPreferencesDialog *dialog,
 }
 
 static void
-ui_set_large_print (GsdA11yPreferencesDialog *dialog,
+ui_set_large_print (MsdA11yPreferencesDialog *dialog,
                     gboolean                  enabled)
 {
         gboolean active;
@@ -655,7 +655,7 @@ static void
 key_changed_cb (MateConfClient              *client,
                 guint                     cnxn_id,
                 MateConfEntry               *entry,
-                GsdA11yPreferencesDialog *dialog)
+                MsdA11yPreferencesDialog *dialog)
 {
         const char *key;
         MateConfValue *value;
@@ -729,7 +729,7 @@ key_changed_cb (MateConfClient              *client,
 }
 
 static void
-setup_dialog (GsdA11yPreferencesDialog *dialog,
+setup_dialog (MsdA11yPreferencesDialog *dialog,
               GtkBuilder               *builder)
 {
         GtkWidget   *widget;
@@ -876,7 +876,7 @@ setup_dialog (GsdA11yPreferencesDialog *dialog,
                               KEY_AT_DIR,
                               MATECONF_CLIENT_PRELOAD_ONELEVEL,
                               NULL);
-        dialog->priv->gsd_a11y_dir_cnxn = mateconf_client_notify_add (client,
+        dialog->priv->msd_a11y_dir_cnxn = mateconf_client_notify_add (client,
                                                                    KEY_AT_DIR,
                                                                    (MateConfClientNotifyFunc)key_changed_cb,
                                                                    dialog,
@@ -887,14 +887,14 @@ setup_dialog (GsdA11yPreferencesDialog *dialog,
 }
 
 static void
-gsd_a11y_preferences_dialog_init (GsdA11yPreferencesDialog *dialog)
+msd_a11y_preferences_dialog_init (MsdA11yPreferencesDialog *dialog)
 {
         static const gchar *ui_file_path = GTKBUILDERDIR "/" GTKBUILDER_UI_FILE;
         gchar *objects[] = {"main_box", NULL};
         GError *error = NULL;
         GtkBuilder  *builder;
 
-        dialog->priv = GSD_A11Y_PREFERENCES_DIALOG_GET_PRIVATE (dialog);
+        dialog->priv = MSD_A11Y_PREFERENCES_DIALOG_GET_PRIVATE (dialog);
 
         builder = gtk_builder_new ();
         gtk_builder_set_translation_domain (builder, PACKAGE);
@@ -937,15 +937,15 @@ gsd_a11y_preferences_dialog_init (GsdA11yPreferencesDialog *dialog)
 }
 
 static void
-gsd_a11y_preferences_dialog_finalize (GObject *object)
+msd_a11y_preferences_dialog_finalize (GObject *object)
 {
-        GsdA11yPreferencesDialog *dialog;
+        MsdA11yPreferencesDialog *dialog;
         MateConfClient              *client;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (GSD_IS_A11Y_PREFERENCES_DIALOG (object));
+        g_return_if_fail (MSD_IS_A11Y_PREFERENCES_DIALOG (object));
 
-        dialog = GSD_A11Y_PREFERENCES_DIALOG (object);
+        dialog = MSD_A11Y_PREFERENCES_DIALOG (object);
 
         g_return_if_fail (dialog->priv != NULL);
 
@@ -954,21 +954,21 @@ gsd_a11y_preferences_dialog_finalize (GObject *object)
         if (dialog->priv->a11y_dir_cnxn > 0) {
                 mateconf_client_notify_remove (client, dialog->priv->a11y_dir_cnxn);
         }
-        if (dialog->priv->gsd_a11y_dir_cnxn > 0) {
-                mateconf_client_notify_remove (client, dialog->priv->gsd_a11y_dir_cnxn);
+        if (dialog->priv->msd_a11y_dir_cnxn > 0) {
+                mateconf_client_notify_remove (client, dialog->priv->msd_a11y_dir_cnxn);
         }
 
         g_object_unref (client);
 
-        G_OBJECT_CLASS (gsd_a11y_preferences_dialog_parent_class)->finalize (object);
+        G_OBJECT_CLASS (msd_a11y_preferences_dialog_parent_class)->finalize (object);
 }
 
 GtkWidget *
-gsd_a11y_preferences_dialog_new (void)
+msd_a11y_preferences_dialog_new (void)
 {
         GObject *object;
 
-        object = g_object_new (GSD_TYPE_A11Y_PREFERENCES_DIALOG,
+        object = g_object_new (MSD_TYPE_A11Y_PREFERENCES_DIALOG,
                                NULL);
 
         return GTK_WIDGET (object);

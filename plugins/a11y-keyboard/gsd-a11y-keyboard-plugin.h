@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef __GSD_A11Y_KEYBOARD_PLUGIN_H__
-#define __GSD_A11Y_KEYBOARD_PLUGIN_H__
+#ifndef __MSD_A11Y_KEYBOARD_PLUGIN_H__
+#define __MSD_A11Y_KEYBOARD_PLUGIN_H__
 
 #include <glib.h>
 #include <glib-object.h>
@@ -31,27 +31,27 @@
 extern "C" {
 #endif
 
-#define GSD_TYPE_A11Y_KEYBOARD_PLUGIN                (gsd_a11y_keyboard_plugin_get_type ())
-#define GSD_A11Y_KEYBOARD_PLUGIN(o)                  (G_TYPE_CHECK_INSTANCE_CAST ((o), GSD_TYPE_A11Y_KEYBOARD_PLUGIN, GsdA11yKeyboardPlugin))
-#define GSD_A11Y_KEYBOARD_PLUGIN_CLASS(k)            (G_TYPE_CHECK_CLASS_CAST((k), GSD_TYPE_A11Y_KEYBOARD_PLUGIN, GsdA11yKeyboardPluginClass))
-#define GSD_IS_A11Y_KEYBOARD_PLUGIN(o)               (G_TYPE_CHECK_INSTANCE_TYPE ((o), GSD_TYPE_A11Y_KEYBOARD_PLUGIN))
-#define GSD_IS_A11Y_KEYBOARD_PLUGIN_CLASS(k)         (G_TYPE_CHECK_CLASS_TYPE ((k), GSD_TYPE_A11Y_KEYBOARD_PLUGIN))
-#define GSD_A11Y_KEYBOARD_PLUGIN_GET_CLASS(o)        (G_TYPE_INSTANCE_GET_CLASS ((o), GSD_TYPE_A11Y_KEYBOARD_PLUGIN, GsdA11yKeyboardPluginClass))
+#define MSD_TYPE_A11Y_KEYBOARD_PLUGIN                (msd_a11y_keyboard_plugin_get_type ())
+#define MSD_A11Y_KEYBOARD_PLUGIN(o)                  (G_TYPE_CHECK_INSTANCE_CAST ((o), MSD_TYPE_A11Y_KEYBOARD_PLUGIN, MsdA11yKeyboardPlugin))
+#define MSD_A11Y_KEYBOARD_PLUGIN_CLASS(k)            (G_TYPE_CHECK_CLASS_CAST((k), MSD_TYPE_A11Y_KEYBOARD_PLUGIN, MsdA11yKeyboardPluginClass))
+#define MSD_IS_A11Y_KEYBOARD_PLUGIN(o)               (G_TYPE_CHECK_INSTANCE_TYPE ((o), MSD_TYPE_A11Y_KEYBOARD_PLUGIN))
+#define MSD_IS_A11Y_KEYBOARD_PLUGIN_CLASS(k)         (G_TYPE_CHECK_CLASS_TYPE ((k), MSD_TYPE_A11Y_KEYBOARD_PLUGIN))
+#define MSD_A11Y_KEYBOARD_PLUGIN_GET_CLASS(o)        (G_TYPE_INSTANCE_GET_CLASS ((o), MSD_TYPE_A11Y_KEYBOARD_PLUGIN, MsdA11yKeyboardPluginClass))
 
-typedef struct GsdA11yKeyboardPluginPrivate GsdA11yKeyboardPluginPrivate;
+typedef struct MsdA11yKeyboardPluginPrivate MsdA11yKeyboardPluginPrivate;
 
 typedef struct
 {
         MateSettingsPlugin    parent;
-        GsdA11yKeyboardPluginPrivate *priv;
-} GsdA11yKeyboardPlugin;
+        MsdA11yKeyboardPluginPrivate *priv;
+} MsdA11yKeyboardPlugin;
 
 typedef struct
 {
         MateSettingsPluginClass parent_class;
-} GsdA11yKeyboardPluginClass;
+} MsdA11yKeyboardPluginClass;
 
-GType   gsd_a11y_keyboard_plugin_get_type            (void) G_GNUC_CONST;
+GType   msd_a11y_keyboard_plugin_get_type            (void) G_GNUC_CONST;
 
 /* All the plugins must implement this function */
 G_MODULE_EXPORT GType register_mate_settings_plugin (GTypeModule *module);
@@ -60,4 +60,4 @@ G_MODULE_EXPORT GType register_mate_settings_plugin (GTypeModule *module);
 }
 #endif
 
-#endif /* __GSD_A11Y_KEYBOARD_PLUGIN_H__ */
+#endif /* __MSD_A11Y_KEYBOARD_PLUGIN_H__ */

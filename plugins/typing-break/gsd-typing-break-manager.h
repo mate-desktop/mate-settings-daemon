@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef __GSD_TYPING_BREAK_MANAGER_H
-#define __GSD_TYPING_BREAK_MANAGER_H
+#ifndef __MSD_TYPING_BREAK_MANAGER_H
+#define __MSD_TYPING_BREAK_MANAGER_H
 
 #include <glib-object.h>
 
@@ -27,35 +27,35 @@
 extern "C" {
 #endif
 
-#define GSD_TYPE_TYPING_BREAK_MANAGER         (gsd_typing_break_manager_get_type ())
-#define GSD_TYPING_BREAK_MANAGER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GSD_TYPE_TYPING_BREAK_MANAGER, GsdTypingBreakManager))
-#define GSD_TYPING_BREAK_MANAGER_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), GSD_TYPE_TYPING_BREAK_MANAGER, GsdTypingBreakManagerClass))
-#define GSD_IS_TYPING_BREAK_MANAGER(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), GSD_TYPE_TYPING_BREAK_MANAGER))
-#define GSD_IS_TYPING_BREAK_MANAGER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), GSD_TYPE_TYPING_BREAK_MANAGER))
-#define GSD_TYPING_BREAK_MANAGER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), GSD_TYPE_TYPING_BREAK_MANAGER, GsdTypingBreakManagerClass))
+#define MSD_TYPE_TYPING_BREAK_MANAGER         (msd_typing_break_manager_get_type ())
+#define MSD_TYPING_BREAK_MANAGER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), MSD_TYPE_TYPING_BREAK_MANAGER, MsdTypingBreakManager))
+#define MSD_TYPING_BREAK_MANAGER_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), MSD_TYPE_TYPING_BREAK_MANAGER, MsdTypingBreakManagerClass))
+#define MSD_IS_TYPING_BREAK_MANAGER(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), MSD_TYPE_TYPING_BREAK_MANAGER))
+#define MSD_IS_TYPING_BREAK_MANAGER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), MSD_TYPE_TYPING_BREAK_MANAGER))
+#define MSD_TYPING_BREAK_MANAGER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), MSD_TYPE_TYPING_BREAK_MANAGER, MsdTypingBreakManagerClass))
 
-typedef struct GsdTypingBreakManagerPrivate GsdTypingBreakManagerPrivate;
+typedef struct MsdTypingBreakManagerPrivate MsdTypingBreakManagerPrivate;
 
 typedef struct
 {
         GObject                     parent;
-        GsdTypingBreakManagerPrivate *priv;
-} GsdTypingBreakManager;
+        MsdTypingBreakManagerPrivate *priv;
+} MsdTypingBreakManager;
 
 typedef struct
 {
         GObjectClass   parent_class;
-} GsdTypingBreakManagerClass;
+} MsdTypingBreakManagerClass;
 
-GType                   gsd_typing_break_manager_get_type            (void);
+GType                   msd_typing_break_manager_get_type            (void);
 
-GsdTypingBreakManager * gsd_typing_break_manager_new                 (void);
-gboolean                gsd_typing_break_manager_start               (GsdTypingBreakManager *manager,
+MsdTypingBreakManager * msd_typing_break_manager_new                 (void);
+gboolean                msd_typing_break_manager_start               (MsdTypingBreakManager *manager,
                                                                       GError               **error);
-void                    gsd_typing_break_manager_stop                (GsdTypingBreakManager *manager);
+void                    msd_typing_break_manager_stop                (MsdTypingBreakManager *manager);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __GSD_TYPING_BREAK_MANAGER_H */
+#endif /* __MSD_TYPING_BREAK_MANAGER_H */
