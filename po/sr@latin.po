@@ -752,23 +752,23 @@ msgstr "Pristupačnost tastature"
 msgid "Accessibility keyboard plugin"
 msgstr "Dodatak za pristupačnost tastature"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:460
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:460
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Došlo je do greške prilikom prikaza pomoći: %s"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:591
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:657
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:591
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Do you want to activate Slow Keys?"
 msgstr "Želite li da uključite spore tastere?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:592
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:658
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:592
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:658
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Želite li da uključite spore tastere?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:593
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:659
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:593
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -776,62 +776,62 @@ msgstr ""
 "Upravo ste držali taster Shift pritisnut 8 sekundi.  Ovo je prečica za "
 "mogućnost sporih tastera, koja utiče na to kako radi vaša tastatura."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:618
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:757
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:618
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:757
 msgid "Don't activate"
 msgstr "Ne pokreći"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:618
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:757
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:618
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:757
 msgid "Don't deactivate"
 msgstr "Ne obustavljaj"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:624
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:763
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:624
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Activate"
 msgstr "Pokreni"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:624
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:763
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:624
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Deactivate"
 msgstr "Obustavi"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:680
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:821
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:680
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:821
 msgid "Do_n't activate"
 msgstr "Ne pokreć_i"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:680
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:821
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:680
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:821
 msgid "Do_n't deactivate"
 msgstr "Ne obust_avljaj"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:683
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:824
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:683
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:824
 msgid "_Activate"
 msgstr "Po_kreni"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:683
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:824
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:683
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:824
 msgid "_Deactivate"
 msgstr "Ob_ustavi"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:687
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:687
 msgid "Slow Keys Alert"
 msgstr "Upozorenje o sporim tasterima"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:727
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:795
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:727
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:795
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Želite li da uključite lepljive tastere?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:728
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:796
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:728
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Želite li da isključite lepljive tastere?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:730
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:798
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:730
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -839,8 +839,8 @@ msgstr ""
 "Upravo ste pritisnuli taster Shift pet puta zaredom.  Ovo je prečica za "
 "mogućnost lepljivih tastera, koja utiče na način rada vaše tastature."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:732
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:800
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:732
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -850,44 +850,44 @@ msgstr ""
 "puta zaredom.  Ovo isključuje mogućnost lepljivih tastera, što utiče na to "
 "kako vaša tastatura radi."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:828
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:828
 msgid "Sticky Keys Alert"
 msgstr "Upozorenje o lepljivim tasterima"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.c:920
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:4
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:920
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:4
 msgid "Universal Access Preferences"
 msgstr "Postavke opšte pristupačnosti"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:1
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Enhance _contrast in colors"
 msgstr "Pojačaj _kontrast boja"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:2
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
 msgid "Make _text larger and easier to read"
 msgstr "_Uvećaj tekst radi lakšeg čitanja"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:3
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:3
 msgid "Press and _hold keys to accept them (Slow Keys)"
 msgstr "_Dugo pritisni taster (spori tasteri)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:5
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:5
 msgid "Use on-screen _keyboard"
 msgstr "Koristi _tastaturu na ekranu"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:6
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:6
 msgid "Use screen _magnifier"
 msgstr "Koristi _lupu"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:7
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "Use screen _reader"
 msgstr "Koristi _čitač ekrana"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:8
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
 msgstr "_Zanemari dvostruke pritiske (odskačući tasteri)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:9
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
 msgstr "P_ritisni po jedan taster za prečicu (lepljivi tasteri)"
 
@@ -925,26 +925,26 @@ msgstr "Font"
 msgid "Font plugin"
 msgstr "Dodatak za font"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:64
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:64
 #| msgid "Don't show any warnings again for this filesystem"
 msgid "Don't show any warnings again for this file system"
 msgstr "Ne prikazuj upozorenja za ovaj sistem datoteka"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:66
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:66
 msgid "Don't show any warnings again"
 msgstr "Ne prikazuj nikakva upozorenja"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:79
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:79
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr "Disk „%s“ ima samo %s preostalog prostora."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:82
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:82
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr "Računar ima samo %s preostalog prostora."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:98
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:98
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
@@ -952,7 +952,7 @@ msgstr ""
 "Možete osloboditi prostor na disku izbacivanjem smeća, uklanjanjem nepotrebnih "
 "programa ili datoteka ili premeštanjem datoteka na drugi disk ili particiju."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:101
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:101
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
@@ -960,7 +960,7 @@ msgstr ""
 "Možete osloboditi prostor na disku uklanjanjem nepotrebnih programa ili "
 "datoteka ili premeštanjem datoteka na drugi disk ili particiju."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:106
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:106
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
@@ -968,7 +968,7 @@ msgstr ""
 "Možete osloboditi prostor na disku izbacivanjem smeća, uklanjanjem nepotrebnih "
 "programa ili datoteka ili premeštanjem datoteka na spoljni disk."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:109
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:109
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
@@ -977,54 +977,54 @@ msgstr ""
 "datoteka ili premeštanjem datoteka na spoljni disk."
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:204
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:204
 msgid "Low Disk Space"
 msgstr "Malo prostora na disku"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:439
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:439
 msgid "Empty Trash"
 msgstr "Izbaci smeće"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:447
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:447
 #| msgid "Examine..."
 msgid "Examine…"
 msgstr "Ispitaj…"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:454
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:454
 msgid "Ignore"
 msgstr "Zanemari"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:97
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:97
 #, c-format
 msgid "Removing item %lu of %lu"
 msgstr "Uklanjam %lu stavku od %lu"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:117
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 #| msgid "<i>Removing: %s</i>"
 msgid "Removing: %s"
 msgstr "Uklanjam: %s"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:296
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:296
 msgid "Emptying the trash"
 msgstr "Izbacujem smeće"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:272
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:272
 #| msgid "Preparing to empty trash..."
 msgid "Preparing to empty trash…"
 msgstr "Pripremam se da izbacim smeće…"
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:299
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:299
 msgid "From: "
 msgstr "Od:"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:360
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:360
 msgid "Empty all of the items from the trash?"
 msgstr "Da izbacim sve stavke iz smeća?"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:363
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:363
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
@@ -1032,21 +1032,21 @@ msgstr ""
 "Ukoliko izaberete da ispraznite smeće, sve stavke će biti trajno izgubljene. "
 "Možete izbaciti i zasebno svaku stavku iz smeća."
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:370
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:370
 msgid "_Empty Trash"
 msgstr "Iz_baci smeće"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:139
+#: ../plugins/keybindings/msd-keybindings-manager.c:139
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "Nije ispravna veza sa tasterom (%s)"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:197
+#: ../plugins/keybindings/msd-keybindings-manager.c:197
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "Nije potpuna veza sa tasterom (%s)"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:493
+#: ../plugins/keybindings/msd-keybindings-manager.c:493
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -1071,7 +1071,7 @@ msgstr "Tastatura"
 msgid "Keyboard plugin"
 msgstr "Dodatak za tastaturu"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:137
+#: ../plugins/keyboard/msd-keyboard-xkb.c:137
 #, c-format
 #| msgid ""
 #| "Error activating XKB configuration.\n"
@@ -1116,7 +1116,7 @@ msgstr ""
 " • Rezultat <b>%s</b>\n"
 " • Rezultat <b>%s</b>"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:151
+#: ../plugins/keyboard/msd-keyboard-xkb.c:151
 #| msgid ""
 #| "You are using XFree 4.3.0.\n"
 #| "There are known problems with complex XKB configurations.\n"
@@ -1132,15 +1132,15 @@ msgstr ""
 "U ovom izdanju postoje problemi sa složenijim podešavanjima tastature.\n"
 "Pokušajte da koristite jednostavnija podešavanja ili nabavite noviji IksFri."
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:279
+#: ../plugins/keyboard/msd-keyboard-xkb.c:279
 msgid "_Layouts"
 msgstr "_Rasporedi"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:286
+#: ../plugins/keyboard/msd-keyboard-xkb.c:286
 msgid "Keyboard _Preferences"
 msgstr "_Postavke tastature"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:292
+#: ../plugins/keyboard/msd-keyboard-xkb.c:292
 #| msgid "Show Current _Layout"
 msgid "Show _Current Layout"
 msgstr "Prika_ži trenutni raspored"
@@ -1170,7 +1170,7 @@ msgstr "_Učitaj"
 msgid "_Loaded files:"
 msgstr "_Učitane datoteke:"
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:195
+#: ../plugins/media-keys/msd-media-keys-manager.c:195
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is "
 "set and points to a valid application."
@@ -1178,7 +1178,7 @@ msgstr ""
 "Ne mogu da nađem podrazumevani terminal. Proverite da li je naredba za "
 "terminal postavljena i da li pokazuje na postojeći program."
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:235
+#: ../plugins/media-keys/msd-media-keys-manager.c:235
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1227,11 +1227,11 @@ msgstr "Multimedijalni tasteri"
 msgid "Media keys plugin"
 msgstr "Dodatak za multimedijalne tastere"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:882
+#: ../plugins/mouse/msd-mouse-manager.c:882
 msgid "Could not enable mouse accessibility features"
 msgstr "Ne mogu da uključim pristupačnost miša"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:884
+#: ../plugins/mouse/msd-mouse-manager.c:884
 #, fuzzy
 #| msgid ""
 #| "Mouse accessibility requires mousetweaks to be installed on your system."
@@ -1239,7 +1239,7 @@ msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr "Za pristupačnost miša morate da instalirate Mousetweaks program."
 
-#: ../plugins/mouse/gsd-mouse-manager.c:887
+#: ../plugins/mouse/msd-mouse-manager.c:887
 msgid "Mouse Preferences"
 msgstr "Podešavanja miša"
 
@@ -1267,19 +1267,19 @@ msgstr "Podešavanje veličine i rotacije ekrana"
 msgid "XRandR"
 msgstr "XRandR"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:225
+#: ../plugins/xrandr/msd-xrandr-manager.c:225
 msgid "Could not switch the monitor configuration"
 msgstr "Ne mogu da učitam podešavanja monitora"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:249
+#: ../plugins/xrandr/msd-xrandr-manager.c:249
 msgid "Could not restore the display's configuration"
 msgstr "Ne mogu da vratim podešavanja ekrana"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:274
+#: ../plugins/xrandr/msd-xrandr-manager.c:274
 msgid "Could not restore the display's configuration from a backup"
 msgstr "Ne mogu da vratim podešavanja ekrana iz rezervnih podešavanja"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:295
+#: ../plugins/xrandr/msd-xrandr-manager.c:295
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
@@ -1289,71 +1289,71 @@ msgstr[1] "Podešavanja ekrana će biti vraćena na prethodna za %d sekunde"
 msgstr[2] "Podešavanja ekrana će biti vraćena na prethodna za %d sekundi"
 msgstr[3] "Podešavanja ekrana će biti vraćena na prethodna za %d sekundu"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:344
+#: ../plugins/xrandr/msd-xrandr-manager.c:344
 msgid "Does the display look OK?"
 msgstr "Da li ekran izgleda kako treba?"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:350
+#: ../plugins/xrandr/msd-xrandr-manager.c:350
 msgid "_Restore Previous Configuration"
 msgstr "_Vrati prethodna podešavanja"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:351
+#: ../plugins/xrandr/msd-xrandr-manager.c:351
 msgid "_Keep This Configuration"
 msgstr "_Zadrži ova podešavanja"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:432
+#: ../plugins/xrandr/msd-xrandr-manager.c:432
 msgid "The selected configuration for displays could not be applied"
 msgstr "Ne mogu da primenim izabrana podešavanja ekrana"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:970
+#: ../plugins/xrandr/msd-xrandr-manager.c:970
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "Ne mogu da osvežim podatke o ekranu: %s"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:973
+#: ../plugins/xrandr/msd-xrandr-manager.c:973
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Pokušavam da ipak učitam podešavanja monitora."
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1703
+#: ../plugins/xrandr/msd-xrandr-manager.c:1703
 #| msgid "<i>Rotation not supported</i>"
 msgid "Rotation not supported"
 msgstr "Nije podržano rotiranje"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1759
+#: ../plugins/xrandr/msd-xrandr-manager.c:1759
 msgid "Could not save monitor configuration"
 msgstr "Ne mogu da sačuvam podešavanja monitora"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1777
+#: ../plugins/xrandr/msd-xrandr-manager.c:1777
 msgid "Normal"
 msgstr "Obično"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1778
+#: ../plugins/xrandr/msd-xrandr-manager.c:1778
 msgid "Left"
 msgstr "Levo"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1779
+#: ../plugins/xrandr/msd-xrandr-manager.c:1779
 msgid "Right"
 msgstr "Desno"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1780
+#: ../plugins/xrandr/msd-xrandr-manager.c:1780
 msgid "Upside Down"
 msgstr "Naopačke"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1900
+#: ../plugins/xrandr/msd-xrandr-manager.c:1900
 #| msgid "_Configure Display Settings ..."
 msgid "_Configure Display Settings…"
 msgstr "Podesi _ekrane…"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1941
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Configure display settings"
 msgstr "Podesi ekran"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:2001
+#: ../plugins/xrandr/msd-xrandr-manager.c:2001
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Ne mogu da primenim sačuvana podešavanja ekrana"
 
-#: ../plugins/xrdb/gsd-xrdb-manager.c:255
-#: ../plugins/xrdb/gsd-xrdb-manager.c:324
+#: ../plugins/xrdb/msd-xrdb-manager.c:255
+#: ../plugins/xrdb/msd-xrdb-manager.c:324
 msgid "Cannot determine user's home directory"
 msgstr "Ne mogu da odredim korisnikov lični direktorijum"
 
@@ -1365,7 +1365,7 @@ msgstr "Upravljanje Iksovom bazom resursa"
 msgid "X Resource Database"
 msgstr "Iksova baza resursa"
 
-#: ../plugins/xsettings/gsd-xsettings-manager.c:596
+#: ../plugins/xsettings/msd-xsettings-manager.c:596
 #, c-format
 msgid "MateConf key %s set to type %s but its expected type was %s\n"
 msgstr "Gkonf ključ %s je postavljen na tip %s a očekivani tip je %s\n"
@@ -1378,95 +1378,95 @@ msgstr "Uredi podešavanja Iksa"
 msgid "X Settings"
 msgstr "Podešavanja Iksa"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:167
+#: ../plugins/smartcard/msd-smartcard-manager.c:167
 msgid "Module Path"
 msgstr "Putanja do modula"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:168
+#: ../plugins/smartcard/msd-smartcard-manager.c:168
 msgid "path to smartcard PKCS #11 driver"
 msgstr "putanja do PKCS #11 putanje drajvera za pametne kartice"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:504
+#: ../plugins/smartcard/msd-smartcard-manager.c:504
 msgid "received error or hang up from event source"
 msgstr "greška ili prekid sa izvorom događaja"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:593
+#: ../plugins/smartcard/msd-smartcard-manager.c:593
 #, c-format
 msgid "NSS security system could not be initialized"
 msgstr "Ne mogu da pokrenem NSS sigurnosni sistem"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:662
+#: ../plugins/smartcard/msd-smartcard-manager.c:662
 #, c-format
 msgid "no suitable smartcard driver could be found"
 msgstr "ne postoji odgovarajući drajver za pametne kartice"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:682
+#: ../plugins/smartcard/msd-smartcard-manager.c:682
 #, c-format
 msgid "smartcard driver '%s' could not be loaded"
 msgstr "ne mogu da učitam drajver „%s“ za pametne kartice"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:771
+#: ../plugins/smartcard/msd-smartcard-manager.c:771
 #, c-format
 msgid "could not watch for incoming card events - %s"
 msgstr "ne mogu da pratim priključivanje kartice — %s"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:1124
+#: ../plugins/smartcard/msd-smartcard-manager.c:1124
 #, c-format
 msgid "encountered unexpected error while waiting for smartcard events"
 msgstr "neočekivana greška pri čekanju na priključivanje pametne kartice"
 
-#: ../plugins/smartcard/gsd-smartcard.c:154
+#: ../plugins/smartcard/msd-smartcard.c:154
 msgid "Slot ID"
 msgstr "IB slota"
 
-#: ../plugins/smartcard/gsd-smartcard.c:155
+#: ../plugins/smartcard/msd-smartcard.c:155
 msgid "The slot the card is in"
 msgstr "Slot u kome je kartica"
 
-#: ../plugins/smartcard/gsd-smartcard.c:161
+#: ../plugins/smartcard/msd-smartcard.c:161
 #| msgid "Slow keys"
 msgid "Slot Series"
 msgstr "Niz slotova"
 
-#: ../plugins/smartcard/gsd-smartcard.c:162
+#: ../plugins/smartcard/msd-smartcard.c:162
 msgid "per-slot card identifier"
 msgstr "identifikazija kartica po slotovima"
 
-#: ../plugins/smartcard/gsd-smartcard.c:168
-#: ../plugins/smartcard/gsd-smartcard.c:169
+#: ../plugins/smartcard/msd-smartcard.c:168
+#: ../plugins/smartcard/msd-smartcard.c:169
 msgid "name"
 msgstr "ime"
 
-#: ../plugins/smartcard/gsd-smartcard.c:173
+#: ../plugins/smartcard/msd-smartcard.c:173
 #| msgid "Mouse"
 msgid "Module"
 msgstr "Modul"
 
-#: ../plugins/smartcard/gsd-smartcard.c:174
+#: ../plugins/smartcard/msd-smartcard.c:174
 msgid "smartcard driver"
 msgstr "drajver za pametne kartice"
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:1
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:1
 msgid "Change system time"
 msgstr "Promeni vreme na sistemu"
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:2
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:2
 msgid "Change system time zone"
 msgstr "Promeni vremensku zonu"
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:3
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:3
 msgid "Configure hardware clock"
 msgstr "Podesi sat na računaru"
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:4
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:4
 msgid "Privileges are required to change the system time zone."
 msgstr "Potrebna su ovlašćenja za promenu vremenske zone na sistemu."
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:5
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:5
 msgid "Privileges are required to change the system time."
 msgstr "Potrebna su ovlašćenja za promenu vremena na sistemu."
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:6
+#: ../plugins/datetime/org.mate.settinmsdaemon.datetimemechanism.policy.in.h:6
 msgid "Privileges are required to configure the hardware clock."
 msgstr "Potrebna su ovlašćenja za podešavanje sata na računaru."
 

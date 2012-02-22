@@ -758,23 +758,23 @@ msgstr "Tastatur for tilgjenge"
 msgid "Accessibility keyboard plugin"
 msgstr "Tillegg for tastatur for tilgjenge"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:388
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:388
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Ein feil oppstod når hjelpeteksten skulle visast: %s"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:519
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:585
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:519
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:585
 msgid "Do you want to activate Slow Keys?"
 msgstr "Vil du slå på trege tastar?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:520
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:586
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:520
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:586
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Vil du slå av trege tastar?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:521
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:587
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:521
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:587
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -782,66 +782,66 @@ msgstr ""
 "Du heldt nede Shift-tasten i 8 sekund. Dette er snøggtasten for trege tastar-"
 "funksjonen, som påverkar korleis tastaturet ditt virkar."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:546
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:685
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:546
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:685
 #| msgid "Do_n't activate"
 msgid "Don't activate"
 msgstr "Ikkje slå på"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:546
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:685
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:546
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:685
 #| msgid "Do_n't deactivate"
 msgid "Don't deactivate"
 msgstr "Ikkje slå av"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:552
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:691
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:552
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:691
 #| msgid "_Activate"
 msgid "Activate"
 msgstr "Slå på"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:552
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:691
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:552
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:691
 #| msgid "_Deactivate"
 msgid "Deactivate"
 msgstr "Slå av"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:608
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:749
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:608
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Do_n't activate"
 msgstr "Ikk_je slå på"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:608
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:749
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:608
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Do_n't deactivate"
 msgstr "Ikk_je slå av"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:611
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:752
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:611
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:752
 msgid "_Activate"
 msgstr "Slå _på"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:611
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:752
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:611
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:752
 msgid "_Deactivate"
 msgstr "Slå _av"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:615
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:615
 msgid "Slow Keys Alert"
 msgstr "Varsel om trege tastar"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:655
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:723
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:655
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:723
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Vil du slå på seige tastar?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:656
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:724
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:724
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Vil du slå av seige tastar?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:658
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:726
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:658
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:726
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -849,8 +849,8 @@ msgstr ""
 "Du trykte Shift fem gongar på rad. Det er snøggtasten til seige tastar-"
 "eigenskapen, som påverkar korleis tastaturet ditt fungerer."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:660
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:728
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:660
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:728
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -859,48 +859,48 @@ msgstr ""
 "Du trykte to tastar på ein gong, eller trykte Shift fem gongar på rad. Det "
 "slår av seige tastareigenskapen, som påverkar korleis tastaturet fungerer."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:756
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:756
 msgid "Sticky Keys Alert"
 msgstr "Varsel om seige tastar"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.c:920
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:4
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:920
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:4
 #| msgid "Appearance Preferences"
 msgid "Universal Access Preferences"
 msgstr "Universale tilgjengeval"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:1
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Enhance _contrast in colors"
 msgstr "Auk _kontrastar i fargar"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:2
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
 msgid "Make _text larger and easier to read"
 msgstr "Gjer _tekst større og lettare å lesa"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:3
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:3
 msgid "Press and _hold keys to accept them (Slow Keys)"
 msgstr "Trykk og held tasten inne for å godta dei (trege tastar)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:5
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:5
 #| msgid "MATE OnScreen Keyboard"
 msgid "Use on-screen _keyboard"
 msgstr "Bruk tastatur på skjermen"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:6
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:6
 msgid "Use screen _magnifier"
 msgstr "Bruk skjerm_forstørrar"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:7
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 #| msgid "Linux Screen Reader"
 msgid "Use screen _reader"
 msgstr "Bruk skjerm_lesar"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:8
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 #| msgid "_Ignore fast duplicate keypresses"
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
 msgstr "_Ignorar dupliserte tastaturtrykk (sprettetastar)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:9
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
 msgstr "_Trykk inn tastatursnarvegar ein tast om gongen (seige tastar)"
 
@@ -944,27 +944,27 @@ msgstr "Skrift"
 msgid "Font plugin"
 msgstr "Tillegg for skrift"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:64
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:64
 #| msgid "Do _not show this warning again"
 msgid "Don't show any warnings again for this filesystem"
 msgstr "_Ikkje vis nokre varsel igjen for dette filsystemet"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:66
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:66
 #| msgid "Do _not show this warning again"
 msgid "Don't show any warnings again"
 msgstr "_Ikkje vis nokre varsel igjen"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:79
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:79
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr "Lagringseininga «%s» har berre %s diskplass att."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:82
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:82
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr "Denne datamaskina har berre %s diskplass att."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:98
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:98
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
@@ -973,7 +973,7 @@ msgstr ""
 "filer, "
 "eller flytta filer til ei anna lagringseining eller partisjon."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:101
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:101
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
@@ -981,7 +981,7 @@ msgstr ""
 "Du kan frigjera diskplass ved å fjerna ubrukte program og filer, "
 "eller flytta filer til ei anna lagringseining eller partisjon."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:106
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:106
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
@@ -990,7 +990,7 @@ msgstr ""
 "filer, "
 "eller flytta filer til ei ekstern lagringseining."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:109
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:109
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
@@ -999,54 +999,54 @@ msgstr ""
 "eller flytta filer til ei ekstern lagringseining."
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:204
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:204
 msgid "Low Disk Space"
 msgstr "Lite diskplass"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:439
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:439
 msgid "Empty Trash"
 msgstr "Tøm papirkorga"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:447
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:447
 #| msgid "Rename..."
 msgid "Examine..."
 msgstr "Undersøk …"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:454
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:454
 msgid "Ignore"
 msgstr "Ignorer"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:96
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:96
 #, c-format
 #| msgid "Copying file: %u of %u"
 msgid "Removing item %lu of %lu"
 msgstr "Fjernar oppføring %lu av %lu"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:116
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:116
 #, c-format
 #| msgid "<b>Open %s</b>"
 msgid "<i>Removing: %s</i>"
 msgstr "<i>Fjernar: %s</i>"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:244
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:293
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:244
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:293
 msgid "Emptying the trash"
 msgstr "Tømmar papirkorga"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:269
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:269
 msgid "Preparing to empty trash..."
 msgstr "Førebur tømming av papirkorg …"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:295
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:295
 #| msgid "From:"
 msgid "From: "
 msgstr "Frå: "
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:356
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:356
 msgid "Empty all of the items from the trash?"
 msgstr "Slett alle oppføringane i papirkorga?"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:359
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:359
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
@@ -1055,23 +1055,23 @@ msgstr ""
 "at "
 "du kan velja kva for filer du vil sletta."
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:366
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:366
 msgid "_Empty Trash"
 msgstr "_Tøm papirkorg"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:139
+#: ../plugins/keybindings/msd-keybindings-manager.c:139
 #, c-format
 #| msgid "Key Binding (%s) is invalid\n"
 msgid "Key binding (%s) is invalid"
 msgstr "Snøggtast «%s» er ikkje gyldig"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:197
+#: ../plugins/keybindings/msd-keybindings-manager.c:197
 #, c-format
 #| msgid "Key Binding (%s) is incomplete\n"
 msgid "Key binding (%s) is incomplete"
 msgstr "Snøggtast «%s» er ufullstendig"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:493
+#: ../plugins/keybindings/msd-keybindings-manager.c:493
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -1099,7 +1099,7 @@ msgstr "Tastatur"
 msgid "Keyboard plugin"
 msgstr "Tillegg for tastatur"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:112
+#: ../plugins/keyboard/msd-keyboard-xkb.c:112
 #, c-format
 msgid ""
 "Error activating XKB configuration.\n"
@@ -1130,7 +1130,7 @@ msgstr ""
 "- Resultatet av <b>%s</b>\n"
 "- Resultatet av <b>%s</b>"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:126
+#: ../plugins/keyboard/msd-keyboard-xkb.c:126
 msgid ""
 "You are using XFree 4.3.0.\n"
 "There are known problems with complex XKB configurations.\n"
@@ -1141,27 +1141,27 @@ msgstr ""
 "Det er kjende problem med innfløkte XKB-oppsett.\n"
 "Prøv å bruka eit enklare oppsett eller ein nyare versjon av XFree."
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:197
+#: ../plugins/keyboard/msd-keyboard-xkb.c:197
 msgid "Unknown"
 msgstr "Ukjend"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:266
+#: ../plugins/keyboard/msd-keyboard-xkb.c:266
 #, c-format
 #| msgid "Keyboard Layout Options"
 msgid "Keyboard Layout \"%s\""
 msgstr "Tastaturutforming «%s»"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:389
+#: ../plugins/keyboard/msd-keyboard-xkb.c:389
 #| msgid "Groups"
 msgid "_Groups"
 msgstr "_Grupper"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:396
+#: ../plugins/keyboard/msd-keyboard-xkb.c:396
 #| msgid "Keyboard Preferences"
 msgid "Keyboard _Preferences"
 msgstr "_Brukarval for tastatur"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:402
+#: ../plugins/keyboard/msd-keyboard-xkb.c:402
 msgid "Show Current _Layout"
 msgstr "Vis noverande _utforming"
 
@@ -1195,7 +1195,7 @@ msgid "Keyboard Layout"
 msgstr "Tastaturutforming"
 
 #
-#: ../plugins/media-keys/gsd-media-keys-manager.c:200
+#: ../plugins/media-keys/msd-media-keys-manager.c:200
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is "
 "set and points to a valid application."
@@ -1203,7 +1203,7 @@ msgstr ""
 "Klarte ikkje finna forvald terminal. Sjekk at kommando for forvald terminal "
 "er sett og peikar til eit gyldig program."
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:240
+#: ../plugins/media-keys/msd-media-keys-manager.c:240
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1253,18 +1253,18 @@ msgid "Media keys plugin"
 msgstr "Tillegg for medietastar"
 
 #
-#: ../plugins/mouse/gsd-mouse-manager.c:882
+#: ../plugins/mouse/msd-mouse-manager.c:882
 msgid "Could not enable mouse accessibility features"
 msgstr "Klarte ikkje aktivera tilgjengefunksjonar for mus"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:884
+#: ../plugins/mouse/msd-mouse-manager.c:884
 #| msgid ""
 #| "Mouse accessibility requires the mousetweaks daemon to be installed on "
 #| "your system."
 msgid "Mouse accessibility requires mousetweaks to be installed on your system."
 msgstr "Tilgjenge for mus krev at mousetweaks er installert på systemet."
 
-#: ../plugins/mouse/gsd-mouse-manager.c:887
+#: ../plugins/mouse/msd-mouse-manager.c:887
 msgid "Mouse Preferences"
 msgstr "Eigenskapar for mus"
 
@@ -1296,19 +1296,19 @@ msgstr "Rediger innstillingar for skjermstørrelse og rotasjon"
 msgid "XRandR"
 msgstr "XRandR"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:222
+#: ../plugins/xrandr/msd-xrandr-manager.c:222
 msgid "Could not switch the monitor configuration"
 msgstr "Klarte ikkje byta innstillingane til skjermen"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:246
+#: ../plugins/xrandr/msd-xrandr-manager.c:246
 msgid "Could not restore the display's configuration"
 msgstr "Klarte ikkje gjenoppretta innstillingane til skjermen"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:271
+#: ../plugins/xrandr/msd-xrandr-manager.c:271
 msgid "Could not restore the display's configuration from a backup"
 msgstr "Klarte ikkje gjenoppretta skjerminnstillingane frå ein reservekopi"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:292
+#: ../plugins/xrandr/msd-xrandr-manager.c:292
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
@@ -1316,75 +1316,75 @@ msgid_plural ""
 msgstr[0] "Skjermen vil gjenoppretta tidlegare innstillingar om %d sekund"
 msgstr[1] "Skjermen vil gjenoppretta tidlegare innstillingar om %d sekund"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:341
+#: ../plugins/xrandr/msd-xrandr-manager.c:341
 msgid "Does the display look OK?"
 msgstr "Ser skjermen grei ut?"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:347
+#: ../plugins/xrandr/msd-xrandr-manager.c:347
 #| msgid "Proxy Configuration"
 msgid "_Restore Previous Configuration"
 msgstr "_Gjenopprett tidlegare innstiingar"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:348
+#: ../plugins/xrandr/msd-xrandr-manager.c:348
 #| msgid "Advanced Configuration"
 msgid "_Keep This Configuration"
 msgstr "_Held fast ved desse innstillingane"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:429
+#: ../plugins/xrandr/msd-xrandr-manager.c:429
 msgid "The selected configuration for displays could not be applied"
 msgstr "Dei valde skjerminnstillingane kunne ikkje brukast"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:967
+#: ../plugins/xrandr/msd-xrandr-manager.c:967
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "Klarte ikkje oppfriska skjerminformasjonen: %s"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:970
+#: ../plugins/xrandr/msd-xrandr-manager.c:970
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Prøver å byta skjerminnstillingar likevel."
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1679
+#: ../plugins/xrandr/msd-xrandr-manager.c:1679
 msgid "<i>Rotation not supported</i>"
 msgstr "<i>Rotering er ikkje støtta</i>"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1733
+#: ../plugins/xrandr/msd-xrandr-manager.c:1733
 #| msgid "Error saving configuration: %s"
 msgid "Could not save monitor configuration"
 msgstr "Klarte ikkje lagra av skjerminnstillingar"
 
 #
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1751
+#: ../plugins/xrandr/msd-xrandr-manager.c:1751
 msgid "Normal"
 msgstr "Normal"
 
 #
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1752
+#: ../plugins/xrandr/msd-xrandr-manager.c:1752
 msgid "Left"
 msgstr "Venstre"
 
 #
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1753
+#: ../plugins/xrandr/msd-xrandr-manager.c:1753
 msgid "Right"
 msgstr "Høgre:"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1754
+#: ../plugins/xrandr/msd-xrandr-manager.c:1754
 msgid "Upside Down"
 msgstr "Opp-ned"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1874
+#: ../plugins/xrandr/msd-xrandr-manager.c:1874
 msgid "_Configure Display Settings ..."
 msgstr "_Still inn skjermen …"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1915
+#: ../plugins/xrandr/msd-xrandr-manager.c:1915
 msgid "Configure display settings"
 msgstr "Still inn skjermen"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1972
+#: ../plugins/xrandr/msd-xrandr-manager.c:1972
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Klarte ikkje å bruka dei lagra innstillingane for skjermar"
 
-#: ../plugins/xrdb/gsd-xrdb-manager.c:255
-#: ../plugins/xrdb/gsd-xrdb-manager.c:324
+#: ../plugins/xrdb/msd-xrdb-manager.c:255
+#: ../plugins/xrdb/msd-xrdb-manager.c:324
 msgid "Cannot determine user's home directory"
 msgstr "Klarte ikkje avgjera heimekatalogen til brukaren"
 
@@ -1398,7 +1398,7 @@ msgstr "Handter X-ressursdatabasen"
 msgid "X Resource Database"
 msgstr "X-ressursdatabase"
 
-#: ../plugins/xsettings/gsd-xsettings-manager.c:644
+#: ../plugins/xsettings/msd-xsettings-manager.c:644
 #, c-format
 msgid "MateConf key %s set to type %s but its expected type was %s\n"
 msgstr "MateConf-nøkkelen «%s» er sett til type «%s», men den venta typen er «%s»\n"
@@ -1574,7 +1574,7 @@ msgstr "Innstillingar for X"
 #~ msgstr "Bilete/merkelapp-bord"
 
 #~ msgid "Width of border around the label and image in the alert dialog"
-#~ msgstr "Breidde på borden rundt merkelappen og biletet i varslingsdialogen"
+#~ msgstr "Breidde på borden rundt merkelappen og biletet i varslinmsdialogen"
 
 #~ msgid "Alert Type"
 #~ msgstr "Type varsel"

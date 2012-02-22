@@ -2,10 +2,10 @@ plugin_LTLIBRARIES = \
 	libsound.la
 
 libsound_la_SOURCES = \
-	gsd-sound-plugin.h \
-	gsd-sound-plugin.c \
-	gsd-sound-manager.h \
-	gsd-sound-manager.c
+	msd-sound-plugin.h \
+	msd-sound-plugin.c \
+	msd-sound-manager.h \
+	msd-sound-manager.c
 
 libsound_la_CPPFLAGS = \
 	-I$(top_srcdir)/mate-settings-daemon \
@@ -19,7 +19,7 @@ libsound_la_CFLAGS = \
 	$(AM_CFLAGS)
 
 libsound_la_LDFLAGS = \
-	$(GSD_PLUGIN_LDFLAGS)
+	$(MSD_PLUGIN_LDFLAGS)
 
 libsound_la_LIBADD = \
 	$(SETTINGS_PLUGIN_LIBS)	\
@@ -39,4 +39,4 @@ CLEANFILES = \
 DISTCLEANFILES = \
 	$(plugin_DATA)
 
-@GSD_INTLTOOL_PLUGIN_RULE@
+@MSD_INTLTOOL_PLUGIN_RULE@

@@ -404,20 +404,20 @@ msgstr "Dastupnaja klavijatura"
 msgid "Accessibility keyboard plugin"
 msgstr "Plugin dastupnaj klavijatury"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:393
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:393
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Padčas pakazu dapamohi adbyłasia pamyłka: %s"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:445
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:445
 msgid "Do you want to activate Slow Keys?"
 msgstr "Ci chočaš uklučyć pavolnyja klavišy?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:446
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:446
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Ci chočaš vyklučyć pavolnyja klavišy?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:449
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:449
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -425,39 +425,39 @@ msgstr ""
 "Ty pratrymaŭ klavišu Shift 8 sekundaŭ. Heta klavijaturny skarot dla funkcyi "
 "pavolnych klavišaŭ, jakaja ŭpłyvaje na režym pracy klavijatury."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:456
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:508
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:456
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:508
 msgid "Do_n't activate"
 msgstr "_Nie ŭklučaj"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:456
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:508
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:456
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:508
 msgid "Do_n't deactivate"
 msgstr "_Nie vyklučaj"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:459
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:511
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:459
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:511
 msgid "_Activate"
 msgstr "_Uklučy"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:459
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:511
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:459
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:511
 msgid "_Deactivate"
 msgstr "_Vyklučy"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:463
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:463
 msgid "Slow Keys Alert"
 msgstr "Aściaroha pavolnych klavišaŭ"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:495
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:495
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Ci chočaš uklučyć funkcyju tryvałych klavišaŭ?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:496
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:496
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Ci chočaš vyklučyć funkcyju tryvałych klavišaŭ?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:499
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:499
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -465,7 +465,7 @@ msgstr ""
 "Ty nacisnuŭ klavišu Shift 5 razoŭ zapar. Heta klavijaturny skarot funkcyi "
 "tryvałych klavišaŭ, jakaja ŭpłyvaje na režym pracy klavijatury."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:501
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:501
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -475,7 +475,7 @@ msgstr ""
 "klavijaturny skarot funkcyi tryvałych klavišaŭ, jakaja ŭpłyvaje na režym "
 "pracy klavijatury."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:515
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:515
 msgid "Sticky Keys Alert"
 msgstr "Aściaroha tryvałych klavišaŭ"
 
@@ -511,7 +511,7 @@ msgstr "Šryft"
 msgid "Font plugin"
 msgstr "Plugin šryftoŭ"
 
-#: ../plugins/font/gsd-font-manager.c:208
+#: ../plugins/font/msd-font-manager.c:208
 #, c-format
 msgid ""
 "Cannot create the directory \"%s\".\n"
@@ -520,7 +520,7 @@ msgstr ""
 "Niemahčyma stvaryć kataloh \"%s\".\n"
 "Jon patrebny dziela źmieny matyvu kursora."
 
-#: ../plugins/font/gsd-font-manager.c:231
+#: ../plugins/font/msd-font-manager.c:231
 #, c-format
 msgid ""
 "Cannot create the directory \"%s\".\n"
@@ -529,38 +529,38 @@ msgstr ""
 "Niemahčyma stvaryć kataloh \"%s\".\n"
 "Jon patrebny, kab mahčy źmianiać kursory."
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:195
+#: ../plugins/keybindings/msd-keybindings-manager.c:195
 #, c-format
 msgid "Key Binding (%s) has its action defined multiple times\n"
 msgstr ""
 "Dziejańnie dla klavijaturnaha skarotu (%s) akreślenaje niekalki razoŭ\n"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:202
+#: ../plugins/keybindings/msd-keybindings-manager.c:202
 #, c-format
 msgid "Key Binding (%s) has its binding defined multiple times\n"
 msgstr "Poviaź dla klavijaturnaha skarotu (%s) akreślenaje niekalki razoŭ\n"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:211
+#: ../plugins/keybindings/msd-keybindings-manager.c:211
 #, c-format
 msgid "Key Binding (%s) is incomplete\n"
 msgstr "Klavijaturny skarot (%s) niapoŭny\n"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:239
+#: ../plugins/keybindings/msd-keybindings-manager.c:239
 #, c-format
 msgid "Key Binding (%s) is invalid\n"
 msgstr "Klavijaturny skarot (%s) niapravilny\n"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:292
+#: ../plugins/keybindings/msd-keybindings-manager.c:292
 #, c-format
 msgid "It seems that another application already has access to key '%u'."
 msgstr "Vierahodna, inšaja aplikacyja maje dostup da klavišy \"%u\"."
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:365
+#: ../plugins/keybindings/msd-keybindings-manager.c:365
 #, c-format
 msgid "Key Binding (%s) is already in use\n"
 msgstr "Klavijaturny skarot (%s) užo ŭžyvajecca\n"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:502
+#: ../plugins/keybindings/msd-keybindings-manager.c:502
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -613,7 +613,7 @@ msgstr "Zahr_užanyja fajły:"
 msgid "Volume"
 msgstr "Hučnaść"
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:200
+#: ../plugins/media-keys/msd-media-keys-manager.c:200
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is "
 "set and points to a valid application."
@@ -621,7 +621,7 @@ msgstr ""
 "Niemahčyma atrymać zmoŭčany terminał. Pravier, ci akreśleny zahad dla tvajho "
 "zmoŭčanaha terminału i ci jon źviartajecca da pravilnaj aplikacyi."
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:240
+#: ../plugins/media-keys/msd-media-keys-manager.c:240
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -630,7 +630,7 @@ msgstr ""
 "Niemahčyma vykanać zahad: %s\n"
 "Pravier, ci heta pravilny zahad."
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:256
+#: ../plugins/media-keys/msd-media-keys-manager.c:256
 msgid ""
 "Couldn't put the machine to sleep.\n"
 "Verify that the machine is correctly configured."
@@ -646,17 +646,17 @@ msgstr "Medyja-klavišy"
 msgid "Media keys plugin"
 msgstr "Plugin medyja-klavišaŭ"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:566
+#: ../plugins/mouse/msd-mouse-manager.c:566
 msgid "Could not enable mouse accessibility features"
 msgstr "Niemahčyma ŭklučyć dastupnaść myšy"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:568
+#: ../plugins/mouse/msd-mouse-manager.c:568
 msgid ""
 "Mouse accessibility requires the mousetweaks daemon to be installed on your "
 "system."
 msgstr "Dastupnaja myš vymahaje zainstalavanaha ŭ systemie demana mousetweaks."
 
-#: ../plugins/mouse/gsd-mouse-manager.c:571
+#: ../plugins/mouse/msd-mouse-manager.c:571
 msgid "Mouse Preferences"
 msgstr "Nałady myšy"
 
@@ -668,7 +668,7 @@ msgstr "Myš"
 msgid "Mouse plugin"
 msgstr "Plugin myšy"
 
-#: ../plugins/screensaver/gsd-screensaver-manager.c:151
+#: ../plugins/screensaver/msd-screensaver-manager.c:151
 #, c-format
 msgid ""
 "There was an error starting up the screensaver:\n"
@@ -683,7 +683,7 @@ msgstr ""
 "\n"
 "Padčas hetaj sesii funkcyi źbierahalnika ekranu buduć niedastupnyja."
 
-#: ../plugins/screensaver/gsd-screensaver-manager.c:160
+#: ../plugins/screensaver/msd-screensaver-manager.c:160
 msgid "_Do not show this message again"
 msgstr "_Nie pakazvaj bolej hetaha paviedamleńnia"
 
@@ -695,7 +695,7 @@ msgstr "Źbierahalnik ekranu"
 msgid "Screensaver plugin"
 msgstr "Plugin źbierahalnika ekranu"
 
-#: ../plugins/sound/gsd-sound-manager.c:164
+#: ../plugins/sound/msd-sound-manager.c:164
 #, c-format
 msgid "Couldn't load sound file %s as sample %s"
 msgstr "Niemahčyma zahruzić hukavy fajł %s u jakaści sempła %s"
@@ -785,8 +785,8 @@ msgstr "Akreśl pamiery ekranu i nałady pavarotu"
 msgid "XRandR"
 msgstr "XRandR"
 
-#: ../plugins/xrdb/gsd-xrdb-manager.c:258
-#: ../plugins/xrdb/gsd-xrdb-manager.c:327
+#: ../plugins/xrdb/msd-xrdb-manager.c:258
+#: ../plugins/xrdb/msd-xrdb-manager.c:327
 msgid "Cannot determine user's home directory"
 msgstr "Niemahčyma vyznačyć chatni kataloh karystalnika"
 
@@ -798,7 +798,7 @@ msgstr "Kiruj bazaju źviestak resursaŭ X"
 msgid "X Resource Database"
 msgstr "Baza źviestak resursaŭ X"
 
-#: ../plugins/xsettings/gsd-xsettings-manager.c:551
+#: ../plugins/xsettings/msd-xsettings-manager.c:551
 #, c-format
 msgid "MateConf key %s set to type %s but its expected type was %s\n"
 msgstr "Kluč MateConfa %s byŭ vyznačany jak typ %s, ale jaho čakany typ byŭ %s\n"

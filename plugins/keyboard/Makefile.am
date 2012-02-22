@@ -17,14 +17,14 @@ uidir   = $(pkgdatadir)
 ui_DATA = modmap-dialog.ui
 
 libkeyboard_la_SOURCES = 	\
-	gsd-keyboard-plugin.h	\
-	gsd-keyboard-plugin.c	\
-	gsd-keyboard-manager.h	\
-	gsd-keyboard-manager.c	\
-	gsd-keyboard-xkb.h	\
-	gsd-keyboard-xkb.c	\
-	gsd-xmodmap.h		\
-	gsd-xmodmap.c		\
+	msd-keyboard-plugin.h	\
+	msd-keyboard-plugin.c	\
+	msd-keyboard-manager.h	\
+	msd-keyboard-manager.c	\
+	msd-keyboard-xkb.h	\
+	msd-keyboard-xkb.c	\
+	msd-xmodmap.h		\
+	msd-xmodmap.c		\
 	delayed-dialog.h	\
 	delayed-dialog.c	\
 	$(NULL)
@@ -41,7 +41,7 @@ libkeyboard_la_CFLAGS = \
 	$(AM_CFLAGS)
 
 libkeyboard_la_LDFLAGS = 	\
-	$(GSD_PLUGIN_LDFLAGS)	\
+	$(MSD_PLUGIN_LDFLAGS)	\
 	$(NULL)
 
 libkeyboard_la_LIBADD  = 	\
@@ -70,4 +70,4 @@ DISTCLEANFILES =		\
 	$(plugin_DATA)		\
 	$(NULL)
 
-@GSD_INTLTOOL_PLUGIN_RULE@
+@MSD_INTLTOOL_PLUGIN_RULE@

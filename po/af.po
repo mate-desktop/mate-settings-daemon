@@ -419,23 +419,23 @@ msgstr "Toeganklikheidsleutelbord"
 msgid "Accessibility keyboard plugin"
 msgstr "Inprop vir toeganklikheidsleutelbord"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:400
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:400
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Daar was 'n fout met die vertoning van hulp: %s"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:526
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:596
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:526
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:596
 msgid "Do you want to activate Slow Keys?"
 msgstr "Wil jy die Stadige-sleutels aktiveer?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:527
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:597
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:527
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Wil jy die Stadige-sleutels deaktiveer?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:528
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:598
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:528
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:598
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -444,62 +444,62 @@ msgstr ""
 "die Stadige-sleuteleienskap wat die manier waarop jou sleutelbord werk, "
 "affekteer."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:554
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:554
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
 msgid "Don't activate"
 msgstr "Moenie aktiveer nie"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:554
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:554
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
 msgid "Don't deactivate"
 msgstr "Moenie deaktiveer nie"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:560
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:703
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:560
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:703
 msgid "Activate"
 msgstr "Aktiveer"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:560
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:703
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:560
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:703
 msgid "Deactivate"
 msgstr "Deaktiveer"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:619
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:764
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:619
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do_n't activate"
 msgstr "Moe_nie aktiveer nie"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:619
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:764
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:619
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do_n't deactivate"
 msgstr "Moe_nie deaktiveer nie"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:622
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:767
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:622
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:767
 msgid "_Activate"
 msgstr "_Aktiveer"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:622
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:767
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:622
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:767
 msgid "_Deactivate"
 msgstr "_Deaktiveer"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:626
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:626
 msgid "Slow Keys Alert"
 msgstr "Stadige-sleutels waarskuwing"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Wil jy Taai-sleutels aktiveer?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:667
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:739
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:667
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:739
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Wil jy Taai-sleutels deaktiveer?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:669
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:741
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:669
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:741
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -508,8 +508,8 @@ msgstr ""
 "die Taai-sleutels eienskap wat die manier waarop jou sleutelbord werk, "
 "affekteer."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:671
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:743
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:671
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:743
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -519,44 +519,44 @@ msgstr ""
 "namekaar gedruk.  Dit skakel die Taai-sleutels eienskap af wat die manier "
 "waarop jou sleutelbord werk, affekteer."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:771
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:771
 msgid "Sticky Keys Alert"
 msgstr "Taaisleutels-waarskuwing"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.c:899
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.glade.h:4
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:899
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.glade.h:4
 msgid "Universal Access Preferences"
 msgstr "Voorkeure vir universele toegang"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.glade.h:1
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.glade.h:1
 msgid "Enhance _contrast in colors"
 msgstr "Verbeter _kleurkontras"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.glade.h:2
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.glade.h:2
 msgid "Make _text larger and easier to read"
 msgstr "Maak _teks groter en makliker om te lees"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.glade.h:3
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.glade.h:3
 msgid "Press and _hold keys to accept them (Slow Keys)"
 msgstr "Druk en _hou sleutels om hulle te aanvaar (Stadige-sleutels)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.glade.h:5
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.glade.h:5
 msgid "Use on-screen _keyboard"
 msgstr "Gebruik sleutelbord op die s_kerm"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.glade.h:6
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.glade.h:6
 msgid "Use screen _magnifier"
 msgstr "Gebruik skerm_vergrootglas"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.glade.h:7
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.glade.h:7
 msgid "Use screen _reader"
 msgstr "Gebruik _skermleser"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.glade.h:8
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.glade.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
 msgstr "_Ignoreer duplikaat sleuteldrukke (bonssleutels)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.glade.h:9
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.glade.h:9
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
 msgstr "_Druk sleutelbordkortpaaie een sleutel op 'n slag (Taai-sleutels)"
 
@@ -592,7 +592,7 @@ msgstr "Lettertipe"
 msgid "Font plugin"
 msgstr "Inprop vir lettertipes"
 
-#: ../plugins/font/gsd-font-manager.c:207
+#: ../plugins/font/msd-font-manager.c:207
 #, c-format
 msgid ""
 "Cannot create the directory \"%s\".\n"
@@ -601,7 +601,7 @@ msgstr ""
 "Kan nie die gids \"%s\" skep nie.\n"
 "Dit word benodig vir die verandering van die muiswysertema."
 
-#: ../plugins/font/gsd-font-manager.c:230
+#: ../plugins/font/msd-font-manager.c:230
 #, c-format
 msgid ""
 "Cannot create the directory \"%s\".\n"
@@ -610,17 +610,17 @@ msgstr ""
 "Kan nie die gids \"%s\" skep nie.\n"
 "Dit word benodig vir die verandering van wysers."
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:190
+#: ../plugins/keybindings/msd-keybindings-manager.c:190
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "Sleutelbinding (%s) is onvolledig"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:222
+#: ../plugins/keybindings/msd-keybindings-manager.c:222
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "Sleutelbinding (%s) is ongeldig"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:409
+#: ../plugins/keybindings/msd-keybindings-manager.c:409
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -669,13 +669,13 @@ msgstr "_Laai"
 msgid "_Loaded files:"
 msgstr "Ge_laaide lêers:"
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:183
+#: ../plugins/media-keys/msd-media-keys-manager.c:183
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is "
 "set and points to a valid application."
 msgstr ""
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:223
+#: ../plugins/media-keys/msd-media-keys-manager.c:223
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -684,7 +684,7 @@ msgstr ""
 "Kon nie opdrag uitvoer nie: %s\n"
 "Verifieer dat hierdie 'n geldige opdrag is."
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:239
+#: ../plugins/media-keys/msd-media-keys-manager.c:239
 msgid ""
 "Couldn't put the machine to sleep.\n"
 "Verify that the machine is correctly configured."
@@ -700,18 +700,18 @@ msgstr "Mediasleutels"
 msgid "Media keys plugin"
 msgstr "Inprop vir mediasleutels"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:571
+#: ../plugins/mouse/msd-mouse-manager.c:571
 msgid "Could not enable mouse accessibility features"
 msgstr "Kon nie muis-toeganklikheidskenmerke aktiveer nie"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:573
+#: ../plugins/mouse/msd-mouse-manager.c:573
 msgid ""
 "Mouse accessibility requires mousetweaks to be installed on your system."
 msgstr ""
 "Muis-toeganklikheidskenmerke benodig dat mousetweaks op u stelsel "
 "geïnstalleer is."
 
-#: ../plugins/mouse/gsd-mouse-manager.c:576
+#: ../plugins/mouse/msd-mouse-manager.c:576
 msgid "Mouse Preferences"
 msgstr "Muisvoorkeure"
 
@@ -723,7 +723,7 @@ msgstr "Muis"
 msgid "Mouse plugin"
 msgstr "Inprop vir die muis"
 
-#: ../plugins/screensaver/gsd-screensaver-manager.c:153
+#: ../plugins/screensaver/msd-screensaver-manager.c:153
 #, c-format
 msgid ""
 "There was an error starting up the screensaver:\n"
@@ -738,7 +738,7 @@ msgstr ""
 "\n"
 "Skermskut funksionaliteit sal nie in hierdie sessie werk nie."
 
-#: ../plugins/screensaver/gsd-screensaver-manager.c:162
+#: ../plugins/screensaver/msd-screensaver-manager.c:162
 msgid "_Do not show this message again"
 msgstr "_Moenie weer hierdie boodskap wys nie"
 
@@ -750,7 +750,7 @@ msgstr ""
 msgid "Screensaver plugin"
 msgstr ""
 
-#: ../plugins/sound/gsd-sound-manager.c:273
+#: ../plugins/sound/msd-sound-manager.c:273
 #, c-format
 msgid "Couldn't load sound file %s as sample %s"
 msgstr "Kon nie klanklêer %s laai as voorbeeld %s nie"
@@ -841,45 +841,45 @@ msgstr "Instellings vir skermgrootte en -rotasie"
 msgid "XRandR"
 msgstr "XRandR"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:419
+#: ../plugins/xrandr/msd-xrandr-manager.c:419
 msgid "<i>Rotation not supported</i>"
 msgstr "<i>Rotasie nie geondersteun nie</i>"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:456
-#: ../plugins/xrandr/gsd-xrandr-manager.c:464
+#: ../plugins/xrandr/msd-xrandr-manager.c:456
+#: ../plugins/xrandr/msd-xrandr-manager.c:464
 msgid "The selected rotation could not be applied"
 msgstr "Die gekose rotasie kon nie toegepas word nie"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:457
+#: ../plugins/xrandr/msd-xrandr-manager.c:457
 msgid "An error occurred while configuring the screen"
 msgstr "'n Fout het voorgekom met die opstelling van die skerm"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:478
+#: ../plugins/xrandr/msd-xrandr-manager.c:478
 msgid "Normal"
 msgstr "Normaal"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:479
+#: ../plugins/xrandr/msd-xrandr-manager.c:479
 msgid "Left"
 msgstr "Links"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:480
+#: ../plugins/xrandr/msd-xrandr-manager.c:480
 msgid "Right"
 msgstr "Regs"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:481
+#: ../plugins/xrandr/msd-xrandr-manager.c:481
 msgid "Upside Down"
 msgstr "Onderstebo"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:600
+#: ../plugins/xrandr/msd-xrandr-manager.c:600
 msgid "_Configure Display Settings ..."
 msgstr "_Opstelling van visuele vertoon ..."
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:641
+#: ../plugins/xrandr/msd-xrandr-manager.c:641
 msgid "Configure display settings"
 msgstr "Opstelling van visuele vertoon"
 
-#: ../plugins/xrdb/gsd-xrdb-manager.c:255
-#: ../plugins/xrdb/gsd-xrdb-manager.c:324
+#: ../plugins/xrdb/msd-xrdb-manager.c:255
+#: ../plugins/xrdb/msd-xrdb-manager.c:324
 msgid "Cannot determine user's home directory"
 msgstr "Kan nie gebruiker se tuisgids vasstel nie"
 
@@ -891,7 +891,7 @@ msgstr "Bestuur die X-hulpbrondatabasis"
 msgid "X Resource Database"
 msgstr "X-hulpbrondatabasis"
 
-#: ../plugins/xsettings/gsd-xsettings-manager.c:609
+#: ../plugins/xsettings/msd-xsettings-manager.c:609
 #, c-format
 msgid "MateConf key %s set to type %s but its expected type was %s\n"
 msgstr "MateConf-sleutel %s is ingestel na tipe %s maar sy verwagte tipe was %s\n"

@@ -547,128 +547,128 @@ msgstr "Accesibilidá del tecláu"
 msgid "Accessibility keyboard plugin"
 msgstr "Complementu d'accesibilidá del tecláu"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:388
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:388
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Hebo un fallu al amosar l'aida: %s"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:519
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:585
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:519
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:585
 msgid "Do you want to activate Slow Keys?"
 msgstr "¿Quies activar les «Tecles lentes»?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:520
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:586
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:520
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:586
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "¿Quies desactivar les «Tecles lentes»?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:521
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:587
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:521
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:587
 msgid "You just held down the Shift key for 8 seconds.  This is the shortcut for the Slow Keys feature, which affects the way your keyboard works."
 msgstr "Acabes de calcar na tecla «Mayúscules» durante 8 segundos. Ésta ye la combinación de tecles pa la carauterística «Tecles lentes», qu'afeuta al mou nel que furrula'l tecláu."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:546
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:685
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:546
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:685
 msgid "Don't activate"
 msgstr "Nun activar"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:546
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:685
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:546
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:685
 msgid "Don't deactivate"
 msgstr "Nun desactivar"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:552
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:691
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:552
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:691
 msgid "Activate"
 msgstr "Activar"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:552
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:691
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:552
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:691
 msgid "Deactivate"
 msgstr "Desactivar"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:608
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:749
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:608
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Do_n't activate"
 msgstr "Nu_n activar"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:608
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:749
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:608
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Do_n't deactivate"
 msgstr "Nu_n desactivar"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:611
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:752
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:611
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:752
 msgid "_Activate"
 msgstr "_Activar"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:611
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:752
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:611
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:752
 msgid "_Deactivate"
 msgstr "_Desactivar"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:615
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:615
 msgid "Slow Keys Alert"
 msgstr "Alerta de tecles lentes"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:655
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:723
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:655
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:723
 msgid "Do you want to activate Sticky Keys?"
 msgstr "¿Quies activar les «Tecles persistentes»?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:656
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:724
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:724
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "¿Quies desactivar les «Tecles persistentes»?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:658
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:726
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:658
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:726
 msgid "You just pressed the Shift key 5 times in a row.  This is the shortcut for the Sticky Keys feature, which affects the way your keyboard works."
 msgstr "Acabes de calcar na tecla «Mayúscules» 5 vegaes. Esti ye l'accesu rápidu pa la carauterística «Tecles persistentes», qu'afeuta al mou nel que furrula el tecláu."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:660
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:728
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:660
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:728
 msgid "You just pressed two keys at once, or pressed the Shift key 5 times in a row.  This turns off the Sticky Keys feature, which affects the way your keyboard works."
 msgstr "Acabes de calcar dos tecles al empar, o tienes calcao na tecla «Mayúscules» 5 vegaes siguíes. Esto desautiva la carauterística de «Tecles persistentes», lo qu'afeuta al mou nel que furrula'l tecláu."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:756
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:756
 msgid "Sticky Keys Alert"
 msgstr "Alerta de tecles persistentes"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.c:920
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:4
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:920
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:4
 msgid "Universal Access Preferences"
 msgstr "Preferencies d'accesu universal"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:1
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Enhance _contrast in colors"
 msgstr "Aumentar _contraste de colores"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:2
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
 msgid "Make _text larger and easier to read"
 msgstr "Facer el _testu mayor y más fácil de lleer"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:3
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:3
 msgid "Press and _hold keys to accept them (Slow Keys)"
 msgstr "Calcar y agua_ntar les tecles p'aceptales (tecles lentes)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:5
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:5
 msgid "Use on-screen _keyboard"
 msgstr "Usar tecláu de _pantalla"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:6
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:6
 msgid "Use screen _magnifier"
 msgstr "Usar a_mpliador de pantalla"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:7
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "Use screen _reader"
 msgstr "Usar llecto_r de pantalla"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:8
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
 msgstr "_Inorar el calcáu doble de tecles (rebote de tecles)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:9
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
 msgstr "Calcar una tecla cada vez pa los atayos (tecles _persistentes)"
 
@@ -704,103 +704,103 @@ msgstr "Fonte"
 msgid "Font plugin"
 msgstr "Complementu de fonte"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:64
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:64
 msgid "Don't show any warnings again for this filesystem"
 msgstr "Nun amosar dengún avisu otra vuelta pa esti sistema de ficheros"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:66
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:66
 msgid "Don't show any warnings again"
 msgstr "Nun amosar dengún avisu otra vuelta."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:79
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:79
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr "El volume «%s» namái tien %s d'espaciu en discu llibre."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:82
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:82
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr "Esti equipu sólo tien %s d'espaciu en discu llibre."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:98
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:98
 msgid "You can free up disk space by emptying the Trash, removing unused programs or files, or moving files to another disk or partition."
 msgstr "Puedes lliberar espaciu vaciando la puxarra, desaniciando programes o ficheros que nun uses o moviendo ficheros a otru discu o partición."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:101
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:101
 msgid "You can free up disk space by removing unused programs or files, or by moving files to another disk or partition."
 msgstr "Puedes lliberar espaciu desaniciando programes o ficheros que nun uses o moviendo ficheros a otru discu o partición."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:106
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:106
 msgid "You can free up disk space by emptying the Trash, removing unused programs or files, or moving files to an external disk."
 msgstr "Puedes lliberar espaciu vaciando la puxarra, desaniciando programes o ficheros que nun uses  a un discu esternu."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:109
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:109
 msgid "You can free up disk space by removing unused programs or files, or by moving files to an external disk."
 msgstr "Puedes lliberar espaciu vaciando la puxarra, desaniciando programes o ficheros que nun uses o moviendo ficheros a un discu esternu."
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:204
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:204
 msgid "Low Disk Space"
 msgstr "Espaciu de discu escasu"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:439
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:439
 msgid "Empty Trash"
 msgstr "Vaciar basoria"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:447
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:447
 msgid "Examine..."
 msgstr "Desaminar..."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:454
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:454
 msgid "Ignore"
 msgstr "Inorar"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:96
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:96
 #, c-format
 msgid "Removing item %lu of %lu"
 msgstr "Desaniciando elementu %lu de %lu"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:116
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:116
 #, c-format
 msgid "<i>Removing: %s</i>"
 msgstr "<i>Desaniciando: %s</i>"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:244
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:293
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:244
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:293
 msgid "Emptying the trash"
 msgstr "Vaciando la puxarra"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:269
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:269
 msgid "Preparing to empty trash..."
 msgstr "Tresnando pa vaciar la puxarra..."
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:295
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:295
 msgid "From: "
 msgstr "De: "
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:356
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:356
 msgid "Empty all of the items from the trash?"
 msgstr "¿Vaciar tolos oxetos de la basoria?"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:359
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:359
 msgid "If you choose to empty the trash, all items in it will be permanently lost. Please note that you can also delete them separately."
 msgstr "Si escueyes vaciar la papelera, tolos elementos que tienes desaniciaránse pa siempres. Nota que tamién puedes desanicialos d'unu n'unu."
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:366
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:366
 msgid "_Empty Trash"
 msgstr "Vaciar bas_oria"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:139
+#: ../plugins/keybindings/msd-keybindings-manager.c:139
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "L'asignación de tecles (%s) nun ye válida"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:197
+#: ../plugins/keybindings/msd-keybindings-manager.c:197
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "L'asignación de tecles (%s) ta incompleta"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:493
+#: ../plugins/keybindings/msd-keybindings-manager.c:493
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -853,11 +853,11 @@ msgstr "Fic_heros cargaos:"
 msgid "Keyboard Layout"
 msgstr "Distribución del Tecláu"
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:198
+#: ../plugins/media-keys/msd-media-keys-manager.c:198
 msgid "Could not get default terminal. Verify that your default terminal command is set and points to a valid application."
 msgstr "Nun pudo obtenese'l terminal predetermináu. Compreba que'l comandu predetermináu del terminal ta configuráu y dirixe a una aplicación válida."
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:238
+#: ../plugins/media-keys/msd-media-keys-manager.c:238
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -866,7 +866,7 @@ msgstr ""
 "Nun pudo executase'l comandu: %s\n"
 "Compreba que ye un comandu válidu."
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:254
+#: ../plugins/media-keys/msd-media-keys-manager.c:254
 msgid ""
 "Couldn't put the machine to sleep.\n"
 "Verify that the machine is correctly configured."
@@ -910,15 +910,15 @@ msgstr "Tecles multimedia"
 msgid "Media keys plugin"
 msgstr "Complementu de tecles multimedia"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:801
+#: ../plugins/mouse/msd-mouse-manager.c:801
 msgid "Could not enable mouse accessibility features"
 msgstr "Nun pudieron activase les carauterístiques d'accesibilidá del mur"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:803
+#: ../plugins/mouse/msd-mouse-manager.c:803
 msgid "Mouse accessibility requires mousetweaks to be installed on your system."
 msgstr "La accesibilidá del mur necesita tener instalao mousetweaks nel sistema."
 
-#: ../plugins/mouse/gsd-mouse-manager.c:806
+#: ../plugins/mouse/msd-mouse-manager.c:806
 msgid "Mouse Preferences"
 msgstr "Preferencies del Mur"
 
@@ -946,90 +946,90 @@ msgstr "Afitar los axustes de tamañu y rotación de la pantalla"
 msgid "XRandR"
 msgstr "XRandR"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:226
+#: ../plugins/xrandr/msd-xrandr-manager.c:226
 msgid "Could not restore the display's configuration"
 msgstr "Nun pudo restaurase la configuración de pantalla"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:251
+#: ../plugins/xrandr/msd-xrandr-manager.c:251
 msgid "Could not restore the display's configuration from a backup"
 msgstr "Nun pudo restaurase la configuración de pantalla dende una copia de seguridá"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:272
+#: ../plugins/xrandr/msd-xrandr-manager.c:272
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural "The display will be reset to its previous configuration in %d seconds"
 msgstr[0] "La pantalla reaniciaráse a la so configuración anterior en %d segundu"
 msgstr[1] "La pantalla reaniciaráse a la so configuración anterior en %d segundos"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:321
+#: ../plugins/xrandr/msd-xrandr-manager.c:321
 msgid "Does the display look OK?"
 msgstr "¿Vese bien la pantalla?"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:327
+#: ../plugins/xrandr/msd-xrandr-manager.c:327
 msgid "_Restore Previous Configuration"
 msgstr "_Restaurar la configuración anterior"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:328
+#: ../plugins/xrandr/msd-xrandr-manager.c:328
 msgid "_Keep This Configuration"
 msgstr "_Caltener esta configuración"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:409
+#: ../plugins/xrandr/msd-xrandr-manager.c:409
 msgid "The selected configuration for displays could not be applied"
 msgstr "La configuración seleicionada pa les pantalles nun pudo aplicase"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:963
+#: ../plugins/xrandr/msd-xrandr-manager.c:963
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "Nun pudo refrescase la información de la pantalla: %s"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:966
+#: ../plugins/xrandr/msd-xrandr-manager.c:966
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Tentando camudar la configuración del monitor de toles maneres."
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1000
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1114
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1281
+#: ../plugins/xrandr/msd-xrandr-manager.c:1000
+#: ../plugins/xrandr/msd-xrandr-manager.c:1114
+#: ../plugins/xrandr/msd-xrandr-manager.c:1281
 msgid "Could not switch the monitor configuration"
 msgstr "Nun pudo camudase la configuración del monitor"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1689
+#: ../plugins/xrandr/msd-xrandr-manager.c:1689
 msgid "<i>Rotation not supported</i>"
 msgstr "<i>Nun hai sofitu pa rotación</i>"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1743
+#: ../plugins/xrandr/msd-xrandr-manager.c:1743
 msgid "Could not save monitor configuration"
 msgstr "Nun pudo atroxase la configuración del monitor"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1761
+#: ../plugins/xrandr/msd-xrandr-manager.c:1761
 msgid "Normal"
 msgstr "Normal"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1762
+#: ../plugins/xrandr/msd-xrandr-manager.c:1762
 msgid "Left"
 msgstr "Esquierda"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1763
+#: ../plugins/xrandr/msd-xrandr-manager.c:1763
 msgid "Right"
 msgstr "Drecha"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1764
+#: ../plugins/xrandr/msd-xrandr-manager.c:1764
 msgid "Upside Down"
 msgstr "Abaxo"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1884
+#: ../plugins/xrandr/msd-xrandr-manager.c:1884
 msgid "_Configure Display Settings ..."
 msgstr "_Configurar los axustes de pantalla..."
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1925
+#: ../plugins/xrandr/msd-xrandr-manager.c:1925
 msgid "Configure display settings"
 msgstr "Configurar los axustes de pantalla"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1982
+#: ../plugins/xrandr/msd-xrandr-manager.c:1982
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Nun pudo aplicase la configuración atroxada pa los monitores"
 
-#: ../plugins/xrdb/gsd-xrdb-manager.c:255
-#: ../plugins/xrdb/gsd-xrdb-manager.c:324
+#: ../plugins/xrdb/msd-xrdb-manager.c:255
+#: ../plugins/xrdb/msd-xrdb-manager.c:324
 msgid "Cannot determine user's home directory"
 msgstr "Nun puede determinase'l direutoriu personal del usuariu"
 
@@ -1041,7 +1041,7 @@ msgstr "Xestionar la base de datos de recursos de les X"
 msgid "X Resource Database"
 msgstr "Base de datos de recursos de les X"
 
-#: ../plugins/xsettings/gsd-xsettings-manager.c:644
+#: ../plugins/xsettings/msd-xsettings-manager.c:644
 #, c-format
 msgid "MateConf key %s set to type %s but its expected type was %s\n"
 msgstr "La clave %s de mateconf definióse como tipu %s pero esperábase que'l so tipu fuere %s\n"

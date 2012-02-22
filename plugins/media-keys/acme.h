@@ -21,7 +21,7 @@
 #ifndef __ACME_H__
 #define __ACME_H__
 
-#include "gsd-keygrab.h"
+#include "msd-keygrab.h"
 
 #define MATECONF_BINDING_DIR "/apps/mate_settings_daemon/keybindings"
 #define MATECONF_MISC_DIR "/apps/mate_settings_daemon"

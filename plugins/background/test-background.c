@@ -28,19 +28,19 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
-#include "gsd-background-manager.h"
+#include "msd-background-manager.h"
 
 static gboolean
-idle (GsdBackgroundManager *manager)
+idle (MsdBackgroundManager *manager)
 {
-        gsd_background_manager_start (manager, NULL);
+        msd_background_manager_start (manager, NULL);
         return FALSE;
 }
 
 int
 main (int argc, char *argv[])
 {
-        GsdBackgroundManager *manager;
+        MsdBackgroundManager *manager;
 
         bindtextdomain (GETTEXT_PACKAGE, MATE_SETTINGS_LOCALEDIR);
         bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
@@ -50,7 +50,7 @@ main (int argc, char *argv[])
 
         gtk_init (&argc, &argv);
 
-        manager = gsd_background_manager_new ();
+        manager = msd_background_manager_new ();
         g_idle_add ((GSourceFunc)idle, manager);
 
         gtk_main ();
