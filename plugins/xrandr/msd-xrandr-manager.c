@@ -61,6 +61,7 @@
 
 #define CONF_DIR "/apps/mate_settings_daemon/xrandr"
 #define CONF_KEY_SHOW_NOTIFICATION_ICON (CONF_DIR "/show_notification_icon")
+#define CONF_KEY_USE_XORG_MONITOR_SETTINGS		(CONF_DIR "/use_xorg_monitor_settings")
 #define CONF_KEY_TURN_ON_EXTERNAL_MONITORS_AT_STARTUP	(CONF_DIR "/turn_on_external_monitors_at_startup")
 #define CONF_KEY_TURN_ON_LAPTOP_MONITOR_AT_STARTUP	(CONF_DIR "/turn_on_laptop_monitor_at_startup")
 #define CONF_KEY_DEFAULT_CONFIGURATION_FILE             (CONF_DIR "/default_configuration_file")
@@ -77,7 +78,7 @@
 #define MSD_XRANDR_ICON_NAME "msd-xrandr"
 
 /* executable of the control center's display configuration capplet */
-#define MSD_XRANDR_DISPLAY_CAPPLET "mate-control-center display"
+#define MSD_XRANDR_DISPLAY_CAPPLET "mate-display-properties"
 
 #define MSD_DBUS_PATH "/org/mate/SettingsDaemon"
 #define MSD_DBUS_NAME "org.mate.SettingsDaemon"
@@ -2168,10 +2169,11 @@ apply_intended_configuration (MsdXrandrManager *manager, const char *intended_fi
 	gboolean result;
 
         my_error = NULL;
-        result = apply_configuration_from_filename (manager, intended_filename, FALSE, timestamp, &my_error);
+        result = apply_configuration_from_filename (manager, intended_filename, TRUE, timestamp, &my_error);
         if (!result) {
                 if (my_error) {
-                        if (!g_error_matches (my_error, G_FILE_ERROR, G_FILE_ERROR_NOENT))
+                        if (!g_error_matches (my_error, G_FILE_ERROR, G_FILE_ERROR_NOENT) &&
+                            !g_error_matches (my_error, MATE_RR_ERROR, MATE_RR_ERROR_NO_MATCHING_CONFIG))
                                 error_message (manager, _("Could not apply the stored configuration for monitors"), my_error, NULL);
 
                         g_error_free (my_error);
@@ -2349,7 +2351,8 @@ msd_xrandr_manager_start (MsdXrandrManager *manager,
         show_timestamps_dialog (manager, "Startup");
         if (!apply_stored_configuration_at_startup (manager, GDK_CURRENT_TIME)) /* we don't have a real timestamp at startup anyway */
                 if (!apply_default_configuration_from_file (manager, GDK_CURRENT_TIME))
-                        apply_default_boot_configuration (manager, GDK_CURRENT_TIME);
+                        if (!mateconf_client_get_bool (manager->priv->client, CONF_KEY_USE_XORG_MONITOR_SETTINGS, NULL))
+                                apply_default_boot_configuration (manager, GDK_CURRENT_TIME);
 
         log_msg ("State of screen after initial configuration:\n");
         log_screen (manager->priv->rw_screen);
