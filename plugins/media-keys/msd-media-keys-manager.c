@@ -1050,7 +1050,13 @@ do_action (MsdMediaKeysManager *manager,
                 do_media_action (manager);
                 break;
         case CALCULATOR_KEY:
-                execute (manager, "gcalctool", FALSE, FALSE);
+                if ((cmd = g_find_program_in_path ("mate-calc"))) {
+                        execute (manager, "mate-calc", FALSE, FALSE);
+                } else {
+                        execute (manager, "gcalctool", FALSE, FALSE);
+                }
+
+                g_free (cmd);
                 break;
         case PLAY_KEY:
                 return do_multimedia_player_action (manager, "Play");
