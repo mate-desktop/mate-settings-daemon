@@ -27,32 +27,39 @@
 extern "C" {
 #endif
 
-#define MSD_TYPE_BACKGROUND_MANAGER         (msd_background_manager_get_type ())
-#define MSD_BACKGROUND_MANAGER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), MSD_TYPE_BACKGROUND_MANAGER, MsdBackgroundManager))
-#define MSD_BACKGROUND_MANAGER_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), MSD_TYPE_BACKGROUND_MANAGER, MsdBackgroundManagerClass))
-#define MSD_IS_BACKGROUND_MANAGER(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), MSD_TYPE_BACKGROUND_MANAGER))
-#define MSD_IS_BACKGROUND_MANAGER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), MSD_TYPE_BACKGROUND_MANAGER))
-#define MSD_BACKGROUND_MANAGER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), MSD_TYPE_BACKGROUND_MANAGER, MsdBackgroundManagerClass))
+//class MsdBackgroundManager
+//{
+	#define MSD_TYPE_BACKGROUND_MANAGER         (msd_background_manager_get_type())
+	#define MSD_BACKGROUND_MANAGER(o)           (G_TYPE_CHECK_INSTANCE_CAST((o), MSD_TYPE_BACKGROUND_MANAGER, MsdBackgroundManager))
+	#define MSD_BACKGROUND_MANAGER_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), MSD_TYPE_BACKGROUND_MANAGER, MsdBackgroundManagerClass))
+	#define MSD_IS_BACKGROUND_MANAGER(o)        (G_TYPE_CHECK_INSTANCE_TYPE((o), MSD_TYPE_BACKGROUND_MANAGER))
+	#define MSD_IS_BACKGROUND_MANAGER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE((k), MSD_TYPE_BACKGROUND_MANAGER))
+	#define MSD_BACKGROUND_MANAGER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS((o), MSD_TYPE_BACKGROUND_MANAGER, MsdBackgroundManagerClass))
 
-typedef struct MsdBackgroundManagerPrivate MsdBackgroundManagerPrivate;
+	typedef struct MsdBackgroundManagerPrivate MsdBackgroundManagerPrivate;
 
-typedef struct
-{
-        GObject                     parent;
-        MsdBackgroundManagerPrivate *priv;
-} MsdBackgroundManager;
+	typedef struct {
+		GObject                      parent;
+		MsdBackgroundManagerPrivate* priv;
+	} MsdBackgroundManager;
 
-typedef struct
-{
-        GObjectClass   parent_class;
-} MsdBackgroundManagerClass;
+	typedef struct {
+		GObjectClass   parent_class;
+	} MsdBackgroundManagerClass;
 
-GType                   msd_background_manager_get_type            (void);
+	GType
+	msd_background_manager_get_type (void);
 
-MsdBackgroundManager *  msd_background_manager_new                 (void);
-gboolean                msd_background_manager_start               (MsdBackgroundManager *manager,
-                                                                    GError              **error);
-void                    msd_background_manager_stop                (MsdBackgroundManager *manager);
+	MsdBackgroundManager*
+	msd_background_manager_new (void);
+
+	gboolean
+	msd_background_manager_start (MsdBackgroundManager* manager,
+	                              GError**              error);
+
+	void
+	msd_background_manager_stop (MsdBackgroundManager* manager);
+//}
 
 #ifdef __cplusplus
 }

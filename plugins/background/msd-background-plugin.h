@@ -31,30 +31,33 @@
 extern "C" {
 #endif
 
-#define MSD_TYPE_BACKGROUND_PLUGIN                (msd_background_plugin_get_type ())
-#define MSD_BACKGROUND_PLUGIN(o)                  (G_TYPE_CHECK_INSTANCE_CAST ((o), MSD_TYPE_BACKGROUND_PLUGIN, MsdBackgroundPlugin))
-#define MSD_BACKGROUND_PLUGIN_CLASS(k)            (G_TYPE_CHECK_CLASS_CAST((k), MSD_TYPE_BACKGROUND_PLUGIN, MsdBackgroundPluginClass))
-#define MSD_IS_BACKGROUND_PLUGIN(o)               (G_TYPE_CHECK_INSTANCE_TYPE ((o), MSD_TYPE_BACKGROUND_PLUGIN))
-#define MSD_IS_BACKGROUND_PLUGIN_CLASS(k)         (G_TYPE_CHECK_CLASS_TYPE ((k), MSD_TYPE_BACKGROUND_PLUGIN))
-#define MSD_BACKGROUND_PLUGIN_GET_CLASS(o)        (G_TYPE_INSTANCE_GET_CLASS ((o), MSD_TYPE_BACKGROUND_PLUGIN, MsdBackgroundPluginClass))
+//class MsdBackgroundPlugin
+//{
+	#define MSD_TYPE_BACKGROUND_PLUGIN                (msd_background_plugin_get_type())
+	#define MSD_BACKGROUND_PLUGIN(o)                  (G_TYPE_CHECK_INSTANCE_CAST((o), MSD_TYPE_BACKGROUND_PLUGIN, MsdBackgroundPlugin))
+	#define MSD_BACKGROUND_PLUGIN_CLASS(k)            (G_TYPE_CHECK_CLASS_CAST((k), MSD_TYPE_BACKGROUND_PLUGIN, MsdBackgroundPluginClass))
+	#define MSD_IS_BACKGROUND_PLUGIN(o)               (G_TYPE_CHECK_INSTANCE_TYPE((o), MSD_TYPE_BACKGROUND_PLUGIN))
+	#define MSD_IS_BACKGROUND_PLUGIN_CLASS(k)         (G_TYPE_CHECK_CLASS_TYPE((k), MSD_TYPE_BACKGROUND_PLUGIN))
+	#define MSD_BACKGROUND_PLUGIN_GET_CLASS(o)        (G_TYPE_INSTANCE_GET_CLASS((o), MSD_TYPE_BACKGROUND_PLUGIN, MsdBackgroundPluginClass))
 
-typedef struct MsdBackgroundPluginPrivate MsdBackgroundPluginPrivate;
+	typedef struct MsdBackgroundPluginPrivate MsdBackgroundPluginPrivate;
 
-typedef struct
-{
-        MateSettingsPlugin    parent;
-        MsdBackgroundPluginPrivate *priv;
-} MsdBackgroundPlugin;
+	typedef struct {
+		MateSettingsPlugin          parent;
+		MsdBackgroundPluginPrivate* priv;
+	} MsdBackgroundPlugin;
 
-typedef struct
-{
-        MateSettingsPluginClass parent_class;
-} MsdBackgroundPluginClass;
+	typedef struct {
+		MateSettingsPluginClass parent_class;
+	} MsdBackgroundPluginClass;
 
-GType   msd_background_plugin_get_type            (void) G_GNUC_CONST;
+	GType
+	msd_background_plugin_get_type (void) G_GNUC_CONST;
 
-/* All the plugins must implement this function */
-G_MODULE_EXPORT GType register_mate_settings_plugin (GTypeModule *module);
+	/* All the plugins must implement this function */
+	G_MODULE_EXPORT GType
+	register_mate_settings_plugin (GTypeModule* module);
+//}
 
 #ifdef __cplusplus
 }

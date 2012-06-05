@@ -27,78 +27,85 @@
 #include "msd-background-plugin.h"
 #include "msd-background-manager.h"
 
-struct MsdBackgroundPluginPrivate {
-        MsdBackgroundManager *manager;
-};
+//class MsdBackgroundPlugin
+//{
+	struct MsdBackgroundPluginPrivate {
+		MsdBackgroundManager* manager;
+	};
 
-#define MSD_BACKGROUND_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), MSD_TYPE_BACKGROUND_PLUGIN, MsdBackgroundPluginPrivate))
+	#define MSD_BACKGROUND_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE((object), MSD_TYPE_BACKGROUND_PLUGIN, MsdBackgroundPluginPrivate))
 
-MATE_SETTINGS_PLUGIN_REGISTER (MsdBackgroundPlugin, msd_background_plugin)
+	MATE_SETTINGS_PLUGIN_REGISTER(MsdBackgroundPlugin, msd_background_plugin)
 
-static void
-msd_background_plugin_init (MsdBackgroundPlugin *plugin)
-{
-        plugin->priv = MSD_BACKGROUND_PLUGIN_GET_PRIVATE (plugin);
+	static void
+	msd_background_plugin_init (MsdBackgroundPlugin* plugin)
+	{
+		plugin->priv = MSD_BACKGROUND_PLUGIN_GET_PRIVATE(plugin);
 
-        g_debug ("MsdBackgroundPlugin initializing");
+		g_debug("MsdBackgroundPlugin initializing");
 
-        plugin->priv->manager = msd_background_manager_new ();
-}
+		plugin->priv->manager = msd_background_manager_new();
+	}
 
-static void
-msd_background_plugin_finalize (GObject *object)
-{
-        MsdBackgroundPlugin *plugin;
+	static void
+	msd_background_plugin_finalize (GObject* object)
+	{
+		MsdBackgroundPlugin* plugin;
 
-        g_return_if_fail (object != NULL);
-        g_return_if_fail (MSD_IS_BACKGROUND_PLUGIN (object));
+		g_return_if_fail(object != NULL);
+		g_return_if_fail(MSD_IS_BACKGROUND_PLUGIN(object));
 
-        g_debug ("MsdBackgroundPlugin finalizing");
+		g_debug("MsdBackgroundPlugin finalizing");
 
-        plugin = MSD_BACKGROUND_PLUGIN (object);
+		plugin = MSD_BACKGROUND_PLUGIN(object);
 
-        g_return_if_fail (plugin->priv != NULL);
+		g_return_if_fail(plugin->priv != NULL);
 
-        if (plugin->priv->manager != NULL) {
-                g_object_unref (plugin->priv->manager);
-        }
+		if (plugin->priv->manager != NULL)
+		{
+			g_object_unref (plugin->priv->manager);
+		}
 
-        G_OBJECT_CLASS (msd_background_plugin_parent_class)->finalize (object);
-}
+		G_OBJECT_CLASS(msd_background_plugin_parent_class)->finalize(object);
+	}
 
-static void
-impl_activate (MateSettingsPlugin *plugin)
-{
-        gboolean res;
-        GError  *error;
+	static void
+	impl_activate (MateSettingsPlugin* plugin)
+	{
+		gboolean res;
+		GError* error;
 
-        g_debug ("Activating background plugin");
+		g_debug("Activating background plugin");
 
-        error = NULL;
-        res = msd_background_manager_start (MSD_BACKGROUND_PLUGIN (plugin)->priv->manager, &error);
-        if (! res) {
-                g_warning ("Unable to start background manager: %s", error->message);
-                g_error_free (error);
-        }
-}
+		error = NULL;
+		res = msd_background_manager_start(MSD_BACKGROUND_PLUGIN(plugin)->priv->manager, &error);
 
-static void
-impl_deactivate (MateSettingsPlugin *plugin)
-{
-        g_debug ("Deactivating background plugin");
-        msd_background_manager_stop (MSD_BACKGROUND_PLUGIN (plugin)->priv->manager);
-}
+		if (!res)
+		{
+			g_warning("Unable to start background manager: %s", error->message);
+			g_error_free(error);
+		}
+	}
 
-static void
-msd_background_plugin_class_init (MsdBackgroundPluginClass *klass)
-{
-        GObjectClass           *object_class = G_OBJECT_CLASS (klass);
-        MateSettingsPluginClass *plugin_class = MATE_SETTINGS_PLUGIN_CLASS (klass);
+	static void
+	impl_deactivate (MateSettingsPlugin* plugin)
+	{
+		g_debug("Deactivating background plugin");
 
-        object_class->finalize = msd_background_plugin_finalize;
+		msd_background_manager_stop(MSD_BACKGROUND_PLUGIN(plugin)->priv->manager);
+	}
 
-        plugin_class->activate = impl_activate;
-        plugin_class->deactivate = impl_deactivate;
+	static void
+	msd_background_plugin_class_init (MsdBackgroundPluginClass* klass)
+	{
+		GObjectClass* object_class = G_OBJECT_CLASS(klass);
+		MateSettingsPluginClass* plugin_class = MATE_SETTINGS_PLUGIN_CLASS(klass);
 
-        g_type_class_add_private (klass, sizeof (MsdBackgroundPluginPrivate));
-}
+		object_class->finalize = msd_background_plugin_finalize;
+
+		plugin_class->activate = impl_activate;
+		plugin_class->deactivate = impl_deactivate;
+
+		g_type_class_add_private(klass, sizeof(MsdBackgroundPluginPrivate));
+	}
+//}
