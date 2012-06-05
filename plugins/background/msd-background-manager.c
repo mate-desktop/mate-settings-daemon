@@ -213,7 +213,6 @@
 			                               gdk_screen_get_height(screen),
 			                               TRUE);
 
-			/*
 			if (use_crossfade)
 			{
 				MateBGCrossfade* fade;
@@ -222,9 +221,11 @@
 				g_signal_connect(fade,
 				                 "finished",
 				                 G_CALLBACK (g_object_unref), NULL);
-			} else {*/
+			}
+			else
+			{
 				mate_bg_set_pixmap_as_root(screen, pixmap);
-			/* }*/
+			}
 
 			g_object_unref(pixmap);
 		}
@@ -281,10 +282,10 @@
 
 		manager->priv->bg = mate_bg_new();
 
-		g_signal_connect(manager->priv->bg,
+		/*g_signal_connect(manager->priv->bg,
 		                 "changed",
 		                 G_CALLBACK(on_bg_changed),
-		                 manager);
+		                 manager);*/
 
 		/*g_signal_connect(manager->priv->bg,
 		                 "transitioned",

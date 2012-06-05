@@ -33,7 +33,7 @@
 static gboolean
 idle (MsdBackgroundManager* manager)
 {
-	msd_background_manager_start (manager, NULL);
+	msd_background_manager_start(manager, NULL);
 	return FALSE;
 }
 
