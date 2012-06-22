@@ -865,7 +865,7 @@ on_control_default_sink_changed (GvcMixerControl     *control,
 static void
 on_control_stream_removed (GvcMixerControl     *control,
                            guint                id,
-                           GsdMediaKeysManager *manager)
+                           MsdMediaKeysManager *manager)
 {
         if (manager->priv->stream != NULL) {
 		if (gvc_mixer_stream_get_id (manager->priv->stream) == id) {
