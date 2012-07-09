@@ -1,0 +1,1249 @@
+========== af.po ==========
+# Afrikaans translation of gnome-control-center.
+# Copyright (C) 2004 Zuza Software Foundation
+# This file is distributed under the same license as the gnome-control-center package.
+# Zuza Software Foundation <info@translate.org.za>, 2004
+# F Wolff <friedel@translate.org.za>, 2008
+
+
+
+
+========== am.po ==========
+# Translations into the Amharic Language.
+# Copyright (C) 2002 Free Software Foundation, Inc.
+# This file is distributed under the same license as the GNOME Control Center package.
+# Ge'ez Frontier Foundation <locales@geez.org>, 2002.
+#
+#
+
+
+
+
+========== ar.po ==========
+# translation of gnome-settings-daemon.HEAD.po to Arabic
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) 2003 THE PACKAGE'S COPYRIGHT HOLDER
+# Sayed Jaffer Al-Mosawi <mosawi@arabeyes.org>, 2002.
+# Isam Bayazidi <bayazidi@arabeyes.org>, 2002.
+# Arafat Medini <lumina@silverpen.de>, 2003.
+# Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>, 2004.
+# Djihed Afifi <djihed@gmail.com>, 2006.
+# Khaled Hosny <khaledhosny@eglug.org>, 2006, 2007, 2008, 2009, 2010.
+# Anas Husseini <linux.anas@gmail.com>, 2007.
+# Abdelmonam Kouka <abdelmonam.kouka@ubuntume.com>, 2008.
+
+
+
+
+========== as.po ==========
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Amitakhya Phukan <aphukan@fedoraproject.org>, 2009.
+
+
+
+
+========== ast.po ==========
+# Asturian translation for gnome-settings-daemon
+# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
+# This file is distributed under the same license as the gnome-settings-daemon package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
+#
+
+
+
+
+========== az.po ==========
+# translation of gnome-control-center.HEAD.az.po to Azerbaijani
+# translation of gnome-control-center.HEAD.po to Azerbaijani
+# translation of gnome-control-center.HEAD.az.po to Azerbaijani Turkish
+# Copyright (C) 1998,1999,2003, 2004 Free Software Foundation, Inc.
+# Mətin Əmirov <metin@karegen.com>, 2003, 2004.
+# Metin Amiroff <metin@karegen.com>, 2004.
+#
+
+
+
+
+========== be.po ==========
+# Беларускі пераклад gnome-control-center.HEAD.
+# Vital Khilko <dojlid@mova.org>, 2003.
+# Ales Nyakhaychyk <nab@mail.by>, 2003, 2004.
+#
+
+
+
+
+========== be@latin.po ==========
+# Biełaruski pierakład gnome-control-center
+# Copyright (C) 2007 Aleś Navicki
+# Distributed under the terms of gnome-control-center's license.
+# Aleś Navicki <zolak@lacinka.org>, 2007
+# Ihar Hrachyshka <ihar.hrachyshka@gmail.com>, 2007
+
+
+
+
+========== bg.po ==========
+# Bulgarian translation of gnome-settings-daemon po-file.
+# Copyright (C) 2002, 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
+# Copyright (C) 2009, 2010 Free Software Foundation, Inc.
+# Copyright (C) 2010 Damyan Ivanov.
+# Borislav Aleksandrov <B.Aleksandrov@cnsys.bg>, 2002.
+# Yanko Kaneti <yaneti@declera.com>, 2002.
+# Rostislav Raykov <zbrox@i-space.org>, 2004, 2005.
+# Vladimir Petkov <vpetkov@i-space.org>, 2004, 2005, 2006.
+# Alexander Shopov <ash@kambanaria.org>, 2006, 2007, 2008, 2009, 2010.
+# Yavor Doganov <yavor@gnu.org>, 2007, 2008.
+# Damyan Ivanov <dam+gnome@ktnx.net>, 2010.
+#
+
+
+
+
+========== bn.po ==========
+# Bangla Translation of the gnome-settings-daemon file.
+# Copyright (c)  2003-2006 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Mate Control Center package.
+#
+# Progga <progga@BengaLinux.Org>, 2003-2006.
+# Runa Bhattacharjee <runabh@gmail.com>, 2006, 2007.
+# Runa Bhattacharjee <runab@fedoraproject.org>, 2008.
+# Runa Bhattacharjee <runab@redhat.com>, 2008, 2009.
+# Maruf Ovee <maruf@ankur.org.bd>, 2009.
+# Loba Yeasmeen <loba@ankur.org.bd>, 2010.
+# Israt Jahan <israt@ankur.org.bd>, 2010.
+#
+
+
+
+
+========== bn_IN.po ==========
+# translation of bn_IN.po to Bengali INDIA
+# Bangla Translation of the Mate Control Center po file.
+# Copyright (c)  2003-2006 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Mate Control Center package.
+#
+#
+# Progga <progga@BengaLinux.Org>, 2003-2006.
+# Runa Bhattacharjee <runabh@gmail.com>, 2006, 2007.
+# Runa Bhattacharjee <runab@fedoraproject.org>, 2008.
+# Runa Bhattacharjee <runab@redhat.com>, 2008, 2009.
+
+
+
+
+========== br.po ==========
+# Breton translation of gnome-control-center.
+# Copyright (C) 2004-2005 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-menu package.
+#
+# Jérémy Ar Floc'h <jeremy.lefloch@gmail.com>, 2006.
+#
+
+
+
+
+========== bs.po ==========
+# translation of gnome-control-center.HEAD.bs.po to Bosnian
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER, 2004.
+# Kenan Hadžiavdić <kenan@bgnett.no>, 2004.
+#
+
+
+
+
+========== ca.po ==========
+# Traducció del mòdul gnome-settings-daemon de Softcatalà
+# Copyright © 1999-2010 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-settings-daemon package.
+# Ivan Vilata i Balaguer <ivan@selidor.net>, 1999, 2000.
+# Softcatalà <linux@softcatala.org>, 2000, 2001.
+# Jordi Mallach <jordi@sindominio.net>, 2002, 2003, 2004, 2005.
+# Xavier Conde Rueda <xavi.conde@gmail.com>, 2005 
+# Josep Puigdemont i Casamajó <josep.puigdemont@gmail.com>, 2005, 2006, 2007.
+# Joan Duran <jodufi@gmail.com>, 2008-2010.
+#
+
+
+
+
+========== ca@valencia.po ==========
+# Traducció del mòdul gnome-settings-daemon de Softcatalà
+# Copyright © 1999-2010 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-settings-daemon package.
+# Ivan Vilata i Balaguer <ivan@selidor.net>, 1999, 2000.
+# Softcatalà <linux@softcatala.org>, 2000, 2001.
+# Jordi Mallach <jordi@sindominio.net>, 2002, 2003, 2004, 2005.
+# Xavier Conde Rueda <xavi.conde@gmail.com>, 2005 
+# Josep Puigdemont i Casamajó <josep.puigdemont@gmail.com>, 2005, 2006, 2007.
+# Joan Duran <jodufi@gmail.com>, 2008-2010.
+#
+
+
+
+
+========== crh.po ==========
+# QIRIMTATARCA gnome-control-center.
+# Copyright (C) 2000-2010 Free Software Foundation, Inc.
+#
+# Reşat SABIQ <tilde.birlik@gmail.com>, 2010.
+
+
+
+
+========== cs.po ==========
+# Czech translation of gnome-settings-daemon.
+# Copyright (C) 1999,2003, 2006, 2007, 2008, 2009, 2010 the author(s) of gnome-settings-daemon.
+# Copyright (C) 2003, 2004, 2005, 2006 Miloslav Trmac <mitr@volny.cz>.
+# Copyright (C) 2006 Lukas Novotny <lukasnov@cvs.gnome.org>.
+# This file is distributed under the same license as the gnome-settings-daemon package.
+# David Šauer <davids@penguin.cz>, 1999.
+# Jiří Lebl <jirka@5z.cz>, 2002.
+# Michal Bukovjan <bukm@centrum.cz>, 2002, 2003.
+# Miloslav Trmac <mitr@volny.cz>, 2003, 2004, 2005, 2006.
+# Jakub Friedl <jfriedl@suse.cz>, 2006, 2007.
+# Petr Tomeš <ptomes@gmail.com>, 2006.
+# Lukas Novotny <lukasnov@cvs.gnome.org>, 2006.
+# Petr Kovar <pknbe@volny.cz>, 2008, 2009, 2010.
+
+
+
+
+========== cy.po ==========
+# gnome-control-center yn Gymraeg.
+# www.kyfieithu.co.uk <kyfieithu@kyfieithu.co.uk>, 2003.
+# Dafydd Harries <daf@muse.19inch.net>, 2003.
+# Dafydd Tomos <i10n@da.fydd.org>, 2004.
+# Rhys Jones <rhys@sucs.org>, 2005.
+#
+# Someone needs to check (a) occurrences of key (if MateConf, allwedd;
+# if most other things, bysell); (b) occurrences of application(s)
+# rhaglennu or the other one I now can't put my finger on?
+#
+# I think I've caught most of the erroneous "bysell"s. Funnily enough, I
+# changed several occurrences of "bysell" to "allwedd" (MateConf context) and
+# several occurrences of "allwedd" to "bysell" (keyboard context). Also
+# replaced "gweithredu" with "cymhwyso" (for "apply") and "wynebfath" with
+# "ffont". I can believe that "wynebfath" is a better word, but I thought it
+# would be better to be consistently wrong for now.
+# - daf
+#
+# [rj] 'Take effect' == 'dod i rym' (cystrawen Saesneg yw 'cymryd effaith')
+# [rj] Wedi gyrru'r cyfan drwy Cysill, 29ain Mai 2005.
+
+
+
+
+========== da.po ==========
+# Danish translation of the Mate Settings Daemon.
+# Copyright (C) 1998-2010
+# This file is distributed under the same license as the gnome-control-center package.
+# Kenneth Christiansen <kenneth@ripen.dk>, 1998-2000.
+# Birger Langkjer <birger.langkjer@image.dk>
+# Keld Simonsen <keld@dkuug.dk>, 2000.
+# Ole Laursen <olau@hardworking.dk>, 2001, 02, 03, 04, 06.
+# Martin Willemoes Hansen <mwh@sysrq.dk>, 2004, 05.
+# Lasse Bang Mikkelsen <lbm@fatalerror.dk>, 2006.
+# Ask Hjorth Larsen <asklarsen@gmail.com>, 2007, 08, 09, 10.
+#
+# Konventioner:
+#
+#   detach -> frigøre
+#   extension -> endelse (f.eks. '.html'), udvidelse (X extensions)
+#   GL -> 3d
+#   help browser -> hjælpefremviser
+#   properties -> indstillinger
+#   torn off -> frigøre
+#   typing break -> tastepause
+#   plugin -> modul
+#
+# Specielt:
+#   volume -> diskenhed.  Dette diskuteres i øjeblikket; det vil måske være nødvendigt at ændre det senere
+#
+# Undgå sammensætninger med 'indstil x' fordi indstil også kan betyde stop.
+# Vær opmærksom på at ordet key bruges både i betydningen nøgle og (genvejs)tast
+#
+
+
+
+
+========== de.po ==========
+# German translation of gnome-settings-daemon
+# Copyright (C) 1998-2004 Free Software Foundation, Inc.
+# Carsten Schaar <nhadcasc@fs-maphy.uni-hannover.de>, 1998.
+# Karsten Weiss <karsten@addx.au.s.shuttle.de>, 1999.
+# Matthias Warkus <mawa@iname.com>, 1999.
+# Karl Eichwalder <ke@suse.de>, 1999, 2000.
+# Christian Meyer <chrisime@gnome.org>, 2000, 2001, 2002.
+# Christian Neumair <chris@gnome-de.org>, 2002-2004.
+# Hendrik Richter <hendrikr@gnome.org>, 2004, 2005, 2006, 2007, 2008.
+# Hendrik Brandt <heb@gnome-de.org>, 2004-2005, 2008.
+# Frank Arnold <frank@scirocco-5v-turbo.de>, 2005.
+# Jens Seidel <jseidel@cvs.gnome.org>, 2005.
+# Christian Kintner <ckintner@gnome-de.org>, 2007.
+# Mario Blättermann <mariobl@gnome.org>, 2009, 2010.
+#
+
+
+
+
+========== dz.po ==========
+# Dzongkha translation of gnome-control-center
+# Copyright @ 2006 Free Software Foundation, Inc.
+# Mindu Dorji
+#
+
+
+
+
+========== el.po ==========
+# translation of el.po to Greek
+# control-center Greek translations.
+# Copyright (C) 2000, 2001, 2002,2003, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
+#
+# For screensaver, picked: profilaji o8onis -simos.
+#
+# spyros: initial translation, around 300 messages.
+# Nikos:   one more review 6Sep2003
+# kostas: 15 feb 2004, update
+# Nikos: 30May2004, some fixes.
+# Nikos: 31Jul2004, some fixes.
+# Nikos 17Sep2004, some fixes.
+#
+#
+# simos: 277 messages, 19Aug2000, (24 fuzzy, 40 untranslated).
+# simos: 358 messages, 05Dec2000, updated translation.
+#      :  64 messages, 01Aug2002, due to enhancements in application.
+# nikos: 266 messages, 05Aug2002, updated translation.
+# t_p_r: 266 messages, 05Aug2002, reviewed translation.
+# simos: 329 messages, 06Aug2002, updated translation.
+# kostas: 461 messages, 18Oct2002, updated and completed translation.
+# kostas: 535 messages, 10Dec2002, reviewed and updated translation for Mate 2.1x.
+# kostas: 533 messages, 06Jan2003, one more update.
+# kostas: 537 messages, 26Jan2003, one more update.
+# kostas:  650 messages, 22Jul2003, one more update.
+# kostas:  655 messages, 27Jul2003, one more update.
+# kostas:  674 messages, 10Aug2003, one more update.
+# Nikos:   review, 29Aug03.
+# kostas: 678 messagew,12Nov2003, updates and fixes.
+# kostas: 786 messagew,22Jan2004, updates and fixes.
+# Simos: 723 messages, 20Dec2004, fixes/updates.
+# Spiros Papadimitriou <spapadim+@cs.cmu.edu>, 2000.
+# Simos Xenitellis <simos@hellug.gr>, 2000, 2001, 2002.
+# Nikos Charonitakis <charosn@her.forthnet.gr>, 2002, 2003, 2004, 2005.
+# Τα πάντα ρει <ta_panta_rei@flashmail.com>, 2002.
+# Kostas Papadimas <pkst@gnome.org>, 2002,2003, 2004, 2005, 2006, 2007.
+# Simos Xenitellis <simos74@gmx.net>, 2004.
+# Simos Xenitellis <simos@gnome.org>, 2006.
+# Jennie Petoumenou <epetoumenou@gmail.com>, 2009.
+# Fotis Tsamis <ftsamis@gmail.com>, 2009.
+
+
+
+
+========== en@shaw.po ==========
+# Shavian translation for gnome-settings-daemon.
+# Copyright (C) 2009 The Mate Foundation.
+# Thomas Thurman <tthurman@gnome.org>, 2009.
+
+
+
+
+========== en_CA.po ==========
+# English/Canada translation of gnome-control-center.
+# Copyright (C) 2004-2006 Adam Weinberger and the GNOME Foundation
+# This file is distributed under the same licence as the gnome-control-center package.
+# Adam Weinberger <adamw@gnome.org>, 2004, 2005, 2006.
+#
+#
+
+
+
+
+========== en_GB.po ==========
+# English (British)
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Robert Brady <rwb197@ecs.soton.ac.uk>
+# Gareth Owen <gowen72@yahoo.com>, David Lodge <dave@cirt.net>, 2004.
+# Bruce Cowan <bruce@bcowan.me.uk>, 2009, 2010.
+# Philip Withnall <philip@tecnocode.co.uk>, 2010.
+
+
+
+
+========== es.po ==========
+# translation of gnome-settings-daemon.HEAD.po to Español
+# Copyright © 1999-2002, 2006, 2007, 2008 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-control-center package.
+#
+# Pablo Saratxaga <srtxg@chanae.alphanet.ch>, 1998-2001.
+# Carlos Perelló Marín <carlos@gnome-db.org>, 2001.
+# Héctor García Álvarez <hector@scouts-es.org>, 2001.
+# Germán Poo Caamaño <gpoo@ubiobio.cl>, 2002 (Revisor).
+# Lucas Di Pentima <lucas@lunix.com.ar>, 2002.
+# Pablo Gonzalo del Campo <pablodc@bigfoot.com>, 2002,2003.
+# Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2003, 2004, 2005, 2006.
+# Claudio Saavedra <csaavedra@alumnos.utalca.cl>, 2007.
+# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2010.
+#
+
+
+
+
+========== et.po ==========
+# GNOME sätetedeemoni eesti keele tõlge.
+# Estonian translation of GNOME Settings Daemon.
+#
+# Copyright (C) 1999, 2002, 2003, 2005, 2006 Free Software Foundation, Inc.
+# Copyright (C) 2007-2010 The Mate Project.
+# This file is distributed under the same license as the gnome-control-center
+# package.
+#
+# Lauris Kaplinski <lauris ariman ee>, 1999.
+# Tõivo Leedjärv <toivo linux ee>, 2002, 2003.
+# Ivar Smolin <okul linux ee>, 2005-2010.
+# Priit Laes <plaes plaes org>, 2005, 2006, 2009
+# Mattias Põldaru <mahfiaz gmail com>, 2009-2010.
+#
+
+
+
+
+========== eu.po ==========
+# translation of eu.po to Basque
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+#
+# Hizkuntza Politikarako Sailburuordetza <hizkpol@ej-gv.es>, 2004, 2005.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2007.
+
+
+
+
+========== fa.po ==========
+# Persian translation of gnome-control-center.
+# Copyright (C) 2003, 2005 Sharif FarsiWeb, Inc.
+# This file is distributed under the same license as the gnome-control-center package.
+# Roozbeh Pournader <roozbeh@farsiweb.info>, 2003.
+# Masoud Ahmadzadeh <masoud@bamdad.org>, 2005.
+# Meelad Zakaria <meelad@farsiweb.info>, 2005.
+# Elnaz Sarbar <elnaz@farsiweb.info>, 2005, 2006.
+# Farzaneh Sarafraz <farzaneh@farsiweb.info>, 2006.
+#
+
+
+
+
+========== fi.po ==========
+# gnome-control-center Finnish translation
+# Copyright (C) 2004-2009 Free Software Foundation, Inc.
+# Mikko Rauhala <mjr@iki.fi>, x-2000
+# Pauli Virtanen <pauli.virtanen@hut.fi>, 2000-2004
+# Ilkka Tuohela <hile@iki.fi>, 2005-2009.
+# Tommi Vainikainen <thv@iki.fi>, 2009.
+# Timo Jyrinki <timo.jyrinki@iki.fi>, 2010.
+#
+# sticky key = pohjaan jäävä näppäin
+# bounce key = kimmonäppäin
+# mouse key = hiirinäppäin
+# toggle key = piippaava näppäin
+#
+
+
+
+
+========== fr.po ==========
+# French translation of gnome-daemon-settings.
+# Copyright (C) 2008-2010 Free Software Foundation, Inc.
+# This file is under the same license as the gnome-settings-daemon package.
+#
+# Claude Paroz <claude@2xlibre.net>, 2008-2010
+# Robert-André Mauchin <zebob.m@pengzone.org>, 2008
+# Nicolas Repentin <nicolas@shivaserv.fr>, 2009
+# Laurent Coudeur <laurentc@iol.ie>, 2009, 2010.
+#
+
+
+
+
+========== ga.po ==========
+# Irish translations for gnome-settings-daemon package.
+# Copyright (C) 2002-2009 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-settings-daemon package.
+# Alastair McKinstry <mckinstry@debian.org>, 2003.
+# Seán de Búrca <leftmostcat@gmail.com>, 2007, 2008, 2009.
+#
+
+
+
+
+========== gl.po ==========
+# translation of gnome-settings-daemon.master.po to Galician
+# Galician translation of GNOME Control Center
+# (C) 2002 Free Software Foundation, Inc.
+#
+#
+# Rubén López Gómez <ryo@mundivia.es>, 1999,, 2000.
+# Manuel A. Fernández Montecelo <manuel@sindominio.net>, 2002.
+# Xabi García <xabigf@gmx.net>, 2002.
+# Ignacio Casal Quinteiro <nacho.resa@gmail.com>, 2005, 2006.
+# Ignacio Casal Quinteiro <icq@svn.gnome.org>, 2007, 2008.
+# Mancomún - Centro de Referencia e Servizos de Software Libre <g11n@mancomun.org>, 2009.
+# Suso Baleato <suso.baleato@xunta.es>, 2009.
+# Antón Méixome <meixome@mancomun.org>, 2009.
+# Fran Diéguez <frandieguez@ubuntu.com>,2009, 2010.
+#
+
+
+
+
+========== gu.po ==========
+# translation of gnome-settings-daemon.master.gu.po to Gujarati
+# Ankit Patel <ankit644@yahoo.com>, 2005, 2006.
+# Ankit Patel <ankit@redhat.com>, 2006, 2007, 2009.
+# Sweta Kothari <swkothar@redhat.com>, 2009.
+
+
+
+
+========== he.po ==========
+# translation of gnome-control-center.HEAD.he.po to Hebrew
+# translation of gnome-control-center.gnome-2-0.he.po to Hebrew
+# This file is distributed under the same license as the PACKAGE package.
+# Yuval Tanny, 2005.
+# Yuval Tanny, 2005.
+# Yuval Tanny, 2005.
+# Yuval Tanny, 2005.
+# Copyright (C) 2005 THE PACKAGE'S COPYRIGHT HOLDER.
+# Gil 'Dolfin' Osher <dolfin@rpg.org.il>, 2002,2003.
+# Yuval Tanny, 2005.
+#
+#
+
+
+
+
+========== hi.po ==========
+# translation of gnome-settings-daemon.master.po to Hindi
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+#
+# Ravishankar Shrivastava <raviratlami@yahoo.com>, 2003, 2004.
+# Rajesh Ranjan <rranjan@redhat.com>, 2005, 2006, 2009.
+# Rajesh Ranjan <rajesh672@gmail.com>, 2009.
+
+
+
+
+========== hr.po ==========
+# Translation of gnome-control-center to Croatiann
+# Copyright (C) Croatiann team
+# Translators: Automatski Prijevod <>,Danijel Studen <dstuden@vuka.hr>,Denis Lackovic <delacko@fly.srk.fer.hr>,Robert Sedak <robert.sedak@sk.tel.hr>,Vedran Vyroubal <vedran.vyroubal@inet.hr>,
+
+
+
+
+========== hu.po ==========
+# Hungarian translation of gnome-settings-daemon.
+# Copyright (C) 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-settings-daemon package.
+#
+# Szabolcs Ban <shooby at gnome dot hu>, 1998, 1999, 2000.
+# Emese Kovacs <emese at gnome dot hu>, 2001.
+# Peter Doma <zelin at pointernet dot hu>, 2002.
+# Andras Timar <timar at gnome dot hu>, 2001, 2002, 2003.
+# Gabor Sari <saga at gnome dot hu>, 2003.
+# Laszlo Dvornik <dvornik at gnome dot hu>, 2004.
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
+# Mate ORY <orygnome at gmail d0t com>, 2006.
+
+
+
+
+========== id.po ==========
+# Indonesian translation of gnome-settings-daemon
+# Copyright (C) 2003 gnome-settings-daemon's package holder
+# This file is distributed under the same license as the gnome-settings-daemon package.
+# Ahmad Riza H Nst  <rizahnst@gnome.org> 2006
+# Mohammad DAMT <mdamt@bisnisweb.com> 2003
+# Andika Triwidada <andika@gmail.com>, 2010.
+#
+
+
+
+
+========== is.po ==========
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Áki G. Karlsson  <aki@akademia.is>, 2003.
+#
+
+
+
+
+========== it.po ==========
+# Italian translation for gnome-settings-daemon
+# This file is relased with the same licence of gnome-settings-daemon package
+# Copyright (C) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+# Derivato dalla traduzione di gnome-control-center
+# Christopher R. Gabriel, 2001, 2002.
+# Alessio Dessì <alkex@inwind.it>, 2003, 2004, 2005, 2006, 2007.
+# Luca Ferretti <lferrett@gnome.org>, 2003, 2004, 2005, 2005, 2007, 2008, 2009, 2010.
+#
+
+
+
+
+========== ja.po ==========
+# gnome-settings-daemon ja.po.
+# Copyright (C) 1998-2010 Free Software Foundation, Inc.
+# Yukihiro Nakai <Nakai@abricot.co.jp>, 1998.
+# Eiichiro ITANI <emu@ceres.dti.ne.jp>, 1999.
+# Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2000, 2009-2010.
+# Akira TAGOH <tagoh@gnome.gr.jp>, 2001.
+# Takeshi AIHANA <takeshi.aihana@gmail.com>, 2003-2009.
+# KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>, 2003.
+# Satoru SATOH <ss@gnome.gr.jp>, 2006.
+# Hideki Yamane (Debian-JP) <henrich@debian.or.jp>, 2010.
+# Noritada Kobayashi <noritadak@gmail.com>, 2010.
+#
+
+
+
+
+========== ka.po ==========
+# translation of ka.po to Georgian
+# translation of gnome-control-center.gnome-2-14.ka.po to
+# Georgian translation for Mate Control Centre.
+# Copyright © 2005 Canonical Ltd, and Rosetta Contributors 2005.
+# This file is distributed under the same license as the evolution package.
+#
+# Alexander Didebulidze <didebuli@in.tum.de>, 2005, 2006.
+# Vladimer Sichinava <alinux@siena.linux.it>, 2006.
+# Zviad Sulaberidze <zviad@osgf.ge>, 2006.
+# Vladimer Sichinava ვლადიმერ სიჭინავა <vsichi@gnome.org>, 2007.
+
+
+
+
+========== kn.po ==========
+# translation of gnome-settings-daemon.master.kn.po to Kannada
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Shankar Prasad <svenkate@redhat.com>, 2008, 2009, 2010.
+
+
+
+
+========== ko.po ==========
+# gnome-settings-daemon Korean translation
+# This file is distributed under the same license as the gnome-settings-daemon package.
+#
+# Young-Ho Cha <ganadist@chollian.net>, 2002, 2006
+# Changwoo Ryu <cwryu@debian.org>, 2002-2006, 2007, 2008, 2009, 2010.
+#
+
+
+
+
+========== ku.po ==========
+# translation of gnome-control-center.HEAD.po to Kurdish
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) 2005 THE PACKAGE'S COPYRIGHT HOLDER.
+# Erdal Ronahi <erdal.ronahi@gmail.com>, 2005.
+# Erdal Ronahi <erdal.ronahi@gmail.com, pckurd@hotmail.com>, 2005.
+#
+
+
+
+
+========== lt.po ==========
+# Lithuanian translation of gnome-settings-daemon
+# Copyright © 2000-2008, 2010 Free Software Foundation, Inc.
+# Gediminas Paulauskas <menesis@chatsubo.lt>, 2000-2002.
+# Vaidotas Zemlys <mpiktas@delfi.lt>, 2003.
+# Justina Klingaitė <justina.klingaite@gmail.com>, 2005.
+# Žygimantas Beručka <zygis@gnome.org>, 2003-2007, 2010.
+# Gintautas Miliauskas <gintautas@miliauskas.lt>, 2006, 2007, 2008, 2009.
+# Vytautas Liuolia <vytautas.liuolia@gmail.com>, 2008.
+
+
+
+
+========== lv.po ==========
+# translation of lv.po to Latvian
+# gnome-control-center for Latvian.
+# Copyright (C) 2001, 2006, 2007 Free Software Foundation, Inc.
+#
+# Artis Trops <hornet@navigators.lv>, 2001.
+# Raivis Dejus <orvils@gmail.com>, 2006, 2007.
+# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2010.
+
+
+
+
+========== mai.po ==========
+# translation of gnome-settings-daemon.master.po to Maithili
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sangeeta Kumari <sangeeta09@gmail.com>, 2009.
+
+
+
+
+========== mg.po ==========
+# Malagasy translation of gnome-control-center.
+# Copyright (C) 2006 THE gnome-control-center'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-control-center package.
+# Fanomezana Rajaonarisoa <rajfanhar@yahoo.fr>, 2006.
+# Thierry Randrianiriana <randrianiriana@gmail.com>, 2006.
+#
+
+
+
+
+========== mk.po ==========
+# translation of gnome-settings-daemon.HEAD.mk.po to Macedonian
+# translation of gnome-control-center.HEAD.mk.po to
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER.
+#
+# Maratonec 4 <maraton@localhost.localdomain>, 2002.
+# Aleksandar Savic <savica@mt.net.mk>, 2003.
+# Jovan Kostovski <chombium@freemail.com.mk>, 2003.
+# Arangel Angov <ufo@linux.net.mk>, 2003, 2004, 2005, 2006, 2007, 2008.
+# Ivan Stojmirov <stojmir@linux.net.mk>, 2003.
+# Tomislav Markovski <herrera@users.sourceforge.net>, 2004.
+# Арангел Ангов <ufo@linux.net.mk>, 2005.
+# Jovan Naumovski <jovan@lugola.net>, 2006, 2007, 2008.
+# Arangel Angov <arangel@linux.net.mk>, 2007.
+
+
+
+
+========== ml.po ==========
+# translation of gnome-settings-daemon.master.ml.po to
+# translation of gnome-settings-daemon.HEAD.ml.po to
+# This file is distributed under the same license as the gnome-settings-daemon package.
+# Copyright (C) 2003-2008 gnome-settings-daemon'S COPYRIGHT HOLDER.
+# FSF-India <locale@gnu.org.in>, 2003.
+# Santhosh|സന്തോഷ് Thottingal|തോട്ടിങ്ങല്‍ <santhosh00@gmail.com>, 2007.
+# Ani Peter <apeter@redhat.com>, 2007, 2009.
+# Anivar Aravind|അനിവര്‍ അരവിന്ദ് <anivar@movingrepublic.org>, 2007.
+# Hari Vishnu <harivishnu@gmail.com>, 2008.
+# Praveen|പ്രവീണ്‍ A|എ <pravi.a@gmail.com>, 2007,2008.
+
+
+
+
+========== mn.po ==========
+# translation of mn.po to Mongolian
+# translation of gnome-control-center.HEAD.po to Mongolian
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER.
+# Sanlig Badral <badral@chinggis.com>, 2003.
+# Sanlig Badral <badral@users.sf.net>, 2003.
+# Sanlig Badral <badral@openmn.org>, 2003, 2004, 2006.
+#
+
+
+
+
+========== mr.po ==========
+# translation of mr.po to Marathi
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+#
+# Rahul Bhalerao <b.rahul.pm@gmail.com>, 2006.
+# Sandeep Shedmake <sandeep.shedmake@gmail.com>, 2008, 2009.
+# Sandeep Shedmake <sshedmak@redhat.com>, 2009, 2010.
+
+
+
+
+========== ms.po ==========
+# Mate-control-center v2.0 Bahasa Melayu (ms)
+# 1. Hasbullah Bin Pit (sebol) <sebol@ikhlas.com>, 2002
+# 2. Khairulanuar Abd Majid (khai) <khairul@ikhlas.com>, 2002
+
+
+
+
+========== nb.po ==========
+# Norwegian Bokmål translation of gnome-settings-daemon.
+# Copyright (C) 1999-2005 Free Software Foundation, Inc.
+# Kjartan Maraas <kmaraas@gnome.org>, 1999-2010.
+# Terance Edward Sola <terance@lyse.net>, 2005.
+#
+
+
+
+
+========== nds.po ==========
+# Low German translation for gnome-settings-daemon.
+# Copyright (C) 2009 gnome-settings-daemon's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-settings-daemon package.
+# Nils-Christoph Fiedler <fiedler@medienkompanie.de>, 2009.
+#
+
+
+
+
+========== ne.po ==========
+# Nepali Translation projectE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-control-center package.
+# Pawan Chitrakar   <pawan@nplinux.org>, 2004.
+#
+
+
+
+
+========== nl.po ==========
+# Dutch translation for Mate Settings Daemon
+#
+# This file is distributed under the same license as the gnome-settings-daemon
+# package.
+#
+# Bas Wagter <B.J.Wagter@bk.tudelft.nl>
+# Linux-ondersteuning: Hein-Jan Leliveld <h.j.leliveld@student.tn.tudelft.nl>
+# Dennis Smit <synap@area101.penguin.nl>, 2000
+# Almer S. Tigelaar <almer@gnome.org>, 2001
+# Jan-Willem Harmanny <jwharmanny@hotmail.com>, 2002
+# Huib Kleinhout <huib@stack.nl>, 2002
+# Ronald Hummelink <ronald@hummelink.xs4all.nl>, 2002
+# Reinout van Schouwen <reinouts@gnome.org>, 2002-2008
+# Tino Meinen <a.t.meinen@chello.nl>, 2004, 2006, 2007, 2008
+# Wouter Bolsterlee <wbolster@gnome.org>, 2006, 2008–2009
+# Rob van den Berg <linuxned@gmail.com>, 2010
+# Hannie Dumoleyn <lafeber-dumoleyn2@zonnet.nl>, 2010
+#
+
+
+
+
+========== nn.po ==========
+# translation of nn.po to Norwegian Nynorsk
+# Norwegian (nynorsk) translation of gnome-control-center.
+# Copyright (C) 1999-2008 Free Software Foundation, Inc.
+# Copyright (C) Roy-Magne Mo <rmo@sunnmore.net>, 2001.
+#
+# Eskild Hustvedt <eskildh@gnome.org> 2008
+# Roy-Magne Mo <rmo@sunnmore.net>, 2001.
+# Åsmund Skjæveland <aasmunds@fys.uio.no>, 2003, 2004, 2006.
+# Torstein Adolf Winterseth <kvikende@fsfe.org>, 2010.
+
+
+
+
+========== nso.po ==========
+# Northern Sotho translation of gnome-control-center.
+# Copyright (C) 2004 Zuza Software Foundation (Translate.org.za)
+# This file is distributed under the same license as the gnome-control-center package.
+#
+# Zuza Software Foundation <info@translate.org.za>, 2004
+#
+
+
+
+
+========== oc.po ==========
+# Translation of oc.po to Occitan
+# Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>, 2006-2008.
+# Translation of oc.po to Occitan
+# Occitan translation of gnome-control-center
+# This file is distributed under the same license as the PACKAGE package.#
+
+
+
+
+========== or.po ==========
+# translation of gnome-settings-daemon.master.or.po to Oriya
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+#
+# Subhransu Behera <arya_subhransu@yahoo.co.in>, 2006.
+# Manoj Kumar Giri <mgiri@redhat.com>, 2009, 2010.
+
+
+
+
+========== pa.po ==========
+# translation of gnome-settings-daemon.HEAD.po to Punjabi
+# Punjabi translation of gnome-control-center.HEAD.
+# Copyright (C) 2004 THE gnome-control-center.HEAD'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-control-center.HEAD package.
+#
+#
+# Amanpreet Singh Alam <amanlinux@netscape.net>, 2004.
+# A S Alam <aalam@users.sf.net>,2005, 2006, 2007, 2008, 2009, 2010.
+# Amanpreet Singh Alam <aalam@users.sf.net>, 2009.
+
+
+
+
+========== pl.po ==========
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# Aviary.pl
+# Jeśli masz jakiekolwiek uwagi odnoszące się do tłumaczenia lub chcesz
+# pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
+# gnomepl@aviary.pl
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+
+
+========== pt.po ==========
+# gnome-settings-daemon's Portuguese Translation
+# Copyright © 1999, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 gnome-settings-daemon
+# Distributed under the same licence as the gnome-control-center package
+# Duarte Loreto <happyguy_pt@hotmail.com>, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
+# Nuno Ferreira <nmrf@rnl.ist.utl.pt>, 1999.
+#
+
+
+
+
+========== pt_BR.po ==========
+# Brazilian Portuguese translation of gnome-control-center.
+# Copyright (C) 1999-2007 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-control-center package.
+# Ivan Passos <ivan@cyclades.com>, 1999.
+# Sandro Nunes Henrique <sandro@conectiva.com.br>, 1999.
+# Gustavo Maciel Dias Vieira <gustavo@sagui.org>, 2000-2001.
+# Tiago Cardoso Menezes <zion@via-rs.net>, 2003.
+# Evandro Fernandes Giovanini <evandrofg@ig.com.br>, 2004, 2006.
+# Alex Camacho Castilho <gnomebr@uol.com.br>, 2004.
+# Guilherme de S. Pastore <gpastore@colband.com.br>, 2004, 2005.
+# Leonardo Ferreira Fontenelle <leonardof@gnome.org>, 2006, 2008.
+# Luiz Fernando S. Armesto <luiz.armesto@gmail.com>, 2007.
+# Og Maciel <ogmaciel@ubuntu.com>, 2007.
+# Washington Lins <washington-lins@uol.com.br>, 2007.
+# Raul Pereira <contato@raulpereira.com>, 2007.
+# Djavan Fagundes <dnoway@gmail.com>, 2008.
+# Jonh Wendell <jwendell@gnome.org>, 2009.
+# Krix Apolinário <krixapolinario@gmail.com>, 2009.
+# Vladimir Melo <vmelo@gnome.org>, 2009.
+# Henrique P. Machado <hpmachado@gnome.org>, 2009, 2010.
+# Antonio Fernandes C. Neto <fernandes@pelivre.org>, 2010.
+#
+
+
+
+
+========== ro.po ==========
+# Romanian translation for gnome-control-center
+# This file is distributed under the same license as the gnome-control-center package.
+# Mugurel Tudor <mugurelu@gnome.ro>, 2002, 2003.
+# Mișu Moldovan <dumol@gnome.ro> 2003, 2004.
+# Sebastian Ivan <sebastian.ivan@ubuntu.ro>, 2005.
+# Dan Damian <dand@gnome.ro>, 2005-2006.
+# Adi Roiban https://launchpad.net/~adiroiban, 2008, 2009
+# Lucian Adrian Grijincu <lucian.grijincu@gmail.com>, 2010.
+
+
+
+
+========== ru.po ==========
+# Copyright 1998-2009, Free Software Foundation Inc.
+#
+# Valek Filippov <frob@df.ru>, 2000-2002.
+# Dmitry G. Mastrukov <dmitry@taurussoft.org>, 2002-2004.
+# Andrew W. Nosenko <awn@bcs.zp.ua>, 2003.
+# Leonid Kanter <leon@asplinux.ru>, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
+# Maxim Popov <ravemax@hotbox.ru>, 2006, 2009.
+# Diesel <diesel594@gmail.com>, 2009.
+# Andrew Grigorev <andrew@ei-grad.ru>, 2009.
+# Alexandre Prokoudine <alexandre.prokoudine@gmail.com>, 2009.
+# Max Valianskiy <maxcom@vinchi.ru> 1998-99
+# Sergey Panov <sipan@mit.edu> 1999
+# Alexander Saprykin <xelfium@gmail.com>, 2010.
+#
+
+
+
+
+========== rw.po ==========
+# translation of gnome-control-center to Kinyarwanda.
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-control-center package.
+# Steve Murphy <murf@e-tools.com>, 2005
+# Steve performed initial rough translation from compendium built from translations provided by the following translators:
+# Philibert Ndandali  <ndandali@yahoo.fr>, 2005.
+# Viateur MUGENZI <muvia1@yahoo.fr>, 2005.
+# Noëlla Mupole <s24211045@tuks.co.za>, 2005.
+# Carole Karema <karemacarole@hotmail.com>, 2005.
+# JEAN BAPTISTE NGENDAHAYO <ngenda_denis@yahoo.co.uk>, 2005.
+# Augustin KIBERWA  <akiberwa@yahoo.co.uk>, 2005.
+# Donatien NSENGIYUMVA <ndonatienuk@yahoo.co.uk>, 2005..
+#
+
+
+
+
+========== si.po ==========
+# translation of si.po to Sinhala
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Danishka Navin <snavin@redhat.com>, 2007.
+
+
+
+
+========== sk.po ==========
+# Slovak translation for gnome-settings-daemon.
+# Copyright (C) 2000-2005, 2007-2010 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-settings-daemon package.
+# Stanislav Visnovsky <visnovsky@nenya.ms.mff.cuni.cz>, 2000-2004.
+# Marcel Telka <marcel@telka.sk>, 2005.
+# Peter Tuharsky <tuharsky@misbb.sk>, 2007.
+# Pavol Šimo <palo.simo@gmail.com>, 2008, 2009, 2010.
+#
+
+
+
+
+========== sl.po ==========
+# Slovenian translations for gnome-settings-deamon.
+# Copyright (C) 2000-2007 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-settings-deamon package.
+#
+# Andraž Tori <andraz.tori1@guest.arnes.si>, 2002.
+# Matjaž Horvat <m@owca.info>, 2005 - 2006.
+# Matic Žgur <mr.zgur@gmail.com>, 2006 - 2007.
+# Matej Urbančič <gnomeju@svn.gnome.org>, 2007 - 2010.
+#
+
+
+
+
+========== sq.po ==========
+# Përkthimi i mesazheve të gnome-control-center në shqip
+# This file is distributed under the same license as the gnome-control-center package.
+# Copyright (C) 2006 Free Software Foundation, Inc.
+#
+#
+# Elian Myftiu <elian@alblinux.net>, 2003, 2004, 2005, 2006.
+
+
+
+
+========== sr.po ==========
+# Serbian translation of gnome-control-center
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2003 - 2009.
+#
+# This file is distributed under the same license as the gnome-control-center package.
+#
+# Maintainer: Вељко М. Станојевић <veljko@vms.homelinux.net>
+# Reviewed on 2005-03-03 by: Данило Шеган <danilo@gnome.org>
+# Translated on 2006-03-11 by: Слободан Д. Средојевић <slobo@akrep.be>
+# Милош Поповић <gpopac@gmail.com>, 2010.
+#
+
+
+
+
+========== sr@latin.po ==========
+# Serbian translation of gnome-control-center
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2003 - 2009.
+#
+# This file is distributed under the same license as the gnome-control-center package.
+#
+# Maintainer: Veljko M. Stanojević <veljko@vms.homelinux.net>
+# Reviewed on 2005-03-03 by: Danilo Šegan <danilo@gnome.org>
+# Translated on 2006-03-11 by: Slobodan D. Sredojević <slobo@akrep.be>
+# Miloš Popović <gpopac@gmail.com>, 2010.
+#
+
+
+
+
+========== sv.po ==========
+# Swedish messages for gnome-settings-daemon
+# Copyright (C) 1998-2010 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-settings-daemon package.
+#
+# FIXME: "Cursor" and "Pointer" are used inconsistently throughout the
+# application! Needs to be bug reported.
+#
+# Martin Wahlen <mva@sbbs.se>, 1998, 1999.
+# Christian Rose <menthos@menthos.com>, 2000, 2001, 2002, 2003, 2004, 2005.
+# Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2008, 2009, 2010.
+#
+
+
+
+
+========== ta.po ==========
+# translation of gnome-settings-daemon.HEAD.ta.po to Tamil
+# Tamil translation of gnome-control-center
+# Copyright (C) 2002
+# This file is distributed under the same license as the gnome-control-center.
+#
+# Dinesh Nadarajah <dinesh_list@sbcglobal.net>, 2002, 2004.
+# Ma SivaKumar <tamil@leatherlink.net>, 2004.
+# Jayaradha N <jaya@pune.redhat.com>, 2004.
+# Felix <ifelix@redhat.com>, 2006.
+# Dr.T.Vasudevan <agnihot3@gmail.com>, 2007, 2008, 2009, 2010.
+# I. Felix <ifelix@redhat.com>, 2009.
+# Dr,T,Vasudevan <agnihot3@gmail.com>, 2010.
+
+
+
+
+========== te.po ==========
+# translation of gnome-settings-daemon.master.te.po to Telugu
+# Telugu translation of control-center
+# Copyright (C) 2005 Free Software Foundation, Andhra Pradesh.
+# This file is distributed under the same license as the control-center package.
+#
+# Prajasakti Localisation Team <localisation@prajasakti.com>, 2005.
+# Krishna Babu K <kkrothap@redhat.com>, 2008, 2009, 2010.
+
+
+
+
+========== th.po ==========
+# Thai gnome-settings-daemon translation.
+# Copyright (C) 2003-2010 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-settings-daemon package.
+# Paisa Seeluangsawat <paisa@users.sf.net>, 2003, 2004.
+# Supakorn Siddhichai <supakorn.siddhichai@nectec.or.th>, 2004.
+# Supranee Thirawatthanasuk <supranee@opentle.org>, 2004.
+# Surichat Sumrit <nook@opentle.org>, 2004.
+# Chanchai Junlouchai <taz@opentle.org>, 2004.
+# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2004-2010.
+#
+
+
+
+
+========== tr.po ==========
+# Turkish translation of gnome-control-center.
+# Copyright (C) 2000-2003, 2004, 2005, 2008 Free Software Foundation, Inc.
+#
+# Nilgün Belma Bugüner <nilgun@fide.org>, 2001.
+# Fatih Demir <kabalak@gtranslator.org>, 2000.
+# Baris Cicek <baris@teamforce.name.tr>, 2004, 2005, 2008, 2009.
+
+
+
+
+========== uk.po ==========
+# Ukrainian translation of control-center.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Yuri Syrota <rasta@renome.rovno.ua>, 1999.
+# Maxim Dzumanenko <dziumanenko@gmail.com>, 2002-2009
+#
+
+
+
+
+========== vi.po ==========
+# Vietnamese Translation for GNOME Settings Daemon.
+# Copyright © 2009 Free Software Foundation, Inc.
+# Nguyễn Thái Ngọc Duy <pclouds@gmail.com>, 2004,2007,2009.
+# Clytie Siddall <clytie@riverland.net.au>, 2005-2009.
+#
+
+
+
+
+========== wa.po ==========
+# Traduction into the walloon language.
+#
+# Si vos voloz donner on côp di spale pol ratournaedje di Mate (ou des
+# ôtes libes programes) sicrijhoz mu a l' adresse emile
+# <srtxg@chanae.alphanet.ch>; nos avons co bråmint di l' ovraedje a fé.
+#
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Pablo Saratxaga <srtxg@chanae.alphanet.ch> 1999-2002
+# Lorint Hendschel <LorintHendschel@skynet.be> 1999,2000
+# Lucyin Mahin <lucyin@walon.org>, 2000
+#
+
+
+
+
+========== xh.po ==========
+# Xhosa translation of gnome-control-center
+# Copyright (C) 2005 Canonical Ltd.
+# This file is distributed under the same license as the gnome-control-center package.
+# Translation by Canonical Ltd <translations@canonical.com> with thanks to
+# Translation World CC in South Africa, 2005.
+#
+
+
+
+
+========== zh_CN.po ==========
+# Simplified Chinese translation for gnome-settings-daemon,
+#    original from gnome-control-center.
+# Copyright (C) 2002 Free Software Foundation, Inc.
+# some translations stolen from tranditional chinese translation
+# by Abel Cheung <maddog@linuxhall.org>, 2001.
+# He Qiangqiang <carton@linux.net.cn>, 2002.
+# Sun G11n <gnome_int_l10n@ireland.sun.com>, 2002.
+# Funda Wang <fundawang@linux.net.cn>, 2003-2006.
+# 甘露(Gan Lu) <rhythm.gan@gmail.com>, 2009.
+# Deng Xiyue <manphiz@gmail.com>, 2009.
+# Tao Wei <weitao1979@gmail.com>, 2009.
+# Aron Xu <happyaron.xu@gmail.com>, 2009.
+# vicwjb <vicwjb@gmail.com>, 2010.
+# Tao Wang <dancefire@gmail.com>, 2010.
+#
+
+
+
+
+========== zh_HK.po ==========
+# Chinese (Hong Kong) translation of gnome-control-center.
+# Copyright (C) 1999, 2001-07 Free Software Foundation, Inc.
+# GNOME 1.x:
+# S.J. Luo <crystal@mickey.ee.nctu.edu.tw>, 1999.
+# Abel Cheung <abel@oaka.org>, 2001-2002.
+# GNOME 2.x:
+# Abel Cheung <abel@oaka.org>, 2001-2003, 2005.
+# Woodman Tuen <wmtuen@gmail.com>, 2004-07.
+# Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>, 2008.
+#
+#
+
+
+
+
+========== zh_TW.po ==========
+# Chinese (Taiwan) translation of gnome-control-center.
+# Copyright (C) 1999, 2001-07 Free Software Foundation, Inc.
+# GNOME 1.x:
+# S.J. Luo <crystal@mickey.ee.nctu.edu.tw>, 1999.
+# Abel Cheung <abel@oaka.org>, 2001-2002.
+# GNOME 2.x:
+# Abel Cheung <abel@oaka.org>, 2001-2003, 2005.
+# Woodman Tuen <wmtuen@gmail.com>, 2004-07.
+# Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>, 2008.
+#
+#
+
+
+
+
+========== zu.po ==========
+# Zulu translation of gnome-control-center.
+# Copyright (C) 2004 Zuza Software Foundation (Translate.org.za)
+# This file is distributed under the same license as the gnome-control-center package.
+#
+# Zuza Software Foundation <info@translate.org.za>, 2004
+#
+
+
+
+
