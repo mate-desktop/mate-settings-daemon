@@ -980,6 +980,13 @@ msd_media_player_key_pressed (MsdMediaKeysManager *manager,
 }
 
 static gboolean
+do_multimedia_player_action (MsdMediaKeysManager *manager,
+                             const char          *key)
+{
+        return msd_media_player_key_pressed (manager, key);
+}
+
+static gboolean
 do_action (MsdMediaKeysManager *manager,
            int                  type)
 {
@@ -1052,19 +1059,19 @@ do_action (MsdMediaKeysManager *manager,
                 g_free (cmd);
                 break;
         case PLAY_KEY:
-                return msd_media_player_key_pressed (manager, "Play");
+                return do_multimedia_player_action (manager, "Play");
                 break;
         case PAUSE_KEY:
-                return msd_media_player_key_pressed (manager, "Pause");
+                return do_multimedia_player_action (manager, "Pause");
                 break;
         case STOP_KEY:
-                return msd_media_player_key_pressed (manager, "Stop");
+                return do_multimedia_player_action (manager, "Stop");
                 break;
         case PREVIOUS_KEY:
-                return msd_media_player_key_pressed (manager, "Previous");
+                return do_multimedia_player_action (manager, "Previous");
                 break;
         case NEXT_KEY:
-                return msd_media_player_key_pressed (manager, "Next");
+                return do_multimedia_player_action (manager, "Next");
                 break;
         default:
                 g_assert_not_reached ();
