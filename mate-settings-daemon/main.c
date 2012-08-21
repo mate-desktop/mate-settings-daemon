@@ -416,6 +416,9 @@ parse_args (int *argc, char ***argv)
         g_option_context_free (context);
 
         mate_settings_profile_end (NULL);
+        
+        if (debug)
+            g_setenv ("G_MESSAGES_DEBUG", "all", FALSE);
 }
 
 int
