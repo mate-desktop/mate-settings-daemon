@@ -23,8 +23,7 @@
 
 #include "msd-keygrab.h"
 
-#define MATECONF_BINDING_DIR "/apps/mate_settings_daemon/keybindings"
-#define MATECONF_MISC_DIR "/apps/mate_settings_daemon"
+#define BINDING_SCHEMA "org.mate.SettingsDaemon.plugins.media-keys"
 
 enum {
         TOUCHPAD_KEY,
@@ -51,28 +50,28 @@ enum {
 
 static struct {
         int key_type;
-        const char *mateconf_key;
+        const char *settings_key;
         Key *key;
 } keys[HANDLED_KEYS] = {
-        { TOUCHPAD_KEY, MATECONF_BINDING_DIR "/touchpad", NULL },
-        { MUTE_KEY, MATECONF_BINDING_DIR "/volume_mute",NULL },
-        { VOLUME_DOWN_KEY, MATECONF_BINDING_DIR "/volume_down", NULL },
-        { VOLUME_UP_KEY, MATECONF_BINDING_DIR "/volume_up", NULL },
-        { POWER_KEY, MATECONF_BINDING_DIR "/power", NULL },
-        { EJECT_KEY, MATECONF_BINDING_DIR "/eject", NULL },
-        { HOME_KEY, MATECONF_BINDING_DIR "/home", NULL },
-        { MEDIA_KEY, MATECONF_BINDING_DIR "/media", NULL },
-        { CALCULATOR_KEY, MATECONF_BINDING_DIR "/calculator", NULL },
-        { SEARCH_KEY, MATECONF_BINDING_DIR "/search", NULL },
-        { EMAIL_KEY, MATECONF_BINDING_DIR "/email", NULL },
-        { SCREENSAVER_KEY, MATECONF_BINDING_DIR "/screensaver", NULL },
-        { HELP_KEY, MATECONF_BINDING_DIR "/help", NULL },
-        { WWW_KEY, MATECONF_BINDING_DIR "/www", NULL },
-        { PLAY_KEY, MATECONF_BINDING_DIR "/play", NULL },
-        { PAUSE_KEY, MATECONF_BINDING_DIR "/pause", NULL },
-        { STOP_KEY, MATECONF_BINDING_DIR "/stop", NULL },
-        { PREVIOUS_KEY, MATECONF_BINDING_DIR "/previous", NULL },
-        { NEXT_KEY, MATECONF_BINDING_DIR "/next", NULL },
+        { TOUCHPAD_KEY, "touchpad", NULL },
+        { MUTE_KEY, "volume-mute",NULL },
+        { VOLUME_DOWN_KEY, "volume-down", NULL },
+        { VOLUME_UP_KEY, "volume-up", NULL },
+        { POWER_KEY, "power", NULL },
+        { EJECT_KEY, "eject", NULL },
+        { HOME_KEY, "home", NULL },
+        { MEDIA_KEY, "media", NULL },
+        { CALCULATOR_KEY, "calculator", NULL },
+        { SEARCH_KEY, "search", NULL },
+        { EMAIL_KEY, "email", NULL },
+        { SCREENSAVER_KEY, "screensaver", NULL },
+        { HELP_KEY, "help", NULL },
+        { WWW_KEY, "www", NULL },
+        { PLAY_KEY, "play", NULL },
+        { PAUSE_KEY, "pause", NULL },
+        { STOP_KEY, "stop", NULL },
+        { PREVIOUS_KEY, "previous", NULL },
+        { NEXT_KEY, "next", NULL },
 };
 
 #endif /* __ACME_H__ */

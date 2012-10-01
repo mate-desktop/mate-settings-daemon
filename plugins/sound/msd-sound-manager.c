@@ -33,7 +33,7 @@
 
 #include <glib.h>
 #include <glib/gi18n.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 #include <gtk/gtk.h>
 
 #ifdef HAVE_PULSE
@@ -47,12 +47,12 @@
 
 struct MsdSoundManagerPrivate
 {
-        guint mateconf_notify;
+        GSettings *settings;
         GList* monitors;
         guint timeout;
 };
 
-#define MATECONF_SOUND_DIR "/desktop/mate/sound"
+#define MATE_SOUND_SCHEMA "org.mate.sound"
 
 static void msd_sound_manager_class_init (MsdSoundManagerClass *klass);
 static void msd_sound_manager_init (MsdSoundManager *sound_manager);
@@ -205,33 +205,11 @@ trigger_flush (MsdSoundManager *manager)
 }
 
 static void
-mateconf_client_notify_cb (MateConfClient *client,
-                        guint cnxn_id,
-                        MateConfEntry *entry,
-                        MsdSoundManager *manager)
+gsettings_notify_cb (GSettings *client,
+                     gchar *key,
+                     MsdSoundManager *manager)
 {
         trigger_flush (manager);
-}
-
-static gboolean
-register_config_callback (MsdSoundManager *manager, GError **error)
-{
-        MateConfClient *client;
-        gboolean succ;
-
-        client = mateconf_client_get_default ();
-
-        mateconf_client_add_dir (client, MATECONF_SOUND_DIR, MATECONF_CLIENT_PRELOAD_NONE, error);
-        succ = !error || !*error;
-
-        if (!error) {
-                manager->priv->mateconf_notify = mateconf_client_notify_add (client, MATECONF_SOUND_DIR, (MateConfClientNotifyFunc) mateconf_client_notify_cb, manager, NULL, error);
-                succ = !error || !*error;
-        }
-
-        g_object_unref (client);
-
-        return succ;
 }
 
 static void
@@ -291,7 +269,9 @@ msd_sound_manager_start (MsdSoundManager *manager,
 #ifdef HAVE_PULSE
 
         /* We listen for change of the selected theme ... */
-        register_config_callback (manager, NULL);
+        manager->priv->settings = g_settings_new (MATE_SOUND_SCHEMA);
+
+        g_signal_connect (manager->priv->settings, "changed",  G_CALLBACK (gsettings_notify_cb), manager);
 
         /* ... and we listen to changes of the theme base directories
          * in $HOME ...*/
@@ -331,15 +311,9 @@ msd_sound_manager_stop (MsdSoundManager *manager)
         g_debug ("Stopping sound manager");
 
 #ifdef HAVE_PULSE
-        if (manager->priv->mateconf_notify != 0) {
-                MateConfClient *client = mateconf_client_get_default ();
-
-                mateconf_client_remove_dir (client, MATECONF_SOUND_DIR, NULL);
-
-                mateconf_client_notify_remove (client, manager->priv->mateconf_notify);
-                manager->priv->mateconf_notify = 0;
-
-                g_object_unref (client);
+        if (manager->priv->settings != NULL) {
+                g_object_unref (manager->priv->settings);
+                manager->priv->settings = NULL;
         }
 
         if (manager->priv->timeout) {

@@ -29,7 +29,7 @@
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
 #include <gtk/gtk.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #include <libmatekbd/matekbd-status.h>
 #include <libmatekbd/matekbd-keyboard-drawing.h>
@@ -44,7 +44,15 @@
 
 #define GTK_RESPONSE_PRINT 2
 
+#define MATEKBD_DESKTOP_SCHEMA "org.mate.peripherals-keyboard-xkb.general"
+#define MATEKBD_KBD_SCHEMA "org.mate.peripherals-keyboard-xkb.kbd"
+
+#define KNOWN_FILES_KEY "known-file-list"
+
 static MsdKeyboardManager* manager = NULL;
+
+static GSettings* settings_desktop;
+static GSettings* settings_kbd;
 
 static XklEngine* xkl_engine;
 static XklConfigRegistry* xkl_registry = NULL;
@@ -57,19 +65,8 @@ static MatekbdKeyboardConfig initial_sys_kbd_config;
 
 static gboolean inited_ok = FALSE;
 
-static guint notify_desktop = 0;
-static guint notify_keyboard = 0;
-
 static PostActivationCallback pa_callback = NULL;
 static void *pa_callback_user_data = NULL;
-
-static const char KNOWN_FILES_KEY[] = "/desktop/mate/peripherals/keyboard/general/known_file_list";
-
-static const char DISABLE_INDICATOR_KEY[] = "/desktop/mate/peripherals/keyboard/general/disable_indicator";
-
-static const char DUPLICATE_LEDS_KEY[] = "/desktop/mate/peripherals/keyboard/general/duplicate_leds";
-
-static const char* mdm_keyboard_layout = NULL;
 
 static GtkStatusIcon* icon = NULL;
 
@@ -106,6 +103,24 @@ static void msd_keyboard_log_appender(const char file[], const char function[], 
 	fflush (logfile);
 }
 #endif
+
+static void g_strv_delete_str (gchar **a, gchar *str)
+{
+	int i;
+	int j;
+	gchar **b;
+	b = g_new0 (gchar *, g_strv_length (a) - 1);
+
+	j = 0;
+	for (i = 0; a[i] != NULL; i++) {
+		if (g_strcmp0 (a[i], str) != 0) {
+			b[j] = g_strdup (a[i]);
+			j++;
+		}
+	}
+	g_strfreev (a);
+	a = b;
+}
 
 static void
 activation_error (void)
@@ -147,7 +162,7 @@ activation_error (void)
 						      "Try using a simpler configuration or using a later version of the XFree software.")
 						     : "",
 						     "xprop -root | grep XKB",
-						     "mateconftool-2 -R /desktop/mate/peripherals/keyboard/kbd");
+						     "gsettings list-keys org.mate.peripherals-keyboard-xkb.kbd");
 	g_signal_connect (dialog, "response",
 			  G_CALLBACK (gtk_widget_destroy), NULL);
 	msd_delayed_show_dialog (dialog);
@@ -156,27 +171,30 @@ activation_error (void)
 static void
 apply_desktop_settings (void)
 {
-	MateConfClient *conf_client;
 	gboolean show_leds;
 	int i;
 	if (!inited_ok)
 		return;
 
 	msd_keyboard_manager_apply_settings (manager);
-	matekbd_desktop_config_load_from_mateconf (&current_config);
+	matekbd_desktop_config_load_from_gsettings (&current_config);
 	/* again, probably it would be nice to compare things
 	   before activating them */
 	matekbd_desktop_config_activate (&current_config);
 
-	conf_client = mateconf_client_get_default ();
-	show_leds =
-	    mateconf_client_get_bool (conf_client, DUPLICATE_LEDS_KEY, NULL);
-	g_object_unref (conf_client);
+	/* FIXME add an option to GSettings to duplicate leds? */
+	show_leds = FALSE;
 	for (i = sizeof (indicator_icons) / sizeof (indicator_icons[0]);
 	     --i >= 0;) {
 		gtk_status_icon_set_visible (indicator_icons[i],
 					     show_leds);
 	}
+}
+
+static void
+apply_desktop_settings_cb (GSettings *settings, gchar *key, gpointer   user_data)
+{
+    apply_desktop_settings ();
 }
 
 static void
@@ -326,15 +344,10 @@ status_icon_popup_menu_cb (GtkStatusIcon * icon, guint button, guint time)
 static void
 show_hide_icon ()
 {
-	if (g_slist_length (current_kbd_config.layouts_variants) > 1) {
+	if (g_strv_length (current_kbd_config.layouts_variants) > 1) {
 		if (icon == NULL) {
-			MateConfClient *conf_client =
-			    mateconf_client_get_default ();
-			gboolean disable =
-			    mateconf_client_get_bool (conf_client,
-						   DISABLE_INDICATOR_KEY,
-						   NULL);
-			g_object_unref (conf_client);
+			/* FIXME add an option to GSettings to disable this? */
+			gboolean disable = FALSE;
 			if (disable)
 				return;
 
@@ -380,8 +393,8 @@ filter_xkb_config (void)
 	XklConfigItem *item;
 	gchar *lname;
 	gchar *vname;
-	GSList *lv;
-	GSList *filtered;
+	gchar **lv;
+	int i;
 	gboolean any_change = FALSE;
 
 	xkl_debug (100, "Filtering configuration against the registry\n");
@@ -395,25 +408,20 @@ filter_xkb_config (void)
 			return FALSE;
 		}
 	}
-	lv = current_kbd_config.layouts_variants;
+	lv = g_strdupv(current_kbd_config.layouts_variants);
 	item = xkl_config_item_new ();
-	while (lv) {
-		xkl_debug (100, "Checking [%s]\n", lv->data);
+	for (lv = 0; lv[i] != NULL; i++) {
+		xkl_debug (100, "Checking [%s]\n", lv[i]);
 		if (matekbd_keyboard_config_split_items
-		    (lv->data, &lname, &vname)) {
+		    (lv[i], &lname, &vname)) {
 			g_snprintf (item->name, sizeof (item->name), "%s",
 				    lname);
 			if (!xkl_config_registry_find_layout
 			    (xkl_registry, item)) {
 				xkl_debug (100, "Bad layout [%s]\n",
 					   lname);
-				filtered = lv;
-				lv = lv->next;
-				g_free (filtered->data);
-				current_kbd_config.layouts_variants =
-				    g_slist_delete_link
-				    (current_kbd_config.layouts_variants,
-				     filtered);
+				g_strv_delete_str (current_kbd_config.layouts_variants,
+							lv[i]);
 				any_change = TRUE;
 				continue;
 			}
@@ -426,20 +434,14 @@ filter_xkb_config (void)
 					xkl_debug (100,
 						   "Bad variant [%s(%s)]\n",
 						   lname, vname);
-					filtered = lv;
-					lv = lv->next;
-					g_free (filtered->data);
-					current_kbd_config.layouts_variants
-					    =
-					    g_slist_delete_link
+					g_strv_delete_str
 					    (current_kbd_config.layouts_variants,
-					     filtered);
+					     lv[i]);
 					any_change = TRUE;
 					continue;
 				}
 			}
 		}
-		lv = lv->next;
 	}
 	g_object_unref (item);
 	return any_change;
@@ -448,108 +450,14 @@ filter_xkb_config (void)
 static void
 apply_xkb_settings (void)
 {
-	MateConfClient *conf_client;
 	MatekbdKeyboardConfig current_sys_kbd_config;
-	int group_to_activate = -1;
-	char *mdm_layout;
-	char *s;
 
 	if (!inited_ok)
 		return;
 
-	conf_client = mateconf_client_get_default ();
+	matekbd_keyboard_config_init (&current_sys_kbd_config, xkl_engine);
 
-	/* With MDM the user can already set a layout from the login
-	 * screen. Try to keep that setting.
-	 * We clear mdm_keyboard_layout early, so we don't risk
-	 * recursion from mateconf notification.
-	 */
-	mdm_layout = g_strdup (mdm_keyboard_layout);
-	mdm_keyboard_layout = NULL;
-
-	/* mdm's configuration and $MDM_KEYBOARD_LAYOUT separates layout and
-	 * variant with a space, but mateconf uses tabs; so convert to be robust
-	 * with both */
-	for (s = mdm_layout; s && *s; ++s) {
-		if (*s == ' ') {
-			*s = '\t';
-		}
-	}
-
-	if (mdm_layout != NULL) {
-		GSList *layouts;
-		GSList *found_node;
-		int max_groups;
-
-		max_groups =
-		    MAX (xkl_engine_get_max_num_groups (xkl_engine), 1);
-		layouts =
-		    mateconf_client_get_list (conf_client,
-					   MATEKBD_KEYBOARD_CONFIG_KEY_LAYOUTS,
-					   MATECONF_VALUE_STRING, NULL);
-
-		/* Use system layouts as a default if we do not have
-		 * user configuration */
-		if (layouts == NULL) {
-			GSList *i;
-			int len;
-
-			for (i = initial_sys_kbd_config.layouts_variants;
-			     i; i = g_slist_next (i)) {
-				s = g_strdup (i->data);
-
-				/* chop off empty variants to avoid duplicates */
-				len = strlen (s);
-				if (s[len - 1] == '\t')
-					s[len - 1] = '\0';
-				layouts = g_slist_append (layouts, s);
-			}
-		}
-
-		/* Add the layout if it doesn't already exist. XKB limits the
-		 * total number of layouts. If we already have the maximum
-		 * number of layouts configured, we replace the last one. This
-		 * prevents the list from becoming full if the user has a habit
-		 * of selecting many different keyboard layouts in MDM. */
-
-		found_node =
-		    g_slist_find_custom (layouts, mdm_layout,
-					 (GCompareFunc) g_strcmp0);
-
-		if (!found_node) {
-			/* Insert at the last valid place, or at the end of
-			 * list, whichever comes first */
-			layouts =
-			    g_slist_insert (layouts, g_strdup (mdm_layout),
-					    max_groups - 1);
-			if (g_slist_length (layouts) > max_groups) {
-				GSList *last;
-				GSList *free_layouts;
-
-				last =
-				    g_slist_nth (layouts, max_groups - 1);
-				free_layouts = last->next;
-				last->next = NULL;
-
-				g_slist_foreach (free_layouts,
-						 (GFunc) g_free, NULL);
-				g_slist_free (free_layouts);
-			}
-
-			mateconf_client_set_list (conf_client,
-					       MATEKBD_KEYBOARD_CONFIG_KEY_LAYOUTS,
-					       MATECONF_VALUE_STRING, layouts,
-					       NULL);
-		}
-
-		g_slist_foreach (layouts, (GFunc) g_free, NULL);
-		g_slist_free (layouts);
-	}
-
-	matekbd_keyboard_config_init (&current_sys_kbd_config,
-				   conf_client, xkl_engine);
-
-	matekbd_keyboard_config_load_from_mateconf (&current_kbd_config,
+	matekbd_keyboard_config_load_from_gsettings (&current_kbd_config,
 					      &initial_sys_kbd_config);
 
 	matekbd_keyboard_config_load_from_x_current (&current_sys_kbd_config,
@@ -572,47 +480,25 @@ apply_xkb_settings (void)
 		xkl_debug (100,
 			   "Actual KBD configuration was not changed: redundant notification\n");
 
-	if (mdm_layout != NULL) {
-		/* If there are multiple layouts,
-		 * try to find the one closest to the mdm layout
-		 */
-		GSList *l;
-		int i;
-		size_t len = strlen (mdm_layout);
-		for (i = 0, l = current_kbd_config.layouts_variants; l;
-		     i++, l = l->next) {
-			char *lv = l->data;
-			if (strncmp (lv, mdm_layout, len) == 0
-			    && (lv[len] == '\0' || lv[len] == '\t')) {
-				group_to_activate = i;
-				break;
-			}
-		}
-	}
-
-	g_free (mdm_layout);
-
-	if (group_to_activate != -1)
-		xkl_engine_lock_group (current_config.engine,
-				       group_to_activate);
 	matekbd_keyboard_config_term (&current_sys_kbd_config);
 	show_hide_icon ();
 }
 
 static void
+apply_xkb_settings_cb (GSettings *settings, gchar *key, gpointer   user_data)
+{
+    apply_xkb_settings ();
+}
+
+static void
 msd_keyboard_xkb_analyze_sysconfig (void)
 {
-	MateConfClient *conf_client;
-
 	if (!inited_ok)
 		return;
 
-	conf_client = mateconf_client_get_default ();
-	matekbd_keyboard_config_init (&initial_sys_kbd_config,
-				   conf_client, xkl_engine);
+	matekbd_keyboard_config_init (&initial_sys_kbd_config, xkl_engine);
 	matekbd_keyboard_config_load_from_x_initial (&initial_sys_kbd_config,
 						  NULL);
-	g_object_unref (conf_client);
 }
 
 static gboolean
@@ -625,7 +511,6 @@ msd_chk_file_list (void)
 	GSList *tmp = NULL;
 	GSList *tmp_l = NULL;
 	gboolean new_file_exist = FALSE;
-	MateConfClient *conf_client;
 
 	home_dir = g_dir_open (g_get_home_dir (), 0, NULL);
 	while ((fname = g_dir_read_name (home_dir)) != NULL) {
@@ -636,12 +521,17 @@ msd_chk_file_list (void)
 	}
 	g_dir_close (home_dir);
 
-	conf_client = mateconf_client_get_default ();
-
-	last_login_file_list = mateconf_client_get_list (conf_client,
-						      KNOWN_FILES_KEY,
-						      MATECONF_VALUE_STRING,
-						      NULL);
+	gchar **settings_list;
+	settings_list = g_settings_get_strv (settings_desktop, KNOWN_FILES_KEY);
+	if (settings_list != NULL) {
+		gint i;
+		for (i = 0; i < G_N_ELEMENTS (settings_list); i++) {
+			if (settings_list[i] != NULL)
+				last_login_file_list = 
+					g_slist_append (last_login_file_list, g_strdup (settings_list[i]));
+		}
+		g_strfreev (settings_list);
+	}
 
 	/* Compare between the two file list, currently available modmap files
 	   and the files available in the last log in */
@@ -665,13 +555,14 @@ msd_chk_file_list (void)
 	}
 
 	if (new_file_exist) {
-		mateconf_client_set_list (conf_client,
-				       KNOWN_FILES_KEY,
-				       MATECONF_VALUE_STRING,
-				       file_list, NULL);
+		GSList *l;
+		GPtrArray *array = g_ptr_array_new ();
+		for (l = file_list; l != NULL; l = l->next)
+			g_ptr_array_add (array, l->data);
+		g_ptr_array_add (array, NULL);
+		g_settings_set_strv (settings_desktop, KNOWN_FILES_KEY, (const gchar **) array->pdata);
+		g_ptr_array_free (array, FALSE);
 	}
-
-	g_object_unref (conf_client);
 
 	g_slist_foreach (file_list, (GFunc) g_free, NULL);
 	g_slist_free (file_list);
@@ -706,16 +597,6 @@ msd_keyboard_xkb_evt_filter (GdkXEvent * xev, GdkEvent * event)
 	XEvent *xevent = (XEvent *) xev;
 	xkl_engine_filter_events (xkl_engine, xevent);
 	return GDK_FILTER_CONTINUE;
-}
-
-static guint
-register_config_callback (MateConfClient * client,
-			  const char *path, MateConfClientNotifyFunc func)
-{
-	mateconf_client_add_dir (client, path, MATECONF_CLIENT_PRELOAD_ONELEVEL,
-			      NULL);
-	return mateconf_client_notify_add (client, path, func, NULL, NULL,
-					NULL);
 }
 
 /* When new Keyboard is plugged in - reload the settings */
@@ -770,8 +651,7 @@ msd_keyboard_state_changed (XklEngine * engine, XklEngineStateChange type,
 }
 
 void
-msd_keyboard_xkb_init (MateConfClient * client,
-		       MsdKeyboardManager * kbd_manager)
+msd_keyboard_xkb_init (MsdKeyboardManager * kbd_manager)
 {
 	int i;
 	Display *display = GDK_DISPLAY_XDISPLAY(gdk_display_get_default());
@@ -806,12 +686,13 @@ msd_keyboard_xkb_init (MateConfClient * client,
 	if (xkl_engine) {
 		inited_ok = TRUE;
 
-		mdm_keyboard_layout = g_getenv ("MDM_KEYBOARD_LAYOUT");
+		settings_desktop = g_settings_new (MATEKBD_DESKTOP_SCHEMA);
+		settings_kbd = g_settings_new (MATEKBD_KBD_SCHEMA);
 
 		matekbd_desktop_config_init (&current_config,
-					  client, xkl_engine);
+					     xkl_engine);
 		matekbd_keyboard_config_init (&current_kbd_config,
-					   client, xkl_engine);
+					      xkl_engine);
 		xkl_engine_backup_names_prop (xkl_engine);
 		msd_keyboard_xkb_analyze_sysconfig ();
 		mate_settings_profile_start
@@ -820,17 +701,8 @@ msd_keyboard_xkb_init (MateConfClient * client,
 		mate_settings_profile_end
 		    ("msd_keyboard_xkb_chk_lcl_xmm");
 
-		notify_desktop =
-		    register_config_callback (client,
-					      MATEKBD_DESKTOP_CONFIG_DIR,
-					      (MateConfClientNotifyFunc)
-					      apply_desktop_settings);
-
-		notify_keyboard =
-		    register_config_callback (client,
-					      MATEKBD_KEYBOARD_CONFIG_DIR,
-					      (MateConfClientNotifyFunc)
-					      apply_xkb_settings);
+		g_signal_connect (settings_desktop, "changed", G_CALLBACK(apply_desktop_settings_cb), NULL);
+		g_signal_connect (settings_kbd, "changed", G_CALLBACK(apply_xkb_settings_cb), NULL);
 
 		gdk_window_add_filter (NULL, (GdkFilterFunc)
 				       msd_keyboard_xkb_evt_filter, NULL);
@@ -865,7 +737,6 @@ msd_keyboard_xkb_init (MateConfClient * client,
 void
 msd_keyboard_xkb_shutdown (void)
 {
-	MateConfClient *client;
 	int i;
 
 	pa_callback = NULL;
@@ -890,27 +761,18 @@ msd_keyboard_xkb_shutdown (void)
 	gdk_window_remove_filter (NULL, (GdkFilterFunc)
 				  msd_keyboard_xkb_evt_filter, NULL);
 
-	client = mateconf_client_get_default ();
-
-	if (notify_desktop != 0) {
-		mateconf_client_remove_dir (client, MATEKBD_DESKTOP_CONFIG_DIR,
-					 NULL);
-		mateconf_client_notify_remove (client, notify_desktop);
-		notify_desktop = 0;
+	if (settings_desktop != NULL) {
+		g_object_unref (settings_desktop);
 	}
 
-	if (notify_keyboard != 0) {
-		mateconf_client_remove_dir (client, MATEKBD_KEYBOARD_CONFIG_DIR,
-					 NULL);
-		mateconf_client_notify_remove (client, notify_keyboard);
-		notify_keyboard = 0;
+	if (settings_kbd != NULL) {
+		g_object_unref (settings_kbd);
 	}
 
 	if (xkl_registry) {
 		g_object_unref (xkl_registry);
 	}
 
-	g_object_unref (client);
 	g_object_unref (xkl_engine);
 
 	xkl_engine = NULL;

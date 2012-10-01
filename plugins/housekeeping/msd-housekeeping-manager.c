@@ -275,7 +275,7 @@ msd_housekeeping_manager_start (MsdHousekeepingManager *manager,
 
         manager->priv->settings = g_settings_new (GSETTINGS_THUMB_SCHEMA);
 
-        g_signal_connect (gsettings, "changed", G_CALLBACK (bindings_callback), manager);
+        g_signal_connect (manager->priv->settings, "changed", G_CALLBACK (bindings_callback), manager);
 
         /* Clean once, a few minutes after start-up */
         do_cleanup_soon (manager);
@@ -297,9 +297,7 @@ msd_housekeeping_manager_stop (MsdHousekeepingManager *manager)
 
         g_debug ("Stopping housekeeping manager");
 
-        g_signal_handlers_disconnect_by_func (p->settings,
-                                              bindings_callback,
-                                              manager);
+        g_object_unref (p->settings);
 
         if (p->short_term_cb) {
                 g_source_remove (p->short_term_cb);

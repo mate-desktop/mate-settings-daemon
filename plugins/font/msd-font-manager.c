@@ -40,8 +40,7 @@
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
 #include <gtk/gtk.h>
-#include <mateconf/mateconf.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #include "mate-settings-profile.h"
 #include "msd-font-manager.h"
@@ -84,7 +83,7 @@ update_property (GString *props, const gchar* key, const gchar* value)
 }
 
 static void
-load_xcursor_theme (MateConfClient *client)
+load_xcursor_theme (GSettings *settings)
 {
         char       *cursor_theme;
         int         size;
@@ -94,16 +93,12 @@ load_xcursor_theme (MateConfClient *client)
 
         mate_settings_profile_start (NULL);
 
-        size = mateconf_client_get_int (client,
-                                     "/desktop/mate/peripherals/mouse/cursor_size",
-                                     NULL);
+        size = g_settings_get_int (settings, "cursor-size");
         if (size <= 0) {
                 return;
         }
 
-        cursor_theme = mateconf_client_get_string (client,
-                                                "/desktop/mate/peripherals/mouse/cursor_theme",
-                                                NULL);
+        cursor_theme = g_settings_get_string (settings, "cursor-theme");
         if (cursor_theme == NULL) {
                 return;
         }
@@ -186,22 +181,20 @@ empty_check_dir (char *font_dir)
 }
 
 static char*
-setup_font_dir (MateConfClient *client)
+setup_font_dir (GSettings *settings)
 {
         return empty_check_dir (setup_dir ("fonts", FALSE));
 }
 
 static char*
-setup_cursor_dir (MateConfClient *client)
+setup_cursor_dir (GSettings *settings)
 {
         char          *cursor_dir;
         char          *cursor_font;
         DIR           *dir;
         struct dirent *file_dirent;
 
-        cursor_font = mateconf_client_get_string (client,
-                                               "/desktop/mate/peripherals/mouse/cursor_font",
-                                               NULL);
+        cursor_font = g_settings_get_string (settings, "cursor-font");
         if (cursor_font != NULL) {
                 if (!g_path_is_absolute (cursor_font) ||
                     !g_file_test (cursor_font, G_FILE_TEST_IS_REGULAR)) {
@@ -251,7 +244,7 @@ setup_cursor_dir (MateConfClient *client)
 }
 
 static void
-load_font_paths (MateConfClient *client)
+load_font_paths (GSettings *settings)
 {
         char          *font_dir_name;
         char          *cursor_dir_name;
@@ -268,8 +261,8 @@ load_font_paths (MateConfClient *client)
 
         mate_settings_profile_start (NULL);
 
-        font_dir_name = setup_font_dir (client);
-        cursor_dir_name = setup_cursor_dir (client);
+        font_dir_name = setup_font_dir (settings);
+        cursor_dir_name = setup_cursor_dir (settings);
 
         if (font_dir_name == NULL && cursor_dir_name == NULL)
                 goto done;
@@ -341,17 +334,17 @@ gboolean
 msd_font_manager_start (MsdFontManager *manager,
                         GError        **error)
 {
-        MateConfClient *client;
+        GSettings *settings;
 
         g_debug ("Starting font manager");
         mate_settings_profile_start (NULL);
 
-        client = mateconf_client_get_default ();
+        settings = g_settings_new ("org.mate.peripherals-mouse");
 
-        load_xcursor_theme (client);
-        load_font_paths (client);
+        load_xcursor_theme (settings);
+        load_font_paths (settings);
 
-        g_object_unref (client);
+        g_object_unref (settings);
 
         mate_settings_profile_end (NULL);
 

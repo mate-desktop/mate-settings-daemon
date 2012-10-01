@@ -44,7 +44,6 @@
 #define MATE_SESSION_DBUS_OBJECT    "/org/mate/SessionManager"
 #define MATE_SESSION_DBUS_INTERFACE "org.mate.SessionManager"
 
-static char      *mateconf_prefix = NULL;
 static gboolean   no_daemon    = FALSE;
 static gboolean   debug        = FALSE;
 static gboolean   do_timed_exit = FALSE;
@@ -54,7 +53,6 @@ static int        term_signal_pipe_fds[2];
 static GOptionEntry entries[] = {
         {"debug", 0, 0, G_OPTION_ARG_NONE, &debug, N_("Enable debugging code"), NULL },
         {"no-daemon", 0, 0, G_OPTION_ARG_NONE, &no_daemon, N_("Don't become a daemon"), NULL },
-        {"mateconf-prefix", 0, 0, G_OPTION_ARG_STRING, &mateconf_prefix, N_("MateConf prefix from which to load plugin settings"), NULL},
         { "timed-exit", 0, 0, G_OPTION_ARG_NONE, &do_timed_exit, N_("Exit after a time (for debugging)"), NULL },
         {NULL}
 };
@@ -484,11 +482,7 @@ main (int argc, char *argv[])
            automatically.  Otherwise, wait for an Awake etc. */
         if (g_getenv ("DBUS_STARTER_BUS_TYPE") == NULL) {
                 error = NULL;
-                if (mateconf_prefix != NULL) {
-                        res = mate_settings_manager_start_with_settings_prefix (manager, mateconf_prefix, &error);
-                } else {
-                        res = mate_settings_manager_start (manager, &error);
-                }
+                res = mate_settings_manager_start (manager, &error);
                 if (! res) {
                         g_warning ("Unable to start: %s", error->message);
                         g_error_free (error);
@@ -505,7 +499,6 @@ main (int argc, char *argv[])
         gtk_main ();
 
  out:
-        g_free (mateconf_prefix);
 
         if (bus != NULL) {
                 dbus_g_connection_unref (bus);

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<schemalist>
+  <schema id="org.mate.peripherals-smartcard" path="/desktop/mate/peripherals/smartcard/">
+    <key name="removal-action" type="s">
+      <default>'none'</default>
+      <summary>Smartcard removal action</summary>
+      <description>Set this to one of "none", "lock_screen", or "force_logout".  The action will get performed when the smartcard used for log in is removed.</description>
+    </key>
+  </schema>
+</schemalist>

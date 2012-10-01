@@ -32,7 +32,7 @@
 
 #include <dbus/dbus-glib.h>
 
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #include "msd-a11y-preferences-dialog.h"
 
@@ -45,19 +45,20 @@
 
 #define GTKBUILDER_UI_FILE "msd-a11y-preferences-dialog.ui"
 
-#define KEY_A11Y_DIR              "/desktop/mate/accessibility"
-#define KEY_STICKY_KEYS_ENABLED   KEY_A11Y_DIR "/keyboard/stickykeys_enable"
-#define KEY_BOUNCE_KEYS_ENABLED   KEY_A11Y_DIR "/keyboard/bouncekeys_enable"
-#define KEY_SLOW_KEYS_ENABLED     KEY_A11Y_DIR "/keyboard/slowkeys_enable"
-#define KEY_MOUSE_KEYS_ENABLED    KEY_A11Y_DIR "/keyboard/mousekeys_enable"
+#define KEY_A11Y_SCHEMA              "org.mate.accessibility-keyboard"
+#define KEY_STICKY_KEYS_ENABLED      "stickykeys-enable"
+#define KEY_BOUNCE_KEYS_ENABLED      "bouncekeys-enable"
+#define KEY_SLOW_KEYS_ENABLED        "slowkeys-enable"
+#define KEY_MOUSE_KEYS_ENABLED       "mousekeys-enable"
 
-#define KEY_AT_DIR                "/desktop/mate/applications/at"
-#define KEY_AT_SCREEN_KEYBOARD_ENABLED  KEY_AT_DIR "/screen_keyboard_enabled"
-#define KEY_AT_SCREEN_MAGNIFIER_ENABLED KEY_AT_DIR "/screen_magnifier_enabled"
-#define KEY_AT_SCREEN_READER_ENABLED    KEY_AT_DIR "/screen_reader_enabled"
+#define KEY_AT_SCHEMA                   "org.mate.applications-at"
+#define KEY_AT_SCREEN_KEYBOARD_ENABLED  "screen-keyboard-enabled"
+#define KEY_AT_SCREEN_MAGNIFIER_ENABLED "screen-magnifier-enabled"
+#define KEY_AT_SCREEN_READER_ENABLED    "screen-reader-enabled"
 
-#define FONT_RENDER_DIR        "/desktop/mate/font_rendering"
-#define KEY_FONT_DPI           FONT_RENDER_DIR "/dpi"
+#define FONT_RENDER_SCHEMA        "org.mate.font-rendering"
+#define KEY_FONT_DPI              "dpi"
+
 /* X servers sometimes lie about the screen's physical dimensions, so we cannot
  * compute an accurate DPI value.  When this happens, the user gets fonts that
  * are too huge or too tiny.  So, we see what the server returns:  if it reports
@@ -65,7 +66,7 @@
  * DPI_HIGH_REASONABLE_VALUE], then we assume that it is lying and we use
  * DPI_FALLBACK instead.
  *
- * See get_dpi_from_mateconf_or_server() below, and also
+ * See get_dpi_from_gsettings_or_server() below, and also
  * https://bugzilla.novell.com/show_bug.cgi?id=217790
  */
 #define DPI_LOW_REASONABLE_VALUE 50
@@ -76,10 +77,13 @@
 #define DPI_FACTOR_LARGEST 2.0
 #define DPI_DEFAULT        96
 
-#define KEY_GTK_THEME          "/desktop/mate/interface/gtk_theme"
-#define KEY_COLOR_SCHEME       "/desktop/mate/interface/gtk_color_scheme"
-#define KEY_MARCO_THEME     "/apps/marco/general/theme"
-#define KEY_ICON_THEME         "/desktop/mate/interface/icon_theme"
+#define KEY_INTERFACE_SCHEMA   "org.mate.interface"
+#define KEY_GTK_THEME          "gtk-theme"
+#define KEY_COLOR_SCHEME       "gtk-color-scheme"
+#define KEY_ICON_THEME         "icon-theme"
+
+#define KEY_MARCO_SCHEMA    "org.mate.Marco"
+#define KEY_MARCO_THEME     "theme"
 
 #define HIGH_CONTRAST_THEME    "HighContrast"
 
@@ -96,8 +100,10 @@ struct MsdA11yPreferencesDialogPrivate
         GtkWidget *screen_keyboard_checkbutton;
         GtkWidget *screen_magnifier_checkbutton;
 
-        guint      a11y_dir_cnxn;
-        guint      msd_a11y_dir_cnxn;
+        GSettings *settings_a11y;
+        GSettings *settings_at;
+        GSettings *settings_interface;
+        GSettings *settings_marco;
 };
 
 enum {
@@ -180,46 +186,18 @@ on_response (MsdA11yPreferencesDialog *dialog,
         }
 }
 
-static char *
-config_get_string (const char *key,
-                   gboolean   *is_writable)
-{
-        char        *str;
-        MateConfClient *client;
-
-        client = mateconf_client_get_default ();
-
-        if (is_writable) {
-                *is_writable = mateconf_client_key_is_writable (client,
-                                                             key,
-                                                             NULL);
-        }
-
-        str = mateconf_client_get_string (client, key, NULL);
-
-        g_object_unref (client);
-
-        return str;
-}
-
 static gboolean
-config_get_bool (const char *key,
+config_get_bool (GSettings  *settings,
+                 const char *key,
                  gboolean   *is_writable)
 {
         int          enabled;
-        MateConfClient *client;
-
-        client = mateconf_client_get_default ();
 
         if (is_writable) {
-                *is_writable = mateconf_client_key_is_writable (client,
-                                                             key,
-                                                             NULL);
+                *is_writable = g_settings_is_writable (settings, key);
         }
 
-        enabled = mateconf_client_get_bool (client, key, NULL);
-
-        g_object_unref (client);
+        enabled = g_settings_get_boolean (settings, key);
 
         return enabled;
 }
@@ -273,25 +251,25 @@ get_dpi_from_x_server (void)
 static gboolean
 config_get_large_print (gboolean *is_writable)
 {
+        GSettings   *settings;
         gboolean     ret;
-        MateConfClient *client;
-        MateConfValue  *value;
         gdouble      x_dpi;
         gdouble      u_dpi;
+        gdouble      gs_dpi;
 
-        client = mateconf_client_get_default ();
-        value = mateconf_client_get_without_default (client, KEY_FONT_DPI, NULL);
+        settings = g_settings_new (FONT_RENDER_SCHEMA);
 
-        if (value != NULL) {
-                u_dpi = mateconf_value_get_float (value);
-                mateconf_value_free (value);
+        gs_dpi = g_settings_get_double (settings, KEY_FONT_DPI);
+
+        if (gs_dpi != 0) {
+                u_dpi = gs_dpi;
         } else {
                 u_dpi = DPI_DEFAULT;
         }
 
         x_dpi = get_dpi_from_x_server ();
 
-        g_object_unref (client);
+        g_object_unref (settings);
 
         g_debug ("MsdA11yPreferences: got x-dpi=%f user-dpi=%f", x_dpi, u_dpi);
 
@@ -303,9 +281,9 @@ config_get_large_print (gboolean *is_writable)
 static void
 config_set_large_print (gboolean enabled)
 {
-        MateConfClient *client;
+        GSettings *settings;
 
-        client = mateconf_client_get_default ();
+        settings = g_settings_new (FONT_RENDER_SCHEMA);
 
         if (enabled) {
                 gdouble x_dpi;
@@ -316,23 +294,25 @@ config_set_large_print (gboolean enabled)
 
                 g_debug ("MsdA11yPreferences: setting x-dpi=%f user-dpi=%f", x_dpi, u_dpi);
 
-                mateconf_client_set_float (client, KEY_FONT_DPI, u_dpi, NULL);
+                g_settings_set_double (settings, KEY_FONT_DPI, u_dpi);
         } else {
-                mateconf_client_unset (client, KEY_FONT_DPI, NULL);
+                g_settings_reset (settings, KEY_FONT_DPI);
         }
 
-        g_object_unref (client);
+        g_object_unref (settings);
 }
 
 static gboolean
-config_get_high_contrast (gboolean *is_writable)
+config_get_high_contrast (MsdA11yPreferencesDialog *dialog, gboolean *is_writable)
 {
         gboolean ret;
         char    *gtk_theme;
 
         ret = FALSE;
 
-        gtk_theme = config_get_string (KEY_GTK_THEME, is_writable);
+        is_writable = g_settings_is_writable (dialog->priv->settings_interface, KEY_GTK_THEME);
+        gtk_theme = g_settings_get_string (dialog->priv->settings_interface, KEY_GTK_THEME);
+
         if (gtk_theme != NULL && strcmp (gtk_theme, HIGH_CONTRAST_THEME) == 0) {
                 ret = TRUE;
         }
@@ -342,75 +322,57 @@ config_get_high_contrast (gboolean *is_writable)
 }
 
 static void
-config_set_high_contrast (gboolean enabled)
+config_set_high_contrast (MsdA11yPreferencesDialog *dialog, gboolean enabled)
 {
-        MateConfClient *client;
-
-        client = mateconf_client_get_default ();
-
         if (enabled) {
-                mateconf_client_set_string (client, KEY_GTK_THEME, HIGH_CONTRAST_THEME, NULL);
-                mateconf_client_set_string (client, KEY_ICON_THEME, HIGH_CONTRAST_THEME, NULL);
+                g_settings_set_string (dialog->priv->settings_interface, KEY_GTK_THEME, HIGH_CONTRAST_THEME);
+                g_settings_set_string (dialog->priv->settings_interface, KEY_ICON_THEME, HIGH_CONTRAST_THEME);
                 /* there isn't a high contrast marco theme afaik */
         } else {
-                mateconf_client_unset (client, KEY_GTK_THEME, NULL);
-                mateconf_client_unset (client, KEY_ICON_THEME, NULL);
-                mateconf_client_unset (client, KEY_MARCO_THEME, NULL);
+                g_settings_reset (dialog->priv->settings_interface, KEY_GTK_THEME);
+                g_settings_reset (dialog->priv->settings_interface, KEY_ICON_THEME);
+                g_settings_reset (dialog->priv->settings_marco, KEY_MARCO_THEME);
         }
-
-        g_object_unref (client);
 }
 
 static gboolean
-config_get_sticky_keys (gboolean *is_writable)
+config_get_sticky_keys (MsdA11yPreferencesDialog *dialog, gboolean *is_writable)
 {
-        return config_get_bool (KEY_STICKY_KEYS_ENABLED, is_writable);
+        return config_get_bool (dialog->priv->settings_a11y, KEY_STICKY_KEYS_ENABLED, is_writable);
 }
 
 static void
-config_set_sticky_keys (gboolean enabled)
+config_set_sticky_keys (MsdA11yPreferencesDialog *dialog, gboolean enabled)
 {
-        MateConfClient *client;
-
-        client = mateconf_client_get_default ();
-        mateconf_client_set_bool (client, KEY_STICKY_KEYS_ENABLED, enabled, NULL);
-        g_object_unref (client);
+        g_settings_set_boolean (dialog->priv->settings_a11y, KEY_STICKY_KEYS_ENABLED, enabled);
 }
 
 static gboolean
-config_get_bounce_keys (gboolean *is_writable)
+config_get_bounce_keys (MsdA11yPreferencesDialog *dialog, gboolean *is_writable)
 {
-        return config_get_bool (KEY_BOUNCE_KEYS_ENABLED, is_writable);
+        return config_get_bool (dialog->priv->settings_a11y, KEY_BOUNCE_KEYS_ENABLED, is_writable);
 }
 
 static void
-config_set_bounce_keys (gboolean enabled)
+config_set_bounce_keys (MsdA11yPreferencesDialog *dialog, gboolean enabled)
 {
-        MateConfClient *client;
-
-        client = mateconf_client_get_default ();
-        mateconf_client_set_bool (client, KEY_BOUNCE_KEYS_ENABLED, enabled, NULL);
-        g_object_unref (client);
+        g_settings_set_boolean (dialog->priv->settings_a11y, KEY_BOUNCE_KEYS_ENABLED, enabled);
 }
 
 static gboolean
-config_get_slow_keys (gboolean *is_writable)
+config_get_slow_keys (MsdA11yPreferencesDialog *dialog, gboolean *is_writable)
 {
-        return config_get_bool (KEY_SLOW_KEYS_ENABLED, is_writable);
+        return config_get_bool (dialog->priv->settings_a11y, KEY_SLOW_KEYS_ENABLED, is_writable);
 }
 
 static void
-config_set_slow_keys (gboolean enabled)
+config_set_slow_keys (MsdA11yPreferencesDialog *dialog, gboolean enabled)
 {
-        MateConfClient *client;
-
-        client = mateconf_client_get_default ();
-        mateconf_client_set_bool (client, KEY_SLOW_KEYS_ENABLED, enabled, NULL);
-        g_object_unref (client);
+        g_settings_set_boolean (dialog->priv->settings_a11y, KEY_SLOW_KEYS_ENABLED, enabled);
 }
 
 static gboolean
-config_have_at_mateconf_condition (const char *condition)
+config_have_at_gsettings_condition (const char *condition)
 {
         DBusGProxy      *sm_proxy;
         DBusGConnection *connection;
@@ -452,100 +414,88 @@ config_have_at_mateconf_condition (const char *condition)
 }
 
 static gboolean
-config_get_at_screen_reader (gboolean *is_writable)
+config_get_at_screen_reader (MsdA11yPreferencesDialog *dialog, gboolean *is_writable)
 {
-        return config_get_bool (KEY_AT_SCREEN_READER_ENABLED, is_writable);
+        return config_get_bool (dialog->priv->settings_at, KEY_AT_SCREEN_READER_ENABLED, is_writable);
 }
 
 static gboolean
-config_get_at_screen_keyboard (gboolean *is_writable)
+config_get_at_screen_keyboard (MsdA11yPreferencesDialog *dialog, gboolean *is_writable)
 {
-        return config_get_bool (KEY_AT_SCREEN_KEYBOARD_ENABLED, is_writable);
+        return config_get_bool (dialog->priv->settings_at, KEY_AT_SCREEN_KEYBOARD_ENABLED, is_writable);
 }
 
 static gboolean
-config_get_at_screen_magnifier (gboolean *is_writable)
+config_get_at_screen_magnifier (MsdA11yPreferencesDialog *dialog, gboolean *is_writable)
 {
-        return config_get_bool (KEY_AT_SCREEN_MAGNIFIER_ENABLED, is_writable);
+        return config_get_bool (dialog->priv->settings_at, KEY_AT_SCREEN_MAGNIFIER_ENABLED, is_writable);
 }
 
 static void
-config_set_at_screen_reader (gboolean enabled)
+config_set_at_screen_reader (MsdA11yPreferencesDialog *dialog, gboolean enabled)
 {
-        MateConfClient *client;
-
-        client = mateconf_client_get_default ();
-        mateconf_client_set_bool (client, KEY_AT_SCREEN_READER_ENABLED, enabled, NULL);
-        g_object_unref (client);
+        g_settings_set_boolean (dialog->priv->settings_at, KEY_AT_SCREEN_READER_ENABLED, enabled);
 }
 
 static void
-config_set_at_screen_keyboard (gboolean enabled)
+config_set_at_screen_keyboard (MsdA11yPreferencesDialog *dialog, gboolean enabled)
 {
-        MateConfClient *client;
-
-        client = mateconf_client_get_default ();
-        mateconf_client_set_bool (client, KEY_AT_SCREEN_KEYBOARD_ENABLED, enabled, NULL);
-        g_object_unref (client);
+        g_settings_set_boolean (dialog->priv->settings_at, KEY_AT_SCREEN_KEYBOARD_ENABLED, enabled);
 }
 
 static void
-config_set_at_screen_magnifier (gboolean enabled)
+config_set_at_screen_magnifier (MsdA11yPreferencesDialog *dialog, gboolean enabled)
 {
-        MateConfClient *client;
-
-        client = mateconf_client_get_default ();
-        mateconf_client_set_bool (client, KEY_AT_SCREEN_MAGNIFIER_ENABLED, enabled, NULL);
-        g_object_unref (client);
+        g_settings_set_boolean (dialog->priv->settings_at, KEY_AT_SCREEN_MAGNIFIER_ENABLED, enabled);
 }
 
 static void
 on_sticky_keys_checkbutton_toggled (GtkToggleButton          *button,
                                     MsdA11yPreferencesDialog *dialog)
 {
-        config_set_sticky_keys (gtk_toggle_button_get_active (button));
+        config_set_sticky_keys (dialog, gtk_toggle_button_get_active (button));
 }
 
 static void
 on_bounce_keys_checkbutton_toggled (GtkToggleButton          *button,
                                  MsdA11yPreferencesDialog *dialog)
 {
-        config_set_bounce_keys (gtk_toggle_button_get_active (button));
+        config_set_bounce_keys (dialog, gtk_toggle_button_get_active (button));
 }
 
 static void
 on_slow_keys_checkbutton_toggled (GtkToggleButton          *button,
                                   MsdA11yPreferencesDialog *dialog)
 {
-        config_set_slow_keys (gtk_toggle_button_get_active (button));
+        config_set_slow_keys (dialog, gtk_toggle_button_get_active (button));
 }
 
 static void
 on_high_contrast_checkbutton_toggled (GtkToggleButton          *button,
                                       MsdA11yPreferencesDialog *dialog)
 {
-        config_set_high_contrast (gtk_toggle_button_get_active (button));
+        config_set_high_contrast (dialog, gtk_toggle_button_get_active (button));
 }
 
 static void
 on_at_screen_reader_checkbutton_toggled (GtkToggleButton          *button,
                                          MsdA11yPreferencesDialog *dialog)
 {
-        config_set_at_screen_reader (gtk_toggle_button_get_active (button));
+        config_set_at_screen_reader (dialog, gtk_toggle_button_get_active (button));
 }
 
 static void
 on_at_screen_keyboard_checkbutton_toggled (GtkToggleButton          *button,
                                            MsdA11yPreferencesDialog *dialog)
 {
-        config_set_at_screen_keyboard (gtk_toggle_button_get_active (button));
+        config_set_at_screen_keyboard (dialog, gtk_toggle_button_get_active (button));
 }
 
 static void
 on_at_screen_magnifier_checkbutton_toggled (GtkToggleButton          *button,
                                             MsdA11yPreferencesDialog *dialog)
 {
-        config_set_at_screen_magnifier (gtk_toggle_button_get_active (button));
+        config_set_at_screen_magnifier (dialog, gtk_toggle_button_get_active (button));
 }
 
 static void
@@ -652,77 +602,34 @@ ui_set_large_print (MsdA11yPreferencesDialog *dialog,
 }
 
 static void
-key_changed_cb (MateConfClient              *client,
-                guint                     cnxn_id,
-                MateConfEntry               *entry,
+key_changed_cb (GSettings                *settings,
+                gchar                    *key,
                 MsdA11yPreferencesDialog *dialog)
 {
-        const char *key;
-        MateConfValue *value;
-
-        key = mateconf_entry_get_key (entry);
-        value = mateconf_entry_get_value (entry);
-
-        if (strcmp (key, KEY_STICKY_KEYS_ENABLED) == 0) {
-                if (value->type == MATECONF_VALUE_BOOL) {
-                        gboolean enabled;
-
-                        enabled = mateconf_value_get_bool (value);
-                        ui_set_sticky_keys (dialog, enabled);
-                } else {
-                        g_warning ("Error retrieving configuration key '%s': Invalid type",
-                                   key);
-                }
-        } else if (strcmp (key, KEY_BOUNCE_KEYS_ENABLED) == 0) {
-                if (value->type == MATECONF_VALUE_BOOL) {
-                        gboolean enabled;
-
-                        enabled = mateconf_value_get_bool (value);
-                        ui_set_bounce_keys (dialog, enabled);
-                } else {
-                        g_warning ("Error retrieving configuration key '%s': Invalid type",
-                                   key);
-                }
-        } else if (strcmp (key, KEY_SLOW_KEYS_ENABLED) == 0) {
-                if (value->type == MATECONF_VALUE_BOOL) {
-                        gboolean enabled;
-
-                        enabled = mateconf_value_get_bool (value);
-                        ui_set_slow_keys (dialog, enabled);
-                } else {
-                        g_warning ("Error retrieving configuration key '%s': Invalid type",
-                                   key);
-                }
-        } else if (strcmp (key, KEY_AT_SCREEN_READER_ENABLED) == 0) {
-                if (value->type == MATECONF_VALUE_BOOL) {
-                        gboolean enabled;
-
-                        enabled = mateconf_value_get_bool (value);
-                        ui_set_at_screen_reader (dialog, enabled);
-                } else {
-                        g_warning ("Error retrieving configuration key '%s': Invalid type",
-                                   key);
-                }
-        } else if (strcmp (key, KEY_AT_SCREEN_KEYBOARD_ENABLED) == 0) {
-                if (value->type == MATECONF_VALUE_BOOL) {
-                        gboolean enabled;
-
-                        enabled = mateconf_value_get_bool (value);
-                        ui_set_at_screen_keyboard (dialog, enabled);
-                } else {
-                        g_warning ("Error retrieving configuration key '%s': Invalid type",
-                                   key);
-                }
+        if (g_strcmp0 (key, KEY_STICKY_KEYS_ENABLED) == 0) {
+                gboolean enabled;
+                enabled = g_settings_get_boolean (settings, key);
+                ui_set_sticky_keys (dialog, enabled);
+        } else if (g_strcmp0 (key, KEY_BOUNCE_KEYS_ENABLED) == 0) {
+                gboolean enabled;
+                enabled = g_settings_get_boolean (settings, key);
+                ui_set_bounce_keys (dialog, enabled);
+        } else if (g_strcmp0 (key, KEY_SLOW_KEYS_ENABLED) == 0) {
+                gboolean enabled;
+                enabled = g_settings_get_boolean (settings, key);
+                ui_set_slow_keys (dialog, enabled);
+        } else if (g_strcmp0 (key, KEY_AT_SCREEN_READER_ENABLED) == 0) {
+                gboolean enabled;
+                enabled = g_settings_get_boolean (settings, key);
+                ui_set_at_screen_reader (dialog, enabled);
+        } else if (g_strcmp0 (key, KEY_AT_SCREEN_KEYBOARD_ENABLED) == 0) {
+                gboolean enabled;
+                enabled = g_settings_get_boolean (settings, key);
+                ui_set_at_screen_keyboard (dialog, enabled);
         } else if (strcmp (key, KEY_AT_SCREEN_MAGNIFIER_ENABLED) == 0) {
-                if (value->type == MATECONF_VALUE_BOOL) {
-                        gboolean enabled;
-
-                        enabled = mateconf_value_get_bool (value);
-                        ui_set_at_screen_magnifier (dialog, enabled);
-                } else {
-                        g_warning ("Error retrieving configuration key '%s': Invalid type",
-                                   key);
-                }
+                gboolean enabled;
+                enabled = g_settings_get_boolean (settings, key);
+                ui_set_at_screen_magnifier (dialog, enabled);
         } else {
                 g_debug ("Config key not handled: %s", key);
         }
@@ -735,7 +642,6 @@ setup_dialog (MsdA11yPreferencesDialog *dialog,
         GtkWidget   *widget;
         gboolean     enabled;
         gboolean     is_writable;
-        MateConfClient *client;
 
         widget = GTK_WIDGET (gtk_builder_get_object (builder,
                                                      "sticky_keys_checkbutton"));
@@ -744,7 +650,7 @@ setup_dialog (MsdA11yPreferencesDialog *dialog,
                           "toggled",
                           G_CALLBACK (on_sticky_keys_checkbutton_toggled),
                           NULL);
-        enabled = config_get_sticky_keys (&is_writable);
+        enabled = config_get_sticky_keys (dialog, &is_writable);
         ui_set_sticky_keys (dialog, enabled);
         if (! is_writable) {
                 gtk_widget_set_sensitive (widget, FALSE);
@@ -757,7 +663,7 @@ setup_dialog (MsdA11yPreferencesDialog *dialog,
                           "toggled",
                           G_CALLBACK (on_bounce_keys_checkbutton_toggled),
                           NULL);
-        enabled = config_get_bounce_keys (&is_writable);
+        enabled = config_get_bounce_keys (dialog, &is_writable);
         ui_set_bounce_keys (dialog, enabled);
         if (! is_writable) {
                 gtk_widget_set_sensitive (widget, FALSE);
@@ -770,7 +676,7 @@ setup_dialog (MsdA11yPreferencesDialog *dialog,
                           "toggled",
                           G_CALLBACK (on_slow_keys_checkbutton_toggled),
                           NULL);
-        enabled = config_get_slow_keys (&is_writable);
+        enabled = config_get_slow_keys (dialog, &is_writable);
         ui_set_slow_keys (dialog, enabled);
         if (! is_writable) {
                 gtk_widget_set_sensitive (widget, FALSE);
@@ -783,7 +689,7 @@ setup_dialog (MsdA11yPreferencesDialog *dialog,
                           "toggled",
                           G_CALLBACK (on_high_contrast_checkbutton_toggled),
                           NULL);
-        enabled = config_get_high_contrast (&is_writable);
+        enabled = config_get_high_contrast (dialog, &is_writable);
         ui_set_high_contrast (dialog, enabled);
         if (! is_writable) {
                 gtk_widget_set_sensitive (widget, FALSE);
@@ -796,13 +702,13 @@ setup_dialog (MsdA11yPreferencesDialog *dialog,
                           "toggled",
                           G_CALLBACK (on_at_screen_keyboard_checkbutton_toggled),
                           NULL);
-        enabled = config_get_at_screen_keyboard (&is_writable);
+        enabled = config_get_at_screen_keyboard (dialog, &is_writable);
         ui_set_at_screen_keyboard (dialog, enabled);
         if (! is_writable) {
                 gtk_widget_set_sensitive (widget, FALSE);
         }
         gtk_widget_set_no_show_all (widget, TRUE);
-        if (config_have_at_mateconf_condition ("MATE " KEY_AT_SCREEN_KEYBOARD_ENABLED)) {
+        if (config_have_at_gsettings_condition ("MATE " KEY_AT_SCHEMA " " KEY_AT_SCREEN_KEYBOARD_ENABLED)) {
                 gtk_widget_show_all (widget);
         } else {
                 gtk_widget_hide (widget);
@@ -815,13 +721,13 @@ setup_dialog (MsdA11yPreferencesDialog *dialog,
                           "toggled",
                           G_CALLBACK (on_at_screen_reader_checkbutton_toggled),
                           NULL);
-        enabled = config_get_at_screen_reader (&is_writable);
+        enabled = config_get_at_screen_reader (dialog, &is_writable);
         ui_set_at_screen_reader (dialog, enabled);
         if (! is_writable) {
                 gtk_widget_set_sensitive (widget, FALSE);
         }
         gtk_widget_set_no_show_all (widget, TRUE);
-        if (config_have_at_mateconf_condition ("MATE " KEY_AT_SCREEN_READER_ENABLED)) {
+        if (config_have_at_gsettings_condition ("MATE " KEY_AT_SCHEMA " " KEY_AT_SCREEN_READER_ENABLED)) {
                 gtk_widget_show_all (widget);
         } else {
                 gtk_widget_hide (widget);
@@ -834,13 +740,13 @@ setup_dialog (MsdA11yPreferencesDialog *dialog,
                           "toggled",
                           G_CALLBACK (on_at_screen_magnifier_checkbutton_toggled),
                           NULL);
-        enabled = config_get_at_screen_magnifier (&is_writable);
+        enabled = config_get_at_screen_magnifier (dialog, &is_writable);
         ui_set_at_screen_magnifier (dialog, enabled);
         if (! is_writable) {
                 gtk_widget_set_sensitive (widget, FALSE);
         }
         gtk_widget_set_no_show_all (widget, TRUE);
-        if (config_have_at_mateconf_condition ("MATE " KEY_AT_SCREEN_MAGNIFIER_ENABLED)) {
+        if (config_have_at_gsettings_condition ("MATE " KEY_AT_SCHEMA " " KEY_AT_SCREEN_MAGNIFIER_ENABLED)) {
                 gtk_widget_show_all (widget);
         } else {
                 gtk_widget_hide (widget);
@@ -859,31 +765,14 @@ setup_dialog (MsdA11yPreferencesDialog *dialog,
                 gtk_widget_set_sensitive (widget, FALSE);
         }
 
-
-        client = mateconf_client_get_default ();
-        mateconf_client_add_dir (client,
-                              KEY_A11Y_DIR,
-                              MATECONF_CLIENT_PRELOAD_ONELEVEL,
-                              NULL);
-        dialog->priv->a11y_dir_cnxn = mateconf_client_notify_add (client,
-                                                               KEY_A11Y_DIR,
-                                                               (MateConfClientNotifyFunc)key_changed_cb,
-                                                               dialog,
-                                                               NULL,
-                                                               NULL);
-
-        mateconf_client_add_dir (client,
-                              KEY_AT_DIR,
-                              MATECONF_CLIENT_PRELOAD_ONELEVEL,
-                              NULL);
-        dialog->priv->msd_a11y_dir_cnxn = mateconf_client_notify_add (client,
-                                                                   KEY_AT_DIR,
-                                                                   (MateConfClientNotifyFunc)key_changed_cb,
-                                                                   dialog,
-                                                                   NULL,
-                                                                   NULL);
-
-        g_object_unref (client);
+        g_signal_connect (dialog->priv->settings_a11y,
+                          "changed",
+                          G_CALLBACK (key_changed_cb),
+                          dialog);
+        g_signal_connect (dialog->priv->settings_at,
+                          "changed",
+                          G_CALLBACK (key_changed_cb),
+                          dialog);
 }
 
 static void
@@ -895,6 +784,11 @@ msd_a11y_preferences_dialog_init (MsdA11yPreferencesDialog *dialog)
         GtkBuilder  *builder;
 
         dialog->priv = MSD_A11Y_PREFERENCES_DIALOG_GET_PRIVATE (dialog);
+
+        dialog->priv->settings_a11y = g_settings_new (KEY_A11Y_SCHEMA);
+        dialog->priv->settings_at = g_settings_new (KEY_AT_SCHEMA);
+        dialog->priv->settings_interface = g_settings_new (KEY_INTERFACE_SCHEMA);
+        dialog->priv->settings_marco = g_settings_new (KEY_MARCO_SCHEMA);
 
         builder = gtk_builder_new ();
         gtk_builder_set_translation_domain (builder, PACKAGE);
@@ -940,7 +834,6 @@ static void
 msd_a11y_preferences_dialog_finalize (GObject *object)
 {
         MsdA11yPreferencesDialog *dialog;
-        MateConfClient              *client;
 
         g_return_if_fail (object != NULL);
         g_return_if_fail (MSD_IS_A11Y_PREFERENCES_DIALOG (object));
@@ -949,16 +842,10 @@ msd_a11y_preferences_dialog_finalize (GObject *object)
 
         g_return_if_fail (dialog->priv != NULL);
 
-        client = mateconf_client_get_default ();
-
-        if (dialog->priv->a11y_dir_cnxn > 0) {
-                mateconf_client_notify_remove (client, dialog->priv->a11y_dir_cnxn);
-        }
-        if (dialog->priv->msd_a11y_dir_cnxn > 0) {
-                mateconf_client_notify_remove (client, dialog->priv->msd_a11y_dir_cnxn);
-        }
-
-        g_object_unref (client);
+        g_object_unref (dialog->priv->settings_a11y);
+        g_object_unref (dialog->priv->settings_at);
+        g_object_unref (dialog->priv->settings_interface);
+        g_object_unref (dialog->priv->settings_marco);
 
         G_OBJECT_CLASS (msd_a11y_preferences_dialog_parent_class)->finalize (object);
 }

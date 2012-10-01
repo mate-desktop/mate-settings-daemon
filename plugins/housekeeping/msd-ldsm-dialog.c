@@ -18,11 +18,12 @@
  */
 
 #include <glib/gi18n.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #include "msd-ldsm-dialog.h"
 
-#define MATECONF_CLIENT_IGNORE_PATHS "/apps/mate_settings_daemon/plugins/housekeeping/ignore_paths"
+#define SETTINGS_SCHEMA "org.mate.SettingsDaemon.plugins.housekeeping"
+#define SETTINGS_IGNORE_PATHS "ignore-paths"
 
 enum
 {
@@ -149,45 +150,47 @@ ignore_check_button_toggled_cb (GtkToggleButton *button,
                                 gpointer user_data)
 {
         MsdLdsmDialog *dialog = (MsdLdsmDialog *)user_data;
-        MateConfClient *client;
+        GSettings *settings;
         GSList *ignore_paths;
         GError *error = NULL;
         gboolean ignore, ret, updated;
+        gchar **settings_list;
         
-        client = mateconf_client_get_default ();
-        if (client != NULL) {
-                ignore_paths = mateconf_client_get_list (client,
-                                                      MATECONF_CLIENT_IGNORE_PATHS,
-                                                      MATECONF_VALUE_STRING, &error);
-                if (error != NULL) {
-                        g_warning ("Cannot change ignore preference - failed to read existing configuration: %s",
-                                   error->message ? error->message : "Unkown error");
-                        g_clear_error (&error);
-                        return;
-                } else {
-                        ignore = gtk_toggle_button_get_active (button);
-                        updated = update_ignore_paths (&ignore_paths, dialog->priv->mount_path, ignore); 
+        settings = g_settings_new (SETTINGS_SCHEMA);
+        
+        settings_list = g_settings_get_strv (settings, SETTINGS_IGNORE_PATHS);
+        if (settings_list != NULL) {
+                gint i;
+
+                for (i = 0; i < G_N_ELEMENTS (settings_list); i++) {
+                        if (settings_list[i] != NULL)
+                                ignore_paths = g_slist_append (ignore_paths, g_strdup (settings_list[i]));
                 }
-                
-                if (!updated)
-                        return;
-                
-                ret = mateconf_client_set_list (client,
-                                             MATECONF_CLIENT_IGNORE_PATHS,
-                                             MATECONF_VALUE_STRING,
-                                             ignore_paths, &error);
-                if (!ret || error != NULL) {
-                        g_warning ("Cannot change ignore preference - failed to commit changes: %s",
-                                   error->message ? error->message : "Unkown error");
-                        g_clear_error (&error);
-                }
-                
-                g_slist_foreach (ignore_paths, (GFunc) g_free, NULL);
-                g_slist_free (ignore_paths);
-                g_object_unref (client);
-        } else {
-                g_warning ("Cannot change ignore preference - failed to get MateConfClient");
-        }     
+                g_strfreev (settings_list);
+        }
+        
+        
+        ignore = gtk_toggle_button_get_active (button);
+        updated = update_ignore_paths (&ignore_paths, dialog->priv->mount_path, ignore); 
+        
+        if (updated) {
+            GSList *l;
+            GPtrArray *array = g_ptr_array_new ();
+
+            for (l = ignore_paths; l != NULL; l = l->next)
+                    g_ptr_array_add (array, l->data);
+            g_ptr_array_add (array, NULL);
+
+            if (!g_settings_set_strv (settings, "ignore-paths", (const gchar **) array->pdata)) {
+                    g_warning ("Cannot change ignore preference - failed to commit changes");
+            }
+
+            g_ptr_array_free (array, FALSE);
+        }
+
+        g_slist_foreach (ignore_paths, (GFunc) g_free, NULL);
+        g_slist_free (ignore_paths);
+        g_object_unref (settings);     
 }
 
 static void
@@ -231,7 +234,7 @@ msd_ldsm_dialog_init (MsdLdsmDialog *dialog)
         /* Create the check button to ignore future warnings */
         dialog->priv->ignore_check_button = gtk_check_button_new ();
         /* The button should be inactive if the dialog was just called.
-         * I suppose it could be possible for the user to manually edit the MateConf key between
+         * I suppose it could be possible for the user to manually edit the GSettings key between
          * the mount being checked and the dialog appearing, but I don't think it matters
          * too much */
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->priv->ignore_check_button), FALSE);

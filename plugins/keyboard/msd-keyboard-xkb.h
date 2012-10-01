@@ -24,13 +24,10 @@
 #ifndef __MSD_KEYBOARD_XKB_H
 #define __MSD_KEYBOARD_XKB_H
 
-#include <mateconf/mateconf.h>
-#include <mateconf/mateconf-client.h>
-
 #include <libxklavier/xklavier.h>
 #include "msd-keyboard-manager.h"
 
-void msd_keyboard_xkb_init(MateConfClient* client, MsdKeyboardManager* manager);
+void msd_keyboard_xkb_init(MsdKeyboardManager* manager);
 void msd_keyboard_xkb_shutdown(void);
 
 typedef void (*PostActivationCallback) (void* userData);

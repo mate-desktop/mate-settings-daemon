@@ -37,8 +37,7 @@
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
 #include <gtk/gtk.h>
-#include <mateconf/mateconf.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #include "mate-settings-profile.h"
 #include "msd-xsettings-manager.h"
@@ -49,18 +48,16 @@
 
 #define MATE_XSETTINGS_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MATE_TYPE_XSETTINGS_MANAGER, MateXSettingsManagerPrivate))
 
-#define MOUSE_SETTINGS_DIR     "/desktop/mate/peripherals/mouse"
-#define GTK_SETTINGS_DIR       "/desktop/gtk"
-#define INTERFACE_SETTINGS_DIR "/desktop/mate/interface"
-#define SOUND_SETTINGS_DIR     "/desktop/mate/sound"
-#define GTK_MODULES_DIR        "/apps/mate_settings_daemon/gtk-modules"
+#define MOUSE_SCHEMA          "org.mate.peripherals-mouse"
+#define INTERFACE_SCHEMA      "org.mate.interface"
+#define SOUND_SCHEMA          "org.mate.sound"
 
 #ifdef HAVE_FONTCONFIG
-#define FONT_RENDER_DIR "/desktop/mate/font_rendering"
-#define FONT_ANTIALIASING_KEY FONT_RENDER_DIR "/antialiasing"
-#define FONT_HINTING_KEY      FONT_RENDER_DIR "/hinting"
-#define FONT_RGBA_ORDER_KEY   FONT_RENDER_DIR "/rgba_order"
-#define FONT_DPI_KEY          FONT_RENDER_DIR "/dpi"
+#define FONT_RENDER_SCHEMA    "org.mate.font-rendering"
+#define FONT_ANTIALIASING_KEY "antialiasing"
+#define FONT_HINTING_KEY      "hinting"
+#define FONT_RGBA_ORDER_KEY   "rgba-order"
+#define FONT_DPI_KEY          "dpi"
 
 /* X servers sometimes lie about the screen's physical dimensions, so we cannot
  * compute an accurate DPI value.  When this happens, the user gets fonts that
@@ -69,7 +66,7 @@
  * DPI_HIGH_REASONABLE_VALUE], then we assume that it is lying and we use
  * DPI_FALLBACK instead.
  *
- * See get_dpi_from_mateconf_or_server() below, and also
+ * See get_dpi_from_gsettings_or_server() below, and also
  * https://bugzilla.novell.com/show_bug.cgi?id=217790
  */
 #define DPI_FALLBACK 96
@@ -79,22 +76,23 @@
 #endif /* HAVE_FONTCONFIG */
 
 typedef struct _TranslationEntry TranslationEntry;
-typedef void (* TranslationFunc) (MateXSettingsManager *manager,
+typedef void (* TranslationFunc) (MateXSettingsManager  *manager,
                                   TranslationEntry      *trans,
-                                  MateConfValue            *value);
+                                  GVariant              *value);
 
 struct _TranslationEntry {
-        const char     *mateconf_key;
+        const char     *gsettings_schema;
+        const char     *gsettings_key;
         const char     *xsetting_name;
 
-        MateConfValueType  mateconf_type;
         TranslationFunc translate;
 };
 
 struct MateXSettingsManagerPrivate
 {
         XSettingsManager **managers;
-        guint              notify[6];
+        GHashTable *gsettings;
+        GSettings *gsettings_font;
 #ifdef HAVE_FONTCONFIG
         fontconfig_monitor_handle_t *fontconfig_handle;
 #endif /* HAVE_FONTCONFIG */
@@ -121,65 +119,57 @@ msd_xsettings_error_quark (void)
 }
 
 static void
-translate_bool_int (MateXSettingsManager *manager,
+translate_bool_int (MateXSettingsManager  *manager,
                     TranslationEntry      *trans,
-                    MateConfValue            *value)
+                    GVariant              *value)
 {
         int i;
 
-        g_assert (value->type == trans->mateconf_type);
-
         for (i = 0; manager->priv->managers [i]; i++) {
                 xsettings_manager_set_int (manager->priv->managers [i], trans->xsetting_name,
-                                           mateconf_value_get_bool (value));
+                                           g_variant_get_boolean (value));
         }
 }
 
 static void
-translate_int_int (MateXSettingsManager *manager,
+translate_int_int (MateXSettingsManager  *manager,
                    TranslationEntry      *trans,
-                   MateConfValue            *value)
+                   GVariant              *value)
 {
         int i;
 
-        g_assert (value->type == trans->mateconf_type);
-
         for (i = 0; manager->priv->managers [i]; i++) {
                 xsettings_manager_set_int (manager->priv->managers [i], trans->xsetting_name,
-                                           mateconf_value_get_int (value));
+                                           g_variant_get_int32 (value));
         }
 }
 
 static void
-translate_string_string (MateXSettingsManager *manager,
+translate_string_string (MateXSettingsManager  *manager,
                          TranslationEntry      *trans,
-                         MateConfValue            *value)
+                         GVariant              *value)
 {
         int i;
-
-        g_assert (value->type == trans->mateconf_type);
 
         for (i = 0; manager->priv->managers [i]; i++) {
                 xsettings_manager_set_string (manager->priv->managers [i],
                                               trans->xsetting_name,
-                                              mateconf_value_get_string (value));
+                                              g_variant_get_string (value, NULL));
         }
 }
 
 static void
-translate_string_string_toolbar (MateXSettingsManager *manager,
+translate_string_string_toolbar (MateXSettingsManager  *manager,
                                  TranslationEntry      *trans,
-                                 MateConfValue            *value)
+                                 GVariant              *value)
 {
         int         i;
         const char *tmp;
 
-        g_assert (value->type == trans->mateconf_type);
-
-        /* This is kind of a workaround since MATE expects the key value to be
+        /* This is kind of a workaround since GNOME expects the key value to be
          * "both_horiz" and gtk+ wants the XSetting to be "both-horiz".
          */
-        tmp = mateconf_value_get_string (value);
+        tmp = g_variant_get_string (value, NULL);
         if (tmp && strcmp (tmp, "both_horiz") == 0) {
                 tmp = "both-horiz";
         }
@@ -192,33 +182,34 @@ translate_string_string_toolbar (MateXSettingsManager *manager,
 }
 
 static TranslationEntry translations [] = {
-        { "/desktop/mate/peripherals/mouse/double_click",   "Net/DoubleClickTime",     MATECONF_VALUE_INT,      translate_int_int },
-        { "/desktop/mate/peripherals/mouse/drag_threshold", "Net/DndDragThreshold",    MATECONF_VALUE_INT,      translate_int_int },
-        { "/desktop/mate/gtk-color-palette",                "Gtk/ColorPalette",        MATECONF_VALUE_STRING,   translate_string_string },
-        { "/desktop/mate/interface/font_name",              "Gtk/FontName",            MATECONF_VALUE_STRING,   translate_string_string },
-        { "/desktop/mate/interface/gtk_key_theme",          "Gtk/KeyThemeName",        MATECONF_VALUE_STRING,   translate_string_string },
-        { "/desktop/mate/interface/toolbar_style",          "Gtk/ToolbarStyle",        MATECONF_VALUE_STRING,   translate_string_string_toolbar },
-        { "/desktop/mate/interface/toolbar_icons_size",     "Gtk/ToolbarIconSize",     MATECONF_VALUE_STRING,   translate_string_string },
-        { "/desktop/mate/interface/can_change_accels",      "Gtk/CanChangeAccels",     MATECONF_VALUE_BOOL,     translate_bool_int },
-        { "/desktop/mate/interface/cursor_blink",           "Net/CursorBlink",         MATECONF_VALUE_BOOL,     translate_bool_int },
-        { "/desktop/mate/interface/cursor_blink_time",      "Net/CursorBlinkTime",     MATECONF_VALUE_INT,      translate_int_int },
-        { "/desktop/mate/interface/gtk_theme",              "Net/ThemeName",           MATECONF_VALUE_STRING,   translate_string_string },
-        { "/desktop/mate/interface/gtk_color_scheme",       "Gtk/ColorScheme",         MATECONF_VALUE_STRING,   translate_string_string },
-        { "/desktop/mate/interface/gtk-im-preedit-style",   "Gtk/IMPreeditStyle",      MATECONF_VALUE_STRING,   translate_string_string },
-        { "/desktop/mate/interface/gtk-im-status-style",    "Gtk/IMStatusStyle",       MATECONF_VALUE_STRING,   translate_string_string },
-        { "/desktop/mate/interface/gtk-im-module",          "Gtk/IMModule",            MATECONF_VALUE_STRING,   translate_string_string },
-        { "/desktop/mate/interface/icon_theme",             "Net/IconThemeName",       MATECONF_VALUE_STRING,   translate_string_string },
-        { "/desktop/mate/interface/file_chooser_backend",   "Gtk/FileChooserBackend",  MATECONF_VALUE_STRING,   translate_string_string },
-        { "/desktop/mate/interface/menus_have_icons",       "Gtk/MenuImages",          MATECONF_VALUE_BOOL,     translate_bool_int },
-        { "/desktop/mate/interface/buttons_have_icons",     "Gtk/ButtonImages",          MATECONF_VALUE_BOOL,     translate_bool_int },
-        { "/desktop/mate/interface/menubar_accel",          "Gtk/MenuBarAccel",        MATECONF_VALUE_STRING,   translate_string_string },
-        { "/desktop/mate/peripherals/mouse/cursor_theme",   "Gtk/CursorThemeName",     MATECONF_VALUE_STRING,   translate_string_string },
-        { "/desktop/mate/peripherals/mouse/cursor_size",    "Gtk/CursorThemeSize",     MATECONF_VALUE_INT,      translate_int_int },
-        { "/desktop/mate/interface/show_input_method_menu", "Gtk/ShowInputMethodMenu", MATECONF_VALUE_BOOL,     translate_bool_int },
-        { "/desktop/mate/interface/show_unicode_menu",      "Gtk/ShowUnicodeMenu",     MATECONF_VALUE_BOOL,     translate_bool_int },
-        { "/desktop/mate/sound/theme_name",                 "Net/SoundThemeName",      MATECONF_VALUE_STRING,   translate_string_string },
-        { "/desktop/mate/sound/event_sounds",               "Net/EnableEventSounds" ,  MATECONF_VALUE_BOOL,     translate_bool_int },
-        { "/desktop/mate/sound/input_feedback_sounds",      "Net/EnableInputFeedbackSounds", MATECONF_VALUE_BOOL, translate_bool_int }
+        { MOUSE_SCHEMA,     "double-click",           "Net/DoubleClickTime",           translate_int_int },
+        { MOUSE_SCHEMA,     "drag-threshold",         "Net/DndDragThreshold",          translate_int_int },
+        { MOUSE_SCHEMA,     "cursor-theme",           "Gtk/CursorThemeName",           translate_string_string },
+        { MOUSE_SCHEMA,     "cursor-size",            "Gtk/CursorThemeSize",           translate_int_int },
+
+        { INTERFACE_SCHEMA, "font-name",              "Gtk/FontName",                  translate_string_string },
+        { INTERFACE_SCHEMA, "gtk-key-theme",          "Gtk/KeyThemeName",              translate_string_string },
+        { INTERFACE_SCHEMA, "toolbar-style",          "Gtk/ToolbarStyle",              translate_string_string_toolbar },
+        { INTERFACE_SCHEMA, "toolbar-icons-size",     "Gtk/ToolbarIconSize",           translate_string_string },
+        { INTERFACE_SCHEMA, "can-change-accels",      "Gtk/CanChangeAccels",           translate_bool_int },
+        { INTERFACE_SCHEMA, "cursor-blink",           "Net/CursorBlink",               translate_bool_int },
+        { INTERFACE_SCHEMA, "cursor-blink-time",      "Net/CursorBlinkTime",           translate_int_int },
+        { INTERFACE_SCHEMA, "gtk-theme",              "Net/ThemeName",                 translate_string_string },
+        { INTERFACE_SCHEMA, "gtk-color-scheme",       "Gtk/ColorScheme",               translate_string_string },
+        { INTERFACE_SCHEMA, "gtk-im-preedit-style",   "Gtk/IMPreeditStyle",            translate_string_string },
+        { INTERFACE_SCHEMA, "gtk-im-status-style",    "Gtk/IMStatusStyle",             translate_string_string },
+        { INTERFACE_SCHEMA, "gtk-im-module",          "Gtk/IMModule",                  translate_string_string },
+        { INTERFACE_SCHEMA, "icon-theme",             "Net/IconThemeName",             translate_string_string },
+        { INTERFACE_SCHEMA, "file-chooser-backend",   "Gtk/FileChooserBackend",        translate_string_string },
+        { INTERFACE_SCHEMA, "menus-have-icons",       "Gtk/MenuImages",                translate_bool_int },
+        { INTERFACE_SCHEMA, "buttons-have-icons",     "Gtk/ButtonImages",              translate_bool_int },
+        { INTERFACE_SCHEMA, "menubar-accel",          "Gtk/MenuBarAccel",              translate_string_string },
+        { INTERFACE_SCHEMA, "show-input-method-menu", "Gtk/ShowInputMethodMenu",       translate_bool_int },
+        { INTERFACE_SCHEMA, "show-unicode-menu",      "Gtk/ShowUnicodeMenu",           translate_bool_int },
+
+        { SOUND_SCHEMA, "theme-name",                 "Net/SoundThemeName",            translate_string_string },
+        { SOUND_SCHEMA, "event-sounds",               "Net/EnableEventSounds" ,        translate_bool_int },
+        { SOUND_SCHEMA, "input-feedback-sounds",      "Net/EnableInputFeedbackSounds", translate_bool_int }
 };
 
 #ifdef HAVE_FONTCONFIG
@@ -265,22 +256,21 @@ get_dpi_from_x_server (void)
 }
 
 static double
-get_dpi_from_mateconf_or_x_server (MateConfClient *client)
+get_dpi_from_gsettings_or_x_server (GSettings *gsettings)
 {
-        MateConfValue *value;
-        double      dpi;
+        double value;
+        double dpi;
 
-        value = mateconf_client_get_without_default (client, FONT_DPI_KEY, NULL);
+        value = g_settings_get_double (gsettings, FONT_DPI_KEY);
 
-        /* If the user has ever set the DPI preference in MateConf, we use that.
+        /* If the user has ever set the DPI preference in GSettings, we use that.
          * Otherwise, we see if the X server reports a reasonable DPI value:  some X
          * servers report completely bogus values, and the user gets huge or tiny
          * fonts which are unusable.
          */
 
-        if (value != NULL) {
-                dpi = mateconf_value_get_float (value);
-                mateconf_value_free (value);
+        if (value != 0) {
+                dpi = value;
         } else {
                 dpi = get_dpi_from_x_server ();
         }
@@ -299,11 +289,11 @@ typedef struct
 
 static const char *rgba_types[] = { "rgb", "bgr", "vbgr", "vrgb" };
 
-/* Read MateConf settings and determine the appropriate Xft settings based on them
- * This probably could be done a bit more cleanly with mateconf_string_to_enum
+/* Read GSettings values and determine the appropriate Xft settings based on them
+ * This probably could be done a bit more cleanly with g_settings_get_enum
  */
 static void
-xft_settings_get (MateConfClient      *client,
+xft_settings_get (GSettings        *gsettings,
                   MateXftSettings *settings)
 {
         char  *antialiasing;
@@ -311,10 +301,10 @@ xft_settings_get (MateConfClient      *client,
         char  *rgba_order;
         double dpi;
 
-        antialiasing = mateconf_client_get_string (client, FONT_ANTIALIASING_KEY, NULL);
-        hinting = mateconf_client_get_string (client, FONT_HINTING_KEY, NULL);
-        rgba_order = mateconf_client_get_string (client, FONT_RGBA_ORDER_KEY, NULL);
-        dpi = get_dpi_from_mateconf_or_x_server (client);
+        antialiasing = g_settings_get_string (gsettings, FONT_ANTIALIASING_KEY);
+        hinting = g_settings_get_string (gsettings, FONT_HINTING_KEY);
+        rgba_order = g_settings_get_string (gsettings, FONT_RGBA_ORDER_KEY);
+        dpi = get_dpi_from_gsettings_or_x_server (gsettings);
 
         settings->antialias = TRUE;
         settings->hinting = TRUE;
@@ -474,13 +464,13 @@ xft_settings_set_xresources (MateXftSettings *settings)
  */
 static void
 update_xft_settings (MateXSettingsManager *manager,
-                     MateConfClient           *client)
+                     GSettings            *gsettings)
 {
         MateXftSettings settings;
 
         mate_settings_profile_start (NULL);
 
-        xft_settings_get (client, &settings);
+        xft_settings_get (gsettings, &settings);
         xft_settings_set_xsettings (manager, &settings);
         xft_settings_set_xresources (&settings);
 
@@ -488,14 +478,13 @@ update_xft_settings (MateXSettingsManager *manager,
 }
 
 static void
-xft_callback (MateConfClient           *client,
-              guint                  cnxn_id,
-              MateConfEntry            *entry,
+xft_callback (GSettings            *gsettings,
+              gchar                *key,
               MateXSettingsManager *manager)
 {
         int i;
 
-        update_xft_settings (manager, client);
+        update_xft_settings (manager, gsettings);
 
         for (i = 0; manager->priv->managers [i]; i++) {
                 xsettings_manager_notify (manager->priv->managers [i]);
@@ -552,84 +541,54 @@ stop_fontconfig_monitor (MateXSettingsManager  *manager)
 }
 #endif /* HAVE_FONTCONFIG */
 
-static const char *
-type_to_string (MateConfValueType type)
-{
-        switch (type) {
-        case MATECONF_VALUE_INT:
-                return "int";
-        case MATECONF_VALUE_STRING:
-                return "string";
-        case MATECONF_VALUE_FLOAT:
-                return "float";
-        case MATECONF_VALUE_BOOL:
-                return "bool";
-        case MATECONF_VALUE_SCHEMA:
-                return "schema";
-        case MATECONF_VALUE_LIST:
-                return "list";
-        case MATECONF_VALUE_PAIR:
-                return "pair";
-        case MATECONF_VALUE_INVALID:
-                return "*invalid*";
-        default:
-                g_assert_not_reached();
-                return NULL; /* for warnings */
-        }
-}
-
 static void
 process_value (MateXSettingsManager *manager,
-               TranslationEntry      *trans,
-               MateConfValue            *val)
+               TranslationEntry     *trans,
+               GVariant             *value)
 {
-        if (val == NULL) {
-                int i;
-
-                for (i = 0; manager->priv->managers [i]; i++) {
-                        xsettings_manager_delete_setting (manager->priv->managers [i], trans->xsetting_name);
-                }
-        } else {
-                if (val->type == trans->mateconf_type) {
-                        (* trans->translate) (manager, trans, val);
-                } else {
-                        g_warning (_("MateConf key %s set to type %s but its expected type was %s\n"),
-                                   trans->mateconf_key,
-                                   type_to_string (val->type),
-                                   type_to_string (trans->mateconf_type));
-                }
-        }
+        (* trans->translate) (manager, trans, value);
 }
 
 static TranslationEntry *
-find_translation_entry (const char *mateconf_key)
+find_translation_entry (GSettings *gsettings, const char *key)
 {
-        int i;
+        guint i;
+        char *schema;
 
-        for (i = 0; i < G_N_ELEMENTS (translations); ++i) {
-                if (strcmp (translations[i].mateconf_key, mateconf_key) == 0) {
+        g_object_get (gsettings, "schema", &schema, NULL);
+
+        for (i = 0; i < G_N_ELEMENTS (translations); i++) {
+                if (g_str_equal (schema, translations[i].gsettings_schema) &&
+                    g_str_equal (key, translations[i].gsettings_key)) {
+                            g_free (schema);
                         return &translations[i];
                 }
         }
+
+        g_free (schema);
 
         return NULL;
 }
 
 static void
-xsettings_callback (MateConfClient           *client,
-                    guint                  cnxn_id,
-                    MateConfEntry            *entry,
-                    MateXSettingsManager *manager)
+xsettings_callback (GSettings             *gsettings,
+                    const char            *key,
+                    MateXSettingsManager  *manager)
 {
         TranslationEntry *trans;
         int               i;
+        GVariant         *value;
 
-        trans = find_translation_entry (entry->key);
+        trans = find_translation_entry (gsettings, key);
         if (trans == NULL) {
                 return;
         }
 
-        process_value (manager, trans, entry->value);
+        value = g_settings_get_value (gsettings, key);
+
+        process_value (manager, trans, value);
+
+        g_variant_unref (value);
 
         for (i = 0; manager->priv->managers [i]; i++) {
                 xsettings_manager_set_string (manager->priv->managers [i],
@@ -640,101 +599,6 @@ xsettings_callback (MateConfClient           *client,
         for (i = 0; manager->priv->managers [i]; i++) {
                 xsettings_manager_notify (manager->priv->managers [i]);
         }
-}
-
-static gchar *
-get_gtk_modules (MateConfClient *client)
-{
-        GSList *entries, *l;
-        GString *mods = g_string_new (NULL);
-
-        entries = mateconf_client_all_entries (client, GTK_MODULES_DIR, NULL);
-
-        for (l = entries; l != NULL; l = g_slist_next (l)) {
-                MateConfEntry *e = l->data;
-                MateConfValue *v = mateconf_entry_get_value (e);
-
-                if (v != NULL) {
-                        gboolean enabled = FALSE;
-                        const gchar *key;
-
-                        switch (v->type) {
-                        case MATECONF_VALUE_BOOL:
-                                /* simple enabled/disabled */
-                                enabled = mateconf_value_get_bool (v);
-                                break;
-
-                        /* due to limitations in MateConf (or the client libraries,
-                         * anyway), it is currently impossible to monitor
-                         * arbitrary keys for changes, so these won't update at
-                         * runtime */
-                        case MATECONF_VALUE_STRING:
-                                /* linked to another MateConf key of type bool */
-                                key = mateconf_value_get_string (v);
-                                if (key != NULL && mateconf_valid_key (key, NULL)) {
-                                        enabled = mateconf_client_get_bool (client, key, NULL);
-                                }
-                                break;
-
-                        default:
-                                g_warning ("MateConf entry %s has invalid type %s",
-                                           mateconf_entry_get_key (e), type_to_string (v->type));
-                        }
-
-                        if (enabled) {
-                                const gchar *name;
-                                name = strrchr (mateconf_entry_get_key (e), '/') + 1;
-
-                                if (mods->len > 0) {
-                                        g_string_append_c (mods, ':');
-                                }
-                                g_string_append (mods, name);
-                        }
-                }
-
-                mateconf_entry_free (e);
-        }
-
-        g_slist_free (entries);
-
-        return g_string_free (mods, mods->len == 0);
-}
-
-static void
-gtk_modules_callback (MateConfClient           *client,
-                      guint                  cnxn_id,
-                      MateConfEntry            *entry,
-                      MateXSettingsManager *manager)
-{
-        gchar *modules = get_gtk_modules (client);
-        int i;
-
-        if (modules == NULL) {
-                for (i = 0; manager->priv->managers [i]; ++i) {
-                        xsettings_manager_delete_setting (manager->priv->managers [i], "Gtk/Modules");
-                }
-        } else {
-                g_debug ("Setting GTK modules '%s'", modules);
-                for (i = 0; manager->priv->managers [i]; ++i) {
-                        xsettings_manager_set_string (manager->priv->managers [i],
-                                                      "Gtk/Modules",
-                                                      modules);
-                }
-                g_free (modules);
-        }
-
-        for (i = 0; manager->priv->managers [i]; ++i) {
-                xsettings_manager_notify (manager->priv->managers [i]);
-        }
-}
-
-static guint
-register_config_callback (MateXSettingsManager  *manager,
-                          MateConfClient            *client,
-                          const char             *path,
-                          MateConfClientNotifyFunc   func)
-{
-        return mateconf_client_notify_add (client, path, func, manager, NULL, NULL);
 }
 
 static void
@@ -795,8 +659,8 @@ gboolean
 mate_xsettings_manager_start (MateXSettingsManager *manager,
                                GError               **error)
 {
-        MateConfClient *client;
         int          i;
+        GList       *list, *l;
 
         g_debug ("Starting xsettings manager");
         mate_settings_profile_start (NULL);
@@ -808,71 +672,42 @@ mate_xsettings_manager_start (MateXSettingsManager *manager,
                 return FALSE;
         }
 
-        client = mateconf_client_get_default ();
+        manager->priv->gsettings = g_hash_table_new_full (g_str_hash, g_str_equal,
+                                                         NULL, (GDestroyNotify) g_object_unref);
 
-        mateconf_client_add_dir (client, MOUSE_SETTINGS_DIR, MATECONF_CLIENT_PRELOAD_ONELEVEL, NULL);
-        mateconf_client_add_dir (client, GTK_SETTINGS_DIR, MATECONF_CLIENT_PRELOAD_ONELEVEL, NULL);
-        mateconf_client_add_dir (client, INTERFACE_SETTINGS_DIR, MATECONF_CLIENT_PRELOAD_ONELEVEL, NULL);
-        mateconf_client_add_dir (client, SOUND_SETTINGS_DIR, MATECONF_CLIENT_PRELOAD_ONELEVEL, NULL);
-        mateconf_client_add_dir (client, GTK_MODULES_DIR, MATECONF_CLIENT_PRELOAD_ONELEVEL, NULL);
-        mateconf_client_add_dir (client, FONT_RENDER_DIR, MATECONF_CLIENT_PRELOAD_ONELEVEL, NULL);
+        g_hash_table_insert (manager->priv->gsettings,
+                             MOUSE_SCHEMA, g_settings_new (MOUSE_SCHEMA));
+        g_hash_table_insert (manager->priv->gsettings,
+                             INTERFACE_SCHEMA, g_settings_new (INTERFACE_SCHEMA));
+        g_hash_table_insert (manager->priv->gsettings,
+                             SOUND_SCHEMA, g_settings_new (SOUND_SCHEMA));
 
         for (i = 0; i < G_N_ELEMENTS (translations); i++) {
-                MateConfValue *val;
-                GError     *err;
+                GVariant  *val;
+                GSettings *gsettings;
 
-                err = NULL;
-                val = mateconf_client_get (client,
-                                        translations[i].mateconf_key,
-                                        &err);
+                gsettings = g_hash_table_lookup (manager->priv->gsettings,
+                                                translations[i].gsettings_schema);
 
-                if (err != NULL) {
-                        g_warning ("Error getting value for %s: %s",
-                                   translations[i].mateconf_key,
-                                   err->message);
-                        g_error_free (err);
-                } else {
-                        process_value (manager, &translations[i], val);
-                        if (val != NULL) {
-                                mateconf_value_free (val);
-                        }
-                }
+                val = g_settings_get_value (gsettings, translations[i].gsettings_key);
+
+                process_value (manager, &translations[i], val);
+                g_variant_unref (val);
         }
 
-        manager->priv->notify[0] =
-                register_config_callback (manager, client,
-                                          MOUSE_SETTINGS_DIR,
-                                          (MateConfClientNotifyFunc) xsettings_callback);
-        manager->priv->notify[1] =
-                register_config_callback (manager, client,
-                                          GTK_SETTINGS_DIR,
-                                          (MateConfClientNotifyFunc) xsettings_callback);
-        manager->priv->notify[2] =
-                register_config_callback (manager, client,
-                                          INTERFACE_SETTINGS_DIR,
-                                          (MateConfClientNotifyFunc) xsettings_callback);
-        manager->priv->notify[3] =
-                register_config_callback (manager, client,
-                                          SOUND_SETTINGS_DIR,
-                                          (MateConfClientNotifyFunc) xsettings_callback);
-
-        manager->priv->notify[4] =
-                register_config_callback (manager, client,
-                                          GTK_MODULES_DIR,
-                                          (MateConfClientNotifyFunc) gtk_modules_callback);
-        gtk_modules_callback (client, 0, NULL, manager);
+        list = g_hash_table_get_values (manager->priv->gsettings);
+        for (l = list; l != NULL; l = l->next) {
+                g_signal_connect_object (G_OBJECT (l->data), "changed", G_CALLBACK (xsettings_callback), manager, 0);
+        }
+        g_list_free (list);
 
 #ifdef HAVE_FONTCONFIG
-        manager->priv->notify[5] =
-                register_config_callback (manager, client,
-                                          FONT_RENDER_DIR,
-                                          (MateConfClientNotifyFunc) xft_callback);
-        update_xft_settings (manager, client);
+        manager->priv->gsettings_font = g_settings_new (FONT_RENDER_SCHEMA);
+        g_signal_connect (manager->priv->gsettings_font, "changed", G_CALLBACK (xft_callback), manager);
+        update_xft_settings (manager, manager->priv->gsettings_font);
 
         start_fontconfig_monitor (manager);
 #endif /* HAVE_FONTCONFIG */
-
-        g_object_unref (client);
 
         for (i = 0; manager->priv->managers [i]; i++)
                 xsettings_manager_set_string (manager->priv->managers [i],
@@ -883,7 +718,6 @@ mate_xsettings_manager_start (MateXSettingsManager *manager,
                 xsettings_manager_notify (manager->priv->managers [i]);
         }
 
-
         mate_settings_profile_end (NULL);
 
         return TRUE;
@@ -893,7 +727,6 @@ void
 mate_xsettings_manager_stop (MateXSettingsManager *manager)
 {
         MateXSettingsManagerPrivate *p = manager->priv;
-        MateConfClient *client;
         int i;
 
         g_debug ("Stopping xsettings manager");
@@ -906,27 +739,20 @@ mate_xsettings_manager_stop (MateXSettingsManager *manager)
                 p->managers = NULL;
         }
 
-        client = mateconf_client_get_default ();
+        if (p->gsettings != NULL) {
+                g_hash_table_destroy (p->gsettings);
+                p->gsettings = NULL;
+        }
 
-        mateconf_client_remove_dir (client, MOUSE_SETTINGS_DIR, NULL);
-        mateconf_client_remove_dir (client, GTK_SETTINGS_DIR, NULL);
-        mateconf_client_remove_dir (client, INTERFACE_SETTINGS_DIR, NULL);
-        mateconf_client_remove_dir (client, SOUND_SETTINGS_DIR, NULL);
-        mateconf_client_remove_dir (client, GTK_MODULES_DIR, NULL);
 #ifdef HAVE_FONTCONFIG
-        mateconf_client_remove_dir (client, FONT_RENDER_DIR, NULL);
+        if (p->gsettings_font != NULL) {
+                g_object_unref (p->gsettings_font);
+                p->gsettings_font = NULL;
+        }
 
         stop_fontconfig_monitor (manager);
 #endif /* HAVE_FONTCONFIG */
 
-        for (i = 0; i < G_N_ELEMENTS (p->notify); ++i) {
-                if (p->notify[i] != 0) {
-                        mateconf_client_notify_remove (client, p->notify[i]);
-                        p->notify[i] = 0;
-                }
-        }
-
-        g_object_unref (client);
 }
 
 static void

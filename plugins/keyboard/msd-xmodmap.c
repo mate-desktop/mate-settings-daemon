@@ -26,43 +26,33 @@
 
 #include <glib.h>
 #include <gtk/gtk.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #include "msd-xmodmap.h"
 
-static const char DISABLE_XMM_WARNING_KEY[] =
-    "/desktop/mate/peripherals/keyboard/disable_xmm_and_xkb_warning";
-
-static const char LOADED_FILES_KEY[] =
-    "/desktop/mate/peripherals/keyboard/general/update_handlers";
-
-
-static void
-check_button_callback (GtkWidget *chk_button,
-                       gpointer   data)
-{
-        MateConfClient *client;
-
-        client = mateconf_client_get_default ();
-
-        mateconf_client_set_bool (client,
-                               DISABLE_XMM_WARNING_KEY,
-                               gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (chk_button)),
-                               NULL);
-
-        g_object_unref (client);
-}
+#define KEYBOARD_SCHEMA "org.mate.peripherals-keyboard-xkb.general"
+#define LOADED_FILES_KEY "update-handlers"
 
 void
 msd_load_modmap_files (void)
 {
-        MateConfClient *client;
+        GSettings   *settings;
         GSList      *tmp;
         GSList      *loaded_file_list;
 
-        client = mateconf_client_get_default ();
+        settings = g_settings_new (KEYBOARD_SCHEMA);
 
-        loaded_file_list = mateconf_client_get_list (client, LOADED_FILES_KEY, MATECONF_VALUE_STRING, NULL);
+        gchar **settings_list;
+        settings_list = g_settings_get_strv (settings, LOADED_FILES_KEY);
+        if (settings_list != NULL) {
+                gint i;
+                for (i = 0; i < G_N_ELEMENTS (settings_list); i++) {
+                        if (settings_list[i] != NULL)
+                            loaded_file_list = 
+                                g_slist_append (loaded_file_list, g_strdup (settings_list[i]));
+                }
+                g_strfreev (settings_list);
+        }
 
         for (tmp = loaded_file_list; tmp != NULL; tmp = tmp->next) {
                 gchar *file;
@@ -79,7 +69,7 @@ msd_load_modmap_files (void)
         }
 
         g_slist_free (loaded_file_list);
-        g_object_unref (client);
+        g_object_unref (settings);
 }
 
 static void
@@ -88,8 +78,6 @@ response_callback (GtkWidget *dialog,
                    void      *data)
 {
         if (id == GTK_RESPONSE_OK) {
-                GtkWidget *chk_button = g_object_get_data (G_OBJECT (dialog), "check_button");
-                check_button_callback (chk_button, NULL);
                 msd_load_modmap_files ();
         }
         gtk_widget_destroy (dialog);
@@ -140,7 +128,7 @@ remove_button_clicked_callback (GtkWidget *button,
         GtkListStore     *tree = NULL;
         GtkTreeSelection *selection;
         GtkWidget        *treeview;
-        MateConfClient      *client;
+        GSettings        *settings;
         GSList           *filenames = NULL;
         GSList           *tmp = NULL;
         GSList           *loaded_files = NULL;
@@ -159,20 +147,31 @@ remove_button_clicked_callback (GtkWidget *button,
 
         /* Remove the selected file */
 
-        client = mateconf_client_get_default ();
+        settings = g_settings_new (KEYBOARD_SCHEMA);
 
-        loaded_files = mateconf_client_get_list (client,
-                                              LOADED_FILES_KEY,
-                                              MATECONF_VALUE_STRING,
-                                              NULL);
+        gchar **settings_list;
+        settings_list = g_settings_get_strv (settings, LOADED_FILES_KEY);
+        if (settings_list != NULL) {
+                gint i;
+                for (i = 0; i < G_N_ELEMENTS (settings_list); i++) {
+                        if (settings_list[i] != NULL)
+                            loaded_files = 
+                                g_slist_append (loaded_files, g_strdup (settings_list[i]));
+                }
+                g_strfreev (settings_list);
+        }
+
         loaded_files = remove_string_from_list (loaded_files, (char *)filenames->data);
 
-        mateconf_client_set_list (client,
-                               LOADED_FILES_KEY,
-                               MATECONF_VALUE_STRING,
-                               loaded_files,
-                               NULL);
-        g_object_unref (client);
+        GSList *l;
+        GPtrArray *array = g_ptr_array_new ();
+        for (l = loaded_files; l != NULL; l = l->next)
+                g_ptr_array_add (array, l->data);
+        g_ptr_array_add (array, NULL);
+        g_settings_set_strv (settings, LOADED_FILES_KEY, (const gchar **) array->pdata);
+        g_ptr_array_free (array, FALSE);
+
+        g_object_unref (settings);
 
         tree = g_object_get_data (G_OBJECT (dialog), "tree");
 
@@ -201,7 +200,7 @@ load_button_clicked_callback (GtkWidget *button,
         GSList           *filenames = NULL;
         GSList           *tmp = NULL;
         GSList           *loaded_files = NULL;
-        MateConfClient      *client;
+        GSettings        *settings;
 
         dialog = data;
 
@@ -216,12 +215,19 @@ load_button_clicked_callback (GtkWidget *button,
                 return;
 
         /* Add the files to left-tree-view */
-        client = mateconf_client_get_default ();
+        settings = g_settings_new (KEYBOARD_SCHEMA);
 
-        loaded_files = mateconf_client_get_list (client,
-                                              LOADED_FILES_KEY,
-                                              MATECONF_VALUE_STRING,
-                                              NULL);
+        gchar **settings_list;
+        settings_list = g_settings_get_strv (settings, LOADED_FILES_KEY);
+        if (settings_list != NULL) {
+                gint i;
+                for (i = 0; i < G_N_ELEMENTS (settings_list); i++) {
+                        if (settings_list[i] != NULL)
+                            loaded_files = 
+                                g_slist_append (loaded_files, g_strdup (settings_list[i]));
+                }
+                g_strfreev (settings_list);
+        }
 
         if (g_slist_find_custom (loaded_files, filenames->data, (GCompareFunc) strcmp)) {
                 g_free (filenames->data);
@@ -230,12 +236,14 @@ load_button_clicked_callback (GtkWidget *button,
         }
 
         loaded_files = g_slist_append (loaded_files, filenames->data);
-        mateconf_client_set_list (client,
-                               LOADED_FILES_KEY,
-                               MATECONF_VALUE_STRING,
-                               loaded_files,
-                               NULL);
 
+        GSList *l;
+        GPtrArray *array = g_ptr_array_new ();
+        for (l = loaded_files; l != NULL; l = l->next)
+                g_ptr_array_add (array, l->data);
+        g_ptr_array_add (array, NULL);
+        g_settings_set_strv (settings, LOADED_FILES_KEY, (const gchar **) array->pdata);
+        g_ptr_array_free (array, FALSE);
 
         tree = g_object_get_data (G_OBJECT (dialog), "tree");
 
@@ -250,7 +258,7 @@ load_button_clicked_callback (GtkWidget *button,
         }
 
 out:
-        g_object_unref (client);
+        g_object_unref (settings);
         g_slist_foreach (loaded_files, (GFunc) g_free, NULL);
         g_slist_free (loaded_files);
 }
@@ -273,12 +281,11 @@ msd_modmap_dialog_call (void)
         GtkTreeViewColumn *column;
         GtkWidget         *add_button;
         GtkWidget         *remove_button;
-        GtkWidget         *chk_button;
         GSList            *tmp;
         GDir              *homeDir;
         GSList            *loaded_files;
         const char        *fname;
-        MateConfClient       *client;
+        GSettings         *settings;
 
         homeDir = g_dir_open (g_get_home_dir (), 0, NULL);
         if (homeDir == NULL)
@@ -315,13 +322,6 @@ msd_modmap_dialog_call (void)
                           "clicked",
                           G_CALLBACK (remove_button_clicked_callback),
                           load_dialog);
-        chk_button =  GTK_WIDGET (gtk_builder_get_object (builder,
-                                                          "checkbutton1"));
-        g_signal_connect (chk_button,
-                          "toggled",
-                          G_CALLBACK (check_button_callback),
-                          NULL);
-        g_object_set_data (G_OBJECT (load_dialog), "check_button", chk_button);
         treeview = GTK_WIDGET (gtk_builder_get_object (builder, "treeview1"));
         g_object_set_data (G_OBJECT (load_dialog), "treeview1", treeview);
         treeview =  GTK_WIDGET (gtk_builder_get_object (builder, "treeview2"));
@@ -369,9 +369,19 @@ msd_modmap_dialog_call (void)
         gtk_tree_view_append_column (GTK_TREE_VIEW (treeview1), column);
         gtk_tree_view_column_set_sort_column_id (column, 0);
 
-        client = mateconf_client_get_default ();
-        loaded_files = mateconf_client_get_list (client, LOADED_FILES_KEY, MATECONF_VALUE_STRING, NULL);
-        g_object_unref (client);
+        settings = g_settings_new (KEYBOARD_SCHEMA);
+
+        gchar **settings_list;
+        settings_list = g_settings_get_strv (settings, LOADED_FILES_KEY);
+        if (settings_list != NULL) {
+                gint i;
+                for (i = 0; i < G_N_ELEMENTS (settings_list); i++) {
+                        if (settings_list[i] != NULL)
+                            loaded_files = 
+                                g_slist_append (loaded_files, g_strdup (settings_list[i]));
+                }
+                g_strfreev (settings_list);
+        }
 
         /* Add the data */
         for (tmp = loaded_files; tmp != NULL; tmp = tmp->next) {

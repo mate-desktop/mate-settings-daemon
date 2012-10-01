@@ -36,14 +36,14 @@
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
 #include <gtk/gtk.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #include "mate-settings-profile.h"
 #include "msd-typing-break-manager.h"
 
 #define MSD_TYPING_BREAK_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_TYPING_BREAK_MANAGER, MsdTypingBreakManagerPrivate))
 
-#define MATECONF_BREAK_DIR           "/desktop/mate/typing_break"
+#define MATE_BREAK_SCHEMA "org.mate.typing-break"
 
 struct MsdTypingBreakManagerPrivate
 {
@@ -51,7 +51,7 @@ struct MsdTypingBreakManagerPrivate
         guint typing_monitor_idle_id;
         guint child_watch_id;
         guint setup_id;
-        guint notify;
+        GSettings *settings;
 };
 
 static void     msd_typing_break_manager_class_init  (MsdTypingBreakManagerClass *klass);
@@ -137,16 +137,11 @@ setup_typing_break (MsdTypingBreakManager *manager,
 }
 
 static void
-typing_break_callback (MateConfClient           *client,
-                       guint                  cnxn_id,
-                       MateConfEntry            *entry,
-                       MsdTypingBreakManager *manager)
+typing_break_enabled_callback (GSettings             *settings,
+                               gchar                 *key,
+                               MsdTypingBreakManager *manager)
 {
-        if (! strcmp (entry->key, "/desktop/mate/typing_break/enabled")) {
-                if (entry->value->type == MATECONF_VALUE_BOOL) {
-                        setup_typing_break (manager, mateconf_value_get_bool (entry->value));
-                }
-        }
+        setup_typing_break (manager, g_settings_get_boolean (settings, key));
 }
 
 static gboolean
@@ -161,23 +156,20 @@ gboolean
 msd_typing_break_manager_start (MsdTypingBreakManager *manager,
                                 GError               **error)
 {
-        MateConfClient *client;
         gboolean     enabled;
 
         g_debug ("Starting typing_break manager");
         mate_settings_profile_start (NULL);
 
-        client = mateconf_client_get_default ();
+        manager->priv->settings = g_settings_new (MATE_BREAK_SCHEMA);
 
-        mateconf_client_add_dir (client, MATECONF_BREAK_DIR, MATECONF_CLIENT_PRELOAD_ONELEVEL, NULL);
-        manager->priv->notify =
-                mateconf_client_notify_add (client,
-                                         MATECONF_BREAK_DIR,
-                                         (MateConfClientNotifyFunc) typing_break_callback, manager,
-                                         NULL, NULL);
+        g_signal_connect (manager->priv->settings,
+                          "changed::enabled",
+                          G_CALLBACK (typing_break_enabled_callback),
+                          manager);
 
-        enabled = mateconf_client_get_bool (client, MATECONF_BREAK_DIR "/enabled", NULL);
-        g_object_unref (client);
+        enabled = g_settings_get_boolean (manager->priv->settings, "enabled");
+
         if (enabled) {
                 manager->priv->setup_id =
                         g_timeout_add_seconds (3,
@@ -218,12 +210,8 @@ msd_typing_break_manager_stop (MsdTypingBreakManager *manager)
                 p->typing_monitor_pid = 0;
         }
 
-        if (p->notify != 0) {
-                MateConfClient *client = mateconf_client_get_default ();
-                mateconf_client_remove_dir (client, MATECONF_BREAK_DIR, NULL);
-                mateconf_client_notify_remove (client, p->notify);
-                g_object_unref (client);
-                p->notify = 0;
+        if (p->settings != NULL) {
+                g_object_unref (p->settings);
         }
 }
 

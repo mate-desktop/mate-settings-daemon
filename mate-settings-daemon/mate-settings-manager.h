@@ -39,7 +39,7 @@ typedef struct MateSettingsManagerPrivate MateSettingsManagerPrivate;
 typedef struct
 {
         GObject                      parent;
-        MateSettingsManagerPrivate *priv;
+        MateSettingsManagerPrivate  *priv;
 } MateSettingsManager;
 
 typedef struct
@@ -63,10 +63,7 @@ GQuark                 mate_settings_manager_error_quark         (void);
 GType                  mate_settings_manager_get_type   (void);
 
 MateSettingsManager * mate_settings_manager_new        (void);
-gboolean               mate_settings_manager_start_with_settings_prefix
-                                                         (MateSettingsManager *manager,
-                                                          const char           *settings_prefix,
-                                                          GError              **error);
+
 gboolean               mate_settings_manager_start      (MateSettingsManager *manager,
                                                           GError              **error);
 void                   mate_settings_manager_stop       (MateSettingsManager *manager);

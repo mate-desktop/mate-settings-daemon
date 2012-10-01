@@ -44,43 +44,45 @@
 #include <X11/extensions/XInput.h>
 #include <X11/extensions/XIproto.h>
 #endif
-#include <mateconf/mateconf.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #include "mate-settings-profile.h"
 #include "msd-mouse-manager.h"
 
 #define MSD_MOUSE_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_MOUSE_MANAGER, MsdMouseManagerPrivate))
 
-#define MATECONF_MOUSE_DIR         "/desktop/mate/peripherals/mouse"
-#define MATECONF_MOUSE_A11Y_DIR    "/desktop/mate/accessibility/mouse"
-#define MATECONF_TOUCHPAD_DIR      "/desktop/mate/peripherals/touchpad"
+#define MATE_MOUSE_SCHEMA                "org.mate.peripherals-mouse"
+#define KEY_MOUSE_LEFT_HANDED            "left-handed"
+#define KEY_MOUSE_MOTION_ACCELERATION    "motion-acceleration"
+#define KEY_MOUSE_MOTION_THRESHOLD       "motion-threshold"
+#define KEY_MOUSE_LOCATE_POINTER         "locate-pointer"
 
-#define KEY_LEFT_HANDED         MATECONF_MOUSE_DIR "/left_handed"
-#define KEY_MOTION_ACCELERATION MATECONF_MOUSE_DIR "/motion_acceleration"
-#define KEY_MOTION_THRESHOLD    MATECONF_MOUSE_DIR "/motion_threshold"
-#define KEY_LOCATE_POINTER      MATECONF_MOUSE_DIR "/locate_pointer"
-#define KEY_DWELL_ENABLE        MATECONF_MOUSE_A11Y_DIR "/dwell_enable"
-#define KEY_DELAY_ENABLE        MATECONF_MOUSE_A11Y_DIR "/delay_enable"
-#define KEY_TOUCHPAD_DISABLE_W_TYPING    MATECONF_TOUCHPAD_DIR "/disable_while_typing"
+#define MATE_TOUCHPAD_SCHEMA             "org.mate.peripherals-touchpad"
+#define KEY_TOUCHPAD_DISABLE_W_TYPING    "disable-while-typing"
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
-#define KEY_TAP_TO_CLICK        MATECONF_TOUCHPAD_DIR "/tap_to_click"
-#define KEY_SCROLL_METHOD       MATECONF_TOUCHPAD_DIR "/scroll_method"
-#define KEY_PAD_HORIZ_SCROLL    MATECONF_TOUCHPAD_DIR "/horiz_scroll_enabled"
-#define KEY_TOUCHPAD_ENABLED    MATECONF_TOUCHPAD_DIR "/touchpad_enabled"
+#define KEY_TOUCHPAD_TAP_TO_CLICK        "tap-to-click"
+#define KEY_TOUCHPAD_SCROLL_METHOD       "scroll-method"
+#define KEY_TOUCHPAD_PAD_HORIZ_SCROLL    "horiz-scroll-enabled"
+#define KEY_TOUCHPAD_ENABLED             "touchpad-enabled"
 #endif
+
+/* FIXME: currently there is no mate-mousetweaks, so I comment this
+ *
+ *#define MATE_MOUSE_A11Y_SCHEMA         "org.mate.accessibility-mouse"
+ *#define KEY_MOUSE_A11Y_DWELL_ENABLE    "dwell-enable"
+ *#define KEY_MOUSE_A11Y_DELAY_ENABLE    "delay-enable"
+ */
 
 struct MsdMouseManagerPrivate
 {
-        guint notify;
-        guint notify_a11y;
-        guint notify_touchpad;
+        GSettings *settings_mouse;
+        GSettings *settings_touchpad;
 
         gboolean mousetweaks_daemon_running;
         gboolean syndaemon_spawned;
         GPid syndaemon_pid;
-	gboolean locate_pointer_spawned;
-	GPid locate_pointer_pid;
+        gboolean locate_pointer_spawned;
+        GPid locate_pointer_pid;
 };
 
 static void     msd_mouse_manager_class_init  (MsdMouseManagerClass *klass);
@@ -325,14 +327,14 @@ set_xinput_devices_left_handed (gboolean left_handed)
                  * around too, otherwise a tap would be a right-click */
                 device = device_is_touchpad (device_info[i]);
                 if (device != NULL) {
-                        MateConfClient *client = mateconf_client_get_default ();
-                        gboolean tap = mateconf_client_get_bool (client, KEY_TAP_TO_CLICK, NULL);
+                        GSettings *settings = g_settings_new (MATE_TOUCHPAD_SCHEMA);
+                        gboolean tap = g_settings_get_boolean (settings, KEY_TOUCHPAD_TAP_TO_CLICK);
                         gboolean single_button = touchpad_has_single_button (device);
 
                         if (tap && !single_button)
                                 set_tap_to_click (tap, left_handed);
                         XCloseDevice (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), device);
-                        g_object_unref (client);
+                        g_object_unref (settings);
 
                         if (single_button)
                             continue;
@@ -569,10 +571,7 @@ set_disable_w_typing (MsdMouseManager *manager, gboolean state)
                 manager->priv->syndaemon_spawned = (error == NULL);
 
                 if (error) {
-                        MateConfClient *client;
-                        client = mateconf_client_get_default ();
-                        mateconf_client_set_bool (client, KEY_TOUCHPAD_DISABLE_W_TYPING, FALSE, NULL);
-                        g_object_unref (client);
+                        g_settings_set_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_DISABLE_W_TYPING, FALSE);
                         g_error_free (error);
                 }
 
@@ -825,15 +824,12 @@ set_locate_pointer (MsdMouseManager *manager,
                 manager->priv->locate_pointer_spawned = (error == NULL);
 
                 if (error) {
-                        MateConfClient *client;
-                        client = mateconf_client_get_default ();
-                        mateconf_client_set_bool (client, KEY_LOCATE_POINTER, FALSE, NULL);
-                        g_object_unref (client);
+                        g_settings_set_boolean (manager->priv->settings_mouse, KEY_MOUSE_LOCATE_POINTER, FALSE);
                         g_error_free (error);
                 }
 
         }
-	else if (manager->priv->locate_pointer_spawned) {
+        else if (manager->priv->locate_pointer_spawned) {
                 kill (manager->priv->locate_pointer_pid, SIGHUP);
                 g_spawn_close_pid (manager->priv->locate_pointer_pid);
                 manager->priv->locate_pointer_spawned = FALSE;
@@ -845,6 +841,10 @@ set_mousetweaks_daemon (MsdMouseManager *manager,
                         gboolean         dwell_enable,
                         gboolean         delay_enable)
 {
+        /* FIXME there is no mate-mousetweaks */
+        return;
+        
+        
         GError *error = NULL;
         gchar *comm;
         gboolean run_daemon = dwell_enable || delay_enable;
@@ -863,19 +863,23 @@ set_mousetweaks_daemon (MsdMouseManager *manager,
                 if (error->code == G_SPAWN_ERROR_NOENT &&
                     (dwell_enable || delay_enable)) {
                         GtkWidget *dialog;
-                        MateConfClient *client;
-
-                        client = mateconf_client_get_default ();
+                        
+                        /* uncomment this when (and if) we'll fork mousetweaks */
+                        
+                        /*
+                        GSettings *settings;
+                        settings = g_settings_new (MATE_MOUSE_A11Y_SCHEMA);
                         if (dwell_enable)
-                                mateconf_client_set_bool (client,
-                                                       KEY_DWELL_ENABLE,
-                                                       FALSE, NULL);
+                                g_settings_set_boolean (settings,
+                                                        MATE_MOUSE_A11Y_KEY_DWELL_ENABLE,
+                                                        FALSE);
                         else if (delay_enable)
-                                mateconf_client_set_bool (client,
-                                                       KEY_DELAY_ENABLE,
-                                                       FALSE, NULL);
-                        g_object_unref (client);
-
+                                g_settings_set_boolean (settings,
+                                                        MATE_MOUSE_A11Y_KEY_DELAY_ENABLE,
+                                                        FALSE);
+                        g_object_unref (settings);
+                        */
+                        
                         dialog = gtk_message_dialog_new (NULL, 0,
                                                          GTK_MESSAGE_WARNING,
                                                          GTK_BUTTONS_OK,
@@ -898,93 +902,60 @@ set_mousetweaks_daemon (MsdMouseManager *manager,
 static void
 set_mouse_settings (MsdMouseManager *manager)
 {
-        MateConfClient *client = mateconf_client_get_default ();
-        gboolean left_handed = mateconf_client_get_bool (client, KEY_LEFT_HANDED, NULL);
+        gboolean left_handed = g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED);
 
         set_left_handed (manager, left_handed);
-        set_motion_acceleration (manager, mateconf_client_get_float (client, KEY_MOTION_ACCELERATION , NULL));
-        set_motion_threshold (manager, mateconf_client_get_int (client, KEY_MOTION_THRESHOLD, NULL));
+        set_motion_acceleration (manager, g_settings_get_double (manager->priv->settings_mouse, KEY_MOUSE_MOTION_ACCELERATION));
+        set_motion_threshold (manager, g_settings_get_int (manager->priv->settings_mouse, KEY_MOUSE_MOTION_THRESHOLD));
 
-        set_disable_w_typing (manager, mateconf_client_get_bool (client, KEY_TOUCHPAD_DISABLE_W_TYPING, NULL));
+        set_disable_w_typing (manager, g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_DISABLE_W_TYPING));
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
-        set_tap_to_click (mateconf_client_get_bool (client, KEY_TAP_TO_CLICK, NULL), left_handed);
-        set_edge_scroll (mateconf_client_get_int (client, KEY_SCROLL_METHOD, NULL));
-        set_horiz_scroll (mateconf_client_get_bool (client, KEY_PAD_HORIZ_SCROLL, NULL));
-        set_touchpad_enabled (mateconf_client_get_bool (client, KEY_TOUCHPAD_ENABLED, NULL));
+        set_tap_to_click (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_TAP_TO_CLICK), left_handed);
+        set_edge_scroll (g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_SCROLL_METHOD));
+        set_horiz_scroll (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_PAD_HORIZ_SCROLL));
+        set_touchpad_enabled (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_ENABLED));
 #endif
-
-        g_object_unref (client);
 }
 
 static void
-mouse_callback (MateConfClient        *client,
-                guint               cnxn_id,
-                MateConfEntry         *entry,
+mouse_callback (GSettings          *settings,
+                const gchar        *key,
                 MsdMouseManager    *manager)
 {
-        if (! strcmp (entry->key, KEY_LEFT_HANDED)) {
-                if (entry->value->type == MATECONF_VALUE_BOOL) {
-                        set_left_handed (manager, mateconf_value_get_bool (entry->value));
-                }
-        } else if (! strcmp (entry->key, KEY_MOTION_ACCELERATION)) {
-                if (entry->value->type == MATECONF_VALUE_FLOAT) {
-                        set_motion_acceleration (manager, mateconf_value_get_float (entry->value));
-                }
-        } else if (! strcmp (entry->key, KEY_MOTION_THRESHOLD)) {
-                if (entry->value->type == MATECONF_VALUE_INT) {
-                        set_motion_threshold (manager, mateconf_value_get_int (entry->value));
-                }
-        } else if (! strcmp (entry->key, KEY_TOUCHPAD_DISABLE_W_TYPING)) {
-                if (entry->value->type == MATECONF_VALUE_BOOL)
-                        set_disable_w_typing (manager, mateconf_value_get_bool (entry->value));
+        if (g_strcmp0 (key, KEY_MOUSE_LEFT_HANDED) == 0) {
+                set_left_handed (manager, g_settings_get_boolean (settings, key));
+        } else if (g_strcmp0 (key, KEY_MOUSE_MOTION_ACCELERATION) == 0) {
+                set_motion_acceleration (manager, g_settings_get_double (settings, key));
+        } else if (g_strcmp0 (key, KEY_MOUSE_MOTION_THRESHOLD) == 0) {
+                set_motion_threshold (manager, g_settings_get_int (settings, key));
+        } else if (g_strcmp0 (key, KEY_TOUCHPAD_DISABLE_W_TYPING) == 0) {
+                set_disable_w_typing (manager, g_settings_get_boolean (settings, key));
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
-        } else if (! strcmp (entry->key, KEY_TAP_TO_CLICK)) {
-                if (entry->value->type == MATECONF_VALUE_BOOL) {
-                        set_tap_to_click (mateconf_value_get_bool (entry->value),
-                                          mateconf_client_get_bool (client, KEY_LEFT_HANDED, NULL));
-                }
-        } else if (! strcmp (entry->key, KEY_SCROLL_METHOD)) {
-                if (entry->value->type == MATECONF_VALUE_INT) {
-                        set_edge_scroll (mateconf_value_get_int (entry->value));
-                        set_horiz_scroll (mateconf_client_get_bool (client, KEY_PAD_HORIZ_SCROLL, NULL));
-                }
-        } else if (! strcmp (entry->key, KEY_PAD_HORIZ_SCROLL)) {
-                if (entry->value->type == MATECONF_VALUE_BOOL)
-                        set_horiz_scroll (mateconf_value_get_bool (entry->value));
+        } else if (g_strcmp0 (key, KEY_TOUCHPAD_TAP_TO_CLICK) == 0) {
+                set_tap_to_click (g_settings_get_boolean (settings, key),
+                                  g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED));
+        } else if (g_strcmp0 (key, KEY_TOUCHPAD_SCROLL_METHOD) == 0) {
+                set_edge_scroll (g_settings_get_int (settings, key));
+                set_horiz_scroll (g_settings_get_boolean (settings, KEY_TOUCHPAD_PAD_HORIZ_SCROLL));
+        } else if (g_strcmp0 (key, KEY_TOUCHPAD_PAD_HORIZ_SCROLL) == 0) {
+                set_horiz_scroll (g_settings_get_boolean (settings, key));
 #endif
-        } else if (! strcmp (entry->key, KEY_LOCATE_POINTER)) {
-                if (entry->value->type == MATECONF_VALUE_BOOL) {
-                        set_locate_pointer (manager, mateconf_value_get_bool (entry->value));
-                }
+        } else if (g_strcmp0 (key, KEY_MOUSE_LOCATE_POINTER) == 0) {
+                set_locate_pointer (manager, g_settings_get_boolean (settings, key));
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
-        } else if (! strcmp (entry->key, KEY_TOUCHPAD_ENABLED)) {
-                if (entry->value->type == MATECONF_VALUE_BOOL) {
-                    set_touchpad_enabled (mateconf_value_get_bool (entry->value));
-                }
+        } else if (g_strcmp0 (key, KEY_TOUCHPAD_ENABLED) == 0) {
+                set_touchpad_enabled (g_settings_get_boolean (settings, key));
 #endif
-        } else if (! strcmp (entry->key, KEY_DWELL_ENABLE)) {
-                if (entry->value->type == MATECONF_VALUE_BOOL) {
-                        set_mousetweaks_daemon (manager,
-                                                mateconf_value_get_bool (entry->value),
-                                                mateconf_client_get_bool (client, KEY_DELAY_ENABLE, NULL));
+        } /*else if (g_strcmp0 (key, KEY_MOUSE_A11Y_DWELL_ENABLE) == 0) {
+                set_mousetweaks_daemon (manager,
+                                        g_settings_get_boolean (settings, key),
+                                        g_settings_get_boolean (settings, KEY_MOUSE_A11Y_DELAY_ENABLE, NULL));
                 }
-        } else if (! strcmp (entry->key, KEY_DELAY_ENABLE)) {
-                if (entry->value->type == MATECONF_VALUE_BOOL) {
-                        set_mousetweaks_daemon (manager,
-                                                mateconf_client_get_bool (client, KEY_DWELL_ENABLE, NULL),
-                                                mateconf_value_get_bool (entry->value));
-                }
-        }
-}
-
-static guint
-register_config_callback (MsdMouseManager         *manager,
-                          MateConfClient             *client,
-                          const char              *path,
-                          MateConfClientNotifyFunc    func)
-{
-        mateconf_client_add_dir (client, path, MATECONF_CLIENT_PRELOAD_ONELEVEL, NULL);
-        return mateconf_client_notify_add (client, path, func, manager, NULL, NULL);
+        } else if (g_strcmp0 (key, KEY_MOUSE_A11Y_DELAY_ENABLE) == 0) {
+                set_mousetweaks_daemon (manager,
+                                        g_settings_get_boolean (settings, KEY_MOUSE_A11Y_DWELL_ENABLE, NULL),
+                                        g_settings_get_boolean (settings, key));
+        }*/
 }
 
 static void
@@ -996,48 +967,39 @@ msd_mouse_manager_init (MsdMouseManager *manager)
 static gboolean
 msd_mouse_manager_idle_cb (MsdMouseManager *manager)
 {
-        MateConfClient *client;
-
         mate_settings_profile_start (NULL);
 
-        client = mateconf_client_get_default ();
+        manager->priv->settings_mouse = g_settings_new (MATE_MOUSE_SCHEMA);
+        manager->priv->settings_touchpad = g_settings_new (MATE_TOUCHPAD_SCHEMA);
 
-        manager->priv->notify =
-                register_config_callback (manager,
-                                          client,
-                                          MATECONF_MOUSE_DIR,
-                                          (MateConfClientNotifyFunc) mouse_callback);
-        manager->priv->notify_a11y =
-                register_config_callback (manager,
-                                          client,
-                                          MATECONF_MOUSE_A11Y_DIR,
-                                          (MateConfClientNotifyFunc) mouse_callback);
-        manager->priv->notify_touchpad =
-                register_config_callback (manager,
-                                          client,
-                                          MATECONF_TOUCHPAD_DIR,
-                                          (MateConfClientNotifyFunc) mouse_callback);
+        g_signal_connect (manager->priv->settings_mouse, "changed",
+                          G_CALLBACK (mouse_callback), manager);
+        g_signal_connect (manager->priv->settings_touchpad, "changed",
+                          G_CALLBACK (mouse_callback), manager);
+
         manager->priv->syndaemon_spawned = FALSE;
 
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
         set_devicepresence_handler (manager);
 #endif
         set_mouse_settings (manager);
-        set_locate_pointer (manager, mateconf_client_get_bool (client, KEY_LOCATE_POINTER, NULL));
+        set_locate_pointer (manager, g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LOCATE_POINTER));
+        /*
         set_mousetweaks_daemon (manager,
-                                mateconf_client_get_bool (client, KEY_DWELL_ENABLE, NULL),
-                                mateconf_client_get_bool (client, KEY_DELAY_ENABLE, NULL));
+                                g_settings_get_boolean (manager->priv->settings_mouse_a11y, 
+                                                        KEY_MOUSE_A11Y_DWELL_ENABLE),
+                                g_settings_get_boolean (manager->priv->settings_mouse_a11y,
+                                                        KEY_MOUSE_A11Y_DELAY_ENABLE));
+        */
 
-        set_disable_w_typing (manager, mateconf_client_get_bool (client, KEY_TOUCHPAD_DISABLE_W_TYPING, NULL));
+        set_disable_w_typing (manager, g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_DISABLE_W_TYPING));
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
-        set_tap_to_click (mateconf_client_get_bool (client, KEY_TAP_TO_CLICK, NULL),
-                          mateconf_client_get_bool (client, KEY_LEFT_HANDED, NULL));
-        set_edge_scroll (mateconf_client_get_int (client, KEY_SCROLL_METHOD, NULL));
-        set_horiz_scroll (mateconf_client_get_bool (client, KEY_PAD_HORIZ_SCROLL, NULL));
-        set_touchpad_enabled (mateconf_client_get_bool (client, KEY_TOUCHPAD_ENABLED, NULL));
+        set_tap_to_click (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_TAP_TO_CLICK),
+                          g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED));
+        set_edge_scroll (g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_SCROLL_METHOD));
+        set_horiz_scroll (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_PAD_HORIZ_SCROLL));
+        set_touchpad_enabled (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_ENABLED));
 #endif
-
-        g_object_unref (client);
 
         mate_settings_profile_end (NULL);
 
@@ -1061,31 +1023,18 @@ void
 msd_mouse_manager_stop (MsdMouseManager *manager)
 {
         MsdMouseManagerPrivate *p = manager->priv;
-        MateConfClient *client;
 
         g_debug ("Stopping mouse manager");
 
-        client = mateconf_client_get_default ();
-
-        if (p->notify != 0) {
-                mateconf_client_remove_dir (client, MATECONF_MOUSE_DIR, NULL);
-                mateconf_client_notify_remove (client, p->notify);
-                p->notify = 0;
+        if (p->settings_mouse != NULL) {
+                g_object_unref(p->settings_mouse);
+                p->settings_mouse = NULL;
         }
 
-        if (p->notify_a11y != 0) {
-                mateconf_client_remove_dir (client, MATECONF_MOUSE_A11Y_DIR, NULL);
-                mateconf_client_notify_remove (client, p->notify_a11y);
-                p->notify_a11y = 0;
+        if (p->settings_touchpad != NULL) {
+                g_object_unref(p->settings_touchpad);
+                p->settings_touchpad = NULL;
         }
-
-        if (p->notify_touchpad != 0) {
-                mateconf_client_remove_dir (client, MATECONF_TOUCHPAD_DIR, NULL);
-                mateconf_client_notify_remove (client, p->notify_touchpad);
-                p->notify_touchpad = 0;
-        }
-
-        g_object_unref (client);
 
         set_locate_pointer (manager, FALSE);
 

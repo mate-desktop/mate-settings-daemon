@@ -25,7 +25,7 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <gmodule.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #include "mate-settings-plugin-info.h"
 #include "mate-settings-module.h"
@@ -48,10 +48,10 @@ typedef enum
 struct MateSettingsPluginInfoPrivate
 {
         char                    *file;
-        MateConfClient             *client;
+        GSettings               *settings;
 
         char                    *location;
-        MateSettingsPluginLoader  loader;
+        MateSettingsPluginLoader loader;
         GTypeModule             *module;
 
         char                    *name;
@@ -117,14 +117,7 @@ mate_settings_plugin_info_finalize (GObject *object)
         g_free (info->priv->copyright);
         g_strfreev (info->priv->authors);
 
-        if (info->priv->enabled_notification_id != 0) {
-                mateconf_client_notify_remove (info->priv->client,
-                                            info->priv->enabled_notification_id);
-
-                info->priv->enabled_notification_id = 0;
-        }
-
-        g_object_unref (info->priv->client);
+        g_object_unref (info->priv->settings);
 
         G_OBJECT_CLASS (mate_settings_plugin_info_parent_class)->finalize (object);
 }
@@ -164,7 +157,6 @@ static void
 mate_settings_plugin_info_init (MateSettingsPluginInfo *info)
 {
         info->priv = MATE_SETTINGS_PLUGIN_INFO_GET_PRIVATE (info);
-        info->priv->client = mateconf_client_get_default ();
 }
 
 static void
@@ -296,30 +288,15 @@ mate_settings_plugin_info_fill_from_file (MateSettingsPluginInfo *info,
 }
 
 static void
-plugin_enabled_cb (MateConfClient             *client,
-                   guint                    cnxn_id,
-                   MateConfEntry              *entry,
+plugin_enabled_cb (GSettings *settings,
+                   gchar *key,
                    MateSettingsPluginInfo *info)
 {
-        if (mateconf_value_get_bool (entry->value)) {
+        if (g_settings_get_boolean (info->priv->settings, key)) {
                 mate_settings_plugin_info_activate (info);
         } else {
                 mate_settings_plugin_info_deactivate (info);
         }
-}
-
-void
-mate_settings_plugin_info_set_enabled_key_name (MateSettingsPluginInfo *info,
-                                                 const char              *key_name)
-{
-        info->priv->enabled_notification_id = mateconf_client_notify_add (info->priv->client,
-                                                                       key_name,
-                                                                       (MateConfClientNotifyFunc)plugin_enabled_cb,
-                                                                       info,
-                                                                       NULL,
-                                                                       NULL);
-
-        info->priv->enabled = mateconf_client_get_bool (info->priv->client, key_name, NULL);
 }
 
 MateSettingsPluginInfo *
@@ -613,4 +590,17 @@ mate_settings_plugin_info_set_priority (MateSettingsPluginInfo *info,
         g_return_if_fail (MATE_IS_SETTINGS_PLUGIN_INFO (info));
 
         info->priv->priority = priority;
+}
+
+void
+mate_settings_plugin_info_set_schema (MateSettingsPluginInfo *info,
+                                      gchar                  *schema)
+{
+        g_return_if_fail (MATE_IS_SETTINGS_PLUGIN_INFO (info));
+
+        info->priv->settings = g_settings_new (schema);
+        info->priv->priority = g_settings_get_int(info->priv->settings, "priority");
+        info->priv->enabled = g_settings_get_boolean(info->priv->settings, "active");
+        
+        g_signal_connect (info->priv->settings, "changed::active", G_CALLBACK (plugin_enabled_cb), info);
 }

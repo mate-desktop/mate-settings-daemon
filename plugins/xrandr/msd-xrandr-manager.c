@@ -37,7 +37,7 @@
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
 #include <gtk/gtk.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 #include <dbus/dbus-glib.h>
 
 #define MATE_DESKTOP_USE_UNSTABLE_API
@@ -59,12 +59,12 @@
 
 #define MSD_XRANDR_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_XRANDR_MANAGER, MsdXrandrManagerPrivate))
 
-#define CONF_DIR "/apps/mate_settings_daemon/xrandr"
-#define CONF_KEY_SHOW_NOTIFICATION_ICON (CONF_DIR "/show_notification_icon")
-#define CONF_KEY_USE_XORG_MONITOR_SETTINGS		(CONF_DIR "/use_xorg_monitor_settings")
-#define CONF_KEY_TURN_ON_EXTERNAL_MONITORS_AT_STARTUP	(CONF_DIR "/turn_on_external_monitors_at_startup")
-#define CONF_KEY_TURN_ON_LAPTOP_MONITOR_AT_STARTUP	(CONF_DIR "/turn_on_laptop_monitor_at_startup")
-#define CONF_KEY_DEFAULT_CONFIGURATION_FILE             (CONF_DIR "/default_configuration_file")
+#define CONF_SCHEMA                                    "org.mate.SettingsDaemon.plugins.xrandr"
+#define CONF_KEY_SHOW_NOTIFICATION_ICON                "show-notification-icon"
+#define CONF_KEY_USE_XORG_MONITOR_SETTINGS             "use-xorg-monitor-settings"
+#define CONF_KEY_TURN_ON_EXTERNAL_MONITORS_AT_STARTUP  "turn-on-external-monitors-at-startup"
+#define CONF_KEY_TURN_ON_LAPTOP_MONITOR_AT_STARTUP     "turn-on-laptop-monitor-at-startup"
+#define CONF_KEY_DEFAULT_CONFIGURATION_FILE            "default-configuration-file"
 
 #define VIDEO_KEYSYM    "XF86Display"
 #define ROTATE_KEYSYM   "XF86RotateWindows"
@@ -102,8 +102,7 @@ struct MsdXrandrManagerPrivate
         GtkWidget *popup_menu;
         MateRRConfig *configuration;
         MateRRLabeler *labeler;
-        MateConfClient *client;
-        int notify_id;
+        GSettings *settings;
 
         /* fn-F7 status */
         int             current_fn_f7_config;             /* -1 if no configs */
@@ -2144,7 +2143,7 @@ status_icon_stop (MsdXrandrManager *manager)
 static void
 start_or_stop_icon (MsdXrandrManager *manager)
 {
-        if (mateconf_client_get_bool (manager->priv->client, CONF_KEY_SHOW_NOTIFICATION_ICON, NULL)) {
+        if (g_settings_get_boolean (manager->priv->settings, CONF_KEY_SHOW_NOTIFICATION_ICON)) {
                 status_icon_start (manager);
         }
         else {
@@ -2153,13 +2152,11 @@ start_or_stop_icon (MsdXrandrManager *manager)
 }
 
 static void
-on_config_changed (MateConfClient          *client,
-                   guint                 cnxn_id,
-                   MateConfEntry           *entry,
+on_config_changed (GSettings        *settings,
+                   gchar            *key,
                    MsdXrandrManager *manager)
 {
-        if (strcmp (entry->key, CONF_KEY_SHOW_NOTIFICATION_ICON) == 0)
-                start_or_stop_icon (manager);
+        start_or_stop_icon (manager);
 }
 
 static gboolean
@@ -2192,9 +2189,9 @@ apply_default_boot_configuration (MsdXrandrManager *mgr, guint32 timestamp)
    	gboolean turn_on_external, turn_on_laptop;
 
         turn_on_external =
-                mateconf_client_get_bool (mgr->priv->client, CONF_KEY_TURN_ON_EXTERNAL_MONITORS_AT_STARTUP, NULL);
+                g_settings_get_boolean (mgr->priv->settings, CONF_KEY_TURN_ON_EXTERNAL_MONITORS_AT_STARTUP);
         turn_on_laptop =
-                mateconf_client_get_bool (mgr->priv->client, CONF_KEY_TURN_ON_LAPTOP_MONITOR_AT_STARTUP, NULL);
+                g_settings_get_boolean (mgr->priv->settings, CONF_KEY_TURN_ON_LAPTOP_MONITOR_AT_STARTUP);
 
 	if (turn_on_external && turn_on_laptop)
 		config = make_clone_setup (screen);
@@ -2275,7 +2272,7 @@ apply_default_configuration_from_file (MsdXrandrManager *manager, guint32 timest
         char *default_config_filename;
         gboolean result;
 
-        default_config_filename = mateconf_client_get_string (priv->client, CONF_KEY_DEFAULT_CONFIGURATION_FILE, NULL);
+        default_config_filename = g_settings_get_string (priv->settings, CONF_KEY_DEFAULT_CONFIGURATION_FILE);
         if (!default_config_filename)
                 return FALSE;
 
@@ -2310,19 +2307,12 @@ msd_xrandr_manager_start (MsdXrandrManager *manager,
         log_screen (manager->priv->rw_screen);
 
         manager->priv->running = TRUE;
-        manager->priv->client = mateconf_client_get_default ();
+        manager->priv->settings = g_settings_new (CONF_SCHEMA);
 
-        g_assert (manager->priv->notify_id == 0);
-
-        mateconf_client_add_dir (manager->priv->client, CONF_DIR,
-                              MATECONF_CLIENT_PRELOAD_ONELEVEL,
-                              NULL);
-
-        manager->priv->notify_id =
-                mateconf_client_notify_add (
-                        manager->priv->client, CONF_DIR,
-                        (MateConfClientNotifyFunc)on_config_changed,
-                        manager, NULL, NULL);
+        g_signal_connect (manager->priv->settings,
+                          "changed::" CONF_KEY_SHOW_NOTIFICATION_ICON,
+                          G_CALLBACK (on_config_changed),
+                          manager);
 
         if (manager->priv->switch_video_mode_keycode) {
                 gdk_error_trap_push ();
@@ -2351,7 +2341,7 @@ msd_xrandr_manager_start (MsdXrandrManager *manager,
         show_timestamps_dialog (manager, "Startup");
         if (!apply_stored_configuration_at_startup (manager, GDK_CURRENT_TIME)) /* we don't have a real timestamp at startup anyway */
                 if (!apply_default_configuration_from_file (manager, GDK_CURRENT_TIME))
-                        if (!mateconf_client_get_bool (manager->priv->client, CONF_KEY_USE_XORG_MONITOR_SETTINGS, NULL))
+                        if (!g_settings_get_boolean (manager->priv->settings, CONF_KEY_USE_XORG_MONITOR_SETTINGS))
                                 apply_default_boot_configuration (manager, GDK_CURRENT_TIME);
 
         log_msg ("State of screen after initial configuration:\n");
@@ -2401,17 +2391,9 @@ msd_xrandr_manager_stop (MsdXrandrManager *manager)
                                   (GdkFilterFunc) event_filter,
                                   manager);
 
-        if (manager->priv->notify_id != 0) {
-                mateconf_client_remove_dir (manager->priv->client,
-                                         CONF_DIR, NULL);
-                mateconf_client_notify_remove (manager->priv->client,
-                                            manager->priv->notify_id);
-                manager->priv->notify_id = 0;
-        }
-
-        if (manager->priv->client != NULL) {
-                g_object_unref (manager->priv->client);
-                manager->priv->client = NULL;
+        if (manager->priv->settings != NULL) {
+                g_object_unref (manager->priv->settings);
+                manager->priv->settings = NULL;
         }
 
         if (manager->priv->rw_screen != NULL) {

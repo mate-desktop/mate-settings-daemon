@@ -38,7 +38,7 @@
 #include <glib/gi18n.h>
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #define MATE_DESKTOP_USE_UNSTABLE_API
 #include <libmateui/mate-bg.h>
@@ -47,16 +47,17 @@
 #include "mate-settings-profile.h"
 #include "msd-background-manager.h"
 
-#define CAJA_SHOW_DESKTOP_KEY "/apps/caja/preferences/show_desktop"
+#define CAJA_SCHEMA "org.mate.caja.preferences"
+#define CAJA_SHOW_DESKTOP_KEY "show-desktop"
 
 #define MSD_BACKGROUND_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_BACKGROUND_MANAGER, MsdBackgroundManagerPrivate))
 
 //class MsdBackgroundManager
 //{
 	struct MsdBackgroundManagerPrivate {
-		MateConfClient* client;
+		GSettings*      bg_settings;
+		GSettings*      caja_settings;
 		MateBG*         bg;
-		guint           bg_notify_id;
 		guint           timeout_id;
 
 		DBusConnection* dbus_connection;
@@ -248,31 +249,20 @@
 	}
 
 	static void
-	mateconf_changed_callback (MateConfClient*          client,
-	                           guint                    cnxn_id,
-	                           MateConfEntry*           entry,
+	settings_changed_callback (GSettings*               settings,
+	                           gchar*                   key,
 	                           MsdBackgroundManager*    manager)
 	{
-		mate_bg_load_from_preferences(manager->priv->bg,
-		                              manager->priv->client);
+		mate_bg_load_from_preferences(manager->priv->bg);
 	}
 
 	static void
 	watch_bg_preferences (MsdBackgroundManager* manager)
 	{
-		g_assert(manager->priv->bg_notify_id == 0);
-
-		mateconf_client_add_dir(manager->priv->client,
-		                        MATE_BG_KEY_DIR,
-		                        MATECONF_CLIENT_PRELOAD_NONE,
-		                        NULL);
-
-		manager->priv->bg_notify_id = mateconf_client_notify_add(manager->priv->client,
-		                                                         MATE_BG_KEY_DIR,
-		                                                         (MateConfClientNotifyFunc)mateconf_changed_callback,
-		                                                         manager,
-		                                                         NULL,
-		                                                         NULL);
+		g_signal_connect (manager->priv->bg_settings,
+		                  "changed",
+		                  G_CALLBACK (settings_changed_callback),
+		                  manager);
 	}
 
 	static void
@@ -293,7 +283,7 @@
 		                 manager);*/
 
 		watch_bg_preferences(manager);
-		mate_bg_load_from_preferences(manager->priv->bg, manager->priv->client);
+		mate_bg_load_from_preferences(manager->priv->bg);
 	}
 
 	static gboolean
@@ -367,9 +357,8 @@
 	{
 		gboolean caja_show_desktop;
 
-		caja_show_desktop = mateconf_client_get_bool(manager->priv->client,
-		                                             CAJA_SHOW_DESKTOP_KEY,
-		                                             NULL);
+		caja_show_desktop = g_settings_get_boolean (manager->priv->caja_settings,
+		                                            CAJA_SHOW_DESKTOP_KEY);
 
 		if (!caja_is_running() || !caja_show_desktop)
 		{
@@ -439,7 +428,8 @@
 		g_debug("Starting background manager");
 		mate_settings_profile_start(NULL);
 
-		manager->priv->client = mateconf_client_get_default();
+		manager->priv->bg_settings = g_settings_new (MATE_BG_SCHEMA);
+		manager->priv->caja_settings = g_settings_new (CAJA_SCHEMA);
 
 		/* If this is set, caja will draw the background and is
 		 * almost definitely in our session.  however, it may not be
@@ -448,9 +438,8 @@
 		 * don't waste time setting the background only to have
 		 * caja overwrite it.
 		 */
-		caja_show_desktop = mateconf_client_get_bool(manager->priv->client,
-		                                             CAJA_SHOW_DESKTOP_KEY,
-		                                             NULL);
+		caja_show_desktop = g_settings_get_boolean (manager->priv->caja_settings,
+	                                                CAJA_SHOW_DESKTOP_KEY);
 
 		if (!caja_show_desktop)
 		{
@@ -484,20 +473,16 @@
 			                              manager);
 		}
 
-		if (manager->priv->bg_notify_id != 0)
+		if (p->bg_settings != NULL)
 		{
-			mateconf_client_remove_dir(manager->priv->client,
-			                           MATE_BG_KEY_DIR,
-			                           NULL);
-			mateconf_client_notify_remove(manager->priv->client,
-			                              manager->priv->bg_notify_id);
-			manager->priv->bg_notify_id = 0;
+			g_object_unref(p->bg_settings);
+			p->bg_settings = NULL;
 		}
 
-		if (p->client != NULL)
+		if (p->caja_settings != NULL)
 		{
-			g_object_unref(p->client);
-			p->client = NULL;
+			g_object_unref(p->caja_settings);
+			p->caja_settings = NULL;
 		}
 
 		if (p->timeout_id != 0)

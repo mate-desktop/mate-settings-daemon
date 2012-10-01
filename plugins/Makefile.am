@@ -8,7 +8,6 @@ enabled_plugins =	\
 	dummy		\
 	font		\
 	housekeeping    \
-	keybindings	\
 	keyboard	\
 	media-keys	\
 	mouse		\

@@ -1,20 +1,30 @@
 NULL =
 
-@INTLTOOL_SCHEMAS_RULE@
-
-schemasdir = $(MATECONF_SCHEMA_FILE_DIR)
-schemas_in_files = 						\
-	mate-settings-daemon.schemas.in			\
-	apps_mate_settings_daemon_housekeeping.schemas.in	\
-	apps_mate_settings_daemon_keybindings.schemas.in	\
-	desktop_mate_font_rendering.schemas.in			\
-	desktop_mate_keybindings.schemas.in			\
-	apps_mate_settings_daemon_xrandr.schemas.in		\
-	desktop_mate_peripherals_touchpad.schemas.in		\
-	desktop_mate_peripherals_smartcard.schemas.in		\
+gsettings_SCHEMAS = \
+	org.mate.applications-at.gschema.xml \
+	org.mate.font-rendering.gschema.xml \
+	org.mate.keybindings.gschema.xml \
+	org.mate.peripherals-smartcard.gschema.xml \
+	org.mate.peripherals-touchpad.gschema.xml \
+	org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml \
+	org.mate.SettingsDaemon.plugins.background.gschema.xml \
+	org.mate.SettingsDaemon.plugins.clipboard.gschema.xml \
+	org.mate.SettingsDaemon.plugins.datetime.gschema.xml \
+	org.mate.SettingsDaemon.plugins.font.gschema.xml \
+	org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml \
+	org.mate.SettingsDaemon.plugins.keyboard.gschema.xml \
+	org.mate.SettingsDaemon.plugins.media-keys.gschema.xml \
+	org.mate.SettingsDaemon.plugins.mouse.gschema.xml \
+	org.mate.SettingsDaemon.plugins.smartcard.gschema.xml \
+	org.mate.SettingsDaemon.plugins.sound.gschema.xml \
+	org.mate.SettingsDaemon.plugins.typing-break.gschema.xml \
+	org.mate.SettingsDaemon.plugins.xrandr.gschema.xml \
+	org.mate.SettingsDaemon.plugins.xrdb.gschema.xml \
+	org.mate.SettingsDaemon.plugins.xsettings.gschema.xml \
 	$(NULL)
 
-schemas_DATA = $(schemas_in_files:.schemas.in=.schemas)
+@INTLTOOL_XML_NOMERGE_RULE@
+@GSETTINGS_RULES@
 
 @INTLTOOL_DESKTOP_RULE@
 desktopdir = $(sysconfdir)/xdg/autostart
@@ -55,15 +65,3 @@ DISTCLEANFILES = 			\
 MAINTAINERCLEANFILES =			\
 	*~				\
 	Makefile.in
-
-if MATECONF_SCHEMAS_INSTALL
-# don't do this if we are building in eg. rpm
-install-data-local: $(schemas_DATA)
-	if test -z "$(DESTDIR)" ; then \
-		for p in $(schemas_DATA) ; do \
-			MATECONF_CONFIG_SOURCE=$(MATECONF_SCHEMA_CONFIG_SOURCE) $(MATECONFTOOL) --makefile-install-rule $(top_builddir)/data/$$p 2>&1 > /dev/null; \
-		done \
-	fi
-else
-install-data-local:
-endif

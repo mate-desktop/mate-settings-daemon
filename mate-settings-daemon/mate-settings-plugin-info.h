@@ -54,8 +54,6 @@ GType            mate_settings_plugin_info_get_type           (void) G_GNUC_CONS
 
 MateSettingsPluginInfo *mate_settings_plugin_info_new_from_file (const char *filename);
 
-void             mate_settings_plugin_info_set_enabled_key_name (MateSettingsPluginInfo *info,
-                                                                  const char              *key_name);
 gboolean         mate_settings_plugin_info_activate        (MateSettingsPluginInfo *info);
 gboolean         mate_settings_plugin_info_deactivate      (MateSettingsPluginInfo *info);
 
@@ -72,8 +70,9 @@ const char      *mate_settings_plugin_info_get_location    (MateSettingsPluginIn
 int              mate_settings_plugin_info_get_priority    (MateSettingsPluginInfo *info);
 
 void             mate_settings_plugin_info_set_priority    (MateSettingsPluginInfo *info,
-                                                             int                      priority);
-
+                                                            int                     priority);
+void             mate_settings_plugin_info_set_schema      (MateSettingsPluginInfo *info,
+                                                            gchar                  *schema);
 #ifdef __cplusplus
 }
 #endif

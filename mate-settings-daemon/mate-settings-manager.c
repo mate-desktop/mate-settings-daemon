@@ -31,7 +31,7 @@
 #define DBUS_API_SUBJECT_TO_CHANGE
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #include "mate-settings-plugin-info.h"
 #include "mate-settings-manager.h"
@@ -40,7 +40,7 @@
 
 #define MSD_MANAGER_DBUS_PATH "/org/mate/SettingsDaemon"
 
-#define DEFAULT_SETTINGS_PREFIX "/apps/mate_settings_daemon/plugins"
+#define DEFAULT_SETTINGS_PREFIX "org.mate.SettingsDaemon"
 
 #define PLUGIN_EXT ".mate-settings-plugin"
 
@@ -49,14 +49,7 @@
 struct MateSettingsManagerPrivate
 {
         DBusGConnection            *connection;
-        MateConfClient                *mateconf_client;
-        char                       *settings_prefix;
         GSList                     *plugins;
-};
-
-enum {
-        PROP_0,
-        PROP_SETTINGS_PREFIX,
 };
 
 enum {
@@ -156,10 +149,8 @@ static void
 _load_file (MateSettingsManager *manager,
             const char           *filename)
 {
-        MateSettingsPluginInfo *info;
-        char                    *key_name;
-        int                      priority;
-        GError                  *error;
+        MateSettingsPluginInfo  *info;
+        char                    *schema;
         GSList                  *l;
 
         g_debug ("Loading plugin: %s", filename);
@@ -185,25 +176,13 @@ _load_file (MateSettingsManager *manager,
         g_signal_connect (info, "deactivated",
                           G_CALLBACK (on_plugin_deactivated), manager);
 
-        key_name = g_strdup_printf ("%s/%s/active",
-                                    manager->priv->settings_prefix,
-                                    mate_settings_plugin_info_get_location (info));
-        mate_settings_plugin_info_set_enabled_key_name (info, key_name);
-        g_free (key_name);
+        schema = g_strdup_printf ("%s.plugins.%s",
+                                  DEFAULT_SETTINGS_PREFIX,
+                                  mate_settings_plugin_info_get_location (info));
+        
+        mate_settings_plugin_info_set_schema (info, schema);
 
-        key_name = g_strdup_printf ("%s/%s/priority",
-                                    manager->priv->settings_prefix,
-                                    mate_settings_plugin_info_get_location (info));
-        error = NULL;
-        priority = mateconf_client_get_int (manager->priv->mateconf_client, key_name, &error);
-        if (error == NULL) {
-                if (priority > 0) {
-                        mate_settings_plugin_info_set_priority (info, priority);
-                }
-        } else {
-                g_error_free (error);
-        }
-        g_free (key_name);
+        g_free (schema);
 
  out:
         if (info != NULL) {
@@ -337,15 +316,6 @@ mate_settings_manager_start (MateSettingsManager *manager,
                 goto out;
         }
 
-        manager->priv->mateconf_client = mateconf_client_get_default ();
-
-        mate_settings_profile_start ("preloading mateconf keys");
-        mateconf_client_add_dir (manager->priv->mateconf_client,
-                              manager->priv->settings_prefix,
-                              MATECONF_CLIENT_PRELOAD_RECURSIVE,
-                              NULL);
-        mate_settings_profile_end ("preloading mateconf keys");
-
         _load_all (manager);
 
         ret = TRUE;
@@ -353,16 +323,6 @@ mate_settings_manager_start (MateSettingsManager *manager,
         mate_settings_profile_end (NULL);
 
         return ret;
-}
-
-gboolean
-mate_settings_manager_start_with_settings_prefix (MateSettingsManager *manager,
-                                                   const char           *settings_prefix,
-                                                   GError              **error)
-{
-        g_object_set (manager, "settings-prefix", settings_prefix, NULL);
-
-        return mate_settings_manager_start (manager, error);
 }
 
 void
@@ -380,60 +340,6 @@ mate_settings_manager_stop (MateSettingsManager *manager)
 #endif
 
         _unload_all (manager);
-
-        mateconf_client_remove_dir (manager->priv->mateconf_client,
-                                 manager->priv->settings_prefix,
-                                 NULL);
-        g_object_unref (manager->priv->mateconf_client);
-        manager->priv->mateconf_client = NULL;
-}
-
-static void
-_set_settings_prefix (MateSettingsManager *self,
-                   const char           *prefix)
-{
-        g_free (self->priv->settings_prefix);
-        self->priv->settings_prefix = g_strdup (prefix);
-}
-
-static void
-mate_settings_manager_set_property (GObject        *object,
-                                     guint           prop_id,
-                                     const GValue   *value,
-                                     GParamSpec     *pspec)
-{
-        MateSettingsManager *self;
-
-        self = MATE_SETTINGS_MANAGER (object);
-
-        switch (prop_id) {
-        case PROP_SETTINGS_PREFIX:
-                _set_settings_prefix (self, g_value_get_string (value));
-                break;
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static void
-mate_settings_manager_get_property (GObject        *object,
-                                     guint           prop_id,
-                                     GValue         *value,
-                                     GParamSpec     *pspec)
-{
-        MateSettingsManager *self;
-
-        self = MATE_SETTINGS_MANAGER (object);
-
-        switch (prop_id) {
-        case PROP_SETTINGS_PREFIX:
-                g_value_set_string (value, self->priv->settings_prefix);
-                break;
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
 }
 
 static GObject *
@@ -470,8 +376,6 @@ mate_settings_manager_class_init (MateSettingsManagerClass *klass)
 {
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->get_property = mate_settings_manager_get_property;
-        object_class->set_property = mate_settings_manager_set_property;
         object_class->constructor = mate_settings_manager_constructor;
         object_class->dispose = mate_settings_manager_dispose;
         object_class->finalize = mate_settings_manager_finalize;
@@ -497,14 +401,6 @@ mate_settings_manager_class_init (MateSettingsManagerClass *klass)
                               G_TYPE_NONE,
                               1, G_TYPE_STRING);
 
-        g_object_class_install_property (object_class,
-                                         PROP_SETTINGS_PREFIX,
-                                         g_param_spec_string ("settings-prefix",
-                                                              "settings-prefix",
-                                                              "settings-prefix",
-                                                              DEFAULT_SETTINGS_PREFIX,
-                                                              G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
-
         g_type_class_add_private (klass, sizeof (MateSettingsManagerPrivate));
 
         dbus_g_object_type_install_info (MATE_TYPE_SETTINGS_MANAGER, &dbus_glib_mate_settings_manager_object_info);
@@ -528,8 +424,6 @@ mate_settings_manager_finalize (GObject *object)
         manager = MATE_SETTINGS_MANAGER (object);
 
         g_return_if_fail (manager->priv != NULL);
-
-        g_free (manager->priv->settings_prefix);
 
         G_OBJECT_CLASS (mate_settings_manager_parent_class)->finalize (object);
 }

@@ -28,7 +28,7 @@
 
 #include <dbus/dbus-glib.h>
 
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #include "mate-settings-plugin.h"
 #include "msd-smartcard-plugin.h"
@@ -57,8 +57,8 @@ typedef enum
 #define SM_DBUS_INTERFACE "org.mate.SessionManager"
 #define SM_LOGOUT_MODE_FORCE 2
 
-#define MSD_SMARTCARD_KEY "/desktop/mate/peripherals/smartcard"
-#define KEY_REMOVE_ACTION MSD_SMARTCARD_KEY "/removal_action"
+#define MSD_SMARTCARD_SCHEMA "org.mate.peripherals-smartcard"
+#define KEY_REMOVE_ACTION "removal-action"
 
 #define MSD_SMARTCARD_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), MSD_TYPE_SMARTCARD_PLUGIN, MsdSmartcardPluginPrivate))
 
@@ -182,13 +182,13 @@ user_logged_in_with_smartcard (void)
 static MsdSmartcardRemoveAction
 get_configured_remove_action (MsdSmartcardPlugin *plugin)
 {
-        MateConfClient *client;
+        GSettings *settings;
         char *remove_action_string;
         MsdSmartcardRemoveAction remove_action;
 
-        client = mateconf_client_get_default ();
-        remove_action_string = mateconf_client_get_string (client,
-                                                        KEY_REMOVE_ACTION, NULL);
+        settings = g_settings_new (MSD_SMARTCARD_SCHEMA);
+        remove_action_string = g_settings_get_string (settings,
+                                                      KEY_REMOVE_ACTION);
 
         if (remove_action_string == NULL) {
                 g_warning ("MsdSmartcardPlugin unable to get smartcard remove action");
@@ -204,7 +204,7 @@ get_configured_remove_action (MsdSmartcardPlugin *plugin)
                 remove_action = MSD_SMARTCARD_REMOVE_ACTION_NONE;
         }
 
-        g_object_unref (client);
+        g_object_unref (settings);
 
         return remove_action;
 }

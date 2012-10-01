@@ -18,13 +18,14 @@
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 
 #include "msd-ldsm-trash-empty.h"
 
-#define CAJA_CONFIRM_TRASH_KEY "/apps/caja/preferences/confirm_trash"
+#define CAJA_PREFS_SCHEMA "org.mate.caja.preferences"
+#define CAJA_CONFIRM_TRASH_KEY "confirm-trash"
 
 /* Some of this code has been borrowed from the trash-applet, courtesy of Ryan Lortie */
 
@@ -325,21 +326,12 @@ trash_empty_confirmation_response (GtkDialog *dialog,
 static gboolean
 trash_empty_require_confirmation ()
 {
-        MateConfClient *client;
+        GSettings *settings;
         gboolean require_confirmation = TRUE;
-        GError *error = NULL;
 
-        client = mateconf_client_get_default ();
-        if (client) {
-                require_confirmation = mateconf_client_get_bool (client, CAJA_CONFIRM_TRASH_KEY, &error);
-                if (error) {
-                        g_warning ("Failed to read confirm_trash key from MateConf: %s", error->message ? error->message : "Unknown error");
-                        /* It's safest to assume that confirmation is required here */
-                        require_confirmation = TRUE;
-                        g_error_free (error);
-                }
-                g_object_unref (client);
-        }
+        settings = g_settings_new (CAJA_PREFS_SCHEMA);
+        require_confirmation = g_settings_get_boolean (settings, CAJA_CONFIRM_TRASH_KEY);
+        g_object_unref (settings);
 
         return require_confirmation;
 }

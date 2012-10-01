@@ -1,7 +1,7 @@
 AC_PREREQ([2.60])
 
 m4_define([msd_api_version_major],[1])
-m4_define([msd_api_version_minor],[4])
+m4_define([msd_api_version_minor],[5])
 m4_define([msd_api_version_micro],[0])
 m4_define([msd_api_version],
 	[msd_api_version_major.msd_api_version_minor.msd_api_version_micro])
@@ -49,9 +49,8 @@ dnl ---------------------------------------------------------------------------
 DBUS_GLIB_REQUIRED_VERSION=0.74
 GLIB_REQUIRED_VERSION=2.17.3
 GTK_REQUIRED_VERSION=2.21.2
-MATECONF_REQUIRED_VERSION=1.1.0
-GIO_REQUIRED_VERSION=2.17.3
-MATE_DESKTOP_REQUIRED_VERSION=1.1.0
+GIO_REQUIRED_VERSION=2.25.0
+MATE_DESKTOP_REQUIRED_VERSION=1.5.0
 LIBMATENOTIFY_REQUIRED_VERSION=1.1.0
 
 EXTRA_COMPILE_WARNINGS(yes)
@@ -59,7 +58,7 @@ EXTRA_COMPILE_WARNINGS(yes)
 PKG_CHECK_MODULES(SETTINGS_DAEMON,
 	glib-2.0 >= $GLIB_REQUIRED_VERSION
 	gtk+-2.0 >= $GTK_REQUIRED_VERSION
-	mateconf-2.0 >= $MATECONF_REQUIRED_VERSION
+	gio-2.0 >= $GIO_REQUIRED_VERSION
 	gmodule-2.0
 	gthread-2.0
 	dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
@@ -67,7 +66,6 @@ PKG_CHECK_MODULES(SETTINGS_DAEMON,
 
 PKG_CHECK_MODULES(SETTINGS_PLUGIN,
 	gtk+-2.0 >= $GTK_REQUIRED_VERSION
-	mateconf-2.0 >= $MATECONF_REQUIRED_VERSION
 	mate-desktop-2.0 >= $MATE_DESKTOP_REQUIRED_VERSION
 	gio-2.0 >= $GIO_REQUIRED_VERSION
 	dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
@@ -83,9 +81,7 @@ AC_SUBST([MSD_PLUGIN_LDFLAGS])
 
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 
-AC_PATH_PROG(MATECONFTOOL, mateconftool-2)
-
-AM_MATECONF_SOURCE_2
+GLIB_GSETTINGS
 
 dnl ---------------------------------------------------------------------------
 dnl - Check for libmatenotify
@@ -477,7 +473,6 @@ plugins/datetime/Makefile
 plugins/dummy/Makefile
 plugins/font/Makefile
 plugins/housekeeping/Makefile
-plugins/keybindings/Makefile
 plugins/keyboard/Makefile
 plugins/media-keys/Makefile
 plugins/media-keys/cut-n-paste/Makefile

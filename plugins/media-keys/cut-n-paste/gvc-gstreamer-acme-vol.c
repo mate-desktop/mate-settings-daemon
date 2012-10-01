@@ -34,14 +34,15 @@
 #include <gst/interfaces/mixer.h>
 #include <gst/interfaces/propertyprobe.h>
 
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #include <string.h>
 
 #define TIMEOUT	4
 
-#define DEFAULT_MIXER_DEVICE_KEY   "/desktop/mate/sound/default_mixer_device"
-#define DEFAULT_MIXER_TRACKS_KEY   "/desktop/mate/sound/default_mixer_tracks"
+#define MATE_SOUND_SCHEMA          "org.mate.sound"
+#define DEFAULT_MIXER_DEVICE_KEY   "default-mixer-device"
+#define DEFAULT_MIXER_TRACKS_KEY   "default-mixer-tracks"
 
 #define ACME_VOLUME_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), ACME_TYPE_VOLUME, AcmeVolumePrivate))
 
@@ -51,7 +52,7 @@ struct AcmeVolumePrivate {
 	guint         timer_id;
 	gdouble       volume;
 	gboolean      mute;
-	MateConfClient  *mateconf_client;
+	GSettings    *settings;
 };
 
 G_DEFINE_TYPE (AcmeVolume, acme_volume, G_TYPE_OBJECT)
@@ -76,9 +77,9 @@ acme_volume_finalize (GObject *object)
 		g_source_remove (self->_priv->timer_id);
 	acme_volume_close_real (self);
 
-	if (self->_priv->mateconf_client != NULL) {
-		g_object_unref (self->_priv->mateconf_client);
-		self->_priv->mateconf_client = NULL;
+	if (self->_priv->settings != NULL) {
+		g_object_unref (self->_priv->settings);
+		self->_priv->settings = NULL;
 	}
 
 	G_OBJECT_CLASS (acme_volume_parent_class)->finalize (object);
@@ -266,7 +267,7 @@ acme_volume_open (AcmeVolume *self)
 		return TRUE;
 	}
 
-	mixer_device = mateconf_client_get_string (self->_priv->mateconf_client, DEFAULT_MIXER_DEVICE_KEY, NULL);
+	mixer_device = g_settings_get_string (self->_priv->settings, DEFAULT_MIXER_DEVICE_KEY);
 	if (mixer_device != NULL)
 		factory_and_device = g_strsplit (mixer_device, ":", 2);
 
@@ -296,19 +297,21 @@ acme_volume_open (AcmeVolume *self)
 	if (self->_priv->mixer != NULL) {
 		const GList *m;
 		GSList *tracks, *t;
-		GError *error = NULL;
 
-		/* Try to use tracks saved in MateConf 
+		/* Try to use tracks saved in GSettings 
 		   Note: errors need to be treated , for example if the user set a non type list for this key
 		   or if the elements type_list are not "matched" */
-		tracks = mateconf_client_get_list (self->_priv->mateconf_client, DEFAULT_MIXER_TRACKS_KEY, 
-						MATECONF_VALUE_STRING, &error);
-
-		if (error) {
-			g_warning("ERROR: %s\n", error->message);
-			g_error_free(error);
+		gchar **settings_list;
+		settings_list = g_settings_get_strv (self->_priv->settings, DEFAULT_MIXER_TRACKS_KEY);
+		if (settings_list != NULL) {
+			gint i;
+			for (i = 0; i < G_N_ELEMENTS (settings_list); i++) {
+				if (settings_list[i] != NULL)
+					tracks = g_slist_append (tracks, g_strdup (settings_list[i]));
+			}
+			g_strfreev (settings_list);
 		}
-
+		
 		/* We use these tracks ONLY if they are supported on the system with the following mixer */
 		for (m = gst_mixer_list_tracks (self->_priv->mixer); m != NULL; m = m->next) {
 			GstMixerTrack *track = GST_MIXER_TRACK (m->data);
@@ -322,7 +325,7 @@ acme_volume_open (AcmeVolume *self)
 		g_slist_foreach (tracks, (GFunc)g_free, NULL);
 		g_slist_free (tracks);
 
-		/* If no track stored in MateConf is avaiable try to use Master track */
+		/* If no track stored in GSettings is avaiable try to use Master track */
 		if (self->_priv->mixer_tracks == NULL) {
 			for (m = gst_mixer_list_tracks (self->_priv->mixer); m != NULL; m = m->next) {
 				GstMixerTrack *track = GST_MIXER_TRACK (m->data);
@@ -374,7 +377,7 @@ static void
 acme_volume_init (AcmeVolume *self)
 {
 	self->_priv = ACME_VOLUME_GET_PRIVATE (self);
-	self->_priv->mateconf_client = mateconf_client_get_default ();
+	self->_priv->settings = g_settings_new (MATE_SOUND_SCHEMA);
 }
 
 static void

@@ -59,23 +59,26 @@
 	#define HOST_NAME_MAX 255
 #endif
 
-#define MSD_KEYBOARD_KEY "/desktop/mate/peripherals/keyboard"
+#define MSD_KEYBOARD_SCHEMA "org.mate.peripherals-keyboard"
 
-#define KEY_REPEAT        MSD_KEYBOARD_KEY "/repeat"
-#define KEY_CLICK         MSD_KEYBOARD_KEY "/click"
-#define KEY_RATE          MSD_KEYBOARD_KEY "/rate"
-#define KEY_DELAY         MSD_KEYBOARD_KEY "/delay"
-#define KEY_CLICK_VOLUME  MSD_KEYBOARD_KEY "/click_volume"
+#define KEY_REPEAT         "repeat"
+#define KEY_CLICK          "click"
+#define KEY_RATE           "rate"
+#define KEY_DELAY          "delay"
+#define KEY_CLICK_VOLUME   "click-volume"
 
-#define KEY_BELL_VOLUME   MSD_KEYBOARD_KEY "/bell_volume"
-#define KEY_BELL_PITCH    MSD_KEYBOARD_KEY "/bell_pitch"
-#define KEY_BELL_DURATION MSD_KEYBOARD_KEY "/bell_duration"
-#define KEY_BELL_MODE     MSD_KEYBOARD_KEY "/bell_mode"
+#define KEY_BELL_VOLUME    "bell-volume"
+#define KEY_BELL_PITCH     "bell-pitch"
+#define KEY_BELL_DURATION  "bell-duration"
+#define KEY_BELL_MODE      "bell-mode"
+
+#define KEY_NUMLOCK_STATE    "numlock-state"
+#define KEY_NUMLOCK_REMEMBER "remember-numlock-state"
 
 struct MsdKeyboardManagerPrivate {
-	gboolean have_xkb;
-	gint     xkb_event_base;
-	guint    notify;
+	gboolean    have_xkb;
+	gint        xkb_event_base;
+	GSettings  *settings;
 };
 
 static void     msd_keyboard_manager_class_init  (MsdKeyboardManagerClass* klass);
@@ -125,29 +128,6 @@ static gboolean xkb_set_keyboard_autorepeat_rate(int delay, int rate)
 	return XkbSetAutoRepeatRate(GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), XkbUseCoreKbd, delay, interval);
 }
 #endif
-
-static char* msd_keyboard_get_hostname_key (const char *subkey)
-{
-        char hostname[HOST_NAME_MAX + 1];
-
-        if (gethostname (hostname, sizeof (hostname)) == 0 &&
-            strcmp (hostname, "localhost") != 0 &&
-            strcmp (hostname, "localhost.localdomain") != 0) {
-                char *escaped;
-                char *key;
-
-                escaped = mateconf_escape_key (hostname, -1);
-                key = g_strconcat (MSD_KEYBOARD_KEY
-                                   "/host-",
-                                   escaped,
-                                   "/0/",
-                                   subkey,
-                                   NULL);
-                g_free (escaped);
-                return key;
-        } else
-                return NULL;
-}
 
 #ifdef HAVE_X11_EXTENSIONS_XKB_H
 
@@ -203,52 +183,20 @@ numlock_set_xkb_state (NumLockState new_state)
         XkbLockModifiers (dpy, XkbUseCoreKbd, num_mask, new_state ? num_mask : 0);
 }
 
-static char *
-numlock_mateconf_state_key (void)
-{
-        char *key = msd_keyboard_get_hostname_key ("numlock_on");
-        if (!key) {
-                g_message ("NumLock remembering disabled because hostname is set to \"localhost\"");
-        }
-        return key;
-}
-
 static NumLockState
-numlock_get_mateconf_state (MateConfClient *client)
+numlock_get_settings_state (GSettings *settings)
 {
         int          curr_state;
-        GError      *err = NULL;
-        char        *key = numlock_mateconf_state_key ();
-
-        if (!key) {
-                return NUMLOCK_STATE_UNKNOWN;
-        }
-
-        curr_state = mateconf_client_get_bool (client, key, &err);
-        if (err) {
-                curr_state = NUMLOCK_STATE_UNKNOWN;
-                g_error_free (err);
-        }
-
-        g_free (key);
+        curr_state = g_settings_get_enum (settings, KEY_NUMLOCK_STATE);
         return curr_state;
 }
 
-static void numlock_set_mateconf_state(MateConfClient *client, NumLockState new_state)
+static void numlock_set_settings_state(GSettings *settings, NumLockState new_state)
 {
-	//printf("numlock_set_mateconf_state\n");
-	char* key;
-
         if (new_state != NUMLOCK_STATE_ON && new_state != NUMLOCK_STATE_OFF) {
                 return;
         }
-
-        key = numlock_mateconf_state_key ();
-
-        if (key) {
-                mateconf_client_set_bool (client, key, new_state, NULL);
-                g_free (key);
-        }
+        g_settings_set_enum (settings, KEY_NUMLOCK_STATE, new_state);
 }
 
 static GdkFilterReturn
@@ -265,9 +213,9 @@ numlock_xkb_callback (GdkXEvent *xev_,
                         unsigned num_mask = numlock_NumLock_modifier_mask ();
                         unsigned locked_mods = xkbev->state.locked_mods;
                         int numlock_state = !! (num_mask & locked_mods);
-                        MateConfClient *client = mateconf_client_get_default ();
-                        numlock_set_mateconf_state (client, numlock_state);
-                        g_object_unref (client);
+                        GSettings *settings = g_settings_new (MSD_KEYBOARD_SCHEMA);
+                        numlock_set_settings_state (settings, numlock_state);
+                        g_object_unref (settings);
                 }
         }
         return GDK_FILTER_CONTINUE;
@@ -287,9 +235,8 @@ numlock_install_xkb_callback (MsdKeyboardManager *manager)
 #endif /* HAVE_X11_EXTENSIONS_XKB_H */
 
 static void
-apply_settings (MateConfClient        *client,
-                guint               cnxn_id,
-                MateConfEntry         *entry,
+apply_settings (GSettings          *settings,
+                gchar              *key,
                 MsdKeyboardManager *manager)
 {
         XKeyboardControl kbdcontrol;
@@ -306,23 +253,23 @@ apply_settings (MateConfClient        *client,
         gboolean         rnumlock;
 #endif /* HAVE_X11_EXTENSIONS_XKB_H */
 
-        repeat        = mateconf_client_get_bool  (client, KEY_REPEAT, NULL);
-        click         = mateconf_client_get_bool  (client, KEY_CLICK, NULL);
-        rate          = mateconf_client_get_int   (client, KEY_RATE, NULL);
-        delay         = mateconf_client_get_int   (client, KEY_DELAY, NULL);
-        click_volume  = mateconf_client_get_int   (client, KEY_CLICK_VOLUME, NULL);
+        repeat        = g_settings_get_boolean  (settings, KEY_REPEAT);
+        click         = g_settings_get_boolean  (settings, KEY_CLICK);
+        rate          = g_settings_get_int   (settings, KEY_RATE);
+        delay         = g_settings_get_int   (settings, KEY_DELAY);
+        click_volume  = g_settings_get_int   (settings, KEY_CLICK_VOLUME);
 #if 0
-        bell_volume   = mateconf_client_get_int   (client, KEY_BELL_VOLUME, NULL);
+        bell_volume   = g_settings_get_int   (settings, KEY_BELL_VOLUME);
 #endif
-        bell_pitch    = mateconf_client_get_int   (client, KEY_BELL_PITCH, NULL);
-        bell_duration = mateconf_client_get_int   (client, KEY_BELL_DURATION, NULL);
+        bell_pitch    = g_settings_get_int   (settings, KEY_BELL_PITCH);
+        bell_duration = g_settings_get_int   (settings, KEY_BELL_DURATION);
 
-        volume_string = mateconf_client_get_string (client, KEY_BELL_MODE, NULL);
+        volume_string = g_settings_get_string (settings, KEY_BELL_MODE);
         bell_volume   = (volume_string && !strcmp (volume_string, "on")) ? 50 : 0;
         g_free (volume_string);
 
 #ifdef HAVE_X11_EXTENSIONS_XKB_H
-        rnumlock      = mateconf_client_get_bool  (client, MSD_KEYBOARD_KEY "/remember_numlock_state", NULL);
+        rnumlock      = g_settings_get_boolean  (settings, KEY_NUMLOCK_REMEMBER);
 #endif /* HAVE_X11_EXTENSIONS_XKB_H */
 
         gdk_error_trap_push ();
@@ -361,7 +308,7 @@ apply_settings (MateConfClient        *client,
 
 #ifdef HAVE_X11_EXTENSIONS_XKB_H
         if (manager->priv->have_xkb && rnumlock) {
-                numlock_set_xkb_state (numlock_get_mateconf_state (client));
+                numlock_set_xkb_state (numlock_get_settings_state (settings));
         }
 #endif /* HAVE_X11_EXTENSIONS_XKB_H */
 
@@ -372,30 +319,22 @@ apply_settings (MateConfClient        *client,
 void
 msd_keyboard_manager_apply_settings (MsdKeyboardManager *manager)
 {
-        MateConfClient *client;
-
-        client = mateconf_client_get_default ();
-        apply_settings (client, 0, NULL, manager);
-        g_object_unref (client);
+        apply_settings (manager->priv->settings, NULL, manager);
 }
 
 static gboolean
 start_keyboard_idle_cb (MsdKeyboardManager *manager)
 {
-        MateConfClient *client;
-
         mate_settings_profile_start (NULL);
 
         g_debug ("Starting keyboard manager");
 
         manager->priv->have_xkb = 0;
-        client = mateconf_client_get_default ();
-
-        mateconf_client_add_dir (client, MSD_KEYBOARD_KEY, MATECONF_CLIENT_PRELOAD_RECURSIVE, NULL);
+        manager->priv->settings = g_settings_new (MSD_KEYBOARD_SCHEMA);
 
         /* Essential - xkb initialization should happen before */
         msd_keyboard_xkb_set_post_activation_callback ((PostActivationCallback) msd_load_modmap_files, NULL);
-        msd_keyboard_xkb_init (client, manager);
+        msd_keyboard_xkb_init (manager);
 
 #ifdef HAVE_X11_EXTENSIONS_XKB_H
         numlock_xkb_init (manager);
@@ -404,11 +343,7 @@ start_keyboard_idle_cb (MsdKeyboardManager *manager)
         /* apply current settings before we install the callback */
         msd_keyboard_manager_apply_settings (manager);
 
-        manager->priv->notify = mateconf_client_notify_add (client, MSD_KEYBOARD_KEY,
-                                                         (MateConfClientNotifyFunc) apply_settings, manager,
-                                                         NULL, NULL);
-
-        g_object_unref (client);
+        g_signal_connect (manager->priv->settings, "changed", G_CALLBACK (apply_settings), manager);
 
 #ifdef HAVE_X11_EXTENSIONS_XKB_H
         numlock_install_xkb_callback (manager);
@@ -439,12 +374,9 @@ msd_keyboard_manager_stop (MsdKeyboardManager *manager)
 
         g_debug ("Stopping keyboard manager");
 
-        if (p->notify != 0) {
-                MateConfClient *client = mateconf_client_get_default ();
-                mateconf_client_remove_dir (client, MSD_KEYBOARD_KEY, NULL);
-                mateconf_client_notify_remove (client, p->notify);
-                g_object_unref (client);
-                p->notify = 0;
+        if (p->settings != NULL) {
+                g_object_unref (p->settings);
+                p->settings = NULL;
         }
 
 #if HAVE_X11_EXTENSIONS_XKB_H

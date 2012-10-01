@@ -36,7 +36,7 @@
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
 #include <gtk/gtk.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #include <X11/XKBlib.h>
 #include <X11/extensions/XKBstr.h>
@@ -54,7 +54,7 @@
 #include "msd-a11y-keyboard-manager.h"
 #include "msd-a11y-preferences-dialog.h"
 
-#define CONFIG_ROOT "/desktop/mate/accessibility/keyboard"
+#define CONFIG_SCHEMA "org.mate.accessibility-keyboard"
 #define NOTIFICATION_TIMEOUT 30
 
 #define MSD_A11Y_KEYBOARD_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_A11Y_KEYBOARD_MANAGER, MsdA11yKeyboardManagerPrivate))
@@ -70,7 +70,7 @@ struct MsdA11yKeyboardManagerPrivate
         GtkStatusIcon *status_icon;
         XkbDescRec *original_xkb_desc;
 
-        guint      mateconf_notify;
+        GSettings  *settings;
 
 #ifdef HAVE_LIBMATENOTIFY
         NotifyNotification *notification;
@@ -81,8 +81,7 @@ static void     msd_a11y_keyboard_manager_class_init  (MsdA11yKeyboardManagerCla
 static void     msd_a11y_keyboard_manager_init        (MsdA11yKeyboardManager      *a11y_keyboard_manager);
 static void     msd_a11y_keyboard_manager_finalize    (GObject             *object);
 static void     msd_a11y_keyboard_manager_ensure_status_icon (MsdA11yKeyboardManager *manager);
-static void     set_server_from_mateconf (MsdA11yKeyboardManager *manager,
-				       MateConfClient            *client);
+static void     set_server_from_settings (MsdA11yKeyboardManager *manager);
 
 G_DEFINE_TYPE (MsdA11yKeyboardManager, msd_a11y_keyboard_manager, G_TYPE_OBJECT)
 
@@ -111,10 +110,7 @@ devicepresence_filter (GdkXEvent *xevent,
         {
             XDevicePresenceNotifyEvent *dpn = (XDevicePresenceNotifyEvent *) xev;
             if (dpn->devchange == DeviceEnabled) {
-                MateConfClient *client;
-		client = mateconf_client_get_default ();
-		set_server_from_mateconf (data, client);
-                g_object_unref (client);
+                set_server_from_settings (data);
 	    }
         }
         return GDK_FILTER_CONTINUE;
@@ -199,10 +195,10 @@ get_xkb_desc_rec (MsdA11yKeyboardManager *manager)
 }
 
 static int
-get_int (MateConfClient *client,
-         char const  *key)
+get_int (GSettings  *settings,
+         char const *key)
 {
-        int res = mateconf_client_get_int  (client, key, NULL);
+        int res = g_settings_get_int (settings, key);
         if (res <= 0) {
                 res = 1;
         }
@@ -210,36 +206,36 @@ get_int (MateConfClient *client,
 }
 
 static gboolean
-set_int (MateConfClient    *client,
-         MateConfChangeSet *cs,
+set_int (GSettings      *settings,
          char const     *key,
          int             val)
 {
-        mateconf_change_set_set_int (cs, key, val);
+        int pre_val = g_settings_get_int (settings, key);
+        g_settings_set_int (settings, key, val);
 #ifdef DEBUG_ACCESSIBILITY
-        if (val != mateconf_client_get_int (client, key, NULL)) {
+        if (val != pre_val) {
                 g_warning ("%s changed", key);
         }
 #endif
-        return val != mateconf_client_get_int (client, key, NULL);
+        return val != pre_val;
 }
 
 static gboolean
-set_bool (MateConfClient    *client,
-          MateConfChangeSet *cs,
+set_bool (GSettings      *settings,
           char const     *key,
           int             val)
 {
         gboolean bval = (val != 0);
+        gboolean pre_val = g_settings_get_boolean (settings, key);
 
-        mateconf_change_set_set_bool (cs, key, bval ? TRUE : FALSE);
+        g_settings_set_boolean (settings, key, bval ? TRUE : FALSE);
 #ifdef DEBUG_ACCESSIBILITY
-                if (bval != mateconf_client_get_bool (client, key, NULL)) {
-                        d ("%s changed", key);
-                        return TRUE;
-                }
+        if (bval != pre_val) {
+                d ("%s changed", key);
+                return TRUE;
+        }
 #endif
-        return (bval != mateconf_client_get_bool (client, key, NULL));
+        return (bval != pre_val);
 }
 
 static unsigned long
@@ -254,19 +250,18 @@ set_clear (gboolean      flag,
 }
 
 static gboolean
-set_ctrl_from_mateconf (XkbDescRec   *desc,
-                     MateConfClient  *client,
+set_ctrl_from_settings (XkbDescRec   *desc,
+                     GSettings  *settings,
                      char const   *key,
                      unsigned long mask)
 {
-        gboolean result = mateconf_client_get_bool (client, key, NULL);
+        gboolean result = g_settings_get_boolean (settings, key);
         desc->ctrls->enabled_ctrls = set_clear (result, desc->ctrls->enabled_ctrls, mask);
         return result;
 }
 
 static void
-set_server_from_mateconf (MsdA11yKeyboardManager *manager,
-                       MateConfClient            *client)
+set_server_from_settings (MsdA11yKeyboardManager *manager)
 {
         XkbDescRec      *desc;
         gboolean         enable_accessX;
@@ -279,18 +274,17 @@ set_server_from_mateconf (MsdA11yKeyboardManager *manager,
         }
 
         /* general */
-        enable_accessX = mateconf_client_get_bool (client, CONFIG_ROOT "/enable", NULL);
+        enable_accessX = g_settings_get_boolean (manager->priv->settings, "enable");
 
         desc->ctrls->enabled_ctrls = set_clear (enable_accessX,
                                                 desc->ctrls->enabled_ctrls,
                                                 XkbAccessXKeysMask);
 
-        if (set_ctrl_from_mateconf (desc, client, CONFIG_ROOT "/timeout_enable",
+        if (set_ctrl_from_settings (desc, manager->priv->settings, "timeout-enable",
                                  XkbAccessXTimeoutMask)) {
-                desc->ctrls->ax_timeout = get_int (client,
-                                                   CONFIG_ROOT "/timeout");
+                desc->ctrls->ax_timeout = get_int (manager->priv->settings, "timeout");
                 /* disable only the master flag via the server we will disable
-                 * the rest on the rebound without affecting mateconf state
+                 * the rest on the rebound without affecting gsettings state
                  * don't change the option flags at all.
                  */
                 desc->ctrls->axt_ctrls_mask = XkbAccessXKeysMask | XkbAccessXFeedbackMask;
@@ -298,82 +292,82 @@ set_server_from_mateconf (MsdA11yKeyboardManager *manager,
                 desc->ctrls->axt_opts_mask = 0;
         }
 
-        desc->ctrls->ax_options = set_clear (mateconf_client_get_bool (client, CONFIG_ROOT "/feature_state_change_beep", NULL),
+        desc->ctrls->ax_options = set_clear (g_settings_get_boolean (manager->priv->settings, "feature-state-change-beep"),
                                              desc->ctrls->ax_options,
                                              XkbAccessXFeedbackMask | XkbAX_FeatureFBMask | XkbAX_SlowWarnFBMask);
 
         /* bounce keys */
-        if (set_ctrl_from_mateconf (desc,
-                                 client,
-                                 CONFIG_ROOT "/bouncekeys_enable",
+        if (set_ctrl_from_settings (desc,
+                                 manager->priv->settings,
+                                 "bouncekeys-enable",
                                  XkbBounceKeysMask)) {
-                desc->ctrls->debounce_delay  = get_int (client,
-                                                        CONFIG_ROOT "/bouncekeys_delay");
-                desc->ctrls->ax_options = set_clear (mateconf_client_get_bool (client, CONFIG_ROOT "/bouncekeys_beep_reject", NULL),
+                desc->ctrls->debounce_delay  = get_int (manager->priv->settings,
+                                                        "bouncekeys-delay");
+                desc->ctrls->ax_options = set_clear (g_settings_get_boolean (manager->priv->settings, "bouncekeys-beep-reject"),
                                                      desc->ctrls->ax_options,
                                                      XkbAccessXFeedbackMask | XkbAX_BKRejectFBMask);
         }
 
         /* mouse keys */
-        if (set_ctrl_from_mateconf (desc,
-                                 client,
-                                 CONFIG_ROOT "/mousekeys_enable",
+        if (set_ctrl_from_settings (desc,
+                                 manager->priv->settings,
+                                 "mousekeys-enable",
                                  XkbMouseKeysMask | XkbMouseKeysAccelMask)) {
                 desc->ctrls->mk_interval     = 100;     /* msec between mousekey events */
                 desc->ctrls->mk_curve        = 50;
 
                 /* We store pixels / sec, XKB wants pixels / event */
-                desc->ctrls->mk_max_speed    = get_int (client,
-                        CONFIG_ROOT "/mousekeys_max_speed") / (1000 / desc->ctrls->mk_interval);
+                desc->ctrls->mk_max_speed    = get_int (manager->priv->settings,
+                        "mousekeys-max-speed") / (1000 / desc->ctrls->mk_interval);
                 if (desc->ctrls->mk_max_speed <= 0)
                         desc->ctrls->mk_max_speed = 1;
 
-                desc->ctrls->mk_time_to_max = get_int (client, /* events before max */
-                                                       CONFIG_ROOT "/mousekeys_accel_time") / desc->ctrls->mk_interval;
+                desc->ctrls->mk_time_to_max = get_int (manager->priv->settings, /* events before max */
+                                                       "mousekeys-accel-time") / desc->ctrls->mk_interval;
                 if (desc->ctrls->mk_time_to_max <= 0)
                         desc->ctrls->mk_time_to_max = 1;
 
-                desc->ctrls->mk_delay = get_int (client, /* ms before 1st event */
-                                                 CONFIG_ROOT "/mousekeys_init_delay");
+                desc->ctrls->mk_delay = get_int (manager->priv->settings, /* ms before 1st event */
+                                                 "mousekeys-init-delay");
         }
 
         /* slow keys */
-        if (set_ctrl_from_mateconf (desc,
-                                 client,
-                                 CONFIG_ROOT "/slowkeys_enable",
+        if (set_ctrl_from_settings (desc,
+                                 manager->priv->settings,
+                                 "slowkeys-enable",
                                  XkbSlowKeysMask)) {
-                desc->ctrls->ax_options = set_clear (mateconf_client_get_bool (client, CONFIG_ROOT "/slowkeys_beep_press", NULL),
+                desc->ctrls->ax_options = set_clear (g_settings_get_boolean (manager->priv->settings, "slowkeys-beep-press"),
                                                      desc->ctrls->ax_options,
                                                      XkbAccessXFeedbackMask | XkbAX_SKPressFBMask);
-                desc->ctrls->ax_options = set_clear (mateconf_client_get_bool (client, CONFIG_ROOT "/slowkeys_beep_accept", NULL),
+                desc->ctrls->ax_options = set_clear (g_settings_get_boolean (manager->priv->settings, "slowkeys-beep-accept"),
                                                      desc->ctrls->ax_options,
                                                      XkbAccessXFeedbackMask | XkbAX_SKAcceptFBMask);
-                desc->ctrls->ax_options = set_clear (mateconf_client_get_bool (client, CONFIG_ROOT "/slowkeys_beep_reject", NULL),
+                desc->ctrls->ax_options = set_clear (g_settings_get_boolean (manager->priv->settings, "slowkeys-beep-reject"),
                                                      desc->ctrls->ax_options,
                                                      XkbAccessXFeedbackMask | XkbAX_SKRejectFBMask);
-                desc->ctrls->slow_keys_delay = get_int (client,
-                                                        CONFIG_ROOT "/slowkeys_delay");
+                desc->ctrls->slow_keys_delay = get_int (manager->priv->settings,
+                                                        "slowkeys-delay");
                 /* anything larger than 500 seems to loose all keyboard input */
                 if (desc->ctrls->slow_keys_delay > 500)
                         desc->ctrls->slow_keys_delay = 500;
         }
 
         /* sticky keys */
-        if (set_ctrl_from_mateconf (desc,
-                                 client,
-                                 CONFIG_ROOT "/stickykeys_enable",
+        if (set_ctrl_from_settings (desc,
+                                 manager->priv->settings,
+                                 "stickykeys-enable",
                                  XkbStickyKeysMask)) {
                 desc->ctrls->ax_options |= XkbAX_LatchToLockMask;
-                desc->ctrls->ax_options = set_clear (mateconf_client_get_bool (client, CONFIG_ROOT "/stickykeys_two_key_off", NULL),
+                desc->ctrls->ax_options = set_clear (g_settings_get_boolean (manager->priv->settings, "stickykeys-two-key-off"),
                                                      desc->ctrls->ax_options,
                                                      XkbAccessXFeedbackMask | XkbAX_TwoKeysMask);
-                desc->ctrls->ax_options = set_clear (mateconf_client_get_bool (client, CONFIG_ROOT "/stickykeys_modifier_beep", NULL),
+                desc->ctrls->ax_options = set_clear (g_settings_get_boolean (manager->priv->settings, "stickykeys-modifier-beep"),
                                                      desc->ctrls->ax_options,
                                                      XkbAccessXFeedbackMask | XkbAX_StickyKeysFBMask);
         }
 
         /* toggle keys */
-        desc->ctrls->ax_options = set_clear (mateconf_client_get_bool (client, CONFIG_ROOT "/togglekeys_enable", NULL),
+        desc->ctrls->ax_options = set_clear (g_settings_get_boolean (manager->priv->settings, "togglekeys-enable"),
                                              desc->ctrls->ax_options,
                                              XkbAccessXFeedbackMask | XkbAX_IndicatorFBMask);
 
@@ -410,7 +404,6 @@ ax_response_callback (MsdA11yKeyboardManager *manager,
                       guint                   revert_controls_mask,
                       gboolean                enabled)
 {
-        MateConfClient *client;
         GdkScreen *screen;
         GError *err;
 
@@ -419,26 +412,19 @@ ax_response_callback (MsdA11yKeyboardManager *manager,
         case GTK_RESPONSE_REJECT:
         case GTK_RESPONSE_CANCEL:
 
-                client = mateconf_client_get_default ();
-
                 /* we're reverting, so we invert sense of 'enabled' flag */
                 d ("cancelling AccessX request");
                 if (revert_controls_mask == XkbStickyKeysMask) {
-                        mateconf_client_set_bool (client,
-                                               CONFIG_ROOT "/stickykeys_enable",
-                                               !enabled,
-                                               NULL);
+                        g_settings_set_boolean (manager->priv->settings,
+                                               "stickykeys-enable",
+                                               !enabled);
                 }
                 else if (revert_controls_mask == XkbSlowKeysMask) {
-                        mateconf_client_set_bool (client,
-                                               CONFIG_ROOT "/slowkeys_enable",
-                                               !enabled,
-                                               NULL);
+                        g_settings_set_boolean (manager->priv->settings,
+                                               "slowkeys-enable",
+                                               !enabled);
                 }
-                mateconf_client_suggest_sync (client, NULL);
-                set_server_from_mateconf (manager, client);
-
-                g_object_unref (client);
+                set_server_from_settings (manager);
 
                 break;
 
@@ -500,12 +486,9 @@ static void
 maybe_show_status_icon (MsdA11yKeyboardManager *manager)
 {
         gboolean     show;
-        MateConfClient *client;
 
         /* for now, show if accessx is enabled */
-        client = mateconf_client_get_default ();
-        show = mateconf_client_get_bool (client, CONFIG_ROOT "/enable", NULL);
-        g_object_unref (client);
+        show = g_settings_get_boolean (manager->priv->settings, "enable");
 
         if (!show && manager->priv->status_icon == NULL)
                 return;
@@ -855,114 +838,93 @@ ax_stickykeys_warning_post (MsdA11yKeyboardManager *manager,
 }
 
 static void
-set_mateconf_from_server (MsdA11yKeyboardManager *manager)
+set_settings_from_server (MsdA11yKeyboardManager *manager)
 {
-        MateConfClient    *client;
-        MateConfChangeSet *cs;
+        GSettings      *settings;
         XkbDescRec     *desc;
         gboolean        changed = FALSE;
         gboolean        slowkeys_changed;
         gboolean        stickykeys_changed;
 
-        cs = mateconf_change_set_new ();
         desc = get_xkb_desc_rec (manager);
         if (! desc) {
                 return;
         }
 
-        client = mateconf_client_get_default ();
+        settings = g_settings_new (CONFIG_SCHEMA);
+        g_settings_delay(settings);
 
         /*
           fprintf (stderr, "changed to : 0x%x\n", desc->ctrls->enabled_ctrls);
           fprintf (stderr, "changed to : 0x%x (2)\n", desc->ctrls->ax_options);
         */
 
-        changed |= set_bool (client,
-                             cs,
-                             CONFIG_ROOT "/enable",
+        changed |= set_bool (settings,
+                             "enable",
                              desc->ctrls->enabled_ctrls & XkbAccessXKeysMask);
 
-        changed |= set_bool (client,
-                             cs,
-                             CONFIG_ROOT "/feature_state_change_beep",
+        changed |= set_bool (settings,
+                             "feature-state-change-beep",
                              desc->ctrls->ax_options & (XkbAX_FeatureFBMask | XkbAX_SlowWarnFBMask));
-        changed |= set_bool (client,
-                             cs,
-                             CONFIG_ROOT "/timeout_enable",
+        changed |= set_bool (settings,
+                             "timeout-enable",
                              desc->ctrls->enabled_ctrls & XkbAccessXTimeoutMask);
-        changed |= set_int (client,
-                            cs,
-                            CONFIG_ROOT "/timeout",
+        changed |= set_int (settings,
+                            "timeout",
                             desc->ctrls->ax_timeout);
 
-        changed |= set_bool (client,
-                             cs,
-                             CONFIG_ROOT "/bouncekeys_enable",
+        changed |= set_bool (settings,
+                             "bouncekeys-enable",
                              desc->ctrls->enabled_ctrls & XkbBounceKeysMask);
-        changed |= set_int (client,
-                            cs,
-                            CONFIG_ROOT "/bouncekeys_delay",
+        changed |= set_int (settings,
+                            "bouncekeys-delay",
                             desc->ctrls->debounce_delay);
-        changed |= set_bool (client,
-                             cs,
-                             CONFIG_ROOT "/bouncekeys_beep_reject",
+        changed |= set_bool (settings,
+                             "bouncekeys-beep-reject",
                              desc->ctrls->ax_options & XkbAX_BKRejectFBMask);
 
-        changed |= set_bool (client,
-                             cs,
-                             CONFIG_ROOT "/mousekeys_enable",
+        changed |= set_bool (settings,
+                             "mousekeys-enable",
                              desc->ctrls->enabled_ctrls & XkbMouseKeysMask);
-        changed |= set_int (client,
-                            cs,
-                            CONFIG_ROOT "/mousekeys_max_speed",
+        changed |= set_int (settings,
+                            "mousekeys-max-speed",
                             desc->ctrls->mk_max_speed * (1000 / desc->ctrls->mk_interval));
         /* NOTE : mk_time_to_max is measured in events not time */
-        changed |= set_int (client,
-                            cs,
-                            CONFIG_ROOT "/mousekeys_accel_time",
+        changed |= set_int (settings,
+                            "mousekeys-accel-time",
                             desc->ctrls->mk_time_to_max * desc->ctrls->mk_interval);
-        changed |= set_int (client,
-                            cs,
-                            CONFIG_ROOT "/mousekeys_init_delay",
+        changed |= set_int (settings,
+                            "mousekeys-init-delay",
                             desc->ctrls->mk_delay);
 
-        slowkeys_changed = set_bool (client,
-                                     cs,
-                                     CONFIG_ROOT "/slowkeys_enable",
+        slowkeys_changed = set_bool (settings,
+                                     "slowkeys-enable",
                                      desc->ctrls->enabled_ctrls & XkbSlowKeysMask);
-        changed |= set_bool (client,
-                             cs,
-                             CONFIG_ROOT "/slowkeys_beep_press",
+        changed |= set_bool (settings,
+                             "slowkeys-beep-press",
                              desc->ctrls->ax_options & XkbAX_SKPressFBMask);
-        changed |= set_bool (client,
-                             cs,
-                             CONFIG_ROOT "/slowkeys_beep_accept",
+        changed |= set_bool (settings,
+                             "slowkeys-beep-accept",
                              desc->ctrls->ax_options & XkbAX_SKAcceptFBMask);
-        changed |= set_bool (client,
-                             cs,
-                             CONFIG_ROOT "/slowkeys_beep_reject",
+        changed |= set_bool (settings,
+                             "slowkeys-beep-reject",
                              desc->ctrls->ax_options & XkbAX_SKRejectFBMask);
-        changed |= set_int (client,
-                            cs,
-                            CONFIG_ROOT "/slowkeys_delay",
+        changed |= set_int (settings,
+                            "slowkeys-delay",
                             desc->ctrls->slow_keys_delay);
 
-        stickykeys_changed = set_bool (client,
-                                       cs,
-                                       CONFIG_ROOT "/stickykeys_enable",
+        stickykeys_changed = set_bool (settings,
+                                       "stickykeys-enable",
                                        desc->ctrls->enabled_ctrls & XkbStickyKeysMask);
-        changed |= set_bool (client,
-                             cs,
-                             CONFIG_ROOT "/stickykeys_two_key_off",
+        changed |= set_bool (settings,
+                             "stickykeys-two-key-off",
                              desc->ctrls->ax_options & XkbAX_TwoKeysMask);
-        changed |= set_bool (client,
-                             cs,
-                             CONFIG_ROOT "/stickykeys_modifier_beep",
+        changed |= set_bool (settings,
+                             "stickykeys-modifier-beep",
                              desc->ctrls->ax_options & XkbAX_StickyKeysFBMask);
 
-        changed |= set_bool (client,
-                             cs,
-                             CONFIG_ROOT "/togglekeys_enable",
+        changed |= set_bool (settings,
+                             "togglekeys-enable",
                              desc->ctrls->ax_options & XkbAX_IndicatorFBMask);
 
         if (!changed && stickykeys_changed ^ slowkeys_changed) {
@@ -992,12 +954,10 @@ set_mateconf_from_server (MsdA11yKeyboardManager *manager)
         changed |= (stickykeys_changed | slowkeys_changed);
 
         if (changed) {
-                mateconf_client_commit_change_set (client, cs, FALSE, NULL);
-                mateconf_client_suggest_sync (client, NULL);
+                g_settings_apply (settings);
         }
-        mateconf_change_set_unref (cs);
 
-        g_object_unref (client);
+        g_object_unref (settings);
 }
 
 static GdkFilterReturn
@@ -1011,7 +971,7 @@ cb_xkb_event_filter (GdkXEvent              *xevent,
         if (xev->xany.type == (manager->priv->xkbEventBase + XkbEventCode) &&
             xkbEv->any.xkb_type == XkbControlsNotify) {
                 d ("XKB state changed");
-                set_mateconf_from_server (manager);
+                set_settings_from_server (manager);
         } else if (xev->xany.type == (manager->priv->xkbEventBase + XkbEventCode) &&
                    xkbEv->any.xkb_type == XkbAccessXNotify) {
                 if (xkbEv->accessx.detail == XkbAXN_AXKWarning) {
@@ -1019,7 +979,7 @@ cb_xkb_event_filter (GdkXEvent              *xevent,
                         /*
                          * TODO: when XkbAXN_AXKWarnings start working, we need to
                          * invoke ax_keys_warning_dialog_run here instead of in
-                         * set_mateconf_from_server().
+                         * set_settings_from_server().
                          */
                 }
         }
@@ -1028,31 +988,18 @@ cb_xkb_event_filter (GdkXEvent              *xevent,
 }
 
 static void
-keyboard_callback (MateConfClient            *client,
-                   guint                   cnxn_id,
-                   MateConfEntry             *entry,
+keyboard_callback (GSettings              *settings,
+                   gchar                  *key,
                    MsdA11yKeyboardManager *manager)
 {
-        set_server_from_mateconf (manager, client);
+        set_server_from_settings (manager);
         maybe_show_status_icon (manager);
-}
-
-static void
-register_config_callback (MsdA11yKeyboardManager  *manager,
-                          MateConfClient             *client,
-                          const char              *path,
-                          MateConfClientNotifyFunc    func,
-                          guint                   *notify)
-{
-        mateconf_client_add_dir (client, path, MATECONF_CLIENT_PRELOAD_ONELEVEL, NULL);
-        *notify = mateconf_client_notify_add (client, path, func, manager, NULL, NULL);
 }
 
 static gboolean
 start_a11y_keyboard_idle_cb (MsdA11yKeyboardManager *manager)
 {
         guint        event_mask;
-        MateConfClient *client;
 
         g_debug ("Starting a11y_keyboard manager");
         mate_settings_profile_start (NULL);
@@ -1060,13 +1007,8 @@ start_a11y_keyboard_idle_cb (MsdA11yKeyboardManager *manager)
         if (!xkb_enabled (manager))
                 goto out;
 
-        client = mateconf_client_get_default ();
-
-        register_config_callback (manager,
-                                  client,
-                                  CONFIG_ROOT,
-                                  (MateConfClientNotifyFunc) keyboard_callback,
-                                  &manager->priv->mateconf_notify);
+        manager->priv->settings = g_settings_new (CONFIG_SCHEMA);
+        g_signal_connect (manager->priv->settings, "changed", G_CALLBACK (keyboard_callback), manager);
 
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
 	set_devicepresence_handler (manager);
@@ -1082,8 +1024,7 @@ start_a11y_keyboard_idle_cb (MsdA11yKeyboardManager *manager)
 #endif
 
         /* be sure to init before starting to monitor the server */
-        set_server_from_mateconf (manager, client);
-        g_object_unref (client);
+        set_server_from_settings (manager);
 
         XkbSelectEvents (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
                          XkbUseCoreKbd,
@@ -1155,12 +1096,9 @@ msd_a11y_keyboard_manager_stop (MsdA11yKeyboardManager *manager)
         if (p->status_icon)
                 gtk_status_icon_set_visible (p->status_icon, FALSE);
 
-        if (p->mateconf_notify != 0) {
-                MateConfClient *client = mateconf_client_get_default ();
-                mateconf_client_remove_dir (client, CONFIG_ROOT, NULL);
-                mateconf_client_notify_remove (client, p->mateconf_notify);
-                g_object_unref (client);
-                p->mateconf_notify = 0;
+        if (p->settings != NULL) {
+                g_object_unref (p->settings);
+                p->settings = NULL;
         }
 
         gdk_window_remove_filter (NULL,

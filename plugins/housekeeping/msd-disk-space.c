@@ -35,7 +35,7 @@
 #include <gio/gunixmounts.h>
 #include <gio/gio.h>
 #include <gtk/gtk.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #include "msd-disk-space.h"
 #include "msd-ldsm-dialog.h"
@@ -46,14 +46,14 @@
 
 #define CHECK_EVERY_X_SECONDS      60
 
-#define DISK_SPACE_ANALYZER        "baobab"
+#define DISK_SPACE_ANALYZER        "mate-disk-usage-analyzer"
 
-#define MATECONF_HOUSEKEEPING_DIR     "/apps/mate_settings_daemon/plugins/housekeeping"
-#define MATECONF_FREE_PC_NOTIFY_KEY   "free_percent_notify"
-#define MATECONF_FREE_PC_NOTIFY_AGAIN_KEY "free_percent_notify_again"
-#define MATECONF_FREE_SIZE_NO_NOTIFY  "free_size_gb_no_notify"
-#define MATECONF_MIN_NOTIFY_PERIOD    "min_notify_period"
-#define MATECONF_IGNORE_PATHS         "ignore_paths"
+#define SETTINGS_HOUSEKEEPING_SCHEMA      "org.mate.SettingsDaemon.plugins.housekeeping"
+#define SETTINGS_FREE_PC_NOTIFY_KEY       "free-percent-notify"
+#define SETTINGS_FREE_PC_NOTIFY_AGAIN_KEY "free-percent-notify-again"
+#define SETTINGS_FREE_SIZE_NO_NOTIFY      "free-size-gb-no-notify"
+#define SETTINGS_MIN_NOTIFY_PERIOD        "min-notify-period"
+#define SETTINGS_IGNORE_PATHS             "ignore-paths"
 
 typedef struct
 {
@@ -70,8 +70,7 @@ static double             free_percent_notify_again = 0.01;
 static unsigned int       free_size_gb_no_notify = 2;
 static unsigned int       min_notify_period = 10;
 static GSList            *ignore_paths = NULL;
-static unsigned int       mateconf_notify_id;
-static MateConfClient       *client = NULL;
+static GSettings         *settings = NULL;
 static MsdLdsmDialog     *dialog = NULL;
 static guint64           *time_read;
 
@@ -570,70 +569,58 @@ ldsm_is_hash_item_in_ignore_paths (gpointer key,
 static void
 msd_ldsm_get_config ()
 {
-        GError *error = NULL;
+        gchar **settings_list;
 
-        free_percent_notify = mateconf_client_get_float (client,
-                                                      MATECONF_HOUSEKEEPING_DIR "/" MATECONF_FREE_PC_NOTIFY_KEY,
-                                                      &error);
-        if (error != NULL) {
-                g_warning ("Error reading configuration from MateConf: %s", error->message ? error->message : "Unknown error");
-                g_clear_error (&error);
-        }
+        free_percent_notify = g_settings_get_double (settings,
+                                                     SETTINGS_FREE_PC_NOTIFY_KEY);
         if (free_percent_notify >= 1 || free_percent_notify < 0) {
+                /* FIXME define min and max in gschema! */
                 g_warning ("Invalid configuration of free_percent_notify: %f\n" \
                            "Using sensible default", free_percent_notify);
                 free_percent_notify = 0.05;
         }
 
-        free_percent_notify_again = mateconf_client_get_float (client,
-                                                            MATECONF_HOUSEKEEPING_DIR "/" MATECONF_FREE_PC_NOTIFY_AGAIN_KEY,
-                                                            &error);
-        if (error != NULL) {
-                g_warning ("Error reading configuration from MateConf: %s", error->message ? error->message : "Unknown error");
-                g_clear_error (&error);
-        }
+        free_percent_notify_again = g_settings_get_double (settings,
+                                                           SETTINGS_FREE_PC_NOTIFY_AGAIN_KEY);
         if (free_percent_notify_again >= 1 || free_percent_notify_again < 0) {
+                /* FIXME define min and max in gschema! */
                 g_warning ("Invalid configuration of free_percent_notify_again: %f\n" \
                            "Using sensible default\n", free_percent_notify_again);
                 free_percent_notify_again = 0.01;
         }
 
-        free_size_gb_no_notify = mateconf_client_get_int (client,
-                                                       MATECONF_HOUSEKEEPING_DIR "/" MATECONF_FREE_SIZE_NO_NOTIFY,
-                                                       &error);
-        if (error != NULL) {
-                g_warning ("Error reading configuration from MateConf: %s", error->message ? error->message : "Unknown error");
-                g_clear_error (&error);
-        }
-         min_notify_period = mateconf_client_get_int (client,
-                                                   MATECONF_HOUSEKEEPING_DIR "/" MATECONF_MIN_NOTIFY_PERIOD,
-                                                   &error);
-         if (error != NULL) {
-                 g_warning ("Error reading configuration from MateConf: %s", error->message ? error->message : "Unknown error");
-                 g_clear_error (&error);
-         }
+        free_size_gb_no_notify = g_settings_get_int (settings,
+                                                     SETTINGS_FREE_SIZE_NO_NOTIFY);
+        min_notify_period = g_settings_get_int (settings,
+                                                SETTINGS_MIN_NOTIFY_PERIOD);
 
-         if (ignore_paths != NULL) {
+        if (ignore_paths != NULL) {
                 g_slist_foreach (ignore_paths, (GFunc) g_free, NULL);
                 g_slist_free (ignore_paths);
-         }
-         ignore_paths = mateconf_client_get_list (client,
-                                               MATECONF_HOUSEKEEPING_DIR "/" MATECONF_IGNORE_PATHS,
-                                               MATECONF_VALUE_STRING, &error);
-         if (error != NULL) {
-                 g_warning ("Error reading configuration from MateConf: %s", error->message ? error->message : "Unknown error");
-                 g_clear_error (&error);
-         } else {
+                ignore_paths = NULL;
+        }
+
+        settings_list = g_settings_get_strv (settings, SETTINGS_IGNORE_PATHS);
+        if (settings_list != NULL) {
+                gint i;
+
+                for (i = 0; i < G_N_ELEMENTS (settings_list); i++) {
+                        if (settings_list[i] != NULL)
+                                ignore_paths = g_slist_append (ignore_paths, g_strdup (settings_list[i]));
+                }
+
                 /* Make sure we dont leave stale entries in ldsm_notified_hash */
-                 g_hash_table_foreach_remove (ldsm_notified_hash,
-                                              ldsm_is_hash_item_in_ignore_paths, NULL);
-         }
+                g_hash_table_foreach_remove (ldsm_notified_hash,
+                                             ldsm_is_hash_item_in_ignore_paths, NULL);
+
+                g_strfreev (settings_list);
+        }
+
 }
 
 static void
-msd_ldsm_update_config (MateConfClient *client,
-                        guint cnxn_id,
-                        MateConfEntry *entry,
+msd_ldsm_update_config (GSettings *settings,
+                        gchar *key,
                         gpointer user_data)
 {
         msd_ldsm_get_config ();
@@ -642,8 +629,6 @@ msd_ldsm_update_config (MateConfClient *client,
 void
 msd_ldsm_setup (gboolean check_now)
 {
-        GError          *error = NULL;
-
         if (ldsm_notified_hash || ldsm_timeout_id || ldsm_monitor) {
                 g_warning ("Low disk space monitor already initialized.");
                 return;
@@ -653,20 +638,9 @@ msd_ldsm_setup (gboolean check_now)
                                                     g_free,
                                                     ldsm_free_mount_info);
 
-        client = mateconf_client_get_default ();
-        if (client != NULL) {
-                msd_ldsm_get_config ();
-                mateconf_notify_id = mateconf_client_notify_add (client,
-                                                           MATECONF_HOUSEKEEPING_DIR,
-                                                           (MateConfClientNotifyFunc) msd_ldsm_update_config,
-                                                           NULL, NULL, &error);
-                if (error != NULL) {
-                        g_warning ("Cannot register callback for MateConf notification");
-                        g_clear_error (&error);
-                }
-        } else {
-                g_warning ("Failed to get default client");
-        }
+        settings = g_settings_new (SETTINGS_HOUSEKEEPING_SCHEMA);
+        msd_ldsm_get_config ();
+        g_signal_connect (settings, "changed", G_CALLBACK (msd_ldsm_update_config), NULL);
 
         ldsm_monitor = g_unix_mount_monitor_new ();
         g_unix_mount_monitor_set_rate_limit (ldsm_monitor, 1000);
@@ -696,9 +670,8 @@ msd_ldsm_clean (void)
                 g_object_unref (ldsm_monitor);
         ldsm_monitor = NULL;
 
-        if (client) {
-                mateconf_client_notify_remove (client, mateconf_notify_id);
-                g_object_unref (client);
+        if (settings) {
+                g_object_unref (settings);
         }
 
         if (dialog) {

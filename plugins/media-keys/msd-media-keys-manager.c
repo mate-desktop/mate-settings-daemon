@@ -36,7 +36,7 @@
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
 #include <gtk/gtk.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
@@ -62,7 +62,8 @@
 #define MSD_MEDIA_KEYS_DBUS_PATH MSD_DBUS_PATH "/MediaKeys"
 #define MSD_MEDIA_KEYS_DBUS_NAME MSD_DBUS_NAME ".MediaKeys"
 
-#define TOUCHPAD_ENABLED_KEY "/desktop/mate/peripherals/touchpad/touchpad_enabled"
+#define TOUCHPAD_SCHEMA "org.mate.peripherals-touchpad"
+#define TOUCHPAD_ENABLED_KEY "touchpad-enabled"
 
 #define VOLUME_STEP 6           /* percents for one volume button press */
 #define MAX_VOLUME 65536.0
@@ -84,7 +85,7 @@ struct MsdMediaKeysManagerPrivate
         AcmeVolume      *volume;
 #endif /* HAVE_PULSE */
         GtkWidget       *dialog;
-        MateConfClient     *conf_client;
+        GSettings       *settings;
         GVolumeMonitor  *volume_monitor;
 
         /* Multihead stuff */
@@ -159,12 +160,13 @@ get_term_command (MsdMediaKeysManager *manager)
         char *cmd_term;
         char *cmd = NULL;
 
-        cmd_term = mateconf_client_get_string (manager->priv->conf_client,
-                                            "/desktop/mate/applications/terminal/exec", NULL);
+        GSettings *settings_terminal;
+        settings_terminal = g_settings_new ("org.mate.applications-terminal");
+
+        cmd_term = g_settings_get_string (settings_terminal, "exec");
         if ((cmd_term != NULL) && (strcmp (cmd_term, "") != 0)) {
                 char *cmd_args;
-                cmd_args = mateconf_client_get_string (manager->priv->conf_client,
-                                                    "/desktop/mate/applications/terminal/exec_arg", NULL);
+                cmd_args = g_settings_get_string (settings_terminal, "exec_arg");
                 if ((cmd_args != NULL) && (strcmp (cmd_term, "") != 0)) {
                         cmd = g_strdup_printf ("%s %s -e", cmd_term, cmd_args);
                 } else {
@@ -175,6 +177,8 @@ get_term_command (MsdMediaKeysManager *manager)
         }
 
         g_free (cmd_term);
+
+        g_object_unref (settings_terminal);
 
         return cmd;
 }
@@ -274,21 +278,20 @@ is_valid_shortcut (const char *string)
 }
 
 static void
-update_kbd_cb (MateConfClient         *client,
-               guint                id,
-               MateConfEntry          *entry,
+update_kbd_cb (GSettings           *settings,
+               gchar               *settings_key,
                MsdMediaKeysManager *manager)
 {
         int      i;
         gboolean need_flush = TRUE;
 
-        g_return_if_fail (entry->key != NULL);
+        g_return_if_fail (settings_key != NULL);
 
         gdk_error_trap_push ();
 
         /* Find the key that was modified */
         for (i = 0; i < HANDLED_KEYS; i++) {
-                if (strcmp (entry->key, keys[i].mateconf_key) == 0) {
+                if (g_strcmp0 (settings_key, keys[i].settings_key) == 0) {
                         char *tmp;
                         Key  *key;
 
@@ -300,8 +303,8 @@ update_kbd_cb (MateConfClient         *client,
                         g_free (keys[i].key);
                         keys[i].key = NULL;
 
-                        tmp = mateconf_client_get_string (manager->priv->conf_client,
-                                                       keys[i].mateconf_key, NULL);
+                        tmp = g_settings_get_string (settings,
+                                                     keys[i].settings_key);
 
                         if (is_valid_shortcut (tmp) == FALSE) {
                                 g_free (tmp);
@@ -345,16 +348,16 @@ static void init_kbd(MsdMediaKeysManager* manager)
 		char* tmp;
 		Key* key;
 
-		manager->priv->notify[i] = mateconf_client_notify_add(manager->priv->conf_client,
-			keys[i].mateconf_key,
-			(MateConfClientNotifyFunc) update_kbd_cb,
-			manager,
-			NULL,
-			NULL);
+		gchar* signal_name;
+		signal_name = g_strdup_printf ("changed::%s", keys[i].settings_key);
+		g_signal_connect (manager->priv->settings,
+						  signal_name,
+						  G_CALLBACK (update_kbd_cb),
+						  manager);
+		g_free (signal_name);
 
-		tmp = mateconf_client_get_string(manager->priv->conf_client,
-			keys[i].mateconf_key,
-			NULL);
+		tmp = g_settings_get_string (manager->priv->settings,
+			keys[i].settings_key);
 
 		if (!is_valid_shortcut(tmp))
 		{
@@ -463,115 +466,67 @@ dialog_show (MsdMediaKeysManager *manager)
 }
 
 static void
-do_unknown_action (MsdMediaKeysManager *manager,
-                   const char          *url)
+do_uri_action (MsdMediaKeysManager *manager, gchar *uri)
 {
-        char *string;
+        GError *error = NULL;
+        GAppInfo *app_info;
 
-        g_return_if_fail (url != NULL);
+        app_info = g_app_info_get_default_for_uri_scheme (uri);
 
-        string = mateconf_client_get_string (manager->priv->conf_client,
-                                          "/desktop/mate/url-handlers/unknown/command",
-                                          NULL);
-
-        if ((string != NULL) && (strcmp (string, "") != 0)) {
-                char *cmd;
-                cmd = g_strdup_printf (string, url);
-                execute (manager, cmd, FALSE, FALSE);
-                g_free (cmd);
+        if (app_info != NULL) {
+           if (!g_app_info_launch (app_info, NULL, NULL, &error)) {
+                g_warning ("Could not launch '%s': %s",
+                    g_app_info_get_commandline (app_info),
+                    error->message);
+                g_error_free (error);
+            }
         }
-        g_free (string);
+        else {
+            g_warning ("Could not find default application for '%s' scheme", uri);
+        }
 }
 
 static void
 do_help_action (MsdMediaKeysManager *manager)
 {
-        char *string;
-
-        string = mateconf_client_get_string (manager->priv->conf_client,
-                                          "/desktop/mate/url-handlers/ghelp/command",
-                                          NULL);
-
-        if ((string != NULL) && (strcmp (string, "") != 0)) {
-                char *cmd;
-                cmd = g_strdup_printf (string, "");
-                execute (manager, cmd, FALSE, FALSE);
-                g_free (cmd);
-        } else {
-                do_unknown_action (manager, "ghelp:");
+        GError *error = NULL;
+        if (!g_app_info_launch_default_for_uri ("http://wiki.mate-desktop.org/docs", NULL, &error)) {
+                g_warning ("Could not launch help application: %s", error->message);
+                g_error_free (error);
         }
-
-        g_free (string);
 }
 
 static void
 do_mail_action (MsdMediaKeysManager *manager)
 {
-        char *string;
-
-        string = mateconf_client_get_string (manager->priv->conf_client,
-                                          "/desktop/mate/url-handlers/mailto/command",
-                                          NULL);
-
-        if ((string != NULL) && (strcmp (string, "") != 0)) {
-                char *cmd;
-                cmd = g_strdup_printf (string, "");
-                execute (manager,
-                         cmd,
-                         FALSE,
-                         mateconf_client_get_bool (manager->priv->conf_client,
-                                                "/desktop/mate/url-handlers/mailto/needs_terminal", NULL));
-                g_free (cmd);
-        }
-        g_free (string);
+        do_uri_action (manager, "mailto");
 }
 
 static void
 do_media_action (MsdMediaKeysManager *manager)
 {
-        char *command;
+        GError *error = NULL;
+        GAppInfo *app_info;
 
-        command = mateconf_client_get_string (manager->priv->conf_client,
-                                           "/desktop/mate/applications/media/exec", NULL);
-        if ((command != NULL) && (strcmp (command, "") != 0)) {
-                execute (manager,
-                         command,
-                         FALSE,
-                         mateconf_client_get_bool (manager->priv->conf_client,
-                                                "/desktop/mate/applications/media/needs_term", NULL));
+        app_info = g_app_info_get_default_for_type ("audio/x-vorbis+ogg", FALSE);
+
+        if (app_info != NULL) {
+           if (!g_app_info_launch (app_info, NULL, NULL, &error)) {
+                g_warning ("Could not launch '%s': %s",
+                    g_app_info_get_commandline (app_info),
+                    error->message);
+                g_error_free (error);
+            }
         }
-        g_free (command);
+        else {
+            g_warning ("Could not find default application for '%s' mime-type", "audio/x-vorbis+ogg");
+        }
 }
 
 static void
-do_www_action (MsdMediaKeysManager *manager,
-               const char          *url)
+do_www_action (MsdMediaKeysManager *manager)
 {
-        char *string;
-
-        string = mateconf_client_get_string (manager->priv->conf_client,
-                                          "/desktop/mate/url-handlers/http/command",
-                                          NULL);
-
-        if ((string != NULL) && (strcmp (string, "") != 0)) {
-                gchar *cmd;
-
-                if (url == NULL) {
-                        cmd = g_strdup_printf (string, "");
-                } else {
-                        cmd = g_strdup_printf (string, url);
-                }
-
-                execute (manager,
-                         cmd,
-                         FALSE,
-                         mateconf_client_get_bool (manager->priv->conf_client,
-                                                "/desktop/mate/url-handlers/http/needs_terminal", NULL));
-                g_free (cmd);
-        } else {
-                do_unknown_action (manager, url ? url : "");
-        }
-        g_free (string);
+        do_uri_action (manager, "http");
 }
 
 static void
@@ -649,8 +604,8 @@ do_eject_action (MsdMediaKeysManager *manager)
 static void
 do_touchpad_action (MsdMediaKeysManager *manager)
 {
-        MateConfClient *client = manager->priv->conf_client;
-        gboolean state = mateconf_client_get_bool (client, TOUCHPAD_ENABLED_KEY, NULL);
+        GSettings *settings = g_settings_new (TOUCHPAD_SCHEMA);
+        gboolean state = g_settings_get_boolean (settings, TOUCHPAD_ENABLED_KEY);
 
         dialog_init (manager);
         msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
@@ -658,7 +613,8 @@ do_touchpad_action (MsdMediaKeysManager *manager)
                                                  FALSE);
         dialog_show (manager);
 
-        mateconf_client_set_bool (client, TOUCHPAD_ENABLED_KEY, !state, NULL);
+        g_settings_set_boolean (settings, TOUCHPAD_ENABLED_KEY, !state);
+        g_object_unref (settings);
 }
 
 #ifdef HAVE_PULSE
@@ -706,9 +662,7 @@ do_sound_action (MsdMediaKeysManager *manager,
                 return;
 #endif
 
-        vol_step = mateconf_client_get_int (manager->priv->conf_client,
-                                         MATECONF_MISC_DIR "/volume_step",
-                                         NULL);
+        vol_step = g_settings_get_int (manager->priv->settings, "volume-step");
 
         if (vol_step <= 0 || vol_step > 100)
                 vol_step = VOLUME_STEP;
@@ -1044,7 +998,7 @@ do_action (MsdMediaKeysManager *manager,
                 do_help_action (manager);
                 break;
         case WWW_KEY:
-                do_www_action (manager, NULL);
+                do_www_action (manager);
                 break;
         case MEDIA_KEY:
                 do_media_action (manager);
@@ -1152,12 +1106,7 @@ start_media_keys_idle_cb (MsdMediaKeysManager *manager)
         g_debug ("Starting media_keys manager");
         mate_settings_profile_start (NULL);
         manager->priv->volume_monitor = g_volume_monitor_get ();
-        manager->priv->conf_client = mateconf_client_get_default ();
-
-        mateconf_client_add_dir (manager->priv->conf_client,
-                              MATECONF_BINDING_DIR,
-                              MATECONF_CLIENT_PRELOAD_ONELEVEL,
-                              NULL);
+        manager->priv->settings = g_settings_new (BINDING_SCHEMA);
 
         init_screens (manager);
         init_kbd (manager);
@@ -1242,20 +1191,9 @@ msd_media_keys_manager_stop (MsdMediaKeysManager *manager)
                                           manager);
         }
 
-        if (priv->conf_client) {
-                mateconf_client_remove_dir (priv->conf_client,
-                                         MATECONF_BINDING_DIR,
-                                         NULL);
-
-                for (i = 0; i < HANDLED_KEYS; ++i) {
-                        if (priv->notify[i] != 0) {
-                                mateconf_client_notify_remove (priv->conf_client, priv->notify[i]);
-                                priv->notify[i] = 0;
-                        }
-                }
-
-                g_object_unref (priv->conf_client);
-                priv->conf_client = NULL;
+        if (priv->settings) {
+                g_object_unref (priv->settings);
+                priv->settings = NULL;
         }
 
         if (priv->volume_monitor != NULL) {
