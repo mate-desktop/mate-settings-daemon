@@ -484,6 +484,10 @@ event_filter (GdkXEvent *gdkxevent,
         {
           if (xevent->xany.type == KeyRelease)
             { 
+              XUngrabButton (xevent->xany.display,
+                             AnyButton,
+                             AnyModifier,
+                             xevent->xany.window);
               XAllowEvents (xevent->xany.display,
                             AsyncKeyboard,
                             xevent->xkey.time);
@@ -494,6 +498,16 @@ event_filter (GdkXEvent *gdkxevent,
               XAllowEvents (xevent->xany.display,
                             SyncKeyboard,
                             xevent->xkey.time);
+              XGrabButton (xevent->xany.display,
+                           AnyButton,
+                           AnyModifier,
+                           xevent->xany.window,
+                           False,
+                           ButtonPressMask,
+                           GrabModeSync,
+                           GrabModeAsync,
+                           None,
+                           None);
             }
         }
       else
@@ -501,9 +515,25 @@ event_filter (GdkXEvent *gdkxevent,
           XAllowEvents (xevent->xany.display,
                         ReplayKeyboard,
                         xevent->xkey.time);
+          XUngrabButton (xevent->xany.display,
+                         AnyButton,
+                         AnyModifier,
+                         xevent->xany.window);
           XUngrabKeyboard (xevent->xany.display,
                            xevent->xkey.time);
         }
+    }
+  else if (xevent->xany.type == ButtonPress)
+    {
+      XAllowEvents (xevent->xany.display,
+                    ReplayPointer,
+                    xevent->xbutton.time);
+      XUngrabButton (xevent->xany.display,
+                     AnyButton,
+                     AnyModifier,
+                     xevent->xany.window);
+      XUngrabKeyboard (xevent->xany.display,
+                       xevent->xbutton.time);
     }
 
   return GDK_FILTER_CONTINUE;
