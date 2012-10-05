@@ -646,9 +646,23 @@ filter (GdkXEvent *xevent,
               XAllowEvents (xev->xkey.display,
                             SyncKeyboard,
                             xev->xkey.time);
+              XGrabButton (xev->xkey.display,
+                           AnyButton,
+                           AnyModifier,
+                           xev->xkey.window,
+                           False,
+                           ButtonPressMask,
+                           GrabModeSync,
+                           GrabModeAsync,
+                           None,
+                           None);
             }
           else
             {
+              XUngrabButton (xev->xkey.display,
+                             AnyButton,
+                             AnyModifier,
+                             xev->xkey.window);
               XAllowEvents (xev->xkey.display,
                             AsyncKeyboard,
                             xev->xkey.time);
@@ -660,9 +674,25 @@ filter (GdkXEvent *xevent,
           XAllowEvents (xev->xkey.display,
                         ReplayKeyboard,
                         xev->xkey.time);
-          XUngrabKeyboard (GDK_DISPLAY_XDISPLAY (display),
+          XUngrabButton (xev->xkey.display,
+                         AnyButton,
+                         AnyModifier,
+                         xev->xkey.window);
+          XUngrabKeyboard (xev->xkey.display,
                            xev->xkey.time);
         }
+    }
+  else if (xev->type == ButtonPress)
+    {
+      XAllowEvents (xev->xbutton.display,
+                    ReplayPointer,
+                    xev->xbutton.time);
+      XUngrabButton (xev->xbutton.display,
+                     AnyButton,
+                     AnyModifier,
+                     xev->xbutton.window);
+      XUngrabKeyboard (xev->xbutton.display,
+                       xev->xbutton.time);
     }
 
   return GDK_FILTER_CONTINUE;
