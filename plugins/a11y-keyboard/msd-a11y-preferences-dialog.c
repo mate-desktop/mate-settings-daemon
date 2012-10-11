@@ -310,7 +310,7 @@ config_get_high_contrast (MsdA11yPreferencesDialog *dialog, gboolean *is_writabl
 
         ret = FALSE;
 
-        is_writable = g_settings_is_writable (dialog->priv->settings_interface, KEY_GTK_THEME);
+        *is_writable = g_settings_is_writable (dialog->priv->settings_interface, KEY_GTK_THEME);
         gtk_theme = g_settings_get_string (dialog->priv->settings_interface, KEY_GTK_THEME);
 
         if (gtk_theme != NULL && strcmp (gtk_theme, HIGH_CONTRAST_THEME) == 0) {
