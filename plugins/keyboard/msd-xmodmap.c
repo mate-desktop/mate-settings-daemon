@@ -37,38 +37,35 @@ void
 msd_load_modmap_files (void)
 {
         GSettings   *settings;
-        GSList      *tmp;
-        GSList      *loaded_file_list;
+        GSList      *tmp = NULL;
+        GSList      *loaded_file_list = NULL;
+        gchar       **settings_list;
+        gint i;
 
         settings = g_settings_new (KEYBOARD_SCHEMA);
-
-        gchar **settings_list;
         settings_list = g_settings_get_strv (settings, LOADED_FILES_KEY);
+
         if (settings_list != NULL) {
-                gint i;
-                for (i = 0; i < G_N_ELEMENTS (settings_list); i++) {
-                        if (settings_list[i] != NULL)
-                            loaded_file_list = 
-                                g_slist_append (loaded_file_list, g_strdup (settings_list[i]));
+                for (i = 0; settings_list[i] != NULL; i++) {
+                        loaded_file_list =
+                            g_slist_append (loaded_file_list, g_strdup (settings_list[i]));
+                }
+                for (tmp = loaded_file_list; tmp != NULL; tmp = tmp->next) {
+                        gchar *file;
+                        gchar *command;
+
+                        file = g_build_filename (g_get_home_dir (), (gchar *) tmp->data, NULL);
+                        command = g_strconcat ("xmodmap ", file, NULL);
+                        g_free (file);
+
+                        g_spawn_command_line_async (command, NULL);
+
+                        g_free (command);
+                        g_free (tmp->data);
                 }
                 g_strfreev (settings_list);
+                g_slist_free (loaded_file_list);
         }
-
-        for (tmp = loaded_file_list; tmp != NULL; tmp = tmp->next) {
-                gchar *file;
-                gchar *command;
-
-                file = g_build_filename (g_get_home_dir (), (gchar *) tmp->data, NULL);
-                command = g_strconcat ("xmodmap ", file, NULL);
-                g_free (file);
-
-                g_spawn_command_line_async (command, NULL);
-
-                g_free (command);
-                g_free (tmp->data);
-        }
-
-        g_slist_free (loaded_file_list);
         g_object_unref (settings);
 }
 
