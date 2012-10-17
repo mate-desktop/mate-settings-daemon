@@ -1,21 +1,38 @@
 <schemalist gettext-domain="@GETTEXT_PACKAGE@">
+  <enum id="org.mate.font-rendering.Antialiasing">
+    <value nick="none" value="0"/>
+    <value nick="grayscale-only" value="1"/>
+    <value nick="rgba" value="2"/>
+  </enum>
+  <enum id="org.mate.font-rendering.Hinting">
+    <value nick="none" value="0"/>
+    <value nick="slight" value="1"/>
+    <value nick="medium" value="2"/>
+    <value nick="full" value="3"/>
+  </enum>
+  <enum id="org.mate.font-rendering.RgbaOrder">
+    <value nick="rgb" value="0"/>
+    <value nick="bgr" value="1"/>
+    <value nick="vrgb" value="2"/>
+    <value nick="vbgr" value="3"/>
+  </enum>
   <schema id="org.mate.font-rendering" path="/desktop/mate/font-rendering/">
     <key name="dpi" type="d">
       <default>0.0</default>
       <_summary>DPI</_summary>
       <_description>The resolution used for converting font sizes to pixel sizes,  in dots per inch.</_description>
     </key>
-    <key name="antialiasing" type="s">
+    <key name="antialiasing" enum="org.mate.font-rendering.Antialiasing">
       <default>'grayscale'</default>
       <_summary>Antialiasing</_summary>
       <_description>The type of antialiasing to use when rendering fonts. Possible values are: "none" for no antialiasing, "grayscale" for standard grayscale antialiasing, and "rgba" for subpixel antialiasing (LCD screens only).</_description>
     </key>
-    <key name="hinting" type="s">
+    <key name="hinting" enum="org.mate.font-rendering.Hinting">
       <default>'medium'</default>
       <_summary>Hinting</_summary>
       <_description>The type of hinting to use when rendering fonts. Possible values are: "none" for no hinting,  "slight" for basic, "medium" for moderate, and "full" for maximum hinting (may cause distortion of letter forms).</_description>
     </key>
-    <key name="rgba-order" type="s">
+    <key name="rgba-order" enum="org.mate.font-rendering.RgbaOrder">
       <default>'rgb'</default>
       <_summary>RGBA order</_summary>
       <_description>The order of subpixel elements on an LCD screen; only used when antialiasing is set to "rgba". Possible values are: "rgb" for red on left (most common), "bgr" for blue on left, "vrgb" for red on top, "vbgr" for red on bottom.</_description>
