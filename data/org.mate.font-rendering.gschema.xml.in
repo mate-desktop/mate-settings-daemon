@@ -1,7 +1,7 @@
 <schemalist gettext-domain="@GETTEXT_PACKAGE@">
   <enum id="org.mate.font-rendering.Antialiasing">
     <value nick="none" value="0"/>
-    <value nick="grayscale-only" value="1"/>
+    <value nick="grayscale" value="1"/>
     <value nick="rgba" value="2"/>
   </enum>
   <enum id="org.mate.font-rendering.Hinting">
