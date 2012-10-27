@@ -43,9 +43,10 @@ pkgconfig_DATA = mate-settings-daemon.pc
 
 @INTLTOOL_XML_NOMERGE_RULE@
 
-xmldir = @MATE_KEYBINDINGS_KEYSDIR@
-xml_in_files = 50-accessibility.xml.in
-xml_DATA = $(xml_in_files:.xml.in=.xml)
+#disabled until we support it
+#xmldir = @MATE_KEYBINDINGS_KEYSDIR@
+#xml_in_files = 50-accessibility.xml.in
+#xml_DATA = $(xml_in_files:.xml.in=.xml)
 
 EXTRA_DIST = 				\
 	$(schemas_in_files)		\
