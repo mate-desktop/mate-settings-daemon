@@ -394,7 +394,7 @@ fi
 # Plugins
 # ---------------------------------------------------------------------------
 
-plugindir='$(libdir)/mate-settings-daemon-msd_api_version'
+plugindir='$(libdir)/mate-settings-daemon'
 AC_SUBST([plugindir])
 
 dnl ---------------------------------------------------------------------------
