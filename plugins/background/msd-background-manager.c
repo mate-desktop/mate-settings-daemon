@@ -47,6 +47,14 @@
 #include "mate-settings-profile.h"
 #include "msd-background-manager.h"
 
+#if !GTK_CHECK_VERSION(3, 0, 0)
+#define cairo_surface_t		GdkPixmap
+#define cairo_surface_destroy	g_object_unref
+#define mate_bg_create_surface				mate_bg_create_pixmap
+#define mate_bg_set_surface_as_root			mate_bg_set_pixmap_as_root
+#define mate_bg_set_surface_as_root_with_crossfade	mate_bg_set_pixmap_as_root_with_crossfade
+#endif
+
 #define CAJA_SCHEMA "org.mate.caja.preferences"
 #define CAJA_SHOW_DESKTOP_KEY "show-desktop"
 
@@ -182,7 +190,7 @@ static void
 draw_background (MsdBackgroundManager* manager,
                  gboolean              use_crossfade)
 {
-	GdkDisplay* display;
+	GdkDisplay *display;
 	int         n_screens;
 	int         i;
 
@@ -198,35 +206,35 @@ draw_background (MsdBackgroundManager* manager,
 
 	for (i = 0; i < n_screens; ++i)
 	{
-		GdkScreen* screen;
-		GdkWindow* root_window;
-		GdkPixmap* pixmap;
+		GdkScreen *screen;
+		GdkWindow *root_window;
+		cairo_surface_t *surface;
 
 		screen = gdk_display_get_screen(display, i);
 
 		root_window = gdk_screen_get_root_window(screen);
 
-		pixmap = mate_bg_create_pixmap(manager->priv->bg,
-		                               root_window,
-		                               gdk_screen_get_width(screen),
-		                               gdk_screen_get_height(screen),
-		                               TRUE);
+		surface = mate_bg_create_surface (manager->priv->bg,
+		                                  root_window,
+		                                  gdk_screen_get_width(screen),
+		                                  gdk_screen_get_height(screen),
+		                                  TRUE);
 
 		if (use_crossfade)
 		{
 			MateBGCrossfade* fade;
 
-			fade = mate_bg_set_pixmap_as_root_with_crossfade(screen, pixmap);
+			fade = mate_bg_set_surface_as_root_with_crossfade (screen, surface);
 			g_signal_connect(fade,
 			                 "finished",
 			                 G_CALLBACK (g_object_unref), NULL);
 		}
 		else
 		{
-			mate_bg_set_pixmap_as_root(screen, pixmap);
+			mate_bg_set_surface_as_root (screen, surface);
 		}
 
-		g_object_unref(pixmap);
+		cairo_surface_destroy (surface);
 	}
 
 	mate_settings_profile_end(NULL);
