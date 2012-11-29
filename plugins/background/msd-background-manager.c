@@ -55,18 +55,16 @@
 #define mate_bg_set_surface_as_root_with_crossfade	mate_bg_set_pixmap_as_root_with_crossfade
 #endif
 
-#define CAJA_SCHEMA "org.mate.caja.preferences"
-#define CAJA_SHOW_DESKTOP_KEY "show-desktop"
+#define MATE_BG_SHOW_DESKTOP_ICONS "show-desktop-icons"
 
 #define MSD_BACKGROUND_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_BACKGROUND_MANAGER, MsdBackgroundManagerPrivate))
 
 struct MsdBackgroundManagerPrivate {
-	GSettings*      bg_settings;
-	GSettings*      caja_settings;
-	MateBG*         bg;
+	GSettings      *settings;
+	MateBG         *bg;
 	guint           timeout_id;
 
-	DBusConnection* dbus_connection;
+	DBusConnection *dbus_connection;
 };
 
 static void
@@ -79,12 +77,15 @@ msd_background_manager_init (MsdBackgroundManager* background_manager);
 static void
 msd_background_manager_finalize (GObject* object);
 
+static void setup_bg (MsdBackgroundManager *manager);
+static void connect_screen_signals (MsdBackgroundManager *manager);
+
 G_DEFINE_TYPE(MsdBackgroundManager, msd_background_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
 static gboolean
-caja_is_running (void)
+caja_is_drawing_background (MsdBackgroundManager *manager)
 {
 	Atom           window_id_atom;
 	Window         caja_xid;
@@ -97,12 +98,18 @@ caja_is_running (void)
 	Atom           wmclass_atom;
 	gboolean       running;
 	gint           error;
+	gboolean       show_desktop_icons;
+
+	show_desktop_icons = g_settings_get_boolean (manager->priv->settings,
+						     MATE_BG_SHOW_DESKTOP_ICONS);
+	if (!show_desktop_icons) {
+	       return FALSE;
+	}
 
 	window_id_atom = XInternAtom(GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
 	                             "CAJA_DESKTOP_WINDOW_ID", True);
 
-	if (window_id_atom == None)
-	{
+	if (window_id_atom == None) {
 		return FALSE;
 	}
 
@@ -187,16 +194,16 @@ caja_is_running (void)
 }
 
 static void
-draw_background (MsdBackgroundManager* manager,
+draw_background (MsdBackgroundManager *manager,
                  gboolean              use_crossfade)
 {
 	GdkDisplay *display;
 	int         n_screens;
 	int         i;
 
-	if (caja_is_running())
+	if (caja_is_drawing_background (manager))
 	{
-			return;
+		return;
 	}
 
 	mate_settings_profile_start(NULL);
@@ -241,69 +248,86 @@ draw_background (MsdBackgroundManager* manager,
 }
 
 static void
-on_bg_changed (MateBG*               bg,
-               MsdBackgroundManager* manager)
+on_bg_transitioned (MateBG               *bg,
+                    MsdBackgroundManager *manager)
 {
-	draw_background(manager, TRUE);
-}
-
-static void
-on_bg_transitioned (MateBG*               bg,
-                    MsdBackgroundManager* manager)
-{
-	draw_background(manager, FALSE);
-}
-
-static void
-settings_changed_callback (GSettings*               settings,
-                           gchar*                   key,
-                           MsdBackgroundManager*    manager)
-{
-	mate_bg_load_from_preferences(manager->priv->bg);
-}
-
-static void
-watch_bg_preferences (MsdBackgroundManager* manager)
-{
-	g_signal_connect (manager->priv->bg_settings,
-	                  "changed",
-	                  G_CALLBACK (settings_changed_callback),
-	                  manager);
-}
-
-static void
-setup_bg (MsdBackgroundManager* manager)
-{
-	g_return_if_fail(manager->priv->bg == NULL);
-
-	manager->priv->bg = mate_bg_new();
-
-	/*g_signal_connect(manager->priv->bg,
-	                 "changed",
-	                 G_CALLBACK(on_bg_changed),
-	                 manager);*/
-
-	/*g_signal_connect(manager->priv->bg,
-	                 "transitioned",
-	                 G_CALLBACK(on_bg_transitioned),
-	                 manager);*/
-
-	watch_bg_preferences(manager);
-	mate_bg_load_from_preferences(manager->priv->bg);
+	draw_background (manager, FALSE);
 }
 
 static gboolean
-queue_draw_background (MsdBackgroundManager* manager)
+settings_change_event_idle_cb (MsdBackgroundManager *manager)
+{
+	mate_bg_load_from_gsettings (manager->priv->bg,
+	                             manager->priv->settings);
+
+	return FALSE;   /* remove from the list of event sources */
+}
+
+static gboolean
+settings_change_event_cb (GSettings            *settings,
+                          gpointer              keys,
+                          gint                  n_keys,
+                          MsdBackgroundManager *manager)
+{
+	/* Defer signal processing to avoid making the dconf backend deadlock */
+	g_idle_add ((GSourceFunc) settings_change_event_idle_cb, manager);
+
+	return FALSE;   /* let the event propagate further */
+}
+
+static void
+on_screen_size_changed (GdkScreen            *screen,
+                        MsdBackgroundManager *manager)
+{
+	draw_background (manager, FALSE);
+}
+
+static void
+on_bg_changed (MateBG               *bg,
+               MsdBackgroundManager *manager)
+{
+	draw_background (manager, TRUE);
+}
+
+static void
+setup_bg (MsdBackgroundManager *manager)
+{
+	g_return_if_fail (manager->priv->bg == NULL);
+
+	manager->priv->bg = mate_bg_new();
+
+	g_signal_connect(manager->priv->bg,
+			 "changed",
+			 G_CALLBACK (on_bg_changed),
+			 manager);
+
+	g_signal_connect(manager->priv->bg,
+			 "transitioned",
+			 G_CALLBACK (on_bg_transitioned),
+			 manager);
+
+	connect_screen_signals (manager);
+
+	mate_bg_load_from_gsettings (manager->priv->bg,
+	                             manager->priv->settings);
+
+    /* Connect to "change-event" signal to receive *groups of changes* before
+     * they are split out into multiple emissions of the "changed" signal.
+     */
+	g_signal_connect (manager->priv->settings,
+			  "change-event",
+			  G_CALLBACK (settings_change_event_cb),
+			  manager);
+}
+
+static gboolean
+queue_draw_background (MsdBackgroundManager *manager)
 {
 	manager->priv->timeout_id = 0;
 
-	if (caja_is_running())
-	{
-		return FALSE;
-	}
+	setup_bg (manager);
 
-	setup_bg(manager);
-	draw_background(manager, FALSE);
+	draw_background (manager, FALSE);
 
 	return FALSE;
 }
@@ -358,26 +382,6 @@ draw_background_after_session_loads (MsdBackgroundManager* manager)
 }
 
 static void
-on_screen_size_changed (GdkScreen*            screen,
-                        MsdBackgroundManager* manager)
-{
-	gboolean caja_show_desktop;
-
-	caja_show_desktop = g_settings_get_boolean (manager->priv->caja_settings,
-	                                            CAJA_SHOW_DESKTOP_KEY);
-
-	if (!caja_is_running() || !caja_show_desktop)
-	{
-		if (manager->priv->bg == NULL)
-		{
-			setup_bg(manager);
-		}
-
-		draw_background(manager, FALSE);
-	}
-}
-
-static void
 disconnect_screen_signals (MsdBackgroundManager* manager)
 {
 	GdkDisplay* display;
@@ -426,16 +430,15 @@ connect_screen_signals (MsdBackgroundManager* manager)
 }
 
 gboolean
-msd_background_manager_start (MsdBackgroundManager* manager,
-                              GError**              error)
+msd_background_manager_start (MsdBackgroundManager  *manager,
+                              GError               **error)
 {
-	gboolean caja_show_desktop;
+	gboolean show_desktop_icons;
 
 	g_debug("Starting background manager");
 	mate_settings_profile_start(NULL);
 
-	manager->priv->bg_settings = g_settings_new (MATE_BG_SCHEMA);
-	manager->priv->caja_settings = g_settings_new (CAJA_SCHEMA);
+	manager->priv->settings = g_settings_new (MATE_BG_SCHEMA);
 
 	/* If this is set, caja will draw the background and is
 	 * almost definitely in our session.  however, it may not be
@@ -444,10 +447,10 @@ msd_background_manager_start (MsdBackgroundManager* manager,
 	 * don't waste time setting the background only to have
 	 * caja overwrite it.
 	 */
-	caja_show_desktop = g_settings_get_boolean (manager->priv->caja_settings,
-                                                CAJA_SHOW_DESKTOP_KEY);
+	show_desktop_icons = g_settings_get_boolean (manager->priv->settings,
+						     MATE_BG_SHOW_DESKTOP_ICONS);
 
-	if (!caja_show_desktop)
+	if (!show_desktop_icons)
 	{
 		setup_bg(manager);
 	}
@@ -456,15 +459,13 @@ msd_background_manager_start (MsdBackgroundManager* manager,
 		draw_background_after_session_loads(manager);
 	}
 
-	connect_screen_signals(manager);
-
 	mate_settings_profile_end(NULL);
 
 	return TRUE;
 }
 
 void
-msd_background_manager_stop (MsdBackgroundManager*  manager)
+msd_background_manager_stop (MsdBackgroundManager *manager)
 {
 	MsdBackgroundManagerPrivate* p = manager->priv;
 
@@ -479,16 +480,14 @@ msd_background_manager_stop (MsdBackgroundManager*  manager)
 		                              manager);
 	}
 
-	if (p->bg_settings != NULL)
-	{
-		g_object_unref(p->bg_settings);
-		p->bg_settings = NULL;
-	}
+	g_signal_handlers_disconnect_by_func (manager->priv->settings,
+					      settings_change_event_cb,
+					      manager);
 
-	if (p->caja_settings != NULL)
+	if (p->settings != NULL)
 	{
-		g_object_unref(p->caja_settings);
-		p->caja_settings = NULL;
+		g_object_unref(p->settings);
+		p->settings = NULL;
 	}
 
 	if (p->timeout_id != 0)
