@@ -64,6 +64,8 @@ struct MsdBackgroundManagerPrivate {
 	MateBG         *bg;
 	guint           timeout_id;
 
+	MateBGCrossfade *fade;
+
 	GDBusProxy     *proxy;
 	guint           proxy_signal_id;
 };
@@ -195,6 +197,13 @@ caja_is_drawing_background (MsdBackgroundManager *manager)
 }
 
 static void
+on_crossfade_finished (MsdBackgroundManager *manager)
+{
+	g_object_unref (manager->priv->fade);
+	manager->priv->fade = NULL;
+}
+
+static void
 draw_background (MsdBackgroundManager *manager,
                  gboolean              use_crossfade)
 {
@@ -215,30 +224,27 @@ draw_background (MsdBackgroundManager *manager,
 	for (i = 0; i < n_screens; ++i)
 	{
 		GdkScreen *screen;
-		GdkWindow *root_window;
 		cairo_surface_t *surface;
 
 		screen = gdk_display_get_screen(display, i);
 
-		root_window = gdk_screen_get_root_window(screen);
-
 		surface = mate_bg_create_surface (manager->priv->bg,
-		                                  root_window,
-		                                  gdk_screen_get_width(screen),
-		                                  gdk_screen_get_height(screen),
-		                                  TRUE);
+						  gdk_screen_get_root_window (screen),
+						  gdk_screen_get_width (screen),
+						  gdk_screen_get_height (screen),
+						  TRUE);
 
 		if (use_crossfade)
 		{
-			MateBGCrossfade* fade;
+			if (manager->priv->fade != NULL)
+				g_object_unref (manager->priv->fade);
 
-			fade = mate_bg_set_surface_as_root_with_crossfade (screen, surface);
-			g_signal_connect(fade,
-			                 "finished",
-			                 G_CALLBACK (g_object_unref), NULL);
-		}
-		else
-		{
+			manager->priv->fade = mate_bg_set_surface_as_root_with_crossfade (screen,
+											  surface);
+			g_signal_connect_swapped (manager->priv->fade, "finished",
+						  G_CALLBACK (on_crossfade_finished),
+						  manager);
+		} else {
 			mate_bg_set_surface_as_root (screen, surface);
 		}
 
