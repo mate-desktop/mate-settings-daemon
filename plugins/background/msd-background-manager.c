@@ -97,7 +97,6 @@ caja_is_drawing_background (MsdBackgroundManager *manager)
 	unsigned long  nitems;
 	unsigned long  bytes_after;
 	unsigned char* data;
-	int            retval;
 	Atom           wmclass_atom;
 	gboolean       running;
 	gint           error;
@@ -116,18 +115,18 @@ caja_is_drawing_background (MsdBackgroundManager *manager)
 		return FALSE;
 	}
 
-	retval = XGetWindowProperty(GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
-	                            GDK_ROOT_WINDOW(),
-	                            window_id_atom,
-	                            0,
-	                            1,
-	                            False,
-	                            XA_WINDOW,
-	                            &actual_type,
-	                            &actual_format,
-	                            &nitems,
-	                            &bytes_after,
-	                            &data);
+	XGetWindowProperty (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
+			    GDK_ROOT_WINDOW(),
+			    window_id_atom,
+			    0,
+			    1,
+			    False,
+			    XA_WINDOW,
+			    &actual_type,
+			    &actual_format,
+			    &nitems,
+			    &bytes_after,
+			    &data);
 
 	if (data != NULL)
 	{
@@ -153,18 +152,18 @@ caja_is_drawing_background (MsdBackgroundManager *manager)
 
 	gdk_error_trap_push();
 
-	retval = XGetWindowProperty(GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
-	                            caja_xid,
-	                            wmclass_atom,
-	                            0,
-	                            24,
-	                            False,
-	                            XA_STRING,
-	                            &actual_type,
-	                            &actual_format,
-	                            &nitems,
-	                            &bytes_after,
-	                            &data);
+	XGetWindowProperty (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
+			    caja_xid,
+			    wmclass_atom,
+			    0,
+			    24,
+			    False,
+			    XA_STRING,
+			    &actual_type,
+			    &actual_format,
+			    &nitems,
+			    &bytes_after,
+			    &data);
 
 	error = gdk_error_trap_pop();
 
@@ -538,10 +537,6 @@ msd_background_manager_set_property (GObject*        object,
                                      const GValue*   value,
                                      GParamSpec*     pspec)
 {
-	MsdBackgroundManager* self;
-
-	self = MSD_BACKGROUND_MANAGER(object);
-
 	switch (prop_id)
 	{
 		default:
@@ -556,10 +551,6 @@ msd_background_manager_get_property (GObject*        object,
                                      GValue*         value,
                                      GParamSpec*     pspec)
 {
-	MsdBackgroundManager* self;
-
-	self = MSD_BACKGROUND_MANAGER(object);
-
 	switch (prop_id)
 	{
 		default:
@@ -574,9 +565,6 @@ msd_background_manager_constructor (GType                  type,
                                     GObjectConstructParam* construct_properties)
 {
 	MsdBackgroundManager*      background_manager;
-	MsdBackgroundManagerClass* klass;
-
-	klass = MSD_BACKGROUND_MANAGER_CLASS(g_type_class_peek(MSD_TYPE_BACKGROUND_MANAGER));
 
 	background_manager = MSD_BACKGROUND_MANAGER(G_OBJECT_CLASS(msd_background_manager_parent_class)->constructor(type,
 	                                                                                                             n_construct_properties,
@@ -587,10 +575,6 @@ msd_background_manager_constructor (GType                  type,
 static void
 msd_background_manager_dispose (GObject* object)
 {
-	MsdBackgroundManager* background_manager;
-
-	background_manager = MSD_BACKGROUND_MANAGER(object);
-
 	G_OBJECT_CLASS(msd_background_manager_parent_class)->dispose(object);
 }
 
