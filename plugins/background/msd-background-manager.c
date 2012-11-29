@@ -32,8 +32,6 @@
 
 #include <locale.h>
 
-#include <dbus/dbus.h>
-
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <gdk/gdk.h>
@@ -56,6 +54,8 @@
 #endif
 
 #define MATE_BG_SHOW_DESKTOP_ICONS "show-desktop-icons"
+#define MATE_SESSION_MANAGER_DBUS_NAME "org.mate.SessionManager"
+#define MATE_SESSION_MANAGER_DBUS_PATH "/org/mate/SessionManager"
 
 #define MSD_BACKGROUND_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_BACKGROUND_MANAGER, MsdBackgroundManagerPrivate))
 
@@ -64,7 +64,8 @@ struct MsdBackgroundManagerPrivate {
 	MateBG         *bg;
 	guint           timeout_id;
 
-	DBusConnection *dbus_connection;
+	GDBusProxy     *proxy;
+	guint           proxy_signal_id;
 };
 
 static void
@@ -332,53 +333,76 @@ queue_draw_background (MsdBackgroundManager *manager)
 	return FALSE;
 }
 
-static DBusHandlerResult
-on_bus_message (DBusConnection* connection,
-                DBusMessage*        message,
-                void*               user_data)
+static void
+queue_timeout (MsdBackgroundManager *manager)
 {
-	MsdBackgroundManager* manager = user_data;
+	if (manager->priv->timeout_id > 0)
+		return;
 
-	if (dbus_message_is_signal(message, "org.mate.SessionManager", "SessionRunning"))
-	{
-		/* If the session finishes then check if caja is
-		 * running and if not, set the background.
-		 *
-		 * We wait a few seconds after the session is up
-		 * because caja tells the session manager that its
-		 * ready before it sets the background.
-		 */
-		manager->priv->timeout_id = g_timeout_add_seconds(8,
-		                                                  (GSourceFunc) queue_draw_background,
-		                                                  manager);
-		dbus_connection_remove_filter(connection,
-		                              on_bus_message,
-		                              manager);
-
-		manager->priv->dbus_connection = NULL;
-	}
-
-	return DBUS_HANDLER_RESULT_NOT_YET_HANDLED;
+	/* If the session finishes then check if caja is
+	 * running and if not, set the background.
+	 *
+	 * We wait a few seconds after the session is up
+	 * because caja tells the session manager that its
+	 * ready before it sets the background.
+	 */
+	manager->priv->timeout_id = g_timeout_add_seconds(8,
+	                                                  (GSourceFunc) queue_draw_background,
+	                                                  manager);
 }
 
 static void
-draw_background_after_session_loads (MsdBackgroundManager* manager)
+disconnect_session_manager_listener (MsdBackgroundManager* manager)
 {
-	DBusConnection* connection;
+	if (manager->priv->proxy && manager->priv->proxy_signal_id) {
+		g_signal_handler_disconnect (manager->priv->proxy,
+					     manager->priv->proxy_signal_id);
+		manager->priv->proxy_signal_id = 0;
+	}
+}
 
-	connection = dbus_bus_get(DBUS_BUS_SESSION, NULL);
+static void
+on_session_manager_signal (GDBusProxy   *proxy,
+			   const gchar  *sender_name,
+			   const gchar  *signal_name,
+			   GVariant     *parameters,
+			   gpointer      user_data)
+{
+	MsdBackgroundManager *manager = MSD_BACKGROUND_MANAGER (user_data);
 
-	if (connection == NULL)
-	{
+	if (g_strcmp0 (signal_name, "SessionRunning") == 0) {
+		queue_timeout (manager);
+		disconnect_session_manager_listener (manager);
+	}
+}
+
+static void
+draw_background_after_session_loads (MsdBackgroundManager *manager)
+{
+	GError *error = NULL;
+	GDBusProxyFlags flags;
+
+	flags = G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES |
+		G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START;
+	manager->priv->proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+							      flags,
+							      NULL, /* GDBusInterfaceInfo */
+							      MATE_SESSION_MANAGER_DBUS_NAME,
+							      MATE_SESSION_MANAGER_DBUS_PATH,
+							      MATE_SESSION_MANAGER_DBUS_NAME,
+							      NULL, /* GCancellable */
+							      &error);
+	if (manager->priv->proxy == NULL) {
+		g_warning ("Could not listen to session manager: %s",
+			   error->message);
+		g_error_free (error);
 		return;
 	}
 
-	if (!dbus_connection_add_filter(connection, on_bus_message, manager, NULL))
-	{
-		return;
-	}
-
-	manager->priv->dbus_connection = connection;
+	manager->priv->proxy_signal_id = g_signal_connect (manager->priv->proxy,
+							   "g-signal",
+							   G_CALLBACK (on_session_manager_signal),
+							   manager);
 }
 
 static void
@@ -473,11 +497,10 @@ msd_background_manager_stop (MsdBackgroundManager *manager)
 
 	disconnect_screen_signals(manager);
 
-	if (manager->priv->dbus_connection != NULL)
+	if (manager->priv->proxy)
 	{
-		dbus_connection_remove_filter(manager->priv->dbus_connection,
-		                              on_bus_message,
-		                              manager);
+		disconnect_session_manager_listener (manager);
+		g_object_unref (manager->priv->proxy);
 	}
 
 	g_signal_handlers_disconnect_by_func (manager->priv->settings,
