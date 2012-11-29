@@ -54,6 +54,8 @@
 #endif
 
 #define MATE_BG_SHOW_DESKTOP_ICONS "show-desktop-icons"
+#define MATE_BG_DRAW_BACKGROUND "draw-background"
+
 #define MATE_SESSION_MANAGER_DBUS_NAME "org.mate.SessionManager"
 #define MATE_SESSION_MANAGER_DBUS_PATH "/org/mate/SessionManager"
 
@@ -86,6 +88,13 @@ static void connect_screen_signals (MsdBackgroundManager *manager);
 G_DEFINE_TYPE(MsdBackgroundManager, msd_background_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
+
+static gboolean
+dont_draw_background (MsdBackgroundManager *manager)
+{
+	return !g_settings_get_boolean (manager->priv->settings,
+					MATE_BG_DRAW_BACKGROUND);
+}
 
 static gboolean
 caja_is_drawing_background (MsdBackgroundManager *manager)
@@ -210,7 +219,7 @@ draw_background (MsdBackgroundManager *manager,
 	int         n_screens;
 	int         i;
 
-	if (caja_is_drawing_background (manager))
+	if (caja_is_drawing_background (manager) || dont_draw_background (manager))
 	{
 		return;
 	}
