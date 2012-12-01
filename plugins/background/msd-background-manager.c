@@ -340,7 +340,8 @@ queue_draw_background (MsdBackgroundManager *manager)
 {
 	manager->priv->timeout_id = 0;
 
-	setup_bg (manager);
+        if (manager->priv->bg == NULL)
+	        setup_bg (manager);
 
 	draw_background (manager, FALSE);
 
@@ -467,6 +468,15 @@ connect_screen_signals (MsdBackgroundManager* manager)
 	}
 }
 
+static void
+background_handling_changed (GSettings            *settings,
+			     const char           *key,
+			     MsdBackgroundManager *manager)
+{
+        if (dont_draw_background (manager) == FALSE)
+                queue_timeout (manager);
+}
+
 gboolean
 msd_background_manager_start (MsdBackgroundManager  *manager,
                               GError               **error)
@@ -477,6 +487,10 @@ msd_background_manager_start (MsdBackgroundManager  *manager,
 	mate_settings_profile_start(NULL);
 
 	manager->priv->settings = g_settings_new (MATE_BG_SCHEMA);
+	g_signal_connect (manager->priv->settings, "changed::" MATE_BG_DRAW_BACKGROUND,
+			  G_CALLBACK (background_handling_changed), manager);
+	g_signal_connect (manager->priv->settings, "changed::" MATE_BG_SHOW_DESKTOP_ICONS,
+			  G_CALLBACK (background_handling_changed), manager);
 
 	/* If this is set, caja will draw the background and is
 	 * almost definitely in our session.  however, it may not be
