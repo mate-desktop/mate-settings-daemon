@@ -165,7 +165,7 @@ caja_is_drawing_background (MsdBackgroundManager *manager)
 			    caja_xid,
 			    wmclass_atom,
 			    0,
-			    24,
+			    20,
 			    False,
 			    XA_STRING,
 			    &actual_type,
@@ -182,7 +182,7 @@ caja_is_drawing_background (MsdBackgroundManager *manager)
 	}
 
 	if (actual_type == XA_STRING &&
-		nitems == 24 &&
+		nitems == 20 &&
 		bytes_after == 0 &&
 		actual_format == 8 &&
 		data != NULL &&
