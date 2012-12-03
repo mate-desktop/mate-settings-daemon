@@ -473,8 +473,11 @@ background_handling_changed (GSettings            *settings,
 			     const char           *key,
 			     MsdBackgroundManager *manager)
 {
-        if (dont_draw_background (manager) == FALSE)
-                queue_timeout (manager);
+	if (!dont_draw_background (manager) &&
+	    !caja_is_drawing_background (manager))
+	{
+		queue_timeout (manager);
+	}
 }
 
 gboolean
