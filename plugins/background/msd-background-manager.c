@@ -53,9 +53,6 @@
 #define mate_bg_set_surface_as_root_with_crossfade	mate_bg_set_pixmap_as_root_with_crossfade
 #endif
 
-#define MATE_BG_SHOW_DESKTOP_ICONS "show-desktop-icons"
-#define MATE_BG_DRAW_BACKGROUND "draw-background"
-
 #define MATE_SESSION_MANAGER_DBUS_NAME "org.mate.SessionManager"
 #define MATE_SESSION_MANAGER_DBUS_PATH "/org/mate/SessionManager"
 
@@ -90,10 +87,17 @@ G_DEFINE_TYPE(MsdBackgroundManager, msd_background_manager, G_TYPE_OBJECT)
 static gpointer manager_object = NULL;
 
 static gboolean
-dont_draw_background (MsdBackgroundManager *manager)
+do_draw_background (MsdBackgroundManager *manager)
 {
-	return !g_settings_get_boolean (manager->priv->settings,
-					MATE_BG_DRAW_BACKGROUND);
+	return g_settings_get_boolean (manager->priv->settings,
+					MATE_BG_KEY_DRAW_BACKGROUND);
+}
+
+static gboolean
+do_crossfade_background (MsdBackgroundManager *manager)
+{
+	return g_settings_get_boolean (manager->priv->settings,
+					MATE_BG_KEY_BACKGROUND_FADE);
 }
 
 static gboolean
@@ -112,7 +116,7 @@ caja_is_drawing_background (MsdBackgroundManager *manager)
 	gboolean       show_desktop_icons;
 
 	show_desktop_icons = g_settings_get_boolean (manager->priv->settings,
-						     MATE_BG_SHOW_DESKTOP_ICONS);
+						     MATE_BG_KEY_SHOW_DESKTOP);
 	if (!show_desktop_icons) {
 	       return FALSE;
 	}
@@ -219,7 +223,7 @@ draw_background (MsdBackgroundManager *manager,
 	int         n_screens;
 	int         i;
 
-	if (caja_is_drawing_background (manager) || dont_draw_background (manager))
+	if (caja_is_drawing_background (manager) || !do_draw_background (manager))
 	{
 		return;
 	}
@@ -242,7 +246,7 @@ draw_background (MsdBackgroundManager *manager,
 						  gdk_screen_get_height (screen),
 						  TRUE);
 
-		if (use_crossfade)
+		if (use_crossfade && do_crossfade_background (manager))
 		{
 			if (manager->priv->fade != NULL)
 				g_object_unref (manager->priv->fade);
@@ -473,7 +477,7 @@ background_handling_changed (GSettings            *settings,
 			     const char           *key,
 			     MsdBackgroundManager *manager)
 {
-	if (!dont_draw_background (manager) &&
+	if (do_draw_background (manager) &&
 	    !caja_is_drawing_background (manager))
 	{
 		queue_timeout (manager);
@@ -490,9 +494,9 @@ msd_background_manager_start (MsdBackgroundManager  *manager,
 	mate_settings_profile_start(NULL);
 
 	manager->priv->settings = g_settings_new (MATE_BG_SCHEMA);
-	g_signal_connect (manager->priv->settings, "changed::" MATE_BG_DRAW_BACKGROUND,
+	g_signal_connect (manager->priv->settings, "changed::" MATE_BG_KEY_DRAW_BACKGROUND,
 			  G_CALLBACK (background_handling_changed), manager);
-	g_signal_connect (manager->priv->settings, "changed::" MATE_BG_SHOW_DESKTOP_ICONS,
+	g_signal_connect (manager->priv->settings, "changed::" MATE_BG_KEY_SHOW_DESKTOP,
 			  G_CALLBACK (background_handling_changed), manager);
 
 	/* If this is set, caja will draw the background and is
@@ -503,7 +507,7 @@ msd_background_manager_start (MsdBackgroundManager  *manager,
 	 * caja overwrite it.
 	 */
 	show_desktop_icons = g_settings_get_boolean (manager->priv->settings,
-						     MATE_BG_SHOW_DESKTOP_ICONS);
+						     MATE_BG_KEY_SHOW_DESKTOP);
 
 	if (!show_desktop_icons)
 	{
