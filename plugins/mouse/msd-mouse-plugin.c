@@ -102,3 +102,9 @@ msd_mouse_plugin_class_init (MsdMousePluginClass *klass)
 
         g_type_class_add_private (klass, sizeof (MsdMousePluginPrivate));
 }
+
+static void
+msd_mouse_plugin_class_finalize (MsdMousePluginClass *klass)
+{
+}
+

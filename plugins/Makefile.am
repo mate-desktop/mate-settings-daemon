@@ -6,13 +6,11 @@ enabled_plugins =	\
 	clipboard	\
 	datetime	\
 	dummy		\
-	font		\
 	housekeeping    \
 	keyboard	\
 	media-keys	\
 	mouse		\
 	sound		\
-	typing-break	\
 	xrandr		\
 	xrdb		\
 	xsettings	\
