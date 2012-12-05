@@ -102,3 +102,8 @@ msd_a11y_keyboard_plugin_class_init (MsdA11yKeyboardPluginClass *klass)
 
         g_type_class_add_private (klass, sizeof (MsdA11yKeyboardPluginPrivate));
 }
+
+static void
+msd_a11y_keyboard_plugin_class_finalize (MsdA11yKeyboardPluginClass *klass)
+{
+}
