@@ -47,7 +47,7 @@ dnl - Dependencies
 dnl ---------------------------------------------------------------------------
 
 DBUS_GLIB_REQUIRED_VERSION=0.74
-GLIB_REQUIRED_VERSION=2.17.3
+GLIB_REQUIRED_VERSION=2.26.0
 GTK_REQUIRED_VERSION=2.21.2
 GIO_REQUIRED_VERSION=2.26.0
 MATE_DESKTOP_REQUIRED_VERSION=1.5.0
