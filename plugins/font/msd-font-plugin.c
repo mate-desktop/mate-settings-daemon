@@ -102,3 +102,8 @@ msd_font_plugin_class_init (MsdFontPluginClass *klass)
 
         g_type_class_add_private (klass, sizeof (MsdFontPluginPrivate));
 }
+
+static void
+msd_font_plugin_class_finalize (MsdFontPluginClass *klass)
+{
+}

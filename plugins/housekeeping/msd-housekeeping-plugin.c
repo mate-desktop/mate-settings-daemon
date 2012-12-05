@@ -102,3 +102,9 @@ msd_housekeeping_plugin_class_init (MsdHousekeepingPluginClass *klass)
 
         g_type_class_add_private (klass, sizeof (MsdHousekeepingPluginPrivate));
 }
+
+static void
+msd_housekeeping_plugin_class_finalize (MsdHousekeepingPluginClass *klass)
+{
+}
+
