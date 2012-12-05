@@ -37,7 +37,6 @@
 #include <libmatekbd/matekbd-keyboard-config.h>
 #include <libmatekbd/matekbd-util.h>
 
-#include "msd-xmodmap.h"
 #include "msd-keyboard-xkb.h"
 #include "delayed-dialog.h"
 #include "mate-settings-profile.h"
@@ -501,88 +500,6 @@ msd_keyboard_xkb_analyze_sysconfig (void)
 						  NULL);
 }
 
-static gboolean
-msd_chk_file_list (void)
-{
-	GDir *home_dir;
-	const char *fname;
-	GSList *file_list = NULL;
-	GSList *last_login_file_list = NULL;
-	GSList *tmp = NULL;
-	GSList *tmp_l = NULL;
-	gboolean new_file_exist = FALSE;
-
-	home_dir = g_dir_open (g_get_home_dir (), 0, NULL);
-	while ((fname = g_dir_read_name (home_dir)) != NULL) {
-		if (g_strrstr (fname, "modmap")) {
-			file_list =
-			    g_slist_append (file_list, g_strdup (fname));
-		}
-	}
-	g_dir_close (home_dir);
-
-	gchar **settings_list;
-	settings_list = g_settings_get_strv (settings_desktop, KNOWN_FILES_KEY);
-	if (settings_list != NULL) {
-		gint i;
-		for (i = 0; i < G_N_ELEMENTS (settings_list); i++) {
-			if (settings_list[i] != NULL)
-				last_login_file_list = 
-					g_slist_append (last_login_file_list, g_strdup (settings_list[i]));
-		}
-		g_strfreev (settings_list);
-	}
-
-	/* Compare between the two file list, currently available modmap files
-	   and the files available in the last log in */
-	tmp = file_list;
-	while (tmp != NULL) {
-		tmp_l = last_login_file_list;
-		new_file_exist = TRUE;
-		while (tmp_l != NULL) {
-			if (strcmp (tmp->data, tmp_l->data) == 0) {
-				new_file_exist = FALSE;
-				break;
-			} else {
-				tmp_l = tmp_l->next;
-			}
-		}
-		if (new_file_exist) {
-			break;
-		} else {
-			tmp = tmp->next;
-		}
-	}
-
-	if (new_file_exist) {
-		GSList *l;
-		GPtrArray *array = g_ptr_array_new ();
-		for (l = file_list; l != NULL; l = l->next)
-			g_ptr_array_add (array, l->data);
-		g_ptr_array_add (array, NULL);
-		g_settings_set_strv (settings_desktop, KNOWN_FILES_KEY, (const gchar **) array->pdata);
-		g_ptr_array_free (array, FALSE);
-	}
-
-	g_slist_foreach (file_list, (GFunc) g_free, NULL);
-	g_slist_free (file_list);
-
-	g_slist_foreach (last_login_file_list, (GFunc) g_free, NULL);
-	g_slist_free (last_login_file_list);
-
-	return new_file_exist;
-
-}
-
-static void
-msd_keyboard_xkb_chk_lcl_xmm (void)
-{
-	if (msd_chk_file_list ()) {
-		msd_modmap_dialog_call ();
-	}
-	msd_load_modmap_files ();
-}
-
 void
 msd_keyboard_xkb_set_post_activation_callback (PostActivationCallback fun,
 					       void *user_data)
@@ -695,11 +612,6 @@ msd_keyboard_xkb_init (MsdKeyboardManager * kbd_manager)
 					      xkl_engine);
 		xkl_engine_backup_names_prop (xkl_engine);
 		msd_keyboard_xkb_analyze_sysconfig ();
-		mate_settings_profile_start
-		    ("msd_keyboard_xkb_chk_lcl_xmm");
-		msd_keyboard_xkb_chk_lcl_xmm ();
-		mate_settings_profile_end
-		    ("msd_keyboard_xkb_chk_lcl_xmm");
 
 		g_signal_connect (settings_desktop, "changed", G_CALLBACK(apply_desktop_settings_cb), NULL);
 		g_signal_connect (settings_kbd, "changed", G_CALLBACK(apply_xkb_settings_cb), NULL);
