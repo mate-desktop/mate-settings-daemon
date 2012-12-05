@@ -10,7 +10,6 @@ gsettings_SCHEMAS = \
 	org.mate.SettingsDaemon.plugins.background.gschema.xml \
 	org.mate.SettingsDaemon.plugins.clipboard.gschema.xml \
 	org.mate.SettingsDaemon.plugins.datetime.gschema.xml \
-	org.mate.SettingsDaemon.plugins.font.gschema.xml \
 	org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml \
 	org.mate.SettingsDaemon.plugins.keyboard.gschema.xml \
 	org.mate.SettingsDaemon.plugins.media-keys.gschema.xml \
