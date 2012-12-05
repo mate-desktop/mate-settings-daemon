@@ -16,7 +16,6 @@ gsettings_SCHEMAS = \
 	org.mate.SettingsDaemon.plugins.mouse.gschema.xml \
 	org.mate.SettingsDaemon.plugins.smartcard.gschema.xml \
 	org.mate.SettingsDaemon.plugins.sound.gschema.xml \
-	org.mate.SettingsDaemon.plugins.typing-break.gschema.xml \
 	org.mate.SettingsDaemon.plugins.xrandr.gschema.xml \
 	org.mate.SettingsDaemon.plugins.xrdb.gschema.xml \
 	org.mate.SettingsDaemon.plugins.xsettings.gschema.xml \

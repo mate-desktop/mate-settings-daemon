@@ -11,7 +11,6 @@ enabled_plugins =	\
 	media-keys	\
 	mouse		\
 	sound		\
-	typing-break	\
 	xrandr		\
 	xrdb		\
 	xsettings	\
