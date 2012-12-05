@@ -471,7 +471,6 @@ plugins/clipboard/Makefile
 plugins/common/Makefile
 plugins/datetime/Makefile
 plugins/dummy/Makefile
-plugins/font/Makefile
 plugins/housekeeping/Makefile
 plugins/keyboard/Makefile
 plugins/media-keys/Makefile
