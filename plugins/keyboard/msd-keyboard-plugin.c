@@ -102,3 +102,9 @@ msd_keyboard_plugin_class_init (MsdKeyboardPluginClass *klass)
 
         g_type_class_add_private (klass, sizeof (MsdKeyboardPluginPrivate));
 }
+
+static void
+msd_keyboard_plugin_class_finalize (MsdKeyboardPluginClass *klass)
+{
+}
+

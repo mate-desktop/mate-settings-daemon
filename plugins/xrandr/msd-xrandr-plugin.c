@@ -102,3 +102,9 @@ msd_xrandr_plugin_class_init (MsdXrandrPluginClass *klass)
 
         g_type_class_add_private (klass, sizeof (MsdXrandrPluginPrivate));
 }
+
+static void
+msd_xrandr_plugin_class_finalize (MsdXrandrPluginClass *klass)
+{
+}
+

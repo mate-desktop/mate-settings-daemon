@@ -35,7 +35,6 @@
 #include <gio/gunixmounts.h>
 #include <gio/gio.h>
 #include <gtk/gtk.h>
-#include <gio/gio.h>
 
 #include "msd-disk-space.h"
 #include "msd-ldsm-dialog.h"

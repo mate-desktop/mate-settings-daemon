@@ -102,3 +102,9 @@ msd_clipboard_plugin_class_init (MsdClipboardPluginClass *klass)
 
         g_type_class_add_private (klass, sizeof (MsdClipboardPluginPrivate));
 }
+
+static void
+msd_clipboard_plugin_class_finalize (MsdClipboardPluginClass *klass)
+{
+}
+
