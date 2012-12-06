@@ -117,7 +117,9 @@ mate_settings_plugin_info_finalize (GObject *object)
         g_free (info->priv->copyright);
         g_strfreev (info->priv->authors);
 
-        g_object_unref (info->priv->settings);
+	if (info->priv->settings != NULL) {
+		g_object_unref (info->priv->settings);
+	}
 
         G_OBJECT_CLASS (mate_settings_plugin_info_parent_class)->finalize (object);
 }
@@ -288,8 +290,8 @@ mate_settings_plugin_info_fill_from_file (MateSettingsPluginInfo *info,
 }
 
 static void
-plugin_enabled_cb (GSettings *settings,
-                   gchar *key,
+plugin_enabled_cb (GSettings              *settings,
+                   gchar                  *key,
                    MateSettingsPluginInfo *info)
 {
         if (g_settings_get_boolean (info->priv->settings, key)) {
@@ -596,11 +598,17 @@ void
 mate_settings_plugin_info_set_schema (MateSettingsPluginInfo *info,
                                       gchar                  *schema)
 {
-        g_return_if_fail (MATE_IS_SETTINGS_PLUGIN_INFO (info));
+	int priority;
 
-        info->priv->settings = g_settings_new (schema);
-        info->priv->priority = g_settings_get_int(info->priv->settings, "priority");
-        info->priv->enabled = g_settings_get_boolean(info->priv->settings, "active");
-        
-        g_signal_connect (info->priv->settings, "changed::active", G_CALLBACK (plugin_enabled_cb), info);
+	g_return_if_fail (MATE_IS_SETTINGS_PLUGIN_INFO (info));
+
+	info->priv->settings = g_settings_new (schema);
+	info->priv->enabled = g_settings_get_boolean (info->priv->settings, "active");
+
+	priority = g_settings_get_int (info->priv->settings, "priority");
+	if (priority > 0)
+		info->priv->priority = priority;
+
+	g_signal_connect (G_OBJECT (info->priv->settings), "changed::active", 
+			  G_CALLBACK (plugin_enabled_cb), info);
 }

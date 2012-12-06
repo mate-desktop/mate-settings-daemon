@@ -102,3 +102,9 @@ msd_xrdb_plugin_class_init (MsdXrdbPluginClass *klass)
 
         g_type_class_add_private (klass, sizeof (MsdXrdbPluginPrivate));
 }
+
+static void
+msd_xrdb_plugin_class_finalize (MsdXrdbPluginClass *klass)
+{
+}
+

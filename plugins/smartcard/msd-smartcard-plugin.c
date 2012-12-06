@@ -338,3 +338,9 @@ msd_smartcard_plugin_class_init (MsdSmartcardPluginClass *klass)
 
         g_type_class_add_private (klass, sizeof (MsdSmartcardPluginPrivate));
 }
+
+static void
+msd_smartcard_plugin_class_finalize (MsdSmartcardPluginClass *klass)
+{
+}
+

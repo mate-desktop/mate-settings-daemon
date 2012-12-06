@@ -102,3 +102,8 @@ msd_typing_break_plugin_class_init (MsdTypingBreakPluginClass *klass)
 
         g_type_class_add_private (klass, sizeof (MsdTypingBreakPluginPrivate));
 }
+
+static void
+msd_typing_break_plugin_class_finalize (MsdTypingBreakPluginClass *klass)
+{
+}
