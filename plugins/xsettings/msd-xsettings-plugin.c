@@ -102,3 +102,8 @@ mate_xsettings_plugin_class_init (MateXSettingsPluginClass *klass)
 
         g_type_class_add_private (klass, sizeof (MateXSettingsPluginPrivate));
 }
+
+static void
+mate_xsettings_plugin_class_finalize (MateXSettingsPluginClass *klass)
+{
+}

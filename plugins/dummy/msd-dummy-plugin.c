@@ -102,3 +102,8 @@ msd_dummy_plugin_class_init (MsdDummyPluginClass *klass)
 
         g_type_class_add_private (klass, sizeof (MsdDummyPluginPrivate));
 }
+
+static void
+msd_dummy_plugin_class_finalize (MsdDummyPluginClass *klass)
+{
+}

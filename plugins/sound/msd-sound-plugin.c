@@ -98,3 +98,9 @@ msd_sound_plugin_class_init (MsdSoundPluginClass *klass)
 
         g_type_class_add_private (klass, sizeof (MsdSoundPluginPrivate));
 }
+
+static void
+msd_sound_plugin_class_finalize (MsdSoundPluginClass *klass)
+{
+}
+

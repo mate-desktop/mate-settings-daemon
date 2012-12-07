@@ -13,9 +13,6 @@ icons_DATA = \
 	  kbd-capslock-off.png kbd-numlock-off.png kbd-scrolllock-off.png \
 	  kbd-capslock-on.png kbd-numlock-on.png kbd-scrolllock-on.png
 
-uidir   = $(pkgdatadir)
-ui_DATA = modmap-dialog.ui
-
 libkeyboard_la_SOURCES = 	\
 	msd-keyboard-plugin.h	\
 	msd-keyboard-plugin.c	\
@@ -23,8 +20,6 @@ libkeyboard_la_SOURCES = 	\
 	msd-keyboard-manager.c	\
 	msd-keyboard-xkb.h	\
 	msd-keyboard-xkb.c	\
-	msd-xmodmap.h		\
-	msd-xmodmap.c		\
 	delayed-dialog.h	\
 	delayed-dialog.c	\
 	$(NULL)

@@ -238,7 +238,7 @@ AC_ARG_ENABLE(pulse,
        [WANT_PULSE=no]) dnl Default value
 
 if test x$WANT_PULSE = xyes ; then
-       PA_REQUIRED_VERSION=0.9.15
+       PA_REQUIRED_VERSION=0.9.16
        PKG_CHECK_MODULES(PULSE, glib-2.0 libpulse >= $PA_REQUIRED_VERSION libpulse-mainloop-glib >= $PA_REQUIRED_VERSION libcanberra-gtk,
              [have_pulse=true
               AC_DEFINE(HAVE_PULSE, 1, [Define if PULSE sound server should be used])],
@@ -471,7 +471,6 @@ plugins/clipboard/Makefile
 plugins/common/Makefile
 plugins/datetime/Makefile
 plugins/dummy/Makefile
-plugins/font/Makefile
 plugins/housekeeping/Makefile
 plugins/keyboard/Makefile
 plugins/media-keys/Makefile

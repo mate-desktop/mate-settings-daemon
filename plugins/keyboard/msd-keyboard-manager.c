@@ -50,7 +50,6 @@
 #include "msd-keyboard-manager.h"
 
 #include "msd-keyboard-xkb.h"
-#include "msd-xmodmap.h"
 
 #define MSD_KEYBOARD_MANAGER_GET_PRIVATE(o) \
 	(G_TYPE_INSTANCE_GET_PRIVATE((o), MSD_TYPE_KEYBOARD_MANAGER, MsdKeyboardManagerPrivate))
@@ -333,7 +332,6 @@ start_keyboard_idle_cb (MsdKeyboardManager *manager)
         manager->priv->settings = g_settings_new (MSD_KEYBOARD_SCHEMA);
 
         /* Essential - xkb initialization should happen before */
-        msd_keyboard_xkb_set_post_activation_callback ((PostActivationCallback) msd_load_modmap_files, NULL);
         msd_keyboard_xkb_init (manager);
 
 #ifdef HAVE_X11_EXTENSIONS_XKB_H

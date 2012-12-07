@@ -659,7 +659,7 @@ gboolean
 mate_xsettings_manager_start (MateXSettingsManager *manager,
                                GError               **error)
 {
-        int          i;
+        guint        i;
         GList       *list, *l;
 
         g_debug ("Starting xsettings manager");
@@ -689,6 +689,11 @@ mate_xsettings_manager_start (MateXSettingsManager *manager,
                 gsettings = g_hash_table_lookup (manager->priv->gsettings,
                                                 translations[i].gsettings_schema);
 
+		if (gsettings == NULL) {
+			g_warning ("Schemas '%s' has not been setup", translations[i].gsettings_schema);
+			continue;
+		}
+
                 val = g_settings_get_value (gsettings, translations[i].gsettings_key);
 
                 process_value (manager, &translations[i], val);
@@ -697,7 +702,8 @@ mate_xsettings_manager_start (MateXSettingsManager *manager,
 
         list = g_hash_table_get_values (manager->priv->gsettings);
         for (l = list; l != NULL; l = l->next) {
-                g_signal_connect_object (G_OBJECT (l->data), "changed", G_CALLBACK (xsettings_callback), manager, 0);
+                g_signal_connect_object (G_OBJECT (l->data), "changed",
+                			 G_CALLBACK (xsettings_callback), manager, 0);
         }
         g_list_free (list);
 

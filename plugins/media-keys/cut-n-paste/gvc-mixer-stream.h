@@ -70,8 +70,8 @@ GType               gvc_mixer_stream_get_type        (void);
 pa_context *        gvc_mixer_stream_get_pa_context  (GvcMixerStream *stream);
 guint               gvc_mixer_stream_get_index       (GvcMixerStream *stream);
 guint               gvc_mixer_stream_get_id          (GvcMixerStream *stream);
-GvcChannelMap *     gvc_mixer_stream_get_channel_map (GvcMixerStream *stream);
-GvcMixerStreamPort *gvc_mixer_stream_get_port        (GvcMixerStream *stream);
+const GvcChannelMap *gvc_mixer_stream_get_channel_map(GvcMixerStream *stream);
+const GvcMixerStreamPort *gvc_mixer_stream_get_port  (GvcMixerStream *stream);
 const GList *       gvc_mixer_stream_get_ports       (GvcMixerStream *stream);
 gboolean            gvc_mixer_stream_change_port     (GvcMixerStream *stream,
                                                       const char     *port);
@@ -92,6 +92,7 @@ const char *        gvc_mixer_stream_get_description (GvcMixerStream *stream);
 const char *        gvc_mixer_stream_get_application_id (GvcMixerStream *stream);
 gboolean            gvc_mixer_stream_is_event_stream (GvcMixerStream *stream);
 gboolean            gvc_mixer_stream_is_virtual      (GvcMixerStream *stream);
+gint                gvc_mixer_stream_get_card_index  (GvcMixerStream *stream);
 
 /* private */
 gboolean            gvc_mixer_stream_set_volume      (GvcMixerStream *stream,
@@ -120,6 +121,8 @@ gboolean            gvc_mixer_stream_set_port        (GvcMixerStream *stream,
                                                       const char     *port);
 gboolean            gvc_mixer_stream_set_ports       (GvcMixerStream *stream,
                                                       GList          *ports);
+gboolean            gvc_mixer_stream_set_card_index  (GvcMixerStream *stream,
+                                                      gint            card_index);
 
 #ifdef __cplusplus
 }
