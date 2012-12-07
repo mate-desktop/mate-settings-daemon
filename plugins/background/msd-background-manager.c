@@ -561,34 +561,6 @@ msd_background_manager_stop (MsdBackgroundManager *manager)
 	}
 }
 
-static void
-msd_background_manager_set_property (GObject*        object,
-                                     guint           prop_id,
-                                     const GValue*   value,
-                                     GParamSpec*     pspec)
-{
-	switch (prop_id)
-	{
-		default:
-			G_OBJECT_WARN_INVALID_PROPERTY_ID(object, prop_id, pspec);
-			break;
-	}
-}
-
-static void
-msd_background_manager_get_property (GObject*        object,
-                                     guint           prop_id,
-                                     GValue*         value,
-                                     GParamSpec*     pspec)
-{
-	switch (prop_id)
-	{
-		default:
-			G_OBJECT_WARN_INVALID_PROPERTY_ID(object, prop_id, pspec);
-			break;
-	}
-}
-
 static GObject*
 msd_background_manager_constructor (GType                  type,
                                     guint                  n_construct_properties,
@@ -603,20 +575,11 @@ msd_background_manager_constructor (GType                  type,
 }
 
 static void
-msd_background_manager_dispose (GObject* object)
-{
-	G_OBJECT_CLASS(msd_background_manager_parent_class)->dispose(object);
-}
-
-static void
 msd_background_manager_class_init (MsdBackgroundManagerClass* klass)
 {
 	GObjectClass* object_class = G_OBJECT_CLASS(klass);
 
-	object_class->get_property = msd_background_manager_get_property;
-	object_class->set_property = msd_background_manager_set_property;
 	object_class->constructor = msd_background_manager_constructor;
-	object_class->dispose = msd_background_manager_dispose;
 	object_class->finalize = msd_background_manager_finalize;
 
 	g_type_class_add_private(klass, sizeof(MsdBackgroundManagerPrivate));
