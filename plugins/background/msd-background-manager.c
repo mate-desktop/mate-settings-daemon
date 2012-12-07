@@ -209,10 +209,12 @@ caja_is_drawing_background (MsdBackgroundManager *manager)
 }
 
 static void
-on_crossfade_finished (MsdBackgroundManager *manager)
+free_fade (MsdBackgroundManager *manager)
 {
-	g_object_unref (manager->priv->fade);
-	manager->priv->fade = NULL;
+	if (manager->priv->fade != NULL) {
+		g_object_unref (manager->priv->fade);
+		manager->priv->fade = NULL;
+	}
 }
 
 static void
@@ -254,13 +256,14 @@ draw_background (MsdBackgroundManager *manager,
 			manager->priv->fade = mate_bg_set_surface_as_root_with_crossfade (screen,
 											  surface);
 			g_signal_connect_swapped (manager->priv->fade, "finished",
-						  G_CALLBACK (on_crossfade_finished),
+						  G_CALLBACK (free_fade),
 						  manager);
 		} else {
 			mate_bg_set_surface_as_root (screen, surface);
 		}
 
 		cairo_surface_destroy (surface);
+		surface = NULL;
 	}
 
 	mate_settings_profile_end(NULL);
@@ -526,7 +529,7 @@ msd_background_manager_start (MsdBackgroundManager  *manager,
 void
 msd_background_manager_stop (MsdBackgroundManager *manager)
 {
-	MsdBackgroundManagerPrivate* p = manager->priv;
+	MsdBackgroundManagerPrivate *p = manager->priv;
 
 	g_debug("Stopping background manager");
 
@@ -544,21 +547,23 @@ msd_background_manager_stop (MsdBackgroundManager *manager)
 
 	if (p->settings != NULL)
 	{
-		g_object_unref(p->settings);
+		g_object_unref (G_OBJECT (p->settings));
 		p->settings = NULL;
 	}
 
 	if (p->timeout_id != 0)
 	{
-		g_source_remove(p->timeout_id);
+		g_source_remove (p->timeout_id);
 		p->timeout_id = 0;
 	}
 
 	if (p->bg != NULL)
 	{
-		g_object_unref(p->bg);
+		g_object_unref (G_OBJECT (p->bg));
 		p->bg = NULL;
 	}
+
+	free_fade (manager);
 }
 
 static GObject*
@@ -594,14 +599,12 @@ msd_background_manager_init (MsdBackgroundManager* manager)
 static void
 msd_background_manager_finalize (GObject* object)
 {
-	MsdBackgroundManager* background_manager;
+	g_return_if_fail (object != NULL);
+	g_return_if_fail (MSD_IS_BACKGROUND_MANAGER (object));
 
-	g_return_if_fail(object != NULL);
-	g_return_if_fail(MSD_IS_BACKGROUND_MANAGER(object));
+	MsdBackgroundManager *manager = MSD_BACKGROUND_MANAGER (object);
 
-	background_manager = MSD_BACKGROUND_MANAGER(object);
-
-	g_return_if_fail(background_manager->priv != NULL);
+	g_return_if_fail (manager->priv != NULL);
 
 	G_OBJECT_CLASS(msd_background_manager_parent_class)->finalize(object);
 }
