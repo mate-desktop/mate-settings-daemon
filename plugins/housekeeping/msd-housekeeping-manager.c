@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2008 Michael J. Chudobiak <mjc@avtechpulse.com>
+ * Copyright (C) 2012 Jasmine Hassan <jasmine.aura@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,21 +33,18 @@
 #define INTERVAL_ONCE_A_DAY 24*60*60
 #define INTERVAL_TWO_MINUTES 2*60
 
-
 /* Thumbnail cleaner */
-#define GSETTINGS_THUMB_SCHEMA "org.mate.thumbnail-cache"
-#define GSETTINGS_THUMB_AGE "maximum-age"
-#define DEFAULT_MAX_AGE_IN_DAYS 180
-#define GSETTINGS_THUMB_SIZE "maximum-size"
-#define DEFAULT_MAX_SIZE_IN_MB 512
-
+#define THUMB_CACHE_SCHEMA	"org.mate.thumbnail-cache"
+#define THUMB_CACHE_KEY_AGE	"maximum-age"
+#define THUMB_CACHE_KEY_SIZE	"maximum-size"
+#define DEFAULT_MAX_AGE  180	/* in Days */
+#define DEFAULT_MAX_SIZE 512	/* in MB */
 
 struct MsdHousekeepingManagerPrivate {
         guint long_term_cb;
         guint short_term_cb;
         GSettings *settings;
 };
-
 
 #define MSD_HOUSEKEEPING_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_HOUSEKEEPING_MANAGER, MsdHousekeepingManagerPrivate))
 
@@ -83,7 +81,6 @@ thumb_data_free (gpointer data)
                 g_free (info);
         }
 }
-
 
 static GList *
 read_dir_for_purge (const char *path, GList *files)
@@ -134,7 +131,6 @@ read_dir_for_purge (const char *path, GList *files)
         return files;
 }
 
-
 static void
 purge_old_thumbnails (ThumbData *info, PurgeData *purge_data)
 {
@@ -146,29 +142,55 @@ purge_old_thumbnails (ThumbData *info, PurgeData *purge_data)
         }
 }
 
-
 static int
 sort_file_mtime (ThumbData *file1, ThumbData *file2)
 {
         return file1->mtime - file2->mtime;
 }
 
-
-static int
-get_gsettings_int_with_default (GSettings *settings, char *key, int default_value)
+static gboolean
+int_gsettings_mapping (GVariant *value,
+			gpointer *result,
+			gpointer  int_ptr)
 {
-        /* If the key is unset, we use a non-zero default value.
-           A zero value corresponds to an extra-paranoid level
-           of cleaning - it deletes all files. We don't want that
-           as a default condition. */
-        int value = g_settings_get_int (settings, key);
-        
-        if (value == NULL || value == 0)
-            value = default_value;
+	gint32 key_value = g_variant_get_int32 (value);
 
-        return value;
+	/* NULL value means the "last chance" for us to return a valid value */
+	if (value == NULL) {
+		*result = int_ptr;	/* use the supplied default value */
+		return TRUE;
+	}
+
+	/* For either AGE/SIZE keys, -1 disables cleaning.
+	 * A zero value corresponds to an extra-paranoid level of cleaning
+	 */
+	if (key_value >= -1) {
+		*result = &key_value;
+		return TRUE;
+	}
+
+	return FALSE;
 }
 
+static int
+get_max_age (MsdHousekeepingManager *manager)
+{
+	int *age = g_settings_get_mapped (manager->priv->settings,
+					  THUMB_CACHE_KEY_AGE,
+					  int_gsettings_mapping,
+					  GINT_TO_POINTER(DEFAULT_MAX_AGE));
+	return *age * 24 * 60 * 60;
+}
+
+static int
+get_max_size (MsdHousekeepingManager *manager)
+{
+	int *size = g_settings_get_mapped (manager->priv->settings,
+					   THUMB_CACHE_KEY_SIZE,
+					   int_gsettings_mapping,
+					   GINT_TO_POINTER(DEFAULT_MAX_SIZE));
+	return *size * 1024 * 1024;
+}
 
 static void
 purge_thumbnail_cache (MsdHousekeepingManager *manager)
@@ -206,8 +228,8 @@ purge_thumbnail_cache (MsdHousekeepingManager *manager)
         g_get_current_time (&current_time);
 
         purge_data.now = current_time.tv_sec;
-        purge_data.max_age = get_gsettings_int_with_default (manager->priv->settings, GSETTINGS_THUMB_AGE, DEFAULT_MAX_AGE_IN_DAYS) * 24 * 60 * 60;
-        purge_data.max_size = get_gsettings_int_with_default (manager->priv->settings, GSETTINGS_THUMB_SIZE, DEFAULT_MAX_SIZE_IN_MB) * 1024 * 1024;
+	purge_data.max_age = get_max_age (manager);
+	purge_data.max_size = get_max_size (manager);
         purge_data.total_size = 0;
 
         if (purge_data.max_age >= 0)
@@ -227,14 +249,12 @@ purge_thumbnail_cache (MsdHousekeepingManager *manager)
         g_list_free (files);
 }
 
-
 static gboolean
 do_cleanup (MsdHousekeepingManager *manager)
 {
         purge_thumbnail_cache (manager);
         return TRUE;
 }
-
 
 static gboolean
 do_cleanup_once (MsdHousekeepingManager *manager)
@@ -243,7 +263,6 @@ do_cleanup_once (MsdHousekeepingManager *manager)
         manager->priv->short_term_cb = 0;
         return FALSE;
 }
-
 
 static void
 do_cleanup_soon (MsdHousekeepingManager *manager)
@@ -256,13 +275,13 @@ do_cleanup_soon (MsdHousekeepingManager *manager)
         }
 }
 
-
 static void
-bindings_callback (GSettings *settings, gchar *key, MsdHousekeepingManager *manager)
+settings_changed_callback (GSettings              *settings,
+			   const char             *key,
+			   MsdHousekeepingManager *manager)
 {
         do_cleanup_soon (manager);
 }
-
 
 gboolean
 msd_housekeeping_manager_start (MsdHousekeepingManager *manager,
@@ -273,9 +292,10 @@ msd_housekeeping_manager_start (MsdHousekeepingManager *manager,
 
         msd_ldsm_setup (FALSE);
 
-        manager->priv->settings = g_settings_new (GSETTINGS_THUMB_SCHEMA);
+        manager->priv->settings = g_settings_new (THUMB_CACHE_SCHEMA);
 
-        g_signal_connect (manager->priv->settings, "changed", G_CALLBACK (bindings_callback), manager);
+	g_signal_connect (manager->priv->settings, "changed",
+			  G_CALLBACK (settings_changed_callback), manager);
 
         /* Clean once, a few minutes after start-up */
         do_cleanup_soon (manager);
@@ -289,15 +309,12 @@ msd_housekeeping_manager_start (MsdHousekeepingManager *manager,
         return TRUE;
 }
 
-
 void
 msd_housekeeping_manager_stop (MsdHousekeepingManager *manager)
 {
         MsdHousekeepingManagerPrivate *p = manager->priv;
 
         g_debug ("Stopping housekeeping manager");
-
-        g_object_unref (p->settings);
 
         if (p->short_term_cb) {
                 g_source_remove (p->short_term_cb);
@@ -308,17 +325,20 @@ msd_housekeeping_manager_stop (MsdHousekeepingManager *manager)
                 g_source_remove (p->long_term_cb);
                 p->long_term_cb = 0;
 
-                /* Do a clean-up on shutdown if and only if the size or age
-                   limits have been set to paranoid levels (zero) */
-                if ((get_gsettings_int_with_default (p->settings, GSETTINGS_THUMB_AGE, DEFAULT_MAX_AGE_IN_DAYS) == 0) ||
-                    (get_gsettings_int_with_default (p->settings, GSETTINGS_THUMB_SIZE, DEFAULT_MAX_SIZE_IN_MB) == 0)) {
-                        do_cleanup (manager);
-                }
+		/* Do a clean-up on shutdown if and only if the size or age
+		 * limits have been set to a paranoid level of cleaning (zero)
+		 */
+		if (get_max_age (manager) == 0 || get_max_size (manager) == 0)
+		{
+			do_cleanup (manager);
+		}
         }
+
+       	g_object_unref (p->settings);
+       	p->settings = NULL;
 
         msd_ldsm_clean ();
 }
-
 
 static void
 msd_housekeeping_manager_class_init (MsdHousekeepingManagerClass *klass)
@@ -326,13 +346,11 @@ msd_housekeeping_manager_class_init (MsdHousekeepingManagerClass *klass)
         g_type_class_add_private (klass, sizeof (MsdHousekeepingManagerPrivate));
 }
 
-
 static void
 msd_housekeeping_manager_init (MsdHousekeepingManager *manager)
 {
         manager->priv = MSD_HOUSEKEEPING_MANAGER_GET_PRIVATE (manager);
 }
-
 
 MsdHousekeepingManager *
 msd_housekeeping_manager_new (void)
