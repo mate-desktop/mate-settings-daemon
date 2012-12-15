@@ -17,10 +17,15 @@
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <glib.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 
 #include "msd-ldsm-dialog.h"
+
+#if GLIB_CHECK_VERSION (2, 30, 0)
+#define g_format_size_for_display g_format_size
+#endif
 
 #define SETTINGS_SCHEMA "org.mate.SettingsDaemon.plugins.housekeeping"
 #define SETTINGS_IGNORE_PATHS "ignore-paths"
