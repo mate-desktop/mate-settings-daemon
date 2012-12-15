@@ -4,6 +4,7 @@ libdir=@libdir@
 includedir=@includedir@
 libexecdir=@libexecdir@
 plugindir=${libdir}/mate-settings-daemon-2.0
+binary=${libexecdir}/mate-settings-daemon
 
 Name: mate-settings-daemon
 Description: Utility library for accessing mate-settings-daemon over DBUS

@@ -35,7 +35,7 @@ plugin_LTLIBRARIES = \
 	libxrandr.la
 
 msd-xrandr-manager-glue.h: msd-xrandr-manager.xml Makefile
-	dbus-binding-tool --prefix=msd_xrandr_manager --mode=glib-server $< > xgen-$(@F) \
+	$(AM_V_GEN) dbus-binding-tool --prefix=msd_xrandr_manager --mode=glib-server $< > xgen-$(@F) \
 	&& ( cmp -s xgen-$(@F) $@ || cp xgen-$(@F) $@ ) \
 	&& rm -f xgen-$(@F)
 
@@ -55,6 +55,7 @@ libxrandr_la_CPPFLAGS =						\
 libxrandr_la_CFLAGS =			\
 	$(SETTINGS_PLUGIN_CFLAGS)	\
 	$(LIBMATENOTIFY_CFLAGS)		\
+	$(MATE_DESKTOP_CFLAGS)		\
 	$(AM_CFLAGS)
 
 libxrandr_la_LDFLAGS = 			\
@@ -62,7 +63,8 @@ libxrandr_la_LDFLAGS = 			\
 
 libxrandr_la_LIBADD  =			\
 	$(SETTINGS_PLUGIN_LIBS)		\
-	$(LIBMATENOTIFY_LIBS)
+	$(LIBMATENOTIFY_LIBS)		\
+	$(MATE_DESKTOP_LIBS)
 
 plugin_in_files =			\
 	xrandr.mate-settings-plugin.in

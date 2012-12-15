@@ -14,6 +14,8 @@ AC_CONFIG_SRCDIR([mate-settings-daemon/mate-settings-manager.c])
 
 AM_INIT_AUTOMAKE([1.9 no-dist-gzip dist-bzip2 tar-ustar])
 
+m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
+
 AC_STDC_HEADERS
 AC_PROG_CXX
 AM_PROG_CC_C_O
@@ -66,7 +68,6 @@ PKG_CHECK_MODULES(SETTINGS_DAEMON,
 
 PKG_CHECK_MODULES(SETTINGS_PLUGIN,
 	gtk+-2.0 >= $GTK_REQUIRED_VERSION
-	mate-desktop-2.0 >= $MATE_DESKTOP_REQUIRED_VERSION
 	gio-2.0 >= $GIO_REQUIRED_VERSION
 	dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
 )
@@ -82,6 +83,11 @@ AC_SUBST([MSD_PLUGIN_LDFLAGS])
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 
 GLIB_GSETTINGS
+
+dnl ---------------------------------------------------------------------------
+dnl - Check for mate-desktop
+dnl ---------------------------------------------------------------------------
+PKG_CHECK_MODULES(MATE_DESKTOP, mate-desktop-2.0 >= $MATE_DESKTOP_REQUIRED_VERSION)
 
 dnl ---------------------------------------------------------------------------
 dnl - Check for libmatenotify
@@ -343,10 +349,8 @@ AC_SUBST(NSS_DATABASE)
 # PolicyKit
 # ---------------------------------------------------------------------------
 
-POLKIT_REQUIRED=0.91
-DBUS_GLIB_REQUIRED=0.71
+POLKIT_REQUIRED=0.97
 DBUS_REQUIRED=1.1.2
-NETWORK_MANAGER_REQUIRED=0.6
 
 # PolicyKit detection; defaults to 'auto' (use it if it's available)
 #

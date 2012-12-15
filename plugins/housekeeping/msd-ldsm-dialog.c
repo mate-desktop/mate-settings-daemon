@@ -17,10 +17,15 @@
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <glib.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 
 #include "msd-ldsm-dialog.h"
+
+#if GLIB_CHECK_VERSION (2, 30, 0)
+#define g_format_size_for_display g_format_size
+#endif
 
 #define SETTINGS_SCHEMA "org.mate.SettingsDaemon.plugins.housekeeping"
 #define SETTINGS_IGNORE_PATHS "ignore-paths"
@@ -151,25 +156,25 @@ ignore_check_button_toggled_cb (GtkToggleButton *button,
 {
         MsdLdsmDialog *dialog = (MsdLdsmDialog *)user_data;
         GSettings *settings;
-        GSList *ignore_paths;
+        gchar **settings_list;
+        GSList *ignore_paths = NULL;
         GError *error = NULL;
         gboolean ignore, ret, updated;
-        gchar **settings_list;
-        
-        settings = g_settings_new (SETTINGS_SCHEMA);
-        
-        settings_list = g_settings_get_strv (settings, SETTINGS_IGNORE_PATHS);
-        if (settings_list != NULL) {
-                gint i;
+        gint i;
 
-                for (i = 0; i < G_N_ELEMENTS (settings_list); i++) {
-                        if (settings_list[i] != NULL)
-                                ignore_paths = g_slist_append (ignore_paths, g_strdup (settings_list[i]));
-                }
-                g_strfreev (settings_list);
+        settings = g_settings_new (SETTINGS_SCHEMA);
+
+        settings_list = g_settings_get_strv (settings, SETTINGS_IGNORE_PATHS);
+
+        for (i = 0; i < G_N_ELEMENTS (settings_list); i++) {
+                if (settings_list[i] != NULL)
+                        ignore_paths = g_slist_prepend (ignore_paths, g_strdup (settings_list[i]));
         }
-        
-        
+        g_strfreev (settings_list);
+
+        if (i > 0)
+                ignore_paths = g_slist_reverse (ignore_paths);
+
         ignore = gtk_toggle_button_get_active (button);
         updated = update_ignore_paths (&ignore_paths, dialog->priv->mount_path, ignore); 
         
@@ -179,9 +184,10 @@ ignore_check_button_toggled_cb (GtkToggleButton *button,
 
             for (l = ignore_paths; l != NULL; l = l->next)
                     g_ptr_array_add (array, l->data);
+
             g_ptr_array_add (array, NULL);
 
-            if (!g_settings_set_strv (settings, "ignore-paths", (const gchar **) array->pdata)) {
+            if (!g_settings_set_strv (settings, SETTINGS_IGNORE_PATHS, (const gchar **) array->pdata)) {
                     g_warning ("Cannot change ignore preference - failed to commit changes");
             }
 
@@ -212,9 +218,6 @@ msd_ldsm_dialog_init (MsdLdsmDialog *dialog)
         gtk_window_set_urgency_hint (GTK_WINDOW (dialog), TRUE);
         gtk_window_set_focus_on_map (GTK_WINDOW (dialog), FALSE);
         gtk_container_set_border_width (GTK_CONTAINER (dialog), 5);
-
-        /* We don't want a separator - they're really ugly */
-        gtk_dialog_set_has_separator (GTK_DIALOG (dialog), FALSE);
 
         /* Create the image */
         image = gtk_image_new_from_stock (GTK_STOCK_DIALOG_WARNING, GTK_ICON_SIZE_DIALOG);

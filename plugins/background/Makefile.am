@@ -17,11 +17,13 @@ test_background_CPPFLAGS = \
 
 test_background_CFLAGS = \
 	$(SETTINGS_PLUGIN_CFLAGS)	\
+	$(MATE_DESKTOP_CFLAGS)		\
 	$(AM_CFLAGS)
 
 test_background_LDADD =		\
 	$(top_builddir)/mate-settings-daemon/libmsd-profile.la	\
 	$(SETTINGS_PLUGIN_LIBS)	\
+	$(MATE_DESKTOP_LIBS)		\
 	$(X11_LIBS) \
 	$(NULL)
 
@@ -30,8 +32,8 @@ plugin_LTLIBRARIES = \
 	$(NULL)
 
 libbackground_la_SOURCES = 		\
-	msd-background-plugin.h	\
-	msd-background-plugin.c	\
+	msd-background-plugin.h		\
+	msd-background-plugin.c		\
 	msd-background-manager.h	\
 	msd-background-manager.c	\
 	$(NULL)
@@ -44,14 +46,16 @@ libbackground_la_CPPFLAGS = \
 
 libbackground_la_CFLAGS = \
 	$(SETTINGS_PLUGIN_CFLAGS)	\
+	$(MATE_DESKTOP_CFLAGS)		\
 	$(AM_CFLAGS)
 
 libbackground_la_LDFLAGS = 		\
-	$(MSD_PLUGIN_LDFLAGS)	\
+	$(MSD_PLUGIN_LDFLAGS)		\
 	$(NULL)
 
 libbackground_la_LIBADD  = 		\
 	$(SETTINGS_PLUGIN_LIBS)		\
+	$(MATE_DESKTOP_LIBS)		\
 	$(NULL)
 
 plugin_in_files = 		\

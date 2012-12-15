@@ -157,28 +157,23 @@ acme_error (char * msg)
 static char *
 get_term_command (MsdMediaKeysManager *manager)
 {
-        char *cmd_term;
-        char *cmd = NULL;
+	char *cmd_term, *cmd_args;
+	char *cmd = NULL;
+	GSettings *settings;
 
-        GSettings *settings_terminal;
-        settings_terminal = g_settings_new ("org.mate.applications-terminal");
+	settings = g_settings_new ("org.mate.applications-terminal");
+	cmd_term = g_settings_get_string (settings, "exec");
+	cmd_args = g_settings_get_string (settings, "exec_arg");
 
-        cmd_term = g_settings_get_string (settings_terminal, "exec");
-        if ((cmd_term != NULL) && (strcmp (cmd_term, "") != 0)) {
-                char *cmd_args;
-                cmd_args = g_settings_get_string (settings_terminal, "exec_arg");
-                if ((cmd_args != NULL) && (strcmp (cmd_term, "") != 0)) {
-                        cmd = g_strdup_printf ("%s %s -e", cmd_term, cmd_args);
-                } else {
-                        cmd = g_strdup_printf ("%s -e", cmd_term);
-                }
+	if (cmd_term[0] != '\0') {
+		cmd = g_strdup_printf ("%s %s -e", cmd_term, cmd_args);
+	} else {
+		cmd = g_strdup_printf ("mate-terminal -e");
+	}
 
-                g_free (cmd_args);
-        }
-
-        g_free (cmd_term);
-
-        g_object_unref (settings_terminal);
+	g_free (cmd_args);
+	g_free (cmd_term);
+	g_object_unref (settings);
 
         return cmd;
 }
@@ -662,10 +657,7 @@ do_sound_action (MsdMediaKeysManager *manager,
                 return;
 #endif
 
-        vol_step = g_settings_get_int (manager->priv->settings, "volume-step");
-
-        if (vol_step <= 0 || vol_step > 100)
-                vol_step = VOLUME_STEP;
+	vol_step = VOLUME_STEP;
 
 #ifdef HAVE_PULSE
         norm_vol_step = PA_VOLUME_NORM * vol_step / 100;
