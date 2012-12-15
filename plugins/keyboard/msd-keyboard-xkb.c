@@ -103,22 +103,14 @@ static void msd_keyboard_log_appender(const char file[], const char function[], 
 }
 #endif
 
-static void g_strv_delete_str (gchar **a, gchar *str)
+static void
+g_strv_behead (gchar **arr)
 {
-	int i;
-	int j;
-	gchar **b;
-	b = g_new0 (gchar *, g_strv_length (a) - 1);
+	if (arr == NULL || *arr == NULL)
+		return;
 
-	j = 0;
-	for (i = 0; a[i] != NULL; i++) {
-		if (g_strcmp0 (a[i], str) != 0) {
-			b[j] = g_strdup (a[i]);
-			j++;
-		}
-	}
-	g_strfreev (a);
-	a = b;
+	g_free (*arr);
+	memmove (arr, arr + 1, g_strv_length (arr) * sizeof (gchar *));
 }
 
 static void
@@ -245,7 +237,11 @@ popup_menu_show_layout ()
 	    matekbd_keyboard_drawing_new_dialog (xkl_state->group,
 					      group_names
 					      [xkl_state->group]);
+#  if GTK_CHECK_VERSION(3,0,0)
+	g_signal_connect (dialog, "destroy",
+#  else
 	g_signal_connect (GTK_OBJECT (dialog), "destroy",
+#endif
 			  G_CALLBACK (show_layout_destroy),
 			  GINT_TO_POINTER (xkl_state->group));
 	g_hash_table_insert (preview_dialogs,
@@ -352,6 +348,7 @@ show_hide_icon ()
 
 			xkl_debug (150, "Creating new icon\n");
 			icon = matekbd_status_new ();
+			gtk_status_icon_set_name (icon, "keyboard");
 			g_signal_connect (icon, "popup-menu",
 					  G_CALLBACK
 					  (status_icon_popup_menu_cb),
@@ -393,7 +390,6 @@ filter_xkb_config (void)
 	gchar *lname;
 	gchar *vname;
 	gchar **lv;
-	int i;
 	gboolean any_change = FALSE;
 
 	xkl_debug (100, "Filtering configuration against the registry\n");
@@ -407,24 +403,20 @@ filter_xkb_config (void)
 			return FALSE;
 		}
 	}
-	lv = g_strdupv(current_kbd_config.layouts_variants);
+	lv = current_kbd_config.layouts_variants;
 	item = xkl_config_item_new ();
-	for (lv = 0; lv[i] != NULL; i++) {
-		xkl_debug (100, "Checking [%s]\n", lv[i]);
-		if (matekbd_keyboard_config_split_items
-		    (lv[i], &lname, &vname)) {
+	while (*lv) {
+		xkl_debug (100, "Checking [%s]\n", *lv);
+		if (matekbd_keyboard_config_split_items (*lv, &lname, &vname)) {
+			gboolean should_be_dropped = FALSE;
 			g_snprintf (item->name, sizeof (item->name), "%s",
 				    lname);
 			if (!xkl_config_registry_find_layout
 			    (xkl_registry, item)) {
 				xkl_debug (100, "Bad layout [%s]\n",
 					   lname);
-				g_strv_delete_str (current_kbd_config.layouts_variants,
-							lv[i]);
-				any_change = TRUE;
-				continue;
-			}
-			if (vname) {
+				should_be_dropped = TRUE;
+			} else if (vname) {
 				g_snprintf (item->name,
 					    sizeof (item->name), "%s",
 					    vname);
@@ -433,14 +425,16 @@ filter_xkb_config (void)
 					xkl_debug (100,
 						   "Bad variant [%s(%s)]\n",
 						   lname, vname);
-					g_strv_delete_str
-					    (current_kbd_config.layouts_variants,
-					     lv[i]);
-					any_change = TRUE;
-					continue;
+					should_be_dropped = TRUE;
 				}
 			}
+			if (should_be_dropped) {
+				g_strv_behead (lv);
+				any_change = TRUE;
+				continue;
+			}
 		}
+		lv++;
 	}
 	g_object_unref (item);
 	return any_change;

@@ -40,10 +40,10 @@ msd_PROGRAMS = \
 	mate-settings-daemon
 
 mate-settings-manager-glue.h: mate-settings-manager.xml Makefile.am
-	dbus-binding-tool --prefix=mate_settings_manager --mode=glib-server $< > $@
+	$(AM_V_GEN) dbus-binding-tool --prefix=mate_settings_manager --mode=glib-server $< > $@
 
 mate-settings-client.h: mate-settings-manager.xml Makefile.am
-	dbus-binding-tool --prefix=mate_settings_manager --mode=glib-client $< > $@
+	$(AM_V_GEN) dbus-binding-tool --prefix=mate_settings_manager --mode=glib-client $< > $@
 
 BUILT_SOURCES = 			\
 	mate-settings-manager-glue.h	\

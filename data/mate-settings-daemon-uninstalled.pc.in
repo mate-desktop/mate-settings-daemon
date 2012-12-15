@@ -2,6 +2,7 @@ prefix=@prefix@
 exec_prefix=@exec_prefix@
 libdir=@libdir@
 includedir=@includedir@
+binary=${pc_top_builddir}/mate-settings-daemon/mate-settings-daemon
 
 Name: mate-settings-daemon
 Description: Utility library for accessing mate-settings-daemon over DBUS

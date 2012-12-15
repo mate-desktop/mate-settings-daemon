@@ -6,7 +6,7 @@ dbus_services_in_files = org.mate.SettingsDaemon.DateTimeMechanism.service.in
 polkit_in_files = org.mate.settingsdaemon.datetimemechanism.policy.in
 
 msd-datetime-mechanism-glue.h: $(srcdir)/msd-datetime-mechanism.xml
-	$(AM_V_GEN)dbus-binding-tool \
+	$(AM_V_GEN) dbus-binding-tool \
 			--prefix=msd_datetime_mechanism --mode=glib-server	\
 			--output=msd-datetime-mechanism-glue.h			\
 			$(srcdir)/msd-datetime-mechanism.xml
