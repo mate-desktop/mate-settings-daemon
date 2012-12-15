@@ -2156,7 +2156,8 @@ on_config_changed (GSettings        *settings,
                    gchar            *key,
                    MsdXrandrManager *manager)
 {
-        start_or_stop_icon (manager);
+	if (g_strcmp0 (key, CONF_KEY_SHOW_NOTIFICATION_ICON) == 0)
+		start_or_stop_icon (manager);
 }
 
 static gboolean
