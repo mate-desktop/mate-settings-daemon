@@ -55,6 +55,7 @@ libxrandr_la_CPPFLAGS =						\
 libxrandr_la_CFLAGS =			\
 	$(SETTINGS_PLUGIN_CFLAGS)	\
 	$(LIBMATENOTIFY_CFLAGS)		\
+	$(MATE_DESKTOP_CFLAGS)		\
 	$(AM_CFLAGS)
 
 libxrandr_la_LDFLAGS = 			\
@@ -62,7 +63,8 @@ libxrandr_la_LDFLAGS = 			\
 
 libxrandr_la_LIBADD  =			\
 	$(SETTINGS_PLUGIN_LIBS)		\
-	$(LIBMATENOTIFY_LIBS)
+	$(LIBMATENOTIFY_LIBS)		\
+	$(MATE_DESKTOP_LIBS)
 
 plugin_in_files =			\
 	xrandr.mate-settings-plugin.in

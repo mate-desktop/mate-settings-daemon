@@ -66,7 +66,6 @@ PKG_CHECK_MODULES(SETTINGS_DAEMON,
 
 PKG_CHECK_MODULES(SETTINGS_PLUGIN,
 	gtk+-2.0 >= $GTK_REQUIRED_VERSION
-	mate-desktop-2.0 >= $MATE_DESKTOP_REQUIRED_VERSION
 	gio-2.0 >= $GIO_REQUIRED_VERSION
 	dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
 )
@@ -82,6 +81,11 @@ AC_SUBST([MSD_PLUGIN_LDFLAGS])
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 
 GLIB_GSETTINGS
+
+dnl ---------------------------------------------------------------------------
+dnl - Check for mate-desktop
+dnl ---------------------------------------------------------------------------
+PKG_CHECK_MODULES(MATE_DESKTOP, mate-desktop-2.0 >= $MATE_DESKTOP_REQUIRED_VERSION)
 
 dnl ---------------------------------------------------------------------------
 dnl - Check for libmatenotify
