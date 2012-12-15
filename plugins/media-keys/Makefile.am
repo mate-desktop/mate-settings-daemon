@@ -56,15 +56,15 @@ uninstall-local:
 	rm -f $(DESTDIR)$(icondir)/scalable/$(context)/touchpad-disabled.svg
 
 msd-media-keys-manager-glue.h: msd-media-keys-manager.xml Makefile
-	dbus-binding-tool --prefix=msd_media_keys_manager --mode=glib-server $< > xgen-$(@F) \
+	$(AM_V_GEN) dbus-binding-tool --prefix=msd_media_keys_manager --mode=glib-server $< > xgen-$(@F) \
 	&& ( cmp -s xgen-$(@F) $@ || cp xgen-$(@F) $@ ) \
 	&& rm -f xgen-$(@F)
 
 msd-marshal.c: msd-marshal.list
-	$(GLIB_GENMARSHAL) --prefix=msd_marshal $< --header --body --internal > $@
+	$(AM_V_GEN) $(GLIB_GENMARSHAL) --prefix=msd_marshal $< --header --body --internal > $@
 
 msd-marshal.h: msd-marshal.list
-	$(GLIB_GENMARSHAL) --prefix=msd_marshal $< --header --internal > $@
+	$(AM_V_GEN) $(GLIB_GENMARSHAL) --prefix=msd_marshal $< --header --internal > $@
 
 libmedia_keys_la_SOURCES = 		\
 	msd-media-keys-plugin.h		\

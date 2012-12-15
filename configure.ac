@@ -14,6 +14,8 @@ AC_CONFIG_SRCDIR([mate-settings-daemon/mate-settings-manager.c])
 
 AM_INIT_AUTOMAKE([1.9 no-dist-gzip dist-bzip2 tar-ustar])
 
+m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
+
 AC_STDC_HEADERS
 AC_PROG_CXX
 AM_PROG_CC_C_O
@@ -348,9 +350,7 @@ AC_SUBST(NSS_DATABASE)
 # ---------------------------------------------------------------------------
 
 POLKIT_REQUIRED=0.91
-DBUS_GLIB_REQUIRED=0.71
 DBUS_REQUIRED=1.1.2
-NETWORK_MANAGER_REQUIRED=0.6
 
 # PolicyKit detection; defaults to 'auto' (use it if it's available)
 #
