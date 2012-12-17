@@ -657,7 +657,10 @@ do_sound_action (MsdMediaKeysManager *manager,
                 return;
 #endif
 
-	vol_step = VOLUME_STEP;
+        vol_step = g_settings_get_int (manager->priv->settings, "volume-step");
+
+        if (vol_step <= 0 || vol_step > 100)
+                vol_step = VOLUME_STEP;
 
 #ifdef HAVE_PULSE
         norm_vol_step = PA_VOLUME_NORM * vol_step / 100;
