@@ -614,7 +614,7 @@ msd_xrandr_manager_2_apply_configuration (MsdXrandrManager *manager,
         gboolean result;
 
         if (parent_window_id != 0)
-                parent_window = gdk_window_foreign_new_for_display (gdk_display_get_default (), (GdkNativeWindow) parent_window_id);
+                parent_window = gdk_x11_window_foreign_new_for_display (gdk_display_get_default (), (Window) parent_window_id);
         else
                 parent_window = NULL;
 
