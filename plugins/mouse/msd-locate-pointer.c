@@ -62,12 +62,8 @@ locate_pointer_paint (MsdLocatePointerData *data,
 
   progress = data->progress;
 
-	#if GTK_CHECK_VERSION(3, 0, 0)
-		width = gdk_window_get_width(GDK_WINDOW(data->window));
-		height = gdk_window_get_height(GDK_WINDOW(data->window));
-	#else
-		gdk_drawable_get_size(data->window, &width, &height);
-	#endif
+  width = gdk_window_get_width (data->window);
+  height = gdk_window_get_height (data->window);
 
   style = gtk_widget_get_style (data->widget);
   color = style->bg[GTK_STATE_SELECTED];
@@ -180,7 +176,7 @@ timeline_frame_cb (MsdTimeline *timeline,
       data->progress += CIRCLES_PROGRESS_INTERVAL;
     }
 
-  screen = gdk_drawable_get_screen (data->window);
+  screen = gdk_window_get_screen (data->window);
   gdk_window_get_pointer (gdk_screen_get_root_window (screen),
 			  &cursor_x, &cursor_y, NULL);
   gdk_window_move (data->window,
@@ -334,7 +330,7 @@ msd_locate_pointer (GdkScreen *screen)
   msd_timeline_rewind (data->timeline);
 
   /* Create again the window if it is not for the current screen */
-  if (gdk_screen_get_number (screen) != gdk_screen_get_number (gdk_drawable_get_screen (data->window)))
+  if (gdk_screen_get_number (screen) != gdk_screen_get_number (gdk_window_get_screen (data->window)))
     {
       gdk_window_set_user_data (data->window, NULL);
       gdk_window_destroy (data->window);
