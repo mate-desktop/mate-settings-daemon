@@ -191,11 +191,24 @@ apply_desktop_settings_cb (GSettings *settings, gchar *key, gpointer   user_data
 static void
 popup_menu_launch_capplet ()
 {
+	GAppInfo *info;
+	GdkAppLaunchContext *context;
 	GError *error = NULL;
 
-	gdk_spawn_command_line_on_screen (gdk_screen_get_default (),
-					  "mate-keyboard-properties",
-					  &error);
+	info = g_app_info_create_from_commandline ("mate-keyboard-properties", NULL, 0, &error);
+
+	if (info != NULL) {
+#           if GTK_CHECK_VERSION (3, 0, 0)
+		context = gdk_display_get_app_launch_context (gdk_display_get_default ());
+#           else
+		context = gdk_app_launch_context_new ();
+#           endif
+		g_app_info_launch (info, NULL,
+				   G_APP_LAUNCH_CONTEXT (context), &error);
+
+		g_object_unref (info);
+		g_object_unref (context);
+	}
 
 	if (error != NULL) {
 		g_warning
