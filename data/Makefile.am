@@ -25,6 +25,9 @@ gsettings_SCHEMAS = \
 @INTLTOOL_XML_NOMERGE_RULE@
 @GSETTINGS_RULES@
 
+convertdir = $(datadir)/MateConf/gsettings
+convert_DATA = mate-settings-daemon.convert
+
 @INTLTOOL_DESKTOP_RULE@
 desktopdir = $(sysconfdir)/xdg/autostart
 desktop_in_files = mate-settings-daemon.desktop.in
@@ -49,6 +52,7 @@ pkgconfig_DATA = mate-settings-daemon.pc
 
 EXTRA_DIST = 				\
 	$(schemas_in_files)		\
+	$(convert_DATA)			\
 	$(service_in_files)		\
 	$(desktop_in_files)		\
 	$(xml_in_files)			\

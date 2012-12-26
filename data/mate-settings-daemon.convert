@@ -1,0 +1,120 @@
+[org.mate.SettingsDaemon.plugins.a11y-keyboard]
+active = /apps/mate_settings_daemon/plugins/a11y-keyboard/active
+priority = /apps/mate_settings_daemon/plugins/a11y-keyboard/priority
+
+[org.mate.SettingsDaemon.plugins.background]
+active = /apps/mate_settings_daemon/plugins/background/active
+priority = /apps/mate_settings_daemon/plugins/background/priority
+
+[org.mate.SettingsDaemon.plugins.clipboard]
+active = /apps/mate_settings_daemon/plugins/clipboard/active
+priority = /apps/mate_settings_daemon/plugins/clipboard/priority
+
+[org.mate.SettingsDaemon.plugins.housekeeping]
+active = /apps/mate_settings_daemon/plugins/housekeeping/active
+priority = /apps/mate_settings_daemon/plugins/housekeeping/priority
+free-percent-notify = /apps/mate_settings_daemon/plugins/housekeeping/free_percent_notify
+free-percent-notify-again = /apps/mate_settings_daemon/plugins/housekeeping/free_percent_notify_again
+free-size-gb-no-notify = /apps/mate_settings_daemon/plugins/housekeeping/free_size_gb_no_notify
+min-notify-period = /apps/mate_settings_daemon/plugins/housekeeping/min_notify_period
+ignore-paths = /apps/mate_settings_daemon/plugins/housekeeping/ignore_paths
+
+[org.mate.SettingsDaemon.plugins.keyboard]
+active = /apps/mate_settings_daemon/plugins/keyboard/active
+priority = /apps/mate_settings_daemon/plugins/keyboard/priority
+
+[org.mate.SettingsDaemon.plugins.media-keys]
+active = /apps/mate_settings_daemon/plugins/media-keys/active
+priority = /apps/mate_settings_daemon/plugins/media-keys/priority
+volume-step = /apps/mate_settings_daemon/volume_step
+touchpad = /apps/mate_settings_daemon/keybindings/touchpad
+volume-mute = /apps/mate_settings_daemon/keybindings/volume_mute
+volume-down = /apps/mate_settings_daemon/keybindings/volume_down
+volume-up = /apps/mate_settings_daemon/keybindings/volume_up
+power = /apps/mate_settings_daemon/keybindings/power
+eject = /apps/mate_settings_daemon/keybindings/eject
+home = /apps/mate_settings_daemon/keybindings/home
+search = /apps/mate_settings_daemon/keybindings/search
+email = /apps/mate_settings_daemon/keybindings/email
+screensaver = /apps/mate_settings_daemon/keybindings/screensaver
+help = /apps/mate_settings_daemon/keybindings/help
+calculator = /apps/mate_settings_daemon/keybindings/calculator
+www = /apps/mate_settings_daemon/keybindings/www
+media = /apps/mate_settings_daemon/keybindings/media
+play = /apps/mate_settings_daemon/keybindings/play
+pause = /apps/mate_settings_daemon/keybindings/pause
+stop = /apps/mate_settings_daemon/keybindings/stop
+previous = /apps/mate_settings_daemon/keybindings/previous
+next = /apps/mate_settings_daemon/keybindings/next
+
+[org.mate.SettingsDaemon.plugins.mouse]
+active = /apps/mate_settings_daemon/plugins/mouse/active
+priority = /apps/mate_settings_daemon/plugins/mouse/priority
+
+[org.mate.SettingsDaemon.plugins.smartcard]
+active = /apps/mate_settings_daemon/plugins/smartcard/active
+priority = /apps/mate_settings_daemon/plugins/smartcard/priority
+
+[org.mate.SettingsDaemon.plugins.sound]
+active = /apps/mate_settings_daemon/plugins/sound/active
+priority = /apps/mate_settings_daemon/plugins/sound/priority
+
+[org.mate.SettingsDaemon.plugins.typing-break]
+active = /apps/mate_settings_daemon/plugins/typing-break/active
+priority = /apps/mate_settings_daemon/plugins/typing-break/priority
+
+[org.mate.SettingsDaemon.plugins.xrandr]
+active = /apps/mate_settings_daemon/plugins/xrandr/active
+priority = /apps/mate_settings_daemon/plugins/xrandr/priority
+show-notification-icon = /apps/mate_settings_daemon/xrandr/show_notification_icon
+use-xorg-monitor-settings = /apps/mate_settings_daemon/xrandr/use_xorg_monitor_settings
+turn-on-external-monitors-at-startup = /apps/mate_settings_daemon/xrandr/turn_on_external_monitors_at_startup
+turn-on-laptop-monitor-at-startup = /apps/mate_settings_daemon/xrandr/turn_on_laptop_monitor_at_startup
+default-configuration-file = /apps/mate_settings_daemon/xrandr/default_configuration_file
+
+[org.mate.SettingsDaemon.plugins.xrdb]
+active = /apps/mate_settings_daemon/plugins/xrdb/active
+priority = /apps/mate_settings_daemon/plugins/xrdb/priority
+
+[org.mate.SettingsDaemon.plugins.xsettings]
+active = /apps/mate_settings_daemon/plugins/xsettings/active
+priority = /apps/mate_settings_daemon/plugins/xsettings/priority
+
+[org.mate.applications-at]
+screen-keyboard-enabled = /desktop/mate/applications/at/screen_keyboard_enabled
+screen-magnifier-enabled = /desktop/mate/applications/at/screen_magnifier_enabled
+screen-reader-enabled = /desktop/mate/applications/at/screen_reader_enabled
+
+[org.mate.font-rendering]
+dpi = /desktop/mate/font_rendering/dpi
+antialiasing = /desktop/mate/font_rendering/antialiasing
+hinting = /desktop/mate/font_rendering/hinting
+rgba-order = /desktop/mate/font_rendering/rgba_order
+
+[org.mate.keybindings]
+allowed-keys = /desktop/mate/keybindings/allowed_keys
+
+[org.mate.keybindings.magnifier]
+binding = /desktop/mate/keybindings/magnifier/binding
+name = /desktop/mate/keybindings/magnifier/name
+action = /desktop/mate/keybindings/magnifier/action
+
+[org.mate.keybindings.screenreader]
+binding = /desktop/mate/keybindings/screenreader/binding
+name = /desktop/mate/keybindings/screenreader/name
+action = /desktop/mate/keybindings/screenreader/action
+
+[org.mate.keybindings.onscreenkeyboard]
+name = /desktop/mate/keybindings/onscreenkeyboard/name
+binding = /desktop/mate/keybindings/onscreenkeyboard/binding
+action = /desktop/mate/keybindings/onscreenkeyboard/action
+
+[org.mate.peripherals-smartcard]
+removal-action = /desktop/mate/peripherals/smartcard/removal_action
+
+[org.mate.peripherals-touchpad]
+disable-while-typing = /desktop/mate/peripherals/touchpad/disable_while_typing
+tap-to-click = /desktop/mate/peripherals/touchpad/tap_to_click
+scroll-method = /desktop/mate/peripherals/touchpad/scroll_method
+horiz-scroll-enabled = /desktop/mate/peripherals/touchpad/horiz_scroll_enabled
+touchpad-enabled = /desktop/mate/peripherals/touchpad/touchpad_enabled
