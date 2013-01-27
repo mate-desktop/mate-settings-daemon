@@ -48,7 +48,6 @@
 #define USER_X_RESOURCES ".Xresources"
 #define USER_X_DEFAULTS  ".Xdefaults"
 
-#define GTK_THEME_KEY "/desktop/mate/interface/gtk_theme"
 
 struct MsdXrdbManagerPrivate {
 	GtkWidget* widget;

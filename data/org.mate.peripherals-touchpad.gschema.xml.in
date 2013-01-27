@@ -1,5 +1,5 @@
 <schemalist>
-  <schema id="org.mate.peripherals-touchpad" path="/desktop/mate/peripherals/touchpad/">
+  <schema id="org.mate.peripherals-touchpad" path="/org/mate/desktop/peripherals/touchpad/">
     <key name="disable-while-typing" type="b">
       <default>false</default>
       <summary>Disable touchpad while typing</summary>

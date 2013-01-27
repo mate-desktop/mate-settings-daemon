@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <schemalist>
-  <schema id="org.mate.peripherals-smartcard" path="/desktop/mate/peripherals/smartcard/">
+  <schema id="org.mate.peripherals-smartcard" path="/org/mate/desktop/peripherals/smartcard/">
     <key name="removal-action" type="s">
       <default>'none'</default>
       <summary>Smartcard removal action</summary>

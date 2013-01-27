@@ -1,5 +1,5 @@
 <schemalist gettext-domain="@GETTEXT_PACKAGE@">
-  <schema id="org.mate.applications-at" path="/desktop/mate/applications/at/">
+  <schema id="org.mate.applications-at" path="/org/mate/desktop/applications/at/">
     <key name="screen-keyboard-enabled" type="b">
       <default>false</default>
       <_summary>On-screen keyboard</_summary>
