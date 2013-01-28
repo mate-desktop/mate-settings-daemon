@@ -1,5 +1,5 @@
 <schemalist gettext-domain="@GETTEXT_PACKAGE@">
-  <schema id="org.mate.keybindings" path="/desktop/mate/keybindings/">
+  <schema id="org.mate.keybindings" path="/org/mate/desktop/keybindings/">
     <key name="allowed-keys" type="as">
       <default>[]</default>
       <_summary>Allowed keys</_summary>
@@ -9,7 +9,7 @@
     <child name="screenreader" schema="org.mate.keybindings.screenreader"/>
     <child name="onscreenkeyboard" schema="org.mate.keybindings.onscreenkeyboard"/>
   </schema>
-  <schema id="org.mate.keybindings.magnifier" path="/desktop/mate/keybindings/magnifier/">
+  <schema id="org.mate.keybindings.magnifier" path="/org/mate/desktop/keybindings/magnifier/">
     <key name="binding" type="s">
       <default>''</default>
       <summary>Toggle magnifier</summary>
@@ -26,7 +26,7 @@
       <description>Command used to turn the magnifier on or off.</description>
     </key>
   </schema>
-  <schema id="org.mate.keybindings.screenreader" path="/desktop/mate/keybindings/screenreader/">
+  <schema id="org.mate.keybindings.screenreader" path="/org/mate/desktop/keybindings/screenreader/">
     <key name="binding" type="s">
       <default>''</default>
       <summary>Toggle screen reader</summary>
@@ -43,7 +43,7 @@
       <description>Command used to turn the screen reader on or off.</description>
     </key>
   </schema>
-  <schema id="org.mate.keybindings.onscreenkeyboard" path="/desktop/mate/keybindings/onscreenkeyboard/">
+  <schema id="org.mate.keybindings.onscreenkeyboard" path="/org/mate/desktop/keybindings/onscreenkeyboard/">
     <key name="name" type="s">
       <default context="name" l10n="messages">'Toggle on-screen keyboard'</default>
       <summary>The name of the keyboard shortcut to toggle the on-screen keyboard</summary>

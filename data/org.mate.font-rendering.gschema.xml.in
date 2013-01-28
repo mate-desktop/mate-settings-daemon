@@ -16,7 +16,7 @@
     <value nick="vrgb" value="2"/>
     <value nick="vbgr" value="3"/>
   </enum>
-  <schema id="org.mate.font-rendering" path="/desktop/mate/font-rendering/">
+  <schema id="org.mate.font-rendering" path="/org/mate/desktop/font-rendering/">
     <key name="dpi" type="d">
       <default>0.0</default>
       <_summary>DPI</_summary>
