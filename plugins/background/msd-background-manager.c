@@ -263,6 +263,11 @@ static void
 on_screen_size_changed (GdkScreen            *screen,
 			MsdBackgroundManager *manager)
 {
+	MsdBackgroundManagerPrivate *p = manager->priv;
+
+	if (!p->msd_can_draw || p->draw_in_progress || caja_is_drawing_bg (manager))
+		return;
+
 	gint scr_num = gdk_screen_get_number (screen);
 	gchar *old_size = g_list_nth (manager->priv->scr_sizes, scr_num)->data;
 	gchar *new_size = g_strdup_printf ("%dx%d", gdk_screen_get_width (screen),
