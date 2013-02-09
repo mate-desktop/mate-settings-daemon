@@ -187,7 +187,7 @@ free_scr_sizes (MsdBackgroundManager *manager)
 	}
 }
 
-static gboolean
+static void
 real_draw_bg (MsdBackgroundManager *manager,
 	      GdkScreen		   *screen)
 {
