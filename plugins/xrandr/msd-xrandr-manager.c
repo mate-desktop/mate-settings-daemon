@@ -46,8 +46,8 @@
 #include <libmateui/mate-rr.h>
 #include <libmateui/mate-rr-labeler.h>
 
-#ifdef HAVE_LIBMATENOTIFY
-#include <libmatenotify/notify.h>
+#ifdef HAVE_LIBNOTIFY
+#include <libnotify/notify.h>
 #endif
 
 #include "mate-settings-profile.h"
@@ -1079,7 +1079,7 @@ generate_fn_f7_configs (MsdXrandrManager *mgr)
 static void
 error_message (MsdXrandrManager *mgr, const char *primary_text, GError *error_to_display, const char *secondary_text)
 {
-#ifdef HAVE_LIBMATENOTIFY
+#ifdef HAVE_LIBNOTIFY
         MsdXrandrManagerPrivate *priv = mgr->priv;
         NotifyNotification *notification;
 
@@ -1093,8 +1093,7 @@ error_message (MsdXrandrManager *mgr, const char *primary_text, GError *error_to
         else
                 notification = notify_notification_new (primary_text,
                                                         error_to_display ? error_to_display->message : secondary_text,
-                                                        MSD_XRANDR_ICON_NAME,
-                                                        NULL);
+                                                        MSD_XRANDR_ICON_NAME);
 
         notify_notification_show (notification, NULL); /* NULL-GError */
 #else
@@ -1107,7 +1106,7 @@ error_message (MsdXrandrManager *mgr, const char *primary_text, GError *error_to
 
         gtk_dialog_run (GTK_DIALOG (dialog));
         gtk_widget_destroy (dialog);
-#endif /* HAVE_LIBMATENOTIFY */
+#endif /* HAVE_LIBNOTIFY */
 }
 
 static void
