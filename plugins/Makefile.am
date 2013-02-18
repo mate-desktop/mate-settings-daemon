@@ -6,7 +6,8 @@ enabled_plugins =	\
 	clipboard	\
 	datetime	\
 	dummy		\
-	housekeeping    \
+	housekeeping	\
+	keybindings	\
 	keyboard	\
 	media-keys	\
 	mouse		\

@@ -11,6 +11,7 @@ gsettings_SCHEMAS = \
 	org.mate.SettingsDaemon.plugins.clipboard.gschema.xml \
 	org.mate.SettingsDaemon.plugins.datetime.gschema.xml \
 	org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml \
+	org.mate.SettingsDaemon.plugins.keybindings.gschema.xml \
 	org.mate.SettingsDaemon.plugins.keyboard.gschema.xml \
 	org.mate.SettingsDaemon.plugins.media-keys.gschema.xml \
 	org.mate.SettingsDaemon.plugins.mouse.gschema.xml \

@@ -80,6 +80,15 @@ case $host_os in
 esac
 AC_SUBST([MSD_PLUGIN_LDFLAGS])
 
+PKG_CHECK_MODULES([DCONF], [dconf >= 0.13],
+   [AC_DEFINE([HAVE_DCONF_0_13], [1], [Use DCONF >= 0.13])],
+   [PKG_CHECK_MODULES([DCONF], [dconf >= 0.10],
+       [AC_DEFINE([HAVE_DCONF_0_10], [1], [Use DCONF 0.10])
+    ])
+])
+AC_SUBST(DCONF_CFLAGS)
+AC_SUBST(DCONF_LIBS)
+
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 
 GLIB_GSETTINGS
@@ -476,6 +485,7 @@ plugins/common/Makefile
 plugins/datetime/Makefile
 plugins/dummy/Makefile
 plugins/housekeeping/Makefile
+plugins/keybindings/Makefile
 plugins/keyboard/Makefile
 plugins/media-keys/Makefile
 plugins/media-keys/cut-n-paste/Makefile

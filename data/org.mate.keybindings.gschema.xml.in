@@ -1,10 +1,5 @@
 <schemalist gettext-domain="@GETTEXT_PACKAGE@">
   <schema id="org.mate.keybindings" path="/org/mate/desktop/keybindings/">
-    <key name="allowed-keys" type="as">
-      <default>[]</default>
-      <_summary>Allowed keys</_summary>
-      <_description>If non-empty, keybindings will be ignored unless their GSettings directory is in the list. This is useful for lockdown.</_description>
-    </key>
     <child name="magnifier" schema="org.mate.keybindings.magnifier"/>
     <child name="screenreader" schema="org.mate.keybindings.screenreader"/>
     <child name="onscreenkeyboard" schema="org.mate.keybindings.onscreenkeyboard"/>
