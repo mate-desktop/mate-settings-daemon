@@ -53,7 +53,7 @@ GLIB_REQUIRED_VERSION=2.17.3
 GTK_REQUIRED_VERSION=2.24.0
 GIO_REQUIRED_VERSION=2.26.0
 MATE_DESKTOP_REQUIRED_VERSION=1.5.0
-LIBMATENOTIFY_REQUIRED_VERSION=1.1.0
+LIBNOTIFY_REQUIRED_VERSION=0.7.0
 
 EXTRA_COMPILE_WARNINGS(yes)
 
@@ -90,24 +90,24 @@ dnl ---------------------------------------------------------------------------
 PKG_CHECK_MODULES(MATE_DESKTOP, mate-desktop-2.0 >= $MATE_DESKTOP_REQUIRED_VERSION)
 
 dnl ---------------------------------------------------------------------------
-dnl - Check for libmatenotify
+dnl - Check for libnotify
 dnl ---------------------------------------------------------------------------
 
-have_libmatenotify=no
-AC_ARG_WITH(libmatenotify,
-	AC_HELP_STRING([--without-libmatenotify], [Disable notifications (default: auto)]),
-	with_libmatenotify=$withval, with_libmatenotify=auto)
+have_libnotify=no
+AC_ARG_WITH(libnotify,
+	AC_HELP_STRING([--without-libnotify], [Disable notifications (default: auto)]),
+	with_libnotify=$withval, with_libnotify=auto)
 
-if test "x$with_libmatenotify" != "xno"; then
-	PKG_CHECK_MODULES(LIBMATENOTIFY, libmatenotify >= $LIBMATENOTIFY_REQUIRED_VERSION,
-			  [AC_DEFINE(HAVE_LIBMATENOTIFY, 1, [Define if libmatenotify is available])
-			  have_libmatenotify=yes], have_libmatenotify=no)
-	if test "x$have_libmatenotify" = xno -a "x$with_libmatenotify" = xyes; then
-		AC_MSG_ERROR([libmatenotify support requested but libraries not found])
+if test "x$with_libnotify" != "xno"; then
+	PKG_CHECK_MODULES(LIBNOTIFY, libnotify >= $LIBNOTIFY_REQUIRED_VERSION,
+			  [AC_DEFINE(HAVE_LIBNOTIFY, 1, [Define if libnotify is available])
+			  have_libnotify=yes], have_libnotify=no)
+	if test "x$have_libnotify" = xno -a "x$with_libnotify" = xyes; then
+		AC_MSG_ERROR([libnotify support requested but libraries not found])
 	fi
 fi
-AC_SUBST(LIBMATENOTIFY_CFLAGS)
-AC_SUBST(LIBMATENOTIFY_LIBS)
+AC_SUBST(LIBNOTIFY_CFLAGS)
+AC_SUBST(LIBNOTIFY_LIBS)
 
 dnl ---------------------------------------------------------------------------
 dnl - Check for D-Bus
@@ -520,7 +520,7 @@ echo "
     dbus-1 system.d dir:      ${DBUS_SYS_DIR}
     PolicyKit support:        ${HAVE_POLKIT}
 
-    Libmatenotify support:    ${have_libmatenotify}
+    Libnotify support:        ${have_libnotify}
     GStreamer support:        ${have_gstreamer}
     PulseAudio support:       ${have_pulse}
     Smartcard support:        ${have_smartcard_support}
