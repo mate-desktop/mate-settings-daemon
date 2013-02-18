@@ -46,9 +46,9 @@
 #include <X11/extensions/XIproto.h>
 #endif
 
-#ifdef HAVE_LIBMATENOTIFY
-#include <libmatenotify/notify.h>
-#endif /* HAVE_LIBMATENOTIFY */
+#ifdef HAVE_LIBNOTIFY
+#include <libnotify/notify.h>
+#endif /* HAVE_LIBNOTIFY */
 
 #include "mate-settings-profile.h"
 #include "msd-a11y-keyboard-manager.h"
@@ -72,9 +72,9 @@ struct MsdA11yKeyboardManagerPrivate
 
         GSettings  *settings;
 
-#ifdef HAVE_LIBMATENOTIFY
+#ifdef HAVE_LIBNOTIFY
         NotifyNotification *notification;
-#endif /* HAVE_LIBMATENOTIFY */
+#endif /* HAVE_LIBNOTIFY */
 };
 
 static void     msd_a11y_keyboard_manager_class_init  (MsdA11yKeyboardManagerClass *klass);
@@ -497,7 +497,7 @@ maybe_show_status_icon (MsdA11yKeyboardManager *manager)
         gtk_status_icon_set_visible (manager->priv->status_icon, show);
 }
 
-#ifdef HAVE_LIBMATENOTIFY
+#ifdef HAVE_LIBNOTIFY
 static void
 on_notification_closed (NotifyNotification     *notification,
                         MsdA11yKeyboardManager *manager)
@@ -558,13 +558,13 @@ on_sticky_keys_action (NotifyNotification     *notification,
         }
 }
 
-#endif /* HAVE_LIBMATENOTIFY */
+#endif /* HAVE_LIBNOTIFY */
 
 static gboolean
 ax_slowkeys_warning_post_bubble (MsdA11yKeyboardManager *manager,
                                  gboolean                enabled)
 {
-#ifdef HAVE_LIBMATENOTIFY
+#ifdef HAVE_LIBNOTIFY
         gboolean    res;
         const char *title;
         const char *message;
@@ -591,8 +591,7 @@ ax_slowkeys_warning_post_bubble (MsdA11yKeyboardManager *manager,
         msd_a11y_keyboard_manager_ensure_status_icon (manager);
         manager->priv->notification = notify_notification_new (title,
                                                                message,
-                                                               "preferences-desktop-accessibility",
-                                                               NULL);
+                                                               "preferences-desktop-accessibility");
         notify_notification_attach_to_status_icon (manager->priv->notification, manager->priv->status_icon);
         notify_notification_set_timeout (manager->priv->notification, NOTIFICATION_TIMEOUT * 1000);
 
@@ -625,7 +624,7 @@ ax_slowkeys_warning_post_bubble (MsdA11yKeyboardManager *manager,
         return res;
 #else
         return FALSE;
-#endif /* HAVE_LIBMATENOTIFY */
+#endif /* HAVE_LIBNOTIFY */
 }
 
 
@@ -700,7 +699,7 @@ static gboolean
 ax_stickykeys_warning_post_bubble (MsdA11yKeyboardManager *manager,
                                    gboolean                enabled)
 {
-#ifdef HAVE_LIBMATENOTIFY
+#ifdef HAVE_LIBNOTIFY
         gboolean    res;
         const char *title;
         const char *message;
@@ -730,8 +729,7 @@ ax_stickykeys_warning_post_bubble (MsdA11yKeyboardManager *manager,
         msd_a11y_keyboard_manager_ensure_status_icon (manager);
         manager->priv->notification = notify_notification_new (title,
                                                                message,
-                                                               "preferences-desktop-accessibility",
-                                                               NULL);
+                                                               "preferences-desktop-accessibility");
         notify_notification_attach_to_status_icon (manager->priv->notification, manager->priv->status_icon);
         notify_notification_set_timeout (manager->priv->notification, NOTIFICATION_TIMEOUT * 1000);
 
@@ -764,7 +762,7 @@ ax_stickykeys_warning_post_bubble (MsdA11yKeyboardManager *manager,
         return res;
 #else
         return FALSE;
-#endif /* HAVE_LIBMATENOTIFY */
+#endif /* HAVE_LIBNOTIFY */
 }
 
 static void
@@ -1250,9 +1248,9 @@ msd_a11y_keyboard_manager_init (MsdA11yKeyboardManager *manager)
 {
         manager->priv = MSD_A11Y_KEYBOARD_MANAGER_GET_PRIVATE (manager);
 
-#ifdef HAVE_LIBMATENOTIFY
+#ifdef HAVE_LIBNOTIFY
         notify_init ("mate-settings-daemon");
-#endif /* HAVE_LIBMATENOTIFY */
+#endif /* HAVE_LIBNOTIFY */
 }
 
 static void

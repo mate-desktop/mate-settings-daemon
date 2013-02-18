@@ -21,7 +21,7 @@
  *
  */
 
-/* gcc -DHAVE_LIBMATENOTIFY -DTEST -Wall `pkg-config --cflags --libs gobject-2.0 gio-unix-2.0 glib-2.0 gtk+-2.0 libmatenotify` -o msd-disk-space-test msd-disk-space.c */
+/* gcc -DHAVE_LIBNOTIFY -DTEST -Wall `pkg-config --cflags --libs gobject-2.0 gio-unix-2.0 glib-2.0 gtk+-2.0 libnotify` -o msd-disk-space-test msd-disk-space.c */
 
 #include "config.h"
 
