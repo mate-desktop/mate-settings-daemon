@@ -80,10 +80,10 @@ case $host_os in
 esac
 AC_SUBST([MSD_PLUGIN_LDFLAGS])
 
-PKG_CHECK_MODULES([DCONF], [dconf >= 0.13],
-   [AC_DEFINE([HAVE_DCONF_0_13], [1], [Use DCONF >= 0.13])],
-   [PKG_CHECK_MODULES([DCONF], [dconf >= 0.10],
-       [AC_DEFINE([HAVE_DCONF_0_10], [1], [Use DCONF 0.10])
+PKG_CHECK_MODULES([DCONF], [dconf >= 0.13.4],
+   [AC_DEFINE([HAVE_DCONF_0_13], [1], [Use DCONF >= 0.13.4])],
+   [PKG_CHECK_MODULES([DCONF], [dconf >= 0.10.0],
+       [AC_DEFINE([HAVE_DCONF_0_10], [1], [Use DCONF 0.10.0])
     ])
 ])
 AC_SUBST(DCONF_CFLAGS)
