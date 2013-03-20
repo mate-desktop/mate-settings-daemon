@@ -43,6 +43,7 @@
 #define MATE_SESSION_DBUS_NAME      "org.mate.SessionManager"
 #define MATE_SESSION_DBUS_OBJECT    "/org/mate/SessionManager"
 #define MATE_SESSION_DBUS_INTERFACE "org.mate.SessionManager"
+#define MATE_SESSION_PRIVATE_DBUS_INTERFACE "org.mate.SessionManager.ClientPrivate"
 
 /* this is kept only for compatibility with custom .desktop files */
 static gboolean   no_daemon    = TRUE;
@@ -200,6 +201,44 @@ bus_register (DBusGConnection *bus)
 static void
 on_session_over (DBusGProxy *proxy, MateSettingsManager *manager)
 {
+        /* not used, see on_session_end instead */
+}
+
+static void
+on_session_query_end (DBusGProxy *proxy, guint flags, MateSettingsManager *manager)
+{
+        GError *error = NULL;
+        gboolean ret = FALSE;
+
+        /* send response */
+        ret = dbus_g_proxy_call (proxy, "EndSessionResponse", &error,
+                                 G_TYPE_BOOLEAN, TRUE /* ok */,
+                                 G_TYPE_STRING, NULL /* reason */,
+                                 G_TYPE_INVALID,
+                                 G_TYPE_INVALID);
+        if (!ret) {
+                g_warning ("failed to send session response: %s", error->message);
+                g_error_free (error);
+        }
+}
+
+static void
+on_session_end (DBusGProxy *proxy, guint flags, MateSettingsManager *manager)
+{
+        GError *error = NULL;
+        gboolean ret = FALSE;
+
+        /* send response */
+        ret = dbus_g_proxy_call (proxy, "EndSessionResponse", &error,
+                                 G_TYPE_BOOLEAN, TRUE /* ok */,
+                                 G_TYPE_STRING, NULL /* reason */,
+                                 G_TYPE_INVALID,
+                                 G_TYPE_INVALID);
+        if (!ret) {
+                g_warning ("failed to send session response: %s", error->message);
+                g_error_free (error);
+        }
+
         mate_settings_manager_stop (manager);
         gtk_main_quit ();
 }
@@ -256,6 +295,11 @@ static void
 set_session_over_handler (DBusGConnection *bus, MateSettingsManager *manager)
 {
         DBusGProxy *session_proxy;
+        DBusGProxy *private_proxy;
+        gchar *client_id = NULL;
+        const char *startup_id;
+        GError *error = NULL;
+        gboolean res;
 
         g_assert (bus != NULL);
 
@@ -281,6 +325,49 @@ set_session_over_handler (DBusGConnection *bus, MateSettingsManager *manager)
                                      G_CALLBACK (on_session_over),
                                      manager,
                                      NULL);
+
+        /* Register with mate-session */
+        startup_id = g_getenv ("DESKTOP_AUTOSTART_ID");
+        if (startup_id != NULL && *startup_id != '\0') {
+                res = dbus_g_proxy_call (session_proxy,
+                                         "RegisterClient",
+                                         &error,
+                                         G_TYPE_STRING, "mate-settings-daemon",
+                                         G_TYPE_STRING, startup_id,
+                                         G_TYPE_INVALID,
+                                         DBUS_TYPE_G_OBJECT_PATH, &client_id,
+                                         G_TYPE_INVALID);
+                if (!res) {
+                        g_warning ("failed to register client '%s': %s", startup_id, error->message);
+                        g_error_free (error);
+                }
+                else {
+                        /* get org.mate.Session.ClientPrivate interface */
+                        private_proxy = dbus_g_proxy_new_for_name_owner (bus, MATE_SESSION_DBUS_NAME,
+                                                                         client_id, MATE_SESSION_PRIVATE_DBUS_INTERFACE,
+                                                                         &error);
+                        if (private_proxy == NULL) {
+                                g_warning ("DBUS error: %s", error->message);
+                                g_error_free (error);
+                        }
+                        else {
+
+                            /* get QueryEndSession */
+                            dbus_g_proxy_add_signal (private_proxy, "QueryEndSession", G_TYPE_UINT, G_TYPE_INVALID);
+                            dbus_g_proxy_connect_signal (private_proxy, "QueryEndSession",
+                                                         G_CALLBACK (on_session_query_end),
+                                                         manager, NULL);
+
+                            /* get EndSession */
+                            dbus_g_proxy_add_signal (private_proxy, "EndSession", G_TYPE_UINT, G_TYPE_INVALID);
+                            dbus_g_proxy_connect_signal (private_proxy, "EndSession",
+                                                         G_CALLBACK (on_session_end), manager, NULL);
+
+                        }
+
+                        g_free (client_id);
+                }
+        }
 
         watch_for_term_signal (manager);
         mate_settings_profile_end (NULL);
