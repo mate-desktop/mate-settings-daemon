@@ -47,12 +47,14 @@
 
 /* this is kept only for compatibility with custom .desktop files */
 static gboolean   no_daemon    = TRUE;
+static gboolean   replace      = FALSE;
 static gboolean   debug        = FALSE;
 static gboolean   do_timed_exit = FALSE;
 static int        term_signal_pipe_fds[2];
 
 static GOptionEntry entries[] = {
         { "debug", 0, 0, G_OPTION_ARG_NONE, &debug, N_("Enable debugging code"), NULL },
+        { "replace", 0, 0, G_OPTION_ARG_NONE, &replace, N_("Replace the current daemon"), NULL },
         { "no-daemon", 0, G_OPTION_FLAG_HIDDEN, G_OPTION_ARG_NONE, &no_daemon, N_("Don't become a daemon"), NULL },
         { "timed-exit", 0, 0, G_OPTION_ARG_NONE, &do_timed_exit, N_("Exit after a time (for debugging)"), NULL },
         { NULL }
@@ -74,6 +76,7 @@ get_bus_proxy (DBusGConnection *connection)
                                                DBUS_SERVICE_DBUS,
                                                DBUS_PATH_DBUS,
                                                DBUS_INTERFACE_DBUS);
+
         return bus_proxy;
 }
 
@@ -84,15 +87,20 @@ acquire_name_on_proxy (DBusGProxy *bus_proxy)
         guint       result;
         gboolean    res;
         gboolean    ret;
+        guint32     flags;
 
         ret = FALSE;
+
+        flags = DBUS_NAME_FLAG_DO_NOT_QUEUE|DBUS_NAME_FLAG_ALLOW_REPLACEMENT;
+        if (replace)
+            flags |= DBUS_NAME_FLAG_REPLACE_EXISTING;
 
         error = NULL;
         res = dbus_g_proxy_call (bus_proxy,
                                  "RequestName",
                                  &error,
                                  G_TYPE_STRING, MSD_DBUS_NAME,
-                                 G_TYPE_UINT, 0,
+                                 G_TYPE_UINT, flags,
                                  G_TYPE_INVALID,
                                  G_TYPE_UINT, &result,
                                  G_TYPE_INVALID);
@@ -130,6 +138,13 @@ bus_message_handler (DBusConnection *connection,
         if (dbus_message_is_signal (message,
                                     DBUS_INTERFACE_LOCAL,
                                     "Disconnected")) {
+                gtk_main_quit ();
+                return DBUS_HANDLER_RESULT_HANDLED;
+        }
+        else if (dbus_message_is_signal (message,
+                                         DBUS_INTERFACE_DBUS,
+                                         "NameLost")) {
+                g_warning ("D-Bus name lost, quitting");
                 gtk_main_quit ();
                 return DBUS_HANDLER_RESULT_HANDLED;
         }
