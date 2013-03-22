@@ -14,6 +14,7 @@ gsettings_SCHEMAS = \
 	org.mate.SettingsDaemon.plugins.keybindings.gschema.xml \
 	org.mate.SettingsDaemon.plugins.keyboard.gschema.xml \
 	org.mate.SettingsDaemon.plugins.media-keys.gschema.xml \
+	org.mate.SettingsDaemon.plugins.mpris.gschema.xml \
 	org.mate.SettingsDaemon.plugins.mouse.gschema.xml \
 	org.mate.SettingsDaemon.plugins.smartcard.gschema.xml \
 	org.mate.SettingsDaemon.plugins.sound.gschema.xml \

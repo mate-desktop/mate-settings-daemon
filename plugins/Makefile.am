@@ -10,6 +10,7 @@ enabled_plugins =	\
 	keybindings	\
 	keyboard	\
 	media-keys	\
+	mpris		\
 	mouse		\
 	sound		\
 	typing-break	\

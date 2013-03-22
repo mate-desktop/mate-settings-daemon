@@ -489,6 +489,7 @@ plugins/keybindings/Makefile
 plugins/keyboard/Makefile
 plugins/media-keys/Makefile
 plugins/media-keys/cut-n-paste/Makefile
+plugins/mpris/Makefile
 plugins/mouse/Makefile
 plugins/smartcard/Makefile
 plugins/sound/Makefile
