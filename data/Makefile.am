@@ -27,6 +27,9 @@ gsettings_SCHEMAS = \
 @INTLTOOL_XML_NOMERGE_RULE@
 @GSETTINGS_RULES@
 
+%.gschema.xml.in: %.gschema.xml.in.in Makefile
+	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
+
 convertdir = $(datadir)/MateConf/gsettings
 convert_DATA = mate-settings-daemon.convert
 

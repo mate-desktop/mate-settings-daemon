@@ -1,15 +1,28 @@
 # Files with translatable strings.
 # Please keep this file in alphabetical order.
 data/50-accessibility.xml.in
-data/apps_mate_settings_daemon_housekeeping.schemas.in
-data/apps_mate_settings_daemon_keybindings.schemas.in
-data/apps_mate_settings_daemon_xrandr.schemas.in
-data/desktop_mate_font_rendering.schemas.in
-data/desktop_mate_keybindings.schemas.in
-data/desktop_mate_peripherals_touchpad.schemas.in
+data/org.mate.applications-at.gschema.xml.in.in
+data/org.mate.font-rendering.gschema.xml.in.in
+data/org.mate.keybindings.gschema.xml.in.in
+data/org.mate.peripherals-smartcard.gschema.xml.in.in
+data/org.mate.peripherals-touchpad.gschema.xml.in.in
+data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in
+data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in
+data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.in
+data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.in
+data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in
+data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.in
+data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.in
+data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in
+data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.in
+data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.in
+data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.in
+data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.in
+data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.in
+data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in
+data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in
+data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in
 data/mate-settings-daemon.desktop.in.in
-data/mate-settings-daemon.schemas.in
-data/desktop_mate_peripherals_smartcard.schemas.in
 mate-settings-daemon/main.c
 [type: gettext/ini]plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.in
 plugins/a11y-keyboard/msd-a11y-keyboard-manager.c
@@ -18,8 +31,6 @@ plugins/a11y-keyboard/msd-a11y-preferences-dialog.c
 [type: gettext/ini]plugins/background/background.mate-settings-plugin.in
 [type: gettext/ini]plugins/clipboard/clipboard.mate-settings-plugin.in
 [type: gettext/ini]plugins/dummy/dummy.mate-settings-plugin.in
-[type: gettext/ini]plugins/font/font.mate-settings-plugin.in
-plugins/font/msd-font-manager.c
 plugins/housekeeping/msd-disk-space.c
 plugins/housekeeping/msd-ldsm-dialog.c
 plugins/housekeeping/msd-ldsm-trash-empty.c
@@ -27,7 +38,6 @@ plugins/keybindings/msd-keybindings-manager.c
 [type: gettext/ini]plugins/keybindings/keybindings.mate-settings-plugin.in
 [type: gettext/ini]plugins/keyboard/keyboard.mate-settings-plugin.in
 plugins/keyboard/msd-keyboard-xkb.c
-[type: gettext/glade]plugins/keyboard/modmap-dialog.ui
 plugins/media-keys/msd-media-keys-manager.c
 plugins/media-keys/cut-n-paste/gvc-mixer-control.c
 [type: gettext/ini]plugins/media-keys/media-keys.mate-settings-plugin.in
