@@ -98,7 +98,7 @@ get_player_name(const gchar *name)
     gchar *player_name;
 
     /* max_tokens is 4 because a player could have additional instances,
-     * lile org.mpris.MediaPlayer2.vlc.instance7389 */
+     * like org.mpris.MediaPlayer2.vlc.instance7389 */
     tokens = g_strsplit (name, ".", 4);
     player_name = g_strdup (tokens[3]);
     g_strfreev (tokens);
