@@ -114,9 +114,6 @@ mp_name_appeared (GDBusConnection  *connection,
                   const gchar      *name_owner,
                   MsdMprisManager  *manager)
 {
-    GDBusProxyFlags flags = G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START;
-    GDBusProxy *proxy = NULL;
-    GError *error = NULL;
     gchar *player_name;
 
     g_debug ("MPRIS Name acquired: %s\n", name);
