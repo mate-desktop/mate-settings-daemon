@@ -1,6 +1,9 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
  *
  * Copyright (C) 2013 Stefano Karapetsas <stefano@karapetsas.com>
+ *               2013 Steve Zesch <stevezesch2@gmail.com>
+ *               2007 William Jon McCann <mccann@jhu.edu>
+ *               2007 Jan Arne Petersen <jap@gnome.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -144,6 +147,8 @@ mp_name_vanished (GDBusConnection *connection,
     g_free (player_name);
 }
 
+/* Code copied from Totem media player
+ * src/plugins/media-player-keys/totem-media-player-keys.c */
 static void
 on_media_player_key_pressed (MsdMprisManager  *manager,
                              const gchar      *key)
