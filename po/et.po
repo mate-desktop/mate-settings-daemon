@@ -10,237 +10,544 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
-"POT-Creation-Date: 2012-01-22 20:23+0100\n"
-"PO-Revision-Date: 2012-01-22 21:25+0000\n"
+"POT-Creation-Date: 2013-03-22 23:14+0100\n"
+"PO-Revision-Date: 2013-03-22 22:15+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/MATE/language/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: et\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/50-accessibility.xml.in.h:1
 msgid "Accessibility"
 msgstr "Hõlbustused"
 
-#: ../data/apps_mate_settings_daemon_housekeeping.schemas.in.h:1
+#: ../data/org.mate.applications-at.gschema.xml.in.in.h:1
+msgid "On-screen keyboard"
+msgstr "Ekraaniklaviatuur"
+
+#: ../data/org.mate.applications-at.gschema.xml.in.in.h:2
+msgid "Whether the on-screen keyboard is turned on."
+msgstr "Kas ekraaniklaviatuur on sisse lülitatud või mitte."
+
+#: ../data/org.mate.applications-at.gschema.xml.in.in.h:3
+msgid "Screen magnifier"
+msgstr "Ekraaniluup"
+
+#: ../data/org.mate.applications-at.gschema.xml.in.in.h:4
+msgid "Whether the screen magnifier is turned on."
+msgstr "Kas ekraaniluup on sisse lülitatud või mitte."
+
+#: ../data/org.mate.applications-at.gschema.xml.in.in.h:5
+msgid "Screen reader"
+msgstr "Ekraanilugeja"
+
+#: ../data/org.mate.applications-at.gschema.xml.in.in.h:6
+msgid "Whether the screen reader is turned on."
+msgstr "Kas ekraanilugeja on sisse lülitatud või mitte."
+
+#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:1
+msgid "DPI"
+msgstr "DPI"
+
+#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:2
+msgid ""
+"The resolution used for converting font sizes to pixel sizes, in dots per "
+"inch."
+msgstr "Eraldusvõime, mida kasutatakse kirjasuuruste pikslitesse teisendamisel. Ühik punkti tollile."
+
+#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:3
+msgid "Antialiasing"
+msgstr "Sakisilumine"
+
+#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:4
+msgid ""
+"The type of antialiasing to use when rendering fonts. Possible values are: "
+"\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
+"antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
+msgstr "Kirjatüüpide renderdamisel kasutatav sakisilumise meetod. Võimalikud väärtused on: \"none\" sakisilumise keelamiseks, \"grayscale\" standardseks halltoonides sakisilumiseks ja \"rgba\" alampiksli sakisilumiseks (ainult LCD ekraanidel)."
+
+#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:5
+msgid "Hinting"
+msgstr "Varjundamine"
+
+#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:6
+msgid ""
+"The type of hinting to use when rendering fonts. Possible values are: "
+"\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
+"\"full\" for maximum hinting (may cause distortion of letter forms)."
+msgstr "Fontide renderdamisel kasutatav varjundamise tüüp. Võimaliku väärtused on \"none\" varjundamise keelamiseks, \"slight\" lihtsa, \"medium\" keskmise ja \"full\" maksimaalse varjundamise jaoks (võib põhjustada tähekujude moondumist)."
+
+#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:7
+msgid "RGBA order"
+msgstr "RGBA järjestus"
+
+#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:8
+msgid ""
+"The order of subpixel elements on an LCD screen; only used when antialiasing"
+" is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
+"common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
+" on bottom."
+msgstr "Alampikslite elementide järjestus LCD-ekraanil. Kasutatakse ainult juhul, kui sakisilumise väärtuseks on määratud \"rgba\". Võimalikud väärtused: \"rgb\" - punane on vasakul (enimkasutatav), \"bgr\" - sinine on vasakul, \"vrgb\" - punane on üleval, \"vbgr\" - punane on all."
+
+#: ../data/org.mate.keybindings.gschema.xml.in.in.h:1
+msgid "Toggle magnifier"
+msgstr "Ekraaniluup sisse/välja"
+
+#: ../data/org.mate.keybindings.gschema.xml.in.in.h:2
+msgid "Binding to toggle the magnifier."
+msgstr "Klahviseos ekraaniluubi sisse/välja lülitamiseks."
+
+#: ../data/org.mate.keybindings.gschema.xml.in.in.h:3
+msgid "The name of the keyboard shortcut to toggle the magnifier"
+msgstr "Luubi sisse/välja lülitamise kiirklahvi nimi"
+
+#: ../data/org.mate.keybindings.gschema.xml.in.in.h:4
+msgid ""
+"This is the name of the keyboard shortcut to toggle the magnifier. This name"
+" will be shown in the keyboard shortcut preferences dialog."
+msgstr "See on luubi sisse- ja väljalülitamiseks mõeldud klahvikombinatsiooni nimi. Seda nime näidatakse kiirklahvide eelistuste dialoogis."
+
+#: ../data/org.mate.keybindings.gschema.xml.in.in.h:5
+msgid "Command used to turn the magnifier on or off."
+msgstr "Ekraaniluubi sisse-/väljalülitamise käsk."
+
+#: ../data/org.mate.keybindings.gschema.xml.in.in.h:6
+msgid "Toggle screen reader"
+msgstr "Ekraanilugeja sisse/välja"
+
+#: ../data/org.mate.keybindings.gschema.xml.in.in.h:7
+msgid "Binding to toggle the screen reader."
+msgstr "Klahviseos ekraanilugeja sisse/välja lülitamiseks."
+
+#: ../data/org.mate.keybindings.gschema.xml.in.in.h:8
+msgid "The name of the keyboard shortcut to toggle the screen reader"
+msgstr "Ekraanilugeja sisse/välja lülitamise kiirklahvi nimi"
+
+#: ../data/org.mate.keybindings.gschema.xml.in.in.h:9
+msgid ""
+"This is the name of the keyboard shortcut to toggle the screen reader. This "
+"name will be shown in the keyboard shortcut preferences dialog."
+msgstr "See on ekraanilugeja sisse- ja väljalülitamiseks mõeldud klahvikombinatsiooni nimi. Seda nime näidatakse kiirklahvide eelistuste dialoogis."
+
+#: ../data/org.mate.keybindings.gschema.xml.in.in.h:10
+msgid "Command used to turn the screen reader on or off."
+msgstr "Ekraanilugeja sisse-/väljalülitamise käsk."
+
+#: ../data/org.mate.keybindings.gschema.xml.in.in.h:11
+msgid "The name of the keyboard shortcut to toggle the on-screen keyboard"
+msgstr "Ekraaniklaviatuuri sisse/välja lülitamise kiirklahvi nimi"
+
+#: ../data/org.mate.keybindings.gschema.xml.in.in.h:12
+msgid ""
+"This is the name of the keyboard shortcut to toggle the on-screen keyboard. "
+"This name will be shown in the keyboard shortcut preferences dialog."
+msgstr "See on ekraaniklaviatuuri sisse- ja väljalülitamiseks mõeldud klahvikombinatsiooni nimi. Seda nime näidatakse kiirklahvide eelistuste dialoogis."
+
+#: ../data/org.mate.keybindings.gschema.xml.in.in.h:13
+msgid "Toggle on-screen keyboard"
+msgstr "Ekraaniklaviatuur sisse/välja"
+
+#: ../data/org.mate.keybindings.gschema.xml.in.in.h:14
+msgid "Binding to toggle the on-screen keyboard."
+msgstr "Klahviseos ekraaniklaviatuuri sisse/välja lülitamiseks."
+
+#: ../data/org.mate.keybindings.gschema.xml.in.in.h:15
+msgid "Command used to turn the on-screen keyboard on or off."
+msgstr "Ekraaniklaviatuuri sisse-/väljalülitamise käsk."
+
+#: ../data/org.mate.peripherals-smartcard.gschema.xml.in.in.h:1
+msgid "Smartcard removal action"
+msgstr "Smartcardi eemaldamise tegevus"
+
+#: ../data/org.mate.peripherals-smartcard.gschema.xml.in.in.h:2
+msgid ""
+"Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
+"action will get performed when the smartcard used for log in is removed."
+msgstr "Määra selle väärtuseks \"none\" (puudub), \"lock_screen\" (lukustatakse ekraan) või \"force_logout\" (väljalogimise nõudmine). See tegevus käivitatakse, kui eemaldatakse smartcard, mida kasutati sisselogimiseks."
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:1
+msgid "Disable touchpad while typing"
+msgstr "Puuteplaadi keelamine tippimise ajaks"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:2
+msgid ""
+"Set this to TRUE if you have problems with accidentally hitting the touchpad"
+" while typing."
+msgstr "Märgi see väärtus juhul, kui sind segab, et sa tippimise ajal kogemata puuteplaati puudutad."
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:3
+msgid "Enable mouse clicks with touchpad"
+msgstr "Hiireklõpsude lubamine puuteplaadilt"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:4
+msgid ""
+"Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
+msgstr "Kui märgitud, siis tõlgendatakse puuteplaadil toksimist hiireklõpsudena."
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:5
+msgid "Select the touchpad scroll method"
+msgstr "Puuteplaadi kerimismeetodi valimine"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:6
+msgid ""
+"Select the touchpad scroll method. Supported values are: 0: disabled, 1: "
+"edge scrolling, and 2: two-finger scrolling"
+msgstr "Puuteplaadi kerimismeetod. Võimalikud väärtused on 0: keelatud, 1: kerimine servalt ja 2: kahe sõrmega kerimine"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:7
+msgid "Enable horizontal scrolling"
+msgstr "Rõhtsa kerimise lubamine"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:8
+msgid ""
+"Set this to TRUE to allow horizontal scrolling by the same method selected "
+"with the scroll_method key."
+msgstr "Kui märgitud, siis on rõhtne kerimine lubatud scroll_method võtmega määratud moel."
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:9
+msgid "Enable touchpad"
+msgstr "Puuteplaadi lubamine"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:10
+msgid "Set this to TRUE to enable all touchpads."
+msgstr "Kui märgitud, siis on kõik puuteplaadid lubatud."
+
+#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:1
+msgid "Activation of this plugin"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:2
+msgid "Whether this plugin would be activated by mate-settings-daemon or not"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:3
+msgid "Priority to use for this plugin"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:4
+msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:5
 msgid "Free percentage notify threshold"
 msgstr "Vaba kettaruumi protsendi teavituslävi"
 
-#: ../data/apps_mate_settings_daemon_housekeeping.schemas.in.h:2
-msgid "Free space no notify threshold"
-msgstr "Vaba kettaruumi teavitusläve piir"
-
-#: ../data/apps_mate_settings_daemon_housekeeping.schemas.in.h:3
-msgid "Minimum notify period for repeated warnings"
-msgstr "Kordushoiatuste intervall"
-
-#: ../data/apps_mate_settings_daemon_housekeeping.schemas.in.h:4
-msgid "Mount paths to ignore"
-msgstr "Eiratavad haakepunktid"
-
-#: ../data/apps_mate_settings_daemon_housekeeping.schemas.in.h:5
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:6
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
 msgstr "Vaba kettaruumi lävi protsentides, mil kuvatakse esimene hoiatus. Kui vaba kettaruumi jääb määratud protsendist vähem, kuvatakse hoiatus."
 
-#: ../data/apps_mate_settings_daemon_housekeeping.schemas.in.h:6
-msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr "Määra haakepunktid, mille kettaruumi vähesust eiratakse."
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:7
+msgid "Subsequent free percentage notify threshold"
+msgstr "Vaba kettaruumi protsendi muutus enne kordushoiatust"
 
-#: ../data/apps_mate_settings_daemon_housekeeping.schemas.in.h:7
-msgid ""
-"Specify a time in minutes. Subsequent warnings for a volume will not appear "
-"more often than this period."
-msgstr "Määra aeg minutites. Kordushoiatused sama köite kohta ei ilmu tihedamini kui määratud vahemik."
-
-#: ../data/apps_mate_settings_daemon_housekeeping.schemas.in.h:8
-msgid ""
-"Specify an amount in GB. If the amount of free space is more than this, no "
-"warning will be shown."
-msgstr "Määra maht GB-des. Kui vaba ruumi on rohkem, kui see väärtus, ei näidata mingit hoiatust."
-
-#: ../data/apps_mate_settings_daemon_housekeeping.schemas.in.h:9
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:8
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
 msgstr "Mitme protsendini peab vaba kettaruum enne kordushoiatuse näitamist kahanema."
 
-#: ../data/apps_mate_settings_daemon_housekeeping.schemas.in.h:10
-msgid "Subsequent free percentage notify threshold"
-msgstr "Vaba kettaruumi protsendi muutus enne kordushoiatust"
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:9
+msgid "Free space no notify threshold"
+msgstr "Vaba kettaruumi teavitusläve piir"
 
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:1
-msgid "Binding to eject an optical disc."
-msgstr "Klahviseos optilise ketta väljastamiseks."
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:10
+msgid ""
+"Specify an amount in GB. If the amount of free space is more than this, no "
+"warning will be shown."
+msgstr "Määra maht GB-des. Kui vaba ruumi on rohkem, kui see väärtus, ei näidata mingit hoiatust."
 
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:2
-msgid "Binding to enable or disable the touchpad."
-msgstr "Klahviseos puuteplaatide lubamiseks ja keelamiseks."
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:11
+msgid "Minimum notify period for repeated warnings"
+msgstr "Kordushoiatuste intervall"
 
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:3
-msgid "Binding to launch the calculator."
-msgstr "Klahviseos kalkulaatori käivitamiseks."
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:12
+msgid ""
+"Specify a time in minutes. Subsequent warnings for a volume will not appear "
+"more often than this period."
+msgstr "Määra aeg minutites. Kordushoiatused sama köite kohta ei ilmu tihedamini kui määratud vahemik."
 
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:4
-msgid "Binding to launch the email client."
-msgstr "Klahviseos e-posti kliendi käivitamiseks."
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:13
+msgid "Mount paths to ignore"
+msgstr "Eiratavad haakepunktid"
 
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:5
-msgid "Binding to launch the help browser."
-msgstr "Klahviseos abiteabe sirvija käivitamiseks."
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:14
+msgid "Specify a list of mount paths to ignore when they run low on space."
+msgstr "Määra haakepunktid, mille kettaruumi vähesust eiratakse."
 
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:6
-msgid "Binding to launch the media player."
-msgstr "Klahviseos meediaesitaja käivitamiseks."
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:7
-msgid "Binding to launch the search tool."
-msgstr "Klahviseos otsinguvahendi käivitamiseks."
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:8
-msgid "Binding to launch the web browser."
-msgstr "Klahviseos veebisirvija käivitamiseks."
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:9
-msgid "Binding to lock the screen."
-msgstr "Klahviseos ekraani lukustamiseks."
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:10
-msgid "Binding to log out."
-msgstr "Klahviseos väljalogimiseks."
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:11
-msgid "Binding to lower the system volume."
-msgstr "Klahviseos süsteemi helivaljuse vähendamiseks."
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:12
-msgid "Binding to mute the system volume."
-msgstr "Klahviseos süsteemi helivaljuse nullimiseks."
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:13
-msgid "Binding to open the Home folder."
-msgstr "Klahviseos kodukataloogi avamiseks."
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:14
-msgid "Binding to pause playback."
-msgstr "Klahviseos meediaesituse pausimiseks."
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:15
-msgid "Binding to raise the system volume."
-msgstr "Klahviseos süsteemi helivaljuse suurendamiseks."
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:16
-msgid "Binding to skip to next track."
-msgstr "Klahviseos järgmise loo peale hüppamiseks."
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:17
-msgid "Binding to skip to previous track."
-msgstr "Klahviseos eelmise loo peale hüppamiseks."
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:18
-msgid "Binding to start playback (or toggle play/pause)."
-msgstr "Klahviseos esitamise alustamiseks (või esitamiseks/pausimiseks)"
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:19
-msgid "Binding to stop playback."
-msgstr "Klahviseos meediaesituse seiskamiseks."
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:20
-msgid "Eject"
-msgstr "Sahtli lahtilükkamine"
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:21
-msgid "Home folder"
-msgstr "Kodukataloog"
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:22
-msgid "Launch calculator"
-msgstr "Kalkulaatori käivitamine"
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:23
-msgid "Launch email client"
-msgstr "E-posti kliendi käivitamine"
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:24
-msgid "Launch help browser"
-msgstr "Abiteabe sirvija käivitamine"
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:25
-msgid "Launch media player"
-msgstr "Meediaesitaja käivitamine"
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:26
-msgid "Launch web browser"
-msgstr "Veebisirvija käivitamine"
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:27
-msgid "Lock screen"
-msgstr "Ekraani lukustamine"
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:28
-msgid "Log out"
-msgstr "Väljalogimine"
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:29
-msgid "Next track"
-msgstr "Järgmisele loole hüppamine"
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:30
-msgid "Pause playback"
-msgstr "Esitamise paus"
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:31
-msgid "Play (or play/pause)"
-msgstr "Esitamine (või esitamine/paus)"
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:32
-msgid "Previous track"
-msgstr "Eelmisele loole hüppamine"
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:33
-msgid "Search"
-msgstr "Otsing"
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:34
-msgid "Stop playback"
-msgstr "Esitamise lõpetamine"
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:35
-msgid "Toggle touchpad"
-msgstr "Puuteplaadid sisse/välja"
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:36
-msgid "Volume down"
-msgstr "Heli vaiksemaks"
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:37
-msgid "Volume mute"
-msgstr "Heli tummaks"
-
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:38
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:5
 msgid "Volume step"
 msgstr "Helitugevuse samm"
 
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:39
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:6
 msgid "Volume step as percentage of volume."
 msgstr "Helitugevuse reguleerimise samm protsentides."
 
-#: ../data/apps_mate_settings_daemon_keybindings.schemas.in.h:40
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:7
+msgid "Toggle touchpad"
+msgstr "Puuteplaadid sisse/välja"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:8
+msgid "Binding to enable or disable the touchpad."
+msgstr "Klahviseos puuteplaatide lubamiseks ja keelamiseks."
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:9
+msgid "Volume mute"
+msgstr "Heli tummaks"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:10
+msgid "Binding to mute the system volume."
+msgstr "Klahviseos süsteemi helivaljuse nullimiseks."
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:11
+msgid "Volume down"
+msgstr "Heli vaiksemaks"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:12
+msgid "Binding to lower the system volume."
+msgstr "Klahviseos süsteemi helivaljuse vähendamiseks."
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:13
 msgid "Volume up"
 msgstr "Heli valjemaks"
 
-#: ../data/apps_mate_settings_daemon_xrandr.schemas.in.h:1
-msgid "File for default configuration for RandR"
-msgstr "RandR vaikesätete fail"
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:14
+msgid "Binding to raise the system volume."
+msgstr "Klahviseos süsteemi helivaljuse suurendamiseks."
 
-#: ../data/apps_mate_settings_daemon_xrandr.schemas.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:15
+msgid "Log out"
+msgstr "Väljalogimine"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:16
+msgid "Binding to log out."
+msgstr "Klahviseos väljalogimiseks."
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:17
+msgid "Eject"
+msgstr "Sahtli lahtilükkamine"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:18
+msgid "Binding to eject an optical disc."
+msgstr "Klahviseos optilise ketta väljastamiseks."
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:19
+msgid "Home folder"
+msgstr "Kodukataloog"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:20
+msgid "Binding to open the Home folder."
+msgstr "Klahviseos kodukataloogi avamiseks."
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:21
+msgid "Search"
+msgstr "Otsing"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:22
+msgid "Binding to launch the search tool."
+msgstr "Klahviseos otsinguvahendi käivitamiseks."
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:23
+msgid "Launch email client"
+msgstr "E-posti kliendi käivitamine"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:24
+msgid "Binding to launch the email client."
+msgstr "Klahviseos e-posti kliendi käivitamiseks."
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:25
+msgid "Lock screen"
+msgstr "Ekraani lukustamine"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:26
+msgid "Binding to lock the screen."
+msgstr "Klahviseos ekraani lukustamiseks."
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:27
+msgid "Launch help browser"
+msgstr "Abiteabe sirvija käivitamine"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:28
+msgid "Binding to launch the help browser."
+msgstr "Klahviseos abiteabe sirvija käivitamiseks."
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:29
+msgid "Launch calculator"
+msgstr "Kalkulaatori käivitamine"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:30
+msgid "Binding to launch the calculator."
+msgstr "Klahviseos kalkulaatori käivitamiseks."
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:31
+msgid "Launch web browser"
+msgstr "Veebisirvija käivitamine"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:32
+msgid "Binding to launch the web browser."
+msgstr "Klahviseos veebisirvija käivitamiseks."
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:33
+msgid "Launch media player"
+msgstr "Meediaesitaja käivitamine"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:34
+msgid "Binding to launch the media player."
+msgstr "Klahviseos meediaesitaja käivitamiseks."
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:35
+msgid "Play (or play/pause)"
+msgstr "Esitamine (või esitamine/paus)"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:36
+msgid "Binding to start playback (or toggle play/pause)."
+msgstr "Klahviseos esitamise alustamiseks (või esitamiseks/pausimiseks)"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:37
+msgid "Pause playback"
+msgstr "Esitamise paus"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:38
+msgid "Binding to pause playback."
+msgstr "Klahviseos meediaesituse pausimiseks."
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:39
+msgid "Stop playback"
+msgstr "Esitamise lõpetamine"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:40
+msgid "Binding to stop playback."
+msgstr "Klahviseos meediaesituse seiskamiseks."
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:41
+msgid "Previous track"
+msgstr "Eelmisele loole hüppamine"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:42
+msgid "Binding to skip to previous track."
+msgstr "Klahviseos eelmise loo peale hüppamiseks."
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:43
+msgid "Next track"
+msgstr "Järgmisele loole hüppamine"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:44
+msgid "Binding to skip to next track."
+msgstr "Klahviseos järgmise loo peale hüppamiseks."
+
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:5
 msgid "Show Displays in Notification Area"
 msgstr "Kuvade näitamine teavitusalas"
 
-#: ../data/apps_mate_settings_daemon_xrandr.schemas.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:6
+msgid ""
+"Whether a notification icon with display-related things should be shown in "
+"the panel."
+msgstr "Kas kuvaga seotud teavitusikooni tuleb paneelil näidata või mitte."
+
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:7
+msgid "Do not touch monitor configuration"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:8
+msgid ""
+"Usually, mate-settings-daemon configures internal and external monitors "
+"according to the turn_on_external_monitors_at_startup and "
+"turn_on_laptop_monitor_at_startup settings and determines an appropriate "
+"cloning/side-by-side mode. Setting this key to True disables this, and the "
+"monitor settings are not touched at all (unless there is an explicit user "
+"configuration)."
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:9
+msgid "Turn on external monitor after system boot"
+msgstr "Pärast süsteemi alglaadimist lülitatakse väline monitor sisse"
+
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:10
+msgid ""
+"Turn on external monitor after system boot if user plugs in external monitor"
+" on system boot."
+msgstr "Kui kasutaja ühendab süsteemi alglaadimisel välise monitori, lülitatakse see alglaadimise järel sisse."
+
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:11
+msgid "Turn on laptop monitor after system boot"
+msgstr "Pärast süsteemi alglaadimist lülitatakse sülearvuti monitor sisse"
+
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:12
+msgid ""
+"Turn on laptop monitor after system boot if user plugs in external monitor "
+"on system boot."
+msgstr "Pärast süsteemi alglaadimist lülitatakse sisse sülearvuti monitor, kui alglaadimisel ühendatakse väline monitor."
+
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:13
+msgid "File for default configuration for RandR"
+msgstr "RandR vaikesätete fail"
+
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:14
 msgid ""
 "The XRandR plugin will look for a default configuration in the file "
 "specified by this key. This is similar to the ~/.config/monitors.xml that "
@@ -249,409 +556,23 @@ msgid ""
 "then the file specified by this key will be used instead."
 msgstr "XRandR plugin otsib vaikesätteid failist, mis määratakse selle võtmega. See on samasugune fail, nagu ~/.config/monitors.xml kasutaja kodukataloogis. Kui kasutajal ei ole mainitud faili, või see fail ei sobi kasutaja monitoride arvuga, kasutatakse hoopis käesoleva võtmega määratud faili."
 
-#: ../data/apps_mate_settings_daemon_xrandr.schemas.in.h:4
-msgid "Turn on external monitor after system boot"
-msgstr "Pärast süsteemi alglaadimist lülitatakse väline monitor sisse"
-
-#: ../data/apps_mate_settings_daemon_xrandr.schemas.in.h:5
-msgid ""
-"Turn on external monitor after system boot if user plugs in external monitor"
-" on system boot."
-msgstr "Kui kasutaja ühendab süsteemi alglaadimisel välise monitori, lülitatakse see alglaadimise järel sisse."
-
-#: ../data/apps_mate_settings_daemon_xrandr.schemas.in.h:6
-msgid "Turn on laptop monitor after system boot"
-msgstr "Pärast süsteemi alglaadimist lülitatakse sülearvuti monitor sisse"
-
-#: ../data/apps_mate_settings_daemon_xrandr.schemas.in.h:7
-msgid ""
-"Turn on laptop monitor after system boot if user plugs in external monitor "
-"on system boot."
-msgstr "Pärast süsteemi alglaadimist lülitatakse sisse sülearvuti monitor, kui alglaadimisel ühendatakse väline monitor."
-
-#: ../data/apps_mate_settings_daemon_xrandr.schemas.in.h:8
-msgid ""
-"Whether a notification icon with display-related things should be shown in "
-"the panel."
-msgstr "Kas kuvaga seotud teavitusikooni tuleb paneelil näidata või mitte."
-
-#: ../data/desktop_mate_font_rendering.schemas.in.h:1
-msgid "Antialiasing"
-msgstr "Sakisilumine"
-
-#: ../data/desktop_mate_font_rendering.schemas.in.h:2
-msgid "DPI"
-msgstr "DPI"
-
-#: ../data/desktop_mate_font_rendering.schemas.in.h:3
-msgid "Hinting"
-msgstr "Varjundamine"
-
-#: ../data/desktop_mate_font_rendering.schemas.in.h:4
-msgid "RGBA order"
-msgstr "RGBA järjestus"
-
-#: ../data/desktop_mate_font_rendering.schemas.in.h:5
-msgid ""
-"The order of subpixel elements on an LCD screen; only used when antialiasing"
-" is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
-"common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
-" on bottom."
-msgstr "Alampikslite elementide järjestus LCD-ekraanil. Kasutatakse ainult juhul, kui sakisilumise väärtuseks on määratud \"rgba\". Võimalikud väärtused: \"rgb\" - punane on vasakul (enimkasutatav), \"bgr\" - sinine on vasakul, \"vrgb\" - punane on üleval, \"vbgr\" - punane on all."
-
-#: ../data/desktop_mate_font_rendering.schemas.in.h:6
-msgid ""
-"The resolution used for converting font sizes to pixel sizes, in dots per "
-"inch."
-msgstr "Eraldusvõime, mida kasutatakse kirjasuuruste pikslitesse teisendamisel. Ühik punkti tollile."
-
-#: ../data/desktop_mate_font_rendering.schemas.in.h:7
-msgid ""
-"The type of antialiasing to use when rendering fonts. Possible values are: "
-"\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
-"antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "Kirjatüüpide renderdamisel kasutatav sakisilumise meetod. Võimalikud väärtused on: \"none\" sakisilumise keelamiseks, \"grayscale\" standardseks halltoonides sakisilumiseks ja \"rgba\" alampiksli sakisilumiseks (ainult LCD ekraanidel)."
-
-#: ../data/desktop_mate_font_rendering.schemas.in.h:8
-msgid ""
-"The type of hinting to use when rendering fonts. Possible values are: "
-"\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
-"\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "Fontide renderdamisel kasutatav varjundamise tüüp. Võimaliku väärtused on \"none\" varjundamise keelamiseks, \"slight\" lihtsa, \"medium\" keskmise ja \"full\" maksimaalse varjundamise jaoks (võib põhjustada tähekujude moondumist)."
-
-#: ../data/desktop_mate_keybindings.schemas.in.h:1
-msgid "Allowed keys"
-msgstr "Lubatud klahvid"
-
-#: ../data/desktop_mate_keybindings.schemas.in.h:2
-msgid ""
-"If non-empty, keybindings will be ignored unless their MateConf directory is"
-" in the list. This is useful for lockdown."
-msgstr "Mittetühja väärtuse korral eiratakse neid kiirklahve, mille MateConf kataloog pole nimekirjas. See on kasulik lukustamiseks."
-
-#: ../data/desktop_mate_peripherals_touchpad.schemas.in.h:1
-msgid "Disable touchpad while typing"
-msgstr "Puuteplaadi keelamine tippimise ajaks"
-
-#: ../data/desktop_mate_peripherals_touchpad.schemas.in.h:2
-msgid "Enable horizontal scrolling"
-msgstr "Rõhtsa kerimise lubamine"
-
-#: ../data/desktop_mate_peripherals_touchpad.schemas.in.h:3
-msgid "Enable mouse clicks with touchpad"
-msgstr "Hiireklõpsude lubamine puuteplaadilt"
-
-#: ../data/desktop_mate_peripherals_touchpad.schemas.in.h:4
-msgid "Enable touchpad"
-msgstr "Puuteplaadi lubamine"
-
-#: ../data/desktop_mate_peripherals_touchpad.schemas.in.h:5
-msgid "Select the touchpad scroll method"
-msgstr "Puuteplaadi kerimismeetodi valimine"
-
-#: ../data/desktop_mate_peripherals_touchpad.schemas.in.h:6
-msgid ""
-"Select the touchpad scroll method. Supported values are: 0: disabled, 1: "
-"edge scrolling, and 2: two-finger scrolling"
-msgstr "Puuteplaadi kerimismeetod. Võimalikud väärtused on 0: keelatud, 1: kerimine servalt ja 2: kahe sõrmega kerimine"
-
-#: ../data/desktop_mate_peripherals_touchpad.schemas.in.h:7
-msgid ""
-"Set this to TRUE if you have problems with accidentally hitting the touchpad"
-" while typing."
-msgstr "Märgi see väärtus juhul, kui sind segab, et sa tippimise ajal kogemata puuteplaati puudutad."
-
-#: ../data/desktop_mate_peripherals_touchpad.schemas.in.h:8
-msgid ""
-"Set this to TRUE to allow horizontal scrolling by the same method selected "
-"with the scroll_method key."
-msgstr "Kui märgitud, siis on rõhtne kerimine lubatud scroll_method võtmega määratud moel."
-
-#: ../data/desktop_mate_peripherals_touchpad.schemas.in.h:9
-msgid ""
-"Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "Kui märgitud, siis tõlgendatakse puuteplaadil toksimist hiireklõpsudena."
-
-#: ../data/desktop_mate_peripherals_touchpad.schemas.in.h:10
-msgid "Set this to TRUE to enable all touchpads."
-msgstr "Kui märgitud, siis on kõik puuteplaadid lubatud."
-
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
 msgstr "MATE sätetedeemon"
 
-#: ../data/mate-settings-daemon.schemas.in.h:1
-msgid "Binding to toggle the magnifier."
-msgstr "Klahviseos ekraaniluubi sisse/välja lülitamiseks."
-
-#: ../data/mate-settings-daemon.schemas.in.h:2
-msgid "Binding to toggle the on-screen keyboard."
-msgstr "Klahviseos ekraaniklaviatuuri sisse/välja lülitamiseks."
-
-#: ../data/mate-settings-daemon.schemas.in.h:3
-msgid "Binding to toggle the screen reader."
-msgstr "Klahviseos ekraanilugeja sisse/välja lülitamiseks."
-
-#: ../data/mate-settings-daemon.schemas.in.h:4
-msgid "Bounce keys"
-msgstr "Põrkeklahvid"
-
-#: ../data/mate-settings-daemon.schemas.in.h:5
-msgid "Command used to turn the magnifier on or off."
-msgstr "Ekraaniluubi sisse-/väljalülitamise käsk."
-
-#: ../data/mate-settings-daemon.schemas.in.h:6
-msgid "Command used to turn the on-screen keyboard on or off."
-msgstr "Ekraaniklaviatuuri sisse-/väljalülitamise käsk."
-
-#: ../data/mate-settings-daemon.schemas.in.h:7
-msgid "Command used to turn the screen reader on or off."
-msgstr "Ekraanilugeja sisse-/väljalülitamise käsk."
-
-#: ../data/mate-settings-daemon.schemas.in.h:8
-msgid "Enable XRandR plugin"
-msgstr "XRandR plugina lubamine"
-
-#: ../data/mate-settings-daemon.schemas.in.h:9
-msgid "Enable accessibility keyboard plugin"
-msgstr "Hõlbustustega klaviatuuriplugina lubamine"
-
-#: ../data/mate-settings-daemon.schemas.in.h:10
-msgid "Enable background plugin"
-msgstr "Taustaplugina lubamine"
-
-#: ../data/mate-settings-daemon.schemas.in.h:11
-msgid "Enable clipboard plugin"
-msgstr "Lõikelauaplugina lubamine"
-
-#: ../data/mate-settings-daemon.schemas.in.h:12
-msgid "Enable font plugin"
-msgstr "Kirjatüübi plugina lubamine"
-
-#: ../data/mate-settings-daemon.schemas.in.h:13
-msgid "Enable housekeeping plugin"
-msgstr "Majapidamisplugina lubamine"
-
-#: ../data/mate-settings-daemon.schemas.in.h:14
-msgid "Enable keybindings plugin"
-msgstr "Kiirklahvide plugina lubamine"
-
-#: ../data/mate-settings-daemon.schemas.in.h:15
-msgid "Enable keyboard plugin"
-msgstr "Klaviatuuriplugina lubamine"
-
-#: ../data/mate-settings-daemon.schemas.in.h:16
-msgid "Enable media keys plugin"
-msgstr "Meediaklahvide plugina lubamine"
-
-#: ../data/mate-settings-daemon.schemas.in.h:17
-msgid "Enable mouse plugin"
-msgstr "Hiireplugina lubamine"
-
-#: ../data/mate-settings-daemon.schemas.in.h:18
-msgid "Enable smartcard plugin"
-msgstr "Smartcard plugina lubamine"
-
-#: ../data/mate-settings-daemon.schemas.in.h:19
-msgid "Enable sound plugin"
-msgstr "Heliplugina lubamine"
-
-#: ../data/mate-settings-daemon.schemas.in.h:20
-msgid "Enable typing breaks plugin"
-msgstr "Tippimise vaheaeja plugina lubamine"
-
-#: ../data/mate-settings-daemon.schemas.in.h:21
-msgid "Enable xrdb plugin"
-msgstr "Xrdb plugina lubamine"
-
-#: ../data/mate-settings-daemon.schemas.in.h:22
-msgid "Enable xsettings plugin"
-msgstr "Xsettings plugina lubamine"
-
-#: ../data/mate-settings-daemon.schemas.in.h:23
-msgid "Mouse keys"
-msgstr "Hiireklahvid"
-
-#: ../data/mate-settings-daemon.schemas.in.h:24
-msgid "On-screen keyboard"
-msgstr "Ekraaniklaviatuur"
-
-#: ../data/mate-settings-daemon.schemas.in.h:25
-msgid "Screen magnifier"
-msgstr "Ekraaniluup"
-
-#: ../data/mate-settings-daemon.schemas.in.h:26
-msgid "Screen reader"
-msgstr "Ekraanilugeja"
-
-#: ../data/mate-settings-daemon.schemas.in.h:27
-msgid ""
-"Set to True to enable the housekeeping plugin, to prune transient file "
-"caches."
-msgstr "Kui määratud, siis on majahoidjaplugin lubatud. Selle plugina abil eemaldatakse ajutiste failide puhvrid."
-
-#: ../data/mate-settings-daemon.schemas.in.h:28
-msgid "Set to True to enable the plugin to manage XRandR settings."
-msgstr "Kui märgitud, siis on pluginal lubatud XRandR sätteid hallata."
-
-#: ../data/mate-settings-daemon.schemas.in.h:29
-msgid "Set to True to enable the plugin to manage clipboard settings."
-msgstr "Kui märgitud, siis on pluginal lubatud lõikelaua sätteid hallata."
-
-#: ../data/mate-settings-daemon.schemas.in.h:30
-msgid ""
-"Set to True to enable the plugin to manage desktop background settings."
-msgstr "Kui märgitud, siis on pluginal lubatud töölaua tausta sätteid hallata."
-
-#: ../data/mate-settings-daemon.schemas.in.h:31
-msgid "Set to True to enable the plugin to manage font settings."
-msgstr "Kui märgitud, siis on pluginal lubatud kirjatüüpide sätteid hallata."
-
-#: ../data/mate-settings-daemon.schemas.in.h:32
-msgid "Set to True to enable the plugin to manage keyboard settings."
-msgstr "Kui märgitud, siis on pluginal lubatud klaviatuurisätteid hallata."
-
-#: ../data/mate-settings-daemon.schemas.in.h:33
-msgid ""
-"Set to True to enable the plugin to manage locking the screen on smartcard "
-"removal."
-msgstr "Märgi see, et lubada pluginal lukustada ekraan smartcardi eemaldamisel."
-
-#: ../data/mate-settings-daemon.schemas.in.h:34
-msgid "Set to True to enable the plugin to manage mouse settings."
-msgstr "Kui märgitud, siis on pluginal lubatud hiiresätteid hallata."
-
-#: ../data/mate-settings-daemon.schemas.in.h:35
-msgid "Set to True to enable the plugin to manage multimedia keys settings."
-msgstr "Kui märgitud, siis on pluginal lubatud multimeediaklahvide sätteid hallata."
-
-#: ../data/mate-settings-daemon.schemas.in.h:36
-msgid "Set to True to enable the plugin to manage sound sample caches."
-msgstr "Kui märgitud, siis on pluginal lubatud helipuhvrit hallata."
-
-#: ../data/mate-settings-daemon.schemas.in.h:37
-msgid ""
-"Set to True to enable the plugin to manage the accessibility keyboard "
-"settings."
-msgstr "Kui märgitud, siis on pluginal lubatud klahviatuurihõlbustuste sätteid hallata."
-
-#: ../data/mate-settings-daemon.schemas.in.h:38
-msgid "Set to True to enable the plugin to manage the keybindings."
-msgstr "Kui märgitud, siis on pluginal lubatud klahviseoseid hallata."
-
-#: ../data/mate-settings-daemon.schemas.in.h:39
-msgid "Set to True to enable the plugin to manage typing breaks."
-msgstr "Kui märgitud, siis on pluginal lubatud tippimise vaheaegu hallata."
-
-#: ../data/mate-settings-daemon.schemas.in.h:40
-msgid "Set to True to enable the plugin to manage xrdb settings."
-msgstr "Kui märgitud, siis on pluginal lubatud xrdb sätteid hallata."
-
-#: ../data/mate-settings-daemon.schemas.in.h:41
-msgid "Set to True to enable the plugin to manage xsettings."
-msgstr "Kui märgitud, siis on pluginal lubatud xsettings sätteid hallata."
-
-#: ../data/mate-settings-daemon.schemas.in.h:42
-msgid "Slow keys"
-msgstr "Aeglased klahvid"
-
-#: ../data/mate-settings-daemon.schemas.in.h:43
-msgid "Sticky keys"
-msgstr "Kleepuvad klahvid"
-
-#: ../data/mate-settings-daemon.schemas.in.h:44
-msgid "The name of the keyboard shortcut to toggle the magnifier"
-msgstr "Luubi sisse/välja lülitamise kiirklahvi nimi"
-
-#: ../data/mate-settings-daemon.schemas.in.h:45
-msgid "The name of the keyboard shortcut to toggle the on-screen keyboard"
-msgstr "Ekraaniklaviatuuri sisse/välja lülitamise kiirklahvi nimi"
-
-#: ../data/mate-settings-daemon.schemas.in.h:46
-msgid "The name of the keyboard shortcut to toggle the screen reader"
-msgstr "Ekraanilugeja sisse/välja lülitamise kiirklahvi nimi"
-
-#: ../data/mate-settings-daemon.schemas.in.h:47
-msgid ""
-"This is the name of the keyboard shortcut to toggle the magnifier. This name"
-" will be shown in the keyboard shortcut preferences dialog."
-msgstr "See on luubi sisse- ja väljalülitamiseks mõeldud klahvikombinatsiooni nimi. Seda nime näidatakse kiirklahvide eelistuste dialoogis."
-
-#: ../data/mate-settings-daemon.schemas.in.h:48
-msgid ""
-"This is the name of the keyboard shortcut to toggle the on-screen keyboard. "
-"This name will be shown in the keyboard shortcut preferences dialog."
-msgstr "See on ekraaniklaviatuuri sisse- ja väljalülitamiseks mõeldud klahvikombinatsiooni nimi. Seda nime näidatakse kiirklahvide eelistuste dialoogis."
-
-#: ../data/mate-settings-daemon.schemas.in.h:49
-msgid ""
-"This is the name of the keyboard shortcut to toggle the screen reader. This "
-"name will be shown in the keyboard shortcut preferences dialog."
-msgstr "See on ekraanilugeja sisse- ja väljalülitamiseks mõeldud klahvikombinatsiooni nimi. Seda nime näidatakse kiirklahvide eelistuste dialoogis."
-
-#: ../data/mate-settings-daemon.schemas.in.h:50
-msgid "Toggle magnifier"
-msgstr "Ekraaniluup sisse/välja"
-
-#: ../data/mate-settings-daemon.schemas.in.h:51
-msgid "Toggle on-screen keyboard"
-msgstr "Ekraaniklaviatuur sisse/välja"
-
-#: ../data/mate-settings-daemon.schemas.in.h:52
-msgid "Toggle screen reader"
-msgstr "Ekraanilugeja sisse/välja"
-
-#: ../data/mate-settings-daemon.schemas.in.h:53
-msgid "Whether the bounce keys keyboard accessibility feature is turned on."
-msgstr "Kas hüpikklahvide hõlbustus on sisse lülitatud või mitte."
-
-#: ../data/mate-settings-daemon.schemas.in.h:54
-msgid "Whether the mouse keys keyboard accessibility feature is turned on."
-msgstr "Kas hiireklaviatuuri hõlbustus on sisse lülitatud või mitte."
-
-#: ../data/mate-settings-daemon.schemas.in.h:55
-msgid "Whether the on-screen keyboard is turned on."
-msgstr "Kas ekraaniklaviatuur on sisse lülitatud või mitte."
-
-#: ../data/mate-settings-daemon.schemas.in.h:56
-msgid "Whether the screen magnifier is turned on."
-msgstr "Kas ekraaniluup on sisse lülitatud või mitte."
-
-#: ../data/mate-settings-daemon.schemas.in.h:57
-msgid "Whether the screen reader is turned on."
-msgstr "Kas ekraanilugeja on sisse lülitatud või mitte."
-
-#: ../data/mate-settings-daemon.schemas.in.h:58
-msgid "Whether the slow keys keyboard accessibility feature is turned on."
-msgstr "Kas aeglaste klahvide hõlbustus on sisse lülitatud või mitte."
-
-#: ../data/mate-settings-daemon.schemas.in.h:59
-msgid "Whether the sticky keys keyboard accessibility feature is turned on."
-msgstr "Kas kleepuvate klahvide hõlbustus on sisse lülitatud või mitte."
-
-#: ../data/desktop_mate_peripherals_smartcard.schemas.in.h:1
-msgid ""
-"Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
-"action will get performed when the smartcard used for log in is removed."
-msgstr "Määra selle väärtuseks \"none\" (puudub), \"lock_screen\" (lukustatakse ekraan) või \"force_logout\" (väljalogimise nõudmine). See tegevus käivitatakse, kui eemaldatakse smartcard, mida kasutati sisselogimiseks."
-
-#: ../data/desktop_mate_peripherals_smartcard.schemas.in.h:2
-msgid "Smartcard removal action"
-msgstr "Smartcardi eemaldamise tegevus"
-
-#: ../mate-settings-daemon/main.c:55
+#: ../mate-settings-daemon/main.c:56
 msgid "Enable debugging code"
 msgstr "Silumiskoodi lubamine"
 
-#: ../mate-settings-daemon/main.c:56
+#: ../mate-settings-daemon/main.c:57
+msgid "Replace the current daemon"
+msgstr ""
+
+#: ../mate-settings-daemon/main.c:58
 msgid "Don't become a daemon"
 msgstr "Deemoniks ei minda"
 
-#: ../mate-settings-daemon/main.c:57
-msgid "MateConf prefix from which to load plugin settings"
-msgstr "MateConfi prefiks, millelt laaditakse plugina sätteid"
-
-#: ../mate-settings-daemon/main.c:58
+#: ../mate-settings-daemon/main.c:59
 msgid "Exit after a time (for debugging)"
 msgstr "Lõpetamine teatud aja möödudes (silumiseks)"
 
@@ -663,137 +584,137 @@ msgstr "Hõlbustustega klaviatuur"
 msgid "Accessibility keyboard plugin"
 msgstr "Hõlbustustega klaviatuuri plugin"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:460
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:446
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Abiteabe kuvamisel tekkis viga: %s"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:591
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:657
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
 msgid "Do you want to activate Slow Keys?"
 msgstr "Kas soovid aeglased klahvid sisse lülitada?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:592
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:658
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:575
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:639
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Kas soovid aeglased klahvid välja lülitada?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:593
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:659
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
 msgstr "Sa hoidsid Shift klahvi all 8 sekundi vältel.  See on kiirklahv, mis lülitab sisse aeglaste klahvide funktsionaalsuse ja seetõttu muudab ka Sinu klaviatuuri käitumist."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:618
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:757
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
 msgid "Don't activate"
 msgstr "Ära lülita sisse"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:618
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:757
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
 msgid "Don't deactivate"
 msgstr "Ära lülita välja"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:624
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:763
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
 msgid "Activate"
 msgstr "Lülita sisse"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:624
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:763
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
 msgid "Deactivate"
 msgstr "Lülita välja"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:680
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:821
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
 msgid "Do_n't activate"
 msgstr "Ä_ra lülita sisse"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:680
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:821
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
 msgid "Do_n't deactivate"
 msgstr "Ä_ra lülita välja"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:683
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:824
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
 msgid "_Activate"
 msgstr "Lülita _sisse"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:683
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:824
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
 msgid "_Deactivate"
 msgstr "Lülita _välja"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:687
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:668
 msgid "Slow Keys Alert"
 msgstr "Aeglaste klahvide hoiatus"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:727
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:795
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:708
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:774
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Kas soovid kleepuvad klahvid sisse lülitada?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:728
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:796
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Kas soovid kleepuvad klahvid välja lülitadada?"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:730
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:798
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
 msgstr "Sa vajutasid Shift klahvi 5 korda järjest.  See on kiirklahv, mis lülitab sisse kleepuvate klahvide funktsionaalsuse ja seetõttu muudab ka Sinu klaviatuuri käitumist."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:732
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:800
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
 msgstr "Sa vajutasid korraga kahte klahvi või vajutasid Shift klahvi 5 korda järjest. See lülitab sisse kleepuvate klahvide funktsionaalsuse ja seetõttu muudab ka Sinu klaviatuuri käitumist."
 
-#: ../plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c:828
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:807
 msgid "Sticky Keys Alert"
 msgstr "Kleepuvate klahvide hoiatus"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.c:920
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:4
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:813
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Universaalse ligipääsu eelistused"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:1
-msgid "Enhance _contrast in colors"
-msgstr "_Värvustel on suurem kontrastsus"
-
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:2
-msgid "Make _text larger and easier to read"
-msgstr "_Tekst on suurem ja seda on lihtsam lugeda"
-
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:3
-msgid "Press and _hold keys to accept them (Slow Keys)"
-msgstr "Vajutusega nõustumiseks tuleb klahvi pikalt all _hoida (aeglased klahvid)"
-
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:5
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
 msgid "Use on-screen _keyboard"
 msgstr "Kasutatakse ekraani_klaviatuuri"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:6
-msgid "Use screen _magnifier"
-msgstr "Kasutatakse ekraani_luupi"
-
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:7
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:3
 msgid "Use screen _reader"
 msgstr "Kasutatakse ekraanilu_gejat"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:8
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:4
+msgid "Use screen _magnifier"
+msgstr "Kasutatakse ekraani_luupi"
+
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:5
+msgid "Enhance _contrast in colors"
+msgstr "_Värvustel on suurem kontrastsus"
+
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:6
+msgid "Make _text larger and easier to read"
+msgstr "_Tekst on suurem ja seda on lihtsam lugeda"
+
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
+msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
+msgstr "_Kiirklahvide kombinatsioone on võimalik valida klahvhaaval (kleepuvad klahvid)"
+
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
 msgstr "Klahvide topeltvajutusi _eiratakse (hüpikklahvid)"
 
-#: ../plugins/a11y-keyboard/gsd-a11y-preferences-dialog.ui.h:9
-msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
-msgstr "_Kiirklahvide kombinatsioone on võimalik valida klahvhaaval (kleepuvad klahvid)"
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
+msgid "Press and _hold keys to accept them (Slow Keys)"
+msgstr "Vajutusega nõustumiseks tuleb klahvi pikalt all _hoida (aeglased klahvid)"
 
 #: ../plugins/background/background.mate-settings-plugin.in.h:1
 msgid "Background"
@@ -819,122 +740,114 @@ msgstr "Liba"
 msgid "Dummy plugin"
 msgstr "Libaplugin"
 
-#: ../plugins/font/font.mate-settings-plugin.in.h:1
-msgid "Font"
-msgstr "Kirjatüüp"
-
-#: ../plugins/font/font.mate-settings-plugin.in.h:2
-msgid "Font plugin"
-msgstr "Kirjatüübi plugin"
-
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:64
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:70
 msgid "Don't show any warnings again for this file system"
 msgstr "Selle failisüsteemi kohta ei pea enam mingeid hoiatusi näitama"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:66
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:72
 msgid "Don't show any warnings again"
 msgstr "_Tulevikus ei kuvata enam ühtegi hoiatust"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:79
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:85
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr "Köitel \"%s\" on ainult %s vaba kettaruumi."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:82
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:88
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr "Sellel arvutil on ainult %s vaba kettaruumi."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:98
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:104
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
 msgstr "Kettaruumi on võimalik vabastada prügikasti tühjendamisega, kasutusel mitteolevate failide või programmide eemaldamisega või failide ümbertõstmisega teisele kettale või partitsioonile."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:101
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
 msgstr "Kettaruumi on võimalik vabastada kasutusel mitteolevate failide või programmide eemaldamisega või failide ümbertõstmisega teisele kettale või partitsioonile."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:106
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:112
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
 msgstr "Kettaruumi on võimalik vabastada prügikasti tühjendamisega, kasutusel mitteolevate failide või programmide eemaldamisega või failide ümbertõstmisega välisele kettale."
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:109
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:115
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
 msgstr "Kettaruumi on võimalik vabastada kasutusel mitteolevate failide või programmide eemaldamisega või failide ümbertõstmisega välisele kettale."
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:204
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:213
 msgid "Low Disk Space"
 msgstr "Kettal on vähe ruumi"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:439
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:445
 msgid "Empty Trash"
 msgstr "Tühjenda prügikast"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:447
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:453
 msgid "Examine…"
 msgstr "Uuri olukorda…"
 
-#: ../plugins/housekeeping/gsd-ldsm-dialog.c:454
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
 msgid "Ignore"
 msgstr "Eira"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:97
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:97
 #, c-format
 msgid "Removing item %lu of %lu"
 msgstr "%lu. kirje eemaldamine (%lu-st)"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:117
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 msgid "Removing: %s"
 msgstr "Eemaldamine: %s"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:296
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:296
 msgid "Emptying the trash"
 msgstr "Prügikasti tühjendamine"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:272
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:272
 msgid "Preparing to empty trash…"
 msgstr "Ettevalmistused prügikasti tühjendamiseks…"
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:299
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:299
 msgid "From: "
 msgstr "Kust:"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:360
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:351
 msgid "Empty all of the items from the trash?"
 msgstr "Kas tühjendada kogu prügikast?"
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:363
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:354
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
 msgstr "Kui sa valid prügikasti tühjendamise, siis kõik seal asuvad asjad visatakse jäädavalt minema. Vajadusel saab neid asju ka ükshaaval minema visata."
 
-#: ../plugins/housekeeping/gsd-ldsm-trash-empty.c:370
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:361
 msgid "_Empty Trash"
 msgstr "_Tühjenda prügikast"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:139
+#: ../plugins/keybindings/msd-keybindings-manager.c:129
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "Klahviseos (%s) on vigane"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:197
+#: ../plugins/keybindings/msd-keybindings-manager.c:165
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "Klahviseos (%s) on poolik"
 
-#: ../plugins/keybindings/gsd-keybindings-manager.c:493
+#: ../plugins/keybindings/msd-keybindings-manager.c:502
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -957,7 +870,7 @@ msgstr "Klaviatuur"
 msgid "Keyboard plugin"
 msgstr "Klaviatuuriplugin"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:131
+#: ../plugins/keyboard/msd-keyboard-xkb.c:137
 #, c-format
 msgid ""
 "Error activating XKB configuration.\n"
@@ -975,56 +888,32 @@ msgid ""
 " • The result of <b>%s</b>"
 msgstr "Viga XKB sätete aktiveerimisel.\nSee võib juhtuda mitmetel asjaoludel:\n • vea tõttu libxklavier teegis\n • vea tõttu X-serveris (utiliidid xkbcomp ja xmodmap)\n • ühildamatusega libxkbfile ja X-serveri vahel\n\nX-serveri versiooniandmed:\n%s\n%d\n%s\nKui sa plaanid olukorra kohta vearaporti saata, siis lisa sinna ka:\n • <b>%s</b> tulemus\n • <b>%s</b> tulemus"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:145
+#: ../plugins/keyboard/msd-keyboard-xkb.c:151
 msgid ""
 "You are using XFree 4.3.0.\n"
 "There are known problems with complex XKB configurations.\n"
 "Try using a simpler configuration or using a later version of the XFree software."
 msgstr "Sa kasutad XFree versiooni 4.3.0.\nSellel on teadaolevalt probleeme kompleksete XKB sätetega.\nProovi kasutada lihtsamaid sätteid või kasuta värskemat XFree tarkvara."
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:273
+#: ../plugins/keyboard/msd-keyboard-xkb.c:299
 msgid "_Layouts"
 msgstr "_Paigutused"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:280
+#: ../plugins/keyboard/msd-keyboard-xkb.c:306
 msgid "Keyboard _Preferences"
 msgstr "Klaviatuuri _eelistused"
 
-#: ../plugins/keyboard/gsd-keyboard-xkb.c:286
+#: ../plugins/keyboard/msd-keyboard-xkb.c:312
 msgid "Show _Current Layout"
 msgstr "Näita _praegust paigutust"
 
-#: ../plugins/keyboard/modmap-dialog.ui.h:1
-msgid "A_vailable files:"
-msgstr "_Saadaolevad failid:"
-
-#: ../plugins/keyboard/modmap-dialog.ui.h:2
-msgid "Load modmap files"
-msgstr "Modmap failide laadimine"
-
-#: ../plugins/keyboard/modmap-dialog.ui.h:3
-msgid "Would you like to load the modmap files?"
-msgstr "Kas soovid modmap faile laadida?"
-
-#: ../plugins/keyboard/modmap-dialog.ui.h:4
-msgid "_Do not show this message again"
-msgstr "Tulevikus _seda teadet enam ei kuvata"
-
-#: ../plugins/keyboard/modmap-dialog.ui.h:5
-msgid "_Load"
-msgstr "_Laadi"
-
-#: ../plugins/keyboard/modmap-dialog.ui.h:6
-msgid "_Loaded files:"
-msgstr "Laaditud _failid:"
-
-#: ../plugins/media-keys/gsd-media-keys-manager.c:195
+#: ../plugins/media-keys/msd-media-keys-manager.c:198
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
 msgstr "Vaikimisi terminali pole võimalik hankida. Veendu, et vaikimisi terminali käsuks on määratud sobilik rakendus."
 
-#: ../plugins/media-keys/gsd-media-keys-manager.c:235
+#: ../plugins/media-keys/msd-media-keys-manager.c:238
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1033,13 +922,13 @@ msgstr "Käsku pole võimalik käivitada: %s\nVeendu, et selline käsk on olemas
 
 #. translators:
 #. * The device has been disabled
-#: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:991
+#: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1005
 msgid "Disabled"
 msgstr "Keelatud"
 
 #. translators:
 #. * The number of sound outputs on a particular device
-#: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:998
+#: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1012
 #, c-format
 msgid "%u Output"
 msgid_plural "%u Outputs"
@@ -1048,14 +937,14 @@ msgstr[1] "%u väljundit"
 
 #. translators:
 #. * The number of sound inputs on a particular device
-#: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1008
+#: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1022
 #, c-format
 msgid "%u Input"
 msgid_plural "%u Inputs"
 msgstr[0] "%u sisend"
 msgstr[1] "%u sisendit"
 
-#: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1304
+#: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1320
 msgid "System Sounds"
 msgstr "Süsteemsed helid"
 
@@ -1067,16 +956,16 @@ msgstr "Meediaklahvid"
 msgid "Media keys plugin"
 msgstr "Meediaklahvide plugin"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:882
+#: ../plugins/mouse/msd-mouse-manager.c:887
 msgid "Could not enable mouse accessibility features"
 msgstr "Hiirehõlbustuste võimalusi pole võimalik lubada"
 
-#: ../plugins/mouse/gsd-mouse-manager.c:884
+#: ../plugins/mouse/msd-mouse-manager.c:889
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr "Hiirehõlbustuste kasutamiseks peab Mousetweaks olema paigaldatud."
 
-#: ../plugins/mouse/gsd-mouse-manager.c:887
+#: ../plugins/mouse/msd-mouse-manager.c:892
 msgid "Mouse Preferences"
 msgstr "Hiire-eelistused"
 
@@ -1088,6 +977,14 @@ msgstr "Hiir"
 msgid "Mouse plugin"
 msgstr "Hiireplugin"
 
+#: ../plugins/mpris/mpris.mate-settings-plugin.in.h:1
+msgid "Mpris"
+msgstr ""
+
+#: ../plugins/mpris/mpris.mate-settings-plugin.in.h:2
+msgid "Mpris plugin"
+msgstr ""
+
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:1
 msgid "Typing Break"
 msgstr "Tippimise vaheaeg"
@@ -1097,26 +994,26 @@ msgid "Typing break plugin"
 msgstr "Tippimise vaheaeja plugin"
 
 #: ../plugins/xrandr/xrandr.mate-settings-plugin.in.h:1
-msgid "Set up screen size and rotation settings"
-msgstr "Ekraani suuruse ja pööramise sätete määramine"
-
-#: ../plugins/xrandr/xrandr.mate-settings-plugin.in.h:2
 msgid "XRandR"
 msgstr "XRandR"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:371
+#: ../plugins/xrandr/xrandr.mate-settings-plugin.in.h:2
+msgid "Set up screen size and rotation settings"
+msgstr "Ekraani suuruse ja pööramise sätete määramine"
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:371
 msgid "Could not switch the monitor configuration"
 msgstr "Kuvari häälestust pole võimalik muuta"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:395
+#: ../plugins/xrandr/msd-xrandr-manager.c:395
 msgid "Could not restore the display's configuration"
 msgstr "Kuva sätteid pole võimalik taastada"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:420
+#: ../plugins/xrandr/msd-xrandr-manager.c:420
 msgid "Could not restore the display's configuration from a backup"
 msgstr "Kuva sätteid pole võimalik varukoopiast taastada"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:441
+#: ../plugins/xrandr/msd-xrandr-manager.c:441
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
@@ -1124,178 +1021,173 @@ msgid_plural ""
 msgstr[0] "Kuva eelmised sätted taastatakse %d sekundi pärast"
 msgstr[1] "Kuva eelmised sätted taastatakse %d sekundi pärast"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:490
+#: ../plugins/xrandr/msd-xrandr-manager.c:490
 msgid "Does the display look OK?"
 msgstr "Kas kuva paistab korras olevat?"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:496
+#: ../plugins/xrandr/msd-xrandr-manager.c:496
 msgid "_Restore Previous Configuration"
 msgstr "_Taasta eelmised sätted"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:497
+#: ../plugins/xrandr/msd-xrandr-manager.c:497
 msgid "_Keep This Configuration"
 msgstr "_Jäta need sätted alles"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:578
+#: ../plugins/xrandr/msd-xrandr-manager.c:578
 msgid "The selected configuration for displays could not be applied"
 msgstr "Valitud kuvasätteid pole võimalik rakendada"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1142
+#: ../plugins/xrandr/msd-xrandr-manager.c:1140
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "Ekraaniteavet pole võimalik värskendada: %s"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1146
+#: ../plugins/xrandr/msd-xrandr-manager.c:1144
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Sellest hoolimata proovitakse kuvari häälestust muuta."
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1877
+#: ../plugins/xrandr/msd-xrandr-manager.c:1875
 msgid "Rotation not supported"
 msgstr "Pööramine pole toetatud"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1933
+#: ../plugins/xrandr/msd-xrandr-manager.c:1931
 msgid "Could not save monitor configuration"
 msgstr "Kuvari häälestust pole võimalik salvestada"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1951
+#: ../plugins/xrandr/msd-xrandr-manager.c:1949
 msgid "Normal"
 msgstr "Tavaline"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1952
+#: ../plugins/xrandr/msd-xrandr-manager.c:1950
 msgid "Left"
 msgstr "Vasakule"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1953
+#: ../plugins/xrandr/msd-xrandr-manager.c:1951
 msgid "Right"
 msgstr "Paremale"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:1954
+#: ../plugins/xrandr/msd-xrandr-manager.c:1952
 msgid "Upside Down"
 msgstr "Tagurpidi"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:2074
+#: ../plugins/xrandr/msd-xrandr-manager.c:2072
 msgid "_Configure Display Settings…"
 msgstr "_Seadista kuva…"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:2115
+#: ../plugins/xrandr/msd-xrandr-manager.c:2113
 msgid "Configure display settings"
 msgstr "Kuva seadistamine"
 
-#: ../plugins/xrandr/gsd-xrandr-manager.c:2175
+#: ../plugins/xrandr/msd-xrandr-manager.c:2173
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Kuvarite jaoks salvestatud häälestust pole võimalik rakendada"
 
-#: ../plugins/xrdb/gsd-xrdb-manager.c:254
-#: ../plugins/xrdb/gsd-xrdb-manager.c:323
+#: ../plugins/xrdb/msd-xrdb-manager.c:253
+#: ../plugins/xrdb/msd-xrdb-manager.c:322
 msgid "Cannot determine user's home directory"
 msgstr "Kasutaja kodukataloogi pole võimalik tuvastada"
 
 #: ../plugins/xrdb/xrdb.mate-settings-plugin.in.h:1
-msgid "Manage the X resource database"
-msgstr "X'i ressursside andmebaasi haldamine"
-
-#: ../plugins/xrdb/xrdb.mate-settings-plugin.in.h:2
 msgid "X Resource Database"
 msgstr "X'i ressursside andmebaas"
 
-#: ../plugins/xsettings/gsd-xsettings-manager.c:596
-#, c-format
-msgid "MateConf key %s set to type %s but its expected type was %s\n"
-msgstr "MateConf võti %s on tüübiga %s, eeldatakse tüüpi %s\n"
+#: ../plugins/xrdb/xrdb.mate-settings-plugin.in.h:2
+msgid "Manage the X resource database"
+msgstr "X'i ressursside andmebaasi haldamine"
 
 #: ../plugins/xsettings/xsettings.mate-settings-plugin.in.h:1
-msgid "Manage X Settings"
-msgstr "X'i seadistuste haldamine"
-
-#: ../plugins/xsettings/xsettings.mate-settings-plugin.in.h:2
 msgid "X Settings"
 msgstr "X'i sätted"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:167
+#: ../plugins/xsettings/xsettings.mate-settings-plugin.in.h:2
+msgid "Manage X Settings"
+msgstr "X'i seadistuste haldamine"
+
+#: ../plugins/smartcard/msd-smartcard-manager.c:167
 msgid "Module Path"
 msgstr "Mooduli rada"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:168
+#: ../plugins/smartcard/msd-smartcard-manager.c:168
 msgid "path to smartcard PKCS #11 driver"
 msgstr "smartcardi PKCS #11 draiveri asukoht"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:504
+#: ../plugins/smartcard/msd-smartcard-manager.c:504
 msgid "received error or hang up from event source"
 msgstr "sündmuste allikast saadi tõrge või katkestus "
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:593
+#: ../plugins/smartcard/msd-smartcard-manager.c:593
 #, c-format
 msgid "NSS security system could not be initialized"
 msgstr "NSS turvasüsteemi pole võimalik lähtestada"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:662
+#: ../plugins/smartcard/msd-smartcard-manager.c:662
 #, c-format
 msgid "no suitable smartcard driver could be found"
 msgstr "sobivat smartcardi draiverit ei leitud"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:682
+#: ../plugins/smartcard/msd-smartcard-manager.c:682
 #, c-format
 msgid "smartcard driver '%s' could not be loaded"
 msgstr "smartcardi draiverit '%s' pole võimalik laadida"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:771
+#: ../plugins/smartcard/msd-smartcard-manager.c:771
 #, c-format
 msgid "could not watch for incoming card events - %s"
 msgstr "sissetulevaid kaardisündmuseid ei suudetud jälgida - %s"
 
-#: ../plugins/smartcard/gsd-smartcard-manager.c:1124
+#: ../plugins/smartcard/msd-smartcard-manager.c:1124
 #, c-format
 msgid "encountered unexpected error while waiting for smartcard events"
 msgstr "esines ootamatu viga, kui oodati smartcardi sündmuseid"
 
-#: ../plugins/smartcard/gsd-smartcard.c:154
+#: ../plugins/smartcard/msd-smartcard.c:154
 msgid "Slot ID"
 msgstr "Sloti ID"
 
-#: ../plugins/smartcard/gsd-smartcard.c:155
+#: ../plugins/smartcard/msd-smartcard.c:155
 msgid "The slot the card is in"
 msgstr "Pesa, milles kaart asub"
 
-#: ../plugins/smartcard/gsd-smartcard.c:161
+#: ../plugins/smartcard/msd-smartcard.c:161
 msgid "Slot Series"
 msgstr "Pesa seeria"
 
-#: ../plugins/smartcard/gsd-smartcard.c:162
+#: ../plugins/smartcard/msd-smartcard.c:162
 msgid "per-slot card identifier"
 msgstr "pesade kaupa kaardi identifitseerija"
 
-#: ../plugins/smartcard/gsd-smartcard.c:168
-#: ../plugins/smartcard/gsd-smartcard.c:169
+#: ../plugins/smartcard/msd-smartcard.c:168
+#: ../plugins/smartcard/msd-smartcard.c:169
 msgid "name"
 msgstr "nimi"
 
-#: ../plugins/smartcard/gsd-smartcard.c:173
+#: ../plugins/smartcard/msd-smartcard.c:173
 msgid "Module"
 msgstr "Moodul"
 
-#: ../plugins/smartcard/gsd-smartcard.c:174
+#: ../plugins/smartcard/msd-smartcard.c:174
 msgid "smartcard driver"
 msgstr "smartcardi lugeja draiver"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:1
-msgid "Change system time"
-msgstr "Muuda süsteemi kella"
-
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:2
 msgid "Change system time zone"
 msgstr "Muuda süsteemi ajavööndit"
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:3
-msgid "Configure hardware clock"
-msgstr "Muuda raudvaralist kella"
-
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:4
+#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:2
 msgid "Privileges are required to change the system time zone."
 msgstr "Süsteemi ajavööndi muutmiseks on vaja eriõiguseid."
 
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:5
+#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:3
+msgid "Change system time"
+msgstr "Muuda süsteemi kella"
+
+#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:4
 msgid "Privileges are required to change the system time."
 msgstr "Süsteemi kella muutmiseks on vaja eriõiguseid."
+
+#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:5
+msgid "Configure hardware clock"
+msgstr "Muuda raudvaralist kella"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:6
 msgid "Privileges are required to configure the hardware clock."
