@@ -1,0 +1,7 @@
+[main]
+host = https://www.transifex.com
+ 
+[MATE.mate-settings-daemon]
+file_filter = po/<lang>.po
+source_file = po/mate-settings-daemon.pot
+source_lang = en
