@@ -35,6 +35,10 @@
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
 
+#ifdef HAVE_LIBNOTIFY
+#include <libnotify/notify.h>
+#endif /* HAVE_LIBNOTIFY */
+
 #include "mate-settings-manager.h"
 #include "mate-settings-profile.h"
 
@@ -483,6 +487,10 @@ main (int argc, char *argv[])
                 goto out;
         }
 
+#ifdef HAVE_LIBNOTIFY
+        notify_init ("mate-settings-daemon");
+#endif /* HAVE_LIBNOTIFY */
+
         mate_settings_profile_start ("mate_settings_manager_new");
         manager = mate_settings_manager_new ();
         mate_settings_profile_end ("mate_settings_manager_new");
@@ -520,6 +528,11 @@ main (int argc, char *argv[])
         if (manager != NULL) {
                 g_object_unref (manager);
         }
+
+#ifdef HAVE_LIBNOTIFY
+        if (notify_is_initted ())
+            notify_uninit ();
+#endif /* HAVE_LIBNOTIFY */
 
         g_debug ("SettingsDaemon finished");
         mate_settings_profile_end (NULL);

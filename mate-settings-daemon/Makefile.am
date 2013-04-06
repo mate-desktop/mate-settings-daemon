@@ -8,6 +8,7 @@ INCLUDES = \
 	$(WARN_CFLAGS)						\
 	$(DISABLE_DEPRECATED_CFLAGS)				\
 	$(SETTINGS_DAEMON_CFLAGS)				\
+	$(LIBNOTIFY_CFLAGS)						\
 	$(NULL)
 
 noinst_LTLIBRARIES = 			\
@@ -78,7 +79,8 @@ mate_settings_daemon_LDFLAGS = 	\
 
 mate_settings_daemon_LDADD = 		\
 	libmsd-profile.la		\
-	$(SETTINGS_DAEMON_LIBS)
+	$(SETTINGS_DAEMON_LIBS)	\
+	$(LIBNOTIFY_LIBS)
 
 EXTRA_DIST = 				\
 	$(Dbusapi_DATA)			\

@@ -1245,10 +1245,6 @@ static void
 msd_a11y_keyboard_manager_init (MsdA11yKeyboardManager *manager)
 {
         manager->priv = MSD_A11Y_KEYBOARD_MANAGER_GET_PRIVATE (manager);
-
-#ifdef HAVE_LIBNOTIFY
-        notify_init ("mate-settings-daemon");
-#endif /* HAVE_LIBNOTIFY */
 }
 
 static void
