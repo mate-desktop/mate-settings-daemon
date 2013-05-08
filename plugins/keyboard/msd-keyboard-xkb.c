@@ -47,6 +47,8 @@
 #define MATEKBD_KBD_SCHEMA "org.mate.peripherals-keyboard-xkb.kbd"
 
 #define KNOWN_FILES_KEY "known-file-list"
+#define DISABLE_INDICATOR_KEY "disable-indicator"
+#define DUPLICATE_LEDS_KEY "duplicate-leds"
 
 static MsdKeyboardManager* manager = NULL;
 
@@ -173,8 +175,7 @@ apply_desktop_settings (void)
 	   before activating them */
 	matekbd_desktop_config_activate (&current_config);
 
-	/* FIXME add an option to GSettings to duplicate leds? */
-	show_leds = FALSE;
+	show_leds = g_settings_get_boolean (settings_desktop, DUPLICATE_LEDS_KEY);
 	for (i = sizeof (indicator_icons) / sizeof (indicator_icons[0]);
 	     --i >= 0;) {
 		gtk_status_icon_set_visible (indicator_icons[i],
@@ -354,8 +355,7 @@ show_hide_icon ()
 {
 	if (g_strv_length (current_kbd_config.layouts_variants) > 1) {
 		if (icon == NULL) {
-			/* FIXME add an option to GSettings to disable this? */
-			gboolean disable = FALSE;
+			gboolean disable = g_settings_get_boolean (settings_desktop, DISABLE_INDICATOR_KEY);
 			if (disable)
 				return;
 
