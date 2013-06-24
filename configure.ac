@@ -12,7 +12,7 @@ AC_INIT([mate-settings-daemon],
 
 AC_CONFIG_SRCDIR([mate-settings-daemon/mate-settings-manager.c])
 
-AM_INIT_AUTOMAKE([1.9 no-dist-gzip dist-bzip2 tar-ustar])
+AM_INIT_AUTOMAKE([1.9 no-dist-gzip dist-xz tar-ustar])
 
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 

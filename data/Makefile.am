@@ -1,34 +1,38 @@
 NULL =
 
-gsettings_SCHEMAS = \
-	org.mate.applications-at.gschema.xml \
-	org.mate.font-rendering.gschema.xml \
-	org.mate.keybindings.gschema.xml \
-	org.mate.peripherals-smartcard.gschema.xml \
-	org.mate.peripherals-touchpad.gschema.xml \
-	org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml \
-	org.mate.SettingsDaemon.plugins.background.gschema.xml \
-	org.mate.SettingsDaemon.plugins.clipboard.gschema.xml \
-	org.mate.SettingsDaemon.plugins.datetime.gschema.xml \
-	org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml \
-	org.mate.SettingsDaemon.plugins.keybindings.gschema.xml \
-	org.mate.SettingsDaemon.plugins.keyboard.gschema.xml \
-	org.mate.SettingsDaemon.plugins.media-keys.gschema.xml \
-	org.mate.SettingsDaemon.plugins.mpris.gschema.xml \
-	org.mate.SettingsDaemon.plugins.mouse.gschema.xml \
-	org.mate.SettingsDaemon.plugins.smartcard.gschema.xml \
-	org.mate.SettingsDaemon.plugins.sound.gschema.xml \
-	org.mate.SettingsDaemon.plugins.typing-break.gschema.xml \
-	org.mate.SettingsDaemon.plugins.xrandr.gschema.xml \
-	org.mate.SettingsDaemon.plugins.xrdb.gschema.xml \
-	org.mate.SettingsDaemon.plugins.xsettings.gschema.xml \
+msd_gschemas_in_in = \
+	org.mate.applications-at.gschema.xml.in.in \
+	org.mate.font-rendering.gschema.xml.in.in \
+	org.mate.keybindings.gschema.xml.in.in \
+	org.mate.peripherals-smartcard.gschema.xml.in.in \
+	org.mate.peripherals-touchpad.gschema.xml.in.in \
+	org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in \
+	org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in \
+	org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.in \
+	org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.in \
+	org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in \
+	org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.in \
+	org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.in \
+	org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in \
+	org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.in \
+	org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.in \
+	org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.in \
+	org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.in \
+	org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.in \
+	org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in \
+	org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in \
+	org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in \
 	$(NULL)
 
 @INTLTOOL_XML_NOMERGE_RULE@
-@GSETTINGS_RULES@
+
+msd_gschemas_in = $(msd_gschemas_in_in:.xml.in.in=.xml.in)
+gsettings_SCHEMAS = $(msd_gschemas_in:.xml.in=.xml)
 
 %.gschema.xml.in: %.gschema.xml.in.in Makefile
 	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
+
+@GSETTINGS_RULES@
 
 convertdir = $(datadir)/MateConf/gsettings
 convert_DATA = mate-settings-daemon.convert
@@ -52,11 +56,11 @@ pkgconfig_DATA = mate-settings-daemon.pc
 
 #disabled until we support it
 #xmldir = @MATE_KEYBINDINGS_KEYSDIR@
-#xml_in_files = 50-accessibility.xml.in
+xml_in_files = 50-accessibility.xml.in
 #xml_DATA = $(xml_in_files:.xml.in=.xml)
 
 EXTRA_DIST = 				\
-	$(schemas_in_files)		\
+	$(msd_gschemas_in_in)		\
 	$(convert_DATA)			\
 	$(service_in_files)		\
 	$(desktop_in_files)		\
@@ -65,7 +69,8 @@ EXTRA_DIST = 				\
 	$(NULL)
 
 DISTCLEANFILES = 			\
-	$(schemas_DATA)			\
+	$(gsettings_SCHEMAS)			\
+	$(msd_gschemas_in)		\
 	$(service_DATA)			\
 	$(desktop_DATA)			\
 	$(xml_DATA)			\

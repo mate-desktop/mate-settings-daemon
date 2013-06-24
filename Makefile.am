@@ -8,7 +8,6 @@ SUBDIRS = 			\
 	$(NULL)
 
 EXTRA_DIST = \
-	MAINTAINERS		\
 	ChangeLog		\
 	README			\
 	$(NULL)
