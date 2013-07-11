@@ -163,7 +163,7 @@ get_term_command (MsdMediaKeysManager *manager)
 
 	settings = g_settings_new ("org.mate.applications-terminal");
 	cmd_term = g_settings_get_string (settings, "exec");
-	cmd_args = g_settings_get_string (settings, "exec_arg");
+	cmd_args = g_settings_get_string (settings, "exec-arg");
 
 	if (cmd_term[0] != '\0') {
 		cmd = g_strdup_printf ("%s %s -e", cmd_term, cmd_args);
@@ -1186,7 +1186,7 @@ msd_media_keys_manager_stop (MsdMediaKeysManager *manager)
                                           manager);
         }
 
-        if (priv->settings) {
+        if (priv->settings != NULL) {
                 g_object_unref (priv->settings);
                 priv->settings = NULL;
         }
