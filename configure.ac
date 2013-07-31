@@ -50,17 +50,37 @@ dnl ---------------------------------------------------------------------------
 
 DBUS_GLIB_REQUIRED_VERSION=0.74
 GLIB_REQUIRED_VERSION=2.17.3
-GTK_REQUIRED_VERSION=2.24.0
 GIO_REQUIRED_VERSION=2.26.0
-MATE_DESKTOP_REQUIRED_VERSION=1.5.0
-LIBMATEKBD_REQUIRED_VERSION=1.6.1
+MATE_DESKTOP_REQUIRED_VERSION=1.7.0
+LIBMATEKBD_REQUIRED_VERSION=1.7.0
 LIBNOTIFY_REQUIRED_VERSION=0.7.0
 
 EXTRA_COMPILE_WARNINGS(yes)
 
+AC_MSG_CHECKING([which gtk+ version to compile against])
+AC_ARG_WITH([gtk],
+  [AS_HELP_STRING([--with-gtk=2.0|3.0],[which gtk+ version to compile against (default: 2.0)])],
+  [case "$with_gtk" in
+     2.0|3.0) ;;
+     *) AC_MSG_ERROR([invalid gtk version specified]) ;;
+   esac],
+  [with_gtk=2.0])
+AC_MSG_RESULT([$with_gtk])
+
+case "$with_gtk" in
+  2.0) GTK_API_VERSION=2.0
+       GTK_REQUIRED_VERSION=2.24.0
+       LIBCANBERRA_PC=libcanberra-gtk
+       ;;
+  3.0) GTK_API_VERSION=3.0
+       GTK_REQUIRED_VERSION=3.0.0
+       LIBCANBERRA_PC=libcanberra-gtk3
+       ;;
+esac
+
 PKG_CHECK_MODULES(SETTINGS_DAEMON,
 	glib-2.0 >= $GLIB_REQUIRED_VERSION
-	gtk+-2.0 >= $GTK_REQUIRED_VERSION
+	gtk+-$GTK_API_VERSION >= $GTK_REQUIRED_VERSION
 	gio-2.0 >= $GIO_REQUIRED_VERSION
 	gmodule-2.0
 	gthread-2.0
@@ -68,7 +88,7 @@ PKG_CHECK_MODULES(SETTINGS_DAEMON,
 )
 
 PKG_CHECK_MODULES(SETTINGS_PLUGIN,
-	gtk+-2.0 >= $GTK_REQUIRED_VERSION
+	gtk+-$GTK_API_VERSION >= $GTK_REQUIRED_VERSION
 	gio-2.0 >= $GIO_REQUIRED_VERSION
 	dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
 )
@@ -255,7 +275,7 @@ AC_ARG_ENABLE(pulse,
 
 if test x$WANT_PULSE = xyes ; then
        PA_REQUIRED_VERSION=0.9.16
-       PKG_CHECK_MODULES(PULSE, glib-2.0 libpulse >= $PA_REQUIRED_VERSION libpulse-mainloop-glib >= $PA_REQUIRED_VERSION libcanberra-gtk,
+       PKG_CHECK_MODULES(PULSE, glib-2.0 libpulse >= $PA_REQUIRED_VERSION libpulse-mainloop-glib >= $PA_REQUIRED_VERSION $LIBCANBERRA_PC,
              [have_pulse=true
               AC_DEFINE(HAVE_PULSE, 1, [Define if PULSE sound server should be used])],
              [have_pulse=false])
@@ -532,6 +552,7 @@ echo "
     dbus-1 system.d dir:      ${DBUS_SYS_DIR}
     PolicyKit support:        ${HAVE_POLKIT}
 
+    Gtk+ version:             ${GTK_API_VERSION}
     Libnotify support:        ${have_libnotify}
     GStreamer support:        ${have_gstreamer}
     PulseAudio support:       ${have_pulse}
