@@ -42,9 +42,9 @@
 
 #define MATE_DESKTOP_USE_UNSTABLE_API
 
-#include <libmateui/mate-rr-config.h>
-#include <libmateui/mate-rr.h>
-#include <libmateui/mate-rr-labeler.h>
+#include <libmate-desktop/mate-rr-config.h>
+#include <libmate-desktop/mate-rr.h>
+#include <libmate-desktop/mate-rr-labeler.h>
 
 #ifdef HAVE_LIBNOTIFY
 #include <libnotify/notify.h>

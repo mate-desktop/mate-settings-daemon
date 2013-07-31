@@ -40,7 +40,7 @@
 #include <gio/gio.h>
 
 #define MATE_DESKTOP_USE_UNSTABLE_API
-#include <libmateui/mate-bg.h>
+#include <libmate-desktop/mate-bg.h>
 #include <X11/Xatom.h>
 
 #include "mate-settings-profile.h"
