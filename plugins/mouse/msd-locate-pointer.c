@@ -123,11 +123,20 @@ locate_pointer_paint (MsdLocatePointerData *data,
 }
 
 static gboolean
+#if GTK_CHECK_VERSION (3, 0, 0)
+locate_pointer_draw (GtkWidget      *widget,
+                     cairo_t *cr,
+#else
 locate_pointer_expose (GtkWidget      *widget,
-		       GdkEventExpose *event,
-		       gpointer        user_data)
+                       GdkEventExpose *event,
+#endif
+                       gpointer        user_data)
 {
   MsdLocatePointerData *data = (MsdLocatePointerData *) user_data;
+#if GTK_CHECK_VERSION (3, 0, 0)
+  if (gtk_cairo_should_draw_window (cr, data->window))
+    locate_pointer_paint (data, cr, gtk_widget_is_composited (data->widget));
+#else
   cairo_t *cr;
 
   if (event->window != data->window)
@@ -136,6 +145,7 @@ locate_pointer_expose (GtkWidget      *widget,
   cr = gdk_cairo_create (data->window);
   locate_pointer_paint (data, cr, gtk_widget_is_composited (data->widget));
   cairo_destroy (cr);
+#endif
 
   return TRUE;
 }
@@ -144,14 +154,33 @@ static void
 update_shape (MsdLocatePointerData *data)
 {
   cairo_t *cr;
+#if GTK_CHECK_VERSION (3, 0, 0)
+  cairo_region_t *region;
+  cairo_surface_t *mask;
+#else
   GdkBitmap *mask;
+#endif
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+  mask = cairo_image_surface_create (CAIRO_FORMAT_A1, WINDOW_SIZE, WINDOW_SIZE);
+  cr = cairo_create (mask);
+  region = gdk_cairo_region_create_from_surface (mask);
+#else
   mask = gdk_pixmap_new (data->window, WINDOW_SIZE, WINDOW_SIZE, 1);
   cr = gdk_cairo_create (mask);
+#endif
   locate_pointer_paint (data, cr, FALSE);
+#if GTK_CHECK_VERSION (3, 0, 0)
+  gdk_window_shape_combine_region (data->window, region, 0, 0);
+  cairo_region_destroy (region);
+#else
   gdk_window_shape_combine_mask (data->window, mask, 0, 0);
   g_object_unref (mask);
+#endif
   cairo_destroy (cr);
+#if GTK_CHECK_VERSION (3, 0, 0)
+  cairo_surface_destroy (mask);
+#endif
 }
 
 static void
@@ -187,6 +216,14 @@ timeline_frame_cb (MsdTimeline *timeline,
 static void
 set_transparent_shape (GdkWindow *window)
 {
+#if GTK_CHECK_VERSION (3, 0, 0)
+  cairo_region_t *region;
+
+  region = cairo_region_create ();
+
+  gdk_window_input_shape_combine_region (data->window, region, 0, 0);
+  cairo_region_destroy (region);
+#else
   GdkBitmap *mask;
   cairo_t *cr;
 
@@ -200,12 +237,17 @@ set_transparent_shape (GdkWindow *window)
   gdk_window_shape_combine_mask (data->window, mask, 0, 0);
   g_object_unref (mask);
   cairo_destroy (cr);
+#endif
 }
 
 static void
 unset_transparent_shape (GdkWindow *window)
 {
+#if GTK_CHECK_VERSION (3, 0, 0)
+  gdk_window_shape_combine_region (data->window, NULL, 0, 0);
+#else
   gdk_window_shape_combine_mask (data->window, NULL, 0, 0);
+#endif
 }
 
 static void
@@ -235,23 +277,39 @@ static void
 create_window (MsdLocatePointerData *data,
 	       GdkScreen            *screen)
 {
+#if !GTK_CHECK_VERSION (3, 0, 0)
   GdkColormap *colormap;
+#endif
   GdkVisual *visual;
   GdkWindowAttr attributes;
   gint attributes_mask;
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
   colormap = gdk_screen_get_rgba_colormap (screen);
+#endif
   visual = gdk_screen_get_rgba_visual (screen);
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+  if (visual == NULL)
+    visual = gdk_screen_get_system_visual (screen);
+#endif
 
   attributes_mask = GDK_WA_X | GDK_WA_Y;
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+  if (visual != NULL)
+    attributes_mask = attributes_mask | GDK_WA_VISUAL;
+#else
   if (colormap)
     attributes_mask = attributes_mask | GDK_WA_VISUAL | GDK_WA_COLORMAP;
+#endif
 
   attributes.window_type = GDK_WINDOW_TEMP;
   attributes.wclass = GDK_INPUT_OUTPUT;
   attributes.visual = visual;
+#if !GTK_CHECK_VERSION (3, 0, 0)
   attributes.colormap = colormap;
+#endif
   attributes.event_mask = GDK_VISIBILITY_NOTIFY_MASK | GDK_EXPOSURE_MASK;
   attributes.width = 1;
   attributes.height = 1;
@@ -276,8 +334,13 @@ msd_locate_pointer_data_new (GdkScreen *screen)
   data->widget = gtk_window_new (GTK_WINDOW_POPUP);
   gtk_widget_realize (data->widget);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+  g_signal_connect (G_OBJECT (data->widget), "draw",
+                    G_CALLBACK (locate_pointer_draw),
+#else
   g_signal_connect (G_OBJECT (data->widget), "expose_event",
                     G_CALLBACK (locate_pointer_expose),
+#endif
                     data);
 
   data->timeline = msd_timeline_new (ANIMATION_LENGTH);
@@ -296,8 +359,10 @@ move_locate_pointer_window (MsdLocatePointerData *data,
 			    GdkScreen            *screen)
 {
   gint cursor_x, cursor_y;
+#if !GTK_CHECK_VERSION (3, 0, 0)
   GdkBitmap *mask;
   cairo_t *cr;
+#endif
 
   gdk_window_get_pointer (gdk_screen_get_root_window (screen), &cursor_x, &cursor_y, NULL);
 
@@ -306,6 +371,9 @@ move_locate_pointer_window (MsdLocatePointerData *data,
                           cursor_y - WINDOW_SIZE / 2,
                           WINDOW_SIZE, WINDOW_SIZE);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+  gdk_window_input_shape_combine_region (data->window, NULL, 0, 0);
+#else
   mask = gdk_pixmap_new (data->window, WINDOW_SIZE, WINDOW_SIZE, 1);
 
   cr = gdk_cairo_create (mask);
@@ -314,10 +382,12 @@ move_locate_pointer_window (MsdLocatePointerData *data,
   cairo_fill (cr);
   cairo_destroy (cr);
 
+
   /* allow events to happen through the window */
   gdk_window_input_shape_combine_mask (data->window, mask, 0, 0);
 
   g_object_unref (mask);
+#endif
 }
 
 void
@@ -436,7 +506,11 @@ set_locate_pointer (void)
                   Window xroot;
 
                   screen = gdk_display_get_screen (display, j);
+#if GTK_CHECK_VERSION (3, 0, 0)
+                  xroot = gdk_x11_window_get_xid (gdk_screen_get_root_window (screen));
+#else
                   xroot = gdk_x11_drawable_get_xid (gdk_screen_get_root_window (screen));
+#endif
 
                   XGrabKey (GDK_DISPLAY_XDISPLAY (display),
                             keys[i].keycode,
