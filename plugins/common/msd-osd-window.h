@@ -70,7 +70,11 @@ struct MsdOsdWindow {
 struct MsdOsdWindowClass {
         GtkWindowClass parent_class;
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+        void (* draw_when_composited) (MsdOsdWindow *window, cairo_t *cr);
+#else
         void (* expose_when_composited) (MsdOsdWindow *window, cairo_t *cr);
+#endif
 };
 
 GType                 msd_osd_window_get_type          (void);

@@ -645,7 +645,11 @@ draw_action_custom (MsdMediaKeysWindow *window,
 }
 
 static void
+#if GTK_CHECK_VERSION (3, 0, 0)
+msd_media_keys_window_draw_when_composited (MsdOsdWindow *osd_window,
+#else
 msd_media_keys_window_expose_when_composited (MsdOsdWindow *osd_window,
+#endif
                                               cairo_t      *cr)
 {
         MsdMediaKeysWindow *window = MSD_MEDIA_KEYS_WINDOW (osd_window);
@@ -667,7 +671,11 @@ msd_media_keys_window_class_init (MsdMediaKeysWindowClass *klass)
 {
         MsdOsdWindowClass *osd_window_class = MSD_OSD_WINDOW_CLASS (klass);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+        osd_window_class->draw_when_composited = msd_media_keys_window_draw_when_composited;
+#else
         osd_window_class->expose_when_composited = msd_media_keys_window_expose_when_composited;
+#endif
 
         g_type_class_add_private (klass, sizeof (MsdMediaKeysWindowPrivate));
 }
