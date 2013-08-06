@@ -3,30 +3,31 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Alex Camacho Castilho <matebr@uol.com.br>, 2004.
-# Antonio Fernandes C. Neto <fernandes@pelivre.org>, 2010.
-# Djavan Fagundes <dnoway@gmail.com>, 2008.
-# Evandro Fernandes Giovanini <evandrofg@ig.com.br>, 2004, 2006.
-# Guilherme de S. Pastore <gpastore@colband.com.br>, 2004, 2005.
-# Henrique P. Machado <hpmachado@gnome.org>, 2009, 2010.
-# Ivan Passos <ivan@cyclades.com>, 1999.
-# Jonh Wendell <jwendell@gnome.org>, 2009.
-# Krix Apolinário <krixapolinario@gmail.com>, 2009.
-# Leonardo Ferreira Fontenelle <leonardof@gnome.org>, 2006, 2008.
-# Luiz Fernando S. Armesto <luiz.armesto@gmail.com>, 2007.
-# Og Maciel <ogmaciel@ubuntu.com>, 2007.
-# Raul Pereira <contato@raulpereira.com>, 2007.
-# Sandro Nunes Henrique <sandro@conectiva.com.br>, 1999.
-# Tiago Cardoso Menezes <zion@via-rs.net>, 2003.
-# Vladimir Melo <vmelo@gnome.org>, 2009.
-# Washington Lins <washington-lins@uol.com.br>, 2007.
+# Alberto Federman Neto <mrtabac@gmail.com>, 2013
+# Alex Camacho Castilho <matebr@uol.com.br>, 2004
+# Antonio Fernandes C. Neto <fernandes@pelivre.org>, 2010
+# dnoway <dnoway@gmail.com>, 2008
+# Evandro Fernandes Giovanini <evandrofg@ig.com.br>, 2004, 2006
+# Guilherme de S. Pastore <gpastore@colband.com.br>, 2004, 2005
+# Henrique P. Machado <hpmachado@gnome.org>, 2009, 2010
+# Ivan Passos <ivan@cyclades.com>, 1999
+# Jonh Wendell <jwendell@gnome.org>, 2009
+# Krix Apolinário <krixapolinario@gmail.com>, 2009
+# leonardof <leonardof@gnome.org>, 2006, 2008
+# Luiz Fernando S. Armesto <luiz.armesto@gmail.com>, 2007
+# Og Maciel <ogmaciel@ubuntu.com>, 2007
+# Raul Pereira <contato@raulpereira.com>, 2007
+# Sandro Nunes Henrique <sandro@conectiva.com.br>, 1999
+# Tiago Cardoso Menezes <zion@via-rs.net>, 2003
+# Vladimir Melo <vmelo@gnome.org>, 2009
+# Washington Lins <washington-lins@uol.com.br>, 2007
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2013-03-22 22:15+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"PO-Revision-Date: 2013-05-21 18:34+0000\n"
+"Last-Translator: Alberto Federman Neto <mrtabac@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/MATE/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -246,7 +247,7 @@ msgstr "Defina como VERDADEIRO para habilitar todos os touchpads."
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:1
 msgid "Activation of this plugin"
-msgstr ""
+msgstr "Ativação deste Plugin"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:2
@@ -265,7 +266,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr ""
+msgstr "Este Plugin pode ser ativado ou pelo próprio mate-settings-daemon, ou não"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:3
@@ -284,7 +285,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:3
 msgid "Priority to use for this plugin"
-msgstr ""
+msgstr "Prioridade de uso do Plugin"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:4
@@ -303,7 +304,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
-msgstr ""
+msgstr "Prioridade de uso deste Plugin na fila de início do mate-settings-daemon "
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:5
 msgid "Free percentage notify threshold"
@@ -525,7 +526,7 @@ msgstr "Se um ícone de notificação de coisas relacionadas com a tela deve ser
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:7
 msgid "Do not touch monitor configuration"
-msgstr ""
+msgstr "Não mexa na configuração do monitor"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:8
 msgid ""
@@ -535,7 +536,7 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr ""
+msgstr "Geralmente, o mate-settings-daemon configura os monitores internos e externos de modo a ligar os monitores externos ai iniciar e os de Laptop na configuração inicial, e determina um modo lado a lado apropriado. Regular esta chave para verdadeira, desabilitará este comportamento e a configuração dos monitores não será mudada (a menos que o usuário especifique uma configuração especial)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:9
 msgid "Turn on external monitor after system boot"
@@ -580,7 +581,7 @@ msgstr "Habilitar código de depuração"
 
 #: ../mate-settings-daemon/main.c:57
 msgid "Replace the current daemon"
-msgstr ""
+msgstr "Substitue a configuração corrente"
 
 #: ../mate-settings-daemon/main.c:58
 msgid "Don't become a daemon"
@@ -993,11 +994,11 @@ msgstr "Plug-in de mouse"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:1
 msgid "Mpris"
-msgstr ""
+msgstr "Mpris"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:2
 msgid "Mpris plugin"
-msgstr ""
+msgstr "Plugin Mpris"
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:1
 msgid "Typing Break"

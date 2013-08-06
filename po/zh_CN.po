@@ -3,23 +3,25 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Aron Xu <happyaron.xu@gmail.com>, 2009.
-# by Abel Cheung <maddog@linuxhall.org>, 2001.
-# Deng Xiyue <manphiz@gmail.com>, 2009.
-# Haonan Yu <rebuilty@gmail.com>, 2013.
-# He Qiangqiang <carton@linux.net.cn>, 2002.
-# Sun G11n <mate_int_l10n@ireland.sun.com>, 2002.
-# Tao Wang <dancefire@gmail.com>, 2010.
-# Tao Wei <weitao1979@gmail.com>, 2009.
-# vicwjb <vicwjb@gmail.com>, 2010.
-# 甘露(Gan Lu) <rhythm.gan@gmail.com>, 2009.
+# Aron Xu <happyaron.xu@gmail.com>, 2009
+# by Abel Cheung <maddog@linuxhall.org>, 2001
+# Deng Xiyue <manphiz@gmail.com>, 2009
+# Cravix <dr.neemous@gmail.com>, 2013
+# rebuilty <rebuilty@gmail.com>, 2013
+# He Qiangqiang <carton@linux.net.cn>, 2002
+# Sun G11n <mate_int_l10n@ireland.sun.com>, 2002
+# Tao Wang <dancefire@gmail.com>, 2010
+# Tao Wei <weitao1979@gmail.com>, 2009
+# vicwjb <vicwjb@gmail.com>, 2010
+# Wylmer Wang <wantinghard@gmail.com>, 2013
+# 甘 露 <rhythm.gan@gmail.com>, 2009
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2013-03-26 14:54+0000\n"
-"Last-Translator: rebuilty <rebuilty@gmail.com>\n"
+"PO-Revision-Date: 2013-06-25 14:54+0000\n"
+"Last-Translator: Wylmer Wang <wantinghard@gmail.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/MATE/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -239,7 +241,7 @@ msgstr "设置为真(TRUE)启用所有触摸板"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:1
 msgid "Activation of this plugin"
-msgstr ""
+msgstr "插件激活状态"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:2
@@ -258,7 +260,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr "此插件是否被 mate-settings-daemon 启动"
+msgstr "此插件是否由 mate-settings-daemon 启动"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:3
@@ -528,7 +530,7 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr ""
+msgstr "在配置内置/外接显视器时，mate-settings-daemon 通常根据turn_on_external_monitors_at_startup、turn_on_laptop_monitor_at_startup 进行配置，并确定合适的复制/并排模式。若将此键值设为True，就会停用这一功能，显视器的配置文件将不作改动(除非用户显式配置;)。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:9
 msgid "Turn on external monitor after system boot"

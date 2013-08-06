@@ -3,16 +3,17 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Marcel Telka <marcel@telka.sk>, 2005.
-# Pavol Šimo <palo.simo@gmail.com>, 2008, 2009, 2010.
-# Peter Tuharsky <tuharsky@misbb.sk>, 2007.
+# Ján Ďanovský <dagsoftware@yahoo.com>, 2013
+# Marcel Telka <marcel@telka.sk>, 2005
+# Pavol Šimo <palo.simo@gmail.com>, 2008, 2009, 2010
+# Peter Tuharsky <tuharsky@misbb.sk>, 2007
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2013-03-22 22:15+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"PO-Revision-Date: 2013-06-10 18:29+0000\n"
+"Last-Translator: Ján Ďanovský <dagsoftware@yahoo.com>\n"
 "Language-Team: Slovak (http://www.transifex.com/projects/p/MATE/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -160,13 +161,13 @@ msgstr "Príkaz použitý na zapnutie alebo vypnutie klávesnice na obrazovke."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.in.h:1
 msgid "Smartcard removal action"
-msgstr ""
+msgstr "Činnosť pri odstránení Smartcard"
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.in.h:2
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr ""
+msgstr "Nastavte na jedno z: \"none\", \"lock_screen\", alebo \"force_logout\". Činnosť sa prevedie, keď sa smartcard použitá na prihlásenie odstráni."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:1
 msgid "Disable touchpad while typing"
@@ -195,7 +196,7 @@ msgstr "Zvoľte si spôsob rolovania touchpadom"
 msgid ""
 "Select the touchpad scroll method. Supported values are: 0: disabled, 1: "
 "edge scrolling, and 2: two-finger scrolling"
-msgstr ""
+msgstr "Vyberte metódu skrolovania na touchpade. Podporované hodnoty sú: 0: zakázané, 1: skrolovanie pri okraji, 2: skrolovanie dvoma prstami"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:7
 msgid "Enable horizontal scrolling"
@@ -232,7 +233,7 @@ msgstr "Nastavte na TRUE na povolenie všetkých touchpadov."
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:1
 msgid "Activation of this plugin"
-msgstr ""
+msgstr "Aktivácia tohto pluginu"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:2
@@ -270,7 +271,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:3
 msgid "Priority to use for this plugin"
-msgstr ""
+msgstr "Priorita na používanie tohto pluginu"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:4
@@ -299,7 +300,7 @@ msgstr "Prah oznamovania percent voľného miesta"
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr ""
+msgstr "Percentuálna hranica voľného miesta prvého upozornenia na nedostatok diskového priestoru. Ak percento voľného miesta klesne pod túto hodnotu, zobrazí sa upozornenie."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:7
 msgid "Subsequent free percentage notify threshold"
@@ -309,7 +310,7 @@ msgstr "Prah nasledujúceho oznamovania percent voľného miesta"
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
-msgstr ""
+msgstr "Zadajte počet percent, o ktoré sa musí zmenšiť veľkosť voľného miesta pred zobrazením nasledujúceho upozornenia."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:9
 msgid "Free space no notify threshold"
@@ -319,7 +320,7 @@ msgstr "Prah neoznamovania voľného miesta"
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr ""
+msgstr "Určte množstvo v GB. Ak je množstvo voľného miesta väčší než takéto, žiadne varovanie nebude zobrazené."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:11
 msgid "Minimum notify period for repeated warnings"
@@ -393,7 +394,7 @@ msgstr "Vysunúť"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:18
 msgid "Binding to eject an optical disc."
-msgstr ""
+msgstr "Skratka na vysunutie optického disku"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:19
 msgid "Home folder"
@@ -507,11 +508,11 @@ msgstr "Zobraziť obrazovky v oblasti upozornení"
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
-msgstr ""
+msgstr "Či sa má v paneli zobrazovať ikona s vecami súvisiacimi s obrazovkou."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:7
 msgid "Do not touch monitor configuration"
-msgstr ""
+msgstr "Nedotýkať sa konfigurácie monitora"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:8
 msgid ""
@@ -521,7 +522,7 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr ""
+msgstr "Bežne mate-settings-daemon konfiguruje externé monitory podľa nastavení turn_on_external_monitors_at_startup a turn_on_laptop_monitor_at_startup a zvolí zodpovedajúci klonovací/rozširujúci režim. Nastavením tohto kľúča na True sa táto funkcionalita zakáže a nastavenie monitora nebude zmenené (okrem explicitnej konfigurácie používateľom)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:9
 msgid "Turn on external monitor after system boot"
@@ -531,7 +532,7 @@ msgstr "Zapnúť externý monitor po štarte systému"
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
-msgstr ""
+msgstr "Zapnúť externý monitor po štarte systému."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:11
 msgid "Turn on laptop monitor after system boot"
@@ -541,11 +542,11 @@ msgstr "Zapnúť monitor prenosného počítača po štarte systému"
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr ""
+msgstr "Zapnúť externý monitor po štarte systému, ak používateľ pripojil externý monitor počas štartu systému."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:13
 msgid "File for default configuration for RandR"
-msgstr ""
+msgstr "Súbor východzej konfigurácie RandR"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:14
 msgid ""
@@ -554,7 +555,7 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr ""
+msgstr "Zásuvnú modul XRandR bude hľadať východziu konfiguráciu v súbore určenom týmto kľúčom. To je podobné ako ~/.config/monitors.xml, ktoré sa ukladá v domovských priečinkoch používateľov. Ak používateľ takýto súbor nemá, alebo má nejaký, ktorý sa nezhoduje s používateľovými nastaveniami monitorov,  potom sa namiesto toho použije súbor určený týmto kľúčom."
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
@@ -566,7 +567,7 @@ msgstr "Povoliť ladiaci kód"
 
 #: ../mate-settings-daemon/main.c:57
 msgid "Replace the current daemon"
-msgstr ""
+msgstr "Nahradiť aktuálnu službu"
 
 #: ../mate-settings-daemon/main.c:58
 msgid "Don't become a daemon"
@@ -574,7 +575,7 @@ msgstr "Nestať sa démonom"
 
 #: ../mate-settings-daemon/main.c:59
 msgid "Exit after a time (for debugging)"
-msgstr ""
+msgstr "Ukončiť po čase (pre ladenie)"
 
 #: ../plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.in.h:1
 msgid "Accessibility Keyboard"
@@ -742,7 +743,7 @@ msgstr "Modul atrapy"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:70
 msgid "Don't show any warnings again for this file system"
-msgstr ""
+msgstr "Nezobrazovať viac varovania pre tento súborový systém "
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:72
 msgid "Don't show any warnings again"
@@ -793,7 +794,7 @@ msgstr "Vyprázdniť Kôš"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:453
 msgid "Examine…"
-msgstr ""
+msgstr "Skúmam..."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:460
 msgid "Ignore"
@@ -807,7 +808,7 @@ msgstr "Odstraňuje sa položka %lu z %lu"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 msgid "Removing: %s"
-msgstr ""
+msgstr "Odstraňuje sa: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:296
@@ -816,7 +817,7 @@ msgstr "Kôš sa vyprázdňuje"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:272
 msgid "Preparing to empty trash…"
-msgstr ""
+msgstr "Pripravuje sa vysypanie koša..."
 
 #. Translators: "Emptying trash from <device>"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:299
@@ -886,14 +887,14 @@ msgid ""
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr ""
+msgstr "Chyba pri aktivovaní nastavenia XKB.\nToto sa môže stať za rôznych okolností:\n- chyba v knižnici libxklavier\n- chyba v X serveri (nástroje xkbcomp, xmodmap)\n- X server s nekompatibilnou implementáciou libxkbfile\n\nÚdaje o verzii X servera:\n%s\n%d\n%s\nAk túto situáciu nahlásite ako chybu, pripojte, prosím:\n- Výsledok <b>%s</b>\n- Výsledok <b>%s</b>"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:151
 msgid ""
 "You are using XFree 4.3.0.\n"
 "There are known problems with complex XKB configurations.\n"
 "Try using a simpler configuration or using a later version of the XFree software."
-msgstr ""
+msgstr "Používate XFree 4.3.0.\nNachádzajú sa v ňom známe problémy so zložitými nastaveniami XKB.\nSkúste použiť jednoduchšie nastavenia alebo použiť novšiu verziu softvéru XFree."
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:299
 msgid "_Layouts"
@@ -965,7 +966,7 @@ msgstr "Nepodarilo sa povoliť sprístupnenie myši"
 #: ../plugins/mouse/msd-mouse-manager.c:889
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
-msgstr ""
+msgstr "Sprístupnenie myši vyžaduje na vašom systéme nainštalované Mousetweaks."
 
 #: ../plugins/mouse/msd-mouse-manager.c:892
 msgid "Mouse Preferences"
@@ -981,11 +982,11 @@ msgstr "Modul myši"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:1
 msgid "Mpris"
-msgstr ""
+msgstr "Mpris"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:2
 msgid "Mpris plugin"
-msgstr ""
+msgstr "Mpris plugin"
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:1
 msgid "Typing Break"
@@ -1051,7 +1052,7 @@ msgstr "Aj napriek tomu sa pokúsiť prepnúť nastavenia monitora."
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1875
 msgid "Rotation not supported"
-msgstr ""
+msgstr "Rotácia nieje podporovaná"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1931
 msgid "Could not save monitor configuration"
@@ -1075,7 +1076,7 @@ msgstr "Dolu hlavou"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2072
 msgid "_Configure Display Settings…"
-msgstr ""
+msgstr "_Konfigurovať nastavenia zobrazenia..."
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2113
 msgid "Configure display settings"
@@ -1108,11 +1109,11 @@ msgstr "Spravovanie nastavenia X"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:167
 msgid "Module Path"
-msgstr ""
+msgstr "Cesta k modulu"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:168
 msgid "path to smartcard PKCS #11 driver"
-msgstr ""
+msgstr "cesta k ovládaču smartcard PKCS #11"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:504
 msgid "received error or hang up from event source"
@@ -1121,17 +1122,17 @@ msgstr ""
 #: ../plugins/smartcard/msd-smartcard-manager.c:593
 #, c-format
 msgid "NSS security system could not be initialized"
-msgstr ""
+msgstr "Bezpečnostný systém NSS sa nepodarilo inicializovať."
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:662
 #, c-format
 msgid "no suitable smartcard driver could be found"
-msgstr ""
+msgstr "Nepodarilo sa nájsť vhodný ovládač pre smartcard"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:682
 #, c-format
 msgid "smartcard driver '%s' could not be loaded"
-msgstr ""
+msgstr "Ovládač smartcard '%s' sa nepodarilo načítať"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:771
 #, c-format
@@ -1145,11 +1146,11 @@ msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard.c:154
 msgid "Slot ID"
-msgstr ""
+msgstr "ID slotu"
 
 #: ../plugins/smartcard/msd-smartcard.c:155
 msgid "The slot the card is in"
-msgstr ""
+msgstr "Slot, v kterom je karta"
 
 #: ../plugins/smartcard/msd-smartcard.c:161
 msgid "Slot Series"
@@ -1162,36 +1163,36 @@ msgstr ""
 #: ../plugins/smartcard/msd-smartcard.c:168
 #: ../plugins/smartcard/msd-smartcard.c:169
 msgid "name"
-msgstr ""
+msgstr "názov"
 
 #: ../plugins/smartcard/msd-smartcard.c:173
 msgid "Module"
-msgstr ""
+msgstr "Modul"
 
 #: ../plugins/smartcard/msd-smartcard.c:174
 msgid "smartcard driver"
-msgstr ""
+msgstr "Ovládač smartcard"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:1
 msgid "Change system time zone"
-msgstr ""
+msgstr "Zmeniť systémovú časovú zónu"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:2
 msgid "Privileges are required to change the system time zone."
-msgstr ""
+msgstr "Na zmenu časovej zóny sa vyžadujú oprávnenia."
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:3
 msgid "Change system time"
-msgstr ""
+msgstr "Zmeniť systémový čas"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:4
 msgid "Privileges are required to change the system time."
-msgstr ""
+msgstr "Na zmenu systémového času sa vyžadujú oprávnenia."
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:5
 msgid "Configure hardware clock"
-msgstr ""
+msgstr "Nastaviť hardwarové hodiny"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:6
 msgid "Privileges are required to configure the hardware clock."
-msgstr ""
+msgstr "Na zmenu taktu sa vyžadujú oprávnenia."

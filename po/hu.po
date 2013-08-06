@@ -3,21 +3,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Andras Timar <timar at mate dot hu>, 2001, 2002, 2003.
-# Emese Kovacs <emese at mate dot hu>, 2001.
-# Gabor Kelemen <kelemeng at mate dot hu>, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
-# Gabor Sari <saga at mate dot hu>, 2003.
-# Laszlo Dvornik <dvornik at mate dot hu>, 2004.
-# Mate ORY <orymate at gmail d0t com>, 2006.
-# Peter Doma <zelin at pointernet dot hu>, 2002.
-# Szabolcs Ban <shooby at mate dot hu>, 1998, 1999, 2000.
+# Andras Timar <timar at mate dot hu>, 2001-2003
+# Emese Kovacs <emese at mate dot hu>, 2001
+# Gabor Kelemen <kelemeng at mate dot hu>, 2004-2010
+# Gabor Sari <saga at mate dot hu>, 2003
+# Laszlo Dvornik <dvornik at mate dot hu>, 2004
+# Mate ORY <orymate at gmail d0t com>, 2006
+# Peter Doma <zelin at pointernet dot hu>, 2002
+# Szabolcs Ban <shooby at mate dot hu>, 1998-2000
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2013-03-22 22:15+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"PO-Revision-Date: 2013-07-12 08:48+0000\n"
+"Last-Translator: Rezső Páder <rezso@rezso.net>\n"
 "Language-Team: Hungarian (http://www.transifex.com/projects/p/MATE/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -237,7 +237,7 @@ msgstr "Állítsa igazra egérkattintások küldéséhez az érintőtáblára ko
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:1
 msgid "Activation of this plugin"
-msgstr ""
+msgstr "Bővítmény aktiválása"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:2
@@ -275,7 +275,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:3
 msgid "Priority to use for this plugin"
-msgstr ""
+msgstr "A bővítmény prioritása"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:4
