@@ -16,7 +16,7 @@
       <_description>This is the name of the keyboard shortcut to toggle the magnifier. This name will be shown in the keyboard shortcut preferences dialog.</_description>
     </key>
     <key name="action" type="s">
-      <default>'mateconftool-2 --toggle /desktop/mate/applications/at/screen_magnifier_enabled'</default>
+      <default>'mate-gsettings-toggle screen-keyboard-enabled'</default>
       <_summary>Toggle magnifier</_summary>
       <_description>Command used to turn the magnifier on or off.</_description>
     </key>
@@ -33,7 +33,7 @@
       <_description>This is the name of the keyboard shortcut to toggle the screen reader. This name will be shown in the keyboard shortcut preferences dialog.</_description>
     </key>
     <key name="action" type="s">
-      <default>'mateconftool-2 --toggle /desktop/mate/applications/at/screen_reader_enabled'</default>
+      <default>'mate-gsettings-toggle screen-reader-enabled'</default>
       <_summary>Toggle screen reader</_summary>
       <_description>Command used to turn the screen reader on or off.</_description>
     </key>
@@ -50,7 +50,7 @@
       <_description>Binding to toggle the on-screen keyboard.</_description>
     </key>
     <key name="action" type="s">
-      <default>'mateconftool-2 --toggle /desktop/mate/applications/at/screen_keyboard_enabled'</default>
+      <default>'mate-gsettings-toggle screen-keyboard-enabled'</default>
       <_summary>Toggle on-screen keyboard</_summary>
       <_description>Command used to turn the on-screen keyboard on or off.</_description>
     </key>
