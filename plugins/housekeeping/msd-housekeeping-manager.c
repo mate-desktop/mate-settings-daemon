@@ -203,22 +203,37 @@ purge_thumbnail_cache (MsdHousekeepingManager *manager)
 
         g_debug ("housekeeping: checking thumbnail cache size and freshness");
 
+#if GLIB_CHECK_VERSION (2, 34, 0)
+        path = g_build_filename (g_get_user_cache_dir (),
+                                 "thumbnails",
+#else
         path = g_build_filename (g_get_home_dir (),
                                  ".thumbnails",
+#endif
                                  "normal",
                                  NULL);
         files = read_dir_for_purge (path, NULL);
         g_free (path);
 
+#if GLIB_CHECK_VERSION (2, 34, 0)
+        path = g_build_filename (g_get_user_cache_dir (),
+                                 "thumbnails",
+#else
         path = g_build_filename (g_get_home_dir (),
                                  ".thumbnails",
+#endif
                                  "large",
                                  NULL);
         files = read_dir_for_purge (path, files);
         g_free (path);
 
+#if GLIB_CHECK_VERSION (2, 34, 0)
+        path = g_build_filename (g_get_user_cache_dir (),
+                                 "thumbnails",
+#else
         path = g_build_filename (g_get_home_dir (),
                                  ".thumbnails",
+#endif
                                  "fail",
                                  "mate-thumbnail-factory",
                                  NULL);
