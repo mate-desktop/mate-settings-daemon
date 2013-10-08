@@ -3,22 +3,24 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Abdelmonam Kouka <abdelmonam.kouka@ubuntume.com>, 2008.
-# Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>, 2004.
-# Anas Husseini <linux.anas@gmail.com>, 2007.
-# Arafat Medini <lumina@silverpen.de>, 2003.
-# Djihed Afifi <djihed@gmail.com>, 2006.
-# Isam Bayazidi <bayazidi@arabeyes.org>, 2002.
-# Khaled Hosny <khaledhosny@eglug.org>, 2006, 2007, 2008, 2009, 2010.
-#   <noureddin@barid.com>, 2012.
-# Sayed Jaffer Al-Mosawi <mosawi@arabeyes.org>, 2002.
+# Abdelmonam Kouka <abdelmonam.kouka@ubuntume.com>, 2008
+# Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>, 2004
+# linostar <linux.anas@gmail.com>, 2007
+# Arafat Medini <lumina@silverpen.de>, 2003
+# Djihed Afifi <djihed@gmail.com>, 2006
+# Isam Bayazidi <bayazidi@arabeyes.org>, 2002
+# Khaled Hosny <khaledhosny@eglug.org>, 2006-2010
+# moceap <moceap@hotmail.com>, 2013
+# noureddin <noureddin@barid.com>, 2012
+# noureddin <noureddin@barid.com>, 2012
+# Sayed Jaffer Al-Mosawi <mosawi@arabeyes.org>, 2002
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2013-03-22 22:15+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"PO-Revision-Date: 2013-10-05 15:53+0000\n"
+"Last-Translator: mauron\n"
 "Language-Team: Arabic (http://www.transifex.com/projects/p/MATE/language/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,7 +38,7 @@ msgstr "لوحة مفاتيح على الشاشة"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:2
 msgid "Whether the on-screen keyboard is turned on."
-msgstr ""
+msgstr "ما إذا كانت لوحة المفاتيح على الشاشة مشغلة."
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:3
 msgid "Screen magnifier"
@@ -44,7 +46,7 @@ msgstr "مكبّر الشاشة"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:4
 msgid "Whether the screen magnifier is turned on."
-msgstr ""
+msgstr "ما إذا كان مكبّر الشاشة مشغلًا."
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:5
 msgid "Screen reader"
@@ -52,7 +54,7 @@ msgstr "قارئ الشاشة"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:6
 msgid "Whether the screen reader is turned on."
-msgstr ""
+msgstr "ما إذا كان قارئ الشاشة مشغلًا."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:1
 msgid "DPI"
@@ -62,7 +64,7 @@ msgstr "نقطة في البوصة"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "الميز المستعمل لتحويل حجم الخطوط إلى حجم بكسل، بعدد النقط في البوصة."
+msgstr "الدقة المستعملة لتحويل حجم الخطوط إلى حجم بكسل، بعدد النقط في البوصة."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:3
 msgid "Antialiasing"
@@ -100,79 +102,79 @@ msgstr "ترتيب عناصر أجزاء البكسل على شاشة LCD؛ يُ
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:1
 msgid "Toggle magnifier"
-msgstr ""
+msgstr "غيّر حالة المكبّر"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:2
 msgid "Binding to toggle the magnifier."
-msgstr ""
+msgstr "ارتباط لتغيير حالة المكبّر."
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:3
 msgid "The name of the keyboard shortcut to toggle the magnifier"
-msgstr ""
+msgstr "اسم اختصار لوحة المفاتيح لتغيير حالة المكبّر"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:4
 msgid ""
 "This is the name of the keyboard shortcut to toggle the magnifier. This name"
 " will be shown in the keyboard shortcut preferences dialog."
-msgstr ""
+msgstr "هذا اسم اختصار لوحة المفاتيح لتغيير حالة المكبّر. سيظهر هذا الاسم أيضًا في مربع حوار تفضيلات اختصارات لوحة المفاتيح."
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:5
 msgid "Command used to turn the magnifier on or off."
-msgstr ""
+msgstr "الأمر المستدم لتغيير حالة تشغيل المكبّر."
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:6
 msgid "Toggle screen reader"
-msgstr ""
+msgstr "غيّر حالة قارئ الشاشة"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:7
 msgid "Binding to toggle the screen reader."
-msgstr ""
+msgstr "ارتباط لتغيير حالة قارئ الشاشة."
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:8
 msgid "The name of the keyboard shortcut to toggle the screen reader"
-msgstr ""
+msgstr "اسم اختصار لوحة المفاتيح لتغيير حالة قارئ الشاشة"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:9
 msgid ""
 "This is the name of the keyboard shortcut to toggle the screen reader. This "
 "name will be shown in the keyboard shortcut preferences dialog."
-msgstr ""
+msgstr "هذا اسم اختصار لوحة المفاتيح لتغيير حالة قارئ الشاشة. سيظهر هذا الاسم أيضًا في مربع حوار تفضيلات اختصارات لوحة المفاتيح."
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:10
 msgid "Command used to turn the screen reader on or off."
-msgstr ""
+msgstr "الأمر المستدم لتغيير حالة تشغيل قارئ الشاشة."
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:11
 msgid "The name of the keyboard shortcut to toggle the on-screen keyboard"
-msgstr ""
+msgstr "اسم اختصار لوحة المفاتيح لتغيير حالة لوحة المفاتيح على الشاشة"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:12
 msgid ""
 "This is the name of the keyboard shortcut to toggle the on-screen keyboard. "
 "This name will be shown in the keyboard shortcut preferences dialog."
-msgstr ""
+msgstr "هذا اسم اختصار لوحة المفاتيح لتغيير حالة لوحة المفاتيح على الشاشة. سيظهر هذا الاسم أيضًا في مربع حوار تفضيلات اختصارات لوحة المفاتيح."
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:13
 msgid "Toggle on-screen keyboard"
-msgstr ""
+msgstr "غيّر حالة لوحة المفاتيح على الشاشة"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:14
 msgid "Binding to toggle the on-screen keyboard."
-msgstr ""
+msgstr "ارتباط لتغيير حالة لوحة المفاتيح على الشاشة."
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:15
 msgid "Command used to turn the on-screen keyboard on or off."
-msgstr ""
+msgstr "الأمر المستدم لتغيير حالة تشغيل لوحة المفاتيح على الشاشة."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.in.h:1
 msgid "Smartcard removal action"
-msgstr ""
+msgstr "نشاط إزالة البطاقة الذكية"
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.in.h:2
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr ""
+msgstr "اضبط إلى واحد من \"لا شيء\" 'none' ، \"قفل الشاشة\" 'lock_screen'، \"الخروج القسري\" 'force_logout'. سيتم تأدية هذا العمل عند إزالة البطاقة الذّكية المخصصّة للولوج."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:1
 msgid "Disable touchpad while typing"
@@ -182,7 +184,7 @@ msgstr "عطّل لوحة اللمس أثناء الكتابة"
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr ""
+msgstr "اضبطه كصحيح ، في حال حدوث مشاكل بسبب نقرات عارضة على لوحة اللّمس أثناء الكتابة."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:3
 msgid "Enable mouse clicks with touchpad"
@@ -191,7 +193,7 @@ msgstr "فعّل نقر الفأرة مع لوحة اللمس"
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr ""
+msgstr "اضبطه كصحيح ، لإرسال نقرات فأرة بواسطة لوحة اللّمس."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:5
 msgid "Select the touchpad scroll method"
@@ -211,7 +213,7 @@ msgstr "فعّل التمرير الأفقي"
 msgid ""
 "Set this to TRUE to allow horizontal scrolling by the same method selected "
 "with the scroll_method key."
-msgstr ""
+msgstr "اضبط كصحيح ، للسماع بالتمرير \"اللّف\" الأُفقي بنفس طريقة التّمرير المحددّة."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:9
 msgid "Enable touchpad"
@@ -219,7 +221,7 @@ msgstr "فعّل لوحة اللمس"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:10
 msgid "Set this to TRUE to enable all touchpads."
-msgstr ""
+msgstr "اضبطه كصحيح ، لفعيل جميع لوحات اللّمس."
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:1
@@ -238,7 +240,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:1
 msgid "Activation of this plugin"
-msgstr ""
+msgstr "نشاط هذا الملحق"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:2
@@ -257,7 +259,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr ""
+msgstr "ما إذا سيفعّل الملحق بواسطة محثّ إعدادات متذة أو لا"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:3
@@ -276,7 +278,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:3
 msgid "Priority to use for this plugin"
-msgstr ""
+msgstr "الملكية لاستخدام هذا الملحق"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:4
@@ -295,37 +297,37 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
-msgstr ""
+msgstr "الملكية لاستخدام هذا الملحق في طابور إقلاع محثّ إعدادات متّة"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:5
 msgid "Free percentage notify threshold"
-msgstr ""
+msgstr "النسبة المئوية التي ينّبه عندها"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:6
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr ""
+msgstr "النسبة المئوية للمساحة الحرّة التي يبدأ التنبيه عندها لانخفاض مساحة القرص. أي عند وصول النسبة المئوية إلى حد أدنى من المحدّد ، فإن التحذيرات ستظهر."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:7
 msgid "Subsequent free percentage notify threshold"
-msgstr ""
+msgstr "النسبة المئوية التالية التي ينّبه عندها"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:8
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
-msgstr ""
+msgstr "حدّد النسبة المئوية لمساحة القرص الحرّة التي يجب أن يتم تجاوزها نقصانًا قبل إصدار أي تحذيرٍ لاحق."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:9
 msgid "Free space no notify threshold"
-msgstr ""
+msgstr "المساحة الحرة التي لا ينبه عندها"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:10
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr ""
+msgstr "حدّد حجمًا بالجيجابايت. لن تظهر أي تحذيرات ما دام حجم المساحة الحرّة لا يقل عنه."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:11
 msgid "Minimum notify period for repeated warnings"
@@ -335,15 +337,15 @@ msgstr "أقل مدة تنبيه للتحذيرات المتكررة"
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr ""
+msgstr "حدّد وقتًا بالدّقائق. التّحذيرات القادمة في الصّوت لن تظهر بعد هذه المدّة."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:13
 msgid "Mount paths to ignore"
-msgstr ""
+msgstr "عناوين التوصيل الواجب تجاهلها"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr ""
+msgstr "خصص قائمة بالمسارات الموصولة و التي تتجاهل انخفاض المساحة."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:5
 msgid "Volume step"
@@ -355,11 +357,11 @@ msgstr "درجة شدّة الصوت كنسبة مئوية من الصوت."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:7
 msgid "Toggle touchpad"
-msgstr "بدّل لوحة اللمس"
+msgstr "غيّر حالة لوحة اللمس"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:8
 msgid "Binding to enable or disable the touchpad."
-msgstr ""
+msgstr "ارتباط تفعيل أو تعطيل لوحة اللمس."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:9
 msgid "Volume mute"
@@ -399,7 +401,7 @@ msgstr "أخرِج"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:18
 msgid "Binding to eject an optical disc."
-msgstr ""
+msgstr "ارتباط إخراج القرص الليزري."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:19
 msgid "Home folder"
@@ -471,7 +473,7 @@ msgstr "شغّل (أو شغّل/ألبِث)"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:36
 msgid "Binding to start playback (or toggle play/pause)."
-msgstr "ارتباط بدء التشغيل (أو تبديل شغّل/ألبث)."
+msgstr "ارتباط بدء التشغيل (أو التغيير بين شغّل/ألبث)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:37
 msgid "Pause playback"
@@ -513,11 +515,11 @@ msgstr "أظهر أجهزة العرض في منطقة التبليغ"
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
-msgstr ""
+msgstr "ما إذا كانت ستعرض أيقونة تبليغ تحتوي على أشياء متعلقة بجهاز العرض في اللوحة."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:7
 msgid "Do not touch monitor configuration"
-msgstr ""
+msgstr "لا تغير إعدادات الشاشة"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:8
 msgid ""
@@ -527,7 +529,7 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr ""
+msgstr "عادةً ، محثّ إعدادات متّة يقوم بتهيئة الشاشات الداخليّة و الخارجيّة بناءً على إعدادات \"الشاشات الخارجية المشغّلة عند الإقلاع\" و \"شاشات الأجهزة المحمولة المشغّلة عند الإقلاع\" و يحدد وضع \"المستنسخ/العمل جنبًا لجنب\". تحديد هذا الإعداد إلى \"صحيح\" سيعطل هذه الآليّة، و لن تُمس إعدادات الشّاشة مطلقًا ( ما لم تصرّح بها إعدادات المستخدم ) ."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:9
 msgid "Turn on external monitor after system boot"
@@ -547,11 +549,11 @@ msgstr "شغّل شاشة الحاسوب المحمول بعد إقلاع الن
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr ""
+msgstr "شغّل شاشة الحاسب المحمول بعد إقلاع النظام لو المستخدم وصّلها عند الإقلاع."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:13
 msgid "File for default configuration for RandR"
-msgstr ""
+msgstr "ملف الإعدادات المبدئية لراند-آر"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:14
 msgid ""
@@ -560,11 +562,11 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr ""
+msgstr "إن إضافة XRandR ستظهر ضمن الإعدادات الافتراضية الموجودة ضمن ملف و المعيّنة في هذا المفتاح. هذا يماثل ~/.config/monitors.xml و الموجود طبيعيًا ضمن أدلة المنازل لكل مستخدم. في حال عدم امتلاك المستخدم لهذا الملف ، أو أنّ ملفه لا يطابق إعداداته للشاشة ، عندها سيتم التعديل على الملف ليلاءم هذا المفتاح و الذي سيعدّ بديلًا."
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
-msgstr "أبقِ على إعدادات جنوم"
+msgstr "محثّ إعدادات متّة"
 
 #: ../mate-settings-daemon/main.c:56
 msgid "Enable debugging code"
@@ -572,11 +574,11 @@ msgstr "فعّل كود تتبع الأخطاء"
 
 #: ../mate-settings-daemon/main.c:57
 msgid "Replace the current daemon"
-msgstr ""
+msgstr "استبدل المحثّ الحالي"
 
 #: ../mate-settings-daemon/main.c:58
 msgid "Don't become a daemon"
-msgstr "لا تصبح جنيا"
+msgstr "لا تجعله محثًّا"
 
 #: ../mate-settings-daemon/main.c:59
 msgid "Exit after a time (for debugging)"
@@ -993,11 +995,11 @@ msgstr "ملحق الفأرة"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:1
 msgid "Mpris"
-msgstr ""
+msgstr "Mpris"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:2
 msgid "Mpris plugin"
-msgstr ""
+msgstr "ملحق Mpris"
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:1
 msgid "Typing Break"
@@ -1127,52 +1129,52 @@ msgstr "مسار الوحدة"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:168
 msgid "path to smartcard PKCS #11 driver"
-msgstr ""
+msgstr "مسار تعريف البطاقة الذّكيّة PKCS #11"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:504
 msgid "received error or hang up from event source"
-msgstr ""
+msgstr "حدث خطأ أو تعليق من المصدر"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:593
 #, c-format
 msgid "NSS security system could not be initialized"
-msgstr ""
+msgstr "تعذّر تهيئة نظام أمان NSS للعمل"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:662
 #, c-format
 msgid "no suitable smartcard driver could be found"
-msgstr ""
+msgstr "لا يوجد تعريفات تلاءم البطاقة الذكية"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:682
 #, c-format
 msgid "smartcard driver '%s' could not be loaded"
-msgstr ""
+msgstr "لم يتكمن من تحميل البطاقة الذكية '%s'"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:771
 #, c-format
 msgid "could not watch for incoming card events - %s"
-msgstr ""
+msgstr "تعذّر مراقبة الأحداث القادمة من البطاقة - %s"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:1124
 #, c-format
 msgid "encountered unexpected error while waiting for smartcard events"
-msgstr ""
+msgstr "حدث خطأ غير متوقّع أثناء انتظار أحداث البطاقة الذّكية"
 
 #: ../plugins/smartcard/msd-smartcard.c:154
 msgid "Slot ID"
-msgstr ""
+msgstr "معرف الفُتحة"
 
 #: ../plugins/smartcard/msd-smartcard.c:155
 msgid "The slot the card is in"
-msgstr ""
+msgstr "البطاقة أُدخلت في الفُتحة"
 
 #: ../plugins/smartcard/msd-smartcard.c:161
 msgid "Slot Series"
-msgstr ""
+msgstr "سلسلة الفُتحات"
 
 #: ../plugins/smartcard/msd-smartcard.c:162
 msgid "per-slot card identifier"
-msgstr ""
+msgstr "معرّف البطاقات من خلال فُتحاتها"
 
 #: ../plugins/smartcard/msd-smartcard.c:168
 #: ../plugins/smartcard/msd-smartcard.c:169
@@ -1185,7 +1187,7 @@ msgstr "الوِحدة"
 
 #: ../plugins/smartcard/msd-smartcard.c:174
 msgid "smartcard driver"
-msgstr ""
+msgstr "معرّف البطاقة الذكية smartcard"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:1
 msgid "Change system time zone"
