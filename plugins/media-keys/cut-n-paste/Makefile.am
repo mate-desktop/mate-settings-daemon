@@ -2,7 +2,7 @@ NULL =
 
 noinst_LTLIBRARIES = libgvc.la
 
-INCLUDES =					\
+AM_CPPFLAGS =					\
 	$(WARN_CFLAGS)				\
 	$(NULL)
 
@@ -13,7 +13,7 @@ libgvc_la_SOURCES =			\
 	$(NULL)
 
 if HAVE_PULSE
-INCLUDES +=					\
+AM_CPPFLAGS +=					\
 	$(VOLUME_CONTROL_CFLAGS)		\
 	$(PULSE_CFLAGS)
 
@@ -43,7 +43,7 @@ libgvc_la_SOURCES +=		\
 endif
 
 if HAVE_GSTREAMER
-INCLUDES +=					\
+AM_CPPFLAGS +=					\
 	$(SETTINGS_PLUGIN_CFLAGS)		\
 	$(AM_CFLAGS)				\
 	$(GST_CFLAGS)
