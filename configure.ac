@@ -11,6 +11,7 @@ AC_INIT([mate-settings-daemon],
 	[http://www.mate-desktop.org/])
 
 AC_CONFIG_SRCDIR([mate-settings-daemon/mate-settings-manager.c])
+AC_CONFIG_MACRO_DIR([m4])
 
 AM_INIT_AUTOMAKE([1.9 no-dist-gzip dist-xz tar-ustar])
 

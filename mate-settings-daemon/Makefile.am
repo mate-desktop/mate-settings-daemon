@@ -1,6 +1,6 @@
 NULL =
 
-INCLUDES = \
+AM_CPPFLAGS = \
 	-DDATADIR=\""$(datadir)"\"				\
 	-DMATE_SETTINGS_LOCALEDIR=\""$(datadir)/locale"\"	\
 	-DLIBEXECDIR=\""$(libexecdir)"\" 			\
@@ -21,6 +21,7 @@ libmsd_profile_la_SOURCES =		\
 	$(NULL)
 
 libmsd_profile_la_CPPFLAGS = 		\
+	$(AM_CPPFLAGS)
 	$(DISABLE_DEPRECATED_CFLAGS)	\
 	$(NULL)
 
