@@ -56,6 +56,7 @@
 #define KEY_MOUSE_MOTION_ACCELERATION    "motion-acceleration"
 #define KEY_MOUSE_MOTION_THRESHOLD       "motion-threshold"
 #define KEY_MOUSE_LOCATE_POINTER         "locate-pointer"
+#define KEY_MIDDLE_BUTTON_EMULATION      "middle-button-enabled"
 
 #define MATE_TOUCHPAD_SCHEMA             "org.mate.peripherals-touchpad"
 #define KEY_TOUCHPAD_DISABLE_W_TYPING    "disable-while-typing"
@@ -508,6 +509,67 @@ set_motion_threshold (MsdMouseManager *manager,
                                0, 0, motion_threshold);
 }
 
+static void
+set_middle_button (MsdMouseManager *manager,
+                   gboolean         middle_button)
+{
+        XDeviceInfo *device_info;
+        gint n_devices;
+        gint i;
+        Atom prop;
+
+        prop = XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
+                            "Evdev Middle Button Emulation", True);
+
+        if (!prop) /* no evdev devices */
+                return;
+
+        device_info = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &n_devices);
+
+        for (i = 0; i < n_devices; i++) {
+                XDevice *device = NULL;
+                Atom type;
+                int format;
+                unsigned long nitems, bytes_after;
+                unsigned char *data;
+
+                gdk_error_trap_push ();
+
+                device = XOpenDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device_info[i].id);
+
+                if ((gdk_error_trap_pop () != 0) ||
+                    (device == NULL))
+                        continue;
+
+                gdk_error_trap_push ();
+
+                XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
+                                    device, prop, 0, 1, False, XA_INTEGER, &type, &format,
+                                    &nitems, &bytes_after, &data);
+
+                if ((gdk_error_trap_pop () != 0)) {
+                        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
+                        continue;
+                }
+
+                if (format == 8 && type == XA_INTEGER && nitems == 1) {
+                        data[0] = middle_button ? 1 : 0;
+
+                        gdk_error_trap_push ();
+                        XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
+                                               device, prop, type, format, PropModeReplace, data, nitems);
+
+                        gdk_error_trap_pop ();
+                }
+
+                XFree (data);
+                XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
+        }
+
+        if (device_info != NULL)
+                XFreeDeviceList (device_info);
+}
+
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
 static XDevice*
 device_is_touchpad (XDeviceInfo deviceinfo)
@@ -908,6 +970,7 @@ set_mouse_settings (MsdMouseManager *manager)
         set_left_handed (manager, left_handed);
         set_motion_acceleration (manager, g_settings_get_double (manager->priv->settings_mouse, KEY_MOUSE_MOTION_ACCELERATION));
         set_motion_threshold (manager, g_settings_get_int (manager->priv->settings_mouse, KEY_MOUSE_MOTION_THRESHOLD));
+	set_middle_button (manager, g_settings_get_boolean (manager->priv->settings_mouse, KEY_MIDDLE_BUTTON_EMULATION));
 
         set_disable_w_typing (manager, g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_DISABLE_W_TYPING));
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
@@ -931,6 +994,8 @@ mouse_callback (GSettings          *settings,
                 set_motion_threshold (manager, g_settings_get_int (settings, key));
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_DISABLE_W_TYPING) == 0) {
                 set_disable_w_typing (manager, g_settings_get_boolean (settings, key));
+	} else if (g_str_equal (key, KEY_MIDDLE_BUTTON_EMULATION)) {
+	        set_middle_button (manager, g_settings_get_boolean (settings, key));
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_TAP_TO_CLICK) == 0) {
                 set_tap_to_click (g_settings_get_boolean (settings, key),
