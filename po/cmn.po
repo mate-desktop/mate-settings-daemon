@@ -3,48 +3,51 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Matriks404 <marcink96@gmail.com>, 2013
+# Abel Cheung <abel@oaka.org>, 2001-2003, 2005
+# Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>, 2008
+# S.J. Luo <crystal@mickey.ee.nctu.edu.tw>, 1999
+# Wei-Lun Chao <bluebat@member.fsf.org>, 2012-2013
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2013-11-29 13:51+0000\n"
-"Last-Translator: Matriks404 <marcink96@gmail.com>\n"
-"Language-Team: Polish (http://www.transifex.com/projects/p/MATE/language/pl/)\n"
+"PO-Revision-Date: 2013-11-21 07:09+0000\n"
+"Last-Translator: Wei-Lun Chao <bluebat@member.fsf.org>\n"
+"Language-Team: Chinese (Mandarin) (http://www.transifex.com/projects/p/MATE/language/cmn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pl\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: cmn\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../data/50-accessibility.xml.in.h:1
 msgid "Accessibility"
-msgstr "Dostępność"
+msgstr "無障礙功能"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:1
 msgid "On-screen keyboard"
-msgstr "Klawiatura ekranowa"
+msgstr "螢幕鍵盤"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:2
 msgid "Whether the on-screen keyboard is turned on."
-msgstr "Określa, czy klawiatura ekranowa jest włączona."
+msgstr "是否開啟螢幕鍵盤。"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:3
 msgid "Screen magnifier"
-msgstr "Lupa ekranowa"
+msgstr "螢幕放大鏡"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:4
 msgid "Whether the screen magnifier is turned on."
-msgstr "Określa, czy lupa ekranowa jest włączona."
+msgstr "是否開啟放大鏡。"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:5
 msgid "Screen reader"
-msgstr "Czytnik ekranowy"
+msgstr "螢幕閱讀器"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:6
 msgid "Whether the screen reader is turned on."
-msgstr "Określa, czy czytnik ekranowy jest włączony."
+msgstr "是否開啟螢幕閱讀器。"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:1
 msgid "DPI"
@@ -54,18 +57,18 @@ msgstr "DPI"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "Rozdzielczość do zmiany rozmiaru czcionek na rozmiar w pikselach, w punktach na cal."
+msgstr "用來將字型大小轉換為像素大小的解析度，單位為 點/每英吋。"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:3
 msgid "Antialiasing"
-msgstr "Wygładzanie krawędzi"
+msgstr "平滑化"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:4
 msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "Rodzaj wygładzania renderowanych czcionek. Możliwe wartości to: \"brak\" dla wyłączonego wygładzania, \"Skala szarości\" dla standardowego wygładzania w skali szarości oraz \"rgba\" dla wygładzania podpikselowego (tylko ekrany LCD)."
+msgstr "繪製字型時所用的平滑化類型。可能的數值有：「none」為不使用平滑化，「grayscale」為標準的灰階平滑化，而「rgba」是子像素平滑化（只適用 LCD 螢幕）。"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:5
 msgid "Hinting"
@@ -76,11 +79,11 @@ msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "Rodzaj hintingu renderowanych czcionek. Możliwe wartości to: \"Brak\" dla wyłączonego hintingu, \"Lekki\" dla podstawowego, \"Średni\" dla zaawansowanego oraz \"Pełny\" dla maksymalnego hintingu (może zniekształcać czcionki)."
+msgstr "繪製字型時所用的 hinting 類型。可能的數值有：「none」為不使用 hinting，「slight」為基本式，「medium」為中等程度，而「full」是最大的 hinting（可能造成字體破碎）。"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:7
 msgid "RGBA order"
-msgstr "kolejność RGBA"
+msgstr "RGBA 順序"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:8
 msgid ""
@@ -88,130 +91,130 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "Kolejność składowych pikseli; używana tylko w wypadku wygładzania krawędzi \"rgba\". Możliwe wartości: \"rgb\" dla czerwonego po lewej stronie (najczęściej używane), \"bgr\" dla niebieskiego po lewej, \"vrgb\" dla czerwonego na górze, \"vbgr\" dla czerwonego na dole."
+msgstr "在 LCD 螢幕上子像素元素的順序；只有在平滑化設為「rgba」時才能使用。可能的數值有：「rgb」為紅色在左(最常用)，「bgr」為藍色在左，「vrgb」為紅色在上，「vbgr」為紅色在下。"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:1
 msgid "Toggle magnifier"
-msgstr "Przełącza lupę ekranową"
+msgstr "切換放大鏡"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:2
 msgid "Binding to toggle the magnifier."
-msgstr "Skrót do przełączania lupy ekranowej."
+msgstr "切換放大鏡的組合鍵。"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:3
 msgid "The name of the keyboard shortcut to toggle the magnifier"
-msgstr "Nazwa skrótu klawiszowego do przełączania lupy ekranowej"
+msgstr "用來切換放大鏡的捷徑鍵名稱"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:4
 msgid ""
 "This is the name of the keyboard shortcut to toggle the magnifier. This name"
 " will be shown in the keyboard shortcut preferences dialog."
-msgstr "To jest nazwa skrótu klawiszowego do przełączania lupy ekranowej. Nazwa będzie wyświetlana w oknie dialogowym skrótów klawiszowych."
+msgstr "這是用來切換放大鏡的捷徑鍵名稱。這個名稱會顯示在捷徑鍵偏好設定對話盒。"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:5
 msgid "Command used to turn the magnifier on or off."
-msgstr "Polecenie używane do przełączania lupy ekranowej."
+msgstr "用來開啟或關閉放大鏡的指令。"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:6
 msgid "Toggle screen reader"
-msgstr "Przełącza czytnik ekranowy"
+msgstr "切換螢幕閱讀器"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:7
 msgid "Binding to toggle the screen reader."
-msgstr "Skrót do przełączania czytnika ekranowego."
+msgstr "切換螢幕閱讀器的組合鍵。"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:8
 msgid "The name of the keyboard shortcut to toggle the screen reader"
-msgstr "Nazwa skrótu klawiszowego do przełączania czytnika ekranowego"
+msgstr "用來切換螢幕閱讀器的捷徑鍵名稱"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:9
 msgid ""
 "This is the name of the keyboard shortcut to toggle the screen reader. This "
 "name will be shown in the keyboard shortcut preferences dialog."
-msgstr "To jest nazwa skrótu klawiszowego do przełączania czytnika ekranowego. Nazwa będzie wyświetlana w oknie dialogowym skrótów klawiszowych."
+msgstr "這是用來切換螢幕閱讀器的捷徑鍵名稱。這個名稱會顯示在捷徑鍵偏好設定對話盒。"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:10
 msgid "Command used to turn the screen reader on or off."
-msgstr "Polecenie używane do przełączania czytnika ekranowego."
+msgstr "用來開啟或關閉螢幕閱讀器的指令。"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:11
 msgid "The name of the keyboard shortcut to toggle the on-screen keyboard"
-msgstr "Nazwa skrótu klawiszowego do przełączania klawiatury ekranowej"
+msgstr "用來切換螢幕鍵盤的捷徑鍵名稱"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:12
 msgid ""
 "This is the name of the keyboard shortcut to toggle the on-screen keyboard. "
 "This name will be shown in the keyboard shortcut preferences dialog."
-msgstr "To jest nazwa skrótu klawiszowego do przełączania klawiatury ekranowej. Nazwa będzie wyświetlana w oknie dialogowym skrótów klawiszowych."
+msgstr "這是用來切換螢幕鍵盤的捷徑鍵名稱。這個名稱會顯示在捷徑鍵偏好設定對話盒。"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:13
 msgid "Toggle on-screen keyboard"
-msgstr "Przełącza klawiaturę ekranową"
+msgstr "切換螢幕鍵盤"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:14
 msgid "Binding to toggle the on-screen keyboard."
-msgstr "Skrót do przełączania klawiatury ekranowej."
+msgstr "切換螢幕鍵盤的組合鍵。"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:15
 msgid "Command used to turn the on-screen keyboard on or off."
-msgstr "Polecenie używane do przełączania klawiatury ekranowej."
+msgstr "用來開啟或關閉螢幕鍵盤的指令。"
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.in.h:1
 msgid "Smartcard removal action"
-msgstr "Czynność po wysunięciu karty smartcard"
+msgstr "智慧卡移除動作"
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.in.h:2
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr "Należy ustawić na jedną z wartości: \"none\", (nic) \"lock_screen\" (zablokowanie ekranu) lub \"force_logout\" (wymuszenie wylogowania). Czynność zostanie wykonana, kiedy użytkownik wysunie kartę smartcard użytą do zalogowania."
+msgstr "將它設定為「none」、「lock_screen」或「force_logout」之一。這個動作會在用來登入的智慧卡移除後執行。"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:1
 msgid "Disable touchpad while typing"
-msgstr "Wyłączenie panelu dotykowego podczas pisania"
+msgstr "打字時停用觸控板"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:2
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "Powinno być ustawione na \"TRUE\", jeśli użytkownik ma problemy z przypadkowym naciskaniem panelu dotykowego podczas pisania."
+msgstr "如果您在打字時容易不小心碰到觸控板，可將此項設定為 TRUE。"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:3
 msgid "Enable mouse clicks with touchpad"
-msgstr "Włączenie kliknięć myszy za pomocą panelu dotykowego"
+msgstr "啟用觸控板的滑鼠點擊"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "Ustawienie na \"TRUE\" umożliwia wysyłanie kliknięć myszy przez stukanie na panelu dotykowym"
+msgstr "設定此項為 TRUE 可以在觸控板上輕點來送出滑鼠點擊的指令。"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:5
 msgid "Select the touchpad scroll method"
-msgstr "Wybór metody przewijania panelu dotykowego"
+msgstr "選擇觸控板捲動方式"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:6
 msgid ""
 "Select the touchpad scroll method. Supported values are: 0: disabled, 1: "
 "edge scrolling, and 2: two-finger scrolling"
-msgstr "Wybór metody przewijania panelu dotykowego. Obsługiwane wartości: 0: wyłączone, 1: przewijanie przy krawędziach, 2: przewijanie dwoma palcami"
+msgstr "選擇觸控板的捲動方式。支援的數值有：0 ：停用，1：邊緣捲動，2：兩指式捲動"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:7
 msgid "Enable horizontal scrolling"
-msgstr "Przewijanie w poziomie"
+msgstr "啟用水平捲動"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:8
 msgid ""
 "Set this to TRUE to allow horizontal scrolling by the same method selected "
 "with the scroll_method key."
-msgstr "Ustawienie na \"TRUE\" umożliwia przewijanie w poziomie tą samą metodą, jaką wybrano za pomocą klucza \"scroll_method\""
+msgstr "設定此項為 TRUE 可使用水平捲動，如同以 scroll_method 選取的方式一般。"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:9
 msgid "Enable touchpad"
-msgstr "Włączenie panelu dotykowego"
+msgstr "啟用觸控板"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:10
 msgid "Set this to TRUE to enable all touchpads."
-msgstr "Ustawienie na \"TRUE\" włącza wszystkie panele dotykowe."
+msgstr "設定此項為 TRUE 以啟用所有的觸控板。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:1
@@ -230,7 +233,7 @@ msgstr "Ustawienie na \"TRUE\" włącza wszystkie panele dotykowe."
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:1
 msgid "Activation of this plugin"
-msgstr "Aktywacja tej wtyczki"
+msgstr "啟用這個外掛功能"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:2
@@ -249,7 +252,7 @@ msgstr "Aktywacja tej wtyczki"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr "Określa, czy ta wtyczka powinna być aktywowana przez mate-settings-daemon lub nie"
+msgstr "是否這個外掛功能會被 mate-settings-daemon 所啟用"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:3
@@ -268,7 +271,7 @@ msgstr "Określa, czy ta wtyczka powinna być aktywowana przez mate-settings-dae
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:3
 msgid "Priority to use for this plugin"
-msgstr "Priorytet używania tej wtyczki"
+msgstr "使用這個外掛功能的優先順序"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:4
@@ -287,229 +290,229 @@ msgstr "Priorytet używania tej wtyczki"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
-msgstr "Priorytet używania tej wtyczki podczas kolejki startowej mate-settings-daemon"
+msgstr "在 mate-settings-daemon 啟動佇列中使用這個外掛功能的優先順序"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:5
 msgid "Free percentage notify threshold"
-msgstr "Próg ostrzegania o wolnym miejscu na dysku w procentach"
+msgstr "可用空間百分比通知界限"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:6
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr "Próg wolnego miejsca w procentach dla początkowego ostrzeżenie o małej ilości miejsca na dysku. Jeśli procent wolnego miejsca spadnie poniżej tej wartości, wyświetlone zostanie ostrzeżenie."
+msgstr "開始警告磁碟空間不足的剩餘空間百分比界限。如果可用空間的百分比低於這個值就會顯示警告。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:7
 msgid "Subsequent free percentage notify threshold"
-msgstr "Próg powiadamiania o małej ilości wolnego miejsca na dysku przed kolejnym ostrzeżeniem, w procentach"
+msgstr "後續可用百分比通知門檻"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:8
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
-msgstr "Określenie procentu, o jaką wolne miejsce powinno się zmniejszyć przed wyświetleniem kolejnego ostrzeżenia."
+msgstr "指定可用磁碟空間減少時發出後續警告前的百分比。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:9
 msgid "Free space no notify threshold"
-msgstr "Próg nieostrzegania o wolnym miejscu na dysku"
+msgstr "可用空間不通知界限"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:10
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr "Określenie liczby w gigabajtach. Jeśli ilość wolnego miejsca jest większa niż ta wartość, żadne ostrzeżenie nie zostanie wyświetlone."
+msgstr "指定一個 GB 數值。如果可用空間大於此數值，就不會顯示警告。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:11
 msgid "Minimum notify period for repeated warnings"
-msgstr "Minimalny okres powiadamiania dla powtarzanych ostrzeżeń"
+msgstr "重覆警示的最小通知期間"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:12
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "Określenie czasu w minutach. Kolejne ostrzeżenia dla woluminu nie będą pojawiały się częściej niż ten okres."
+msgstr "以分鐘指定的時間。後續的儲存區警告出現頻率不會高於這個週期。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:13
 msgid "Mount paths to ignore"
-msgstr "Ignorowane ścieżki montowania"
+msgstr "要忽略的掛載路徑"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr "Określenie listy ścieżek montowania do zignorowania, kiedy jest mało miejsca."
+msgstr "指定要忽略磁碟空間不足的掛載路徑列表。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:5
 msgid "Volume step"
-msgstr "Skok głośności"
+msgstr "音度"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:6
 msgid "Volume step as percentage of volume."
-msgstr "Procentowy skok głośności."
+msgstr "音度是音量的百分比。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:7
 msgid "Toggle touchpad"
-msgstr "Przełączenie panelu dotykowego"
+msgstr "切換觸控板"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:8
 msgid "Binding to enable or disable the touchpad."
-msgstr "Skrót do włączenia lub wyłączenia panelu dotykowego."
+msgstr "啟用或停用觸控板的組合鍵。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:9
 msgid "Volume mute"
-msgstr "Wyciszenie"
+msgstr "靜音"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:10
 msgid "Binding to mute the system volume."
-msgstr "Skrót do wyciszania dźwięku."
+msgstr "設定系統靜音的組合鍵。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:11
 msgid "Volume down"
-msgstr "Zmniejszenie głośności"
+msgstr "調低音量"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:12
 msgid "Binding to lower the system volume."
-msgstr "Skrót do zmniejszania głośności."
+msgstr "降低系統音量的組合鍵。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:13
 msgid "Volume up"
-msgstr "Zwiększenie głośności"
+msgstr "調高音量"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:14
 msgid "Binding to raise the system volume."
-msgstr "Skrót do zwiększania głośności."
+msgstr "提高系統音量的組合鍵。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:15
 msgid "Log out"
-msgstr "Wylogowanie"
+msgstr "登出"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:16
 msgid "Binding to log out."
-msgstr "Skrót do wylogowania."
+msgstr "登出的組合鍵。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:17
 msgid "Eject"
-msgstr "Wysunięcie nośnika"
+msgstr "退出"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:18
 msgid "Binding to eject an optical disc."
-msgstr "Skrót do wysuwania płyty optycznej."
+msgstr "退出光碟片的組合鍵。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:19
 msgid "Home folder"
-msgstr "Katalog domowy"
+msgstr "個人資料夾"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:20
 msgid "Binding to open the Home folder."
-msgstr "Skrót do otwierania katalogu domowego."
+msgstr "開啟家目錄的組合鍵。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:21
 msgid "Search"
-msgstr "Wyszukiwanie"
+msgstr "搜尋"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:22
 msgid "Binding to launch the search tool."
-msgstr "Skrót do uruchomienia narzędzia wyszukiwania."
+msgstr "執行搜尋工具的組合鍵。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:23
 msgid "Launch email client"
-msgstr "Uruchomienie klienta e-mail"
+msgstr "執行電子郵件客戶端"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:24
 msgid "Binding to launch the email client."
-msgstr "Skrót do uruchomienia klienta e-mail."
+msgstr "執行電子郵件客戶端的組合鍵。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:25
 msgid "Lock screen"
-msgstr "Blokada ekranu"
+msgstr "鎖定畫面"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:26
 msgid "Binding to lock the screen."
-msgstr "Skrót do zablokowania ekranu."
+msgstr "鎖定螢幕的組合鍵。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:27
 msgid "Launch help browser"
-msgstr "Uruchomienie przeglądarki pomocy"
+msgstr "執行說明文件瀏覽器"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:28
 msgid "Binding to launch the help browser."
-msgstr "Skrót do uruchomienia przeglądarki pomocy"
+msgstr "執行說明文件瀏覽器的組合鍵。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:29
 msgid "Launch calculator"
-msgstr "Uruchomienie kalkulatora"
+msgstr "執行計算機"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:30
 msgid "Binding to launch the calculator."
-msgstr "Skrót do uruchomienia kalkulatora."
+msgstr "執行計算機的組合鍵。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:31
 msgid "Launch web browser"
-msgstr "Uruchomienie przeglądarki WWW"
+msgstr "執行網頁瀏覽器"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:32
 msgid "Binding to launch the web browser."
-msgstr "Skrót do uruchomienia przeglądarki WWW."
+msgstr "執行網頁瀏覽器的組合鍵。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:33
 msgid "Launch media player"
-msgstr "Uruchomienie odtwarzacza multimediów"
+msgstr "執行媒體播放程式"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:34
 msgid "Binding to launch the media player."
-msgstr "Skrót do uruchomienia odtwarzacza multimediów."
+msgstr "執行媒體播放程式的組合鍵。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:35
 msgid "Play (or play/pause)"
-msgstr "Odtwarzanie (lub odtwarzanie/wstrzymanie)"
+msgstr "播放（或播放/暫停）"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:36
 msgid "Binding to start playback (or toggle play/pause)."
-msgstr "Skrót do rozpoczęcia odtwarzania (lub przełączania odtwarzania/wstrzymania)."
+msgstr "開始播放(或切換播放/暫停)的組合鍵。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:37
 msgid "Pause playback"
-msgstr "Wstrzymanie odtwarzania"
+msgstr "暫停播放"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:38
 msgid "Binding to pause playback."
-msgstr "Skrót do wstrzymywania odtwarzania."
+msgstr "暫停播放的組合鍵。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:39
 msgid "Stop playback"
-msgstr "Zatrzymanie odtwarzania"
+msgstr "停止播放"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:40
 msgid "Binding to stop playback."
-msgstr "Skrót do zatrzymania odtwarzania."
+msgstr "停止播放的組合鍵。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:41
 msgid "Previous track"
-msgstr "Poprzednia ścieżka"
+msgstr "上一首歌曲"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:42
 msgid "Binding to skip to previous track."
-msgstr "Skrót do przechodzenia do poprzedniej ścieżki."
+msgstr "跳回上一首的組合鍵。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:43
 msgid "Next track"
-msgstr "Następna ścieżka"
+msgstr "下一首歌曲"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:44
 msgid "Binding to skip to next track."
-msgstr "Skrót do przechodzenia do następnej ścieżki."
+msgstr "跳到下一首的組合鍵。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:5
 msgid "Show Displays in Notification Area"
-msgstr "Wyświetlanie ekranów w obszarze powiadamiania"
+msgstr "在通知區顯示訊息"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:6
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
-msgstr "Określa, czy ma być wyświetlana ikona z właściwościami ekranu w obszarze powiadamiania."
+msgstr "是否在面板顯示通知圖示和顯示器相關訊息。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:7
 msgid "Do not touch monitor configuration"
-msgstr "Nie dotykaj konfiguracji monitora"
+msgstr "不要更動到顯示器的設定"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:8
 msgid ""
@@ -519,31 +522,31 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr "Zazwyczaj, mate-settings-daemon konfiguruje wewnętrzne i zewnętrzne monitory stosownie do ustawień turn_on_external_monitors_at_startup i turn_on_laptop_monitor_at_startup i ustala odpowiedni tryb (klonowanie/jeden obok drugiego). Ustawienie tego klucza na wartość prawdy wyłącza to, i ustawienia monitora nie są wcale dotknięte (chyba że jest wyraźna konfiguracja użytkownika)"
+msgstr "通常，mate-settings-daemon 會根據 turn_on_external_monitors_at_startup 以及 turn_on_laptop_monitor_at_startup 的設定值，來組配內部與外部監視器，並且決定一個適宜的仿本/並列模式。將這個鍵值設定為真會將它停用，而完全不會動到監視器設定值 (除非有明確的使用者組態)。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:9
 msgid "Turn on external monitor after system boot"
-msgstr "Włączenie zewnętrznego monitora po uruchomieniu systemu"
+msgstr "在系統開機後開啟外接螢幕"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:10
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
-msgstr "Włączenie zewnętrznego monitora po uruchomieniu systemu, jeśli użytkownik podłączył go podczas uruchamiania."
+msgstr "如果使用者在系統開機時接上外接螢幕則在開機後開啟外接螢幕。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:11
 msgid "Turn on laptop monitor after system boot"
-msgstr "Włącza monitor laptopa po uruchomieniu systemu"
+msgstr "在系統開機後開啟筆電螢幕"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:12
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr "Włącza monitor laptopa po uruchomieniu systemu, jeśli użytkownik podłączył go podczas uruchamiania."
+msgstr "如果使用者在系統開機時接上筆電螢幕則在開機後開啟它。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:13
 msgid "File for default configuration for RandR"
-msgstr "Plik domyślnej konfiguracji RandR"
+msgstr "RandR 的預設組態檔案"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:14
 msgid ""
@@ -552,118 +555,118 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr "Wtyczka XRandR będzie wyszukiwała domyślną konfigurację w pliku określonym w tym kluczu. Jest ona podobna do pliku ~/.config/monitors.xml, który zwykle jest przechowywany w katalogach domowych użytkowników. Jeśli użytkownik nie posiada takiego pliku, lub posiada plik nie pasujący do ustawienia monitorów, to zostanie użyty plik określony w tym kluczu."
+msgstr "XRandR 外掛程式會在這個設定鍵指定的檔案中尋找預設的組態。這很類似通常儲存在使用者家目錄的 ~/.config/monitors.xml。如果使用者沒有這個檔案，或是雖然有卻不符含使用者的螢幕設定，就會以這個設定鍵指定的檔案來代替。"
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
-msgstr "Usługa ustawień środowiska MATE"
+msgstr "MATE 設定值守護程式"
 
 #: ../mate-settings-daemon/main.c:56
 msgid "Enable debugging code"
-msgstr "Włączenie kodu do debugowania"
+msgstr "啟用除錯碼"
 
 #: ../mate-settings-daemon/main.c:57
 msgid "Replace the current daemon"
-msgstr "Zastąp bieżący demon"
+msgstr "替換目前的守護程式"
 
 #: ../mate-settings-daemon/main.c:58
 msgid "Don't become a daemon"
-msgstr "Bez przekształcania w usługę"
+msgstr "不要以守護程式狀態執行"
 
 #: ../mate-settings-daemon/main.c:59
 msgid "Exit after a time (for debugging)"
-msgstr "Kończy działanie po podanym czasie (do debugowania)"
+msgstr "一段時間後離開（偵錯用）"
 
 #: ../plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.in.h:1
 msgid "Accessibility Keyboard"
-msgstr "Dostępność klawiatury"
+msgstr "鍵盤可存取性"
 
 #: ../plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.in.h:2
 msgid "Accessibility keyboard plugin"
-msgstr "Wtyczka dostępności klawiatury"
+msgstr "鍵盤可存取性引掛程式"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:446
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr "Podczas wyświetlania pomocy wystąpił błąd: %s"
+msgstr "顯示說明文件時發生錯誤：%s"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
 msgid "Do you want to activate Slow Keys?"
-msgstr "Włączyć funkcję powolnych klawiszy?"
+msgstr "是否啟用遲緩按鍵？"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:575
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:639
 msgid "Do you want to deactivate Slow Keys?"
-msgstr "Wyłączyć funkcję powolnych klawiszy?"
+msgstr "是否停用遲緩按鍵？"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "Przytrzymano przez osiem sekund klawisz Shift. Jest to skrót klawiszowy dla funkcji powolnych klawiszy, która wpływa na sposób pracy klawiatury."
+msgstr "您按住 Shift 鍵達 8 秒。這是使用遲緩鍵功能的捷徑，那會影響鍵盤的操作方式。"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
 msgid "Don't activate"
-msgstr "Bez włączania"
+msgstr "不要啟用"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
 msgid "Don't deactivate"
-msgstr "Bez wyłączania"
+msgstr "不要停用"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
 msgid "Activate"
-msgstr "Włącz"
+msgstr "啟用"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
 msgid "Deactivate"
-msgstr "Wyłącz"
+msgstr "停用"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
 msgid "Do_n't activate"
-msgstr "_Nie włączaj"
+msgstr "不要啟用(_N)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
 msgid "Do_n't deactivate"
-msgstr "_Nie wyłączaj"
+msgstr "不要停用(_N)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
 msgid "_Activate"
-msgstr "Włą_cz"
+msgstr "啟用(_A)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
 msgid "_Deactivate"
-msgstr "_Wyłącz"
+msgstr "停用(_D)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:668
 msgid "Slow Keys Alert"
-msgstr "Ostrzeżenie powolnych klawiszy"
+msgstr "遲緩按鍵警告"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:708
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:774
 msgid "Do you want to activate Sticky Keys?"
-msgstr "Włączyć funkcję klawiszy trwałych?"
+msgstr "是否啟用黏性特殊鍵？"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
 msgid "Do you want to deactivate Sticky Keys?"
-msgstr "Wyłączyć funkcję klawiszy trwałych?"
+msgstr "是否停用黏性特殊鍵？"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "Przyciśnięto klawisz Shift pięć razy pod rząd. Jest to skrót klawiszowy dla funkcji trwałych klawiszy, która wpływa na sposób pracy klawiatury."
+msgstr "您連續按了 5 下 Shift 鍵。這是使用黏性特殊鍵功能的捷徑，那會影響鍵盤的操作方式。"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
@@ -671,202 +674,202 @@ msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "Przyciśnięto dwa klawisze na raz, lub przyciśnięto klawisz Shift pięć razy pod rząd. Wyłącza to funkcję trwałych klawiszy, która wpływa na sposób pracy klawiatury."
+msgstr "您同時按下兩個鍵，或是連續按下 5 次 Shift 鍵。這會停用黏性特殊鍵功能，那會影響鍵盤的操作方式。"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:807
 msgid "Sticky Keys Alert"
-msgstr "Ostrzeżenie trwałych klawiszy"
+msgstr "黏性特殊鍵警告"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:813
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
-msgstr "Preferencje dostępu uniwersalnego"
+msgstr "無障礙偏好設定"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
 msgid "Use on-screen _keyboard"
-msgstr "_Klawiatura ekranowa"
+msgstr "使用螢幕鍵盤(_K)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:3
 msgid "Use screen _reader"
-msgstr "_Czytnik ekranowy"
+msgstr "使用螢幕閱讀器(_R)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:4
 msgid "Use screen _magnifier"
-msgstr "_Lupa ekranowa"
+msgstr "使用螢幕放大鏡(_M)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:5
 msgid "Enhance _contrast in colors"
-msgstr "_Zwiększenie kontrastu kolorów"
+msgstr "增強顏色對比(_C)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:6
 msgid "Make _text larger and easier to read"
-msgstr "Powiększenie _tekstu do łatwiejszego odczytania"
+msgstr "讓文字變大以利閱讀(_T)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
-msgstr "_Wprowadzanie skrótów klawiszowych jeden klawisz po drugim (klawisze trwałe)"
+msgstr "按壓捷徑鍵時能一次按壓一個鍵（黏性鍵）(_P)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
-msgstr "_Ignorowanie podwójnych naciśnięć klawiszy w jednym ciągu (klawisze odbijane)"
+msgstr "忽略重複按下的按鍵（回鍵）(_I)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "Press and _hold keys to accept them (Slow Keys)"
-msgstr "N_aciskanie i przytrzymywanie klawiszy, aby je zatwierdzić (klawisze powolne)"
+msgstr "按住按鍵來接受他們（遲緩按鍵）"
 
 #: ../plugins/background/background.mate-settings-plugin.in.h:1
 msgid "Background"
-msgstr "Tło"
+msgstr "背景"
 
 #: ../plugins/background/background.mate-settings-plugin.in.h:2
 msgid "Background plugin"
-msgstr "Wtyczka tła"
+msgstr "背景圖片外掛程式"
 
 #: ../plugins/clipboard/clipboard.mate-settings-plugin.in.h:1
 msgid "Clipboard"
-msgstr "Schowek"
+msgstr "剪貼簿"
 
 #: ../plugins/clipboard/clipboard.mate-settings-plugin.in.h:2
 msgid "Clipboard plugin"
-msgstr "Wtyczka schowka"
+msgstr "剪貼簿外掛程式"
 
 #: ../plugins/dummy/dummy.mate-settings-plugin.in.h:1
 msgid "Dummy"
-msgstr "Przykład"
+msgstr "偽裝"
 
 #: ../plugins/dummy/dummy.mate-settings-plugin.in.h:2
 msgid "Dummy plugin"
-msgstr "Przykładowa wtyczka"
+msgstr "偽裝外掛程式"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:70
 msgid "Don't show any warnings again for this file system"
-msgstr "Bez ponownego wyświetlania ostrzeżeń dla tego systemu plików"
+msgstr "不要再對這個檔案系統顯示任何警告"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:72
 msgid "Don't show any warnings again"
-msgstr "Bez ponownego wyświetlania ostrzeżeń"
+msgstr "不再顯示任何警告"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:85
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
-msgstr "Wolumin \"%s\" posiada tylko %s wolnego miejsca."
+msgstr "儲存區「%s」只剩下 %s 磁碟空間。"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:88
 #, c-format
 msgid "This computer has only %s disk space remaining."
-msgstr "Ten komputer posiada tylko %s wolnego miejsca."
+msgstr "這臺電腦只剩下 %s 磁碟空間。"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:104
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "Można uwolnić trochę miejsca przez opróżnienie kosza, usunięcie nieużywanych programów albo plików lub przeniesienie plików na inny dysk lub partycję."
+msgstr "您可以藉由清理回收筒、移除未使用的程式或檔案，或將檔案移至另一個磁碟機或分割區來釋出磁碟空間。"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
-msgstr "Można uwolnić trochę miejsca przez usunięcie nieużywanych programów albo plików lub przeniesienie plików na inny dysk lub partycję."
+msgstr "您可以藉由移除未使用的程式或檔案，或將檔案移至另一個磁碟機或分割區來釋出磁碟空間。"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:112
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "Można uwolnić trochę miejsca przez opróżnienie kosza, usunięcie nieużywanych programów albo plików lub przeniesienie plików na dysk zewnętrzny."
+msgstr "您可以藉由清理回收筒、移除未使用的程式或檔案，或將檔案移至外接式磁碟機來釋出磁碟空間。"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:115
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
-msgstr "Można uwolnić trochę miejsca przez usunięcie nieużywanych programów albo plików lub przeniesienie plików na dysk zewnętrzny."
+msgstr "您可以藉由移除未使用的程式或檔案，或將檔案移至外接式磁碟機來釋出磁碟空間。"
 
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:213
 msgid "Low Disk Space"
-msgstr "Mało miejsca na dysku"
+msgstr "磁碟空間不足"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:445
 msgid "Empty Trash"
-msgstr "Opróżnianie kosza"
+msgstr "清理回收筒"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:453
 msgid "Examine…"
-msgstr "Sprawdzanie…"
+msgstr "檢查…"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:460
 msgid "Ignore"
-msgstr "Zignoruj"
+msgstr "忽略"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:97
 #, c-format
 msgid "Removing item %lu of %lu"
-msgstr "Usuwanie elementu %lu z %lu"
+msgstr "正在移除項目 %lu / %lu"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 msgid "Removing: %s"
-msgstr "Usuwanie: %s"
+msgstr "正在移除：%s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:296
 msgid "Emptying the trash"
-msgstr "Opróżnianie kosza"
+msgstr "正在清理回收筒"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:272
 msgid "Preparing to empty trash…"
-msgstr "Przygotowywanie opróżnienia kosza…"
+msgstr "準備清理回收筒…"
 
 #. Translators: "Emptying trash from <device>"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:299
 msgid "From: "
-msgstr "Z: "
+msgstr "從："
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:351
 msgid "Empty all of the items from the trash?"
-msgstr "Usunąć wszystkie elementy z kosza?"
+msgstr "是否清理回收筒所有項目？"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:354
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "Jeśli wybrano opróżnienie kosza, wszystkie elementy w nim zostaną trwale utracone. Proszę zauważyć, że można je także usuwać osobno."
+msgstr "如果您選擇清理回收筒，所有在回收筒裡的項目會永遠消失。請注意您也可以個別刪除它們。"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:361
 msgid "_Empty Trash"
-msgstr "Op_różnij kosz"
+msgstr "清理回收筒(_E)"
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:129
 #, c-format
 msgid "Key binding (%s) is invalid"
-msgstr "Skrót klawiszowy (%s) jest nieprawidłowy"
+msgstr "按鍵組合 (%s) 無效"
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:165
 #, c-format
 msgid "Key binding (%s) is incomplete"
-msgstr "Skrót klawiszowy (%s) jest niekompletny"
+msgstr "按鍵組合 (%s) 不完整"
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:502
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "Wystąpił błąd podczas próby uruchomienia programu (%s),\nktóry jest powiązany z kluczem (%s)"
+msgstr "執行 (%s) 時發生錯誤；\n有關的按鍵組合是 (%s)"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
-msgstr "Skróty klawiszowe"
+msgstr "組合鍵"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:2
 msgid "Keybindings plugin"
-msgstr "Wtyczka skrótów klawiszowych"
+msgstr "組合鍵外掛程式"
 
 #: ../plugins/keyboard/keyboard.mate-settings-plugin.in.h:1
 msgid "Keyboard"
-msgstr "Klawiatura"
+msgstr "鍵盤"
 
 #: ../plugins/keyboard/keyboard.mate-settings-plugin.in.h:2
 msgid "Keyboard plugin"
-msgstr "Wtyczka klawiatury"
+msgstr "鍵盤外掛程式"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:137
 #, c-format
@@ -884,45 +887,45 @@ msgid ""
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr "Błąd podczas włączania konfiguracji XKB.\nMogło się to wydarzyć z różnych powodów:\n • błędu w bibliotece libxklavier\n • błędu w serwerze X (narzędzia xkbcomp, xmodmap)\n • serwera X z niezgodną implementacją biblioteki libxkbfile\n\nDane wersji serwera X:\n%s\n%d\n%s\nW razie zgłoszenia tej sytuacji jako błąd, proszę dołączyć:\n • wynik polecenia <b>%s</b>\n • wynik polecenia <b>%s</b>"
+msgstr "啟用 XKB 組態時發生錯誤。\n這可能在很多種狀況下發生：\n- libxklavier 程式庫有錯誤\n- X 伺服器有錯誤(xkbcomp、xmodmap 公用程式)\n- X 伺服器的 libxkbfile 實作不完整\n\nX 伺服器版本資料：\n%s\n%d\n%s\n如果您要將這個狀況回報為程式錯誤，請附上：\n • <b>%s</b> 的結果\n • <b>%s</b> 的結果"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:151
 msgid ""
 "You are using XFree 4.3.0.\n"
 "There are known problems with complex XKB configurations.\n"
 "Try using a simpler configuration or using a later version of the XFree software."
-msgstr "Używane jest oprogramowanie XFree 4.3.0.\nW tej wersji występują znane problemy ze złożonymi konfiguracjami XKB.\nProszę spróbować użyć prostszej konfiguracji lub nowszej wersji oprogramowania XFree."
+msgstr "您使用的是 XFree 4.3.0。\n這個版本在複雜 XKB 組態上有已知的問題。\n請使用較簡單的組態或使用較新版的 XFree 軟體。"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:299
 msgid "_Layouts"
-msgstr "_Układy"
+msgstr "配置(_L)"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:306
 msgid "Keyboard _Preferences"
-msgstr "_Preferencje klawiatury"
+msgstr "鍵盤偏好設定(_P)"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:312
 msgid "Show _Current Layout"
-msgstr "Wyświetlenie bieżącego u_kładu"
+msgstr "顯示目前配置(_C)"
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:198
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "Nie można uzyskać domyślnego terminala. Proszę sprawdzić, czy ustalone jest domyślne polecenie terminala i czy wskazuje na prawidłowy program."
+msgstr "無法取得預設的終端機。請檢查您預設的終端機指令已設定並指向正確的應用程式。"
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:238
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "Nie można wykonać polecenia: %s\nProszę sprawdzić, czy jest to prawidłowe polecenie."
+msgstr "不能執行指令： %s\n請檢查該指令是否為有效的指令。"
 
 #. translators:
 #. * The device has been disabled
 #: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1005
 msgid "Disabled"
-msgstr "Wyłączone"
+msgstr "已停用"
 
 #. translators:
 #. * The number of sound outputs on a particular device
@@ -930,9 +933,7 @@ msgstr "Wyłączone"
 #, c-format
 msgid "%u Output"
 msgid_plural "%u Outputs"
-msgstr[0] "%u wyjście"
-msgstr[1] "%u wyjścia"
-msgstr[2] "%u wyjść"
+msgstr[0] "%u 輸出"
 
 #. translators:
 #. * The number of sound inputs on a particular device
@@ -940,42 +941,40 @@ msgstr[2] "%u wyjść"
 #, c-format
 msgid "%u Input"
 msgid_plural "%u Inputs"
-msgstr[0] "%u wejście"
-msgstr[1] "%u wejścia"
-msgstr[2] "%u wejść"
+msgstr[0] "%u 輸入"
 
 #: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1320
 msgid "System Sounds"
-msgstr "Dźwięki systemowe"
+msgstr "系統音效"
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
-msgstr "Klawisze multimedialne"
+msgstr "多媒體按鍵"
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:2
 msgid "Media keys plugin"
-msgstr "Wtyczka klawiszy multimedialnych"
+msgstr "多媒體按鍵外掛程式"
 
 #: ../plugins/mouse/msd-mouse-manager.c:887
 msgid "Could not enable mouse accessibility features"
-msgstr "Nie można włączyć funkcji dostępności myszy"
+msgstr "無法啟用滑鼠可存取性功能"
 
 #: ../plugins/mouse/msd-mouse-manager.c:889
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
-msgstr "Dostępność myszy wymaga instalacji programu Mousetweaks."
+msgstr "滑鼠無障礙功能需要您的系統安裝 Mousetweaks。"
 
 #: ../plugins/mouse/msd-mouse-manager.c:892
 msgid "Mouse Preferences"
-msgstr "Preferencje myszy"
+msgstr "滑鼠偏好設定"
 
 #: ../plugins/mouse/mouse.mate-settings-plugin.in.h:1
 msgid "Mouse"
-msgstr "Mysz"
+msgstr "滑鼠"
 
 #: ../plugins/mouse/mouse.mate-settings-plugin.in.h:2
 msgid "Mouse plugin"
-msgstr "Wtyczka myszy"
+msgstr "滑鼠外掛程式"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:1
 msgid "Mpris"
@@ -983,15 +982,15 @@ msgstr "Mpris"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:2
 msgid "Mpris plugin"
-msgstr "Wtyczka Mpris"
+msgstr "Mpris 外掛程式"
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:1
 msgid "Typing Break"
-msgstr "Przerwa w pisaniu"
+msgstr "休息提示"
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:2
 msgid "Typing break plugin"
-msgstr "Wtyczka przerwy w pisaniu"
+msgstr "休息提示外掛程式"
 
 #: ../plugins/xrandr/xrandr.mate-settings-plugin.in.h:1
 msgid "XRandR"
@@ -999,197 +998,195 @@ msgstr "XRandR"
 
 #: ../plugins/xrandr/xrandr.mate-settings-plugin.in.h:2
 msgid "Set up screen size and rotation settings"
-msgstr "Ustawia rozmiar i orientację ekranu"
+msgstr "設定螢幕大小與旋轉設定值"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:371
 msgid "Could not switch the monitor configuration"
-msgstr "Nie można przełączyć konfiguracji monitora"
+msgstr "無法切換顯示器組態"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:395
 msgid "Could not restore the display's configuration"
-msgstr "Nie można odtworzyć konfiguracji ekranu"
+msgstr "無法還原畫面的組態"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:420
 msgid "Could not restore the display's configuration from a backup"
-msgstr "Nie można odtworzyć konfiguracji ekranu z kopii zapasowej"
+msgstr "無法從備份還原畫面的組態"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:441
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Poprzednie ustawienia zostaną przywrócone w ciągu %d sekundy"
-msgstr[1] "Poprzednie ustawienia zostaną przywrócone w ciągu %d sekund"
-msgstr[2] "Poprzednie ustawienia zostaną przywrócone w ciągu %d sekund"
+msgstr[0] "畫面將會在 %d 秒後重設為先前的組態"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:490
 msgid "Does the display look OK?"
-msgstr "Czy wyświetlany obraz wygląda poprawnie?"
+msgstr "畫面看來是否正常？"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:496
 msgid "_Restore Previous Configuration"
-msgstr "_Przywróć poprzednią konfigurację"
+msgstr "復原前一個組態(_R)"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:497
 msgid "_Keep This Configuration"
-msgstr "_Zachowaj konfigurację"
+msgstr "保留這個組態(_K)"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:578
 msgid "The selected configuration for displays could not be applied"
-msgstr "Wybrana konfiguracja ekranów nie mogła zostać zastosowana"
+msgstr "選取的畫面組態無法套用"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1140
 #, c-format
 msgid "Could not refresh the screen information: %s"
-msgstr "Nie można odświeżyć informacji o ekranie: %s"
+msgstr "無法重新整理螢幕的資訊：%s"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1144
 msgid "Trying to switch the monitor configuration anyway."
-msgstr "Mimo to zostanie podjęta próba przełączenia konfiguracji monitora."
+msgstr "嘗試強制切換顯示器。"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1875
 msgid "Rotation not supported"
-msgstr "Brak obsługi obracania"
+msgstr "不支援旋轉"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1931
 msgid "Could not save monitor configuration"
-msgstr "Nie można zapisać konfiguracji monitora"
+msgstr "無法儲存顯示器組態"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1949
 msgid "Normal"
-msgstr "Normalnie"
+msgstr "一般"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1950
 msgid "Left"
-msgstr "Lewo"
+msgstr "左"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1951
 msgid "Right"
-msgstr "Prawo"
+msgstr "右"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1952
 msgid "Upside Down"
-msgstr "Do góry nogami"
+msgstr "由上而下"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2072
 msgid "_Configure Display Settings…"
-msgstr "_Skonfiguruj ustawienia wyświetlania…"
+msgstr "設定顯示設定值(_C)…"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2113
 msgid "Configure display settings"
-msgstr "Konfiguruje ustawienia wyświetlania"
+msgstr "設定顯示設定值"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2173
 msgid "Could not apply the stored configuration for monitors"
-msgstr "Nie można zastosować zachowanej konfiguracji dla monitorów"
+msgstr "無法套用已儲存的顯示器組態"
 
 #: ../plugins/xrdb/msd-xrdb-manager.c:253
 #: ../plugins/xrdb/msd-xrdb-manager.c:322
 msgid "Cannot determine user's home directory"
-msgstr "Nie można ustalić katalogu domowego użytkownika"
+msgstr "無法決定使用者的個人資料夾所在"
 
 #: ../plugins/xrdb/xrdb.mate-settings-plugin.in.h:1
 msgid "X Resource Database"
-msgstr "Baza zasobów X"
+msgstr "X 資源資料庫"
 
 #: ../plugins/xrdb/xrdb.mate-settings-plugin.in.h:2
 msgid "Manage the X resource database"
-msgstr "Zarządzanie bazą zasobów X"
+msgstr "管理 X 資源資料庫"
 
 #: ../plugins/xsettings/xsettings.mate-settings-plugin.in.h:1
 msgid "X Settings"
-msgstr "Ustawienia X"
+msgstr "X 設定值"
 
 #: ../plugins/xsettings/xsettings.mate-settings-plugin.in.h:2
 msgid "Manage X Settings"
-msgstr "Zmiana ustawień X"
+msgstr "管理 X 設定值"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:167
 msgid "Module Path"
-msgstr "Ścieżka do modułu"
+msgstr "模組路徑"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:168
 msgid "path to smartcard PKCS #11 driver"
-msgstr "ścieżka do sterownika PKCS #11 kart smartcard"
+msgstr "智慧卡 PKCS #11 讀卡機路徑"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:504
 msgid "received error or hang up from event source"
-msgstr "odebrano błąd lub rozłączenie ze źródła zdarzeń"
+msgstr "接收到錯誤或是從事件來源掛斷"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:593
 #, c-format
 msgid "NSS security system could not be initialized"
-msgstr "nie można zainicjować systemu bezpieczeństwa NSS"
+msgstr "無法初始化 NSS 安全系統"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:662
 #, c-format
 msgid "no suitable smartcard driver could be found"
-msgstr "nie odnaleziono odpowiedniego sterownika kart smartcard"
+msgstr "找不到適合的智慧卡讀卡機"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:682
 #, c-format
 msgid "smartcard driver '%s' could not be loaded"
-msgstr "nie można wczytać sterownika kart smartcard \"%s\""
+msgstr "無法載入智慧卡讀卡機「%s」"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:771
 #, c-format
 msgid "could not watch for incoming card events - %s"
-msgstr "nie można obserwować przychodzących zdarzeń dla kart - %s"
+msgstr "無法監看剛剛的卡片事件 - %s"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:1124
 #, c-format
 msgid "encountered unexpected error while waiting for smartcard events"
-msgstr "wystąpił nieoczekiwany błąd podczas oczekiwania na zdarzenia kart smartcard"
+msgstr "當等候智慧卡事件時遇到未預期的錯誤"
 
 #: ../plugins/smartcard/msd-smartcard.c:154
 msgid "Slot ID"
-msgstr "Identyfikator gniazda"
+msgstr "插槽 ID"
 
 #: ../plugins/smartcard/msd-smartcard.c:155
 msgid "The slot the card is in"
-msgstr "Gniazdo, w którym znajduje się karta"
+msgstr "卡片放入的插槽"
 
 #: ../plugins/smartcard/msd-smartcard.c:161
 msgid "Slot Series"
-msgstr "Serie gniazda"
+msgstr "插槽序列"
 
 #: ../plugins/smartcard/msd-smartcard.c:162
 msgid "per-slot card identifier"
-msgstr "identyfikator karty dla gniazda"
+msgstr "各插槽卡片識別符"
 
 #: ../plugins/smartcard/msd-smartcard.c:168
 #: ../plugins/smartcard/msd-smartcard.c:169
 msgid "name"
-msgstr "nazwa"
+msgstr "名稱"
 
 #: ../plugins/smartcard/msd-smartcard.c:173
 msgid "Module"
-msgstr "Moduł"
+msgstr "模組"
 
 #: ../plugins/smartcard/msd-smartcard.c:174
 msgid "smartcard driver"
-msgstr "sterownik smartcard"
+msgstr "智慧卡讀卡機"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:1
 msgid "Change system time zone"
-msgstr "Zmiana systemowej strefy czasowej"
+msgstr "改變系統時區"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:2
 msgid "Privileges are required to change the system time zone."
-msgstr "Wymagane są uprawnienia, aby zmienić systemową strefę czasową."
+msgstr "改變系統時區需要有權限。"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:3
 msgid "Change system time"
-msgstr "Zmiana czasu systemowego"
+msgstr "改變系統時刻"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:4
 msgid "Privileges are required to change the system time."
-msgstr "Wymagane są uprawnienia, aby zmienić czas systemowy."
+msgstr "改變系統時刻需要有權限。"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:5
 msgid "Configure hardware clock"
-msgstr "Konfiguracja zegara sprzętowego"
+msgstr "設定硬體時鐘"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:6
 msgid "Privileges are required to configure the hardware clock."
-msgstr "Wymagane są uprawnienia, aby skonfigurować zegar sprzętowy."
+msgstr "設定硬體時鐘需要有權限。"
