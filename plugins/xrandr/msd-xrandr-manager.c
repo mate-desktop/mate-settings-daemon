@@ -46,6 +46,11 @@
 #include <libmate-desktop/mate-rr.h>
 #include <libmate-desktop/mate-rr-labeler.h>
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+#include <libmate-desktop/mate-desktop-utils.h>
+#define gdk_spawn_command_line_on_screen mate_gdk_spawn_command_line_on_screen
+#endif
+
 #ifdef HAVE_LIBNOTIFY
 #include <libnotify/notify.h>
 #endif
