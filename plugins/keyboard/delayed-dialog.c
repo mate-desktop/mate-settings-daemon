@@ -68,7 +68,7 @@ msd_delayed_show_dialog (GtkWidget *dialog)
 
 #if GTK_CHECK_VERSION (3, 0, 0)
         gdk_window_add_filter (NULL, message_filter, NULL);
-#ele
+#else
         manager_atom = gdk_atom_intern ("MANAGER", FALSE);
         gdk_display_add_client_message_filter (display, manager_atom,
                                                message_filter, NULL);
