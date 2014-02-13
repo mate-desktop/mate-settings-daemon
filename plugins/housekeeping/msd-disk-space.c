@@ -486,6 +486,7 @@ ldsm_check_all_mounts (gpointer data)
 
                 check_mounts = g_list_prepend (check_mounts, mount_info);
         }
+        g_list_free (mounts);
 
         number_of_mounts = g_list_length (check_mounts);
         if (number_of_mounts > 1)
@@ -545,7 +546,11 @@ ldsm_mounts_changed (GObject  *monitor,
         mounts = g_unix_mounts_get (time_read);
         g_hash_table_foreach_remove (ldsm_notified_hash,
                                      ldsm_is_hash_item_not_in_mounts, mounts);
+#if GLIB_CHECK_VERSION (2, 28, 0)
+        g_list_free_full (mounts, (GDestroyNotify) g_unix_mount_free);
+#else
         g_list_foreach (mounts, (GFunc) g_unix_mount_free, NULL);
+#endif
 
         /* check the status now, for the new mounts */
         ldsm_check_all_mounts (NULL);
@@ -601,11 +606,11 @@ msd_ldsm_get_config ()
 
         settings_list = g_settings_get_strv (settings, SETTINGS_IGNORE_PATHS);
         if (settings_list != NULL) {
-                gint i;
+                guint i;
 
-                for (i = 0; i < G_N_ELEMENTS (settings_list); i++) {
+                for (i = 0; settings_list[i] != NULL; i++) {
                         if (settings_list[i] != NULL)
-                                ignore_paths = g_slist_append (ignore_paths, g_strdup (settings_list[i]));
+                                ignore_paths = g_slist_prepend (ignore_paths, g_strdup (settings_list[i]));
                 }
 
                 /* Make sure we dont leave stale entries in ldsm_notified_hash */
