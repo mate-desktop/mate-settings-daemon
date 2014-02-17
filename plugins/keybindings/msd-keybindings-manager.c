@@ -424,7 +424,11 @@ get_exec_environment (XEvent *xevent)
         GdkWindow *window = gdk_xid_table_lookup (xevent->xkey.root);
 
         if (window) {
+#if GTK_CHECK_VERSION (3, 0, 0)
+                screen = gdk_window_get_screen (window);
+#else
                 screen = gdk_drawable_get_screen (GDK_DRAWABLE (window));
+#endif
         }
 
         g_return_val_if_fail (GDK_IS_SCREEN (screen), NULL);
