@@ -421,7 +421,11 @@ get_exec_environment (XEvent *xevent)
         int        i;
         int        display_index = -1;
         GdkScreen *screen = NULL;
+#if GTK_CHECK_VERSION (3, 0, 0)
+        GdkWindow *window = gdk_x11_window_lookup_for_display (gdk_display_get_default (), xevent->xkey.root);
+#else
         GdkWindow *window = gdk_xid_table_lookup (xevent->xkey.root);
+#endif
 
         if (window) {
 #if GTK_CHECK_VERSION (3, 0, 0)
