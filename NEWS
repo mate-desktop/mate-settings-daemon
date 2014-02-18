@@ -1,3 +1,7 @@
-1.5.0
+1.7.1
+  * Add GTK3 support
+  * Add Middle Click Emulation to mouse manager
+
+1.6.0
 
   * Migration to gsettings
