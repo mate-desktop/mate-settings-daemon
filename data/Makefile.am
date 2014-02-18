@@ -52,6 +52,8 @@ org.mate.SettingsDaemon.service: org.mate.SettingsDaemon.service.in Makefile
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = mate-settings-daemon.pc
 
+man_MANS = mate-settings-daemon.1
+
 @INTLTOOL_XML_NOMERGE_RULE@
 
 #disabled until we support it
@@ -66,6 +68,7 @@ EXTRA_DIST = 				\
 	$(desktop_in_files)		\
 	$(xml_in_files)			\
 	mate-settings-daemon.pc.in	\
+	$(man_MANS)				\
 	$(NULL)
 
 DISTCLEANFILES = 			\
