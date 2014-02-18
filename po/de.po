@@ -16,13 +16,14 @@
 # Mario Blättermann <mariobl@gnome.org>, 2009, 2010
 # Matthias Warkus <mawa@iname.com>, 1999
 # muesli4 <muesli4@gmail.com>, 2013
+# to_ba, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2013-04-30 14:23+0000\n"
-"Last-Translator: desperateCoder <a.dawtjan@gmx.de>\n"
+"PO-Revision-Date: 2014-02-18 14:55+0000\n"
+"Last-Translator: to_ba\n"
 "Language-Team: German (http://www.transifex.com/projects/p/MATE/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -517,7 +518,7 @@ msgstr "Bildschirme im Benachrichtigungsfeld anzeigen"
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
-msgstr "Legt fest, ob im Panel ein Benachrichtigungssymbol für die Bildschirmeinstellungen angezeigt wird."
+msgstr "Legt fest, ob in der Leiste ein Benachrichtigungssymbol für die Bildschirmeinstellungen angezeigt wird."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:7
 msgid "Do not touch monitor configuration"

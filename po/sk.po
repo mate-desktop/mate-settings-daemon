@@ -5,14 +5,15 @@
 # Translators:
 # Ján Ďanovský <dagsoftware@yahoo.com>, 2013-2014
 # Marcel Telka <marcel@telka.sk>, 2005
-# Pavol Šimo <palo.simo@gmail.com>, 2008, 2009, 2010
+# Pavol Šimo <palo.simo@gmail.com>, 2008-2010
 # Peter Tuharsky <tuharsky@misbb.sk>, 2007
+# tibbi <tibbbi2@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2014-01-15 10:59+0000\n"
+"PO-Revision-Date: 2014-02-16 23:44+0000\n"
 "Last-Translator: Ján Ďanovský <dagsoftware@yahoo.com>\n"
 "Language-Team: Slovak (http://www.transifex.com/projects/p/MATE/language/sk/)\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +58,7 @@ msgstr "DPI"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "Rozlíšenie použité na konverziu veľkostí písiem na veľkosť pixelov, v bodoch na palec."
+msgstr "Rozlíšenie použité na konverziu veľkostí písmen na veľkosť pixelov, v bodoch na palec."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:3
 msgid "Antialiasing"
@@ -68,7 +69,7 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "Typ vyhladzovania použitý pri vykresľovaní písma. Možné hodnoty sú: \"none\" pre žiadne vyhladzovanie, \"grayscale\" pre štandardné vyhladzovanie odtieňmi sivej a \"rgba\" pre sub-pixelové vyhladzovanie (pre obrazovky LCD)."
+msgstr "Typ vyhladzovania použitý pri vykresľovaní písma. Možné hodnoty sú: „none“ pre žiadne vyhladzovanie, „grayscale“ pre štandardné vyhladzovanie odtieňmi sivej a „rgba“ pre sub-pixelové vyhladzovanie (pre obrazovky LCD)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:5
 msgid "Hinting"
@@ -79,7 +80,7 @@ msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "Typ úpravy rozostupov písmen použitej pri vykresľovaní písma. Možné hodnoty sú: \"none\" pre žiadnu úpravu, \"slight\" pre jemnú (základnú), \"medium\" na strednú a \"full\" pre úplnú úpravu (môže spôsobiť skreslenie tvarov písmen)."
+msgstr "Typ úpravy rozostupov písmen použitej pri vykresľovaní písma. Možné hodnoty sú: „none“ pre žiadnu úpravu, „slight“ pre jemnú (základnú), „medium“ na strednú a „full“ pre úplnú úpravu (môže spôsobiť skreslenie tvarov písmen)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:7
 msgid "RGBA order"
@@ -91,7 +92,7 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "Poradie sub-pixelových elementov na obrazovke LCD; použije sa len ak je vyhladzovanie nastavené na \"rgba\". Možné hodnoty sú: \"rgb\" pre červenú vľavo (najbežnejšie), \"bgr\" pre modrú vľavo, \"vrgb\" pre červenú hore a \"vbgr\" pre červenú dole."
+msgstr "Poradie sub-pixelových elementov na obrazovke LCD; použije sa len ak je vyhladzovanie nastavené na „rgba“. Možné hodnoty sú: „rgb“ pre červenú vľavo (najbežnejšie), „bgr“ pre modrú vľavo, „vrgb“ pre červenú hore a „vbgr“ pre červenú dole."
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:1
 msgid "Toggle magnifier"
@@ -167,7 +168,7 @@ msgstr "Činnosť pri odstránení Smartcard"
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr "Nastavte na jedno z: \"none\", \"lock_screen\", alebo \"force_logout\". Činnosť sa prevedie, keď sa smartcard použitá na prihlásenie odstráni."
+msgstr "Nastavte na jedno z: „none“, „lock_screen“, alebo „force_logout“. Činnosť sa prevedie, keď sa smartcard použitá na prihlásenie odstráni."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:1
 msgid "Disable touchpad while typing"
@@ -196,17 +197,17 @@ msgstr "Zvoľte si spôsob rolovania touchpadom"
 msgid ""
 "Select the touchpad scroll method. Supported values are: 0: disabled, 1: "
 "edge scrolling, and 2: two-finger scrolling"
-msgstr "Vyberte metódu skrolovania na touchpade. Podporované hodnoty sú: 0: zakázané, 1: skrolovanie pri okraji, 2: skrolovanie dvoma prstami"
+msgstr "Vyberte metódu rolovania na touchpade. Podporované hodnoty sú: 0: zakázané, 1: rolovanie pri okraji, 2: rolovanie dvoma prstami"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:7
 msgid "Enable horizontal scrolling"
-msgstr "Povoliť horizontálne rolovanie"
+msgstr "Povoliť vodorovné rolovanie"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:8
 msgid ""
 "Set this to TRUE to allow horizontal scrolling by the same method selected "
 "with the scroll_method key."
-msgstr "Nastavte na TRUE na povolenie horizontálneho rolovania rovnakým spôsobom zvoleným v kľúči scroll_method."
+msgstr "Nastavte na TRUE na povolenie vodorovného rolovania rovnakým spôsobom zvoleným v kľúči scroll_method."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:9
 msgid "Enable touchpad"
@@ -320,17 +321,17 @@ msgstr "Prah neoznamovania voľného miesta"
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr "Určte množstvo v GB. Ak je množstvo voľného miesta väčší než takéto, žiadne varovanie nebude zobrazené."
+msgstr "Určte množstvo v GB. Ak je množstvo voľného miesta väčšie než takéto, žiadne varovanie nebude zobrazené."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:11
 msgid "Minimum notify period for repeated warnings"
-msgstr "Minimálna perióda oznamovania opakovaných upozornení"
+msgstr "Minimálny interval oznamovania opakovaných upozornení"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:12
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "Zadajte čas v minútach. Nasledujúce upozornenia pre zväzok sa nezobrazia častejšie ako s touto periódou."
+msgstr "Zadajte čas v minútach. Nasledujúce upozornenia pre zväzok sa nezobrazia častejšie ako s týmto intervalom."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:13
 msgid "Mount paths to ignore"
@@ -358,11 +359,11 @@ msgstr "Klávesová skratka na zapnutie alebo vypnutie touchpadu."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:9
 msgid "Volume mute"
-msgstr "Umlčať zvuk"
+msgstr "Vypnúť zvuk"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:10
 msgid "Binding to mute the system volume."
-msgstr "Klávesová skratka na umlčanie zvuku."
+msgstr "Klávesová skratka na vypnutie zvuku."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:11
 msgid "Volume down"
@@ -446,15 +447,15 @@ msgstr "Klávesová skratka na spustenie kalkulačky."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:31
 msgid "Launch web browser"
-msgstr "Spustiť WWW prehliadač"
+msgstr "Spustiť webový prehliadač"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:32
 msgid "Binding to launch the web browser."
-msgstr "Klávesová skratka na spustenie WWW prehliadača."
+msgstr "Klávesová skratka na spustenie webového prehliadača."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:33
 msgid "Launch media player"
-msgstr "Prehrávač hudby/videa"
+msgstr "Spustiť prehrávač hudby/videa"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:34
 msgid "Binding to launch the media player."
@@ -508,7 +509,7 @@ msgstr "Zobraziť obrazovky v oblasti upozornení"
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
-msgstr "Či sa má v paneli zobrazovať ikona s vecami súvisiacimi s obrazovkou."
+msgstr "Či sa má v paneli oznámení zobrazovať ikona s vecami súvisiacimi s obrazovkou."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:7
 msgid "Do not touch monitor configuration"
@@ -546,7 +547,7 @@ msgstr "Zapnúť externý monitor po štarte systému, ak používateľ pripojil
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:13
 msgid "File for default configuration for RandR"
-msgstr "Súbor východzej konfigurácie RandR"
+msgstr "Súbor predvolenej konfigurácie RandR"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:14
 msgid ""
@@ -555,7 +556,7 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr "Zásuvnú modul XRandR bude hľadať východziu konfiguráciu v súbore určenom týmto kľúčom. To je podobné ako ~/.config/monitors.xml, ktoré sa ukladá v domovských priečinkoch používateľov. Ak používateľ takýto súbor nemá, alebo má nejaký, ktorý sa nezhoduje s používateľovými nastaveniami monitorov,  potom sa namiesto toho použije súbor určený týmto kľúčom."
+msgstr "Zásuvný modul XRandR bude hľadať predvolenú konfiguráciu v súbore určenom týmto kľúčom. To je podobné ako ~/.config/monitors.xml, ktoré sa ukladá v domovských priečinkoch používateľov. Ak používateľ takýto súbor nemá, alebo má nejaký, ktorý sa nezhoduje s používateľovými nastaveniami monitorov,  potom sa namiesto toho použije súbor určený týmto kľúčom."
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
@@ -659,7 +660,7 @@ msgstr "Chcete použiť Lepkavé klávesy?"
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
 msgid "Do you want to deactivate Sticky Keys?"
-msgstr "Chcete zrušiť používanie Lepkavých kláves?"
+msgstr "Chcete zrušiť používanie Lepkavých klávesov?"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
@@ -752,7 +753,7 @@ msgstr "Nezobrazovať znova žiadne upozornenia"
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:85
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
-msgstr "Na zväzku \"%s\" zostáva už len %s diskového priestoru."
+msgstr "Na zväzku „%s“ zostáva už len %s diskového priestoru."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:88
 #, c-format
@@ -794,7 +795,7 @@ msgstr "Vyprázdniť Kôš"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:453
 msgid "Examine…"
-msgstr "Skúmam..."
+msgstr "Skúma sa…"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:460
 msgid "Ignore"
@@ -887,7 +888,7 @@ msgid ""
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr "Chyba pri aktivovaní nastavenia XKB.\nToto sa môže stať za rôznych okolností:\n- chyba v knižnici libxklavier\n- chyba v X serveri (nástroje xkbcomp, xmodmap)\n- X server s nekompatibilnou implementáciou libxkbfile\n\nÚdaje o verzii X servera:\n%s\n%d\n%s\nAk túto situáciu nahlásite ako chybu, pripojte, prosím:\n- Výsledok <b>%s</b>\n- Výsledok <b>%s</b>"
+msgstr "Chyba pri aktivovaní nastavenia XKB.\nToto sa môže stať za rôznych okolností:\n- chyba v knižnici libxklavier\n- chyba v X serveri (nástroje xkbcomp, xmodmap)\n- X server s nekompatibilnou implementáciou libxkbfile\n\nÚdaje o verzii X servera:\n%s\n%d\n%s\nAk túto situáciu nahlásite ako chybu, pripojte prosím:\n- Výsledok <b>%s</b>\n- Výsledok <b>%s</b>"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:151
 msgid ""
@@ -912,7 +913,7 @@ msgstr "Zobraziť aktuálne _rozloženie"
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "Nepodarilo sa získať predvolený terminál. Overte si, či máte nastavený príkaz pre terminál, a či je to platná aplikácia."
+msgstr "Nepodarilo sa získať predvolený terminál. Overte si, či máte nastavený príkaz pre terminál, a či je to platný program."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:238
 #, c-format
@@ -925,7 +926,7 @@ msgstr "Nepodarilo sa spustiť príkaz: %s\nSkontrolujte, či je to platný prí
 #. * The device has been disabled
 #: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1005
 msgid "Disabled"
-msgstr "Zakázané"
+msgstr "Vypnuté"
 
 #. translators:
 #. * The number of sound outputs on a particular device
@@ -933,9 +934,9 @@ msgstr "Zakázané"
 #, c-format
 msgid "%u Output"
 msgid_plural "%u Outputs"
-msgstr[0] "%u výstupov"
-msgstr[1] "%u výstup"
-msgstr[2] "%u výstupy"
+msgstr[0] "%u výstup"
+msgstr[1] "%u výstupy"
+msgstr[2] "%u výstupov"
 
 #. translators:
 #. * The number of sound inputs on a particular device
@@ -943,9 +944,9 @@ msgstr[2] "%u výstupy"
 #, c-format
 msgid "%u Input"
 msgid_plural "%u Inputs"
-msgstr[0] "%u vstupov"
-msgstr[1] "%u vstup"
-msgstr[2] "%u vstupy"
+msgstr[0] "%u vstup"
+msgstr[1] "%u vstupy"
+msgstr[2] "%u vstupov"
 
 #: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1320
 msgid "System Sounds"
@@ -1021,8 +1022,8 @@ msgstr "Nepodarilo sa obnoviť nastavenia monitora zo zálohy"
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Nastavenia monitora budú obnovené do predchádzajúceho stavu o %d sekúnd"
-msgstr[1] "Nastavenia monitora budú obnovené do predchádzajúceho stavu o %d sekúnd"
+msgstr[0] "Nastavenia monitora budú obnovené do predchádzajúceho stavu o %d sekundu"
+msgstr[1] "Nastavenia monitora budú obnovené do predchádzajúceho stavu o %d sekundy"
 msgstr[2] "Nastavenia monitora budú obnovené do predchádzajúceho stavu o %d sekúnd"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:490
@@ -1048,7 +1049,7 @@ msgstr "Nepodarilo sa obnoviť informácie o obrazovke: %s"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1144
 msgid "Trying to switch the monitor configuration anyway."
-msgstr "Aj napriek tomu sa pokúsiť prepnúť nastavenia monitora."
+msgstr "Napriek tomu sa pokúsiť prepnúť nastavenia monitora."
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1875
 msgid "Rotation not supported"
@@ -1076,7 +1077,7 @@ msgstr "Dolu hlavou"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2072
 msgid "_Configure Display Settings…"
-msgstr "_Konfigurovať nastavenia zobrazenia..."
+msgstr "_Konfigurovať nastavenia zobrazenia…"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2113
 msgid "Configure display settings"
@@ -1084,12 +1085,12 @@ msgstr "Konfigurovať nastavenia obrazovky"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2173
 msgid "Could not apply the stored configuration for monitors"
-msgstr "Nie je možné použiť uložené nastavenia pre monitory"
+msgstr "Nepodarilo sa použiť uložené nastavenia pre monitory"
 
 #: ../plugins/xrdb/msd-xrdb-manager.c:253
 #: ../plugins/xrdb/msd-xrdb-manager.c:322
 msgid "Cannot determine user's home directory"
-msgstr "Nepodarilo sa určiť domovský priečinok používateľa"
+msgstr "Nedá sa sa určiť domovský priečinok používateľa"
 
 #: ../plugins/xrdb/xrdb.mate-settings-plugin.in.h:1
 msgid "X Resource Database"
@@ -1150,11 +1151,11 @@ msgstr "ID slotu"
 
 #: ../plugins/smartcard/msd-smartcard.c:155
 msgid "The slot the card is in"
-msgstr "Slot, v kterom je karta"
+msgstr "Slot, v ktorom je karta"
 
 #: ../plugins/smartcard/msd-smartcard.c:161
 msgid "Slot Series"
-msgstr "Slot Series"
+msgstr "Séria slotov"
 
 #: ../plugins/smartcard/msd-smartcard.c:162
 msgid "per-slot card identifier"
