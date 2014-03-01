@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Ales Nyakhaychyk <nab@mail.by>, 2003, 2004.
-# Vital Khilko <dojlid@mova.org>, 2003.
+# Alex Nehaichik <nab@mail.by>, 2003-2004
+# Vital Khilko <dojlid@mova.org>, 2003,2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2013-03-22 22:15+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2014-02-28 13:08+0000\n"
+"Last-Translator: meequz <meequz@gmail.com>\n"
+"Language-Team: Belarusian (http://www.transifex.com/projects/p/MATE/language/be/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -340,11 +340,11 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:5
 msgid "Volume step"
-msgstr "Крок зьмяненьня гучнасьці"
+msgstr "Крок змянення гучнасці"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:6
 msgid "Volume step as percentage of volume."
-msgstr "Крок зьмяненьня гучнасьці ў адсотках."
+msgstr "Крок змянення гучнасці ў адсотках."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:7
 msgid "Toggle touchpad"
@@ -364,7 +364,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:11
 msgid "Volume down"
-msgstr "Паменшыць гучнасьць"
+msgstr "Зменшыць гучнасць"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:12
 msgid "Binding to lower the system volume."
@@ -372,7 +372,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:13
 msgid "Volume up"
-msgstr "Павялічыць гучнасьць"
+msgstr "Павялічыць гучнасць"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:14
 msgid "Binding to raise the system volume."
@@ -380,7 +380,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:15
 msgid "Log out"
-msgstr "Скончыць сэанс"
+msgstr "Скончыць сеанс"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:16
 msgid "Binding to log out."
@@ -396,7 +396,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:19
 msgid "Home folder"
-msgstr "Хатняя тэчка"
+msgstr "Хатні каталог"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:20
 msgid "Binding to open the Home folder."
@@ -444,7 +444,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:31
 msgid "Launch web browser"
-msgstr "Запуск вандроўніка павуціньня"
+msgstr "Запуск браўзэра"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:32
 msgid "Binding to launch the web browser."
@@ -591,19 +591,19 @@ msgstr "Памылка паказу даведкі: %s"
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
 msgid "Do you want to activate Slow Keys?"
-msgstr "Хочаце задзейнічаць запаволеныя клявішы?"
+msgstr "Хочаце задзейнічаць запаволеныя кнопкі?"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:575
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:639
 msgid "Do you want to deactivate Slow Keys?"
-msgstr "Хочаце скасаваць дзейнасьць запаволеных клявішаў?"
+msgstr "Хочаце скасаваць дзейнасць запаволеных кнопак?"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "Вы толькі што трымалі клявішу Shift 8 сэкундаў. Гэта хуткая клявіша для здольнасьці \"Запаволеныя клявішы\", што ўплывае на рэжым працы вашай клявіятуры."
+msgstr "Вы толькі што трымалі кнопку Shift 8 секунд. Гэта хуткая кнопка для здольнасці \"Запаволеныя кнопкі\", што ўплывае на рэжым працы вашай клавіятуры."
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
@@ -633,7 +633,7 @@ msgstr "_Не задзейнічаць"
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
 msgid "Do_n't deactivate"
-msgstr "Н_е скасоўваць дзейнасьць"
+msgstr "Н_е скасоўваць дзейнасць"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
@@ -647,24 +647,24 @@ msgstr "_Скасаваць"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:668
 msgid "Slow Keys Alert"
-msgstr "Паведамленьне запаволеных клявішаў"
+msgstr "Паведамленне запаволеных кнопак"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:708
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:774
 msgid "Do you want to activate Sticky Keys?"
-msgstr "Хочаце задзейнічаць ліпучыя клявішы?"
+msgstr "Хочаце задзейнічаць ліпучыя кнопкі?"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
 msgid "Do you want to deactivate Sticky Keys?"
-msgstr "Хочаце скасаваць дзейнасьць ліпучых клявішаў?"
+msgstr "Хочаце скасаваць дзейнасць ліпучых кнопак?"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "Вы націснулі клявішу Shift 5 разоў запар. Гэта хуткія клявішы здольнасьці \"Ліпучыя клявішы\", што ўплывае на працу вашай клявіятуры."
+msgstr "Вы націснулі кнопку Shift 5 разоў запар. Гэта хуткія кнопкі здольнасці \"Ліпучыя кнопкі\", што ўплывае на працу вашай клавіятуры."
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
@@ -672,11 +672,11 @@ msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "Вы націснулі адначасова дзьве клявішы ці 5 раз запар клявішу Shift. Гэта выключыла здольнасьць \"Ліпучыя клявішы\", што ўплывае на працу вашай клявіятуры."
+msgstr "Вы націснулі адначасова дзве кнопкі ці 5 раз запар кнопку Shift. Гэта адключыла здольнасць \"Ліпучыя кнопкі\", што ўплывае на працу вашай клавіятуры."
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:807
 msgid "Sticky Keys Alert"
-msgstr "Паведамленьне \"Ліпучых клявішаў\""
+msgstr "Паведамленне \"Ліпучых кнопак\""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:813
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
@@ -851,7 +851,7 @@ msgstr ""
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "Памылка падчас спробы выканаць загад (%s),\nякі зьвязаны з клявішай (%s)"
+msgstr "Памылка падчас спробы выканаць загад (%s),\nякі звязаны з кнопкай (%s)"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
@@ -863,7 +863,7 @@ msgstr ""
 
 #: ../plugins/keyboard/keyboard.mate-settings-plugin.in.h:1
 msgid "Keyboard"
-msgstr "Клявіятура"
+msgstr "Клавіятура"
 
 #: ../plugins/keyboard/keyboard.mate-settings-plugin.in.h:2
 msgid "Keyboard plugin"
@@ -949,7 +949,7 @@ msgstr[3] ""
 
 #: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1320
 msgid "System Sounds"
-msgstr "Сыстэмныя гукі"
+msgstr "Сістэмныя гукі"
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -970,7 +970,7 @@ msgstr ""
 
 #: ../plugins/mouse/msd-mouse-manager.c:892
 msgid "Mouse Preferences"
-msgstr "Перавагі мышы"
+msgstr "Настáўленні мышы"
 
 #: ../plugins/mouse/mouse.mate-settings-plugin.in.h:1
 msgid "Mouse"
@@ -1090,7 +1090,7 @@ msgstr ""
 #: ../plugins/xrdb/msd-xrdb-manager.c:253
 #: ../plugins/xrdb/msd-xrdb-manager.c:322
 msgid "Cannot determine user's home directory"
-msgstr "Немагчыма вызначыць хатнюю тэчку карыстальніка"
+msgstr "Немагчыма вызначыць хатні каталог карыстальніка"
 
 #: ../plugins/xrdb/xrdb.mate-settings-plugin.in.h:1
 msgid "X Resource Database"

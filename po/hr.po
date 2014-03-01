@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Ivica  Kolić <ikoli@yahoo.com>, 2013
+# Ivica  Kolić <ikoli@yahoo.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2013-12-21 08:44+0000\n"
+"PO-Revision-Date: 2014-02-24 19:35+0000\n"
 "Last-Translator: Ivica  Kolić <ikoli@yahoo.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/projects/p/MATE/language/hr/)\n"
 "MIME-Version: 1.0\n"
@@ -317,7 +317,7 @@ msgstr ""
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr ""
+msgstr "Odredite iznos u GB.Ako je slobodni prostor veći od toga, nikakvo se upozorenje neće pokazati."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:11
 msgid "Minimum notify period for repeated warnings"
@@ -459,7 +459,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:35
 msgid "Play (or play/pause)"
-msgstr ""
+msgstr "Sviranje (ili sviranje/pauza)"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:36
 msgid "Binding to start playback (or toggle play/pause)."
@@ -467,7 +467,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:37
 msgid "Pause playback"
-msgstr ""
+msgstr "Pauziraj reprodukciju"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:38
 msgid "Binding to pause playback."
@@ -475,7 +475,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:39
 msgid "Stop playback"
-msgstr ""
+msgstr "Zaustavi reprodukciju"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:40
 msgid "Binding to stop playback."
@@ -680,11 +680,11 @@ msgstr "Obavijest o ljepljivim tipkama"
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:813
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
-msgstr ""
+msgstr "Osobitosti univerzalnoga pristupa"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
 msgid "Use on-screen _keyboard"
-msgstr ""
+msgstr "Koristi tipkovnicu na zaslonu"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:3
 msgid "Use screen _reader"
@@ -740,11 +740,11 @@ msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:70
 msgid "Don't show any warnings again for this file system"
-msgstr ""
+msgstr "Ne prikazuj više nikakva upozorenja za ovaj datotečni sustav"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:72
 msgid "Don't show any warnings again"
-msgstr ""
+msgstr "Ne prikazuj više nikakva upozorenja"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:85
 #, c-format
@@ -754,31 +754,31 @@ msgstr ""
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:88
 #, c-format
 msgid "This computer has only %s disk space remaining."
-msgstr ""
+msgstr "Ovo računalo ima samo %s preostalog diskovnog prostora."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:104
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr ""
+msgstr "Možete osloboditi diskovni prostor ispražnjavajući Smeće, uklanjanjem nekorištenih programa ili datoteka, ili premještanjem datoteka na drugi disk ili particiju."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
-msgstr ""
+msgstr "Možete osloboditi diskovni prostor uklanjanjem nekorištenih programa ili datoteka, ili premještanjem datoteka na drugi disk ili particiju."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:112
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr ""
+msgstr "Možete osloboditi diskovni prostor ispražnjavanjem Smeća, uklanjanjem neiskorištenih programa ili datoteka na vanjski disk."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:115
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
-msgstr ""
+msgstr "Možete osloboditi diskovni prostor, uklanjanjem neiskorištenih programa ili datoteka na vanjski disk."
 
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:213
@@ -810,11 +810,11 @@ msgstr "Uklanjam: %s"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:296
 msgid "Emptying the trash"
-msgstr ""
+msgstr "Ispražnjavam smeće"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:272
 msgid "Preparing to empty trash…"
-msgstr ""
+msgstr "Spremam se isprazniti smeće..."
 
 #. Translators: "Emptying trash from <device>"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:299
@@ -829,7 +829,7 @@ msgstr "Isprazniti sve stavke iz smeća?"
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr ""
+msgstr "Ako odlučite isprazniti smeće, sve stavke u njemu će biti trajno izgubljene.Znajte da možete stavke izbrisati odvojeno."
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:361
 msgid "_Empty Trash"
@@ -930,9 +930,9 @@ msgstr "Onemogućeno"
 #, c-format
 msgid "%u Output"
 msgid_plural "%u Outputs"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%u Izlaz"
+msgstr[1] "%u Izlaza"
+msgstr[2] "%u Izlaza"
 
 #. translators:
 #. * The number of sound inputs on a particular device
@@ -940,9 +940,9 @@ msgstr[2] ""
 #, c-format
 msgid "%u Input"
 msgid_plural "%u Inputs"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%u Ulaz"
+msgstr[1] "%u Ulaza"
+msgstr[2] "%u Ulaza"
 
 #: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1320
 msgid "System Sounds"
@@ -975,7 +975,7 @@ msgstr "Miš"
 
 #: ../plugins/mouse/mouse.mate-settings-plugin.in.h:2
 msgid "Mouse plugin"
-msgstr ""
+msgstr "Priključak miša"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:1
 msgid "Mpris"
@@ -999,7 +999,7 @@ msgstr "XRandR"
 
 #: ../plugins/xrandr/xrandr.mate-settings-plugin.in.h:2
 msgid "Set up screen size and rotation settings"
-msgstr ""
+msgstr "Namjesti postavke veličine ekrana i rotacije"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:371
 msgid "Could not switch the monitor configuration"
@@ -1028,11 +1028,11 @@ msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:496
 msgid "_Restore Previous Configuration"
-msgstr ""
+msgstr "_Obnovi prethodnu konfiguraciju"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:497
 msgid "_Keep This Configuration"
-msgstr ""
+msgstr "_Zadrži ovu konfiguraciju"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:578
 msgid "The selected configuration for displays could not be applied"
