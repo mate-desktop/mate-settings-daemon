@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2014-02-28 13:08+0000\n"
+"PO-Revision-Date: 2014-03-20 10:37+0000\n"
 "Last-Translator: meequz <meequz@gmail.com>\n"
 "Language-Team: Belarusian (http://www.transifex.com/projects/p/MATE/language/be/)\n"
 "MIME-Version: 1.0\n"
@@ -21,11 +21,11 @@ msgstr ""
 
 #: ../data/50-accessibility.xml.in.h:1
 msgid "Accessibility"
-msgstr ""
+msgstr "Даступнасць"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:1
 msgid "On-screen keyboard"
-msgstr ""
+msgstr "Экранная клавіятура"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:2
 msgid "Whether the on-screen keyboard is turned on."
@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:1
 msgid "DPI"
-msgstr ""
+msgstr "DPI"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:2
 msgid ""
@@ -59,7 +59,7 @@ msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:3
 msgid "Antialiasing"
-msgstr ""
+msgstr "Згладжванне"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:4
 msgid ""
@@ -70,7 +70,7 @@ msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:5
 msgid "Hinting"
-msgstr ""
+msgstr "Хінтынг"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:6
 msgid ""
@@ -81,7 +81,7 @@ msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:7
 msgid "RGBA order"
-msgstr ""
+msgstr "Паслядоўнасць RGBA"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:8
 msgid ""
@@ -412,7 +412,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:23
 msgid "Launch email client"
-msgstr ""
+msgstr "Запуск паштовай праграмы"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:24
 msgid "Binding to launch the email client."
@@ -436,7 +436,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:29
 msgid "Launch calculator"
-msgstr ""
+msgstr "Запуск калькулятара"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:30
 msgid "Binding to launch the calculator."
@@ -452,7 +452,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:33
 msgid "Launch media player"
-msgstr ""
+msgstr "Запуск медыяплэера"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:34
 msgid "Binding to launch the media player."
@@ -468,7 +468,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:37
 msgid "Pause playback"
-msgstr ""
+msgstr "Прыпыніць гранне"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:38
 msgid "Binding to pause playback."
@@ -476,7 +476,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:39
 msgid "Stop playback"
-msgstr ""
+msgstr "Спыніць гранне"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:40
 msgid "Binding to stop playback."
@@ -484,7 +484,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:41
 msgid "Previous track"
-msgstr ""
+msgstr "Папярэдні трэк"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:42
 msgid "Binding to skip to previous track."
@@ -492,7 +492,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:43
 msgid "Next track"
-msgstr ""
+msgstr "Наступны трэк"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:44
 msgid "Binding to skip to next track."
@@ -608,22 +608,22 @@ msgstr "Вы толькі што трымалі кнопку Shift 8 секун�
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
 msgid "Don't activate"
-msgstr ""
+msgstr "Не задзейнічаць"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
 msgid "Don't deactivate"
-msgstr ""
+msgstr "Не скасоўваць дзейнасць"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
 msgid "Activate"
-msgstr ""
+msgstr "Задзейнічаць"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
 msgid "Deactivate"
-msgstr ""
+msgstr "Абяздзейнічаць"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
@@ -643,7 +643,7 @@ msgstr "_Задзейнічаць"
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
 msgid "_Deactivate"
-msgstr "_Скасаваць"
+msgstr "_Абяздзейнічаць"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:668
 msgid "Slow Keys Alert"
@@ -784,19 +784,19 @@ msgstr ""
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:213
 msgid "Low Disk Space"
-msgstr ""
+msgstr "Мала месца на дыску"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:445
 msgid "Empty Trash"
-msgstr ""
+msgstr "Спустошыць сметніцу"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:453
 msgid "Examine…"
-msgstr ""
+msgstr "Агляд файлавай сістэмы..."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:460
 msgid "Ignore"
-msgstr ""
+msgstr "Ігнараваць"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:97
 #, c-format
@@ -806,16 +806,16 @@ msgstr ""
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 msgid "Removing: %s"
-msgstr ""
+msgstr "Выдаленне: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:296
 msgid "Emptying the trash"
-msgstr ""
+msgstr "Спусташэнне сметніцы"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:272
 msgid "Preparing to empty trash…"
-msgstr ""
+msgstr "Падрыхтоўка да спусташэння сметніцы..."
 
 #. Translators: "Emptying trash from <device>"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:299
@@ -923,7 +923,7 @@ msgstr ""
 #. * The device has been disabled
 #: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1005
 msgid "Disabled"
-msgstr ""
+msgstr "Адключана"
 
 #. translators:
 #. * The number of sound outputs on a particular device
@@ -998,7 +998,7 @@ msgstr ""
 
 #: ../plugins/xrandr/xrandr.mate-settings-plugin.in.h:1
 msgid "XRandR"
-msgstr ""
+msgstr "XRandR"
 
 #: ../plugins/xrandr/xrandr.mate-settings-plugin.in.h:2
 msgid "Set up screen size and rotation settings"
@@ -1021,22 +1021,22 @@ msgstr ""
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Настáўленні дысплею будуць вернуты праз %d секунду"
+msgstr[1] "Настáўленні дысплею будуць вернуты праз %d секунды"
+msgstr[2] "Настáўленні дысплею будуць вернуты праз %d секунд"
+msgstr[3] "Настáўленні дысплею будуць вернуты праз %d секунд"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:490
 msgid "Does the display look OK?"
-msgstr ""
+msgstr "З дысплеем усё добра?"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:496
 msgid "_Restore Previous Configuration"
-msgstr ""
+msgstr "_Аднавіць папярэднюю канфігурацыю"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:497
 msgid "_Keep This Configuration"
-msgstr ""
+msgstr "_Пакінуць такую канфігурацыю"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:578
 msgid "The selected configuration for displays could not be applied"
@@ -1053,7 +1053,7 @@ msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1875
 msgid "Rotation not supported"
-msgstr ""
+msgstr "Паварот не падтрымліваецца"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1931
 msgid "Could not save monitor configuration"
@@ -1061,19 +1061,19 @@ msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1949
 msgid "Normal"
-msgstr ""
+msgstr "Нармальны"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1950
 msgid "Left"
-msgstr ""
+msgstr "Улева"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1951
 msgid "Right"
-msgstr ""
+msgstr "Управа"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1952
 msgid "Upside Down"
-msgstr ""
+msgstr "Дагары нагамі"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2072
 msgid "_Configure Display Settings…"
@@ -1102,7 +1102,7 @@ msgstr ""
 
 #: ../plugins/xsettings/xsettings.mate-settings-plugin.in.h:1
 msgid "X Settings"
-msgstr ""
+msgstr "Настáўленні X-оў"
 
 #: ../plugins/xsettings/xsettings.mate-settings-plugin.in.h:2
 msgid "Manage X Settings"
@@ -1176,24 +1176,24 @@ msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:1
 msgid "Change system time zone"
-msgstr ""
+msgstr "Змяніць сістэмны часавы пояс"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:2
 msgid "Privileges are required to change the system time zone."
-msgstr ""
+msgstr "Патрабуюцца прывілеі для змянення сістэмнага часавага поясу"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:3
 msgid "Change system time"
-msgstr ""
+msgstr "Змяніць сістэмны час"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:4
 msgid "Privileges are required to change the system time."
-msgstr ""
+msgstr "Патрабуюцца прывілеі для змянення сістэмнага часу"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:5
 msgid "Configure hardware clock"
-msgstr ""
+msgstr "Наставіць апаратны гадзіннік"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:6
 msgid "Privileges are required to configure the hardware clock."
-msgstr ""
+msgstr "Патрабуюцца прывілеі для настáўлення апаратнага гадзінніка"
