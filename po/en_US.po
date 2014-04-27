@@ -3,87 +3,84 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# AsavarTzeth <asavartzeth@gmail.com>, 2014
-# Christian Rose <menthos@menthos.com>, 2000, 2001, 2002, 2003, 2004, 2005
-# Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2008, 2009, 2010
-# Martin Wahlen <mva@sbbs.se>, 1998, 1999
+# cpatrick08 <cpatrick08@rocketmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2014-04-03 09:40+0000\n"
-"Last-Translator: AsavarTzeth <asavartzeth@gmail.com>\n"
-"Language-Team: Swedish (http://www.transifex.com/projects/p/MATE/language/sv/)\n"
+"PO-Revision-Date: 2014-03-02 23:39+0000\n"
+"Last-Translator: cpatrick08 <cpatrick08@rocketmail.com>\n"
+"Language-Team: English (United States) (http://www.transifex.com/projects/p/MATE/language/en_US/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sv\n"
+"Language: en_US\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/50-accessibility.xml.in.h:1
 msgid "Accessibility"
-msgstr "Hjälpmedel"
+msgstr "Accessibility"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:1
 msgid "On-screen keyboard"
-msgstr "Skärmtangentbord"
+msgstr ""
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:2
 msgid "Whether the on-screen keyboard is turned on."
-msgstr "Huruvida hjälpmedelsfunktionen Skärmtangentbord är påslagen."
+msgstr ""
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:3
 msgid "Screen magnifier"
-msgstr "Skärmförstorare"
+msgstr ""
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:4
 msgid "Whether the screen magnifier is turned on."
-msgstr "Huruvida hjälpmedelsfunktionen Skärmförstorare är påslagen."
+msgstr ""
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:5
 msgid "Screen reader"
-msgstr "Skärmläsare"
+msgstr ""
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:6
 msgid "Whether the screen reader is turned on."
-msgstr "Huruvida hjälpmedelsfunktionen Skärmläsare är påslagen."
+msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:1
 msgid "DPI"
-msgstr "PPT"
+msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:2
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "Upplösning som används för konvertering av typsnittsstorlekar till bildpunktsstorlekar, i punkter per tum."
+msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:3
 msgid "Antialiasing"
-msgstr "Kantutjämning"
+msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:4
 msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "Typen av kantutjämning att använda när typsnitt ritas ut. Möjliga värden är: \"none\" för ingen kantutjämning, \"grayscale\" för standardkantutjämning med gråskala samt \"rgba\" för underbildpunktsutjämning (endast LCD-skärmar)."
+msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:5
 msgid "Hinting"
-msgstr "Hintning"
+msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:6
 msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "Typen av hintning att använda när typsnitt ritas ut. Möjliga värden är: \"none\" för ingen hintning, \"slight\" för grundläggande, \"medium\" för medel samt \"full\" för maximal hintning (kan orsaka distortion av bokstavsformer)."
+msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:7
 msgid "RGBA order"
-msgstr "RGBA-ordning"
+msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:8
 msgid ""
@@ -91,130 +88,130 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "Ordningen för underbildpunktselementen på en LCD-skärm; används endast när kantutjämning är inställd till \"rgba\". Möjliga värden är: \"rgb\" - röd till vänster (vanligast), \"bgr\" - blå till vänster. \"vrgb\" - röd överst. \"vbgr\" - röd nederst."
+msgstr ""
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:1
 msgid "Toggle magnifier"
-msgstr "Växla förstorare"
+msgstr ""
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:2
 msgid "Binding to toggle the magnifier."
-msgstr "Bindning för att växla förstoraren."
+msgstr ""
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:3
 msgid "The name of the keyboard shortcut to toggle the magnifier"
-msgstr "Namnet på tangentbordsgenvägen för att växla förstoraren"
+msgstr ""
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:4
 msgid ""
 "This is the name of the keyboard shortcut to toggle the magnifier. This name"
 " will be shown in the keyboard shortcut preferences dialog."
-msgstr "Detta är namnet på tangentbordsgenvägen för att växla förstoraren. Detta namn kommer att visas i inställningsdialogen för tangentbordsgenvägar."
+msgstr ""
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:5
 msgid "Command used to turn the magnifier on or off."
-msgstr "Kommando som används för att aktivera/inaktivera förstoraren."
+msgstr ""
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:6
 msgid "Toggle screen reader"
-msgstr "Växla skärmläsare"
+msgstr ""
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:7
 msgid "Binding to toggle the screen reader."
-msgstr "Bindning för att växla skärmläsaren."
+msgstr ""
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:8
 msgid "The name of the keyboard shortcut to toggle the screen reader"
-msgstr "Namnet på tangentbordsgenvägen för att växla skärmläsaren"
+msgstr ""
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:9
 msgid ""
 "This is the name of the keyboard shortcut to toggle the screen reader. This "
 "name will be shown in the keyboard shortcut preferences dialog."
-msgstr "Detta är namnet på tangentbordsgenvägen för att växla skärmläsaren. Detta namn kommer att visas i inställningsdialogen för tangentbordsgenvägar."
+msgstr ""
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:10
 msgid "Command used to turn the screen reader on or off."
-msgstr "Kommando för att aktivera/inaktivera skärmläsaren."
+msgstr ""
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:11
 msgid "The name of the keyboard shortcut to toggle the on-screen keyboard"
-msgstr "Namnet på tangentbordsgenvägen för att växla skärmtangentbordet"
+msgstr ""
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:12
 msgid ""
 "This is the name of the keyboard shortcut to toggle the on-screen keyboard. "
 "This name will be shown in the keyboard shortcut preferences dialog."
-msgstr "Detta är namnet på tangentbordsgenvägen för att växla skärmtangentbordet. Detta namn kommer att visas i inställningsdialogen för tangentbordsgenvägar."
+msgstr ""
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:13
 msgid "Toggle on-screen keyboard"
-msgstr "Växla skärmtangentbord"
+msgstr ""
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:14
 msgid "Binding to toggle the on-screen keyboard."
-msgstr "Bindning för att växla skärmtangentbordet."
+msgstr ""
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:15
 msgid "Command used to turn the on-screen keyboard on or off."
-msgstr "Kommando som används för att aktivera/inaktivera skärmtangentbordet."
+msgstr ""
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.in.h:1
 msgid "Smartcard removal action"
-msgstr "Åtgärd för utmatning av smartkort"
+msgstr ""
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.in.h:2
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr "Ställ in denna till en av \"none\", \"lock_screen\" eller \"force_logout\". Åtgärden kommer att genomföras när smartkortet som används för att logga in matas ut."
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:1
 msgid "Disable touchpad while typing"
-msgstr "Inaktivera pekplatta under skrivning"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:2
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "Ställ in denna till TRUE om du har problem med oavsiktliga tryck på pekplattan när du skriver."
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:3
 msgid "Enable mouse clicks with touchpad"
-msgstr "Aktivera musklick med pekplatta"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "Ställ in denna till TRUE för att kunna skicka musklick genom att trycka på pekplattan."
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:5
 msgid "Select the touchpad scroll method"
-msgstr "Välj rullningsmetod för pekplattan"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:6
 msgid ""
 "Select the touchpad scroll method. Supported values are: 0: disabled, 1: "
 "edge scrolling, and 2: two-finger scrolling"
-msgstr "Välj rullningsmetod för pekplattan. Värden som stöds är: 0: inaktiverad, 1: kantrullning och 2: tvåfingersrullning"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:7
 msgid "Enable horizontal scrolling"
-msgstr "Aktivera horisontell rullning"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:8
 msgid ""
 "Set this to TRUE to allow horizontal scrolling by the same method selected "
 "with the scroll_method key."
-msgstr "Ställ in denna till TRUE för att tillåta horisontell rullning med samma metod som valts med nyckeln scroll_method."
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:9
 msgid "Enable touchpad"
-msgstr "Aktivera pekplatta"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:10
 msgid "Set this to TRUE to enable all touchpads."
-msgstr "Ställ in denna till TRUE för att aktivera alla pekplattor."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:1
@@ -233,7 +230,7 @@ msgstr "Ställ in denna till TRUE för att aktivera alla pekplattor."
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:1
 msgid "Activation of this plugin"
-msgstr "Aktivering av denna insticksmodul"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:2
@@ -252,7 +249,7 @@ msgstr "Aktivering av denna insticksmodul"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr "Om denna insticksmodul skulle aktiveras av mate-settings-daemon eller ej"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:3
@@ -271,7 +268,7 @@ msgstr "Om denna insticksmodul skulle aktiveras av mate-settings-daemon eller ej
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:3
 msgid "Priority to use for this plugin"
-msgstr "Prioritering att användas för denna insticksmodul"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:4
@@ -290,229 +287,229 @@ msgstr "Prioritering att användas för denna insticksmodul"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
-msgstr "Prioritering att användas för denna insticksmodul i mate-settings-daemon uppstarts kö"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:5
 msgid "Free percentage notify threshold"
-msgstr "Tröskelvärde för notifiering om ledigt utrymme (procent)"
+msgstr "Free percentage notify threshold"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:6
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr "Tröskelvärde för ledigt utrymme (procent) för initial varning för lågt diskutrymme. Om procentandelen ledigt utrymme sjunker under detta värde så kommer en varning att visas."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:7
 msgid "Subsequent free percentage notify threshold"
-msgstr "Tröskelvärde för efterföljande varning om lågt diskutrymme (procent)"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:8
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
-msgstr "Ange procentandelen som det lediga diskutrymme ska minskas med innan en efterföljande varning ska visas."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:9
 msgid "Free space no notify threshold"
-msgstr "Tröskelvärde för notifiering om ledigt utrymme (utrymme)"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:10
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr "Ange en mängd i GB. Om mängden ledigt utrymme är mer än detta så kommer ingen varning att visas."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:11
 msgid "Minimum notify period for repeated warnings"
-msgstr "Minsta notifieringsperioden för upprepade varningar"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:12
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "Ange en tid i minuter. Efterföljande varningar för en volym kommer inte att visas oftare än denna tidsperiod."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:13
 msgid "Mount paths to ignore"
-msgstr "Monteringssökvägar att ignorera"
+msgstr "Mount paths to ignore"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr "Ange en lista över monteringssökvägar att ignorera när de får lågt diskutrymme."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:5
 msgid "Volume step"
-msgstr "Volymsteg"
+msgstr "Volume step"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:6
 msgid "Volume step as percentage of volume."
-msgstr "Volymsteg som procentandel av volymen."
+msgstr "Volume step as percentage of volume."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:7
 msgid "Toggle touchpad"
-msgstr "Växla pekplatta"
+msgstr "Toggle touchpad"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:8
 msgid "Binding to enable or disable the touchpad."
-msgstr "Bindning för att aktivera eller inaktivera pekplattan."
+msgstr "Binding to enable or disable the touchpad."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:9
 msgid "Volume mute"
-msgstr "Tysta volym"
+msgstr "Volume mute"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:10
 msgid "Binding to mute the system volume."
-msgstr "Bindning för att tysta ner ljudet."
+msgstr "Binding to mute the system volume."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:11
 msgid "Volume down"
-msgstr "Volym ned"
+msgstr "Volume down"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:12
 msgid "Binding to lower the system volume."
-msgstr "Bindning för att sänka ljudvolymen."
+msgstr "Binding to lower the system volume."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:13
 msgid "Volume up"
-msgstr "Volym upp"
+msgstr "Volume up"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:14
 msgid "Binding to raise the system volume."
-msgstr "Bindning för att höja ljudvolymen."
+msgstr "Binding to raise the system volume."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:15
 msgid "Log out"
-msgstr "Logga ut"
+msgstr "Log out"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:16
 msgid "Binding to log out."
-msgstr "Bindning för att logga ut."
+msgstr "Binding to log out."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:17
 msgid "Eject"
-msgstr "Mata ut"
+msgstr "Eject"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:18
 msgid "Binding to eject an optical disc."
-msgstr "Bindning för att mata ut en optisk skiva."
+msgstr "Binding to eject an optical disc."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:19
 msgid "Home folder"
-msgstr "Hemmapp"
+msgstr "Home folder"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:20
 msgid "Binding to open the Home folder."
-msgstr "Bindning för att öppna hemmappen."
+msgstr "Binding to open the Home folder."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:21
 msgid "Search"
-msgstr "Sök"
+msgstr "Search"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:22
 msgid "Binding to launch the search tool."
-msgstr "Bindning för att starta sökverktyget."
+msgstr "Binding to launch the search tool."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:23
 msgid "Launch email client"
-msgstr "Starta e-postklient"
+msgstr "Launch email client"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:24
 msgid "Binding to launch the email client."
-msgstr "Bindning för att starta e-postklienten."
+msgstr "Binding to launch the email client."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:25
 msgid "Lock screen"
-msgstr "Lås skärmen"
+msgstr "Lock screen"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:26
 msgid "Binding to lock the screen."
-msgstr "Bindning för att låsa skärmen."
+msgstr "Binding to lock the screen."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:27
 msgid "Launch help browser"
-msgstr "Starta hjälpvisare"
+msgstr "Launch help browser"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:28
 msgid "Binding to launch the help browser."
-msgstr "Bindning för att starta hjälpvisaren."
+msgstr "Binding to launch the help browser."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:29
 msgid "Launch calculator"
-msgstr "Starta miniräknare"
+msgstr "Launch calculator"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:30
 msgid "Binding to launch the calculator."
-msgstr "Bindning för att starta miniräknaren."
+msgstr "Binding to launch the calculator."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:31
 msgid "Launch web browser"
-msgstr "Starta webbläsare"
+msgstr "Launch web browser"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:32
 msgid "Binding to launch the web browser."
-msgstr "Bindning för att starta webbläsaren."
+msgstr "Binding to launch the web browser."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:33
 msgid "Launch media player"
-msgstr "Starta mediaspelare"
+msgstr "Launch media player"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:34
 msgid "Binding to launch the media player."
-msgstr "Bindning för att starta mediaspelaren."
+msgstr "Binding to launch the media player."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:35
 msgid "Play (or play/pause)"
-msgstr "Spela (eller spela/gör paus)"
+msgstr "Play (or play/pause)"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:36
 msgid "Binding to start playback (or toggle play/pause)."
-msgstr "Bindning för att starta uppspelningen (eller växla spela/pausa)."
+msgstr "Binding to start playback (or toggle play/pause)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:37
 msgid "Pause playback"
-msgstr "Gör paus i uppspelning"
+msgstr "Pause playback"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:38
 msgid "Binding to pause playback."
-msgstr "Bindning för att göra paus i uppspelningen."
+msgstr "Binding to pause playback."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:39
 msgid "Stop playback"
-msgstr "Stoppa uppspelning"
+msgstr "Stop playback"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:40
 msgid "Binding to stop playback."
-msgstr "Bindning för att stoppa uppspelningen."
+msgstr "Binding to stop playback."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:41
 msgid "Previous track"
-msgstr "Föregående spår"
+msgstr "Previous track"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:42
 msgid "Binding to skip to previous track."
-msgstr "Bindning för att hoppa till föregående spår."
+msgstr "Binding to skip to previous track."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:43
 msgid "Next track"
-msgstr "Nästa spår"
+msgstr "Next track"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:44
 msgid "Binding to skip to next track."
-msgstr "Bindning för att hoppa till nästa spår."
+msgstr "Binding to skip to next track."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:5
 msgid "Show Displays in Notification Area"
-msgstr "Visa skärmar i notifieringsytan"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:6
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
-msgstr "Huruvida en notifieringsikon med skärmrelaterade saker ska visas i panelen."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:7
 msgid "Do not touch monitor configuration"
-msgstr "Rör inte skärmkonfigurationen"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:8
 msgid ""
@@ -522,31 +519,31 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr "Vanligtvis konfigurerar mate-settings-daemon interna samt externa skärmar enligt turn_on_external_monitors_at_startup och turn_on_laptop_monitor_at_startup inställningarna och avgör ett lämpligt kloning/sida-vid-sida läge. Omställning av denna nyckeln till Sant inaktiverar detta, och skärminställningarna rörs inte alls (såvida det inte är en explicit användarkonfiguration)."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:9
 msgid "Turn on external monitor after system boot"
-msgstr "Aktivera extern skärm efter systemuppstart"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:10
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
-msgstr "Aktivera extern skärm efter systemuppstart om användaren ansluter en extern skärm vid systemuppstart."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:11
 msgid "Turn on laptop monitor after system boot"
-msgstr "Aktivera bärbara datorns skärm efter systemuppstart"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:12
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr "Aktivera bärbara datorns skärm efter systemuppstart om användaren ansluter en extern skärm vid systemuppstart."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:13
 msgid "File for default configuration for RandR"
-msgstr "Fil för standardkonfiguration för RandR"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:14
 msgid ""
@@ -555,118 +552,118 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr "Insticksmodulen XRandR kommer att leta efter en standardkonfiguration i filen som anges av denna nyckel. Detta liknar ~/.config/monitors.xml som oftast lagras i användarens hemkataloger. Om en användare inte har en sådan fil, eller har en som inte matchar användarens skärmkonfiguration, så kommer filen som anges av denna nyckel att användas istället."
+msgstr ""
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
-msgstr "MATE-inställningsdemon"
+msgstr ""
 
 #: ../mate-settings-daemon/main.c:56
 msgid "Enable debugging code"
-msgstr "Aktivera felsökningskod"
+msgstr ""
 
 #: ../mate-settings-daemon/main.c:57
 msgid "Replace the current daemon"
-msgstr "Ersätt den aktuella daemonen"
+msgstr ""
 
 #: ../mate-settings-daemon/main.c:58
 msgid "Don't become a daemon"
-msgstr "Bli inte en demonprocess"
+msgstr ""
 
 #: ../mate-settings-daemon/main.c:59
 msgid "Exit after a time (for debugging)"
-msgstr "Avsluta efter en stund (för felsökning)"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.in.h:1
 msgid "Accessibility Keyboard"
-msgstr "Hjälpmedelstangentbord"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.in.h:2
 msgid "Accessibility keyboard plugin"
-msgstr "Insticksmodul för hjälpmedelstangentbord"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:446
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr "Ett fel inträffade vid visning av hjälp: %s"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
 msgid "Do you want to activate Slow Keys?"
-msgstr "Vill du aktivera tröga tangenter?"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:575
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:639
 msgid "Do you want to deactivate Slow Keys?"
-msgstr "Vill du inaktivera tröga tangenter?"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "Du höll precis ned skifttangenten under 8 sekunder. Detta är genvägen för funktionen tröga tangenter, som påverkar hur ditt tangentbord fungerar."
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
 msgid "Don't activate"
-msgstr "Aktivera inte"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
 msgid "Don't deactivate"
-msgstr "Inaktivera inte"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
 msgid "Activate"
-msgstr "Aktivera"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
 msgid "Deactivate"
-msgstr "Inaktivera"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
 msgid "Do_n't activate"
-msgstr "Aktivera _inte"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
 msgid "Do_n't deactivate"
-msgstr "Inaktivera _inte"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
 msgid "_Activate"
-msgstr "_Aktivera"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
 msgid "_Deactivate"
-msgstr "_Inaktivera"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:668
 msgid "Slow Keys Alert"
-msgstr "Varning för tröga tangenter"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:708
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:774
 msgid "Do you want to activate Sticky Keys?"
-msgstr "Vill du aktivera klistriga tangenter?"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
 msgid "Do you want to deactivate Sticky Keys?"
-msgstr "Vill du inaktivera klistriga tangenter?"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "Du tryckte precis ned skifttangenten 5 gånger i följd. Detta är genvägen för funktionen klistriga tangenter, som påverkar hur ditt tangentbord fungerar."
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
@@ -674,202 +671,202 @@ msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "Du tryckte precis ned två tangenter samtidigt, eller tryckte ned skifttangenten 5 gånger i följd. Detta stänger av funktionen tröga tangenter, som påverkar hur ditt tangentbord fungerar."
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:807
 msgid "Sticky Keys Alert"
-msgstr "Larm från Klistriga tangenter"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:813
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
-msgstr "Inställningar för Universell åtkomst"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
 msgid "Use on-screen _keyboard"
-msgstr "Använd skärm_tangentbord"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:3
 msgid "Use screen _reader"
-msgstr "Använd skärm_läsare"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:4
 msgid "Use screen _magnifier"
-msgstr "Använd skärm_förstorare"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:5
 msgid "Enhance _contrast in colors"
-msgstr "Förbättra _kontrast i färger"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:6
 msgid "Make _text larger and easier to read"
-msgstr "Gör _texten större och enklare att läsa"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
-msgstr "_Tryck tangentbordsgenvägar en tangent åt gången (Klistriga tangenter)"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
-msgstr "_Ignorera dubletta tangenttryckningar (Studsande tangenter)"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "Press and _hold keys to accept them (Slow Keys)"
-msgstr "Tryck och _håll ner tangenter för att acceptera dem (Tröga tangenter)"
+msgstr ""
 
 #: ../plugins/background/background.mate-settings-plugin.in.h:1
 msgid "Background"
-msgstr "Bakgrund"
+msgstr ""
 
 #: ../plugins/background/background.mate-settings-plugin.in.h:2
 msgid "Background plugin"
-msgstr "Insticksmodul för bakgrund"
+msgstr ""
 
 #: ../plugins/clipboard/clipboard.mate-settings-plugin.in.h:1
 msgid "Clipboard"
-msgstr "Urklipp"
+msgstr ""
 
 #: ../plugins/clipboard/clipboard.mate-settings-plugin.in.h:2
 msgid "Clipboard plugin"
-msgstr "Insticksmodul för urklipp"
+msgstr ""
 
 #: ../plugins/dummy/dummy.mate-settings-plugin.in.h:1
 msgid "Dummy"
-msgstr "Dummy"
+msgstr ""
 
 #: ../plugins/dummy/dummy.mate-settings-plugin.in.h:2
 msgid "Dummy plugin"
-msgstr "Insticksmodul för dummy"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:70
 msgid "Don't show any warnings again for this file system"
-msgstr "Visa inte några varningar igen för detta filsystem"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:72
 msgid "Don't show any warnings again"
-msgstr "Visa inte några varningar igen"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:85
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
-msgstr "Volymen \"%s\" har endast %s diskutrymme kvar."
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:88
 #, c-format
 msgid "This computer has only %s disk space remaining."
-msgstr "Denna dator har endast %s diskutrymme kvar."
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:104
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "Du kan frigöra diskutrymme genom att tömma papperskorgen, ta bort oanvända program eller filer, eller flytta filer till en annan disk eller partition."
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
-msgstr "Du kan frigöra diskutrymme genom att ta bort oanvända program eller filer, eller flytta filer till en annan disk eller partition."
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:112
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "Du kan frigöra diskutrymme genom att tömma papperskorgen, ta bort oanvända program eller filer, eller flytta filer till en extern disk."
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:115
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
-msgstr "Du kan frigöra diskutrymme genom att ta bort oanvända program eller filer, eller flytta filer till en extern disk."
+msgstr ""
 
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:213
 msgid "Low Disk Space"
-msgstr "Lågt diskutrymme"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:445
 msgid "Empty Trash"
-msgstr "Töm papperskorgen"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:453
 msgid "Examine…"
-msgstr "Undersök..."
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:460
 msgid "Ignore"
-msgstr "Ignorera"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:97
 #, c-format
 msgid "Removing item %lu of %lu"
-msgstr "Tar bort objekt %lu av %lu"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 msgid "Removing: %s"
-msgstr "Tar bort: %s"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:296
 msgid "Emptying the trash"
-msgstr "Tömmer papperskorgen"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:272
 msgid "Preparing to empty trash…"
-msgstr "Förbereder att tömma papperskorgen..."
+msgstr ""
 
 #. Translators: "Emptying trash from <device>"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:299
 msgid "From: "
-msgstr "Från: "
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:351
 msgid "Empty all of the items from the trash?"
-msgstr "Töm alla objekt i papperskorgen?"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:354
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "Om du väljer att tömma papperskorgen så kommer alla objekt i den att gå förlorade. Observera att du även kan ta bort dem individuellt."
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:361
 msgid "_Empty Trash"
-msgstr "Töm _papperskorgen"
+msgstr ""
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:129
 #, c-format
 msgid "Key binding (%s) is invalid"
-msgstr "Tangentbindningen (%s) är ogiltig"
+msgstr ""
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:165
 #, c-format
 msgid "Key binding (%s) is incomplete"
-msgstr "Tangentbindningen (%s) är ofullständig"
+msgstr ""
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:502
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "Fel vid försök att köra (%s)\nsom är länkad till tangenten (%s)"
+msgstr ""
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
-msgstr "Tangentbindningar"
+msgstr ""
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:2
 msgid "Keybindings plugin"
-msgstr "Insticksmodul för tangentbindningar"
+msgstr ""
 
 #: ../plugins/keyboard/keyboard.mate-settings-plugin.in.h:1
 msgid "Keyboard"
-msgstr "Tangentbord"
+msgstr ""
 
 #: ../plugins/keyboard/keyboard.mate-settings-plugin.in.h:2
 msgid "Keyboard plugin"
-msgstr "Insticksmodul för tangentbord"
+msgstr ""
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:137
 #, c-format
@@ -887,45 +884,45 @@ msgid ""
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr "Fel vid aktivering av XKB-konfiguration.\nDetta kan hända under olika situationer:\n • ett fel i biblioteket libxklavier\n • ett fel i X-server (verktygen xkbcomp, xmodmap)\n • X-server med inkompatibel implementation av libxkbfile\n\nVersionsdata för X-server:\n%s\n%d\n%s\nOm du rapporterar denna situation som ett fel så inkludera:\n • Resultatet av <b>%s</b>\n • Resultatet av <b>%s</b>"
+msgstr ""
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:151
 msgid ""
 "You are using XFree 4.3.0.\n"
 "There are known problems with complex XKB configurations.\n"
 "Try using a simpler configuration or using a later version of the XFree software."
-msgstr "Du använder XFree 4.3.0.\nDet finns kända problem med komplexa XKB-konfigurationer.\nProva med en enklare konfiguration eller använd en senare version av XFree-programvaran."
+msgstr ""
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:299
 msgid "_Layouts"
-msgstr "_Layouter"
+msgstr ""
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:306
 msgid "Keyboard _Preferences"
-msgstr "Tangentbordsins_tällningar"
+msgstr ""
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:312
 msgid "Show _Current Layout"
-msgstr "Visa a_ktuell layout"
+msgstr ""
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:198
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "Kunde inte hitta standardterminalen. Verifiera att kommandot för din standardterminal är inställt och pekar på ett giltigt program."
+msgstr ""
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:238
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "Kunde inte köra kommandot: %s\nVerifiera att det här är ett giltigt kommando."
+msgstr ""
 
 #. translators:
 #. * The device has been disabled
 #: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1005
 msgid "Disabled"
-msgstr "Inaktiverad"
+msgstr ""
 
 #. translators:
 #. * The number of sound outputs on a particular device
@@ -933,8 +930,8 @@ msgstr "Inaktiverad"
 #, c-format
 msgid "%u Output"
 msgid_plural "%u Outputs"
-msgstr[0] "%u utgång"
-msgstr[1] "%u utgångar"
+msgstr[0] ""
+msgstr[1] ""
 
 #. translators:
 #. * The number of sound inputs on a particular device
@@ -942,254 +939,254 @@ msgstr[1] "%u utgångar"
 #, c-format
 msgid "%u Input"
 msgid_plural "%u Inputs"
-msgstr[0] "%u ingång"
-msgstr[1] "%u ingångar"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1320
 msgid "System Sounds"
-msgstr "Systemljud"
+msgstr ""
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
-msgstr "Mediatangenter"
+msgstr ""
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:2
 msgid "Media keys plugin"
-msgstr "Insticksmodul för mediatangenter"
+msgstr ""
 
 #: ../plugins/mouse/msd-mouse-manager.c:887
 msgid "Could not enable mouse accessibility features"
-msgstr "Kunde inte aktivera mushjälpmedelsfunktioner"
+msgstr ""
 
 #: ../plugins/mouse/msd-mouse-manager.c:889
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
-msgstr "Mushjälpmedel kräver att Mousetweaks (Musjusteringar) är installerat på ditt system."
+msgstr ""
 
 #: ../plugins/mouse/msd-mouse-manager.c:892
 msgid "Mouse Preferences"
-msgstr "Musinställningar"
+msgstr ""
 
 #: ../plugins/mouse/mouse.mate-settings-plugin.in.h:1
 msgid "Mouse"
-msgstr "Mus"
+msgstr ""
 
 #: ../plugins/mouse/mouse.mate-settings-plugin.in.h:2
 msgid "Mouse plugin"
-msgstr "Insticksmodul för mus"
+msgstr ""
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:1
 msgid "Mpris"
-msgstr "Mpris"
+msgstr ""
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:2
 msgid "Mpris plugin"
-msgstr "Mpris insticksmodul"
+msgstr ""
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:1
 msgid "Typing Break"
-msgstr "Paus i skrivande"
+msgstr ""
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:2
 msgid "Typing break plugin"
-msgstr "Insticksmodul för paus i skrivande"
+msgstr ""
 
 #: ../plugins/xrandr/xrandr.mate-settings-plugin.in.h:1
 msgid "XRandR"
-msgstr "XRandR"
+msgstr ""
 
 #: ../plugins/xrandr/xrandr.mate-settings-plugin.in.h:2
 msgid "Set up screen size and rotation settings"
-msgstr "Konfigurera skärmstorlek och roteringsinställningar"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:371
 msgid "Could not switch the monitor configuration"
-msgstr "Kunde inte växla till skärmkonfigurationen"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:395
 msgid "Could not restore the display's configuration"
-msgstr "Kunde inte återställa skärmens konfiguration"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:420
 msgid "Could not restore the display's configuration from a backup"
-msgstr "Kunde inte återställa skärmens konfiguration från en säkerhetskopia"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:441
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Skärmen kommer att återställas till dess tidigare konfiguration om %d sekund"
-msgstr[1] "Skärmen kommer att återställas till dess tidigare konfiguration om %d sekunder"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:490
 msgid "Does the display look OK?"
-msgstr "Ser skärmen bra ut?"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:496
 msgid "_Restore Previous Configuration"
-msgstr "_Återställ tidigare konfiguration"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:497
 msgid "_Keep This Configuration"
-msgstr "_Behåll denna konfiguration"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:578
 msgid "The selected configuration for displays could not be applied"
-msgstr "Den valda konfigurationen för skärmar kunde inte tillämpas"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1140
 #, c-format
 msgid "Could not refresh the screen information: %s"
-msgstr "Kunde inte uppdatera skärminformationen: %s"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1144
 msgid "Trying to switch the monitor configuration anyway."
-msgstr "Försöker att växla till skärmkonfigurationen ändå."
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1875
 msgid "Rotation not supported"
-msgstr "Rotering stöds inte"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1931
 msgid "Could not save monitor configuration"
-msgstr "Kunde inte spara skärmkonfigurationen"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1949
 msgid "Normal"
-msgstr "Normal"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1950
 msgid "Left"
-msgstr "Vänster"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1951
 msgid "Right"
-msgstr "Höger"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1952
 msgid "Upside Down"
-msgstr "Upp och ner"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2072
 msgid "_Configure Display Settings…"
-msgstr "_Konfigurera skärminställningar..."
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2113
 msgid "Configure display settings"
-msgstr "Konfigurera skärminställningar"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2173
 msgid "Could not apply the stored configuration for monitors"
-msgstr "Kunde inte tillämpa lagrad konfiguration för skärmar"
+msgstr ""
 
 #: ../plugins/xrdb/msd-xrdb-manager.c:253
 #: ../plugins/xrdb/msd-xrdb-manager.c:322
 msgid "Cannot determine user's home directory"
-msgstr "Kan inte avgöra användarens hemkatalog"
+msgstr ""
 
 #: ../plugins/xrdb/xrdb.mate-settings-plugin.in.h:1
 msgid "X Resource Database"
-msgstr "X-resursdatabas"
+msgstr ""
 
 #: ../plugins/xrdb/xrdb.mate-settings-plugin.in.h:2
 msgid "Manage the X resource database"
-msgstr "Hantera X-resursdatabasen"
+msgstr ""
 
 #: ../plugins/xsettings/xsettings.mate-settings-plugin.in.h:1
 msgid "X Settings"
-msgstr "X-inställningar"
+msgstr ""
 
 #: ../plugins/xsettings/xsettings.mate-settings-plugin.in.h:2
 msgid "Manage X Settings"
-msgstr "Hantera X-inställningar"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:167
 msgid "Module Path"
-msgstr "Modulsökväg"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:168
 msgid "path to smartcard PKCS #11 driver"
-msgstr "sökväg till smartkortsdrivrutin för PKCS #11"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:504
 msgid "received error or hang up from event source"
-msgstr "tog emot fel eller avstängning från händelsekälla"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:593
 #, c-format
 msgid "NSS security system could not be initialized"
-msgstr "NSS-säkerhetssystemet kunde inte initieras"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:662
 #, c-format
 msgid "no suitable smartcard driver could be found"
-msgstr "ingen lämplig smartkortdrivrutin hittades"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:682
 #, c-format
 msgid "smartcard driver '%s' could not be loaded"
-msgstr "smartkortdrivrutinen \"%s\" kunde inte läsas in"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:771
 #, c-format
 msgid "could not watch for incoming card events - %s"
-msgstr "kunde inte bevaka inkommande korthändelser - %s"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:1124
 #, c-format
 msgid "encountered unexpected error while waiting for smartcard events"
-msgstr "påträffade oväntat fel vid väntan på smartkorthändelser"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard.c:154
 msgid "Slot ID"
-msgstr "Kortplats-id"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard.c:155
 msgid "The slot the card is in"
-msgstr "Kortplatsen som kortet är i"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard.c:161
 msgid "Slot Series"
-msgstr "Kortplatsserier"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard.c:162
 msgid "per-slot card identifier"
-msgstr "kortidentifierare per kortplats"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard.c:168
 #: ../plugins/smartcard/msd-smartcard.c:169
 msgid "name"
-msgstr "namn"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard.c:173
 msgid "Module"
-msgstr "Modul"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard.c:174
 msgid "smartcard driver"
-msgstr "smartkortdrivrutin"
+msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:1
 msgid "Change system time zone"
-msgstr "Ändra systemets tidszon"
+msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:2
 msgid "Privileges are required to change the system time zone."
-msgstr "Privilegier krävs för att ändra systemets tidszon."
+msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:3
 msgid "Change system time"
-msgstr "Ändra systemtiden"
+msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:4
 msgid "Privileges are required to change the system time."
-msgstr "Privilegier krävs för att ändra systemtiden."
+msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:5
 msgid "Configure hardware clock"
-msgstr "Konfigurera maskinvaruklocka"
+msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:6
 msgid "Privileges are required to configure the hardware clock."
-msgstr "Privilegier krävs för att konfigurera maskinvaruklockan."
+msgstr ""
