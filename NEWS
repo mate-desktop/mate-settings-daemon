@@ -1,3 +1,6 @@
+1.8.1
+  * Added support for Gtk/DecorationLayout for GTK3 CSD windows
+
 1.8.0
   * Add GTK3 support
   * Add Middle Click Emulation to mouse manager
