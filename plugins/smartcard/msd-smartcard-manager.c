@@ -1256,9 +1256,9 @@ msd_smartcard_manager_create_worker (MsdSmartcardManager  *manager,
         worker = msd_smartcard_manager_worker_new (write_fd);
         worker->module = manager->priv->module;
 
-        *worker_thread = g_thread_create ((GThreadFunc)
+        *worker_thread = g_thread_new ("MsdSmartcardManagerWorker", (GThreadFunc)
                                           msd_smartcard_manager_worker_run,
-                                          worker, FALSE, NULL);
+                                          worker);
 
         if (*worker_thread == NULL) {
                 msd_smartcard_manager_worker_free (worker);
