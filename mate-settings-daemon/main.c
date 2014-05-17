@@ -453,10 +453,6 @@ main (int argc, char *argv[])
 
         manager = NULL;
 
-        if (!g_thread_supported ()) {
-                g_thread_init (NULL);
-        }
-
         mate_settings_profile_start (NULL);
 
         bindtextdomain (GETTEXT_PACKAGE, MATE_SETTINGS_LOCALEDIR);
@@ -465,8 +461,6 @@ main (int argc, char *argv[])
         setlocale (LC_ALL, "");
 
         parse_args (&argc, &argv);
-
-        g_type_init ();
 
         mate_settings_profile_start ("opening gtk display");
         if (! gtk_init_check (NULL, NULL)) {

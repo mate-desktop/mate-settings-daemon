@@ -340,11 +340,6 @@ msd_smartcard_manager_init (MsdSmartcardManager *manager)
                                        g_str_equal,
                                        (GDestroyNotify) g_free,
                                        (GDestroyNotify) g_object_unref);
-
-        if (!g_thread_supported ()) {
-                g_thread_init (NULL);
-        }
-
 }
 
 static void
@@ -1334,8 +1329,6 @@ main (int   argc,
 
         g_log_set_always_fatal (G_LOG_LEVEL_ERROR
                                 | G_LOG_LEVEL_CRITICAL | G_LOG_LEVEL_WARNING);
-
-        g_type_init ();
 
         g_message ("creating instance of 'smartcard manager' object...");
         manager = msd_smartcard_manager_new (NULL);
