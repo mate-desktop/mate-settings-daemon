@@ -17,15 +17,10 @@
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <glib.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 
 #include "msd-ldsm-dialog.h"
-
-#if GLIB_CHECK_VERSION (2, 30, 0)
-#define g_format_size_for_display g_format_size
-#endif
 
 #define SETTINGS_SCHEMA "org.mate.SettingsDaemon.plugins.housekeeping"
 #define SETTINGS_IGNORE_PATHS "ignore-paths"
@@ -79,7 +74,7 @@ msd_ldsm_dialog_get_primary_text (MsdLdsmDialog *dialog)
 	
         g_return_val_if_fail (MSD_IS_LDSM_DIALOG (dialog), NULL);
 	
-        free_space = g_format_size_for_display (dialog->priv->space_remaining);
+        free_space = g_format_size (dialog->priv->space_remaining);
 	
         if (dialog->priv->other_partitions) {
                 primary_text = g_strdup_printf (_("The volume \"%s\" has only %s disk space remaining."),
