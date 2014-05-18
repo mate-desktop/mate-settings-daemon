@@ -46,9 +46,6 @@ msd_delayed_show_dialog (GtkWidget *dialog)
         GdkDisplay *display = gtk_widget_get_display (dialog);
         Display *xdisplay = GDK_DISPLAY_XDISPLAY (display);
         GdkScreen *screen = gtk_widget_get_screen (dialog);
-#if !GTK_CHECK_VERSION (3, 0, 0)
-        GdkAtom manager_atom;
-#endif
         char selection_name[10];
         Atom selection_atom;
 
@@ -66,13 +63,7 @@ msd_delayed_show_dialog (GtkWidget *dialog)
 
         dialogs = g_slist_prepend (dialogs, dialog);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
         gdk_window_add_filter (NULL, message_filter, NULL);
-#else
-        manager_atom = gdk_atom_intern ("MANAGER", FALSE);
-        gdk_display_add_client_message_filter (display, manager_atom,
-                                               message_filter, NULL);
-#endif
 
         g_timeout_add (5000, delayed_show_timeout, NULL);
 }
@@ -95,17 +86,11 @@ delayed_show_timeout (gpointer data)
 static GdkFilterReturn
 message_filter (GdkXEvent *xevent, GdkEvent *event, gpointer data)
 {
-#if GTK_CHECK_VERSION (3, 0, 0)
         XClientMessageEvent *evt;
         char *selection_name;
-#else
-        XClientMessageEvent *evt = (XClientMessageEvent *)xevent;
-        char *selection_name = XGetAtomName (evt->display, evt->data.l[1]);
-#endif
         int screen;
         GSList *l, *next;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
         if (((XEvent *)xevent)->type != ClientMessage)
                 return GDK_FILTER_CONTINUE;
 
@@ -115,10 +100,6 @@ message_filter (GdkXEvent *xevent, GdkEvent *event, gpointer data)
                 return GDK_FILTER_CONTINUE;
 
         selection_name = XGetAtomName (evt->display, evt->data.l[1]);
-#else
-        if (!dialogs)
-                return GDK_FILTER_CONTINUE;
-#endif
 
         if (strncmp (selection_name, "WM_S", 4) != 0) {
                 XFree (selection_name);
@@ -138,16 +119,10 @@ message_filter (GdkXEvent *xevent, GdkEvent *event, gpointer data)
         }
 
         if (!dialogs) {
-#if GTK_CHECK_VERSION (3, 0, 0)
                 gdk_window_remove_filter (NULL, message_filter, NULL);
-#else
-                /* FIXME: There's no gdk_display_remove_client_message_filter */
-#endif
         }
 
-#if GTK_CHECK_VERSION (3, 0, 0)
         XFree (selection_name);
-#endif
 
         return GDK_FILTER_CONTINUE;
 }
