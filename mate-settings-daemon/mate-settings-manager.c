@@ -158,8 +158,8 @@ on_plugin_deactivated (MateSettingsPluginInfo *info,
 }
 
 static gboolean
-is_item_in_schema (const char * const *items,
-                   const char         *item)
+is_item_in_schema (char       **items,
+                   const char  *item)
 {
 	while (*items) {
 	       if (g_strcmp0 (*items++, item) == 0)
@@ -171,7 +171,18 @@ is_item_in_schema (const char * const *items,
 static gboolean
 is_schema (const char *schema)
 {
-	return is_item_in_schema (g_settings_list_schemas (), schema);
+        GSettingsSchemaSource *source = NULL;
+        gchar **non_relocatable = NULL;
+        gchar **relocatable = NULL;
+
+        source = g_settings_schema_source_get_default ();
+        if (!source)
+                return FALSE;
+
+        g_settings_schema_source_list_schemas (source, TRUE, &non_relocatable, &relocatable);
+
+        return (is_item_in_schema (non_relocatable, schema) ||
+                is_item_in_schema (relocatable, schema));
 }
 
 static void
