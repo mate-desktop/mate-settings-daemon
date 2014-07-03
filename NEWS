@@ -1,10 +1,11 @@
-1.9.1
-  *
+1.9.x
+  * Port media-keys plugin to libmatemixer
+  * Remove GStreamer and PulseAudio dependencies, add optional dependency
+    on libmatemixer
 
 1.8.0
   * Add GTK3 support
   * Add Middle Click Emulation to mouse manager
 
 1.6.0
-
   * Migration to gsettings

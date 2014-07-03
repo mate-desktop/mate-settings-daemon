@@ -3,7 +3,6 @@ context = actions
 
 NULL =
 
-SUBDIRS = cut-n-paste
 plugin_LTLIBRARIES = libmedia-keys.la
 
 BUILT_SOURCES = 			\
@@ -80,7 +79,6 @@ libmedia_keys_la_SOURCES = 		\
 libmedia_keys_la_CPPFLAGS = \
 	-I$(top_srcdir)/mate-settings-daemon			\
 	-I$(top_srcdir)/plugins/common				\
-	-I$(top_srcdir)/plugins/media-keys/cut-n-paste		\
 	-DPIXMAPDIR=\""$(pkgdatadir)"\"				\
 	-DGTKBUILDERDIR=\""$(pkgdatadir)"\"			\
 	-DMATE_SETTINGS_LOCALEDIR=\""$(datadir)/locale"\"	\
@@ -88,6 +86,8 @@ libmedia_keys_la_CPPFLAGS = \
 
 libmedia_keys_la_CFLAGS = \
 	$(SETTINGS_PLUGIN_CFLAGS)	\
+    $(LIBMATEMIXER_CFLAGS)   \
+    $(LIBCANBERRA_CFLAGS)   \
 	$(AM_CFLAGS)
 
 libmedia_keys_la_LDFLAGS = 		\
@@ -95,8 +95,9 @@ libmedia_keys_la_LDFLAGS = 		\
 
 libmedia_keys_la_LIBADD  = 		\
 	$(top_builddir)/plugins/common/libcommon.la			\
-	$(top_builddir)/plugins/media-keys/cut-n-paste/libgvc.la	\
 	$(SETTINGS_PLUGIN_LIBS)						\
+    $(LIBMATEMIXER_LIBS)                     \
+    $(LIBCANBERRA_LIBS)         \
 	$(XF86MISC_LIBS)						\
 	-lm
 
@@ -150,7 +151,6 @@ test_media_keys_SOURCES =			\
 test_media_keys_CPPFLAGS = \
 	-I$(top_srcdir)/mate-settings-daemon			\
 	-I$(top_srcdir)/plugins/common				\
-	-I$(top_srcdir)/plugins/media-keys/cut-n-paste		\
 	-DPIXMAPDIR=\""$(pkgdatadir)"\"				\
 	-DGTKBUILDERDIR=\""$(pkgdatadir)"\"			\
 	-DMATE_SETTINGS_LOCALEDIR=\""$(datadir)/locale"\"	\
@@ -158,6 +158,8 @@ test_media_keys_CPPFLAGS = \
 
 test_media_keys_CFLAGS = \
 	$(SETTINGS_PLUGIN_CFLAGS)	\
+    $(LIBMATEMIXER_CFLAGS)   \
+    $(LIBCANBERRA_CFLAGS)   \
 	$(AM_CFLAGS)
 
 test_media_keys_LDADD = \
@@ -165,18 +167,15 @@ test_media_keys_LDADD = \
 	$(top_builddir)/plugins/common/libcommon.la			\
 	$(SETTINGS_DAEMON_LIBS)			\
 	$(SETTINGS_PLUGIN_LIBS)			\
+    $(LIBMATEMIXER_LIBS)         \
+    $(LIBCANBERRA_LIBS)         \
 	$(XF86MISC_LIBS)			\
-	$(GST_LIBS)				\
 	-lm
-
-test_media_keys_LDADD += $(top_builddir)/plugins/media-keys/cut-n-paste/libgvc.la
 
 gtkbuilderdir = $(pkgdatadir)
 gtkbuilder_DATA =	\
 	acme.ui		\
 	$(NULL)
-
-DIST_SUBDIRS = cut-n-paste
 
 EXTRA_DIST = 				\
 	msd-media-keys-manager.xml	\

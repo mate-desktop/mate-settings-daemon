@@ -20,8 +20,13 @@
 
 #include "config.h"
 
+#include <glib.h>
 #include <glib/gi18n-lib.h>
-#include <gmodule.h>
+#include <glib-object.h>
+
+#ifdef HAVE_LIBMATEMIXER
+#include <libmatemixer/matemixer.h>
+#endif
 
 #include "mate-settings-plugin.h"
 #include "msd-media-keys-plugin.h"
@@ -70,11 +75,13 @@ static void
 impl_activate (MateSettingsPlugin *plugin)
 {
         gboolean res;
-        GError  *error;
+        GError  *error = NULL;
 
         g_debug ("Activating media_keys plugin");
 
-        error = NULL;
+#ifdef HAVE_LIBMATEMIXER
+        mate_mixer_init ();
+#endif
         res = msd_media_keys_manager_start (MSD_MEDIA_KEYS_PLUGIN (plugin)->priv->manager, &error);
         if (! res) {
                 g_warning ("Unable to start media_keys manager: %s", error->message);
@@ -87,12 +94,16 @@ impl_deactivate (MateSettingsPlugin *plugin)
 {
         g_debug ("Deactivating media_keys plugin");
         msd_media_keys_manager_stop (MSD_MEDIA_KEYS_PLUGIN (plugin)->priv->manager);
+
+#ifdef HAVE_LIBMATEMIXER
+        mate_mixer_deinit ();
+#endif
 }
 
 static void
 msd_media_keys_plugin_class_init (MsdMediaKeysPluginClass *klass)
 {
-        GObjectClass           *object_class = G_OBJECT_CLASS (klass);
+        GObjectClass            *object_class = G_OBJECT_CLASS (klass);
         MateSettingsPluginClass *plugin_class = MATE_SETTINGS_PLUGIN_CLASS (klass);
 
         object_class->finalize = msd_media_keys_plugin_finalize;
@@ -107,4 +118,3 @@ static void
 msd_media_keys_plugin_class_finalize (MsdMediaKeysPluginClass *klass)
 {
 }
-
