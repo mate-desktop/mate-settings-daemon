@@ -2,6 +2,7 @@
  *
  * Copyright (C) 2001-2003 Bastien Nocera <hadess@hadess.net>
  * Copyright (C) 2006-2007 William Jon McCann <mccann@jhu.edu>
+ * Copyright (C) 2014 Michal Ratajsky <michal.ratajsky@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,16 +21,6 @@
  */
 
 #include "config.h"
-
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
-#include <errno.h>
-
-#include <locale.h>
 
 #include <glib.h>
 #include <glib/gi18n.h>
@@ -75,7 +66,7 @@ typedef struct {
         guint32 time;
 } MediaPlayer;
 
-struct MsdMediaKeysManagerPrivate
+struct _MsdMediaKeysManagerPrivate
 {
 #ifdef HAVE_LIBMATEMIXER
         /* Volume bits */
@@ -105,7 +96,6 @@ static guint signals[LAST_SIGNAL] = { 0 };
 
 static void     msd_media_keys_manager_class_init  (MsdMediaKeysManagerClass *klass);
 static void     msd_media_keys_manager_init        (MsdMediaKeysManager      *media_keys_manager);
-static void     msd_media_keys_manager_finalize    (GObject                  *object);
 
 G_DEFINE_TYPE (MsdMediaKeysManager, msd_media_keys_manager, G_TYPE_OBJECT)
 
@@ -1181,89 +1171,20 @@ msd_media_keys_manager_stop (MsdMediaKeysManager *manager)
 }
 
 static void
-msd_media_keys_manager_set_property (GObject        *object,
-                               guint           prop_id,
-                               const GValue   *value,
-                               GParamSpec     *pspec)
-{
-        MsdMediaKeysManager *self;
-
-        self = MSD_MEDIA_KEYS_MANAGER (object);
-
-        switch (prop_id) {
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static void
-msd_media_keys_manager_get_property (GObject        *object,
-                               guint           prop_id,
-                               GValue         *value,
-                               GParamSpec     *pspec)
-{
-        MsdMediaKeysManager *self;
-
-        self = MSD_MEDIA_KEYS_MANAGER (object);
-
-        switch (prop_id) {
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static GObject *
-msd_media_keys_manager_constructor (GType                  type,
-                              guint                  n_construct_properties,
-                              GObjectConstructParam *construct_properties)
-{
-        MsdMediaKeysManager      *media_keys_manager;
-        MsdMediaKeysManagerClass *klass;
-
-        klass = MSD_MEDIA_KEYS_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_MEDIA_KEYS_MANAGER));
-
-        media_keys_manager = MSD_MEDIA_KEYS_MANAGER (G_OBJECT_CLASS (msd_media_keys_manager_parent_class)->constructor (type,
-                                                                                                      n_construct_properties,
-                                                                                                      construct_properties));
-
-        return G_OBJECT (media_keys_manager);
-}
-
-static void
-msd_media_keys_manager_dispose (GObject *object)
-{
-        MsdMediaKeysManager *media_keys_manager;
-
-        media_keys_manager = MSD_MEDIA_KEYS_MANAGER (object);
-
-        G_OBJECT_CLASS (msd_media_keys_manager_parent_class)->dispose (object);
-}
-
-static void
 msd_media_keys_manager_class_init (MsdMediaKeysManagerClass *klass)
 {
-        GObjectClass   *object_class = G_OBJECT_CLASS (klass);
-
-        object_class->get_property = msd_media_keys_manager_get_property;
-        object_class->set_property = msd_media_keys_manager_set_property;
-        object_class->constructor = msd_media_keys_manager_constructor;
-        object_class->dispose = msd_media_keys_manager_dispose;
-        object_class->finalize = msd_media_keys_manager_finalize;
-
-       signals[MEDIA_PLAYER_KEY_PRESSED] =
-               g_signal_new ("media-player-key-pressed",
-                             G_OBJECT_CLASS_TYPE (klass),
-                             G_SIGNAL_RUN_LAST,
-                             G_STRUCT_OFFSET (MsdMediaKeysManagerClass, media_player_key_pressed),
-                             NULL,
-                             NULL,
-                             msd_marshal_VOID__STRING_STRING,
-                             G_TYPE_NONE,
-                             2,
-                             G_TYPE_STRING,
-                             G_TYPE_STRING);
+        signals[MEDIA_PLAYER_KEY_PRESSED] =
+                g_signal_new ("media-player-key-pressed",
+                              G_OBJECT_CLASS_TYPE (klass),
+                              G_SIGNAL_RUN_LAST,
+                              G_STRUCT_OFFSET (MsdMediaKeysManagerClass, media_player_key_pressed),
+                              NULL,
+                              NULL,
+                              msd_marshal_VOID__STRING_STRING,
+                              G_TYPE_NONE,
+                              2,
+                              G_TYPE_STRING,
+                              G_TYPE_STRING);
 
         dbus_g_object_type_install_info (MSD_TYPE_MEDIA_KEYS_MANAGER, &dbus_glib_msd_media_keys_manager_object_info);
 
@@ -1274,22 +1195,6 @@ static void
 msd_media_keys_manager_init (MsdMediaKeysManager *manager)
 {
         manager->priv = MSD_MEDIA_KEYS_MANAGER_GET_PRIVATE (manager);
-
-}
-
-static void
-msd_media_keys_manager_finalize (GObject *object)
-{
-        MsdMediaKeysManager *media_keys_manager;
-
-        g_return_if_fail (object != NULL);
-        g_return_if_fail (MSD_IS_MEDIA_KEYS_MANAGER (object));
-
-        media_keys_manager = MSD_MEDIA_KEYS_MANAGER (object);
-
-        g_return_if_fail (media_keys_manager->priv != NULL);
-
-        G_OBJECT_CLASS (msd_media_keys_manager_parent_class)->finalize (object);
 }
 
 static gboolean

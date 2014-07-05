@@ -1,7 +1,7 @@
 1.9.x
   * Port media-keys plugin to libmatemixer
-  * Remove GStreamer and PulseAudio dependencies, add optional dependency
-    on libmatemixer
+  * Remove GStreamer bits, make libmatemixer, libcanberra and PulseAudio
+    optional dependencies
 
 1.8.0
   * Add GTK3 support

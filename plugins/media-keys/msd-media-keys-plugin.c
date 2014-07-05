@@ -1,6 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
  *
  * Copyright (C) 2007 William Jon McCann <mccann@jhu.edu>
+ * Copyright (C) 2014 Michal Ratajsky <michal.ratajsky@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +33,8 @@
 #include "msd-media-keys-plugin.h"
 #include "msd-media-keys-manager.h"
 
-struct MsdMediaKeysPluginPrivate {
+struct _MsdMediaKeysPluginPrivate
+{
         MsdMediaKeysManager *manager;
 };
 
@@ -51,24 +53,17 @@ msd_media_keys_plugin_init (MsdMediaKeysPlugin *plugin)
 }
 
 static void
-msd_media_keys_plugin_finalize (GObject *object)
+msd_media_keys_plugin_dispose (GObject *object)
 {
         MsdMediaKeysPlugin *plugin;
 
-        g_return_if_fail (object != NULL);
-        g_return_if_fail (MSD_IS_MEDIA_KEYS_PLUGIN (object));
-
-        g_debug ("MsdMediaKeysPlugin finalizing");
+        g_debug ("MsdMediaKeysPlugin disposing");
 
         plugin = MSD_MEDIA_KEYS_PLUGIN (object);
 
-        g_return_if_fail (plugin->priv != NULL);
+        g_clear_object (&plugin->priv->manager);
 
-        if (plugin->priv->manager != NULL) {
-                g_object_unref (plugin->priv->manager);
-        }
-
-        G_OBJECT_CLASS (msd_media_keys_plugin_parent_class)->finalize (object);
+        G_OBJECT_CLASS (msd_media_keys_plugin_parent_class)->dispose (object);
 }
 
 static void
@@ -106,7 +101,7 @@ msd_media_keys_plugin_class_init (MsdMediaKeysPluginClass *klass)
         GObjectClass            *object_class = G_OBJECT_CLASS (klass);
         MateSettingsPluginClass *plugin_class = MATE_SETTINGS_PLUGIN_CLASS (klass);
 
-        object_class->finalize = msd_media_keys_plugin_finalize;
+        object_class->dispose = msd_media_keys_plugin_dispose;
 
         plugin_class->activate = impl_activate;
         plugin_class->deactivate = impl_deactivate;
