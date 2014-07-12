@@ -452,10 +452,10 @@ static void debug_changed (GSettings *settings, gchar *key, gpointer user_data)
 {
         debug = g_settings_get_boolean (settings, DEBUG_KEY);
         if (debug) {
-            g_debug ("Enable DEBUG");
+            g_warning ("Enable DEBUG");
             g_setenv ("G_MESSAGES_DEBUG", "all", FALSE);
         } else {
-            g_debug ("Disable DEBUG");
+            g_warning ("Disable DEBUG");
             g_unsetenv ("G_MESSAGES_DEBUG");
         }
 }
@@ -485,12 +485,11 @@ main (int argc, char *argv[])
         {
                 debug_settings = g_settings_new (DEBUG_SCHEMA);
                 debug = g_settings_get_boolean (debug_settings, DEBUG_KEY);
+                g_signal_connect (debug_settings, "changed::" DEBUG_KEY, G_CALLBACK (debug_changed), NULL);
 
 		if (debug) {
 		    g_setenv ("G_MESSAGES_DEBUG", "all", FALSE);
 		}
-
-                g_signal_connect (debug_settings, "changed::" DEBUG_KEY, G_CALLBACK (debug_changed), NULL);
         }
 
         mate_settings_profile_start ("opening gtk display");
