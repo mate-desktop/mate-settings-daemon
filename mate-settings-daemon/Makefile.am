@@ -73,6 +73,7 @@ mate_settings_daemon_CPPFLAGS = \
 	$(AM_CPPFLAGS)
 
 mate_settings_daemon_CFLAGS = 		\
+	$(MATE_DESKTOP_CFLAGS)          \
 	$(AM_CFLAGS)
 
 mate_settings_daemon_LDFLAGS = 	\
@@ -81,6 +82,7 @@ mate_settings_daemon_LDFLAGS = 	\
 mate_settings_daemon_LDADD = 		\
 	libmsd-profile.la		\
 	$(SETTINGS_DAEMON_LIBS)	\
+	$(MATE_DESKTOP_LIBS)    \
 	$(LIBNOTIFY_LIBS)
 
 EXTRA_DIST = 				\
