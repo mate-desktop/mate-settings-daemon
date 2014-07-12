@@ -3,17 +3,18 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Rahul Bhalerao <b.rahul.pm@gmail.com>, 2006.
-# Sandeep Shedmake <sandeep.shedmake@gmail.com>, 2008, 2009.
-# Sandeep Shedmake <sshedmak@redhat.com>, 2009, 2010.
+# Rahul Bhalerao <b.rahul.pm@gmail.com>, 2006
+# Sandeep Shedmake <sandeep.shedmake@gmail.com>, 2008, 2009
+# sandeeps <sshedmak@redhat.com>, 2009, 2010
+# Vaibhav S Dalvi <vaibhav.dlv@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2013-03-22 22:15+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2014-06-01 05:28+0000\n"
+"Last-Translator: Vaibhav S Dalvi <vaibhav.dlv@gmail.com>\n"
+"Language-Team: Marathi (http://www.transifex.com/projects/p/MATE/language/mr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -209,7 +210,7 @@ msgstr "scroll_method कि सह समान पद्धत नीवडल
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:9
 msgid "Enable touchpad"
-msgstr ""
+msgstr "टचपॅड कार्यान्वित करा"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:10
 msgid "Set this to TRUE to enable all touchpads."
@@ -232,7 +233,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:1
 msgid "Activation of this plugin"
-msgstr ""
+msgstr "प्लगीन्स कार्यान्वीकरण"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:2
@@ -349,7 +350,7 @@ msgstr "आवाज वाढ टक्केवारी स्वरूपा
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:7
 msgid "Toggle touchpad"
-msgstr ""
+msgstr "टचपॅड् टॉगल करा"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:8
 msgid "Binding to enable or disable the touchpad."
@@ -511,7 +512,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:7
 msgid "Do not touch monitor configuration"
-msgstr ""
+msgstr "मॉनीटर संयोजना बदलू नका"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:8
 msgid ""
@@ -807,7 +808,7 @@ msgstr "%lu पैकी घटक %lu काढून टाकत आहे"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 msgid "Removing: %s"
-msgstr ""
+msgstr "काढून टाकत आहे: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:296
@@ -897,11 +898,11 @@ msgstr ""
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:299
 msgid "_Layouts"
-msgstr ""
+msgstr "मांडणी (_L)"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:306
 msgid "Keyboard _Preferences"
-msgstr ""
+msgstr "कळफलक पसंती (_P)"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:312
 msgid "Show _Current Layout"
@@ -979,11 +980,11 @@ msgstr "माऊस प्लगइन"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:1
 msgid "Mpris"
-msgstr ""
+msgstr "Mpris"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:2
 msgid "Mpris plugin"
-msgstr ""
+msgstr "Mpris प्लगइन"
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:1
 msgid "Typing Break"
@@ -1072,7 +1073,7 @@ msgstr "वर खाली"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2072
 msgid "_Configure Display Settings…"
-msgstr ""
+msgstr "दृश्य संयोजना संयोजीत करा (_C)"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2113
 msgid "Configure display settings"
@@ -1105,11 +1106,11 @@ msgstr "X संयोजना व्यवस्थापीत करा"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:167
 msgid "Module Path"
-msgstr ""
+msgstr "घटक मार्ग"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:168
 msgid "path to smartcard PKCS #11 driver"
-msgstr ""
+msgstr "स्मार्टकार्ड PKCS #11 ड्रायव्हरचा मार्ग "
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:504
 msgid "received error or hang up from event source"
@@ -1118,7 +1119,7 @@ msgstr ""
 #: ../plugins/smartcard/msd-smartcard-manager.c:593
 #, c-format
 msgid "NSS security system could not be initialized"
-msgstr ""
+msgstr "NSS सुरक्षा प्रणाली सुरु करता आली नाही "
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:662
 #, c-format
@@ -1142,15 +1143,15 @@ msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard.c:154
 msgid "Slot ID"
-msgstr ""
+msgstr "स्लॉट ID"
 
 #: ../plugins/smartcard/msd-smartcard.c:155
 msgid "The slot the card is in"
-msgstr ""
+msgstr "कार्ड असलेला स्लॉट"
 
 #: ../plugins/smartcard/msd-smartcard.c:161
 msgid "Slot Series"
-msgstr ""
+msgstr "स्लॉट शृंखला "
 
 #: ../plugins/smartcard/msd-smartcard.c:162
 msgid "per-slot card identifier"
@@ -1159,31 +1160,31 @@ msgstr ""
 #: ../plugins/smartcard/msd-smartcard.c:168
 #: ../plugins/smartcard/msd-smartcard.c:169
 msgid "name"
-msgstr ""
+msgstr "नाव"
 
 #: ../plugins/smartcard/msd-smartcard.c:173
 msgid "Module"
-msgstr ""
+msgstr "घटक"
 
 #: ../plugins/smartcard/msd-smartcard.c:174
 msgid "smartcard driver"
-msgstr ""
+msgstr "स्मार्टकार्ड ड्रायव्हर"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:1
 msgid "Change system time zone"
-msgstr ""
+msgstr "प्रणाली वेळक्षेत्र बदला"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:2
 msgid "Privileges are required to change the system time zone."
-msgstr ""
+msgstr "प्रणाली वेळक्षेत्र बदलण्यासाठी परवानगी आवश्यक आहे"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:3
 msgid "Change system time"
-msgstr ""
+msgstr "प्रणाली वेळ बदला"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:4
 msgid "Privileges are required to change the system time."
-msgstr ""
+msgstr "प्रणाली वेळ बदलण्यासाठी परवानगी आवश्यक आहे"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:5
 msgid "Configure hardware clock"

@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Carlos <crolidge@gmail.com>, 2013.
-# Carlos  <crolidge@gmail.com>, 2012-2013.
+# Carlos Moreira <crolidge@gmail.com>, 2013
+# Carlos Moreira <crolidge@gmail.com>, 2012-2013
+# Carlos Moreira <crolidge@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2013-03-24 15:43+0000\n"
-"Last-Translator: Carlos <crolidge@gmail.com>\n"
+"PO-Revision-Date: 2014-05-21 23:16+0000\n"
+"Last-Translator: Carlos Moreira <crolidge@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/projects/p/MATE/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -66,7 +67,7 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "O tipo de suavização a usar quando processar tipos de letra. Os valores possíveis são nenhuma suavização, \"escala de cinzentos\" para suavização padrão em cinzentos, e \"rgba\" para suavização de subpixeis (apenas ecrãs LCD)."
+msgstr "O tipo de suavização a usar ao processar tipos de letra. Os valores possíveis são nenhuma suavização, \"escala de cinzentos\" para suavização padrão em cinzentos, e \"rgba\" para suavização de subpixeis (apenas ecrãs LCD)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:5
 msgid "Hinting"
@@ -412,7 +413,7 @@ msgstr "Atalho para lançar a ferramenta de pesquisa."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:23
 msgid "Launch email client"
-msgstr "Lançar cliente de email"
+msgstr "Lançar cliente de correio eletrónico"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:24
 msgid "Binding to launch the email client."
@@ -506,7 +507,7 @@ msgstr "Apresentar Ecrãs na Área de Notificação"
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
-msgstr "Se deve ou não ser mostrado um ícone de notificação no painel relacionado com coisas no ecrã"
+msgstr "Se deve ou não ser mostrado um ícone de notificação no painel relacionado com coisas no ecrã."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:7
 msgid "Do not touch monitor configuration"
@@ -534,7 +535,7 @@ msgstr "Ligar monitor externo após início do sistema se o utilizador liga um m
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:11
 msgid "Turn on laptop monitor after system boot"
-msgstr "Ligar monitor do portátil após o reinício do sistema"
+msgstr "Ligar monitor do portátil após o início do sistema"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:12
 msgid ""

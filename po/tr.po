@@ -3,18 +3,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Baris Cicek <baris@teamforce.name.tr>, 2004, 2005, 2008, 2009.
-# Fatih Demir <kabalak@gtranslator.org>, 2000.
-#  <mauron@vmail.me>, 2013.
-#   <mauron@vmail.me>, 2012.
-# Nilgün Belma Bugüner <nilgun@fide.org>, 2001.
+# Atilla Öntaş <tarakbumba@gmail.com>, 2014
+# Baris Cicek <baris@teamforce.name.tr>, 2004-2005,2008-2009
+# Fatih Demir <kabalak@gtranslator.org>, 2000
+# mauron, 2012-2013
+# mauron, 2013
+# mauron, 2012
+# Nilgün Belma Bugüner <nilgun@fide.org>, 2001
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2013-03-24 17:07+0000\n"
-"Last-Translator: mauron <mauron@vmail.me>\n"
+"PO-Revision-Date: 2014-05-24 23:43+0000\n"
+"Last-Translator: Atilla Öntaş <tarakbumba@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/MATE/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -399,11 +401,11 @@ msgstr "Optik disk çıkarılması için bağ."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:19
 msgid "Home folder"
-msgstr "Başlangıç klasörü"
+msgstr "Başlangıç dizini"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:20
 msgid "Binding to open the Home folder."
-msgstr "Başlangıç klasörünü açmak için bağ."
+msgstr "Başlangıç dizinini açmak için bağ."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:21
 msgid "Search"
