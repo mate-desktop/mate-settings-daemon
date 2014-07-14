@@ -1672,13 +1672,19 @@ status_icon_popup_menu_selection_done_cb (GtkMenuShell *menu_shell, gpointer dat
  * to see why that "after" handler is needed.
  */
 static gboolean
+#if GTK_CHECK_VERSION (3, 0, 0)
+output_title_label_draw_cb (GtkWidget *widget, cairo_t *cr, gpointer data)
+#else
 output_title_label_expose_event_cb (GtkWidget *widget, GdkEventExpose *event, gpointer data)
+#endif
 {
         MsdXrandrManager *manager = MSD_XRANDR_MANAGER (data);
         struct MsdXrandrManagerPrivate *priv = manager->priv;
         MateOutputInfo *output;
         GdkColor color;
+#if !GTK_CHECK_VERSION (3, 0, 0)
         cairo_t *cr;
+#endif
         GtkAllocation allocation;
 
         g_assert (GTK_IS_LABEL (widget));
@@ -1692,7 +1698,9 @@ output_title_label_expose_event_cb (GtkWidget *widget, GdkEventExpose *event, gp
 
         mate_rr_labeler_get_color_for_output (priv->labeler, output, &color);
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
         cr = gdk_cairo_create (gtk_widget_get_window (widget));
+#endif
 
         cairo_set_source_rgb (cr, 0, 0, 0);
         cairo_set_line_width (cr, OUTPUT_TITLE_ITEM_BORDER);
@@ -1731,7 +1739,11 @@ output_title_label_expose_event_cb (GtkWidget *widget, GdkEventExpose *event, gp
 
 /* See the comment in output_title_event_box_expose_event_cb() about this funny label widget */
 static gboolean
+#if GTK_CHECK_VERSION (3, 0, 0)
+output_title_label_after_draw_cb (GtkWidget *widget, cairo_t *cr, gpointer data)
+#else
 output_title_label_after_expose_event_cb (GtkWidget *widget, GdkEventExpose *event, gpointer data)
+#endif
 {
         g_assert (GTK_IS_LABEL (widget));
         gtk_widget_set_state (widget, GTK_STATE_INSENSITIVE);
@@ -1814,10 +1826,17 @@ make_menu_item_for_output_title (MsdXrandrManager *manager, MateOutputInfo *outp
          * to its expose-event signal.  See the comment in *** to see why need to connect
          * to the label both 'before' and 'after'.
          */
+#if GTK_CHECK_VERSION (3, 0, 0)
+        g_signal_connect (label, "draw",
+                          G_CALLBACK (output_title_label_draw_cb), manager);
+        g_signal_connect_after (label, "draw",
+                                G_CALLBACK (output_title_label_after_draw_cb) , manager);
+#else
         g_signal_connect (label, "expose-event",
                           G_CALLBACK (output_title_label_expose_event_cb), manager);
         g_signal_connect_after (label, "expose-event",
                                 G_CALLBACK (output_title_label_after_expose_event_cb), manager);
+#endif
 
         g_object_set_data (G_OBJECT (label), "output", output);
 
