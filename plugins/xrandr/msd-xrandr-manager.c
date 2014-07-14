@@ -1734,6 +1734,9 @@ output_title_label_expose_event_cb (GtkWidget *widget, GdkEventExpose *event, gp
 
         gtk_widget_set_state (widget, GTK_STATE_NORMAL);
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
+        cairo_destroy (cr);
+#endif
         return FALSE;
 }
 
