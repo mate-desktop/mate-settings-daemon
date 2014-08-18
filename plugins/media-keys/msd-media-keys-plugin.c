@@ -89,10 +89,6 @@ impl_deactivate (MateSettingsPlugin *plugin)
 {
         g_debug ("Deactivating media_keys plugin");
         msd_media_keys_manager_stop (MSD_MEDIA_KEYS_PLUGIN (plugin)->priv->manager);
-
-#ifdef HAVE_LIBMATEMIXER
-        mate_mixer_deinit ();
-#endif
 }
 
 static void
