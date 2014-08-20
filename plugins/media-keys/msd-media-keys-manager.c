@@ -653,7 +653,7 @@ do_sound_action (MsdMediaKeysManager *manager, int type)
             volume_step > 100)
                 volume_step = VOLUME_STEP;
 
-        /* Scale the volume step size accordingly to the range used by the stream */
+        /* Scale the volume step size accordingly to the range used by the control */
         volume_step = (volume_max - volume_min) * volume_step / 100;
 
         volume = volume_last =
@@ -666,12 +666,12 @@ do_sound_action (MsdMediaKeysManager *manager, int type)
                 muted = !muted;
                 break;
         case VOLUME_DOWN_KEY:
-                if (!muted) {
-                        if (volume <= (volume_min + volume_step)) {
-                                volume = volume_min;
-                                muted  = TRUE;
-                        } else
-                                volume -= volume_step;
+                if (volume <= (volume_min + volume_step)) {
+                        volume = volume_min;
+                        muted  = TRUE;
+                } else {
+                        volume -= volume_step;
+                        muted  = FALSE;
                 }
                 break;
         case VOLUME_UP_KEY:
