@@ -686,8 +686,6 @@ do_sound_action (MsdMediaKeysManager *manager, int type)
                 break;
         }
 
-        g_print ("muted=%d muted_last=%d\n", muted,muted_last);
-
         if (muted != muted_last) {
                 if (mate_mixer_stream_control_set_mute (manager->priv->control, muted))
                         sound_changed = TRUE;
