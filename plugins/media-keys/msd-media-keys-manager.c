@@ -527,7 +527,7 @@ do_www_action (MsdMediaKeysManager *manager)
 static void
 do_exit_action (MsdMediaKeysManager *manager)
 {
-        execute (manager, "mate-session-save --logout-dialog", FALSE, FALSE);
+        execute (manager, "mate-session-save --shutdown-dialog", FALSE, FALSE);
 }
 
 static void
