@@ -45,7 +45,8 @@ enum {
         STOP_KEY,
         PREVIOUS_KEY,
         NEXT_KEY,
-        HANDLED_KEYS
+        LOGOUT_KEY,
+        HANDLED_KEYS,
 };
 
 static struct {
@@ -72,6 +73,7 @@ static struct {
         { STOP_KEY, "stop", NULL },
         { PREVIOUS_KEY, "previous", NULL },
         { NEXT_KEY, "next", NULL },
+        { LOGOUT_KEY, "logout", NULL },
 };
 
 #endif /* __ACME_H__ */
