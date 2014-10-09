@@ -15,6 +15,11 @@
       <_summary>Volume step</_summary>
       <_description>Volume step as percentage of volume.</_description>
     </key>
+    <key name="volume-max" type="i">
+      <default>65536</default>
+      <_summary>Volume max</_summary>
+      <_description>Upper bound for volume on a pulseaudio system.</_description>
+    </key>
     <key name="touchpad" type="s">
       <default>'XF86TouchpadToggle'</default>
       <_summary>Toggle touchpad</_summary>
