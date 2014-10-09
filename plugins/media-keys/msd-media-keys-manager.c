@@ -619,7 +619,7 @@ update_dialog (MsdMediaKeysManager *manager,
                gboolean muted,
                gboolean sound_changed)
 {
-        vol = (int) (100 * (double) vol / PA_VOLUME_NORM);
+        vol = (int) (100 * (double) vol / MAX_VOLUME);
         vol = CLAMP (vol, 0, 100);
 
         dialog_init (manager);
