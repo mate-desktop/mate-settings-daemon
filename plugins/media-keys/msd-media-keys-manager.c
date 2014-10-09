@@ -65,7 +65,6 @@
 #define TOUCHPAD_SCHEMA "org.mate.peripherals-touchpad"
 #define TOUCHPAD_ENABLED_KEY "touchpad-enabled"
 
-#define VOLUME_STEP 6           /* percents for one volume button press */
 #define MAX_VOLUME 65536.0
 
 #define MSD_MEDIA_KEYS_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_MEDIA_KEYS_MANAGER, MsdMediaKeysManagerPrivate))
@@ -658,9 +657,6 @@ do_sound_action (MsdMediaKeysManager *manager,
 #endif
 
         vol_step = g_settings_get_int (manager->priv->settings, "volume-step");
-
-        if (vol_step <= 0 || vol_step > 100)
-                vol_step = VOLUME_STEP;
 
 #ifdef HAVE_PULSE
         norm_vol_step = PA_VOLUME_NORM * vol_step / 100;
