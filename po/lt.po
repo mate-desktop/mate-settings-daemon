@@ -3,18 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Gintautas Miliauskas <gintautas@miliauskas.lt>, 2006, 2007, 2008, 2009.
-# Justina Klingaitė <justina.klingaite@gmail.com>, 2005.
-# Vaidotas Zemlys <mpiktas@delfi.lt>, 2003.
-# Vytautas Liuolia <vytautas.liuolia@gmail.com>, 2008.
-# Žygimantas Beručka <zygis@gnome.org>, 2003-2007, 2010.
+# Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2014
+# Gintautas Miliauskas <gintautas@miliauskas.lt>, 2006, 2007, 2008, 2009
+# Justina Klingaitė <justina.klingaite@gmail.com>, 2005
+# Vaidotas Zemlys <mpiktas@delfi.lt>, 2003
+# Vytautas Liuolia <vytautas.liuolia@gmail.com>, 2008
+# Žygimantas Beručka <zygis@gnome.org>, 2003-2007, 2010
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2013-03-22 22:15+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"PO-Revision-Date: 2014-08-25 13:01+0000\n"
+"Last-Translator: Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>\n"
 "Language-Team: Lithuanian (http://www.transifex.com/projects/p/MATE/language/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -234,7 +235,7 @@ msgstr "Nustatykite teigiamą, jei norite įjungti visas paliesties lenteles."
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:1
 msgid "Activation of this plugin"
-msgstr ""
+msgstr "Šio papildinio aktyvavimas"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:2
@@ -253,7 +254,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr ""
+msgstr "Kada šį papildinį turėtų arba neturėtų aktyvinti „mate-settings-daemon“"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:3
@@ -272,7 +273,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:3
 msgid "Priority to use for this plugin"
-msgstr ""
+msgstr "Pirmenybė naudoti šį papildinį"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:4
@@ -291,7 +292,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
-msgstr ""
+msgstr "Pirmenybė naudoti šį papildinį „mate-settings-daemon“ paleidimo eilėje"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:5
 msgid "Free percentage notify threshold"
@@ -513,7 +514,7 @@ msgstr "Ar skydelyje rodyti pranešimų piktogramą, susijusią su ekrano nustat
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:7
 msgid "Do not touch monitor configuration"
-msgstr ""
+msgstr "Nekeisti vaizduoklio sąrankos"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:8
 msgid ""
@@ -523,7 +524,7 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr ""
+msgstr "Įprastai mate-settings-daemon tvarko vidinius ir išorinius vaizduoklius pagal turn_on_external_monitors_at_startup ir turn_on_laptop_monitor_at_startup nustatymus bei numato tinkamą rodymo veikseną. Tai išjungia šio parametro įgalinimas ir monitoriams nedaroma jokios įtakos (nebent yra atskira naudotojo konfigūracija)"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:9
 msgid "Turn on external monitor after system boot"
@@ -568,7 +569,7 @@ msgstr "Įjungti derinimo kodą"
 
 #: ../mate-settings-daemon/main.c:57
 msgid "Replace the current daemon"
-msgstr ""
+msgstr "Pakeičia esamą tarnybą"
 
 #: ../mate-settings-daemon/main.c:58
 msgid "Don't become a daemon"
@@ -983,11 +984,11 @@ msgstr "Pelės įskiepis"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:1
 msgid "Mpris"
-msgstr ""
+msgstr "Mpris"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:2
 msgid "Mpris plugin"
-msgstr ""
+msgstr "Mpris papildinys"
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:1
 msgid "Typing Break"

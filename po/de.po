@@ -7,7 +7,7 @@
 # Christian Kintner <ckintner@mate-de.org>, 2007
 # Christian Meyer <chrisime@gnome.org>, 2000, 2001, 2002
 # Frank Arnold <frank@scirocco-5v-turbo.de>, 2005
-# desperateCoder <a.dawtjan@gmx.de>, 2013
+# guyfawkes <a.dawtjan@gmx.de>, 2013
 # Hendrik Brandt <heb@mate-de.org>, 2004-2005, 2008
 # Hendrik Richter <hendrikr@gnome.org>, 2004, 2005, 2006, 2007, 2008
 # Jens Seidel <jseidel@cvs.gnome.org>, 2005
@@ -15,15 +15,15 @@
 # Karsten Weiss <karsten@addx.au.s.shuttle.de>, 1999
 # Mario Blättermann <mariobl@gnome.org>, 2009, 2010
 # Matthias Warkus <mawa@iname.com>, 1999
-# muesli4 <muesli4@gmail.com>, 2013
-# to_ba, 2014
+# Moritz Bruder <muesli4@gmail.com>, 2013
+# Tobias Bannert, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2014-02-18 14:55+0000\n"
-"Last-Translator: to_ba\n"
+"PO-Revision-Date: 2014-09-10 00:25+0000\n"
+"Last-Translator: Tobias Bannert\n"
 "Language-Team: German (http://www.transifex.com/projects/p/MATE/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1010,7 +1010,7 @@ msgstr "XRandR"
 
 #: ../plugins/xrandr/xrandr.mate-settings-plugin.in.h:2
 msgid "Set up screen size and rotation settings"
-msgstr "Bildschirmgröße und -rotation einstellen"
+msgstr "Bildschirmgröße und -drehung einstellen"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:371
 msgid "Could not switch the monitor configuration"
@@ -1059,7 +1059,7 @@ msgstr "Es wird trotzdem versucht, die Bildschirmkonfiguration zu ändern."
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1875
 msgid "Rotation not supported"
-msgstr "Rotation wird nicht unterstützt"
+msgstr "Drehung wird nicht unterstützt"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1931
 msgid "Could not save monitor configuration"

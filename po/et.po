@@ -3,16 +3,17 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Lauris Kaplinski <lauris ariman ee>, 1999.
-# Priit Laes <plaes plaes org>, 2005, 2006, 2009.
-# Tõivo Leedjärv <toivo linux ee>, 2002, 2003.
+# Ivar Smolin <okul@linux.ee>, 2014
+# Lauris Kaplinski <lauris ariman ee>, 1999
+# Priit Laes <plaes plaes org>, 2005, 2006, 2009
+# Tõivo Leedjärv <toivo linux ee>, 2002, 2003
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2013-03-22 22:15+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"PO-Revision-Date: 2014-09-13 07:48+0000\n"
+"Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/MATE/language/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -78,7 +79,7 @@ msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "Fontide renderdamisel kasutatav varjundamise tüüp. Võimaliku väärtused on \"none\" varjundamise keelamiseks, \"slight\" lihtsa, \"medium\" keskmise ja \"full\" maksimaalse varjundamise jaoks (võib põhjustada tähekujude moondumist)."
+msgstr "Fontide renderdamisel kasutatav varjundamise liik. Võimaliku väärtused on \"none\" varjundamise keelamiseks, \"slight\" lihtsa, \"medium\" keskmise ja \"full\" maksimaalse varjundamise jaoks (võib põhjustada tähekujude moondumist)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:7
 msgid "RGBA order"
@@ -232,7 +233,7 @@ msgstr "Kui märgitud, siis on kõik puuteplaadid lubatud."
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:1
 msgid "Activation of this plugin"
-msgstr ""
+msgstr "Selle plugina aktiveerimine"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:2
@@ -251,7 +252,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr ""
+msgstr "Kas see plugin võib olla mate-settings-daemon'i poolt aktiveeritud või mitte"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:3
@@ -270,7 +271,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:3
 msgid "Priority to use for this plugin"
-msgstr ""
+msgstr "Selle plugina prioriteet"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:4
@@ -289,7 +290,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
-msgstr ""
+msgstr "Selle plugina prioriteet mate-settings-daemon'i käivitusjärjekorras"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:5
 msgid "Free percentage notify threshold"
@@ -299,11 +300,11 @@ msgstr "Vaba kettaruumi protsendi teavituslävi"
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr "Vaba kettaruumi lävi protsentides, mil kuvatakse esimene hoiatus. Kui vaba kettaruumi jääb määratud protsendist vähem, kuvatakse hoiatus."
+msgstr "Hoiatuse kuvamiseks vajaliku vaba kettaruumi lävi protsentides. Hoiatust kuvatakse juhul, kui vaba kettaruumi jääb määratud protsendist vähem."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:7
 msgid "Subsequent free percentage notify threshold"
-msgstr "Vaba kettaruumi protsendi muutus enne kordushoiatust"
+msgstr "Vaba kettaruumi protsendi lävi enne kordushoiatust"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:8
 msgid ""
@@ -319,17 +320,17 @@ msgstr "Vaba kettaruumi teavitusläve piir"
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr "Määra maht GB-des. Kui vaba ruumi on rohkem, kui see väärtus, ei näidata mingit hoiatust."
+msgstr "Maht tuleb määrata gigabaitides. Kui vaba ruumi on sellest väärtusest rohkem, siis ei näidata mingit hoiatust."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:11
 msgid "Minimum notify period for repeated warnings"
-msgstr "Kordushoiatuste intervall"
+msgstr "Vähim teavituste vahe kordushoiatuste jaoks"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:12
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "Määra aeg minutites. Kordushoiatused sama köite kohta ei ilmu tihedamini kui määratud vahemik."
+msgstr "Aeg tuleb määrata minutites. Kordushoiatused sama köite kohta ei ilmu enne määratud aja möödumist."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:13
 msgid "Mount paths to ignore"
@@ -511,7 +512,7 @@ msgstr "Kas kuvaga seotud teavitusikooni tuleb paneelil näidata või mitte."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:7
 msgid "Do not touch monitor configuration"
-msgstr ""
+msgstr "Kuvarite sätteid ei puudutata"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:8
 msgid ""
@@ -521,27 +522,27 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr ""
+msgstr "Harilikult määrab mate-settings-daemon sisemise ja välimise kuvari sätted vastavalt võtmetele turn_on_external_monitors_at_startup ja turn_on_laptop_monitor_at_startup settings ning valib kuvaritele sobiva režiimi: kloonimise või külg külje kõrval näitamise. Selle võtme märkimine keelab kuvari sätete muutmise täielikult (kuniks kasutaja pole selleks eraldi sätteid määranud)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:9
 msgid "Turn on external monitor after system boot"
-msgstr "Pärast süsteemi alglaadimist lülitatakse väline monitor sisse"
+msgstr "Välise monitori sisselülitamine pärast süsteemi alglaadimist"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:10
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
-msgstr "Kui kasutaja ühendab süsteemi alglaadimisel välise monitori, lülitatakse see alglaadimise järel sisse."
+msgstr "Kui kasutaja ühendab süsteemi alglaadimisel välise monitori, siis lülitatakse see alglaadimise järel sisse."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:11
 msgid "Turn on laptop monitor after system boot"
-msgstr "Pärast süsteemi alglaadimist lülitatakse sülearvuti monitor sisse"
+msgstr "Sülearvuti monitori sisselülitamine pärast süsteemi alglaadimist"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:12
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr "Pärast süsteemi alglaadimist lülitatakse sisse sülearvuti monitor, kui alglaadimisel ühendatakse väline monitor."
+msgstr "Kui alglaadimisel ühendatakse väline monitor, siis pärast süsteemi alglaadimist lülitatakse sülearvuti monitor sisse."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:13
 msgid "File for default configuration for RandR"
@@ -554,7 +555,7 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr "XRandR plugin otsib vaikesätteid failist, mis määratakse selle võtmega. See on samasugune fail, nagu ~/.config/monitors.xml kasutaja kodukataloogis. Kui kasutajal ei ole mainitud faili, või see fail ei sobi kasutaja monitoride arvuga, kasutatakse hoopis käesoleva võtmega määratud faili."
+msgstr "XRandR plugin otsib vaikesätteid selle võtmega määratud failist. See on samasugune fail, nagu ~/.config/monitors.xml kasutaja kodukataloogis. Kui kasutajal ei ole nimetatud faili või see fail ei sobi kasutaja monitoride arvuga, siis kasutatakse hoopis käesoleva võtmega määratud faili."
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
@@ -566,7 +567,7 @@ msgstr "Silumiskoodi lubamine"
 
 #: ../mate-settings-daemon/main.c:57
 msgid "Replace the current daemon"
-msgstr ""
+msgstr "Hetkel töötava deemoni asendamine"
 
 #: ../mate-settings-daemon/main.c:58
 msgid "Don't become a daemon"
@@ -979,11 +980,11 @@ msgstr "Hiireplugin"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:1
 msgid "Mpris"
-msgstr ""
+msgstr "Mpris"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:2
 msgid "Mpris plugin"
-msgstr ""
+msgstr "Mpris plugin"
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:1
 msgid "Typing Break"
@@ -1076,7 +1077,7 @@ msgstr "_Seadista kuva…"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2113
 msgid "Configure display settings"
-msgstr "Kuva seadistamine"
+msgstr "Kuva sätete määramine"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2173
 msgid "Could not apply the stored configuration for monitors"
@@ -1187,8 +1188,8 @@ msgstr "Süsteemi kella muutmiseks on vaja eriõiguseid."
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:5
 msgid "Configure hardware clock"
-msgstr "Muuda raudvaralist kella"
+msgstr "Muuda riistvaralist kella"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:6
 msgid "Privileges are required to configure the hardware clock."
-msgstr "Raudvaralise kella seadistamiseks on vaja eriõiguseid."
+msgstr "Riistvaralise kella sätete määramiseks on vaja eriõiguseid."

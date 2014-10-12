@@ -15,6 +15,7 @@
 # Krix Apolinário <krixapolinario@gmail.com>, 2009
 # leonardof <leonardof@gnome.org>, 2006, 2008
 # Luiz Fernando S. Armesto <luiz.armesto@gmail.com>, 2007
+# Marcelo Ghelman <marcelo.ghelman@gmail.com>, 2014
 # Og Maciel <ogmaciel@ubuntu.com>, 2007
 # Raul Pereira <contato@raulpereira.com>, 2007
 # Sandro Nunes Henrique <sandro@conectiva.com.br>, 1999
@@ -24,10 +25,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2013-05-21 18:34+0000\n"
-"Last-Translator: Alberto Federman Neto <mrtabac@gmail.com>\n"
+"PO-Revision-Date: 2014-07-16 17:25+0000\n"
+"Last-Translator: Marcelo Ghelman <marcelo.ghelman@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/MATE/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -901,7 +902,7 @@ msgid ""
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr "Erro ao ativar a configuração do XKB.\nIsso pode acontecer em várias circunstâncias:\n • um bug na biblioteca libxklavier\n • um bug no servidor X (xkbcomp, utilitários do xmodmap)\n • servidor X com implementação da libxkbfile incompatível\n\nDados da versão do servidor X:\n%s\n%d\n%s\nSe você relatar essa situação como um bug, por favor, inclua:\n • O resultado de <b>%s</b>\n • O resultado de <b>%s</b>"
+msgstr "Erro ao ativar a configuração do XKB.\nIsso pode acontecer em várias circunstâncias:\n • um bug na biblioteca libxklavier\n • um bug no servidor X (xkbcomp, utilitários do xmodmap)\n • servidor X com implementação da libxkbfile incompatível\n\nDados da versão do servidor X:\n%s\n%d\n%s\nSe você relatar essa situação como um bug, inclua:\n • O resultado de <b>%s</b>\n • O resultado de <b>%s</b>"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:151
 msgid ""
