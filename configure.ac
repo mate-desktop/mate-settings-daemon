@@ -55,6 +55,7 @@ GIO_REQUIRED_VERSION=2.26.0
 MATE_DESKTOP_REQUIRED_VERSION=1.9.1
 LIBMATEKBD_REQUIRED_VERSION=1.7.0
 LIBNOTIFY_REQUIRED_VERSION=0.7.0
+LIBMATEMIXER_REQUIRED_VERSION=1.9.0
 
 EXTRA_COMPILE_WARNINGS(yes)
 
@@ -251,22 +252,12 @@ AC_SUBST(LIBMATEKBDUI_CFLAGS)
 AC_SUBST(LIBMATEKBDUI_LIBS)
 
 dnl ---------------------------------------------------------------------------
-dnl - Housekeeping plugin stuff
+dnl - Check for sound & mixer libraries
 dnl ---------------------------------------------------------------------------
-
-PKG_CHECK_MODULES(GIOUNIX, [gio-unix-2.0])
-AC_SUBST(GIOUNIX_CFLAGS)
-AC_SUBST(GIOUNIX_LIBS)
-
-dnl ==============================================
-dnl PulseAudio section
-dnl ==============================================
-
 
 have_pulse=false
 AC_ARG_ENABLE(pulse,
-  AC_HELP_STRING([--disable-pulse],
-                 [turn off PulseAudio support]),
+  AC_HELP_STRING([--disable-pulse], [Disable PulseAudio support]),
        [case "${enableval}" in
                yes) WANT_PULSE=yes ;;
                no)  WANT_PULSE=no ;;
@@ -276,9 +267,9 @@ AC_ARG_ENABLE(pulse,
 
 if test x$WANT_PULSE = xyes ; then
        PA_REQUIRED_VERSION=0.9.16
-       PKG_CHECK_MODULES(PULSE, glib-2.0 libpulse >= $PA_REQUIRED_VERSION libpulse-mainloop-glib >= $PA_REQUIRED_VERSION $LIBCANBERRA_PC,
+       PKG_CHECK_MODULES(PULSE, libpulse >= $PA_REQUIRED_VERSION,
              [have_pulse=true
-              AC_DEFINE(HAVE_PULSE, 1, [Define if PULSE sound server should be used])],
+              AC_DEFINE(HAVE_PULSE, 1, [Define if PulseAudio support is available])],
              [have_pulse=false])
 fi
 AM_CONDITIONAL(HAVE_PULSE, test "x$have_pulse" = "xtrue")
@@ -286,49 +277,45 @@ AM_CONDITIONAL(HAVE_PULSE, test "x$have_pulse" = "xtrue")
 AC_SUBST(PULSE_CFLAGS)
 AC_SUBST(PULSE_LIBS)
 
+have_libcanberra=no
+AC_ARG_WITH(libcanberra,
+    AC_HELP_STRING([--without-libcanberra], [Disable sound events (default: auto)]),
+    with_libcanberra=$withval, with_libcanberra=auto)
 
-dnl ==============================================
-dnl GStreamer section
-dnl ==============================================
-GST_MAJORMINOR=auto
-
-AC_ARG_ENABLE(gstreamer,
-AC_HELP_STRING([--enable-gstreamer],[use gstreamer if available (and optionally specify a version)]),
-[case "${enableval}" in
- yes) ENABLE_GSTREAMER=yes ;;
- 0.10) ENABLE_GSTREAMER=yes && GST_MAJORMINOR=0.10 ;;
- no)  ENABLE_GSTREAMER=no ;;
- *) AC_MSG_ERROR([
-                  *** Bad value ${enableval} for --enable-gstreamer
-                  *** Please use one of the following:
-                  ***    --enable-gstreamer=0.10
-               ]) ;;
-esac],
-[ENABLE_GSTREAMER=yes]) dnl Default value
-
-have_gstreamer=no
-if test "x$ENABLE_GSTREAMER" = "xyes"; then
-   GST_REQS=0.10.1.2
-   PKGS="gstreamer-0.10 >= $GST_REQS gstreamer-plugins-base-0.10 >= $GST_REQS"
-
-   PKG_CHECK_MODULES(GST, $PKGS, have_gstreamer=yes,
-                     AC_MSG_RESULT([no]))
-
-   if test "x$have_pulse" = "xtrue"; then
-      AC_MSG_ERROR([*** GStreamer & Pulseaudio both are selected ***])
-   fi
-
-   if test "x$have_gstreamer" = "xyes"; then
-      GST_LIBS="$GST_LIBS -lgstinterfaces-0.10 -lgstaudio-0.10"
-      AC_DEFINE(HAVE_GSTREAMER,1,[enable gstreamer])
-   fi
-else
-   AC_MSG_NOTICE([*** GStreamer support disabled ***])
+if test "x$with_libcanberra" != "xno"; then
+    PKG_CHECK_MODULES(LIBCANBERRA, $LIBCANBERRA_PC,
+              [AC_DEFINE(HAVE_LIBCANBERRA, 1, [Define if $LIBCANBERRA_PC is available])
+              have_libcanberra=yes], have_libcanberra=no)
+    if test "x$have_libcanberra" = xno -a "x$with_libcanberra" = xyes; then
+        AC_MSG_ERROR([libcanberra support requested but library not found])
+    fi
 fi
-AM_CONDITIONAL(HAVE_GSTREAMER, test "x$have_gstreamer" = "xyes")
-AC_SUBST(GST_LIBS)
-AC_SUBST(GST_CFLAGS)
+AC_SUBST(LIBCANBERRA_CFLAGS)
+AC_SUBST(LIBCANBERRA_LIBS)
 
+have_libmatemixer=no
+AC_ARG_WITH(libmatemixer,
+    AC_HELP_STRING([--without-libmatemixer], [Disable volume event handling (default: auto)]),
+    with_libmatemixer=$withval, with_libmatemixer=auto)
+
+if test "x$with_libmatemixer" != "xno"; then
+    PKG_CHECK_MODULES(LIBMATEMIXER, libmatemixer >= $LIBMATEMIXER_REQUIRED_VERSION,
+              [AC_DEFINE(HAVE_LIBMATEMIXER, 1, [Define if libmatemixer is available])
+              have_libmatemixer=yes], have_libmatemixer=no)
+    if test "x$have_libmatemixer" = xno -a "x$with_libmatemixer" = xyes; then
+        AC_MSG_ERROR([libmatemixer support requested but library not found])
+    fi
+fi
+AC_SUBST(LIBMATEMIXER_CFLAGS)
+AC_SUBST(LIBMATEMIXER_LIBS)
+
+dnl ---------------------------------------------------------------------------
+dnl - Housekeeping plugin stuff
+dnl ---------------------------------------------------------------------------
+
+PKG_CHECK_MODULES(GIOUNIX, [gio-unix-2.0])
+AC_SUBST(GIOUNIX_CFLAGS)
+AC_SUBST(GIOUNIX_LIBS)
 
 dnl ==============================================
 dnl smartcard section
@@ -375,7 +362,6 @@ fi
 
 AC_SUBST(NSS_DATABASE)
 
-
 # ---------------------------------------------------------------------------
 # PolicyKit
 # ---------------------------------------------------------------------------
@@ -411,8 +397,6 @@ AM_CONDITIONAL(HAVE_POLKIT, test "x$HAVE_POLKIT" = "xyes")
 AC_SUBST(POLKIT_CFLAGS)
 AC_SUBST(POLKIT_LIBS)
 
-
-
 # ---------------------------------------------------------------------------
 # Enable Profiling
 # ---------------------------------------------------------------------------
@@ -423,7 +407,6 @@ AC_ARG_ENABLE(profiling,
 if test "x$enable_profiling" = "xyes"; then
     AC_DEFINE(ENABLE_PROFILING,1,[enable profiling])
 fi
-
 
 # ---------------------------------------------------------------------------
 # Plugins
@@ -510,7 +493,6 @@ plugins/housekeeping/Makefile
 plugins/keybindings/Makefile
 plugins/keyboard/Makefile
 plugins/media-keys/Makefile
-plugins/media-keys/cut-n-paste/Makefile
 plugins/mpris/Makefile
 plugins/mouse/Makefile
 plugins/smartcard/Makefile
@@ -554,9 +536,10 @@ echo "
     PolicyKit support:        ${HAVE_POLKIT}
 
     Gtk+ version:             ${GTK_API_VERSION}
-    Libnotify support:        ${have_libnotify}
-    GStreamer support:        ${have_gstreamer}
     PulseAudio support:       ${have_pulse}
+    Libnotify support:        ${have_libnotify}
+    Libcanberra support:      ${have_libcanberra}
+    Libmatemixer support:     ${have_libmatemixer}
     Smartcard support:        ${have_smartcard_support}
 ${NSS_DATABASE:+\
     System nssdb:             ${NSS_DATABASE}

@@ -1,6 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
  *
  * Copyright (C) 2007 William Jon McCann <mccann@jhu.edu>
+ * Copyright (C) 2014 Michal Ratajsky <michal.ratajsky@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,9 +28,7 @@
 
 #include "mate-settings-plugin.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+G_BEGIN_DECLS
 
 #define MSD_TYPE_MEDIA_KEYS_PLUGIN                (msd_media_keys_plugin_get_type ())
 #define MSD_MEDIA_KEYS_PLUGIN(o)                  (G_TYPE_CHECK_INSTANCE_CAST ((o), MSD_TYPE_MEDIA_KEYS_PLUGIN, MsdMediaKeysPlugin))
@@ -38,26 +37,26 @@ extern "C" {
 #define MSD_IS_MEDIA_KEYS_PLUGIN_CLASS(k)         (G_TYPE_CHECK_CLASS_TYPE ((k), MSD_TYPE_MEDIA_KEYS_PLUGIN))
 #define MSD_MEDIA_KEYS_PLUGIN_GET_CLASS(o)        (G_TYPE_INSTANCE_GET_CLASS ((o), MSD_TYPE_MEDIA_KEYS_PLUGIN, MsdMediaKeysPluginClass))
 
-typedef struct MsdMediaKeysPluginPrivate MsdMediaKeysPluginPrivate;
+typedef struct _MsdMediaKeysPlugin         MsdMediaKeysPlugin;
+typedef struct _MsdMediaKeysPluginClass    MsdMediaKeysPluginClass;
+typedef struct _MsdMediaKeysPluginPrivate  MsdMediaKeysPluginPrivate;
 
-typedef struct
+struct _MsdMediaKeysPlugin
 {
-        MateSettingsPlugin    parent;
-        MsdMediaKeysPluginPrivate *priv;
-} MsdMediaKeysPlugin;
+        MateSettingsPlugin          parent;
+        MsdMediaKeysPluginPrivate  *priv;
+};
 
-typedef struct
+struct _MsdMediaKeysPluginClass
 {
-        MateSettingsPluginClass parent_class;
-} MsdMediaKeysPluginClass;
+        MateSettingsPluginClass     parent_class;
+};
 
-GType   msd_media_keys_plugin_get_type            (void) G_GNUC_CONST;
+GType msd_media_keys_plugin_get_type (void) G_GNUC_CONST;
 
 /* All the plugins must implement this function */
 G_MODULE_EXPORT GType register_mate_settings_plugin (GTypeModule *module);
 
-#ifdef __cplusplus
-}
-#endif
+G_END_DECLS
 
 #endif /* __MSD_MEDIA_KEYS_PLUGIN_H__ */

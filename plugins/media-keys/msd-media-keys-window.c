@@ -683,11 +683,7 @@ msd_media_keys_window_class_init (MsdMediaKeysWindowClass *klass)
 static void
 msd_media_keys_window_init (MsdMediaKeysWindow *window)
 {
-        GdkScreen *screen;
-
         window->priv = MSD_MEDIA_KEYS_WINDOW_GET_PRIVATE (window);
-
-        screen = gtk_widget_get_screen (GTK_WIDGET (window));
 
         if (!msd_osd_window_is_composited (MSD_OSD_WINDOW (window))) {
                 GtkBuilder *builder;

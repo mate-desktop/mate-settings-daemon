@@ -35,8 +35,7 @@ int
 main (int    argc,
       char **argv)
 {
-        GError  *error;
-        gboolean res;
+        GError  *error = NULL;
 
 #ifdef ENABLE_NLS
         bindtextdomain (GETTEXT_PACKAGE, MATE_SETTINGS_LOCALEDIR);
@@ -46,7 +45,6 @@ main (int    argc,
         textdomain (GETTEXT_PACKAGE);
 #endif
 
-        error = NULL;
         if (! gtk_init_with_args (&argc, &argv, NULL, NULL, NULL, &error)) {
                 fprintf (stderr, "%s", error->message);
                 g_error_free (error);
@@ -56,7 +54,7 @@ main (int    argc,
         manager = msd_media_keys_manager_new ();
 
         error = NULL;
-        res = msd_media_keys_manager_start (manager, &error);
+        msd_media_keys_manager_start (manager, &error);
 
         gtk_main ();
 
