@@ -39,7 +39,6 @@ plugins/keybindings/msd-keybindings-manager.c
 [type: gettext/ini]plugins/keyboard/keyboard.mate-settings-plugin.in
 plugins/keyboard/msd-keyboard-xkb.c
 plugins/media-keys/msd-media-keys-manager.c
-plugins/media-keys/cut-n-paste/gvc-mixer-control.c
 [type: gettext/ini]plugins/media-keys/media-keys.mate-settings-plugin.in
 plugins/mouse/msd-mouse-manager.c
 [type: gettext/ini]plugins/mouse/mouse.mate-settings-plugin.in

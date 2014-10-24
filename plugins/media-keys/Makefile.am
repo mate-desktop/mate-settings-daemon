@@ -120,7 +120,6 @@ test_media_window_SOURCES =			\
 test_media_window_CPPFLAGS = \
 	-I$(top_srcdir)/mate-settings-daemon			\
 	-I$(top_srcdir)/plugins/common				\
-	-I$(top_srcdir)/plugins/media-keys/cut-n-paste		\
 	-DDATADIR=\""$(datadir)"\"				\
 	-DPIXMAPDIR=\""$(pkgdatadir)"\"				\
 	-DGTKBUILDERDIR=\""$(pkgdatadir)"\"			\
