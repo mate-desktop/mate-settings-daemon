@@ -95,7 +95,7 @@ enum {
         NUMBER_OF_SIGNALS
 };
 
-static guint msd_smartcard_signals[NUMBER_OF_SIGNALS];
+static guint msd_smartcard_signals[NUMBER_OF_SIGNALS] = { 0 };
 
 G_DEFINE_TYPE (MsdSmartcard, msd_smartcard, G_TYPE_OBJECT);
 
