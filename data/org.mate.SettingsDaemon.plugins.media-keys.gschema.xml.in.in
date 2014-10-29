@@ -37,6 +37,11 @@
     </key>
     <key name="power" type="s">
       <default>'&lt;Control&gt;&lt;Alt&gt;Delete'</default>
+      <_summary>Shut down</_summary>
+      <_description>Binding to shut down.</_description>
+    </key>
+    <key name="logout" type="s">
+      <default>''</default>
       <_summary>Log out</_summary>
       <_description>Binding to log out.</_description>
     </key>
