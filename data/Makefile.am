@@ -3,7 +3,6 @@ NULL =
 msd_gschemas_in_in = \
 	org.mate.applications-at.gschema.xml.in.in \
 	org.mate.font-rendering.gschema.xml.in.in \
-	org.mate.keybindings.gschema.xml.in.in \
 	org.mate.peripherals-smartcard.gschema.xml.in.in \
 	org.mate.peripherals-touchpad.gschema.xml.in.in \
 	org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in \
@@ -57,9 +56,9 @@ man_MANS = mate-settings-daemon.1
 @INTLTOOL_XML_NOMERGE_RULE@
 
 #disabled until we support it
-#xmldir = @MATE_KEYBINDINGS_KEYSDIR@
+xmldir = @MATE_KEYBINDINGS_KEYSDIR@
 xml_in_files = 50-accessibility.xml.in
-#xml_DATA = $(xml_in_files:.xml.in=.xml)
+xml_DATA = $(xml_in_files:.xml.in=.xml)
 
 EXTRA_DIST = 				\
 	$(msd_gschemas_in_in)		\

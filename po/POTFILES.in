@@ -3,7 +3,6 @@
 data/50-accessibility.xml.in
 data/org.mate.applications-at.gschema.xml.in.in
 data/org.mate.font-rendering.gschema.xml.in.in
-data/org.mate.keybindings.gschema.xml.in.in
 data/org.mate.peripherals-smartcard.gschema.xml.in.in
 data/org.mate.peripherals-touchpad.gschema.xml.in.in
 data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in
