@@ -407,7 +407,7 @@ update_property (GString *props, const gchar* key, const gchar* value)
         if (g_str_has_prefix (props->str, needle))
                 found = props->str;
         else 
-            found = strstr (props->str, needle);
+                found = strstr (props->str, needle);
 
         if (found) {
                 size_t value_index;
@@ -421,6 +421,8 @@ update_property (GString *props, const gchar* key, const gchar* value)
         } else {
                 g_string_append_printf (props, "%s:\t%s\n", key, value);
         }
+
+        g_free (needle);
 }
 
 static void
