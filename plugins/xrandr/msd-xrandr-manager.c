@@ -870,7 +870,7 @@ make_laptop_setup (MateRRScreen *screen)
                 }
         }
 
-        if (config_is_all_off (result)) {
+        if (result && config_is_all_off (result)) {
                 mate_rr_config_free (result);
                 result = NULL;
         }
