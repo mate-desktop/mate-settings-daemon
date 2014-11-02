@@ -6,6 +6,7 @@ msd_gschemas_in_in = \
 	org.mate.peripherals-smartcard.gschema.xml.in.in \
 	org.mate.peripherals-touchpad.gschema.xml.in.in \
 	org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in \
+	org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.in \
 	org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in \
 	org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.in \
 	org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.in \
