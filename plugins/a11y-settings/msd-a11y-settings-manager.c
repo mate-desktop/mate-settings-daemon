@@ -92,7 +92,7 @@ msd_a11y_settings_manager_start (MsdA11ySettingsManager *manager,
         mate_settings_profile_start (NULL);
 
 	manager->priv->interface_settings = g_settings_new ("org.mate.interface");
-	manager->priv->a11y_apps_settings = g_settings_new ("org.mate.applications-at");
+	manager->priv->a11y_apps_settings = g_settings_new ("org.gnome.desktop.a11y.applications");
 
 	g_signal_connect (G_OBJECT (manager->priv->a11y_apps_settings), "changed",
 			  G_CALLBACK (apps_settings_changed), manager);
