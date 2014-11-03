@@ -886,7 +886,7 @@ do_toggle_accessibility_key (const char *key)
         GSettings *settings;
         gboolean state;
 
-        settings = g_settings_new ("org.mate.applications-at");
+        settings = g_settings_new ("org.gnome.desktop.a11y.applications");
         state = g_settings_get_boolean (settings, key);
         g_settings_set_boolean (settings, key, !state);
         g_object_unref (settings);
