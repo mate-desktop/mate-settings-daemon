@@ -677,8 +677,8 @@ set_tap_to_click (gboolean state, gboolean left_handed)
                         if (rc == Success && type == XA_INTEGER && format == 8 && nitems >= 7)
                         {
                                 /* Set RLM mapping for 1/2/3 fingers*/
-                                data[4] = (state) ? ((left_handed) ? 3 : 1) : 0;
-                                data[5] = (state) ? ((left_handed) ? 1 : 3) : 0;
+                                data[4] = (state) ? 1 : 0;
+                                data[5] = (state) ? 3 : 0;
                                 data[6] = (state) ? 2 : 0;
                                 XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), device, prop, XA_INTEGER, 8,
                                                         PropModeReplace, data, nitems);
@@ -896,7 +896,7 @@ set_locate_pointer (MsdMouseManager *manager,
                 kill (manager->priv->locate_pointer_pid, SIGHUP);
                 g_spawn_close_pid (manager->priv->locate_pointer_pid);
                 manager->priv->locate_pointer_spawned = FALSE;
-        }
+        }
 }
 
 static void
