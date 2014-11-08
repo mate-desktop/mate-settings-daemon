@@ -200,8 +200,8 @@ log_output (MateRROutputInfo *output)
 
 	log_msg ("        %s: ", name ? name : "unknown");
 
-        if (mate_rr_output_info_get_connected (output)) {
-                if (mate_rr_output_info_get_active (output)) {
+        if (mate_rr_output_info_is_connected (output)) {
+                if (mate_rr_output_info_is_active (output)) {
                         int x, y, width, height;
                         mate_rr_output_info_get_geometry (output, &x, &y, &width, &height);
                         log_msg ("%dx%d@%d +%d+%d",
@@ -690,7 +690,7 @@ print_output (MateRROutputInfo *info)
         int x, y, width, height;
 
         g_print ("  Output: %s attached to %s\n", mate_rr_output_info_get_display_name (info), mate_rr_output_info_get_name (info));
-        g_print ("     status: %s\n", mate_rr_output_info_get_active (info) ? "on" : "off");
+        g_print ("     status: %s\n", mate_rr_output_info_is_active (info) ? "on" : "off");
 
         mate_rr_output_info_get_geometry (info, &x, &y, &width, &height);
         g_print ("     width: %d\n", width);
@@ -725,7 +725,7 @@ config_is_all_off (MateRRConfig *config)
         outputs = mate_rr_config_get_outputs (config);
 
         for (j = 0; outputs[j] != NULL; ++j) {
-                if (mate_rr_output_info_get_active (outputs[j])) {
+                if (mate_rr_output_info_is_active (outputs[j])) {
                         return FALSE;
                 }
         }
@@ -751,7 +751,7 @@ make_clone_setup (MateRRScreen *screen)
                 MateRROutputInfo *info = outputs[i];
 
                 mate_rr_output_info_set_active (info, FALSE);
-                if (mate_rr_output_info_get_connected (info)) {
+                if (mate_rr_output_info_is_connected (info)) {
                         MateRROutput *output =
                                 mate_rr_screen_get_output_by_name (screen, mate_rr_output_info_get_name (info));
                         MateRRMode **modes = mate_rr_output_list_modes (output);
@@ -930,7 +930,7 @@ make_xinerama_setup (MateRRScreen *screen)
         for (i = 0; outputs[i] != NULL; ++i) {
                 MateRROutputInfo *info = outputs[i];
 
-                if (mate_rr_output_info_get_connected (info) && !is_laptop (screen, info))
+                if (mate_rr_output_info_is_connected (info) && !is_laptop (screen, info))
                         x = turn_on_and_get_rightmost_offset (screen, info, x);
         }
 
@@ -962,7 +962,7 @@ make_other_setup (MateRRScreen *screen)
                         mate_rr_output_info_set_active (info, FALSE);
                 }
                 else {
-                        if (mate_rr_output_info_get_connected (info))
+                        if (mate_rr_output_info_is_connected (info))
                                 turn_on (screen, info, 0, 0);
                }
         }
@@ -1411,11 +1411,11 @@ auto_configure_outputs (MsdXrandrManager *manager, guint32 timestamp)
         for (i = 0; outputs[i] != NULL; i++) {
                 MateRROutputInfo *output = outputs[i];
 
-                if (mate_rr_output_info_get_connected (output) && !mate_rr_output_info_get_active (output)) {
+                if (mate_rr_output_info_is_connected (output) && !mate_rr_output_info_is_active (output)) {
                         mate_rr_output_info_set_active (output, TRUE);
                         mate_rr_output_info_set_rotation (output, MATE_RR_ROTATION_0);
                         just_turned_on = g_list_prepend (just_turned_on, GINT_TO_POINTER (i));
-                } else if (!mate_rr_output_info_get_connected (output) && mate_rr_output_info_get_active (output))
+                } else if (!mate_rr_output_info_is_connected (output) && mate_rr_output_info_is_active (output))
                         mate_rr_output_info_set_active (output, FALSE);
         }
 
@@ -1433,9 +1433,9 @@ auto_configure_outputs (MsdXrandrManager *manager, guint32 timestamp)
                 if (g_list_find (just_turned_on, GINT_TO_POINTER (i)))
                         continue;
 
-                if (mate_rr_output_info_get_active (output)) {
+                if (mate_rr_output_info_is_active (output)) {
                         int width, height;
-                        g_assert (mate_rr_output_info_get_connected (output));
+                        g_assert (mate_rr_output_info_is_connected (output));
 
                         mate_rr_output_info_get_geometry (output, NULL, NULL, &width, &height);
 			mate_rr_output_info_set_geometry (output, x, 0, width, height);
@@ -1453,7 +1453,7 @@ auto_configure_outputs (MsdXrandrManager *manager, guint32 timestamp)
                 i = GPOINTER_TO_INT (l->data);
                 output = outputs[i];
 
-                g_assert (mate_rr_output_info_get_active (output) && mate_rr_output_info_get_connected (output));
+                g_assert (mate_rr_output_info_is_active (output) && mate_rr_output_info_is_connected (output));
 
                 /* since the output was off, use its preferred width/height (it doesn't have a real width/height yet) */
                 width = mate_rr_output_info_get_preferred_width (output);
@@ -2088,7 +2088,7 @@ add_menu_items_for_outputs (MsdXrandrManager *manager)
 
         outputs = mate_rr_config_get_outputs (priv->configuration);
         for (i = 0; outputs[i] != NULL; i++) {
-                if (mate_rr_output_info_get_connected (outputs[i]))
+                if (mate_rr_output_info_is_connected (outputs[i]))
                         add_menu_items_for_output (manager, outputs[i]);
         }
 }
