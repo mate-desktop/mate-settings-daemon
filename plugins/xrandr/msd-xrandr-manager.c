@@ -2346,7 +2346,7 @@ msd_xrandr_manager_start (MsdXrandrManager *manager,
                 return FALSE;
         }
 
-        g_signal_connect (manager->priv->rw_screen, "screen-changed", G_CALLBACK (on_randr_event), manager);
+        g_signal_connect (manager->priv->rw_screen, "changed", G_CALLBACK (on_randr_event), manager);
 
         log_msg ("State of screen at startup:\n");
         log_screen (manager->priv->rw_screen);
