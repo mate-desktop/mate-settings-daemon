@@ -3,12 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2013-11-03 06:43+0000\n"
+"PO-Revision-Date: 2014-10-31 06:19+0000\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh (http://www.transifex.com/projects/p/MATE/language/kk/)\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +58,7 @@ msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:3
 msgid "Antialiasing"
-msgstr ""
+msgstr "Антиалиасинг"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:4
 msgid ""
@@ -79,7 +80,7 @@ msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:7
 msgid "RGBA order"
-msgstr ""
+msgstr "RGBA реті"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:8
 msgid ""
@@ -91,7 +92,7 @@ msgstr ""
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:1
 msgid "Toggle magnifier"
-msgstr ""
+msgstr "Үлкейткішті іске қосу/сөндіру"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:2
 msgid "Binding to toggle the magnifier."
@@ -113,7 +114,7 @@ msgstr ""
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:6
 msgid "Toggle screen reader"
-msgstr ""
+msgstr "Экраннан оқитын қолданбаны іске қосу/сөндіру"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:7
 msgid "Binding to toggle the screen reader."
@@ -145,7 +146,7 @@ msgstr ""
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:13
 msgid "Toggle on-screen keyboard"
-msgstr ""
+msgstr "Экрандағы пернетақтаны іске қосу/сөндіру"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:14
 msgid "Binding to toggle the on-screen keyboard."
@@ -157,7 +158,7 @@ msgstr ""
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.in.h:1
 msgid "Smartcard removal action"
-msgstr ""
+msgstr "Смарткартаны алып тастау әрекеті"
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.in.h:2
 msgid ""
@@ -167,7 +168,7 @@ msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:1
 msgid "Disable touchpad while typing"
-msgstr ""
+msgstr "Теру кезінде тачпадты сөндіру"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:2
 msgid ""
@@ -177,7 +178,7 @@ msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:3
 msgid "Enable mouse clicks with touchpad"
-msgstr ""
+msgstr "Тачпадқа шертуді іске қосу"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:4
 msgid ""
@@ -196,7 +197,7 @@ msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:7
 msgid "Enable horizontal scrolling"
-msgstr ""
+msgstr "Горизонталды айналдыруды іске қосу"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:8
 msgid ""
@@ -206,7 +207,7 @@ msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:9
 msgid "Enable touchpad"
-msgstr ""
+msgstr "Тачпадты іске қосу"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:10
 msgid "Set this to TRUE to enable all touchpads."
@@ -229,7 +230,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:1
 msgid "Activation of this plugin"
-msgstr ""
+msgstr "Бұл плагин белсендіруі"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:2
@@ -267,7 +268,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:3
 msgid "Priority to use for this plugin"
-msgstr ""
+msgstr "Бұл плагинді қолдану приоритеті"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:4
@@ -354,11 +355,11 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:9
 msgid "Volume mute"
-msgstr "Дыбысын басу"
+msgstr "Дыбысты сөндіру"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:10
 msgid "Binding to mute the system volume."
-msgstr ""
+msgstr "Жұйелік дыбысты сөндіру үшін пернетақта жарлығы."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:11
 msgid "Volume down"
@@ -366,7 +367,7 @@ msgstr "Дыбысты азайту"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:12
 msgid "Binding to lower the system volume."
-msgstr ""
+msgstr "Жүйелік дыбыс деңгейін азайту үшін пернетақта жарлығы."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:13
 msgid "Volume up"
@@ -374,15 +375,15 @@ msgstr "Дыбысты көтеру"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:14
 msgid "Binding to raise the system volume."
-msgstr ""
+msgstr "Жүйелік дыбыс деңгейін қосу үшін пернетақта жарлығы."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:15
 msgid "Log out"
-msgstr "Шығу"
+msgstr "Шығу үшін"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:16
 msgid "Binding to log out."
-msgstr ""
+msgstr "Шығу үшін үшін пернетақта жарлығы."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:17
 msgid "Eject"
@@ -390,7 +391,7 @@ msgstr "Шығару"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:18
 msgid "Binding to eject an optical disc."
-msgstr ""
+msgstr "Оптикалық дискті шығару үшін пернетақта жарлығы."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:19
 msgid "Home folder"
@@ -398,7 +399,7 @@ msgstr "Үй бумасы"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:20
 msgid "Binding to open the Home folder."
-msgstr ""
+msgstr "Үй бумасын ашу үшін пернетақта жарлығы."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:21
 msgid "Search"
@@ -406,7 +407,7 @@ msgstr "Іздеу"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:22
 msgid "Binding to launch the search tool."
-msgstr ""
+msgstr "Іздеу сайманын жөнелту үшін пернетақта жарлығы."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:23
 msgid "Launch email client"
@@ -414,15 +415,15 @@ msgstr "Эл. пошта клиентін жөнелту"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:24
 msgid "Binding to launch the email client."
-msgstr ""
+msgstr "Эл. пошта клиентін жөнелту үшін пернетақта жарлығы."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:25
 msgid "Lock screen"
-msgstr "Блоктау экраны"
+msgstr "Экранды блоктау"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:26
 msgid "Binding to lock the screen."
-msgstr ""
+msgstr "Экранды блоктау үшін пернетақта жарлығы."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:27
 msgid "Launch help browser"
@@ -430,7 +431,7 @@ msgstr "Көмек шолушысын жөнелту"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:28
 msgid "Binding to launch the help browser."
-msgstr ""
+msgstr "Көмек шолушысын жөнелту үшін пернетақта жарлығы."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:29
 msgid "Launch calculator"
@@ -438,7 +439,7 @@ msgstr "Калькуляторды жөнелту"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:30
 msgid "Binding to launch the calculator."
-msgstr ""
+msgstr "Калькуляторды жөнелту үшін пернетақта жарлығы."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:31
 msgid "Launch web browser"
@@ -446,7 +447,7 @@ msgstr "Веб браузерін жөнелту"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:32
 msgid "Binding to launch the web browser."
-msgstr ""
+msgstr "Веб браузерін жөнелту үшін пернетақта жарлығы."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:33
 msgid "Launch media player"
@@ -454,7 +455,7 @@ msgstr "Медиа ойнатқышын жөнелту"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:34
 msgid "Binding to launch the media player."
-msgstr ""
+msgstr "Медиа ойнатқышын жөнелту үшін пернетақта жарлығы."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:35
 msgid "Play (or play/pause)"
@@ -462,7 +463,7 @@ msgstr "Ойнату (не ойнату/аялдату)"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:36
 msgid "Binding to start playback (or toggle play/pause)."
-msgstr ""
+msgstr "Ойнатуды бастау үшін (ойнату/аялдату) пернетақта жарлығы."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:37
 msgid "Pause playback"
@@ -470,7 +471,7 @@ msgstr "Ойнатуды аялдату"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:38
 msgid "Binding to pause playback."
-msgstr ""
+msgstr "Ойнатуды аялдату үшін пернетақта жарлығы."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:39
 msgid "Stop playback"
@@ -478,7 +479,7 @@ msgstr "Ойнатуды тоқтату"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:40
 msgid "Binding to stop playback."
-msgstr ""
+msgstr "Ойнатуды тоқтату үшін пернетақта жарлығы."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:41
 msgid "Previous track"
@@ -486,7 +487,7 @@ msgstr "Алдыңғы трек"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:42
 msgid "Binding to skip to previous track."
-msgstr ""
+msgstr "Алдыңғы трекке ауысу үшін пернетақта жарлығы."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:43
 msgid "Next track"
@@ -494,7 +495,7 @@ msgstr "Келесі трек"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:44
 msgid "Binding to skip to next track."
-msgstr ""
+msgstr "Келесі трекке ауысу үшін пернетақта жарлығы."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:5
 msgid "Show Displays in Notification Area"
@@ -542,7 +543,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:13
 msgid "File for default configuration for RandR"
-msgstr ""
+msgstr "RandR үшін үнсіз келісім баптауларының файлы"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:14
 msgid ""
@@ -571,7 +572,7 @@ msgstr ""
 
 #: ../mate-settings-daemon/main.c:59
 msgid "Exit after a time (for debugging)"
-msgstr "Уақыт өте шығу (жөндеу режимі)"
+msgstr "Белгілі уақыт шамасынан кейін шығу (жөндеу үшін)"
 
 #: ../plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.in.h:1
 msgid "Accessibility Keyboard"
@@ -727,7 +728,7 @@ msgstr "Алмасу буфері"
 
 #: ../plugins/clipboard/clipboard.mate-settings-plugin.in.h:2
 msgid "Clipboard plugin"
-msgstr ""
+msgstr "Алмасу буфері плагині"
 
 #: ../plugins/dummy/dummy.mate-settings-plugin.in.h:1
 msgid "Dummy"
@@ -739,7 +740,7 @@ msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:70
 msgid "Don't show any warnings again for this file system"
-msgstr ""
+msgstr "Бұл файлдық жүйе үшін хабарламаларды енді көрсетпеу"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:72
 msgid "Don't show any warnings again"
@@ -748,12 +749,12 @@ msgstr ""
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:85
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
-msgstr ""
+msgstr "\"%s\" томында тек %s диск орны қалды."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:88
 #, c-format
 msgid "This computer has only %s disk space remaining."
-msgstr ""
+msgstr "Бұл компьютерде тек %s диск орны қалды."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:104
 msgid ""
@@ -782,7 +783,7 @@ msgstr ""
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:213
 msgid "Low Disk Space"
-msgstr ""
+msgstr "Диск орны аз"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:445
 msgid "Empty Trash"
@@ -790,7 +791,7 @@ msgstr "Қоқыс шелегін тазарту"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:453
 msgid "Examine…"
-msgstr ""
+msgstr "Тексеру…"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:460
 msgid "Ignore"
@@ -865,7 +866,7 @@ msgstr "Пернетақта"
 
 #: ../plugins/keyboard/keyboard.mate-settings-plugin.in.h:2
 msgid "Keyboard plugin"
-msgstr ""
+msgstr "Пернетақта плагині"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:137
 #, c-format
@@ -929,7 +930,7 @@ msgstr "Сөндірулі"
 #, c-format
 msgid "%u Output"
 msgid_plural "%u Outputs"
-msgstr[0] ""
+msgstr[0] "%u шығыс"
 
 #. translators:
 #. * The number of sound inputs on a particular device
@@ -937,7 +938,7 @@ msgstr[0] ""
 #, c-format
 msgid "%u Input"
 msgid_plural "%u Inputs"
-msgstr[0] ""
+msgstr[0] "%u кіріс"
 
 #: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1320
 msgid "System Sounds"
@@ -970,7 +971,7 @@ msgstr "Тышқан"
 
 #: ../plugins/mouse/mouse.mate-settings-plugin.in.h:2
 msgid "Mouse plugin"
-msgstr ""
+msgstr "Тышқан плагині"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:1
 msgid "Mpris"
@@ -990,11 +991,11 @@ msgstr ""
 
 #: ../plugins/xrandr/xrandr.mate-settings-plugin.in.h:1
 msgid "XRandR"
-msgstr ""
+msgstr "XRandR"
 
 #: ../plugins/xrandr/xrandr.mate-settings-plugin.in.h:2
 msgid "Set up screen size and rotation settings"
-msgstr ""
+msgstr "Экран өлшемі және бұру баптауларын орнату"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:371
 msgid "Could not switch the monitor configuration"
@@ -1034,7 +1035,7 @@ msgstr ""
 #: ../plugins/xrandr/msd-xrandr-manager.c:1140
 #, c-format
 msgid "Could not refresh the screen information: %s"
-msgstr ""
+msgstr "Экран ақпаратын жаңарту мүмкін емес: %s"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1144
 msgid "Trying to switch the monitor configuration anyway."
@@ -1091,11 +1092,11 @@ msgstr ""
 
 #: ../plugins/xsettings/xsettings.mate-settings-plugin.in.h:1
 msgid "X Settings"
-msgstr ""
+msgstr "X баптаулары"
 
 #: ../plugins/xsettings/xsettings.mate-settings-plugin.in.h:2
 msgid "Manage X Settings"
-msgstr ""
+msgstr "X баптауларын түзету"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:167
 msgid "Module Path"

@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2014-09-10 00:25+0000\n"
+"PO-Revision-Date: 2014-11-06 13:17+0000\n"
 "Last-Translator: Tobias Bannert\n"
 "Language-Team: German (http://www.transifex.com/projects/p/MATE/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -773,7 +773,7 @@ msgstr "Auf diesem Rechner ist nur noch %s Plattenplatz verfügbar."
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "Sie können Plattenplatz frei machen, indem Sie den Müll leeren, ungenutzte Programme oder Dateien löschen oder Dateien auf eine andere Festplatte oder eine andere Partition verschieben."
+msgstr "Sie können Plattenplatz frei machen, indem Sie den Papierkorb leeren, ungenutzte Programme oder Dateien löschen oder Dateien auf eine andere Festplatte oder eine andere Partition verschieben."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
@@ -785,7 +785,7 @@ msgstr "Sie können Plattenplatz frei machen, indem Sie ungenutzte Programme ode
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "Sie können Plattenplatz frei machen, indem Sie den Müll leeren, ungenutzte Programme oder Dateien löschen oder Dateien auf einen externen Datenträger verschieben."
+msgstr "Sie können Plattenplatz frei machen, indem Sie den Papierkorb leeren, ungenutzte Programme oder Dateien löschen oder Dateien auf einen externen Datenträger verschieben."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:115
 msgid ""
@@ -800,7 +800,7 @@ msgstr "Zu wenig Speicherplatz"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:445
 msgid "Empty Trash"
-msgstr "Müll leeren"
+msgstr "Papierkorb leeren"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:453
 msgid "Examine…"
@@ -823,11 +823,11 @@ msgstr "Entfernt wird: %s"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:296
 msgid "Emptying the trash"
-msgstr "Mülleimer wird geleert"
+msgstr "Papierkorb wird geleert"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:272
 msgid "Preparing to empty trash…"
-msgstr "Leeren des Mülleimers wird vorbereitet …"
+msgstr "Leeren des Papierkorbes wird vorbereitet …"
 
 #. Translators: "Emptying trash from <device>"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:299
@@ -836,17 +836,17 @@ msgstr "Von:"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:351
 msgid "Empty all of the items from the trash?"
-msgstr "Möchten Sie alle Objekte aus dem Mülleimer löschen?"
+msgstr "Möchten Sie alle Objekte aus dem Papierkorb löschen?"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:354
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "Wenn Sie den Mülleimer leeren, wird der gesamte Inhalt unwiderruflich gelöscht. Bitte beachten Sie, dass Objekte auch einzeln gelöscht werden können."
+msgstr "Wenn Sie den Papierkorb leeren, wird der gesamte Inhalt unwiderruflich gelöscht. Bitte beachten Sie, dass Objekte auch einzeln gelöscht werden können."
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:361
 msgid "_Empty Trash"
-msgstr "_Müll leeren"
+msgstr "_Papierkorb leeren"
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:129
 #, c-format
