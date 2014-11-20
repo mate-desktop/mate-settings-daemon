@@ -62,6 +62,9 @@
 #define KEY_TOUCHPAD_DISABLE_W_TYPING    "disable-while-typing"
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
 #define KEY_TOUCHPAD_TAP_TO_CLICK        "tap-to-click"
+#define KEY_TOUCHPAD_ONE_FINGER_TAP      "tap-button-one-finger"
+#define KEY_TOUCHPAD_TWO_FINGER_TAP      "tap-button-two-finger"
+#define KEY_TOUCHPAD_THREE_FINGER_TAP    "tap-button-three-finger"
 #define KEY_TOUCHPAD_SCROLL_METHOD       "scroll-method"
 #define KEY_TOUCHPAD_PAD_HORIZ_SCROLL    "horiz-scroll-enabled"
 #define KEY_TOUCHPAD_ENABLED             "touchpad-enabled"
@@ -673,13 +676,25 @@ set_tap_to_click (gboolean state, gboolean left_handed)
                         rc = XGetDeviceProperty (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), device, prop, 0, 2,
                                                 False, XA_INTEGER, &type, &format, &nitems,
                                                 &bytes_after, &data);
+                                                
+                        GSettings *settings = g_settings_new (MATE_TOUCHPAD_SCHEMA);
+                        gint one_finger_tap = g_settings_get_int (settings, KEY_TOUCHPAD_ONE_FINGER_TAP);
+                        gint two_finger_tap = g_settings_get_int (settings, KEY_TOUCHPAD_TWO_FINGER_TAP);
+                        gint three_finger_tap = g_settings_get_int (settings, KEY_TOUCHPAD_THREE_FINGER_TAP);
+                        if (one_finger_tap > 3 || one_finger_tap < 1)
+				one_finger_tap = 1;
+			if (two_finger_tap > 3 || two_finger_tap < 1)
+				two_finger_tap = 2;
+			if (three_finger_tap > 3 || three_finger_tap < 1)
+				three_finger_tap = 3;
+			g_object_unref (settings);
 
                         if (rc == Success && type == XA_INTEGER && format == 8 && nitems >= 7)
                         {
                                 /* Set RLM mapping for 1/2/3 fingers*/
-                                data[4] = (state) ? ((left_handed) ? 3 : 1) : 0;
-                                data[5] = (state) ? ((left_handed) ? 1 : 3) : 0;
-                                data[6] = (state) ? 2 : 0;
+                                data[4] = (state) ? ((left_handed) ? (4-one_finger_tap) : one_finger_tap) : 0;
+                                data[5] = (state) ? ((left_handed) ? (4-two_finger_tap) : two_finger_tap) : 0;
+                                data[6] = (state) ? three_finger_tap : 0;
                                 XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), device, prop, XA_INTEGER, 8,
                                                         PropModeReplace, data, nitems);
                         }
@@ -999,6 +1014,15 @@ mouse_callback (GSettings          *settings,
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_TAP_TO_CLICK) == 0) {
                 set_tap_to_click (g_settings_get_boolean (settings, key),
+                                  g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED));
+        } else if (g_strcmp0 (key, KEY_TOUCHPAD_ONE_FINGER_TAP) == 0) {
+                set_tap_to_click (g_settings_get_boolean (settings, KEY_TOUCHPAD_TAP_TO_CLICK),
+                                  g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED));
+        } else if (g_strcmp0 (key, KEY_TOUCHPAD_TWO_FINGER_TAP) == 0) {
+                set_tap_to_click (g_settings_get_boolean (settings, KEY_TOUCHPAD_TAP_TO_CLICK),
+                                  g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED));
+        } else if (g_strcmp0 (key, KEY_TOUCHPAD_THREE_FINGER_TAP) == 0) {
+                set_tap_to_click (g_settings_get_boolean (settings, KEY_TOUCHPAD_TAP_TO_CLICK),
                                   g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED));
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_SCROLL_METHOD) == 0) {
                 set_edge_scroll (g_settings_get_int (settings, key));
