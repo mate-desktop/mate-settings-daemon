@@ -2,6 +2,8 @@
   * Port media-keys plugin to libmatemixer
   * Remove GStreamer bits, make libmatemixer, libcanberra and PulseAudio
     optional dependencies
+  * Adapt to mate-desktop MateRR* API changes. Thanks to monsta for testing.
+
 
 1.8.0
   * Add GTK3 support
