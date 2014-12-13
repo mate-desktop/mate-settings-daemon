@@ -48,6 +48,7 @@
 #include "eggaccelerators.h"
 #include "acme.h"
 #include "msd-media-keys-window.h"
+#include "msd-input-helper.h"
 
 #define MSD_DBUS_PATH "/org/mate/SettingsDaemon"
 #define MSD_DBUS_NAME "org.mate.SettingsDaemon"
@@ -588,6 +589,13 @@ do_touchpad_action (MsdMediaKeysManager *manager)
 {
         GSettings *settings = g_settings_new (TOUCHPAD_SCHEMA);
         gboolean state = g_settings_get_boolean (settings, TOUCHPAD_ENABLED_KEY);
+
+        if (touchpad_is_present () == FALSE) {
+                dialog_init (manager);
+                msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
+                                                         "touchpad-disabled", FALSE);
+                return;
+        }
 
         dialog_init (manager);
         msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
