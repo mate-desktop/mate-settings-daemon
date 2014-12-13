@@ -48,6 +48,7 @@
 
 #include "mate-settings-profile.h"
 #include "msd-mouse-manager.h"
+#include "msd-input-helper.h"
 
 #define MSD_MOUSE_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_MOUSE_MANAGER, MsdMouseManagerPrivate))
 
@@ -92,7 +93,6 @@ static void     msd_mouse_manager_finalize    (GObject             *object);
 static void     set_mouse_settings            (MsdMouseManager      *manager);
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
 static int      set_tap_to_click              (gboolean state, gboolean left_handed);
-static XDevice* device_is_touchpad            (XDeviceInfo deviceinfo);
 #endif
 
 G_DEFINE_TYPE (MsdMouseManager, msd_mouse_manager, G_TYPE_OBJECT)
@@ -568,64 +568,6 @@ set_middle_button (MsdMouseManager *manager,
 
         if (device_info != NULL)
                 XFreeDeviceList (device_info);
-}
-
-#ifdef HAVE_X11_EXTENSIONS_XINPUT_H
-static XDevice*
-device_is_touchpad (XDeviceInfo deviceinfo)
-{
-        XDevice *device;
-        Atom realtype, prop;
-        int realformat;
-        unsigned long nitems, bytes_after;
-        unsigned char *data;
-
-        if (deviceinfo.type != XInternAtom (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), XI_TOUCHPAD, False))
-                return NULL;
-
-        prop = XInternAtom (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), "Synaptics Off", False);
-        if (!prop)
-                return NULL;
-
-        gdk_error_trap_push ();
-        device = XOpenDevice (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), deviceinfo.id);
-        if (gdk_error_trap_pop () || (device == NULL))
-                return NULL;
-
-        gdk_error_trap_push ();
-        if ((XGetDeviceProperty (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), device, prop, 0, 1, False,
-                                XA_INTEGER, &realtype, &realformat, &nitems,
-                                &bytes_after, &data) == Success) && (realtype != None)) {
-                gdk_error_trap_pop ();
-                XFree (data);
-                return device;
-        }
-        gdk_error_trap_pop ();
-
-        XCloseDevice (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), device);
-        return NULL;
-}
-#endif
-
-static gboolean
-touchpad_is_present (void)
-{
-        gboolean touchpad_present = FALSE;
-        int numdevices, i;
-        XDeviceInfo *devicelist = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &numdevices);
-        XDevice *device;
-
-        if (devicelist == NULL)
-                return 0;
-
-        for (i = 0; i < numdevices; i++) {
-                if ((device = device_is_touchpad (devicelist[i]))) {
-                        touchpad_present = TRUE;
-                        break;
-                }
-        }
-
-        return touchpad_present;
 }
 
 static int

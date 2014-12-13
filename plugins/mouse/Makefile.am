@@ -8,6 +8,7 @@ libmouse_la_SOURCES = 		\
 
 libmouse_la_CPPFLAGS = \
 	-I$(top_srcdir)/mate-settings-daemon		\
+	-I$(top_srcdir)/plugins/common/			\
 	-DMATE_SETTINGS_LOCALEDIR=\""$(datadir)/locale"\" \
 	-DLIBEXECDIR=\""$(libexecdir)"\" \
 	$(AM_CPPFLAGS)
@@ -19,9 +20,10 @@ libmouse_la_CFLAGS = \
 libmouse_la_LDFLAGS = 		\
 	$(MSD_PLUGIN_LDFLAGS)
 
-libmouse_la_LIBADD  = 		\
-	$(SETTINGS_PLUGIN_LIBS)	\
-	$(X11_LIBS)		\
+libmouse_la_LIBADD  =							\
+	$(top_builddir)/plugins/common/libcommon.la			\
+	$(SETTINGS_PLUGIN_LIBS)						\
+	$(X11_LIBS)							\
 	$(XINPUT_LIBS)
 
 plugin_in_files = mouse.mate-settings-plugin.in
