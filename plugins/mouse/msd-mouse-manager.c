@@ -607,11 +607,32 @@ device_is_touchpad (XDeviceInfo deviceinfo)
 }
 #endif
 
+static gboolean
+touchpad_is_present (void)
+{
+        gboolean touchpad_present = FALSE;
+        int numdevices, i;
+        XDeviceInfo *devicelist = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &numdevices);
+        XDevice *device;
+
+        if (devicelist == NULL)
+                return 0;
+
+        for (i = 0; i < numdevices; i++) {
+                if ((device = device_is_touchpad (devicelist[i]))) {
+                        touchpad_present = TRUE;
+                        break;
+                }
+        }
+
+        return touchpad_present;
+}
+
 static int
 set_disable_w_typing (MsdMouseManager *manager, gboolean state)
 {
 
-        if (state) {
+        if (state && touchpad_is_present ()) {
                 GError *error = NULL;
                 char *args[5];
 
