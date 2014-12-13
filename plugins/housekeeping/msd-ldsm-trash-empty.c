@@ -378,7 +378,7 @@ trash_empty_show_confirmation_dialog ()
 }
 
 void
-msd_ldsm_trash_empty ()
+msd_ldsm_trash_empty (void)
 {
         if (trash_empty_confirm_dialog)
                 gtk_window_present (GTK_WINDOW (trash_empty_confirm_dialog));

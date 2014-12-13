@@ -22,6 +22,6 @@
 
 #include <gtk/gtk.h>
 
-void msd_ldsm_trash_empty ();
+void msd_ldsm_trash_empty (void);
 
 #endif /* _msd_ldsm_trash_empty_h_ */ 
