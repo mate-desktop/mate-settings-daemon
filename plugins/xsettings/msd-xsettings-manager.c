@@ -42,9 +42,7 @@
 #include "mate-settings-profile.h"
 #include "msd-xsettings-manager.h"
 #include "xsettings-manager.h"
-#ifdef HAVE_FONTCONFIG
 #include "fontconfig-monitor.h"
-#endif /* HAVE_FONTCONFIG */
 
 #define MATE_XSETTINGS_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MATE_TYPE_XSETTINGS_MANAGER, MateXSettingsManagerPrivate))
 
@@ -52,7 +50,6 @@
 #define INTERFACE_SCHEMA      "org.mate.interface"
 #define SOUND_SCHEMA          "org.mate.sound"
 
-#ifdef HAVE_FONTCONFIG
 #define FONT_RENDER_SCHEMA    "org.mate.font-rendering"
 #define FONT_ANTIALIASING_KEY "antialiasing"
 #define FONT_HINTING_KEY      "hinting"
@@ -73,8 +70,6 @@
 #define DPI_LOW_REASONABLE_VALUE 50
 #define DPI_HIGH_REASONABLE_VALUE 500
 
-#endif /* HAVE_FONTCONFIG */
-
 typedef struct _TranslationEntry TranslationEntry;
 typedef void (* TranslationFunc) (MateXSettingsManager  *manager,
                                   TranslationEntry      *trans,
@@ -93,9 +88,7 @@ struct MateXSettingsManagerPrivate
         XSettingsManager **managers;
         GHashTable *gsettings;
         GSettings *gsettings_font;
-#ifdef HAVE_FONTCONFIG
         fontconfig_monitor_handle_t *fontconfig_handle;
-#endif /* HAVE_FONTCONFIG */
 };
 
 #define MSD_XSETTINGS_ERROR msd_xsettings_error_quark ()
@@ -216,7 +209,6 @@ static TranslationEntry translations [] = {
         { SOUND_SCHEMA, "input-feedback-sounds",      "Net/EnableInputFeedbackSounds", translate_bool_int }
 };
 
-#ifdef HAVE_FONTCONFIG
 static double
 dpi_from_pixels_and_mm (int pixels,
                         int mm)
@@ -549,7 +541,6 @@ stop_fontconfig_monitor (MateXSettingsManager  *manager)
                 manager->priv->fontconfig_handle = NULL;
         }
 }
-#endif /* HAVE_FONTCONFIG */
 
 static void
 process_value (MateXSettingsManager *manager,
@@ -717,13 +708,11 @@ mate_xsettings_manager_start (MateXSettingsManager *manager,
         }
         g_list_free (list);
 
-#ifdef HAVE_FONTCONFIG
         manager->priv->gsettings_font = g_settings_new (FONT_RENDER_SCHEMA);
         g_signal_connect (manager->priv->gsettings_font, "changed", G_CALLBACK (xft_callback), manager);
         update_xft_settings (manager, manager->priv->gsettings_font);
 
         start_fontconfig_monitor (manager);
-#endif /* HAVE_FONTCONFIG */
 
         for (i = 0; manager->priv->managers [i]; i++)
                 xsettings_manager_set_string (manager->priv->managers [i],
@@ -760,14 +749,12 @@ mate_xsettings_manager_stop (MateXSettingsManager *manager)
                 p->gsettings = NULL;
         }
 
-#ifdef HAVE_FONTCONFIG
         if (p->gsettings_font != NULL) {
                 g_object_unref (p->gsettings_font);
                 p->gsettings_font = NULL;
         }
 
         stop_fontconfig_monitor (manager);
-#endif /* HAVE_FONTCONFIG */
 
 }
 

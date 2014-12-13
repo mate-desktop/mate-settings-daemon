@@ -13,6 +13,8 @@ libxsettings_la_SOURCES = 	\
 	xsettings-common.c	\
 	xsettings-manager.h	\
 	xsettings-manager.c	\
+	fontconfig-monitor.h	\
+	fontconfig-monitor.c	\
 	$(NULL)
 
 libxsettings_la_CPPFLAGS = \
@@ -22,6 +24,7 @@ libxsettings_la_CPPFLAGS = \
 
 libxsettings_la_CFLAGS = \
 	$(SETTINGS_PLUGIN_CFLAGS)	\
+	$(FONTCONFIG_CFLAGS)		\
 	$(AM_CFLAGS)
 
 libxsettings_la_LDFLAGS = 	\
@@ -30,19 +33,8 @@ libxsettings_la_LDFLAGS = 	\
 
 libxsettings_la_LIBADD  = 	\
 	$(SETTINGS_PLUGIN_LIBS)	\
+	$(FONTCONFIG_LIBS)	\
 	$(NULL)
-
-if HAVE_FONTCONFIG
-libxsettings_la_SOURCES += 	\
-	fontconfig-monitor.h	\
-	fontconfig-monitor.c	\
-	$(NULL)
-libxsettings_la_CFLAGS +=	\
-	$(FONTCONFIG_CFLAGS)
-libxsettings_la_LIBADD += 	\
-	$(FONTCONFIG_LIBS)
-endif
-
 
 plugin_in_files = 		\
 	xsettings.mate-settings-plugin.in	\
