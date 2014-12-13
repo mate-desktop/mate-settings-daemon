@@ -286,6 +286,9 @@ update_kbd_cb (GSettings           *settings,
                         g_free (keys[i].key);
                         keys[i].key = NULL;
 
+                        /* We can't have a change in a hard-coded key */
+                        g_assert (keys[i].settings_key != NULL);
+
                         tmp = g_settings_get_string (settings,
                                                      keys[i].settings_key);
 
@@ -339,8 +342,11 @@ static void init_kbd(MsdMediaKeysManager* manager)
 						  manager);
 		g_free (signal_name);
 
-		tmp = g_settings_get_string (manager->priv->settings,
-			keys[i].settings_key);
+		if (keys[i].settings_key != NULL) {
+			tmp = g_settings_get_string (manager->priv->settings, keys[i].settings_key);
+		} else {
+			tmp = g_strdup (keys[i].hard_coded);
+		}
 
 		if (!is_valid_shortcut(tmp))
 		{
