@@ -455,40 +455,26 @@ dialog_show (MsdMediaKeysManager *manager)
 }
 
 static void
-do_uri_action (MsdMediaKeysManager *manager, gchar *uri)
+do_url_action (MsdMediaKeysManager *manager,
+               const gchar         *scheme)
 {
         GError *error = NULL;
         GAppInfo *app_info;
 
-        app_info = g_app_info_get_default_for_uri_scheme (uri);
+        app_info = g_app_info_get_default_for_uri_scheme (scheme);
 
         if (app_info != NULL) {
            if (!g_app_info_launch (app_info, NULL, NULL, &error)) {
                 g_warning ("Could not launch '%s': %s",
                     g_app_info_get_commandline (app_info),
                     error->message);
+		g_object_unref (app_info);
                 g_error_free (error);
             }
         }
         else {
-            g_warning ("Could not find default application for '%s' scheme", uri);
+            g_warning ("Could not find default application for '%s' scheme", scheme);
         }
-}
-
-static void
-do_help_action (MsdMediaKeysManager *manager)
-{
-        GError *error = NULL;
-        if (!g_app_info_launch_default_for_uri ("http://wiki.mate-desktop.org/docs", NULL, &error)) {
-                g_warning ("Could not launch help application: %s", error->message);
-                g_error_free (error);
-        }
-}
-
-static void
-do_mail_action (MsdMediaKeysManager *manager)
-{
-        do_uri_action (manager, "mailto");
 }
 
 static void
@@ -510,12 +496,6 @@ do_media_action (MsdMediaKeysManager *manager)
         else {
             g_warning ("Could not find default application for '%s' mime-type", "audio/x-vorbis+ogg");
         }
-}
-
-static void
-do_www_action (MsdMediaKeysManager *manager)
-{
-        do_uri_action (manager, "http");
 }
 
 static void
@@ -967,7 +947,7 @@ do_action (MsdMediaKeysManager *manager,
                 g_free (cmd);
                 break;
         case EMAIL_KEY:
-                do_mail_action (manager);
+                do_url_action (manager, "mailto");
                 break;
         case SCREENSAVER_KEY:
                 if ((cmd = g_find_program_in_path ("mate-screensaver-command"))) {
@@ -979,10 +959,10 @@ do_action (MsdMediaKeysManager *manager,
                 g_free (cmd);
                 break;
         case HELP_KEY:
-                do_help_action (manager);
+                do_url_action (manager, "help");
                 break;
         case WWW_KEY:
-                do_www_action (manager);
+                do_url_action (manager, "http");
                 break;
         case MEDIA_KEY:
                 do_media_action (manager);
