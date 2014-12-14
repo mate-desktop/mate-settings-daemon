@@ -75,9 +75,9 @@ static struct {
         { STOP_KEY, "stop", NULL },
         { PREVIOUS_KEY, "previous", NULL },
         { NEXT_KEY, "next", NULL },
-        { MAGNIFIER_KEY, "magnifier", NULL, NULL },
-        { SCREENREADER_KEY, "screenreader", NULL, NULL },
-        { ON_SCREEN_KEYBOARD_KEY, "on-screen-keyboard", NULL, NULL },
+        { MAGNIFIER_KEY, "magnifier", NULL },
+        { SCREENREADER_KEY, "screenreader", NULL },
+        { ON_SCREEN_KEYBOARD_KEY, "on-screen-keyboard", NULL },
 };
 
 #endif /* __ACME_H__ */
