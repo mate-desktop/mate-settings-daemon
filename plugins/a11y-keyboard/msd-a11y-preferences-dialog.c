@@ -458,7 +458,7 @@ on_sticky_keys_checkbutton_toggled (GtkToggleButton          *button,
 
 static void
 on_bounce_keys_checkbutton_toggled (GtkToggleButton          *button,
-                                 MsdA11yPreferencesDialog *dialog)
+                                    MsdA11yPreferencesDialog *dialog)
 {
         config_set_bounce_keys (dialog, gtk_toggle_button_get_active (button));
 }
@@ -649,7 +649,7 @@ setup_dialog (MsdA11yPreferencesDialog *dialog,
         g_signal_connect (widget,
                           "toggled",
                           G_CALLBACK (on_sticky_keys_checkbutton_toggled),
-                          NULL);
+                          dialog);
         enabled = config_get_sticky_keys (dialog, &is_writable);
         ui_set_sticky_keys (dialog, enabled);
         if (! is_writable) {
@@ -662,7 +662,7 @@ setup_dialog (MsdA11yPreferencesDialog *dialog,
         g_signal_connect (widget,
                           "toggled",
                           G_CALLBACK (on_bounce_keys_checkbutton_toggled),
-                          NULL);
+                          dialog);
         enabled = config_get_bounce_keys (dialog, &is_writable);
         ui_set_bounce_keys (dialog, enabled);
         if (! is_writable) {
@@ -675,7 +675,7 @@ setup_dialog (MsdA11yPreferencesDialog *dialog,
         g_signal_connect (widget,
                           "toggled",
                           G_CALLBACK (on_slow_keys_checkbutton_toggled),
-                          NULL);
+                          dialog);
         enabled = config_get_slow_keys (dialog, &is_writable);
         ui_set_slow_keys (dialog, enabled);
         if (! is_writable) {
@@ -688,7 +688,7 @@ setup_dialog (MsdA11yPreferencesDialog *dialog,
         g_signal_connect (widget,
                           "toggled",
                           G_CALLBACK (on_high_contrast_checkbutton_toggled),
-                          NULL);
+                          dialog);
         enabled = config_get_high_contrast (dialog, &is_writable);
         ui_set_high_contrast (dialog, enabled);
         if (! is_writable) {
@@ -701,7 +701,7 @@ setup_dialog (MsdA11yPreferencesDialog *dialog,
         g_signal_connect (widget,
                           "toggled",
                           G_CALLBACK (on_at_screen_keyboard_checkbutton_toggled),
-                          NULL);
+                          dialog);
         enabled = config_get_at_screen_keyboard (dialog, &is_writable);
         ui_set_at_screen_keyboard (dialog, enabled);
         if (! is_writable) {
@@ -720,7 +720,7 @@ setup_dialog (MsdA11yPreferencesDialog *dialog,
         g_signal_connect (widget,
                           "toggled",
                           G_CALLBACK (on_at_screen_reader_checkbutton_toggled),
-                          NULL);
+                          dialog);
         enabled = config_get_at_screen_reader (dialog, &is_writable);
         ui_set_at_screen_reader (dialog, enabled);
         if (! is_writable) {
@@ -739,7 +739,7 @@ setup_dialog (MsdA11yPreferencesDialog *dialog,
         g_signal_connect (widget,
                           "toggled",
                           G_CALLBACK (on_at_screen_magnifier_checkbutton_toggled),
-                          NULL);
+                          dialog);
         enabled = config_get_at_screen_magnifier (dialog, &is_writable);
         ui_set_at_screen_magnifier (dialog, enabled);
         if (! is_writable) {
@@ -758,7 +758,7 @@ setup_dialog (MsdA11yPreferencesDialog *dialog,
         g_signal_connect (widget,
                           "toggled",
                           G_CALLBACK (on_large_print_checkbutton_toggled),
-                          NULL);
+                          dialog);
         enabled = config_get_large_print (&is_writable);
         ui_set_large_print (dialog, enabled);
         if (! is_writable) {
