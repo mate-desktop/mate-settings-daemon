@@ -35,6 +35,6 @@ EXTRA_DIST = $(plugin_in_files)
 
 CLEANFILES = $(plugin_DATA)
 
-DISTCLEANFILES = (plugin_DATA)
+DISTCLEANFILES = $(plugin_DATA)
 
 @MSD_INTLTOOL_PLUGIN_RULE@
