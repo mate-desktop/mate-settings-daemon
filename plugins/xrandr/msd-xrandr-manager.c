@@ -41,15 +41,10 @@
 #include <dbus/dbus-glib.h>
 
 #define MATE_DESKTOP_USE_UNSTABLE_API
-
 #include <libmate-desktop/mate-rr-config.h>
 #include <libmate-desktop/mate-rr.h>
 #include <libmate-desktop/mate-rr-labeler.h>
-
-#if GTK_CHECK_VERSION (3, 0, 0)
 #include <libmate-desktop/mate-desktop-utils.h>
-#define gdk_spawn_command_line_on_screen mate_gdk_spawn_command_line_on_screen
-#endif
 
 #ifdef HAVE_LIBNOTIFY
 #include <libnotify/notify.h>
@@ -1641,7 +1636,7 @@ run_display_capplet (GtkWidget *widget)
                 screen = gdk_screen_get_default ();
 
         error = NULL;
-        if (!gdk_spawn_command_line_on_screen (screen, MSD_XRANDR_DISPLAY_CAPPLET, &error)) {
+        if (!mate_gdk_spawn_command_line_on_screen (screen, MSD_XRANDR_DISPLAY_CAPPLET, &error)) {
 		GtkWidget *dialog;
 
 		dialog = gtk_message_dialog_new_with_markup (NULL, 0, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
