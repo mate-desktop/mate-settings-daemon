@@ -3,9 +3,10 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Adolfo Jayme Barrientos <fitoschido@ubuntu.com>, 2014
+# Adolfo Jayme Barrientos <fito@libreoffice.org>, 2014
 # Carlos Perelló Marín <carlos@mate-db.org>, 2001
 # Claudio Saavedra <csaavedra@alumnos.utalca.cl>, 2007
+# Emiliano Fascetti, 2015
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2003, 2004, 2005, 2006
 # Héctor García Álvarez <hector@scouts-es.org>, 2001
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2010
@@ -17,8 +18,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2014-05-06 14:18+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitoschido@ubuntu.com>\n"
+"PO-Revision-Date: 2015-01-05 00:44+0000\n"
+"Last-Translator: Emiliano Fascetti\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/MATE/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,7 +41,7 @@ msgstr "Indica si el teclado en pantalla está activado."
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:3
 msgid "Screen magnifier"
-msgstr "Lupa"
+msgstr "Magnificador de pantalla"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:4
 msgid "Whether the screen magnifier is turned on."
@@ -118,7 +119,7 @@ msgstr "Este es el nombre de la combinación de teclas para cambiar al magnifica
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:5
 msgid "Command used to turn the magnifier on or off."
-msgstr "Orden usada para activar o desactivar el ampliador."
+msgstr "Comando usado para activar o desactivar el magnificador."
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:6
 msgid "Toggle screen reader"
@@ -140,7 +141,7 @@ msgstr "Este es el nombre de la combinación de teclas para cambiar al lector de
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:10
 msgid "Command used to turn the screen reader on or off."
-msgstr "Orden usada para activar o desactivar el lector de pantalla."
+msgstr "Comando usado para activar o desactivar el lector de pantalla."
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:11
 msgid "The name of the keyboard shortcut to toggle the on-screen keyboard"
@@ -162,7 +163,7 @@ msgstr "Vínculo para conmutar el teclado en pantalla."
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:15
 msgid "Command used to turn the on-screen keyboard on or off."
-msgstr "Orden usada para activar o desactivar el teclado en pantalla."
+msgstr "Comando usado para activar o desactivar el teclado en pantalla."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.in.h:1
 msgid "Smartcard removal action"
@@ -917,14 +918,14 @@ msgstr "Mostrar distribución _actual"
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "No se pudo obtener el terminal predeterminado. Compruebe que la orden predeterminada del terminal está configurada y apunta a una aplicación válida."
+msgstr "No se pudo obtener el terminal predeterminado. Compruebe que el comando predeterminado del terminal está configurado y apunta a una aplicación válida."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:238
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "No se pudo ejecutar la orden: %s\nCompruebe que es una orden válida."
+msgstr "No se pudo ejecutar el comando: %s\nCompruebe que es un comando válido."
 
 #. translators:
 #. * The device has been disabled
@@ -1054,7 +1055,7 @@ msgstr "Intentando cambiar la configuración del monitor de todas formas."
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1875
 msgid "Rotation not supported"
-msgstr "No se admite el giro"
+msgstr "La rotación no está soportada"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1931
 msgid "Could not save monitor configuration"

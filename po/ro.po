@@ -3,19 +3,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Adi Roiban https://launchpad.net/~adiroiban, 2008, 2009.
-# Lucian Adrian Grijincu <lucian.grijincu@gmail.com>, 2010.
-# Mișu Moldovan <dumol@mate.ro> 2003, 2004.
-# Mugurel Tudor <mugurelu@mate.ro>, 2002, 2003.
-# Sebastian Ivan <sebastian.ivan@ubuntu.ro>, 2005.
+# Adi Roiban https://launchpad.net/~adiroiban, 2008, 2009
+# corneliu.e <corneliueva@yahoo.com>, 2014
+# Lucian Adrian Grijincu <lucian.grijincu@gmail.com>, 2010
+# Mișu Moldovan <dumol@mate.ro> 2003, 2004
+# Mugurel Tudor <mugurelu@mate.ro>, 2002, 2003
+# sorinn <nemes.sorin@gmail.com>, 2014-2015
+# Sebastian Ivan <sebastian.ivan@ubuntu.ro>, 2005
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2013-03-22 22:15+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2015-01-03 21:54+0000\n"
+"Last-Translator: sorinn <nemes.sorin@gmail.com>\n"
+"Language-Team: Romanian (http://www.transifex.com/projects/p/MATE/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,15 +34,15 @@ msgstr "Tastatură pe ecran"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:2
 msgid "Whether the on-screen keyboard is turned on."
-msgstr "Dacă tastatura pe ecran este pornită."
+msgstr "Dacă tastatura pe ecran este activată."
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:3
 msgid "Screen magnifier"
-msgstr "Lupă ecran"
+msgstr "Lupă pentru ecran"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:4
 msgid "Whether the screen magnifier is turned on."
-msgstr "Dacă mărirea ecranului este activată."
+msgstr "Dacă lupa pentru ecran e activată."
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:5
 msgid "Screen reader"
@@ -58,7 +60,7 @@ msgstr "DPI"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "Rezoluția folosită pentru conversia dimensiunii fontului în dimensiunea pixelilor, în puncte pe inch."
+msgstr "Rezoluția folosită pentru conversia mărimii literelor din pixeli, în puncte pe inch."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:3
 msgid "Antialiasing"
@@ -69,7 +71,7 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "Tipul de antialiasing folosit la randarea fonturilor. Valori posibile sunt: „none” pentru dezactivare antialiasing, „grayscale” pentru antialiasing standard în nuanțe de gri și „rgba” pentru antialiasing pe subpixeli (doar pentru ecranele LCD)."
+msgstr "Tipul de antialiasing folosit la redarea caracterelor de literă. Valori posibile sunt: „none” pentru dezactivare antialiasing, „grayscale” pentru antialiasing standard în nuanțe de gri și „rgba” pentru antialiasing la nivel de sub-pixeli (doar pentru ecranele LCD)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.in.h:5
 msgid "Hinting"
@@ -118,7 +120,7 @@ msgstr "Comanda folosită pentru a activa sau dezactiva lupa."
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:6
 msgid "Toggle screen reader"
-msgstr "Comută cititorul de ecran"
+msgstr "Activare / Dezactivare  cititor ecran"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:7
 msgid "Binding to toggle the screen reader."
@@ -150,7 +152,7 @@ msgstr "Numele scurtăturii de tastatură pentru comutarea tastaturii pe ecran. 
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:13
 msgid "Toggle on-screen keyboard"
-msgstr "Comută tastatura pe ecran"
+msgstr "Activare  / Dezactivare tastatura pe ecran"
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:14
 msgid "Binding to toggle the on-screen keyboard."
@@ -234,7 +236,7 @@ msgstr "Definiți ca „TRUE” pentru a activa toate touchpad-urile."
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:1
 msgid "Activation of this plugin"
-msgstr ""
+msgstr "Activarea acestui plugin"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:2
@@ -253,7 +255,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr ""
+msgstr "Dacă acest plugin va fi activat de mate-settings-daemon sau nu"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:3
@@ -272,7 +274,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:3
 msgid "Priority to use for this plugin"
-msgstr ""
+msgstr "Prioritatea de folosit pentru acest plugin"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:4
@@ -291,7 +293,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
-msgstr ""
+msgstr "Prioritatea de folosit pentru acest plugin în coada de start a mate-settings-daemon"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:5
 msgid "Free percentage notify threshold"
@@ -513,7 +515,7 @@ msgstr "Dacă să fie afișată în panou o iconiță de notificare cu informaț
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:7
 msgid "Do not touch monitor configuration"
-msgstr ""
+msgstr "Nu afecta configurația monitorului"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:8
 msgid ""
@@ -523,7 +525,7 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr ""
+msgstr "De obicei,  mate-settings-daemon configurează monitoarele interne și externe dupa setarile turn_on_external_monitors_at_startup și  turn_on_laptop_monitor_at_startup și determină astfel o aranjare de tip unul-langă-altul sau de tip clonă.  Setând valoarea acestei chei ca True, se  dezactivează acest comportament, iar setările monitorului vor rămane neatinse (în caz că nu există o configurare explicită facută de utilizator)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:9
 msgid "Turn on external monitor after system boot"
@@ -568,7 +570,7 @@ msgstr "Activează codul pentru depanare"
 
 #: ../mate-settings-daemon/main.c:57
 msgid "Replace the current daemon"
-msgstr ""
+msgstr "Înlocuiește serviciul curent"
 
 #: ../mate-settings-daemon/main.c:58
 msgid "Don't become a daemon"
@@ -748,7 +750,7 @@ msgstr "Nu mai arăta nicio avertizare pentru acest sistem de fișiere"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:72
 msgid "Don't show any warnings again"
-msgstr "Nu mai arăta nicio avertizare"
+msgstr "Nu mai arăta avertizări"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:85
 #, c-format
@@ -913,7 +915,7 @@ msgstr "Afișează aranjamentul _curent"
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "Nu s-a putut obține terminalul implicit. Asigurați-vă de definirea și validitatea comenzii pentru terminalul implicit."
+msgstr "Nu s-a putut obține terminalul implicit. Asigurați-vă că terminalul implicit e setat și conectat la o aplicație valabilă."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:238
 #, c-format
@@ -936,7 +938,7 @@ msgid "%u Output"
 msgid_plural "%u Outputs"
 msgstr[0] "%u ieșire"
 msgstr[1] "%u ieșiri"
-msgstr[2] "%u de ieșiri"
+msgstr[2] "%u Ieșiri"
 
 #. translators:
 #. * The number of sound inputs on a particular device
@@ -946,7 +948,7 @@ msgid "%u Input"
 msgid_plural "%u Inputs"
 msgstr[0] "%u intrare"
 msgstr[1] "%u intrări"
-msgstr[2] "%u de intrări"
+msgstr[2] "%u Intrări"
 
 #: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1320
 msgid "System Sounds"
@@ -983,11 +985,11 @@ msgstr "Modul maus"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:1
 msgid "Mpris"
-msgstr ""
+msgstr "Mpris"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:2
 msgid "Mpris plugin"
-msgstr ""
+msgstr "Plugin Mpris"
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:1
 msgid "Typing Break"
