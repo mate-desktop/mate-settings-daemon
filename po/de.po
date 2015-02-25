@@ -16,14 +16,14 @@
 # Mario Blättermann <mariobl@gnome.org>, 2009, 2010
 # Matthias Warkus <mawa@iname.com>, 1999
 # Moritz Bruder <muesli4@gmail.com>, 2013
-# Tobias Bannert, 2014
+# Tobias Bannert <tobannert@gmail.com>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2014-11-06 13:17+0000\n"
-"Last-Translator: Tobias Bannert\n"
+"PO-Revision-Date: 2015-01-27 14:55+0000\n"
+"Last-Translator: Tobias Bannert <tobannert@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/MATE/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -101,7 +101,7 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "Die Abfolge der Sub-Pixel-Elemente eines Flachbildschirms. Wird nur verwendet, wenn die Kantenglättung auf »rgba« gesetzt ist. Mögliche Werte sind: »rgb« für Rot auf links (am meisten verbreitet), »bgr« für Blau auf links, »vrgb« für Rot oben und »vbgr« für Rot unten."
+msgstr "Die Abfolge der Sub-Pixel-Elemente eines Flachbildschirms. Wird nur verwendet, wenn die Kantenglättung auf »rgba« gestellt ist. Mögliche Werte sind: »rgb« für Rot auf links (am meisten verbreitet), »bgr« für Blau auf links, »vrgb« für Rot oben und »vbgr« für Rot unten."
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:1
 msgid "Toggle magnifier"
@@ -119,7 +119,7 @@ msgstr "Tastenkürzel zum Ein- und Ausschalten der Bildschirmlupe"
 msgid ""
 "This is the name of the keyboard shortcut to toggle the magnifier. This name"
 " will be shown in the keyboard shortcut preferences dialog."
-msgstr "Dies ist der Name des Tastenkürzels zum Ein- und Ausschalten der Bildschirmlupe. Dieser Name wird im Einstellungsdialog der Tastatur angezeigt."
+msgstr "Das ist der Name des Tastenkürzels zum Ein- und Ausschalten der Bildschirmlupe. Dieser Name wird im Einstellungsdialog der Tastatur angezeigt."
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:5
 msgid "Command used to turn the magnifier on or off."
@@ -141,7 +141,7 @@ msgstr "Der Name des Tastenkürzels zum Ein- und Ausschalten des Bildschirmleser
 msgid ""
 "This is the name of the keyboard shortcut to toggle the screen reader. This "
 "name will be shown in the keyboard shortcut preferences dialog."
-msgstr "Dies ist der Name des Tastenkürzels zum Ein- und Ausschalten des Bildschirmlesers. Dieser Name wird im Einstellungsdialog der Tastatur angezeigt."
+msgstr "Das ist der Name des Tastenkürzels zum Ein- und Ausschalten des Bildschirmlesers. Dieser Name wird im Einstellungsdialog der Tastatur angezeigt."
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:10
 msgid "Command used to turn the screen reader on or off."
@@ -155,7 +155,7 @@ msgstr "Tastenkürzel zum Ein- und Ausschalten der Bildschirmtastatur"
 msgid ""
 "This is the name of the keyboard shortcut to toggle the on-screen keyboard. "
 "This name will be shown in the keyboard shortcut preferences dialog."
-msgstr "Dies ist der Name des Tastenkürzels zum Ein- und Ausschalten der Bildschirmtastatur. Dieser Name wird im Einstellungsdialog der Tastatur angezeigt."
+msgstr "Das ist der Name des Tastenkürzels zum Ein- und Ausschalten der Bildschirmtastatur. Dieser Name wird im Einstellungsdialog der Tastatur angezeigt."
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:13
 msgid "Toggle on-screen keyboard"
@@ -177,7 +177,7 @@ msgstr "Smartcard-Entfernung"
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr "Setzen Sie dies auf »none« (nichts tun), »lock_screen« (Bildschirm sperren) oder »force_logout« (Abmelden erzwingen). Die Aktion wird ausgeführt, wenn die zum Anmelden benutzte Smartcard entfernt wird."
+msgstr "Dieses auf »none« (nichts tun), »lock_screen« (Bildschirm sperren) oder »force_logout« (Abmelden erzwingen) stellen. Die Aktion wird ausgeführt, wenn die zum Anmelden benutzte Smartcard entfernt wird."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:1
 msgid "Disable touchpad while typing"
@@ -187,7 +187,7 @@ msgstr "Touchpad während des Tippens deaktivieren"
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "Setzen Sie dies auf »WAHR«, falls Sie Probleme mit unbeabsichtigtem Berühren des Touchpads während des Tippens haben."
+msgstr "Dieses auf »WAHR« stellen, falls Sie Probleme mit unbeabsichtigtem Berühren des Touchpads während des Tippens haben."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:3
 msgid "Enable mouse clicks with touchpad"
@@ -196,7 +196,7 @@ msgstr "Mausklicks mit dem Touchpad aktivieren"
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "Setzen Sie dies auf »WAHR«, um Mausklicks mit dem Touchpad auslösen zu können."
+msgstr "Dieses auf »WAHR« stellen, um Mausklicks mit dem Touchpad auslösen zu können."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:5
 msgid "Select the touchpad scroll method"
@@ -206,7 +206,7 @@ msgstr "Rollmethode für Touchpad auswählen"
 msgid ""
 "Select the touchpad scroll method. Supported values are: 0: disabled, 1: "
 "edge scrolling, and 2: two-finger scrolling"
-msgstr "Wählen Sie die Rollmethode für das Touchpad aus. Mögliche Werte sind: 0 - deaktiviert, 1 - Kantenrollen, 2 - Rollen mit zwei Fingern"
+msgstr "Die Rollmethode für das Touchpad auswählen. Mögliche Werte sind: 0 - deaktiviert, 1 - Kantenrollen, 2 - Rollen mit zwei Fingern"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:7
 msgid "Enable horizontal scrolling"
@@ -216,7 +216,7 @@ msgstr "Horizontales Rollen aktivieren"
 msgid ""
 "Set this to TRUE to allow horizontal scrolling by the same method selected "
 "with the scroll_method key."
-msgstr "Setzen Sie dies auf »WAHR«, um horizontales Rollen mit der Methode zu erlauben, die im Schlüssel »scroll_method« festgelegt ist."
+msgstr "Dieses auf »WAHR« stellen, um horizontales Rollen mit der Methode zu erlauben, die im Schlüssel »scroll_method« festgelegt ist."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:9
 msgid "Enable touchpad"
@@ -224,7 +224,7 @@ msgstr "Touchpad aktivieren"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:10
 msgid "Set this to TRUE to enable all touchpads."
-msgstr "Setzen Sie dies auf »WAHR«, um alle Touchpads zu aktivieren."
+msgstr "Dieses auf »WAHR« stellen, um alle Touchpads zu aktivieren."
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:1
@@ -243,7 +243,7 @@ msgstr "Setzen Sie dies auf »WAHR«, um alle Touchpads zu aktivieren."
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:1
 msgid "Activation of this plugin"
-msgstr "Aktivierung dieses Plugins"
+msgstr "Aktivierung dieser Erweiterung"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:2
@@ -262,7 +262,7 @@ msgstr "Aktivierung dieses Plugins"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr "Legt fest, ob dieses Plugin durch den mate-settings-daemon aktiviert wird, oder nicht."
+msgstr "Legt fest, ob diese Erweiterung durch den mate-settings-daemon aktiviert wird, oder nicht."
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:3
@@ -281,7 +281,7 @@ msgstr "Legt fest, ob dieses Plugin durch den mate-settings-daemon aktiviert wir
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:3
 msgid "Priority to use for this plugin"
-msgstr "Nutzungspriorität für dieses Plugin"
+msgstr "Nutzungsvorrang für diese Erweiterung"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:4
@@ -300,7 +300,7 @@ msgstr "Nutzungspriorität für dieses Plugin"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
-msgstr "Nutzungspriorität für dieses Plugin in der Starte-Warteschlange des mate-settings-daemon"
+msgstr "Nutzungsvorrang für diese Erweiterung in der Startwarteschlange des mate-settings-daemon"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:5
 msgid "Free percentage notify threshold"
@@ -320,7 +320,7 @@ msgstr "Schwellwert in Prozent für wiederholte Warnungen"
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
-msgstr "Geben Sie den Prozentsatz des freien Plattenplatzes an, der unterschritten werden muss, um wiederholte Warnungen auszulösen."
+msgstr "Der Prozentsatz des freien Plattenplatzes, der unterschritten werden muss, um wiederholte Warnungen auszulösen."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:9
 msgid "Free space no notify threshold"
@@ -440,11 +440,11 @@ msgstr "Tastenkürzel um den Bildschirm zu sperren."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:27
 msgid "Launch help browser"
-msgstr "Hilfe-Browser starten"
+msgstr "Hilfenavigator starten"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:28
 msgid "Binding to launch the help browser."
-msgstr "Tastenkürzel um den Hilfe-Browser zu öffnen."
+msgstr "Tastenkürzel um den Hilfenavigator zu öffnen."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:29
 msgid "Launch calculator"
@@ -456,23 +456,23 @@ msgstr "Tastenkürzel um den Taschenrechner zu öffnen."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:31
 msgid "Launch web browser"
-msgstr "Webbrowser starten"
+msgstr "Internetprogramm starten"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:32
 msgid "Binding to launch the web browser."
-msgstr "Tastenkürzel um den Web-Browser zu öffnen."
+msgstr "Tastenkürzel um das Internetprogramm zu öffnen."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:33
 msgid "Launch media player"
-msgstr "Medien-Player öffnen"
+msgstr "Medienwiedergabe öffnen"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:34
 msgid "Binding to launch the media player."
-msgstr "Tastenkürzel um den Medien-Player zu öffnen."
+msgstr "Tastenkürzel um die Medienwiedergabe zu öffnen."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:35
 msgid "Play (or play/pause)"
-msgstr "Wiedergabe (bzw. Wiedergabe/Unterbrechen)"
+msgstr "Wiedergabe (oder Wiedergabe/Anhalten)"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:36
 msgid "Binding to start playback (or toggle play/pause)."
@@ -522,7 +522,7 @@ msgstr "Legt fest, ob in der Leiste ein Benachrichtigungssymbol für die Bildsch
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:7
 msgid "Do not touch monitor configuration"
-msgstr "Berühren Sie nicht die Bildschirm-Konfiguration"
+msgstr "Nicht die Bildschirmkonfiguration ändern!"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:8
 msgid ""
@@ -532,7 +532,7 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr "Normalerweise konfiguriert der mate-settings-daemon die internen und externen Bildschirme entsprechend den turn_on_external_monitors_at_startup und turn_on_laptop_monitor_at_startup Einstellungen und bestimmt einen passenden cloning/side-by-side Modus. Dies wird deaktiviert, wenn Sie diesen Schlüssel auf \"wahr\" setzen, und die Bildschirmeinstellungen bleiben unangetastet (Es sei denn, es existiert eine ausdrückliche Benutzerkonfiguration). "
+msgstr "Normalerweise konfiguriert der mate-settings-daemon die internen und externen Bildschirme entsprechend den »turn_on_external_monitors_at_startup«- und »turn_on_laptop_monitor_at_startup«-Einstellungen und bestimmt einen passenden Klonen-/Nebeneinandermodus. Das wird deaktiviert, wenn Sie diesen Schlüssel auf »wahr« stellen und die Bildschirmeinstellungen bleiben unangetastet (Es sei denn, es besteht eine ausdrückliche Benutzerkonfiguration). "
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:9
 msgid "Turn on external monitor after system boot"
@@ -565,7 +565,7 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr "Das XRandR-Plugin sucht in der durch diesen Schlüssel angegebenen Datei nach einer Vorgabekonfiguration. Dies verhält sich ähnlich wie ~/.config/monitors.xml, die normalerweise in den persönlichen Ordnern der Benutzer gespeichert wird. Falls ein Benutzer nicht über solch eine Datei verfügt oder seine Konfiguration nicht zu den vorhandenen Bildschirmen passt, wird die in diesem Schlüssel angegebene Datei stattdessen verwendet."
+msgstr "Die XRandR-Erweiterung sucht in der durch diesen Schlüssel angegebenen Datei nach einer Vorgabekonfiguration. Das verhält sich ähnlich wie ~/.config/monitors.xml, die normalerweise in den persönlichen Ordnern der Benutzer gespeichert wird. Falls ein Benutzer nicht über solch eine Datei verfügt oder seine Konfiguration nicht zu den vorhandenen Bildschirmen passt, wird die in diesem Schlüssel angegebene Datei stattdessen verwendet."
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
@@ -577,7 +577,7 @@ msgstr "Code zur Fehlersuche aktivieren"
 
 #: ../mate-settings-daemon/main.c:57
 msgid "Replace the current daemon"
-msgstr "Aktuellen Daemon ersetzen"
+msgstr "Aktuellen Dienst ersetzen"
 
 #: ../mate-settings-daemon/main.c:58
 msgid "Don't become a daemon"
@@ -688,12 +688,12 @@ msgstr "Sie haben zwei Tasten auf einmal oder die Umschalttaste 5 Mal in Folge g
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:807
 msgid "Sticky Keys Alert"
-msgstr "Klebrige Tasten-Alarm"
+msgstr "Klebrige-Tasten-Alarm"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:813
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
-msgstr "Allgemeine Einstellungen für Barrierefreiheit"
+msgstr "Einstellungen zur Barrierefreiheit"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
 msgid "Use on-screen _keyboard"
@@ -897,7 +897,7 @@ msgid ""
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr "Fehler beim Aktivieren der XKB-Konfiguration.\nDies kann unter folgenden Umständen passieren:\n • ein Fehler in der Bibliothek libxklavier\n • ein Fehler im X-Server (xkbcomp, xmodmap-Werkzeuge)\n • X-Server mit inkompatibler Implementation von libxkbfile\n\nVersionsdaten des X-Servers:\n%s\n%d\n%s\nFalls Sie dies als Fehler melden, fügen Sie hinzu:\n • das Ergebnis von <b>%s</b>\n • das Ergebnis von <b>%s</b>"
+msgstr "Fehler beim Aktivieren der XKB-Konfiguration.\nDas kann unter folgenden Umständen passieren:\n • ein Fehler in der Bibliothek libxklavier\n • ein Fehler im X-Server (xkbcomp, xmodmap-Werkzeuge)\n • X-Server mit inkompatibler Umsetzung von libxkbfile\n\nVersionsdaten des X-Servers:\n%s\n%d\n%s\nFalls Sie das als Fehler melden, bitte folgendes hinzufügen:\n • das Ergebnis von <b>%s</b>\n • das Ergebnis von <b>%s</b>"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:151
 msgid ""
@@ -922,14 +922,14 @@ msgstr "Aktuelle _Belegung anzeigen"
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "Das Vorgabeterminal konnte nicht gefunden werden. Stellen Sie sicher, dass der Befehl für \nden Vorgabeterminal gesetzt ist und auf eine installierte Anwendung verweist."
+msgstr "Das Vorgabeterminal konnte nicht gefunden werden. Bitte stellen Sie sicher, dass der Befehl für das Vorgabeterminal eingestellt ist und auf eine installierte Anwendung verweist."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:238
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "Befehl konnte nicht ausgeführt werden: %s\nStellen Sie sicher, dass es sich um einen gültigen Befehl handelt."
+msgstr "Befehl konnte nicht ausgeführt werden: %s\nBitte sicher stellen, dass es sich um einen gültigen Befehl handelt."
 
 #. translators:
 #. * The device has been disabled
@@ -990,11 +990,11 @@ msgstr "Mausmodul"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:1
 msgid "Mpris"
-msgstr "Mpris"
+msgstr "MPRIS"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:2
 msgid "Mpris plugin"
-msgstr "Mpris Plugin"
+msgstr "MPRIS-Erweiterung"
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:1
 msgid "Typing Break"
