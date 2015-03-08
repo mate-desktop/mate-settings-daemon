@@ -1,3 +1,6 @@
+1.8.3
+  * Support for glib >= 2.43
+
 1.8.2
   * mpris: Replace googlemusicframe with nuvolaplayer
   * Update schema to use toggle shell script
