@@ -267,10 +267,6 @@ apply_settings (GSettings          *settings,
         bell_volume   = (volume_string && !strcmp (volume_string, "on")) ? 50 : 0;
         g_free (volume_string);
 
-#ifdef HAVE_X11_EXTENSIONS_XKB_H
-        rnumlock      = g_settings_get_boolean  (settings, KEY_NUMLOCK_REMEMBER);
-#endif /* HAVE_X11_EXTENSIONS_XKB_H */
-
         gdk_error_trap_push ();
         if (repeat) {
                 gboolean rate_set = FALSE;
@@ -306,8 +302,12 @@ apply_settings (GSettings          *settings,
                                 &kbdcontrol);
 
 #ifdef HAVE_X11_EXTENSIONS_XKB_H
-        if (manager->priv->have_xkb && rnumlock) {
-                numlock_set_xkb_state (numlock_get_settings_state (settings));
+        rnumlock = g_settings_get_boolean (settings, KEY_NUMLOCK_REMEMBER);
+
+        if (rnumlock == 0 || key == NULL) {
+                if (manager->priv->have_xkb && rnumlock) {
+                        numlock_set_xkb_state (numlock_get_settings_state (settings));
+                }
         }
 #endif /* HAVE_X11_EXTENSIONS_XKB_H */
 
