@@ -3,21 +3,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Ge'ez Frontier Foundation <locales@geez.org>, 2002
-# samson <sambelet@yahoo.com>, 2013,2015
+# chingis, 2013
+# chingis, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2015-03-28 16:15+0000\n"
-"Last-Translator: samson <sambelet@yahoo.com>\n"
-"Language-Team: Amharic (http://www.transifex.com/projects/p/MATE/language/am/)\n"
+"PO-Revision-Date: 2013-04-27 14:33+0000\n"
+"Last-Translator: chingis\n"
+"Language-Team: Kirgyz (http://www.transifex.com/projects/p/MATE/language/ky/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: am\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: ky\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../data/50-accessibility.xml.in.h:1
 msgid "Accessibility"
@@ -25,7 +25,7 @@ msgstr ""
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:1
 msgid "On-screen keyboard"
-msgstr "የፊደል ገበታ በመመልከቻው-ላይ "
+msgstr ""
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:2
 msgid "Whether the on-screen keyboard is turned on."
@@ -33,7 +33,7 @@ msgstr ""
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:3
 msgid "Screen magnifier"
-msgstr "መመልከቻውን ማጉያ "
+msgstr ""
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:4
 msgid "Whether the screen magnifier is turned on."
@@ -41,7 +41,7 @@ msgstr ""
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:5
 msgid "Screen reader"
-msgstr "መመልከቻውን አንባቢ"
+msgstr ""
 
 #: ../data/org.mate.applications-at.gschema.xml.in.in.h:6
 msgid "Whether the screen reader is turned on."
@@ -93,7 +93,7 @@ msgstr ""
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:1
 msgid "Toggle magnifier"
-msgstr "ማጉያውን መቀያየሪያ "
+msgstr ""
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:2
 msgid "Binding to toggle the magnifier."
@@ -115,7 +115,7 @@ msgstr ""
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:6
 msgid "Toggle screen reader"
-msgstr "የፊደል ገበታ በመመልከቻው-ላይ መቀያየሪያ "
+msgstr ""
 
 #: ../data/org.mate.keybindings.gschema.xml.in.in.h:7
 msgid "Binding to toggle the screen reader."
@@ -340,11 +340,11 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:5
 msgid "Volume step"
-msgstr "የመጠን ደረጃ "
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:6
 msgid "Volume step as percentage of volume."
-msgstr "የመጠን ደረጃ በመቶኛ መጠን "
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:7
 msgid "Toggle touchpad"
@@ -356,7 +356,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:9
 msgid "Volume mute"
-msgstr "መጠኑን ማጥፊያ "
+msgstr "Үнүн өчүрүү"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:10
 msgid "Binding to mute the system volume."
@@ -364,7 +364,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:11
 msgid "Volume down"
-msgstr "መጠን መቀነሻ"
+msgstr "Көлөмүн төмөндөтүү"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:12
 msgid "Binding to lower the system volume."
@@ -372,7 +372,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:13
 msgid "Volume up"
-msgstr "መጠን መጨመሪያ "
+msgstr "Көлөмүн жогорулатуу"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:14
 msgid "Binding to raise the system volume."
@@ -380,7 +380,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:15
 msgid "Log out"
-msgstr "መውጫ"
+msgstr "Сеансты аяктоо"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:16
 msgid "Binding to log out."
@@ -388,7 +388,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:17
 msgid "Eject"
-msgstr "ማውጫ"
+msgstr "Чыгаруу"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:18
 msgid "Binding to eject an optical disc."
@@ -396,7 +396,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:19
 msgid "Home folder"
-msgstr "የቤት ፎልደር"
+msgstr "Үй папкасы"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:20
 msgid "Binding to open the Home folder."
@@ -404,7 +404,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:21
 msgid "Search"
-msgstr "መፈለጊያ"
+msgstr "Табуу"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:22
 msgid "Binding to launch the search tool."
@@ -412,7 +412,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:23
 msgid "Launch email client"
-msgstr "የኢሜይል ደንብኛ ማስጀመሪያ"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:24
 msgid "Binding to launch the email client."
@@ -420,7 +420,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:25
 msgid "Lock screen"
-msgstr "መመልከቻውን መቆለፊያ"
+msgstr "Экранды блоктоо"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:26
 msgid "Binding to lock the screen."
@@ -428,7 +428,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:27
 msgid "Launch help browser"
-msgstr "የእርዳታ መቃኛ ማስጀመሪያ "
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:28
 msgid "Binding to launch the help browser."
@@ -436,7 +436,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:29
 msgid "Launch calculator"
-msgstr "መደመሪያ ማስጀመሪያ "
+msgstr "Калькуляторду жүргүзүү"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:30
 msgid "Binding to launch the calculator."
@@ -444,7 +444,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:31
 msgid "Launch web browser"
-msgstr "የዌብ መቃኛ ማስጀመሪያ"
+msgstr "Веб-браузерди жүргүзүү"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:32
 msgid "Binding to launch the web browser."
@@ -460,7 +460,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:35
 msgid "Play (or play/pause)"
-msgstr "ማጫወቻ (ማጫወቻ/ማቆሚያ)"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:36
 msgid "Binding to start playback (or toggle play/pause)."
@@ -476,7 +476,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:39
 msgid "Stop playback"
-msgstr ""
+msgstr "Ойнотууну токтотуу"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:40
 msgid "Binding to stop playback."
@@ -484,7 +484,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:41
 msgid "Previous track"
-msgstr "ቀደም ያለው ተረኛ"
+msgstr "Мурунку жолчо"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:42
 msgid "Binding to skip to previous track."
@@ -492,7 +492,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:43
 msgid "Next track"
-msgstr "የሚቀጥለው ተረኛ"
+msgstr "Кийинки жолчо"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:44
 msgid "Binding to skip to next track."
@@ -685,7 +685,7 @@ msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
 msgid "Use on-screen _keyboard"
-msgstr "የፊደል ገበታ በመመልከቻው-ላይ መጠቀሚያ "
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:3
 msgid "Use screen _reader"
@@ -693,7 +693,7 @@ msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:4
 msgid "Use screen _magnifier"
-msgstr "የመመልከቻውን _ማጉያ መጠቀሚያ "
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:5
 msgid "Enhance _contrast in colors"
@@ -717,19 +717,19 @@ msgstr ""
 
 #: ../plugins/background/background.mate-settings-plugin.in.h:1
 msgid "Background"
-msgstr "መደብ "
+msgstr ""
 
 #: ../plugins/background/background.mate-settings-plugin.in.h:2
 msgid "Background plugin"
-msgstr "የመደብ ተሰኪ"
+msgstr ""
 
 #: ../plugins/clipboard/clipboard.mate-settings-plugin.in.h:1
 msgid "Clipboard"
-msgstr "ቁራጭ ሰሌዳ "
+msgstr ""
 
 #: ../plugins/clipboard/clipboard.mate-settings-plugin.in.h:2
 msgid "Clipboard plugin"
-msgstr "የቁራጭ ሰሌዳ ተሰኪ "
+msgstr ""
 
 #: ../plugins/dummy/dummy.mate-settings-plugin.in.h:1
 msgid "Dummy"
@@ -745,7 +745,7 @@ msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:72
 msgid "Don't show any warnings again"
-msgstr "ምንም አይነት ማስጠንቀቂያ አታሳየኝ "
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:85
 #, c-format
@@ -784,43 +784,43 @@ msgstr ""
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:213
 msgid "Low Disk Space"
-msgstr "አነስተኛ የዲስክ ቦታ"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:445
 msgid "Empty Trash"
-msgstr "ቆሻሻውን ባዶ ማድረጊያ"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:453
 msgid "Examine…"
-msgstr "መመርመሪያ…"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:460
 msgid "Ignore"
-msgstr "መተው"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:97
 #, c-format
 msgid "Removing item %lu of %lu"
-msgstr "እቃዎችን በማስወገድ ላይ %lu ከ %lu"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 msgid "Removing: %s"
-msgstr "በማስወገድ ላይ : %s"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:296
 msgid "Emptying the trash"
-msgstr "ቆሻሻውን ባዶ በማድረግ ላይ "
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:272
 msgid "Preparing to empty trash…"
-msgstr "ቆሻሻውን ባዶ ለማድረግ በማሰናዳት ላይ "
+msgstr ""
 
 #. Translators: "Emptying trash from <device>"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:299
 msgid "From: "
-msgstr "ከ : "
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:351
 msgid "Empty all of the items from the trash?"
@@ -834,7 +834,7 @@ msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:361
 msgid "_Empty Trash"
-msgstr "_ቆሻሻውን ባዶ ማድረጊያ"
+msgstr "Себетти _тазалоо"
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:129
 #, c-format
@@ -863,7 +863,7 @@ msgstr ""
 
 #: ../plugins/keyboard/keyboard.mate-settings-plugin.in.h:1
 msgid "Keyboard"
-msgstr "የፊደል ሠሌዳ"
+msgstr ""
 
 #: ../plugins/keyboard/keyboard.mate-settings-plugin.in.h:2
 msgid "Keyboard plugin"
@@ -896,11 +896,11 @@ msgstr ""
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:299
 msgid "_Layouts"
-msgstr ""
+msgstr "_Раскладкалар"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:306
 msgid "Keyboard _Preferences"
-msgstr "የፊደል ገበታ _ምርጫዎች "
+msgstr ""
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:312
 msgid "Show _Current Layout"
@@ -923,7 +923,7 @@ msgstr ""
 #. * The device has been disabled
 #: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1005
 msgid "Disabled"
-msgstr "ተሰናክሏል "
+msgstr ""
 
 #. translators:
 #. * The number of sound outputs on a particular device
@@ -931,8 +931,7 @@ msgstr "ተሰናክሏል "
 #, c-format
 msgid "%u Output"
 msgid_plural "%u Outputs"
-msgstr[0] "%u ውጤት "
-msgstr[1] "%u ውጤቶች "
+msgstr[0] ""
 
 #. translators:
 #. * The number of sound inputs on a particular device
@@ -940,12 +939,11 @@ msgstr[1] "%u ውጤቶች "
 #, c-format
 msgid "%u Input"
 msgid_plural "%u Inputs"
-msgstr[0] "%u ማስገቢያ "
-msgstr[1] "%u ማስገቢያዎች "
+msgstr[0] ""
 
 #: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1320
 msgid "System Sounds"
-msgstr "የስርአቱ ድምፅ"
+msgstr ""
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -966,11 +964,11 @@ msgstr ""
 
 #: ../plugins/mouse/msd-mouse-manager.c:892
 msgid "Mouse Preferences"
-msgstr "የአይጥ ምርጫዎች "
+msgstr ""
 
 #: ../plugins/mouse/mouse.mate-settings-plugin.in.h:1
 msgid "Mouse"
-msgstr "አይጥ "
+msgstr "Чычкан"
 
 #: ../plugins/mouse/mouse.mate-settings-plugin.in.h:2
 msgid "Mouse plugin"
@@ -978,7 +976,7 @@ msgstr ""
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:1
 msgid "Mpris"
-msgstr ""
+msgstr "Mpris"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:2
 msgid "Mpris plugin"
@@ -994,7 +992,7 @@ msgstr ""
 
 #: ../plugins/xrandr/xrandr.mate-settings-plugin.in.h:1
 msgid "XRandR"
-msgstr ""
+msgstr "XRandR"
 
 #: ../plugins/xrandr/xrandr.mate-settings-plugin.in.h:2
 msgid "Set up screen size and rotation settings"
@@ -1018,7 +1016,6 @@ msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
 msgstr[0] ""
-msgstr[1] ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:490
 msgid "Does the display look OK?"
@@ -1055,15 +1052,15 @@ msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1949
 msgid "Normal"
-msgstr "መደበኛ"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1950
 msgid "Left"
-msgstr "በግራ "
+msgstr "Сол"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1951
 msgid "Right"
-msgstr "በቀኝ"
+msgstr "Оң"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1952
 msgid "Upside Down"
@@ -1071,7 +1068,7 @@ msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2072
 msgid "_Configure Display Settings…"
-msgstr ""
+msgstr "Дисплейдин параметрлерин _ырастоо…"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2113
 msgid "Configure display settings"
@@ -1158,11 +1155,11 @@ msgstr ""
 #: ../plugins/smartcard/msd-smartcard.c:168
 #: ../plugins/smartcard/msd-smartcard.c:169
 msgid "name"
-msgstr "ስም "
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard.c:173
 msgid "Module"
-msgstr ""
+msgstr "Модуль"
 
 #: ../plugins/smartcard/msd-smartcard.c:174
 msgid "smartcard driver"
@@ -1170,7 +1167,7 @@ msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:1
 msgid "Change system time zone"
-msgstr "የስርአቱን ሰአት ክልል መቀየሪያ"
+msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:2
 msgid "Privileges are required to change the system time zone."
@@ -1178,7 +1175,7 @@ msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:3
 msgid "Change system time"
-msgstr "የስርአቱን ሰአት መቀየሪያ"
+msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:4
 msgid "Privileges are required to change the system time."

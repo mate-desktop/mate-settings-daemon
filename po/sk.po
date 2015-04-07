@@ -3,17 +3,17 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Ján Ďanovský <dagsoftware@yahoo.com>, 2013-2014
+# Ján Ďanovský <dagsoftware@yahoo.com>, 2013-2015
 # Marcel Telka <marcel@telka.sk>, 2005
 # Pavol Šimo <palo.simo@gmail.com>, 2008-2010
 # Peter Tuharsky <tuharsky@misbb.sk>, 2007
-# tibbi <tibbbi2@gmail.com>, 2014
+# Tibor Kaputa <tibbbi2@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2014-02-16 23:44+0000\n"
+"PO-Revision-Date: 2015-03-19 16:39+0000\n"
 "Last-Translator: Ján Ďanovský <dagsoftware@yahoo.com>\n"
 "Language-Team: Slovak (http://www.transifex.com/projects/p/MATE/language/sk/)\n"
 "MIME-Version: 1.0\n"
@@ -178,7 +178,7 @@ msgstr "Zakázať touchpad počas písania"
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "Nastavte na TRUE, ak máte problémy s náhodnými stlačeniami touchpadu počas písania."
+msgstr "Vyberte túto možnosť, ak máte problémy s náhodnými stlačeniami touchpadu počas písania."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:3
 msgid "Enable mouse clicks with touchpad"
@@ -187,7 +187,7 @@ msgstr "Povoliť kliknutia myšou pomocou touchpadu"
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "Nastavte na TRUE, aby ste mohli posielať kliknutia myšou pomocou ťuknutia na touchpad."
+msgstr "Vyberte túto možnosť, aby ste mohli posielať kliknutia myšou pomocou ťuknutia na touchpad."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:5
 msgid "Select the touchpad scroll method"
@@ -207,7 +207,7 @@ msgstr "Povoliť vodorovné rolovanie"
 msgid ""
 "Set this to TRUE to allow horizontal scrolling by the same method selected "
 "with the scroll_method key."
-msgstr "Nastavte na TRUE na povolenie vodorovného rolovania rovnakým spôsobom zvoleným v kľúči scroll_method."
+msgstr "Vyberte túto možnosť, na povolenie vodorovného rolovania rovnakým spôsobom zvoleným v kľúči scroll_method."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:9
 msgid "Enable touchpad"
@@ -215,7 +215,7 @@ msgstr "Povoliť touchpad"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:10
 msgid "Set this to TRUE to enable all touchpads."
-msgstr "Nastavte na TRUE na povolenie všetkých touchpadov."
+msgstr "Vyberte túto možnosť, na povolenie všetkých touchpadov."
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:1
@@ -523,7 +523,7 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr "Bežne mate-settings-daemon konfiguruje externé monitory podľa nastavení turn_on_external_monitors_at_startup a turn_on_laptop_monitor_at_startup a zvolí zodpovedajúci klonovací/rozširujúci režim. Nastavením tohto kľúča na True sa táto funkcionalita zakáže a nastavenie monitora nebude zmenené (okrem explicitnej konfigurácie používateľom)."
+msgstr "Bežne mate-settings-daemon konfiguruje externé monitory podľa nastavení turn_on_external_monitors_at_startup a turn_on_laptop_monitor_at_startup a zvolí zodpovedajúci klonovací/rozširujúci režim. Vybratím tejto možnosti sa táto funkcionalita zakáže a nastavenie monitora nebude zmenené (okrem explicitnej konfigurácie používateľom)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:9
 msgid "Turn on external monitor after system boot"
