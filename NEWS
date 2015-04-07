@@ -1,4 +1,4 @@
-1.9.90
+1.10.0
   * Port media-keys plugin to libmatemixer
   * Remove GStreamer bits, make libmatemixer, libcanberra and PulseAudio
     optional dependencies
