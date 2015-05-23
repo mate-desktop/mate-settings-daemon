@@ -134,6 +134,7 @@ mp_name_vanished (GDBusConnection *connection,
                   MsdMprisManager *manager)
 {
     gchar *player_name;
+    GList *player_list;
 
     if (g_queue_is_empty (manager->priv->media_player_queue))
         return;
@@ -142,7 +143,11 @@ mp_name_vanished (GDBusConnection *connection,
 
     player_name = get_player_name(name);
 
-    g_queue_remove (manager->priv->media_player_queue, player_name);
+    player_list = g_queue_find_custom (manager->priv->media_player_queue,
+                                       player_name, g_strcmp0);
+
+    if (player_list)
+        g_queue_remove (manager->priv->media_player_queue, player_list->data);
 
     g_free (player_name);
 }
