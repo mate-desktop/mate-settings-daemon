@@ -3,27 +3,27 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Alexander Saprykin <xelfium@gmail.com>, 2010.
-# Alexandre Prokoudine <alexandre.prokoudine@gmail.com>, 2009.
-# Alexei Sorokin <sor.alexei@hotbox.ru>, 2013.
-# Andrew Grigorev <andrew@ei-grad.ru>, 2009.
-# Andrew W. Nosenko <awn@bcs.zp.ua>, 2003.
-# Diesel <diesel594@gmail.com>, 2009.
-# Leonid Kanter <leon@asplinux.ru>, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
-# Maxim Popov <ravemax@hotbox.ru>, 2006, 2009.
+# Alexander Saprykin <xelfium@gmail.com>, 2010
+# Alexandre Prokoudine <alexandre.prokoudine@gmail.com>, 2009
+# Alexei Sorokin <sor.alexei@meowr.ru>, 2013
+# Andrew Grigorev <andrew@ei-grad.ru>, 2009
+# Andrew W. Nosenko <awn@bcs.zp.ua>, 2003
+# Diesel <diesel594@gmail.com>, 2009
+# Leonid Kanter <leon@asplinux.ru>, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010
+# Maxim Popov <ravemax@hotbox.ru>, 2006, 2009
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2013-03-24 12:28+0000\n"
-"Last-Translator: Alexei Sorokin <sor.alexei@hotbox.ru>\n"
+"PO-Revision-Date: 2015-05-29 01:37+0000\n"
+"Last-Translator: Alexei Sorokin <sor.alexei@meowr.ru>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/MATE/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: ../data/50-accessibility.xml.in.h:1
 msgid "Accessibility"
@@ -940,6 +940,7 @@ msgid_plural "%u Outputs"
 msgstr[0] "%u выход"
 msgstr[1] "%u выхода"
 msgstr[2] "%u выходов"
+msgstr[3] "%u выходов"
 
 #. translators:
 #. * The number of sound inputs on a particular device
@@ -950,6 +951,7 @@ msgid_plural "%u Inputs"
 msgstr[0] "%u вход"
 msgstr[1] "%u входа"
 msgstr[2] "%u входов"
+msgstr[3] "%u входов"
 
 #: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1320
 msgid "System Sounds"
@@ -1028,6 +1030,7 @@ msgid_plural ""
 msgstr[0] "Конфигурация мониторов будет восстановлена через %d секунду"
 msgstr[1] "Конфигурация мониторов будет восстановлена через %d секунды"
 msgstr[2] "Конфигурация мониторов будет восстановлена через %d секунд"
+msgstr[3] "Конфигурация мониторов будет восстановлена через %d секунд"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:490
 msgid "Does the display look OK?"

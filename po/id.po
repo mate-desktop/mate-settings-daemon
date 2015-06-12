@@ -4,15 +4,16 @@
 # 
 # Translators:
 # Andika Triwidada <andika@gmail.com>, 2010
-# operamaniac <rizkiaulia.r@gmail.com>, 2013
-# willysr <willysr@slackware-id.org>, 2014
+# La Ode Muh. Fadlun Akbar <fadlun.net@gmail.com>, 2015
+# Rizki Aulia Rachman <rizkiaulia.r@gmail.com>, 2013
+# Willy Sudiarto Raharjo <willysr@slackware-id.org>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2014-03-10 13:47+0000\n"
-"Last-Translator: willysr <willysr@slackware-id.org>\n"
+"PO-Revision-Date: 2015-04-08 15:57+0000\n"
+"Last-Translator: La Ode Muh. Fadlun Akbar <fadlun.net@gmail.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/projects/p/MATE/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -762,7 +763,7 @@ msgstr "Komputer hanya memiliki sisa ruang disk %s."
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "Anda dapat membebaskan ruang disk dengan cara mengosongkan Tong Sampah, menghapus program atau berkas tak terpakai, atau memindah berkas ke disk atau partisi lain."
+msgstr "Anda dapat membebaskan ruang disk dengan cara mengosongkan Tempat Sampah, menghapus program atau berkas tak terpakai, atau memindah berkas ke disk atau partisi lain."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
@@ -774,7 +775,7 @@ msgstr "Anda dapat membebaskan ruang disk dengan cara menghapus program atau ber
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "Anda dapat membebaskan ruang disk dengan cara mengosongkan Tong Sampah, menghapus program atau berkas tak terpakai, atau memindah berkas ke disk eksternal."
+msgstr "Anda dapat membebaskan ruang disk dengan cara mengosongkan Tempat Sampah, menghapus program atau berkas tak terpakai, atau memindah berkas ke disk eksternal."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:115
 msgid ""
@@ -789,7 +790,7 @@ msgstr "Ruang Disk Sedikit"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:445
 msgid "Empty Trash"
-msgstr "Kosongkan Tong Sampah"
+msgstr "Kosongkan Tempat Sampah"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:453
 msgid "Examine…"
@@ -812,11 +813,11 @@ msgstr "Menghapus: %s"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:296
 msgid "Emptying the trash"
-msgstr "Mengosongkan tong sampah"
+msgstr "Mengosongkan tempat sampah"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:272
 msgid "Preparing to empty trash…"
-msgstr "Bersiap mengosongkan tong sampah…"
+msgstr "Bersiap mengosongkan tempat sampah…"
 
 #. Translators: "Emptying trash from <device>"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:299
@@ -825,17 +826,17 @@ msgstr "Dari:"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:351
 msgid "Empty all of the items from the trash?"
-msgstr "Kosongkan seluruh objek dari tong?"
+msgstr "Kosongkan seluruh item dari tempat sampah?"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:354
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "Jika anda memilih untuk mengosongkan tong; seluruh benda di dalamnya akan hilang. Ingat bahwa anda juga dapat menghapusnya secara terpisah."
+msgstr "Jika Anda memilih untuk mengosongkan tempat sampah, seluruh item di dalamnya akan hilang. Ingat bahwa Anda juga dapat menghapusnya secara terpisah."
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:361
 msgid "_Empty Trash"
-msgstr "_Kosongkan Tong"
+msgstr "_Kosongkan Tempat Sampah"
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:129
 #, c-format
