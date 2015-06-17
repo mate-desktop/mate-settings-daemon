@@ -604,11 +604,11 @@ load_nss (GError **error)
                 goto out;
         }
 
-        g_debug ("NSS database sucessfully loaded");
+        g_debug ("NSS database successfully loaded");
         return TRUE;
 
 out:
-        g_debug ("NSS database couldn't be sucessfully loaded");
+        g_debug ("NSS database couldn't be successfully loaded");
         return FALSE;
 }
 
