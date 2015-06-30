@@ -52,7 +52,10 @@ org.mate.SettingsDaemon.service: org.mate.SettingsDaemon.service.in Makefile
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = mate-settings-daemon.pc
 
-man_MANS = mate-settings-daemon.1
+man_MANS = \
+	mate-settings-daemon.1 \
+	msd-datetime-mechanism.1 \
+	msd-locate-pointer.1
 
 @INTLTOOL_XML_NOMERGE_RULE@
 
