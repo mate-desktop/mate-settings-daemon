@@ -1,3 +1,8 @@
+1.10.1
+  * Fix media keys issue with multiple players
+  * Add some missing manpages
+  * Translations update
+
 1.10.0
   * Port media-keys plugin to libmatemixer
   * Remove GStreamer bits, make libmatemixer, libcanberra and PulseAudio
