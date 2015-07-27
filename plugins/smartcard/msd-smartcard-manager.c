@@ -1288,7 +1288,7 @@ on_timeout (MsdSmartcardManager *manager)
                 g_warning ("could not start smartcard manager - %s",
                            error->message);
                 g_error_free (error);
-                return 1;
+                return TRUE;
         }
         g_print ("Please re-insert smartcard\n");
 
