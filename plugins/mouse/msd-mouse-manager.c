@@ -640,6 +640,18 @@ set_tap_to_click (gboolean state, gboolean left_handed)
                         rc = XGetDeviceProperty (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), device, prop, 0, 2,
                                                 False, XA_INTEGER, &type, &format, &nitems,
                                                 &bytes_after, &data);
+                                                
+                        GSettings *settings = g_settings_new (MATE_TOUCHPAD_SCHEMA);
+                        gint one_finger_tap = g_settings_get_int (settings, KEY_TOUCHPAD_ONE_FINGER_TAP);
+                        gint two_finger_tap = g_settings_get_int (settings, KEY_TOUCHPAD_TWO_FINGER_TAP);
+                        gint three_finger_tap = g_settings_get_int (settings, KEY_TOUCHPAD_THREE_FINGER_TAP);
+                        if (one_finger_tap > 3 || one_finger_tap < 1)
+				one_finger_tap = 1;
+			if (two_finger_tap > 3 || two_finger_tap < 1)
+				two_finger_tap = 2;
+			if (three_finger_tap > 3 || three_finger_tap < 1)
+				three_finger_tap = 3;
+			g_object_unref (settings);
 
                         GSettings *settings = g_settings_new (MATE_TOUCHPAD_SCHEMA);
                         gint one_finger_tap = g_settings_get_int (settings, KEY_TOUCHPAD_ONE_FINGER_TAP);
