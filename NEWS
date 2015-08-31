@@ -1,3 +1,8 @@
+1.10.2
+  * a11y: don't use ancient properties
+  * housekeeping: don’t monitor fdescfs (special FS in FreeBSD)
+  * keyboard: connect to libmatekbd's GSettings before reading them
+
 1.10.1
   * Fix media keys issue with multiple players
   * Add some missing manpages
