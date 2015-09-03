@@ -655,9 +655,9 @@ set_tap_to_click (MsdMouseManager * manager)
                         if (one_finger_tap > 3 || one_finger_tap < 1)
                                 one_finger_tap = 1;
                         if (two_finger_tap > 3 || two_finger_tap < 1)
-                                two_finger_tap = 2;
+                                two_finger_tap = 3;
                         if (three_finger_tap > 3 || three_finger_tap < 1)
-                                three_finger_tap = 3;
+                                three_finger_tap = 2;
                         
                         if (rc == Success && type == XA_INTEGER && format == 8 && nitems >= 7)
                         {
