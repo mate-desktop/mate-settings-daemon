@@ -20,6 +20,11 @@
       <_summary>Enable horizontal scrolling</_summary>
       <_description>Set this to TRUE to allow horizontal scrolling by the same method selected with the scroll_method key.</_description>
     </key>
+    <key name="natural-scroll" type="b">
+      <default>false</default>
+      <_summary>Natural scrolling</_summary>
+      <_description>Set this to true to enable natural (reverse) scrolling for touchpads</_description>
+    </key>
     <key name="touchpad-enabled" type="b">
       <default>true</default>
       <_summary>Enable touchpad</_summary>
