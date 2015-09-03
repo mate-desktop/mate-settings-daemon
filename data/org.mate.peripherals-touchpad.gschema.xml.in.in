@@ -25,6 +25,16 @@
       <_summary>Enable touchpad</_summary>
       <_description>Set this to TRUE to enable all touchpads.</_description>
     </key>
+    <key name="two-finger-click" type="i">
+      <default>3</default>
+      <_summary>Enabled two-finger button-click emulation</_summary>
+      <_description>0 thru 3, 0 is inactive, 1-3 is button for two-finger click to emulate</_description>
+    </key>
+    <key name="three-finger-click" type="i">
+      <default>2</default>
+      <_summary>Enable three-finger button-click emulation</_summary>
+      <_description>0 thru 3, 0 is inactive, 1-3 is button for two-finger click to emulate</_description>
+    </key>
     <key name="tap-button-one-finger" type="i">
       <default>1</default>
       <_summary>One finger tap button</_summary>

@@ -62,6 +62,10 @@
 #define MATE_TOUCHPAD_SCHEMA             "org.mate.peripherals-touchpad"
 #define KEY_TOUCHPAD_DISABLE_W_TYPING    "disable-while-typing"
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
+ 
+#define KEY_TWO_FINGER_CLICK             "two-finger-click"
+#define KEY_THREE_FINGER_CLICK           "three-finger-click"
+
 #define KEY_TOUCHPAD_TAP_TO_CLICK        "tap-to-click"
 #define KEY_TOUCHPAD_ONE_FINGER_TAP      "tap-button-one-finger"
 #define KEY_TOUCHPAD_TWO_FINGER_TAP      "tap-button-two-finger"
@@ -96,6 +100,7 @@ static void     msd_mouse_manager_finalize    (GObject             *object);
 static void     set_mouse_settings            (MsdMouseManager      *manager);
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
 static int      set_tap_to_click              (gboolean state, gboolean left_handed);
+static void     set_click_actions             (gboolean enable_two_finger_click, gboolean enable_three_finger_click);
 #endif
 
 G_DEFINE_TYPE (MsdMouseManager, msd_mouse_manager, G_TYPE_OBJECT)
@@ -646,12 +651,12 @@ set_tap_to_click (gboolean state, gboolean left_handed)
                         gint two_finger_tap = g_settings_get_int (settings, KEY_TOUCHPAD_TWO_FINGER_TAP);
                         gint three_finger_tap = g_settings_get_int (settings, KEY_TOUCHPAD_THREE_FINGER_TAP);
                         if (one_finger_tap > 3 || one_finger_tap < 1)
-				one_finger_tap = 1;
-			if (two_finger_tap > 3 || two_finger_tap < 1)
-				two_finger_tap = 2;
-			if (three_finger_tap > 3 || three_finger_tap < 1)
-				three_finger_tap = 3;
-			g_object_unref (settings);
+                                one_finger_tap = 1;
+                        if (two_finger_tap > 3 || two_finger_tap < 1)
+                                two_finger_tap = 2;
+                        if (three_finger_tap > 3 || three_finger_tap < 1)
+                                three_finger_tap = 3;
+                        g_object_unref (settings);
 
                         if (rc == Success && type == XA_INTEGER && format == 8 && nitems >= 7)
                         {
@@ -675,6 +680,51 @@ set_tap_to_click (gboolean state, gboolean left_handed)
 
         XFreeDeviceList (devicelist);
         return 0;
+}
+
+ static void
+set_click_actions (gint   enable_two_finger_click,
+                   gint   enable_three_finger_click)
+{
+        int numdevices, i, format, rc;
+        unsigned long nitems, bytes_after;
+        XDeviceInfo *devicelist = XListInputDevices (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), &numdevices);
+        XDevice * device;
+        unsigned char* data;
+        Atom prop, type;
+
+        if (devicelist == NULL)
+                return 0;
+
+        prop = XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), "Synaptics Click Action", False);
+        if (!prop)
+                return;
+
+        for (i = 0; i < numdevices; i++) {
+                if ((device = device_is_touchpad (devicelist[i]))) {
+                        g_debug ("setting click action to click on %s", devicelist[i].name);
+                        gdk_error_trap_push ();
+                        rc = XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop, 0, 2,
+                                         False, XA_INTEGER, &type, &format, &nitems,
+                                         &bytes_after, &data);
+
+                        if (rc == Success && type == XA_INTEGER && format == 8 && nitems >= 3) {
+                                data[0] = 1;
+                                data[1] = enable_two_finger_click;
+                                data[2] = enable_three_finger_click;
+                                XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop, XA_INTEGER, 8, PropModeReplace, data, nitems);
+                        }
+
+                        if (rc == Success)
+                                XFree (data);
+                        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
+                        if (gdk_error_trap_pop ()) {
+                                g_warning ("Error in setting click actions on \"%s\"", devicelist[i].name);
+                                continue;
+                        }
+                }
+        }
+        XFreeDeviceList (devicelist);
 }
 
 static int
@@ -954,6 +1004,7 @@ set_mouse_settings (MsdMouseManager *manager)
         set_disable_w_typing (manager, g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_DISABLE_W_TYPING));
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
         set_tap_to_click (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_TAP_TO_CLICK), left_handed);
+        set_click_actions (g_settings_get_int (manager->priv->settings_touchpad, KEY_TWO_FINGER_CLICK), g_settings_get_int (manager->priv->settings_touchpad, KEY_THREE_FINGER_CLICK));
         set_edge_scroll (g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_SCROLL_METHOD));
         set_horiz_scroll (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_PAD_HORIZ_SCROLL));
         set_touchpad_enabled (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_ENABLED));
@@ -979,6 +1030,9 @@ mouse_callback (GSettings          *settings,
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_TAP_TO_CLICK) == 0) {
                 set_tap_to_click (g_settings_get_boolean (settings, key),
                                   g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED));
+        } else if (g_str_equal (key, KEY_TWO_FINGER_CLICK) || g_str_equal (key, KEY_THREE_FINGER_CLICK)) {
+                set_click_actions(g_settings_get_int (settings, KEY_TWO_FINGER_CLICK),
+                                  g_settings_get_int (settings, KEY_THREE_FINGER_CLICK));
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_ONE_FINGER_TAP) == 0) {
                 set_tap_to_click (g_settings_get_boolean (settings, KEY_TOUCHPAD_TAP_TO_CLICK),
                                   g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED));
