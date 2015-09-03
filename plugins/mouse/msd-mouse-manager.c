@@ -62,6 +62,10 @@
 #define MATE_TOUCHPAD_SCHEMA             "org.mate.peripherals-touchpad"
 #define KEY_TOUCHPAD_DISABLE_W_TYPING    "disable-while-typing"
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
+ 
+#define KEY_TWO_FINGER_CLICK             "two-finger-click"
+#define KEY_THREE_FINGER_CLICK           "three-finger-click"
+
 #define KEY_TOUCHPAD_TAP_TO_CLICK        "tap-to-click"
 #define KEY_TOUCHPAD_ONE_FINGER_TAP      "tap-button-one-finger"
 #define KEY_TOUCHPAD_TWO_FINGER_TAP      "tap-button-two-finger"
@@ -95,7 +99,8 @@ static void     msd_mouse_manager_init        (MsdMouseManager      *mouse_manag
 static void     msd_mouse_manager_finalize    (GObject             *object);
 static void     set_mouse_settings            (MsdMouseManager      *manager);
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
-static int      set_tap_to_click              (gboolean state, gboolean left_handed);
+static void     set_tap_to_click              (MsdMouseManager * manager);
+static void     set_click_actions             (MsdMouseManager * manager);
 #endif
 
 G_DEFINE_TYPE (MsdMouseManager, msd_mouse_manager, G_TYPE_OBJECT)
@@ -303,7 +308,7 @@ touchpad_has_single_button (XDevice *device)
 
 
 static void
-set_xinput_devices_left_handed (gboolean left_handed)
+set_xinput_devices_left_handed (MsdMouseManager * manager, gboolean left_handed)
 {
         XDeviceInfo *device_info;
         gint n_devices;
@@ -337,7 +342,7 @@ set_xinput_devices_left_handed (gboolean left_handed)
                         gboolean single_button = touchpad_has_single_button (device);
 
                         if (tap && !single_button)
-                                set_tap_to_click (tap, left_handed);
+                                set_tap_to_click (manager);
                         XCloseDevice (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), device);
                         g_object_unref (settings);
 
@@ -435,7 +440,7 @@ set_left_handed (MsdMouseManager *manager,
                 /* When XInput support is available, never set the
                  * button ordering on the core pointer as that would
                  * revert the changes we make on the devices themselves */
-                set_xinput_devices_left_handed (left_handed);
+                set_xinput_devices_left_handed (manager, left_handed);
                 return;
         }
 #endif
@@ -616,8 +621,8 @@ set_disable_w_typing (MsdMouseManager *manager, gboolean state)
 }
 
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
-static int
-set_tap_to_click (gboolean state, gboolean left_handed)
+static void
+set_tap_to_click (MsdMouseManager * manager)
 {
         int numdevices, i, format, rc;
         unsigned long nitems, bytes_after;
@@ -627,12 +632,18 @@ set_tap_to_click (gboolean state, gboolean left_handed)
         Atom prop, type;
 
         if (devicelist == NULL)
-                return 0;
+                return;
 
         prop = XInternAtom (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), "Synaptics Tap Action", False);
 
         if (!prop)
-                return 0;
+                return;
+
+        gboolean state = g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_TAP_TO_CLICK);
+        gboolean left_handed = g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED);
+        gint one_finger_tap = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_ONE_FINGER_TAP);
+        gint two_finger_tap = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_TWO_FINGER_TAP);
+        gint three_finger_tap = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_THREE_FINGER_TAP);
 
         for (i = 0; i < numdevices; i++) {
                 if ((device = device_is_touchpad (devicelist[i]))) {
@@ -641,18 +652,13 @@ set_tap_to_click (gboolean state, gboolean left_handed)
                                                 False, XA_INTEGER, &type, &format, &nitems,
                                                 &bytes_after, &data);
 
-                        GSettings *settings = g_settings_new (MATE_TOUCHPAD_SCHEMA);
-                        gint one_finger_tap = g_settings_get_int (settings, KEY_TOUCHPAD_ONE_FINGER_TAP);
-                        gint two_finger_tap = g_settings_get_int (settings, KEY_TOUCHPAD_TWO_FINGER_TAP);
-                        gint three_finger_tap = g_settings_get_int (settings, KEY_TOUCHPAD_THREE_FINGER_TAP);
                         if (one_finger_tap > 3 || one_finger_tap < 1)
-				one_finger_tap = 1;
-			if (two_finger_tap > 3 || two_finger_tap < 1)
-				two_finger_tap = 2;
-			if (three_finger_tap > 3 || three_finger_tap < 1)
-				three_finger_tap = 3;
-			g_object_unref (settings);
-
+                                one_finger_tap = 1;
+                        if (two_finger_tap > 3 || two_finger_tap < 1)
+                                two_finger_tap = 3;
+                        if (three_finger_tap > 3 || three_finger_tap < 1)
+                                three_finger_tap = 2;
+                        
                         if (rc == Success && type == XA_INTEGER && format == 8 && nitems >= 7)
                         {
                                 /* Set RLM mapping for 1/2/3 fingers*/
@@ -674,7 +680,53 @@ set_tap_to_click (gboolean state, gboolean left_handed)
         }
 
         XFreeDeviceList (devicelist);
-        return 0;
+}
+
+static void
+set_click_actions (MsdMouseManager * manager)
+{
+        int numdevices, i, format, rc;
+        unsigned long nitems, bytes_after;
+        XDeviceInfo *devicelist = XListInputDevices (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), &numdevices);
+        XDevice * device;
+        unsigned char* data;
+        Atom prop, type;
+
+        if (devicelist == NULL)
+                return 0;
+
+        prop = XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), "Synaptics Click Action", False);
+        if (!prop)
+                return;
+
+        gint enable_two_finger_click = g_settings_get_int (manager->priv->settings_touchpad, KEY_TWO_FINGER_CLICK);
+        gint enable_three_finger_click = g_settings_get_int (manager->priv->settings_touchpad, KEY_THREE_FINGER_CLICK);
+
+        for (i = 0; i < numdevices; i++) {
+                if ((device = device_is_touchpad (devicelist[i]))) {
+                        g_debug ("setting click action to click on %s", devicelist[i].name);
+                        gdk_error_trap_push ();
+                        rc = XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop, 0, 2,
+                                         False, XA_INTEGER, &type, &format, &nitems,
+                                         &bytes_after, &data);
+
+                        if (rc == Success && type == XA_INTEGER && format == 8 && nitems >= 3) {
+                                data[0] = 1;
+                                data[1] = enable_two_finger_click;
+                                data[2] = enable_three_finger_click;
+                                XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop, XA_INTEGER, 8, PropModeReplace, data, nitems);
+                        }
+
+                        if (rc == Success)
+                                XFree (data);
+                        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
+                        if (gdk_error_trap_pop ()) {
+                                g_warning ("Error in setting click actions on \"%s\"", devicelist[i].name);
+                                continue;
+                        }
+                }
+        }
+        XFreeDeviceList (devicelist);
 }
 
 static int
@@ -949,11 +1001,12 @@ set_mouse_settings (MsdMouseManager *manager)
         set_left_handed (manager, left_handed);
         set_motion_acceleration (manager, g_settings_get_double (manager->priv->settings_mouse, KEY_MOUSE_MOTION_ACCELERATION));
         set_motion_threshold (manager, g_settings_get_int (manager->priv->settings_mouse, KEY_MOUSE_MOTION_THRESHOLD));
-	set_middle_button (manager, g_settings_get_boolean (manager->priv->settings_mouse, KEY_MIDDLE_BUTTON_EMULATION));
+        set_middle_button (manager, g_settings_get_boolean (manager->priv->settings_mouse, KEY_MIDDLE_BUTTON_EMULATION));
 
         set_disable_w_typing (manager, g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_DISABLE_W_TYPING));
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
-        set_tap_to_click (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_TAP_TO_CLICK), left_handed);
+        set_tap_to_click (manager);
+        set_click_actions (manager);
         set_edge_scroll (g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_SCROLL_METHOD));
         set_horiz_scroll (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_PAD_HORIZ_SCROLL));
         set_touchpad_enabled (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_ENABLED));
@@ -977,17 +1030,15 @@ mouse_callback (GSettings          *settings,
 	        set_middle_button (manager, g_settings_get_boolean (settings, key));
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_TAP_TO_CLICK) == 0) {
-                set_tap_to_click (g_settings_get_boolean (settings, key),
-                                  g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED));
+                set_tap_to_click (manager);
+        } else if (g_str_equal (key, KEY_TWO_FINGER_CLICK) || g_str_equal (key, KEY_THREE_FINGER_CLICK)) {
+                set_click_actions(manager);
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_ONE_FINGER_TAP) == 0) {
-                set_tap_to_click (g_settings_get_boolean (settings, KEY_TOUCHPAD_TAP_TO_CLICK),
-                                  g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED));
+                set_tap_to_click (manager);
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_TWO_FINGER_TAP) == 0) {
-                set_tap_to_click (g_settings_get_boolean (settings, KEY_TOUCHPAD_TAP_TO_CLICK),
-                                  g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED));
+                set_tap_to_click (manager);
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_THREE_FINGER_TAP) == 0) {
-                set_tap_to_click (g_settings_get_boolean (settings, KEY_TOUCHPAD_TAP_TO_CLICK),
-                                  g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED));
+                set_tap_to_click (manager);
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_SCROLL_METHOD) == 0) {
                 set_edge_scroll (g_settings_get_int (settings, key));
                 set_horiz_scroll (g_settings_get_boolean (settings, KEY_TOUCHPAD_PAD_HORIZ_SCROLL));
@@ -1048,8 +1099,8 @@ msd_mouse_manager_idle_cb (MsdMouseManager *manager)
 
         set_disable_w_typing (manager, g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_DISABLE_W_TYPING));
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
-        set_tap_to_click (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_TAP_TO_CLICK),
-                          g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED));
+        set_tap_to_click (manager);
+        set_click_actions (manager);
         set_edge_scroll (g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_SCROLL_METHOD));
         set_horiz_scroll (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_PAD_HORIZ_SCROLL));
         set_touchpad_enabled (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_ENABLED));
