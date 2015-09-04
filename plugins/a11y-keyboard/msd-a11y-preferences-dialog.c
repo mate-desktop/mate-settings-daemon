@@ -36,9 +36,9 @@
 
 #include "msd-a11y-preferences-dialog.h"
 
-#define SM_DBUS_NAME      "org.mate.SessionManager"
-#define SM_DBUS_PATH      "/org/mate/SessionManager"
-#define SM_DBUS_INTERFACE "org.mate.SessionManager"
+#define SM_DBUS_NAME      "org.gnome.SessionManager"
+#define SM_DBUS_PATH      "/org/gnome/SessionManager"
+#define SM_DBUS_INTERFACE "org.gnome.SessionManager"
 
 
 #define MSD_A11Y_PREFERENCES_DIALOG_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_A11Y_PREFERENCES_DIALOG, MsdA11yPreferencesDialogPrivate))

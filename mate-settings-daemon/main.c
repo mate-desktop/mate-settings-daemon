@@ -49,10 +49,10 @@
 #define DEBUG_KEY             "mate-settings-daemon"
 #define DEBUG_SCHEMA          "org.mate.debug"
 
-#define MATE_SESSION_DBUS_NAME      "org.mate.SessionManager"
-#define MATE_SESSION_DBUS_OBJECT    "/org/mate/SessionManager"
-#define MATE_SESSION_DBUS_INTERFACE "org.mate.SessionManager"
-#define MATE_SESSION_PRIVATE_DBUS_INTERFACE "org.mate.SessionManager.ClientPrivate"
+#define MATE_SESSION_DBUS_NAME      "org.gnome.SessionManager"
+#define MATE_SESSION_DBUS_OBJECT    "/org/gnome/SessionManager"
+#define MATE_SESSION_DBUS_INTERFACE "org.gnome.SessionManager"
+#define MATE_SESSION_PRIVATE_DBUS_INTERFACE "org.gnome.SessionManager.ClientPrivate"
 
 /* this is kept only for compatibility with custom .desktop files */
 static gboolean   no_daemon    = TRUE;

@@ -54,8 +54,8 @@
 #define mate_bg_set_surface_as_root_with_crossfade	mate_bg_set_pixmap_as_root_with_crossfade
 #endif
 
-#define MATE_SESSION_MANAGER_DBUS_NAME "org.mate.SessionManager"
-#define MATE_SESSION_MANAGER_DBUS_PATH "/org/mate/SessionManager"
+#define MATE_SESSION_MANAGER_DBUS_NAME "org.gnome.SessionManager"
+#define MATE_SESSION_MANAGER_DBUS_PATH "/org/gnome/SessionManager"
 
 #define MSD_BACKGROUND_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_BACKGROUND_MANAGER, MsdBackgroundManagerPrivate))
 

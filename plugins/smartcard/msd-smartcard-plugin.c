@@ -52,9 +52,9 @@ typedef enum
 #define SCREENSAVER_DBUS_PATH      "/"
 #define SCREENSAVER_DBUS_INTERFACE "org.mate.ScreenSaver"
 
-#define SM_DBUS_NAME      "org.mate.SessionManager"
-#define SM_DBUS_PATH      "/org/mate/SessionManager"
-#define SM_DBUS_INTERFACE "org.mate.SessionManager"
+#define SM_DBUS_NAME      "org.gnome.SessionManager"
+#define SM_DBUS_PATH      "/org/gnome/SessionManager"
+#define SM_DBUS_INTERFACE "org.gnome.SessionManager"
 #define SM_LOGOUT_MODE_FORCE 2
 
 #define MSD_SMARTCARD_SCHEMA "org.mate.peripherals-smartcard"
