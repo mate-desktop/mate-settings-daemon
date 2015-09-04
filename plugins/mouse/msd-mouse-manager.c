@@ -579,6 +579,18 @@ set_middle_button (MsdMouseManager *manager,
                 XFreeDeviceList (device_info);
 }
 
+static gboolean
+have_program_in_path (const char *name)
+{
+        gchar *path;
+        gboolean result;
+
+        path = g_find_program_in_path (name);
+        result = (path != NULL);
+        g_free (path);
+        return result;
+}
+
 static int
 set_disable_w_typing (MsdMouseManager *manager, gboolean state)
 {
@@ -597,7 +609,7 @@ set_disable_w_typing (MsdMouseManager *manager, gboolean state)
                 args[4] = "-R";
                 args[5] = NULL;
 
-                if (!g_find_program_in_path (args[0]))
+                if (!have_program_in_path (args[0]))
                         return 0;
 
                 g_spawn_async (g_get_home_dir (), args, NULL,
