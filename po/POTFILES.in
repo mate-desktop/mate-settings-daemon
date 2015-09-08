@@ -1,27 +1,27 @@
 # Files with translatable strings.
 # Please keep this file in alphabetical order.
 data/50-accessibility.xml.in
-data/org.mate.applications-at.gschema.xml.in.in
-data/org.mate.font-rendering.gschema.xml.in.in
-data/org.mate.peripherals-smartcard.gschema.xml.in.in
-data/org.mate.peripherals-touchpad.gschema.xml.in.in
-data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in
-data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.in
-data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in
-data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.in
-data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.in
-data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in
-data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.in
-data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.in
-data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in
-data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.in
-data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.in
-data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.in
-data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.in
-data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.in
-data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in
-data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in
-data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in
+[type: gettext/gsettings]data/org.mate.applications-at.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.font-rendering.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.peripherals-smartcard.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.peripherals-touchpad.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in
 data/mate-settings-daemon.desktop.in.in
 mate-settings-daemon/main.c
 [type: gettext/ini]plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.in

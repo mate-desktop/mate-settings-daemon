@@ -19,23 +19,23 @@
   <schema id="org.mate.font-rendering" path="/org/mate/desktop/font-rendering/">
     <key name="dpi" type="d">
       <default>0.0</default>
-      <_summary>DPI</_summary>
-      <_description>The resolution used for converting font sizes to pixel sizes,  in dots per inch.</_description>
+      <summary>DPI</summary>
+      <description>The resolution used for converting font sizes to pixel sizes,  in dots per inch.</description>
     </key>
     <key name="antialiasing" enum="org.mate.font-rendering.Antialiasing">
       <default>'grayscale'</default>
-      <_summary>Antialiasing</_summary>
-      <_description>The type of antialiasing to use when rendering fonts. Possible values are: "none" for no antialiasing, "grayscale" for standard grayscale antialiasing, and "rgba" for subpixel antialiasing (LCD screens only).</_description>
+      <summary>Antialiasing</summary>
+      <description>The type of antialiasing to use when rendering fonts. Possible values are: "none" for no antialiasing, "grayscale" for standard grayscale antialiasing, and "rgba" for subpixel antialiasing (LCD screens only).</description>
     </key>
     <key name="hinting" enum="org.mate.font-rendering.Hinting">
       <default>'medium'</default>
-      <_summary>Hinting</_summary>
-      <_description>The type of hinting to use when rendering fonts. Possible values are: "none" for no hinting,  "slight" for basic, "medium" for moderate, and "full" for maximum hinting (may cause distortion of letter forms).</_description>
+      <summary>Hinting</summary>
+      <description>The type of hinting to use when rendering fonts. Possible values are: "none" for no hinting,  "slight" for basic, "medium" for moderate, and "full" for maximum hinting (may cause distortion of letter forms).</description>
     </key>
     <key name="rgba-order" enum="org.mate.font-rendering.RgbaOrder">
       <default>'rgb'</default>
-      <_summary>RGBA order</_summary>
-      <_description>The order of subpixel elements on an LCD screen; only used when antialiasing is set to "rgba". Possible values are: "rgb" for red on left (most common), "bgr" for blue on left, "vrgb" for red on top, "vbgr" for red on bottom.</_description>
+      <summary>RGBA order</summary>
+      <description>The order of subpixel elements on an LCD screen; only used when antialiasing is set to "rgba". Possible values are: "rgb" for red on left (most common), "bgr" for blue on left, "vrgb" for red on top, "vbgr" for red on bottom.</description>
     </key>
   </schema>
 </schemalist>

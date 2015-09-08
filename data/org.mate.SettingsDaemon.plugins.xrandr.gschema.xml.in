@@ -1,0 +1,39 @@
+<schemalist>
+  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.mate.SettingsDaemon.plugins.xrandr" path="/org/mate/settings-daemon/plugins/xrandr/">
+    <key name="active" type="b">
+      <default>true</default>
+      <summary>Activation of this plugin</summary>
+      <description>Whether this plugin would be activated by mate-settings-daemon or not</description>
+    </key>
+    <key name="priority" type="i">
+      <default>1</default>
+      <summary>Priority to use for this plugin</summary>
+      <description>Priority to use for this plugin in mate-settings-daemon startup queue</description>
+    </key>
+    <key name="show-notification-icon" type="b">
+      <default>false</default>
+      <summary>Show Displays in Notification Area</summary>
+      <description>Whether a notification icon with display-related things should be shown in the panel.</description>
+    </key>
+    <key name="use-xorg-monitor-settings" type="b">
+      <default>true</default>
+      <summary>Do not touch monitor configuration</summary>
+      <description>Usually, mate-settings-daemon configures internal and external monitors according to the turn_on_external_monitors_at_startup and turn_on_laptop_monitor_at_startup settings and determines an appropriate cloning/side-by-side mode. Setting this key to True disables this, and the monitor settings are not touched at all (unless there is an explicit user configuration).</description>
+    </key>
+    <key name="turn-on-external-monitors-at-startup" type="b">
+      <default>false</default>
+      <summary>Turn on external monitor after system boot</summary>
+      <description>Turn on external monitor after system boot if user plugs in external monitor on system boot.</description>
+    </key>
+    <key name="turn-on-laptop-monitor-at-startup" type="b">
+      <default>true</default>
+      <summary>Turn on laptop monitor after system boot</summary>
+      <description>Turn on laptop monitor after system boot if user plugs in external monitor on system boot.</description>
+    </key>
+    <key name="default-configuration-file" type="s">
+      <default>'/etc/mate-settings-daemon/xrandr/monitors.xml'</default>
+      <summary>File for default configuration for RandR</summary>
+      <description>The XRandR plugin will look for a default configuration in the file specified by this key.  This is similar to the ~/.config/monitors.xml that normally gets stored in users' home directories.  If a user does not have such a file, or has one that does not match the user's setup of monitors, then the file specified by this key will be used instead.</description>
+    </key>
+  </schema>
+</schemalist>

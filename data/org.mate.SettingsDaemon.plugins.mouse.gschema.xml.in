@@ -2,13 +2,13 @@
   <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.mate.SettingsDaemon.plugins.mouse" path="/org/mate/settings-daemon/plugins/mouse/">
     <key name="active" type="b">
       <default>true</default>
-      <_summary>Activation of this plugin</_summary>
-      <_description>Whether this plugin would be activated by mate-settings-daemon or not</_description>
+      <summary>Activation of this plugin</summary>
+      <description>Whether this plugin would be activated by mate-settings-daemon or not</description>
     </key>
     <key name="priority" type="i">
       <default>7</default>
-      <_summary>Priority to use for this plugin</_summary>
-      <_description>Priority to use for this plugin in mate-settings-daemon startup queue</_description>
+      <summary>Priority to use for this plugin</summary>
+      <description>Priority to use for this plugin in mate-settings-daemon startup queue</description>
     </key>
   </schema>
 </schemalist>
