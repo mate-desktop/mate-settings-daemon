@@ -1,3 +1,10 @@
+1.11.0
+  * Switch to org.gnome.SessionManager
+  * Touchpad: Added support for natural scrolling
+  * Touchpad support: Added support for two and three finger clicks
+  * Mouse: use syndaemon -K to ignore Ctrl+C and other combos
+  * Mouse: use event driven mode for syndaemon, save some power
+
 1.10.1
   * Fix media keys issue with multiple players
   * Add some missing manpages
