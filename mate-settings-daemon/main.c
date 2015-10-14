@@ -366,7 +366,7 @@ set_session_over_handler (DBusGConnection *bus, MateSettingsManager *manager)
                         g_error_free (error);
                 }
                 else {
-                        /* get org.mate.Session.ClientPrivate interface */
+                        /* get org.gnome.SessionManager.ClientPrivate interface */
                         private_proxy = dbus_g_proxy_new_for_name_owner (bus, MATE_SESSION_DBUS_NAME,
                                                                          client_id, MATE_SESSION_PRIVATE_DBUS_INTERFACE,
                                                                          &error);
