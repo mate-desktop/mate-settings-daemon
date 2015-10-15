@@ -2118,7 +2118,21 @@ status_icon_popup_menu (MsdXrandrManager *manager, guint button, guint32 timesta
 
         g_signal_connect (priv->popup_menu, "selection-done",
                           G_CALLBACK (status_icon_popup_menu_selection_done_cb), manager);
-
+                          
+#if GTK_CHECK_VERSION (3, 0, 0)
+        /*Set up custom theming and forced transparency support*/
+        GtkWidget *toplevel = gtk_widget_get_toplevel (priv->popup_menu);
+        /*Fix any failures of compiz/other wm's to communicate with gtk for transparency */
+        GdkScreen *screen = gtk_widget_get_screen(GTK_WIDGET(toplevel));
+        GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
+        gtk_widget_set_visual(GTK_WIDGET(toplevel), visual);
+        /*Set up the gtk theme class from mate-panel*/
+        GtkStyleContext *context;
+        context = gtk_widget_get_style_context (GTK_WIDGET(toplevel));
+        gtk_style_context_remove_class (context,GTK_STYLE_CLASS_BACKGROUND);
+        gtk_style_context_add_class(context,"gnome-panel-menu-bar");
+        gtk_style_context_add_class(context,"mate-panel-menu-bar");
+#endif
         gtk_menu_popup (GTK_MENU (priv->popup_menu), NULL, NULL,
                         gtk_status_icon_position_menu,
                         priv->status_icon, button, timestamp);
