@@ -1,9 +1,17 @@
 1.11.0
+  * Add new keybinding for logout (empty by default)
+  * Retrieve strings directly from gschema (requires intltool 0.50.1)
   * Switch to org.gnome.SessionManager
-  * Touchpad: Added support for natural scrolling
-  * Touchpad support: Added support for two and three finger clicks
+  * Touchpad settings: Added support for natural scrolling, 2 finger
+    and 3 finger clicks
   * Mouse: use syndaemon -K to ignore Ctrl+C and other combos
-  * Mouse: use event driven mode for syndaemon, save some power
+  * Some more fixes and cleanups
+
+1.10.2
+  * a11y: don't use ancient properties
+  * housekeeping: don’t monitor fdescfs (special FS in FreeBSD)
+  * keyboard: connect to libmatekbd's GSettings before reading them
+  * mouse: use event driven mode for syndaemon, save some power
 
 1.10.1
   * Fix media keys issue with multiple players
