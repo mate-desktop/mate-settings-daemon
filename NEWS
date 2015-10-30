@@ -1,10 +1,11 @@
-1.11.0
+1.12.0
   * Add new keybinding for logout (empty by default)
   * Retrieve strings directly from gschema (requires intltool 0.50.1)
   * Switch to org.gnome.SessionManager
-  * Touchpad settings: Added support for natural scrolling, 2 finger
+  * Touchpad settings: added support for natural scrolling, 2 finger
     and 3 finger clicks
   * Mouse: use syndaemon -K to ignore Ctrl+C and other combos
+  * GTK+3: make xrandr tray applet support custom panel themes
   * Some more fixes and cleanups
 
 1.10.2
