@@ -2381,7 +2381,11 @@ msd_xrandr_manager_start (MsdXrandrManager *manager,
                           True, GrabModeAsync, GrabModeAsync);
 
                 gdk_flush ();
+#if GTK_CHECK_VERSION (3, 0, 0)
+                gdk_error_trap_pop_ignored ();
+#else
                 gdk_error_trap_pop ();
+#endif
         }
 
         if (manager->priv->rotate_windows_keycode) {
@@ -2393,7 +2397,11 @@ msd_xrandr_manager_start (MsdXrandrManager *manager,
                           True, GrabModeAsync, GrabModeAsync);
 
                 gdk_flush ();
+#if GTK_CHECK_VERSION (3, 0, 0)
+                gdk_error_trap_pop_ignored ();
+#else
                 gdk_error_trap_pop ();
+#endif
         }
 
         show_timestamps_dialog (manager, "Startup");
@@ -2432,7 +2440,11 @@ msd_xrandr_manager_stop (MsdXrandrManager *manager)
                             manager->priv->switch_video_mode_keycode, AnyModifier,
                             gdk_x11_get_default_root_xwindow());
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+                gdk_error_trap_pop_ignored ();
+#else
                 gdk_error_trap_pop ();
+#endif
         }
 
         if (manager->priv->rotate_windows_keycode) {
@@ -2442,7 +2454,11 @@ msd_xrandr_manager_stop (MsdXrandrManager *manager)
                             manager->priv->rotate_windows_keycode, AnyModifier,
                             gdk_x11_get_default_root_xwindow());
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+                gdk_error_trap_pop_ignored ();
+#else
                 gdk_error_trap_pop ();
+#endif
         }
 
         gdk_window_remove_filter (gdk_get_default_root_window (),

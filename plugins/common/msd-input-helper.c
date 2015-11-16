@@ -22,6 +22,7 @@
 
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
+#include <gtk/gtk.h>
 
 #include <sys/types.h>
 #include <X11/Xatom.h>
@@ -65,11 +66,19 @@ device_is_touchpad (XDeviceInfo deviceinfo)
         if ((XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop, 0, 1, False,
                                 XA_INTEGER, &realtype, &realformat, &nitems,
                                 &bytes_after, &data) == Success) && (realtype != None)) {
+#if GTK_CHECK_VERSION (3, 0, 0)
+                gdk_error_trap_pop_ignored ();
+#else
                 gdk_error_trap_pop ();
+#endif
                 XFree (data);
                 return device;
         }
+#if GTK_CHECK_VERSION (3, 0, 0)
+        gdk_error_trap_pop_ignored ();
+#else
         gdk_error_trap_pop ();
+#endif
 
         XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
         return NULL;
