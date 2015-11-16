@@ -411,7 +411,11 @@ dialog_show (MsdMediaKeysManager *manager)
          * know its true size, yet, so we need to jump through hoops
          */
         gtk_window_get_default_size (GTK_WINDOW (manager->priv->dialog), &orig_w, &orig_h);
+#if GTK_CHECK_VERSION (3, 0, 0)
+        gtk_widget_get_preferred_size (manager->priv->dialog, NULL, &win_req);
+#else
         gtk_widget_size_request (manager->priv->dialog, &win_req);
+#endif
 
         if (win_req.width > orig_w) {
                 orig_w = win_req.width;
