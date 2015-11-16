@@ -395,6 +395,11 @@ dialog_show (MsdMediaKeysManager *manager)
         int            screen_h;
         int            x;
         int            y;
+#if GTK_CHECK_VERSION (3, 0, 0)
+        GdkDisplay *display;
+        GdkDeviceManager *device_manager;
+        GdkDevice *pointer;
+#endif
         int            pointer_x;
         int            pointer_y;
         GtkRequisition win_req;
@@ -421,11 +426,22 @@ dialog_show (MsdMediaKeysManager *manager)
         }
 
         pointer_screen = NULL;
+#if GTK_CHECK_VERSION (3, 0, 0)
+        display = gdk_screen_get_display (manager->priv->current_screen);
+        device_manager = gdk_display_get_device_manager (display);
+        pointer = gdk_device_manager_get_client_pointer (device_manager);
+
+        gdk_device_get_position (pointer,
+                                 &pointer_screen,
+                                 &pointer_x,
+                                 &pointer_y);
+#else
         gdk_display_get_pointer (gdk_screen_get_display (manager->priv->current_screen),
                                  &pointer_screen,
                                  &pointer_x,
                                  &pointer_y,
                                  NULL);
+#endif
         if (pointer_screen != manager->priv->current_screen) {
                 /* The pointer isn't on the current screen, so just
                  * assume the default monitor
