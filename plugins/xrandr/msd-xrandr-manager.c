@@ -2129,7 +2129,6 @@ status_icon_popup_menu (MsdXrandrManager *manager, guint button, guint32 timesta
         /*Set up the gtk theme class from mate-panel*/
         GtkStyleContext *context;
         context = gtk_widget_get_style_context (GTK_WIDGET(toplevel));
-        gtk_style_context_remove_class (context,GTK_STYLE_CLASS_BACKGROUND);
         gtk_style_context_add_class(context,"gnome-panel-menu-bar");
         gtk_style_context_add_class(context,"mate-panel-menu-bar");
 #endif
