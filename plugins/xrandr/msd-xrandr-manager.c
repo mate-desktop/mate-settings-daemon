@@ -75,7 +75,7 @@
 #define CONFIRMATION_DIALOG_SECONDS 30
 
 /* name of the icon files (msd-xrandr.svg, etc.) */
-#define MSD_XRANDR_ICON_NAME "msd-xrandr"
+#define MSD_XRANDR_ICON_NAME "preferences-desktop-display"
 
 /* executable of the control center's display configuration capplet */
 #define MSD_XRANDR_DISPLAY_CAPPLET "mate-display-properties"
