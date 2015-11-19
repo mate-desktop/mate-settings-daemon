@@ -1,4 +1,4 @@
-icondir = $(datadir)/icons/mate
+icondir = $(datadir)/icons/hicolor
 context = apps
 
 BUILT_SOURCES =				\
