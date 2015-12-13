@@ -66,7 +66,6 @@
 #define KEY_DELAY          "delay"
 #define KEY_CLICK_VOLUME   "click-volume"
 
-#define KEY_BELL_VOLUME    "bell-volume"
 #define KEY_BELL_PITCH     "bell-pitch"
 #define KEY_BELL_DURATION  "bell-duration"
 #define KEY_BELL_MODE      "bell-mode"
@@ -257,9 +256,6 @@ apply_settings (GSettings          *settings,
         rate          = g_settings_get_int   (settings, KEY_RATE);
         delay         = g_settings_get_int   (settings, KEY_DELAY);
         click_volume  = g_settings_get_int   (settings, KEY_CLICK_VOLUME);
-#if 0
-        bell_volume   = g_settings_get_int   (settings, KEY_BELL_VOLUME);
-#endif
         bell_pitch    = g_settings_get_int   (settings, KEY_BELL_PITCH);
         bell_duration = g_settings_get_int   (settings, KEY_BELL_DURATION);
 
