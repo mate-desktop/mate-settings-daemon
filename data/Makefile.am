@@ -30,9 +30,6 @@ gsettings_SCHEMAS = $(msd_gschemas_in:.xml.in=.xml)
 
 @GSETTINGS_RULES@
 
-convertdir = $(datadir)/MateConf/gsettings
-convert_DATA = mate-settings-daemon.convert
-
 @INTLTOOL_DESKTOP_RULE@
 desktopdir = $(sysconfdir)/xdg/autostart
 desktop_in_files = mate-settings-daemon.desktop.in
@@ -62,7 +59,6 @@ xml_DATA = $(xml_in_files:.xml.in=.xml)
 
 EXTRA_DIST = 				\
 	$(msd_gschemas_in)		\
-	$(convert_DATA)			\
 	$(service_in_files)		\
 	$(desktop_in_files)		\
 	$(xml_in_files)			\
