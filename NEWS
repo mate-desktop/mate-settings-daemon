@@ -1,3 +1,5 @@
+1.13.0
+
 1.12.1
   * xrandr: install icon in correct directory
   * GTK+3: don't remove xrandr applet background (fixes invisible
