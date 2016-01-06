@@ -573,11 +573,13 @@ do_eject_action (MsdMediaKeysManager *manager)
         }
 
         /* Show the dialogue */
-        dialog_init (manager);
-        msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
-                                                 "media-eject",
-                                                 FALSE);
-        dialog_show (manager);
+        if (g_settings_get_boolean (manager->priv->settings, "show-dialog")) {
+                dialog_init (manager);
+                msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
+                                                         "media-eject",
+                                                         FALSE);
+                dialog_show (manager);
+        }
 
         /* Clean up the drive selection and exit if no suitable
          * drives are found */
@@ -603,17 +605,22 @@ do_touchpad_action (MsdMediaKeysManager *manager)
         gboolean state = g_settings_get_boolean (settings, TOUCHPAD_ENABLED_KEY);
 
         if (touchpad_is_present () == FALSE) {
-                dialog_init (manager);
-                msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
-                                                         "touchpad-disabled", FALSE);
+                if (g_settings_get_boolean (manager->priv->settings, "show-dialog")) {
+                        dialog_init (manager);
+                        msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
+                                                                 "touchpad-disabled", FALSE);
+                        dialog_show (manager);
+                }
                 return;
         }
-
-        dialog_init (manager);
-        msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
-                                                 (!state) ? "touchpad-enabled" : "touchpad-disabled",
-                                                 FALSE);
-        dialog_show (manager);
+        
+        if (g_settings_get_boolean (manager->priv->settings, "show-dialog")) {
+                dialog_init (manager);
+                msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
+                                                         (!state) ? "touchpad-enabled" : "touchpad-disabled",
+                                                         FALSE);
+                dialog_show (manager);
+        }
 
         g_settings_set_boolean (settings, TOUCHPAD_ENABLED_KEY, !state);
         g_object_unref (settings);
@@ -718,11 +725,13 @@ do_sound_action (MsdMediaKeysManager *manager, int type)
                 else
                         volume = volume_last;
         }
-
-        update_dialog (manager,
-                       CLAMP (100 * volume / (volume_max - volume_min), 0, 100),
-                       muted,
-                       sound_changed);
+        
+        if (g_settings_get_boolean (manager->priv->settings, "show-dialog")) {
+                update_dialog (manager,
+                               CLAMP (100 * volume / (volume_max - volume_min), 0, 100),
+                               muted,
+                               sound_changed);
+        }
 }
 
 static void
