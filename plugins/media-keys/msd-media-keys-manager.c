@@ -3,6 +3,7 @@
  * Copyright (C) 2001-2003 Bastien Nocera <hadess@hadess.net>
  * Copyright (C) 2006-2007 William Jon McCann <mccann@jhu.edu>
  * Copyright (C) 2014 Michal Ratajsky <michal.ratajsky@gmail.com>
+ * Copyright (C) 2015 Friedrich Herbst <frimam@web.de>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
