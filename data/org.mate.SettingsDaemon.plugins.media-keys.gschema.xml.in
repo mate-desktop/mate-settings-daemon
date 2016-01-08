@@ -5,6 +5,11 @@
       <summary>Activation of this plugin</summary>
       <description>Whether this plugin would be activated by mate-settings-daemon or not</description>
     </key>
+    <key name="enable-osd" type="b">
+      <default>true</default>
+      <summary>Show notification dialog</summary>
+      <description>Whether a OSD notification is shown to notify about changes</description>
+    </key>
     <key name="priority" type="i">
       <default>98</default>
       <summary>Priority to use for this plugin</summary>
