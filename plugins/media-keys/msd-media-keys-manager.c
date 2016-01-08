@@ -410,6 +410,10 @@ dialog_show (MsdMediaKeysManager *manager)
         gtk_window_set_screen (GTK_WINDOW (manager->priv->dialog),
                                manager->priv->current_screen);
 
+        /* Return if show-dialog is disabled */
+        if (!g_settings_get_boolean (manager->priv->settings, "show-dialog"))
+                return;
+
         /*
          * get the window size
          * if the window hasn't been mapped, it doesn't necessarily
