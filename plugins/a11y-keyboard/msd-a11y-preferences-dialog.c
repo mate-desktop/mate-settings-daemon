@@ -117,60 +117,10 @@ static void     msd_a11y_preferences_dialog_finalize    (GObject                
 G_DEFINE_TYPE (MsdA11yPreferencesDialog, msd_a11y_preferences_dialog, GTK_TYPE_DIALOG)
 
 static void
-msd_a11y_preferences_dialog_set_property (GObject        *object,
-                                          guint           prop_id,
-                                          const GValue   *value,
-                                          GParamSpec     *pspec)
-{
-        switch (prop_id) {
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static void
-msd_a11y_preferences_dialog_get_property (GObject        *object,
-                                          guint           prop_id,
-                                          GValue         *value,
-                                          GParamSpec     *pspec)
-{
-        switch (prop_id) {
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static GObject *
-msd_a11y_preferences_dialog_constructor (GType                  type,
-                                         guint                  n_construct_properties,
-                                         GObjectConstructParam *construct_properties)
-{
-        MsdA11yPreferencesDialog      *a11y_preferences_dialog;
-
-        a11y_preferences_dialog = MSD_A11Y_PREFERENCES_DIALOG (G_OBJECT_CLASS (msd_a11y_preferences_dialog_parent_class)->constructor (type,
-                                                                                                                                       n_construct_properties,
-                                                                                                                                       construct_properties));
-
-        return G_OBJECT (a11y_preferences_dialog);
-}
-
-static void
-msd_a11y_preferences_dialog_dispose (GObject *object)
-{
-        G_OBJECT_CLASS (msd_a11y_preferences_dialog_parent_class)->dispose (object);
-}
-
-static void
 msd_a11y_preferences_dialog_class_init (MsdA11yPreferencesDialogClass *klass)
 {
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->get_property = msd_a11y_preferences_dialog_get_property;
-        object_class->set_property = msd_a11y_preferences_dialog_set_property;
-        object_class->constructor = msd_a11y_preferences_dialog_constructor;
-        object_class->dispose = msd_a11y_preferences_dialog_dispose;
         object_class->finalize = msd_a11y_preferences_dialog_finalize;
 
         g_type_class_add_private (klass, sizeof (MsdA11yPreferencesDialogPrivate));

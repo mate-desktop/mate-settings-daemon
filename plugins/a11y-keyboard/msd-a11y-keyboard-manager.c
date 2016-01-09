@@ -1128,75 +1128,10 @@ msd_a11y_keyboard_manager_stop (MsdA11yKeyboardManager *manager)
 }
 
 static void
-msd_a11y_keyboard_manager_set_property (GObject        *object,
-                                        guint           prop_id,
-                                        const GValue   *value,
-                                        GParamSpec     *pspec)
-{
-        MsdA11yKeyboardManager *self;
-
-        self = MSD_A11Y_KEYBOARD_MANAGER (object);
-
-        switch (prop_id) {
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static void
-msd_a11y_keyboard_manager_get_property (GObject        *object,
-                                        guint           prop_id,
-                                        GValue         *value,
-                                        GParamSpec     *pspec)
-{
-        MsdA11yKeyboardManager *self;
-
-        self = MSD_A11Y_KEYBOARD_MANAGER (object);
-
-        switch (prop_id) {
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static GObject *
-msd_a11y_keyboard_manager_constructor (GType                  type,
-                                       guint                  n_construct_properties,
-                                       GObjectConstructParam *construct_properties)
-{
-        MsdA11yKeyboardManager      *a11y_keyboard_manager;
-        MsdA11yKeyboardManagerClass *klass;
-
-        klass = MSD_A11Y_KEYBOARD_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_A11Y_KEYBOARD_MANAGER));
-
-        a11y_keyboard_manager = MSD_A11Y_KEYBOARD_MANAGER (G_OBJECT_CLASS (msd_a11y_keyboard_manager_parent_class)->constructor (type,
-                                                                                                      n_construct_properties,
-                                                                                                      construct_properties));
-
-        return G_OBJECT (a11y_keyboard_manager);
-}
-
-static void
-msd_a11y_keyboard_manager_dispose (GObject *object)
-{
-        MsdA11yKeyboardManager *a11y_keyboard_manager;
-
-        a11y_keyboard_manager = MSD_A11Y_KEYBOARD_MANAGER (object);
-
-        G_OBJECT_CLASS (msd_a11y_keyboard_manager_parent_class)->dispose (object);
-}
-
-static void
 msd_a11y_keyboard_manager_class_init (MsdA11yKeyboardManagerClass *klass)
 {
         GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->get_property = msd_a11y_keyboard_manager_get_property;
-        object_class->set_property = msd_a11y_keyboard_manager_set_property;
-        object_class->constructor = msd_a11y_keyboard_manager_constructor;
-        object_class->dispose = msd_a11y_keyboard_manager_dispose;
         object_class->finalize = msd_a11y_keyboard_manager_finalize;
 
         g_type_class_add_private (klass, sizeof (MsdA11yKeyboardManagerPrivate));
