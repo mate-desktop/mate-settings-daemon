@@ -368,75 +368,10 @@ msd_mpris_manager_stop (MsdMprisManager *manager)
 }
 
 static void
-msd_mpris_manager_set_property (GObject        *object,
-                                guint           prop_id,
-                                const GValue   *value,
-                                GParamSpec     *pspec)
-{
-    MsdMprisManager *self;
-
-    self = MSD_MPRIS_MANAGER (object);
-
-    switch (prop_id) {
-    default:
-        G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-        break;
-    }
-}
-
-static void
-msd_mpris_manager_get_property (GObject        *object,
-                                guint           prop_id,
-                                GValue         *value,
-                                GParamSpec     *pspec)
-{
-    MsdMprisManager *self;
-
-    self = MSD_MPRIS_MANAGER (object);
-
-    switch (prop_id) {
-    default:
-        G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-        break;
-    }
-}
-
-static GObject *
-msd_mpris_manager_constructor (GType                  type,
-                               guint                  n_construct_properties,
-                               GObjectConstructParam *construct_properties)
-{
-    MsdMprisManager      *mpris_manager;
-    MsdMprisManagerClass *klass;
-
-    klass = MSD_MPRIS_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_MPRIS_MANAGER));
-
-    mpris_manager = MSD_MPRIS_MANAGER (G_OBJECT_CLASS (msd_mpris_manager_parent_class)->constructor (type,
-                                                                                                     n_construct_properties,
-                                                                                                     construct_properties));
-
-    return G_OBJECT (mpris_manager);
-}
-
-static void
-msd_mpris_manager_dispose (GObject *object)
-{
-    MsdMprisManager *mpris_manager;
-
-    mpris_manager = MSD_MPRIS_MANAGER (object);
-
-    G_OBJECT_CLASS (msd_mpris_manager_parent_class)->dispose (object);
-}
-
-static void
 msd_mpris_manager_class_init (MsdMprisManagerClass *klass)
 {
     GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
-    object_class->get_property = msd_mpris_manager_get_property;
-    object_class->set_property = msd_mpris_manager_set_property;
-    object_class->constructor = msd_mpris_manager_constructor;
-    object_class->dispose = msd_mpris_manager_dispose;
     object_class->finalize = msd_mpris_manager_finalize;
 
     g_type_class_add_private (klass, sizeof (MsdMprisManagerPrivate));
