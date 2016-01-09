@@ -2486,75 +2486,10 @@ msd_xrandr_manager_stop (MsdXrandrManager *manager)
 }
 
 static void
-msd_xrandr_manager_set_property (GObject        *object,
-                               guint           prop_id,
-                               const GValue   *value,
-                               GParamSpec     *pspec)
-{
-        MsdXrandrManager *self;
-
-        self = MSD_XRANDR_MANAGER (object);
-
-        switch (prop_id) {
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static void
-msd_xrandr_manager_get_property (GObject        *object,
-                               guint           prop_id,
-                               GValue         *value,
-                               GParamSpec     *pspec)
-{
-        MsdXrandrManager *self;
-
-        self = MSD_XRANDR_MANAGER (object);
-
-        switch (prop_id) {
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static GObject *
-msd_xrandr_manager_constructor (GType                  type,
-                              guint                  n_construct_properties,
-                              GObjectConstructParam *construct_properties)
-{
-        MsdXrandrManager      *xrandr_manager;
-        MsdXrandrManagerClass *klass;
-
-        klass = MSD_XRANDR_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_XRANDR_MANAGER));
-
-        xrandr_manager = MSD_XRANDR_MANAGER (G_OBJECT_CLASS (msd_xrandr_manager_parent_class)->constructor (type,
-                                                                                                      n_construct_properties,
-                                                                                                      construct_properties));
-
-        return G_OBJECT (xrandr_manager);
-}
-
-static void
-msd_xrandr_manager_dispose (GObject *object)
-{
-        MsdXrandrManager *xrandr_manager;
-
-        xrandr_manager = MSD_XRANDR_MANAGER (object);
-
-        G_OBJECT_CLASS (msd_xrandr_manager_parent_class)->dispose (object);
-}
-
-static void
 msd_xrandr_manager_class_init (MsdXrandrManagerClass *klass)
 {
         GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->get_property = msd_xrandr_manager_get_property;
-        object_class->set_property = msd_xrandr_manager_set_property;
-        object_class->constructor = msd_xrandr_manager_constructor;
-        object_class->dispose = msd_xrandr_manager_dispose;
         object_class->finalize = msd_xrandr_manager_finalize;
 
         dbus_g_object_type_install_info (MSD_TYPE_XRANDR_MANAGER, &dbus_glib_msd_xrandr_manager_object_info);
