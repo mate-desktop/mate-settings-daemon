@@ -406,11 +406,8 @@ msd_smartcard_manager_emit_smartcard_inserted (MsdSmartcardManager *manager,
 
 static void
 msd_smartcard_manager_emit_smartcard_removed (MsdSmartcardManager *manager,
-                                             MsdSmartcard        *card)
+                                              MsdSmartcard        *card)
 {
-        MsdSmartcardManagerState old_state;
-
-        old_state = manager->priv->state;
         manager->priv->is_unstoppable = TRUE;
         g_signal_emit (manager, msd_smartcard_manager_signals[SMARTCARD_REMOVED], 0,
                        card);
@@ -724,12 +721,9 @@ gboolean
 msd_smartcard_manager_start (MsdSmartcardManager  *manager,
                              GError              **error)
 {
-        GError *watching_error;
         int worker_fd;
-        GPid worker_pid;
         GIOChannel *io_channel;
         GSource *source;
-        GIOFlags channel_flags;
         GError *nss_error;
 
         if (manager->priv->state == MSD_SMARTCARD_MANAGER_STATE_STARTED) {
@@ -740,7 +734,6 @@ msd_smartcard_manager_start (MsdSmartcardManager  *manager,
         manager->priv->state = MSD_SMARTCARD_MANAGER_STATE_STARTING;
 
         worker_fd = -1;
-        worker_pid = 0;
 
         nss_error = NULL;
         if (!manager->priv->nss_is_loaded && !load_nss (&nss_error)) {
@@ -759,7 +752,6 @@ msd_smartcard_manager_start (MsdSmartcardManager  *manager,
         }
 
         if (!msd_smartcard_manager_create_worker (manager, &worker_fd, &manager->priv->worker_thread)) {
-
                 g_set_error (error,
                              MSD_SMARTCARD_MANAGER_ERROR,
                              MSD_SMARTCARD_MANAGER_ERROR_WATCHING_FOR_EVENTS,
@@ -770,9 +762,6 @@ msd_smartcard_manager_start (MsdSmartcardManager  *manager,
         }
 
         io_channel = g_io_channel_unix_new (worker_fd);
-
-        channel_flags = g_io_channel_get_flags (io_channel);
-        watching_error = NULL;
 
         source = g_io_create_watch (io_channel, G_IO_IN | G_IO_HUP);
         g_io_channel_unref (io_channel);
@@ -1062,11 +1051,8 @@ error_out:
 static gboolean
 msd_smartcard_manager_worker_emit_smartcard_inserted (MsdSmartcardManagerWorker  *worker,
                                                       MsdSmartcard               *card,
-                                                      GError                   **error)
+                                                      GError                    **error)
 {
-        GError *write_error;
-
-        write_error = NULL;
         g_debug ("card '%s' inserted!", msd_smartcard_get_name (card));
         if (!write_bytes (worker->write_fd, "I", 1)) {
                 goto error_out;
