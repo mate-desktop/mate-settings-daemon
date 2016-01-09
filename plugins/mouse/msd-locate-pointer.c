@@ -122,21 +122,26 @@ locate_pointer_paint (MsdLocatePointerData *data,
     }
 }
 
-static gboolean
 #if GTK_CHECK_VERSION (3, 0, 0)
+static gboolean
 locate_pointer_draw (GtkWidget      *widget,
-                     cairo_t *cr,
+                     cairo_t        *cr,
+                     gpointer        user_data)
+{
+  MsdLocatePointerData *data = (MsdLocatePointerData *) user_data;
+
+  if (gtk_cairo_should_draw_window (cr, data->window))
+    locate_pointer_paint (data, cr, gtk_widget_is_composited (data->widget));
+
+  return TRUE;
+}
 #else
+static gboolean
 locate_pointer_expose (GtkWidget      *widget,
                        GdkEventExpose *event,
-#endif
                        gpointer        user_data)
 {
   MsdLocatePointerData *data = (MsdLocatePointerData *) user_data;
-#if GTK_CHECK_VERSION (3, 0, 0)
-  if (gtk_cairo_should_draw_window (cr, data->window))
-    locate_pointer_paint (data, cr, gtk_widget_is_composited (data->widget));
-#else
   cairo_t *cr;
 
   if (event->window != data->window)
@@ -145,10 +150,10 @@ locate_pointer_expose (GtkWidget      *widget,
   cr = gdk_cairo_create (data->window);
   locate_pointer_paint (data, cr, gtk_widget_is_composited (data->widget));
   cairo_destroy (cr);
-#endif
 
   return TRUE;
 }
+#endif
 
 static void
 update_shape (MsdLocatePointerData *data)
@@ -157,29 +162,30 @@ update_shape (MsdLocatePointerData *data)
 #if GTK_CHECK_VERSION (3, 0, 0)
   cairo_region_t *region;
   cairo_surface_t *mask;
-#else
-  GdkBitmap *mask;
-#endif
 
-#if GTK_CHECK_VERSION (3, 0, 0)
   mask = cairo_image_surface_create (CAIRO_FORMAT_A1, WINDOW_SIZE, WINDOW_SIZE);
   cr = cairo_create (mask);
   region = gdk_cairo_region_create_from_surface (mask);
-#else
-  mask = gdk_pixmap_new (data->window, WINDOW_SIZE, WINDOW_SIZE, 1);
-  cr = gdk_cairo_create (mask);
-#endif
+
   locate_pointer_paint (data, cr, FALSE);
-#if GTK_CHECK_VERSION (3, 0, 0)
+
   gdk_window_shape_combine_region (data->window, region, 0, 0);
   cairo_region_destroy (region);
+
+  cairo_destroy (cr);
+  cairo_surface_destroy (mask);
 #else
+  GdkBitmap *mask;
+
+  mask = gdk_pixmap_new (data->window, WINDOW_SIZE, WINDOW_SIZE, 1);
+  cr = gdk_cairo_create (mask);
+
+  locate_pointer_paint (data, cr, FALSE);
+
   gdk_window_shape_combine_mask (data->window, mask, 0, 0);
   g_object_unref (mask);
-#endif
+
   cairo_destroy (cr);
-#if GTK_CHECK_VERSION (3, 0, 0)
-  cairo_surface_destroy (mask);
 #endif
 }
 
