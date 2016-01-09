@@ -389,75 +389,10 @@ msd_keyboard_manager_stop (MsdKeyboardManager *manager)
 }
 
 static void
-msd_keyboard_manager_set_property (GObject        *object,
-                                   guint           prop_id,
-                                   const GValue   *value,
-                                   GParamSpec     *pspec)
-{
-        MsdKeyboardManager *self;
-
-        self = MSD_KEYBOARD_MANAGER (object);
-
-        switch (prop_id) {
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static void
-msd_keyboard_manager_get_property (GObject        *object,
-                                   guint           prop_id,
-                                   GValue         *value,
-                                   GParamSpec     *pspec)
-{
-        MsdKeyboardManager *self;
-
-        self = MSD_KEYBOARD_MANAGER (object);
-
-        switch (prop_id) {
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static GObject *
-msd_keyboard_manager_constructor (GType                  type,
-                                  guint                  n_construct_properties,
-                                  GObjectConstructParam *construct_properties)
-{
-        MsdKeyboardManager      *keyboard_manager;
-        MsdKeyboardManagerClass *klass;
-
-        klass = MSD_KEYBOARD_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_KEYBOARD_MANAGER));
-
-        keyboard_manager = MSD_KEYBOARD_MANAGER (G_OBJECT_CLASS (msd_keyboard_manager_parent_class)->constructor (type,
-                                                                                                      n_construct_properties,
-                                                                                                      construct_properties));
-
-        return G_OBJECT (keyboard_manager);
-}
-
-static void
-msd_keyboard_manager_dispose (GObject *object)
-{
-        MsdKeyboardManager *keyboard_manager;
-
-        keyboard_manager = MSD_KEYBOARD_MANAGER (object);
-
-        G_OBJECT_CLASS (msd_keyboard_manager_parent_class)->dispose (object);
-}
-
-static void
 msd_keyboard_manager_class_init (MsdKeyboardManagerClass *klass)
 {
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->get_property = msd_keyboard_manager_get_property;
-        object_class->set_property = msd_keyboard_manager_set_property;
-        object_class->constructor = msd_keyboard_manager_constructor;
-        object_class->dispose = msd_keyboard_manager_dispose;
         object_class->finalize = msd_keyboard_manager_finalize;
 
         g_type_class_add_private (klass, sizeof (MsdKeyboardManagerPrivate));
