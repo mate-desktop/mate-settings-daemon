@@ -237,10 +237,8 @@ msd_timeline_set_property (GObject      *object,
 			   GParamSpec   *pspec)
 {
   MsdTimeline *timeline;
-  MsdTimelinePriv *priv;
 
   timeline = MSD_TIMELINE (object);
-  priv = MSD_TIMELINE_GET_PRIV (timeline);
 
   switch (prop_id)
     {
