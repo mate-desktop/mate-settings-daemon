@@ -759,75 +759,10 @@ mate_xsettings_manager_stop (MateXSettingsManager *manager)
 }
 
 static void
-mate_xsettings_manager_set_property (GObject        *object,
-                                      guint           prop_id,
-                                      const GValue   *value,
-                                      GParamSpec     *pspec)
-{
-        MateXSettingsManager *self;
-
-        self = MATE_XSETTINGS_MANAGER (object);
-
-        switch (prop_id) {
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static void
-mate_xsettings_manager_get_property (GObject        *object,
-                                      guint           prop_id,
-                                      GValue         *value,
-                                      GParamSpec     *pspec)
-{
-        MateXSettingsManager *self;
-
-        self = MATE_XSETTINGS_MANAGER (object);
-
-        switch (prop_id) {
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static GObject *
-mate_xsettings_manager_constructor (GType                  type,
-                                     guint                  n_construct_properties,
-                                     GObjectConstructParam *construct_properties)
-{
-        MateXSettingsManager      *xsettings_manager;
-        MateXSettingsManagerClass *klass;
-
-        klass = MATE_XSETTINGS_MANAGER_CLASS (g_type_class_peek (MATE_TYPE_XSETTINGS_MANAGER));
-
-        xsettings_manager = MATE_XSETTINGS_MANAGER (G_OBJECT_CLASS (mate_xsettings_manager_parent_class)->constructor (type,
-                                                                                                                  n_construct_properties,
-                                                                                                                  construct_properties));
-
-        return G_OBJECT (xsettings_manager);
-}
-
-static void
-mate_xsettings_manager_dispose (GObject *object)
-{
-        MateXSettingsManager *xsettings_manager;
-
-        xsettings_manager = MATE_XSETTINGS_MANAGER (object);
-
-        G_OBJECT_CLASS (mate_xsettings_manager_parent_class)->dispose (object);
-}
-
-static void
 mate_xsettings_manager_class_init (MateXSettingsManagerClass *klass)
 {
         GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->get_property = mate_xsettings_manager_get_property;
-        object_class->set_property = mate_xsettings_manager_set_property;
-        object_class->constructor = mate_xsettings_manager_constructor;
-        object_class->dispose = mate_xsettings_manager_dispose;
         object_class->finalize = mate_xsettings_manager_finalize;
 
         g_type_class_add_private (klass, sizeof (MateXSettingsManagerPrivate));
