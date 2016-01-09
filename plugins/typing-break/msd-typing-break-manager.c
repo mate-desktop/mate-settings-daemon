@@ -216,75 +216,10 @@ msd_typing_break_manager_stop (MsdTypingBreakManager *manager)
 }
 
 static void
-msd_typing_break_manager_set_property (GObject        *object,
-                               guint           prop_id,
-                               const GValue   *value,
-                               GParamSpec     *pspec)
-{
-        MsdTypingBreakManager *self;
-
-        self = MSD_TYPING_BREAK_MANAGER (object);
-
-        switch (prop_id) {
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static void
-msd_typing_break_manager_get_property (GObject        *object,
-                               guint           prop_id,
-                               GValue         *value,
-                               GParamSpec     *pspec)
-{
-        MsdTypingBreakManager *self;
-
-        self = MSD_TYPING_BREAK_MANAGER (object);
-
-        switch (prop_id) {
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static GObject *
-msd_typing_break_manager_constructor (GType                  type,
-                              guint                  n_construct_properties,
-                              GObjectConstructParam *construct_properties)
-{
-        MsdTypingBreakManager      *typing_break_manager;
-        MsdTypingBreakManagerClass *klass;
-
-        klass = MSD_TYPING_BREAK_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_TYPING_BREAK_MANAGER));
-
-        typing_break_manager = MSD_TYPING_BREAK_MANAGER (G_OBJECT_CLASS (msd_typing_break_manager_parent_class)->constructor (type,
-                                                                                                      n_construct_properties,
-                                                                                                      construct_properties));
-
-        return G_OBJECT (typing_break_manager);
-}
-
-static void
-msd_typing_break_manager_dispose (GObject *object)
-{
-        MsdTypingBreakManager *typing_break_manager;
-
-        typing_break_manager = MSD_TYPING_BREAK_MANAGER (object);
-
-        G_OBJECT_CLASS (msd_typing_break_manager_parent_class)->dispose (object);
-}
-
-static void
 msd_typing_break_manager_class_init (MsdTypingBreakManagerClass *klass)
 {
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->get_property = msd_typing_break_manager_get_property;
-        object_class->set_property = msd_typing_break_manager_set_property;
-        object_class->constructor = msd_typing_break_manager_constructor;
-        object_class->dispose = msd_typing_break_manager_dispose;
         object_class->finalize = msd_typing_break_manager_finalize;
 
         g_type_class_add_private (klass, sizeof (MsdTypingBreakManagerPrivate));
