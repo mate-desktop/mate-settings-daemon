@@ -53,10 +53,6 @@
 #include "mate-settings-profile.h"
 #include "msd-xrandr-manager.h"
 
-#ifndef HOST_NAME_MAX
-#define HOST_NAME_MAX   255
-#endif
-
 #define MSD_XRANDR_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_XRANDR_MANAGER, MsdXrandrManagerPrivate))
 
 #define CONF_SCHEMA                                    "org.mate.SettingsDaemon.plugins.xrandr"

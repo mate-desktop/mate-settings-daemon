@@ -54,10 +54,6 @@
 #define MSD_KEYBOARD_MANAGER_GET_PRIVATE(o) \
 	(G_TYPE_INSTANCE_GET_PRIVATE((o), MSD_TYPE_KEYBOARD_MANAGER, MsdKeyboardManagerPrivate))
 
-#ifndef HOST_NAME_MAX
-	#define HOST_NAME_MAX 255
-#endif
-
 #define MSD_KEYBOARD_SCHEMA "org.mate.peripherals-keyboard"
 
 #define KEY_REPEAT         "repeat"
