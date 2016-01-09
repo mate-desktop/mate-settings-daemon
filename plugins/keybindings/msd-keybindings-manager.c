@@ -614,75 +614,10 @@ msd_keybindings_manager_stop (MsdKeybindingsManager *manager)
 }
 
 static void
-msd_keybindings_manager_set_property (GObject        *object,
-                               guint           prop_id,
-                               const GValue   *value,
-                               GParamSpec     *pspec)
-{
-        MsdKeybindingsManager *self;
-
-        self = MSD_KEYBINDINGS_MANAGER (object);
-
-        switch (prop_id) {
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static void
-msd_keybindings_manager_get_property (GObject        *object,
-                               guint           prop_id,
-                               GValue         *value,
-                               GParamSpec     *pspec)
-{
-        MsdKeybindingsManager *self;
-
-        self = MSD_KEYBINDINGS_MANAGER (object);
-
-        switch (prop_id) {
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static GObject *
-msd_keybindings_manager_constructor (GType                  type,
-                              guint                  n_construct_properties,
-                              GObjectConstructParam *construct_properties)
-{
-        MsdKeybindingsManager      *keybindings_manager;
-        MsdKeybindingsManagerClass *klass;
-
-        klass = MSD_KEYBINDINGS_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_KEYBINDINGS_MANAGER));
-
-        keybindings_manager = MSD_KEYBINDINGS_MANAGER (G_OBJECT_CLASS (msd_keybindings_manager_parent_class)->constructor (type,
-                                                                                                      n_construct_properties,
-                                                                                                      construct_properties));
-
-        return G_OBJECT (keybindings_manager);
-}
-
-static void
-msd_keybindings_manager_dispose (GObject *object)
-{
-        MsdKeybindingsManager *keybindings_manager;
-
-        keybindings_manager = MSD_KEYBINDINGS_MANAGER (object);
-
-        G_OBJECT_CLASS (msd_keybindings_manager_parent_class)->dispose (object);
-}
-
-static void
 msd_keybindings_manager_class_init (MsdKeybindingsManagerClass *klass)
 {
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->get_property = msd_keybindings_manager_get_property;
-        object_class->set_property = msd_keybindings_manager_set_property;
-        object_class->constructor = msd_keybindings_manager_constructor;
-        object_class->dispose = msd_keybindings_manager_dispose;
         object_class->finalize = msd_keybindings_manager_finalize;
 
         g_type_class_add_private (klass, sizeof (MsdKeybindingsManagerPrivate));
