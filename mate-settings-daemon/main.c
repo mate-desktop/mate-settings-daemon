@@ -280,10 +280,6 @@ on_term_signal_pipe_closed (GIOChannel *source,
                             GIOCondition condition,
                             gpointer data)
 {
-        MateSettingsManager *manager;
-
-        manager = MATE_SETTINGS_MANAGER (data);
-
         term_signal_pipe_fds[0] = -1;
 
         /* Got SIGTERM, time to clean up and get out
