@@ -109,80 +109,14 @@ G_DEFINE_TYPE (MsdMouseManager, msd_mouse_manager, G_TYPE_OBJECT)
 static gpointer manager_object = NULL;
 
 static void
-msd_mouse_manager_set_property (GObject        *object,
-                               guint           prop_id,
-                               const GValue   *value,
-                               GParamSpec     *pspec)
-{
-        MsdMouseManager *self;
-
-        self = MSD_MOUSE_MANAGER (object);
-
-        switch (prop_id) {
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static void
-msd_mouse_manager_get_property (GObject        *object,
-                               guint           prop_id,
-                               GValue         *value,
-                               GParamSpec     *pspec)
-{
-        MsdMouseManager *self;
-
-        self = MSD_MOUSE_MANAGER (object);
-
-        switch (prop_id) {
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static GObject *
-msd_mouse_manager_constructor (GType                  type,
-                              guint                  n_construct_properties,
-                              GObjectConstructParam *construct_properties)
-{
-        MsdMouseManager      *mouse_manager;
-        MsdMouseManagerClass *klass;
-
-        klass = MSD_MOUSE_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_MOUSE_MANAGER));
-
-        mouse_manager = MSD_MOUSE_MANAGER (G_OBJECT_CLASS (msd_mouse_manager_parent_class)->constructor (type,
-                                                                                                      n_construct_properties,
-                                                                                                      construct_properties));
-
-        return G_OBJECT (mouse_manager);
-}
-
-static void
-msd_mouse_manager_dispose (GObject *object)
-{
-        MsdMouseManager *mouse_manager;
-
-        mouse_manager = MSD_MOUSE_MANAGER (object);
-
-        G_OBJECT_CLASS (msd_mouse_manager_parent_class)->dispose (object);
-}
-
-static void
 msd_mouse_manager_class_init (MsdMouseManagerClass *klass)
 {
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->get_property = msd_mouse_manager_get_property;
-        object_class->set_property = msd_mouse_manager_set_property;
-        object_class->constructor = msd_mouse_manager_constructor;
-        object_class->dispose = msd_mouse_manager_dispose;
         object_class->finalize = msd_mouse_manager_finalize;
 
         g_type_class_add_private (klass, sizeof (MsdMouseManagerPrivate));
 }
-
 
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
 static gboolean
