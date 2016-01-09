@@ -193,7 +193,7 @@ log_output (MateRROutputInfo *output)
         gchar *name = mate_rr_output_info_get_name (output);
         gchar *display_name = mate_rr_output_info_get_display_name (output);
 
-	log_msg ("        %s: ", name ? name : "unknown");
+        log_msg ("        %s: ", name ? name : "unknown");
 
         if (mate_rr_output_info_is_connected (output)) {
                 if (mate_rr_output_info_is_active (output)) {
@@ -699,7 +699,7 @@ static void
 print_configuration (MateRRConfig *config, const char *header)
 {
         int i;
-	MateRROutputInfo **outputs;
+        MateRROutputInfo **outputs;
 
         g_print ("=== %s Configuration ===\n", header);
         if (!config) {
@@ -708,7 +708,7 @@ print_configuration (MateRRConfig *config, const char *header)
         }
 
         outputs = mate_rr_config_get_outputs (config);
-	for (i = 0; outputs[i] != NULL; ++i)
+        for (i = 0; outputs[i] != NULL; ++i)
                 print_output (outputs[i]);
 }
 
@@ -733,7 +733,7 @@ static MateRRConfig *
 make_clone_setup (MateRRScreen *screen)
 {
         MateRRConfig *result;
-	MateRROutputInfo **outputs;
+        MateRROutputInfo **outputs;
         int width, height;
         int i;
 
@@ -741,7 +741,7 @@ make_clone_setup (MateRRScreen *screen)
                 return NULL;
 
         result = mate_rr_config_new_current (screen, NULL);
-	outputs = mate_rr_config_get_outputs (result);
+        outputs = mate_rr_config_get_outputs (result);
 
         for (i = 0; outputs[i] != NULL; ++i) {
                 MateRROutputInfo *info = outputs[i];
@@ -860,7 +860,7 @@ make_laptop_setup (MateRRScreen *screen)
 {
         /* Turn on the laptop, disable everything else */
         MateRRConfig *result = mate_rr_config_new_current (screen, NULL);
-	MateRROutputInfo **outputs = mate_rr_config_get_outputs (result);
+        MateRROutputInfo **outputs = mate_rr_config_get_outputs (result);
         int i;
 
         for (i = 0; outputs[i] != NULL; ++i) {
@@ -889,7 +889,6 @@ make_laptop_setup (MateRRScreen *screen)
          * one connected "laptop" screen?
          */
         return result;
-
 }
 
 static int
@@ -948,7 +947,7 @@ make_other_setup (MateRRScreen *screen)
          */
 
         MateRRConfig *result = mate_rr_config_new_current (screen, NULL);
-	MateRROutputInfo **outputs = mate_rr_config_get_outputs (result);
+        MateRROutputInfo **outputs = mate_rr_config_get_outputs (result);
         int i;
 
         for (i = 0; outputs[i] != NULL; ++i) {
@@ -1116,7 +1115,7 @@ error_message (MsdXrandrManager *mgr, const char *primary_text, GError *error_to
 #else
         GtkWidget *dialog;
 
-	dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
+        dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
                                          "%s", primary_text);
         gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s",
                                                   error_to_display ? error_to_display->message : secondary_text);
@@ -1235,7 +1234,7 @@ static MateRROutputInfo *
 get_laptop_output_info (MateRRScreen *screen, MateRRConfig *config)
 {
         int i;
-	MateRROutputInfo **outputs = mate_rr_config_get_outputs (config);
+        MateRROutputInfo **outputs = mate_rr_config_get_outputs (config);
 
         for (i = 0; outputs[i] != NULL; i++) {
                 if (is_laptop (screen, outputs[i]))
@@ -1379,7 +1378,7 @@ auto_configure_outputs (MsdXrandrManager *manager, guint32 timestamp)
 {
         MsdXrandrManagerPrivate *priv = manager->priv;
         MateRRConfig *config;
-	MateRROutputInfo **outputs;
+        MateRROutputInfo **outputs;
         int i;
         GList *just_turned_on;
         GList *l;
@@ -1402,7 +1401,7 @@ auto_configure_outputs (MsdXrandrManager *manager, guint32 timestamp)
          */
 
         just_turned_on = NULL;
-	outputs = mate_rr_config_get_outputs (config);
+        outputs = mate_rr_config_get_outputs (config);
 
         for (i = 0; outputs[i] != NULL; i++) {
                 MateRROutputInfo *output = outputs[i];
@@ -1637,17 +1636,17 @@ run_display_capplet (GtkWidget *widget)
 
         error = NULL;
         if (!mate_gdk_spawn_command_line_on_screen (screen, MSD_XRANDR_DISPLAY_CAPPLET, &error)) {
-		GtkWidget *dialog;
+                GtkWidget *dialog;
 
-		dialog = gtk_message_dialog_new_with_markup (NULL, 0, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
+                dialog = gtk_message_dialog_new_with_markup (NULL, 0, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
                                                              "<span weight=\"bold\" size=\"larger\">"
                                                              "Display configuration could not be run"
                                                              "</span>\n\n"
                                                              "%s", error->message);
-		gtk_dialog_run (GTK_DIALOG (dialog));
-		gtk_widget_destroy (dialog);
+                gtk_dialog_run (GTK_DIALOG (dialog));
+                gtk_widget_destroy (dialog);
 
-		g_error_free (error);
+                g_error_free (error);
         }
 }
 
@@ -1811,7 +1810,7 @@ make_menu_item_for_output_title (MsdXrandrManager *manager, MateRROutputInfo *ou
         GtkWidget *item;
         GtkWidget *label;
         char *str;
-	GdkColor black = { 0, 0, 0, 0 };
+        GdkColor black = { 0, 0, 0, 0 };
 
         item = gtk_menu_item_new ();
 
@@ -1823,11 +1822,11 @@ make_menu_item_for_output_title (MsdXrandrManager *manager, MateRROutputInfo *ou
         gtk_label_set_markup (GTK_LABEL (label), str);
         g_free (str);
 
-	/* Make the label explicitly black.  We don't want it to follow the
-	 * theme's colors, since the label is always shown against a light
-	 * pastel background.  See bgo#556050
-	 */
-	gtk_widget_modify_fg (label, gtk_widget_get_state (label), &black);
+        /* Make the label explicitly black.  We don't want it to follow the
+         * theme's colors, since the label is always shown against a light
+         * pastel background.  See bgo#556050
+         */
+        gtk_widget_modify_fg (label, gtk_widget_get_state (label), &black);
 
         /* Add padding around the label to fit the box that we'll draw for color-coding */
 #if GTK_CHECK_VERSION (3, 14, 0)
@@ -1958,9 +1957,9 @@ output_rotation_item_activate_cb (GtkCheckMenuItem *item, gpointer data)
         MateRRRotation rotation;
         GError *error;
 
-	/* Not interested in deselected items */
-	if (!gtk_check_menu_item_get_active (item))
-		return;
+        /* Not interested in deselected items */
+        if (!gtk_check_menu_item_get_active (item))
+                return;
 
         ensure_current_configuration_is_saved ();
 
@@ -2212,15 +2211,15 @@ on_config_changed (GSettings        *settings,
                    gchar            *key,
                    MsdXrandrManager *manager)
 {
-	if (g_strcmp0 (key, CONF_KEY_SHOW_NOTIFICATION_ICON) == 0)
-		start_or_stop_icon (manager);
+        if (g_strcmp0 (key, CONF_KEY_SHOW_NOTIFICATION_ICON) == 0)
+                start_or_stop_icon (manager);
 }
 
 static gboolean
 apply_intended_configuration (MsdXrandrManager *manager, const char *intended_filename, guint32 timestamp)
 {
         GError *my_error;
-	gboolean result;
+        gboolean result;
 
         my_error = NULL;
         result = apply_configuration_from_filename (manager, intended_filename, TRUE, timestamp, &my_error);
@@ -2240,24 +2239,24 @@ apply_intended_configuration (MsdXrandrManager *manager, const char *intended_fi
 static void
 apply_default_boot_configuration (MsdXrandrManager *mgr, guint32 timestamp)
 {
-	MsdXrandrManagerPrivate *priv = mgr->priv;
-	MateRRScreen *screen = priv->rw_screen;
-   	MateRRConfig *config;
-   	gboolean turn_on_external, turn_on_laptop;
+        MsdXrandrManagerPrivate *priv = mgr->priv;
+        MateRRScreen *screen = priv->rw_screen;
+        MateRRConfig *config;
+        gboolean turn_on_external, turn_on_laptop;
 
         turn_on_external =
                 g_settings_get_boolean (mgr->priv->settings, CONF_KEY_TURN_ON_EXTERNAL_MONITORS_AT_STARTUP);
         turn_on_laptop =
                 g_settings_get_boolean (mgr->priv->settings, CONF_KEY_TURN_ON_LAPTOP_MONITOR_AT_STARTUP);
 
-	if (turn_on_external && turn_on_laptop)
-		config = make_clone_setup (screen);
-	else if (!turn_on_external && turn_on_laptop)
-		config = make_laptop_setup (screen);
-	else if (turn_on_external && !turn_on_laptop)
-		config = make_other_setup (screen);
-	else
-		config = make_laptop_setup (screen);
+        if (turn_on_external && turn_on_laptop)
+                config = make_clone_setup (screen);
+        else if (!turn_on_external && turn_on_laptop)
+                config = make_laptop_setup (screen);
+        else if (turn_on_external && !turn_on_laptop)
+                config = make_other_setup (screen);
+        else
+                config = make_laptop_setup (screen);
 
         if (config) {
                 apply_configuration_and_display_error (mgr, config, timestamp);
@@ -2312,7 +2311,6 @@ apply_stored_configuration_at_startup (MsdXrandrManager *manager, guint32 timest
         success = apply_intended_configuration (manager, intended_filename, timestamp);
 
 out:
-
         if (my_error)
                 g_error_free (my_error);
 
