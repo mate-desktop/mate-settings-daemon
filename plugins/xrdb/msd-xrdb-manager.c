@@ -525,75 +525,10 @@ msd_xrdb_manager_stop (MsdXrdbManager *manager)
 }
 
 static void
-msd_xrdb_manager_set_property (GObject        *object,
-                               guint           prop_id,
-                               const GValue   *value,
-                               GParamSpec     *pspec)
-{
-        MsdXrdbManager *self;
-
-        self = MSD_XRDB_MANAGER (object);
-
-        switch (prop_id) {
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static void
-msd_xrdb_manager_get_property (GObject        *object,
-                               guint           prop_id,
-                               GValue         *value,
-                               GParamSpec     *pspec)
-{
-        MsdXrdbManager *self;
-
-        self = MSD_XRDB_MANAGER (object);
-
-        switch (prop_id) {
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static GObject *
-msd_xrdb_manager_constructor (GType                  type,
-                              guint                  n_construct_properties,
-                              GObjectConstructParam *construct_properties)
-{
-        MsdXrdbManager      *xrdb_manager;
-        MsdXrdbManagerClass *klass;
-
-        klass = MSD_XRDB_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_XRDB_MANAGER));
-
-        xrdb_manager = MSD_XRDB_MANAGER (G_OBJECT_CLASS (msd_xrdb_manager_parent_class)->constructor (type,
-                                                                                                      n_construct_properties,
-                                                                                                      construct_properties));
-
-        return G_OBJECT (xrdb_manager);
-}
-
-static void
-msd_xrdb_manager_dispose (GObject *object)
-{
-        MsdXrdbManager *xrdb_manager;
-
-        xrdb_manager = MSD_XRDB_MANAGER (object);
-
-        G_OBJECT_CLASS (msd_xrdb_manager_parent_class)->dispose (object);
-}
-
-static void
 msd_xrdb_manager_class_init (MsdXrdbManagerClass *klass)
 {
         GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->get_property = msd_xrdb_manager_get_property;
-        object_class->set_property = msd_xrdb_manager_set_property;
-        object_class->constructor = msd_xrdb_manager_constructor;
-        object_class->dispose = msd_xrdb_manager_dispose;
         object_class->finalize = msd_xrdb_manager_finalize;
 
         g_type_class_add_private (klass, sizeof (MsdXrdbManagerPrivate));
