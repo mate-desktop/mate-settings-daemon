@@ -80,10 +80,6 @@ msd_dummy_manager_set_property (GObject        *object,
                                const GValue   *value,
                                GParamSpec     *pspec)
 {
-        MsdDummyManager *self;
-
-        self = MSD_DUMMY_MANAGER (object);
-
         switch (prop_id) {
         default:
                 G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -97,10 +93,6 @@ msd_dummy_manager_get_property (GObject        *object,
                                GValue         *value,
                                GParamSpec     *pspec)
 {
-        MsdDummyManager *self;
-
-        self = MSD_DUMMY_MANAGER (object);
-
         switch (prop_id) {
         default:
                 G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -114,9 +106,6 @@ msd_dummy_manager_constructor (GType                  type,
                               GObjectConstructParam *construct_properties)
 {
         MsdDummyManager      *dummy_manager;
-        MsdDummyManagerClass *klass;
-
-        klass = MSD_DUMMY_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_DUMMY_MANAGER));
 
         dummy_manager = MSD_DUMMY_MANAGER (G_OBJECT_CLASS (msd_dummy_manager_parent_class)->constructor (type,
                                                                                                       n_construct_properties,
@@ -128,10 +117,6 @@ msd_dummy_manager_constructor (GType                  type,
 static void
 msd_dummy_manager_dispose (GObject *object)
 {
-        MsdDummyManager *dummy_manager;
-
-        dummy_manager = MSD_DUMMY_MANAGER (object);
-
         G_OBJECT_CLASS (msd_dummy_manager_parent_class)->dispose (object);
 }
 
