@@ -356,23 +356,6 @@ mate_settings_manager_stop (MateSettingsManager *manager)
         _unload_all (manager);
 }
 
-static GObject *
-mate_settings_manager_constructor (GType                  type,
-                                    guint                  n_construct_properties,
-                                    GObjectConstructParam *construct_properties)
-{
-        MateSettingsManager      *manager;
-        MateSettingsManagerClass *klass;
-
-        klass = MATE_SETTINGS_MANAGER_CLASS (g_type_class_peek (MATE_TYPE_SETTINGS_MANAGER));
-
-        manager = MATE_SETTINGS_MANAGER (G_OBJECT_CLASS (mate_settings_manager_parent_class)->constructor (type,
-                                                                                                         n_construct_properties,
-                                                                                                         construct_properties));
-
-        return G_OBJECT (manager);
-}
-
 static void
 mate_settings_manager_dispose (GObject *object)
 {
@@ -390,7 +373,6 @@ mate_settings_manager_class_init (MateSettingsManagerClass *klass)
 {
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->constructor = mate_settings_manager_constructor;
         object_class->dispose = mate_settings_manager_dispose;
         object_class->finalize = mate_settings_manager_finalize;
 
