@@ -193,7 +193,6 @@ real_draw_bg (MsdBackgroundManager *manager,
 {
 	MsdBackgroundManagerPrivate *p = manager->priv;
 	GdkWindow *window = gdk_screen_get_root_window (screen);
-	gint scr_num = gdk_screen_get_number (screen);
 	gint width   = gdk_screen_get_width (screen);
 	gint height  = gdk_screen_get_height (screen);
 
