@@ -353,15 +353,6 @@ mate_settings_manager_stop (MateSettingsManager *manager)
 {
         g_debug ("Stopping settings manager");
 
-#ifdef ENABLE_PYTHON
-        /* Note: that this may cause finalization of objects by
-         * running the garbage collector. Since some of the plugin may
-         * have installed callbacks upon object finalization it must
-         * run before we get rid of the plugins.
-         */
-        mate_settings_python_shutdown ();
-#endif
-
         _unload_all (manager);
 }
 
