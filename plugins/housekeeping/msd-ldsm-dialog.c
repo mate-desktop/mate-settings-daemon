@@ -158,8 +158,7 @@ ignore_check_button_toggled_cb (GtkToggleButton *button,
         GSettings *settings;
         gchar **settings_list;
         GSList *ignore_paths = NULL;
-        GError *error = NULL;
-        gboolean ignore, ret, updated;
+        gboolean ignore, updated;
         gint i;
 
         settings = g_settings_new (SETTINGS_SCHEMA);
