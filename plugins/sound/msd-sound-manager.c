@@ -329,25 +329,6 @@ msd_sound_manager_stop (MsdSoundManager *manager)
 #endif
 }
 
-static GObject *
-msd_sound_manager_constructor (
-                GType type,
-                guint n_construct_properties,
-                GObjectConstructParam *construct_properties)
-{
-        MsdSoundManager *m;
-        MsdSoundManagerClass *klass;
-
-        klass = MSD_SOUND_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_SOUND_MANAGER));
-
-        m = MSD_SOUND_MANAGER (G_OBJECT_CLASS (msd_sound_manager_parent_class)->constructor (
-                                                           type,
-                                                           n_construct_properties,
-                                                           construct_properties));
-
-        return G_OBJECT (m);
-}
-
 static void
 msd_sound_manager_dispose (GObject *object)
 {
@@ -365,7 +346,6 @@ msd_sound_manager_class_init (MsdSoundManagerClass *klass)
 {
         GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->constructor = msd_sound_manager_constructor;
         object_class->dispose = msd_sound_manager_dispose;
         object_class->finalize = msd_sound_manager_finalize;
 
