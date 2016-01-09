@@ -968,75 +968,10 @@ msd_clipboard_manager_stop (MsdClipboardManager *manager)
 }
 
 static void
-msd_clipboard_manager_set_property (GObject        *object,
-                                    guint           prop_id,
-                                    const GValue   *value,
-                                    GParamSpec     *pspec)
-{
-        MsdClipboardManager *self;
-
-        self = MSD_CLIPBOARD_MANAGER (object);
-
-        switch (prop_id) {
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static void
-msd_clipboard_manager_get_property (GObject        *object,
-                                    guint           prop_id,
-                                    GValue         *value,
-                                    GParamSpec     *pspec)
-{
-        MsdClipboardManager *self;
-
-        self = MSD_CLIPBOARD_MANAGER (object);
-
-        switch (prop_id) {
-        default:
-                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-                break;
-        }
-}
-
-static GObject *
-msd_clipboard_manager_constructor (GType                  type,
-                                   guint                  n_construct_properties,
-                                   GObjectConstructParam *construct_properties)
-{
-        MsdClipboardManager      *clipboard_manager;
-        MsdClipboardManagerClass *klass;
-
-        klass = MSD_CLIPBOARD_MANAGER_CLASS (g_type_class_peek (MSD_TYPE_CLIPBOARD_MANAGER));
-
-        clipboard_manager = MSD_CLIPBOARD_MANAGER (G_OBJECT_CLASS (msd_clipboard_manager_parent_class)->constructor (type,
-                                                                                                      n_construct_properties,
-                                                                                                      construct_properties));
-
-        return G_OBJECT (clipboard_manager);
-}
-
-static void
-msd_clipboard_manager_dispose (GObject *object)
-{
-        MsdClipboardManager *clipboard_manager;
-
-        clipboard_manager = MSD_CLIPBOARD_MANAGER (object);
-
-        G_OBJECT_CLASS (msd_clipboard_manager_parent_class)->dispose (object);
-}
-
-static void
 msd_clipboard_manager_class_init (MsdClipboardManagerClass *klass)
 {
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
-        object_class->get_property = msd_clipboard_manager_get_property;
-        object_class->set_property = msd_clipboard_manager_set_property;
-        object_class->constructor = msd_clipboard_manager_constructor;
-        object_class->dispose = msd_clipboard_manager_dispose;
         object_class->finalize = msd_clipboard_manager_finalize;
 
         g_type_class_add_private (klass, sizeof (MsdClipboardManagerPrivate));
