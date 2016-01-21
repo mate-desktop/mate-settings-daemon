@@ -219,7 +219,7 @@ msd_ldsm_dialog_init (MsdLdsmDialog *dialog)
         gtk_container_set_border_width (GTK_CONTAINER (dialog), 5);
 
         /* Create the image */
-        image = gtk_image_new_from_stock (GTK_STOCK_DIALOG_WARNING, GTK_ICON_SIZE_DIALOG);
+        image = gtk_image_new_from_icon_name ("dialog-warning", GTK_ICON_SIZE_DIALOG);
 #if GTK_CHECK_VERSION (3, 14, 0)
         gtk_widget_set_valign (image, GTK_ALIGN_START);
 #else
@@ -457,7 +457,7 @@ msd_ldsm_dialog_new (gboolean     other_usable_partitions,
                 button_empty_trash = gtk_dialog_add_button (GTK_DIALOG (dialog),
                                                             _("Empty Trash"),
                                                             MSD_LDSM_DIALOG_RESPONSE_EMPTY_TRASH);
-                empty_trash_image = gtk_image_new_from_stock (GTK_STOCK_CLEAR, GTK_ICON_SIZE_BUTTON);
+                empty_trash_image = gtk_image_new_from_icon_name ("edit-clear", GTK_ICON_SIZE_BUTTON);
                 gtk_button_set_image (GTK_BUTTON (button_empty_trash), empty_trash_image);
         }
 	
