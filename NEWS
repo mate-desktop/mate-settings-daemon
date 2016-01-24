@@ -1,4 +1,8 @@
 1.13.0
+  * GTK3: several deprecation fixes
+  * Add setting to enable/disable the osd
+  * fix some build warnings
+  * drop MateConf migration script
 
 1.12.1
   * xrandr: install icon in correct directory
