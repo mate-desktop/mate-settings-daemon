@@ -453,7 +453,7 @@ xft_settings_set_xresources (MateXftSettings *settings)
 
         /* Set the new X property */
         XChangeProperty(dpy, RootWindow (dpy, 0),
-                XA_RESOURCE_MANAGER, XA_STRING, 8, PropModeReplace, add_string->str, add_string->len);
+                XA_RESOURCE_MANAGER, XA_STRING, 8, PropModeReplace, (unsigned char *) add_string->str, add_string->len);
         XCloseDisplay (dpy);
 
         g_string_free (add_string, TRUE);
