@@ -3,21 +3,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Alexander Shopov <ash@kambanaria.org>, 2006, 2007, 2008, 2009, 2010.
-# Borislav Aleksandrov <B.Aleksandrov@cnsys.bg>, 2002.
-# Damyan Ivanov <dam+mate@ktnx.net>, 2010.
-# Rostislav Raykov <zbrox@i-space.org>, 2004, 2005.
-# Vladimir Petkov <vpetkov@i-space.org>, 2004, 2005, 2006.
-# Yanko Kaneti <yaneti@declera.com>, 2002.
-# Yavor Doganov <yavor@gnu.org>, 2007, 2008.
+# Alexander Shopov <ash@kambanaria.org>, 2006, 2007, 2008, 2009, 2010
+# Borislav Aleksandrov <B.Aleksandrov@cnsys.bg>, 2002
+# Damyan Ivanov <dam+mate@ktnx.net>, 2010
+# Rostislav Raykov <zbrox@i-space.org>, 2004, 2005
+# Vladimir Petkov <vpetkov@i-space.org>, 2004, 2005, 2006
+# Yanko Kaneti <yaneti@declera.com>, 2002
+# Yavor Doganov <yavor@gnu.org>, 2007, 2008
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
-"POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2013-03-22 22:15+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
-"Language-Team: Bulgarian <dict@ludost.net>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-12 14:49+0300\n"
+"PO-Revision-Date: 2016-01-12 11:55+0000\n"
+"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
+"Language-Team: Bulgarian (http://www.transifex.com/mate/MATE/language/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,67 +28,82 @@ msgstr ""
 msgid "Accessibility"
 msgstr "Достъпност"
 
-#: ../data/org.mate.applications-at.gschema.xml.in.in.h:1
+#: ../data/50-accessibility.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
+msgid "Toggle magnifier"
+msgstr "Превключване на лупата"
+
+#: ../data/50-accessibility.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
+msgid "Toggle screen reader"
+msgstr "Превключване на екранния четец"
+
+#: ../data/50-accessibility.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
+msgid "Toggle on-screen keyboard"
+msgstr "Превключване на екранната клавиатура"
+
+#: ../data/org.mate.applications-at.gschema.xml.in.h:1
 msgid "On-screen keyboard"
 msgstr "Екранна клавиатура"
 
-#: ../data/org.mate.applications-at.gschema.xml.in.in.h:2
+#: ../data/org.mate.applications-at.gschema.xml.in.h:2
 msgid "Whether the on-screen keyboard is turned on."
 msgstr "Дали екранната клавиатура е включена."
 
-#: ../data/org.mate.applications-at.gschema.xml.in.in.h:3
+#: ../data/org.mate.applications-at.gschema.xml.in.h:3
 msgid "Screen magnifier"
 msgstr "Лупа"
 
-#: ../data/org.mate.applications-at.gschema.xml.in.in.h:4
+#: ../data/org.mate.applications-at.gschema.xml.in.h:4
 msgid "Whether the screen magnifier is turned on."
 msgstr "Дали лупата е включена."
 
-#: ../data/org.mate.applications-at.gschema.xml.in.in.h:5
+#: ../data/org.mate.applications-at.gschema.xml.in.h:5
 msgid "Screen reader"
 msgstr "Екранен четец"
 
-#: ../data/org.mate.applications-at.gschema.xml.in.in.h:6
+#: ../data/org.mate.applications-at.gschema.xml.in.h:6
 msgid "Whether the screen reader is turned on."
 msgstr "Дали екранният четец е включен."
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:1
+#: ../data/org.mate.font-rendering.gschema.xml.in.h:1
 msgid "DPI"
 msgstr "DPI"
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:2
+#: ../data/org.mate.font-rendering.gschema.xml.in.h:2
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
 msgstr "Разделителната способност при преобразуване на размери на шрифтове в размери на пиксели, в точки на инч."
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:3
+#: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
 msgstr "Заглаждане"
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:4
+#: ../data/org.mate.font-rendering.gschema.xml.in.h:4
 msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
 msgstr "Видът на заглаждане при изобразяване на шрифтове. Възможни стойности са „none“ (без заглаждане), „grayscale“ (стандартно за степени на сивото) и „rgba“ (за подпикселно заглаждане — само за екрани тип LCD)."
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:5
+#: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
 msgstr "Шрифтови подсказки"
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:6
+#: ../data/org.mate.font-rendering.gschema.xml.in.h:6
 msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
 msgstr "Видът на шрифтовите подсказки при изобразяване на шрифтове. Възможни стойности са „none“ (без подсказки), „slight“ (леки), „medium“ (средни) и „full“ (за пълни подсказки — възможно е да причини изкривяване на някои букви)."
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:7
+#: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
 msgstr "Ред на RGBA"
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:8
+#: ../data/org.mate.font-rendering.gschema.xml.in.h:8
 msgid ""
 "The order of subpixel elements on an LCD screen; only used when antialiasing"
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
@@ -96,428 +111,444 @@ msgid ""
 " on bottom."
 msgstr "Редът на подпикселните елементи при екран тип LCD — използва се, само когато заглаждането е зададено на „rgba“. Възможни стойности са „rgb“ (за червено отляво — най-често срещано), „bgr“ (за синьо отляво), „vrgb“ (за червено отгоре) и „vbgr“ (за червено отдолу)."
 
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:1
-msgid "Toggle magnifier"
-msgstr "Превключване на лупата"
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:2
-msgid "Binding to toggle the magnifier."
-msgstr "Клавишна комбинация за превключване на лупата."
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:3
-msgid "The name of the keyboard shortcut to toggle the magnifier"
-msgstr "Клавишната комбинация за включване и изключване на лупата"
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:4
-msgid ""
-"This is the name of the keyboard shortcut to toggle the magnifier. This name"
-" will be shown in the keyboard shortcut preferences dialog."
-msgstr "Клавишната комбинация за включване и изключване на лупата. Тя се показва в прозореца за настройки на клавишните комбинации."
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:5
-msgid "Command used to turn the magnifier on or off."
-msgstr "Команда за превключването на лупата."
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:6
-msgid "Toggle screen reader"
-msgstr "Превключване на екранния четец"
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:7
-msgid "Binding to toggle the screen reader."
-msgstr "Клавишна комбинация за превключване на екранния четец."
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:8
-msgid "The name of the keyboard shortcut to toggle the screen reader"
-msgstr "Клавишната комбинация за включване и изключване на екранния четец"
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:9
-msgid ""
-"This is the name of the keyboard shortcut to toggle the screen reader. This "
-"name will be shown in the keyboard shortcut preferences dialog."
-msgstr "Клавишната комбинация за включване и изключване на екранния четец. Тя се показва в прозореца за настройки на клавишните комбинации."
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:10
-msgid "Command used to turn the screen reader on or off."
-msgstr "Команда за превключването на екранния четец."
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:11
-msgid "The name of the keyboard shortcut to toggle the on-screen keyboard"
-msgstr "Клавишната комбинация за включване и изключване на екранната клавиатура"
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:12
-msgid ""
-"This is the name of the keyboard shortcut to toggle the on-screen keyboard. "
-"This name will be shown in the keyboard shortcut preferences dialog."
-msgstr "Клавишната комбинация за включване и изключване на екранната клавиатура. Тя се показва в прозореца за настройки на клавишните комбинации."
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:13
-msgid "Toggle on-screen keyboard"
-msgstr "Превключване на екранната клавиатура"
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:14
-msgid "Binding to toggle the on-screen keyboard."
-msgstr "Клавишна комбинация за превключване на екранната клавиатура."
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:15
-msgid "Command used to turn the on-screen keyboard on or off."
-msgstr "Команда за превключването на екранната клавиатура."
-
-#: ../data/org.mate.peripherals-smartcard.gschema.xml.in.in.h:1
+#: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
 msgstr "Действие при изключване на чип-картата"
 
-#: ../data/org.mate.peripherals-smartcard.gschema.xml.in.in.h:2
+#: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:2
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
 msgstr "Задайте „none“ (без действие), „lock_screen“ (заключване на екрана) или „force_logout“ (принудителен изход). Действието ще се предприема, когато чип-картата, използвана за вход в системата, се изключи."
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:1
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:1
 msgid "Disable touchpad while typing"
 msgstr "Изключване на сензорния панел по време на писане"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:2
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:2
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
 msgstr "Задайте да е истина, ако имате проблем със случайно докосване на сензорния панел по време на писане."
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:3
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:3
 msgid "Enable mouse clicks with touchpad"
 msgstr "Включване на натискане на бутоните на мишката чрез сензорния панел"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:4
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
 msgstr "Задайте да е истина, за да подавате натискания на бутоните на мишката чрез потупване по сензорния панел."
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:5
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Select the touchpad scroll method"
 msgstr "Избор на вида придвижване чрез сензорния панел"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:6
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:6
 msgid ""
 "Select the touchpad scroll method. Supported values are: 0: disabled, 1: "
 "edge scrolling, and 2: two-finger scrolling"
 msgstr "Избор на метода на предвижване чрез сензорния панел. Възможни стойности са „0“ (изключено), „1“ (чрез ръба на панела), „2“ (с два пръста)"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:7
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:7
 msgid "Enable horizontal scrolling"
 msgstr "Включване на хоризонталното предвижване"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:8
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:8
 msgid ""
 "Set this to TRUE to allow horizontal scrolling by the same method selected "
 "with the scroll_method key."
 msgstr "Задайте да е истина, за да позволите хоризонтално придвижване по начина указан в ключа „scroll_method“."
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:9
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:9
+msgid "Natural scrolling"
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:10
+msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:11
 msgid "Enable touchpad"
 msgstr "Включване на сензорния панел"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:10
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
 msgid "Set this to TRUE to enable all touchpads."
 msgstr "Задайте да е истина, за да включите всички сензорни панели."
 
-#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:1
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
+msgid "Enabled two-finger button-click emulation"
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
+msgid "0 thru 3, 0 is inactive, 1-3 is button to emulate"
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
+msgid "Enable three-finger button-click emulation"
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:16
+msgid "One finger tap button"
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:17
+msgid ""
+"Select the button mapping for one-finger tap. Supported values are: 1: left "
+"mouse button 2: middle mouse button 3: right mouse button"
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:18
+msgid "Two finger tap button"
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:19
+msgid ""
+"Select the button mapping for two-finger tap. Supported values are: 1: left "
+"mouse button 2: middle mouse button 3: right mouse button"
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:20
+msgid "Three finger tap button"
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:21
+msgid ""
+"Select the button mapping for three-finger tap. Supported values are: 1: "
+"left mouse button 2: middle mouse button 3: right mouse button"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:1
 msgid "Activation of this plugin"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:5
+#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:3
 msgid "Priority to use for this plugin"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:6
+#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:5
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:5
 msgid "Free percentage notify threshold"
 msgstr "Праг на свободното място, при който да се предупреждава"
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:6
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:6
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
 msgstr "Процент свободно място за първо предупреждение за липса на място. Ако свободното място падне под този процент, ще се покаже предупреждение."
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:7
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
 msgid "Subsequent free percentage notify threshold"
 msgstr "Праг за повторно предупреждение за свободното дисково пространство"
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:8
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:8
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
 msgstr "Процент, с който трябва да намалее свободното пространство на диска, преди да се покаже ново предупреждение."
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:9
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:9
 msgid "Free space no notify threshold"
 msgstr "Праг на свободното място, при който да не се предупреждава"
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:10
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:10
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
 msgstr "Обем в GB. Ако наличното свободно място е повече, няма да се показва предупреждение."
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:11
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:11
 msgid "Minimum notify period for repeated warnings"
 msgstr "Минимален интервал между предупрежденията"
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:12
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:12
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
 msgstr "Интервал в минути. Повторните предупреждения за файловата система ще се появяват не по-често от този период."
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:13
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
 msgstr "Монтирани пътища, които да се пренебрегват"
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:14
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
 msgstr "Списък с монтирани пътища, които да не се взимат под внимание за предупрежденията за свободното място."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:5
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
+msgid "Show OSD notification"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:4
+msgid "Whether an OSD notification is shown to notify about changes"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:7
 msgid "Volume step"
 msgstr "Стъпка при изменение на звука"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:6
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:8
 msgid "Volume step as percentage of volume."
 msgstr "Стъпка при увеличаване на звука като процент."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:7
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:9
 msgid "Toggle touchpad"
 msgstr "Превключване на сензорния панел"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:8
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:10
 msgid "Binding to enable or disable the touchpad."
 msgstr "Клавишна комбинация за включване и изключване на сензорния панел."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:9
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:11
 msgid "Volume mute"
 msgstr "Заглушаване на звука"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:10
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:12
 msgid "Binding to mute the system volume."
 msgstr "Клавишна комбинация за заглушаване на звука."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:11
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:13
 msgid "Volume down"
 msgstr "Намаляване на звука"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:12
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:14
 msgid "Binding to lower the system volume."
 msgstr "Клавишна комбинация за намаляване на нивото на звука."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:13
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:15
 msgid "Volume up"
 msgstr "Увеличаване на звука"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:14
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:16
 msgid "Binding to raise the system volume."
 msgstr "Клавишна комбинация за увеличаване на нивото на звука."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:15
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:17
+msgid "Shut down"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:18
+msgid "Binding to shut down."
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
 msgid "Log out"
 msgstr "Излизане от системата"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:16
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:20
 msgid "Binding to log out."
 msgstr "Клавишна комбинация за излизане от системата."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:17
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:21
 msgid "Eject"
 msgstr "Изваждане"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:18
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:22
 msgid "Binding to eject an optical disc."
 msgstr "Клавишна комбинация за изваждане на оптичен диск."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:19
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:23
 msgid "Home folder"
 msgstr "Домашна папка"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:20
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:24
 msgid "Binding to open the Home folder."
 msgstr "Клавишна комбинация за отваряне на домашната папка."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:21
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
 msgid "Search"
 msgstr "Търсене"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:22
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:26
 msgid "Binding to launch the search tool."
 msgstr "Клавишна комбинация за стартиране на инструмента за търсене."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:23
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:27
 msgid "Launch email client"
 msgstr "Стартиране на програма за е-поща"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:24
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:28
 msgid "Binding to launch the email client."
 msgstr "Клавишна комбинация за стартиране на програмата за е-поща."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:25
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:29
 msgid "Lock screen"
 msgstr "Заключване на екрана"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:26
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:30
 msgid "Binding to lock the screen."
 msgstr "Клавишна комбинация за заключване на екрана."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:27
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:31
 msgid "Launch help browser"
 msgstr "Стартиране на програмата за помощ"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:28
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
 msgid "Binding to launch the help browser."
 msgstr "Клавишна комбинация за стартиране на програмата за помощ."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:29
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
 msgid "Launch calculator"
 msgstr "Стартиране на калкулатор"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:30
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
 msgid "Binding to launch the calculator."
 msgstr "Клавишна комбинация за стартиране на калкулатора."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:31
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
 msgid "Launch web browser"
 msgstr "Стартиране на Интернет браузъра"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:32
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
 msgid "Binding to launch the web browser."
 msgstr "Клавишна комбинация за стартиране на Интернет браузъра."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:33
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
 msgid "Launch media player"
 msgstr "Стартиране на програмата за мултимедия"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:34
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
 msgid "Binding to launch the media player."
 msgstr "Клавишна комбинация за стартиране на програмата за мултимедия."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:35
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
 msgid "Play (or play/pause)"
 msgstr "Изпълнение (или изпълнение/пауза)"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:36
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
 msgid "Binding to start playback (or toggle play/pause)."
 msgstr "Клавишна комбинация за изпълнение на музика (или превключване изпълнение/пауза)."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:37
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
 msgid "Pause playback"
 msgstr "Пауза при изпълнение на музика"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:38
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:42
 msgid "Binding to pause playback."
 msgstr "Клавишна комбинация за пауза при изпълнение на музика."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:39
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
 msgid "Stop playback"
 msgstr "Спиране на изпълнението"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:40
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
 msgid "Binding to stop playback."
 msgstr "Клавишна комбинация за спиране на изпълнението."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:41
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
 msgid "Previous track"
 msgstr "Предишна песен"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:42
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
 msgid "Binding to skip to previous track."
 msgstr "Клавишна комбинация за отиване на предходна песен."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:43
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
 msgid "Next track"
 msgstr "Следваща песен"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:44
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
 msgid "Binding to skip to next track."
 msgstr "Клавишна комбинация за отиване на следваща песен."
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:5
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
+msgid "Binding to show the screen magnifier"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
+msgid "Binding to start the screen reader"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
+msgid "Binding to show the on-screen keyboard"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:5
 msgid "Show Displays in Notification Area"
 msgstr "Показване на екраните в областта за уведомяване"
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:6
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:6
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
 msgstr "Дали в панела да се показва уведомителна икона за екрана."
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:7
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:7
 msgid "Do not touch monitor configuration"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:8
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:8
 msgid ""
 "Usually, mate-settings-daemon configures internal and external monitors "
 "according to the turn_on_external_monitors_at_startup and "
@@ -527,31 +558,31 @@ msgid ""
 "configuration)."
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:9
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:9
 msgid "Turn on external monitor after system boot"
 msgstr "Включване на външен монитор след зареждане на системата"
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:10
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:10
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
 msgstr "Дали да се включва евентуален външен монитор, който е бил свързан преди включването на компютъра."
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:11
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:11
 msgid "Turn on laptop monitor after system boot"
 msgstr "Включване на вградения монитор след зареждане на системата"
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:12
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:12
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
 msgstr "Дали да се включва вграденият монитор, ако преди включването на компютъра е бил свързан външен монитор."
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:13
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:13
 msgid "File for default configuration for RandR"
 msgstr "Файл за стандартните настройки на RandR"
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:14
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:14
 msgid ""
 "The XRandR plugin will look for a default configuration in the file "
 "specified by this key. This is similar to the ~/.config/monitors.xml that "
@@ -564,19 +595,19 @@ msgstr "Приставката за управление на RandR ще тър�
 msgid "MATE Settings Daemon"
 msgstr "Сървър за настройките на MATE"
 
-#: ../mate-settings-daemon/main.c:56
+#: ../mate-settings-daemon/main.c:65
 msgid "Enable debugging code"
 msgstr "Включване на код за изчистване на грешки"
 
-#: ../mate-settings-daemon/main.c:57
+#: ../mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
 msgstr ""
 
-#: ../mate-settings-daemon/main.c:58
+#: ../mate-settings-daemon/main.c:67
 msgid "Don't become a daemon"
 msgstr "Да не се преминава в режим на демон"
 
-#: ../mate-settings-daemon/main.c:59
+#: ../mate-settings-daemon/main.c:68
 msgid "Exit after a time (for debugging)"
 msgstr "Изход след време — за изчистване на грешки"
 
@@ -588,102 +619,102 @@ msgstr "Достъпност на клавиатурата"
 msgid "Accessibility keyboard plugin"
 msgstr "Приставка за достъпност на клавиатурата"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:446
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:454
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Възникна грешка при показването на помощта: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:582
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:646
 msgid "Do you want to activate Slow Keys?"
 msgstr "Искате ли да включите функцията „Бавни клавиши“?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:575
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:639
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:583
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:647
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Искате ли да изключите функцията „Бавни клавиши“?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:584
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:648
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
 msgstr "Току що задържахте клавиша Shift за 8 секунди. Това е бърз клавиш за функцията „Бавни клавиши“, която влияе върху работата на клавиатурата ви."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
 msgid "Don't activate"
 msgstr "Да не се активира"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
 msgid "Don't deactivate"
 msgstr "Да не се деактивира"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
 msgid "Activate"
 msgstr "Активиране"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
 msgid "Deactivate"
 msgstr "Деактивиране"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:669
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:808
 msgid "Do_n't activate"
 msgstr "Да н_е се активира"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:669
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:808
 msgid "Do_n't deactivate"
 msgstr "Да н_е се деактивира"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:672
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:811
 msgid "_Activate"
 msgstr "_Активиране"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:672
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:811
 msgid "_Deactivate"
 msgstr "_Деактивиране"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:668
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:676
 msgid "Slow Keys Alert"
 msgstr "Сигнал за бавни клавиши"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:708
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:774
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:716
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:782
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Искате ли да включите функцията „Лепкави клавиши“?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:717
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:783
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Искате ли да изключите функцията „Лепкави клавиши“?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:719
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:785
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
 msgstr "Току що натиснахте клавиша Shift 5 пъти последователно. Това е бързият клавиш за функцията „Лепкави клавиши“, която влияе върху работата на клавиатурата ви."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:721
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:787
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
 msgstr "Току що натиснахте два клавиша едновременно, или клавиша Shift 5 пъти подред. Това изключва функцията „Лепкави клавиши“, която влияе върху работата на клавиатурата ви."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:807
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:815
 msgid "Sticky Keys Alert"
 msgstr "Сигнал за лепкави клавиши"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:813
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:763
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Настройки за универсален достъп"
@@ -787,57 +818,57 @@ msgid ""
 msgstr "Можете да освободите място като изтриете неизползваните програми и файлове или като преместите част от нещата на външен диск."
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:213
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:212
 msgid "Low Disk Space"
 msgstr "Дисковото пространство привършва"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:445
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:458
 msgid "Empty Trash"
 msgstr "Изчистване на кошчето"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:453
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:466
 msgid "Examine…"
 msgstr "Проверка…"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:473
 msgid "Ignore"
 msgstr "Пренебрегване"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:97
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:102
 #, c-format
 msgid "Removing item %lu of %lu"
 msgstr "Изтриване на обект %lu от общо %lu"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:122
 #, c-format
 msgid "Removing: %s"
 msgstr "Изтриване: %s"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:296
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:252
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:317
 msgid "Emptying the trash"
 msgstr "Изчистване на кошчето"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:272
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:293
 msgid "Preparing to empty trash…"
 msgstr "Подготовка за изчистване на кошчето…"
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:299
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:320
 msgid "From: "
 msgstr "От:"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:351
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:372
 msgid "Empty all of the items from the trash?"
 msgstr "Да се изтрият ли всички обекти в кошчето?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:354
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:375
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
 msgstr "Ако решите за изчистите кошчето, всички обекти в него ще бъдат безвъзвратно изтрити. Можете да изтривате обекти и поотделно."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:361
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:382
 msgid "_Empty Trash"
 msgstr "_Изчистване на кошчето"
 
@@ -851,7 +882,7 @@ msgstr "Клавишната комбинация (%s) е грешна"
 msgid "Key binding (%s) is incomplete"
 msgstr "Клавишната комбинация (%s) е непълна"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:502
+#: ../plugins/keybindings/msd-keybindings-manager.c:506
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -874,7 +905,7 @@ msgstr "Клавиатура"
 msgid "Keyboard plugin"
 msgstr "Приставка за клавиатурата"
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:137
+#: ../plugins/keyboard/msd-keyboard-xkb.c:119
 #, c-format
 msgid ""
 "Error activating XKB configuration.\n"
@@ -886,71 +917,35 @@ msgid ""
 "X server version data:\n"
 "%s\n"
 "%d\n"
-"%s\n"
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr "Грешка при задействане на настройките на XKB.\nТова може да се случи в следните ситуации:\n • грешка в библиотеката libxklavier;\n • грешка в X сървъра (xkbcomp, xmodmap utilities);\n • X сървър с несъвместима реализация на libxkbfile.\n\nДанни за версията на X сървъра:\n%s\n%d\n%s\nАко решите да докладвате тази грешка, молим включете следното:\n • резултата от <b>%s</b>;\n • резултата от <b>%s</b>."
+msgstr ""
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:151
-msgid ""
-"You are using XFree 4.3.0.\n"
-"There are known problems with complex XKB configurations.\n"
-"Try using a simpler configuration or using a later version of the XFree software."
-msgstr "Използвате XFree 4.3.0.\nТози софтуер има проблеми при сложни настройки на XKB.\nИли пробвайте с по-прости настройки, или обновете версията на XFree."
-
-#: ../plugins/keyboard/msd-keyboard-xkb.c:299
+#: ../plugins/keyboard/msd-keyboard-xkb.c:273
 msgid "_Layouts"
 msgstr "_Подредби"
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:306
+#: ../plugins/keyboard/msd-keyboard-xkb.c:280
 msgid "Keyboard _Preferences"
 msgstr "Настройки на _клавиатурата"
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:312
+#: ../plugins/keyboard/msd-keyboard-xkb.c:286
 msgid "Show _Current Layout"
 msgstr "Показване на _текущата подредба"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:198
+#: ../plugins/media-keys/msd-media-keys-manager.c:186
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
 msgstr "Стандартният терминал не може да бъде открит. Проверете дали командата за терминала е зададена и дали тя съответства на правилна програма."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:238
+#: ../plugins/media-keys/msd-media-keys-manager.c:226
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
 msgstr "Следната команда не може да бъде изпълнена: %s\nПроверете дали това е валидна команда."
-
-#. translators:
-#. * The device has been disabled
-#: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1005
-msgid "Disabled"
-msgstr "Изключено"
-
-#. translators:
-#. * The number of sound outputs on a particular device
-#: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1012
-#, c-format
-msgid "%u Output"
-msgid_plural "%u Outputs"
-msgstr[0] "%u вход"
-msgstr[1] "%u входа"
-
-#. translators:
-#. * The number of sound inputs on a particular device
-#: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1022
-#, c-format
-msgid "%u Input"
-msgid_plural "%u Inputs"
-msgstr[0] "%u изход"
-msgstr[1] "%u изхода"
-
-#: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1320
-msgid "System Sounds"
-msgstr "Системните звуци"
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -960,16 +955,16 @@ msgstr "Мултимедийни клавиши"
 msgid "Media keys plugin"
 msgstr "Приставка за мултимедийни клавиши"
 
-#: ../plugins/mouse/msd-mouse-manager.c:887
+#: ../plugins/mouse/msd-mouse-manager.c:988
 msgid "Could not enable mouse accessibility features"
 msgstr "Неуспех при включване на функциите за достъпност на мишката"
 
-#: ../plugins/mouse/msd-mouse-manager.c:889
+#: ../plugins/mouse/msd-mouse-manager.c:990
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr "За достъпност на мишката на системата трябва да е инсталиран Mousetweaks."
 
-#: ../plugins/mouse/msd-mouse-manager.c:892
+#: ../plugins/mouse/msd-mouse-manager.c:993
 msgid "Mouse Preferences"
 msgstr "Настройки на мишката"
 
@@ -1005,19 +1000,19 @@ msgstr "XRandR"
 msgid "Set up screen size and rotation settings"
 msgstr "Настройки за размер на екрана и ротация"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:371
+#: ../plugins/xrandr/msd-xrandr-manager.c:373
 msgid "Could not switch the monitor configuration"
 msgstr "Настройките на екрана не могат да бъдат сменени"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:395
+#: ../plugins/xrandr/msd-xrandr-manager.c:397
 msgid "Could not restore the display's configuration"
 msgstr "Настройките на екрана не могат да бъдат възстановени"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:420
+#: ../plugins/xrandr/msd-xrandr-manager.c:422
 msgid "Could not restore the display's configuration from a backup"
 msgstr "Настройките на екрана не могат да бъдат възстановени от резервно копие"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:441
+#: ../plugins/xrandr/msd-xrandr-manager.c:443
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
@@ -1025,64 +1020,64 @@ msgid_plural ""
 msgstr[0] "След %d секунда ще бъдат върнати старите настройки на екрана"
 msgstr[1] "След %d секунди ще бъдат върнати старите настройки на екрана"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:490
+#: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
 msgstr "Наред ли е екрана?"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:496
+#: ../plugins/xrandr/msd-xrandr-manager.c:499
 msgid "_Restore Previous Configuration"
 msgstr "_Възстановяване на предишните настройки"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:497
+#: ../plugins/xrandr/msd-xrandr-manager.c:500
 msgid "_Keep This Configuration"
 msgstr "_Запазване на тези настройки"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:578
+#: ../plugins/xrandr/msd-xrandr-manager.c:581
 msgid "The selected configuration for displays could not be applied"
 msgstr "Избраните настройки на екраните не могат да бъдат приложени"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1140
+#: ../plugins/xrandr/msd-xrandr-manager.c:1153
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "Информацията за екрана не може да бъде обновена: %s"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1144
+#: ../plugins/xrandr/msd-xrandr-manager.c:1157
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Опит за смяна на настройките на екрана въпреки това."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1875
+#: ../plugins/xrandr/msd-xrandr-manager.c:1913
 msgid "Rotation not supported"
 msgstr "Не се поддържа завъртане"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1931
+#: ../plugins/xrandr/msd-xrandr-manager.c:1969
 msgid "Could not save monitor configuration"
 msgstr "Настройките на екрана не мотат да бъдат запазени"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1949
+#: ../plugins/xrandr/msd-xrandr-manager.c:1987
 msgid "Normal"
 msgstr "нормално"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1950
+#: ../plugins/xrandr/msd-xrandr-manager.c:1988
 msgid "Left"
 msgstr "наляво"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1951
+#: ../plugins/xrandr/msd-xrandr-manager.c:1989
 msgid "Right"
 msgstr "надясно"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1952
+#: ../plugins/xrandr/msd-xrandr-manager.c:1990
 msgid "Upside Down"
 msgstr "обратно"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2072
+#: ../plugins/xrandr/msd-xrandr-manager.c:2112
 msgid "_Configure Display Settings…"
 msgstr "_Настройване на екрана…"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2113
+#: ../plugins/xrandr/msd-xrandr-manager.c:2166
 msgid "Configure display settings"
 msgstr "Настройване на екрана"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2173
+#: ../plugins/xrandr/msd-xrandr-manager.c:2226
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Запазените настройките на екраните не можаха да бъдат приложени"
 
@@ -1115,31 +1110,31 @@ msgstr "Път до модула"
 msgid "path to smartcard PKCS #11 driver"
 msgstr "път до драйвера за PKCS #11 на чип-картата"
 
-#: ../plugins/smartcard/msd-smartcard-manager.c:504
+#: ../plugins/smartcard/msd-smartcard-manager.c:496
 msgid "received error or hang up from event source"
 msgstr "получена е грешка или прекъсване при комуникация с чип-картата"
 
-#: ../plugins/smartcard/msd-smartcard-manager.c:593
+#: ../plugins/smartcard/msd-smartcard-manager.c:585
 #, c-format
 msgid "NSS security system could not be initialized"
 msgstr "Неуспех при инициализиране на системата за сигурност NSS"
 
-#: ../plugins/smartcard/msd-smartcard-manager.c:662
+#: ../plugins/smartcard/msd-smartcard-manager.c:654
 #, c-format
 msgid "no suitable smartcard driver could be found"
 msgstr "не е намерен подходящ драйвер за чип-картата"
 
-#: ../plugins/smartcard/msd-smartcard-manager.c:682
+#: ../plugins/smartcard/msd-smartcard-manager.c:674
 #, c-format
 msgid "smartcard driver '%s' could not be loaded"
 msgstr "неуспех при зареждане на драйвера за чип-карти „%s“"
 
-#: ../plugins/smartcard/msd-smartcard-manager.c:771
+#: ../plugins/smartcard/msd-smartcard-manager.c:758
 #, c-format
 msgid "could not watch for incoming card events - %s"
 msgstr "неуспех при получаване на данни от картата – %s"
 
-#: ../plugins/smartcard/msd-smartcard-manager.c:1124
+#: ../plugins/smartcard/msd-smartcard-manager.c:1105
 #, c-format
 msgid "encountered unexpected error while waiting for smartcard events"
 msgstr "неочаквана грешка при изчакване на информация от чип-картата"

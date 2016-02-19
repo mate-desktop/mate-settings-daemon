@@ -4,23 +4,29 @@
 # 
 # Translators:
 # David Šauer <davids@penguin.cz>, 1999
-# Jakub Friedl <jfriedl@suse.cz>, 2006, 2007
+# Jakub Friedl <jfriedl@suse.cz>, 2006-2007
 # Jiří Lebl <jirka@5z.cz>, 2002
-# segfault <lukas.kvidera@seznam.cz>, 2013
+# Lucas Lommer <drom@kdyne.net>, 2016
+# Lukáš Kvídera <lukas.kvidera@seznam.cz>, 2013
 # Lukas Novotny <lukasnov@cvs.gnome.org>, 2006
-# Michal Bukovjan <bukm@centrum.cz>, 2002, 2003
+# Martin Kříž <liberte.czech@gmail.com>, 2016
+# Michal Bukovjan <bukm@centrum.cz>, 2002-2003
+# Michal <sinope@seznam.cz>, 2013
 # Miloslav Trmač <mitr@volny.cz>, 2003, 2004, 2005, 2006
+# Miloslav Trmač <mitr@volny.cz>, 2003-2006
 # Ondřej Kolín <ondrej.kolin@gmail.com>, 2012-2013
 # Petr Kovar <pmkovar@gmail.com>, 2008, 2009, 2010
+# Petr Kovar <pmkovar@gmail.com>, 2008-2010
 # Petr Tomeš <ptomes@gmail.com>, 2006
+# Stanislav Kučera <kacernator@quick.cz>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
-"POT-Creation-Date: 2013-03-22 23:14+0100\n"
-"PO-Revision-Date: 2013-06-03 15:45+0000\n"
-"Last-Translator: Ondřej Kolín <ondrej.kolin@gmail.com>\n"
-"Language-Team: Czech (http://www.transifex.com/projects/p/MATE/language/cs/)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-12 14:49+0300\n"
+"PO-Revision-Date: 2016-02-15 10:50+0000\n"
+"Last-Translator: Lucas Lommer <drom@kdyne.net>\n"
+"Language-Team: Czech (http://www.transifex.com/mate/MATE/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -31,496 +37,527 @@ msgstr ""
 msgid "Accessibility"
 msgstr "Zpřístupnění"
 
-#: ../data/org.mate.applications-at.gschema.xml.in.in.h:1
+#: ../data/50-accessibility.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
+msgid "Toggle magnifier"
+msgstr "Přepnout lupu"
+
+#: ../data/50-accessibility.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
+msgid "Toggle screen reader"
+msgstr "Přepnout čtení obrazovky"
+
+#: ../data/50-accessibility.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
+msgid "Toggle on-screen keyboard"
+msgstr "Přepnout klávesnici na obrazovce"
+
+#: ../data/org.mate.applications-at.gschema.xml.in.h:1
 msgid "On-screen keyboard"
 msgstr "Klávesnice na obrazovce"
 
-#: ../data/org.mate.applications-at.gschema.xml.in.in.h:2
+#: ../data/org.mate.applications-at.gschema.xml.in.h:2
 msgid "Whether the on-screen keyboard is turned on."
 msgstr "Jestli je zapnuta klávesnice na obrazovce."
 
-#: ../data/org.mate.applications-at.gschema.xml.in.in.h:3
+#: ../data/org.mate.applications-at.gschema.xml.in.h:3
 msgid "Screen magnifier"
 msgstr "Lupa obrazovky"
 
-#: ../data/org.mate.applications-at.gschema.xml.in.in.h:4
+#: ../data/org.mate.applications-at.gschema.xml.in.h:4
 msgid "Whether the screen magnifier is turned on."
 msgstr "Jestli je zapnuta lupa obrazovky."
 
-#: ../data/org.mate.applications-at.gschema.xml.in.in.h:5
+#: ../data/org.mate.applications-at.gschema.xml.in.h:5
 msgid "Screen reader"
 msgstr "Čtení obrazovky"
 
-#: ../data/org.mate.applications-at.gschema.xml.in.in.h:6
+#: ../data/org.mate.applications-at.gschema.xml.in.h:6
 msgid "Whether the screen reader is turned on."
 msgstr "Jestli je zapnuto čtení obrazovky."
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:1
+#: ../data/org.mate.font-rendering.gschema.xml.in.h:1
 msgid "DPI"
 msgstr "DPI"
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:2
+#: ../data/org.mate.font-rendering.gschema.xml.in.h:2
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
 msgstr "Rozlišení užité při konverzi velikosti písem na velikost pixelů, v obrazových bodech na palec."
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:3
+#: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
 msgstr "Vyhlazování"
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:4
+#: ../data/org.mate.font-rendering.gschema.xml.in.h:4
 msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "Typ vyhlazování užitý při vykreslování písem. Možnými hodnotami jsou: \"none\" značí žádné vyhlazování, \"grayscale\" značí standardní vyhlazování v odstínech šedi a \"rgba\" značí subpixelové vyhlazování (pouze obrazovky LCD)."
+msgstr "Typ vyhlazování užitý při vykreslování písem. Možnými hodnotami jsou: „none” značí žádné vyhlazování, „grayscale” značí standardní vyhlazování v odstínech šedi a „rgba” značí subpixelové vyhlazování (pouze obrazovky LCD)."
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:5
+#: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
 msgstr "Hinting"
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:6
+#: ../data/org.mate.font-rendering.gschema.xml.in.h:6
 msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "Typ hintingu užitý při vykreslování písem. Možnými hodnotami jsou: \"none\" značí žádný hinting, \"slight\" značí základní, \"medium\" značí střední a \"full\" značí maximální hinting (může způsobit zkreslení jednotlivých písmen)."
+msgstr "Typ hintingu užitý při vykreslování písem. Možnými hodnotami jsou: „none” značí žádný hinting, „slight” značí základní, „medium” značí střední a „full” značí maximální hinting (může způsobit zkreslení jednotlivých písmen)."
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:7
+#: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
 msgstr "Pořadí RGBA"
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.in.h:8
+#: ../data/org.mate.font-rendering.gschema.xml.in.h:8
 msgid ""
 "The order of subpixel elements on an LCD screen; only used when antialiasing"
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "Pořadí subpixelových prvků na obrazovce LCD; užito pouze při vyhlazování nastaveném na \"rgba\". Možnými hodnotami jsou: \"rgb\" značí červenou vlevo (nejběžnější), \"bgr\" značí modrou vlevo, \"vrgb\" značí červenou nahoře, \"vbgr\" značí červenou dole."
+msgstr "Pořadí subpixelových prvků na obrazovce LCD; užito pouze při vyhlazování nastaveném na „rgba”. Možnými hodnotami jsou: „rgb” značí červenou vlevo (nejběžnější), „bgr” značí modrou vlevo, „vrgb” značí červenou nahoře, „vbgr” značí červenou dole."
 
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:1
-msgid "Toggle magnifier"
-msgstr "Přepnout lupu"
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:2
-msgid "Binding to toggle the magnifier."
-msgstr "Zkratka k přepnutí lupy."
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:3
-msgid "The name of the keyboard shortcut to toggle the magnifier"
-msgstr "Název klávesové zkratky určené k přepnutí lupy"
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:4
-msgid ""
-"This is the name of the keyboard shortcut to toggle the magnifier. This name"
-" will be shown in the keyboard shortcut preferences dialog."
-msgstr "Název klávesové zkratky určené k přepnutí lupy. Tento název bude zobrazen v dialogu předvoleb klávesových zkratek."
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:5
-msgid "Command used to turn the magnifier on or off."
-msgstr "Příkaz užitý k zapnutí nebo vypnutí lupy obrazovky."
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:6
-msgid "Toggle screen reader"
-msgstr "Přepnout čtení obrazovky"
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:7
-msgid "Binding to toggle the screen reader."
-msgstr "Zkratka k přepnutí čtení obrazovky."
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:8
-msgid "The name of the keyboard shortcut to toggle the screen reader"
-msgstr "Název klávesové zkratky určené k přepnutí čtení obrazovky"
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:9
-msgid ""
-"This is the name of the keyboard shortcut to toggle the screen reader. This "
-"name will be shown in the keyboard shortcut preferences dialog."
-msgstr "Název klávesové zkratky určené k přepnutí čtení obrazovky. Tento název bude zobrazen v dialogu předvoleb klávesových zkratek."
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:10
-msgid "Command used to turn the screen reader on or off."
-msgstr "Příkaz užitý k zapnutí nebo vypnutí čtení obrazovky."
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:11
-msgid "The name of the keyboard shortcut to toggle the on-screen keyboard"
-msgstr "Název klávesové zkratky určené k přepnutí klávesnice na obrazovce"
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:12
-msgid ""
-"This is the name of the keyboard shortcut to toggle the on-screen keyboard. "
-"This name will be shown in the keyboard shortcut preferences dialog."
-msgstr "Název klávesové zkratky určené k přepnutí klávesnice na obrazovce. Tento název bude zobrazen v dialogu předvoleb klávesových zkratek."
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:13
-msgid "Toggle on-screen keyboard"
-msgstr "Přepnout klávesnici na obrazovce"
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:14
-msgid "Binding to toggle the on-screen keyboard."
-msgstr "Zkratka k přepnutí klávesnice na obrazovce."
-
-#: ../data/org.mate.keybindings.gschema.xml.in.in.h:15
-msgid "Command used to turn the on-screen keyboard on or off."
-msgstr "Příkaz užitý k zapnutí nebo vypnutí klávesnice na obrazovce."
-
-#: ../data/org.mate.peripherals-smartcard.gschema.xml.in.in.h:1
+#: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
 msgstr "Akce při odebrání smartcard"
 
-#: ../data/org.mate.peripherals-smartcard.gschema.xml.in.in.h:2
+#: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:2
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr "Nastavte na jedno z: \"none\", \"lock_screen\", nebo \"force_logout\". Akce bude provedena, když smartcard použita k přihlášení je odebrána."
+msgstr "Nastavte na jedno z: „none”, „lock_screen”, nebo „force_logout”. Akce bude provedena, když je smartcard použitá k přihlášení odebrána."
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:1
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:1
 msgid "Disable touchpad while typing"
 msgstr "Vypnout touchpad během psaní"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:2
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:2
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "Nastavte na \"TRUE\", pokud občas při psaní omylem zavadíte o touchpad."
+msgstr "Nastavte na „TRUE”, pokud občas při psaní omylem zavadíte o touchpad."
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:3
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:3
 msgid "Enable mouse clicks with touchpad"
 msgstr "Povolit kliknutí myší pomocí zařízení touchpad"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:4
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "Nastavte na \"TRUE\", chcete-li odeslat kliknutí myší poklepáním prsty na touchpad."
+msgstr "Nastavte na „TRUE”, chcete-li odeslat kliknutí myší poklepáním prsty na touchpad."
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:5
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Select the touchpad scroll method"
 msgstr "Zvolte metodu posunování zařízení touchpad"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:6
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:6
 msgid ""
 "Select the touchpad scroll method. Supported values are: 0: disabled, 1: "
 "edge scrolling, and 2: two-finger scrolling"
 msgstr "Zvolte metodu scrollování touchpadem. Podporované hodnoty jsou: 0: zakázané, 1: scrollování u okraje, 2: scrollování dvěma prsty"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:7
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:7
 msgid "Enable horizontal scrolling"
 msgstr "Povolit vodorovné posunování"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:8
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:8
 msgid ""
 "Set this to TRUE to allow horizontal scrolling by the same method selected "
 "with the scroll_method key."
-msgstr "Nastavte na \"TRUE\", chcete-li povolit vodorovné posunování stejnou metodou, jaká byla vybrána se scroll_method key."
+msgstr "Nastavte na „TRUE”, chcete-li povolit vodorovné posunování stejnou metodou, jaká byla vybrána se scroll_method key."
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:9
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:9
+msgid "Natural scrolling"
+msgstr "Přirozené posouvání"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:10
+msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
+msgstr "Nastavte na pravda (true) pro povolení opačného posouvání pomocí touchpadu"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:11
 msgid "Enable touchpad"
 msgstr "Zapnout zařízení touchpad"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.in.h:10
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
 msgid "Set this to TRUE to enable all touchpads."
-msgstr "Nastavte na \"TRUE\", chcete-li zapnout všechna zařízení touchpad."
+msgstr "Nastavte na „TRUE”, chcete-li zapnout všechna zařízení touchpad."
 
-#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:1
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
+msgid "Enabled two-finger button-click emulation"
+msgstr "Zapnout emulaci kliknutí při klepnutí dvěma prsty"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
+msgid "0 thru 3, 0 is inactive, 1-3 is button to emulate"
+msgstr "0 až 3, 0 je neaktivní, 1-3 je tlačítko emulace"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
+msgid "Enable three-finger button-click emulation"
+msgstr "Zapnout emulaci kliknutí při klepnutí třemi prsty"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:16
+msgid "One finger tap button"
+msgstr "Tlačítko klepnutí jedním prstem"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:17
+msgid ""
+"Select the button mapping for one-finger tap. Supported values are: 1: left "
+"mouse button 2: middle mouse button 3: right mouse button"
+msgstr "Zvolte tlačítko použité pro klepnutí jedním prstem. Podporované hodnoty jsou: „1” pro levé tlačítko myši, „2” pro prostřední tlačítko myši a „3” pro pravé tlačítko myši."
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:18
+msgid "Two finger tap button"
+msgstr "Tlačítko klepnutí dvěma prsty"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:19
+msgid ""
+"Select the button mapping for two-finger tap. Supported values are: 1: left "
+"mouse button 2: middle mouse button 3: right mouse button"
+msgstr "Zvolte tlačítko použité pro klepnutí dvěma prsty. Podporované hodnoty jsou: „1” pro levé tlačítko myši, „2” pro prostřední tlačítko myši a „3” pro pravé tlačítko myši."
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:20
+msgid "Three finger tap button"
+msgstr "Tlačítko klepnutí třemi prsty"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:21
+msgid ""
+"Select the button mapping for three-finger tap. Supported values are: 1: "
+"left mouse button 2: middle mouse button 3: right mouse button"
+msgstr "Zvolte tlačítko použité pro klepnutí třemi prsty. Podporované hodnoty jsou: „1” pro levé tlačítko myši, „2” pro prostřední tlačítko myši a „3” pro pravé tlačítko myši."
+
+#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:1
 msgid "Activation of this plugin"
-msgstr "Aktivace tohoto pluginu"
+msgstr "Aktivace tohoto zásuvného modulu"
 
-#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr ""
+msgstr "Zda bude tento zásuvný modul aktivován pomocí mate-settings-daemon nebo ne"
 
-#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:5
+#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:3
 msgid "Priority to use for this plugin"
-msgstr "Priorita k používání tohoto pluginu"
+msgstr "Priorita k používání tohoto zásuvného modulu"
 
-#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:6
+#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
-msgstr ""
+msgstr "Priorita použití tohoto zásuvného modulu při spuštění mate-settings-daemon"
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:5
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:5
 msgid "Free percentage notify threshold"
 msgstr "Práh upozorňování na procenta volného"
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:6
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:6
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr "Procentuální množství, které spustí varování \"Málo místa na disku\". Pokud hodnota klesne pod zadanou mez, bude zobrazeno upozornění."
+msgstr "Procentuální množství, které spustí varování „Málo místa na disku”. Pokud hodnota klesne pod zadanou mez, bude zobrazeno upozornění."
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:7
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
 msgid "Subsequent free percentage notify threshold"
 msgstr "Práh upozorňování na procenta volného místa"
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:8
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:8
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
-msgstr ""
+msgstr "Pro snížení možnosti zobrazení dalšího varování, určete procentuální volné místo na disku."
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:9
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:9
 msgid "Free space no notify threshold"
 msgstr "Práh neupozorňování na volné místo"
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:10
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:10
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
 msgstr "Definuj množství v GB. Pokud je množství volného místa větší než tohle, žádné varování nebude zobrazeno."
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:11
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:11
 msgid "Minimum notify period for repeated warnings"
 msgstr "Minimální doba upozorňování u opakovaných varování"
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:12
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:12
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
 msgstr "Zadejte čas v minutách. Následná varování u svazku se nezobrazí dříve než po této době."
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:13
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
 msgstr "Cesty připojení, které se mají ignorovat"
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.in.h:14
+#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
 msgstr "Zadejte seznam cest připojení, které se mají ignorovat, pokud jim dochází místo."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:5
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
+msgid "Show OSD notification"
+msgstr "Zobrazit upozornění OSD"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:4
+msgid "Whether an OSD notification is shown to notify about changes"
+msgstr "Zda používat notifikace OSD k zobrazení upozornění o změnách"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:7
 msgid "Volume step"
 msgstr "Krok hlasitosti"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:6
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:8
 msgid "Volume step as percentage of volume."
 msgstr "Krok hlasitosti v procentech."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:7
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:9
 msgid "Toggle touchpad"
 msgstr "Přepnout stav zařízení touchpad"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:8
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:10
 msgid "Binding to enable or disable the touchpad."
 msgstr "Zkratka k zapnutí nebo vypnutí zařízení touchpad."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:9
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:11
 msgid "Volume mute"
 msgstr "Ztlumit zvuk"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:10
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:12
 msgid "Binding to mute the system volume."
 msgstr "Zkratka ke ztlumení systémové hlasitosti."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:11
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:13
 msgid "Volume down"
 msgstr "Snížit hlasitost"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:12
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:14
 msgid "Binding to lower the system volume."
 msgstr "Zkratka ke snížení systémové hlasitosti."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:13
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:15
 msgid "Volume up"
 msgstr "Zvýšit hlasitost"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:14
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:16
 msgid "Binding to raise the system volume."
 msgstr "Zkratka ke zvýšení systémové hlasitosti."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:15
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:17
+msgid "Shut down"
+msgstr "Vypnout"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:18
+msgid "Binding to shut down."
+msgstr "Navázat na vypnutí"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
 msgid "Log out"
 msgstr "Odhlásit se"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:16
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:20
 msgid "Binding to log out."
 msgstr "Zkratka k odhlášení se."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:17
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:21
 msgid "Eject"
 msgstr "Vysunout"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:18
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:22
 msgid "Binding to eject an optical disc."
 msgstr "Zkratka k vysunutí optického disku"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:19
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:23
 msgid "Home folder"
 msgstr "Domovská složka"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:20
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:24
 msgid "Binding to open the Home folder."
 msgstr "Zkratka k otevření domovské složky."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:21
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
 msgid "Search"
 msgstr "Hledat"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:22
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:26
 msgid "Binding to launch the search tool."
 msgstr "Zkratka ke spuštění vyhledávacího nástroje."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:23
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:27
 msgid "Launch email client"
 msgstr "Spustit poštovní klient"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:24
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:28
 msgid "Binding to launch the email client."
 msgstr "Zkratka ke spuštění poštovního klienta."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:25
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:29
 msgid "Lock screen"
 msgstr "Zamknout obrazovku"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:26
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:30
 msgid "Binding to lock the screen."
 msgstr "Zkratka k uzamčení obrazovky."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:27
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:31
 msgid "Launch help browser"
 msgstr "Spustit prohlížeč nápovědy"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:28
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
 msgid "Binding to launch the help browser."
 msgstr "Zkratka ke spuštění prohlížeče nápovědy."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:29
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
 msgid "Launch calculator"
 msgstr "Spustit kalkulačku"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:30
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
 msgid "Binding to launch the calculator."
 msgstr "Zkratka ke spuštění kalkulačky."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:31
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
 msgid "Launch web browser"
 msgstr "Spustit prohlížeč WWW"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:32
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
 msgid "Binding to launch the web browser."
 msgstr "Zkratka ke spuštění prohlížeče WWW."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:33
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
 msgid "Launch media player"
 msgstr "Spustit přehrávač multimédií"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:34
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
 msgid "Binding to launch the media player."
 msgstr "Zkratka ke spuštění multimediálního přehrávače."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:35
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
 msgid "Play (or play/pause)"
 msgstr "Přehrát (nebo přehrát/pozastavit)"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:36
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
 msgid "Binding to start playback (or toggle play/pause)."
 msgstr "Zkratka ke spuštění přehrávání (nebo přepnutí přehrávání/pozastavení)."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:37
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
 msgid "Pause playback"
 msgstr "Pozastavit přehrávání"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:38
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:42
 msgid "Binding to pause playback."
 msgstr "Zkratka k pozastavení přehrávání."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:39
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
 msgid "Stop playback"
 msgstr "Zastavit přehrávání"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:40
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
 msgid "Binding to stop playback."
 msgstr "Zkratka k zastavení přehrávání."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:41
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
 msgid "Previous track"
 msgstr "Předchozí stopa"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:42
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
 msgid "Binding to skip to previous track."
 msgstr "Zkratka k přeskočení na předchozí stopu."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:43
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
 msgid "Next track"
 msgstr "Následující stopa"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.in.h:44
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
 msgid "Binding to skip to next track."
 msgstr "Zkratka k přeskočení na následující stopu."
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:5
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
+msgid "Binding to show the screen magnifier"
+msgstr "Zkratka pro zobrazení lupy obrazovky"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
+msgid "Binding to start the screen reader"
+msgstr "Zkratka pro zobrazení čtení obrazovky"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
+msgid "Binding to show the on-screen keyboard"
+msgstr "Zkratka pro zobrazení klávesnice na obrazovce"
+
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:5
 msgid "Show Displays in Notification Area"
 msgstr "Zobrazit displeje v oznamovací oblasti"
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:6
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:6
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
 msgstr "Zda notifikační ikona věcí, které mají něco společného s displejem, má být zobrazena na panelu."
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:7
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:7
 msgid "Do not touch monitor configuration"
 msgstr "Nesahat na konfiguraci monitoru"
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:8
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:8
 msgid ""
 "Usually, mate-settings-daemon configures internal and external monitors "
 "according to the turn_on_external_monitors_at_startup and "
@@ -530,56 +567,56 @@ msgid ""
 "configuration)."
 msgstr "Běžně mate-settings-daemon konfiguruje externí monitory podle nastavení turn_on_external_monitors_at_startup a turn_on_laptop_monitor_at_startup a zvolí odpovídající klonovací/rozšiřující režim. Nastavením tohoto klíče na True se tato funkcionalita zakáže a nastavení monitoru nebude změněno (vyjma explicitni konfigurace uživatelem)."
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:9
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:9
 msgid "Turn on external monitor after system boot"
-msgstr "Zapněte externí monitor po nabootování systému"
+msgstr "Zapněte externí monitor po nastartování systému"
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:10
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:10
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
-msgstr "Zapnout externí monitor po nabootování systému, pokud jej uživatel připojil při bootování"
+msgstr "Zapnout externí monitor po nastartování systému, pokud jej uživatel připojil při bootování"
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:11
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:11
 msgid "Turn on laptop monitor after system boot"
-msgstr "Zapněte monitor vašeho notebooku po nabootování systému"
+msgstr "Zapněte monitor vašeho notebooku po nastartování systému"
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:12
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:12
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr "Zapnout monitor přenosného počítače po nabootování systému, pokud uživatel připojil externí monitor"
+msgstr "Zapnout monitor přenosného počítače po nastartování systému, pokud uživatel připojil externí monitor"
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:13
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:13
 msgid "File for default configuration for RandR"
 msgstr "Soubor pro výchozí konfiguraci pro RandR"
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.in.h:14
+#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:14
 msgid ""
 "The XRandR plugin will look for a default configuration in the file "
 "specified by this key. This is similar to the ~/.config/monitors.xml that "
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr ""
+msgstr "Zásuvný modul XRandR bude hledat výchozí konfiguraci v souboru stanoveném tímto klíčem. Soubor je podobný souboru ~/.config/monitors.xml, který je obvykle uložen v domovských adresářích uživatelů. Pokud uživatel nemá takový soubor, nebo má ten, který neodpovídá uživatelskému nastavení monitorů, pak soubor určený tímto klíčem bude používán místo něho."
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
 msgstr "Démon nastavení MATE"
 
-#: ../mate-settings-daemon/main.c:56
+#: ../mate-settings-daemon/main.c:65
 msgid "Enable debugging code"
 msgstr "Povolit ladicí kód"
 
-#: ../mate-settings-daemon/main.c:57
+#: ../mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
 msgstr "Nahradit aktuální daemon"
 
-#: ../mate-settings-daemon/main.c:58
+#: ../mate-settings-daemon/main.c:67
 msgid "Don't become a daemon"
 msgstr "Nestát se démonem"
 
-#: ../mate-settings-daemon/main.c:59
+#: ../mate-settings-daemon/main.c:68
 msgid "Exit after a time (for debugging)"
 msgstr "Ukončit po čase (pro účely ladění)"
 
@@ -591,102 +628,102 @@ msgstr "Zpřístupnění klávesnice"
 msgid "Accessibility keyboard plugin"
 msgstr "Zásuvný modul zpřístupnění klávesnice"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:446
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:454
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Při zobrazování nápovědy došlo k chybě: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:582
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:646
 msgid "Do you want to activate Slow Keys?"
 msgstr "Chcete aktivovat Pomalé klávesy?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:575
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:639
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:583
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:647
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Chcete deaktivovat Pomalé klávesy?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:584
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:648
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
 msgstr "Právě jste na 8 sekund podrželi klávesu Shift. To je zkratka funkce Pomalé klávesy, která má vliv na způsob fungování vaší klávesnice."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
 msgid "Don't activate"
 msgstr "Neaktivovat"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
 msgid "Don't deactivate"
 msgstr "Nedeaktivovat"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
 msgid "Activate"
 msgstr "Aktivovat"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
 msgid "Deactivate"
 msgstr "Deaktivovat"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:669
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:808
 msgid "Do_n't activate"
 msgstr "_Neaktivovat"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:669
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:808
 msgid "Do_n't deactivate"
 msgstr "_Nedeaktivovat"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:672
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:811
 msgid "_Activate"
 msgstr "_Aktivovat"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:672
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:811
 msgid "_Deactivate"
 msgstr "_Deaktivovat"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:668
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:676
 msgid "Slow Keys Alert"
 msgstr "Upozornění na Pomalé klávesy"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:708
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:774
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:716
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:782
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Chcete aktivovat Lepící klávesy?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:717
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:783
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Chcete deaktivovat Lepící klávesy?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:719
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:785
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
 msgstr "Právě jste pětkrát za sebou stiskli klávesu Shift. To je zkratka funkce Lepící klávesy, která má vliv na způsob fungování vaší klávesnice."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:721
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:787
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
 msgstr "Právě jste stiskli dvě klávesy zároveň, nebo jste pětkrát za sebou stiskli klávesu Shift. To vypíná funkci Lepící klávesy, která má vliv na způsob fungování vaší klávesnice."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:807
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:815
 msgid "Sticky Keys Alert"
 msgstr "Lepící klávesy"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:813
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:763
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Předvolby zpřístupnění"
@@ -758,7 +795,7 @@ msgstr "Nezobrazovat znovu žádná varování"
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:85
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
-msgstr "Svazku \"%s\" zbývá pouze %s volného místa."
+msgstr "Svazku „%s” zbývá pouze %s volného místa."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:88
 #, c-format
@@ -790,57 +827,57 @@ msgid ""
 msgstr "Místo na disku můžete uvolnit odstraněním nepotřebných programů nebo souborů, či přesunutím souborů na externí disk."
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:213
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:212
 msgid "Low Disk Space"
 msgstr "Nedostatek místa na disku"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:445
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:458
 msgid "Empty Trash"
 msgstr "Vyprázdnit koš"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:453
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:466
 msgid "Examine…"
-msgstr "Zkoumám..."
+msgstr "Zkoumá se…"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:473
 msgid "Ignore"
 msgstr "Ignorovat"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:97
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:102
 #, c-format
 msgid "Removing item %lu of %lu"
 msgstr "Odstraňování položky %lu z %lu"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:122
 #, c-format
 msgid "Removing: %s"
 msgstr "Odpojování: %s"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:296
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:252
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:317
 msgid "Emptying the trash"
 msgstr "Vyprazdňování koše"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:272
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:293
 msgid "Preparing to empty trash…"
 msgstr "Připrava na vysypání koše"
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:299
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:320
 msgid "From: "
 msgstr "Z: "
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:351
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:372
 msgid "Empty all of the items from the trash?"
 msgstr "Odstranit všechny položky z koše?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:354
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:375
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
 msgstr "Pokud se rozhodnete vyprázdnit koš, budou položky natrvalo odstraněny. Všimněte si, že je také můžete odstranit po jedné."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:361
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:382
 msgid "_Empty Trash"
 msgstr "Vyprázdnit _koš"
 
@@ -854,7 +891,7 @@ msgstr "Svázání s klávesami (%s) není platné"
 msgid "Key binding (%s) is incomplete"
 msgstr "Svázání s klávesami (%s) není úplné"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:502
+#: ../plugins/keybindings/msd-keybindings-manager.c:506
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -877,7 +914,7 @@ msgstr "Klávesnice"
 msgid "Keyboard plugin"
 msgstr "Zásuvný modul klávesnice"
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:137
+#: ../plugins/keyboard/msd-keyboard-xkb.c:119
 #, c-format
 msgid ""
 "Error activating XKB configuration.\n"
@@ -889,73 +926,35 @@ msgid ""
 "X server version data:\n"
 "%s\n"
 "%d\n"
-"%s\n"
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr "Chyba aktivace konfigurace XKB\nTo se může přihodit z různých důvodů:\n• bug v knihovně libxklavier\n• bug v X server (xkbcomp, xmodmap utilities)\n• X server s nekompatibilní implementací libxkbfile\n\nX server informace o verzi:\n%s\n%d\n%s\nPři reportování této události jako bug, prosím přiložte:\n• Výsledek <b>%s</b>\n• Výsledek <b>%s</b>"
+msgstr "Chyba při aktivaci konfigurace XKB.\nTato situace může nastat za několika okolností:\n • chyba v knihovně libxklavier • chyba v X serveru (xkbcomp, utility xmodmap)\n • X server využívá nekompatabilní implementaci libxkbfile\n\nData o verzi X serveru:\n%s\n%d\nPokud tuto situaci oznámíte jako chybu, přidejte prosím následující:\n • Výsledek <b>%s</b>\n • Výsledek <b>%s</b>"
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:151
-msgid ""
-"You are using XFree 4.3.0.\n"
-"There are known problems with complex XKB configurations.\n"
-"Try using a simpler configuration or using a later version of the XFree software."
-msgstr "Používáte XFree 4.3.0\nV této verzi jsou známy problémy s komplexní konfigurací XKB.\nZkuste použít jednoduší konfiguraci nebo použít novější verzi XFree."
-
-#: ../plugins/keyboard/msd-keyboard-xkb.c:299
+#: ../plugins/keyboard/msd-keyboard-xkb.c:273
 msgid "_Layouts"
 msgstr "_Rozložení"
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:306
+#: ../plugins/keyboard/msd-keyboard-xkb.c:280
 msgid "Keyboard _Preferences"
 msgstr "Př_edvolby klávesnice"
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:312
+#: ../plugins/keyboard/msd-keyboard-xkb.c:286
 msgid "Show _Current Layout"
 msgstr "Zobrazit _Současné rozložení"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:198
+#: ../plugins/media-keys/msd-media-keys-manager.c:186
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
 msgstr "Nelze nalézt výchozí terminál. Ověřte prosím, zda je zadán příkaz výchozího terminálu a zda směřuje k platné aplikaci."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:238
+#: ../plugins/media-keys/msd-media-keys-manager.c:226
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
 msgstr "Nelze spustit příkaz: %s\nOvěřte prosím platnost příkazu."
-
-#. translators:
-#. * The device has been disabled
-#: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1005
-msgid "Disabled"
-msgstr "Zakázáno"
-
-#. translators:
-#. * The number of sound outputs on a particular device
-#: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1012
-#, c-format
-msgid "%u Output"
-msgid_plural "%u Outputs"
-msgstr[0] "%u výstup"
-msgstr[1] "%u výstupy"
-msgstr[2] "%u výstupů"
-
-#. translators:
-#. * The number of sound inputs on a particular device
-#: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1022
-#, c-format
-msgid "%u Input"
-msgid_plural "%u Inputs"
-msgstr[0] "%u vstup"
-msgstr[1] "%u vstupy"
-msgstr[2] "%u vstupů"
-
-#: ../plugins/media-keys/cut-n-paste/gvc-mixer-control.c:1320
-msgid "System Sounds"
-msgstr "Systémové zvuky"
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -965,16 +964,16 @@ msgstr "Multimediální klávesy"
 msgid "Media keys plugin"
 msgstr "Zásuvný modul multimediálních kláves"
 
-#: ../plugins/mouse/msd-mouse-manager.c:887
+#: ../plugins/mouse/msd-mouse-manager.c:988
 msgid "Could not enable mouse accessibility features"
 msgstr "Nezdařilo se povolení vlastností zpřístupnění myši"
 
-#: ../plugins/mouse/msd-mouse-manager.c:889
+#: ../plugins/mouse/msd-mouse-manager.c:990
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr "Přizpůsobení myši vyžaduje mít nainstalované \"Mousetweaks\" ve vašem systému"
 
-#: ../plugins/mouse/msd-mouse-manager.c:892
+#: ../plugins/mouse/msd-mouse-manager.c:993
 msgid "Mouse Preferences"
 msgstr "Předvolby myši"
 
@@ -992,7 +991,7 @@ msgstr "Mpris"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:2
 msgid "Mpris plugin"
-msgstr "Mpris plugin"
+msgstr "Zásuvný modul Mpris"
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:1
 msgid "Typing Break"
@@ -1010,19 +1009,19 @@ msgstr "XRandR"
 msgid "Set up screen size and rotation settings"
 msgstr "Zvolit velikost obrazovky a nastavení otočení"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:371
+#: ../plugins/xrandr/msd-xrandr-manager.c:373
 msgid "Could not switch the monitor configuration"
 msgstr "Nelze přepnout nastavení monitoru"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:395
+#: ../plugins/xrandr/msd-xrandr-manager.c:397
 msgid "Could not restore the display's configuration"
 msgstr "Nelze obnovit nastavení displeje"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:420
+#: ../plugins/xrandr/msd-xrandr-manager.c:422
 msgid "Could not restore the display's configuration from a backup"
 msgstr "Ze zálohy nelze obnovit nastavení displeje"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:441
+#: ../plugins/xrandr/msd-xrandr-manager.c:443
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
@@ -1031,64 +1030,64 @@ msgstr[0] "Nastavení displeje bude resetováno na původní konfiguraci za %d s
 msgstr[1] "Nastavení displeje bude resetováno na původní konfiguraci za %d sekundy"
 msgstr[2] "Nastavení displeje bude resetováno na původní konfiguraci za %d sekund"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:490
+#: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
 msgstr "Vypadá displej v pořádku?"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:496
+#: ../plugins/xrandr/msd-xrandr-manager.c:499
 msgid "_Restore Previous Configuration"
 msgstr "_Obnovit předchozí nastavení"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:497
+#: ../plugins/xrandr/msd-xrandr-manager.c:500
 msgid "_Keep This Configuration"
 msgstr "Z_achovat toto nastavení"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:578
+#: ../plugins/xrandr/msd-xrandr-manager.c:581
 msgid "The selected configuration for displays could not be applied"
 msgstr "Vybrané nastavení displejů nemůže být použito"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1140
+#: ../plugins/xrandr/msd-xrandr-manager.c:1153
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "Nelze obnovit informace o obrazovce: %s"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1144
+#: ../plugins/xrandr/msd-xrandr-manager.c:1157
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Přesto probíhá pokus o přepnutí nastavení monitoru."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1875
+#: ../plugins/xrandr/msd-xrandr-manager.c:1913
 msgid "Rotation not supported"
 msgstr "Rotace není podporována"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1931
+#: ../plugins/xrandr/msd-xrandr-manager.c:1969
 msgid "Could not save monitor configuration"
 msgstr "Nelze uložit nastavení monitoru"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1949
+#: ../plugins/xrandr/msd-xrandr-manager.c:1987
 msgid "Normal"
 msgstr "Běžné"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1950
+#: ../plugins/xrandr/msd-xrandr-manager.c:1988
 msgid "Left"
 msgstr "Vlevo"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1951
+#: ../plugins/xrandr/msd-xrandr-manager.c:1989
 msgid "Right"
 msgstr "Vpravo"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1952
+#: ../plugins/xrandr/msd-xrandr-manager.c:1990
 msgid "Upside Down"
 msgstr "Převrátit"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2072
+#: ../plugins/xrandr/msd-xrandr-manager.c:2112
 msgid "_Configure Display Settings…"
-msgstr "_Konfigurovat nastavení displeje..."
+msgstr "_Konfigurovat nastavení displeje…"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2113
+#: ../plugins/xrandr/msd-xrandr-manager.c:2166
 msgid "Configure display settings"
 msgstr "Konfigurovat nastavení displeje"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2173
+#: ../plugins/xrandr/msd-xrandr-manager.c:2226
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Nelze použít uložené nastavení monitorů"
 
@@ -1121,34 +1120,34 @@ msgstr "Cesta k modulu"
 msgid "path to smartcard PKCS #11 driver"
 msgstr "cesta k ovladači smartcard PKCS #11 "
 
-#: ../plugins/smartcard/msd-smartcard-manager.c:504
+#: ../plugins/smartcard/msd-smartcard-manager.c:496
 msgid "received error or hang up from event source"
-msgstr ""
+msgstr "obdržena chyba nebo ukončeno ze zdroje událostí"
 
-#: ../plugins/smartcard/msd-smartcard-manager.c:593
+#: ../plugins/smartcard/msd-smartcard-manager.c:585
 #, c-format
 msgid "NSS security system could not be initialized"
 msgstr "Bezpečnostní systém NSS nemohl být inicializován."
 
-#: ../plugins/smartcard/msd-smartcard-manager.c:662
+#: ../plugins/smartcard/msd-smartcard-manager.c:654
 #, c-format
 msgid "no suitable smartcard driver could be found"
 msgstr "žádný použitelný ovladač smartcard nebyl nalezen"
 
-#: ../plugins/smartcard/msd-smartcard-manager.c:682
+#: ../plugins/smartcard/msd-smartcard-manager.c:674
 #, c-format
 msgid "smartcard driver '%s' could not be loaded"
-msgstr "Ovladač smartcard '%s' nemohl být načten"
+msgstr "Ovladač smartcard „%s” nemohl být načten"
 
-#: ../plugins/smartcard/msd-smartcard-manager.c:771
+#: ../plugins/smartcard/msd-smartcard-manager.c:758
 #, c-format
 msgid "could not watch for incoming card events - %s"
-msgstr ""
+msgstr "nemohu zobrazit došlou kartu událostí - %s"
 
-#: ../plugins/smartcard/msd-smartcard-manager.c:1124
+#: ../plugins/smartcard/msd-smartcard-manager.c:1105
 #, c-format
 msgid "encountered unexpected error while waiting for smartcard events"
-msgstr ""
+msgstr "došlo k neočekávané chybě při čekání na události smartcard"
 
 #: ../plugins/smartcard/msd-smartcard.c:154
 msgid "Slot ID"
@@ -1160,11 +1159,11 @@ msgstr "Slot, ve kterém je karta"
 
 #: ../plugins/smartcard/msd-smartcard.c:161
 msgid "Slot Series"
-msgstr ""
+msgstr "Slot Series"
 
 #: ../plugins/smartcard/msd-smartcard.c:162
 msgid "per-slot card identifier"
-msgstr ""
+msgstr "identifikátor per-slot karty"
 
 #: ../plugins/smartcard/msd-smartcard.c:168
 #: ../plugins/smartcard/msd-smartcard.c:169
