@@ -50,6 +50,9 @@
 #define INTERFACE_SCHEMA      "org.mate.interface"
 #define SOUND_SCHEMA          "org.mate.sound"
 
+#define CURSOR_THEME_KEY      "cursor-theme"
+#define CURSOR_SIZE_KEY       "cursor-size"
+
 #define FONT_RENDER_SCHEMA    "org.mate.font-rendering"
 #define FONT_ANTIALIASING_KEY "antialiasing"
 #define FONT_HINTING_KEY      "hinting"
@@ -279,6 +282,8 @@ typedef struct
         gboolean    antialias;
         gboolean    hinting;
         int         dpi;
+        char       *cursor_theme;
+        int         cursor_size;
         const char *rgba;
         const char *hintstyle;
 } MateXftSettings;
@@ -289,23 +294,28 @@ static const char *rgba_types[] = { "rgb", "bgr", "vbgr", "vrgb" };
  * This probably could be done a bit more cleanly with g_settings_get_enum
  */
 static void
-xft_settings_get (GSettings        *gsettings,
+xft_settings_get (MateXSettingsManager *manager,
                   MateXftSettings *settings)
 {
-        char  *antialiasing;
-        char  *hinting;
-        char  *rgba_order;
-        double dpi;
+        GSettings *mouse_gsettings;
+        char      *antialiasing;
+        char      *hinting;
+        char      *rgba_order;
+        double     dpi;
 
-        antialiasing = g_settings_get_string (gsettings, FONT_ANTIALIASING_KEY);
-        hinting = g_settings_get_string (gsettings, FONT_HINTING_KEY);
-        rgba_order = g_settings_get_string (gsettings, FONT_RGBA_ORDER_KEY);
-        dpi = get_dpi_from_gsettings_or_x_server (gsettings);
+        mouse_gsettings = g_hash_table_lookup (manager->priv->gsettings, MOUSE_SCHEMA);
+
+        antialiasing = g_settings_get_string (manager->priv->gsettings_font, FONT_ANTIALIASING_KEY);
+        hinting = g_settings_get_string (manager->priv->gsettings_font, FONT_HINTING_KEY);
+        rgba_order = g_settings_get_string (manager->priv->gsettings_font, FONT_RGBA_ORDER_KEY);
+        dpi = get_dpi_from_gsettings_or_x_server (manager->priv->gsettings_font);
 
         settings->antialias = TRUE;
         settings->hinting = TRUE;
         settings->hintstyle = "hintfull";
         settings->dpi = dpi * 1024; /* Xft wants 1/1024ths of an inch */
+        settings->cursor_theme = g_settings_get_string (mouse_gsettings, CURSOR_THEME_KEY);
+        settings->cursor_size = g_settings_get_int (mouse_gsettings, CURSOR_SIZE_KEY);
         settings->rgba = "rgb";
 
         if (rgba_order) {
@@ -385,6 +395,8 @@ xft_settings_set_xsettings (MateXSettingsManager *manager,
                 xsettings_manager_set_string (manager->priv->managers [i], "Xft/RGBA", settings->rgba);
                 xsettings_manager_set_string (manager->priv->managers [i], "Xft/lcdfilter",
                                               g_str_equal (settings->rgba, "rgb") ? "lcddefault" : "none");
+                xsettings_manager_set_int (manager->priv->managers [i], "Gtk/CursorThemeSize", settings->cursor_size);
+                xsettings_manager_set_string (manager->priv->managers [i], "Gtk/CursorThemeName", settings->cursor_theme);
         }
         mate_settings_profile_end (NULL);
 }
@@ -448,6 +460,10 @@ xft_settings_set_xresources (MateXftSettings *settings)
                                 settings->rgba);
         update_property (add_string, "Xft.lcdfilter",
                          g_str_equal (settings->rgba, "rgb") ? "lcddefault" : "none");
+        update_property (add_string, "Xcursor.theme",
+                                settings->cursor_theme);
+        update_property (add_string, "Xcursor.size",
+                                g_ascii_dtostr (dpibuf, sizeof (dpibuf), (double) settings->cursor_size));
 
         g_debug("xft_settings_set_xresources: new res '%s'", add_string->str);
 
@@ -465,14 +481,13 @@ xft_settings_set_xresources (MateXftSettings *settings)
  * X resources
  */
 static void
-update_xft_settings (MateXSettingsManager *manager,
-                     GSettings            *gsettings)
+update_xft_settings (MateXSettingsManager *manager)
 {
         MateXftSettings settings;
 
         mate_settings_profile_start (NULL);
 
-        xft_settings_get (gsettings, &settings);
+        xft_settings_get (manager, &settings);
         xft_settings_set_xsettings (manager, &settings);
         xft_settings_set_xresources (&settings);
 
@@ -486,7 +501,7 @@ xft_callback (GSettings            *gsettings,
 {
         int i;
 
-        update_xft_settings (manager, gsettings);
+        update_xft_settings (manager);
 
         for (i = 0; manager->priv->managers [i]; i++) {
                 xsettings_manager_notify (manager->priv->managers [i]);
@@ -579,6 +594,12 @@ xsettings_callback (GSettings             *gsettings,
         TranslationEntry *trans;
         int               i;
         GVariant         *value;
+
+        if (g_str_equal (key, CURSOR_THEME_KEY) ||
+            g_str_equal (key, CURSOR_SIZE_KEY)) {
+                xft_callback (NULL, key, manager);
+                return;
+	}
 
         trans = find_translation_entry (gsettings, key);
         if (trans == NULL) {
@@ -710,7 +731,7 @@ mate_xsettings_manager_start (MateXSettingsManager *manager,
 
         manager->priv->gsettings_font = g_settings_new (FONT_RENDER_SCHEMA);
         g_signal_connect (manager->priv->gsettings_font, "changed", G_CALLBACK (xft_callback), manager);
-        update_xft_settings (manager, manager->priv->gsettings_font);
+        update_xft_settings (manager);
 
         start_fontconfig_monitor (manager);
 
