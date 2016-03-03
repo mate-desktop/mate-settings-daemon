@@ -31,7 +31,7 @@
       <description></description>
     </key>
     <key name="natural-scroll" type="b">
-      <default>false</default>
+      <default>true</default>
       <summary>Natural scrolling</summary>
       <description>Set this to true to enable natural (reverse) scrolling for touchpads</description>
     </key>
