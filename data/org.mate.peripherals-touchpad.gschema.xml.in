@@ -10,15 +10,25 @@
       <summary>Enable mouse clicks with touchpad</summary>
       <description>Set this to TRUE to be able to send mouse clicks by tapping on the touchpad.</description>
     </key>
-    <key name="scroll-method" type="i">
-      <default>1</default>
-      <summary>Select the touchpad scroll method</summary>
-      <description>Select the touchpad scroll method. Supported values are: 0: disabled, 1: edge scrolling, and 2: two-finger scrolling</description>
+    <key name="vertical-edge-scrolling" type="b">
+      <default>true</default>
+      <summary></summary>
+      <description></description>
     </key>
-    <key name="horiz-scroll-enabled" type="b">
+    <key name="horizontal-edge-scrolling" type="b">
       <default>false</default>
-      <summary>Enable horizontal scrolling</summary>
-      <description>Set this to TRUE to allow horizontal scrolling by the same method selected with the scroll_method key.</description>
+      <summary></summary>
+      <description></description>
+    </key>
+    <key name="vertical-two-finger-scrolling" type="b">
+      <default>true</default>
+      <summary></summary>
+      <description></description>
+    </key>
+    <key name="horizontal-two-finger-scrolling" type="b">
+      <default>false</default>
+      <summary></summary>
+      <description></description>
     </key>
     <key name="natural-scroll" type="b">
       <default>false</default>
