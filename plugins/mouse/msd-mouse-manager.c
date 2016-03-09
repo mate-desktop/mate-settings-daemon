@@ -536,7 +536,7 @@ have_program_in_path (const char *name)
         return result;
 }
 
-static int
+static void
 set_disable_w_typing (MsdMouseManager *manager, gboolean state)
 {
 
@@ -545,7 +545,7 @@ set_disable_w_typing (MsdMouseManager *manager, gboolean state)
                 char *args[6];
 
                 if (manager->priv->syndaemon_spawned)
-                        return 0;
+                        return;
 
                 args[0] = "syndaemon";
                 args[1] = "-i";
@@ -555,7 +555,7 @@ set_disable_w_typing (MsdMouseManager *manager, gboolean state)
                 args[5] = NULL;
 
                 if (!have_program_in_path (args[0]))
-                        return 0;
+                        return;
 
                 g_spawn_async (g_get_home_dir (), args, NULL,
                                 G_SPAWN_SEARCH_PATH, NULL, NULL,
@@ -574,8 +574,6 @@ set_disable_w_typing (MsdMouseManager *manager, gboolean state)
                 g_spawn_close_pid (manager->priv->syndaemon_pid);
                 manager->priv->syndaemon_spawned = FALSE;
         }
-
-        return 0;
 }
 
 #ifdef HAVE_X11_EXTENSIONS_XINPUT_H
@@ -740,7 +738,7 @@ set_natural_scroll (MsdMouseManager * manager)
         XFreeDeviceList (devicelist);
 }
 
-static int
+static void
 synaptics_set_bool (const char * property_name, int property_index, gboolean enabled)
 {
     int numdevices, i, rc;
@@ -752,12 +750,12 @@ synaptics_set_bool (const char * property_name, int property_index, gboolean ena
     unsigned char *data;
 
     if (devicelist == NULL)
-        return 0;
+        return;
 
     property = XInternAtom (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), property_name, False);
 
     if (!property)
-        return 0;
+        return;
 
     int value = 0;
     if (enabled) {
@@ -789,11 +787,10 @@ synaptics_set_bool (const char * property_name, int property_index, gboolean ena
     }
 
     XFreeDeviceList (devicelist);
-    return 0;
 }
 
 
-static int
+static void
 set_scrolling (GSettings *settings)
 {
     synaptics_set_bool ("Synaptics Edge Scrolling", 0, g_settings_get_boolean (settings, KEY_VERT_EDGE_SCROLL));
@@ -802,7 +799,7 @@ set_scrolling (GSettings *settings)
     synaptics_set_bool ("Synaptics Two-Finger Scrolling", 1, g_settings_get_boolean (settings, KEY_HORIZ_TWO_FINGER_SCROLL));
 }
 
-static int
+static void
 set_touchpad_enabled (gboolean state)
 {
         int numdevices, i;
@@ -811,12 +808,12 @@ set_touchpad_enabled (gboolean state)
         Atom prop_enabled;
 
         if (devicelist == NULL)
-                return 0;
+                return;
 
         prop_enabled = XInternAtom (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), "Device Enabled", False);
 
         if (!prop_enabled)
-            return 0;
+            return;
 
         for (i = 0; i < numdevices; i++) {
                 if ((device = device_is_touchpad (devicelist[i]))) {
@@ -837,7 +834,6 @@ set_touchpad_enabled (gboolean state)
         }
 
         XFreeDeviceList (devicelist);
-        return 0;
 }
 #endif
 
