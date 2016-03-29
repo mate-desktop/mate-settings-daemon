@@ -12,23 +12,23 @@
     </key>
     <key name="vertical-edge-scrolling" type="b">
       <default>true</default>
-      <summary></summary>
-      <description></description>
+      <summary>Enable vertical edge scrolling</summary>
+      <description>Set this to TRUE to allow vertical edge scrolling</description>
     </key>
     <key name="horizontal-edge-scrolling" type="b">
       <default>false</default>
-      <summary></summary>
-      <description></description>
+      <summary>Enable horizontal edge scrolling</summary>
+      <description>Set this to TRUE to allow horizontal edge scrolling</description>
     </key>
     <key name="vertical-two-finger-scrolling" type="b">
       <default>true</default>
-      <summary></summary>
-      <description></description>
+      <summary>Enable vertical two-finger scrolling</summary>
+      <description>Set this to TRUE to allow vertical two-finger scrolling</description>
     </key>
     <key name="horizontal-two-finger-scrolling" type="b">
       <default>false</default>
-      <summary></summary>
-      <description></description>
+      <summary>Enable horizontal two-finger scrolling</summary>
+      <description>Set this to TRUE to allow horizontal two-finger scrolling</description>
     </key>
     <key name="natural-scroll" type="b">
       <default>true</default>
