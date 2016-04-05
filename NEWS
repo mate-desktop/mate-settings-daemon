@@ -1,10 +1,12 @@
-1.13.1
-
-1.13.0
-  * GTK3: several deprecation fixes
-  * Add setting to enable/disable the osd
-  * fix some build warnings
-  * drop MateConf migration script
+1.14.0
+  * Drop MateConf migration script
+  * media-keys: add setting to enable/disable OSD
+  * touchpad: support edge and two-finger scrolling independently
+    (use separate GSettings keys for them)
+  * xsettings: add settings for cursor theme and size
+  * GTK+3: several deprecation fixes
+  * Some more fixes and cleanups
+  * Translations update
 
 1.12.1
   * xrandr: install icon in correct directory
