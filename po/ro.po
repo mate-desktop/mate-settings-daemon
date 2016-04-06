@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-12 14:49+0300\n"
-"PO-Revision-Date: 2016-01-23 11:34+0000\n"
-"Last-Translator: Daniel <danny34ever@yahoo.com>\n"
+"POT-Creation-Date: 2016-03-29 13:05+0300\n"
+"PO-Revision-Date: 2016-03-29 10:19+0000\n"
+"Last-Translator: monsta <monsta@inbox.ru>\n"
 "Language-Team: Romanian (http://www.transifex.com/mate/MATE/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -142,78 +142,90 @@ msgid ""
 msgstr "Definiți ca „TRUE” pentru a putea trimite clicuri de maus prin atingerea zonei tactile."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
-msgid "Select the touchpad scroll method"
-msgstr "Alegere metodă derulare zonă tactilă"
+msgid "Enable vertical edge scrolling"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:6
-msgid ""
-"Select the touchpad scroll method. Supported values are: 0: disabled, 1: "
-"edge scrolling, and 2: two-finger scrolling"
-msgstr "Alegere metoda de derulare zonă tactilă. Valorile suportate sunt: 0: dezactivat, 1: derulare la margini, 2: derulare cu două degete"
+msgid "Set this to TRUE to allow vertical edge scrolling"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:7
-msgid "Enable horizontal scrolling"
-msgstr "Activare derulare orizontală"
+msgid "Enable horizontal edge scrolling"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:8
-msgid ""
-"Set this to TRUE to allow horizontal scrolling by the same method selected "
-"with the scroll_method key."
-msgstr "Definiți ca „TRUE” pentru a permite derularea orizontală prin aceeași metodă selectată de cheia scroll_method."
+msgid "Set this to TRUE to allow horizontal edge scrolling"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:9
+msgid "Enable vertical two-finger scrolling"
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:10
+msgid "Set this to TRUE to allow vertical two-finger scrolling"
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:11
+msgid "Enable horizontal two-finger scrolling"
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
+msgid "Set this to TRUE to allow horizontal two-finger scrolling"
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
 msgid "Natural scrolling"
 msgstr "Derulare naturală"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:10
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
 msgstr "Definiți ca adevărat pentru a activa derularea naturală (inversă) pentru zonele tactile"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:11
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
 msgid "Enable touchpad"
 msgstr "Activează zona tactilă"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:16
 msgid "Set this to TRUE to enable all touchpads."
 msgstr "Definiți ca „TRUE” pentru a activa toate zonele tactile."
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:17
 msgid "Enabled two-finger button-click emulation"
 msgstr "Activează emulare clic buton cu două degete"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:18
 msgid "0 thru 3, 0 is inactive, 1-3 is button to emulate"
 msgstr "De la 0 la 3, 0 este inactiv, 1-3 este butonul de emulat"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:19
 msgid "Enable three-finger button-click emulation"
 msgstr "Activează emulare clic buton cu trei degete"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:16
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:20
 msgid "One finger tap button"
 msgstr "Buton de apăsat cu un deget"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:17
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:21
 msgid ""
 "Select the button mapping for one-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:18
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
 msgid "Two finger tap button"
 msgstr "Buton de apăsat cu două degete"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:19
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:23
 msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:20
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
 msgid "Three finger tap button"
 msgstr "Buton de apăsat cu trei degete"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:21
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:25
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
@@ -602,7 +614,7 @@ msgstr "Activează codul pentru depanare"
 
 #: ../mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
-msgstr "Înlocuiește serviciul curent"
+msgstr "Înlocuiește serviciul actual"
 
 #: ../mate-settings-daemon/main.c:67
 msgid "Don't become a daemon"
@@ -823,15 +835,15 @@ msgstr "Puteți obține mai mult spațiu liber prin ștergerea programelor sau f
 msgid "Low Disk Space"
 msgstr "Spațiu redus pe disc"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:458
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Empty Trash"
 msgstr "Golește coșul de gunoi"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:466
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
 msgid "Examine…"
 msgstr "Examinează…"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:473
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:474
 msgid "Ignore"
 msgstr "Ignoră"
 
@@ -846,30 +858,30 @@ msgid "Removing: %s"
 msgstr "Se șterge: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:252
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:317
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:321
 msgid "Emptying the trash"
 msgstr "Se golește coșul de gunoi"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:293
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:297
 msgid "Preparing to empty trash…"
 msgstr "Se pregătește golirea coșului de gunoi…"
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:320
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:324
 msgid "From: "
 msgstr "De la:"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:372
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:376
 msgid "Empty all of the items from the trash?"
 msgstr "Goliți cu totul coșul de gunoi?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:375
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:379
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
 msgstr "Dacă alegeți să goliți coșul de gunoi, toate elementele vor fi șterse definitiv. De asemenea puteți să ștergeți elementele și individual."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:382
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:386
 msgid "_Empty Trash"
 msgstr "Gol_ește coșul de gunoi"
 
@@ -933,7 +945,7 @@ msgstr "_Preferințe tastatură"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:286
 msgid "Show _Current Layout"
-msgstr "Afișează aranjamentul _curent"
+msgstr "Afișează aranjamentul a_ctual"
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:186
 msgid ""
@@ -956,16 +968,16 @@ msgstr "Taste media"
 msgid "Media keys plugin"
 msgstr "Modul taste media"
 
-#: ../plugins/mouse/msd-mouse-manager.c:988
+#: ../plugins/mouse/msd-mouse-manager.c:920
 msgid "Could not enable mouse accessibility features"
 msgstr "Nu s-au putut activa facilitățile pentru accesibilitatea mausului"
 
-#: ../plugins/mouse/msd-mouse-manager.c:990
+#: ../plugins/mouse/msd-mouse-manager.c:922
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr "Accesibilitățile mausului necesită instalarea Mousetweaks în sistemul dumneavoastră."
 
-#: ../plugins/mouse/msd-mouse-manager.c:993
+#: ../plugins/mouse/msd-mouse-manager.c:925
 msgid "Mouse Preferences"
 msgstr "Preferințe maus"
 
@@ -1047,39 +1059,39 @@ msgstr "Nu s-a putut reîncărca informația ecranului: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Se încearcă oricum comutarea configurării monitorului."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1913
+#: ../plugins/xrandr/msd-xrandr-manager.c:1914
 msgid "Rotation not supported"
 msgstr "Rotirea nu este suportată"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1969
+#: ../plugins/xrandr/msd-xrandr-manager.c:1970
 msgid "Could not save monitor configuration"
 msgstr "Nu s-a putut salva configurația monitorului"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1987
+#: ../plugins/xrandr/msd-xrandr-manager.c:1988
 msgid "Normal"
 msgstr "Normal"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1988
+#: ../plugins/xrandr/msd-xrandr-manager.c:1989
 msgid "Left"
 msgstr "Stânga"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1989
+#: ../plugins/xrandr/msd-xrandr-manager.c:1990
 msgid "Right"
 msgstr "Dreapta"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1990
+#: ../plugins/xrandr/msd-xrandr-manager.c:1991
 msgid "Upside Down"
 msgstr "Răsturnat"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2112
+#: ../plugins/xrandr/msd-xrandr-manager.c:2113
 msgid "_Configure Display Settings…"
 msgstr "_Configurare preferințe ecran…"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2166
+#: ../plugins/xrandr/msd-xrandr-manager.c:2167
 msgid "Configure display settings"
 msgstr "Configurare preferințe ecran"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2226
+#: ../plugins/xrandr/msd-xrandr-manager.c:2227
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Nu s-a putut aplica configurația stocată pentru monitoare"
 

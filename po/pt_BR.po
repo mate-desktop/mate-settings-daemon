@@ -15,7 +15,8 @@
 # Krix Apolinário <krixapolinario@gmail.com>, 2009
 # leonardof <leonardof@gnome.org>, 2006, 2008
 # Luiz Fernando S. Armesto <luiz.armesto@gmail.com>, 2007
-# Marcelo Ghelman <marcelo.ghelman@gmail.com>, 2014
+# Marcelo Ghelman <marcelo.ghelman@gmail.com>, 2014,2016
+# Matheus Macabu <mkbu95@gmail.com>, 2016
 # Og Maciel <ogmaciel@ubuntu.com>, 2007
 # Raul Pereira <contato@raulpereira.com>, 2007
 # Sandro Nunes Henrique <sandro@conectiva.com.br>, 1999
@@ -27,9 +28,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-12 14:49+0300\n"
-"PO-Revision-Date: 2016-01-12 11:55+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
+"POT-Creation-Date: 2016-03-29 13:05+0300\n"
+"PO-Revision-Date: 2016-03-29 16:59+0000\n"
+"Last-Translator: Marcelo Ghelman <marcelo.ghelman@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/mate/MATE/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,7 +45,7 @@ msgstr "Acessibilidade"
 #: ../data/50-accessibility.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
 msgid "Toggle magnifier"
-msgstr "Alternar ampliador"
+msgstr "Alternar lente de aumento"
 
 #: ../data/50-accessibility.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
@@ -66,11 +67,11 @@ msgstr "Se o teclado exibido na tela está ligado ou não."
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:3
 msgid "Screen magnifier"
-msgstr "Ampliador de tela"
+msgstr "Lente de aumento da tela"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:4
 msgid "Whether the screen magnifier is turned on."
-msgstr "Se o ampliador de tela está ligado ou não."
+msgstr "Se a lente de aumento da tela está ligada ou não."
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:5
 msgid "Screen reader"
@@ -154,78 +155,90 @@ msgid ""
 msgstr "Defina como VERDADEIRO para poder enviar cliques do mouse tocando no touchpad."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
-msgid "Select the touchpad scroll method"
-msgstr "Selecionar o método de rolagem do touchpad"
+msgid "Enable vertical edge scrolling"
+msgstr "Habilitar deslocamento vertical de borda"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:6
-msgid ""
-"Select the touchpad scroll method. Supported values are: 0: disabled, 1: "
-"edge scrolling, and 2: two-finger scrolling"
-msgstr "Selecione o método de rolagem do touchpad. Os valores suportados são: 0: desabilitado; 1: rolagem pela lateral; 2: rolagem com dois dedos"
+msgid "Set this to TRUE to allow vertical edge scrolling"
+msgstr "Defina como VERDADEIRO para habilitar deslocamento vertical de borda"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:7
-msgid "Enable horizontal scrolling"
-msgstr "Habilitar a rolagem horizontal"
+msgid "Enable horizontal edge scrolling"
+msgstr "Habilitar deslocamento horizontal de borda"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:8
-msgid ""
-"Set this to TRUE to allow horizontal scrolling by the same method selected "
-"with the scroll_method key."
-msgstr "Defina como VERDADEIRO para permitir rolagem horizontal pelo mesmo método selecionado com a chave scroll_method."
+msgid "Set this to TRUE to allow horizontal edge scrolling"
+msgstr "Defina como VERDADEIRO para habilitar deslocamento horizontal de borda"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:9
+msgid "Enable vertical two-finger scrolling"
+msgstr "Habilitar deslocamento vertical com dois dedos"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:10
+msgid "Set this to TRUE to allow vertical two-finger scrolling"
+msgstr "Defina como VERDADEIRO para habilitar deslocamento vertical com dois dedos"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:11
+msgid "Enable horizontal two-finger scrolling"
+msgstr "Habilitar deslocamento horizontal com dois dedos"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
+msgid "Set this to TRUE to allow horizontal two-finger scrolling"
+msgstr "Defina como VERDADEIRO para habilitar deslocamento horizontal com dois dedos"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
 msgid "Natural scrolling"
 msgstr "Rolagem Natural"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:10
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
 msgstr "Defina como verdadeiro para habilitar a rolagem natural (reversa) para os touchpads"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:11
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
 msgid "Enable touchpad"
 msgstr "Habilitar touchpad"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:16
 msgid "Set this to TRUE to enable all touchpads."
 msgstr "Defina como VERDADEIRO para habilitar todos os touchpads."
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:17
 msgid "Enabled two-finger button-click emulation"
 msgstr "Habilita a emulação de click de botão com dois dedos"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:18
 msgid "0 thru 3, 0 is inactive, 1-3 is button to emulate"
 msgstr "0 a 3, 0 é inativo, 1-3 é botão para emular"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:19
 msgid "Enable three-finger button-click emulation"
 msgstr "Habilita a emulação de click de botão com três dedos"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:16
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:20
 msgid "One finger tap button"
 msgstr "Botão de toque de um dedo"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:17
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:21
 msgid ""
 "Select the button mapping for one-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
 msgstr "Seleciona o mapeamento de botão para toque com um dedo. Valores suportados: 1: botão esquerdo do mouse 2: botão do meio do mouse 3: botão direito do mouse"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:18
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
 msgid "Two finger tap button"
 msgstr "Botão de toque de dois dedos"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:19
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:23
 msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
 msgstr "Seleciona o mapeamento de botão para toque com dois dedos. Valores suportados: 1: botão esquerdo do mouse 2: botão do meio do mouse 3: botão direito do mouse"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:20
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
 msgid "Three finger tap button"
 msgstr "Botão de toque com três dedos"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:21
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:25
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
@@ -361,11 +374,11 @@ msgstr "Especifique uma lista de caminhos montados para ignorar quando ficarem c
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
-msgstr ""
+msgstr "Mostrar notificações de OSD"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:4
 msgid "Whether an OSD notification is shown to notify about changes"
-msgstr ""
+msgstr "Se uma notificação OSD é exibida ou não para notificar sobre mudanças"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:7
 msgid "Volume step"
@@ -409,11 +422,11 @@ msgstr "Atalho para aumentar o volume do sistema."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:17
 msgid "Shut down"
-msgstr ""
+msgstr "Desligar"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:18
 msgid "Binding to shut down."
-msgstr ""
+msgstr "Atalho para desligar."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
 msgid "Log out"
@@ -537,7 +550,7 @@ msgstr "Atalho para pular para a próxima faixa."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
 msgid "Binding to show the screen magnifier"
-msgstr "Atalho para exibir o ampliador de tela"
+msgstr "Atalho para exibir a lente de aumento da tela"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
 msgid "Binding to start the screen reader"
@@ -742,7 +755,7 @@ msgstr "Usar _leitor de tela"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:4
 msgid "Use screen _magnifier"
-msgstr "Usar a_mpliador de tela"
+msgstr "Usar lente de au_mento da tela"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:5
 msgid "Enhance _contrast in colors"
@@ -835,15 +848,15 @@ msgstr "Você pode liberar espaço em disco removendo programas ou arquivos inut
 msgid "Low Disk Space"
 msgstr "Pouco espaço em disco"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:458
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Empty Trash"
 msgstr "Esvaziar lixeira"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:466
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
 msgid "Examine…"
 msgstr "Examinar..."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:473
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:474
 msgid "Ignore"
 msgstr "Ignorar"
 
@@ -858,30 +871,30 @@ msgid "Removing: %s"
 msgstr "Removendo: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:252
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:317
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:321
 msgid "Emptying the trash"
 msgstr "Esvaziando a lixeira"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:293
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:297
 msgid "Preparing to empty trash…"
 msgstr "Preparando para esvaziar lixeira..."
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:320
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:324
 msgid "From: "
 msgstr "De: "
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:372
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:376
 msgid "Empty all of the items from the trash?"
 msgstr "Esvaziar todos os itens da lixeira?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:375
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:379
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
 msgstr "Se você escolher esvaziar a lixeira, todos os itens serão permanentemente perdidos. Observe que você também pode excluí-los separadamente."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:382
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:386
 msgid "_Empty Trash"
 msgstr "_Esvaziar lixeira"
 
@@ -968,16 +981,16 @@ msgstr "Teclas de mídia"
 msgid "Media keys plugin"
 msgstr "Plug-in de teclas de mídia"
 
-#: ../plugins/mouse/msd-mouse-manager.c:988
+#: ../plugins/mouse/msd-mouse-manager.c:920
 msgid "Could not enable mouse accessibility features"
 msgstr "Não foi possível habilitar os recursos de acessibilidade do mouse"
 
-#: ../plugins/mouse/msd-mouse-manager.c:990
+#: ../plugins/mouse/msd-mouse-manager.c:922
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr "A acessibilidade de mouse requer que o Mousetweaks seja instalado em seu sistema."
 
-#: ../plugins/mouse/msd-mouse-manager.c:993
+#: ../plugins/mouse/msd-mouse-manager.c:925
 msgid "Mouse Preferences"
 msgstr "Preferências do mouse"
 
@@ -1058,39 +1071,39 @@ msgstr "Não foi possível atualizar a informação da tela: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Tentando mudar a configuração do monitor de qualquer modo."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1913
+#: ../plugins/xrandr/msd-xrandr-manager.c:1914
 msgid "Rotation not supported"
 msgstr "Sem suporte a rotação"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1969
+#: ../plugins/xrandr/msd-xrandr-manager.c:1970
 msgid "Could not save monitor configuration"
 msgstr "Não foi possível salvar a configuração do monitor"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1987
+#: ../plugins/xrandr/msd-xrandr-manager.c:1988
 msgid "Normal"
 msgstr "Normal"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1988
+#: ../plugins/xrandr/msd-xrandr-manager.c:1989
 msgid "Left"
 msgstr "Esquerda"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1989
+#: ../plugins/xrandr/msd-xrandr-manager.c:1990
 msgid "Right"
 msgstr "Direita"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1990
+#: ../plugins/xrandr/msd-xrandr-manager.c:1991
 msgid "Upside Down"
 msgstr "Cabeça para baixo"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2112
+#: ../plugins/xrandr/msd-xrandr-manager.c:2113
 msgid "_Configure Display Settings…"
 msgstr "_Definir configurações de exibição..."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2166
+#: ../plugins/xrandr/msd-xrandr-manager.c:2167
 msgid "Configure display settings"
 msgstr "Define configurações de exibição"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2226
+#: ../plugins/xrandr/msd-xrandr-manager.c:2227
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Não foi possível aplicar a configuração armazenada para monitores"
 

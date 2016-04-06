@@ -3,105 +3,98 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Микола Ткач <Stuartlittle1970@gmail.com>, 2013
-# Stefano Karapetsas <stefano@karapetsas.com>, 2012
-# Yuri Syrota <rasta@renome.rovno.ua>, 1999
-# zubr139, 2012
-# zubr139, 2012
-# Микола Ткач <Stuartlittle1970@gmail.com>, 2014-2016
-# Шаповалов Анатолій Романович <elrond.716.smith@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-29 13:05+0300\n"
-"PO-Revision-Date: 2016-03-29 14:33+0000\n"
-"Last-Translator: Микола Ткач <Stuartlittle1970@gmail.com>\n"
-"Language-Team: Ukrainian (http://www.transifex.com/mate/MATE/language/uk/)\n"
+"PO-Revision-Date: 2016-03-29 10:19+0000\n"
+"Last-Translator: monsta <monsta@inbox.ru>\n"
+"Language-Team: Spanish (Colombia) (http://www.transifex.com/mate/MATE/language/es_CO/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: uk\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: es_CO\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/50-accessibility.xml.in.h:1
 msgid "Accessibility"
-msgstr "Технології доступности"
+msgstr ""
 
 #: ../data/50-accessibility.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
 msgid "Toggle magnifier"
-msgstr "Увімкнути екранний збільшувач"
+msgstr ""
 
 #: ../data/50-accessibility.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
 msgid "Toggle screen reader"
-msgstr "Увімкнути читання екрану"
+msgstr ""
 
 #: ../data/50-accessibility.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
 msgid "Toggle on-screen keyboard"
-msgstr "Увімкнути екранну набірницю"
+msgstr ""
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:1
 msgid "On-screen keyboard"
-msgstr "Екранна набірниця"
+msgstr ""
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:2
 msgid "Whether the on-screen keyboard is turned on."
-msgstr "Чи увімкнено екранну набірницю."
+msgstr ""
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:3
 msgid "Screen magnifier"
-msgstr "Збільшувач екрану"
+msgstr ""
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:4
 msgid "Whether the screen magnifier is turned on."
-msgstr "Чи увімкнено збільшувач екрану."
+msgstr ""
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:5
 msgid "Screen reader"
-msgstr "Читання екрану"
+msgstr ""
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:6
 msgid "Whether the screen reader is turned on."
-msgstr "Чи увімкнено систему читання з екрану."
+msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:1
 msgid "DPI"
-msgstr "DPI"
+msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:2
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "Роздільність, що використовується для перетворення розмірів шрифтів на кількість пікселів, у крапках на дюйм."
+msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
-msgstr "Згладжування"
+msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:4
 msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "Тип згладжування, що використовується при растеризації шрифтів. Можливі значення: \"none\" - без згладжування, \"grayscale\" - стандартне чорно-біле згладжування, \"rgba\" - субпіксельне згладжування (лише для РК-дисплеїв)."
+msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
-msgstr "Хінтінг"
+msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:6
 msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "Тип хінтінгу, що використовується при растеризації шрифтів. Можливі значення: \"none\" - без хінтінгу, \"slight\" - базовий, \"medium\" - помірний, \"full\" - максимальний хінтінг (може призводити до викривлення форми символів)."
+msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
-msgstr "Порядок RGBA"
+msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:8
 msgid ""
@@ -109,126 +102,126 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "Порядок субпіксельних елементів на РК екрані; лише якщо встановлено тип згладжування \"rgba\". Можливі значення: \"rgb\" (червоний ліворуч, найчастіше), \"bgr\" (синій ліворуч), \"vrgb\" (червоний згори), \"vbgr\" (червоний знизу)."
+msgstr ""
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
-msgstr "Дія при витягуванні смарт-картки"
+msgstr ""
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:2
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr "Встановіть у «none», «lock_screen» або «force_logout». Дію буде виконано при витягуванні смарт-картки, що використовувалася для входу у систему."
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:1
 msgid "Disable touchpad while typing"
-msgstr "Вимикати точпад при наборі набірницею"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:2
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "Позначте параметр TRUE, якщо в вас виникають проблеми з випадковим натисканням на точпад при наборі тексту набірницею."
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:3
 msgid "Enable mouse clicks with touchpad"
-msgstr "Увімкнути клацання миші на точпаді"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "Позначте цей параметр, щоб мати змогу виконувати клацання мишею не постукуючи на точпаді."
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Enable vertical edge scrolling"
-msgstr "Увімкнути вертикальне крайове гортання"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:6
 msgid "Set this to TRUE to allow vertical edge scrolling"
-msgstr "Встановіть у TRUE, щоб дозволити вертикальне крайове гортання"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:7
 msgid "Enable horizontal edge scrolling"
-msgstr "Увімкнути горизонтальне крайове гортання"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:8
 msgid "Set this to TRUE to allow horizontal edge scrolling"
-msgstr "Встановіть у TRUE, щоб дозволити горизонтальне крайове гортання"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:9
 msgid "Enable vertical two-finger scrolling"
-msgstr "Увімкнути вертикальне двопальцеве гортання"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:10
 msgid "Set this to TRUE to allow vertical two-finger scrolling"
-msgstr "Встановіть у TRUE, щоб дозволити двопальцеве гортання"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:11
 msgid "Enable horizontal two-finger scrolling"
-msgstr "Увімкнути горизонтальне двопальцеве гортання"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
 msgid "Set this to TRUE to allow horizontal two-finger scrolling"
-msgstr "Встановіть у TRUE, щоб дозволити горизонтальне двопальцеве гортання"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
 msgid "Natural scrolling"
-msgstr "Природнє гортання"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
-msgstr "Позначте цей параметр, щоб увімкнути природнє (зворотнє) гортання для тачпадів"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
 msgid "Enable touchpad"
-msgstr "Увімкнути сенсорну панель"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:16
 msgid "Set this to TRUE to enable all touchpads."
-msgstr "Позначте цей параметр, щоб увімкнути усі точпади."
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:17
 msgid "Enabled two-finger button-click emulation"
-msgstr "Увімкнути емуляцію клацу натисканням двома пальцями"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:18
 msgid "0 thru 3, 0 is inactive, 1-3 is button to emulate"
-msgstr "від 0 до 3, 0 неактивний, 1-3 кнопка для емуляції"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:19
 msgid "Enable three-finger button-click emulation"
-msgstr "Увімкнути емуляцію клацу натисканням трьома пальцями"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:20
 msgid "One finger tap button"
-msgstr "Натискання кнопки одним пальцем"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:21
 msgid ""
 "Select the button mapping for one-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Віберіть розташування кнопки клацання одним пальцем. Підтримуються такі значення: 1: ліва кнопка миші 2: середня кнопка миші 3: права кнопка миші"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
 msgid "Two finger tap button"
-msgstr "Натискання кнопки двома пальцями"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:23
 msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Віберіть розташування кнопки клацання двома пальцями. Підтримуються такі значення: 1: ліва кнопка миші 2: середня кнопка миші 3: права кнопка миші"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
 msgid "Three finger tap button"
-msgstr "Натискання кнопки трьома пальцями"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:25
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Віберіть розташування кнопки клацання трьома пальцями. Підтримуються такі значення: 1: ліва кнопка миші 2: середня кнопка миші 3: права кнопка миші"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
@@ -248,7 +241,7 @@ msgstr "Віберіть розташування кнопки клацання 
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:1
 msgid "Activation of this plugin"
-msgstr "Активація цієї втулки"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:2
@@ -268,7 +261,7 @@ msgstr "Активація цієї втулки"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr "Чи буде активовано цю втулку mate-settings-daemon чи ні."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:3
@@ -288,7 +281,7 @@ msgstr "Чи буде активовано цю втулку mate-settings-daemo
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:3
 msgid "Priority to use for this plugin"
-msgstr "Пріоритет, що використовується для цієї втулки"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:4
@@ -308,257 +301,257 @@ msgstr "Пріоритет, що використовується для ціє�
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
-msgstr "Пріоритет, що використовується для цієї втулки у черзі на запуск у mate-settings-daemon"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:5
 msgid "Free percentage notify threshold"
-msgstr "Поріг у відсотках сповіщення про брак вільного місця"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:6
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr "Поріг (у відсотках) для показу першого сповіщення про брак вільного місця. Якщо відсоток вільного місця на диску опускається нижче цього значення, тоді буде показано попередження."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
 msgid "Subsequent free percentage notify threshold"
-msgstr "Поріг у відсотках для сповіщення про брак вільного місця"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:8
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
-msgstr "Вкажіть відсоток вільного місця, при досягненні нижче якого потрібно показати попередження вдруге."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:9
 msgid "Free space no notify threshold"
-msgstr "Поріг сповіщення про брак вільного місця"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:10
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr "Вкажіть об’єм у ГБ. Якщо об’єм вільного місця більший, тоді попередження не буде показано."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:11
 msgid "Minimum notify period for repeated warnings"
-msgstr "Мінімальний період попереджень про брак вільного місця"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:12
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "Вкажіть час у хвилинах. Подальші попередження про заповнення тому не виводитимуться частіше ніж цей період."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
-msgstr "Точки монтування, що нехтуються"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr "Вкажіть перелік точок монтування, що нехтуються у попередженні про брак вільного місця."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
-msgstr "Показувати сповіщення OSD"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:4
 msgid "Whether an OSD notification is shown to notify about changes"
-msgstr "Якщо показується сповіщення OSD, то сповістити про зміни"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:7
 msgid "Volume step"
-msgstr "Крок гучности"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:8
 msgid "Volume step as percentage of volume."
-msgstr "Крок зміни гучности у відсотках."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:9
 msgid "Toggle touchpad"
-msgstr "Перемикнути сенсорну панель"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:10
 msgid "Binding to enable or disable the touchpad."
-msgstr "Сполучення клявіш для вмикання та вимикання сенсорної панелі."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:11
 msgid "Volume mute"
-msgstr "Вимкнення звуку"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:12
 msgid "Binding to mute the system volume."
-msgstr "Прив'язка для приглушення системної гучности."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:13
 msgid "Volume down"
-msgstr "Зменшення гучности."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:14
 msgid "Binding to lower the system volume."
-msgstr "Прив'язка для зменшення системної гучности."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:15
 msgid "Volume up"
-msgstr "Збільшення гучности"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:16
 msgid "Binding to raise the system volume."
-msgstr "Прив'язка для збільшення системної гучности."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:17
 msgid "Shut down"
-msgstr "Вимкнути"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:18
 msgid "Binding to shut down."
-msgstr "Сполучення клявіш для вимикання."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
 msgid "Log out"
-msgstr "Завершення роботи"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:20
 msgid "Binding to log out."
-msgstr "Прив'язка для виходу з системи."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:21
 msgid "Eject"
-msgstr "Витягування"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:22
 msgid "Binding to eject an optical disc."
-msgstr "Сполучення клявіш для витягування оптичного носія."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:23
 msgid "Home folder"
-msgstr "Домівка"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:24
 msgid "Binding to open the Home folder."
-msgstr "Прив'язка для відкриття домашньої теки."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
 msgid "Search"
-msgstr "Пошук"
+msgstr "Buscar"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:26
 msgid "Binding to launch the search tool."
-msgstr "Прив'язка для запуску знаряддя пошуку."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:27
 msgid "Launch email client"
-msgstr "Запустити клієнт електронної пошти"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:28
 msgid "Binding to launch the email client."
-msgstr "Прив'язка для запуску поштового клієнта."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:29
 msgid "Lock screen"
-msgstr "Блокування екрану"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:30
 msgid "Binding to lock the screen."
-msgstr "Прив'язка для блокування екрану."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:31
 msgid "Launch help browser"
-msgstr "Запуск переглядача довідки"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
 msgid "Binding to launch the help browser."
-msgstr "Прив'язка для запуску довідникової системи."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
 msgid "Launch calculator"
-msgstr "Запустити калькулятор"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
 msgid "Binding to launch the calculator."
-msgstr "Прив'язка для запуску калькулятора."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
 msgid "Launch web browser"
-msgstr "Запуск оглядача тенет"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
 msgid "Binding to launch the web browser."
-msgstr "Прив'язка для запуску оглядача тенет."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
 msgid "Launch media player"
-msgstr "Запустити мультимедійний програвач"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
 msgid "Binding to launch the media player."
-msgstr "Прив'язка для запуску мультимедійного програвача."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
 msgid "Play (or play/pause)"
-msgstr "Відтворити (або Відтворити/Призупинити)"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
 msgid "Binding to start playback (or toggle play/pause)."
-msgstr "Прив'язка для запуску відтворення (чи перемикання відтворення/призупинення)"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
 msgid "Pause playback"
-msgstr "Призупинити відтворення"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:42
 msgid "Binding to pause playback."
-msgstr "Прив'язка для призупинення відтворення."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
 msgid "Stop playback"
-msgstr "Зупинити відтворення"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
 msgid "Binding to stop playback."
-msgstr "При'вязка для зупинки відтворення"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
 msgid "Previous track"
-msgstr "Попередня доріжка"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
 msgid "Binding to skip to previous track."
-msgstr "Прив'язка для переходу до попередньої доріжки."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
 msgid "Next track"
-msgstr "Наступна доріжка"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
 msgid "Binding to skip to next track."
-msgstr "Прив'язка для переходу до наступної доріжки."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
 msgid "Binding to show the screen magnifier"
-msgstr "Прив'язка для показу екранної лупи"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
 msgid "Binding to start the screen reader"
-msgstr "Прив'язка для вмикання читання з екрану"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
 msgid "Binding to show the on-screen keyboard"
-msgstr "Прив'язка для вмикання екранної набірниці"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:5
 msgid "Show Displays in Notification Area"
-msgstr "Показувати дисплеї у ділянці сповіщення"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:6
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
-msgstr "Чи показувати піктограму керування монітором у ділянці сповіщень."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:7
 msgid "Do not touch monitor configuration"
-msgstr "Не чіпати конфігурацію монітора"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:8
 msgid ""
@@ -568,31 +561,31 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr "Зазвичай mate-settings-daemon налаштовує внутрішні та зовнішні монітори судячи по turn_on_external_monitors_at_startup та turn_on_laptop_monitor_at_startup settings й визначає режим що підходить cloning/side-by-side. Увімкнення цього ключа вимикає це, й налаштування монітора не чіпаються геть (якщо немає явного налаштування користувачем)."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:9
 msgid "Turn on external monitor after system boot"
-msgstr "Вмикати зовнішній монітор після завантаження системи"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:10
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
-msgstr "Вмикати зовнішній монітор після завантаження системи, якщо користувач під’єднав його під час завантаження"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:11
 msgid "Turn on laptop monitor after system boot"
-msgstr "Вмикати монітор ноутбука після завантаження системи"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:12
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr "Вмикати монітор ноутбука після завантаження системи, якщо користувач під’єднав зовнішній монітор під час завантаження."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:13
 msgid "File for default configuration for RandR"
-msgstr "Файл налаштувань RandR типово"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:14
 msgid ""
@@ -601,118 +594,118 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr "Втулка XRandR буде шукати типову конфігурацію у вказаному у цьому ключі файлі. Він схожий на файл ~/.config/monitors.xml, який зазвичай знаходиться у домашніх теках користувачів. Якщо у користувача немає такого файлу, або файл що є не відповідає конфігурації моніторів, тоді буде використовуватися вказаний у даному ключі файл."
+msgstr ""
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
-msgstr "Служба параметрів MATE"
+msgstr ""
 
 #: ../mate-settings-daemon/main.c:65
 msgid "Enable debugging code"
-msgstr "Увімкнути зневаджувальний код"
+msgstr ""
 
 #: ../mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
-msgstr "Замінити поточну службу"
+msgstr ""
 
 #: ../mate-settings-daemon/main.c:67
 msgid "Don't become a daemon"
-msgstr "Не переходити у режим служби"
+msgstr ""
 
 #: ../mate-settings-daemon/main.c:68
 msgid "Exit after a time (for debugging)"
-msgstr "Вийти за сплином певного часу (для зневадження)"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.in.h:1
 msgid "Accessibility Keyboard"
-msgstr "Технології доступности"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.in.h:2
 msgid "Accessibility keyboard plugin"
-msgstr "Втулка технологій доступности набірниці"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:454
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr "Помилка показу довідки: %s"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:582
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:646
 msgid "Do you want to activate Slow Keys?"
-msgstr "Бажаєте увімкнути режим \"Повільні клявіші\"?"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:583
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:647
 msgid "Do you want to deactivate Slow Keys?"
-msgstr "Бажаєте вимкнути режим \"Повільні клявіші\"?"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:584
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:648
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "Ви щойно утримували натисненою клявішу Shift впродовж 8 секунд. Це сигнал для увімкнення режиму \"Повільні клявіші\", який впливає на роботу набірниці."
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
 msgid "Don't activate"
-msgstr "Не активувати"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
 msgid "Don't deactivate"
-msgstr "Не деактивувати"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
 msgid "Activate"
-msgstr "Активувати"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
 msgid "Deactivate"
-msgstr "Деактивувати"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:669
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:808
 msgid "Do_n't activate"
-msgstr "Н_е запускати"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:669
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:808
 msgid "Do_n't deactivate"
-msgstr "_Не вимикати"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:672
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:811
 msgid "_Activate"
-msgstr "_Увімкнути"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:672
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:811
 msgid "_Deactivate"
-msgstr "_Вимкнути"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:676
 msgid "Slow Keys Alert"
-msgstr "Сповіщення про режим \"Повільні клявіші\""
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:716
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:782
 msgid "Do you want to activate Sticky Keys?"
-msgstr "Бажаєте увімкнути режим \"Липкі клявіші\"?"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:717
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:783
 msgid "Do you want to deactivate Sticky Keys?"
-msgstr "Бажаєте вимкнути режим \"Липкі клявіші\"?"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:719
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:785
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "Ви щойно утримували натисненою клявішу Shift впродовж 5 секунд. Це сигнал для увімкнення режиму \"Липкі клявіші\", який впливає на роботу набірниці."
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:721
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:787
@@ -720,202 +713,202 @@ msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "Ви щойно натиснули дві клявіші одночасно, або утримували натисненою клявішу Shift впродовж 5 секунд. Це сигнал для вимкнення режиму \"Липкі клявіші\", який впливає на роботу набірниці."
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:815
 msgid "Sticky Keys Alert"
-msgstr "Сповіщення про режим \"Липкі клявіші\""
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:763
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
-msgstr "Параметри універсального доступу"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
 msgid "Use on-screen _keyboard"
-msgstr "Використовувати _екранну набірницю"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:3
 msgid "Use screen _reader"
-msgstr "Використовувати _читання екрану"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:4
 msgid "Use screen _magnifier"
-msgstr "Використовувати _збільшувач екрану"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:5
 msgid "Enhance _contrast in colors"
-msgstr "Покращений _контраст у кольорах"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:6
 msgid "Make _text larger and easier to read"
-msgstr "Зробити _текст більшим та простішим для читання"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
-msgstr "Уводити сполучення клявіш _почерговим натисканням клявіш (Липкі клявіші)"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
-msgstr "_Нехтувати швидкі повторні натискання клявіш (Пружні клявіші)"
+msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "Press and _hold keys to accept them (Slow Keys)"
-msgstr "Приймати клявіші лише після т_ривалого натискання (Повільні клявіші)"
+msgstr ""
 
 #: ../plugins/background/background.mate-settings-plugin.in.h:1
 msgid "Background"
-msgstr "Тло"
+msgstr ""
 
 #: ../plugins/background/background.mate-settings-plugin.in.h:2
 msgid "Background plugin"
-msgstr "Втулка тла стільниці"
+msgstr ""
 
 #: ../plugins/clipboard/clipboard.mate-settings-plugin.in.h:1
 msgid "Clipboard"
-msgstr "Буфер обміну"
+msgstr ""
 
 #: ../plugins/clipboard/clipboard.mate-settings-plugin.in.h:2
 msgid "Clipboard plugin"
-msgstr "Втулка буферу обміну"
+msgstr ""
 
 #: ../plugins/dummy/dummy.mate-settings-plugin.in.h:1
 msgid "Dummy"
-msgstr "Заглушка"
+msgstr ""
 
 #: ../plugins/dummy/dummy.mate-settings-plugin.in.h:2
 msgid "Dummy plugin"
-msgstr "Втулка-заглушка"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:70
 msgid "Don't show any warnings again for this file system"
-msgstr "Більше не показувати попередження для цієї файлової системи"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:72
 msgid "Don't show any warnings again"
-msgstr "Не показувати більше це повідомлення"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:85
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
-msgstr "На томі \"%s\" залишилося лише %s дискового простору."
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:88
 #, c-format
 msgid "This computer has only %s disk space remaining."
-msgstr "На комп'ютері залишилося лише %s дискового простору."
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:104
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "Ви можете звільнити дисковий простір спорожняючи Смітник, вилучаючи зайві проґрами чи файли, або переміщенням файлів на иньший диск чи розділ."
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
-msgstr "Ви можете звільнити дисковий простір вилученням зайвих проґрам чи файлів, або переміщенням файлів на иньший диск чи розділ."
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:112
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "Ви можете звільнити дисковий простір спорожняючи Смітник, вилучаючи зайві проґрами чи файли, або переміщенням файлів на зовнішній диск."
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:115
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
-msgstr "Ви можете звільнити дисковий простір вилученням зайвих проґрам чи файлів, або переміщенням файлів на зовнішній диск."
+msgstr ""
 
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:212
 msgid "Low Disk Space"
-msgstr "Мало місця на файловій системі"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Empty Trash"
-msgstr "Спорожнити смітник"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:467
 msgid "Examine…"
-msgstr "Запустити аналізатор використання дисків…"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:474
 msgid "Ignore"
-msgstr "Нехтувати"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:102
 #, c-format
 msgid "Removing item %lu of %lu"
-msgstr "Вилучення елементу %lu з %lu"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:122
 #, c-format
 msgid "Removing: %s"
-msgstr "Вилучається: %s"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:252
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:321
 msgid "Emptying the trash"
-msgstr "Спорожняється смітник"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:297
 msgid "Preparing to empty trash…"
-msgstr "Підготовка до спорожнення смітника…"
+msgstr ""
 
 #. Translators: "Emptying trash from <device>"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:324
 msgid "From: "
-msgstr "З:"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:376
 msgid "Empty all of the items from the trash?"
-msgstr "Вилучити увесь вміст смітника?"
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:379
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "Якщо Ви спорожните смітник, увесь його вміст буде остаточно втрачено. Зверніть увагу, Ви також можете вилучити їх окремо."
+msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:386
 msgid "_Empty Trash"
-msgstr "Спо_рожнити смітник"
+msgstr ""
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:129
 #, c-format
 msgid "Key binding (%s) is invalid"
-msgstr "Сполучення клявіш (%s) неправильне"
+msgstr ""
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:165
 #, c-format
 msgid "Key binding (%s) is incomplete"
-msgstr "Сполучення клявіш (%s) не завершене"
+msgstr ""
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:506
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "Помилка при спробі запуску (%s)\nщо пов'язаний з клявішею (%s)"
+msgstr ""
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
-msgstr "Сполучення клявіш"
+msgstr ""
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:2
 msgid "Keybindings plugin"
-msgstr "Втулка сполучень клявіш"
+msgstr ""
 
 #: ../plugins/keyboard/keyboard.mate-settings-plugin.in.h:1
 msgid "Keyboard"
-msgstr "Набірниця"
+msgstr ""
 
 #: ../plugins/keyboard/keyboard.mate-settings-plugin.in.h:2
 msgid "Keyboard plugin"
-msgstr "Втулка набірниці"
+msgstr ""
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:119
 #, c-format
@@ -932,275 +925,274 @@ msgid ""
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr "Помилка активації конфігурації XKB.\nЦе може статися за різних обставин:\n• помилка в бібліотеці libxklavier\n• помилка в X сервері (засоби xkbcomp, xmodmap)\n• X сервер несумісний з імплементацією libxkbfile\n\nДані версії С сервера:\n%s\n%d\nЯкщо Ви звітуєте про цю ситуацію як помилку, будь ласка включіть:\n• Результат <b>%s</b>\n• Результат <b>%s</b>"
+msgstr ""
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:273
 msgid "_Layouts"
-msgstr "_Розкладки"
+msgstr ""
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:280
 msgid "Keyboard _Preferences"
-msgstr "Параметри _набірниці"
+msgstr ""
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:286
 msgid "Show _Current Layout"
-msgstr "Показати _поточну розладку"
+msgstr ""
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:186
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "Не вдається отримати типовий термінал. Перевірте, що обрана Вами типова термінальна проґрама справді вказує типову проґраму."
+msgstr ""
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:226
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "Не вдається виконати команду: %s\nПеревірте чи команда існує."
+msgstr ""
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
-msgstr "Мультимедійні клявіші"
+msgstr ""
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:2
 msgid "Media keys plugin"
-msgstr "Втулка мультимедійних клявіш"
+msgstr ""
 
 #: ../plugins/mouse/msd-mouse-manager.c:920
 msgid "Could not enable mouse accessibility features"
-msgstr "Не вдається увімкнути спеціяльні можливости миші"
+msgstr ""
 
 #: ../plugins/mouse/msd-mouse-manager.c:922
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
-msgstr "Щоб активувати спеціяльні можливости миші, потрібно встановити службу Mousetweaks."
+msgstr ""
 
 #: ../plugins/mouse/msd-mouse-manager.c:925
 msgid "Mouse Preferences"
-msgstr "Параметри миші"
+msgstr ""
 
 #: ../plugins/mouse/mouse.mate-settings-plugin.in.h:1
 msgid "Mouse"
-msgstr "Миша"
+msgstr ""
 
 #: ../plugins/mouse/mouse.mate-settings-plugin.in.h:2
 msgid "Mouse plugin"
-msgstr "Втулка миші"
+msgstr ""
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:1
 msgid "Mpris"
-msgstr "Mpris"
+msgstr ""
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:2
 msgid "Mpris plugin"
-msgstr "Втулка Mpris"
+msgstr ""
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:1
 msgid "Typing Break"
-msgstr "Перерва у роботі"
+msgstr ""
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:2
 msgid "Typing break plugin"
-msgstr "Втулка перерви у роботі"
+msgstr ""
 
 #: ../plugins/xrandr/xrandr.mate-settings-plugin.in.h:1
 msgid "XRandR"
-msgstr "XRandR"
+msgstr ""
 
 #: ../plugins/xrandr/xrandr.mate-settings-plugin.in.h:2
 msgid "Set up screen size and rotation settings"
-msgstr "Встановити розмір екрану та параметри повороту"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:373
 msgid "Could not switch the monitor configuration"
-msgstr "Не вдається застосувати конфігурацію моніторів"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:397
 msgid "Could not restore the display's configuration"
-msgstr "Не вдається відновити конфігурацію моніторів"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:422
 msgid "Could not restore the display's configuration from a backup"
-msgstr "Не вдається відновити конфігурацію моніторів з резервної копії"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:443
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Попередню конфігурацію дисплею буде повернуто через %d секунду"
-msgstr[1] "Попередню конфігурацію дисплею буде повернуто через %d секунди"
-msgstr[2] "Попередню конфігурацію дисплею буде повернуто через %d секунд"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
-msgstr "Конфігурація влаштовує?"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:499
 msgid "_Restore Previous Configuration"
-msgstr "_Відновити попередню конфігурацію"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:500
 msgid "_Keep This Configuration"
-msgstr "_Застосувати поточну конфігурацію"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:581
 msgid "The selected configuration for displays could not be applied"
-msgstr "Не вдається застосувати обрану конфігурацію моніторів"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1153
 #, c-format
 msgid "Could not refresh the screen information: %s"
-msgstr "Не вдається оновити інформацію про екран: %s"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1157
 msgid "Trying to switch the monitor configuration anyway."
-msgstr "Конфігурація моніторів застосовується примусово."
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1914
 msgid "Rotation not supported"
-msgstr "Поворот екрану не підтримується"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1970
 msgid "Could not save monitor configuration"
-msgstr "Не вдається зберегти конфігурацію моніторів"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1988
 msgid "Normal"
-msgstr "Звичайне"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1989
 msgid "Left"
-msgstr "Ліворуч"
+msgstr "Izquierda"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1990
 msgid "Right"
-msgstr "Праворуч"
+msgstr "Derecha"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1991
 msgid "Upside Down"
-msgstr "Догоридриґа"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2113
 msgid "_Configure Display Settings…"
-msgstr "_Налаштувати параметри дисплею…"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2167
 msgid "Configure display settings"
-msgstr "Налаштувати параметри екрану"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2227
 msgid "Could not apply the stored configuration for monitors"
-msgstr "Не вдається застосувати збережену конфігурацію моніторів"
+msgstr ""
 
 #: ../plugins/xrdb/msd-xrdb-manager.c:253
 #: ../plugins/xrdb/msd-xrdb-manager.c:322
 msgid "Cannot determine user's home directory"
-msgstr "Не вдається визначити домашній каталог користувача"
+msgstr ""
 
 #: ../plugins/xrdb/xrdb.mate-settings-plugin.in.h:1
 msgid "X Resource Database"
-msgstr "База даних ресурсів X"
+msgstr ""
 
 #: ../plugins/xrdb/xrdb.mate-settings-plugin.in.h:2
 msgid "Manage the X resource database"
-msgstr "Керування базою даних ресурсів X"
+msgstr ""
 
 #: ../plugins/xsettings/xsettings.mate-settings-plugin.in.h:1
 msgid "X Settings"
-msgstr "Параметри X Window"
+msgstr ""
 
 #: ../plugins/xsettings/xsettings.mate-settings-plugin.in.h:2
 msgid "Manage X Settings"
-msgstr "Керування параметрами X Window"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:167
 msgid "Module Path"
-msgstr "Шлях до модулю"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:168
 msgid "path to smartcard PKCS #11 driver"
-msgstr "шлях до драйвера PKCS #11 смарт-картки"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:496
 msgid "received error or hang up from event source"
-msgstr "отримано помилку або сигнал скасовування від джерела"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:585
 #, c-format
 msgid "NSS security system could not be initialized"
-msgstr "Не вдалося ініціялізувати систему безпеки NSS"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:654
 #, c-format
 msgid "no suitable smartcard driver could be found"
-msgstr "відповідного драйвера для смарт-картки не знайдено"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:674
 #, c-format
 msgid "smartcard driver '%s' could not be loaded"
-msgstr "не вдалося завантажити драйвер «%s» для смарт-картки"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:758
 #, c-format
 msgid "could not watch for incoming card events - %s"
-msgstr "не вдалося отримати вхідні події від картки — %s"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:1105
 #, c-format
 msgid "encountered unexpected error while waiting for smartcard events"
-msgstr "трапилася непередбачувана помилка при очікуванні подій від смарт-картки"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard.c:154
 msgid "Slot ID"
-msgstr "Ідентифікатор слоту"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard.c:155
 msgid "The slot the card is in"
-msgstr "Слот, у якому знаходиться картка"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard.c:161
 msgid "Slot Series"
-msgstr "Серія слоту"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard.c:162
 msgid "per-slot card identifier"
-msgstr "ідентифікатор картки у слоті"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard.c:168
 #: ../plugins/smartcard/msd-smartcard.c:169
 msgid "name"
-msgstr "ім’я"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard.c:173
 msgid "Module"
-msgstr "Модуль"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard.c:174
 msgid "smartcard driver"
-msgstr "драйвер смарт-картки"
+msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:1
 msgid "Change system time zone"
-msgstr "Змінити системний часовий пояс"
+msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:2
 msgid "Privileges are required to change the system time zone."
-msgstr "Потрібні повноваження для зміни системного часового поясу."
+msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:3
 msgid "Change system time"
-msgstr "Змінити системний час"
+msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:4
 msgid "Privileges are required to change the system time."
-msgstr "Потрібні повноваження для зміни системного часу."
+msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:5
 msgid "Configure hardware clock"
-msgstr "Налаштувати апаратний годинник"
+msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:6
 msgid "Privileges are required to configure the hardware clock."
-msgstr "Потрібні повноваження для налаштування апаратного годинника."
+msgstr ""

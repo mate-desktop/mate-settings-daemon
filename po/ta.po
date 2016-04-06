@@ -14,9 +14,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-12 14:49+0300\n"
-"PO-Revision-Date: 2016-01-12 11:55+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
+"POT-Creation-Date: 2016-03-29 13:05+0300\n"
+"PO-Revision-Date: 2016-03-29 10:19+0000\n"
+"Last-Translator: monsta <monsta@inbox.ru>\n"
 "Language-Team: Tamil (http://www.transifex.com/mate/MATE/language/ta/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -141,78 +141,90 @@ msgid ""
 msgstr "சொடுக்கி சொடுக்கலை திட்டு தட்டலால் செய்ய இதை உண்மை என அமைக்கவும்"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
-msgid "Select the touchpad scroll method"
-msgstr "தொடுதிட்டால் உருளல் செயலை தேர்ந்தெடு"
+msgid "Enable vertical edge scrolling"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:6
-msgid ""
-"Select the touchpad scroll method. Supported values are: 0: disabled, 1: "
-"edge scrolling, and 2: two-finger scrolling"
-msgstr "தொடுதிட்டால் உருளல் செயலை தேர்ந்தெடு. ஆதரவுள்ள மதிப்புகள்: 0: செயல்நீக்கப்பட்டது, 1 : விளிம்பு உருளல் , மற்றும் 2: இரு-விரல் உருளல்"
+msgid "Set this to TRUE to allow vertical edge scrolling"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:7
-msgid "Enable horizontal scrolling"
-msgstr "கிடைமட்ட உருளலை இயலுமை செய்க"
+msgid "Enable horizontal edge scrolling"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:8
-msgid ""
-"Set this to TRUE to allow horizontal scrolling by the same method selected "
-"with the scroll_method key."
-msgstr "_m உருளல் முறைமை விசையுடன் தெந்தெடுத்த அதே முறையில் கிடைமட்ட உருளலை இயலுமை செய்ய  இதை உண்மை என அமைக்கவும்"
+msgid "Set this to TRUE to allow horizontal edge scrolling"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:9
-msgid "Natural scrolling"
+msgid "Enable vertical two-finger scrolling"
 msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:10
-msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
+msgid "Set this to TRUE to allow vertical two-finger scrolling"
 msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:11
-msgid "Enable touchpad"
-msgstr "தொடுதிட்டை  செயல்படுத்து"
+msgid "Enable horizontal two-finger scrolling"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
-msgid "Set this to TRUE to enable all touchpads."
-msgstr " எல்லா தொடு  திட்டுக்களை,யும்  செயல் படுத்த இதை உண்மை என அமைக்கவும்"
+msgid "Set this to TRUE to allow horizontal two-finger scrolling"
+msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
-msgid "Enabled two-finger button-click emulation"
+msgid "Natural scrolling"
 msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
-msgid "0 thru 3, 0 is inactive, 1-3 is button to emulate"
+msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
 msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
+msgid "Enable touchpad"
+msgstr "தொடுதிட்டை  செயல்படுத்து"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:16
+msgid "Set this to TRUE to enable all touchpads."
+msgstr " எல்லா தொடு  திட்டுக்களை,யும்  செயல் படுத்த இதை உண்மை என அமைக்கவும்"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:17
+msgid "Enabled two-finger button-click emulation"
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:18
+msgid "0 thru 3, 0 is inactive, 1-3 is button to emulate"
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:19
 msgid "Enable three-finger button-click emulation"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:16
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:20
 msgid "One finger tap button"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:17
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:21
 msgid ""
 "Select the button mapping for one-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:18
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
 msgid "Two finger tap button"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:19
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:23
 msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:20
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
 msgid "Three finger tap button"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:21
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:25
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
@@ -822,15 +834,15 @@ msgstr "பயன்படாத நிரல்கள் அல்லது க
 msgid "Low Disk Space"
 msgstr "குறைந்த வட்டு இடம்"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:458
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Empty Trash"
 msgstr "குப்பையை காலி செய்"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:466
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
 msgid "Examine…"
 msgstr "சோதி..."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:473
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:474
 msgid "Ignore"
 msgstr "உதாசீனம் செய்"
 
@@ -845,30 +857,30 @@ msgid "Removing: %s"
 msgstr "நீக்குகிறது: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:252
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:317
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:321
 msgid "Emptying the trash"
 msgstr "குப்பை காலி செய்யப்படுகிறது"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:293
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:297
 msgid "Preparing to empty trash…"
 msgstr "குப்பையை காலி செய்ய தயார் செய்கிறது..."
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:320
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:324
 msgid "From: "
 msgstr "அனுப்புனர்:"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:372
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:376
 msgid "Empty all of the items from the trash?"
 msgstr "குப்பையிலிருந்து எல்லா உருப்படிகளையும் காலி செய்யவா?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:375
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:379
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
 msgstr "குப்பையை காலி செய்ய தேர்ந்தெடுத்தால் எல்லா உருப்படிகளும் நிரந்தரமாக இழக்கப்படும். அவற்றை தனித்தனியாக கூட நீக்கலாம் என அறியவும். "
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:382
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:386
 msgid "_Empty Trash"
 msgstr "_E குப்பையை காலி செய்"
 
@@ -955,16 +967,16 @@ msgstr "ஊடக விசைகள்"
 msgid "Media keys plugin"
 msgstr "ஊடக விசைகள் சொருகி"
 
-#: ../plugins/mouse/msd-mouse-manager.c:988
+#: ../plugins/mouse/msd-mouse-manager.c:920
 msgid "Could not enable mouse accessibility features"
 msgstr "சொடுக்கி அணுகல்-முறைகளை செயல்படுத்த முடியவில்லை"
 
-#: ../plugins/mouse/msd-mouse-manager.c:990
+#: ../plugins/mouse/msd-mouse-manager.c:922
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr "சொடுக்கி அணுகலுக்கு மவுஸ்ட்வீக்ஸ் ஐ உங்கள் கணினியில் நிறுவி இருக்க வேண்டும்."
 
-#: ../plugins/mouse/msd-mouse-manager.c:993
+#: ../plugins/mouse/msd-mouse-manager.c:925
 msgid "Mouse Preferences"
 msgstr "சுட்டி பண்புகள்"
 
@@ -1045,39 +1057,39 @@ msgstr "திரை தகவலை புதுப்பிக்க முட
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "மானிட்டர் கட்டமைப்பை எப்படியும் மாற்ற முயற்சிக்கிறது."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1913
+#: ../plugins/xrandr/msd-xrandr-manager.c:1914
 msgid "Rotation not supported"
 msgstr "சுற்றுதல் ஆதரிக்கப்படவில்லை"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1969
+#: ../plugins/xrandr/msd-xrandr-manager.c:1970
 msgid "Could not save monitor configuration"
 msgstr "மானிட்டர் கட்டமைப்பை சேமிக்க முடியவில்லை"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1987
+#: ../plugins/xrandr/msd-xrandr-manager.c:1988
 msgid "Normal"
 msgstr "இயல்பான"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1988
+#: ../plugins/xrandr/msd-xrandr-manager.c:1989
 msgid "Left"
 msgstr "இடது"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1989
+#: ../plugins/xrandr/msd-xrandr-manager.c:1990
 msgid "Right"
 msgstr "வலது"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1990
+#: ../plugins/xrandr/msd-xrandr-manager.c:1991
 msgid "Upside Down"
 msgstr "தலை கீழ்"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2112
+#: ../plugins/xrandr/msd-xrandr-manager.c:2113
 msgid "_Configure Display Settings…"
 msgstr "(_C) காட்சி அமைப்பை வடிவமை..."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2166
+#: ../plugins/xrandr/msd-xrandr-manager.c:2167
 msgid "Configure display settings"
 msgstr "காட்சி அமைப்பை வடிவமை"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2226
+#: ../plugins/xrandr/msd-xrandr-manager.c:2227
 msgid "Could not apply the stored configuration for monitors"
 msgstr "மானிட்டர்களுக்கான சேமிக்கப்பட்ட கட்டமைப்பை செயல்படுத்த முடியவில்லை"
 

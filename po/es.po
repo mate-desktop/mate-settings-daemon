@@ -9,9 +9,11 @@
 # Benjamin Perez Carrillo <benperezc@gmail.com>, 2015
 # Carlos Perelló Marín <carlos@mate-db.org>, 2001
 # Claudio Saavedra <csaavedra@alumnos.utalca.cl>, 2007
+# ebray187 <ebray187@gmail.com>, 2016
 # Emiliano Fascetti, 2015
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2003, 2004, 2005, 2006
 # Héctor García Álvarez <hector@scouts-es.org>, 2001
+# Ivan Nieto <ivan.nieto.sousa@gmail.com>, 2016
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2010
 # Lluís Tusquellas <lutusq@gmail.com>, 2013
 # Lucas Di Pentima <lucas@lunix.com.ar>, 2002
@@ -20,9 +22,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-12 14:49+0300\n"
-"PO-Revision-Date: 2016-02-11 00:26+0000\n"
-"Last-Translator: Angel Mireles <lamborghinilph710@gmail.com>\n"
+"POT-Creation-Date: 2016-03-29 13:05+0300\n"
+"PO-Revision-Date: 2016-03-29 18:56+0000\n"
+"Last-Translator: ebray187 <ebray187@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/mate/MATE/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -147,78 +149,90 @@ msgid ""
 msgstr "Establecer esto a verdadero para poder enviar pulsaciones del ratón pulsando sobre el touchpad."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
-msgid "Select the touchpad scroll method"
-msgstr "Seleccionar el método de desplazamiento del touchpad"
+msgid "Enable vertical edge scrolling"
+msgstr "Activar el desplazamiento vertical por el borde"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:6
-msgid ""
-"Select the touchpad scroll method. Supported values are: 0: disabled, 1: "
-"edge scrolling, and 2: two-finger scrolling"
-msgstr "Seleccionar el método de desplazamiento del touchpad. Los valores soportados son: 0 desactivado, 1 desplazamiento en el borde y 2 desplazamiento con dos dedos."
+msgid "Set this to TRUE to allow vertical edge scrolling"
+msgstr "Establecer esto a verdadero para activar el desplazamiento vertical por el borde"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:7
-msgid "Enable horizontal scrolling"
-msgstr "Activar desplazamiento horizontal"
+msgid "Enable horizontal edge scrolling"
+msgstr "Activar el desplazamiento horizontal por el borde"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:8
-msgid ""
-"Set this to TRUE to allow horizontal scrolling by the same method selected "
-"with the scroll_method key."
-msgstr "Establecer esto a verdadero para permitir desplazamiento horizontal con el mismo método seleccionado en la clave scroll_method."
+msgid "Set this to TRUE to allow horizontal edge scrolling"
+msgstr "Establecer esto a verdadero para activar el desplazamiento horizontal por el borde"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:9
+msgid "Enable vertical two-finger scrolling"
+msgstr "Activar el desplazamiento vertical con dos dedos"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:10
+msgid "Set this to TRUE to allow vertical two-finger scrolling"
+msgstr "Establecer esto a verdadero para activar el desplazamiento vertical con dos dedos"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:11
+msgid "Enable horizontal two-finger scrolling"
+msgstr "Activar el desplazamiento horizontal con dos dedos"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
+msgid "Set this to TRUE to allow horizontal two-finger scrolling"
+msgstr "Establecer esto a verdadero para activar el desplazamiento horizontal con dos dedos"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
 msgid "Natural scrolling"
 msgstr "Desplazamiento natural"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:10
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
 msgstr "Establecer esto a verdadero para activar el desplazamiento natural (y reverso) del touchpad."
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:11
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
 msgid "Enable touchpad"
 msgstr "Activar el touchpad"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:16
 msgid "Set this to TRUE to enable all touchpads."
 msgstr "Establecer esto a verdadero para activar todos los touchpad."
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:17
 msgid "Enabled two-finger button-click emulation"
 msgstr "Emulacion activada de pulsacion de dos dedos "
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:18
 msgid "0 thru 3, 0 is inactive, 1-3 is button to emulate"
 msgstr "Del 0 al 3, boton 0 esta inactivo, botones 1-3 para emulacion"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:19
 msgid "Enable three-finger button-click emulation"
 msgstr "Activar la emulacion de pulsacion de tres dedos"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:16
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:20
 msgid "One finger tap button"
 msgstr "Boton de pulsacion de un solo dedo"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:17
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:21
 msgid ""
 "Select the button mapping for one-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
 msgstr "Seleccionar el boton de pulsacion de un solo dedo. Los valores validos son : 1: boton izquierdo 2: boton del centro 3: boton derecho"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:18
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
 msgid "Two finger tap button"
 msgstr "Boton de pulsacion de dos dedos"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:19
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:23
 msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
 msgstr "Seleccionar el boton de pulsacion de dos dedos. Los valores validos son : 1: boton izquierdo 2: boton del centro 3: boton derecho"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:20
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
 msgid "Three finger tap button"
 msgstr "Boton de pulsacion de tres dedos"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:21
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:25
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
@@ -354,11 +368,11 @@ msgstr "Especificar una lista de puntos de montaje para ignorar cuando están ba
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
-msgstr ""
+msgstr "Muestra notificación OSD"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:4
 msgid "Whether an OSD notification is shown to notify about changes"
-msgstr ""
+msgstr "Si una notificación OSD se muestra para notificar sobre cambios"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:7
 msgid "Volume step"
@@ -406,7 +420,7 @@ msgstr "Apagar"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:18
 msgid "Binding to shut down."
-msgstr ""
+msgstr "Forzando el apagado."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
 msgid "Log out"
@@ -828,15 +842,15 @@ msgstr "Puede liberar espacio eliminando programas o archivos sin usar o moviend
 msgid "Low Disk Space"
 msgstr "Espacio de disco bajo"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:458
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Empty Trash"
 msgstr "Vacía la papelera"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:466
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
 msgid "Examine…"
 msgstr "Examinar…"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:473
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:474
 msgid "Ignore"
 msgstr "Ignorar"
 
@@ -851,30 +865,30 @@ msgid "Removing: %s"
 msgstr "Eliminando: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:252
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:317
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:321
 msgid "Emptying the trash"
 msgstr "Vaciando la papelera"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:293
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:297
 msgid "Preparing to empty trash…"
 msgstr "Preparándose para vaciar la papelera…"
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:320
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:324
 msgid "From: "
 msgstr "Desde:"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:372
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:376
 msgid "Empty all of the items from the trash?"
 msgstr "¿Vaciar todos los elementos de la papelera?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:375
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:379
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
 msgstr "Si elige vaciar la papelera se borrarán permanentemente todos los elementos en ella. Note que también puede borrarlos separadamente."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:382
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:386
 msgid "_Empty Trash"
 msgstr "_Vaciar papelera"
 
@@ -961,16 +975,16 @@ msgstr "Teclas multimedia"
 msgid "Media keys plugin"
 msgstr "Complemento de teclas multimedia"
 
-#: ../plugins/mouse/msd-mouse-manager.c:988
+#: ../plugins/mouse/msd-mouse-manager.c:920
 msgid "Could not enable mouse accessibility features"
 msgstr "No se pudieron activar las características de accesibilidad del ratón"
 
-#: ../plugins/mouse/msd-mouse-manager.c:990
+#: ../plugins/mouse/msd-mouse-manager.c:922
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr "La accesibilidad del ratón requiere que los ajustes finos del ratón estén instalados en su sistema."
 
-#: ../plugins/mouse/msd-mouse-manager.c:993
+#: ../plugins/mouse/msd-mouse-manager.c:925
 msgid "Mouse Preferences"
 msgstr "Preferencias del ratón"
 
@@ -1051,39 +1065,39 @@ msgstr "No se pudo refrescar la información de la pantalla: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Intentando cambiar la configuración del monitor de todas formas."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1913
+#: ../plugins/xrandr/msd-xrandr-manager.c:1914
 msgid "Rotation not supported"
 msgstr "La rotación no está soportada"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1969
+#: ../plugins/xrandr/msd-xrandr-manager.c:1970
 msgid "Could not save monitor configuration"
 msgstr "No se pudo guardar la configuración del monitor"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1987
+#: ../plugins/xrandr/msd-xrandr-manager.c:1988
 msgid "Normal"
 msgstr "Normal"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1988
+#: ../plugins/xrandr/msd-xrandr-manager.c:1989
 msgid "Left"
 msgstr "Izquierda"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1989
+#: ../plugins/xrandr/msd-xrandr-manager.c:1990
 msgid "Right"
 msgstr "Derecha"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1990
+#: ../plugins/xrandr/msd-xrandr-manager.c:1991
 msgid "Upside Down"
 msgstr "Hacia abajo"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2112
+#: ../plugins/xrandr/msd-xrandr-manager.c:2113
 msgid "_Configure Display Settings…"
 msgstr "_Configurar ajustes de pantalla…"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2166
+#: ../plugins/xrandr/msd-xrandr-manager.c:2167
 msgid "Configure display settings"
 msgstr "Configurar los ajustes de la pantalla"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2226
+#: ../plugins/xrandr/msd-xrandr-manager.c:2227
 msgid "Could not apply the stored configuration for monitors"
 msgstr "No se pudo aplicar la configuración almacenada para los monitores"
 

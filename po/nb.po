@@ -3,14 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Allan Nordhøy <epost@anotheragency.no>, 2016
+# Kenneth Jenssen <kennethjenssen@yahoo.com>, 2016
 # Terance Edward Sola <terance@lyse.net>, 2005
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-12 14:49+0300\n"
-"PO-Revision-Date: 2016-01-12 11:55+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
+"POT-Creation-Date: 2016-03-29 13:05+0300\n"
+"PO-Revision-Date: 2016-03-29 18:03+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/mate/MATE/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,7 +45,7 @@ msgstr "Tastatur på skjermen"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:2
 msgid "Whether the on-screen keyboard is turned on."
-msgstr ""
+msgstr "Hvorvidt skjermtastaturet er påslått."
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:3
 msgid "Screen magnifier"
@@ -51,7 +53,7 @@ msgstr "Forstørrelsesglass"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:4
 msgid "Whether the screen magnifier is turned on."
-msgstr ""
+msgstr "Hvorvidt skjermforstørrelse er påslått."
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:5
 msgid "Screen reader"
@@ -107,13 +109,13 @@ msgstr "Rekkefølge for underpikselelementer på en LCD-skjerm; brukes kun når 
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
-msgstr ""
+msgstr "Handling for fjerning av smartkort"
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:2
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr ""
+msgstr "Sett denne til 'none'. 'lock_screen' eller 'force_logout'. Handlingen vil bli utført når smartkortet brukt for loggen blir fjernet."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:1
 msgid "Disable touchpad while typing"
@@ -123,7 +125,7 @@ msgstr "Slå av pekeplate ved skriving"
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr ""
+msgstr "Sett denne til SANN hvis du har problemer med at du kommer borti pekeflaten når du skriver."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:3
 msgid "Enable mouse clicks with touchpad"
@@ -132,85 +134,97 @@ msgstr "Slå på musklikk med pekeplaten"
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr ""
+msgstr "Sett denne til SANN for å muliggjøre forsendelse av museklikk ved å trykke på pekeflaten."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
-msgid "Select the touchpad scroll method"
-msgstr "Velg rullemetode for pekeplate"
+msgid "Enable vertical edge scrolling"
+msgstr "Skru på loddrett kantrulling"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:6
-msgid ""
-"Select the touchpad scroll method. Supported values are: 0: disabled, 1: "
-"edge scrolling, and 2: two-finger scrolling"
-msgstr ""
+msgid "Set this to TRUE to allow vertical edge scrolling"
+msgstr "Sett denne til SANN for å tillate loddrett kantrulling"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:7
-msgid "Enable horizontal scrolling"
-msgstr "Slå på horisontal rulling"
+msgid "Enable horizontal edge scrolling"
+msgstr "Skru på vannrett kantrulling"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:8
-msgid ""
-"Set this to TRUE to allow horizontal scrolling by the same method selected "
-"with the scroll_method key."
-msgstr ""
+msgid "Set this to TRUE to allow horizontal edge scrolling"
+msgstr "Sett denne til SANN for å tillate vannrett kantrulling"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:9
-msgid "Natural scrolling"
-msgstr ""
+msgid "Enable vertical two-finger scrolling"
+msgstr "Skru på loddrett tofingerrulling"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:10
-msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
-msgstr ""
+msgid "Set this to TRUE to allow vertical two-finger scrolling"
+msgstr "Sett denne til SANN for å tillate loddrett tofingerrulling"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:11
+msgid "Enable horizontal two-finger scrolling"
+msgstr "Skru på vannrett tofingerrulling"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
+msgid "Set this to TRUE to allow horizontal two-finger scrolling"
+msgstr "Sett denne til SANN for å tillate vannrett tofingerrulling"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
+msgid "Natural scrolling"
+msgstr "Naturlig rulling"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
+msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
+msgstr "Sett denne til sann for å aktivere naturlig (omvendt) rulling for pekeflater"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
 msgid "Enable touchpad"
 msgstr "Slå på pekeplaten"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
-msgid "Set this to TRUE to enable all touchpads."
-msgstr ""
-
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
-msgid "Enabled two-finger button-click emulation"
-msgstr ""
-
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
-msgid "0 thru 3, 0 is inactive, 1-3 is button to emulate"
-msgstr ""
-
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
-msgid "Enable three-finger button-click emulation"
-msgstr ""
-
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:16
-msgid "One finger tap button"
-msgstr ""
+msgid "Set this to TRUE to enable all touchpads."
+msgstr "Sett denne til SANN for å skru på alle pekeplater."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:17
-msgid ""
-"Select the button mapping for one-finger tap. Supported values are: 1: left "
-"mouse button 2: middle mouse button 3: right mouse button"
-msgstr ""
+msgid "Enabled two-finger button-click emulation"
+msgstr "Skrudde på emulering av tofingersklikk"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:18
-msgid "Two finger tap button"
-msgstr ""
+msgid "0 thru 3, 0 is inactive, 1-3 is button to emulate"
+msgstr "0 til 3, 0 er inaktiv, 1-3 er en knapp å emulere"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:19
-msgid ""
-"Select the button mapping for two-finger tap. Supported values are: 1: left "
-"mouse button 2: middle mouse button 3: right mouse button"
-msgstr ""
+msgid "Enable three-finger button-click emulation"
+msgstr "Skru på emulering av trenfingersklikk"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:20
-msgid "Three finger tap button"
-msgstr ""
+msgid "One finger tap button"
+msgstr "En-fingerstrykk-knapp"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:21
 msgid ""
+"Select the button mapping for one-finger tap. Supported values are: 1: left "
+"mouse button 2: middle mouse button 3: right mouse button"
+msgstr "Velg knappetilhørigheten for en-fingerstrykk. Støttede verdier er: 1: venstre museknapp 2: midterste museknapp 3: høyre museknapp"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
+msgid "Two finger tap button"
+msgstr "To-fingerstrykk-knapp"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:23
+msgid ""
+"Select the button mapping for two-finger tap. Supported values are: 1: left "
+"mouse button 2: middle mouse button 3: right mouse button"
+msgstr "Velg knapp for to-fingerstrykk. Støttede verdier er: 1: venstre museknapp 2: midtre museknapp 3: høyre museknapp"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
+msgid "Three finger tap button"
+msgstr "Tre-fingerstrykk-knapp"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:25
+msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
-msgstr ""
+msgstr "Velg knapp for tre-fingerstrykk. Støttede verdier er: 1: venstre museknapp 2: midtre museknapp 3: høyre museknapp"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
@@ -230,7 +244,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:1
 msgid "Activation of this plugin"
-msgstr ""
+msgstr "Aktivering av dette programtillegget"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:2
@@ -250,7 +264,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr ""
+msgstr "Om dette programtillegget skal aktiveres av mate-settings-nissen eller ei"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:3
@@ -270,7 +284,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:3
 msgid "Priority to use for this plugin"
-msgstr ""
+msgstr "Prioritet for dette programtillegget"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:4
@@ -290,7 +304,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
-msgstr ""
+msgstr "Prioritet for dette programtillegget oppstartskøen for mate-settings-nissen"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:5
 msgid "Free percentage notify threshold"
@@ -300,17 +314,17 @@ msgstr "Terskel for varsling av ledig plass"
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr ""
+msgstr "Mengden fri plass i prosent før første advarsel om lav diskplass blir gitt. Hvis den prosentvise andelen ledig plass går under dette, vil en advarsel bli vist."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
 msgid "Subsequent free percentage notify threshold"
-msgstr ""
+msgstr "Påfølgende påminnelsesterskel for ledig plass i prosent"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:8
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
-msgstr ""
+msgstr "Angi prosentandelen ledig plass som tas i bruk før en påfølgende advarsel utstedes."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:9
 msgid "Free space no notify threshold"
@@ -320,7 +334,7 @@ msgstr "Terskel for å stoppe varsling om ledig plass"
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr ""
+msgstr "Angi plassmengde i GB. Hvis mengden ledig plass overstiger denne, vil ingen advarsel bli vist."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:11
 msgid "Minimum notify period for repeated warnings"
@@ -330,7 +344,7 @@ msgstr "Minste varslingsperiode for gjentatte advarsler"
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr ""
+msgstr "Angi tid i minutter. Påfølgende advarsler for en diskenhet vil ikke opptre oftere enn denne tidsperioden."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
@@ -338,15 +352,15 @@ msgstr "Monteringsstier som skal ignoreres"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr ""
+msgstr "Angi en liste over monteringsstier som skal ignoreres når de nesten er tomme for diskplass."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
-msgstr ""
+msgstr "Vis OSD-påminnelse"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:4
 msgid "Whether an OSD notification is shown to notify about changes"
-msgstr ""
+msgstr "Hvorvidt en OSD-påminnelse vises for å gi beskjed om endringer"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:7
 msgid "Volume step"
@@ -390,11 +404,11 @@ msgstr "Binding for å øke volumet."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:17
 msgid "Shut down"
-msgstr ""
+msgstr "Slå av"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:18
 msgid "Binding to shut down."
-msgstr ""
+msgstr "Tastatursnarvei for å slå av."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
 msgid "Log out"
@@ -518,15 +532,15 @@ msgstr "Binding for å hoppe til neste spor."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
 msgid "Binding to show the screen magnifier"
-msgstr ""
+msgstr "Snarvei til visning av skjermforstørrelse"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
 msgid "Binding to start the screen reader"
-msgstr ""
+msgstr "Tastatursnarvei for å starte skjermleser"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
 msgid "Binding to show the on-screen keyboard"
-msgstr ""
+msgstr "Tastatursnarvei for å vise skjermtastatur"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:5
 msgid "Show Displays in Notification Area"
@@ -540,7 +554,7 @@ msgstr "Om et varslingsikon med skjermrelatert informasjon skal vises på panele
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:7
 msgid "Do not touch monitor configuration"
-msgstr ""
+msgstr "Ikke rør skjermoppsettet"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:8
 msgid ""
@@ -550,31 +564,31 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr ""
+msgstr "Normalt setter mate-settings-daemon opp interne og eksterne skjermer, i henhold til innstillingene i turn_on_external_monitors_at_startup og turn_on_laptop_monitor_at_startup og bestemmer en passende kloning/side-ved-side -tilstand. Å angi denne nøkkelen til sann skrur dette av, og skjerminnstillingene røres ikke (med mindre der er et eksplisitt brukeroppsett)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:9
 msgid "Turn on external monitor after system boot"
-msgstr ""
+msgstr "Slå på ekstern skjerm etter systemoppstart"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:10
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
-msgstr ""
+msgstr "Slå på ekstern skjerm etter systemoppstart hvis brukeren plugger til ekstern skjerm ved systemoppstart."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:11
 msgid "Turn on laptop monitor after system boot"
-msgstr ""
+msgstr "Skru på bærbarskjerm etter systemoppstart"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:12
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr ""
+msgstr "Slå på ekstern skjerm etter systemoppstart hvis brukeren plugger til ekstern skjerm ved systemoppstart."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:13
 msgid "File for default configuration for RandR"
-msgstr ""
+msgstr "Fil med forvalgt oppsett for RandR"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:14
 msgid ""
@@ -583,7 +597,7 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr ""
+msgstr "Programtillegget XRandR ser etter forvalgt oppsett i filen angitt av denne nøkkelen. Dette svarer til ~/.config/monitors.xml, som normalt ligger i brukernes hjemmemapper. Hvis en bruker ikke har en slik fil, eller har en fil som ikke svarer til brukerens skjermoppsett, vil filen angitt i denne nøkkelen brukes i steden for."
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
@@ -595,7 +609,7 @@ msgstr "Aktiver kode for feilsøking"
 
 #: ../mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
-msgstr ""
+msgstr "Erstatt gjeldende nisse"
 
 #: ../mate-settings-daemon/main.c:67
 msgid "Don't become a daemon"
@@ -816,15 +830,15 @@ msgstr "Du kan frigjøre diskplass ved å fjerne ubrukte programmer og filer ell
 msgid "Low Disk Space"
 msgstr "Lite diskplass"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:458
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Empty Trash"
 msgstr "Tøm papirkurv"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:466
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
 msgid "Examine…"
 msgstr "Undersøk…"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:473
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:474
 msgid "Ignore"
 msgstr "Overse"
 
@@ -839,30 +853,30 @@ msgid "Removing: %s"
 msgstr "Fjerner: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:252
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:317
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:321
 msgid "Emptying the trash"
 msgstr "Tømmer papirkurven"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:293
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:297
 msgid "Preparing to empty trash…"
 msgstr "Forbereder tømming av papirkurven…"
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:320
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:324
 msgid "From: "
 msgstr "Fra: "
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:372
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:376
 msgid "Empty all of the items from the trash?"
 msgstr "Tøm alle oppføringer fra papirkurven?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:375
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:379
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
 msgstr "Hvis du velger å tømme papirkurven vil alle oppføringer i den gå tapt permanent. Merk at du også kan slette dem hver for seg."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:382
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:386
 msgid "_Empty Trash"
 msgstr "_Tøm papirkurv"
 
@@ -914,7 +928,7 @@ msgid ""
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr ""
+msgstr "Feil under aktivering av XKB-konfigurasjon.\nDette kan skje under forskjellige omstendigheter:\n - en feil i libxklavier-biblioteket\n - en feil i X-tjeneren (xkbcomp- og xmodmap-verktøyene)\n - X-tjener med inkompatibel implementasjon av libxkbfile\n\nVersjonsdata for X-tjeneren:\n%s\n%d\nVennligst ta med følgende hvis du rapporterer dette som en feil:\n - Resultatet av <b>%s</b>\n - Resultatet av <b>%s</b>"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:273
 msgid "_Layouts"
@@ -949,16 +963,16 @@ msgstr "Medietaster"
 msgid "Media keys plugin"
 msgstr "Tillegg for medietaster"
 
-#: ../plugins/mouse/msd-mouse-manager.c:988
+#: ../plugins/mouse/msd-mouse-manager.c:920
 msgid "Could not enable mouse accessibility features"
 msgstr "Kunne ikke aktivere tilgjengelighetsfunksjoner for mus"
 
-#: ../plugins/mouse/msd-mouse-manager.c:990
+#: ../plugins/mouse/msd-mouse-manager.c:922
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr "Tilgjengelighet for mus krever at Mousetweaks er installert på systemet."
 
-#: ../plugins/mouse/msd-mouse-manager.c:993
+#: ../plugins/mouse/msd-mouse-manager.c:925
 msgid "Mouse Preferences"
 msgstr "Brukervalg for mus"
 
@@ -972,11 +986,11 @@ msgstr "Tillegg for mus"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:1
 msgid "Mpris"
-msgstr ""
+msgstr "Mpris"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:2
 msgid "Mpris plugin"
-msgstr ""
+msgstr "Mpris-tilleggsprogram"
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:1
 msgid "Typing Break"
@@ -1039,39 +1053,39 @@ msgstr "Kunne ikke oppdatere informasjon om skjermen: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Prøver å bytte skjermkonfigurasjon likevel."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1913
+#: ../plugins/xrandr/msd-xrandr-manager.c:1914
 msgid "Rotation not supported"
 msgstr "Rotering ikke støttet"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1969
+#: ../plugins/xrandr/msd-xrandr-manager.c:1970
 msgid "Could not save monitor configuration"
 msgstr "Kunne ikke lagre skjermkonfigurasjon"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1987
+#: ../plugins/xrandr/msd-xrandr-manager.c:1988
 msgid "Normal"
 msgstr "Normal"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1988
+#: ../plugins/xrandr/msd-xrandr-manager.c:1989
 msgid "Left"
 msgstr "Venstre"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1989
+#: ../plugins/xrandr/msd-xrandr-manager.c:1990
 msgid "Right"
 msgstr "Høyre"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1990
+#: ../plugins/xrandr/msd-xrandr-manager.c:1991
 msgid "Upside Down"
 msgstr "Opp-ned"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2112
+#: ../plugins/xrandr/msd-xrandr-manager.c:2113
 msgid "_Configure Display Settings…"
 msgstr "_Konfigurer innstillinger for skjerm…"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2166
+#: ../plugins/xrandr/msd-xrandr-manager.c:2167
 msgid "Configure display settings"
 msgstr "Konfigurer skjerminnstillinger"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2226
+#: ../plugins/xrandr/msd-xrandr-manager.c:2227
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Kunne ikke bruke lagret konfigurasjon for skjermer"
 
