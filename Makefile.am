@@ -18,16 +18,13 @@ EXTRA_DIST = \
 DISTCLEANFILES = \
 	$(NULL)
 
-dist-hook:
-	@if test -d "$(srcdir)/.git"; \
-	then \
-		echo Creating ChangeLog && \
-		(GIT_DIR=$(top_srcdir)/.git \
-		 ./missing --run git log --stat -M -C --name-status --date=short --no-color) | \
-		 fmt --split-only > ChangeLog.tmp \
-		&& mv -f ChangeLog.tmp $(top_distdir)/ChangeLog \
-		|| ( rm -f ChangeLog.tmp ; \
-		echo Failed to generate ChangeLog >&2 ); \
-	else \
-		echo A git clone is required to generate a ChangeLog >&2; \
+# Build ChangeLog from GIT  history
+ChangeLog:
+	$(AM_V_GEN) if test -d $(top_srcdir)/.git; then \
+		GIT_DIR="$(top_srcdir)/.git" git log --stat > $@; \
 	fi
+
+dist: ChangeLog
+
+.PHONY: ChangeLog
+
