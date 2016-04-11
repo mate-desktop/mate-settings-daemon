@@ -121,7 +121,7 @@ trash_empty_update_dialog (gpointer user_data)
                 tmp = g_file_get_basename (file);
                 text = g_markup_printf_escaped (_("Removing: %s"), tmp);
                 markup = g_strdup_printf ("<i>%s</i>", text);
-                gtk_label_set_markup (GTK_LABEL (file_label), text);
+                gtk_label_set_markup (GTK_LABEL (file_label), markup);
                 g_free (markup);
                 g_free (text);
                 g_free (tmp);
