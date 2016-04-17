@@ -440,26 +440,6 @@ msd_osd_window_color_reverse (const GdkColor *a,
 }
 #endif
 
-#if GTK_CHECK_VERSION(3, 0, 0)
-static void
-msd_get_background_color (GtkStyleContext *context,
-                          GtkStateFlags    state,
-                          GdkRGBA         *color)
-{
-    GdkRGBA *c;
-
-    g_return_if_fail (color != NULL);
-    g_return_if_fail (GTK_IS_STYLE_CONTEXT (context));
-
-    gtk_style_context_get (context,
-                           state,
-                           "background-color", &c,
-                           NULL);
-    *color = *c;
-    gdk_rgba_free (c);
-}
-#endif
-
 /* This is our expose/draw-event handler when the window is in a compositing manager.
  * We draw everything by hand, using Cairo, so that we can have a nice
  * transparent/rounded look.
@@ -481,7 +461,6 @@ expose_when_composited (GtkWidget *widget, GdkEventExpose *event)
         int              height;
 #if GTK_CHECK_VERSION (3, 0, 0)
         GtkStyleContext *context;
-        GdkRGBA          acolor;
 #else
         GtkStyle        *style;
         GdkColor         color;
@@ -520,41 +499,32 @@ expose_when_composited (GtkWidget *widget, GdkEventExpose *event)
         if (cairo_status (cr) != CAIRO_STATUS_SUCCESS) {
                 goto done;
         }
+#if !GTK_CHECK_VERSION (3, 0, 0)
         cairo_set_source_rgba (cr, 1.0, 1.0, 1.0, 0.0);
         cairo_set_operator (cr, CAIRO_OPERATOR_OVER);
         cairo_paint (cr);
+#endif
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+        gtk_render_background (context, cr, 0, 0, width, height);
+#else
         /* draw a box */
         msd_osd_window_draw_rounded_rectangle (cr, 1.0, 0.5, 0.5, height / 10, width-1, height-1);
-#if GTK_CHECK_VERSION (3, 0, 0)
-        msd_get_background_color (context, GTK_STATE_FLAG_NORMAL, &acolor);
-        msd_osd_window_color_reverse (&acolor);
-        acolor.alpha = BG_ALPHA;
-        gdk_cairo_set_source_rgba (cr, &acolor);
-#else
         msd_osd_window_color_reverse (&style->bg[GTK_STATE_NORMAL], &color);
         r = (float)color.red / 65535.0;
         g = (float)color.green / 65535.0;
         b = (float)color.blue / 65535.0;
         cairo_set_source_rgba (cr, r, g, b, BG_ALPHA);
-#endif
         cairo_fill_preserve (cr);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-        /* FIXME use &style->text_aa[GTK_STATE_FLAG_NORMAL] instead? */
-        gtk_style_context_get_color (context, GTK_STATE_FLAG_NORMAL, &acolor);
-        msd_osd_window_color_reverse (&acolor);
-        acolor.alpha = BG_ALPHA / 2;
-        gdk_cairo_set_source_rgba (cr, &acolor);
-#else
         msd_osd_window_color_reverse (&style->text_aa[GTK_STATE_NORMAL], &color);
         r = (float)color.red / 65535.0;
         g = (float)color.green / 65535.0;
         b = (float)color.blue / 65535.0;
         cairo_set_source_rgba (cr, r, g, b, BG_ALPHA / 2);
-#endif
         cairo_set_line_width (cr, 1);
         cairo_stroke (cr);
+#endif
 
 #if GTK_CHECK_VERSION (3, 0, 0)
         g_signal_emit (window, signals[DRAW_WHEN_COMPOSITED], 0, cr);
@@ -600,7 +570,6 @@ expose_when_composited (GtkWidget *widget, GdkEventExpose *event)
 static void
 draw_when_not_composited (GtkWidget *widget, cairo_t *cr)
 {
-        MsdOsdWindow *window;
         GtkStyleContext *context;
         int width;
         int height;
