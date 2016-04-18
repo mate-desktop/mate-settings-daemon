@@ -846,6 +846,12 @@ msd_osd_window_constructor (GType                  type,
                       "focus-on-map", FALSE,
                       NULL);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+        GtkWidget *widget = GTK_WIDGET (object);
+        GtkStyleContext *style_context = gtk_widget_get_style_context (widget);
+        gtk_style_context_add_class (style_context, "osd");
+#endif
+
         return object;
 }
 
