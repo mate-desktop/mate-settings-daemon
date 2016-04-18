@@ -637,6 +637,11 @@ msd_osd_window_class_init (MsdOsdWindowClass *klass)
                                                         G_TYPE_NONE, 1,
                                                         G_TYPE_POINTER);
 
+#if GTK_CHECK_VERSION (3, 20, 0)
+        GtkWidgetClass *widget_class  = GTK_WIDGET_CLASS (class);
+        gtk_widget_class_set_css_name (widget_class, "MsdOsdWindow");
+#endif
+
         g_type_class_add_private (klass, sizeof (MsdOsdWindowPrivate));
 }
 
