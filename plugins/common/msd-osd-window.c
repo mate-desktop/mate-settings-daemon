@@ -596,6 +596,12 @@ msd_osd_window_constructor (GType                  type,
                       "focus-on-map", FALSE,
                       NULL);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+        GtkWidget *widget = GTK_WIDGET (object);
+        GtkStyleContext *style_context = gtk_widget_get_style_context (widget);
+        gtk_style_context_add_class (style_context, "osd");
+#endif
+
         return object;
 }
 
@@ -636,6 +642,10 @@ msd_osd_window_class_init (MsdOsdWindowClass *klass)
                                                         g_cclosure_marshal_VOID__POINTER,
                                                         G_TYPE_NONE, 1,
                                                         G_TYPE_POINTER);
+
+#if GTK_CHECK_VERSION (3, 20, 0)
+        gtk_widget_class_set_css_name (widget_class, "MsdOsdWindow");
+#endif
 
         g_type_class_add_private (klass, sizeof (MsdOsdWindowPrivate));
 }
