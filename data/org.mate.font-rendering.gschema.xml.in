@@ -28,7 +28,7 @@
       <description>The type of antialiasing to use when rendering fonts. Possible values are: "none" for no antialiasing, "grayscale" for standard grayscale antialiasing, and "rgba" for subpixel antialiasing (LCD screens only).</description>
     </key>
     <key name="hinting" enum="org.mate.font-rendering.Hinting">
-      <default>'medium'</default>
+      <default>'slight'</default>
       <summary>Hinting</summary>
       <description>The type of hinting to use when rendering fonts. Possible values are: "none" for no hinting,  "slight" for basic, "medium" for moderate, and "full" for maximum hinting (may cause distortion of letter forms).</description>
     </key>

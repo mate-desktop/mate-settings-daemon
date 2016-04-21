@@ -312,7 +312,7 @@ xft_settings_get (MateXSettingsManager *manager,
 
         settings->antialias = TRUE;
         settings->hinting = TRUE;
-        settings->hintstyle = "hintfull";
+        settings->hintstyle = "hintslight";
         settings->dpi = dpi * 1024; /* Xft wants 1/1024ths of an inch */
         settings->cursor_theme = g_settings_get_string (mouse_gsettings, CURSOR_THEME_KEY);
         settings->cursor_size = g_settings_get_int (mouse_gsettings, CURSOR_SIZE_KEY);
