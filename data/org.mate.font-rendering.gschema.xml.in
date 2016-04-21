@@ -23,7 +23,7 @@
       <description>The resolution used for converting font sizes to pixel sizes,  in dots per inch.</description>
     </key>
     <key name="antialiasing" enum="org.mate.font-rendering.Antialiasing">
-      <default>'grayscale'</default>
+      <default>'rgba'</default>
       <summary>Antialiasing</summary>
       <description>The type of antialiasing to use when rendering fonts. Possible values are: "none" for no antialiasing, "grayscale" for standard grayscale antialiasing, and "rgba" for subpixel antialiasing (LCD screens only).</description>
     </key>
