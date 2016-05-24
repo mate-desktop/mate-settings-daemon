@@ -495,7 +495,18 @@ msd_osd_window_real_realize (GtkWidget *widget)
         cairo_destroy (cr);
 #endif
 }
-
+#if  GTK_CHECK_VERSION (3, 0, 0)
+msd_osd_window_style_set (GtkWidget *widget,
+                            GtkStyleContext *style2)
+{
+        guint border_width;
+        style2 = gtk_widget_get_style_context (GTK_WIDGET (msd_osd_window_parent_class));
+        gtk_style_context_get_style (style2,"border-width",
+                                     &border_width,
+                                     NULL);
+        gtk_container_set_border_width (GTK_CONTAINER (widget), 12 + border_width);
+}
+#else
 static void
 msd_osd_window_style_set (GtkWidget *widget,
                           GtkStyle  *previous_style)
@@ -512,7 +523,7 @@ msd_osd_window_style_set (GtkWidget *widget,
         style = gtk_widget_get_style (widget);
         gtk_container_set_border_width (GTK_CONTAINER (widget), 12 + MAX (style->xthickness, style->ythickness));
 }
-
+#endif
 #if GTK_CHECK_VERSION (3, 0, 0)
 static void
 msd_osd_window_get_preferred_width (GtkWidget *widget,
