@@ -496,6 +496,7 @@ msd_osd_window_real_realize (GtkWidget *widget)
 #endif
 }
 #if  GTK_CHECK_VERSION (3, 0, 0)
+static void
 msd_osd_window_style_set (GtkWidget *widget,
                             GtkStyleContext *style2)
 {
