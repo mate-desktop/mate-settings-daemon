@@ -507,7 +507,7 @@ expose_when_composited (GtkWidget *widget, GdkEventExpose *event)
         /* draw a box */
         msd_osd_window_draw_rounded_rectangle (cr, 1.0, 0.5, 0.5, height / 10, width-1, height-1);
 #if GTK_CHECK_VERSION (3, 0, 0)
-        gtk_style_context_get_background_color (context, GTK_STATE_NORMAL, &acolor);
+        gtk_style_context_get_background_color (context, GTK_STATE_FLAG_NORMAL, &acolor);
         msd_osd_window_color_reverse (&acolor);
         acolor.alpha = BG_ALPHA;
         gdk_cairo_set_source_rgba (cr, &acolor);
@@ -521,8 +521,8 @@ expose_when_composited (GtkWidget *widget, GdkEventExpose *event)
         cairo_fill_preserve (cr);
 
 #if GTK_CHECK_VERSION (3, 0, 0)
-        /* FIXME use &style->text_aa[GTK_STATE_NORMAL] instead? */
-        gtk_style_context_get_color (context, GTK_STATE_NORMAL, &acolor);
+        /* FIXME use &style->text_aa[GTK_STATE_FLAG_NORMAL] instead? */
+        gtk_style_context_get_color (context, GTK_STATE_FLAG_NORMAL, &acolor);
         msd_osd_window_color_reverse (&acolor);
         acolor.alpha = BG_ALPHA / 2;
         gdk_cairo_set_source_rgba (cr, &acolor);
@@ -763,7 +763,7 @@ msd_osd_window_style_updated (GtkWidget *widget)
          */
 
         context = gtk_widget_get_style_context (widget);
-        gtk_style_context_get_padding (context, GTK_STATE_NORMAL, &padding);
+        gtk_style_context_get_padding (context, GTK_STATE_FLAG_NORMAL, &padding);
         gtk_container_set_border_width (GTK_CONTAINER (widget), 12 + MAX (padding.left, padding.top));
 }
 #else
@@ -798,7 +798,7 @@ msd_osd_window_get_preferred_width (GtkWidget *widget,
         /* See the comment in msd_osd_window_style_updated() for why we add the thickness here */
 
         context = gtk_widget_get_style_context (widget);
-        gtk_style_context_get_padding (context, GTK_STATE_NORMAL, &padding);
+        gtk_style_context_get_padding (context, GTK_STATE_FLAG_NORMAL, &padding);
 
         *minimum += padding.left;
         *natural += padding.left;
@@ -817,7 +817,7 @@ msd_osd_window_get_preferred_height (GtkWidget *widget,
         /* See the comment in msd_osd_window_style_updated() for why we add the thickness here */
 
         context = gtk_widget_get_style_context (widget);
-        gtk_style_context_get_padding (context, GTK_STATE_NORMAL, &padding);
+        gtk_style_context_get_padding (context, GTK_STATE_FLAG_NORMAL, &padding);
 
         *minimum += padding.top;
         *natural += padding.top;
