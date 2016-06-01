@@ -50,6 +50,26 @@ struct MsdLocatePointerData
 
 static MsdLocatePointerData *data = NULL;
 
+#if GTK_CHECK_VERSION(3, 0, 0)
+static void
+msd_get_background_color (GtkStyleContext *context,
+                          GtkStateFlags    state,
+                          GdkRGBA         *color)
+{
+    GdkRGBA *c;
+
+    g_return_if_fail (color != NULL);
+    g_return_if_fail (GTK_IS_STYLE_CONTEXT (context));
+
+    gtk_style_context_get (context,
+                           state,
+                           "background-color", &c,
+                           NULL);
+    *color = *c;
+    gdk_rgba_free (c);
+}
+#endif
+
 static void
 locate_pointer_paint (MsdLocatePointerData *data,
 		      cairo_t              *cr,
@@ -74,7 +94,7 @@ locate_pointer_paint (MsdLocatePointerData *data,
 
 #if GTK_CHECK_VERSION (3, 0, 0)
   context = gtk_widget_get_style_context (data->widget);
-  gtk_style_context_get_background_color (context, GTK_STATE_FLAG_SELECTED, &color);
+  msd_get_background_color (context, GTK_STATE_FLAG_SELECTED, &color);
 #else
   style = gtk_widget_get_style (data->widget);
   color = style->bg[GTK_STATE_SELECTED];
