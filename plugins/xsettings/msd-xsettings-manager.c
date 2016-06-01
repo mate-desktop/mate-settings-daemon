@@ -496,7 +496,7 @@ update_xft_settings (MateXSettingsManager *manager)
 
 static void
 xft_callback (GSettings            *gsettings,
-              gchar                *key,
+              const gchar          *key,
               MateXSettingsManager *manager)
 {
         int i;
