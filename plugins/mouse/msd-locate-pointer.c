@@ -55,18 +55,30 @@ locate_pointer_paint (MsdLocatePointerData *data,
 		      cairo_t              *cr,
 		      gboolean              composite)
 {
+#if GTK_CHECK_VERSION (3, 0, 0)
+  GdkRGBA color;
+  gdouble progress, circle_progress;
+  gint width, height, i;
+  GtkStyleContext *context;
+#else
   GdkColor color;
   gdouble progress, circle_progress;
   gint width, height, i;
   GtkStyle *style;
+#endif
 
   progress = data->progress;
 
   width = gdk_window_get_width (data->window);
   height = gdk_window_get_height (data->window);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+  context = gtk_widget_get_style_context (data->widget);
+  gtk_style_context_get_background_color (context, GTK_STATE_FLAG_SELECTED, &color);
+#else
   style = gtk_widget_get_style (data->widget);
   color = style->bg[GTK_STATE_SELECTED];
+#endif
 
   cairo_set_source_rgba (cr, 1., 1., 1., 0.);
   cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
@@ -86,9 +98,15 @@ locate_pointer_paint (MsdLocatePointerData *data,
       if (composite)
 	{
 	  cairo_set_source_rgba (cr,
+#if GTK_CHECK_VERSION (3, 0, 0)
+				 color.red,
+				 color.green,
+				 color.blue,
+#else
 				 color.red / 65535.,
 				 color.green / 65535.,
 				 color.blue / 65535.,
+#endif
 				 1 - circle_progress);
 	  cairo_arc (cr,
 		     width / 2,
