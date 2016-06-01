@@ -392,6 +392,11 @@ render_speaker (MsdMediaKeysWindow *window,
         return TRUE;
 }
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+#define LIGHTNESS_MULT  1.3
+#define DARKNESS_MULT   0.7
+#endif
+
 static void
 draw_volume_boxes (MsdMediaKeysWindow *window,
                    cairo_t            *cr,
@@ -402,18 +407,53 @@ draw_volume_boxes (MsdMediaKeysWindow *window,
                    double              height)
 {
         gdouble   x1;
+#if GTK_CHECK_VERSION (3, 0, 0)
+        GtkStyleContext *context;
+        GdkRGBA  acolor;
+#else
         GdkColor  color;
         double    r, g, b;
         GtkStyle *style;
+#endif
 
         _x0 += 0.5;
         _y0 += 0.5;
         height = round (height) - 1;
         width = round (width) - 1;
         x1 = round ((width - 1) * percentage);
+#if GTK_CHECK_VERSION (3, 0, 0)
+        context = gtk_widget_get_style_context (GTK_WIDGET (window));
+#else
         style = gtk_widget_get_style (GTK_WIDGET (window));
+#endif
 
         /* bar background */
+#if GTK_CHECK_VERSION (3, 0, 0)
+        gtk_style_context_get_background_color (context, GTK_STATE_NORMAL, &acolor);
+        msd_osd_window_color_shade (&acolor, DARKNESS_MULT);
+        msd_osd_window_color_reverse (&acolor);
+        acolor.alpha = MSD_OSD_WINDOW_FG_ALPHA / 2;
+        msd_osd_window_draw_rounded_rectangle (cr, 1.0, _x0, _y0, height / 6, width, height);
+        gdk_cairo_set_source_rgba (cr, &acolor);
+        cairo_fill_preserve (cr);
+
+        /* bar border */
+        gtk_style_context_get_background_color (context, GTK_STATE_NORMAL, &acolor);
+        msd_osd_window_color_shade (&acolor, LIGHTNESS_MULT);
+        msd_osd_window_color_reverse (&acolor);
+        acolor.alpha = MSD_OSD_WINDOW_FG_ALPHA / 2;
+        gdk_cairo_set_source_rgba (cr, &acolor);
+        cairo_set_line_width (cr, 1);
+        cairo_stroke (cr);
+
+        /* bar progress */
+        if (percentage < 0.01)
+                return;
+        gtk_style_context_get_background_color (context, GTK_STATE_NORMAL, &acolor);
+        acolor.alpha = MSD_OSD_WINDOW_FG_ALPHA;
+        msd_osd_window_draw_rounded_rectangle (cr, 1.0, _x0 + 0.5, _y0 + 0.5, height / 6 - 0.5, x1, height - 1);
+        gdk_cairo_set_source_rgba (cr, &acolor);
+#else
         msd_osd_window_color_reverse (&style->dark[GTK_STATE_NORMAL], &color);
         r = (float)color.red / 65535.0;
         g = (float)color.green / 65535.0;
@@ -440,6 +480,7 @@ draw_volume_boxes (MsdMediaKeysWindow *window,
         b = (float)color.blue / 65535.0;
         msd_osd_window_draw_rounded_rectangle (cr, 1.0, _x0 + 0.5, _y0 + 0.5, height / 6 - 0.5, x1, height - 1);
         cairo_set_source_rgba (cr, r, g, b, MSD_OSD_WINDOW_FG_ALPHA);
+#endif
         cairo_fill (cr);
 }
 

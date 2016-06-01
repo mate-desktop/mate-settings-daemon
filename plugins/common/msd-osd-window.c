@@ -195,7 +195,221 @@ msd_osd_window_draw_rounded_rectangle (cairo_t* cr,
         cairo_close_path (cr);
 }
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+static void
+rgb_to_hls (gdouble *r,
+            gdouble *g,
+            gdouble *b)
+{
+        gdouble min;
+        gdouble max;
+        gdouble red;
+        gdouble green;
+        gdouble blue;
+        gdouble h, l, s;
+        gdouble delta;
+
+        red = *r;
+        green = *g;
+        blue = *b;
+
+        if (red > green)
+        {
+                if (red > blue)
+                        max = red;
+                else
+                        max = blue;
+
+                if (green < blue)
+                        min = green;
+                else
+                        min = blue;
+        }
+        else
+        {
+                if (green > blue)
+                        max = green;
+                else
+                        max = blue;
+
+                if (red < blue)
+                        min = red;
+                else
+                        min = blue;
+        }
+
+        l = (max + min) / 2;
+        s = 0;
+        h = 0;
+
+        if (max != min)
+        {
+                if (l <= 0.5)
+                        s = (max - min) / (max + min);
+                else
+                        s = (max - min) / (2 - max - min);
+
+                delta = max -min;
+                if (red == max)
+                        h = (green - blue) / delta;
+                else if (green == max)
+                        h = 2 + (blue - red) / delta;
+                else if (blue == max)
+                        h = 4 + (red - green) / delta;
+
+                h *= 60;
+                if (h < 0.0)
+                        h += 360;
+        }
+
+        *r = h;
+        *g = l;
+        *b = s;
+}
+
+static void
+hls_to_rgb (gdouble *h,
+            gdouble *l,
+            gdouble *s)
+{
+        gdouble hue;
+        gdouble lightness;
+        gdouble saturation;
+        gdouble m1, m2;
+        gdouble r, g, b;
+
+        lightness = *l;
+        saturation = *s;
+
+        if (lightness <= 0.5)
+                m2 = lightness * (1 + saturation);
+        else
+                m2 = lightness + saturation - lightness * saturation;
+        m1 = 2 * lightness - m2;
+
+        if (saturation == 0)
+        {
+                *h = lightness;
+                *l = lightness;
+                *s = lightness;
+        }
+        else
+        {
+                hue = *h + 120;
+                while (hue > 360)
+                        hue -= 360;
+                while (hue < 0)
+                        hue += 360;
+
+                if (hue < 60)
+                        r = m1 + (m2 - m1) * hue / 60;
+                else if (hue < 180)
+                        r = m2;
+                else if (hue < 240)
+                        r = m1 + (m2 - m1) * (240 - hue) / 60;
+                else
+                        r = m1;
+
+                hue = *h;
+                while (hue > 360)
+                        hue -= 360;
+                while (hue < 0)
+                        hue += 360;
+
+                if (hue < 60)
+                        g = m1 + (m2 - m1) * hue / 60;
+                else if (hue < 180)
+                        g = m2;
+                else if (hue < 240)
+                        g = m1 + (m2 - m1) * (240 - hue) / 60;
+                else
+                        g = m1;
+
+                hue = *h - 120;
+                while (hue > 360)
+                        hue -= 360;
+                while (hue < 0)
+                        hue += 360;
+
+                if (hue < 60)
+                        b = m1 + (m2 - m1) * hue / 60;
+                else if (hue < 180)
+                        b = m2;
+                else if (hue < 240)
+                        b = m1 + (m2 - m1) * (240 - hue) / 60;
+                else
+                        b = m1;
+
+                *h = r;
+                *l = g;
+                *s = b;
+        }
+}
+
 void
+msd_osd_window_color_shade (GdkRGBA *a,
+                            gdouble   k)
+{
+        gdouble red;
+        gdouble green;
+        gdouble blue;
+
+        red = a->red;
+        green = a->green;
+        blue = a->blue;
+
+        rgb_to_hls (&red, &green, &blue);
+
+        green *= k;
+        if (green > 1.0)
+                green = 1.0;
+        else if (green < 0.0)
+                green = 0.0;
+
+        blue *= k;
+        if (blue > 1.0)
+                blue = 1.0;
+        else if (blue < 0.0)
+                blue = 0.0;
+
+        hls_to_rgb (&red, &green, &blue);
+
+        a->red = red;
+        a->green = green;
+        a->blue = blue;
+}
+#endif
+
+void
+#if GTK_CHECK_VERSION (3, 0, 0)
+msd_osd_window_color_reverse (GdkRGBA *a)
+{
+        gdouble red;
+        gdouble green;
+        gdouble blue;
+        gdouble h;
+        gdouble s;
+        gdouble v;
+
+        red = a->red;
+        green = a->green;
+        blue = a->blue;
+
+        gtk_rgb_to_hsv (red, green, blue, &h, &s, &v);
+
+        v = 0.5 + (0.5 - v);
+        if (v > 1.0)
+                v = 1.0;
+        else if (v < 0.0)
+                v = 0.0;
+
+        gtk_hsv_to_rgb (h, s, v, &red, &green, &blue);
+
+        a->red = red;
+        a->green = green;
+        a->blue = blue;
+}
+#else
 msd_osd_window_color_reverse (const GdkColor *a,
                               GdkColor       *b)
 {
@@ -224,6 +438,7 @@ msd_osd_window_color_reverse (const GdkColor *a,
         b->green = green * 65535.0;
         b->blue = blue * 65535.0;
 }
+#endif
 
 /* This is our expose/draw-event handler when the window is in a compositing manager.
  * We draw everything by hand, using Cairo, so that we can have a nice
@@ -231,7 +446,7 @@ msd_osd_window_color_reverse (const GdkColor *a,
  */
 static void
 #if GTK_CHECK_VERSION (3, 0, 0)
-draw_when_composited (GtkWidget *widget, cairo_t *context)
+draw_when_composited (GtkWidget *widget, cairo_t *orig_cr)
 #else
 expose_when_composited (GtkWidget *widget, GdkEventExpose *event)
 #endif
@@ -245,7 +460,8 @@ expose_when_composited (GtkWidget *widget, GdkEventExpose *event)
         int              width;
         int              height;
 #if GTK_CHECK_VERSION (3, 0, 0)
-        GtkStyleContext *style;
+        GtkStyleContext *context;
+        GdkRGBA          acolor;
 #else
         GtkStyle        *style;
         GdkColor         color;
@@ -259,14 +475,19 @@ expose_when_composited (GtkWidget *widget, GdkEventExpose *event)
 #endif
 
 #if GTK_CHECK_VERSION (3, 0, 0)
-        style = gtk_widget_get_style_context (widget);
+        context = gtk_widget_get_style_context (widget);
+        cairo_set_operator (orig_cr, CAIRO_OPERATOR_SOURCE);
 #else
         style = gtk_widget_get_style (widget);
-#endif
         cairo_set_operator (context, CAIRO_OPERATOR_SOURCE);
+#endif
         gtk_window_get_size (GTK_WINDOW (widget), &width, &height);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+        surface = cairo_surface_create_similar (cairo_get_target (orig_cr),
+#else
         surface = cairo_surface_create_similar (cairo_get_target (context),
+#endif
                                                 CAIRO_CONTENT_COLOR_ALPHA,
                                                 width,
                                                 height);
@@ -279,32 +500,41 @@ expose_when_composited (GtkWidget *widget, GdkEventExpose *event)
         if (cairo_status (cr) != CAIRO_STATUS_SUCCESS) {
                 goto done;
         }
-#if !GTK_CHECK_VERSION (3, 0, 0)
         cairo_set_source_rgba (cr, 1.0, 1.0, 1.0, 0.0);
         cairo_set_operator (cr, CAIRO_OPERATOR_OVER);
         cairo_paint (cr);
-#endif
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-        gtk_render_background (style, cr, 0, 0, width, height);
-#else
         /* draw a box */
         msd_osd_window_draw_rounded_rectangle (cr, 1.0, 0.5, 0.5, height / 10, width-1, height-1);
+#if GTK_CHECK_VERSION (3, 0, 0)
+        gtk_style_context_get_background_color (context, GTK_STATE_NORMAL, &acolor);
+        msd_osd_window_color_reverse (&acolor);
+        acolor.alpha = BG_ALPHA;
+        gdk_cairo_set_source_rgba (cr, &acolor);
+#else
         msd_osd_window_color_reverse (&style->bg[GTK_STATE_NORMAL], &color);
         r = (float)color.red / 65535.0;
         g = (float)color.green / 65535.0;
         b = (float)color.blue / 65535.0;
         cairo_set_source_rgba (cr, r, g, b, BG_ALPHA);
+#endif
         cairo_fill_preserve (cr);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+        /* FIXME use &style->text_aa[GTK_STATE_NORMAL] instead? */
+        gtk_style_context_get_color (context, GTK_STATE_NORMAL, &acolor);
+        msd_osd_window_color_reverse (&acolor);
+        acolor.alpha = BG_ALPHA / 2;
+        gdk_cairo_set_source_rgba (cr, &acolor);
+#else
         msd_osd_window_color_reverse (&style->text_aa[GTK_STATE_NORMAL], &color);
         r = (float)color.red / 65535.0;
         g = (float)color.green / 65535.0;
         b = (float)color.blue / 65535.0;
         cairo_set_source_rgba (cr, r, g, b, BG_ALPHA / 2);
+#endif
         cairo_set_line_width (cr, 1);
         cairo_stroke (cr);
-#endif
 
 #if GTK_CHECK_VERSION (3, 0, 0)
         g_signal_emit (window, signals[DRAW_WHEN_COMPOSITED], 0, cr);
@@ -315,12 +545,21 @@ expose_when_composited (GtkWidget *widget, GdkEventExpose *event)
         cairo_destroy (cr);
 
         /* Make sure we have a transparent background */
+#if GTK_CHECK_VERSION (3, 0, 0)
+        cairo_rectangle (orig_cr, 0, 0, width, height);
+        cairo_set_source_rgba (orig_cr, 0.0, 0.0, 0.0, 0.0);
+        cairo_fill (orig_cr);
+
+        cairo_set_source_surface (orig_cr, surface, 0, 0);
+        cairo_paint_with_alpha (orig_cr, window->priv->fade_out_alpha);
+#else
         cairo_rectangle (context, 0, 0, width, height);
         cairo_set_source_rgba (context, 0.0, 0.0, 0.0, 0.0);
         cairo_fill (context);
 
         cairo_set_source_surface (context, surface, 0, 0);
         cairo_paint_with_alpha (context, window->priv->fade_out_alpha);
+#endif
 
  done:
         if (surface != NULL) {
@@ -341,22 +580,22 @@ expose_when_composited (GtkWidget *widget, GdkEventExpose *event)
 static void
 draw_when_not_composited (GtkWidget *widget, cairo_t *cr)
 {
-	int width;
-	int height;
+        MsdOsdWindow *window;
+        GtkStyleContext *context;
+        int width;
+        int height;
 
-	width = gtk_widget_get_allocated_width (widget);
-	height = gtk_widget_get_allocated_width (widget);
+        width = gtk_widget_get_allocated_width (widget);
+        height = gtk_widget_get_allocated_width (widget);
+        context = gtk_widget_get_style_context (widget);
 
-	gtk_paint_shadow (gtk_widget_get_style (widget),
-			  cr,
-			  gtk_widget_get_state (widget),
-			  GTK_SHADOW_OUT,
-			  widget,
-			  NULL, /* NULL detail -> themes should use the MsdOsdWindow widget name, probably */
-			  0,
-			  0,
-			  width,
-			  height);
+        gtk_style_context_set_state (context, GTK_STATE_FLAG_ACTIVE);
+        gtk_render_frame (context,
+                          cr,
+                          0,
+                          0,
+                          width,
+                          height);
 }
 #else
 static void
@@ -511,15 +750,21 @@ msd_osd_window_real_realize (GtkWidget *widget)
 }
 #if  GTK_CHECK_VERSION (3, 0, 0)
 static void
-msd_osd_window_style_set (GtkWidget *widget,
-                            GtkStyleContext *style2)
+msd_osd_window_style_updated (GtkWidget *widget)
 {
-        guint border_width;
-        style2 = gtk_widget_get_style_context (GTK_WIDGET (msd_osd_window_parent_class));
-        gtk_style_context_get_style (style2,"border-width",
-                                     &border_width,
-                                     NULL);
-        gtk_container_set_border_width (GTK_CONTAINER (widget), 12 + border_width);
+        GtkStyleContext *context;
+        GtkBorder padding;
+
+        GTK_WIDGET_CLASS (msd_osd_window_parent_class)->style_updated (widget);
+
+        /* We set our border width to 12 (per the MATE standard), plus the
+         * thickness of the frame that we draw in our expose/draw handler.  This will
+         * make our child be 12 pixels away from the frame.
+         */
+
+        context = gtk_widget_get_style_context (widget);
+        gtk_style_context_get_padding (context, GTK_STATE_NORMAL, &padding);
+        gtk_container_set_border_width (GTK_CONTAINER (widget), 12 + MAX (padding.left, padding.top));
 }
 #else
 static void
@@ -542,36 +787,40 @@ msd_osd_window_style_set (GtkWidget *widget,
 #if GTK_CHECK_VERSION (3, 0, 0)
 static void
 msd_osd_window_get_preferred_width (GtkWidget *widget,
-                                    gint *minimum_width,
-                                    gint *natural_width)
+                                    gint      *minimum,
+                                    gint      *natural)
 {
-        GtkStyle *style;
+        GtkStyleContext *context;
+        GtkBorder padding;
 
-        GTK_WIDGET_CLASS (msd_osd_window_parent_class)->get_preferred_width (widget, minimum_width, natural_width);
+        GTK_WIDGET_CLASS (msd_osd_window_parent_class)->get_preferred_width (widget, minimum, natural);
 
-        /* See the comment in msd_osd_window_style_set() for why we add the thickness here */
+        /* See the comment in msd_osd_window_style_updated() for why we add the thickness here */
 
-        style = gtk_widget_get_style (widget);
+        context = gtk_widget_get_style_context (widget);
+        gtk_style_context_get_padding (context, GTK_STATE_NORMAL, &padding);
 
-        *minimum_width += style->xthickness;
-        *natural_width += style->xthickness;
+        *minimum += padding.left;
+        *natural += padding.left;
 }
 
 static void
 msd_osd_window_get_preferred_height (GtkWidget *widget,
-                                     gint *minimum_height,
-                                     gint *natural_height)
+                                     gint      *minimum,
+                                     gint      *natural)
 {
-        GtkStyle *style;
+        GtkStyleContext *context;
+        GtkBorder padding;
 
-        GTK_WIDGET_CLASS (msd_osd_window_parent_class)->get_preferred_height (widget, minimum_height, natural_height);
+        GTK_WIDGET_CLASS (msd_osd_window_parent_class)->get_preferred_height (widget, minimum, natural);
 
-        /* See the comment in msd_osd_window_style_set() for why we add the thickness here */
+        /* See the comment in msd_osd_window_style_updated() for why we add the thickness here */
 
-        style = gtk_widget_get_style (widget);
+        context = gtk_widget_get_style_context (widget);
+        gtk_style_context_get_padding (context, GTK_STATE_NORMAL, &padding);
 
-        *minimum_height += style->ythickness;
-        *natural_height += style->ythickness;
+        *minimum += padding.top;
+        *natural += padding.top;
 }
 #else
 static void
@@ -622,12 +871,13 @@ msd_osd_window_class_init (MsdOsdWindowClass *klass)
         widget_class->show = msd_osd_window_real_show;
         widget_class->hide = msd_osd_window_real_hide;
         widget_class->realize = msd_osd_window_real_realize;
-        widget_class->style_set = msd_osd_window_style_set;
 #if GTK_CHECK_VERSION (3, 0, 0)
+        widget_class->style_updated = msd_osd_window_style_updated;
         widget_class->get_preferred_width = msd_osd_window_get_preferred_width;
         widget_class->get_preferred_height = msd_osd_window_get_preferred_height;
         widget_class->draw = msd_osd_window_draw;
 #else
+        widget_class->style_set = msd_osd_window_style_set;
         widget_class->size_request = msd_osd_window_size_request;
         widget_class->expose_event = msd_osd_window_expose_event;
 #endif
