@@ -440,6 +440,26 @@ msd_osd_window_color_reverse (const GdkColor *a,
 }
 #endif
 
+#if GTK_CHECK_VERSION(3, 0, 0)
+static void
+msd_get_background_color (GtkStyleContext *context,
+                          GtkStateFlags    state,
+                          GdkRGBA         *color)
+{
+    GdkRGBA *c;
+
+    g_return_if_fail (color != NULL);
+    g_return_if_fail (GTK_IS_STYLE_CONTEXT (context));
+
+    gtk_style_context_get (context,
+                           state,
+                           "background-color", &c,
+                           NULL);
+    *color = *c;
+    gdk_rgba_free (c);
+}
+#endif
+
 /* This is our expose/draw-event handler when the window is in a compositing manager.
  * We draw everything by hand, using Cairo, so that we can have a nice
  * transparent/rounded look.
@@ -507,7 +527,7 @@ expose_when_composited (GtkWidget *widget, GdkEventExpose *event)
         /* draw a box */
         msd_osd_window_draw_rounded_rectangle (cr, 1.0, 0.5, 0.5, height / 10, width-1, height-1);
 #if GTK_CHECK_VERSION (3, 0, 0)
-        gtk_style_context_get_background_color (context, GTK_STATE_FLAG_NORMAL, &acolor);
+        msd_get_background_color (context, GTK_STATE_FLAG_NORMAL, &acolor);
         msd_osd_window_color_reverse (&acolor);
         acolor.alpha = BG_ALPHA;
         gdk_cairo_set_source_rgba (cr, &acolor);

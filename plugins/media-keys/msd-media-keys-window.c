@@ -392,6 +392,26 @@ render_speaker (MsdMediaKeysWindow *window,
         return TRUE;
 }
 
+#if GTK_CHECK_VERSION(3, 0, 0)
+static void
+msd_get_background_color (GtkStyleContext *context,
+                          GtkStateFlags    state,
+                          GdkRGBA         *color)
+{
+    GdkRGBA *c;
+
+    g_return_if_fail (color != NULL);
+    g_return_if_fail (GTK_IS_STYLE_CONTEXT (context));
+
+    gtk_style_context_get (context,
+                           state,
+                           "background-color", &c,
+                           NULL);
+    *color = *c;
+    gdk_rgba_free (c);
+}
+#endif
+
 #if GTK_CHECK_VERSION (3, 0, 0)
 #define LIGHTNESS_MULT  1.3
 #define DARKNESS_MULT   0.7
@@ -429,7 +449,7 @@ draw_volume_boxes (MsdMediaKeysWindow *window,
 
         /* bar background */
 #if GTK_CHECK_VERSION (3, 0, 0)
-        gtk_style_context_get_background_color (context, GTK_STATE_FLAG_NORMAL, &acolor);
+        msd_get_background_color (context, GTK_STATE_FLAG_NORMAL, &acolor);
         msd_osd_window_color_shade (&acolor, DARKNESS_MULT);
         msd_osd_window_color_reverse (&acolor);
         acolor.alpha = MSD_OSD_WINDOW_FG_ALPHA / 2;
@@ -438,7 +458,7 @@ draw_volume_boxes (MsdMediaKeysWindow *window,
         cairo_fill_preserve (cr);
 
         /* bar border */
-        gtk_style_context_get_background_color (context, GTK_STATE_FLAG_NORMAL, &acolor);
+        msd_get_background_color (context, GTK_STATE_FLAG_NORMAL, &acolor);
         msd_osd_window_color_shade (&acolor, LIGHTNESS_MULT);
         msd_osd_window_color_reverse (&acolor);
         acolor.alpha = MSD_OSD_WINDOW_FG_ALPHA / 2;
@@ -449,7 +469,7 @@ draw_volume_boxes (MsdMediaKeysWindow *window,
         /* bar progress */
         if (percentage < 0.01)
                 return;
-        gtk_style_context_get_background_color (context, GTK_STATE_FLAG_NORMAL, &acolor);
+        msd_get_background_color (context, GTK_STATE_FLAG_NORMAL, &acolor);
         acolor.alpha = MSD_OSD_WINDOW_FG_ALPHA;
         msd_osd_window_draw_rounded_rectangle (cr, 1.0, _x0 + 0.5, _y0 + 0.5, height / 6 - 0.5, x1, height - 1);
         gdk_cairo_set_source_rgba (cr, &acolor);
