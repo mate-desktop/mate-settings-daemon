@@ -143,6 +143,7 @@ add_hide_timeout (MsdOsdWindow *window)
                                                        window);
 }
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 void
 msd_osd_window_draw_rounded_rectangle (cairo_t* cr,
                                        gdouble  aspect,
@@ -195,7 +196,6 @@ msd_osd_window_draw_rounded_rectangle (cairo_t* cr,
         cairo_close_path (cr);
 }
 
-#if !GTK_CHECK_VERSION (3, 0, 0)
 void
 msd_osd_window_color_reverse (const GdkColor *a,
                               GdkColor       *b)
@@ -294,6 +294,7 @@ expose_when_composited (GtkWidget *widget, GdkEventExpose *event)
 
 #if GTK_CHECK_VERSION (3, 0, 0)
         gtk_render_background (context, cr, 0, 0, width, height);
+        gtk_render_frame (context, cr, 0, 0, width, height);
 #else
         /* draw a box */
         msd_osd_window_draw_rounded_rectangle (cr, 1.0, 0.5, 0.5, height / 10, width-1, height-1);
