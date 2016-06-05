@@ -143,6 +143,7 @@ add_hide_timeout (MsdOsdWindow *window)
                                                        window);
 }
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 void
 msd_osd_window_draw_rounded_rectangle (cairo_t* cr,
                                        gdouble  aspect,
@@ -195,7 +196,6 @@ msd_osd_window_draw_rounded_rectangle (cairo_t* cr,
         cairo_close_path (cr);
 }
 
-#if !GTK_CHECK_VERSION (3, 0, 0)
 void
 msd_osd_window_color_reverse (const GdkColor *a,
                               GdkColor       *b)
