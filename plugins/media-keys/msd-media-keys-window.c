@@ -427,6 +427,8 @@ draw_volume_boxes (MsdMediaKeysWindow *window,
 #if GTK_CHECK_VERSION (3, 0, 0)
         gtk_style_context_save (context);
         gtk_style_context_add_class (context, GTK_STYLE_CLASS_TROUGH);
+
+        gtk_render_background (context, cr, _x0, _y0, width, height);
         gtk_render_frame (context, cr, _x0, _y0, width, height);
 
         gtk_style_context_restore (context);
@@ -434,10 +436,12 @@ draw_volume_boxes (MsdMediaKeysWindow *window,
         /* bar progress */
         if (percentage < 0.01)
                 return;
+
         gtk_style_context_save (context);
         gtk_style_context_add_class (context, GTK_STYLE_CLASS_PROGRESSBAR);
 
         gtk_render_background (context, cr, _x0 + 0.5, _y0 + 0.5, x1, height -1 );
+        gtk_render_frame (context, cr, _x0 + 0.5, _y0 + 0.5, x1, height -1 );
 
         gtk_style_context_restore (context);
 #else
