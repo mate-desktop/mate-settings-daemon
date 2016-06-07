@@ -7,6 +7,7 @@
 # Eiichiro ITANI <emu@ceres.dti.ne.jp>, 1999
 # Hideki Yamane <henrich@debian.or.jp>, 2010
 # KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>, 2003
+# Kenzo Matsumoto <dicegeist@gmail.com>, 2016
 # Mika Kobayashi, 2014
 # Noritada Kobayashi <noritadak@gmail.com>, 2010
 # Satoru SATOH <ss@gnome.gr.jp>, 2006
@@ -16,8 +17,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-29 13:05+0300\n"
-"PO-Revision-Date: 2016-03-29 10:19+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"PO-Revision-Date: 2016-05-07 05:33+0000\n"
+"Last-Translator: Kenzo Matsumoto <dicegeist@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/mate/MATE/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -143,43 +144,43 @@ msgstr "この値を TRUE にすると、タッチ・パッドをタップする
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Enable vertical edge scrolling"
-msgstr ""
+msgstr "垂直エッジスクロールを有効にする"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:6
 msgid "Set this to TRUE to allow vertical edge scrolling"
-msgstr ""
+msgstr "垂直エッジスクロールの反転"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:7
 msgid "Enable horizontal edge scrolling"
-msgstr ""
+msgstr "水平エッジスクロールを有効にする"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:8
 msgid "Set this to TRUE to allow horizontal edge scrolling"
-msgstr ""
+msgstr "水平エッジスクロールの反転"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:9
 msgid "Enable vertical two-finger scrolling"
-msgstr ""
+msgstr "垂直２本指スクロールを有効にする"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:10
 msgid "Set this to TRUE to allow vertical two-finger scrolling"
-msgstr ""
+msgstr "垂直２本指スクロールの反転"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:11
 msgid "Enable horizontal two-finger scrolling"
-msgstr ""
+msgstr "水平２本指スクロールを有効にする"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
 msgid "Set this to TRUE to allow horizontal two-finger scrolling"
-msgstr ""
+msgstr "水平２本指スクロールの反転"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
 msgid "Natural scrolling"
-msgstr ""
+msgstr "直感的（反転）スクロール"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
-msgstr ""
+msgstr "タッチパッドでの直感的（反転）スクロールの使用"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
 msgid "Enable touchpad"
@@ -191,45 +192,45 @@ msgstr "この値を TRUE にすると、すべてのタッチ・パッドを有
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:17
 msgid "Enabled two-finger button-click emulation"
-msgstr ""
+msgstr "２本指クリックエミュレーションを有効にする"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:18
 msgid "0 thru 3, 0 is inactive, 1-3 is button to emulate"
-msgstr ""
+msgstr "0は無効。1-3はクリックエミュレートするマウスのボタン。"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:19
 msgid "Enable three-finger button-click emulation"
-msgstr ""
+msgstr "３本指クリックエミュレーションを有効にする"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:20
 msgid "One finger tap button"
-msgstr ""
+msgstr "１本指タップのボタン"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:21
 msgid ""
 "Select the button mapping for one-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr ""
+msgstr "１本指でタップした場合のボタンマッピング。1は左クリック、2はミドルクリック、3は右クリック"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
 msgid "Two finger tap button"
-msgstr ""
+msgstr "２本指タップのボタン"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:23
 msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr ""
+msgstr "２本指でタップした場合のボタンマッピング。1は左クリック、2はミドルクリック、3は右クリック"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
 msgid "Three finger tap button"
-msgstr ""
+msgstr "３本指タップのボタン"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:25
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
-msgstr ""
+msgstr "３本指でタップした場合のボタンマッピング。1は左クリック、2はミドルクリック、3は右クリック"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
@@ -361,7 +362,7 @@ msgstr "残り容量が少なくても無視するマウント・パスの一覧
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
-msgstr ""
+msgstr "画面上通知を表示する"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:4
 msgid "Whether an OSD notification is shown to notify about changes"

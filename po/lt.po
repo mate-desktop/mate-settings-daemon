@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-29 13:05+0300\n"
-"PO-Revision-Date: 2016-03-30 10:18+0000\n"
+"PO-Revision-Date: 2016-04-27 19:58+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/mate/MATE/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -41,15 +41,15 @@ msgstr "Jungti ekrano _skaityklę"
 #: ../data/50-accessibility.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
 msgid "Toggle on-screen keyboard"
-msgstr "Naudoti klaviatūrą ekrane"
+msgstr "Perjungti ekraninę klaviatūrą"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:1
 msgid "On-screen keyboard"
-msgstr "Klaviatūra ekrane"
+msgstr "Ekraninė klaviatūra"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:2
 msgid "Whether the on-screen keyboard is turned on."
-msgstr "Ar klaviatūra ekrane įjungta."
+msgstr "Ar ekraninė klaviatūra įjungta."
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:3
 msgid "Screen magnifier"
@@ -544,7 +544,7 @@ msgstr "Susiejimas, skirtas paleisti ekrano skaityklę."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
 msgid "Binding to show the on-screen keyboard"
-msgstr "Susiejimas, skirtas rodyti klaviatūrą ekrane"
+msgstr "Susiejimas, skirtas rodyti ekraninę klaviatūrą"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:5
 msgid "Show Displays in Notification Area"
@@ -700,19 +700,19 @@ msgstr "Lėtųjų klavišų įspėjimas"
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:716
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:782
 msgid "Do you want to activate Sticky Keys?"
-msgstr "Ar norite įjungti kibiuosius klavišus?"
+msgstr "Ar norite įjungti atmeniuosius klavišus?"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:717
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:783
 msgid "Do you want to deactivate Sticky Keys?"
-msgstr "Ar norite išjungti kibiuosius klavišus?"
+msgstr "Ar norite išjungti atmeniuosius klavišus?"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:719
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:785
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "Ką tik paspaudėte Shift klavišą 5 kartus iš eilės.  Tai yra kibiųjų klavišų funkcijos šaukinys. Kibieji klavišai leidžia jums kitaip naudotis klaviatūra."
+msgstr "Ką tik paspaudėte Shift klavišą 5 kartus iš eilės. Tai yra atmeniųjų klavišų funkcijos šaukinys. Atmenieji klavišai leidžia jums kitaip naudotis klaviatūra."
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:721
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:787
@@ -720,11 +720,11 @@ msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "Ką tik paspaudėte du klavišus vienu metu, arba Shift klavišą 5 kartus iš eilės. Tai išjungia kibiųjų klavišų funkciją, leidžiančią jums kitaip naudotis klaviatūra."
+msgstr "Ką tik paspaudėte du klavišus vienu metu, arba Shift klavišą 5 kartus iš eilės. Tai išjungia atmeniųjų klavišų funkciją, leidžiančią jums kitaip naudotis klaviatūra."
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:815
 msgid "Sticky Keys Alert"
-msgstr "Kibiųjų klavišų įspėjimas"
+msgstr "Atmeniųjų klavišų įspėjimas"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:763
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
@@ -733,7 +733,7 @@ msgstr "Universaliosios prieigos nuostatos"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
 msgid "Use on-screen _keyboard"
-msgstr "Naudoti klaviatūrą _ekrane"
+msgstr "Naudoti _ekraninę klaviatūrą"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:3
 msgid "Use screen _reader"
@@ -753,7 +753,7 @@ msgstr "Padidinti _tekstą"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
-msgstr "_Nuspausti klavišų kombinacijas po vieną (kibieji klavišai)"
+msgstr "_Nuspausti klavišų kombinacijas po vieną (atmenieji klavišai)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"

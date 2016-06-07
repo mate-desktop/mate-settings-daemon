@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-29 13:05+0300\n"
-"PO-Revision-Date: 2016-03-30 11:51+0000\n"
+"PO-Revision-Date: 2016-04-17 07:03+0000\n"
 "Last-Translator: muzaffar habibullayev <muzaffarlearner@gmail.com>\n"
 "Language-Team: Uzbek (http://www.transifex.com/mate/MATE/language/uz/)\n"
 "MIME-Version: 1.0\n"
@@ -442,7 +442,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:27
 msgid "Launch email client"
-msgstr ""
+msgstr "email mijozini ishga tushirish"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:28
 msgid "Binding to launch the email client."
@@ -458,7 +458,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:31
 msgid "Launch help browser"
-msgstr ""
+msgstr "Yordam brauzerini ishga tushirish"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
 msgid "Binding to launch the help browser."
@@ -466,7 +466,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
 msgid "Launch calculator"
-msgstr ""
+msgstr "Kalkulyatorni ishga tushirish"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
 msgid "Binding to launch the calculator."
@@ -474,7 +474,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
 msgid "Launch web browser"
-msgstr ""
+msgstr "Internet brauzerni ishga tushirish "
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
 msgid "Binding to launch the web browser."
@@ -482,7 +482,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
 msgid "Launch media player"
-msgstr ""
+msgstr "Mediya pleyerni ishga tushirish"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
 msgid "Binding to launch the media player."
@@ -490,7 +490,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
 msgid "Play (or play/pause)"
-msgstr ""
+msgstr "Ijro (yoki ijro/pauza)"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
 msgid "Binding to start playback (or toggle play/pause)."
@@ -514,7 +514,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
 msgid "Previous track"
-msgstr ""
+msgstr "Oldingi yo'lak"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
 msgid "Binding to skip to previous track."
@@ -522,7 +522,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
 msgid "Next track"
-msgstr ""
+msgstr "Keyingi yo'lak"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
 msgid "Binding to skip to next track."
@@ -628,7 +628,7 @@ msgstr ""
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:454
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr ""
+msgstr "Yordam faylini koʻrsatishda xatolik yuz berdi: %s"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:582
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:646
@@ -660,12 +660,12 @@ msgstr ""
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
 msgid "Activate"
-msgstr ""
+msgstr "Faollashtirish"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
 msgid "Deactivate"
-msgstr ""
+msgstr "Faolsizlantirish"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:669
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:808
@@ -680,12 +680,12 @@ msgstr ""
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:672
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:811
 msgid "_Activate"
-msgstr ""
+msgstr "_Faollashtirish"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:672
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:811
 msgid "_Deactivate"
-msgstr ""
+msgstr "_Faolsizlantirish"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:676
 msgid "Slow Keys Alert"
@@ -759,7 +759,7 @@ msgstr ""
 
 #: ../plugins/background/background.mate-settings-plugin.in.h:1
 msgid "Background"
-msgstr ""
+msgstr "Orqa fon"
 
 #: ../plugins/background/background.mate-settings-plugin.in.h:2
 msgid "Background plugin"
@@ -826,7 +826,7 @@ msgstr ""
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:212
 msgid "Low Disk Space"
-msgstr ""
+msgstr "DIskda Joy Kam"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Empty Trash"
@@ -838,7 +838,7 @@ msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:474
 msgid "Ignore"
-msgstr ""
+msgstr "E'tibor berilmasin"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:102
 #, c-format
@@ -866,7 +866,7 @@ msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:376
 msgid "Empty all of the items from the trash?"
-msgstr ""
+msgstr "Chiqindilar qutisidan barcha narsa bo'shatilsinmi?"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:379
 msgid ""
@@ -876,7 +876,7 @@ msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:386
 msgid "_Empty Trash"
-msgstr ""
+msgstr "Chiqindilar qutisini _Boʻshatish"
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:129
 #, c-format
@@ -934,7 +934,7 @@ msgstr ""
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:280
 msgid "Keyboard _Preferences"
-msgstr ""
+msgstr "Klaviatura _Xususiyatlari"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:286
 msgid "Show _Current Layout"
@@ -1027,15 +1027,15 @@ msgstr[0] ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
-msgstr ""
+msgstr "Ekran ko'rinishi yaxshimi?"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:499
 msgid "_Restore Previous Configuration"
-msgstr ""
+msgstr "Avvalgi Holatga _Qaytarish"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:500
 msgid "_Keep This Configuration"
-msgstr ""
+msgstr "Shu Holatda _Saqlash"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:581
 msgid "The selected configuration for displays could not be applied"
@@ -1060,7 +1060,7 @@ msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1988
 msgid "Normal"
-msgstr ""
+msgstr "Odatiy"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1989
 msgid "Left"
@@ -1076,11 +1076,11 @@ msgstr "Teskari"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2113
 msgid "_Configure Display Settings…"
-msgstr ""
+msgstr "Ekran Moslamalarini _Sozlash..."
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2167
 msgid "Configure display settings"
-msgstr ""
+msgstr "Ekran moslamalarini sozlash"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2227
 msgid "Could not apply the stored configuration for monitors"
@@ -1163,7 +1163,7 @@ msgstr ""
 #: ../plugins/smartcard/msd-smartcard.c:168
 #: ../plugins/smartcard/msd-smartcard.c:169
 msgid "name"
-msgstr ""
+msgstr "nomi"
 
 #: ../plugins/smartcard/msd-smartcard.c:173
 msgid "Module"
@@ -1183,7 +1183,7 @@ msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:3
 msgid "Change system time"
-msgstr ""
+msgstr "Tizim vaqtini o'zgartirish"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:4
 msgid "Privileges are required to change the system time."
@@ -1191,8 +1191,8 @@ msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:5
 msgid "Configure hardware clock"
-msgstr ""
+msgstr "Qurilma soatini sozlash"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:6
 msgid "Privileges are required to configure the hardware clock."
-msgstr ""
+msgstr "Qurilma soatini sozlash uchun imtiyozlar zarur."

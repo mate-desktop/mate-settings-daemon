@@ -17,6 +17,7 @@
 # Ondřej Kolín <ondrej.kolin@gmail.com>, 2012-2013
 # Petr Kovar <pmkovar@gmail.com>, 2008, 2009, 2010
 # Petr Kovar <pmkovar@gmail.com>, 2008-2010
+# Petr Šimáček <petr.simacek@gmail.com>, 2016
 # Petr Tomeš <ptomes@gmail.com>, 2006
 # Stanislav Kučera <inactive+kacernator@transifex.com>, 2015
 msgid ""
@@ -24,8 +25,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-29 13:05+0300\n"
-"PO-Revision-Date: 2016-03-29 10:19+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"PO-Revision-Date: 2016-05-04 08:56+0000\n"
+"Last-Translator: Petr Šimáček <petr.simacek@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/mate/MATE/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -151,35 +152,35 @@ msgstr "Nastavte na „TRUE”, chcete-li odeslat kliknutí myší poklepáním 
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Enable vertical edge scrolling"
-msgstr ""
+msgstr "Povolit posouvání podél svislých okrajů"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:6
 msgid "Set this to TRUE to allow vertical edge scrolling"
-msgstr ""
+msgstr "Pro posouvání podél svislých okrajů nastavte na hodnotu TRUE "
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:7
 msgid "Enable horizontal edge scrolling"
-msgstr ""
+msgstr "Povolit posunování podél vodorovné hrany"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:8
 msgid "Set this to TRUE to allow horizontal edge scrolling"
-msgstr ""
+msgstr "Pro posouvání podél vodorovných okrajů nastavte na hodnotu TRUE "
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:9
 msgid "Enable vertical two-finger scrolling"
-msgstr ""
+msgstr "Povolit svislé posouvání dvěma prsty"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:10
 msgid "Set this to TRUE to allow vertical two-finger scrolling"
-msgstr ""
+msgstr "Pro svislé posouvání dvěma prsty nastavte na hodnotu TRUE "
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:11
 msgid "Enable horizontal two-finger scrolling"
-msgstr ""
+msgstr "Povolit vodorovné posouvání dvěma prsty"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
 msgid "Set this to TRUE to allow horizontal two-finger scrolling"
-msgstr ""
+msgstr "Pro vodorovné posouvání dvěma prsty nastavte na hodnotu TRUE"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
 msgid "Natural scrolling"
