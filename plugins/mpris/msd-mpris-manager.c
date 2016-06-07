@@ -333,8 +333,8 @@ msd_mpris_manager_start (MsdMprisManager   *manager,
         g_bus_watch_name(G_BUS_TYPE_SESSION,
                          BUS_NAMES[i],
                          flags,
-                         mp_name_appeared,
-                         mp_name_vanished,
+                         (GBusNameAppearedCallback) mp_name_appeared,
+                         (GBusNameVanishedCallback) mp_name_vanished,
                          manager,
                          NULL);
     }
