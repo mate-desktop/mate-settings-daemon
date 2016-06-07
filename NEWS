@@ -1,3 +1,20 @@
+1.15.0
+
+  * Translations update
+  * mpris: fix a couple of build warnings
+  * fix build warning -Wdiscarded-qualifiers
+  * GTK+3 mouse: fix deprecated gtk_style_context_get_background_color
+  * GTK+3 msd-locate-pointer: port to GtkStyleContext
+  * GTK+3 media-keys: progressbar themed background
+  * GTK+3 media-keys: add style class OSD for MsdOsdWindow
+  * GTK+3 media-keys: do not use hardcoded colors for osd progressbar
+  * GTK+3 media-keys: Port OSD to GtkStyleContext
+  * GTK+3 media-keys: setup css class name for MsdOsdWindow
+  * GTK+3 media-keys: css themes for MsdOsdWindow
+  * Change default hinting style to 'hintslight'
+  * Use 'rgba' (LCD subpixel) antialiasing by default
+  * housekeeping: properly apply label markup
+
 1.14.0
   * Drop MateConf migration script
   * media-keys: add setting to enable/disable OSD
