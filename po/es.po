@@ -3,8 +3,8 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Adolfo Jayme Barrientos, 2015
-# Adolfo Jayme Barrientos, 2014
+# Fitoschido, 2015
+# Fitoschido, 2014
 # Angel Mireles <lamborghinilph710@gmail.com>, 2016
 # Benjamin Perez Carrillo <benperezc@gmail.com>, 2015
 # Carlos Perelló Marín <carlos@mate-db.org>, 2001
@@ -13,7 +13,7 @@
 # Emiliano Fascetti, 2015
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2003, 2004, 2005, 2006
 # Héctor García Álvarez <hector@scouts-es.org>, 2001
-# Ivan Nieto <ivan.nieto.sousa@gmail.com>, 2016
+# Ivan Nieto <ivan.n.s@tuta.io>, 2016
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2010
 # Lluís Tusquellas <lutusq@gmail.com>, 2013
 # Lucas Di Pentima <lucas@lunix.com.ar>, 2002

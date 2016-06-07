@@ -15,7 +15,7 @@
 # Tao Wei <weitao1979@gmail.com>, 2009
 # vicwjb <vicwjb@gmail.com>, 2010
 # Wylmer Wang <wantinghard@gmail.com>, 2013
-# павел <nazar12101@gmail.com>, 2016
+# павел назаров <nazar12101@gmail.com>, 2016
 # 甘 露 <rhythm.gan@gmail.com>, 2009
 # Mingcong Bai <jeffbai@aosc.xyz>, 2015
 msgid ""
