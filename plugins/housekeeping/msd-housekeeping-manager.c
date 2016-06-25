@@ -37,8 +37,6 @@
 #define THUMB_CACHE_SCHEMA	"org.mate.thumbnail-cache"
 #define THUMB_CACHE_KEY_AGE	"maximum-age"
 #define THUMB_CACHE_KEY_SIZE	"maximum-size"
-#define DEFAULT_MAX_AGE  180	/* in Days */
-#define DEFAULT_MAX_SIZE 512	/* in MB */
 
 struct MsdHousekeepingManagerPrivate {
         guint long_term_cb;
@@ -148,50 +146,6 @@ sort_file_mtime (ThumbData *file1, ThumbData *file2)
         return file1->mtime - file2->mtime;
 }
 
-static gboolean
-int_gsettings_mapping (GVariant *value,
-			gpointer *result,
-			gpointer  int_ptr)
-{
-	gint32 key_value = g_variant_get_int32 (value);
-
-	/* NULL value means the "last chance" for us to return a valid value */
-	if (value == NULL) {
-		*result = int_ptr;	/* use the supplied default value */
-		return TRUE;
-	}
-
-	/* For either AGE/SIZE keys, -1 disables cleaning.
-	 * A zero value corresponds to an extra-paranoid level of cleaning
-	 */
-	if (key_value >= -1) {
-		*result = &key_value;
-		return TRUE;
-	}
-
-	return FALSE;
-}
-
-static int
-get_max_age (MsdHousekeepingManager *manager)
-{
-	int *age = g_settings_get_mapped (manager->priv->settings,
-					  THUMB_CACHE_KEY_AGE,
-					  int_gsettings_mapping,
-					  GINT_TO_POINTER(DEFAULT_MAX_AGE));
-	return *age * 24 * 60 * 60;
-}
-
-static int
-get_max_size (MsdHousekeepingManager *manager)
-{
-	int *size = g_settings_get_mapped (manager->priv->settings,
-					   THUMB_CACHE_KEY_SIZE,
-					   int_gsettings_mapping,
-					   GINT_TO_POINTER(DEFAULT_MAX_SIZE));
-	return *size * 1024 * 1024;
-}
-
 static void
 purge_thumbnail_cache (MsdHousekeepingManager *manager)
 {
@@ -202,6 +156,13 @@ purge_thumbnail_cache (MsdHousekeepingManager *manager)
         GTimeVal   current_time;
 
         g_debug ("housekeeping: checking thumbnail cache size and freshness");
+
+        purge_data.max_age = g_settings_get_int (manager->priv->settings, THUMB_CACHE_KEY_AGE) * 24 * 60 * 60;
+        purge_data.max_size = g_settings_get_int (manager->priv->settings, THUMB_CACHE_KEY_SIZE) * 1024 * 1024;
+
+        /* if both are set to -1, we don't need to read anything */
+        if ((purge_data.max_age < 0) && (purge_data.max_size < 0))
+                return;
 
         path = g_build_filename (g_get_user_cache_dir (),
                                  "thumbnails",
@@ -228,8 +189,6 @@ purge_thumbnail_cache (MsdHousekeepingManager *manager)
         g_get_current_time (&current_time);
 
         purge_data.now = current_time.tv_sec;
-	purge_data.max_age = get_max_age (manager);
-	purge_data.max_size = get_max_size (manager);
         purge_data.total_size = 0;
 
         if (purge_data.max_age >= 0)
@@ -325,13 +284,13 @@ msd_housekeeping_manager_stop (MsdHousekeepingManager *manager)
                 g_source_remove (p->long_term_cb);
                 p->long_term_cb = 0;
 
-		/* Do a clean-up on shutdown if and only if the size or age
-		 * limits have been set to a paranoid level of cleaning (zero)
-		 */
-		if (get_max_age (manager) == 0 || get_max_size (manager) == 0)
-		{
-			do_cleanup (manager);
-		}
+                /* Do a clean-up on shutdown if and only if the size or age
+                 * limits have been set to a paranoid level of cleaning (zero)
+                 */
+                if ((g_settings_get_int (p->settings, THUMB_CACHE_KEY_AGE) == 0) ||
+                    (g_settings_get_int (p->settings, THUMB_CACHE_KEY_SIZE) == 0)) {
+                        do_cleanup (manager);
+                }
         }
 
        	g_object_unref (p->settings);
