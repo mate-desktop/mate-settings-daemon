@@ -1003,6 +1003,8 @@ do_action (MsdMediaKeysManager *manager,
         case CALCULATOR_KEY:
                 if ((cmd = g_find_program_in_path ("galculator"))) {
                         execute (manager, "galculator", FALSE, FALSE);
+                } else if ((cmd = g_find_program_in_path ("mate-calc"))) {
+                        execute (manager, "mate-calc", FALSE, FALSE);
                 } else {
                         execute (manager, "gnome-calculator", FALSE, FALSE);
                 }
