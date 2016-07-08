@@ -1006,7 +1006,7 @@ do_action (MsdMediaKeysManager *manager,
                 } else if ((cmd = g_find_program_in_path ("mate-calc"))) {
                         execute (manager, "mate-calc", FALSE, FALSE);
                 } else {
-                        execute (manager, "gcalctool", FALSE, FALSE);
+                        execute (manager, "gnome-calculator", FALSE, FALSE);
                 }
 
                 g_free (cmd);
