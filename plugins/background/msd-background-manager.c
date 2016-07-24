@@ -218,9 +218,10 @@ draw_background (MsdBackgroundManager *manager,
 {
 	MsdBackgroundManagerPrivate *p = manager->priv;
 
+#if !GTK_CHECK_VERSION(3, 21, 0)
 	if (!p->msd_can_draw || p->draw_in_progress || caja_is_drawing_bg (manager))
 		return;
-
+#endif
 	mate_settings_profile_start (NULL);
 
 	GdkDisplay *display   = gdk_display_get_default ();
@@ -402,7 +403,7 @@ on_bg_handling_changed (GSettings            *settings,
 	MsdBackgroundManagerPrivate *p = manager->priv;
 
 	mate_settings_profile_start (NULL);
-
+#if !GTK_CHECK_VERSION(3, 21, 0)
 	if (caja_is_drawing_bg (manager))
 	{
 		if (p->bg != NULL)
@@ -410,9 +411,11 @@ on_bg_handling_changed (GSettings            *settings,
 	}
 	else if (p->msd_can_draw && p->bg == NULL)
 	{
+#endif
 		setup_background (manager);
+#if !GTK_CHECK_VERSION(3, 21, 0)
 	}
-
+#endif
 	mate_settings_profile_end (NULL);
 }
 
