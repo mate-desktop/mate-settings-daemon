@@ -1,5 +1,14 @@
 1.15.1
 
+  * Translations update
+  * sync with transiflex
+  * GTK 3.21: Fix background changing, startup delay
+  * GTK 3.21: Fix caja startup background
+  * distcheck: explicitly use currently selected GTK+ version
+  * media-keys: bring back support for mate-calc
+  * media-keys: support gnome-calculator, drop support for mate-calc
+  * housekeeping: replace buggy thumb-cleaning code with correct one
+
 1.15.0
 
   * Translations update
