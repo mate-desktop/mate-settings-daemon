@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-29 13:05+0300\n"
-"PO-Revision-Date: 2016-04-27 19:58+0000\n"
+"PO-Revision-Date: 2016-06-24 13:21+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/mate/MATE/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -480,11 +480,11 @@ msgstr "Susiejimas skaičiuotuvui paleisti."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
 msgid "Launch web browser"
-msgstr "Paleisti žiniatinklio naršyklę"
+msgstr "Paleisti saityno naršyklę"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
 msgid "Binding to launch the web browser."
-msgstr "Susiejimas žiniatinklio naršyklei paleisti."
+msgstr "Susiejimas saityno naršyklei paleisti."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
 msgid "Launch media player"
@@ -601,7 +601,7 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr "XRandR įskiepis ieškos numatytųjų nustatymų faile, nurodytame šiame rakte. Jis panašus į ~/.config/monitors.xml failą, kuris paprastai saugomas naudotojo namų aplanke. Jeigu naudotojas neturi tokio failo arba jo turimas failas nesutampa su naudotojo vaizduoklių sąranka, tuomet vietoje to bus naudojamas šio rakto nurodytas failas."
+msgstr "XRandR įskiepis ieškos numatytųjų nustatymų faile, nurodytame šiame rakte. Jis panašus į ~/.config/monitors.xml failą, kuris paprastai saugomas naudotojo namų kataloge. Jeigu naudotojas neturi tokio failo arba jo turimas failas nesutampa su naudotojo vaizduoklių sąranka, tuomet vietoje to bus naudojamas šio rakto nurodytas failas."
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
