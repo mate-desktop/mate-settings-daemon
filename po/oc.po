@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Cédric Valmary <cvalmary@yahoo.fr>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-29 13:05+0300\n"
-"PO-Revision-Date: 2016-03-29 10:19+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"PO-Revision-Date: 2016-06-11 12:16+0000\n"
+"Last-Translator: Cédric Valmary <cvalmary@yahoo.fr>\n"
 "Language-Team: Occitan (post 1500) (http://www.transifex.com/mate/MATE/language/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,50 +20,50 @@ msgstr ""
 
 #: ../data/50-accessibility.xml.in.h:1
 msgid "Accessibility"
-msgstr ""
+msgstr "Accessibilitat"
 
 #: ../data/50-accessibility.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
 msgid "Toggle magnifier"
-msgstr ""
+msgstr "Activar o desactivar la lópia"
 
 #: ../data/50-accessibility.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
 msgid "Toggle screen reader"
-msgstr ""
+msgstr "Activar o desactivar lo lector d'ecran"
 
 #: ../data/50-accessibility.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
 msgid "Toggle on-screen keyboard"
-msgstr ""
+msgstr "Activar o desactivar lo clavièr visual"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:1
 msgid "On-screen keyboard"
-msgstr ""
+msgstr "Clavièr visual"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:2
 msgid "Whether the on-screen keyboard is turned on."
-msgstr ""
+msgstr "Indica se lo clavièr visual es activat."
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:3
 msgid "Screen magnifier"
-msgstr ""
+msgstr "Lópia d'ecran"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:4
 msgid "Whether the screen magnifier is turned on."
-msgstr ""
+msgstr "Indica se la lópia d'ecran es activada."
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:5
 msgid "Screen reader"
-msgstr ""
+msgstr "Lector d'ecran"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:6
 msgid "Whether the screen reader is turned on."
-msgstr ""
+msgstr "Indica se lo lector d'ecran es activat."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:1
 msgid "DPI"
-msgstr ""
+msgstr "PPP"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:2
 msgid ""
@@ -83,7 +84,7 @@ msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
-msgstr ""
+msgstr "Optimizacion"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:6
 msgid ""
@@ -94,7 +95,7 @@ msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
-msgstr ""
+msgstr "Òrdre RVBA"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:8
 msgid ""
@@ -377,7 +378,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:11
 msgid "Volume mute"
-msgstr ""
+msgstr "Sordina"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:12
 msgid "Binding to mute the system volume."
@@ -401,7 +402,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:17
 msgid "Shut down"
-msgstr ""
+msgstr "Atudar"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:18
 msgid "Binding to shut down."
@@ -505,7 +506,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
 msgid "Stop playback"
-msgstr ""
+msgstr "Arrestar la lectura"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
 msgid "Binding to stop playback."
@@ -649,22 +650,22 @@ msgstr ""
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
 msgid "Don't activate"
-msgstr ""
+msgstr "Activar pas"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
 msgid "Don't deactivate"
-msgstr ""
+msgstr "Desactivar pas"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
 msgid "Activate"
-msgstr ""
+msgstr "Activar"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
 msgid "Deactivate"
-msgstr ""
+msgstr "Desactivar"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:669
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:808
@@ -766,7 +767,7 @@ msgstr ""
 
 #: ../plugins/clipboard/clipboard.mate-settings-plugin.in.h:1
 msgid "Clipboard"
-msgstr ""
+msgstr "Quichapapièrs"
 
 #: ../plugins/clipboard/clipboard.mate-settings-plugin.in.h:2
 msgid "Clipboard plugin"
@@ -774,11 +775,11 @@ msgstr ""
 
 #: ../plugins/dummy/dummy.mate-settings-plugin.in.h:1
 msgid "Dummy"
-msgstr ""
+msgstr "Factici"
 
 #: ../plugins/dummy/dummy.mate-settings-plugin.in.h:2
 msgid "Dummy plugin"
-msgstr ""
+msgstr "Empeuton factici"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:70
 msgid "Don't show any warnings again for this file system"
@@ -833,11 +834,11 @@ msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:467
 msgid "Examine…"
-msgstr ""
+msgstr "Examinar…"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:474
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorar"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:102
 #, c-format
@@ -847,7 +848,7 @@ msgstr ""
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:122
 #, c-format
 msgid "Removing: %s"
-msgstr ""
+msgstr "Supression : %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:252
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:321
@@ -861,7 +862,7 @@ msgstr ""
 #. Translators: "Emptying trash from <device>"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:324
 msgid "From: "
-msgstr ""
+msgstr "Dempuèi :"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:376
 msgid "Empty all of the items from the trash?"
@@ -908,7 +909,7 @@ msgstr "Clavièr"
 
 #: ../plugins/keyboard/keyboard.mate-settings-plugin.in.h:2
 msgid "Keyboard plugin"
-msgstr ""
+msgstr "Empeuton del clavièr"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:119
 #, c-format
@@ -983,11 +984,11 @@ msgstr ""
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:1
 msgid "Mpris"
-msgstr ""
+msgstr "Mpris"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:2
 msgid "Mpris plugin"
-msgstr ""
+msgstr "Empeuton Mpris"
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:1
 msgid "Typing Break"
@@ -999,7 +1000,7 @@ msgstr ""
 
 #: ../plugins/xrandr/xrandr.mate-settings-plugin.in.h:1
 msgid "XRandR"
-msgstr ""
+msgstr "XRandR"
 
 #: ../plugins/xrandr/xrandr.mate-settings-plugin.in.h:2
 msgid "Set up screen size and rotation settings"
@@ -1060,19 +1061,19 @@ msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1988
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1989
 msgid "Left"
-msgstr ""
+msgstr "Esquèrra"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1990
 msgid "Right"
-msgstr ""
+msgstr "Dreita"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1991
 msgid "Upside Down"
-msgstr ""
+msgstr "Inversat"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2113
 msgid "_Configure Display Settings…"
@@ -1163,11 +1164,11 @@ msgstr ""
 #: ../plugins/smartcard/msd-smartcard.c:168
 #: ../plugins/smartcard/msd-smartcard.c:169
 msgid "name"
-msgstr ""
+msgstr "nom"
 
 #: ../plugins/smartcard/msd-smartcard.c:173
 msgid "Module"
-msgstr ""
+msgstr "Modul"
 
 #: ../plugins/smartcard/msd-smartcard.c:174
 msgid "smartcard driver"
