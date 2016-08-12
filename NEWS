@@ -1,3 +1,10 @@
+1.14.1
+  * housekeeping: fix thumbnails cleaning
+  * housekeeping: fix text markup
+  * media-keys: use gnome-calculator binary instead of old gcalctool
+  * Translations update
+  * Make distcheck use currently selected GTK+ version
+
 1.14.0
   * Drop MateConf migration script
   * media-keys: add setting to enable/disable OSD
