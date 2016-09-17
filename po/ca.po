@@ -6,6 +6,7 @@
 # Ivan Vilata i Balaguer <ivan@selidor.net>, 1999, 2000
 # Jordi Mallach <jordi@sindominio.net>, 2002, 2003, 2004, 2005
 # Josep Puigdemont <josep.puigdemont@gmail.com>, 2005, 2006, 2007
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2015-2016
 # Softcatalà <linux@softcatala.org>, 2000, 2001
 msgid ""
@@ -13,7 +14,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-29 13:05+0300\n"
-"PO-Revision-Date: 2016-06-17 09:49+0000\n"
+"PO-Revision-Date: 2016-08-18 12:30+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/mate/MATE/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -1077,7 +1078,7 @@ msgstr "Dreta"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1991
 msgid "Upside Down"
-msgstr "Cara avall"
+msgstr "De cap per avall"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2113
 msgid "_Configure Display Settings…"

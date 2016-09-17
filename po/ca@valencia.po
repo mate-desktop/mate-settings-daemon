@@ -3,17 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Ivan Vilata i Balaguer <ivan@selidor.net>, 1999, 2000
-# Jordi Mallach <jordi@sindominio.net>, 2002, 2003, 2004, 2005
+# Ivan Vilata i Balaguer <ivan@selidor.net>, 1999-2000
+# Jordi Mallach <jordi@sindominio.net>, 2002-2005
 # Josep Puigdemont <josep.puigdemont@gmail.com>, 2005, 2006, 2007
-# Softcatalà <linux@softcatala.org>, 2000, 2001
+# Josep Puigdemont <josep.puigdemont@gmail.com>, 2005-2007
+# Pilar Embid Giner <embid_mar@gva.es>, 2016
+# Softcatalà <linux@softcatala.org>, 2000-2001
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-29 13:05+0300\n"
-"PO-Revision-Date: 2016-03-29 10:19+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"PO-Revision-Date: 2016-09-15 10:46+0000\n"
+"Last-Translator: Jose Alfredo Murcia Andrés <joamuran@gmail.com>\n"
 "Language-Team: Catalan (Valencian) (http://www.transifex.com/mate/MATE/language/ca@valencia/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,18 +74,18 @@ msgstr "PPP"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "La resolució que s'utilitzarà per convertir les mides dels tipus de lletra a mides de píxels, en punts per polzada."
+msgstr "La resolució que s'utilitzarà per a convertir les mides dels tipus de lletra a mides de píxels, en punts per polzada."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
-msgstr "Suavitzat"
+msgstr "Antialiàsing"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:4
 msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "El tipus de suavitzat que s'utilitzarà per mostrar els tipus de lletra. Els valors possibles són: «none» (cap) per no aplicar cap suavitzat, «grayscale» (escala de grisos) per a suavitzat d'escala de grisos estàndard i «RGBA» per a suavitzat de subpíxel (només per a pantalles LCD)."
+msgstr "El tipus d'antialiàsing que s'utilitzarà per a mostrar els tipus de lletra. Els valors possibles són: «none» (cap) per no aplicar cap antialiàsing, «grayscale» (escala de grisos) per a antialiàsing d'escala de grisos estàndard i «RGBA» per a antialiàsing de subpíxel (només per a pantalles LCD)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
@@ -94,11 +96,11 @@ msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "El tipus de contorn que s'utilitzarà per mostrar els tipus de lletra. Els valors possibles són: «none» (cap) cap contorn, «slight» (lleu) contorn petit, «medium» (mitjà) contorn moderat i «full» (complet) màxim contorn (pot produir distorsió en les formes de les lletres)."
+msgstr "El tipus de contorn que s'utilitzarà per a mostrar els tipus de lletra. Els valors possibles són: «none» (cap) cap contorn, «slight» (lleu) contorn xicotet, «medium» (mitjà) contorn moderat i «full» (complet) contorn màxim (pot produir distorsió en les formes de les lletres)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
-msgstr "Orde del RGBA"
+msgstr "Ordre del RGBA"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:8
 msgid ""
@@ -106,17 +108,17 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "L'orde dels elements de subpíxel d'una pantalla LCD. Només s'utilitza si el suavitzat és «RGBA». Els valors possibles són: «RGB» per al roig (R) a l'esquerra (el més comú), «BGR» per al blau (B) a l'esquerra, «VRGB» per al roig a dalt, «VBGR» per al roig a baix."
+msgstr "L'ordre dels elements de subpíxel d'una pantalla LCD. Només s'utilitza si l'antialiàsing és «RGBA». Els valors possibles són: «RGB» per al roig (R) a l'esquerra (el més comú), «BGR» per al blau (B) a l'esquerra, «VRGB» per al roig a dalt, «VBGR» per al roig a baix."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
-msgstr ""
+msgstr "Acció en l'extracció de la targeta intel·ligent"
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:2
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr ""
+msgstr "Establiu-ho a un dels valors següents: \"none\" (cap), \"lock_screen\" (bloqueja la pantalla), o \"force_logout\" (imposa el tancament de la sessió). L'acció es realitza quan s'extrau la targeta intel·ligent utilitzada per a l'inici de sessió."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:1
 msgid "Disable touchpad while typing"
@@ -135,47 +137,47 @@ msgstr "Permet fer clic amb el ratolí tàctil"
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "Establiu-ho a «True» (cert) per permetre enviar clics de ratolí en prémer al ratolí tàctil."
+msgstr "Establiu-ho a «True» (cert) per a permetre enviar clics de ratolí en prémer el ratolí tàctil."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Enable vertical edge scrolling"
-msgstr ""
+msgstr "Habilita el desplaçament vertical de la vora"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:6
 msgid "Set this to TRUE to allow vertical edge scrolling"
-msgstr ""
+msgstr "Establiu-ho a «TRUE» per a permetre el desplaçament vertical de la vora"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:7
 msgid "Enable horizontal edge scrolling"
-msgstr ""
+msgstr "Habilita el desplaçament horitzontal de la vora"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:8
 msgid "Set this to TRUE to allow horizontal edge scrolling"
-msgstr ""
+msgstr "Establiu-ho a «TRUE» per a permetre el desplaçament horitzontal de la vora"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:9
 msgid "Enable vertical two-finger scrolling"
-msgstr ""
+msgstr "Habilita el desplaçament vertical amb dos dits"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:10
 msgid "Set this to TRUE to allow vertical two-finger scrolling"
-msgstr ""
+msgstr "Establiu-ho a «TRUE» per a permetre el desplaçament vertical amb dos dits"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:11
 msgid "Enable horizontal two-finger scrolling"
-msgstr ""
+msgstr "Habilita el desplaçament horitzontal amb dos dits"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
 msgid "Set this to TRUE to allow horizontal two-finger scrolling"
-msgstr ""
+msgstr "Establiu-ho a «TRUE» per a permetre el desplaçament horitzontal amb dos dits"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
 msgid "Natural scrolling"
-msgstr ""
+msgstr "Desplaçament natural"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
-msgstr ""
+msgstr "Establiu-ho a «TRUE» per a habilitar el desplaçament natural (invers) per als ratolins tàctils"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
 msgid "Enable touchpad"
@@ -183,49 +185,49 @@ msgstr "Habilita el ratolí tàctil"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:16
 msgid "Set this to TRUE to enable all touchpads."
-msgstr "Establiu-ho a «True» (cert) per habilitar tots els ratolins tàctils."
+msgstr "Establiu-ho a «True» (cert) per a habilitar tots els ratolins tàctils."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:17
 msgid "Enabled two-finger button-click emulation"
-msgstr ""
+msgstr "S'ha habilitat l'emulació de clic de botó amb dos dits"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:18
 msgid "0 thru 3, 0 is inactive, 1-3 is button to emulate"
-msgstr ""
+msgstr "de 0 a 3, 0 està inactiu, 1-3 és el botó que s'ha d'emular"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:19
 msgid "Enable three-finger button-click emulation"
-msgstr ""
+msgstr "Habilita l'emulació de clic de botó amb tres dits"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:20
 msgid "One finger tap button"
-msgstr ""
+msgstr "Botó per a toc amb un dit"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:21
 msgid ""
 "Select the button mapping for one-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr ""
+msgstr "Seleccioneu el mapatge del botó per a toc amb un dit. Els valors admesos són: 1 per al botó esquerre del ratolí; 2 per al botó del mig; 3 per al botó dret"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
 msgid "Two finger tap button"
-msgstr ""
+msgstr "Botó per a toc amb dos dits"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:23
 msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr ""
+msgstr "Seleccioneu el mapatge del botó per a toc amb dos dits. Els valors admesos són: 1 per al botó esquerre del ratolí; 2 per al botó del mig; 3 per al botó dret"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
 msgid "Three finger tap button"
-msgstr ""
+msgstr "Botó per a toc amb tres dits"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:25
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
-msgstr ""
+msgstr "Seleccioneu el mapatge del botó per a toc amb tres dita. Els valors admesos són: 1 per al botó esquerre del ratolí; 2 per al botó del mig; 3 per al botó dret"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
@@ -245,7 +247,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:1
 msgid "Activation of this plugin"
-msgstr ""
+msgstr "Activació d'aquest connector"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:2
@@ -265,7 +267,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr ""
+msgstr "Si el mate-settings-daemon ha d'activar aquest connector"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:3
@@ -285,7 +287,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:3
 msgid "Priority to use for this plugin"
-msgstr ""
+msgstr "Prioritat per a utilitzar aquest connector."
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:4
@@ -305,37 +307,37 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
-msgstr ""
+msgstr "La prioritat en la cua d'inici per a utilitzar aquest connector del mate-settings-daemon"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:5
 msgid "Free percentage notify threshold"
-msgstr "Llindar per notificar el percentatge lliure"
+msgstr "Llindar per a notificar el percentatge lliure"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:6
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr ""
+msgstr "El percentatge del llindar d'espai lliure per a l'avís inicial de poc espai de disc. Si el percentatge d'espai lliure baixa per davall d'aquest, es mostrarà un avís."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
 msgid "Subsequent free percentage notify threshold"
-msgstr "Llindar de notificació de percentatge lliure subseqüent"
+msgstr "Llindar de notificació de percentatge lliure subsegüent"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:8
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
-msgstr ""
+msgstr "Especifica el percentatge d'espai de disc lliure que s'ha de reduir abans de mostrar més avisos."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:9
 msgid "Free space no notify threshold"
-msgstr "Llindar per no notificar el percentatge lliure"
+msgstr "Llindar per a no notificar el percentatge lliure"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:10
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr ""
+msgstr "Especifica una quantitat en GB. Si l'espai lliure és més gran, no es mostrarà cap avís."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:11
 msgid "Minimum notify period for repeated warnings"
@@ -345,23 +347,23 @@ msgstr "Període mínim entre notificacions d'avisos repetits"
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "Especifica un temps en minuts. Els pròxims avisos per a un volum no apareixeran abans d'este període de temps."
+msgstr "Especifica un temps en minuts. Els pròxims avisos per a un volum no apareixeran abans d'aquest període de temps."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
-msgstr "Camins de muntatge a ignorar"
+msgstr "Camins de muntatge que s'han d'ignorar"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr "Especifica una llista de camins de muntatge a ignorar quan els queda poc espai lliure."
+msgstr "Especifica una llista de camins de muntatge que s'han d'ignorar quan els queda poc espai lliure."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
-msgstr ""
+msgstr "Mostra la notificació OSD"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:4
 msgid "Whether an OSD notification is shown to notify about changes"
-msgstr ""
+msgstr "Si s'ha de mostrar una notificació OSD per a notificar els canvis"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:7
 msgid "Volume step"
@@ -369,7 +371,7 @@ msgstr "Pas del volum"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:8
 msgid "Volume step as percentage of volume."
-msgstr "Pas del volum com un percentatge de volum."
+msgstr "Pas del volum com a percentatge de volum."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:9
 msgid "Toggle touchpad"
@@ -377,7 +379,7 @@ msgstr "Commuta el ratolí tàctil"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:10
 msgid "Binding to enable or disable the touchpad."
-msgstr "Vinculació per habilitar o inhabilitar el ratolí tàctil."
+msgstr "Vinculació per a habilitar o inhabilitar el ratolí tàctil."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:11
 msgid "Volume mute"
@@ -385,7 +387,7 @@ msgstr "Volum silenciat"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:12
 msgid "Binding to mute the system volume."
-msgstr "Vinculació per silenciar el volum del sistema."
+msgstr "Vinculació per a silenciar el volum del sistema."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:13
 msgid "Volume down"
@@ -393,7 +395,7 @@ msgstr "Abaixa el volum"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:14
 msgid "Binding to lower the system volume."
-msgstr "Vinculació per abaixar el volum del sistema."
+msgstr "Vinculació per a abaixar el volum del sistema."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:15
 msgid "Volume up"
@@ -401,23 +403,23 @@ msgstr "Apuja el volum"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:16
 msgid "Binding to raise the system volume."
-msgstr "Vinculació per apujar el volum del sistema."
+msgstr "Vinculació per a apujar el volum del sistema."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:17
 msgid "Shut down"
-msgstr ""
+msgstr "Apaga"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:18
 msgid "Binding to shut down."
-msgstr ""
+msgstr "Vinculació per a apagar."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
 msgid "Log out"
-msgstr "Ix"
+msgstr "Tanca la sessió"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:20
 msgid "Binding to log out."
-msgstr "Vinculació per eixir de la sessió."
+msgstr "Vinculació per a eixir de la sessió."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:21
 msgid "Eject"
@@ -425,7 +427,7 @@ msgstr "Expulsa"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:22
 msgid "Binding to eject an optical disc."
-msgstr ""
+msgstr "Vinculació per a expulsar un disc òptic."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:23
 msgid "Home folder"
@@ -433,7 +435,7 @@ msgstr "Carpeta de l'usuari"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:24
 msgid "Binding to open the Home folder."
-msgstr "Vinculació per obrir la carpeta de l'usuari."
+msgstr "Vinculació per a obrir la carpeta de l'usuari."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
 msgid "Search"
@@ -441,7 +443,7 @@ msgstr "Cerca"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:26
 msgid "Binding to launch the search tool."
-msgstr "Vinculació per executar l'eina de cerca."
+msgstr "Vinculació per a executar l'eina de cerca."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:27
 msgid "Launch email client"
@@ -449,15 +451,15 @@ msgstr "Executa el client de correu electrònic"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:28
 msgid "Binding to launch the email client."
-msgstr "Vinculació per executar el client de correu electrònic."
+msgstr "Vinculació per a executar el client de correu electrònic."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:29
 msgid "Lock screen"
-msgstr "Bloca la pantalla"
+msgstr "Bloqueja la pantalla"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:30
 msgid "Binding to lock the screen."
-msgstr "Vinculació per bloquejar la pantalla."
+msgstr "Vinculació per a bloquejar la pantalla."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:31
 msgid "Launch help browser"
@@ -465,7 +467,7 @@ msgstr "Executa el navegador de l'ajuda"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
 msgid "Binding to launch the help browser."
-msgstr "Vinculació per executar el navegador de l'ajuda."
+msgstr "Vinculació per a executar el navegador de l'ajuda."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
 msgid "Launch calculator"
@@ -473,7 +475,7 @@ msgstr "Executa la calculadora"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
 msgid "Binding to launch the calculator."
-msgstr "Vinculació per executar la calculadora."
+msgstr "Vinculació per a executar la calculadora."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
 msgid "Launch web browser"
@@ -481,7 +483,7 @@ msgstr "Executa el navegador web"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
 msgid "Binding to launch the web browser."
-msgstr "Vinculació per executar el navegador web."
+msgstr "Vinculació per a executar el navegador web."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
 msgid "Launch media player"
@@ -489,7 +491,7 @@ msgstr "Executa el reproductor multimèdia"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
 msgid "Binding to launch the media player."
-msgstr "Vinculació per executar el reproductor multimèdia."
+msgstr "Vinculació per a executar el reproductor multimèdia."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
 msgid "Play (or play/pause)"
@@ -497,7 +499,7 @@ msgstr "Reprodueix (o reprodueix/fes una pausa)"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
 msgid "Binding to start playback (or toggle play/pause)."
-msgstr "Vinculació per iniciar el reproductor (o commutar entre reproducció/en pausa)."
+msgstr "Vinculació per a iniciar el reproductor (o commutar entre reproducció/en pausa)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
 msgid "Pause playback"
@@ -505,15 +507,15 @@ msgstr "Fes una pausa en la reproducció"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:42
 msgid "Binding to pause playback."
-msgstr "Vinculació per fer una pausa a la reproducció."
+msgstr "Vinculació per a fer una pausa a la reproducció."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
 msgid "Stop playback"
-msgstr "Atura la reproducció"
+msgstr "Para la reproducció"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
 msgid "Binding to stop playback."
-msgstr "Vinculació per aturar la reproducció."
+msgstr "Vinculació per a parar la reproducció."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
 msgid "Previous track"
@@ -521,7 +523,7 @@ msgstr "Peça anterior"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
 msgid "Binding to skip to previous track."
-msgstr "Vinculació per saltar a la peça anterior."
+msgstr "Vinculació per a saltar a la peça anterior."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
 msgid "Next track"
@@ -529,19 +531,19 @@ msgstr "Peça següent"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
 msgid "Binding to skip to next track."
-msgstr "Vinculació per saltar a la peça següent."
+msgstr "Vinculació per a saltar a la peça següent."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
 msgid "Binding to show the screen magnifier"
-msgstr ""
+msgstr "Vinculació per a mostrar l'ampliador de pantalla"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
 msgid "Binding to start the screen reader"
-msgstr ""
+msgstr "Vinculació per a iniciar el lector de pantalla."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
 msgid "Binding to show the on-screen keyboard"
-msgstr ""
+msgstr "Vinculació per a mostrar el teclat a la pantalla."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:5
 msgid "Show Displays in Notification Area"
@@ -551,11 +553,11 @@ msgstr "Mostra les pantalles a l'àrea de notificació"
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
-msgstr ""
+msgstr "Si s'ha de mostrar al quadre una icona de notificació amb les coses relacionades amb la pantalla"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:7
 msgid "Do not touch monitor configuration"
-msgstr ""
+msgstr "No toques la configuració del monitor"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:8
 msgid ""
@@ -565,31 +567,31 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr ""
+msgstr "Normalment, el mate-settings-daemon configura els monitors extern i intern d'acord amb els paràmetres turn_on_external_monitors_at_startup i turn_on_laptop_monitor_at_startup i determina un mode apropiat de clonatge/«un al costat de l'altre». Si s'estableix a «True» aquesta clau, s'inhabilita, i la configuració del monitor no es toca en absolut (llevat que hi haja explícita una configuració de l'usuari)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:9
 msgid "Turn on external monitor after system boot"
-msgstr ""
+msgstr "Engega el monitor extern després de l'arrancada del sistema"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:10
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
-msgstr ""
+msgstr "Engega el monitor extern després de l'arrancada del sistema, si l'usuari connecta el monitor extern en l'arrancada del sistema."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:11
 msgid "Turn on laptop monitor after system boot"
-msgstr ""
+msgstr "Engega el monitor de l'ordinador portàtil després de l'arrancada del sistema"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:12
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr ""
+msgstr "Engega el monitor de l'ordinador portàtil després de l'arrancada del sistema, si l'usuari connecta el monitor extern en l'arrancada del sistema."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:13
 msgid "File for default configuration for RandR"
-msgstr ""
+msgstr "Fitxer per a la configuració predeterminada per a RandR"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:14
 msgid ""
@@ -598,7 +600,7 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr ""
+msgstr "El connector XRandR buscarà la configuració per defecte en el fitxer especificat per aquesta clau. Aquest és semblant al ~/.config/monitors.xml que normalment s'emmagatzema al directori d'usuari. Si un usuari no té aquest fitxer o en té un que no coincideix amb la configuració de monitors de l'usuari, llavors en lloc seu s'utilitzarà el fitxer especificat per aquesta clau."
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
@@ -610,15 +612,15 @@ msgstr "Habilita el codi de depuració"
 
 #: ../mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
-msgstr ""
+msgstr "Substitueix el dimoni actual"
 
 #: ../mate-settings-daemon/main.c:67
 msgid "Don't become a daemon"
-msgstr "No et tornes un dimoni"
+msgstr "No esdevingues un dimoni"
 
 #: ../mate-settings-daemon/main.c:68
 msgid "Exit after a time (for debugging)"
-msgstr ""
+msgstr "Ix al cap d'una estona (per a la depuració)"
 
 #: ../plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.in.h:1
 msgid "Accessibility Keyboard"
@@ -648,17 +650,17 @@ msgstr "Voleu desactivar les «tecles lentes»?"
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "Heu mantingut premuda la tecla de majúscules durant 8 segons.  Esta és la drecera per a la funcionalitat «tecles lentes», que afecta la forma de funcionar del teclat."
+msgstr "Heu mantingut premuda la tecla de majúscules durant 8 segons.  Aquesta és la drecera per a la funcionalitat «tecles lentes», que afecta la manera de funcionar del teclat."
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
 msgid "Don't activate"
-msgstr "No activis"
+msgstr "No actives"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
 msgid "Don't deactivate"
-msgstr "No desactivis"
+msgstr "No desactives"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
@@ -673,12 +675,12 @@ msgstr "Desactiva"
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:669
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:808
 msgid "Do_n't activate"
-msgstr "_No activis"
+msgstr "_No actives"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:669
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:808
 msgid "Do_n't deactivate"
-msgstr "_No desactivis"
+msgstr "_No desactives"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:672
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:811
@@ -697,19 +699,19 @@ msgstr "Alerta de «tecles lentes»"
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:716
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:782
 msgid "Do you want to activate Sticky Keys?"
-msgstr "Voleu activar les «tecles enganxoses»?"
+msgstr "Voleu activar les «tecles permanents»?"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:717
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:783
 msgid "Do you want to deactivate Sticky Keys?"
-msgstr "Voleu desactivar les «tecles enganxoses»?"
+msgstr "Voleu desactivar les «tecles permanents»?"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:719
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:785
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "Heu premut la tecla de majúscules 5 vegades seguides. Esta és la drecera per a la funcionalitat «tecles enganxoses», que afecta la forma de funcionar del teclat."
+msgstr "Heu premut la tecla de majúscules 5 vegades seguides. Aquesta és la drecera per a la funcionalitat «tecles permanents», que afecta la manera de funcionar del teclat."
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:721
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:787
@@ -717,11 +719,11 @@ msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "Heu premut dues tecles alhora, o heu premut la tecla de majúscules 5 vegades seguides. Això desactiva les «tecles enganxoses», que afecten la forma de funcionar del teclat."
+msgstr "Heu premut dues tecles alhora, o heu premut la tecla de majúscules 5 vegades seguides. Això desactiva les «tecles permanents», que afecta la manera de funcionar del teclat."
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:815
 msgid "Sticky Keys Alert"
-msgstr "Alerta de «tecles enganxoses»"
+msgstr "Avís de «tecles permanents»"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:763
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
@@ -730,7 +732,7 @@ msgstr "Preferències d'accés universal"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
 msgid "Use on-screen _keyboard"
-msgstr "Utilitza el _teclat a la pantalla"
+msgstr "Utilitza el _teclat en pantalla"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:3
 msgid "Use screen _reader"
@@ -750,15 +752,15 @@ msgstr "Fes el _text més gran i més fàcil de llegir"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
-msgstr "_Prem les dreceres de teclat una tecla a la vegada (tecles enganxoses)"
+msgstr "_Prem les tecles de drecera de teclat d'una en una (tecles permanents)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
-msgstr "_Ignora les pulsacions duplicades (tecles de salt)"
+msgstr "_Ignora les pulsacions duplicades de les tecles (tecles de rebot)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "Press and _hold keys to accept them (Slow Keys)"
-msgstr "Prem i _mantén les tecles per acceptar-les (tecles lentes)"
+msgstr "Prem i _mantín les tecles per a acceptar-les (tecles lentes)"
 
 #: ../plugins/background/background.mate-settings-plugin.in.h:1
 msgid "Background"
@@ -786,7 +788,7 @@ msgstr "Connector de prova"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:70
 msgid "Don't show any warnings again for this file system"
-msgstr ""
+msgstr "No tornes a mostrar més avisos per a aquest sistema de fitxers"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:72
 msgid "Don't show any warnings again"
@@ -795,12 +797,12 @@ msgstr "No tornes a mostrar més avisos"
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:85
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
-msgstr "El volum «%s» només li resta %s d'espai de disc."
+msgstr "Al volum «%s» només li resta %s d'espai de disc."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:88
 #, c-format
 msgid "This computer has only %s disk space remaining."
-msgstr "Este ordinador només li resta %s d'espai de disc."
+msgstr "A aquest ordinador només li resta %s d'espai de disc."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:104
 msgid ""
@@ -829,7 +831,7 @@ msgstr "Podeu alliberar espai de disc suprimint programes o fitxers que no utili
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:212
 msgid "Low Disk Space"
-msgstr "Espai del disc baix"
+msgstr "Poc d'espai al disc"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Empty Trash"
@@ -837,7 +839,7 @@ msgstr "Buida la paperera"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:467
 msgid "Examine…"
-msgstr ""
+msgstr "Examina..."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:474
 msgid "Ignore"
@@ -851,7 +853,7 @@ msgstr "S'està suprimint l'element %lu de %lu"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:122
 #, c-format
 msgid "Removing: %s"
-msgstr ""
+msgstr "S'està suprimint: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:252
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:321
@@ -860,7 +862,7 @@ msgstr "S'està buidant la paperera"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:297
 msgid "Preparing to empty trash…"
-msgstr ""
+msgstr "S'està preparant per a buidar la paperera..."
 
 #. Translators: "Emptying trash from <device>"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:324
@@ -896,15 +898,15 @@ msgstr "La vinculació de tecla (%s) és incompleta"
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "S'ha produït un error en intentar executar (%s)\nque està enllaçat a la tecla (%s)"
+msgstr "S'ha produït un error en intentar executar (%s),\nque està enllaçat a la tecla (%s)"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
-msgstr "Vinculacions"
+msgstr "Vinculacions de tecla"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:2
 msgid "Keybindings plugin"
-msgstr "Connector de vinculacions"
+msgstr "Connector de vinculacions de tecla"
 
 #: ../plugins/keyboard/keyboard.mate-settings-plugin.in.h:1
 msgid "Keyboard"
@@ -929,11 +931,11 @@ msgid ""
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr ""
+msgstr "S'ha produït un error en activar la configuració XKB.\nAixò pot passar per diversos motius:\n- un error de programació en la biblioteca libxklavier\n- un error de programació en el servidor de les X (utilitats xkbcomp, xmodmap)\n- Un servidor de les X amb una implementació incompatible de libxkbfile\n\nDades de la versió del servidor de les X:\n%s\n%d\nSi informeu d'aquesta situació en un informe d'error, incloeu-hi:\n- El resultat de <b>%s</b>\n- El resultat de <b>%s</b>"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:273
 msgid "_Layouts"
-msgstr ""
+msgstr "_Disposicions"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:280
 msgid "Keyboard _Preferences"
@@ -941,20 +943,20 @@ msgstr "_Preferències del teclat"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:286
 msgid "Show _Current Layout"
-msgstr ""
+msgstr "Mostra la disposició a_ctual"
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:186
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "No s'ha pogut obtindre el terminal per defecte. Verifiqueu que l'orde que teniu establerta per al terminal per defecte existisca."
+msgstr "No s'ha pogut obtindre el terminal per defecte. Verifiqueu que l'ordre que teniu establida per al terminal per defecte existisca."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:226
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "No s'ha pogut executar l'orde: %s\nVerifiqueu que siga una orde vàlida."
+msgstr "No s'ha pogut executar l'ordre: %s\nVerifiqueu que siga una ordre vàlida."
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -971,7 +973,7 @@ msgstr "No s'han pogut habilitar les funcionalitats d'accessibilitat del ratolí
 #: ../plugins/mouse/msd-mouse-manager.c:922
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
-msgstr ""
+msgstr "L'accessibilitat del ratolí requereix que s'instal·le el Mousetweaks al vostre sistema."
 
 #: ../plugins/mouse/msd-mouse-manager.c:925
 msgid "Mouse Preferences"
@@ -987,11 +989,11 @@ msgstr "Connector del ratolí"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:1
 msgid "Mpris"
-msgstr ""
+msgstr "Mpris"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:2
 msgid "Mpris plugin"
-msgstr ""
+msgstr "Connector Mpris"
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:1
 msgid "Typing Break"
@@ -1026,8 +1028,8 @@ msgstr "No s'ha pogut restaurar la configuració de la pantalla des d'una còpia
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Es reiniciarà la pantalla a la configuració anterior d'ací %d segon"
-msgstr[1] "Es reiniciarà la pantalla a la configuració anterior d'ací %d segons"
+msgstr[0] "Es reiniciarà la pantalla a la configuració anterior d'ací a %d segon"
+msgstr[1] "Es reiniciarà la pantalla a la configuració anterior d'ací a %d segons"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1039,7 +1041,7 @@ msgstr "_Restaura la configuració anterior"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:500
 msgid "_Keep This Configuration"
-msgstr "_Manté esta configuració"
+msgstr "_Mantín aquesta configuració"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:581
 msgid "The selected configuration for displays could not be applied"
@@ -1056,11 +1058,11 @@ msgstr "S'està intentant commutar la configuració del monitor de totes maneres
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1914
 msgid "Rotation not supported"
-msgstr ""
+msgstr "No és compatible amb la rotació"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1970
 msgid "Could not save monitor configuration"
-msgstr "No s'ha pogut alçar la configuració del monitor"
+msgstr "No s'ha pogut guardar la configuració del monitor"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1988
 msgid "Normal"
@@ -1076,11 +1078,11 @@ msgstr "Dreta"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1991
 msgid "Upside Down"
-msgstr "Cara avall"
+msgstr "De cap per avall"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2113
 msgid "_Configure Display Settings…"
-msgstr ""
+msgstr "_Configura els paràmetres de la pantalla..."
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2167
 msgid "Configure display settings"
@@ -1097,106 +1099,106 @@ msgstr "No es pot determinar el directori de l'usuari"
 
 #: ../plugins/xrdb/xrdb.mate-settings-plugin.in.h:1
 msgid "X Resource Database"
-msgstr "Base de dades de recursos d'X"
+msgstr "Base de dades de recursos de les X"
 
 #: ../plugins/xrdb/xrdb.mate-settings-plugin.in.h:2
 msgid "Manage the X resource database"
-msgstr "Gestiona la base de dades de recursos d'X"
+msgstr "Gestiona la base de dades dels recursos de les X"
 
 #: ../plugins/xsettings/xsettings.mate-settings-plugin.in.h:1
 msgid "X Settings"
-msgstr "Paràmetres d'X"
+msgstr "Paràmetres de les X"
 
 #: ../plugins/xsettings/xsettings.mate-settings-plugin.in.h:2
 msgid "Manage X Settings"
-msgstr "Gestiona els paràmetres d'X"
+msgstr "Gestiona els paràmetres de les X"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:167
 msgid "Module Path"
-msgstr ""
+msgstr "Camí al mòdul"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:168
 msgid "path to smartcard PKCS #11 driver"
-msgstr ""
+msgstr "camí al controlador de targeta intel·ligent PKCS #11"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:496
 msgid "received error or hang up from event source"
-msgstr ""
+msgstr "s'ha rebut un error o s'ha penjat des de la font d'esdeveniments"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:585
 #, c-format
 msgid "NSS security system could not be initialized"
-msgstr ""
+msgstr "No s'ha pogut inicialitzar el sistema de seguretat NSS"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:654
 #, c-format
 msgid "no suitable smartcard driver could be found"
-msgstr ""
+msgstr "no s'ha pogut trobar cap controlador adequat per a la targeta intel·ligent"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:674
 #, c-format
 msgid "smartcard driver '%s' could not be loaded"
-msgstr ""
+msgstr "no s'ha pogut carregar el controlador de la targeta intel·ligent «%s»"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:758
 #, c-format
 msgid "could not watch for incoming card events - %s"
-msgstr ""
+msgstr "no s'ha pogut observar si hi ha esdeveniments d'entrada de targeta - %s"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:1105
 #, c-format
 msgid "encountered unexpected error while waiting for smartcard events"
-msgstr ""
+msgstr "s'ha trobat un error inesperat mentre s'esperaven esdeveniments de la targeta intel·ligent"
 
 #: ../plugins/smartcard/msd-smartcard.c:154
 msgid "Slot ID"
-msgstr ""
+msgstr "Id. de la ranura"
 
 #: ../plugins/smartcard/msd-smartcard.c:155
 msgid "The slot the card is in"
-msgstr ""
+msgstr "La ranura on és la targeta "
 
 #: ../plugins/smartcard/msd-smartcard.c:161
 msgid "Slot Series"
-msgstr ""
+msgstr "Sèrie de la ranura"
 
 #: ../plugins/smartcard/msd-smartcard.c:162
 msgid "per-slot card identifier"
-msgstr ""
+msgstr "identificador de targetes per ranura"
 
 #: ../plugins/smartcard/msd-smartcard.c:168
 #: ../plugins/smartcard/msd-smartcard.c:169
 msgid "name"
-msgstr ""
+msgstr "nom"
 
 #: ../plugins/smartcard/msd-smartcard.c:173
 msgid "Module"
-msgstr ""
+msgstr "Mòdul"
 
 #: ../plugins/smartcard/msd-smartcard.c:174
 msgid "smartcard driver"
-msgstr ""
+msgstr "controlador de targetes intel·ligents"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:1
 msgid "Change system time zone"
-msgstr ""
+msgstr "Canvia la zona horària del sistema"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:2
 msgid "Privileges are required to change the system time zone."
-msgstr ""
+msgstr "Es necessiten privilegis per a canviar la zona horària del sistema."
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:3
 msgid "Change system time"
-msgstr ""
+msgstr "Canvia l'hora del sistema"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:4
 msgid "Privileges are required to change the system time."
-msgstr ""
+msgstr "Es necessiten privilegis per a canviar l'hora del sistema."
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:5
 msgid "Configure hardware clock"
-msgstr ""
+msgstr "Configura el rellotge del maquinari"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:6
 msgid "Privileges are required to configure the hardware clock."
-msgstr ""
+msgstr "Es necessiten privilegis per a configurar el rellotge del maquinari."
