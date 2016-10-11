@@ -1688,8 +1688,10 @@ output_title_label_expose_event_cb (GtkWidget *widget, GdkEventExpose *event, gp
         MsdXrandrManager *manager = MSD_XRANDR_MANAGER (data);
         struct MsdXrandrManagerPrivate *priv = manager->priv;
         MateRROutputInfo *output;
+#if GTK_CHECK_VERSION (3, 0, 0)
+        GdkRGBA color;
+#else
         GdkColor color;
-#if !GTK_CHECK_VERSION (3, 0, 0)
         cairo_t *cr;
 #endif
         GtkAllocation allocation;
@@ -1702,10 +1704,10 @@ output_title_label_expose_event_cb (GtkWidget *widget, GdkEventExpose *event, gp
         g_assert (priv->labeler != NULL);
 
         /* Draw a black rectangular border, filled with the color that corresponds to this output */
-
+#if GTK_CHECK_VERSION (3, 0, 0)
+        mate_rr_labeler_get_rgba_for_output (priv->labeler, output, &color);
+#else
         mate_rr_labeler_get_color_for_output (priv->labeler, output, &color);
-
-#if !GTK_CHECK_VERSION (3, 0, 0)
         cr = gdk_cairo_create (gtk_widget_get_window (widget));
 #endif
 
@@ -1719,7 +1721,11 @@ output_title_label_expose_event_cb (GtkWidget *widget, GdkEventExpose *event, gp
                          allocation.height - OUTPUT_TITLE_ITEM_BORDER);
         cairo_stroke (cr);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+        gdk_cairo_set_source_rgba (cr, &color);
+#else
         gdk_cairo_set_source_color (cr, &color);
+#endif
         cairo_rectangle (cr,
                          allocation.x + OUTPUT_TITLE_ITEM_BORDER,
                          allocation.y + OUTPUT_TITLE_ITEM_BORDER,
