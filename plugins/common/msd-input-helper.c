@@ -29,7 +29,7 @@
 
 #include "msd-input-helper.h"
 
-static gboolean
+gboolean
 supports_xinput_devices (void)
 {
         gint op_code, event, error;

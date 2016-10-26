@@ -27,8 +27,9 @@ G_BEGIN_DECLS
 #include <X11/extensions/XInput.h>
 #include <X11/extensions/XIproto.h>
 
-XDevice * device_is_touchpad  (XDeviceInfo deviceinfo);
-gboolean  touchpad_is_present (void);
+gboolean  supports_xinput_devices (void);
+XDevice  *device_is_touchpad      (XDeviceInfo deviceinfo);
+gboolean  touchpad_is_present     (void);
 
 G_END_DECLS
 

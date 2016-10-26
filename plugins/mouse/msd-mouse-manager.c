@@ -115,18 +115,6 @@ msd_mouse_manager_class_init (MsdMouseManagerClass *klass)
         g_type_class_add_private (klass, sizeof (MsdMouseManagerPrivate));
 }
 
-static gboolean
-supports_xinput_devices (void)
-{
-        gint op_code, event, error;
-
-        return XQueryExtension (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
-                                "XInputExtension",
-                                &op_code,
-                                &event,
-                                &error);
-}
-
 static void
 configure_button_layout (guchar   *buttons,
                          gint      n_buttons,
