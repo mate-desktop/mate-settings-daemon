@@ -39,11 +39,9 @@
 #include <gdk/gdkkeysyms.h>
 #include <X11/keysym.h>
 #include <X11/Xatom.h>
-
-#ifdef HAVE_X11_EXTENSIONS_XINPUT_H
 #include <X11/extensions/XInput.h>
 #include <X11/extensions/XIproto.h>
-#endif
+
 #include <gio/gio.h>
 
 #include "mate-settings-profile.h"
@@ -61,7 +59,6 @@
 
 #define MATE_TOUCHPAD_SCHEMA             "org.mate.peripherals-touchpad"
 #define KEY_TOUCHPAD_DISABLE_W_TYPING    "disable-while-typing"
-#ifdef HAVE_X11_EXTENSIONS_XINPUT_H
  
 #define KEY_TOUCHPAD_TWO_FINGER_CLICK    "two-finger-click"
 #define KEY_TOUCHPAD_THREE_FINGER_CLICK  "three-finger-click"
@@ -76,7 +73,6 @@
 #define KEY_HORIZ_TWO_FINGER_SCROLL      "horizontal-two-finger-scrolling"
 #define KEY_TOUCHPAD_ENABLED             "touchpad-enabled"
 
-#endif
 
 /* FIXME: currently there is no mate-mousetweaks, so I comment this
  *
@@ -101,11 +97,9 @@ static void     msd_mouse_manager_class_init  (MsdMouseManagerClass *klass);
 static void     msd_mouse_manager_init        (MsdMouseManager      *mouse_manager);
 static void     msd_mouse_manager_finalize    (GObject             *object);
 static void     set_mouse_settings            (MsdMouseManager      *manager);
-#ifdef HAVE_X11_EXTENSIONS_XINPUT_H
 static void     set_tap_to_click              (MsdMouseManager * manager);
 static void     set_click_actions             (MsdMouseManager * manager);
 static void     set_natural_scroll            (MsdMouseManager * manager); 
-#endif
 
 G_DEFINE_TYPE (MsdMouseManager, msd_mouse_manager, G_TYPE_OBJECT)
 
@@ -121,7 +115,6 @@ msd_mouse_manager_class_init (MsdMouseManagerClass *klass)
         g_type_class_add_private (klass, sizeof (MsdMouseManagerPrivate));
 }
 
-#ifdef HAVE_X11_EXTENSIONS_XINPUT_H
 static gboolean
 supports_xinput_devices (void)
 {
@@ -133,7 +126,6 @@ supports_xinput_devices (void)
                                 &event,
                                 &error);
 }
-#endif
 
 static void
 configure_button_layout (guchar   *buttons,
@@ -192,7 +184,6 @@ configure_button_layout (guchar   *buttons,
         }
 }
 
-#ifdef HAVE_X11_EXTENSIONS_XINPUT_H
 static gboolean
 xinput_device_has_buttons (XDeviceInfo *device_info)
 {
@@ -367,7 +358,6 @@ set_devicepresence_handler (MsdMouseManager *manager)
         if (!gdk_error_trap_pop ())
                 gdk_window_add_filter (NULL, devicepresence_filter, manager);
 }
-#endif
 
 static void
 set_left_handed (MsdMouseManager *manager,
@@ -377,7 +367,6 @@ set_left_handed (MsdMouseManager *manager,
         gsize buttons_capacity = 16;
         gint n_buttons, i;
 
-#ifdef HAVE_X11_EXTENSIONS_XINPUT_H
         if (supports_xinput_devices ()) {
                 /* When XInput support is available, never set the
                  * button ordering on the core pointer as that would
@@ -385,7 +374,6 @@ set_left_handed (MsdMouseManager *manager,
                 set_xinput_devices_left_handed (manager, left_handed);
                 return;
         }
-#endif
 
         buttons = g_new (guchar, buttons_capacity);
         n_buttons = XGetPointerMapping (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
@@ -576,7 +564,6 @@ set_disable_w_typing (MsdMouseManager *manager, gboolean state)
         }
 }
 
-#ifdef HAVE_X11_EXTENSIONS_XINPUT_H
 static void
 set_tap_to_click (MsdMouseManager * manager)
 {
@@ -837,7 +824,6 @@ set_touchpad_enabled (gboolean state)
 
         XFreeDeviceList (devicelist);
 }
-#endif
 
 static void
 set_locate_pointer (MsdMouseManager *manager,
@@ -946,13 +932,12 @@ set_mouse_settings (MsdMouseManager *manager)
         set_middle_button (manager, g_settings_get_boolean (manager->priv->settings_mouse, KEY_MIDDLE_BUTTON_EMULATION));
 
         set_disable_w_typing (manager, g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_DISABLE_W_TYPING));
-#ifdef HAVE_X11_EXTENSIONS_XINPUT_H
+
         set_tap_to_click (manager);
         set_click_actions (manager);
         set_scrolling (manager->priv->settings_touchpad);
         set_natural_scroll (manager);
         set_touchpad_enabled (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_ENABLED));
-#endif
 }
 
 static void
@@ -970,7 +955,6 @@ mouse_callback (GSettings          *settings,
                 set_disable_w_typing (manager, g_settings_get_boolean (settings, key));
 	    } else if (g_str_equal (key, KEY_MIDDLE_BUTTON_EMULATION)) {
 	            set_middle_button (manager, g_settings_get_boolean (settings, key));
-#ifdef HAVE_X11_EXTENSIONS_XINPUT_H
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_TAP_TO_CLICK) == 0) {
                 set_tap_to_click (manager);
         } else if (g_str_equal (key, KEY_TOUCHPAD_TWO_FINGER_CLICK) || g_str_equal (key, KEY_TOUCHPAD_THREE_FINGER_CLICK)) {
@@ -985,13 +969,10 @@ mouse_callback (GSettings          *settings,
                 set_scrolling (manager->priv->settings_touchpad);
         } else if (g_str_equal (key, KEY_TOUCHPAD_NATURAL_SCROLL)) {
                 set_natural_scroll (manager);
-#endif
         } else if (g_strcmp0 (key, KEY_MOUSE_LOCATE_POINTER) == 0) {
                 set_locate_pointer (manager, g_settings_get_boolean (settings, key));
-#ifdef HAVE_X11_EXTENSIONS_XINPUT_H
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_ENABLED) == 0) {
                 set_touchpad_enabled (g_settings_get_boolean (settings, key));
-#endif
         } /*else if (g_strcmp0 (key, KEY_MOUSE_A11Y_DWELL_ENABLE) == 0) {
                 set_mousetweaks_daemon (manager,
                                         g_settings_get_boolean (settings, key),
@@ -1025,9 +1006,8 @@ msd_mouse_manager_idle_cb (MsdMouseManager *manager)
 
         manager->priv->syndaemon_spawned = FALSE;
 
-#ifdef HAVE_X11_EXTENSIONS_XINPUT_H
         set_devicepresence_handler (manager);
-#endif
+
         set_mouse_settings (manager);
         set_locate_pointer (manager, g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LOCATE_POINTER));
         /*
@@ -1039,13 +1019,12 @@ msd_mouse_manager_idle_cb (MsdMouseManager *manager)
         */
 
         set_disable_w_typing (manager, g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_DISABLE_W_TYPING));
-#ifdef HAVE_X11_EXTENSIONS_XINPUT_H
+
         set_tap_to_click (manager);
         set_click_actions (manager);
         set_scrolling (manager->priv->settings_touchpad);
         set_natural_scroll (manager);
         set_touchpad_enabled (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_ENABLED));
-#endif
 
         mate_settings_profile_end (NULL);
 
@@ -1084,9 +1063,7 @@ msd_mouse_manager_stop (MsdMouseManager *manager)
 
         set_locate_pointer (manager, FALSE);
 
-#ifdef HAVE_X11_EXTENSIONS_XINPUT_H
         gdk_window_remove_filter (NULL, devicepresence_filter, manager);
-#endif
 }
 
 static void
