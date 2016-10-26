@@ -227,9 +227,8 @@ touchpad_has_single_button (XDevice *device)
         return is_single_button;
 }
 
-
 static void
-set_xinput_devices_left_handed (MsdMouseManager * manager, gboolean left_handed)
+set_left_handed (MsdMouseManager * manager, gboolean left_handed)
 {
         XDeviceInfo *device_info;
         gint n_devices;
@@ -331,9 +330,6 @@ set_devicepresence_handler (MsdMouseManager *manager)
         XEventClass class_presence;
         int xi_presence;
 
-        if (!supports_xinput_devices ())
-                return;
-
         display = gdk_x11_get_default_xdisplay ();
 
         gdk_error_trap_push ();
@@ -345,50 +341,6 @@ set_devicepresence_handler (MsdMouseManager *manager)
         gdk_flush ();
         if (!gdk_error_trap_pop ())
                 gdk_window_add_filter (NULL, devicepresence_filter, manager);
-}
-
-static void
-set_left_handed (MsdMouseManager *manager,
-                 gboolean         left_handed)
-{
-        guchar *buttons ;
-        gsize buttons_capacity = 16;
-        gint n_buttons, i;
-
-        if (supports_xinput_devices ()) {
-                /* When XInput support is available, never set the
-                 * button ordering on the core pointer as that would
-                 * revert the changes we make on the devices themselves */
-                set_xinput_devices_left_handed (manager, left_handed);
-                return;
-        }
-
-        buttons = g_new (guchar, buttons_capacity);
-        n_buttons = XGetPointerMapping (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
-                                        buttons,
-                                        (gint) buttons_capacity);
-        while (n_buttons > buttons_capacity) {
-                buttons_capacity = n_buttons;
-                buttons = (guchar *) g_realloc (buttons,
-                                                buttons_capacity * sizeof (guchar));
-
-                n_buttons = XGetPointerMapping (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
-                                                buttons,
-                                                (gint) buttons_capacity);
-        }
-
-        configure_button_layout (buttons, n_buttons, left_handed);
-
-        /* X refuses to change the mapping while buttons are engaged,
-         * so if this is the case we'll retry a few times
-         */
-        for (i = 0;
-             i < 20 && XSetPointerMapping (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), buttons, n_buttons) == MappingBusy;
-             ++i) {
-                g_usleep (300);
-        }
-
-        g_free (buttons);
 }
 
 static void
@@ -1024,6 +976,11 @@ msd_mouse_manager_start (MsdMouseManager *manager,
                          GError         **error)
 {
         mate_settings_profile_start (NULL);
+
+        if (!supports_xinput_devices ()) {
+                g_debug ("XInput is not supported, not applying any settings");
+                return TRUE;
+        }
 
         g_idle_add ((GSourceFunc) msd_mouse_manager_idle_cb, manager);
 
