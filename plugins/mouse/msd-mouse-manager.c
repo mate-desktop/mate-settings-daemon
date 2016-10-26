@@ -958,14 +958,6 @@ msd_mouse_manager_idle_cb (MsdMouseManager *manager)
                                                         KEY_MOUSE_A11Y_DELAY_ENABLE));
         */
 
-        set_disable_w_typing (manager, g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_DISABLE_W_TYPING));
-
-        set_tap_to_click (manager);
-        set_click_actions (manager);
-        set_scrolling (manager->priv->settings_touchpad);
-        set_natural_scroll (manager);
-        set_touchpad_enabled (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_ENABLED));
-
         mate_settings_profile_end (NULL);
 
         return FALSE;
