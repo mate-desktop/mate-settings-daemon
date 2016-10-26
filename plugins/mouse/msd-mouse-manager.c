@@ -257,14 +257,12 @@ set_left_handed (MsdMouseManager * manager, gboolean left_handed)
                  * around too, otherwise a tap would be a right-click */
                 device = device_is_touchpad (device_info[i]);
                 if (device != NULL) {
-                        GSettings *settings = g_settings_new (MATE_TOUCHPAD_SCHEMA);
-                        gboolean tap = g_settings_get_boolean (settings, KEY_TOUCHPAD_TAP_TO_CLICK);
+                        gboolean tap = g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_TAP_TO_CLICK);
                         gboolean single_button = touchpad_has_single_button (device);
 
                         if (tap && !single_button)
                                 set_tap_to_click (manager);
                         XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
-                        g_object_unref (settings);
 
                         if (single_button)
                             continue;
