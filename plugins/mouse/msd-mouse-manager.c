@@ -389,12 +389,15 @@ set_motion_threshold (MsdMouseManager *manager,
 
 static void
 set_middle_button (MsdMouseManager *manager,
+                   XDeviceInfo     *device_info,
                    gboolean         middle_button)
 {
-        XDeviceInfo *device_info;
-        gint n_devices;
-        gint i;
+        XDevice *device;
         Atom prop;
+        Atom type;
+        int format;
+        unsigned long nitems, bytes_after;
+        unsigned char *data;
 
         prop = XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
                             "Evdev Middle Button Emulation", True);
@@ -402,50 +405,56 @@ set_middle_button (MsdMouseManager *manager,
         if (!prop) /* no evdev devices */
                 return;
 
+        gdk_error_trap_push ();
+
+        device = XOpenDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device_info->id);
+
+        if ((gdk_error_trap_pop () != 0) ||
+            (device == NULL))
+                return;
+
+        gdk_error_trap_push ();
+
+        XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
+                            device, prop, 0, 1, False, XA_INTEGER, &type, &format,
+                            &nitems, &bytes_after, &data);
+
+        if ((gdk_error_trap_pop () != 0)) {
+                XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
+                return;
+        }
+
+        if (format == 8 && type == XA_INTEGER && nitems == 1) {
+                data[0] = middle_button ? 1 : 0;
+
+                gdk_error_trap_push ();
+                XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
+                                       device, prop, type, format, PropModeReplace, data, nitems);
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+                gdk_error_trap_pop_ignored ();
+#else
+                gdk_error_trap_pop ();
+#endif
+        }
+
+        XFree (data);
+        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
+
+}
+
+static void
+set_middle_button_all (MsdMouseManager *manager,
+                       gboolean         middle_button)
+{
+        XDeviceInfo *device_info;
+        gint n_devices;
+        gint i;
+
         device_info = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &n_devices);
 
         for (i = 0; i < n_devices; i++) {
-                XDevice *device = NULL;
-                Atom type;
-                int format;
-                unsigned long nitems, bytes_after;
-                unsigned char *data;
-
-                gdk_error_trap_push ();
-
-                device = XOpenDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device_info[i].id);
-
-                if ((gdk_error_trap_pop () != 0) ||
-                    (device == NULL))
-                        continue;
-
-                gdk_error_trap_push ();
-
-                XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
-                                    device, prop, 0, 1, False, XA_INTEGER, &type, &format,
-                                    &nitems, &bytes_after, &data);
-
-                if ((gdk_error_trap_pop () != 0)) {
-                        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
-                        continue;
-                }
-
-                if (format == 8 && type == XA_INTEGER && nitems == 1) {
-                        data[0] = middle_button ? 1 : 0;
-
-                        gdk_error_trap_push ();
-                        XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
-                                               device, prop, type, format, PropModeReplace, data, nitems);
-
-#if GTK_CHECK_VERSION (3, 0, 0)
-                        gdk_error_trap_pop_ignored ();
-#else
-                        gdk_error_trap_pop ();
-#endif
-                }
-
-                XFree (data);
-                XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
+                set_middle_button (manager, &device_info[i], middle_button);
         }
 
         if (device_info != NULL)
@@ -863,7 +872,7 @@ set_mouse_settings (MsdMouseManager *manager)
         set_left_handed (manager, left_handed);
         set_motion_acceleration (manager, g_settings_get_double (manager->priv->settings_mouse, KEY_MOUSE_MOTION_ACCELERATION));
         set_motion_threshold (manager, g_settings_get_int (manager->priv->settings_mouse, KEY_MOUSE_MOTION_THRESHOLD));
-        set_middle_button (manager, g_settings_get_boolean (manager->priv->settings_mouse, KEY_MIDDLE_BUTTON_EMULATION));
+        set_middle_button_all (manager, g_settings_get_boolean (manager->priv->settings_mouse, KEY_MIDDLE_BUTTON_EMULATION));
 
         set_disable_w_typing (manager, g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_DISABLE_W_TYPING));
 
@@ -888,7 +897,7 @@ mouse_callback (GSettings          *settings,
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_DISABLE_W_TYPING) == 0) {
                 set_disable_w_typing (manager, g_settings_get_boolean (settings, key));
         } else if (g_str_equal (key, KEY_MIDDLE_BUTTON_EMULATION)) {
-                set_middle_button (manager, g_settings_get_boolean (settings, key));
+                set_middle_button_all (manager, g_settings_get_boolean (settings, key));
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_TAP_TO_CLICK) == 0) {
                 set_tap_to_click (manager);
         } else if (g_str_equal (key, KEY_TOUCHPAD_TWO_FINGER_CLICK) || g_str_equal (key, KEY_TOUCHPAD_THREE_FINGER_CLICK)) {
