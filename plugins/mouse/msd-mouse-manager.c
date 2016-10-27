@@ -256,7 +256,7 @@ set_left_handed (MsdMouseManager * manager, gboolean left_handed)
 
                 /* If the device is a touchpad, swap tap buttons
                  * around too, otherwise a tap would be a right-click */
-                device = device_is_touchpad (device_info[i]);
+                device = device_is_touchpad (&device_info[i]);
                 if (device != NULL) {
                         gboolean tap = g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_TAP_TO_CLICK);
                         gboolean single_button = touchpad_has_single_button (device);
@@ -538,7 +538,7 @@ set_tap_to_click (MsdMouseManager * manager)
         gint three_finger_tap = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_THREE_FINGER_TAP);
 
         for (i = 0; i < numdevices; i++) {
-                if ((device = device_is_touchpad (devicelist[i]))) {
+                if ((device = device_is_touchpad (&devicelist[i]))) {
                         gdk_error_trap_push ();
                         rc = XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop, 0, 2,
                                                  False, XA_INTEGER, &type, &format, &nitems,
@@ -595,7 +595,7 @@ set_click_actions (MsdMouseManager * manager)
         gint enable_three_finger_click = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_THREE_FINGER_CLICK);
 
         for (i = 0; i < numdevices; i++) {
-                if ((device = device_is_touchpad (devicelist[i]))) {
+                if ((device = device_is_touchpad (&devicelist[i]))) {
                         g_debug ("setting click action to click on %s", devicelist[i].name);
                         gdk_error_trap_push ();
                         rc = XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop, 0, 2,
@@ -643,7 +643,7 @@ set_natural_scroll (MsdMouseManager * manager)
         gboolean natural_scroll = g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_NATURAL_SCROLL);
 
         for (i = 0; i < numdevices; i++) {
-                if ((device = device_is_touchpad (devicelist[i]))) {
+                if ((device = device_is_touchpad (&devicelist[i]))) {
                         g_debug ("Trying to set %s for \"%s\"", natural_scroll ? "natural (reverse) scroll" : "normal scroll", devicelist[i].name);
                         gdk_error_trap_push ();
                         rc = XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop, 0, 2,
@@ -701,7 +701,7 @@ synaptics_set_bool (const char * property_name, int property_index, gboolean ena
         }
 
         for (i = 0; i < numdevices; i++) {
-                if ((device = device_is_touchpad (devicelist[i]))) {
+                if ((device = device_is_touchpad (&devicelist[i]))) {
                         gdk_error_trap_push ();
                         rc = XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device,
                                                  property, 0, 1, False,
@@ -754,7 +754,7 @@ set_touchpad_enabled (gboolean state)
                 return;
 
         for (i = 0; i < numdevices; i++) {
-                if ((device = device_is_touchpad (devicelist[i]))) {
+                if ((device = device_is_touchpad (&devicelist[i]))) {
                         unsigned char data = state;
                         gdk_error_trap_push ();
                         XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device,

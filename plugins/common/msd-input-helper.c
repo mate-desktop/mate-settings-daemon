@@ -42,7 +42,7 @@ supports_xinput_devices (void)
 }
 
 XDevice*
-device_is_touchpad (XDeviceInfo deviceinfo)
+device_is_touchpad (XDeviceInfo *deviceinfo)
 {
         XDevice *device;
         Atom realtype, prop;
@@ -50,7 +50,7 @@ device_is_touchpad (XDeviceInfo deviceinfo)
         unsigned long nitems, bytes_after;
         unsigned char *data;
 
-        if (deviceinfo.type != XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), XI_TOUCHPAD, False))
+        if (deviceinfo->type != XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), XI_TOUCHPAD, False))
                 return NULL;
 
         prop = XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), "Synaptics Off", False);
@@ -58,7 +58,7 @@ device_is_touchpad (XDeviceInfo deviceinfo)
                 return NULL;
 
         gdk_error_trap_push ();
-        device = XOpenDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), deviceinfo.id);
+        device = XOpenDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), deviceinfo->id);
         if (gdk_error_trap_pop () || (device == NULL))
                 return NULL;
 
@@ -104,7 +104,7 @@ touchpad_is_present (void)
         for (i = 0; i < n_devices; i++) {
                 XDevice *device;
 
-                device = device_is_touchpad (device_info[i]);
+                device = device_is_touchpad (&device_info[i]);
                 if (device != NULL) {
                         retval = TRUE;
                         break;
