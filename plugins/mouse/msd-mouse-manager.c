@@ -265,7 +265,7 @@ set_left_handed (MsdMouseManager * manager, gboolean left_handed)
                         XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
 
                         if (single_button)
-                            continue;
+                                continue;
                 }
 
                 gdk_error_trap_push ();
@@ -314,10 +314,11 @@ devicepresence_filter (GdkXEvent *xevent,
 
         if (xev->type == xi_presence)
         {
-            XDevicePresenceNotifyEvent *dpn = (XDevicePresenceNotifyEvent *) xev;
-            if (dpn->devchange == DeviceEnabled)
-                set_mouse_settings ((MsdMouseManager *) data);
+                XDevicePresenceNotifyEvent *dpn = (XDevicePresenceNotifyEvent *) xev;
+                if (dpn->devchange == DeviceEnabled)
+                        set_mouse_settings ((MsdMouseManager *) data);
         }
+
         return GDK_FILTER_CONTINUE;
 }
 
@@ -740,7 +741,7 @@ set_touchpad_enabled (gboolean state)
         prop_enabled = XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), "Device Enabled", False);
 
         if (!prop_enabled)
-            return;
+                return;
 
         for (i = 0; i < numdevices; i++) {
                 if ((device = device_is_touchpad (devicelist[i]))) {
@@ -891,8 +892,8 @@ mouse_callback (GSettings          *settings,
                 set_motion_threshold (manager, g_settings_get_int (settings, key));
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_DISABLE_W_TYPING) == 0) {
                 set_disable_w_typing (manager, g_settings_get_boolean (settings, key));
-	    } else if (g_str_equal (key, KEY_MIDDLE_BUTTON_EMULATION)) {
-	            set_middle_button (manager, g_settings_get_boolean (settings, key));
+        } else if (g_str_equal (key, KEY_MIDDLE_BUTTON_EMULATION)) {
+                set_middle_button (manager, g_settings_get_boolean (settings, key));
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_TAP_TO_CLICK) == 0) {
                 set_tap_to_click (manager);
         } else if (g_str_equal (key, KEY_TOUCHPAD_TWO_FINGER_CLICK) || g_str_equal (key, KEY_TOUCHPAD_THREE_FINGER_CLICK)) {
