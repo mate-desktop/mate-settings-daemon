@@ -411,7 +411,7 @@ set_middle_button (MsdMouseManager *manager,
         XDevice *device;
         Atom prop;
         Atom type;
-        int format;
+        int format, rc;
         unsigned long nitems, bytes_after;
         unsigned char *data;
 
@@ -424,39 +424,28 @@ set_middle_button (MsdMouseManager *manager,
         gdk_error_trap_push ();
 
         device = XOpenDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device_info->id);
-
         if ((gdk_error_trap_pop () != 0) ||
             (device == NULL))
                 return;
 
         gdk_error_trap_push ();
+        rc = XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
+                                 device, prop, 0, 1, False, XA_INTEGER, &type, &format,
+                                 &nitems, &bytes_after, &data);
 
-        XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
-                            device, prop, 0, 1, False, XA_INTEGER, &type, &format,
-                            &nitems, &bytes_after, &data);
-
-        if ((gdk_error_trap_pop () != 0)) {
-                XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
-                return;
-        }
-
-        if (format == 8 && type == XA_INTEGER && nitems == 1) {
+        if (rc == Success && format == 8 && type == XA_INTEGER && nitems == 1) {
                 data[0] = middle_button ? 1 : 0;
-
-                gdk_error_trap_push ();
                 XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
                                        device, prop, type, format, PropModeReplace, data, nitems);
-
-#if GTK_CHECK_VERSION (3, 0, 0)
-                gdk_error_trap_pop_ignored ();
-#else
-                gdk_error_trap_pop ();
-#endif
         }
 
-        XFree (data);
-        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
+        if (rc == Success)
+                XFree (data);
 
+        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
+        if (gdk_error_trap_pop ()) {
+                g_warning ("Error in setting middle button emulation on \"%s\"", device_info->name);
+        }
 }
 
 static void
