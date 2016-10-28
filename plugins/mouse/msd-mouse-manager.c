@@ -100,7 +100,6 @@ static void     msd_mouse_manager_finalize    (GObject             *object);
 static void     set_mouse_settings            (MsdMouseManager      *manager);
 static void     set_tap_to_click              (MsdMouseManager * manager);
 static void     set_click_actions             (MsdMouseManager * manager);
-static void     set_natural_scroll            (MsdMouseManager * manager); 
 
 G_DEFINE_TYPE (MsdMouseManager, msd_mouse_manager, G_TYPE_OBJECT)
 
@@ -623,56 +622,72 @@ set_click_actions (MsdMouseManager * manager)
 }
 
 static void
-set_natural_scroll (MsdMouseManager * manager)
+set_natural_scroll (MsdMouseManager *manager,
+                    XDeviceInfo     *device_info,
+                    gboolean         natural_scroll)
 {
-        int numdevices, i, format, rc;
+        XDevice *device;
+        int format, rc;
         unsigned long nitems, bytes_after;
-        XDeviceInfo *devicelist = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &numdevices);
-        XDevice * device;
         unsigned char* data;
         glong *ptr;
         Atom prop, type;
-
-        if (devicelist == NULL)
-                return;
 
         prop = XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), "Synaptics Scrolling Distance", False);
         if (!prop)
                 return;
 
+        device = device_is_touchpad (device_info);
+        if (device == NULL) {
+                return;
+        }
+
+        g_debug ("Trying to set %s for \"%s\"", natural_scroll ? "natural (reverse) scroll" : "normal scroll", device_info->name);
+
+        gdk_error_trap_push ();
+        rc = XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop, 0, 2,
+                                 False, XA_INTEGER, &type, &format, &nitems,
+                                 &bytes_after, &data);
+
+        if (rc == Success && type == XA_INTEGER && format == 32 && nitems >= 2) {
+                ptr = (glong *) data;
+                if (natural_scroll) {
+                        ptr[0] = -abs(ptr[0]);
+                        ptr[1] = -abs(ptr[1]);
+                } else {
+                        ptr[0] = abs(ptr[0]);
+                        ptr[1] = abs(ptr[1]);
+                }
+
+                XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop,
+                                       XA_INTEGER, 32, PropModeReplace, data, nitems);
+        }
+
+        if (rc == Success)
+                XFree (data);
+
+        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
+        if (gdk_error_trap_pop ()) {
+                g_warning ("Error in setting natural scroll on \"%s\"", device_info->name);
+        }
+}
+
+
+static void
+set_natural_scroll_all (MsdMouseManager *manager)
+{
+        int numdevices, i;
+        XDeviceInfo *devicelist = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &numdevices);
+
+        if (devicelist == NULL)
+                return;
+
         gboolean natural_scroll = g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_NATURAL_SCROLL);
 
         for (i = 0; i < numdevices; i++) {
-                if ((device = device_is_touchpad (&devicelist[i]))) {
-                        g_debug ("Trying to set %s for \"%s\"", natural_scroll ? "natural (reverse) scroll" : "normal scroll", devicelist[i].name);
-                        gdk_error_trap_push ();
-                        rc = XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop, 0, 2,
-                                                 False, XA_INTEGER, &type, &format, &nitems,
-                                                 &bytes_after, &data);
-
-                        if (rc == Success && type == XA_INTEGER && format == 32 && nitems >= 2) {
-                                ptr = (glong *) data;
-                                if (natural_scroll) {
-                                        ptr[0] = -abs(ptr[0]);
-                                        ptr[1] = -abs(ptr[1]);
-                                } else {
-                                        ptr[0] = abs(ptr[0]);
-                                        ptr[1] = abs(ptr[1]);
-                                }
-                                
-                                XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop,
-                                                       XA_INTEGER, 32, PropModeReplace, data, nitems);
-                        }
-
-                        if (rc == Success)
-                                XFree (data);
-                        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
-                        if (gdk_error_trap_pop ()) {
-                                g_warning ("Error in setting natural scroll on \"%s\"", devicelist[i].name);
-                                continue;
-                        }
-                }
+                set_natural_scroll (manager, &devicelist[i], natural_scroll);
         }
+
         XFreeDeviceList (devicelist);
 }
 
@@ -879,7 +894,7 @@ set_mouse_settings (MsdMouseManager *manager)
         set_tap_to_click (manager);
         set_click_actions (manager);
         set_scrolling (manager->priv->settings_touchpad);
-        set_natural_scroll (manager);
+        set_natural_scroll_all (manager);
         set_touchpad_enabled (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_ENABLED));
 }
 
@@ -911,7 +926,7 @@ mouse_callback (GSettings          *settings,
         } else if (g_strcmp0 (key, KEY_VERT_EDGE_SCROLL) == 0 || g_strcmp0 (key, KEY_HORIZ_EDGE_SCROLL) == 0 || g_strcmp0 (key, KEY_VERT_TWO_FINGER_SCROLL) == 0 || g_strcmp0 (key, KEY_HORIZ_TWO_FINGER_SCROLL) == 0) {
                 set_scrolling (manager->priv->settings_touchpad);
         } else if (g_str_equal (key, KEY_TOUCHPAD_NATURAL_SCROLL)) {
-                set_natural_scroll (manager);
+                set_natural_scroll_all (manager);
         } else if (g_strcmp0 (key, KEY_MOUSE_LOCATE_POINTER) == 0) {
                 set_locate_pointer (manager, g_settings_get_boolean (settings, key));
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_ENABLED) == 0) {
