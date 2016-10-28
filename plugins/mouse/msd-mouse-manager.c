@@ -780,37 +780,48 @@ set_scrolling (GSettings *settings)
 }
 
 static void
-set_touchpad_enabled (gboolean state)
+set_touchpad_enabled (XDeviceInfo *device_info,
+                      gboolean     state)
 {
-        int numdevices, i;
-        XDeviceInfo *devicelist = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &numdevices);
         XDevice *device;
         Atom prop_enabled;
-
-        if (devicelist == NULL)
-                return;
+        unsigned char data = state;
 
         prop_enabled = XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), "Device Enabled", False);
 
         if (!prop_enabled)
                 return;
 
+        device = device_is_touchpad (device_info);
+        if (device == NULL) {
+                return;
+        }
+
+        gdk_error_trap_push ();
+        XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device,
+                               prop_enabled, XA_INTEGER, 8,
+                               PropModeReplace, &data, 1);
+
+        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
+        gdk_flush ();
+        if (gdk_error_trap_pop ()) {
+                g_warning ("Error %s device \"%s\"",
+                           (state) ? "enabling" : "disabling",
+                           device_info->name);
+        }
+}
+
+static void
+set_touchpad_enabled_all (gboolean state)
+{
+        int numdevices, i;
+        XDeviceInfo *devicelist = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &numdevices);
+
+        if (devicelist == NULL)
+                return;
+
         for (i = 0; i < numdevices; i++) {
-                if ((device = device_is_touchpad (&devicelist[i]))) {
-                        unsigned char data = state;
-                        gdk_error_trap_push ();
-                        XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device,
-                                               prop_enabled, XA_INTEGER, 8,
-                                               PropModeReplace, &data, 1);
-                        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
-                        gdk_flush ();
-                        if (gdk_error_trap_pop ()) {
-                                g_warning ("Error %s device \"%s\"",
-                                           (state) ? "enabling" : "disabling",
-                                           devicelist[i].name);
-                                continue;
-                        }
-                }
+                set_touchpad_enabled (&devicelist[i], state);
         }
 
         XFreeDeviceList (devicelist);
@@ -922,7 +933,7 @@ set_mouse_settings (MsdMouseManager *manager)
         set_click_actions_all (manager);
         set_scrolling (manager->priv->settings_touchpad);
         set_natural_scroll_all (manager);
-        set_touchpad_enabled (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_ENABLED));
+        set_touchpad_enabled_all (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_ENABLED));
 }
 
 static void
@@ -957,7 +968,7 @@ mouse_callback (GSettings          *settings,
         } else if (g_strcmp0 (key, KEY_MOUSE_LOCATE_POINTER) == 0) {
                 set_locate_pointer (manager, g_settings_get_boolean (settings, key));
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_ENABLED) == 0) {
-                set_touchpad_enabled (g_settings_get_boolean (settings, key));
+                set_touchpad_enabled_all (g_settings_get_boolean (settings, key));
 #if 0   /* FIXME need to fork (?) mousetweaks for this to work */
         } else if (g_strcmp0 (key, KEY_MOUSE_A11Y_DWELL_ENABLE) == 0) {
                 set_mousetweaks_daemon (manager,
