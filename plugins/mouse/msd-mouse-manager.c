@@ -99,7 +99,6 @@ static void     msd_mouse_manager_init        (MsdMouseManager      *mouse_manag
 static void     msd_mouse_manager_finalize    (GObject             *object);
 static void     set_mouse_settings            (MsdMouseManager      *manager);
 static void     set_tap_to_click              (MsdMouseManager * manager);
-static void     set_click_actions             (MsdMouseManager * manager);
 
 G_DEFINE_TYPE (MsdMouseManager, msd_mouse_manager, G_TYPE_OBJECT)
 
@@ -574,50 +573,67 @@ set_tap_to_click (MsdMouseManager * manager)
 }
 
 static void
-set_click_actions (MsdMouseManager * manager)
+set_click_actions (MsdMouseManager *manager,
+                   XDeviceInfo     *device_info,
+                   gint             enable_two_finger_click,
+                   gint             enable_three_finger_click)
 {
-        int numdevices, i, format, rc;
+        XDevice *device;
+        int format, rc;
         unsigned long nitems, bytes_after;
-        XDeviceInfo *devicelist = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &numdevices);
-        XDevice * device;
         unsigned char* data;
         Atom prop, type;
 
-        if (devicelist == NULL)
-                return;
-
         prop = XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), "Synaptics Click Action", False);
         if (!prop)
+                return;
+
+        device = device_is_touchpad (device_info);
+        if (device == NULL) {
+                return;
+        }
+
+        g_debug ("setting click action to click on %s", device_info->name);
+
+        gdk_error_trap_push ();
+        rc = XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop, 0, 2,
+                                 False, XA_INTEGER, &type, &format, &nitems,
+                                 &bytes_after, &data);
+
+        if (rc == Success && type == XA_INTEGER && format == 8 && nitems >= 3) {
+                data[0] = 1;
+                data[1] = enable_two_finger_click;
+                data[2] = enable_three_finger_click;
+                XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop,
+                                       XA_INTEGER, 8, PropModeReplace, data, nitems);
+        }
+
+        if (rc == Success)
+                XFree (data);
+
+        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
+        if (gdk_error_trap_pop ()) {
+                g_warning ("Error in setting click actions on \"%s\"", device_info->name);
+        }
+
+}
+
+static void
+set_click_actions_all (MsdMouseManager *manager)
+{
+        int numdevices, i;
+        XDeviceInfo *devicelist = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &numdevices);
+
+        if (devicelist == NULL)
                 return;
 
         gint enable_two_finger_click = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_TWO_FINGER_CLICK);
         gint enable_three_finger_click = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_THREE_FINGER_CLICK);
 
         for (i = 0; i < numdevices; i++) {
-                if ((device = device_is_touchpad (&devicelist[i]))) {
-                        g_debug ("setting click action to click on %s", devicelist[i].name);
-                        gdk_error_trap_push ();
-                        rc = XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop, 0, 2,
-                                                 False, XA_INTEGER, &type, &format, &nitems,
-                                                 &bytes_after, &data);
-
-                        if (rc == Success && type == XA_INTEGER && format == 8 && nitems >= 3) {
-                                data[0] = 1;
-                                data[1] = enable_two_finger_click;
-                                data[2] = enable_three_finger_click;
-                                XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop,
-                                                       XA_INTEGER, 8, PropModeReplace, data, nitems);
-                        }
-
-                        if (rc == Success)
-                                XFree (data);
-                        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
-                        if (gdk_error_trap_pop ()) {
-                                g_warning ("Error in setting click actions on \"%s\"", devicelist[i].name);
-                                continue;
-                        }
-                }
+                set_click_actions (manager, &devicelist[i], enable_two_finger_click, enable_three_finger_click);
         }
+
         XFreeDeviceList (devicelist);
 }
 
@@ -892,7 +908,7 @@ set_mouse_settings (MsdMouseManager *manager)
         set_disable_w_typing (manager, g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_DISABLE_W_TYPING));
 
         set_tap_to_click (manager);
-        set_click_actions (manager);
+        set_click_actions_all (manager);
         set_scrolling (manager->priv->settings_touchpad);
         set_natural_scroll_all (manager);
         set_touchpad_enabled (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_ENABLED));
@@ -916,7 +932,7 @@ mouse_callback (GSettings          *settings,
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_TAP_TO_CLICK) == 0) {
                 set_tap_to_click (manager);
         } else if (g_str_equal (key, KEY_TOUCHPAD_TWO_FINGER_CLICK) || g_str_equal (key, KEY_TOUCHPAD_THREE_FINGER_CLICK)) {
-                set_click_actions(manager);
+                set_click_actions_all (manager);
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_ONE_FINGER_TAP) == 0) {
                 set_tap_to_click (manager);
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_TWO_FINGER_TAP) == 0) {
