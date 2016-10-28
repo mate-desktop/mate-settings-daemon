@@ -98,7 +98,7 @@ static void     msd_mouse_manager_class_init  (MsdMouseManagerClass *klass);
 static void     msd_mouse_manager_init        (MsdMouseManager      *mouse_manager);
 static void     msd_mouse_manager_finalize    (GObject             *object);
 static void     set_mouse_settings            (MsdMouseManager      *manager);
-static void     set_tap_to_click              (MsdMouseManager * manager);
+static void     set_tap_to_click_all          (MsdMouseManager * manager);
 
 G_DEFINE_TYPE (MsdMouseManager, msd_mouse_manager, G_TYPE_OBJECT)
 
@@ -260,7 +260,7 @@ set_left_handed (MsdMouseManager * manager, gboolean left_handed)
                         gboolean single_button = touchpad_has_single_button (device);
 
                         if (tap && !single_button)
-                                set_tap_to_click (manager);
+                                set_tap_to_click_all (manager);
                         XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
 
                         if (single_button)
@@ -512,21 +512,68 @@ set_disable_w_typing (MsdMouseManager *manager, gboolean state)
 }
 
 static void
-set_tap_to_click (MsdMouseManager * manager)
+set_tap_to_click (MsdMouseManager *manager,
+                  XDeviceInfo     *device_info,
+                  gboolean         state,
+                  gboolean         left_handed,
+                  gint             one_finger_tap,
+                  gint             two_finger_tap,
+                  gint             three_finger_tap)
 {
-        int numdevices, i, format, rc;
+        XDevice *device;
+        int format, rc;
         unsigned long nitems, bytes_after;
-        XDeviceInfo *devicelist = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &numdevices);
-        XDevice * device;
         unsigned char* data;
         Atom prop, type;
-
-        if (devicelist == NULL)
-                return;
 
         prop = XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), "Synaptics Tap Action", False);
 
         if (!prop)
+                return;
+
+        device = device_is_touchpad (device_info);
+        if (device == NULL) {
+                return;
+        }
+
+        gdk_error_trap_push ();
+        rc = XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop, 0, 2,
+                                 False, XA_INTEGER, &type, &format, &nitems,
+                                 &bytes_after, &data);
+
+        if (one_finger_tap > 3 || one_finger_tap < 1)
+                one_finger_tap = 1;
+        if (two_finger_tap > 3 || two_finger_tap < 1)
+                two_finger_tap = 3;
+        if (three_finger_tap > 3 || three_finger_tap < 1)
+                three_finger_tap = 2;
+
+        if (rc == Success && type == XA_INTEGER && format == 8 && nitems >= 7)
+        {
+                /* Set RLM mapping for 1/2/3 fingers*/
+                data[4] = (state) ? ((left_handed) ? (4-one_finger_tap) : one_finger_tap) : 0;
+                data[5] = (state) ? ((left_handed) ? (4-two_finger_tap) : two_finger_tap) : 0;
+                data[6] = (state) ? three_finger_tap : 0;
+                XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop, XA_INTEGER, 8,
+                                       PropModeReplace, data, nitems);
+        }
+
+        if (rc == Success)
+                XFree (data);
+
+        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
+        if (gdk_error_trap_pop ()) {
+                g_warning ("Error in setting tap to click on \"%s\"", device_info->name);
+        }
+}
+
+static void
+set_tap_to_click_all (MsdMouseManager *manager)
+{
+        int numdevices, i;
+        XDeviceInfo *devicelist = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &numdevices);
+
+        if (devicelist == NULL)
                 return;
 
         gboolean state = g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_TAP_TO_CLICK);
@@ -536,37 +583,7 @@ set_tap_to_click (MsdMouseManager * manager)
         gint three_finger_tap = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_THREE_FINGER_TAP);
 
         for (i = 0; i < numdevices; i++) {
-                if ((device = device_is_touchpad (&devicelist[i]))) {
-                        gdk_error_trap_push ();
-                        rc = XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop, 0, 2,
-                                                 False, XA_INTEGER, &type, &format, &nitems,
-                                                 &bytes_after, &data);
-
-                        if (one_finger_tap > 3 || one_finger_tap < 1)
-                                one_finger_tap = 1;
-                        if (two_finger_tap > 3 || two_finger_tap < 1)
-                                two_finger_tap = 3;
-                        if (three_finger_tap > 3 || three_finger_tap < 1)
-                                three_finger_tap = 2;
-                        
-                        if (rc == Success && type == XA_INTEGER && format == 8 && nitems >= 7)
-                        {
-                                /* Set RLM mapping for 1/2/3 fingers*/
-                                data[4] = (state) ? ((left_handed) ? (4-one_finger_tap) : one_finger_tap) : 0;
-                                data[5] = (state) ? ((left_handed) ? (4-two_finger_tap) : two_finger_tap) : 0;
-                                data[6] = (state) ? three_finger_tap : 0;
-                                XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop, XA_INTEGER, 8,
-                                                       PropModeReplace, data, nitems);
-                        }
-
-                        if (rc == Success)
-                                XFree (data);
-                        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
-                        if (gdk_error_trap_pop ()) {
-                                g_warning ("Error in setting tap to click on \"%s\"", devicelist[i].name);
-                                continue;
-                        }
-                }
+                set_tap_to_click (manager, &devicelist[i], state, left_handed, one_finger_tap, two_finger_tap, three_finger_tap);
         }
 
         XFreeDeviceList (devicelist);
@@ -929,7 +946,7 @@ set_mouse_settings (MsdMouseManager *manager)
 
         set_disable_w_typing (manager, g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_DISABLE_W_TYPING));
 
-        set_tap_to_click (manager);
+        set_tap_to_click_all (manager);
         set_click_actions_all (manager);
         set_scrolling (manager->priv->settings_touchpad);
         set_natural_scroll_all (manager);
@@ -952,15 +969,15 @@ mouse_callback (GSettings          *settings,
         } else if (g_str_equal (key, KEY_MIDDLE_BUTTON_EMULATION)) {
                 set_middle_button_all (manager, g_settings_get_boolean (settings, key));
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_TAP_TO_CLICK) == 0) {
-                set_tap_to_click (manager);
+                set_tap_to_click_all (manager);
         } else if (g_str_equal (key, KEY_TOUCHPAD_TWO_FINGER_CLICK) || g_str_equal (key, KEY_TOUCHPAD_THREE_FINGER_CLICK)) {
                 set_click_actions_all (manager);
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_ONE_FINGER_TAP) == 0) {
-                set_tap_to_click (manager);
+                set_tap_to_click_all (manager);
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_TWO_FINGER_TAP) == 0) {
-                set_tap_to_click (manager);
+                set_tap_to_click_all (manager);
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_THREE_FINGER_TAP) == 0) {
-                set_tap_to_click (manager);
+                set_tap_to_click_all (manager);
         } else if (g_strcmp0 (key, KEY_VERT_EDGE_SCROLL) == 0 || g_strcmp0 (key, KEY_HORIZ_EDGE_SCROLL) == 0 || g_strcmp0 (key, KEY_VERT_TWO_FINGER_SCROLL) == 0 || g_strcmp0 (key, KEY_HORIZ_TWO_FINGER_SCROLL) == 0) {
                 set_scrolling (manager->priv->settings_touchpad);
         } else if (g_str_equal (key, KEY_TOUCHPAD_NATURAL_SCROLL)) {
