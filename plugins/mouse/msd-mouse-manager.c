@@ -98,7 +98,14 @@ static void     msd_mouse_manager_class_init  (MsdMouseManagerClass *klass);
 static void     msd_mouse_manager_init        (MsdMouseManager      *mouse_manager);
 static void     msd_mouse_manager_finalize    (GObject             *object);
 static void     set_mouse_settings            (MsdMouseManager      *manager);
-static void     set_tap_to_click_all          (MsdMouseManager * manager);
+static void     set_tap_to_click              (MsdMouseManager      *manager,
+                                               XDeviceInfo          *device_info,
+                                               gboolean              state,
+                                               gboolean              left_handed,
+                                               gint                  one_finger_tap,
+                                               gint                  two_finger_tap,
+                                               gint                  three_finger_tap);
+
 
 G_DEFINE_TYPE (MsdMouseManager, msd_mouse_manager, G_TYPE_OBJECT)
 
@@ -227,74 +234,85 @@ touchpad_has_single_button (XDevice *device)
 }
 
 static void
-set_left_handed (MsdMouseManager * manager, gboolean left_handed)
+set_left_handed (MsdMouseManager *manager,
+                 XDeviceInfo     *device_info,
+                 gboolean         left_handed)
 {
-        XDeviceInfo *device_info;
-        gint n_devices;
+        XDevice *device;
         guchar *buttons;
         gsize buttons_capacity = 16;
         gint n_buttons;
-        gint i;
 
-        device_info = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &n_devices);
+        if ((device_info->use == IsXPointer) ||
+            (device_info->use == IsXKeyboard) ||
+            (g_strcmp0 ("Virtual core XTEST pointer", device_info->name) == 0) ||
+            (!xinput_device_has_buttons (device_info)))
+                return;
 
-        if (n_devices > 0)
-                buttons = g_new (guchar, buttons_capacity);
-        else
-                buttons = NULL;
+        /* If the device is a touchpad, swap tap buttons
+         * around too, otherwise a tap would be a right-click */
+        device = device_is_touchpad (device_info);
+        if (device != NULL) {
+                gboolean tap = g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_TAP_TO_CLICK);
+                gboolean single_button = touchpad_has_single_button (device);
 
-        for (i = 0; i < n_devices; i++) {
-                XDevice *device = NULL;
-
-                if ((device_info[i].use == IsXPointer) ||
-                    (device_info[i].use == IsXKeyboard) ||
-                    (g_strcmp0 ("Virtual core XTEST pointer", device_info[i].name) == 0) ||
-                    (!xinput_device_has_buttons (&device_info[i])))
-                        continue;
-
-                /* If the device is a touchpad, swap tap buttons
-                 * around too, otherwise a tap would be a right-click */
-                device = device_is_touchpad (&device_info[i]);
-                if (device != NULL) {
-                        gboolean tap = g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_TAP_TO_CLICK);
-                        gboolean single_button = touchpad_has_single_button (device);
-
-                        if (tap && !single_button)
-                                set_tap_to_click_all (manager);
-                        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
-
-                        if (single_button)
-                                continue;
+                if (tap && !single_button) {
+                        gint one_finger_tap = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_ONE_FINGER_TAP);
+                        gint two_finger_tap = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_TWO_FINGER_TAP);
+                        gint three_finger_tap = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_THREE_FINGER_TAP);
+                        set_tap_to_click (manager, device_info, tap, left_handed, one_finger_tap, two_finger_tap, three_finger_tap);
                 }
 
-                gdk_error_trap_push ();
+                XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
 
-                device = XOpenDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device_info[i].id);
+                if (single_button)
+                        return;
+        }
 
-                if ((gdk_error_trap_pop () != 0) ||
-                    (device == NULL))
-                        continue;
+        gdk_error_trap_push ();
+
+        device = XOpenDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device_info->id);
+        if ((gdk_error_trap_pop () != 0) ||
+            (device == NULL))
+                return;
+
+        buttons = g_new (guchar, buttons_capacity);
+
+        n_buttons = XGetDeviceButtonMapping (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device,
+                                             buttons,
+                                             buttons_capacity);
+
+        while (n_buttons > buttons_capacity) {
+                buttons_capacity = n_buttons;
+                buttons = (guchar *) g_realloc (buttons,
+                                                buttons_capacity * sizeof (guchar));
 
                 n_buttons = XGetDeviceButtonMapping (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device,
                                                      buttons,
                                                      buttons_capacity);
-
-                while (n_buttons > buttons_capacity) {
-                        buttons_capacity = n_buttons;
-                        buttons = (guchar *) g_realloc (buttons,
-                                                        buttons_capacity * sizeof (guchar));
-
-                        n_buttons = XGetDeviceButtonMapping (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device,
-                                                             buttons,
-                                                             buttons_capacity);
-                }
-
-                configure_button_layout (buttons, n_buttons, left_handed);
-
-                XSetDeviceButtonMapping (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, buttons, n_buttons);
-                XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
         }
+
+        configure_button_layout (buttons, n_buttons, left_handed);
+
+        XSetDeviceButtonMapping (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, buttons, n_buttons);
+        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
+
         g_free (buttons);
+}
+
+static void
+set_left_handed_all (MsdMouseManager *manager,
+                     gboolean         left_handed)
+{
+        XDeviceInfo *device_info;
+        gint n_devices;
+        gint i;
+
+        device_info = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &n_devices);
+
+        for (i = 0; i < n_devices; i++) {
+                set_left_handed (manager, &device_info[i], left_handed);
+        }
 
         if (device_info != NULL)
                 XFreeDeviceList (device_info);
@@ -939,7 +957,7 @@ set_mouse_settings (MsdMouseManager *manager)
 {
         gboolean left_handed = g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED);
 
-        set_left_handed (manager, left_handed);
+        set_left_handed_all (manager, left_handed);
         set_motion_acceleration (manager, g_settings_get_double (manager->priv->settings_mouse, KEY_MOUSE_MOTION_ACCELERATION));
         set_motion_threshold (manager, g_settings_get_int (manager->priv->settings_mouse, KEY_MOUSE_MOTION_THRESHOLD));
         set_middle_button_all (manager, g_settings_get_boolean (manager->priv->settings_mouse, KEY_MIDDLE_BUTTON_EMULATION));
@@ -959,7 +977,7 @@ mouse_callback (GSettings          *settings,
                 MsdMouseManager    *manager)
 {
         if (g_strcmp0 (key, KEY_MOUSE_LEFT_HANDED) == 0) {
-                set_left_handed (manager, g_settings_get_boolean (settings, key));
+                set_left_handed_all (manager, g_settings_get_boolean (settings, key));
         } else if (g_strcmp0 (key, KEY_MOUSE_MOTION_ACCELERATION) == 0) {
                 set_motion_acceleration (manager, g_settings_get_double (settings, key));
         } else if (g_strcmp0 (key, KEY_MOUSE_MOTION_THRESHOLD) == 0) {
