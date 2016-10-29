@@ -200,6 +200,12 @@ xinput_device_has_buttons (XDeviceInfo *device_info)
         return FALSE;
 }
 
+static Atom
+property_from_name (const char *property_name)
+{
+        return XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), property_name, True);
+}
+
 static gboolean
 touchpad_has_single_button (XDevice *device)
 {
@@ -210,7 +216,7 @@ touchpad_has_single_button (XDevice *device)
         gboolean is_single_button = FALSE;
         int rc;
 
-        prop = XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), "Synaptics Capabilities", False);
+        prop = property_from_name ("Synaptics Capabilities");
         if (!prop)
                 return FALSE;
 
@@ -415,8 +421,7 @@ set_middle_button (MsdMouseManager *manager,
         unsigned long nitems, bytes_after;
         unsigned char *data;
 
-        prop = XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
-                            "Evdev Middle Button Emulation", True);
+        prop = property_from_name ("Evdev Middle Button Emulation");
 
         if (!prop) /* no evdev devices */
                 return;
@@ -533,7 +538,7 @@ set_tap_to_click (MsdMouseManager *manager,
         unsigned char* data;
         Atom prop, type;
 
-        prop = XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), "Synaptics Tap Action", False);
+        prop = property_from_name ("Synaptics Tap Action");
 
         if (!prop)
                 return;
@@ -608,7 +613,7 @@ set_click_actions (MsdMouseManager *manager,
         unsigned char* data;
         Atom prop, type;
 
-        prop = XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), "Synaptics Click Action", False);
+        prop = property_from_name ("Synaptics Click Action");
         if (!prop)
                 return;
 
@@ -673,7 +678,7 @@ set_natural_scroll (MsdMouseManager *manager,
         glong *ptr;
         Atom prop, type;
 
-        prop = XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), "Synaptics Scrolling Distance", False);
+        prop = property_from_name ("Synaptics Scrolling Distance");
         if (!prop)
                 return;
 
@@ -744,8 +749,7 @@ synaptics_set_bool (XDeviceInfo *device_info,
         int act_format;
         Atom act_type, property;
 
-        property = XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), property_name, False);
-
+        property = property_from_name (property_name);
         if (!property)
                 return;
 
@@ -811,8 +815,7 @@ set_touchpad_enabled (XDeviceInfo *device_info,
         Atom prop_enabled;
         unsigned char data = state;
 
-        prop_enabled = XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), "Device Enabled", False);
-
+        prop_enabled = property_from_name ("Device Enabled");
         if (!prop_enabled)
                 return;
 
