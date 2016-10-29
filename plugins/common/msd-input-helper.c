@@ -50,10 +50,10 @@ device_is_touchpad (XDeviceInfo *deviceinfo)
         unsigned long nitems, bytes_after;
         unsigned char *data;
 
-        if (deviceinfo->type != XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), XI_TOUCHPAD, False))
+        if (deviceinfo->type != XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), XI_TOUCHPAD, True))
                 return NULL;
 
-        prop = XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), "Synaptics Off", False);
+        prop = XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), "Synaptics Off", True);
         if (!prop)
                 return NULL;
 
