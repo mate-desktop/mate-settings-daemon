@@ -1003,36 +1003,14 @@ mouse_callback (GSettings          *settings,
                 gboolean mouse_left_handed = g_settings_get_boolean (settings, key);
                 gboolean touchpad_left_handed = get_touchpad_handedness (manager, mouse_left_handed);
                 set_left_handed_all (manager, mouse_left_handed, touchpad_left_handed);
-        } else if (g_strcmp0 (key, KEY_TOUCHPAD_LEFT_HANDED) == 0) {
-                gboolean mouse_left_handed = g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED);
-                gboolean touchpad_left_handed = get_touchpad_handedness (manager, mouse_left_handed);
-                set_left_handed_all (manager, mouse_left_handed, touchpad_left_handed);
         } else if (g_strcmp0 (key, KEY_MOUSE_MOTION_ACCELERATION) == 0) {
                 set_motion_acceleration (manager, g_settings_get_double (settings, key));
         } else if (g_strcmp0 (key, KEY_MOUSE_MOTION_THRESHOLD) == 0) {
                 set_motion_threshold (manager, g_settings_get_int (settings, key));
-        } else if (g_strcmp0 (key, KEY_TOUCHPAD_DISABLE_W_TYPING) == 0) {
-                set_disable_w_typing (manager, g_settings_get_boolean (settings, key));
         } else if (g_strcmp0 (key, KEY_MIDDLE_BUTTON_EMULATION) == 0) {
                 set_middle_button_all (manager, g_settings_get_boolean (settings, key));
-        } else if (g_strcmp0 (key, KEY_TOUCHPAD_TAP_TO_CLICK) == 0) {
-                set_tap_to_click_all (manager);
-        } else if ((g_strcmp0 (key, KEY_TOUCHPAD_TWO_FINGER_CLICK) == 0) || (g_strcmp0 (key, KEY_TOUCHPAD_THREE_FINGER_CLICK) == 0)) {
-                set_click_actions_all (manager);
-        } else if (g_strcmp0 (key, KEY_TOUCHPAD_ONE_FINGER_TAP) == 0) {
-                set_tap_to_click_all (manager);
-        } else if (g_strcmp0 (key, KEY_TOUCHPAD_TWO_FINGER_TAP) == 0) {
-                set_tap_to_click_all (manager);
-        } else if (g_strcmp0 (key, KEY_TOUCHPAD_THREE_FINGER_TAP) == 0) {
-                set_tap_to_click_all (manager);
-        } else if (g_strcmp0 (key, KEY_VERT_EDGE_SCROLL) == 0 || g_strcmp0 (key, KEY_HORIZ_EDGE_SCROLL) == 0 || g_strcmp0 (key, KEY_VERT_TWO_FINGER_SCROLL) == 0 || g_strcmp0 (key, KEY_HORIZ_TWO_FINGER_SCROLL) == 0) {
-                set_scrolling (manager->priv->settings_touchpad);
-        } else if (g_strcmp0 (key, KEY_TOUCHPAD_NATURAL_SCROLL) == 0) {
-                set_natural_scroll_all (manager);
         } else if (g_strcmp0 (key, KEY_MOUSE_LOCATE_POINTER) == 0) {
                 set_locate_pointer (manager, g_settings_get_boolean (settings, key));
-        } else if (g_strcmp0 (key, KEY_TOUCHPAD_ENABLED) == 0) {
-                set_touchpad_enabled_all (g_settings_get_boolean (settings, key));
 #if 0   /* FIXME need to fork (?) mousetweaks for this to work */
         } else if (g_strcmp0 (key, KEY_MOUSE_A11Y_DWELL_ENABLE) == 0) {
                 set_mousetweaks_daemon (manager,
@@ -1044,6 +1022,37 @@ mouse_callback (GSettings          *settings,
                                         g_settings_get_boolean (settings, KEY_MOUSE_A11Y_DWELL_ENABLE, NULL),
                                         g_settings_get_boolean (settings, key));
 #endif
+        }
+}
+
+static void
+touchpad_callback (GSettings          *settings,
+                   const gchar        *key,
+                   MsdMouseManager    *manager)
+{
+        if (g_strcmp0 (key, KEY_TOUCHPAD_DISABLE_W_TYPING) == 0) {
+                set_disable_w_typing (manager, g_settings_get_boolean (settings, key));
+        } else if (g_strcmp0 (key, KEY_TOUCHPAD_LEFT_HANDED) == 0) {
+                gboolean mouse_left_handed = g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED);
+                gboolean touchpad_left_handed = get_touchpad_handedness (manager, mouse_left_handed);
+                set_left_handed_all (manager, mouse_left_handed, touchpad_left_handed);
+        } else if ((g_strcmp0 (key, KEY_TOUCHPAD_TAP_TO_CLICK) == 0)
+                || (g_strcmp0 (key, KEY_TOUCHPAD_ONE_FINGER_TAP) == 0)
+                || (g_strcmp0 (key, KEY_TOUCHPAD_TWO_FINGER_TAP) == 0)
+                || (g_strcmp0 (key, KEY_TOUCHPAD_THREE_FINGER_TAP) == 0)) {
+                set_tap_to_click_all (manager);
+        } else if ((g_strcmp0 (key, KEY_TOUCHPAD_TWO_FINGER_CLICK) == 0)
+                || (g_strcmp0 (key, KEY_TOUCHPAD_THREE_FINGER_CLICK) == 0)) {
+                set_click_actions_all (manager);
+        } else if ((g_strcmp0 (key, KEY_VERT_EDGE_SCROLL) == 0)
+                || (g_strcmp0 (key, KEY_HORIZ_EDGE_SCROLL) == 0)
+                || (g_strcmp0 (key, KEY_VERT_TWO_FINGER_SCROLL) == 0)
+                || (g_strcmp0 (key, KEY_HORIZ_TWO_FINGER_SCROLL) == 0)) {
+                set_scrolling (manager->priv->settings_touchpad);
+        } else if (g_strcmp0 (key, KEY_TOUCHPAD_NATURAL_SCROLL) == 0) {
+                set_natural_scroll_all (manager);
+        } else if (g_strcmp0 (key, KEY_TOUCHPAD_ENABLED) == 0) {
+                set_touchpad_enabled_all (g_settings_get_boolean (settings, key));
         }
 }
 
@@ -1064,7 +1073,7 @@ msd_mouse_manager_idle_cb (MsdMouseManager *manager)
         g_signal_connect (manager->priv->settings_mouse, "changed",
                           G_CALLBACK (mouse_callback), manager);
         g_signal_connect (manager->priv->settings_touchpad, "changed",
-                          G_CALLBACK (mouse_callback), manager);
+                          G_CALLBACK (touchpad_callback), manager);
 
         manager->priv->syndaemon_spawned = FALSE;
 
