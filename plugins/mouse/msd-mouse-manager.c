@@ -1013,11 +1013,11 @@ mouse_callback (GSettings          *settings,
                 set_motion_threshold (manager, g_settings_get_int (settings, key));
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_DISABLE_W_TYPING) == 0) {
                 set_disable_w_typing (manager, g_settings_get_boolean (settings, key));
-        } else if (g_str_equal (key, KEY_MIDDLE_BUTTON_EMULATION)) {
+        } else if (g_strcmp0 (key, KEY_MIDDLE_BUTTON_EMULATION) == 0) {
                 set_middle_button_all (manager, g_settings_get_boolean (settings, key));
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_TAP_TO_CLICK) == 0) {
                 set_tap_to_click_all (manager);
-        } else if (g_str_equal (key, KEY_TOUCHPAD_TWO_FINGER_CLICK) || g_str_equal (key, KEY_TOUCHPAD_THREE_FINGER_CLICK)) {
+        } else if ((g_strcmp0 (key, KEY_TOUCHPAD_TWO_FINGER_CLICK) == 0) || (g_strcmp0 (key, KEY_TOUCHPAD_THREE_FINGER_CLICK) == 0)) {
                 set_click_actions_all (manager);
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_ONE_FINGER_TAP) == 0) {
                 set_tap_to_click_all (manager);
@@ -1027,7 +1027,7 @@ mouse_callback (GSettings          *settings,
                 set_tap_to_click_all (manager);
         } else if (g_strcmp0 (key, KEY_VERT_EDGE_SCROLL) == 0 || g_strcmp0 (key, KEY_HORIZ_EDGE_SCROLL) == 0 || g_strcmp0 (key, KEY_VERT_TWO_FINGER_SCROLL) == 0 || g_strcmp0 (key, KEY_HORIZ_TWO_FINGER_SCROLL) == 0) {
                 set_scrolling (manager->priv->settings_touchpad);
-        } else if (g_str_equal (key, KEY_TOUCHPAD_NATURAL_SCROLL)) {
+        } else if (g_strcmp0 (key, KEY_TOUCHPAD_NATURAL_SCROLL) == 0) {
                 set_natural_scroll_all (manager);
         } else if (g_strcmp0 (key, KEY_MOUSE_LOCATE_POINTER) == 0) {
                 set_locate_pointer (manager, g_settings_get_boolean (settings, key));
