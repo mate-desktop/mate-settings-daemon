@@ -55,7 +55,7 @@
       <summary>One finger tap button</summary>
       <description>Select the button mapping for one-finger tap. Supported values are: 1: left mouse button 2: middle mouse button 3: right mouse button</description>
     </key>
-        <key name="tap-button-two-finger" type="i">
+    <key name="tap-button-two-finger" type="i">
       <default>3</default>
       <summary>Two finger tap button</summary>
       <description>Select the button mapping for two-finger tap. Supported values are: 1: left mouse button 2: middle mouse button 3: right mouse button</description>
