@@ -72,6 +72,7 @@
 #define KEY_VERT_TWO_FINGER_SCROLL       "vertical-two-finger-scrolling"
 #define KEY_HORIZ_TWO_FINGER_SCROLL      "horizontal-two-finger-scrolling"
 #define KEY_TOUCHPAD_ENABLED             "touchpad-enabled"
+#define KEY_TOUCHPAD_LEFT_HANDED         "left-handed"      /* NOTE: here it's enum, not boolean */
 
 
 #if 0   /* FIXME need to fork (?) mousetweaks for this to work */
@@ -93,6 +94,12 @@ struct MsdMouseManagerPrivate
         gboolean locate_pointer_spawned;
         GPid locate_pointer_pid;
 };
+
+typedef enum {
+        TOUCHPAD_HANDEDNESS_RIGHT,
+        TOUCHPAD_HANDEDNESS_LEFT,
+        TOUCHPAD_HANDEDNESS_MOUSE
+} TouchpadHandedness;
 
 static void     msd_mouse_manager_class_init  (MsdMouseManagerClass *klass);
 static void     msd_mouse_manager_init        (MsdMouseManager      *mouse_manager);
@@ -242,12 +249,14 @@ touchpad_has_single_button (XDevice *device)
 static void
 set_left_handed (MsdMouseManager *manager,
                  XDeviceInfo     *device_info,
-                 gboolean         left_handed)
+                 gboolean         mouse_left_handed,
+                 gboolean         touchpad_left_handed)
 {
         XDevice *device;
         guchar *buttons;
         gsize buttons_capacity = 16;
         gint n_buttons;
+        gboolean left_handed;
 
         if ((device_info->use == IsXPointer) ||
             (device_info->use == IsXKeyboard) ||
@@ -262,6 +271,8 @@ set_left_handed (MsdMouseManager *manager,
                 gboolean tap = g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_TAP_TO_CLICK);
                 gboolean single_button = touchpad_has_single_button (device);
 
+                left_handed = touchpad_left_handed;
+
                 if (tap && !single_button) {
                         gint one_finger_tap = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_ONE_FINGER_TAP);
                         gint two_finger_tap = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_TWO_FINGER_TAP);
@@ -273,6 +284,8 @@ set_left_handed (MsdMouseManager *manager,
 
                 if (single_button)
                         return;
+        } else {
+                left_handed = mouse_left_handed;
         }
 
         gdk_error_trap_push ();
@@ -308,7 +321,8 @@ set_left_handed (MsdMouseManager *manager,
 
 static void
 set_left_handed_all (MsdMouseManager *manager,
-                     gboolean         left_handed)
+                     gboolean         mouse_left_handed,
+                     gboolean         touchpad_left_handed)
 {
         XDeviceInfo *device_info;
         gint n_devices;
@@ -317,7 +331,7 @@ set_left_handed_all (MsdMouseManager *manager,
         device_info = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &n_devices);
 
         for (i = 0; i < n_devices; i++) {
-                set_left_handed (manager, &device_info[i], left_handed);
+                set_left_handed (manager, &device_info[i], mouse_left_handed, touchpad_left_handed);
         }
 
         if (device_info != NULL)
@@ -523,6 +537,22 @@ set_disable_w_typing (MsdMouseManager *manager, gboolean state)
         }
 }
 
+static gboolean
+get_touchpad_handedness (MsdMouseManager *manager,
+                         gboolean         mouse_left_handed)
+{
+        switch (g_settings_get_enum (manager->priv->settings_touchpad, KEY_TOUCHPAD_LEFT_HANDED)) {
+        case TOUCHPAD_HANDEDNESS_RIGHT:
+                return FALSE;
+        case TOUCHPAD_HANDEDNESS_LEFT:
+                return TRUE;
+        case TOUCHPAD_HANDEDNESS_MOUSE:
+                return mouse_left_handed;
+        default:
+                g_assert_not_reached ();
+        }
+}
+
 static void
 set_tap_to_click (MsdMouseManager *manager,
                   XDeviceInfo     *device_info,
@@ -589,7 +619,7 @@ set_tap_to_click_all (MsdMouseManager *manager)
                 return;
 
         gboolean state = g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_TAP_TO_CLICK);
-        gboolean left_handed = g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED);
+        gboolean left_handed = get_touchpad_handedness (manager, g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED));
         gint one_finger_tap = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_ONE_FINGER_TAP);
         gint two_finger_tap = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_TWO_FINGER_TAP);
         gint three_finger_tap = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_THREE_FINGER_TAP);
@@ -947,9 +977,10 @@ set_mousetweaks_daemon (MsdMouseManager *manager,
 static void
 set_mouse_settings (MsdMouseManager *manager)
 {
-        gboolean left_handed = g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED);
+        gboolean mouse_left_handed = g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED);
+        gboolean touchpad_left_handed = get_touchpad_handedness (manager, mouse_left_handed);
+        set_left_handed_all (manager, mouse_left_handed, touchpad_left_handed);
 
-        set_left_handed_all (manager, left_handed);
         set_motion_acceleration (manager, g_settings_get_double (manager->priv->settings_mouse, KEY_MOUSE_MOTION_ACCELERATION));
         set_motion_threshold (manager, g_settings_get_int (manager->priv->settings_mouse, KEY_MOUSE_MOTION_THRESHOLD));
         set_middle_button_all (manager, g_settings_get_boolean (manager->priv->settings_mouse, KEY_MIDDLE_BUTTON_EMULATION));
@@ -969,7 +1000,13 @@ mouse_callback (GSettings          *settings,
                 MsdMouseManager    *manager)
 {
         if (g_strcmp0 (key, KEY_MOUSE_LEFT_HANDED) == 0) {
-                set_left_handed_all (manager, g_settings_get_boolean (settings, key));
+                gboolean mouse_left_handed = g_settings_get_boolean (settings, key);
+                gboolean touchpad_left_handed = get_touchpad_handedness (manager, mouse_left_handed);
+                set_left_handed_all (manager, mouse_left_handed, touchpad_left_handed);
+        } else if (g_strcmp0 (key, KEY_TOUCHPAD_LEFT_HANDED) == 0) {
+                gboolean mouse_left_handed = g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_LEFT_HANDED);
+                gboolean touchpad_left_handed = get_touchpad_handedness (manager, mouse_left_handed);
+                set_left_handed_all (manager, mouse_left_handed, touchpad_left_handed);
         } else if (g_strcmp0 (key, KEY_MOUSE_MOTION_ACCELERATION) == 0) {
                 set_motion_acceleration (manager, g_settings_get_double (settings, key));
         } else if (g_strcmp0 (key, KEY_MOUSE_MOTION_THRESHOLD) == 0) {
