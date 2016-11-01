@@ -382,11 +382,32 @@ set_devicepresence_handler (MsdMouseManager *manager)
 }
 
 static void
-set_motion_acceleration (MsdMouseManager *manager,
-                         gfloat           motion_acceleration)
+set_motion (MsdMouseManager *manager,
+            XDeviceInfo     *device_info)
 {
+        XDevice *device;
+        XPtrFeedbackControl feedback;
+        XFeedbackState *states, *state;
+        gint num_feedbacks, i;
+        GSettings *settings;
+        gdouble motion_acceleration;
+        gint motion_threshold;
         gint numerator, denominator;
 
+        device = device_is_touchpad (device_info);
+        if (device != NULL) {
+                settings = manager->priv->settings_touchpad;
+        } else {
+                gdk_error_trap_push ();
+                device = XOpenDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device_info->id);
+                if ((gdk_error_trap_pop () != 0) || (device == NULL))
+                        return;
+
+                settings = manager->priv->settings_mouse;
+        }
+
+        /* Calculate acceleration */
+        motion_acceleration = g_settings_get_double (settings, KEY_MOTION_ACCELERATION);
         if (motion_acceleration >= 1.0) {
                 /* we want to get the acceleration, with a resolution of 0.5
                  */
@@ -412,17 +433,59 @@ set_motion_acceleration (MsdMouseManager *manager,
                 denominator = -1;
         }
 
-        XChangePointerControl (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), True, False,
-                               numerator, denominator,
-                               0);
+        /* And threshold */
+        motion_threshold = g_settings_get_int (settings, KEY_MOTION_THRESHOLD);
+
+        /* Get the list of feedbacks for the device */
+        states = XGetFeedbackControl (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, &num_feedbacks);
+        if (states == NULL) {
+                XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
+                return;
+        }
+
+        state = (XFeedbackState *) states;
+        for (i = 0; i < num_feedbacks; i++) {
+                if (state->class == PtrFeedbackClass) {
+                        /* And tell the device */
+                        feedback.class      = PtrFeedbackClass;
+                        feedback.length     = sizeof (XPtrFeedbackControl);
+                        feedback.id         = state->id;
+                        feedback.threshold  = motion_threshold;
+                        feedback.accelNum   = numerator;
+                        feedback.accelDenom = denominator;
+
+                        g_debug ("Setting accel %d/%d, threshold %d for device '%s'",
+                                 numerator, denominator, motion_threshold, device_info->name);
+
+                        XChangeFeedbackControl (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
+                                                device,
+                                                DvAccelNum | DvAccelDenom | DvThreshold,
+                                                (XFeedbackControl *) &feedback);
+                        break;
+                }
+
+                state = (XFeedbackState *) ((char *) state + state->length);
+        }
+
+        XFreeFeedbackList (states);
+        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
 }
 
 static void
-set_motion_threshold (MsdMouseManager *manager,
-                      int              motion_threshold)
+set_motion_all (MsdMouseManager *manager)
 {
-        XChangePointerControl (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), False, True,
-                               0, 0, motion_threshold);
+        XDeviceInfo *device_info;
+        gint n_devices;
+        gint i;
+
+        device_info = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &n_devices);
+
+        for (i = 0; i < n_devices; i++) {
+                set_motion (manager, &device_info[i]);
+        }
+
+        if (device_info != NULL)
+                XFreeDeviceList (device_info);
 }
 
 static void
@@ -983,8 +1046,7 @@ set_mouse_settings (MsdMouseManager *manager)
         gboolean touchpad_left_handed = get_touchpad_handedness (manager, mouse_left_handed);
         set_left_handed_all (manager, mouse_left_handed, touchpad_left_handed);
 
-        set_motion_acceleration (manager, g_settings_get_double (manager->priv->settings_mouse, KEY_MOTION_ACCELERATION));
-        set_motion_threshold (manager, g_settings_get_int (manager->priv->settings_mouse, KEY_MOTION_THRESHOLD));
+        set_motion_all (manager);
         set_middle_button_all (manager, g_settings_get_boolean (manager->priv->settings_mouse, KEY_MIDDLE_BUTTON_EMULATION));
 
         set_disable_w_typing (manager, g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_DISABLE_W_TYPING));
@@ -1005,10 +1067,9 @@ mouse_callback (GSettings          *settings,
                 gboolean mouse_left_handed = g_settings_get_boolean (settings, key);
                 gboolean touchpad_left_handed = get_touchpad_handedness (manager, mouse_left_handed);
                 set_left_handed_all (manager, mouse_left_handed, touchpad_left_handed);
-        } else if (g_strcmp0 (key, KEY_MOTION_ACCELERATION) == 0) {
-                set_motion_acceleration (manager, g_settings_get_double (settings, key));
-        } else if (g_strcmp0 (key, KEY_MOTION_THRESHOLD) == 0) {
-                set_motion_threshold (manager, g_settings_get_int (settings, key));
+        } else if ((g_strcmp0 (key, KEY_MOTION_ACCELERATION) == 0)
+                || (g_strcmp0 (key, KEY_MOTION_THRESHOLD) == 0)) {
+                set_motion_all (manager);
         } else if (g_strcmp0 (key, KEY_MIDDLE_BUTTON_EMULATION) == 0) {
                 set_middle_button_all (manager, g_settings_get_boolean (settings, key));
         } else if (g_strcmp0 (key, KEY_MOUSE_LOCATE_POINTER) == 0) {
@@ -1055,6 +1116,9 @@ touchpad_callback (GSettings          *settings,
                 set_natural_scroll_all (manager);
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_ENABLED) == 0) {
                 set_touchpad_enabled_all (g_settings_get_boolean (settings, key));
+        } else if ((g_strcmp0 (key, KEY_MOTION_ACCELERATION) == 0)
+                || (g_strcmp0 (key, KEY_MOTION_THRESHOLD) == 0)) {
+                set_motion_all (manager);
         }
 }
 
