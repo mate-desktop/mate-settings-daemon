@@ -75,5 +75,15 @@
       <summary>Touchpad button orientation</summary>
       <description>Swap left and right buttons for left-handed touchpads with 'left', 'right' for right-handed, 'mouse' to follow the mouse setting.</description>
     </key>
+    <key name="motion-acceleration" type="d">
+      <default>-1</default>
+      <summary>Single Click</summary>
+      <description>Acceleration multiplier for touchpad motion.  A value of -1 is the system default.</description>
+    </key>
+    <key name="motion-threshold" type="i">
+      <default>-1</default>
+      <summary>Motion Threshold</summary>
+      <description>Distance in pixels the pointer must move before accelerated touchpad motion is activated.  A value of -1 is the system default.</description>
+    </key>
   </schema>
 </schemalist>

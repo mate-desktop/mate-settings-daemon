@@ -52,11 +52,11 @@
 
 /* Keys with same names for both touchpad and mouse */
 #define KEY_LEFT_HANDED                  "left-handed"          /*  a boolean for mouse, an enum for touchpad */
+#define KEY_MOTION_ACCELERATION          "motion-acceleration"
+#define KEY_MOTION_THRESHOLD             "motion-threshold"
 
 /* Mouse settings */
 #define MATE_MOUSE_SCHEMA                "org.mate.peripherals-mouse"
-#define KEY_MOUSE_MOTION_ACCELERATION    "motion-acceleration"
-#define KEY_MOUSE_MOTION_THRESHOLD       "motion-threshold"
 #define KEY_MOUSE_LOCATE_POINTER         "locate-pointer"
 #define KEY_MIDDLE_BUTTON_EMULATION      "middle-button-enabled"
 
@@ -983,8 +983,8 @@ set_mouse_settings (MsdMouseManager *manager)
         gboolean touchpad_left_handed = get_touchpad_handedness (manager, mouse_left_handed);
         set_left_handed_all (manager, mouse_left_handed, touchpad_left_handed);
 
-        set_motion_acceleration (manager, g_settings_get_double (manager->priv->settings_mouse, KEY_MOUSE_MOTION_ACCELERATION));
-        set_motion_threshold (manager, g_settings_get_int (manager->priv->settings_mouse, KEY_MOUSE_MOTION_THRESHOLD));
+        set_motion_acceleration (manager, g_settings_get_double (manager->priv->settings_mouse, KEY_MOTION_ACCELERATION));
+        set_motion_threshold (manager, g_settings_get_int (manager->priv->settings_mouse, KEY_MOTION_THRESHOLD));
         set_middle_button_all (manager, g_settings_get_boolean (manager->priv->settings_mouse, KEY_MIDDLE_BUTTON_EMULATION));
 
         set_disable_w_typing (manager, g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_DISABLE_W_TYPING));
@@ -1005,9 +1005,9 @@ mouse_callback (GSettings          *settings,
                 gboolean mouse_left_handed = g_settings_get_boolean (settings, key);
                 gboolean touchpad_left_handed = get_touchpad_handedness (manager, mouse_left_handed);
                 set_left_handed_all (manager, mouse_left_handed, touchpad_left_handed);
-        } else if (g_strcmp0 (key, KEY_MOUSE_MOTION_ACCELERATION) == 0) {
+        } else if (g_strcmp0 (key, KEY_MOTION_ACCELERATION) == 0) {
                 set_motion_acceleration (manager, g_settings_get_double (settings, key));
-        } else if (g_strcmp0 (key, KEY_MOUSE_MOTION_THRESHOLD) == 0) {
+        } else if (g_strcmp0 (key, KEY_MOTION_THRESHOLD) == 0) {
                 set_motion_threshold (manager, g_settings_get_int (settings, key));
         } else if (g_strcmp0 (key, KEY_MIDDLE_BUTTON_EMULATION) == 0) {
                 set_middle_button_all (manager, g_settings_get_boolean (settings, key));
