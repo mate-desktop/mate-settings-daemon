@@ -1,7 +1,7 @@
 AC_PREREQ([2.60])
 
 m4_define([msd_api_version_major],[1])
-m4_define([msd_api_version_minor],[16])
+m4_define([msd_api_version_minor],[17])
 m4_define([msd_api_version_micro],[0])
 m4_define([msd_api_version],
 	[msd_api_version_major.msd_api_version_minor.msd_api_version_micro])
@@ -59,39 +59,17 @@ dnl ---------------------------------------------------------------------------
 DBUS_GLIB_REQUIRED_VERSION=0.74
 GLIB_REQUIRED_VERSION=2.36.0
 GIO_REQUIRED_VERSION=2.26.0
-MATE_DESKTOP_REQUIRED_VERSION=1.9.4
-LIBMATEKBD_REQUIRED_VERSION=1.7.0
+GTK_REQUIRED_VERSION=3.14.0
+MATE_DESKTOP_REQUIRED_VERSION=1.17.0
+LIBMATEKBD_REQUIRED_VERSION=1.17.0
 LIBNOTIFY_REQUIRED_VERSION=0.7.0
 LIBMATEMIXER_REQUIRED_VERSION=1.10.0
 
 EXTRA_COMPILE_WARNINGS(yes)
 
-AC_MSG_CHECKING([which gtk+ version to compile against])
-AC_ARG_WITH([gtk],
-  [AS_HELP_STRING([--with-gtk=2.0|3.0],[which gtk+ version to compile against (default: 2.0)])],
-  [case "$with_gtk" in
-     2.0|3.0) ;;
-     *) AC_MSG_ERROR([invalid gtk version specified]) ;;
-   esac],
-  [with_gtk=2.0])
-AC_MSG_RESULT([$with_gtk])
-
-case "$with_gtk" in
-  2.0) GTK_API_VERSION=2.0
-       GTK_REQUIRED_VERSION=2.24.0
-       LIBCANBERRA_PC=libcanberra-gtk
-       ;;
-  3.0) GTK_API_VERSION=3.0
-       GTK_REQUIRED_VERSION=3.0.0
-       LIBCANBERRA_PC=libcanberra-gtk3
-       ;;
-esac
-
-AC_SUBST(GTK_API_VERSION)
-
 PKG_CHECK_MODULES(SETTINGS_DAEMON,
 	glib-2.0 >= $GLIB_REQUIRED_VERSION
-	gtk+-$GTK_API_VERSION >= $GTK_REQUIRED_VERSION
+	gtk+-3.0 >= $GTK_REQUIRED_VERSION
 	gio-2.0 >= $GIO_REQUIRED_VERSION
 	gmodule-2.0
 	gthread-2.0
@@ -99,7 +77,7 @@ PKG_CHECK_MODULES(SETTINGS_DAEMON,
 )
 
 PKG_CHECK_MODULES(SETTINGS_PLUGIN,
-	gtk+-$GTK_API_VERSION >= $GTK_REQUIRED_VERSION
+	gtk+-3.0 >= $GTK_REQUIRED_VERSION
 	gio-2.0 >= $GIO_REQUIRED_VERSION
 	dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
 )
@@ -269,8 +247,8 @@ AC_ARG_WITH(libcanberra,
     with_libcanberra=$withval, with_libcanberra=auto)
 
 if test "x$with_libcanberra" != "xno"; then
-    PKG_CHECK_MODULES(LIBCANBERRA, $LIBCANBERRA_PC,
-              [AC_DEFINE(HAVE_LIBCANBERRA, 1, [Define if $LIBCANBERRA_PC is available])
+    PKG_CHECK_MODULES(LIBCANBERRA, libcanberra-gtk3,
+              [AC_DEFINE(HAVE_LIBCANBERRA, 1, [Define if libcanberra-gtk3 is available])
               have_libcanberra=yes], have_libcanberra=no)
     if test "x$have_libcanberra" = xno -a "x$with_libcanberra" = xyes; then
         AC_MSG_ERROR([libcanberra support requested but library not found])
@@ -543,7 +521,6 @@ echo "
     dbus-1 system.d dir:      ${DBUS_SYS_DIR}
     PolicyKit support:        ${HAVE_POLKIT}
 
-    Gtk+ version:             ${GTK_API_VERSION}
     PulseAudio support:       ${have_pulse}
     Libnotify support:        ${have_libnotify}
     Libcanberra support:      ${have_libcanberra}

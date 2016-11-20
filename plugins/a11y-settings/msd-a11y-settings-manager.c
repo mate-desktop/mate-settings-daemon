@@ -32,9 +32,7 @@
 
 #include <glib.h>
 #include <glib/gi18n.h>
-#include <gdk/gdk.h>
-#include <gdk/gdkx.h>
-#include <gtk/gtk.h>
+#include <gio/gio.h>
 
 #include "mate-settings-profile.h"
 #include "msd-a11y-settings-manager.h"

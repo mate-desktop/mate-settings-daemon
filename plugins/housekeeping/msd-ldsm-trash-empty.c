@@ -26,11 +26,6 @@
 #define CAJA_PREFS_SCHEMA "org.mate.caja.preferences"
 #define CAJA_CONFIRM_TRASH_KEY "confirm-trash"
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
-#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
-#endif
-
 /* Some of this code has been borrowed from the trash-applet, courtesy of Ryan Lortie */
 
 static GtkWidget *trash_empty_confirm_dialog = NULL;
@@ -251,9 +246,9 @@ trash_empty_start ()
         gtk_window_set_title (GTK_WINDOW (trash_empty_dialog),
                               _("Emptying the trash"));
 
-        vbox1 = gtk_vbox_new (FALSE, 12);
-        vbox2 = gtk_vbox_new (FALSE, 0);
-        hbox = gtk_hbox_new (FALSE, 0);
+        vbox1 = gtk_box_new (GTK_ORIENTATION_VERTICAL, 12);
+        vbox2 = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+        hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 
         label1 = gtk_label_new (NULL);
         gtk_label_set_line_wrap (GTK_LABEL (label1), TRUE);

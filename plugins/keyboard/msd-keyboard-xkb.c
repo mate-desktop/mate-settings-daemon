@@ -172,11 +172,7 @@ popup_menu_launch_capplet ()
 	info = g_app_info_create_from_commandline ("mate-keyboard-properties", NULL, 0, &error);
 
 	if (info != NULL) {
-#           if GTK_CHECK_VERSION (3, 0, 0)
 		context = gdk_display_get_app_launch_context (gdk_display_get_default ());
-#           else
-		context = gdk_app_launch_context_new ();
-#           endif
 		g_app_info_launch (info, NULL,
 				   G_APP_LAUNCH_CONTEXT (context), &error);
 
@@ -224,11 +220,7 @@ popup_menu_show_layout ()
 	    matekbd_keyboard_drawing_new_dialog (xkl_state->group,
 					      group_names
 					      [xkl_state->group]);
-#  if GTK_CHECK_VERSION(3,0,0)
 	g_signal_connect (dialog, "destroy",
-#  else
-	g_signal_connect (GTK_OBJECT (dialog), "destroy",
-#endif
 			  G_CALLBACK (show_layout_destroy),
 			  GINT_TO_POINTER (xkl_state->group));
 	g_hash_table_insert (preview_dialogs,

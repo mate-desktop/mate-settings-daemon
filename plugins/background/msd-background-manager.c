@@ -46,14 +46,6 @@
 #include "mate-settings-profile.h"
 #include "msd-background-manager.h"
 
-#if !GTK_CHECK_VERSION(3, 0, 0)
-#define cairo_surface_t		GdkPixmap
-#define cairo_surface_destroy	g_object_unref
-#define mate_bg_create_surface				mate_bg_create_pixmap
-#define mate_bg_set_surface_as_root			mate_bg_set_pixmap_as_root
-#define mate_bg_set_surface_as_root_with_crossfade	mate_bg_set_pixmap_as_root_with_crossfade
-#endif
-
 #define MATE_SESSION_MANAGER_DBUS_NAME "org.gnome.SessionManager"
 #define MATE_SESSION_MANAGER_DBUS_PATH "/org/gnome/SessionManager"
 
@@ -162,6 +154,7 @@ caja_is_drawing_bg (MsdBackgroundManager *manager)
 	return running;
 }
 #endif
+
 static void
 free_fade (MsdBackgroundManager *manager)
 {

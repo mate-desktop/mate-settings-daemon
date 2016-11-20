@@ -239,11 +239,7 @@ touchpad_has_single_button (XDevice *device)
         if (rc == Success)
                 XFree (data);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
         gdk_error_trap_pop_ignored ();
-#else
-        gdk_error_trap_pop ();
-#endif
 
         return is_single_button;
 }

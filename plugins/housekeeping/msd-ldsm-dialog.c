@@ -25,11 +25,6 @@
 #define SETTINGS_SCHEMA "org.mate.SettingsDaemon.plugins.housekeeping"
 #define SETTINGS_IGNORE_PATHS "ignore-paths"
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
-#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
-#endif
-
 enum
 {
         PROP_0,
@@ -220,12 +215,8 @@ msd_ldsm_dialog_init (MsdLdsmDialog *dialog)
 
         /* Create the image */
         image = gtk_image_new_from_icon_name ("dialog-warning", GTK_ICON_SIZE_DIALOG);
-#if GTK_CHECK_VERSION (3, 0, 0)
         gtk_widget_set_halign (image, GTK_ALIGN_START);
         gtk_widget_set_valign (image, GTK_ALIGN_END);
-#else
-        gtk_misc_set_alignment (GTK_MISC (image), 0.5, 0.0);
-#endif
 
         /* Create the labels */
         dialog->priv->primary_label = gtk_label_new (NULL);	
@@ -261,10 +252,10 @@ msd_ldsm_dialog_init (MsdLdsmDialog *dialog)
         /* Now set up the dialog's GtkBox's' */
         gtk_box_set_spacing (GTK_BOX (main_vbox), 14);
 	
-        hbox = gtk_hbox_new (FALSE, 12);
+        hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
         gtk_container_set_border_width (GTK_CONTAINER (hbox), 5);
 	
-        text_vbox = gtk_vbox_new (FALSE, 12);
+        text_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 12);
         
         gtk_box_pack_start (GTK_BOX (text_vbox), dialog->priv->primary_label, FALSE, FALSE, 0);
         gtk_box_pack_start (GTK_BOX (text_vbox), dialog->priv->secondary_label, TRUE, TRUE, 0);

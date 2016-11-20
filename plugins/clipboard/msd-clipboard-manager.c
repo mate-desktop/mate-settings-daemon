@@ -37,7 +37,6 @@
 #include <glib/gi18n.h>
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
-#include <gtk/gtk.h>
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
 
@@ -151,11 +150,7 @@ send_selection_notify (MsdClipboardManager *manager,
                     (XEvent *)&notify);
         XSync (manager->priv->display, False);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
         gdk_error_trap_pop_ignored ();
-#else
-        gdk_error_trap_pop ();
-#endif
 }
 
 static void
@@ -182,11 +177,7 @@ finish_selection_request (MsdClipboardManager *manager,
                     False, NoEventMask, (XEvent *) &notify);
         XSync (manager->priv->display, False);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
         gdk_error_trap_pop_ignored ();
-#else
-        gdk_error_trap_pop ();
-#endif
 }
 
 static int
@@ -562,11 +553,7 @@ convert_clipboard_target (IncrConversion      *rdata,
 
                         XSync (manager->priv->display, False);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
                         gdk_error_trap_pop_ignored ();
-#else
-                        gdk_error_trap_pop ();
-#endif
                 }
         }
 }

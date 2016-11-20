@@ -395,11 +395,9 @@ dialog_show (MsdMediaKeysManager *manager)
         int            screen_h;
         int            x;
         int            y;
-#if GTK_CHECK_VERSION (3, 0, 0)
         GdkDisplay *display;
         GdkDeviceManager *device_manager;
         GdkDevice *pointer;
-#endif
         int            pointer_x;
         int            pointer_y;
         GtkRequisition win_req;
@@ -420,11 +418,7 @@ dialog_show (MsdMediaKeysManager *manager)
          * know its true size, yet, so we need to jump through hoops
          */
         gtk_window_get_default_size (GTK_WINDOW (manager->priv->dialog), &orig_w, &orig_h);
-#if GTK_CHECK_VERSION (3, 0, 0)
         gtk_widget_get_preferred_size (manager->priv->dialog, NULL, &win_req);
-#else
-        gtk_widget_size_request (manager->priv->dialog, &win_req);
-#endif
 
         if (win_req.width > orig_w) {
                 orig_w = win_req.width;
@@ -434,7 +428,6 @@ dialog_show (MsdMediaKeysManager *manager)
         }
 
         pointer_screen = NULL;
-#if GTK_CHECK_VERSION (3, 0, 0)
         display = gdk_screen_get_display (manager->priv->current_screen);
         device_manager = gdk_display_get_device_manager (display);
         pointer = gdk_device_manager_get_client_pointer (device_manager);
@@ -443,13 +436,7 @@ dialog_show (MsdMediaKeysManager *manager)
                                  &pointer_screen,
                                  &pointer_x,
                                  &pointer_y);
-#else
-        gdk_display_get_pointer (gdk_screen_get_display (manager->priv->current_screen),
-                                 &pointer_screen,
-                                 &pointer_x,
-                                 &pointer_y,
-                                 NULL);
-#endif
+
         if (pointer_screen != manager->priv->current_screen) {
                 /* The pointer isn't on the current screen, so just
                  * assume the default monitor
@@ -1224,11 +1211,8 @@ msd_media_keys_manager_stop (MsdMediaKeysManager *manager)
 
         if (need_flush)
                 gdk_flush ();
-#if GTK_CHECK_VERSION (3, 0, 0)
+
         gdk_error_trap_pop_ignored ();
-#else
-        gdk_error_trap_pop ();
-#endif
 
         g_slist_free (priv->screens);
         priv->screens = NULL;

@@ -21,7 +21,6 @@
 #ifndef __EGG_ACCELERATORS_H__
 #define __EGG_ACCELERATORS_H__
 
-#include <gtk/gtk.h>
 #include <gdk/gdk.h>
 
 #ifdef __cplusplus

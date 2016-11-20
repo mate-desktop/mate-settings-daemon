@@ -180,11 +180,7 @@ get_xkb_desc_rec (MsdA11yKeyboardManager *manager)
                 desc->ctrls = NULL;
                 status = XkbGetControls (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), XkbAllControlsMask, desc);
         }
-#if GTK_CHECK_VERSION (3, 0, 0)
         gdk_error_trap_pop_ignored ();
-#else
-        gdk_error_trap_pop ();
-#endif
 
         g_return_val_if_fail (desc != NULL, NULL);
         g_return_val_if_fail (desc->ctrls != NULL, NULL);
@@ -391,11 +387,7 @@ set_server_from_settings (MsdA11yKeyboardManager *manager)
         XkbFreeKeyboard (desc, XkbAllComponentsMask, True);
 
         XSync (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), FALSE);
-#if GTK_CHECK_VERSION (3, 0, 0)
         gdk_error_trap_pop_ignored ();
-#else
-        gdk_error_trap_pop ();
-#endif
 
         mate_settings_profile_end (NULL);
 }
@@ -1074,11 +1066,7 @@ restore_server_xkb_config (MsdA11yKeyboardManager *manager)
                          XkbAllComponentsMask, True);
 
         XSync (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), FALSE);
-#if GTK_CHECK_VERSION (3, 0, 0)
         gdk_error_trap_pop_ignored ();
-#else
-        gdk_error_trap_pop ();
-#endif
 
         manager->priv->original_xkb_desc = NULL;
 }
