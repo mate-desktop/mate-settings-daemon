@@ -521,14 +521,8 @@ keybindings_filter (GdkXEvent             *gdk_xevent,
 
 static void
 bindings_callback (DConfClient           *client,
-        #ifdef HAVE_DCONF_0_13
                    gchar                 *prefix,
                    GStrv                  changes,
-        #else
-                   const gchar           *path,
-                   const gchar * const   *items,
-                   gint                   n_items,
-        #endif
                    gchar                 *tag,
                    MsdKeybindingsManager *manager)
 {
@@ -568,18 +562,9 @@ msd_keybindings_manager_start (MsdKeybindingsManager *manager,
         bindings_get_entries (manager);
         binding_register_keys (manager);
 
-        /* DConf has different API between versions:
-         * http://developer.gnome.org/dconf/0.12/DConfClient.html
-         * http://developer.gnome.org/dconf/0.14/DConfClient.html
-         */
-        #ifdef HAVE_DCONF_0_13
         manager->priv->client = dconf_client_new ();
         dconf_client_watch_fast (manager->priv->client, GSETTINGS_KEYBINDINGS_DIR);
         g_signal_connect (manager->priv->client, "changed", G_CALLBACK (bindings_callback), manager);
-        #else
-        manager->priv->client = dconf_client_new (NULL, (DConfWatchFunc) bindings_callback, manager, NULL);
-        dconf_client_watch (manager->priv->client, GSETTINGS_KEYBINDINGS_DIR, NULL, NULL);
-        #endif
 
         mate_settings_profile_end (NULL);
 
