@@ -485,6 +485,7 @@ on_session_manager_signal (GDBusProxy   *proxy,
 	}
 }
 
+#if !GTK_CHECK_VERSION(3, 22, 0)
 static void
 draw_bg_after_session_loads (MsdBackgroundManager *manager)
 {
@@ -513,6 +514,7 @@ draw_bg_after_session_loads (MsdBackgroundManager *manager)
 							   G_CALLBACK (on_session_manager_signal),
 							   manager);
 }
+#endif
 
 gboolean
 msd_background_manager_start (MsdBackgroundManager  *manager,
