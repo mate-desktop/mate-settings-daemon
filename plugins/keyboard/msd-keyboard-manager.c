@@ -38,12 +38,12 @@
 #include <gtk/gtk.h>
 
 #ifdef HAVE_X11_EXTENSIONS_XF86MISC_H
-	#include <X11/extensions/xf86misc.h>
+#include <X11/extensions/xf86misc.h>
 #endif
 
 #ifdef HAVE_X11_EXTENSIONS_XKB_H
-	#include <X11/XKBlib.h>
-	#include <X11/keysym.h>
+#include <X11/XKBlib.h>
+#include <X11/keysym.h>
 #endif
 
 #include "mate-settings-profile.h"

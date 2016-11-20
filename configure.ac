@@ -48,7 +48,7 @@ AS_AC_EXPAND(LIBEXECDIR, "$libexecdir")
 MSD_INTLTOOL_PLUGIN_RULE='%.mate-settings-plugin:   %.mate-settings-plugin.in   $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; LC_ALL=C $(INTLTOOL_MERGE) -d -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@'
 AC_SUBST([MSD_INTLTOOL_PLUGIN_RULE])
 
- dnl Unconditionally use this dir to avoid a circular dep with matecc
+dnl Unconditionally use this dir to avoid a circular dep with matecc
 MATE_KEYBINDINGS_KEYSDIR="${datadir}/mate-control-center/keybindings"
 AC_SUBST(MATE_KEYBINDINGS_KEYSDIR)
 
