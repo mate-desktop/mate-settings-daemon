@@ -1,4 +1,36 @@
 1.17.0
+  * Translations update
+  * move to GTK+3 (>= 3.14), drop GTK+2 code and --with-gtk build option
+  * background: add missing GTK+ version check to avoid build warning
+  * background: check for stable release of GTK+3, not for development one
+  * build: require libmatemixer >= 1.10 (first stable release)
+  * build: require libxklavier >= 5.2
+  * remove extra glib version check from build conf
+  * build: require dconf >= 0.13
+  * fix description of motion-acceleration key in touchpad schema
+  * mouse: implement separate mouse/touchpad motion settings using XInput
+  * mouse: add separate keys for touchpad motion settings (not used yet)
+  * mouse: use same #define for 'left-handed' key of mouse and touchpad
+  * mouse: make separate callback for processing touchpad settings
+  * mouse: use more common g_strcmp0 function instead of g_str_equal
+  * mouse: add key for separate touchpad handedness (left/right-handed)
+  * schema: fix indent a bit
+  * mouse: add helper function for fetching Atom property
+  * common: don't create Atom property when checking for its presence
+  * mouse: a bit more of refactoring, less push/pop calls
+  * mouse: move setting left-handed for one device to new function
+  * mouse: move setting tap to click for one device to new function
+  * mouse: move enabling/disabling one touchpad to new function
+  * mouse: move setting bool property for one device to new function
+  * mouse: move setting click actions for one device to new function
+  * mouse: move setting natural scroll for one device to new function
+  * mouse: don't copy struct when it's not needed, pass pointer instead
+  * mouse: move setting middle button for one device to new function
+  * mouse: don't create duplicate GSettings instance
+  * mouse: don't apply any settings if XInput isn't present
+  * mouse: remove duplicate function
+  * build: require XInput unconditionally
+  * xrandr: use proper libmate-desktop function in GTK+3 build
 
 1.16.0
   * Change default hinting style to 'hintslight'
