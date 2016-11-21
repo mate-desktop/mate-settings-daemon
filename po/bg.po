@@ -10,13 +10,14 @@
 # Vladimir Petkov <vpetkov@i-space.org>, 2004, 2005, 2006
 # Yanko Kaneti <yaneti@declera.com>, 2002
 # Yavor Doganov <yavor@gnu.org>, 2007, 2008
+# Любомир Василев, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-29 13:05+0300\n"
-"PO-Revision-Date: 2016-03-29 10:19+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"PO-Revision-Date: 2016-11-08 11:21+0000\n"
+"Last-Translator: Любомир Василев\n"
 "Language-Team: Bulgarian (http://www.transifex.com/mate/MATE/language/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -142,43 +143,43 @@ msgstr "Задайте да е истина, за да подавате нати
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Enable vertical edge scrolling"
-msgstr ""
+msgstr "Вертикално превъртане по ръба"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:6
 msgid "Set this to TRUE to allow vertical edge scrolling"
-msgstr ""
+msgstr "Ако е вярно, вертикалното превъртане по ръба ще бъде включено."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:7
 msgid "Enable horizontal edge scrolling"
-msgstr ""
+msgstr "Хоризонтално превъртане по ръба"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:8
 msgid "Set this to TRUE to allow horizontal edge scrolling"
-msgstr ""
+msgstr "Ако е вярно, хоризонталното превъртане по ръба ще бъде включено."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:9
 msgid "Enable vertical two-finger scrolling"
-msgstr ""
+msgstr "Вертикално превъртане чрез два пръста"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:10
 msgid "Set this to TRUE to allow vertical two-finger scrolling"
-msgstr ""
+msgstr "Ако е вярно, вертикалното превъртане чрез два пръста ще бъде включено."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:11
 msgid "Enable horizontal two-finger scrolling"
-msgstr ""
+msgstr "Хоризонтално превъртане чрез два пръста"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
 msgid "Set this to TRUE to allow horizontal two-finger scrolling"
-msgstr ""
+msgstr "Ако е вярно, хоризонталното превъртане чрез два пръста ще бъде включено."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
 msgid "Natural scrolling"
-msgstr ""
+msgstr "Обратно превъртане"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
-msgstr ""
+msgstr "Ако е вярно, превъртането със сензорните панели ще бъде в обратна посока."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
 msgid "Enable touchpad"
@@ -190,45 +191,45 @@ msgstr "Задайте да е истина, за да включите всич
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:17
 msgid "Enabled two-finger button-click emulation"
-msgstr ""
+msgstr "Симулация на натискане на бутон чрез два пръста"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:18
 msgid "0 thru 3, 0 is inactive, 1-3 is button to emulate"
-msgstr ""
+msgstr "Число между 0 и 3. 0 — изключено, 1-3 — бутонът, който да се симулира."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:19
 msgid "Enable three-finger button-click emulation"
-msgstr ""
+msgstr "Симулация на натискане на бутон чрез три пръста"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:20
 msgid "One finger tap button"
-msgstr ""
+msgstr "Бутон при докосване с един пръст"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:21
 msgid ""
 "Select the button mapping for one-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr ""
+msgstr "Изберете бутона, който да се симулира чрез докосване с един пръст. Възможните стойности са: 1 — левият бутон на мишката, 2 — средният бутон на мишката, 3 — десният бутон на мишката."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
 msgid "Two finger tap button"
-msgstr ""
+msgstr "Бутон при докосване с два пръста"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:23
 msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr ""
+msgstr "Изберете бутона, който да се симулира чрез докосване с два пръста. Възможните стойности са: 1 — левият бутон на мишката, 2 — средният бутон на мишката, 3 — десният бутон на мишката."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
 msgid "Three finger tap button"
-msgstr ""
+msgstr "Бутон при докосване с три пръста"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:25
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
-msgstr ""
+msgstr "Изберете бутона, който да се симулира чрез докосване с три пръста. Възможните стойности са: 1 — левият бутон на мишката, 2 — средният бутон на мишката, 3 — десният бутон на мишката."
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
@@ -248,7 +249,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:1
 msgid "Activation of this plugin"
-msgstr ""
+msgstr "Задействане на тази приставка"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:2
@@ -268,7 +269,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr ""
+msgstr "Дали тази приставка да бъде задействана от „mate-settings-daemon“ или не"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:3
@@ -288,7 +289,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:3
 msgid "Priority to use for this plugin"
-msgstr ""
+msgstr "Приоритет на тази приставка"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:4
@@ -308,7 +309,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
-msgstr ""
+msgstr "Приоритет на тази приставка в опашката за стартиране на „mate-settings-daemon“."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:5
 msgid "Free percentage notify threshold"
@@ -360,11 +361,11 @@ msgstr "Списък с монтирани пътища, които да не с
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
-msgstr ""
+msgstr "Визуално известие"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:4
 msgid "Whether an OSD notification is shown to notify about changes"
-msgstr ""
+msgstr "Дали да се показва визуално известие за промените"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:7
 msgid "Volume step"
@@ -408,11 +409,11 @@ msgstr "Клавишна комбинация за увеличаване на �
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:17
 msgid "Shut down"
-msgstr ""
+msgstr "Изключване"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:18
 msgid "Binding to shut down."
-msgstr ""
+msgstr "Клавишна комбинация за изключване на системата."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
 msgid "Log out"
@@ -536,15 +537,15 @@ msgstr "Клавишна комбинация за отиване на след�
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
 msgid "Binding to show the screen magnifier"
-msgstr ""
+msgstr "Клавишна комбинация за показване на лупата."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
 msgid "Binding to start the screen reader"
-msgstr ""
+msgstr "Клавишна комбинация за пускане на екранния четец."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
 msgid "Binding to show the on-screen keyboard"
-msgstr ""
+msgstr "Клавишна комбинация за показване на екранната клавиатура."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:5
 msgid "Show Displays in Notification Area"
@@ -554,11 +555,11 @@ msgstr "Показване на екраните в областта за уве
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
-msgstr "Дали в панела да се показва уведомителна икона за екрана."
+msgstr "Дали в панела да се показва уведомителна иконка за екрана."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:7
 msgid "Do not touch monitor configuration"
-msgstr ""
+msgstr "Настройките на екраните да не се променят"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:8
 msgid ""
@@ -568,7 +569,7 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr ""
+msgstr "Обикновено, „mate-settings-daemon“ настройва вътрешните и външните екрани според стойностите в „turn_on_external_monitors_at_startup“ и „turn_on_laptop_monitor_at_startup“, и определя правилния режим — клониране или един до друг. Задаването на „вярно“ в този ключ ще изключи това и настройките на екраните няма да бъдат променяни (освен ако няма изрична потребителска настройка)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:9
 msgid "Turn on external monitor after system boot"
@@ -613,7 +614,7 @@ msgstr "Включване на код за изчистване на грешк
 
 #: ../mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
-msgstr ""
+msgstr "Замяна на текущия демон"
 
 #: ../mate-settings-daemon/main.c:67
 msgid "Don't become a daemon"
@@ -932,7 +933,7 @@ msgid ""
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr ""
+msgstr "Грешка при активирането на настройката на „XKB“.\nТова може да се случва поради няколко причини:\n • проблем в библиотеката „libxklavier“;\n • проблем в сървъра „X“ (xkbcomp, xmodmap utilities);\n • сървър „X“ с несъвместима версия или съдържание на „libxkbfile“.\n\nДанни за версията на сървъра „X“:\n%s\n%d\nАко смятате да докладвате този случай като проблем в системата, моля включете следната информация:\n • Резултата от <b>%s</b>\n • Резултата от <b>%s</b>"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:273
 msgid "_Layouts"
@@ -990,11 +991,11 @@ msgstr "Приставка за мишката"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:1
 msgid "Mpris"
-msgstr ""
+msgstr "Mpris"
 
 #: ../plugins/mpris/mpris.mate-settings-plugin.in.h:2
 msgid "Mpris plugin"
-msgstr ""
+msgstr "Приставката „Mpris“"
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:1
 msgid "Typing Break"

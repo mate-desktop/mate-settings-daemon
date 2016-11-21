@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-29 13:05+0300\n"
-"PO-Revision-Date: 2016-05-01 01:26+0000\n"
+"PO-Revision-Date: 2016-11-19 14:39+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/mate/MATE/language/nb/)\n"
 "MIME-Version: 1.0\n"
@@ -601,7 +601,7 @@ msgstr "Programtillegget XRandR ser etter forvalgt oppsett i filen angitt av den
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
-msgstr "MATE konfigurasjonstjeneste"
+msgstr "MATE oppsettstjenestenisse"
 
 #: ../mate-settings-daemon/main.c:65
 msgid "Enable debugging code"
@@ -928,7 +928,7 @@ msgid ""
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr "Feil under aktivering av XKB-konfigurasjon.\nDette kan skje under forskjellige omstendigheter:\n - en feil i libxklavier-biblioteket\n - en feil i X-tjeneren (xkbcomp- og xmodmap-verktøyene)\n - X-tjener med inkompatibel implementasjon av libxkbfile\n\nVersjonsdata for X-tjeneren:\n%s\n%d\nVennligst ta med følgende hvis du rapporterer dette som en feil:\n - Resultatet av <b>%s</b>\n - Resultatet av <b>%s</b>"
+msgstr "Feil under aktivering av XKB-oppsett.\nDette kan skje under forskjellige omstendigheter:\n - en feil i libxklavier-biblioteket\n - en feil i X-tjeneren (xkbcomp- og xmodmap-verktøyene)\n - X-tjener med inkompatibel implementasjon av libxkbfile\n\nVersjonsdata for X-tjeneren:\n%s\n%d\nTa med følgende hvis du rapporterer dette som en feil:\n - Resultatet av <b>%s</b>\n - Resultatet av <b>%s</b>"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:273
 msgid "_Layouts"
@@ -1010,23 +1010,23 @@ msgstr "Rediger innstillinger for skjermstørrelse og rotasjon"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:373
 msgid "Could not switch the monitor configuration"
-msgstr "Kunne ikke bytte skjermkonfigurasjon"
+msgstr "Kunne ikke bytte skjermoppsett"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:397
 msgid "Could not restore the display's configuration"
-msgstr "Kunne ikke gjenopprette skjermkonfigurasjon"
+msgstr "Kunne ikke gjenopprette skjermoppsett"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:422
 msgid "Could not restore the display's configuration from a backup"
-msgstr "Kunne ikke gjenopprette skjermkonfigurasjonen fra sikkerhetskopi"
+msgstr "Kunne ikke gjenopprette skjermoppsettet fra sikkerhetskopi"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:443
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Skjermen vil bli satt tilbake til forrige konfigurasjon om %d sekund"
-msgstr[1] "Skjermen vil bli satt tilbake til forrige konfigurasjon om %d sekunder"
+msgstr[0] "Skjermen vil bli satt tilbake til forrige oppsett om %d sekund"
+msgstr[1] "Skjermen vil bli satt tilbake til forrige oppsett om %d sekunder"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1034,15 +1034,15 @@ msgstr "Ser dette bra ut?"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:499
 msgid "_Restore Previous Configuration"
-msgstr "Gjenopp_rett forrige konfigurasjon"
+msgstr "Gjenopp_rett forrige oppsett"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:500
 msgid "_Keep This Configuration"
-msgstr "_Behold denne konfigurasjonen"
+msgstr "_Behold dette oppsettet"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:581
 msgid "The selected configuration for displays could not be applied"
-msgstr "Valgt konfigurasjon for skjermer kunne ikke brukes"
+msgstr "Valgt oppsett for skjermer kunne ikke brukes"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1153
 #, c-format
@@ -1051,7 +1051,7 @@ msgstr "Kunne ikke oppdatere informasjon om skjermen: %s"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1157
 msgid "Trying to switch the monitor configuration anyway."
-msgstr "Prøver å bytte skjermkonfigurasjon likevel."
+msgstr "Prøver å bytte skjermoppsett likevel."
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1914
 msgid "Rotation not supported"
@@ -1059,7 +1059,7 @@ msgstr "Rotering ikke støttet"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1970
 msgid "Could not save monitor configuration"
-msgstr "Kunne ikke lagre skjermkonfigurasjon"
+msgstr "Kunne ikke lagre skjermoppsett"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1988
 msgid "Normal"
@@ -1079,15 +1079,15 @@ msgstr "Opp-ned"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2113
 msgid "_Configure Display Settings…"
-msgstr "_Konfigurer innstillinger for skjerm…"
+msgstr "_Sett opp innstillinger for skjerm…"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2167
 msgid "Configure display settings"
-msgstr "Konfigurer skjerminnstillinger"
+msgstr "Sett opp skjerminnstillinger"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2227
 msgid "Could not apply the stored configuration for monitors"
-msgstr "Kunne ikke bruke lagret konfigurasjon for skjermer"
+msgstr "Kunne ikke bruke lagret oppsett for skjermer"
 
 #: ../plugins/xrdb/msd-xrdb-manager.c:253
 #: ../plugins/xrdb/msd-xrdb-manager.c:322
@@ -1194,8 +1194,8 @@ msgstr "Rettigheter kreves for å stille klokken på systemet."
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:5
 msgid "Configure hardware clock"
-msgstr "Konfigurer maskinvareklokken"
+msgstr "Sett opp maskinvareklokken"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:6
 msgid "Privileges are required to configure the hardware clock."
-msgstr "Rettigheter kreves for å konfigurere maskinvareklokken."
+msgstr "Rettigheter kreves for å sette opp maskinvareklokken."
