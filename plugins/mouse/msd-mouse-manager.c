@@ -244,6 +244,64 @@ touchpad_has_single_button (XDevice *device)
 }
 
 static void
+property_set_bool (XDeviceInfo *device_info,
+                   XDevice     *device,
+                   const char  *property_name,
+                   int          property_index,
+                   gboolean     enabled)
+{
+        int rc;
+        unsigned long nitems, bytes_after;
+        unsigned char *data;
+        int act_format;
+        Atom act_type, property;
+
+        property = property_from_name (property_name);
+        if (!property)
+                return;
+
+        gdk_error_trap_push ();
+        rc = XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device,
+                                 property, 0, 1, False,
+                                 XA_INTEGER, &act_type, &act_format, &nitems,
+                                 &bytes_after, &data);
+
+        if (rc == Success && act_type == XA_INTEGER && act_format == 8 && nitems > property_index) {
+                data[property_index] = enabled ? 1 : 0;
+                XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device,
+                                       property, XA_INTEGER, 8,
+                                       PropModeReplace, data, nitems);
+        }
+
+        if (rc == Success)
+                XFree (data);
+
+        if (gdk_error_trap_pop ()) {
+                g_warning ("Error while setting %s on \"%s\"", property_name, device_info->name);
+        }
+}
+
+static void
+touchpad_set_bool (XDeviceInfo *device_info,
+                   const char  *property_name,
+                   int          property_index,
+                   gboolean     enabled)
+{
+        XDevice *device;
+
+        device = device_is_touchpad (device_info);
+        if (device == NULL) {
+                return;
+        }
+
+        property_set_bool (device_info, device, property_name, property_index, enabled);
+
+        gdk_error_trap_push ();
+        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
+        gdk_error_trap_pop_ignored ();
+}
+
+static void
 set_left_handed (MsdMouseManager *manager,
                  XDeviceInfo     *device_info,
                  gboolean         mouse_left_handed,
@@ -819,64 +877,6 @@ set_natural_scroll_all (MsdMouseManager *manager)
         }
 
         XFreeDeviceList (devicelist);
-}
-
-static void
-property_set_bool (XDeviceInfo *device_info,
-                   XDevice     *device,
-                   const char  *property_name,
-                   int          property_index,
-                   gboolean     enabled)
-{
-        int rc;
-        unsigned long nitems, bytes_after;
-        unsigned char *data;
-        int act_format;
-        Atom act_type, property;
-
-        property = property_from_name (property_name);
-        if (!property)
-                return;
-
-        gdk_error_trap_push ();
-        rc = XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device,
-                                 property, 0, 1, False,
-                                 XA_INTEGER, &act_type, &act_format, &nitems,
-                                 &bytes_after, &data);
-
-        if (rc == Success && act_type == XA_INTEGER && act_format == 8 && nitems > property_index) {
-                data[property_index] = enabled ? 1 : 0;
-                XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device,
-                                       property, XA_INTEGER, 8,
-                                       PropModeReplace, data, nitems);
-        }
-
-        if (rc == Success)
-                XFree (data);
-
-        if (gdk_error_trap_pop ()) {
-                g_warning ("Error while setting %s on \"%s\"", property_name, device_info->name);
-        }
-}
-
-static void
-touchpad_set_bool (XDeviceInfo *device_info,
-                   const char  *property_name,
-                   int          property_index,
-                   gboolean     enabled)
-{
-        XDevice *device;
-
-        device = device_is_touchpad (device_info);
-        if (device == NULL) {
-                return;
-        }
-
-        property_set_bool (device_info, device, property_name, property_index, enabled);
-
-        gdk_error_trap_push ();
-        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
-        gdk_error_trap_pop_ignored ();
 }
 
 static void
