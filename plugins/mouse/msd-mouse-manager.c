@@ -822,12 +822,12 @@ set_natural_scroll_all (MsdMouseManager *manager)
 }
 
 static void
-synaptics_set_bool (XDeviceInfo *device_info,
-                    const char  *property_name,
-                    int          property_index,
-                    gboolean     enabled)
+property_set_bool (XDeviceInfo *device_info,
+                   XDevice     *device,
+                   const char  *property_name,
+                   int          property_index,
+                   gboolean     enabled)
 {
-        XDevice *device;
         int rc;
         unsigned long nitems, bytes_after;
         unsigned char *data;
@@ -837,11 +837,6 @@ synaptics_set_bool (XDeviceInfo *device_info,
         property = property_from_name (property_name);
         if (!property)
                 return;
-
-        device = device_is_touchpad (device_info);
-        if (device == NULL) {
-                return;
-        }
 
         gdk_error_trap_push ();
         rc = XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device,
@@ -859,20 +854,39 @@ synaptics_set_bool (XDeviceInfo *device_info,
         if (rc == Success)
                 XFree (data);
 
-        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
         if (gdk_error_trap_pop ()) {
                 g_warning ("Error while setting %s on \"%s\"", property_name, device_info->name);
         }
 }
 
 static void
+touchpad_set_bool (XDeviceInfo *device_info,
+                   const char  *property_name,
+                   int          property_index,
+                   gboolean     enabled)
+{
+        XDevice *device;
+
+        device = device_is_touchpad (device_info);
+        if (device == NULL) {
+                return;
+        }
+
+        property_set_bool (device_info, device, property_name, property_index, enabled);
+
+        gdk_error_trap_push ();
+        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
+        gdk_error_trap_pop_ignored ();
+}
+
+static void
 set_scrolling (XDeviceInfo *device_info,
                GSettings   *settings)
 {
-        synaptics_set_bool (device_info, "Synaptics Edge Scrolling", 0, g_settings_get_boolean (settings, KEY_VERT_EDGE_SCROLL));
-        synaptics_set_bool (device_info, "Synaptics Edge Scrolling", 1, g_settings_get_boolean (settings, KEY_HORIZ_EDGE_SCROLL));
-        synaptics_set_bool (device_info, "Synaptics Two-Finger Scrolling", 0, g_settings_get_boolean (settings, KEY_VERT_TWO_FINGER_SCROLL));
-        synaptics_set_bool (device_info, "Synaptics Two-Finger Scrolling", 1, g_settings_get_boolean (settings, KEY_HORIZ_TWO_FINGER_SCROLL));
+        touchpad_set_bool (device_info, "Synaptics Edge Scrolling", 0, g_settings_get_boolean (settings, KEY_VERT_EDGE_SCROLL));
+        touchpad_set_bool (device_info, "Synaptics Edge Scrolling", 1, g_settings_get_boolean (settings, KEY_HORIZ_EDGE_SCROLL));
+        touchpad_set_bool (device_info, "Synaptics Two-Finger Scrolling", 0, g_settings_get_boolean (settings, KEY_VERT_TWO_FINGER_SCROLL));
+        touchpad_set_bool (device_info, "Synaptics Two-Finger Scrolling", 1, g_settings_get_boolean (settings, KEY_HORIZ_TWO_FINGER_SCROLL));
 }
 
 static void
