@@ -811,8 +811,8 @@ set_click_actions_all (MsdMouseManager *manager)
 }
 
 static void
-set_natural_scroll (XDeviceInfo     *device_info,
-                    gboolean         natural_scroll)
+set_natural_scroll_synaptics (XDeviceInfo *device_info,
+                              gboolean     natural_scroll)
 {
         XDevice *device;
         int format, rc;
@@ -860,6 +860,25 @@ set_natural_scroll (XDeviceInfo     *device_info,
         }
 }
 
+static void
+set_natural_scroll_libinput (XDeviceInfo *device_info,
+                             gboolean     natural_scroll)
+{
+        g_debug ("Trying to set %s for \"%s\"", natural_scroll ? "natural (reverse) scroll" : "normal scroll", device_info->name);
+
+        touchpad_set_bool (device_info, "libinput Natural Scrolling Enabled", 0, natural_scroll);
+}
+
+static void
+set_natural_scroll (XDeviceInfo *device_info,
+                    gboolean     natural_scroll)
+{
+        if (property_from_name ("Synaptics Scrolling Distance"))
+                set_natural_scroll_synaptics (device_info, natural_scroll);
+
+        if (property_from_name ("libinput Natural Scrolling Enabled"))
+                set_natural_scroll_libinput (device_info, natural_scroll);
+}
 
 static void
 set_natural_scroll_all (MsdMouseManager *manager)
