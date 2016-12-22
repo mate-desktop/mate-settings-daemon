@@ -866,9 +866,17 @@ synaptics_set_bool (XDeviceInfo *device_info,
 }
 
 static void
-synaptics_set_bool_all (const char *property_name,
-                        int         property_index,
-                        gboolean    enabled)
+set_scrolling (XDeviceInfo *device_info,
+               GSettings   *settings)
+{
+        synaptics_set_bool (device_info, "Synaptics Edge Scrolling", 0, g_settings_get_boolean (settings, KEY_VERT_EDGE_SCROLL));
+        synaptics_set_bool (device_info, "Synaptics Edge Scrolling", 1, g_settings_get_boolean (settings, KEY_HORIZ_EDGE_SCROLL));
+        synaptics_set_bool (device_info, "Synaptics Two-Finger Scrolling", 0, g_settings_get_boolean (settings, KEY_VERT_TWO_FINGER_SCROLL));
+        synaptics_set_bool (device_info, "Synaptics Two-Finger Scrolling", 1, g_settings_get_boolean (settings, KEY_HORIZ_TWO_FINGER_SCROLL));
+}
+
+static void
+set_scrolling_all (GSettings *settings)
 {
         int numdevices, i;
         XDeviceInfo *devicelist = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &numdevices);
@@ -877,19 +885,10 @@ synaptics_set_bool_all (const char *property_name,
                 return;
 
         for (i = 0; i < numdevices; i++) {
-                synaptics_set_bool (&devicelist[i], property_name, property_index, enabled);
+                set_scrolling (&devicelist[i], settings);
         }
 
         XFreeDeviceList (devicelist);
-}
-
-static void
-set_scrolling (GSettings *settings)
-{
-        synaptics_set_bool_all ("Synaptics Edge Scrolling", 0, g_settings_get_boolean (settings, KEY_VERT_EDGE_SCROLL));
-        synaptics_set_bool_all ("Synaptics Edge Scrolling", 1, g_settings_get_boolean (settings, KEY_HORIZ_EDGE_SCROLL));
-        synaptics_set_bool_all ("Synaptics Two-Finger Scrolling", 0, g_settings_get_boolean (settings, KEY_VERT_TWO_FINGER_SCROLL));
-        synaptics_set_bool_all ("Synaptics Two-Finger Scrolling", 1, g_settings_get_boolean (settings, KEY_HORIZ_TWO_FINGER_SCROLL));
 }
 
 static void
@@ -1043,7 +1042,7 @@ set_mouse_settings (MsdMouseManager *manager)
 
         set_tap_to_click_all (manager);
         set_click_actions_all (manager);
-        set_scrolling (manager->priv->settings_touchpad);
+        set_scrolling_all (manager->priv->settings_touchpad);
         set_natural_scroll_all (manager);
         set_touchpad_enabled_all (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_ENABLED));
 }
@@ -1101,7 +1100,7 @@ touchpad_callback (GSettings          *settings,
                 || (g_strcmp0 (key, KEY_HORIZ_EDGE_SCROLL) == 0)
                 || (g_strcmp0 (key, KEY_VERT_TWO_FINGER_SCROLL) == 0)
                 || (g_strcmp0 (key, KEY_HORIZ_TWO_FINGER_SCROLL) == 0)) {
-                set_scrolling (manager->priv->settings_touchpad);
+                set_scrolling_all (manager->priv->settings_touchpad);
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_NATURAL_SCROLL) == 0) {
                 set_natural_scroll_all (manager);
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_ENABLED) == 0) {
