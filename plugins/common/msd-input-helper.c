@@ -40,26 +40,18 @@ supports_xinput_devices (void)
                                 &error);
 }
 
-XDevice*
-device_is_touchpad (XDeviceInfo *deviceinfo)
+static gboolean
+device_has_property (XDevice    *device,
+                     const char *property_name)
 {
-        XDevice *device;
         Atom realtype, prop;
         int realformat;
         unsigned long nitems, bytes_after;
         unsigned char *data;
 
-        if (deviceinfo->type != XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), XI_TOUCHPAD, True))
-                return NULL;
-
-        prop = XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), "Synaptics Off", True);
+        prop = XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), property_name, True);
         if (!prop)
-                return NULL;
-
-        gdk_error_trap_push ();
-        device = XOpenDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), deviceinfo->id);
-        if (gdk_error_trap_pop () || (device == NULL))
-                return NULL;
+                return FALSE;
 
         gdk_error_trap_push ();
         if ((XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop, 0, 1, False,
@@ -67,10 +59,30 @@ device_is_touchpad (XDeviceInfo *deviceinfo)
                                 &bytes_after, &data) == Success) && (realtype != None)) {
                 gdk_error_trap_pop_ignored ();
                 XFree (data);
-                return device;
+                return TRUE;
         }
 
         gdk_error_trap_pop_ignored ();
+        return FALSE;
+}
+
+XDevice*
+device_is_touchpad (XDeviceInfo *deviceinfo)
+{
+        XDevice *device;
+
+        if (deviceinfo->type != XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), XI_TOUCHPAD, True))
+                return NULL;
+
+        gdk_error_trap_push ();
+        device = XOpenDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), deviceinfo->id);
+        if (gdk_error_trap_pop () || (device == NULL))
+                return NULL;
+
+        if (device_has_property (device, "libinput Tapping Enabled") ||
+            device_has_property (device, "Synaptics Off")) {
+                return device;
+        }
 
         XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
         return NULL;
