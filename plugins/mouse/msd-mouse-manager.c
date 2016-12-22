@@ -107,8 +107,7 @@ static void     msd_mouse_manager_class_init  (MsdMouseManagerClass *klass);
 static void     msd_mouse_manager_init        (MsdMouseManager      *mouse_manager);
 static void     msd_mouse_manager_finalize    (GObject             *object);
 static void     set_mouse_settings            (MsdMouseManager      *manager);
-static void     set_tap_to_click              (MsdMouseManager      *manager,
-                                               XDeviceInfo          *device_info,
+static void     set_tap_to_click              (XDeviceInfo          *device_info,
                                                gboolean              state,
                                                gboolean              left_handed,
                                                gint                  one_finger_tap,
@@ -275,7 +274,7 @@ set_left_handed (MsdMouseManager *manager,
                         gint one_finger_tap = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_ONE_FINGER_TAP);
                         gint two_finger_tap = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_TWO_FINGER_TAP);
                         gint three_finger_tap = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_THREE_FINGER_TAP);
-                        set_tap_to_click (manager, device_info, tap, left_handed, one_finger_tap, two_finger_tap, three_finger_tap);
+                        set_tap_to_click (device_info, tap, left_handed, one_finger_tap, two_finger_tap, three_finger_tap);
                 }
 
                 XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
@@ -485,8 +484,7 @@ set_motion_all (MsdMouseManager *manager)
 }
 
 static void
-set_middle_button (MsdMouseManager *manager,
-                   XDeviceInfo     *device_info,
+set_middle_button (XDeviceInfo     *device_info,
                    gboolean         middle_button)
 {
         XDevice *device;
@@ -529,8 +527,7 @@ set_middle_button (MsdMouseManager *manager,
 }
 
 static void
-set_middle_button_all (MsdMouseManager *manager,
-                       gboolean         middle_button)
+set_middle_button_all (gboolean middle_button)
 {
         XDeviceInfo *device_info;
         gint n_devices;
@@ -539,7 +536,7 @@ set_middle_button_all (MsdMouseManager *manager,
         device_info = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &n_devices);
 
         for (i = 0; i < n_devices; i++) {
-                set_middle_button (manager, &device_info[i], middle_button);
+                set_middle_button (&device_info[i], middle_button);
         }
 
         if (device_info != NULL)
@@ -615,8 +612,7 @@ get_touchpad_handedness (MsdMouseManager *manager,
 }
 
 static void
-set_tap_to_click (MsdMouseManager *manager,
-                  XDeviceInfo     *device_info,
+set_tap_to_click (XDeviceInfo     *device_info,
                   gboolean         state,
                   gboolean         left_handed,
                   gint             one_finger_tap,
@@ -686,15 +682,14 @@ set_tap_to_click_all (MsdMouseManager *manager)
         gint three_finger_tap = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_THREE_FINGER_TAP);
 
         for (i = 0; i < numdevices; i++) {
-                set_tap_to_click (manager, &devicelist[i], state, left_handed, one_finger_tap, two_finger_tap, three_finger_tap);
+                set_tap_to_click (&devicelist[i], state, left_handed, one_finger_tap, two_finger_tap, three_finger_tap);
         }
 
         XFreeDeviceList (devicelist);
 }
 
 static void
-set_click_actions (MsdMouseManager *manager,
-                   XDeviceInfo     *device_info,
+set_click_actions (XDeviceInfo     *device_info,
                    gint             enable_two_finger_click,
                    gint             enable_three_finger_click)
 {
@@ -751,15 +746,14 @@ set_click_actions_all (MsdMouseManager *manager)
         gint enable_three_finger_click = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_THREE_FINGER_CLICK);
 
         for (i = 0; i < numdevices; i++) {
-                set_click_actions (manager, &devicelist[i], enable_two_finger_click, enable_three_finger_click);
+                set_click_actions (&devicelist[i], enable_two_finger_click, enable_three_finger_click);
         }
 
         XFreeDeviceList (devicelist);
 }
 
 static void
-set_natural_scroll (MsdMouseManager *manager,
-                    XDeviceInfo     *device_info,
+set_natural_scroll (XDeviceInfo     *device_info,
                     gboolean         natural_scroll)
 {
         XDevice *device;
@@ -821,7 +815,7 @@ set_natural_scroll_all (MsdMouseManager *manager)
         gboolean natural_scroll = g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_NATURAL_SCROLL);
 
         for (i = 0; i < numdevices; i++) {
-                set_natural_scroll (manager, &devicelist[i], natural_scroll);
+                set_natural_scroll (&devicelist[i], natural_scroll);
         }
 
         XFreeDeviceList (devicelist);
@@ -1043,7 +1037,7 @@ set_mouse_settings (MsdMouseManager *manager)
         set_left_handed_all (manager, mouse_left_handed, touchpad_left_handed);
 
         set_motion_all (manager);
-        set_middle_button_all (manager, g_settings_get_boolean (manager->priv->settings_mouse, KEY_MIDDLE_BUTTON_EMULATION));
+        set_middle_button_all (g_settings_get_boolean (manager->priv->settings_mouse, KEY_MIDDLE_BUTTON_EMULATION));
 
         set_disable_w_typing (manager, g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_DISABLE_W_TYPING));
 
@@ -1067,7 +1061,7 @@ mouse_callback (GSettings          *settings,
                 || (g_strcmp0 (key, KEY_MOTION_THRESHOLD) == 0)) {
                 set_motion_all (manager);
         } else if (g_strcmp0 (key, KEY_MIDDLE_BUTTON_EMULATION) == 0) {
-                set_middle_button_all (manager, g_settings_get_boolean (settings, key));
+                set_middle_button_all (g_settings_get_boolean (settings, key));
         } else if (g_strcmp0 (key, KEY_MOUSE_LOCATE_POINTER) == 0) {
                 set_locate_pointer (manager, g_settings_get_boolean (settings, key));
 #if 0   /* FIXME need to fork (?) mousetweaks for this to work */
