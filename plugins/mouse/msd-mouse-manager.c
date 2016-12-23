@@ -243,6 +243,40 @@ touchpad_has_single_button (XDevice *device)
         return is_single_button;
 }
 
+static gboolean
+property_exists_on_device (XDeviceInfo *device_info,
+                           const char  *property_name)
+{
+        XDevice *device;
+        int rc;
+        Atom type, prop;
+        int format;
+        unsigned long nitems, bytes_after;
+        unsigned char *data;
+
+        prop = property_from_name (property_name);
+        if (!prop)
+                return FALSE;
+
+        gdk_error_trap_push ();
+        device = XOpenDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device_info->id);
+        if ((gdk_error_trap_pop () != 0) || (device == NULL))
+                return FALSE;
+
+        gdk_error_trap_push ();
+        rc = XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
+                                 device, prop, 0, 1, False, XA_INTEGER, &type, &format,
+                                 &nitems, &bytes_after, &data);
+
+        if (rc == Success)
+                XFree (data);
+
+        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
+        gdk_error_trap_pop_ignored ();
+
+        return rc == Success;
+}
+
 static void
 property_set_bool (XDeviceInfo *device_info,
                    XDevice     *device,
