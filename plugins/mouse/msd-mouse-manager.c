@@ -107,7 +107,7 @@ static void     msd_mouse_manager_class_init  (MsdMouseManagerClass *klass);
 static void     msd_mouse_manager_init        (MsdMouseManager      *mouse_manager);
 static void     msd_mouse_manager_finalize    (GObject             *object);
 static void     set_mouse_settings            (MsdMouseManager      *manager);
-static void     set_tap_to_click              (XDeviceInfo          *device_info,
+static void     set_tap_to_click_synaptics    (XDeviceInfo          *device_info,
                                                gboolean              state,
                                                gboolean              left_handed,
                                                gint                  one_finger_tap,
@@ -366,7 +366,7 @@ set_left_handed_legacy_driver (MsdMouseManager *manager,
                         gint one_finger_tap = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_ONE_FINGER_TAP);
                         gint two_finger_tap = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_TWO_FINGER_TAP);
                         gint three_finger_tap = g_settings_get_int (manager->priv->settings_touchpad, KEY_TOUCHPAD_THREE_FINGER_TAP);
-                        set_tap_to_click (device_info, tap, left_handed, one_finger_tap, two_finger_tap, three_finger_tap);
+                        set_tap_to_click_synaptics (device_info, tap, left_handed, one_finger_tap, two_finger_tap, three_finger_tap);
                 }
 
                 XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
