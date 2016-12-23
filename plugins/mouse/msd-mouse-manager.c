@@ -810,9 +810,9 @@ set_tap_to_click_all (MsdMouseManager *manager)
 }
 
 static void
-set_click_actions (XDeviceInfo     *device_info,
-                   gint             enable_two_finger_click,
-                   gint             enable_three_finger_click)
+set_click_actions_synaptics (XDeviceInfo *device_info,
+                             gint         enable_two_finger_click,
+                             gint         enable_three_finger_click)
 {
         XDevice *device;
         int format, rc;
@@ -851,7 +851,66 @@ set_click_actions (XDeviceInfo     *device_info,
         if (gdk_error_trap_pop ()) {
                 g_warning ("Error in setting click actions on \"%s\"", device_info->name);
         }
+}
 
+static void
+set_click_actions_libinput (XDeviceInfo *device_info,
+                            gint         enable_two_finger_click,
+                            gint         enable_three_finger_click)
+{
+        XDevice *device;
+        int format, rc;
+        unsigned long nitems, bytes_after;
+        unsigned char *data;
+        Atom prop, type;
+        gboolean want_clickfinger;
+        gboolean want_softwarebuttons;
+
+        prop = property_from_name ("libinput Click Method Enabled");
+        if (!prop)
+                return;
+
+        device = device_is_touchpad (device_info);
+        if (device == NULL) {
+                return;
+        }
+
+        g_debug ("setting click action to click on %s", device_info->name);
+
+        want_clickfinger = enable_two_finger_click || enable_three_finger_click;
+        want_softwarebuttons = !want_clickfinger;
+
+        gdk_error_trap_push ();
+        rc = XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop, 0, 2,
+                                 False, XA_INTEGER, &type, &format, &nitems,
+                                 &bytes_after, &data);
+
+        if (rc == Success && type == XA_INTEGER && format == 8 && nitems >= 2) {
+                data[0] = want_softwarebuttons;
+                data[1] = want_clickfinger;
+                XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device, prop,
+                                       XA_INTEGER, 8, PropModeReplace, data, nitems);
+        }
+
+        if (rc == Success)
+                XFree (data);
+
+        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
+        if (gdk_error_trap_pop ()) {
+                g_warning ("Error in setting click actions on \"%s\"", device_info->name);
+        }
+}
+
+static void
+set_click_actions (XDeviceInfo *device_info,
+                   gint         enable_two_finger_click,
+                   gint         enable_three_finger_click)
+{
+        if (property_from_name ("Synaptics Click Action"))
+                set_click_actions_synaptics (device_info, enable_two_finger_click, enable_three_finger_click);
+
+        if (property_from_name ("libinput Click Method Enabled"))
+                set_click_actions_libinput (device_info, enable_two_finger_click, enable_three_finger_click);
 }
 
 static void
