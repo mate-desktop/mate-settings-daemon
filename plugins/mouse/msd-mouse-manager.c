@@ -336,10 +336,10 @@ touchpad_set_bool (XDeviceInfo *device_info,
 }
 
 static void
-set_left_handed (MsdMouseManager *manager,
-                 XDeviceInfo     *device_info,
-                 gboolean         mouse_left_handed,
-                 gboolean         touchpad_left_handed)
+set_left_handed_legacy_driver (MsdMouseManager *manager,
+                               XDeviceInfo     *device_info,
+                               gboolean         mouse_left_handed,
+                               gboolean         touchpad_left_handed)
 {
         XDevice *device;
         guchar *buttons;
@@ -406,6 +406,48 @@ set_left_handed (MsdMouseManager *manager,
         XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
 
         g_free (buttons);
+}
+
+static void
+set_left_handed_libinput (XDeviceInfo *device_info,
+                          gboolean     mouse_left_handed,
+                          gboolean     touchpad_left_handed)
+{
+        XDevice *device;
+        gboolean want_lefthanded;
+
+        device = device_is_touchpad (device_info);
+        if (device == NULL) {
+                gdk_error_trap_push ();
+                device = XOpenDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device_info->id);
+                if ((gdk_error_trap_pop () != 0) || (device == NULL))
+                        return;
+
+                want_lefthanded = mouse_left_handed;
+        } else {
+                /* touchpad device is already open after
+                 * return from device_is_touchpad function
+                 */
+                want_lefthanded = touchpad_left_handed;
+        }
+
+        property_set_bool (device_info, device, "libinput Left Handed Enabled", 0, want_lefthanded);
+
+        gdk_error_trap_push ();
+        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
+        gdk_error_trap_pop_ignored ();
+}
+
+static void
+set_left_handed (MsdMouseManager *manager,
+                 XDeviceInfo     *device_info,
+                 gboolean         mouse_left_handed,
+                 gboolean         touchpad_left_handed)
+{
+        if (property_exists_on_device (device_info, "libinput Left Handed Enabled"))
+                set_left_handed_libinput (device_info, mouse_left_handed, touchpad_left_handed);
+        else
+                set_left_handed_legacy_driver (manager, device_info, mouse_left_handed, touchpad_left_handed);
 }
 
 static void
