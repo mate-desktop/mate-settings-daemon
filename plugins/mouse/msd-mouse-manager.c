@@ -542,8 +542,8 @@ set_motion_all (MsdMouseManager *manager)
 }
 
 static void
-set_middle_button (XDeviceInfo     *device_info,
-                   gboolean         middle_button)
+set_middle_button_evdev (XDeviceInfo *device_info,
+                         gboolean     middle_button)
 {
         XDevice *device;
         Atom prop;
@@ -582,6 +582,46 @@ set_middle_button (XDeviceInfo     *device_info,
         if (gdk_error_trap_pop ()) {
                 g_warning ("Error in setting middle button emulation on \"%s\"", device_info->name);
         }
+}
+
+static void
+set_middle_button_libinput (XDeviceInfo *device_info,
+                            gboolean     middle_button)
+{
+        XDevice *device;
+
+        /* touchpad devices are excluded as the old code
+         * only applies to evdev devices
+         */
+        device = device_is_touchpad (device_info);
+        if (device != NULL) {
+                gdk_error_trap_push ();
+                XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
+                gdk_error_trap_pop_ignored ();
+                return;
+        }
+
+        gdk_error_trap_push ();
+        device = XOpenDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device_info->id);
+        if ((gdk_error_trap_pop () != 0) || (device == NULL))
+                return;
+
+        property_set_bool (device_info, device, "libinput Middle Emulation Enabled", 0, middle_button);
+
+        gdk_error_trap_push ();
+        XCloseDevice (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), device);
+        gdk_error_trap_pop_ignored ();
+}
+
+static void
+set_middle_button (XDeviceInfo *device_info,
+                   gboolean     middle_button)
+{
+        if (property_from_name ("Evdev Middle Button Emulation"))
+                set_middle_button_evdev (device_info, middle_button);
+
+        if (property_from_name ("libinput Middle Emulation Enabled"))
+                set_middle_button_libinput (device_info, middle_button);
 }
 
 static void
