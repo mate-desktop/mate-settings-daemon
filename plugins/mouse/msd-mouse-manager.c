@@ -816,9 +816,9 @@ have_program_in_path (const char *name)
 }
 
 static void
-set_disable_w_typing (MsdMouseManager *manager, gboolean state)
+set_disable_w_typing_synaptics (MsdMouseManager *manager,
+                                gboolean         state)
 {
-
         if (state && touchpad_is_present ()) {
                 GError *error = NULL;
                 char *args[6];
@@ -853,6 +853,38 @@ set_disable_w_typing (MsdMouseManager *manager, gboolean state)
                 g_spawn_close_pid (manager->priv->syndaemon_pid);
                 manager->priv->syndaemon_spawned = FALSE;
         }
+}
+
+static void
+set_disable_w_typing_libinput (MsdMouseManager *manager,
+                               gboolean         state)
+{
+        XDeviceInfo *device_info;
+        gint n_devices;
+        gint i;
+
+        /* This is only called once for synaptics but for libinput
+         * we need to loop through the list of devices
+         */
+        device_info = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &n_devices);
+
+        for (i = 0; i < n_devices; i++) {
+                touchpad_set_bool (device_info, "libinput Disable While Typing Enabled", 0, state);
+        }
+
+        if (device_info != NULL)
+                XFreeDeviceList (device_info);
+}
+
+static void
+set_disable_w_typing (MsdMouseManager *manager,
+                      gboolean         state)
+{
+        if (property_from_name ("Synaptics Off"))
+                set_disable_w_typing_synaptics (manager, state);
+
+        if (property_from_name ("libinput Disable While Typing Enabled"))
+                set_disable_w_typing_libinput (manager, state);
 }
 
 static gboolean
