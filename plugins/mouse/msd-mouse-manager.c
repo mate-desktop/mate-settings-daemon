@@ -710,12 +710,12 @@ get_touchpad_handedness (MsdMouseManager *manager,
 }
 
 static void
-set_tap_to_click (XDeviceInfo     *device_info,
-                  gboolean         state,
-                  gboolean         left_handed,
-                  gint             one_finger_tap,
-                  gint             two_finger_tap,
-                  gint             three_finger_tap)
+set_tap_to_click_synaptics (XDeviceInfo *device_info,
+                            gboolean     state,
+                            gboolean     left_handed,
+                            gint         one_finger_tap,
+                            gint         two_finger_tap,
+                            gint         three_finger_tap)
 {
         XDevice *device;
         int format, rc;
@@ -762,6 +762,29 @@ set_tap_to_click (XDeviceInfo     *device_info,
         if (gdk_error_trap_pop ()) {
                 g_warning ("Error in setting tap to click on \"%s\"", device_info->name);
         }
+}
+
+static void
+set_tap_to_click_libinput (XDeviceInfo *device_info,
+                           gboolean     state)
+{
+        touchpad_set_bool (device_info, "libinput Tapping Enabled", 0, state);
+}
+
+static void
+set_tap_to_click (XDeviceInfo *device_info,
+                  gboolean     state,
+                  gboolean     left_handed,
+                  gint         one_finger_tap,
+                  gint         two_finger_tap,
+                  gint         three_finger_tap)
+{
+        if (property_from_name ("Synaptics Tap Action"))
+                set_tap_to_click_synaptics (device_info, state, left_handed,
+                                            one_finger_tap, two_finger_tap, three_finger_tap);
+
+        if (property_from_name ("libinput Tapping Enabled"))
+                set_tap_to_click_libinput (device_info, state);
 }
 
 static void
