@@ -869,7 +869,7 @@ set_disable_w_typing_libinput (MsdMouseManager *manager,
         device_info = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &n_devices);
 
         for (i = 0; i < n_devices; i++) {
-                touchpad_set_bool (device_info, "libinput Disable While Typing Enabled", 0, state);
+                touchpad_set_bool (&device_info[i], "libinput Disable While Typing Enabled", 0, state);
         }
 
         if (device_info != NULL)
