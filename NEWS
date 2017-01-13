@@ -1,6 +1,5 @@
-1.17.1
+### mate-settings-daemon 1.17.0
 
-1.17.0
   * Translations update
   * move to GTK+3 (>= 3.14), drop GTK+2 code and --with-gtk build option
   * background: add missing GTK+ version check to avoid build warning
@@ -34,7 +33,8 @@
   * build: require XInput unconditionally
   * xrandr: use proper libmate-desktop function in GTK+3 build
 
-1.16.0
+### mate-settings-daemon 1.16.0
+
   * Change default hinting style to 'hintslight'
   * Use 'rgba' (LCD subpixel) antialiasing by default
   * GTK+3: add css theming for OSD (MsdOsdWindow) instead of using
@@ -44,14 +44,16 @@
   * Fix some build warnings
   * Translations update
 
-1.14.1
+### mate-settings-daemon 1.14.1
+
   * housekeeping: fix thumbnails cleaning
   * housekeeping: fix text markup
   * media-keys: use gnome-calculator binary instead of old gcalctool
   * Translations update
   * Make distcheck use currently selected GTK+ version
 
-1.14.0
+### mate-settings-daemon 1.14.0
+
   * Drop MateConf migration script
   * media-keys: add setting to enable/disable OSD
   * touchpad: support edge and two-finger scrolling independently
@@ -62,12 +64,14 @@
   * Translations update
   * Fix Changelog generation
 
-1.12.1
+### mate-settings-daemon 1.12.1
+
   * xrandr: install icon in correct directory
   * GTK+3: don't remove xrandr applet background (fixes invisible
     text in some themes)
 
-1.12.0
+### mate-settings-daemon 1.12.0
+
   * Add new keybinding for logout (empty by default)
   * Retrieve strings directly from gschema (requires intltool 0.50.1)
   * Switch to org.gnome.SessionManager
@@ -77,26 +81,31 @@
   * GTK+3: make xrandr tray applet support custom panel themes
   * Some more fixes and cleanups
 
-1.10.2
+### mate-settings-daemon 1.10.2
+
   * a11y: don't use ancient properties
   * housekeeping: don’t monitor fdescfs (special FS in FreeBSD)
   * keyboard: connect to libmatekbd's GSettings before reading them
   * mouse: use event driven mode for syndaemon, save some power
 
-1.10.1
+### mate-settings-daemon 1.10.1
+
   * Fix media keys issue with multiple players
   * Add some missing manpages
   * Translations update
 
-1.10.0
+### mate-settings-daemon 1.10.0
+
   * Port media-keys plugin to libmatemixer
   * Remove GStreamer bits, make libmatemixer, libcanberra and PulseAudio
     optional dependencies
   * Adapt to mate-desktop MateRR* API changes. Thanks to monsta for testing.
 
-1.8.0
+### mate-settings-daemon 1.8.0
+
   * Add GTK3 support
   * Add Middle Click Emulation to mouse manager
 
-1.6.0
+### mate-settings-daemon 1.6.0
+
   * Migration to gsettings
