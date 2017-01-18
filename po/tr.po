@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Atilla Öntaş <tarakbumba@gmail.com>, 2014
+# tarakbumba <tarakbumba@gmail.com>, 2014
 # Baris Cicek <baris@teamforce.name.tr>, 2004-2005,2008-2009
 # Butterfly <gokhanlnx@gmail.com>, 2015
 # Emre FIRAT <emrefirat93@gmail.com>, 2016
@@ -12,13 +12,14 @@
 # mauron, 2013,2016
 # mauron, 2012
 # Nilgün Belma Bugüner <nilgun@fide.org>, 2001
+# Rahmi GENÇ <bt06sof@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-29 13:05+0300\n"
-"PO-Revision-Date: 2016-03-30 09:53+0000\n"
-"Last-Translator: mauron\n"
+"POT-Creation-Date: 2016-12-06 01:02+0300\n"
+"PO-Revision-Date: 2017-01-18 15:34+0000\n"
+"Last-Translator: Rahmi GENÇ <bt06sof@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/mate/MATE/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -231,6 +232,36 @@ msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
 msgstr "Üç parmak tıklaması için düğme atamasını seç. Desteklenen değerler: 1: sol fare düğmesi 2: orta fare düğmesi 3: sağ fare düğmesi"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:26
+msgid "Touchpad button orientation"
+msgstr "Touchpad button dizilimi"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:27
+msgid ""
+"Swap left and right buttons for left-handed touchpads with 'left', 'right' "
+"for right-handed, 'mouse' to follow the mouse setting."
+msgstr "sağ-el mause için \"sağ\", sol el mause için \"sol\", mause ayarları için \"mouse\" yi seçin."
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
+msgid "Motion Acceleration"
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:29
+msgid ""
+"Acceleration multiplier for touchpad motion. A value of -1 is the system "
+"default."
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
+msgid "Motion Threshold"
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:31
+msgid ""
+"Distance in pixels the pointer must move before accelerated touchpad motion "
+"is activated. A value of -1 is the system default."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
@@ -633,98 +664,98 @@ msgstr "Erişilebilirlik Klavyesi"
 msgid "Accessibility keyboard plugin"
 msgstr "Erişilebilirlik klavyesi eklentisi"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:454
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:441
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Yardım dosyasının görüntülenmesinde bir hata oluştu: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:582
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:646
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:569
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:633
 msgid "Do you want to activate Slow Keys?"
 msgstr "Tuş Yavaşlatmasını aktif hale getirmek istiyor musunuz?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:583
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:647
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:570
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:634
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Tuş Yavaşlatmasını kapatmak istiyor musunuz?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:584
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:648
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:571
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:635
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
 msgstr "Sadece Shift tuşunu 8 saniye basılı tutun.  Bu klavyenizin çalışma biçimini etkileyecek Tuş Yavaşlatması özelliği için bir kısayoldur."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Don't activate"
 msgstr "Etkinleştirme"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Don't deactivate"
 msgstr "Devre dışı bırakma"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:600
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:737
 msgid "Activate"
 msgstr "Etkinleştir"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:600
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:737
 msgid "Deactivate"
 msgstr "Devre dışı bırak"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:669
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:808
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:795
 msgid "Do_n't activate"
 msgstr "_Etkinleştirme"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:669
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:808
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:795
 msgid "Do_n't deactivate"
 msgstr "Etki_sizleştirme"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:672
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:811
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
 msgid "_Activate"
 msgstr "_Etkinleştir"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:672
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:811
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
 msgid "_Deactivate"
 msgstr "E_tkisizleştir"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:676
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
 msgid "Slow Keys Alert"
 msgstr "Tuş Yavaşlatması Uyarısı"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:716
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:782
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:703
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:769
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Yapışkan Tuşlar özelliğini aktif hale getirmek istiyor musunuz?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:717
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:783
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:704
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:770
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Yapışkan Tuşları kapatmak istiyor musunuz?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:719
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:785
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:706
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:772
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
 msgstr "Sadece Shift tuşuna 5 kere art arda basın.  Bu klavyenizin çalışma biçimini etkileyecek Yapışkan Tuşlar özelliği için bir kısayoldur."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:721
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:787
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:708
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:774
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
 msgstr "Aynı anda iki tuşa bastınız veya Shift tuşuna art arda 5 kere bastınız.  Bu klavyenizin çalışma biçimini etkileyecek Yapışkan Tuşlar özelliğini kapatır."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:815
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
 msgid "Sticky Keys Alert"
 msgstr "Yapışkan Tuş Uyarısı"
 
@@ -789,100 +820,100 @@ msgstr "Aptal"
 msgid "Dummy plugin"
 msgstr "Aptal eklentisi"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:70
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:65
 msgid "Don't show any warnings again for this file system"
 msgstr "Bu dosya sistemi için tekrar hiçbir uyarı gösterme"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:72
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:67
 msgid "Don't show any warnings again"
 msgstr "_Bir daha hiçbir uyarı gösterme"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:85
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:80
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr "Birim \"%s\" üzerinde sadece %s disk alanı kaldı."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:88
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:83
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr "Bu bilgisayarda sadece %s disk alanı kaldı."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:104
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:99
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
 msgstr "Çöp'ü boşaltarak, kullanmadığınız programları ya da dosyaları silerek ya da dosyaları başka bir diske veya bölümlemeye taşıyarak disk boş alanınızı arttırabilirsiniz."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:107
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
 msgstr "Kullanmadığınız programları ya da dosyaları silerek ya da dosyaları başka bir diske veya bölümlemeye taşıyarak disk boş alanınızı arttırabilirsiniz."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:112
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
 msgstr "Çöp'ü boşaltarak, kullanmadığınız programları ya da dosyaları silerek ya da dosyaları başka bir harici diske taşıyarak disk boş alanınızı arttırabilirsiniz."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:115
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:110
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
 msgstr "Kullanmadığınız programları ya da dosyaları silerek ya da dosyaları başka bir harici diske taşıyarak disk boş alanınızı arttırabilirsiniz."
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:212
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:207
 msgid "Low Disk Space"
 msgstr "Düşük Disk Alanı"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:450
 msgid "Empty Trash"
 msgstr "Çöpü Boşalt"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:458
 msgid "Examine…"
 msgstr "İncele..."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:474
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:465
 msgid "Ignore"
 msgstr "Yoksay"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:102
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:97
 #, c-format
 msgid "Removing item %lu of %lu"
 msgstr "Silinen öğe %lu / %lu"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:122
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 msgid "Removing: %s"
 msgstr "Kaldırılıyor: %s"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:252
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:321
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
 msgid "Emptying the trash"
 msgstr "Çöp boşaltılıyor"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:297
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
 msgid "Preparing to empty trash…"
 msgstr "Çöpün boşaltılmasına hazırlanılıyor..."
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:324
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
 msgid "From: "
 msgstr "Kaynak:"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:376
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
 msgid "Empty all of the items from the trash?"
 msgstr "Çöpten tüm öğeler boşaltılsın mı?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:379
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
 msgstr "Eğer çöpü boşaltmayı seçerseniz, içindeki tüm öğeler kalıcı olarak silinecek. Lütfen onları ayrı ayrı da silebileceğinizi unutmayın."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:386
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
 msgid "_Empty Trash"
 msgstr "Çöpü _Boşalt"
 
@@ -896,7 +927,7 @@ msgstr "Tuş bağı (%s) geçersiz"
 msgid "Key binding (%s) is incomplete"
 msgstr "Tuş bağı (%s) eksik"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:506
+#: ../plugins/keybindings/msd-keybindings-manager.c:503
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -936,15 +967,15 @@ msgid ""
 " • The result of <b>%s</b>"
 msgstr "XKB yapılandıması etkinleştirilirken hata.\nBu çeşitli şartlar altında gerçekleşebilir.\n• libxklavier library kütüphanesinde bir böcek/hata\n• X sunucusunda (xkbcomp, xmodmap araçları) bir böcek/hata\n• libxkbfile uyguaması ile uyumsuz X sunucusu\n\nX sunucusu sürüm verisi:\n%s\n%d\nEğer bu durumu rapor edecekseniz, lütfen şunları ekleyiniz:\n• <b>%s</b> sonucu\n• <b>%s</b> sonucu"
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:273
+#: ../plugins/keyboard/msd-keyboard-xkb.c:265
 msgid "_Layouts"
 msgstr "_Düzenler"
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:280
+#: ../plugins/keyboard/msd-keyboard-xkb.c:272
 msgid "Keyboard _Preferences"
 msgstr "Klavye _Tercihleri"
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:286
+#: ../plugins/keyboard/msd-keyboard-xkb.c:278
 msgid "Show _Current Layout"
 msgstr "_Güncel Düzeni Göster"
 
@@ -969,16 +1000,16 @@ msgstr "Ortam tuşları"
 msgid "Media keys plugin"
 msgstr "Ortam tuşları eklentisi"
 
-#: ../plugins/mouse/msd-mouse-manager.c:920
+#: ../plugins/mouse/msd-mouse-manager.c:1021
 msgid "Could not enable mouse accessibility features"
 msgstr "Klavye erişilebilirlik özelliklerini etkinleştirilemedi"
 
-#: ../plugins/mouse/msd-mouse-manager.c:922
+#: ../plugins/mouse/msd-mouse-manager.c:1023
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr "Fare yardımcısı Mousetweaks programının sisteminizde kurulu olmasını gerektirir."
 
-#: ../plugins/mouse/msd-mouse-manager.c:925
+#: ../plugins/mouse/msd-mouse-manager.c:1026
 msgid "Mouse Preferences"
 msgstr "Fare Tercihleri"
 
@@ -1059,39 +1090,39 @@ msgstr "Ekran bilgilerini yenilenemedi: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Gene de ekran yapılandırmasına geçmeye çalışılıyor."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1914
+#: ../plugins/xrandr/msd-xrandr-manager.c:1888
 msgid "Rotation not supported"
 msgstr "Döndürme desteklenmemektedir"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1970
+#: ../plugins/xrandr/msd-xrandr-manager.c:1944
 msgid "Could not save monitor configuration"
 msgstr "Ekran yapılandırması kaydedilemedi"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1988
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Normal"
 msgstr "Normal"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1989
+#: ../plugins/xrandr/msd-xrandr-manager.c:1963
 msgid "Left"
 msgstr "Sol"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1990
+#: ../plugins/xrandr/msd-xrandr-manager.c:1964
 msgid "Right"
 msgstr "Sağ"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1991
+#: ../plugins/xrandr/msd-xrandr-manager.c:1965
 msgid "Upside Down"
 msgstr "Yukarıdan Aşağı"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2113
+#: ../plugins/xrandr/msd-xrandr-manager.c:2087
 msgid "_Configure Display Settings…"
 msgstr "Ekran Ayarlarını _Yapılandır..."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2167
+#: ../plugins/xrandr/msd-xrandr-manager.c:2140
 msgid "Configure display settings"
 msgstr "Ekran ayarlarını yapılandır"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2227
+#: ../plugins/xrandr/msd-xrandr-manager.c:2200
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Ekranlar için kayıtlı yapılandırma uygulanamadı"
 
