@@ -1,3 +1,25 @@
+### mate-settings-daemon 1.17.1
+
+  * mouse: fix applying "disable while typing" setting to all devices
+  * mouse: libinput - hook up disable while typing
+  * mouse: libinput - hook up acceleration setting
+  * mouse: call only Synaptics function from set_left_handed_legacy_driver
+  * mouse: libinput - hook up left-handed setting
+  * mouse: added helper to check if property exists on device
+  * mouse: libinput - hook up click methods
+  * mouse: libinput - hook up scrolling settings
+  * mouse: libinput - hook up tapping configuration
+  * mouse: libinput - hook up middle button emulation
+  * mouse: libinput - hook up natural scroll configuration
+  * common: recognize libinput touchpads as touchpads
+  * OSD: Add style class for noncomposited case
+  * OSD: fix rendering on noncomposited desktop
+  * mouse: move bool property helpers closer to the top
+  * mouse: split helper for setting bool property into two separate ones
+  * reorganize helpers for setting touchpad scrolling
+  * mouse: remove unused argument from some functions
+  * po: actually add new language from Transifex
+
 ### mate-settings-daemon 1.17.0
 
   * Translations update
