@@ -1,3 +1,8 @@
+1.16.1
+  * GTK+3: fix possible build breakage with libmate-desktop 1.17
+  * GTK+3: fix OSD rendering on non-composited desktop
+  * GTK+3: add OSD style class for non-composited desktop
+
 1.16.0
   * Change default hinting style to 'hintslight'
   * Use 'rgba' (LCD subpixel) antialiasing by default
