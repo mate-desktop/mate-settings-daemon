@@ -42,7 +42,7 @@ typedef struct MsdLocatePointerData MsdLocatePointerData;
 struct MsdLocatePointerData
 {
   MsdTimeline *timeline;
-  GtkWidget *widget;
+  GtkWindow *widget;
   GdkWindow *window;
 
   gdouble progress;
@@ -51,43 +51,42 @@ struct MsdLocatePointerData
 static MsdLocatePointerData *data = NULL;
 
 static void
-msd_get_background_color (GtkStyleContext *context,
-                          GtkStateFlags    state,
-                          GdkRGBA         *color)
-{
-    GdkRGBA *c;
-
-    g_return_if_fail (color != NULL);
-    g_return_if_fail (GTK_IS_STYLE_CONTEXT (context));
-
-    gtk_style_context_get (context,
-                           state,
-                           "background-color", &c,
-                           NULL);
-    *color = *c;
-    gdk_rgba_free (c);
-}
-
-static void
 locate_pointer_paint (MsdLocatePointerData *data,
 		      cairo_t              *cr,
-		      gboolean              composite)
+		      gboolean              composited)
 {
   GdkRGBA color;
   gdouble progress, circle_progress;
   gint width, height, i;
-  GtkStyleContext *context;
+  GtkStyleContext *style;
+
+  color.red = color.green = color.blue = 0.7;
+  color.alpha = 0.;
 
   progress = data->progress;
 
   width = gdk_window_get_width (data->window);
   height = gdk_window_get_height (data->window);
 
-  context = gtk_widget_get_style_context (data->widget);
-  msd_get_background_color (context, GTK_STATE_FLAG_SELECTED, &color);
+  style = gtk_widget_get_style_context (GTK_WIDGET (data->widget));
+  gtk_style_context_save (style);
+  gtk_style_context_set_state (style, GTK_STATE_FLAG_SELECTED);
+  gtk_style_context_add_class (style, GTK_STYLE_CLASS_VIEW);
+  gtk_style_context_get_background_color (style,
+                                          gtk_style_context_get_state (style),
+                                          &color);
+  if (color.alpha == 0.)
+    {
+      gtk_style_context_remove_class (style, GTK_STYLE_CLASS_VIEW);
+      gtk_style_context_get_background_color (style,
+                                              gtk_style_context_get_state (style),
+                                              &color);
+    }
+  gtk_style_context_restore (style);
 
-  cairo_set_source_rgba (cr, 1., 1., 1., 0.);
+  cairo_save (cr);
   cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
+  cairo_set_source_rgba (cr, 1., 1., 1., 0.);
   cairo_paint (cr);
 
   for (i = 0; i <= N_CIRCLES; i++)
@@ -101,7 +100,7 @@ locate_pointer_paint (MsdLocatePointerData *data,
       if (circle_progress >= 1.)
 	continue;
 
-      if (composite)
+      if (composited)
 	{
 	  cairo_set_source_rgba (cr,
 				 color.red,
@@ -138,37 +137,30 @@ locate_pointer_paint (MsdLocatePointerData *data,
 	  cairo_stroke (cr);
 	}
     }
-}
 
-static gboolean
-locate_pointer_draw (GtkWidget      *widget,
-                     cairo_t        *cr,
-                     gpointer        user_data)
-{
-  MsdLocatePointerData *data = (MsdLocatePointerData *) user_data;
-
-  if (gtk_cairo_should_draw_window (cr, data->window))
-    locate_pointer_paint (data, cr, gtk_widget_is_composited (data->widget));
-
-  return TRUE;
+  cairo_restore (cr);
 }
 
 static void
 update_shape (MsdLocatePointerData *data)
 {
   cairo_t *cr;
-  cairo_region_t *region;
   cairo_surface_t *mask;
+  cairo_region_t *region;
 
-  mask = cairo_image_surface_create (CAIRO_FORMAT_A1, WINDOW_SIZE, WINDOW_SIZE);
+  mask = gdk_window_create_similar_image_surface (data->window,
+                                                  CAIRO_FORMAT_A1,
+                                                  WINDOW_SIZE,
+                                                  WINDOW_SIZE,
+                                                  0);
   cr = cairo_create (mask);
-  region = gdk_cairo_region_create_from_surface (mask);
-
   locate_pointer_paint (data, cr, FALSE);
 
-  gdk_window_shape_combine_region (data->window, region, 0, 0);
-  cairo_region_destroy (region);
+  region = gdk_cairo_region_create_from_surface (mask);
 
+  gdk_window_shape_combine_region (data->window, region, 0, 0);
+
+  cairo_region_destroy (region);
   cairo_destroy (cr);
   cairo_surface_destroy (mask);
 }
@@ -179,14 +171,19 @@ timeline_frame_cb (MsdTimeline *timeline,
 		   gpointer     user_data)
 {
   MsdLocatePointerData *data = (MsdLocatePointerData *) user_data;
-  GdkScreen *screen;
+  GdkDisplay *display = gdk_window_get_display (data->window);
+  GdkScreen *screen = gdk_display_get_default_screen (display);
+#if GTK_CHECK_VERSION (3, 20, 0)
+  GdkSeat *seat;
+#else
   GdkDeviceManager *device_manager;
+#endif
   GdkDevice *pointer;
   gint cursor_x, cursor_y;
 
-  if (gtk_widget_is_composited (data->widget))
+  if (gdk_screen_is_composited (screen))
     {
-      gdk_window_invalidate_rect (data->window, NULL, FALSE);
+      gtk_widget_queue_draw (GTK_WIDGET (data->widget));
       data->progress = progress;
     }
   else if (progress >= data->progress + CIRCLES_PROGRESS_INTERVAL)
@@ -197,16 +194,19 @@ timeline_frame_cb (MsdTimeline *timeline,
       data->progress += CIRCLES_PROGRESS_INTERVAL;
     }
 
-  screen = gdk_window_get_screen (data->window);
-  device_manager = gdk_display_get_device_manager (gdk_window_get_display (gdk_screen_get_root_window (screen)));
+#if GTK_CHECK_VERSION (3, 20, 0)
+  seat = gdk_display_get_default_seat (display);
+  pointer = gdk_seat_get_pointer (seat);
+#else
+  device_manager = gdk_display_get_device_manager (display);
   pointer = gdk_device_manager_get_client_pointer (device_manager);
-  gdk_window_get_device_position (gdk_screen_get_root_window (screen),
-                                  pointer,
-                                  &cursor_x,
-                                  &cursor_y,
-                                  NULL);
+#endif
+  gdk_device_get_position (pointer,
+                           NULL,
+                           &cursor_x,
+                           &cursor_y);
 
-  gdk_window_move (data->window,
+  gtk_window_move (data->widget,
                    cursor_x - WINDOW_SIZE / 2,
                    cursor_y - WINDOW_SIZE / 2);
 }
@@ -214,28 +214,48 @@ timeline_frame_cb (MsdTimeline *timeline,
 static void
 set_transparent_shape (GdkWindow *window)
 {
+  cairo_t *cr;
+  cairo_surface_t *mask;
   cairo_region_t *region;
 
-  region = cairo_region_create ();
+  mask = gdk_window_create_similar_image_surface (window,
+                                                  CAIRO_FORMAT_A1,
+                                                  WINDOW_SIZE,
+                                                  WINDOW_SIZE,
+                                                  0);
+  cr = cairo_create (mask);
 
-  gdk_window_input_shape_combine_region (data->window, region, 0, 0);
+  cairo_set_source_rgba (cr, 1., 1., 1., 0.);
+  cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
+  cairo_paint (cr);
+
+  region = gdk_cairo_region_create_from_surface (mask);
+
+  gdk_window_shape_combine_region (window, region, 0, 0);
+
   cairo_region_destroy (region);
+  cairo_destroy (cr);
+  cairo_surface_destroy (mask);
 }
 
 static void
 unset_transparent_shape (GdkWindow *window)
 {
-  gdk_window_shape_combine_region (data->window, NULL, 0, 0);
+  gdk_window_shape_combine_region (window, NULL, 0, 0);
 }
 
 static void
-composited_changed (GtkWidget            *widget,
+composited_changed (GdkScreen            *screen,
                     MsdLocatePointerData *data)
 {
-  if (!gtk_widget_is_composited (widget))
-    set_transparent_shape (data->window);
+  if (gdk_screen_is_composited (screen))
+    {
+      unset_transparent_shape (data->window);
+    }
   else
-    unset_transparent_shape (data->window);
+    {
+      set_transparent_shape (data->window);
+    }
 }
 
 static void
@@ -243,31 +263,52 @@ timeline_finished_cb (MsdTimeline *timeline,
 		      gpointer     user_data)
 {
   MsdLocatePointerData *data = (MsdLocatePointerData *) user_data;
+  GdkScreen *screen = gdk_window_get_screen (data->window);
 
   /* set transparent shape and hide window */
-  if (!gtk_widget_is_composited (data->widget))
+  if (!gdk_screen_is_composited (screen))
     set_transparent_shape (data->window);
 
-  gdk_window_hide (data->window);
+  gtk_widget_hide (GTK_WIDGET (data->widget));
 }
 
 static void
-create_window (MsdLocatePointerData *data,
-	       GdkScreen            *screen)
+locate_pointer_unrealize_cb (GtkWidget            *widget,
+                             MsdLocatePointerData *data)
 {
+  if (data->window != NULL)
+    {
+      gtk_widget_unregister_window (GTK_WIDGET (data->widget),
+                                    data->window);
+      gdk_window_destroy (data->window);
+    }
+  data->window = NULL;
+}
+
+static void
+locate_pointer_realize_cb (GtkWidget            *widget,
+                           MsdLocatePointerData *data)
+{
+  GdkDisplay *display;
+  GdkScreen *screen;
   GdkVisual *visual;
   GdkWindowAttr attributes;
   gint attributes_mask;
 
+  display = gtk_widget_get_display (GTK_WIDGET (data->widget));
+  screen = gdk_display_get_default_screen (display);
   visual = gdk_screen_get_rgba_visual (screen);
 
   if (visual == NULL)
     visual = gdk_screen_get_system_visual (screen);
 
-  attributes_mask = GDK_WA_X | GDK_WA_Y;
+  locate_pointer_unrealize_cb (GTK_WIDGET (data->widget), data);
 
+  attributes_mask = GDK_WA_X | GDK_WA_Y;
   if (visual != NULL)
-    attributes_mask = attributes_mask | GDK_WA_VISUAL;
+    {
+      attributes_mask |= GDK_WA_VISUAL;
+    }
 
   attributes.window_type = GDK_WINDOW_TEMP;
   attributes.wclass = GDK_INPUT_OUTPUT;
@@ -280,11 +321,30 @@ create_window (MsdLocatePointerData *data,
 				 &attributes,
 				 attributes_mask);
 
-  gdk_window_set_user_data (data->window, data->widget);
+  gtk_widget_set_window (GTK_WIDGET (data->widget),
+                         data->window);
+  gtk_widget_register_window (GTK_WIDGET (data->widget),
+                              data->window);
+}
+
+static gboolean
+locate_pointer_draw_cb (GtkWidget      *widget,
+                        cairo_t        *cr,
+                        gpointer        user_data)
+{
+  MsdLocatePointerData *data = (MsdLocatePointerData *) user_data;
+  GdkScreen *screen = gtk_window_get_screen (data->widget);
+
+  if (gtk_cairo_should_draw_window (cr, data->window))
+    {
+      locate_pointer_paint (data, cr, gdk_screen_is_composited (screen));
+    }
+
+  return TRUE;
 }
 
 static MsdLocatePointerData *
-msd_locate_pointer_data_new (GdkScreen *screen)
+msd_locate_pointer_data_new (GdkDisplay *display)
 {
   MsdLocatePointerData *data;
 
@@ -293,12 +353,20 @@ msd_locate_pointer_data_new (GdkScreen *screen)
   /* this widget will never be shown, it's
    * mainly used to get signals/events from
    */
-  data->widget = gtk_window_new (GTK_WINDOW_POPUP);
-  gtk_widget_realize (data->widget);
+  data->widget = GTK_WINDOW (gtk_window_new (GTK_WINDOW_POPUP));
 
-  g_signal_connect (G_OBJECT (data->widget), "draw",
-                    G_CALLBACK (locate_pointer_draw),
+  g_signal_connect (GTK_WIDGET (data->widget), "unrealize",
+                    G_CALLBACK (locate_pointer_unrealize_cb),
                     data);
+  g_signal_connect (GTK_WIDGET (data->widget), "realize",
+                    G_CALLBACK (locate_pointer_realize_cb),
+                    data);
+  g_signal_connect (GTK_WIDGET (data->widget), "draw",
+                    G_CALLBACK (locate_pointer_draw_cb),
+                    data);
+
+  gtk_widget_set_app_paintable (GTK_WIDGET (data->widget), TRUE);
+  gtk_widget_realize (GTK_WIDGET (data->widget));
 
   data->timeline = msd_timeline_new (ANIMATION_LENGTH);
   g_signal_connect (data->timeline, "frame",
@@ -306,61 +374,83 @@ msd_locate_pointer_data_new (GdkScreen *screen)
   g_signal_connect (data->timeline, "finished",
 		    G_CALLBACK (timeline_finished_cb), data);
 
-  create_window (data, screen);
-
   return data;
 }
 
 static void
 move_locate_pointer_window (MsdLocatePointerData *data,
-			    GdkScreen            *screen)
+			    GdkDisplay           *display)
 {
+#if GTK_CHECK_VERSION (3, 20, 0)
+  GdkSeat *seat;
+#else
   GdkDeviceManager *device_manager;
+#endif
   GdkDevice *pointer;
   gint cursor_x, cursor_y;
+  cairo_t *cr;
+  cairo_surface_t *mask;
+  cairo_region_t *region;
 
-  device_manager = gdk_display_get_device_manager (gdk_window_get_display (gdk_screen_get_root_window (screen)));
+#if GTK_CHECK_VERSION (3, 20, 0)
+  seat = gdk_display_get_default_seat (display);
+  pointer = gdk_seat_get_pointer (seat);
+#else
+  device_manager = gdk_display_get_device_manager (display);
   pointer = gdk_device_manager_get_client_pointer (device_manager);
-  gdk_window_get_device_position (gdk_screen_get_root_window (screen),
-                                  pointer,
-                                  &cursor_x,
-                                  &cursor_y,
-                                  NULL);
+#endif
+  gdk_device_get_position (pointer,
+                           NULL,
+                           &cursor_x,
+                           &cursor_y);
 
-  gdk_window_move_resize (data->window,
-                          cursor_x - WINDOW_SIZE / 2,
-                          cursor_y - WINDOW_SIZE / 2,
-                          WINDOW_SIZE, WINDOW_SIZE);
+  gtk_window_move (data->widget,
+                   cursor_x - WINDOW_SIZE / 2,
+                   cursor_y - WINDOW_SIZE / 2);
+  gtk_window_resize (data->widget,
+                     WINDOW_SIZE, WINDOW_SIZE);
 
-  gdk_window_input_shape_combine_region (data->window, NULL, 0, 0);
+  mask = gdk_window_create_similar_image_surface (data->window,
+                                                  CAIRO_FORMAT_A1,
+                                                  WINDOW_SIZE,
+                                                  WINDOW_SIZE,
+                                                  0);
+  cr = cairo_create (mask);
+
+  cairo_set_source_rgb (cr, 0., 0., 0.);
+  cairo_rectangle (cr, 0., 0., WINDOW_SIZE, WINDOW_SIZE);
+  cairo_fill (cr);
+
+  region = gdk_cairo_region_create_from_surface (mask);
+
+  gdk_window_input_shape_combine_region (data->window, region, 0, 0);
+
+  cairo_region_destroy (region);
+  cairo_destroy (cr);
+  cairo_surface_destroy (mask);
 }
 
 void
-msd_locate_pointer (GdkScreen *screen)
+msd_locate_pointer (GdkDisplay *display)
 {
-  if (!data)
-    data = msd_locate_pointer_data_new (screen);
+  GdkScreen *screen = gdk_display_get_default_screen (display);
+
+  if (data == NULL)
+    {
+      data = msd_locate_pointer_data_new (display);
+    }
 
   msd_timeline_pause (data->timeline);
   msd_timeline_rewind (data->timeline);
 
-  /* Create again the window if it is not for the current screen */
-  if (gdk_screen_get_number (screen) != gdk_screen_get_number (gdk_window_get_screen (data->window)))
-    {
-      gdk_window_set_user_data (data->window, NULL);
-      gdk_window_destroy (data->window);
-
-      create_window (data, screen);
-    }
-
   data->progress = 0.;
 
-  g_signal_connect (data->widget, "composited-changed",
+  g_signal_connect (screen, "composited-changed",
                     G_CALLBACK (composited_changed), data);
 
-  move_locate_pointer_window (data, screen);
-  composited_changed (data->widget, data);
-  gdk_window_show (data->window);
+  move_locate_pointer_window (data, display);
+  composited_changed (screen, data);
+  gtk_widget_show (GTK_WIDGET (data->widget));
 
   msd_timeline_start (data->timeline);
 }
@@ -379,7 +469,7 @@ filter (GdkXEvent *xevent,
   guint keyval;
   gint group;
 
-  GdkScreen *screen = (GdkScreen *)data;
+  GdkDisplay *display = (GdkDisplay *) data;
 
   if (xev->type == KeyPress || xev->type == KeyRelease)
     {
@@ -404,7 +494,7 @@ filter (GdkXEvent *xevent,
               XAllowEvents (xev->xkey.display,
                             AsyncKeyboard,
                             xev->xkey.time);
-              msd_locate_pointer (screen);
+              msd_locate_pointer (display);
             }
         }
       else
@@ -412,7 +502,7 @@ filter (GdkXEvent *xevent,
           XAllowEvents (xev->xkey.display,
                         ReplayKeyboard,
                         xev->xkey.time);
-          XUngrabKeyboard (gdk_x11_get_default_xdisplay (),
+          XUngrabKeyboard (GDK_DISPLAY_XDISPLAY (display),
                            xev->xkey.time);
         }
     }
@@ -425,14 +515,14 @@ set_locate_pointer (void)
 {
   GdkKeymapKey *keys;
   GdkDisplay *display;
-  int n_screens;
+  GdkScreen *screen;
   int n_keys;
   gboolean has_entries;
   static const guint keyvals[] = { GDK_KEY_Control_L, GDK_KEY_Control_R };
-  unsigned j;
+  unsigned int j;
 
   display = gdk_display_get_default ();
-  n_screens = gdk_display_get_n_screens (display);
+  screen = gdk_display_get_default_screen (display);
 
   for (j = 0 ; j < G_N_ELEMENTS (keyvals) ; j++)
     {
@@ -442,59 +532,48 @@ set_locate_pointer (void)
                                                        &n_keys);
       if (has_entries)
         {
-          gint i, j;
+          gint i;
           for (i = 0; i < n_keys; i++)
             {
-              for (j=0; j< n_screens; j++)
-                {
-                  GdkScreen *screen;
-                  Window xroot;
+              Window xroot;
 
-                  screen = gdk_display_get_screen (display, j);
-                  xroot = gdk_x11_window_get_xid (gdk_screen_get_root_window (screen));
+              xroot = GDK_WINDOW_XID (gdk_screen_get_root_window (screen));
 
-                  XGrabKey (GDK_DISPLAY_XDISPLAY (display),
-                            keys[i].keycode,
-                            0,
-                            xroot,
-                            False,
-                            GrabModeAsync,
-                            GrabModeSync);
-                  XGrabKey (GDK_DISPLAY_XDISPLAY (display),
-                            keys[i].keycode,
-                            LockMask,
-                            xroot,
-                            False,
-                            GrabModeAsync,
-                            GrabModeSync);
-                  XGrabKey (GDK_DISPLAY_XDISPLAY (display),
-                            keys[i].keycode,
-                            Mod2Mask,
-                            xroot,
-                            False,
-                            GrabModeAsync,
-                            GrabModeSync);
-                  XGrabKey (GDK_DISPLAY_XDISPLAY (display),
-                            keys[i].keycode,
-                            Mod4Mask,
-                            xroot,
-                            False,
-                            GrabModeAsync,
-                            GrabModeSync);
-                }
+              XGrabKey (GDK_DISPLAY_XDISPLAY (display),
+                        keys[i].keycode,
+                        0,
+                        xroot,
+                        False,
+                        GrabModeAsync,
+                        GrabModeSync);
+              XGrabKey (GDK_DISPLAY_XDISPLAY (display),
+                        keys[i].keycode,
+                        LockMask,
+                        xroot,
+                        False,
+                        GrabModeAsync,
+                        GrabModeSync);
+              XGrabKey (GDK_DISPLAY_XDISPLAY (display),
+                        keys[i].keycode,
+                        Mod2Mask,
+                        xroot,
+                        False,
+                        GrabModeAsync,
+                        GrabModeSync);
+              XGrabKey (GDK_DISPLAY_XDISPLAY (display),
+                        keys[i].keycode,
+                        Mod4Mask,
+                        xroot,
+                        False,
+                        GrabModeAsync,
+                        GrabModeSync);
             }
 
           g_free (keys);
 
-          for (i = 0; i < n_screens; i++)
-            {
-              GdkScreen *screen;
-
-              screen = gdk_display_get_screen (display, i);
-              gdk_window_add_filter (gdk_screen_get_root_window (screen),
-                                     filter,
-                                     screen);
-            }
+          gdk_window_add_filter (gdk_screen_get_root_window (screen),
+                                 filter,
+                                 display);
         }
     }
 }
