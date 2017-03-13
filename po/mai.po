@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-29 13:05+0300\n"
-"PO-Revision-Date: 2016-03-29 10:19+0000\n"
+"POT-Creation-Date: 2016-12-06 01:02+0300\n"
+"PO-Revision-Date: 2016-12-05 22:04+0000\n"
 "Last-Translator: monsta <monsta@inbox.ru>\n"
 "Language-Team: Maithili (http://www.transifex.com/mate/MATE/language/mai/)\n"
 "MIME-Version: 1.0\n"
@@ -222,6 +222,36 @@ msgstr ""
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:26
+msgid "Touchpad button orientation"
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:27
+msgid ""
+"Swap left and right buttons for left-handed touchpads with 'left', 'right' "
+"for right-handed, 'mouse' to follow the mouse setting."
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
+msgid "Motion Acceleration"
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:29
+msgid ""
+"Acceleration multiplier for touchpad motion. A value of -1 is the system "
+"default."
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
+msgid "Motion Threshold"
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:31
+msgid ""
+"Distance in pixels the pointer must move before accelerated touchpad motion "
+"is activated. A value of -1 is the system default."
 msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
@@ -625,98 +655,98 @@ msgstr ""
 msgid "Accessibility keyboard plugin"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:454
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:441
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "मद्दति देखाबैमे कोनो त्रुटि भेल: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:582
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:646
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:569
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:633
 msgid "Do you want to activate Slow Keys?"
 msgstr "की अहाँ धीमा कुँजीसभ सक्रिय कएनाइ चाहैत अछि?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:583
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:647
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:570
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:634
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "की अहाँ धीमी कुँजीसभ अक्रिय कएनाइ चाहैत अछि?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:584
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:648
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:571
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:635
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
 msgstr ""
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Don't activate"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Don't deactivate"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:600
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:737
 msgid "Activate"
 msgstr "सक्रिय करू"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:600
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:737
 msgid "Deactivate"
 msgstr "निष्क्रिय करू"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:669
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:808
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:795
 msgid "Do_n't activate"
 msgstr "सक्रिय नहि करू (_n)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:669
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:808
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:795
 msgid "Do_n't deactivate"
 msgstr "निष्क्रिय नहि करू (_n)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:672
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:811
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
 msgid "_Activate"
 msgstr "सक्रिय करू (_A)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:672
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:811
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
 msgid "_Deactivate"
 msgstr "निष्क्रिय करू (_D)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:676
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
 msgid "Slow Keys Alert"
 msgstr "धीमा कुँजीसभ चेतावनी"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:716
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:782
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:703
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:769
 msgid "Do you want to activate Sticky Keys?"
 msgstr "की अहाँ स्टिकी कुँजीसभ सक्रिय कएनाइ चाहैत अछि?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:717
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:783
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:704
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:770
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "की अहाँ स्टिकी कुँजीसभ निष्क्रिय कएनाइ चाहैत अछि?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:719
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:785
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:706
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:772
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
 msgstr ""
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:721
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:787
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:708
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:774
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
 msgstr ""
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:815
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
 msgid "Sticky Keys Alert"
 msgstr "स्टिकी कुँजी चेतावनी"
 
@@ -781,100 +811,100 @@ msgstr ""
 msgid "Dummy plugin"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:70
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:65
 msgid "Don't show any warnings again for this file system"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:72
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:67
 msgid "Don't show any warnings again"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:85
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:80
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:88
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:83
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:104
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:99
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:107
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:112
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:115
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:110
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
 msgstr ""
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:212
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:207
 msgid "Low Disk Space"
 msgstr "कम डिस्क स्थान"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:450
 msgid "Empty Trash"
 msgstr "रद्दी खाली करू"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:458
 msgid "Examine…"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:474
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:465
 msgid "Ignore"
 msgstr "उपेक्षा"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:102
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:97
 #, c-format
 msgid "Removing item %lu of %lu"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:122
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 msgid "Removing: %s"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:252
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:321
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
 msgid "Emptying the trash"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:297
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
 msgid "Preparing to empty trash…"
 msgstr ""
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:324
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
 msgid "From: "
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:376
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
 msgid "Empty all of the items from the trash?"
 msgstr "अहाँ रद्दीसँ सबहि वस्तुसभकेँ खाली कएनाइ चाहैत अछि?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:379
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
 msgstr "जँ अहाँ रद्दी खाली करब क'लेल चुनैत अछि, एहिमे सभ मद स्थायी रूप सँ मेट जएताह. कृप्या नोट करू जे अहाँ एकरा अलग-अलग मेटाए सकैत अछि."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:386
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
 msgid "_Empty Trash"
 msgstr "रद्दी खाली करू (_E)"
 
@@ -888,7 +918,7 @@ msgstr ""
 msgid "Key binding (%s) is incomplete"
 msgstr ""
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:506
+#: ../plugins/keybindings/msd-keybindings-manager.c:503
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -928,15 +958,15 @@ msgid ""
 " • The result of <b>%s</b>"
 msgstr ""
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:273
+#: ../plugins/keyboard/msd-keyboard-xkb.c:265
 msgid "_Layouts"
 msgstr ""
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:280
+#: ../plugins/keyboard/msd-keyboard-xkb.c:272
 msgid "Keyboard _Preferences"
 msgstr ""
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:286
+#: ../plugins/keyboard/msd-keyboard-xkb.c:278
 msgid "Show _Current Layout"
 msgstr ""
 
@@ -961,16 +991,16 @@ msgstr ""
 msgid "Media keys plugin"
 msgstr ""
 
-#: ../plugins/mouse/msd-mouse-manager.c:920
+#: ../plugins/mouse/msd-mouse-manager.c:1021
 msgid "Could not enable mouse accessibility features"
 msgstr ""
 
-#: ../plugins/mouse/msd-mouse-manager.c:922
+#: ../plugins/mouse/msd-mouse-manager.c:1023
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 
-#: ../plugins/mouse/msd-mouse-manager.c:925
+#: ../plugins/mouse/msd-mouse-manager.c:1026
 msgid "Mouse Preferences"
 msgstr "माउस वरीयतासभ "
 
@@ -1051,39 +1081,39 @@ msgstr ""
 msgid "Trying to switch the monitor configuration anyway."
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1914
+#: ../plugins/xrandr/msd-xrandr-manager.c:1888
 msgid "Rotation not supported"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1970
+#: ../plugins/xrandr/msd-xrandr-manager.c:1944
 msgid "Could not save monitor configuration"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1988
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Normal"
 msgstr "सामान्य"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1989
+#: ../plugins/xrandr/msd-xrandr-manager.c:1963
 msgid "Left"
 msgstr "बामाँ"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1990
+#: ../plugins/xrandr/msd-xrandr-manager.c:1964
 msgid "Right"
 msgstr "दहिन्ना"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1991
+#: ../plugins/xrandr/msd-xrandr-manager.c:1965
 msgid "Upside Down"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2113
+#: ../plugins/xrandr/msd-xrandr-manager.c:2087
 msgid "_Configure Display Settings…"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2167
+#: ../plugins/xrandr/msd-xrandr-manager.c:2140
 msgid "Configure display settings"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2227
+#: ../plugins/xrandr/msd-xrandr-manager.c:2200
 msgid "Could not apply the stored configuration for monitors"
 msgstr ""
 
