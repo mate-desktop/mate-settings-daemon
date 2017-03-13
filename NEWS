@@ -1,59 +1,24 @@
-### mate-settings-daemon 1.17.1
+### mate-settings-daemon 1.18.0
 
-  * mouse: fix applying "disable while typing" setting to all devices
-  * mouse: libinput - hook up disable while typing
-  * mouse: libinput - hook up acceleration setting
-  * mouse: call only Synaptics function from set_left_handed_legacy_driver
-  * mouse: libinput - hook up left-handed setting
-  * mouse: added helper to check if property exists on device
-  * mouse: libinput - hook up click methods
-  * mouse: libinput - hook up scrolling settings
-  * mouse: libinput - hook up tapping configuration
-  * mouse: libinput - hook up middle button emulation
-  * mouse: libinput - hook up natural scroll configuration
-  * common: recognize libinput touchpads as touchpads
-  * OSD: Add style class for noncomposited case
-  * OSD: fix rendering on noncomposited desktop
-  * mouse: move bool property helpers closer to the top
-  * mouse: split helper for setting bool property into two separate ones
-  * reorganize helpers for setting touchpad scrolling
-  * mouse: remove unused argument from some functions
-  * po: actually add new language from Transifex
-
-### mate-settings-daemon 1.17.0
-
+  * NEWS: use consistent, project wide, markdown-like formatting to make
+    generating release announcements easier
+  * Build: require XInput unconditionally
+  * Build: require libmatemixer >= 1.10, libxklavier >= 5.2, dconf >= 0.13
+  * Build: require libmatekbd and libmate-desktop >= 1.17
+  * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and --with-gtk
+    build option
+  * Add libinput support for mouse and touchpad
+  * Touchpad: add separate settings for handedness (left/right-handed)
+    and motion acceleration/threshold
+  * Background: restore option to let Caja draw background with GTK+ 3.22
+  * Some fixes and cleanups
   * Translations update
-  * move to GTK+3 (>= 3.14), drop GTK+2 code and --with-gtk build option
-  * background: add missing GTK+ version check to avoid build warning
-  * background: check for stable release of GTK+3, not for development one
-  * build: require libmatemixer >= 1.10 (first stable release)
-  * build: require libxklavier >= 5.2
-  * remove extra glib version check from build conf
-  * build: require dconf >= 0.13
-  * fix description of motion-acceleration key in touchpad schema
-  * mouse: implement separate mouse/touchpad motion settings using XInput
-  * mouse: add separate keys for touchpad motion settings (not used yet)
-  * mouse: use same #define for 'left-handed' key of mouse and touchpad
-  * mouse: make separate callback for processing touchpad settings
-  * mouse: use more common g_strcmp0 function instead of g_str_equal
-  * mouse: add key for separate touchpad handedness (left/right-handed)
-  * schema: fix indent a bit
-  * mouse: add helper function for fetching Atom property
-  * common: don't create Atom property when checking for its presence
-  * mouse: a bit more of refactoring, less push/pop calls
-  * mouse: move setting left-handed for one device to new function
-  * mouse: move setting tap to click for one device to new function
-  * mouse: move enabling/disabling one touchpad to new function
-  * mouse: move setting bool property for one device to new function
-  * mouse: move setting click actions for one device to new function
-  * mouse: move setting natural scroll for one device to new function
-  * mouse: don't copy struct when it's not needed, pass pointer instead
-  * mouse: move setting middle button for one device to new function
-  * mouse: don't create duplicate GSettings instance
-  * mouse: don't apply any settings if XInput isn't present
-  * mouse: remove duplicate function
-  * build: require XInput unconditionally
-  * xrandr: use proper libmate-desktop function in GTK+3 build
+
+### mate-settings-daemon 1.16.1
+
+  * GTK+3: fix possible build breakage with libmate-desktop 1.17
+  * GTK+3: fix OSD rendering on non-composited desktop
+  * GTK+3: add OSD style class for non-composited desktop
 
 ### mate-settings-daemon 1.16.0
 
