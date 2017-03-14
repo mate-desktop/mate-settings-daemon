@@ -417,7 +417,7 @@ move_locate_pointer_window (MsdLocatePointerData *data,
                                                   0);
   cr = cairo_create (mask);
 
-  cairo_set_source_rgb (cr, 0., 0., 0.);
+  cairo_set_source_rgba (cr, 0., 0., 0., 0.);
   cairo_rectangle (cr, 0., 0., WINDOW_SIZE, WINDOW_SIZE);
   cairo_fill (cr);
 
