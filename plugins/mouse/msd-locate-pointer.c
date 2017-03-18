@@ -190,7 +190,7 @@ timeline_frame_cb (MsdTimeline *timeline,
     {
       /* only invalidate window each circle interval */
       update_shape (data);
-      gdk_window_invalidate_rect (data->window, NULL, FALSE);
+      gtk_widget_queue_draw (GTK_WIDGET (data->widget));
       data->progress += CIRCLES_PROGRESS_INTERVAL;
     }
 
@@ -267,7 +267,9 @@ timeline_finished_cb (MsdTimeline *timeline,
 
   /* set transparent shape and hide window */
   if (!gdk_screen_is_composited (screen))
-    set_transparent_shape (data->window);
+    {
+      set_transparent_shape (data->window);
+    }
 
   gtk_widget_hide (GTK_WIDGET (data->widget));
 }
@@ -333,7 +335,7 @@ locate_pointer_draw_cb (GtkWidget      *widget,
                         gpointer        user_data)
 {
   MsdLocatePointerData *data = (MsdLocatePointerData *) user_data;
-  GdkScreen *screen = gtk_window_get_screen (data->widget);
+  GdkScreen *screen = gdk_window_get_screen (data->window);
 
   if (gtk_cairo_should_draw_window (cr, data->window))
     {
@@ -344,15 +346,12 @@ locate_pointer_draw_cb (GtkWidget      *widget,
 }
 
 static MsdLocatePointerData *
-msd_locate_pointer_data_new (GdkDisplay *display)
+msd_locate_pointer_data_new (void)
 {
   MsdLocatePointerData *data;
 
   data = g_new0 (MsdLocatePointerData, 1);
 
-  /* this widget will never be shown, it's
-   * mainly used to get signals/events from
-   */
   data->widget = GTK_WINDOW (gtk_window_new (GTK_WINDOW_POPUP));
 
   g_signal_connect (GTK_WIDGET (data->widget), "unrealize",
@@ -418,8 +417,7 @@ move_locate_pointer_window (MsdLocatePointerData *data,
   cr = cairo_create (mask);
 
   cairo_set_source_rgba (cr, 0., 0., 0., 0.);
-  cairo_rectangle (cr, 0., 0., WINDOW_SIZE, WINDOW_SIZE);
-  cairo_fill (cr);
+  cairo_paint (cr);
 
   region = gdk_cairo_region_create_from_surface (mask);
 
@@ -437,7 +435,7 @@ msd_locate_pointer (GdkDisplay *display)
 
   if (data == NULL)
     {
-      data = msd_locate_pointer_data_new (display);
+      data = msd_locate_pointer_data_new ();
     }
 
   msd_timeline_pause (data->timeline);
@@ -461,49 +459,50 @@ msd_locate_pointer (GdkDisplay *display)
 
 /* Owen magic */
 static GdkFilterReturn
-filter (GdkXEvent *xevent,
-        GdkEvent  *event,
-        gpointer   data)
+event_filter (GdkXEvent *gdkxevent,
+              GdkEvent  *event,
+              gpointer   user_data)
 {
-  XEvent *xev = (XEvent *) xevent;
-  guint keyval;
-  gint group;
+  XEvent *xevent = (XEvent *) gdkxevent;
+  GdkDisplay *display = (GdkDisplay *) user_data;
 
-  GdkDisplay *display = (GdkDisplay *) data;
-
-  if (xev->type == KeyPress || xev->type == KeyRelease)
+  if (xevent->xany.type == KeyPress || xevent->xany.type == KeyRelease)
     {
+      guint keyval;
+      gint group;
+
       /* get the keysym */
-      group = (xev->xkey.state & KEYBOARD_GROUP_MASK) >> KEYBOARD_GROUP_SHIFT;
-      gdk_keymap_translate_keyboard_state (gdk_keymap_get_default (),
-                                           xev->xkey.keycode,
-                                           xev->xkey.state,
+      group = (xevent->xkey.state & KEYBOARD_GROUP_MASK) >> KEYBOARD_GROUP_SHIFT;
+      gdk_keymap_translate_keyboard_state (gdk_keymap_get_for_display (display),
+                                           xevent->xkey.keycode,
+                                           xevent->xkey.state,
                                            group,
                                            &keyval,
                                            NULL, NULL, NULL);
+
       if (keyval == GDK_KEY_Control_L || keyval == GDK_KEY_Control_R)
         {
-          if (xev->type == KeyPress)
-            {
-              XAllowEvents (xev->xkey.display,
-                            SyncKeyboard,
-                            xev->xkey.time);
+          if (xevent->xany.type == KeyRelease)
+            { 
+              XAllowEvents (xevent->xany.display,
+                            AsyncKeyboard,
+                            xevent->xkey.time);
+              msd_locate_pointer (display);
             }
           else
             {
-              XAllowEvents (xev->xkey.display,
-                            AsyncKeyboard,
-                            xev->xkey.time);
-              msd_locate_pointer (display);
+              XAllowEvents (xevent->xany.display,
+                            SyncKeyboard,
+                            xevent->xkey.time);
             }
         }
       else
         {
-          XAllowEvents (xev->xkey.display,
+          XAllowEvents (xevent->xany.display,
                         ReplayKeyboard,
-                        xev->xkey.time);
-          XUngrabKeyboard (GDK_DISPLAY_XDISPLAY (display),
-                           xev->xkey.time);
+                        xevent->xkey.time);
+          XUngrabKeyboard (xevent->xany.display,
+                           xevent->xkey.time);
         }
     }
 
@@ -517,64 +516,65 @@ set_locate_pointer (void)
   GdkDisplay *display;
   GdkScreen *screen;
   int n_keys;
-  gboolean has_entries;
+  gboolean has_entries = FALSE;
   static const guint keyvals[] = { GDK_KEY_Control_L, GDK_KEY_Control_R };
-  unsigned int j;
+  unsigned int i, j;
 
   display = gdk_display_get_default ();
   screen = gdk_display_get_default_screen (display);
 
-  for (j = 0 ; j < G_N_ELEMENTS (keyvals) ; j++)
+  for (i = 0; i < G_N_ELEMENTS (keyvals); ++i)
     {
-      has_entries = gdk_keymap_get_entries_for_keyval (gdk_keymap_get_default (),
-                                                       keyvals[j],
-                                                       &keys,
-                                                       &n_keys);
-      if (has_entries)
+      if (gdk_keymap_get_entries_for_keyval (gdk_keymap_get_for_display (display),
+                                             keyvals[i],
+                                             &keys,
+                                             &n_keys))
         {
-          gint i;
-          for (i = 0; i < n_keys; i++)
+          has_entries = TRUE;
+          for (j = 0; j < n_keys; ++j)
             {
               Window xroot;
 
               xroot = GDK_WINDOW_XID (gdk_screen_get_root_window (screen));
 
               XGrabKey (GDK_DISPLAY_XDISPLAY (display),
-                        keys[i].keycode,
+                        keys[j].keycode,
                         0,
                         xroot,
                         False,
                         GrabModeAsync,
                         GrabModeSync);
               XGrabKey (GDK_DISPLAY_XDISPLAY (display),
-                        keys[i].keycode,
+                        keys[j].keycode,
                         LockMask,
                         xroot,
                         False,
                         GrabModeAsync,
                         GrabModeSync);
               XGrabKey (GDK_DISPLAY_XDISPLAY (display),
-                        keys[i].keycode,
+                        keys[j].keycode,
                         Mod2Mask,
                         xroot,
                         False,
                         GrabModeAsync,
                         GrabModeSync);
               XGrabKey (GDK_DISPLAY_XDISPLAY (display),
-                        keys[i].keycode,
+                        keys[j].keycode,
                         Mod4Mask,
                         xroot,
                         False,
                         GrabModeAsync,
                         GrabModeSync);
             }
-
           g_free (keys);
-
-          gdk_window_add_filter (gdk_screen_get_root_window (screen),
-                                 filter,
-                                 display);
         }
+    }
+
+  if (has_entries)
+    {
+      gdk_window_add_filter (gdk_screen_get_root_window (screen),
+                             (GdkFilterFunc) event_filter,
+                             display);
     }
 }
 
