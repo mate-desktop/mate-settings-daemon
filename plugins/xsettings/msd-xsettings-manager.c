@@ -198,6 +198,8 @@ static TranslationEntry translations [] = {
         { INTERFACE_SCHEMA, "icon-theme",             "Net/IconThemeName",             translate_string_string },
         { INTERFACE_SCHEMA, "file-chooser-backend",   "Gtk/FileChooserBackend",        translate_string_string },
         { INTERFACE_SCHEMA, "gtk-decoration-layout",  "Gtk/DecorationLayout",          translate_string_string },
+        { INTERFACE_SCHEMA, "gtk-shell-shows-app-menu","Gtk/ShellShowsAppMenu",        translate_bool_int },
+        { INTERFACE_SCHEMA, "gtk-shell-shows-menubar","Gtk/ShellShowsMenubar",         translate_bool_int },
         { INTERFACE_SCHEMA, "menus-have-icons",       "Gtk/MenuImages",                translate_bool_int },
         { INTERFACE_SCHEMA, "buttons-have-icons",     "Gtk/ButtonImages",              translate_bool_int },
         { INTERFACE_SCHEMA, "menubar-accel",          "Gtk/MenuBarAccel",              translate_string_string },
