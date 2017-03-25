@@ -1,3 +1,9 @@
+1.16.2
+  * Background: restore option to let Caja draw background with
+    GTK+ 3.22
+  * Mouse: make pointer locater work in GTK+3 build
+  * Mouse: fix some more issues in pointer locater
+
 1.16.1
   * GTK+3: fix possible build breakage with libmate-desktop 1.17
   * GTK+3: fix OSD rendering on non-composited desktop
