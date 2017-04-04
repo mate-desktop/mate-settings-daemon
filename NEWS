@@ -1,3 +1,9 @@
+### mate-settings-daemon 1.18.1
+
+  * mouse: Also grab button presses so as to replay them on pointer locater
+  * mouse: More pointer locater refactoring
+  * Make pointer locater always pass through
+
 ### mate-settings-daemon 1.18.0
 
   * NEWS: use consistent, project wide, markdown-like formatting to make
