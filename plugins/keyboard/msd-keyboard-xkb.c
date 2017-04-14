@@ -554,20 +554,20 @@ msd_keyboard_xkb_init (MsdKeyboardManager * kbd_manager)
 	num_lock = XInternAtom (display, "Num Lock", False);
 	scroll_lock = XInternAtom (display, "Scroll Lock", False);
 
-	for (i = sizeof (indicator_icons) / sizeof (indicator_icons[0]);
-	     --i >= 0;) {
-		indicator_icons[i] =
-		    gtk_status_icon_new_from_icon_name
-		    (indicator_off_icon_names[i]);
-	}
-
-	msd_keyboard_update_indicator_icons ();
-
 	manager = kbd_manager;
 	mate_settings_profile_start ("xkl_engine_get_instance");
 	xkl_engine = xkl_engine_get_instance (display);
 	mate_settings_profile_end ("xkl_engine_get_instance");
 	if (xkl_engine) {
+		for (i = sizeof (indicator_icons) / sizeof (indicator_icons[0]);
+		     --i >= 0;) {
+			indicator_icons[i] =
+			    gtk_status_icon_new_from_icon_name
+			    (indicator_off_icon_names[i]);
+		}
+
+		msd_keyboard_update_indicator_icons ();
+
 		inited_ok = TRUE;
 
 		settings_desktop = g_settings_new (MATEKBD_DESKTOP_SCHEMA);
