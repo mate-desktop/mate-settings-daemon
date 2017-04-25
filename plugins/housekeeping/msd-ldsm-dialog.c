@@ -206,7 +206,7 @@ msd_ldsm_dialog_init (MsdLdsmDialog *dialog)
         /* Set up all the window stuff here */
         gtk_window_set_title (GTK_WINDOW (dialog), _("Low Disk Space"));
         gtk_window_set_icon_name (GTK_WINDOW (dialog), 
-                                  GTK_STOCK_DIALOG_WARNING);
+                                  "dialog-warning");
         gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
         gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
         gtk_window_set_urgency_hint (GTK_WINDOW (dialog), TRUE);
