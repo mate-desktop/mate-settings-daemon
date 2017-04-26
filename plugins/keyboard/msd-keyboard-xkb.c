@@ -257,8 +257,22 @@ popup_menu_set_group (GtkMenuItem * item, gpointer param)
 static void
 status_icon_popup_menu_cb (GtkStatusIcon * icon, guint button, guint time)
 {
+	GtkWidget *toplevel;
+	GdkScreen *screen;
+	GdkVisual *visual;
+	GtkStyleContext *context;
 	GtkMenu *popup_menu = GTK_MENU (gtk_menu_new ());
 	GtkMenu *groups_menu = GTK_MENU (gtk_menu_new ());
+	/*Set up theme and transparency support*/
+	toplevel = gtk_widget_get_toplevel (GTK_WIDGET(popup_menu));
+	/* Fix any failures of compiz/other wm's to communicate with gtk for transparency */
+	screen = gtk_widget_get_screen(GTK_WIDGET(toplevel));
+	visual = gdk_screen_get_rgba_visual(screen);
+	gtk_widget_set_visual(GTK_WIDGET(toplevel), visual); 
+	/* Set menu and it's toplevel window to follow panel theme */
+	context = gtk_widget_get_style_context (GTK_WIDGET(toplevel));
+	gtk_style_context_add_class(context,"gnome-panel-menu-bar");
+	gtk_style_context_add_class(context,"mate-panel-menu-bar");
 	int i = 0;
 	gchar **current_name = matekbd_status_get_group_names ();
 
