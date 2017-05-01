@@ -1812,9 +1812,10 @@ make_menu_item_for_output_title (MsdXrandrManager *manager, MateRROutputInfo *ou
 #else
         gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
 #endif
-        gtk_misc_set_padding (GTK_MISC (label),
-                              OUTPUT_TITLE_ITEM_BORDER + OUTPUT_TITLE_ITEM_PADDING,
-                              OUTPUT_TITLE_ITEM_BORDER + OUTPUT_TITLE_ITEM_PADDING);
+        gtk_widget_set_margin_start (label, OUTPUT_TITLE_ITEM_BORDER + OUTPUT_TITLE_ITEM_PADDING);
+        gtk_widget_set_margin_end (label, OUTPUT_TITLE_ITEM_BORDER + OUTPUT_TITLE_ITEM_PADDING);
+        gtk_widget_set_margin_top (label, OUTPUT_TITLE_ITEM_BORDER + OUTPUT_TITLE_ITEM_PADDING);
+        gtk_widget_set_margin_bottom (label, OUTPUT_TITLE_ITEM_BORDER + OUTPUT_TITLE_ITEM_PADDING);
 
         gtk_container_add (GTK_CONTAINER (item), label);
 
