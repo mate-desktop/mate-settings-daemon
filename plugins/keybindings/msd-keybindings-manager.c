@@ -554,7 +554,7 @@ msd_keybindings_manager_start (MsdKeybindingsManager *manager,
                 gdk_window_add_filter (window,
                                        (GdkFilterFunc) keybindings_filter,
                                        manager);
-                XSelectInput(GDK_DISPLAY_XDISPLAY(dpy), GDK_WINDOW_XID(window), KeyPressMask | KeyReleaseMask);
+                XSelectInput(GDK_DISPLAY_XDISPLAY(dpy), GDK_WINDOW_XID(window), KeyPressMask);
         }
         manager->priv->screens = get_screens_list ();
 
