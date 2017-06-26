@@ -541,21 +541,30 @@ msd_keybindings_manager_start (MsdKeybindingsManager *manager,
         GdkWindow   *window;
         int          screen_num;
         int          i;
+        Display     *xdpy;
+        Window       xwindow;
+        XWindowAttributes atts;
 
         g_debug ("Starting keybindings manager");
         mate_settings_profile_start (NULL);
 
         dpy = gdk_display_get_default ();
+        xdpy = GDK_DISPLAY_XDISPLAY (dpy);
         screen_num = gdk_display_get_n_screens (dpy);
 
         for (i = 0; i < screen_num; i++) {
                 screen = gdk_display_get_screen (dpy, i);
-                window = gdk_screen_get_root_window(screen);
+                window = gdk_screen_get_root_window (screen);
+                xwindow = GDK_WINDOW_XID (window);
+
                 gdk_window_add_filter (window,
                                        (GdkFilterFunc) keybindings_filter,
                                        manager);
+
                 gdk_error_trap_push ();
-                XSelectInput(GDK_DISPLAY_XDISPLAY(dpy), GDK_WINDOW_XID(window), KeyPressMask);
+                /* Add KeyPressMask to the currently reportable event masks */
+                XGetWindowAttributes (xdpy, xwindow, &atts);
+                XSelectInput (xdpy, xwindow, atts.your_event_mask | KeyPressMask);
                 gdk_error_trap_pop_ignored ();
         }
         manager->priv->screens = get_screens_list ();
