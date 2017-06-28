@@ -560,7 +560,7 @@ msd_keyboard_xkb_init (MsdKeyboardManager * kbd_manager)
 	xkl_engine = xkl_engine_get_instance (display);
 	mate_settings_profile_end ("xkl_engine_get_instance");
 	if (xkl_engine) {
-		for (i = G_N_ELEMENTS(indicator_icons));
+		for (i = G_N_ELEMENTS(indicator_icons);
 		     --i >= 0;) {
 			indicator_icons[i] =
 			    gtk_status_icon_new_from_icon_name
