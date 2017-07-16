@@ -1114,7 +1114,7 @@ start_media_keys_idle_cb (MsdMediaKeysManager *manager)
                 mate_settings_profile_start ("gdk_window_add_filter");
 
                 g_debug ("adding key filter for screen: %d",
-                         gdk_screen_get_number (l->data));
+                         gdk_x11_screen_get_screen_number (l->data));
 
                 gdk_window_add_filter (gdk_screen_get_root_window (l->data),
                                        (GdkFilterFunc)acme_filter_events,

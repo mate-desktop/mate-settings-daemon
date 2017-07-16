@@ -397,7 +397,7 @@ screen_exec_display_string (GdkScreen *screen)
                 g_string_truncate (str, p - str->str);
         }
 
-        g_string_append_printf (str, ".%d", gdk_screen_get_number (screen));
+        g_string_append_printf (str, ".%d", gdk_x11_screen_get_screen_number (screen));
 
         return g_string_free (str, FALSE);
 }
