@@ -53,7 +53,7 @@ msd_delayed_show_dialog (GtkWidget *dialog)
          * it's an unknown out-of-process window.
          */
         snprintf (selection_name, sizeof (selection_name), "WM_S%d",
-                  gdk_screen_get_number (screen));
+                  gdk_x11_screen_get_screen_number (screen));
         selection_atom = XInternAtom (xdisplay, selection_name, True);
         if (selection_atom &&
             XGetSelectionOwner (xdisplay, selection_atom) != None) {
@@ -112,7 +112,7 @@ message_filter (GdkXEvent *xevent, GdkEvent *event, gpointer data)
                 GtkWidget *dialog = l->data;
                 next = l->next;
 
-                if (gdk_screen_get_number (gtk_widget_get_screen (dialog)) == screen) {
+                if (gdk_x11_screen_get_screen_number (gtk_widget_get_screen (dialog)) == screen) {
                         gtk_widget_show (dialog);
                         dialogs = g_slist_remove (dialogs, dialog);
                 }

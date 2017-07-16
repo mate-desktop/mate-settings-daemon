@@ -415,7 +415,7 @@ update_property (GString *props, const gchar* key, const gchar* value)
         needle_len = strlen (needle);
         if (g_str_has_prefix (props->str, needle))
                 found = props->str;
-        else 
+        else
                 found = strstr (props->str, needle);
 
         if (found) {
@@ -652,7 +652,7 @@ setup_xsettings_managers (MateXSettingsManager *manager)
         n_screens = gdk_display_get_n_screens (display);
 
         res = xsettings_manager_check_running (gdk_x11_display_get_xdisplay (display),
-                                               gdk_screen_get_number (gdk_screen_get_default ()));
+                                               gdk_x11_screen_get_screen_number (gdk_screen_get_default ()));
         if (res) {
                 g_warning ("You can only run one xsettings manager at a time; exiting");
                 return FALSE;
@@ -667,7 +667,7 @@ setup_xsettings_managers (MateXSettingsManager *manager)
                 screen = gdk_display_get_screen (display, i);
 
                 manager->priv->managers [i] = xsettings_manager_new (gdk_x11_display_get_xdisplay (display),
-                                                                     gdk_screen_get_number (screen),
+                                                                     gdk_x11_screen_get_screen_number (screen),
                                                                      terminate_cb,
                                                                      &terminated);
                 if (! manager->priv->managers [i]) {

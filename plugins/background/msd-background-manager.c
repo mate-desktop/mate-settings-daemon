@@ -259,7 +259,7 @@ on_screen_size_changed (GdkScreen            *screen,
 	if (!p->msd_can_draw || p->draw_in_progress || caja_is_drawing_bg (manager))
 		return;
 
-	gint scr_num = gdk_screen_get_number (screen);
+	gint scr_num = gdk_x11_screen_get_screen_number (screen);
 	gchar *old_size = g_list_nth_data (manager->priv->scr_sizes, scr_num);
 	gchar *new_size = g_strdup_printf ("%dx%d", gdk_screen_get_width (screen),
 						    gdk_screen_get_height (screen));
