@@ -216,18 +216,14 @@ draw_background (MsdBackgroundManager *manager,
 	mate_settings_profile_start (NULL);
 
 	GdkDisplay *display   = gdk_display_get_default ();
-	int         n_screens = gdk_display_get_n_screens (display);
-	int         scr;
 
 	p->draw_in_progress = TRUE;
 	p->do_fade = may_fade && can_fade_bg (manager);
 	free_scr_sizes (manager);
 
-	for (scr = 0; scr < n_screens; scr++)
-	{
-		g_debug ("Drawing background on Screen%d", scr);
-		real_draw_bg (manager, gdk_display_get_screen (display, scr));
-	}
+	g_debug ("Drawing background on Screen");
+	real_draw_bg (manager, gdk_display_get_default_screen (display));
+
 	p->scr_sizes = g_list_reverse (p->scr_sizes);
 
 	p->draw_in_progress = FALSE;
@@ -277,33 +273,23 @@ static void
 disconnect_screen_signals (MsdBackgroundManager *manager)
 {
 	GdkDisplay *display   = gdk_display_get_default();
-	int         n_screens = gdk_display_get_n_screens (display);
-	int         i;
 
-	for (i = 0; i < n_screens; i++)
-	{
-		g_signal_handlers_disconnect_by_func
-			(gdk_display_get_screen (display, i),
-			 G_CALLBACK (on_screen_size_changed), manager);
-	}
+	g_signal_handlers_disconnect_by_func
+		(gdk_display_get_default_screen (display),
+		 G_CALLBACK (on_screen_size_changed), manager);
 }
 
 static void
 connect_screen_signals (MsdBackgroundManager *manager)
 {
 	GdkDisplay *display   = gdk_display_get_default();
-	int         n_screens = gdk_display_get_n_screens (display);
-	int         i;
 
-	for (i = 0; i < n_screens; i++)
-	{
-		GdkScreen *screen = gdk_display_get_screen (display, i);
+	GdkScreen *screen = gdk_display_get_default_screen (display);
 
-		g_signal_connect (screen, "monitors-changed",
-				  G_CALLBACK (on_screen_size_changed), manager);
-		g_signal_connect (screen, "size-changed",
-				  G_CALLBACK (on_screen_size_changed), manager);
-	}
+	g_signal_connect (screen, "monitors-changed",
+			  G_CALLBACK (on_screen_size_changed), manager);
+	g_signal_connect (screen, "size-changed",
+			  G_CALLBACK (on_screen_size_changed), manager);
 }
 
 static gboolean

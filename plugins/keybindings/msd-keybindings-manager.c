@@ -77,26 +77,9 @@ static gpointer manager_object = NULL;
 static GSList *
 get_screens_list (void)
 {
-        GdkDisplay *display = gdk_display_get_default();
-        int         n_screens;
         GSList     *list = NULL;
-        int         i;
 
-        n_screens = gdk_display_get_n_screens (display);
-
-        if (n_screens == 1) {
-                list = g_slist_append (list, gdk_screen_get_default ());
-        } else {
-                for (i = 0; i < n_screens; i++) {
-                        GdkScreen *screen;
-
-                        screen = gdk_display_get_screen (display, i);
-                        if (screen != NULL) {
-                                list = g_slist_prepend (list, screen);
-                        }
-                }
-                list = g_slist_reverse (list);
-        }
+        list = g_slist_append (list, gdk_screen_get_default ());
 
         return list;
 }
@@ -539,8 +522,6 @@ msd_keybindings_manager_start (MsdKeybindingsManager *manager,
         GdkDisplay  *dpy;
         GdkScreen   *screen;
         GdkWindow   *window;
-        int          screen_num;
-        int          i;
         Display     *xdpy;
         Window       xwindow;
         XWindowAttributes atts;
@@ -550,23 +531,21 @@ msd_keybindings_manager_start (MsdKeybindingsManager *manager,
 
         dpy = gdk_display_get_default ();
         xdpy = GDK_DISPLAY_XDISPLAY (dpy);
-        screen_num = gdk_display_get_n_screens (dpy);
 
-        for (i = 0; i < screen_num; i++) {
-                screen = gdk_display_get_screen (dpy, i);
-                window = gdk_screen_get_root_window (screen);
-                xwindow = GDK_WINDOW_XID (window);
+        screen = gdk_display_get_default_screen (dpy);
+        window = gdk_screen_get_root_window (screen);
+        xwindow = GDK_WINDOW_XID (window);
 
-                gdk_window_add_filter (window,
-                                       (GdkFilterFunc) keybindings_filter,
-                                       manager);
+        gdk_window_add_filter (window,
+                               (GdkFilterFunc) keybindings_filter,
+                               manager);
 
-                gdk_error_trap_push ();
-                /* Add KeyPressMask to the currently reportable event masks */
-                XGetWindowAttributes (xdpy, xwindow, &atts);
-                XSelectInput (xdpy, xwindow, atts.your_event_mask | KeyPressMask);
-                gdk_error_trap_pop_ignored ();
-        }
+        gdk_error_trap_push ();
+        /* Add KeyPressMask to the currently reportable event masks */
+        XGetWindowAttributes (xdpy, xwindow, &atts);
+        XSelectInput (xdpy, xwindow, atts.your_event_mask | KeyPressMask);
+        gdk_error_trap_pop_ignored ();
+
         manager->priv->screens = get_screens_list ();
 
         manager->priv->binding_list = NULL;

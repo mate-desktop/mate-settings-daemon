@@ -107,16 +107,14 @@ static void
 init_screens (MsdMediaKeysManager *manager)
 {
         GdkDisplay *display;
-        int i;
 
         display = gdk_display_get_default ();
-        for (i = 0; i < gdk_display_get_n_screens (display); i++) {
-                GdkScreen *screen;
 
-                screen = gdk_display_get_screen (display, i);
-                if (screen == NULL) {
-                        continue;
-                }
+        GdkScreen *screen;
+
+        screen = gdk_display_get_default_screen (display);
+
+        if (screen != NULL) {
                 manager->priv->screens = g_slist_append (manager->priv->screens, screen);
         }
 
