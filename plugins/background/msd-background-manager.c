@@ -183,10 +183,14 @@ static void
 real_draw_bg (MsdBackgroundManager *manager,
 	      GdkScreen		   *screen)
 {
+	gint width;
+	gint height;
+
 	MsdBackgroundManagerPrivate *p = manager->priv;
 	GdkWindow *window = gdk_screen_get_root_window (screen);
-	gint width   = gdk_screen_get_width (screen);
-	gint height  = gdk_screen_get_height (screen);
+
+	gdk_window_get_geometry (gdk_screen_get_root_window (screen), NULL, NULL,
+				 &width, &height);
 
 	free_bg_surface (manager);
 	p->surface = mate_bg_create_surface (p->bg, window, width, height, TRUE);
@@ -254,15 +258,19 @@ static void
 on_screen_size_changed (GdkScreen            *screen,
 			MsdBackgroundManager *manager)
 {
+	gint sc_width, sc_height;
+
 	MsdBackgroundManagerPrivate *p = manager->priv;
+
+	gdk_window_get_geometry (gdk_screen_get_root_window (screen), NULL, NULL,
+				 &sc_width, &sc_height);
 
 	if (!p->msd_can_draw || p->draw_in_progress || caja_is_drawing_bg (manager))
 		return;
 
 	gint scr_num = gdk_x11_screen_get_screen_number (screen);
 	gchar *old_size = g_list_nth_data (manager->priv->scr_sizes, scr_num);
-	gchar *new_size = g_strdup_printf ("%dx%d", gdk_screen_get_width (screen),
-						    gdk_screen_get_height (screen));
+	gchar *new_size = g_strdup_printf ("%dx%d", sc_width, sc_height);
 	if (g_strcmp0 (old_size, new_size) != 0)
 	{
 		g_debug ("Screen%d size changed: %s -> %s", scr_num, old_size, new_size);
