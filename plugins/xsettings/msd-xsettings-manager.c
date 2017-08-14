@@ -238,12 +238,24 @@ get_dpi_from_x_server (void)
         if (screen != NULL) {
                 double width_dpi, height_dpi;
                 gint   sc_width, sc_height;
+#if GTK_CHECK_VERSION (3, 22, 0)
+                GdkDisplay *display;
+                GdkMonitor *monitor;
+
+                display = gdk_screen_get_display (screen);
+                monitor = gdk_display_get_primary_monitor (display);
+#endif
 
                 gdk_window_get_geometry (gdk_screen_get_root_window (screen), NULL, NULL,
                                          &sc_width, &sc_height);
 
+#if GTK_CHECK_VERSION (3, 22, 0)
+                width_dpi = dpi_from_pixels_and_mm (sc_width, gdk_monitor_get_width_mm (monitor));
+                height_dpi = dpi_from_pixels_and_mm (sc_height, gdk_monitor_get_height_mm (monitor));
+#else
                 width_dpi = dpi_from_pixels_and_mm (sc_width, gdk_screen_get_width_mm (screen));
                 height_dpi = dpi_from_pixels_and_mm (sc_height, gdk_screen_get_height_mm (screen));
+#endif
 
                 if (width_dpi < DPI_LOW_REASONABLE_VALUE || width_dpi > DPI_HIGH_REASONABLE_VALUE
                     || height_dpi < DPI_LOW_REASONABLE_VALUE || height_dpi > DPI_HIGH_REASONABLE_VALUE) {
