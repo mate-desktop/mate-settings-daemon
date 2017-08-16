@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2014
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2014,2017
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-06 01:02+0300\n"
-"PO-Revision-Date: 2016-12-05 22:04+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"PO-Revision-Date: 2017-03-22 18:23+0000\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh (http://www.transifex.com/mate/MATE/language/kk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,27 +39,27 @@ msgstr "Экрандағы пернетақтаны іске қосу/сөнді
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:1
 msgid "On-screen keyboard"
-msgstr ""
+msgstr "Экрандағы пернетақта"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:2
 msgid "Whether the on-screen keyboard is turned on."
-msgstr ""
+msgstr "Экрандағы пернетақта іске қосылған ба."
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:3
 msgid "Screen magnifier"
-msgstr ""
+msgstr "Экран үлкейткіші"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:4
 msgid "Whether the screen magnifier is turned on."
-msgstr ""
+msgstr "Экран үлкейткіші іске қосылған ба."
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:5
 msgid "Screen reader"
-msgstr ""
+msgstr "Экраннан оқитын қолданба"
 
 #: ../data/org.mate.applications-at.gschema.xml.in.h:6
 msgid "Whether the screen reader is turned on."
-msgstr ""
+msgstr "Экраннан оқитын қолданба іске қосылған ба."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:1
 msgid "DPI"
@@ -84,7 +84,7 @@ msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
-msgstr ""
+msgstr "Тегістеу"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:6
 msgid ""
@@ -168,7 +168,7 @@ msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
 msgid "Natural scrolling"
-msgstr ""
+msgstr "Табиғи айналдыру"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
@@ -336,13 +336,13 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:5
 msgid "Free percentage notify threshold"
-msgstr ""
+msgstr "Хабарлау үшін бос орынның табалдырықты пайызы"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:6
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr ""
+msgstr "Дискідегі аз бос орын жөнінде бірінші ескерту үшін бос орынның табалдырықты пайызы. Егер бос орынның пайызы осы шамадан аз түссе, ескерту көрсетілетін болады."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
 msgid "Subsequent free percentage notify threshold"
@@ -352,7 +352,7 @@ msgstr ""
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
-msgstr ""
+msgstr "Келесі ескертуді көрсету үшін дискідегі бос орын қандай пайыздық шамасына азаюы керек."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:9
 msgid "Free space no notify threshold"
@@ -362,25 +362,25 @@ msgstr ""
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr ""
+msgstr "ГБ есебімен шамасын көрсетіңіз. Егер бос орын шамасы осы шамадан үлкен болса, ескерту көрсетілмейді."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:11
 msgid "Minimum notify period for repeated warnings"
-msgstr ""
+msgstr "Қайталанатын ескертулер арасындағы минималды уақыты"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:12
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr ""
+msgstr "Минут есебімен уақытты көрсетіңіз. Бос орын туралы келесі ескертулер бұл уақытта бір реттен көп емес рет көрсетіледі."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
-msgstr ""
+msgstr "Қай тіркеу нүктелерін елемейміз"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr ""
+msgstr "Бос орындары аз болып қалса да, біз елемейтін тіркелу нүктелерін көрсетіңіз."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
@@ -432,7 +432,7 @@ msgstr "Жүйелік дыбыс деңгейін қосу үшін перне�
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:17
 msgid "Shut down"
-msgstr ""
+msgstr "Сөндіру"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:18
 msgid "Binding to shut down."
@@ -560,19 +560,19 @@ msgstr "Келесі трекке ауысу үшін пернетақта жа�
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
 msgid "Binding to show the screen magnifier"
-msgstr ""
+msgstr "Экран үлкейткішін көрсету үшін пернетақта жарлығы."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
 msgid "Binding to start the screen reader"
-msgstr ""
+msgstr "Экраннан оқитын қолданбаны жөнелту үшін пернетақта жарлығы."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
 msgid "Binding to show the on-screen keyboard"
-msgstr ""
+msgstr "Экрандағы пернетақтаны жөнелту үшін пернетақта жарлығы."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:5
 msgid "Show Displays in Notification Area"
-msgstr ""
+msgstr "Мониторларды хабарламалар аймағында көрсету"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:6
 msgid ""
@@ -582,7 +582,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:7
 msgid "Do not touch monitor configuration"
-msgstr ""
+msgstr "Монитор баптауларын өзгертпеу"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:8
 msgid ""
@@ -596,23 +596,23 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:9
 msgid "Turn on external monitor after system boot"
-msgstr ""
+msgstr "Жүктелуден кейін сыртқы мониторды іске қосу"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:10
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
-msgstr ""
+msgstr "Жүктелуден кейін сыртқы мониторды іске қосу, егер пайдаланушы жүйе жүктелген кезде сыртқы мониторды жалғаса."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:11
 msgid "Turn on laptop monitor after system boot"
-msgstr ""
+msgstr "Жүктелуден кейін ноутбук мониторын іске қосу"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:12
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr ""
+msgstr "Жүктелуден кейін ноутбук мониторын іске қосу, егер пайдаланушы жүйе жүктелген кезде сыртқы мониторды жалғаса."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:13
 msgid "File for default configuration for RandR"
@@ -629,7 +629,7 @@ msgstr ""
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
-msgstr ""
+msgstr "MATE баптаулар қызметі"
 
 #: ../mate-settings-daemon/main.c:65
 msgid "Enable debugging code"
@@ -637,11 +637,11 @@ msgstr "Жөндеу кодын іске қосу"
 
 #: ../mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
-msgstr ""
+msgstr "Ағымдағы қызметті алмастыру"
 
 #: ../mate-settings-daemon/main.c:67
 msgid "Don't become a daemon"
-msgstr ""
+msgstr "Қызмет режиміне өтпеу"
 
 #: ../mate-settings-daemon/main.c:68
 msgid "Exit after a time (for debugging)"
@@ -649,43 +649,43 @@ msgstr "Белгілі уақыт шамасынан кейін шығу (жөн
 
 #: ../plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.in.h:1
 msgid "Accessibility Keyboard"
-msgstr ""
+msgstr "Қолжетерлілік пернетақтасы"
 
 #: ../plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.in.h:2
 msgid "Accessibility keyboard plugin"
-msgstr ""
+msgstr "Қолжетерлілік пернетақта плагині"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:441
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr ""
+msgstr "Көмекті көрсету кезінде қате кетті: %s"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:569
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:633
 msgid "Do you want to activate Slow Keys?"
-msgstr ""
+msgstr "Баяу пернелерді белсендіруді қалайсыз ба?"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:570
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:634
 msgid "Do you want to deactivate Slow Keys?"
-msgstr ""
+msgstr "Баяу пернелерді сөндіруді қалайсыз ба?"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:571
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:635
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr ""
+msgstr "Сіз жаңа ғана Shift пернесін 8 секунд бойы басулы түрде ұстадыңыз. Бұл деген баяу пернелер мүмкіндігіне жарлық болып отыр, ол пернетақта жұмысына әсер етеді."
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Don't activate"
-msgstr ""
+msgstr "Белсендірмеу"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Don't deactivate"
-msgstr ""
+msgstr "Сөндірмеу"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:600
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:737
@@ -700,43 +700,43 @@ msgstr "Керiснше белсендiру"
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:795
 msgid "Do_n't activate"
-msgstr ""
+msgstr "Белсе_ндірмеу"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:795
 msgid "Do_n't deactivate"
-msgstr ""
+msgstr "Сө_ндірмеу"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
 msgid "_Activate"
-msgstr ""
+msgstr "_Белсендіру"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
 msgid "_Deactivate"
-msgstr ""
+msgstr "_Сөндіру"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
 msgid "Slow Keys Alert"
-msgstr ""
+msgstr "Баяу пернелер ескертуі"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:703
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:769
 msgid "Do you want to activate Sticky Keys?"
-msgstr ""
+msgstr "Жабысқақ пернелерді белсендіруді қалайсыз ба?"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:704
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:770
 msgid "Do you want to deactivate Sticky Keys?"
-msgstr ""
+msgstr "Жабысқақ пернелерді сөндіруді қалайсыз ба?"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:706
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:772
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr ""
+msgstr "Сіз жаңа ғана Shift пернесін қатарынан 5 рет басқансыз. Бұл деген жабысқақ пернелерді іске қосу әрекеті, пернетақта жұмысына әсер етеді."
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:708
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:774
@@ -744,36 +744,36 @@ msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr ""
+msgstr "Сіз жаңа ғана екі пернені бірге, немесе Shift пернесін қатарынан 5 рет басқансыз. Бұл деген жабысқақ пернелер мүмкіндігіне жарлық болып отыр, ол пернетақта жұмысына әсер етеді."
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
 msgid "Sticky Keys Alert"
-msgstr ""
+msgstr "Жабысқақ пернелер ескертуі"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:763
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
-msgstr ""
+msgstr "Әмбебап қатынау баптаулары"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
 msgid "Use on-screen _keyboard"
-msgstr ""
+msgstr "Экрандағы перне_тақтаны қолдану"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:3
 msgid "Use screen _reader"
-msgstr ""
+msgstr "Экраннан оқитын қол_данбаны қолдану"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:4
 msgid "Use screen _magnifier"
-msgstr ""
+msgstr "Экран үлкейткішін қолдану"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:5
 msgid "Enhance _contrast in colors"
-msgstr ""
+msgstr "Түстер _контрастын арттыру"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:6
 msgid "Make _text larger and easier to read"
-msgstr ""
+msgstr "Мә_тінді үлкенірек және оқуға ыңғайлырақ қылу"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
@@ -878,31 +878,31 @@ msgstr ""
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 msgid "Removing: %s"
-msgstr ""
+msgstr "Өшірілуде: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
 msgid "Emptying the trash"
-msgstr ""
+msgstr "Қоқыс шелегін тазарту"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
 msgid "Preparing to empty trash…"
-msgstr ""
+msgstr "Қоқыс шелегін тазартуға дайындау…"
 
 #. Translators: "Emptying trash from <device>"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
 msgid "From: "
-msgstr ""
+msgstr "Қайдан: "
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
 msgid "Empty all of the items from the trash?"
-msgstr ""
+msgstr "Қоқыс шелегінен барлық заттарды өшіру керек пе?"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr ""
+msgstr "Қоқыс шелегін тазартуды таңдасаңыз, құрамасы жойылады. Оларды жеке-жеке өшіруге болатынын есте сақтаңыз."
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
 msgid "_Empty Trash"
@@ -927,7 +927,7 @@ msgstr ""
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
-msgstr ""
+msgstr "Пернетақта жарлықтары"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:2
 msgid "Keybindings plugin"
@@ -960,15 +960,15 @@ msgstr ""
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:265
 msgid "_Layouts"
-msgstr ""
+msgstr "Жайма_лар"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:272
 msgid "Keyboard _Preferences"
-msgstr ""
+msgstr "Пернетақта ба_птаулары"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:278
 msgid "Show _Current Layout"
-msgstr ""
+msgstr "Ағ_ымдағы жайманы көрсету"
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:186
 msgid ""
@@ -1002,7 +1002,7 @@ msgstr ""
 
 #: ../plugins/mouse/msd-mouse-manager.c:1026
 msgid "Mouse Preferences"
-msgstr ""
+msgstr "Тышқан баптаулары"
 
 #: ../plugins/mouse/mouse.mate-settings-plugin.in.h:1
 msgid "Mouse"
@@ -1022,11 +1022,11 @@ msgstr ""
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:1
 msgid "Typing Break"
-msgstr ""
+msgstr "Теруден үзіліс"
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:2
 msgid "Typing break plugin"
-msgstr ""
+msgstr "Теруден үзіліс плагині"
 
 #: ../plugins/xrandr/xrandr.mate-settings-plugin.in.h:1
 msgid "XRandR"
@@ -1038,38 +1038,38 @@ msgstr "Экран өлшемі және бұру баптауларын орн�
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:373
 msgid "Could not switch the monitor configuration"
-msgstr ""
+msgstr "Монитор баптауларын өзгерту мүмкін емес"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:397
 msgid "Could not restore the display's configuration"
-msgstr ""
+msgstr "Экран баптауларын қалпына келтіру мүмкін емес"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:422
 msgid "Could not restore the display's configuration from a backup"
-msgstr ""
+msgstr "Экран баптауларын қор көшірмеден қалпына келтіру мүмкін емес"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:443
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] ""
+msgstr[0] "Экран %d секундтан кейін алдыңғы баптауларға қайтарылады"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
-msgstr ""
+msgstr "Бұл экран жақсы көріне ме?"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:499
 msgid "_Restore Previous Configuration"
-msgstr ""
+msgstr "Алдыңғы баптауларды қал_пына келтіру"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:500
 msgid "_Keep This Configuration"
-msgstr ""
+msgstr "Бұл баптауларды _сақтау"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:581
 msgid "The selected configuration for displays could not be applied"
-msgstr ""
+msgstr "Экрандар үшін таңдалған баптауды іске асыру мүмкін емес"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1153
 #, c-format
@@ -1078,15 +1078,15 @@ msgstr "Экран ақпаратын жаңарту мүмкін емес: %s"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1157
 msgid "Trying to switch the monitor configuration anyway."
-msgstr ""
+msgstr "Сонда да монитор баптауларын ауыстырып көру."
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1888
 msgid "Rotation not supported"
-msgstr ""
+msgstr "Бұруға қолдау жоқ"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1944
 msgid "Could not save monitor configuration"
-msgstr ""
+msgstr "Монитор баптауларын сақтау мүмкін емес"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Normal"
@@ -1102,24 +1102,24 @@ msgstr "Оң жақ"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1965
 msgid "Upside Down"
-msgstr ""
+msgstr "Төңкеру"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2087
 msgid "_Configure Display Settings…"
-msgstr ""
+msgstr "_Экранды баптау…"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2140
 msgid "Configure display settings"
-msgstr ""
+msgstr "Экранды баптау"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2200
 msgid "Could not apply the stored configuration for monitors"
-msgstr ""
+msgstr "Мониторлар үшін сақталған баптауларды іске асыру мүмкін емес"
 
 #: ../plugins/xrdb/msd-xrdb-manager.c:253
 #: ../plugins/xrdb/msd-xrdb-manager.c:322
 msgid "Cannot determine user's home directory"
-msgstr ""
+msgstr "Пайдаланушының үй бумасын анықтау мүмкін емес"
 
 #: ../plugins/xrdb/xrdb.mate-settings-plugin.in.h:1
 msgid "X Resource Database"
@@ -1205,24 +1205,24 @@ msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:1
 msgid "Change system time zone"
-msgstr ""
+msgstr "Жүйелік уақыт белдеуін өзгерту"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:2
 msgid "Privileges are required to change the system time zone."
-msgstr ""
+msgstr "Жүйелік уақыт белдеуін өзгерту үшін рұқсаттар керек."
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:3
 msgid "Change system time"
-msgstr ""
+msgstr "Жүйелік уақытты өзгерту"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:4
 msgid "Privileges are required to change the system time."
-msgstr ""
+msgstr "Жүйелік уақытты өзгерту үшін рұқсаттар керек."
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:5
 msgid "Configure hardware clock"
-msgstr ""
+msgstr "Құрылғылық сағатты баптау"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:6
 msgid "Privileges are required to configure the hardware clock."
-msgstr ""
+msgstr "Құрылғылық сағатты баптау үшін рұқсаттар керек."
