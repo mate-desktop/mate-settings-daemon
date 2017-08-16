@@ -6,7 +6,7 @@
 # Carsten Schaar <nhadcasc@fs-maphy.uni-hannover.de>, 1998
 # Christian Kintner <ckintner@mate-de.org>, 2007
 # Christian Meyer <chrisime@gnome.org>, 2000, 2001, 2002
-# Christian Spaan <gyges@gmx.net>, 2016
+# Christian Spaan, 2016
 # Ettore Atalan <atalanttore@googlemail.com>, 2015-2016
 # Franco Della-Monica <franco.della.monica@gmail.com>, 2015
 # Frank Arnold <frank@scirocco-5v-turbo.de>, 2005

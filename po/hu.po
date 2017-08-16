@@ -8,20 +8,21 @@
 # Emese Kovacs <emese at mate dot hu>, 2001
 # Gabor Kelemen <kelemeng at mate dot hu>, 2004-2010
 # Gabor Sari <saga at mate dot hu>, 2003
-# kami911 <kami911@gmail.com>, 2014,2016
-# kami911 <kami911@gmail.com>, 2014-2015
+# KAMI KAMI <kami911@gmail.com>, 2014,2016-2017
+# KAMI KAMI <kami911@gmail.com>, 2014-2015
 # Laszlo Dvornik <dvornik at mate dot hu>, 2004
 # Mate ORY <orymate at gmail d0t com>, 2006
 # Peter Doma <zelin at pointernet dot hu>, 2002
 # Rezső Páder <rezso@rezso.net>, 2013
 # Szabolcs Ban <shooby at mate dot hu>, 1998-2000
+# Zoltán Rápolthy <real_zolee@hotmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-06 01:02+0300\n"
-"PO-Revision-Date: 2016-12-05 22:04+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"PO-Revision-Date: 2017-05-29 18:35+0000\n"
+"Last-Translator: KAMI KAMI <kami911@gmail.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/mate/MATE/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -237,33 +238,33 @@ msgstr "Válassza ki a gomb hozzárendelést az háromujjas koppintáshoz. Támo
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:26
 msgid "Touchpad button orientation"
-msgstr ""
+msgstr "Érintőtábla gombjainak elhelyezkedése"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:27
 msgid ""
 "Swap left and right buttons for left-handed touchpads with 'left', 'right' "
 "for right-handed, 'mouse' to follow the mouse setting."
-msgstr ""
+msgstr "Felcseréli a bal és jobb gombokat a balkezes érintőtábláknál a „left” értéket megadva. Adja meg a „right” értéket a jobbkezes működéshez, vagy a „mouse” értéket az egérbeállítások használatához."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
 msgid "Motion Acceleration"
-msgstr ""
+msgstr "Mozgás gyorsítás"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:29
 msgid ""
 "Acceleration multiplier for touchpad motion. A value of -1 is the system "
 "default."
-msgstr ""
+msgstr "Gyorsítási szorzó az érintőtábla mozgatásához. A -1 érték a rendszer alapértelmezése."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
-msgstr ""
+msgstr "Mozgási küszöbérték"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:31
 msgid ""
 "Distance in pixels the pointer must move before accelerated touchpad motion "
 "is activated. A value of -1 is the system default."
-msgstr ""
+msgstr "Az a távolság képpontokban, amit az érintőpad mutatónak meg kell tennie, mielőtt a gyorsított érintőpad mozgatás aktivizálódik. A -1 érték a rendszer alapértelmezése."
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-06 01:02+0300\n"
-"PO-Revision-Date: 2017-03-11 23:19+0000\n"
+"PO-Revision-Date: 2017-04-25 15:07+0000\n"
 "Last-Translator: samson <sambelet@yahoo.com>\n"
 "Language-Team: Amharic (http://www.transifex.com/mate/MATE/language/am/)\n"
 "MIME-Version: 1.0\n"
@@ -74,29 +74,29 @@ msgstr "ይህን ሪዞሊሽን ተጠቅሟል ለ መቀየር የ ፊደል
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
-msgstr ""
+msgstr "ማለስለሻ"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:4
 msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr ""
+msgstr "የ ማለስለሻ አይነት የሚጠቀሙት ለፊደል ማስተካከያ: የሚቻሉት ዋጋዎች እነዚህ ናቸው: \"ምንም\" ለ no antialiasing, \"grayscale\" for standard grayscale antialiasing, and \"rgba\" for subpixel antialiasing (LCD መመልከቻ ብቻ)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
-msgstr ""
+msgstr "ምክር"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:6
 msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr ""
+msgstr "እርስዎ ለ ፊደል የሚጠቀሙት አቀራረብ: የሚቻሉት ዋጋዎች እነዚህ ናቸው: \"ምንም\" ምንም ምክር የለም: \"በትንሹ\" ለ መሰረታዊ: \"መካከለኛ\" ለ ዘመናዊ እና  \"ሙሉ\" ለ ከፍተኛ ምክር (ምናልባት የ ፊደል መጣመም ሊያስከትል ይችላል)"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
-msgstr ""
+msgstr "የ RGBA ቅደም ተከተል"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:8
 msgid ""
@@ -104,17 +104,17 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr ""
+msgstr "የ ንዑስ ፒክስል አካላቶች ቅደም ተከተል ለ LCD መመልከቻ; ይህን ብቻ ይጠቀሙ ለ ማስተካከያ ማሰናጃ ለ \"rgba\". የሚቻሉት ዋጋዎች እነዚህ ናቸው: \"rgb\" ለ ቀይ በ ግራ በኩል (በጣም የ ተለመደ), \"bgr\" ለ ሰማያዊ በ ግራ በኩል:  \"vrgb\" ለ ቀይ ከ ላይ በኩል: \"vbgr\" ለ ቀይ ከ ታች በኩል"
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
-msgstr ""
+msgstr "Smartcard ማስወገጃ ተግባር"
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:2
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr ""
+msgstr "ከ እነዚህ አንዱን ያሰናዱ \"ምንም\", \"መመልከቻ_መቆለፊያ\": ወይንም \"አስገድዶ_መውጫ\". ይህ ተግባር ይፈጸማል ይህን የ smartcard ሲጠቀሙ መግቢያ ሲያስወግዱ"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:1
 msgid "Disable touchpad while typing"
@@ -189,7 +189,7 @@ msgstr "በ ሁለት-ጣት ቁልፍ-መጫኛ ማስመሳያ ማስቻያ"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:18
 msgid "0 thru 3, 0 is inactive, 1-3 is button to emulate"
-msgstr ""
+msgstr "ከ 0 እስከ 3, 0 ንቁ አይደለም: ከ 1-3 ማስመሰያ ቁልፍ ነው"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:19
 msgid "Enable three-finger button-click emulation"
@@ -203,7 +203,7 @@ msgstr "በ አንድ ጣት tap ቁልፍ"
 msgid ""
 "Select the button mapping for one-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr ""
+msgstr "የ ቁልፍ ካርታ ይምረጡ ለ አንድ-ጣት መታ ማድረጊ: የሚደገፉት ዋጋዎች እነዚህ ናቸው: 1: የ ግራ አይጥ ቁልፍ 2: የ መሀከል አይጥ ቁልፍ 3: የ ቀኝ አይጥ ቁልፍ"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
 msgid "Two finger tap button"
@@ -213,7 +213,7 @@ msgstr "በ ሁለት ጣት tap ቁልፍ"
 msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr ""
+msgstr "የ ቁልፍ ካርታ ይምረጡ ለ ሁለት-ጣት መታ ማድረጊ: የሚደገፉት ዋጋዎች እነዚህ ናቸው: 1: የ ግራ አይጥ ቁልፍ 2: የ መሀከል አይጥ ቁልፍ 3: የ ቀኝ አይጥ ቁልፍ"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
 msgid "Three finger tap button"
@@ -223,27 +223,27 @@ msgstr "በ ሶስት ጣት tap ቁልፍ"
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
-msgstr ""
+msgstr "የ ቁልፍ ካርታ ይምረጡ ለ ሶስት-ጣት መታ ማድረጊ: የሚደገፉት ዋጋዎች እነዚህ ናቸው: 1: የ ግራ አይጥ ቁልፍ 2: የ መሀከል አይጥ ቁልፍ 3: የ ቀኝ አይጥ ቁልፍ"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:26
 msgid "Touchpad button orientation"
-msgstr ""
+msgstr "የ ተችፓድ ቁልፍ አቅጣጫ"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:27
 msgid ""
 "Swap left and right buttons for left-handed touchpads with 'left', 'right' "
 "for right-handed, 'mouse' to follow the mouse setting."
-msgstr ""
+msgstr "ይጥረጉ ወደ ግራ እና ቀኝ ቁልፍ በ ግራ-እጅ ተጠቃሚዎች ተችፓድ በ  'ግራ', 'ቀኝ' በ ቀኝ-እጅ ተጠቃሚዎች, 'አይጥ' የ አይጥ ማሰናጃ እንዲከተል"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
 msgid "Motion Acceleration"
-msgstr ""
+msgstr "እንቅስቃሴ ማፍጠኛ"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:29
 msgid ""
 "Acceleration multiplier for touchpad motion. A value of -1 is the system "
 "default."
-msgstr ""
+msgstr "ማፍጠኛ ማባዣ ለ ተችፓድ እንቅስቃሴ: ይህ ዋጋ -1 የ ስርአቱ ነባር ነው"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
@@ -253,7 +253,7 @@ msgstr "የ እንቅስቃሴ መግቢያ"
 msgid ""
 "Distance in pixels the pointer must move before accelerated touchpad motion "
 "is activated. A value of -1 is the system default."
-msgstr ""
+msgstr "እርቀቱ በ ፒክስል መጠቆሚያው የሚንቀሳቀሰው ከ ተችፓድ ማፍጠኛ ማስጀመሪያ በፊት: ይህ ዋጋ ለ -1 ለ ስርአቱ ነባር ነው"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
@@ -293,7 +293,7 @@ msgstr "ይህን ተሰኪ ማስጀመሪያ"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr ""
+msgstr "በ ሜት-ማሰናጃ እረዳት ውስጥ ይህ ተሰኪ ይጀምር እንደሆን መወሰኛ"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:3
@@ -343,11 +343,11 @@ msgstr "ነፃ ፐርሰንት የ መግቢያ ማስታወቂያ"
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr ""
+msgstr "ነፃ የ ቀረው ባዶ ቦታ በ ፐርሰንት የ መጀመሪያውን ማስጠንቀቂያ ለማስጀመር:  በ ፐርሰንት ነፃ የ ቀረው ባዶ ቦታ ከዚህ በታች ሲሆን ማስጠንቀቂያ ይታያል"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
 msgid "Subsequent free percentage notify threshold"
-msgstr ""
+msgstr "ነፃ የ ፐርሰንት ማስታወቂያ መግቢያ ይታይ እንደሆን መወሰኛ"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:8
 msgid ""
@@ -363,7 +363,7 @@ msgstr "ነፃ ቦታ ለ ማስታወቂያ መግቢያ"
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr ""
+msgstr "እርስዎ መጠኑን በ ጌባ ይወስኑ: ነፃ ያለው ቦታ ከዚህ በላይ ከሆነ ምንም ማስጠንቀቂያ አይታይም"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:11
 msgid "Minimum notify period for repeated warnings"
@@ -373,7 +373,7 @@ msgstr "አነስተኛ የ ማስታወቂያ ጊዜ ለ ተደገመ ማስጠ
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr ""
+msgstr "ጊዜ በ ደቂቃ ይወስኑ:ተከታታይ ከዚህ ጊዜ በ ቀረበ ማስጠንቀቂያ ለ መጠን አይታይም "
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
@@ -389,7 +389,7 @@ msgstr "የ OSD ማስታወቂያ ማሳያ"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:4
 msgid "Whether an OSD notification is shown to notify about changes"
-msgstr ""
+msgstr "የ OSD ማስታወቂያ ለውጦች ለማስታወቅ ይታይ እንደሆን መወሰኛ"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:7
 msgid "Volume step"
@@ -579,7 +579,7 @@ msgstr "በ ማስታወቂያ ቦታ ላይ ማሳያ"
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
-msgstr ""
+msgstr "የ ማስታወቂያ ምልክት ከ ማሳያው ጋር-የ ተዛመደ እቃ በ ክፍል ውስጥ ይታይ እንደሆን መወሰኛ"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:7
 msgid "Do not touch monitor configuration"
@@ -603,7 +603,7 @@ msgstr "የ ውጪ መመልከቻ ማብሪያ ስርአቱ ከ ጀመረ በ�
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
-msgstr ""
+msgstr "ስርአቱ ከ ተነሳ በኋላ የ ውጪ መመልከቻውን ማብሪያ: ተጠቃሚው የ ውጪ መመልከቻ ከ ስርአቱ ማስጀመሪያ ጋር ካያያዘ"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:11
 msgid "Turn on laptop monitor after system boot"
@@ -613,7 +613,7 @@ msgstr "የ ላፕቶፕ መመልከቻ ማብሪያ ስርአቱ ከ ጀመረ
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr ""
+msgstr "ስርአቱ ከ ተነሳ በኋላ የ ላፕቶፕ መመልከቻውን ማብሪያ: ተጠቃሚው የ ውጪ መመልከቻ ከ ስርአቱ ማስጀመሪያ ጋር ካያያዘ"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:13
 msgid "File for default configuration for RandR"
@@ -646,7 +646,7 @@ msgstr "እረዳት አትሁን"
 
 #: ../mate-settings-daemon/main.c:68
 msgid "Exit after a time (for debugging)"
-msgstr ""
+msgstr "ከ ተወሰነ ጊዜ በኋላ መውጫ (ለ ማስተካከያ)"
 
 #: ../plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.in.h:1
 msgid "Accessibility Keyboard"
@@ -676,7 +676,7 @@ msgstr "ዝግተኛ ቁልፎችን ማስጀመር ይፈልጋሉ?"
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr ""
+msgstr "እርስዎ ተጭነው ይዘዋል የ Shift ቁልፍ ለ 8 ሰከንዶች: ይህ አቋራጭ ነው ለ ማዘግያ ቁልፍ ገጽታ: ይህ የ እርስዎን የ ፊደል ገበታ አሰራር ይቀይረዋል"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
@@ -737,7 +737,7 @@ msgstr "ተጣባቂ ቁልፎችን ማቦዘን ይፈልጋሉ?"
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr ""
+msgstr "እርስዎ የ Shift ቁልፍ 5 ጊዜ ተጭነዋል በ ተከታታይ: ይህ አቋራጭ ነው ለ ተጣባቂ ቁልፎች ገጽታ: ይህ በ እርስዎ የ ፊደል ገበታ አሰራር ላይ ተጽእኖ ይፈጥራል"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:708
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:774
@@ -745,7 +745,7 @@ msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr ""
+msgstr "እርስዎ አሁን ሁለት ቁልፎች በ አንድ ጊዜ ተጭነዋል: ወይንም የ Shift ቁልፍ 5 ጊዜ በ ተከታታይ ተጭነዋል: ይህ ተጣባቂ ቁልፍ ገጽታን ያጠፋዋል: ይህ የ እርስዎን የ ፊደል ገበታ አሰራር ይቀይረዋል"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
 msgid "Sticky Keys Alert"
@@ -770,7 +770,7 @@ msgstr "የመመልከቻውን _ማጉያ መጠቀሚያ "
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:5
 msgid "Enhance _contrast in colors"
-msgstr ""
+msgstr "የ _ማነፃፀሪያ ቀለም መጨመሪያ"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:6
 msgid "Make _text larger and easier to read"
@@ -903,7 +903,7 @@ msgstr "በቆሻሻ ውስጥ ያለውን ባዶ ላድርገው? "
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr ""
+msgstr "እርስዎ ቆሻሻውን ባዶ ማድረግ ከ ፈለጉ: ሁሉም እቃዎች በ ቋሚነት ይጠፋሉ: እባክዎን ያስታውሱ እያንዳንዱን እቃ ለየብቻ ማጥፋት ይችላሉ"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
 msgid "_Empty Trash"
@@ -975,7 +975,7 @@ msgstr "የ _አሁኑን እቅድ ማሳያ"
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr ""
+msgstr "ነባር ተርሚናል ማግኘት አልተቻለም: የ እርስዎ ነባር ተርሚናል ትእዛዝ መሰናዳቱን እና ወደ ትክክለኛው መተግበሪያ እንደሚያመለክት"
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:226
 #, c-format
@@ -999,7 +999,7 @@ msgstr "የ አይጥ ቁልፍ መደረሻ ገጽታዎችን ማስቻል አ
 #: ../plugins/mouse/msd-mouse-manager.c:1023
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
-msgstr ""
+msgstr "የ አይጥ መድረሻ የ አይጥ ማስተካከያ በ ቅድሚያ በ ስርአቱ ውስጥ መገጠም አለበት"
 
 #: ../plugins/mouse/msd-mouse-manager.c:1026
 msgid "Mouse Preferences"
@@ -1145,7 +1145,7 @@ msgstr "የ ክፍል ዘዴ"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:168
 msgid "path to smartcard PKCS #11 driver"
-msgstr ""
+msgstr "መንገድ ወደ smartcard PKCS #11 driver"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:496
 msgid "received error or hang up from event source"
@@ -1174,7 +1174,7 @@ msgstr "ወደ ውስጥ የሚመጣውን የ ካርድ ሁኔታ መመልከ
 #: ../plugins/smartcard/msd-smartcard-manager.c:1105
 #, c-format
 msgid "encountered unexpected error while waiting for smartcard events"
-msgstr ""
+msgstr "ያልታሰበ ችግር ገጥሞታል smartcard ሁኔታዎች በ መጠበቅ ላይ እንዳለ"
 
 #: ../plugins/smartcard/msd-smartcard.c:154
 msgid "Slot ID"
@@ -1186,11 +1186,11 @@ msgstr "ካርዱ ያለበት ማስገቢያ"
 
 #: ../plugins/smartcard/msd-smartcard.c:161
 msgid "Slot Series"
-msgstr ""
+msgstr "የ ማስገቢያ ተከታታይ"
 
 #: ../plugins/smartcard/msd-smartcard.c:162
 msgid "per-slot card identifier"
-msgstr ""
+msgstr "በ-ማስገቢያ ካርድ መለያ"
 
 #: ../plugins/smartcard/msd-smartcard.c:168
 #: ../plugins/smartcard/msd-smartcard.c:169

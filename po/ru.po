@@ -10,7 +10,7 @@
 # AlexL <loginov.alex.valer@gmail.com>, 2016
 # Andrew Grigorev <andrew@ei-grad.ru>, 2009
 # Andrew W. Nosenko <awn@bcs.zp.ua>, 2003
-# Дмитрий Михирев <bizdelnick@gmail.com>, 2015
+# Дмитрий Михирев, 2015
 # Diesel <diesel594@gmail.com>, 2009
 # Leonid Kanter <leon@asplinux.ru>, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010
 # Maxim Popov <ravemax@hotbox.ru>, 2006, 2009

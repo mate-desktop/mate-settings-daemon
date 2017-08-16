@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Rasti K5 <rasti.khdhr@gmail.com>, 2016
+# Rasti K5 <rasti.khdhr@gmail.com>, 2016-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-06 01:02+0300\n"
-"PO-Revision-Date: 2016-12-05 22:04+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"PO-Revision-Date: 2017-07-17 19:23+0000\n"
+"Last-Translator: Rasti K5 <rasti.khdhr@gmail.com>\n"
 "Language-Team: Kurdish (Iraq) (http://www.transifex.com/mate/MATE/language/ku_IQ/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -464,7 +464,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
 msgid "Search"
-msgstr ""
+msgstr "گەڕان"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:26
 msgid "Binding to launch the search tool."
@@ -544,7 +544,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
 msgid "Previous track"
-msgstr ""
+msgstr "تراکی پێشوو"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
 msgid "Binding to skip to previous track."
@@ -552,7 +552,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
 msgid "Next track"
-msgstr ""
+msgstr "تراکی دواتر"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
 msgid "Binding to skip to next track."
@@ -789,7 +789,7 @@ msgstr ""
 
 #: ../plugins/background/background.mate-settings-plugin.in.h:1
 msgid "Background"
-msgstr ""
+msgstr "پاشبنەما"
 
 #: ../plugins/background/background.mate-settings-plugin.in.h:2
 msgid "Background plugin"
@@ -892,7 +892,7 @@ msgstr ""
 #. Translators: "Emptying trash from <device>"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
 msgid "From: "
-msgstr ""
+msgstr "لە:"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
 msgid "Empty all of the items from the trash?"
@@ -1091,15 +1091,15 @@ msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Normal"
-msgstr ""
+msgstr "ئاسایی"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1963
 msgid "Left"
-msgstr ""
+msgstr "چەپ"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1964
 msgid "Right"
-msgstr ""
+msgstr "ڕاست"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1965
 msgid "Upside Down"
@@ -1206,7 +1206,7 @@ msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:1
 msgid "Change system time zone"
-msgstr ""
+msgstr "گۆڕینی ناوچەی کاتی سیستەم"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:2
 msgid "Privileges are required to change the system time zone."
@@ -1214,7 +1214,7 @@ msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:3
 msgid "Change system time"
-msgstr ""
+msgstr "گۆڕینی کاتی سیستەم"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:4
 msgid "Privileges are required to change the system time."
