@@ -1,5 +1,24 @@
 ### mate-settings-daemon 1.19.0
 
+  * Translations update
+    configure: bump MATE_DESKTOP_REQUIRED_VERSION
+    gtk 3.22: avoid deprecated gdk_screen_get_width/height_mm
+    avoid deprecated gdk_screen_get_width/height
+    avoid deprecated gdk_display_get_screen and gdk_display_get_n_screens
+    msd-a11y-preferences-dialog.ui: clean up deprecations
+    ally-keyboard: fix help link
+    don't use deprecated gtk_show_uri
+    avoid deprecated gdk_screen_get_number
+    Fix Xrandr applet dying on restart
+    Request keyboard event reports from global keybindings of other windows (#179)
+    Restore Polish translation credits from GNOME
+    msd-xrandr-manager: avoid deprecated gtk_misc_set_padding
+    keyboard plugin: apply panel menu theme to popup menu
+    ldsm-dialog: don't use deprecated GTK_STOCK
+    ldsm-dialog: set max width chars for labels
+    datetime: fix a Wunused-but-set-variable warning
+    add GlobalMenu support
+
 ### mate-settings-daemon 1.18.0
 
   * NEWS: use consistent, project wide, markdown-like formatting to make
