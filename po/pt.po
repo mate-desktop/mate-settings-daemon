@@ -5,6 +5,7 @@
 # Translators:
 # Carlos Moreira, 2013
 # Carlos Moreira, 2012-2013
+# Carlos Moreira, 2013,2016
 # Carlos Moreira, 2014-2015,2017
 # Carlos Moreira, 2016
 # Manuela Silva <manuela.silva@sky.com>, 2016-2017
@@ -13,8 +14,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-06 01:02+0300\n"
-"PO-Revision-Date: 2017-04-07 17:14+0000\n"
-"Last-Translator: Carlos Moreira\n"
+"PO-Revision-Date: 2017-08-23 21:51+0000\n"
+"Last-Translator: José Vieira <jvieira33@sapo.pt>\n"
 "Language-Team: Portuguese (http://www.transifex.com/mate/MATE/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -168,7 +169,7 @@ msgstr "Ativar rolamento horizontal com dois dedos"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
 msgid "Set this to TRUE to allow horizontal two-finger scrolling"
-msgstr ""
+msgstr "Defina como VERDADEIRO para ativar o deslocamento horizontal com dois dedos"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
 msgid "Natural scrolling"
@@ -176,7 +177,7 @@ msgstr "Rolamento natural"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
-msgstr ""
+msgstr "Defina como verdadeiro para ativar o deslocamento natural (sentido inverso) para os sensores de toque"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
 msgid "Enable touchpad"
@@ -192,7 +193,7 @@ msgstr "Simulação de clique com dois dedos ativada"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:18
 msgid "0 thru 3, 0 is inactive, 1-3 is button to emulate"
-msgstr ""
+msgstr "0 a 3, 0 é inativo, 1-3 é botão para emular"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:19
 msgid "Enable three-finger button-click emulation"
@@ -206,7 +207,7 @@ msgstr "Botão de toque de um dedo"
 msgid ""
 "Select the button mapping for one-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr ""
+msgstr "Seleciona o mapeamento de botão para toque com um dedo. Valores aceites: 1: botão esquerdo do rato 2: botão do meio do rato 3: botão direito do rato"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
 msgid "Two finger tap button"
@@ -216,7 +217,7 @@ msgstr "Botão de toque de dois dedos"
 msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr ""
+msgstr "Seleciona o mapeamento de botão para toque com dois dedos. Valores aceites: 1: botão esquerdo do rato 2: botão do meio do rato 3: botão direito do rato"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
 msgid "Three finger tap button"
@@ -226,17 +227,17 @@ msgstr "Botão de toque de três dedos"
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
-msgstr ""
+msgstr "Seleciona o mapeamento de botão para toque com três dedos. Valores aceites: 1: botão esquerdo do rato 2: botão do meio do rato 3: botão direito do rato"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:26
 msgid "Touchpad button orientation"
-msgstr ""
+msgstr "Orientação do botão do sensor de toque"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:27
 msgid ""
 "Swap left and right buttons for left-handed touchpads with 'left', 'right' "
 "for right-handed, 'mouse' to follow the mouse setting."
-msgstr ""
+msgstr "Troque os botões esquerdo e direito para sensores de toque para esquerdinos com 'esquerdo', 'direito' para destro, 'rato' para seguir a configuração do rato."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
 msgid "Motion Acceleration"
@@ -246,7 +247,7 @@ msgstr "Aceleração de Movimento"
 msgid ""
 "Acceleration multiplier for touchpad motion. A value of -1 is the system "
 "default."
-msgstr ""
+msgstr "Multiplicador de aceleração para movimento de sensor de toque. Um valor de -1 é a predefinição do sistema."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
@@ -256,7 +257,7 @@ msgstr "Tolerância de Movimento"
 msgid ""
 "Distance in pixels the pointer must move before accelerated touchpad motion "
 "is activated. A value of -1 is the system default."
-msgstr ""
+msgstr "Distância em pixeis que o ponteiro deve percorrer antes de o movimento acelerado do sensor de toque ser ativado. O valor -1 é a predefinição do sistema."
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
@@ -960,7 +961,7 @@ msgid ""
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr ""
+msgstr "Erro ao ativar a configuração do XKB.\nIsto pode acontecer em várias circunstâncias:\n • um erro na biblioteca libxklavier\n • um erro no servidor X (xkbcomp, utilitários do xmodmap)\n • servidor X com implementação da libxkbfile incompatível\n\nDados da versão do servidor X:\n%s\n%d\nSe relatar esta situação como um erro, inclua:\n • O resultado de <b>%s</b>\n • O resultado de <b>%s</b>"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:265
 msgid "_Layouts"

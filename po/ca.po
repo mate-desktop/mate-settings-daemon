@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-06 01:02+0300\n"
-"PO-Revision-Date: 2017-02-15 11:40+0000\n"
+"PO-Revision-Date: 2017-08-23 13:50+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/mate/MATE/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -786,7 +786,7 @@ msgstr "_Prem les dreceres de teclat una tecla a la vegada (tecles enganxoses)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
-msgstr "_Ignora les pressions duplicades de les tecles (tecles de salt)"
+msgstr "_Ignora les pressions duplicades de les tecles (tecles de rebot)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "Press and _hold keys to accept them (Slow Keys)"
