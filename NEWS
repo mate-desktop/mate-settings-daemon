@@ -1,3 +1,10 @@
+### mate-settings-daemon 1.18.2
+
+  * ldsm-dialog: set max width chars for labels
+  * keyboard plugin: apply panel menu theme to popup menu
+  * Request keyboard event reports from global keybindings of other windows
+  * Translations update
+
 ### mate-settings-daemon 1.18.1
 
   * mouse: Also grab button presses so as to replay them on pointer locater
