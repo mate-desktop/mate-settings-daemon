@@ -18,7 +18,7 @@
   </enum>
   <schema id="org.mate.font-rendering" path="/org/mate/desktop/font-rendering/">
     <key name="dpi" type="d">
-      <default>0.0</default>
+      <default>96</default>
       <summary>DPI</summary>
       <description>The resolution used for converting font sizes to pixel sizes,  in dots per inch.</description>
     </key>
