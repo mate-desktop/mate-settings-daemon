@@ -173,6 +173,7 @@ get_dpi_from_x_server (void)
 {
         GdkScreen *screen;
         double     dpi;
+        int        scale;
 
         screen = gdk_screen_get_default ();
         if (screen != NULL) {
@@ -181,6 +182,7 @@ get_dpi_from_x_server (void)
 
                 Screen *xscreen = gdk_x11_screen_get_xscreen (screen);
 
+                scale = gdk_window_get_scale_factor (gdk_screen_get_root_window (screen));
                 width_dpi = dpi_from_pixels_and_mm (WidthOfScreen (xscreen), WidthMMOfScreen (xscreen));
                 height_dpi = dpi_from_pixels_and_mm (HeightOfScreen (xscreen), HeightMMOfScreen (xscreen));
 
@@ -192,6 +194,9 @@ get_dpi_from_x_server (void)
                 } else {
                         dpi = (width_dpi + height_dpi) / 2.0;
                 }
+
+                dpi *= scale;
+
         } else {
                 /* Huh!?  No screen? */
                 dpi = DPI_DEFAULT;
