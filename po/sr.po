@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-06 01:02+0300\n"
+"POT-Creation-Date: 2017-11-28 15:15+0100\n"
 "PO-Revision-Date: 2017-09-19 11:21+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian (http://www.transifex.com/mate/MATE/language/sr/)\n"
@@ -659,102 +659,102 @@ msgstr "Приступачност тастатуре"
 msgid "Accessibility keyboard plugin"
 msgstr "Додатак за приступачност тастатуре"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:441
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Дошло је до грешке приликом приказа помоћи: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:569
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:633
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
 msgid "Do you want to activate Slow Keys?"
 msgstr "Желите ли да укључите споре тастере?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:570
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:634
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Желите ли да укључите споре тастере?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:571
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:635
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
 msgstr "Управо сте држали тастер Шифт притиснут 8 секунди.  Ово је пречица за могућност спорих тастера, која утиче на то како ради ваша тастатура."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
 msgid "Don't activate"
 msgstr "Не покрећи"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
 msgid "Don't deactivate"
 msgstr "Не обустављај"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:600
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:737
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
 msgid "Activate"
 msgstr "Покрени"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:600
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:737
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
 msgid "Deactivate"
 msgstr "Обустави"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:795
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
 msgid "Do_n't activate"
 msgstr "Не покрећ_и"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:795
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
 msgid "Do_n't deactivate"
 msgstr "Не обуст_ављај"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
 msgid "_Activate"
 msgstr "По_крени"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
 msgid "_Deactivate"
 msgstr "Об_устави"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
 msgid "Slow Keys Alert"
 msgstr "Упозорење спорих тастера"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:703
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:769
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Желите ли да укључите лепљиве тастере?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:704
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:770
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Желите ли да искључите лепљиве тастере?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:706
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:772
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
 msgstr "Управо сте притиснули тастер Шифт пет пута заредом.  Ово је пречица за могућност лепљивих тастера, која утиче на начин рада ваше тастатуре."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:708
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:774
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
 msgstr "Управо сте притиснули два тастера истовремено, или сте притиснули Шифт 5 пута заредом.  Ово искључује могућност лепљивих тастера, што утиче на то како ваша тастатура ради."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
 msgid "Sticky Keys Alert"
 msgstr "Упозорење лепљивих тастера"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:763
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:780
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Поставке универзалног приступа"
@@ -862,15 +862,15 @@ msgstr "Можете ослободити простор на диску укл�
 msgid "Low Disk Space"
 msgstr "Мало простора на диску"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:450
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Empty Trash"
 msgstr "Испразни корпу"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:458
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
 msgid "Examine…"
 msgstr "Испитај…"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:465
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
 msgid "Ignore"
 msgstr "Занемари"
 
@@ -912,17 +912,17 @@ msgstr "Уколико изаберете да испразните смеће, 
 msgid "_Empty Trash"
 msgstr "_Испразни корпу"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:129
+#: ../plugins/keybindings/msd-keybindings-manager.c:112
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "Није исправна веза са тастером (%s)"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:165
+#: ../plugins/keybindings/msd-keybindings-manager.c:148
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "Није потпуна веза са тастером (%s)"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:503
+#: ../plugins/keybindings/msd-keybindings-manager.c:486
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -962,25 +962,25 @@ msgid ""
 " • The result of <b>%s</b>"
 msgstr "Грешка активирања ИксКБ подешавања.\nМоже да се догоди под разни околностима:\n • због грешке у библиотеци „libxklavier“\n • због грешке Икс сервера (помагала „xkbcomp“, „xmodmap“)\n • због Икс сервера са несагласном применом „libxkbfile“-а\n\nПодаци о издању Икс сервера:\n%s\n%d\nАко ово пријавите као грешку, укључите и:\n • Резултате за <b>%s</b>\n • Резултате за <b>%s</b>"
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:265
+#: ../plugins/keyboard/msd-keyboard-xkb.c:279
 msgid "_Layouts"
 msgstr "_Распореди"
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:272
+#: ../plugins/keyboard/msd-keyboard-xkb.c:286
 msgid "Keyboard _Preferences"
 msgstr "Поставке _тастатуре"
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:278
+#: ../plugins/keyboard/msd-keyboard-xkb.c:292
 msgid "Show _Current Layout"
 msgstr "Прика_жи тренутни распоред"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:186
+#: ../plugins/media-keys/msd-media-keys-manager.c:184
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
 msgstr "Не могу да нађем подразумевани терминал. Проверите да ли је наредба за терминал постављена и да ли показује на постојећи програм."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:226
+#: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -995,16 +995,16 @@ msgstr "Мултимедијални тастери"
 msgid "Media keys plugin"
 msgstr "Додатак за мултимедијалне тастере"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1021
+#: ../plugins/mouse/msd-mouse-manager.c:1440
 msgid "Could not enable mouse accessibility features"
 msgstr "Не могу да укључим приступачност миша"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1023
+#: ../plugins/mouse/msd-mouse-manager.c:1442
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr "Приступачност миша захтева да је инсталиран програм за подешавања миша (mousetweaks) на вашем систему."
 
-#: ../plugins/mouse/msd-mouse-manager.c:1026
+#: ../plugins/mouse/msd-mouse-manager.c:1445
 msgid "Mouse Preferences"
 msgstr "Подешавања миша"
 
@@ -1086,39 +1086,39 @@ msgstr "Не могу да освежим податке о екрану: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Покушавам да ипак учитам подешавања монитора."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1888
+#: ../plugins/xrandr/msd-xrandr-manager.c:1889
 msgid "Rotation not supported"
 msgstr "Није подржано ротирање"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1944
+#: ../plugins/xrandr/msd-xrandr-manager.c:1945
 msgid "Could not save monitor configuration"
 msgstr "Не могу да сачувам подешавања монитора"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1962
+#: ../plugins/xrandr/msd-xrandr-manager.c:1963
 msgid "Normal"
 msgstr "Обично"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1964
 msgid "Left"
 msgstr "Лево"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1965
 msgid "Right"
 msgstr "Десно"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1966
 msgid "Upside Down"
 msgstr "Наопачке"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2087
+#: ../plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "_Configure Display Settings…"
 msgstr "Подеси _екране…"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2140
+#: ../plugins/xrandr/msd-xrandr-manager.c:2141
 msgid "Configure display settings"
 msgstr "Подеси екран"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2200
+#: ../plugins/xrandr/msd-xrandr-manager.c:2201
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Не могу да применим сачувана подешавања екрана"
 

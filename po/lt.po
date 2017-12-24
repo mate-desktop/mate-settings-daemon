@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-06 01:02+0300\n"
+"POT-Creation-Date: 2017-11-28 15:15+0100\n"
 "PO-Revision-Date: 2017-09-19 11:21+0000\n"
 "Last-Translator: Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>\n"
 "Language-Team: Lithuanian (http://www.transifex.com/mate/MATE/language/lt/)\n"
@@ -661,102 +661,102 @@ msgstr "Klaviatūros pritaikymas neįgaliesiems"
 msgid "Accessibility keyboard plugin"
 msgstr "Klaviatūros pritaikymo neįgaliesiems įskiepis"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:441
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Įvyko klaida bandant parodyti žinyną: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:569
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:633
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
 msgid "Do you want to activate Slow Keys?"
 msgstr "Ar norite įjungti lėtuosius klavišus?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:570
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:634
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Ar norite išjungti lėtuosius klavišus?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:571
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:635
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
 msgstr "Jūs laikėte nuspaudę Shift klavišą 8 sekundes. Tai yra šaukinys lėtųjų klavišų funkcijai, pakeičiančiai jūsų klaviatūros veikimą, įjungti."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
 msgid "Don't activate"
 msgstr "Neįjungti"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
 msgid "Don't deactivate"
 msgstr "Neišjungti"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:600
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:737
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
 msgid "Activate"
 msgstr "Įjungti"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:600
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:737
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
 msgid "Deactivate"
 msgstr "Išjungti"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:795
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
 msgid "Do_n't activate"
 msgstr "_Neįjungti"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:795
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
 msgid "Do_n't deactivate"
 msgstr "_Neišjungti"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
 msgid "_Activate"
 msgstr "Įj_ungti"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
 msgid "_Deactivate"
 msgstr "_Išjungti"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
 msgid "Slow Keys Alert"
 msgstr "Lėtųjų klavišų įspėjimas"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:703
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:769
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Ar norite įjungti atmeniuosius klavišus?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:704
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:770
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Ar norite išjungti atmeniuosius klavišus?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:706
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:772
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
 msgstr "Ką tik paspaudėte Shift klavišą 5 kartus iš eilės. Tai yra atmeniųjų klavišų funkcijos šaukinys. Atmenieji klavišai leidžia jums kitaip naudotis klaviatūra."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:708
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:774
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
 msgstr "Ką tik paspaudėte du klavišus vienu metu, arba Shift klavišą 5 kartus iš eilės. Tai išjungia atmeniųjų klavišų funkciją, leidžiančią jums kitaip naudotis klaviatūra."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
 msgid "Sticky Keys Alert"
 msgstr "Atmeniųjų klavišų įspėjimas"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:763
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:780
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Universaliosios prieigos nustatymai"
@@ -864,15 +864,15 @@ msgstr "Galite atlaisvinti vietos diske ištrindami nenaudojamas programas ir fa
 msgid "Low Disk Space"
 msgstr "Baigiasi vieta diske"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:450
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Empty Trash"
 msgstr "Išvalyti šiukšlinę"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:458
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
 msgid "Examine…"
 msgstr "Ištirti…"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:465
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
 msgid "Ignore"
 msgstr "Nepaisyti"
 
@@ -914,17 +914,17 @@ msgstr "Jei išvalysite šiukšlinę, visi joje esantys duomenys bus prarasti. B
 msgid "_Empty Trash"
 msgstr "_Išvalyti šiukšlinę"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:129
+#: ../plugins/keybindings/msd-keybindings-manager.c:112
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "Klavišų susiejimas (%s) netinkamas"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:165
+#: ../plugins/keybindings/msd-keybindings-manager.c:148
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "Klavišų susiejimas (%s) nevisas"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:503
+#: ../plugins/keybindings/msd-keybindings-manager.c:486
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -964,25 +964,25 @@ msgid ""
 " • The result of <b>%s</b>"
 msgstr "Klaida įjungiant XKB konfigūraciją.\nTai gali nutikti įvairiomis aplinkybėmis:\n • klaida libxklavier bibliotekoje\n • klaida X serveryje (xkbcomp, xmodmap programose)\n • X serveris su nesuderinamu libxkbfile įgyvendinimu\n\n\nX serverio versijos duomenys:\n%s\n%d\nJei pranešite apie šią klaidą, pateikite šią informaciją:\n • <b>%s</b> rezultatą\n • <b>%s</b> rezultatą"
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:265
+#: ../plugins/keyboard/msd-keyboard-xkb.c:279
 msgid "_Layouts"
 msgstr "_Išdėstymai"
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:272
+#: ../plugins/keyboard/msd-keyboard-xkb.c:286
 msgid "Keyboard _Preferences"
 msgstr "Klaviatūros _nustatymai"
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:278
+#: ../plugins/keyboard/msd-keyboard-xkb.c:292
 msgid "Show _Current Layout"
 msgstr "Rodyti _dabartinį išdėstymą"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:186
+#: ../plugins/media-keys/msd-media-keys-manager.c:184
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
 msgstr "Nepavyko gauti numatytojo teminalo. Patikrinkite, ar jūsų numatytojo terminalo komanda yra nustatyta ir nurodo tinkamą programą."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:226
+#: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -997,16 +997,16 @@ msgstr "Multimedijos klavišai"
 msgid "Media keys plugin"
 msgstr "Multimedijos klavišų įskiepis"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1021
+#: ../plugins/mouse/msd-mouse-manager.c:1440
 msgid "Could not enable mouse accessibility features"
 msgstr "Nepavyko įjungti pelės pritaikymo neįgaliesiems ypatybių"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1023
+#: ../plugins/mouse/msd-mouse-manager.c:1442
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr "Norint pritaikyti pelę neįgaliesiems, sistemoje turi būti įdiegta Mousetweaks programa."
 
-#: ../plugins/mouse/msd-mouse-manager.c:1026
+#: ../plugins/mouse/msd-mouse-manager.c:1445
 msgid "Mouse Preferences"
 msgstr "Pelės nustatymai"
 
@@ -1088,39 +1088,39 @@ msgstr "Nepavyko atnaujinti ekrano informacijos: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Vis vien bandoma pakeisti vaizduoklio nustatymus."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1888
+#: ../plugins/xrandr/msd-xrandr-manager.c:1889
 msgid "Rotation not supported"
 msgstr "Pasukimas nepalaikomas"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1944
+#: ../plugins/xrandr/msd-xrandr-manager.c:1945
 msgid "Could not save monitor configuration"
 msgstr "Nepavyko įrašyti vaizduoklio nustatymų"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1962
+#: ../plugins/xrandr/msd-xrandr-manager.c:1963
 msgid "Normal"
 msgstr "Normalus"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1964
 msgid "Left"
 msgstr "Kairė"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1965
 msgid "Right"
 msgstr "Dešinė"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1966
 msgid "Upside Down"
 msgstr "Apverstas"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2087
+#: ../plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "_Configure Display Settings…"
 msgstr "_Keisti ekranų nustatymus…"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2140
+#: ../plugins/xrandr/msd-xrandr-manager.c:2141
 msgid "Configure display settings"
 msgstr "Keisti ekranų nustatymus"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2200
+#: ../plugins/xrandr/msd-xrandr-manager.c:2201
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Nepavyko pritaikyti įrašytų vaizduoklių nustatymų"
 

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-06 01:02+0300\n"
+"POT-Creation-Date: 2017-11-28 15:15+0100\n"
 "PO-Revision-Date: 2017-09-23 18:08+0000\n"
 "Last-Translator: Helena S <ele@tutamail.com>\n"
 "Language-Team: Slovenian (http://www.transifex.com/mate/MATE/language/sl/)\n"
@@ -657,102 +657,102 @@ msgstr "Tipkovnica za dostopnost"
 msgid "Accessibility keyboard plugin"
 msgstr "Vstavek tipkovnice dostopnosti"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:441
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Med prikazovanjem pomoči se je zgodila napaka: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:569
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:633
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
 msgid "Do you want to activate Slow Keys?"
 msgstr "Ali želite omogočiti počasne tipke?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:570
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:634
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Ali želite onemogočiti počasne tipke?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:571
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:635
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
 msgstr "Držite tipko Shift 8 sekund. To je bližnjica za možnost počasnih tipk, ki vpliva na delovanje vaše tipkovnice."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
 msgid "Don't activate"
 msgstr "Ne omogoči"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
 msgid "Don't deactivate"
 msgstr "Ne onemogoči"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:600
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:737
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
 msgid "Activate"
 msgstr "Omogoči"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:600
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:737
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
 msgid "Deactivate"
 msgstr "Onemogoči"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:795
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
 msgid "Do_n't activate"
 msgstr "_Ne omogoči"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:795
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
 msgid "Do_n't deactivate"
 msgstr "_Ne onemogoči"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
 msgid "_Activate"
 msgstr "_Omogoči"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
 msgid "_Deactivate"
 msgstr "_Onemogoči"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
 msgid "Slow Keys Alert"
 msgstr "Opozorilo o počasnih tipkah"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:703
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:769
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Ali želite omogočiti lepljive tipke?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:704
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:770
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Ali želite onemogočiti lepljive tipke?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:706
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:772
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
 msgstr "Pravkar ste pritisnili tipko Shift 5-krat zapovrstjo. To je bližnjica za možnost lepljivih tipk, ki vpliva na delovanje vaše tipkovnice."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:708
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:774
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
 msgstr "Pravkar ste pritisnili dve tipki hkrati ali tipko Shift 5-krat zapovrstjo. S tem ste onemogočiti možnost lepljivih tipk, ki vpliva na delovanje vaše tipkovnice."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
 msgid "Sticky Keys Alert"
 msgstr "Opozorilo o lepljivih tipkah"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:763
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:780
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Možnosti splošnega dostopa"
@@ -860,15 +860,15 @@ msgstr "Prostor na disku lahko povečate, če odstranite redko uporabljene progr
 msgid "Low Disk Space"
 msgstr "Na disku zmanjkuje prostora"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:450
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Empty Trash"
 msgstr "Izprazni smeti"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:458
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
 msgid "Examine…"
 msgstr "Preišči ..."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:465
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
 msgid "Ignore"
 msgstr "Prezri"
 
@@ -910,17 +910,17 @@ msgstr "V primeru, da se odločite izprazniti smeti, bodo vsi predmeti trajno iz
 msgid "_Empty Trash"
 msgstr "Izprazni _smeti"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:129
+#: ../plugins/keybindings/msd-keybindings-manager.c:112
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "Tipkovna bližnjica (%s) je neveljavna"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:165
+#: ../plugins/keybindings/msd-keybindings-manager.c:148
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "Tipkovna bližnjica (%s) je nepopolna"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:503
+#: ../plugins/keybindings/msd-keybindings-manager.c:486
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -960,25 +960,25 @@ msgid ""
 " • The result of <b>%s</b>"
 msgstr ""
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:265
+#: ../plugins/keyboard/msd-keyboard-xkb.c:279
 msgid "_Layouts"
 msgstr "_Razporeditve"
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:272
+#: ../plugins/keyboard/msd-keyboard-xkb.c:286
 msgid "Keyboard _Preferences"
 msgstr "Možnosti _tipkovnice"
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:278
+#: ../plugins/keyboard/msd-keyboard-xkb.c:292
 msgid "Show _Current Layout"
 msgstr "Pokaži trenutni _razpored"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:186
+#: ../plugins/media-keys/msd-media-keys-manager.c:184
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
 msgstr "Ni mogoče priklicati privzetega terminala. Preverite, če je ukaz za zagon terminala ustrezno določen."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:226
+#: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -993,16 +993,16 @@ msgstr "Predstavnostne tipke"
 msgid "Media keys plugin"
 msgstr "Vstavek predstavnostnih tipk"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1021
+#: ../plugins/mouse/msd-mouse-manager.c:1440
 msgid "Could not enable mouse accessibility features"
 msgstr "Ni mogoče zagnati zmožnosti dostopnosti miške"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1023
+#: ../plugins/mouse/msd-mouse-manager.c:1442
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr "Dostopnost miške zahteva namestitev programa Mousetweaks."
 
-#: ../plugins/mouse/msd-mouse-manager.c:1026
+#: ../plugins/mouse/msd-mouse-manager.c:1445
 msgid "Mouse Preferences"
 msgstr "Možnosti miške"
 
@@ -1085,39 +1085,39 @@ msgstr "Podrobnosti zaslona ni mogoče osvežiti: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Poskus preklopa nastavitve zaslona."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1888
+#: ../plugins/xrandr/msd-xrandr-manager.c:1889
 msgid "Rotation not supported"
 msgstr "Vrtenje ni podprto"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1944
+#: ../plugins/xrandr/msd-xrandr-manager.c:1945
 msgid "Could not save monitor configuration"
 msgstr "Nastavitve zaslona ni mogoče shraniti."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1962
+#: ../plugins/xrandr/msd-xrandr-manager.c:1963
 msgid "Normal"
 msgstr "Običajno"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1964
 msgid "Left"
 msgstr "Levo"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1965
 msgid "Right"
 msgstr "Desno"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1966
 msgid "Upside Down"
 msgstr "Zgoraj navzdol"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2087
+#: ../plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "_Configure Display Settings…"
 msgstr "_Nastavitve zaslona ..."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2140
+#: ../plugins/xrandr/msd-xrandr-manager.c:2141
 msgid "Configure display settings"
 msgstr "Nastavitve zaslona"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2200
+#: ../plugins/xrandr/msd-xrandr-manager.c:2201
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Shranjenih nastavitev za zaslone ni mogoče uveljaviti."
 

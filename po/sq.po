@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-06 01:02+0300\n"
+"POT-Creation-Date: 2017-11-28 15:15+0100\n"
 "PO-Revision-Date: 2017-09-19 11:21+0000\n"
 "Last-Translator: monsta <monsta@inbox.ru>\n"
 "Language-Team: Albanian (http://www.transifex.com/mate/MATE/language/sq/)\n"
@@ -655,102 +655,102 @@ msgstr ""
 msgid "Accessibility keyboard plugin"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:441
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "U verifikua një gabim gjatë shfaqjes së ndihmës: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:569
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:633
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
 msgid "Do you want to activate Slow Keys?"
 msgstr "Aktivizon ngadalsimin e tasteve?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:570
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:634
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Çaktivon ngadalsimin e tasteve?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:571
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:635
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
 msgstr "Është mbajtur i shtypur për 8 sekonda tasti Shift.  Ky veprim është shtegu për funksionin e ngadalsimit të tasteve, që ndryshon funksionimin aktual të tastierës."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
 msgid "Don't activate"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
 msgid "Don't deactivate"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:600
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:737
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
 msgid "Activate"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:600
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:737
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
 msgid "Deactivate"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:795
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
 msgid "Do_n't activate"
 msgstr "Mo_s aktivizo"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:656
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:795
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
 msgid "Do_n't deactivate"
 msgstr "Mo_s çaktivizo"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
 msgid "_Activate"
 msgstr "_Aktivo"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
 msgid "_Deactivate"
 msgstr "Ç_aktivo"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
 msgid "Slow Keys Alert"
 msgstr "Paralajmërim ngadalsimi i tasteve"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:703
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:769
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Aktivon qendrimin e tasteve?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:704
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:770
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Çaktivon qendrimin e tasteve?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:706
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:772
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
 msgstr "Është shtypur 5 herë rresht tasti Shift.  Ky veprim është shtegu për funksionin e qendrimit të tasteve, që ndryshon funksionimin aktual të tastierës."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:708
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:774
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
 msgstr "Janë shtypur njëkohësisht dy taste, apo është shtypur tasti·Shift·5·herë· rradhazi.··Kjo·çaktivon funksionin e qendrimit të tasteve, që ndryshon funksionimin aktual të tastierës."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
 msgid "Sticky Keys Alert"
 msgstr "Paralajmërim qendrimi i tasteve"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:763
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:780
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr ""
@@ -858,15 +858,15 @@ msgstr ""
 msgid "Low Disk Space"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:450
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Empty Trash"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:458
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
 msgid "Examine…"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:465
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
 msgid "Ignore"
 msgstr ""
 
@@ -908,17 +908,17 @@ msgstr ""
 msgid "_Empty Trash"
 msgstr ""
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:129
+#: ../plugins/keybindings/msd-keybindings-manager.c:112
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr ""
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:165
+#: ../plugins/keybindings/msd-keybindings-manager.c:148
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr ""
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:503
+#: ../plugins/keybindings/msd-keybindings-manager.c:486
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -958,25 +958,25 @@ msgid ""
 " • The result of <b>%s</b>"
 msgstr ""
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:265
+#: ../plugins/keyboard/msd-keyboard-xkb.c:279
 msgid "_Layouts"
 msgstr ""
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:272
+#: ../plugins/keyboard/msd-keyboard-xkb.c:286
 msgid "Keyboard _Preferences"
 msgstr ""
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:278
+#: ../plugins/keyboard/msd-keyboard-xkb.c:292
 msgid "Show _Current Layout"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:186
+#: ../plugins/media-keys/msd-media-keys-manager.c:184
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:226
+#: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -991,16 +991,16 @@ msgstr ""
 msgid "Media keys plugin"
 msgstr ""
 
-#: ../plugins/mouse/msd-mouse-manager.c:1021
+#: ../plugins/mouse/msd-mouse-manager.c:1440
 msgid "Could not enable mouse accessibility features"
 msgstr ""
 
-#: ../plugins/mouse/msd-mouse-manager.c:1023
+#: ../plugins/mouse/msd-mouse-manager.c:1442
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 
-#: ../plugins/mouse/msd-mouse-manager.c:1026
+#: ../plugins/mouse/msd-mouse-manager.c:1445
 msgid "Mouse Preferences"
 msgstr "Preferimet e miut"
 
@@ -1081,39 +1081,39 @@ msgstr ""
 msgid "Trying to switch the monitor configuration anyway."
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1888
+#: ../plugins/xrandr/msd-xrandr-manager.c:1889
 msgid "Rotation not supported"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1944
+#: ../plugins/xrandr/msd-xrandr-manager.c:1945
 msgid "Could not save monitor configuration"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1962
+#: ../plugins/xrandr/msd-xrandr-manager.c:1963
 msgid "Normal"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1964
 msgid "Left"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1965
 msgid "Right"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1966
 msgid "Upside Down"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2087
+#: ../plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "_Configure Display Settings…"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2140
+#: ../plugins/xrandr/msd-xrandr-manager.c:2141
 msgid "Configure display settings"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2200
+#: ../plugins/xrandr/msd-xrandr-manager.c:2201
 msgid "Could not apply the stored configuration for monitors"
 msgstr ""
 
