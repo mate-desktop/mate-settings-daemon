@@ -187,7 +187,6 @@ static TranslationEntry translations [] = {
         { INTERFACE_SCHEMA, "gtk-key-theme",          "Gtk/KeyThemeName",              translate_string_string },
         { INTERFACE_SCHEMA, "toolbar-style",          "Gtk/ToolbarStyle",              translate_string_string_toolbar },
         { INTERFACE_SCHEMA, "toolbar-icons-size",     "Gtk/ToolbarIconSize",           translate_string_string },
-        { INTERFACE_SCHEMA, "can-change-accels",      "Gtk/CanChangeAccels",           translate_bool_int },
         { INTERFACE_SCHEMA, "cursor-blink",           "Net/CursorBlink",               translate_bool_int },
         { INTERFACE_SCHEMA, "cursor-blink-time",      "Net/CursorBlinkTime",           translate_int_int },
         { INTERFACE_SCHEMA, "gtk-theme",              "Net/ThemeName",                 translate_string_string },
