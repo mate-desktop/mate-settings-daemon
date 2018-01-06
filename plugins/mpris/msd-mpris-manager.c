@@ -144,7 +144,7 @@ mp_name_vanished (GDBusConnection *connection,
     player_name = get_player_name(name);
 
     player_list = g_queue_find_custom (manager->priv->media_player_queue,
-                                       player_name, g_strcmp0);
+                                       player_name, (GCompareFunc) g_strcmp0);
 
     if (player_list)
         g_queue_remove (manager->priv->media_player_queue, player_list->data);
