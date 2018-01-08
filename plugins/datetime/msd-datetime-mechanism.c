@@ -287,7 +287,7 @@ _set_time (MsdDatetimeMechanism  *mechanism,
         if (settimeofday (tv, NULL) != 0) {
                 error = g_error_new (MSD_DATETIME_MECHANISM_ERROR,
                                      MSD_DATETIME_MECHANISM_ERROR_GENERAL,
-                                     "Error calling settimeofday({%lld,%lld}): %s", 
+                                     "Error calling settimeofday({%ld,%ld}): %s", 
                                      (gint64) tv->tv_sec, (gint64) tv->tv_usec,
                                      strerror (errno));
                 dbus_g_method_return_error (context, error);
@@ -397,7 +397,7 @@ msd_datetime_mechanism_set_time (MsdDatetimeMechanism  *mechanism,
         struct timeval tv;
 
         reset_killtimer ();
-        g_debug ("SetTime(%lld) called", seconds_since_epoch);
+        g_debug ("SetTime(%ld) called", seconds_since_epoch);
 
         tv.tv_sec = (time_t) seconds_since_epoch;
         tv.tv_usec = 0;
@@ -412,7 +412,7 @@ msd_datetime_mechanism_adjust_time (MsdDatetimeMechanism  *mechanism,
         struct timeval tv;
 
         reset_killtimer ();
-        g_debug ("AdjustTime(%lld) called", seconds_to_add);
+        g_debug ("AdjustTime(%ld) called", seconds_to_add);
 
         if (gettimeofday (&tv, NULL) != 0) {
                 GError *error;
