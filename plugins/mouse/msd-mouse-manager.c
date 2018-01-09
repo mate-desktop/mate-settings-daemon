@@ -475,7 +475,7 @@ devicepresence_filter (GdkXEvent *xevent,
                        gpointer   data)
 {
         XEvent *xev = (XEvent *) xevent;
-        XEventClass class_presence;
+        G_GNUC_UNUSED XEventClass class_presence;
         int xi_presence;
 
         DevicePresence (gdk_x11_get_default_xdisplay (), xi_presence, class_presence);
@@ -495,7 +495,7 @@ set_devicepresence_handler (MsdMouseManager *manager)
 {
         Display *display;
         XEventClass class_presence;
-        int xi_presence;
+        G_GNUC_UNUSED int xi_presence;
 
         display = gdk_x11_get_default_xdisplay ();
 
