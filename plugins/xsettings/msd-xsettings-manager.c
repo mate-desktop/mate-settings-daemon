@@ -28,6 +28,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <errno.h>
+#include <math.h>
 #include <time.h>
 
 #include <X11/Xatom.h>
@@ -233,6 +234,7 @@ get_dpi_from_x_server (void)
 {
         GdkScreen *screen;
         double     dpi;
+        gint       scale;
 
         screen = gdk_screen_get_default ();
         if (screen != NULL) {
@@ -254,6 +256,11 @@ get_dpi_from_x_server (void)
 
                 dpi = DPI_FALLBACK;
         }
+
+
+        scale = gdk_window_get_scale_factor (gdk_screen_get_root_window (screen));
+        if (scale)
+                dpi = ceil(dpi * scale);
 
         return dpi;
 }
@@ -307,7 +314,7 @@ xft_settings_get (MateXSettingsManager *manager,
         char      *hinting;
         char      *rgba_order;
         double     dpi;
-        int        scale;
+        gint       scale;
 
         mouse_gsettings = g_hash_table_lookup (manager->priv->gsettings, MOUSE_SCHEMA);
         screen = gdk_screen_get_default();
@@ -321,7 +328,7 @@ xft_settings_get (MateXSettingsManager *manager,
         settings->antialias = TRUE;
         settings->hinting = TRUE;
         settings->hintstyle = "hintslight";
-        settings->dpi = dpi * scale * 1024; /* Xft wants 1/1024ths of an inch */
+        settings->dpi = dpi * 1024; /* Xft wants 1/1024ths of an inch */
         settings->cursor_theme = g_settings_get_string (mouse_gsettings, CURSOR_THEME_KEY);
         settings->cursor_size = scale * g_settings_get_int (mouse_gsettings, CURSOR_SIZE_KEY);
         settings->rgba = "rgb";
