@@ -1,3 +1,12 @@
+### mate-settings-daemon 1.19.2
+
+  * Translations update
+  * plugins: G_GNUC_UNUSED in unused but needed variables
+  * xsettings: drop CanChangeAccels which won't work with GTK+3
+  * msd-datetime-mechanism.c: Fix build warnings:
+  * msd-mpris-manager.c: Fix build warning:
+  * configure.ac: drop GLIB_VERSION_MAX_ALLOWED
+
 ### mate-settings-daemon 1.19.1
 
   * Translations update
