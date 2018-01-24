@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:15+0100\n"
+"POT-Creation-Date: 2018-01-09 21:52+0300\n"
 "PO-Revision-Date: 2017-09-19 11:21+0000\n"
 "Last-Translator: Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>\n"
 "Language-Team: Lithuanian (http://www.transifex.com/mate/MATE/language/lt/)\n"
@@ -756,7 +756,7 @@ msgstr "Ką tik paspaudėte du klavišus vienu metu, arba Shift klavišą 5 kart
 msgid "Sticky Keys Alert"
 msgstr "Atmeniųjų klavišų įspėjimas"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:780
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Universaliosios prieigos nustatymai"

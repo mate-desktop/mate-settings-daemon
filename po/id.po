@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:15+0100\n"
+"POT-Creation-Date: 2018-01-09 21:52+0300\n"
 "PO-Revision-Date: 2017-09-19 11:21+0000\n"
 "Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/mate/MATE/language/id/)\n"
@@ -753,7 +753,7 @@ msgstr "Anda baru saja menekan dua tombol sekaligus atau  tombol Shift selama 5 
 msgid "Sticky Keys Alert"
 msgstr "Peringatan Tombol Berurut"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:780
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Preferensi Akses Universal"

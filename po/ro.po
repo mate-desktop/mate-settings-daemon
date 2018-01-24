@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:15+0100\n"
+"POT-Creation-Date: 2018-01-09 21:52+0300\n"
 "PO-Revision-Date: 2017-09-19 11:21+0000\n"
 "Last-Translator: Daniel <danny3@tutanota.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/mate/MATE/language/ro/)\n"
@@ -758,7 +758,7 @@ msgstr "Ați apăsat două taste în același timp sau ați apăsat Shift de cin
 msgid "Sticky Keys Alert"
 msgstr "Alertă „Modificatori persistenți”"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:780
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Preferințe acces universal"

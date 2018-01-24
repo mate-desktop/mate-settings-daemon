@@ -29,7 +29,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:15+0100\n"
+"POT-Creation-Date: 2018-01-09 21:52+0300\n"
 "PO-Revision-Date: 2017-09-19 11:21+0000\n"
 "Last-Translator: Felipe Rozelio <feliperozelio@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/mate/MATE/language/pt_BR/)\n"
@@ -771,7 +771,7 @@ msgstr "Você acaba de pressionar duas teclas de uma vez ou a tecla Shift 5 veze
 msgid "Sticky Keys Alert"
 msgstr "Alerta de teclas de aderência"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:780
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Preferências de acesso universal"

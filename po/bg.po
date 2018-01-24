@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:15+0100\n"
+"POT-Creation-Date: 2018-01-09 21:52+0300\n"
 "PO-Revision-Date: 2017-09-19 11:21+0000\n"
 "Last-Translator: Любомир Василев\n"
 "Language-Team: Bulgarian (http://www.transifex.com/mate/MATE/language/bg/)\n"
@@ -757,7 +757,7 @@ msgstr "Току що натиснахте два клавиша едновре�
 msgid "Sticky Keys Alert"
 msgstr "Сигнал за лепкави клавиши"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:780
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Настройки за универсален достъп"

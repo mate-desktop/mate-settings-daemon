@@ -6,7 +6,7 @@
 # Beniamin Pawlus <kupwzywcu@o2.pl>, 2015
 # Darek Witkowski, 2016
 # Lukasz Kaminski <elpikej@gmail.com>, 2017
-# m4sk1n <m4sk1n@vivaldi.net>, 2016
+# Marcin Mikołajczak <m4sk1n@vivaldi.net>, 2016
 # Marcin Kralka <marcink96@gmail.com>, 2013
 # Paweł Bandura <gawelx@gmail.com>, 2016
 # Piotr Drąg <piotrdrag@gmail.com>, 2017
@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:15+0100\n"
+"POT-Creation-Date: 2018-01-09 21:52+0300\n"
 "PO-Revision-Date: 2017-09-19 11:21+0000\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/mate/MATE/language/pl/)\n"
@@ -757,7 +757,7 @@ msgstr "Przyciśnięto dwa klawisze na raz, lub przyciśnięto klawisz Shift pi�
 msgid "Sticky Keys Alert"
 msgstr "Ostrzeżenie trwałych klawiszy"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:780
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Preferencje dostępu uniwersalnego"

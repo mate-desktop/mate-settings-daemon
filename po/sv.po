@@ -9,13 +9,14 @@
 # Jonatan Nyberg, 2016
 # Kristoffer Grundström <kristoffer.grundstrom1983@gmail.com>, 2016
 # Martin Wahlen <mva@sbbs.se>, 1998, 1999
+# Tobias Lekare <lekare@linux.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:15+0100\n"
-"PO-Revision-Date: 2017-09-19 11:21+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"POT-Creation-Date: 2018-01-09 21:52+0300\n"
+"PO-Revision-Date: 2017-12-29 12:56+0000\n"
+"Last-Translator: Tobias Lekare <lekare@linux.com>\n"
 "Language-Team: Swedish (http://www.transifex.com/mate/MATE/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -141,19 +142,19 @@ msgstr "Ställ in denna till TRUE för att kunna skicka musklick genom att tryck
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Enable vertical edge scrolling"
-msgstr ""
+msgstr "Aktivera vertikal kantrullning"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:6
 msgid "Set this to TRUE to allow vertical edge scrolling"
-msgstr ""
+msgstr "Sätt till SANT för att tillåta vertikal kantrullning"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:7
 msgid "Enable horizontal edge scrolling"
-msgstr ""
+msgstr "Aktivera horisontell kantrullning"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:8
 msgid "Set this to TRUE to allow horizontal edge scrolling"
-msgstr ""
+msgstr "Sätt till SANT för att tillåta horisontell kantrullning"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:9
 msgid "Enable vertical two-finger scrolling"
@@ -161,15 +162,15 @@ msgstr "Aktivera vertikal tvåfingersrullning"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:10
 msgid "Set this to TRUE to allow vertical two-finger scrolling"
-msgstr ""
+msgstr "Sätt till SANT för att tillåta vertikal tvåfingersrullning"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:11
 msgid "Enable horizontal two-finger scrolling"
-msgstr ""
+msgstr "Aktivera horisontell tvåfingersrullning"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
 msgid "Set this to TRUE to allow horizontal two-finger scrolling"
-msgstr ""
+msgstr "Sätt till SANT för att aktivera horisontell tvåfingersrullning"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
 msgid "Natural scrolling"
@@ -177,7 +178,7 @@ msgstr "Naturlig rullning"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
-msgstr ""
+msgstr "Sätt till sant för att aktivera naturlig (omvänd) rullning för pekplattor"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
 msgid "Enable touchpad"
@@ -189,25 +190,25 @@ msgstr "Ställ in denna till TRUE för att aktivera alla pekplattor."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:17
 msgid "Enabled two-finger button-click emulation"
-msgstr ""
+msgstr "Aktivera två-fingrars knapptrycks-efterlikning"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:18
 msgid "0 thru 3, 0 is inactive, 1-3 is button to emulate"
-msgstr ""
+msgstr "0 genom 3, 0 är inaktivt, 1-3 är knapp för efterlikning"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:19
 msgid "Enable three-finger button-click emulation"
-msgstr ""
+msgstr "Aktivera efterlikning av tre-fingers knapptryckning"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:20
 msgid "One finger tap button"
-msgstr ""
+msgstr "Ett finger knackningsknapp"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:21
 msgid ""
 "Select the button mapping for one-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr ""
+msgstr "Välj en knapp för en-fingers tryckning. Tillåtna värden är: 1: vänster musknapp 2: mittenmusknapp 3: höger musknapp"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
 msgid "Two finger tap button"
@@ -217,47 +218,47 @@ msgstr "Två fingrar knackningsknapp"
 msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr ""
+msgstr "Välj en knapp för två-fingrars tryckning. Tillåtna värden är: 1: vänster musknapp 2: mittenmusknapp 3: höger musknapp"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
 msgid "Three finger tap button"
-msgstr ""
+msgstr "Tre-fingrars tryckknapp"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:25
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
-msgstr ""
+msgstr "Välj en knapp för tree-fingrars tryckning. Tillåtna värden är: 1: vänster musknapp 2: mittenmusknapp 3: höger musknapp"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:26
 msgid "Touchpad button orientation"
-msgstr ""
+msgstr "Knapporientering för tryckplatta"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:27
 msgid ""
 "Swap left and right buttons for left-handed touchpads with 'left', 'right' "
 "for right-handed, 'mouse' to follow the mouse setting."
-msgstr ""
+msgstr "Byt vänster och höger knapp för vänsterhänta pekskärmar med \"vänster\", \"höger\" för högerhänt, \"mus\" för använda musinställningarna."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
 msgid "Motion Acceleration"
-msgstr ""
+msgstr "Rörelseacceleration"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:29
 msgid ""
 "Acceleration multiplier for touchpad motion. A value of -1 is the system "
 "default."
-msgstr ""
+msgstr "Accelerationsförstärkare för rörelse på tryckplatta. Ett värde på -1 är systemets standardalternativ."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
-msgstr ""
+msgstr "Tröskelvärde för rörelse"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:31
 msgid ""
 "Distance in pixels the pointer must move before accelerated touchpad motion "
 "is activated. A value of -1 is the system default."
-msgstr ""
+msgstr "Avstånd i bildpunkter som pekaren måste flyttas innan accelererad tryckplatta aktiveras. Ett värde på -1 är systemets standardalternativ."
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
@@ -393,7 +394,7 @@ msgstr "Visa OSD avisering"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:4
 msgid "Whether an OSD notification is shown to notify about changes"
-msgstr ""
+msgstr "Om ett OSD-meddelande ska visas för att meddela om förändringar"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:7
 msgid "Volume step"
@@ -441,7 +442,7 @@ msgstr "Stäng ner"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:18
 msgid "Binding to shut down."
-msgstr ""
+msgstr "Bindning för att stänga ner."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
 msgid "Log out"
@@ -565,15 +566,15 @@ msgstr "Bindning för att hoppa till nästa spår."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
 msgid "Binding to show the screen magnifier"
-msgstr ""
+msgstr "Bindning för att visa skärmförstoraren"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
 msgid "Binding to start the screen reader"
-msgstr ""
+msgstr "Bindning för att starta skärmläsaren"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
 msgid "Binding to show the on-screen keyboard"
-msgstr ""
+msgstr "Bindning för att visa skärmtangentbordet."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:5
 msgid "Show Displays in Notification Area"
@@ -755,7 +756,7 @@ msgstr "Du tryckte precis ned två tangenter samtidigt, eller tryckte ned skiftt
 msgid "Sticky Keys Alert"
 msgstr "Larm från Klistriga tangenter"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:780
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Inställningar för Universell åtkomst"
@@ -961,7 +962,7 @@ msgid ""
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr ""
+msgstr "Fel vid aktivering av XKB-konfiguration.\nDetta kan hända under olika omständigheter:\n • ett fel i biblioteket libxklavier\n • ett fel i X-server (verktygen xkbcomp, xmodmap)\n • X-server med inkompatibel implementation av libxkbfile\n\nVersionsdata för X-server:\n%s\n%d\nOm du rapporterar denna situation som ett fel så inkludera:\n • Resultatet av <b>%s</b>\n • Resultatet av <b>%s</b>"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:279
 msgid "_Layouts"

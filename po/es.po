@@ -3,8 +3,8 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Adolfo Jayme Barrientos, 2015
-# Adolfo Jayme Barrientos, 2014
+# Adolfo Jayme-Barrientos, 2015
+# Adolfo Jayme-Barrientos, 2014
 # Angel Mireles <lamborghinilph710@gmail.com>, 2016
 # Benjamin Perez Carrillo <benperezc@gmail.com>, 2015
 # Carlos Perelló Marín <carlos@mate-db.org>, 2001
@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:15+0100\n"
+"POT-Creation-Date: 2018-01-09 21:52+0300\n"
 "PO-Revision-Date: 2017-12-15 15:54+0000\n"
 "Last-Translator: Joel Barrios <darkshram@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/mate/MATE/language/es/)\n"
@@ -765,7 +765,7 @@ msgstr "Acaba de pulsar dos teclas a la vez, o ha pulsado la tecla «Mayúsculas
 msgid "Sticky Keys Alert"
 msgstr "Alerta de teclas persistentes"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:780
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Preferencias de acceso universal"
