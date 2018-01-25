@@ -28,7 +28,6 @@
 #include <unistd.h>
 #include <string.h>
 #include <errno.h>
-#include <math.h>
 #include <time.h>
 
 #include <X11/Xatom.h>
@@ -260,7 +259,7 @@ get_dpi_from_x_server (void)
 
         scale = gdk_window_get_scale_factor (gdk_screen_get_root_window (screen));
         if (scale)
-                dpi = ceil(dpi * scale);
+                dpi = dpi * scale;
 
         return dpi;
 }
