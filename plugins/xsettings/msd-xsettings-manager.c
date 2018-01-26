@@ -232,6 +232,7 @@ get_dpi_from_x_server (void)
 {
         GdkScreen *screen;
         double     dpi;
+        gint       scale;
 
         screen = gdk_screen_get_default ();
         if (screen != NULL) {
@@ -253,6 +254,11 @@ get_dpi_from_x_server (void)
 
                 dpi = DPI_FALLBACK;
         }
+
+
+        scale = gdk_window_get_scale_factor (gdk_screen_get_root_window (screen));
+        if (scale)
+                dpi = dpi * scale;
 
         return dpi;
 }
@@ -301,24 +307,28 @@ xft_settings_get (MateXSettingsManager *manager,
                   MateXftSettings *settings)
 {
         GSettings *mouse_gsettings;
+        GdkScreen *screen;
         char      *antialiasing;
         char      *hinting;
         char      *rgba_order;
         double     dpi;
+        gint       scale;
 
         mouse_gsettings = g_hash_table_lookup (manager->priv->gsettings, MOUSE_SCHEMA);
+        screen = gdk_screen_get_default();
 
         antialiasing = g_settings_get_string (manager->priv->gsettings_font, FONT_ANTIALIASING_KEY);
         hinting = g_settings_get_string (manager->priv->gsettings_font, FONT_HINTING_KEY);
         rgba_order = g_settings_get_string (manager->priv->gsettings_font, FONT_RGBA_ORDER_KEY);
         dpi = get_dpi_from_gsettings_or_x_server (manager->priv->gsettings_font);
+        scale = gdk_window_get_scale_factor (gdk_screen_get_root_window (screen));
 
         settings->antialias = TRUE;
         settings->hinting = TRUE;
         settings->hintstyle = "hintslight";
         settings->dpi = dpi * 1024; /* Xft wants 1/1024ths of an inch */
         settings->cursor_theme = g_settings_get_string (mouse_gsettings, CURSOR_THEME_KEY);
-        settings->cursor_size = g_settings_get_int (mouse_gsettings, CURSOR_SIZE_KEY);
+        settings->cursor_size = scale * g_settings_get_int (mouse_gsettings, CURSOR_SIZE_KEY);
         settings->rgba = "rgb";
 
         if (rgba_order) {
