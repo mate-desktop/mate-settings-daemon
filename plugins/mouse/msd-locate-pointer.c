@@ -173,11 +173,7 @@ timeline_frame_cb (MsdTimeline *timeline,
   MsdLocatePointerData *data = (MsdLocatePointerData *) user_data;
   GdkDisplay *display = gdk_window_get_display (data->window);
   GdkScreen *screen = gdk_display_get_default_screen (display);
-#if GTK_CHECK_VERSION (3, 20, 0)
   GdkSeat *seat;
-#else
-  GdkDeviceManager *device_manager;
-#endif
   GdkDevice *pointer;
   gint cursor_x, cursor_y;
 
@@ -194,13 +190,8 @@ timeline_frame_cb (MsdTimeline *timeline,
       data->progress += CIRCLES_PROGRESS_INTERVAL;
     }
 
-#if GTK_CHECK_VERSION (3, 20, 0)
   seat = gdk_display_get_default_seat (display);
   pointer = gdk_seat_get_pointer (seat);
-#else
-  device_manager = gdk_display_get_device_manager (display);
-  pointer = gdk_device_manager_get_client_pointer (device_manager);
-#endif
   gdk_device_get_position (pointer,
                            NULL,
                            &cursor_x,
@@ -380,24 +371,15 @@ static void
 move_locate_pointer_window (MsdLocatePointerData *data,
 			    GdkDisplay           *display)
 {
-#if GTK_CHECK_VERSION (3, 20, 0)
   GdkSeat *seat;
-#else
-  GdkDeviceManager *device_manager;
-#endif
   GdkDevice *pointer;
   gint cursor_x, cursor_y;
   cairo_t *cr;
   cairo_surface_t *mask;
   cairo_region_t *region;
 
-#if GTK_CHECK_VERSION (3, 20, 0)
   seat = gdk_display_get_default_seat (display);
   pointer = gdk_seat_get_pointer (seat);
-#else
-  device_manager = gdk_display_get_device_manager (display);
-  pointer = gdk_device_manager_get_client_pointer (device_manager);
-#endif
   gdk_device_get_position (pointer,
                            NULL,
                            &cursor_x,
