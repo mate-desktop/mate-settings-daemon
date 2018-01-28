@@ -252,40 +252,24 @@ trash_empty_start ()
 
         label1 = gtk_label_new (NULL);
         gtk_label_set_line_wrap (GTK_LABEL (label1), TRUE);
-#if GTK_CHECK_VERSION (3, 16, 0)
         gtk_label_set_xalign (GTK_LABEL (label1), 0.0);
         gtk_label_set_yalign (GTK_LABEL (label1), 0.5);
-#else
-        gtk_misc_set_alignment (GTK_MISC (label1), 0.0, 0.5);
-#endif
 
         label3 = gtk_label_new (NULL);
         gtk_label_set_line_wrap (GTK_LABEL (label3), TRUE);
-#if GTK_CHECK_VERSION (3, 16, 0)
         gtk_label_set_xalign (GTK_LABEL (label3), 0.0);
         gtk_label_set_yalign (GTK_LABEL (label3), 0.5);
-#else
-        gtk_misc_set_alignment (GTK_MISC (label3), 0.0, 0.5);
-#endif
         gtk_widget_hide (label3);
 
         location_label = gtk_label_new (NULL);
         gtk_label_set_line_wrap (GTK_LABEL (location_label), TRUE);
-#if GTK_CHECK_VERSION (3, 16, 0)
         gtk_label_set_xalign (GTK_LABEL (location_label), 0.0);
         gtk_label_set_yalign (GTK_LABEL (location_label), 0.5);
-#else
-        gtk_misc_set_alignment (GTK_MISC (location_label), 0.0, 0.5);
-#endif
 
         file_label = gtk_label_new (NULL);
         gtk_label_set_line_wrap (GTK_LABEL (file_label), TRUE);
-#if GTK_CHECK_VERSION (3, 16, 0)
         gtk_label_set_xalign (GTK_LABEL (file_label), 0.0);
         gtk_label_set_yalign (GTK_LABEL (file_label), 0.5);
-#else
-        gtk_misc_set_alignment (GTK_MISC (file_label), 0.0, 0.5);
-#endif
 
         progressbar = gtk_progress_bar_new ();
         gtk_progress_bar_set_pulse_step (GTK_PROGRESS_BAR (progressbar), 0.1);

@@ -1806,12 +1806,8 @@ make_menu_item_for_output_title (MsdXrandrManager *manager, MateRROutputInfo *ou
         gtk_widget_modify_fg (label, gtk_widget_get_state (label), &black);
 
         /* Add padding around the label to fit the box that we'll draw for color-coding */
-#if GTK_CHECK_VERSION (3, 16, 0)
         gtk_label_set_xalign (GTK_LABEL (label), 0.0);
         gtk_label_set_yalign (GTK_LABEL (label), 0.5);
-#else
-        gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-#endif
         gtk_widget_set_margin_start (label, OUTPUT_TITLE_ITEM_BORDER + OUTPUT_TITLE_ITEM_PADDING);
         gtk_widget_set_margin_end (label, OUTPUT_TITLE_ITEM_BORDER + OUTPUT_TITLE_ITEM_PADDING);
         gtk_widget_set_margin_top (label, OUTPUT_TITLE_ITEM_BORDER + OUTPUT_TITLE_ITEM_PADDING);

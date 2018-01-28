@@ -659,12 +659,7 @@ msd_ldsm_setup (gboolean check_now)
         msd_ldsm_get_config ();
         g_signal_connect (settings, "changed", G_CALLBACK (msd_ldsm_update_config), NULL);
 
-#if GLIB_CHECK_VERSION (2, 44, 0)
         ldsm_monitor = g_unix_mount_monitor_get ();
-#else
-        ldsm_monitor = g_unix_mount_monitor_new ();
-        g_unix_mount_monitor_set_rate_limit (ldsm_monitor, 1000);
-#endif
         g_signal_connect (ldsm_monitor, "mounts-changed",
                           G_CALLBACK (ldsm_mounts_changed), NULL);
 
