@@ -52,6 +52,7 @@
 
 #define CURSOR_THEME_KEY      "cursor-theme"
 #define CURSOR_SIZE_KEY       "cursor-size"
+#define SCALING_FACTOR_KEY    "window-scaling-factor"
 
 #define FONT_RENDER_SCHEMA    "org.mate.font-rendering"
 #define FONT_ANTIALIASING_KEY "antialiasing"
@@ -72,6 +73,14 @@
 #define DPI_FALLBACK 96
 #define DPI_LOW_REASONABLE_VALUE 50
 #define DPI_HIGH_REASONABLE_VALUE 500
+
+/* The minimum resolution at which we turn on a window-scale of 2 */
+#define HIDPI_LIMIT (DPI_FALLBACK * 2)
+
+/* The minimum screen height at which we turn on a window-scale of 2;
+ * below this there just isn't enough vertical real estate for GNOME
+ * apps to work, and it's better to just be tiny */
+#define HIDPI_MIN_HEIGHT 1500
 
 typedef struct _TranslationEntry TranslationEntry;
 typedef void (* TranslationFunc) (MateXSettingsManager  *manager,
@@ -213,6 +222,70 @@ static TranslationEntry translations [] = {
         { SOUND_SCHEMA, "input-feedback-sounds",      "Net/EnableInputFeedbackSounds", translate_bool_int }
 };
 
+/* Auto-detect the most appropriate scale factor for the primary monitor.
+ * A lot of this code is shamelessly copied and adapted from Linux Mint/Cinnamon.
+ */
+static int
+get_window_scale_auto ()
+{
+        GdkDisplay   *display;
+        GdkMonitor   *monitor;
+        GdkRectangle  rect;
+        int width_mm, height_mm;
+        int monitor_scale, window_scale;
+
+        display = gdk_display_get_default ();
+        monitor = gdk_display_get_primary_monitor (display);
+
+        /* Use current value as the default */
+        window_scale = 1;
+
+        gdk_monitor_get_geometry (monitor, &rect);
+        width_mm = gdk_monitor_get_width_mm (monitor);
+        height_mm = gdk_monitor_get_height_mm (monitor);
+        monitor_scale = gdk_monitor_get_scale_factor (monitor);
+
+        if (rect.height * monitor_scale < HIDPI_MIN_HEIGHT)
+                return 1;
+
+        /* Some monitors/TV encode the aspect ratio (16/9 or 16/10) instead of the physical size */
+        if ((width_mm == 160 && height_mm == 90) ||
+            (width_mm == 160 && height_mm == 100) ||
+            (width_mm == 16 && height_mm == 9) ||
+            (width_mm == 16 && height_mm == 10))
+                return 1;
+
+        if (width_mm > 0 && height_mm > 0) {
+                double dpi_x, dpi_y;
+
+                dpi_x = (double)rect.width * monitor_scale / (width_mm / 25.4);
+                dpi_y = (double)rect.height * monitor_scale / (height_mm / 25.4);
+                /* We don't completely trust these values so both must be high, and never pick
+                 * higher ratio than 2 automatically */
+                if (dpi_x > HIDPI_LIMIT && dpi_y > HIDPI_LIMIT)
+                        window_scale = 2;
+        }
+
+        return window_scale;
+}
+
+static int
+get_window_scale (MateXSettingsManager *manager)
+{
+        GSettings   *gsettings;
+        gint         scale;
+
+        /* Get scale factor from gsettings */
+        gsettings = g_hash_table_lookup (manager->priv->gsettings, INTERFACE_SCHEMA);
+        scale = g_settings_get_int (gsettings, SCALING_FACTOR_KEY);
+
+        /* Auto-detect */
+        if (scale == 0)
+                scale = get_window_scale_auto ();
+
+        return scale;
+}
+
 static double
 dpi_from_pixels_and_mm (int pixels,
                         int mm)
@@ -232,7 +305,6 @@ get_dpi_from_x_server (void)
 {
         GdkScreen *screen;
         double     dpi;
-        gint       scale;
 
         screen = gdk_screen_get_default ();
         if (screen != NULL) {
@@ -255,16 +327,11 @@ get_dpi_from_x_server (void)
                 dpi = DPI_FALLBACK;
         }
 
-
-        scale = gdk_window_get_scale_factor (gdk_screen_get_root_window (screen));
-        if (scale)
-                dpi = dpi * scale;
-
         return dpi;
 }
 
 static double
-get_dpi_from_gsettings_or_x_server (GSettings *gsettings)
+get_dpi_from_gsettings_or_x_server (GSettings *gsettings, gint scale)
 {
         double value;
         double dpi;
@@ -280,7 +347,7 @@ get_dpi_from_gsettings_or_x_server (GSettings *gsettings)
         if (value != 0) {
                 dpi = value;
         } else {
-                dpi = get_dpi_from_x_server ();
+                dpi = get_dpi_from_x_server () * (double)scale;
         }
 
         return dpi;
@@ -290,7 +357,9 @@ typedef struct
 {
         gboolean    antialias;
         gboolean    hinting;
+        int         window_scale;
         int         dpi;
+        int         scaled_dpi;
         char       *cursor_theme;
         int         cursor_size;
         const char *rgba;
@@ -307,7 +376,6 @@ xft_settings_get (MateXSettingsManager *manager,
                   MateXftSettings *settings)
 {
         GSettings *mouse_gsettings;
-        GdkScreen *screen;
         char      *antialiasing;
         char      *hinting;
         char      *rgba_order;
@@ -315,18 +383,19 @@ xft_settings_get (MateXSettingsManager *manager,
         gint       scale;
 
         mouse_gsettings = g_hash_table_lookup (manager->priv->gsettings, MOUSE_SCHEMA);
-        screen = gdk_screen_get_default();
 
         antialiasing = g_settings_get_string (manager->priv->gsettings_font, FONT_ANTIALIASING_KEY);
         hinting = g_settings_get_string (manager->priv->gsettings_font, FONT_HINTING_KEY);
         rgba_order = g_settings_get_string (manager->priv->gsettings_font, FONT_RGBA_ORDER_KEY);
-        dpi = get_dpi_from_gsettings_or_x_server (manager->priv->gsettings_font);
-        scale = gdk_window_get_scale_factor (gdk_screen_get_root_window (screen));
+        scale = get_window_scale (manager);
+        dpi = get_dpi_from_gsettings_or_x_server (manager->priv->gsettings_font, scale);
 
         settings->antialias = TRUE;
         settings->hinting = TRUE;
         settings->hintstyle = "hintslight";
-        settings->dpi = dpi * 1024; /* Xft wants 1/1024ths of an inch */
+        settings->window_scale = scale;
+        settings->dpi = dpi / scale * 1024; /* Xft wants 1/1024ths of an inch */
+        settings->scaled_dpi = dpi * 1024;
         settings->cursor_theme = g_settings_get_string (mouse_gsettings, CURSOR_THEME_KEY);
         settings->cursor_size = scale * g_settings_get_int (mouse_gsettings, CURSOR_SIZE_KEY);
         settings->rgba = "rgb";
@@ -404,7 +473,9 @@ xft_settings_set_xsettings (MateXSettingsManager *manager,
                 xsettings_manager_set_int (manager->priv->managers [i], "Xft/Antialias", settings->antialias);
                 xsettings_manager_set_int (manager->priv->managers [i], "Xft/Hinting", settings->hinting);
                 xsettings_manager_set_string (manager->priv->managers [i], "Xft/HintStyle", settings->hintstyle);
-                xsettings_manager_set_int (manager->priv->managers [i], "Xft/DPI", settings->dpi);
+                xsettings_manager_set_int (manager->priv->managers [i], "Gdk/WindowScalingFactor", settings->window_scale);
+                xsettings_manager_set_int (manager->priv->managers [i], "Gdk/UnscaledDPI", settings->dpi);
+                xsettings_manager_set_int (manager->priv->managers [i], "Xft/DPI", settings->scaled_dpi);
                 xsettings_manager_set_string (manager->priv->managers [i], "Xft/RGBA", settings->rgba);
                 xsettings_manager_set_string (manager->priv->managers [i], "Xft/lcdfilter",
                                               g_str_equal (settings->rgba, "rgb") ? "lcddefault" : "none");
@@ -505,6 +576,19 @@ update_xft_settings (MateXSettingsManager *manager)
         xft_settings_set_xresources (&settings);
 
         mate_settings_profile_end (NULL);
+}
+
+static void
+screen_callback (GdkScreen            *screen,
+                 MateXSettingsManager *manager)
+{
+        int i;
+
+        update_xft_settings (manager);
+
+        for (i = 0; manager->priv->managers [i]; i++) {
+                xsettings_manager_notify (manager->priv->managers [i]);
+        }
 }
 
 static void
@@ -609,6 +693,7 @@ xsettings_callback (GSettings             *gsettings,
         GVariant         *value;
 
         if (g_str_equal (key, CURSOR_THEME_KEY) ||
+            g_str_equal (key, SCALING_FACTOR_KEY) ||
             g_str_equal (key, CURSOR_SIZE_KEY)) {
                 xft_callback (NULL, key, manager);
                 return;
@@ -692,6 +777,7 @@ mate_xsettings_manager_start (MateXSettingsManager *manager,
 {
         guint        i;
         GList       *list, *l;
+        GdkScreen   *screen;
 
         g_debug ("Starting xsettings manager");
         mate_settings_profile_start (NULL);
@@ -718,6 +804,7 @@ mate_xsettings_manager_start (MateXSettingsManager *manager,
                 g_signal_connect_object (G_OBJECT (l->data), "changed",
                 			 G_CALLBACK (xsettings_callback), manager, 0);
         }
+
         g_list_free (list);
 
         for (i = 0; i < G_N_ELEMENTS (translations); i++) {
@@ -737,6 +824,10 @@ mate_xsettings_manager_start (MateXSettingsManager *manager,
                 process_value (manager, &translations[i], val);
                 g_variant_unref (val);
         }
+
+        /* Detect changes in screen resolution */
+        screen = gdk_screen_get_default();
+        g_signal_connect(screen, "size-changed", G_CALLBACK (screen_callback), manager);
 
         manager->priv->gsettings_font = g_settings_new (FONT_RENDER_SCHEMA);
         g_signal_connect (manager->priv->gsettings_font, "changed", G_CALLBACK (xft_callback), manager);
