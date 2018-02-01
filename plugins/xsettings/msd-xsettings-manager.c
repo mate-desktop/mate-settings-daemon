@@ -333,10 +333,9 @@ get_dpi_from_x_server (void)
 static double
 get_dpi_from_gsettings_or_x_server (GSettings *gsettings, gint scale)
 {
-        double value;
         double dpi;
 
-        value = g_settings_get_double (gsettings, FONT_DPI_KEY);
+        dpi = g_settings_get_double (gsettings, FONT_DPI_KEY);
 
         /* If the user has ever set the DPI preference in GSettings, we use that.
          * Otherwise, we see if the X server reports a reasonable DPI value:  some X
@@ -344,11 +343,11 @@ get_dpi_from_gsettings_or_x_server (GSettings *gsettings, gint scale)
          * fonts which are unusable.
          */
 
-        if (value != 0) {
-                dpi = value;
-        } else {
-                dpi = get_dpi_from_x_server () * (double)scale;
-        }
+        if (dpi == 0)
+                dpi = get_dpi_from_x_server ();
+
+        dpi *= (double)scale;
+        dpi = CLAMP(dpi, DPI_LOW_REASONABLE_VALUE, DPI_HIGH_REASONABLE_VALUE);
 
         return dpi;
 }
