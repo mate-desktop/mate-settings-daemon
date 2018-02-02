@@ -101,6 +101,7 @@ struct MateXSettingsManagerPrivate
         GHashTable *gsettings;
         GSettings *gsettings_font;
         fontconfig_monitor_handle_t *fontconfig_handle;
+        gint window_scale;
 };
 
 #define MSD_XSETTINGS_ERROR msd_xsettings_error_quark ()
@@ -399,6 +400,8 @@ xft_settings_get (MateXSettingsManager *manager,
         settings->cursor_size = scale * g_settings_get_int (mouse_gsettings, CURSOR_SIZE_KEY);
         settings->rgba = "rgb";
 
+        manager->priv->window_scale = scale;
+
         if (rgba_order) {
                 int i;
                 gboolean found = FALSE;
@@ -582,6 +585,10 @@ screen_callback (GdkScreen            *screen,
                  MateXSettingsManager *manager)
 {
         int i;
+        int new_scale = get_window_scale (manager);
+
+        if (manager->priv->window_scale == new_scale)
+                return;
 
         update_xft_settings (manager);
 
