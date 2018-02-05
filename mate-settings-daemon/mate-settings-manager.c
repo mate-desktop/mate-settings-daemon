@@ -50,6 +50,8 @@ struct MateSettingsManagerPrivate
 {
         DBusGConnection            *connection;
         GSList                     *plugins;
+        gint                        init_load_priority;
+        gint                        load_init_flag;
 };
 
 enum {
@@ -80,15 +82,25 @@ mate_settings_manager_error_quark (void)
 }
 
 static void
-maybe_activate_plugin (MateSettingsPluginInfo *info, gpointer user_data)
+maybe_activate_plugin (MateSettingsPluginInfo *info,
+                       MateSettingsManager    *manager)
 {
         if (mate_settings_plugin_info_get_enabled (info)) {
-                gboolean res;
-                res = mate_settings_plugin_info_activate (info);
-                if (res) {
-                        g_debug ("Plugin %s: active", mate_settings_plugin_info_get_location (info));
+                int plugin_priority;
+                plugin_priority = mate_settings_plugin_info_get_priority (info);
+
+                if (manager->priv->load_init_flag == PLUGIN_LOAD_ALL ||
+                   (manager->priv->load_init_flag == PLUGIN_LOAD_INIT && plugin_priority <= manager->priv->init_load_priority) ||
+                   (manager->priv->load_init_flag == PLUGIN_LOAD_DEFER && plugin_priority > manager->priv->init_load_priority)) {
+                        gboolean res;
+                        res = mate_settings_plugin_info_activate (info);
+                        if (res) {
+                                g_debug ("Plugin %s: active", mate_settings_plugin_info_get_location (info));
+                        } else {
+                                g_debug ("Plugin %s: activation failed", mate_settings_plugin_info_get_location (info));
+                        }
                 } else {
-                        g_debug ("Plugin %s: activation failed", mate_settings_plugin_info_get_location (info));
+                        g_debug ("Plugin %s: loading deferred or previously loaded", mate_settings_plugin_info_get_location (info));
                 }
         } else {
                 g_debug ("Plugin %s: inactive", mate_settings_plugin_info_get_location (info));
@@ -262,7 +274,7 @@ _load_all (MateSettingsManager *manager)
         _load_dir (manager, MATE_SETTINGS_PLUGINDIR G_DIR_SEPARATOR_S);
 
         manager->priv->plugins = g_slist_sort (manager->priv->plugins, (GCompareFunc) compare_priority);
-        g_slist_foreach (manager->priv->plugins, (GFunc) maybe_activate_plugin, NULL);
+        g_slist_foreach (manager->priv->plugins, (GFunc) maybe_activate_plugin, manager);
         mate_settings_profile_end (NULL);
 }
 
@@ -295,7 +307,7 @@ mate_settings_manager_awake (MateSettingsManager *manager,
                               GError              **error)
 {
         g_debug ("Awake called");
-        return mate_settings_manager_start (manager, error);
+        return mate_settings_manager_start (manager, PLUGIN_LOAD_ALL, error);
 }
 
 static gboolean
@@ -319,7 +331,8 @@ register_manager (MateSettingsManager *manager)
 
 gboolean
 mate_settings_manager_start (MateSettingsManager *manager,
-                              GError              **error)
+                              gint               load_init_flag,
+                              GError             **error)
 {
         gboolean ret;
 
@@ -339,6 +352,7 @@ mate_settings_manager_start (MateSettingsManager *manager,
                 goto out;
         }
 
+        manager->priv->load_init_flag = load_init_flag;
         _load_all (manager);
 
         ret = TRUE;
@@ -405,8 +419,16 @@ mate_settings_manager_class_init (MateSettingsManagerClass *klass)
 static void
 mate_settings_manager_init (MateSettingsManager *manager)
 {
+        char      *schema;
+        GSettings *settings;
 
         manager->priv = MATE_SETTINGS_MANAGER_GET_PRIVATE (manager);
+
+        schema = g_strdup_printf ("%s.plugins", DEFAULT_SETTINGS_PREFIX);
+        if (is_schema (schema)) {
+                settings = g_settings_new (schema);
+                manager->priv->init_load_priority = g_settings_get_int (settings, "init-load-priority");
+        }
 }
 
 static void

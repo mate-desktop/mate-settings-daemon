@@ -57,6 +57,13 @@ typedef enum
         MATE_SETTINGS_MANAGER_ERROR_GENERAL
 } MateSettingsManagerError;
 
+enum
+{
+        PLUGIN_LOAD_ALL,
+        PLUGIN_LOAD_INIT,
+        PLUGIN_LOAD_DEFER
+};
+
 #define MATE_SETTINGS_MANAGER_ERROR mate_settings_manager_error_quark ()
 
 GQuark                 mate_settings_manager_error_quark         (void);
@@ -65,7 +72,8 @@ GType                  mate_settings_manager_get_type   (void);
 MateSettingsManager * mate_settings_manager_new        (void);
 
 gboolean               mate_settings_manager_start      (MateSettingsManager *manager,
-                                                          GError              **error);
+                                                          gint                load_init_flag,
+                                                          GError            **error);
 void                   mate_settings_manager_stop       (MateSettingsManager *manager);
 
 gboolean               mate_settings_manager_awake      (MateSettingsManager *manager,

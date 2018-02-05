@@ -22,6 +22,7 @@ msd_gschemas_in = \
 	org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in \
 	org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in \
 	org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in \
+	org.mate.SettingsDaemon.plugins.gschema.xml.in \
 	$(NULL)
 
 @INTLTOOL_XML_NOMERGE_RULE@
