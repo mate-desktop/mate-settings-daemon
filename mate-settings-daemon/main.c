@@ -519,13 +519,24 @@ main (int argc, char *argv[])
                 goto out;
         }
 
-        set_session_over_handler (bus, manager);
-
-        /* If we aren't started by dbus then load the plugins
-           automatically.  Otherwise, wait for an Awake etc. */
+        /* If we aren't started by dbus then load the plugins automatically during the
+         * Initialization phase. Otherwise, wait for an Awake etc. */
         if (g_getenv ("DBUS_STARTER_BUS_TYPE") == NULL) {
                 error = NULL;
-                res = mate_settings_manager_start (manager, &error);
+                res = mate_settings_manager_start (manager, PLUGIN_LOAD_INIT, &error);
+                if (! res) {
+                        g_warning ("Unable to start: %s", error->message);
+                        g_error_free (error);
+                }
+        }
+
+        set_session_over_handler (bus, manager);
+
+        /* If we aren't started by dbus then load the plugins automatically after
+         * mate-settings-daemon has registered itself. Otherwise, wait for an Awake etc. */
+        if (g_getenv ("DBUS_STARTER_BUS_TYPE") == NULL) {
+                error = NULL;
+                res = mate_settings_manager_start (manager, PLUGIN_LOAD_DEFER, &error);
                 if (! res) {
                         g_warning ("Unable to start: %s", error->message);
                         g_error_free (error);

@@ -15,6 +15,8 @@ libxsettings_la_SOURCES = 	\
 	xsettings-manager.c	\
 	fontconfig-monitor.h	\
 	fontconfig-monitor.c	\
+	wm-common.h	\
+	wm-common.c	\
 	$(NULL)
 
 libxsettings_la_CPPFLAGS = \

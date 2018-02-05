@@ -1,0 +1,9 @@
+<schemalist>
+  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.mate.SettingsDaemon.plugins" path="/org/mate/settings-daemon/plugins/">
+    <key name="init-load-priority" type="i">
+      <default>2</default>
+      <summary>Load priority for Initialization phase</summary>
+      <description>Priority to use as the cut-off for loading plugins during the session initialization phase. Plugins that are this number or lower, will be loaded before mate-settings-daemon registers itself as an initialized application. This is useful for plugins that need the set environment variables, or change settings before the window manager, panel, or desktop has started loading. Values higher than this number will be deferred to be loaded asynchronously.</description>
+    </key>
+  </schema>
+</schemalist>

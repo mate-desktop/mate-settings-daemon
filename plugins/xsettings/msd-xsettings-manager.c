@@ -43,6 +43,7 @@
 #include "msd-xsettings-manager.h"
 #include "xsettings-manager.h"
 #include "fontconfig-monitor.h"
+#include "wm-common.h"
 
 #define MATE_XSETTINGS_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MATE_TYPE_XSETTINGS_MANAGER, MateXSettingsManagerPrivate))
 
@@ -400,8 +401,6 @@ xft_settings_get (MateXSettingsManager *manager,
         settings->cursor_size = scale * g_settings_get_int (mouse_gsettings, CURSOR_SIZE_KEY);
         settings->rgba = "rgb";
 
-        manager->priv->window_scale = scale;
-
         if (rgba_order) {
                 int i;
                 gboolean found = FALSE;
@@ -463,6 +462,121 @@ xft_settings_get (MateXSettingsManager *manager,
         g_free (antialiasing);
 }
 
+/* Set environment variable.
+ * This should only work during the initialization phase. */
+static gboolean
+update_user_env_variable (const gchar  *variable,
+                          const gchar  *value,
+                          GError      **error)
+{
+        GDBusConnection *connection;
+        gboolean         environment_updated;
+        GVariant        *reply;
+        GError          *bus_error = NULL;
+
+        g_setenv (variable, value, TRUE);
+
+        environment_updated = FALSE;
+        connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, error);
+
+        if (connection == NULL) {
+                return FALSE;
+        }
+
+        reply = g_dbus_connection_call_sync (connection,
+                        "org.gnome.SessionManager",
+                        "/org/gnome/SessionManager",
+                        "org.gnome.SessionManager",
+                        "Setenv",
+                        g_variant_new ("(ss)", variable, value),
+                        NULL,
+                        G_DBUS_CALL_FLAGS_NONE,
+                        -1, NULL, &bus_error);
+
+        if (bus_error != NULL) {
+                g_propagate_error (error, bus_error);
+        } else {
+                environment_updated = TRUE;
+                g_variant_unref (reply);
+        }
+
+        g_clear_object (&connection);
+
+        return environment_updated;
+}
+
+static gboolean
+delayed_toggle_bg_draw (gboolean value)
+{
+        GSettings *settings;
+        settings = g_settings_new ("org.mate.background");
+        g_settings_set_boolean (settings, "show-desktop-icons", value);
+        return FALSE;
+}
+
+static void
+scale_change_workarounds (MateXSettingsManager *manager, int new_scale)
+{
+        if (manager->priv->window_scale == new_scale)
+                return;
+
+        GError *error = NULL;
+
+        /* This is only useful during the Initialization phase, so we guard against
+         * unnecessarily attempting to set it later. */
+        if (!manager->priv->window_scale) {
+                /* Set env variables to properly scale QT applications */
+                if (!update_user_env_variable ("QT_AUTO_SCREEN_SCALE_FACTOR", "0", &error)) {
+                        g_warning ("There was a problem when setting QT_AUTO_SCREEN_SCALE_FACTOR=0: %s", error->message);
+                        g_clear_error (&error);
+                }
+                if (!update_user_env_variable ("QT_SCALE_FACTOR", new_scale == 2 ? "2" : "1", &error)) {
+                        g_warning ("There was a problem when setting QT_SCALE_FACTOR=%d: %s", new_scale, error->message);
+                        g_clear_error (&error);
+                }
+        } else {
+                /* Restart marco */
+                /* FIXME: The ideal scenario would be for marco to respect window scaling and thus
+                 * resize itself. Currently this is not happening, so msd restarts it when the window
+                 * scaling factor changes so that it's visually correct. */
+                wm_common_update_window();
+                gchar *wm = wm_common_get_current_window_manager ();
+                if (g_strcmp0 (wm, WM_COMMON_MARCO) == 0) {
+                        const gchar * const marco[] = {"marco", "--replace", NULL};
+                        if (!g_spawn_async (NULL, marco, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error)) {
+                                g_warning ("There was a problem restarting marco: %s", error->message);
+                                g_clear_error (&error);
+                        }
+                }
+                g_free (wm);
+
+                /* Restart mate-panel */
+                /* FIXME: The ideal scenario would be for mate-panel to respect window scaling and thus
+                 * resize itself. Currently this is not happening, so msd restarts it when the window
+                 * scaling factor changes so that it's visually correct. */
+                const gchar * const mate_panel[] = {"killall", "mate-panel", NULL};
+                if (!g_spawn_async (NULL, mate_panel, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error)) {
+                        g_warning ("There was a problem restarting mate-panel: %s", error->message);
+                        g_clear_error (&error);
+                }
+
+                /* Toggle icons on desktop to fix size */
+                /* FIXME: The ideal scenario would be for caja to respect window scaling and thus
+                 * resize itself. Currently this is not happening, so msd restarts it when the window
+                 * scaling factor changes so that it's visually correct. */
+                GSettings *desktop_settings;
+                desktop_settings = g_settings_new ("org.mate.background");
+                if (g_settings_get_boolean (desktop_settings, "show-desktop-icons")) {
+                        /* Delay the toggle to allow enough time for the desktop to redraw */
+                        g_timeout_add_seconds (1, (GSourceFunc) delayed_toggle_bg_draw, (gpointer) FALSE);
+                        g_timeout_add_seconds (2, (GSourceFunc) delayed_toggle_bg_draw, (gpointer) TRUE);
+                }
+        }
+
+        /* Store new scale value */
+        manager->priv->window_scale = new_scale;
+}
+
 static void
 xft_settings_set_xsettings (MateXSettingsManager *manager,
                             MateXftSettings      *settings)
@@ -485,6 +599,8 @@ xft_settings_set_xsettings (MateXSettingsManager *manager,
                 xsettings_manager_set_string (manager->priv->managers [i], "Gtk/CursorThemeName", settings->cursor_theme);
         }
         mate_settings_profile_end (NULL);
+
+        scale_change_workarounds (manager, settings->window_scale);
 }
 
 static void
@@ -581,8 +697,8 @@ update_xft_settings (MateXSettingsManager *manager)
 }
 
 static void
-screen_callback (GdkScreen            *screen,
-                 MateXSettingsManager *manager)
+recalculate_scale_callback (GdkScreen            *screen,
+                            MateXSettingsManager *manager)
 {
         int i;
         int new_scale = get_window_scale (manager);
@@ -833,7 +949,8 @@ mate_xsettings_manager_start (MateXSettingsManager *manager,
 
         /* Detect changes in screen resolution */
         screen = gdk_screen_get_default();
-        g_signal_connect(screen, "size-changed", G_CALLBACK (screen_callback), manager);
+        g_signal_connect(screen, "size-changed", G_CALLBACK (recalculate_scale_callback), manager);
+        g_signal_connect(screen, "monitors-changed", G_CALLBACK (recalculate_scale_callback), manager);
 
         manager->priv->gsettings_font = g_settings_new (FONT_RENDER_SCHEMA);
         g_signal_connect (manager->priv->gsettings_font, "changed", G_CALLBACK (xft_callback), manager);
