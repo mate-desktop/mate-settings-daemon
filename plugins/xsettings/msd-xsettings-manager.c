@@ -505,6 +505,15 @@ update_user_env_variable (const gchar  *variable,
         return environment_updated;
 }
 
+static gboolean
+delayed_toggle_bg_draw (gboolean value)
+{
+        GSettings *settings;
+        settings = g_settings_new ("org.mate.background");
+        g_settings_set_boolean (settings, "show-desktop-icons", value);
+        return FALSE;
+}
+
 static void
 scale_change_workarounds (MateXSettingsManager *manager, int new_scale)
 {
@@ -556,12 +565,11 @@ scale_change_workarounds (MateXSettingsManager *manager, int new_scale)
                  * resize itself. Currently this is not happening, so msd restarts it when the window
                  * scaling factor changes so that it's visually correct. */
                 GSettings *desktop_settings;
-                gboolean show_desktop_icons;
                 desktop_settings = g_settings_new ("org.mate.background");
-                show_desktop_icons = g_settings_get_boolean (desktop_settings, "show-desktop-icons");
-                if (show_desktop_icons) {
-                        g_settings_set_boolean (desktop_settings, "show-desktop-icons", FALSE);
-                        g_settings_set_boolean (desktop_settings, "show-desktop-icons", TRUE);
+                if (g_settings_get_boolean (desktop_settings, "show-desktop-icons")) {
+                        /* Delay the toggle to allow enough time for the desktop to redraw */
+                        g_timeout_add_seconds (1, (GSourceFunc) delayed_toggle_bg_draw, (gpointer) FALSE);
+                        g_timeout_add_seconds (2, (GSourceFunc) delayed_toggle_bg_draw, (gpointer) TRUE);
                 }
         }
 
