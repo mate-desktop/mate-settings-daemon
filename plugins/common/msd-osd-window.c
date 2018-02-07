@@ -320,13 +320,8 @@ msd_osd_window_get_preferred_width (GtkWidget *widget,
 {
         GtkStyleContext *context;
         GtkBorder padding;
-        gint scale_factor;
 
         GTK_WIDGET_CLASS (msd_osd_window_parent_class)->get_preferred_width (widget, minimum, natural);
-
-        scale_factor = gtk_widget_get_scale_factor (widget);
-        *minimum /= scale_factor;
-        *natural /= scale_factor;
 
         /* See the comment in msd_osd_window_style_updated() for why we add the padding here */
 
@@ -344,13 +339,8 @@ msd_osd_window_get_preferred_height (GtkWidget *widget,
 {
         GtkStyleContext *context;
         GtkBorder padding;
-        gint scale_factor;
 
         GTK_WIDGET_CLASS (msd_osd_window_parent_class)->get_preferred_height (widget, minimum, natural);
-
-        scale_factor = gtk_widget_get_scale_factor (widget);
-        *minimum /= scale_factor;
-        *natural /= scale_factor;
 
         /* See the comment in msd_osd_window_style_updated() for why we add the padding here */
 
