@@ -542,7 +542,7 @@ scale_change_workarounds (MateXSettingsManager *manager, int new_scale)
                 wm_common_update_window();
                 gchar *wm = wm_common_get_current_window_manager ();
                 if (g_strcmp0 (wm, WM_COMMON_MARCO) == 0) {
-                        const gchar * const marco[] = {"marco", "--replace", NULL};
+                        gchar *marco[3] = {"marco", "--replace", NULL};
                         if (!g_spawn_async (NULL, marco, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error)) {
                                 g_warning ("There was a problem restarting marco: %s", error->message);
                                 g_clear_error (&error);
@@ -554,7 +554,7 @@ scale_change_workarounds (MateXSettingsManager *manager, int new_scale)
                 /* FIXME: The ideal scenario would be for mate-panel to respect window scaling and thus
                  * resize itself. Currently this is not happening, so msd restarts it when the window
                  * scaling factor changes so that it's visually correct. */
-                const gchar * const mate_panel[] = {"killall", "mate-panel", NULL};
+                gchar *mate_panel[3] = {"killall", "mate-panel", NULL};
                 if (!g_spawn_async (NULL, mate_panel, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error)) {
                         g_warning ("There was a problem restarting mate-panel: %s", error->message);
                         g_clear_error (&error);
