@@ -297,10 +297,12 @@ key_already_used (MsdKeybindingsManager *manager,
 static void
 binding_unregister_keys (MsdKeybindingsManager *manager)
 {
+        GdkDisplay *dpy;
         GSList *li;
         gboolean need_flush = FALSE;
 
-        gdk_error_trap_push ();
+        dpy = gdk_display_get_default ();
+        gdk_x11_display_error_trap_push (dpy);
 
         for (li = manager->priv->binding_list; li != NULL; li = li->next) {
                 Binding *binding = (Binding *) li->data;
@@ -312,18 +314,20 @@ binding_unregister_keys (MsdKeybindingsManager *manager)
         }
 
         if (need_flush)
-                gdk_flush ();
+                gdk_display_flush (dpy);
 
-        gdk_error_trap_pop_ignored ();
+        gdk_x11_display_error_trap_pop_ignored (dpy);
 }
 
 static void
 binding_register_keys (MsdKeybindingsManager *manager)
 {
         GSList *li;
+        GdkDisplay *dpy;
         gboolean need_flush = FALSE;
 
-        gdk_error_trap_push ();
+        dpy = gdk_display_get_default ();
+        gdk_x11_display_error_trap_push (dpy);
 
         /* Now check for changes and grab new key if not already used */
         for (li = manager->priv->binding_list; li != NULL; li = li->next) {
@@ -353,8 +357,8 @@ binding_register_keys (MsdKeybindingsManager *manager)
         }
 
         if (need_flush)
-                gdk_flush ();
-        if (gdk_error_trap_pop ())
+                gdk_display_flush (dpy);
+        if (gdk_x11_display_error_trap_pop (dpy))
                 g_warning ("Grab failed for some keys, another application may already have access the them.");
 
 }
@@ -540,11 +544,11 @@ msd_keybindings_manager_start (MsdKeybindingsManager *manager,
                                (GdkFilterFunc) keybindings_filter,
                                manager);
 
-        gdk_error_trap_push ();
+        gdk_x11_display_error_trap_push (dpy);
         /* Add KeyPressMask to the currently reportable event masks */
         XGetWindowAttributes (xdpy, xwindow, &atts);
         XSelectInput (xdpy, xwindow, atts.your_event_mask | KeyPressMask);
-        gdk_error_trap_pop_ignored ();
+        gdk_x11_display_error_trap_pop_ignored (dpy);
 
         manager->priv->screens = get_screens_list ();
 
