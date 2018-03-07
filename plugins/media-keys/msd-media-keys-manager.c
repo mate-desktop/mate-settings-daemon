@@ -1063,7 +1063,7 @@ acme_filter_events (GdkXEvent           *xevent,
         int        i;
 
         /* verify we have a key event */
-        if (xev->type != KeyPress && xev->type != KeyRelease) {
+        if (xev->type != KeyPress) {
                 return GDK_FILTER_CONTINUE;
         }
 
@@ -1077,10 +1077,6 @@ acme_filter_events (GdkXEvent           *xevent,
                                         return GDK_FILTER_CONTINUE;
                                 }
                                 break;
-                        default:
-                                if (xev->type != KeyRelease) {
-                                        return GDK_FILTER_CONTINUE;
-                                }
                         }
 
                         manager->priv->current_screen = acme_get_screen_from_event (manager, xany);
@@ -1100,9 +1096,15 @@ static gboolean
 start_media_keys_idle_cb (MsdMediaKeysManager *manager)
 {
         GSList *l;
+        GdkDisplay *dpy;
+        Display *xdpy;
 
         g_debug ("Starting media_keys manager");
         mate_settings_profile_start (NULL);
+
+        dpy = gdk_display_get_default ();
+        xdpy = GDK_DISPLAY_XDISPLAY (dpy);
+
         manager->priv->volume_monitor = g_volume_monitor_get ();
         manager->priv->settings = g_settings_new (BINDING_SCHEMA);
 
@@ -1111,14 +1113,28 @@ start_media_keys_idle_cb (MsdMediaKeysManager *manager)
 
         /* Start filtering the events */
         for (l = manager->priv->screens; l != NULL; l = l->next) {
+                GdkWindow *window;
+                Window xwindow;
+                XWindowAttributes atts;
+
                 mate_settings_profile_start ("gdk_window_add_filter");
+
+                window = gdk_screen_get_root_window (l->data);
+                xwindow = GDK_WINDOW_XID (window);
 
                 g_debug ("adding key filter for screen: %d",
                          gdk_screen_get_number (l->data));
 
-                gdk_window_add_filter (gdk_screen_get_root_window (l->data),
+                gdk_window_add_filter (window,
                                        (GdkFilterFunc)acme_filter_events,
                                        manager);
+
+                gdk_error_trap_push ();
+                /* Add KeyPressMask to the currently reportable event masks */
+                XGetWindowAttributes (xdpy, xwindow, &atts);
+                XSelectInput (xdpy, xwindow, atts.your_event_mask | KeyPressMask);
+                gdk_error_trap_pop_ignored ();
+
                 mate_settings_profile_end ("gdk_window_add_filter");
         }
 
