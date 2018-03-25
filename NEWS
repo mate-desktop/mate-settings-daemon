@@ -1,10 +1,15 @@
+### mate-settings-daemon 1.20.1
+
+  * Prevent media-keys bindings from swallowing modifier keys
+  * Scale OSD size correctly on HiDPI displays
+
 ### mate-settings-daemon 1.20.0
 
-    bump required version of mate-desktop
-    HiDPI: Load xsettings during initialization phase
-    Add HiDPI configuration in XSettings
-    require GTK+ 3.22 and GLib 2.50
-    Add support for HiDPI displays
+  * bump required version of mate-desktop
+  * HiDPI: Load xsettings during initialization phase
+  * Add HiDPI configuration in XSettings
+  * require GTK+ 3.22 and GLib 2.50
+  * Add support for HiDPI displays
 
 ### mate-settings-daemon 1.19.2
 
