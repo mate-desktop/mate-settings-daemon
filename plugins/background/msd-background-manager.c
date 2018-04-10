@@ -185,11 +185,12 @@ real_draw_bg (MsdBackgroundManager *manager,
 {
 	MsdBackgroundManagerPrivate *p = manager->priv;
 	GdkWindow *window = gdk_screen_get_root_window (screen);
-	gint width   = WidthOfScreen (gdk_x11_screen_get_xscreen (screen));
-	gint height  = HeightOfScreen (gdk_x11_screen_get_xscreen (screen));
+	gint scale   = gdk_window_get_scale_factor (window);
+	gint width   = WidthOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale;
+	gint height  = HeightOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale;
 
 	free_bg_surface (manager);
-	p->surface = mate_bg_create_surface (p->bg, window, width, height, TRUE);
+	p->surface = mate_bg_create_surface_scale (p->bg, window, width, height, scale, TRUE);
 
 	if (p->do_fade)
 	{
@@ -255,10 +256,12 @@ on_screen_size_changed (GdkScreen            *screen,
 	if (!p->msd_can_draw || p->draw_in_progress || caja_is_drawing_bg (manager))
 		return;
 
+	GdkWindow *window = gdk_screen_get_root_window (screen);
+	gint scale = gdk_window_get_scale_factor (window);
 	gint scr_num = gdk_x11_screen_get_screen_number (screen);
 	gchar *old_size = g_list_nth_data (manager->priv->scr_sizes, scr_num);
-	gchar *new_size = g_strdup_printf ("%dx%d", WidthOfScreen (gdk_x11_screen_get_xscreen (screen)),
-						    HeightOfScreen (gdk_x11_screen_get_xscreen (screen)));
+	gchar *new_size = g_strdup_printf ("%dx%d", WidthOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale,
+						    HeightOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale);
 	if (g_strcmp0 (old_size, new_size) != 0)
 	{
 		g_debug ("Screen%d size changed: %s -> %s", scr_num, old_size, new_size);
@@ -297,8 +300,7 @@ settings_change_event_idle_cb (MsdBackgroundManager *manager)
 {
 	mate_settings_profile_start ("settings_change_event_idle_cb");
 
-	mate_bg_load_from_gsettings (manager->priv->bg,
-				     manager->priv->settings);
+	mate_bg_load_from_preferences (manager->priv->bg);
 
 	mate_settings_profile_end ("settings_change_event_idle_cb");
 
