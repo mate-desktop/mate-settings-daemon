@@ -1672,76 +1672,6 @@ status_icon_popup_menu_selection_done_cb (GtkMenuShell *menu_shell, gpointer dat
 #define OUTPUT_TITLE_ITEM_BORDER 2
 #define OUTPUT_TITLE_ITEM_PADDING 4
 
-/* This is an expose-event hander for the title label for each MateRROutput.
- * We want each title to have a colored background, so we paint that background, then
- * return FALSE to let GtkLabel expose itself (i.e. paint the label's text), and then
- * we have a signal_connect_after handler as well.  See the comments below
- * to see why that "after" handler is needed.
- */
-static gboolean
-output_title_label_draw_cb (GtkWidget *widget, cairo_t *cr, gpointer data)
-{
-        MsdXrandrManager *manager = MSD_XRANDR_MANAGER (data);
-        struct MsdXrandrManagerPrivate *priv = manager->priv;
-        MateRROutputInfo *output;
-        GdkRGBA color;
-        GtkAllocation allocation;
-
-        g_assert (GTK_IS_LABEL (widget));
-
-        output = g_object_get_data (G_OBJECT (widget), "output");
-        g_assert (output != NULL);
-
-        g_assert (priv->labeler != NULL);
-
-        /* Draw a black rectangular border, filled with the color that corresponds to this output */
-        mate_rr_labeler_get_rgba_for_output (priv->labeler, output, &color);
-
-        cairo_set_source_rgb (cr, 0, 0, 0);
-        cairo_set_line_width (cr, OUTPUT_TITLE_ITEM_BORDER);
-        gtk_widget_get_allocation (widget, &allocation);
-        cairo_rectangle (cr,
-                         allocation.x + OUTPUT_TITLE_ITEM_BORDER / 2.0,
-                         allocation.y + OUTPUT_TITLE_ITEM_BORDER / 2.0,
-                         allocation.width - OUTPUT_TITLE_ITEM_BORDER,
-                         allocation.height - OUTPUT_TITLE_ITEM_BORDER);
-        cairo_stroke (cr);
-
-        gdk_cairo_set_source_rgba (cr, &color);
-        cairo_rectangle (cr,
-                         allocation.x + OUTPUT_TITLE_ITEM_BORDER,
-                         allocation.y + OUTPUT_TITLE_ITEM_BORDER,
-                         allocation.width - 2 * OUTPUT_TITLE_ITEM_BORDER,
-                         allocation.height - 2 * OUTPUT_TITLE_ITEM_BORDER);
-
-        cairo_fill (cr);
-
-        /* We want the label to always show up as if it were sensitive
-         * ("style->fg[GTK_STATE_NORMAL]"), even though the label is insensitive
-         * due to being inside an insensitive menu item.  So, here we have a
-         * HACK in which we frob the label's state directly.  GtkLabel's expose
-         * handler will be run after this function, so it will think that the
-         * label is in GTK_STATE_NORMAL.  We reset the label's state back to
-         * insensitive in output_title_label_after_expose_event_cb().
-         *
-         * Yay for fucking with GTK+'s internals.
-         */
-
-        gtk_widget_set_state (widget, GTK_STATE_NORMAL);
-
-        return FALSE;
-}
-
-/* See the comment in output_title_event_box_expose_event_cb() about this funny label widget */
-static gboolean
-output_title_label_after_draw_cb (GtkWidget *widget, cairo_t *cr, gpointer data)
-{
-        g_assert (GTK_IS_LABEL (widget));
-        gtk_widget_set_state (widget, GTK_STATE_INSENSITIVE);
-
-        return FALSE;
-}
-
 static void
 title_item_size_allocate_cb (GtkWidget *widget, GtkAllocation *allocation, gpointer data)
 {
@@ -1807,17 +1737,6 @@ make_menu_item_for_output_title (MsdXrandrManager *manager, MateRROutputInfo *ou
         gtk_widget_set_margin_bottom (label, OUTPUT_TITLE_ITEM_BORDER + OUTPUT_TITLE_ITEM_PADDING);
 
         gtk_container_add (GTK_CONTAINER (item), label);
-
-        /* We want to paint a colored box as the background of the label, so we connect
-         * to its expose-event signal.  See the comment in *** to see why need to connect
-         * to the label both 'before' and 'after'.
-         */
-        g_signal_connect (label, "draw",
-                          G_CALLBACK (output_title_label_draw_cb), manager);
-        g_signal_connect_after (label, "draw",
-                                G_CALLBACK (output_title_label_after_draw_cb) , manager);
-
-        g_object_set_data (G_OBJECT (label), "output", output);
 
         gtk_widget_set_sensitive (item, FALSE); /* the title is not selectable */
         gtk_widget_show_all (item);
