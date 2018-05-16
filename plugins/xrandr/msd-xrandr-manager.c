@@ -1714,11 +1714,14 @@ title_item_size_allocate_cb (GtkWidget *widget, GtkAllocation *allocation, gpoin
 static GtkWidget *
 make_menu_item_for_output_title (MsdXrandrManager *manager, MateRROutputInfo *output)
 {
-        GtkWidget *item;
-        GtkWidget *label;
+        GtkWidget       *item;
+        GtkStyleContext *context;
+        GtkWidget       *label;
         char *str;
 
         item = gtk_menu_item_new ();
+        context = gtk_widget_get_style_context (item);
+        gtk_style_context_add_class (context, "xrandr-applet");
 
         g_signal_connect (item, "size-allocate",
                           G_CALLBACK (title_item_size_allocate_cb), NULL);
