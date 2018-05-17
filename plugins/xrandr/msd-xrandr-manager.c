@@ -1716,12 +1716,28 @@ make_menu_item_for_output_title (MsdXrandrManager *manager, MateRROutputInfo *ou
 {
         GtkWidget       *item;
         GtkStyleContext *context;
+        GtkCssProvider  *provider;
         GtkWidget       *label;
         char *str;
 
         item = gtk_menu_item_new ();
         context = gtk_widget_get_style_context (item);
         gtk_style_context_add_class (context, "xrandr-applet");
+        provider = gtk_css_provider_new ();
+        gtk_css_provider_load_from_data (provider,
+					".mate-panel-menu-bar menuitem.xrandr-applet:disabled > label {\n"
+					"background-color: #e3ffaa;\n"
+					"color: #000000;\n"
+					"border-style: inset; \n"
+					"border-width: 2px; \n"
+					"border-color: #000000; \n"
+					"}",
+					-1, NULL);
+
+	    gtk_style_context_add_provider_for_screen (gdk_screen_get_default(),
+					GTK_STYLE_PROVIDER (provider),
+					GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+	    g_object_unref (provider);
 
         g_signal_connect (item, "size-allocate",
                           G_CALLBACK (title_item_size_allocate_cb), NULL);
