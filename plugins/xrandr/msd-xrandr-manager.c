@@ -1717,9 +1717,13 @@ make_menu_item_for_output_title (MsdXrandrManager *manager, MateRROutputInfo *ou
         GtkWidget       *item;
         GtkStyleContext *context;
         GtkWidget       *label;
+        GtkWidget       *image;
+        GtkWidget *box;
         char *str;
 
         item = gtk_menu_item_new ();
+        box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
+        image = gtk_image_new_from_icon_name ("computer-symbolic", GTK_ICON_SIZE_MENU);
         context = gtk_widget_get_style_context (item);
         gtk_style_context_add_class (context, "xrandr-applet");
 
@@ -1739,7 +1743,9 @@ make_menu_item_for_output_title (MsdXrandrManager *manager, MateRROutputInfo *ou
         gtk_widget_set_margin_top (label, OUTPUT_TITLE_ITEM_BORDER + OUTPUT_TITLE_ITEM_PADDING);
         gtk_widget_set_margin_bottom (label, OUTPUT_TITLE_ITEM_BORDER + OUTPUT_TITLE_ITEM_PADDING);
 
-        gtk_container_add (GTK_CONTAINER (item), label);
+        gtk_container_add (GTK_CONTAINER (box), image);
+        gtk_container_add (GTK_CONTAINER (box), label);
+        gtk_container_add (GTK_CONTAINER (item), box);
 
         gtk_widget_set_sensitive (item, FALSE); /* the title is not selectable */
         gtk_widget_show_all (item);
