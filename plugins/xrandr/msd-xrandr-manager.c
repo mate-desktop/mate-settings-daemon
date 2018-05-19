@@ -1693,6 +1693,9 @@ output_title_label_draw_cb (GtkWidget *widget, cairo_t *cr, gpointer data)
         g_string_append (string, ".mate-panel-menu-bar menuitem.xrandr-applet:disabled>box>label{\n");
         g_string_append (string, "color: black;");
         g_string_append (string, "padding-left: 4px; padding-right: 4px;");
+        g_string_append (string, "border-style: inset;");
+        g_string_append (string, "border-width: 1px;");
+        g_string_append (string, "border-color: gray;");
         g_string_append (string, "background-color:");
         g_string_append (string, color_string);
         g_string_append (string," }");
@@ -1774,6 +1777,7 @@ make_menu_item_for_output_title (MsdXrandrManager *manager, MateRROutputInfo *ou
             ".mate-panel-menu-bar menuitem.xrandr-applet:disabled>box>image{\n"
              "opacity: 1.0; \n"
              "-gtk-icon-effect: none; \n"
+             "min-height: 36px; \n" /*Use as a spacer so label border does not put scrollbars on popup*/
              "}",
              -1, NULL);
 	    gtk_style_context_add_provider (context,
