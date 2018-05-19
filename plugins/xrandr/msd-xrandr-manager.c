@@ -1689,12 +1689,11 @@ output_title_label_draw_cb (GtkWidget *widget, cairo_t *cr, gpointer data)
 
         color_string = gdk_rgba_to_string (&color);
 
+        /*This can be overriden by themes, check all label:insensitive entries if it does not show up*/
         string = g_string_new(NULL);
         g_string_append (string, ".mate-panel-menu-bar menuitem.xrandr-applet:disabled>box>label{\n");
-        g_string_append (string, "color: black;");
+        /* g_string_append (string, "color: black;"); Does not work-overridden in all themes*/
         g_string_append (string, "padding-left: 4px; padding-right: 4px;");
-        g_string_append (string, "border-style: inset;");
-        g_string_append (string, "border-width: 1px;");
         g_string_append (string, "border-color: gray;");
         g_string_append (string, "background-color:");
         g_string_append (string, color_string);
@@ -1708,7 +1707,7 @@ output_title_label_draw_cb (GtkWidget *widget, cairo_t *cr, gpointer data)
 
 	    gtk_style_context_add_provider (context,
 					GTK_STYLE_PROVIDER (provider),
-					GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+					GTK_STYLE_PROVIDER_PRIORITY_FALLBACK);
 	    g_object_unref (provider);
 
         return FALSE;
@@ -1770,21 +1769,32 @@ make_menu_item_for_output_title (MsdXrandrManager *manager, MateRROutputInfo *ou
         context = gtk_widget_get_style_context (item);
         gtk_style_context_add_class (context, "xrandr-applet");
 
-        /*Disable effects applied to icons in an insensitive menu item*/
-        context = gtk_widget_get_style_context (image);
+        /*This is NOT overrridden by themes as FALLBACK won't work here
+         *
+         *Disable dim/opacity effects applied to icons in an insensitive menu item
+         *And apply the final label border width and style here
+         *(style required too because "none" will define zero width)
+         *before the draw call so label width is defined here
+         *Draw call is too late and will cause scrollbars to appear from
+         *delayed expansion of the label
+         */
+
         provider = gtk_css_provider_new ();
         gtk_css_provider_load_from_data (provider,
             ".mate-panel-menu-bar menuitem.xrandr-applet:disabled>box>image{\n"
              "opacity: 1.0; \n"
              "-gtk-icon-effect: none; \n"
-             "min-height: 36px; \n" /*Use as a spacer so label border does not put scrollbars on popup*/
+             "}"
+             ".mate-panel-menu-bar menuitem.xrandr-applet:disabled>box>label{\n"
+             "border-width: 1px;"
+             "border-style: inset;"
              "}",
              -1, NULL);
-	    gtk_style_context_add_provider (context,
+        /*Need to handle both the image and the label, so has to be for screen to work*/
+        gtk_style_context_add_provider_for_screen (gdk_screen_get_default(),
 					GTK_STYLE_PROVIDER (provider),
 					GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 	    g_object_unref (provider);
-
 
         g_signal_connect (item, "size-allocate",
                           G_CALLBACK (title_item_size_allocate_cb), NULL);
