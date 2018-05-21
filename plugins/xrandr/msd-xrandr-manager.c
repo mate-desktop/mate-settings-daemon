@@ -1705,7 +1705,7 @@ output_title_label_draw_cb (GtkWidget *widget, cairo_t *cr, gpointer data)
         provider = gtk_css_provider_new ();
         gtk_css_provider_load_from_data (provider,css, -1, NULL);
 
-	    gtk_style_context_add_provider (context,
+        gtk_style_context_add_provider (context,
 					GTK_STYLE_PROVIDER (provider),
 					GTK_STYLE_PROVIDER_PRIORITY_FALLBACK);
 	    g_object_unref (provider);
