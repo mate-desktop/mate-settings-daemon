@@ -1716,14 +1716,15 @@ make_menu_item_for_output_title (MsdXrandrManager *manager, MateRROutputInfo *ou
 {
         GtkWidget       *item;
         GtkStyleContext *context;
-        GtkCssProvider  *provider;
+        GtkCssProvider  *provider, *provider2;
         GtkWidget       *label;
         GtkWidget       *image;
         GtkWidget *box;
         char *str;
         GString *string;
         GdkRGBA color;
-        gchar *css, *color_string;
+        gchar *css, *color_string, *theme_name;
+        GtkSettings *settings;
 
         struct MsdXrandrManagerPrivate *priv = manager->priv;
 
@@ -1799,7 +1800,34 @@ make_menu_item_for_output_title (MsdXrandrManager *manager, MateRROutputInfo *ou
         gtk_style_context_add_provider (context,
 					GTK_STYLE_PROVIDER (provider),
 					GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+        /*Deal with the GNOME themes*/
+        provider2 = gtk_css_provider_new ();
+        settings = gtk_settings_get_default();
+        context = gtk_widget_get_style_context (label);
+        g_object_get (settings, "gtk-theme-name", &theme_name, NULL);
+        if (g_strcmp0 (theme_name, "Adwaita") == 0 ||
+                      g_strcmp0 (theme_name, "Adwaita-dark") == 0 ||
+                      g_strcmp0 (theme_name, "Raleigh") == 0 ||
+                      g_strcmp0 (theme_name, "win32") == 0 ||
+                      g_strcmp0 (theme_name, "HighContrast") == 0 ||
+                      g_strcmp0 (theme_name, "HighContrastInverse") == 0){
+            gtk_css_provider_load_from_data (provider2,
+                    ".mate-panel-menu-bar menuitem.xrandr-applet:disabled>box>label{\n"
+                    "color: black;\n"
+                    "}",
+                    -1, NULL);
+            gtk_style_context_add_provider(context,
+					    GTK_STYLE_PROVIDER (provider2),
+					    GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+        }
+        /*Keep or take this off all other themes as soon as the theme changes*/
+        else{
+            gtk_style_context_remove_provider(context, GTK_STYLE_PROVIDER (provider2));
+        }
+
         g_object_unref (provider);
+        g_object_unref (provider2);
 
         gtk_widget_set_sensitive (item, FALSE); /* the title is not selectable */
 
