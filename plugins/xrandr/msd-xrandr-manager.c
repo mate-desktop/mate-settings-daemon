@@ -1766,6 +1766,7 @@ make_menu_item_for_output_title (MsdXrandrManager *manager, MateRROutputInfo *ou
         g_string_append (string, "border-color: gray;");
         g_string_append (string,"border-width: 1px;");
         g_string_append (string,"border-style: inset;");
+        g_string_append (string, "background-image: none;");
         g_string_append (string, "background-color:");
         g_string_append (string, color_string);
         g_string_append (string," }");
@@ -1794,6 +1795,7 @@ make_menu_item_for_output_title (MsdXrandrManager *manager, MateRROutputInfo *ou
         gtk_css_provider_load_from_data (provider,
             ".mate-panel-menu-bar menuitem.xrandr-applet:disabled>box>image{\n"
              "opacity: 1.0; \n"
+             "-gtk-icon-style:regular; \n" /* symbolic icons would get the disabled color*/
              "-gtk-icon-effect: none; \n"
              "}",
              -1, NULL);
@@ -1811,7 +1813,10 @@ make_menu_item_for_output_title (MsdXrandrManager *manager, MateRROutputInfo *ou
                       g_strcmp0 (theme_name, "Raleigh") == 0 ||
                       g_strcmp0 (theme_name, "win32") == 0 ||
                       g_strcmp0 (theme_name, "HighContrast") == 0 ||
-                      g_strcmp0 (theme_name, "HighContrastInverse") == 0){
+                      g_strcmp0 (theme_name, "HighContrastInverse") == 0 ||
+                      g_strcmp0 (theme_name, "Blackbird") == 0 ||
+                      g_strcmp0 (theme_name, "Bluebird") == 0 ||
+                      g_strcmp0 (theme_name, "Greybird") == 0){
             gtk_css_provider_load_from_data (provider2,
                     ".mate-panel-menu-bar menuitem.xrandr-applet:disabled>box>label{\n"
                     "color: black;\n"
