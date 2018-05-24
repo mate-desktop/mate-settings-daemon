@@ -1931,6 +1931,47 @@ ensure_current_configuration_is_saved (void)
 }
 
 static void
+monitor_activate_cb (GtkCheckMenuItem *item, gpointer data)
+{
+        MsdXrandrManager *manager = MSD_XRANDR_MANAGER (data);
+        struct MsdXrandrManagerPrivate *priv = manager->priv;
+        MateRROutputInfo *output;
+        GError *error;
+
+        ensure_current_configuration_is_saved ();
+
+        output = g_object_get_data (G_OBJECT (item), "output");
+
+        /*This is borrowed from the capplet in mate-control-center
+         *And shares the same limitations concerning monitors
+         *which have been turned off and back on without being reconfigured
+         */
+        if (gtk_check_menu_item_get_active (item)){
+                int x, y, width, height;
+                mate_rr_output_info_get_geometry (output, &x, &y, NULL, NULL);
+                width = mate_rr_output_info_get_preferred_width (output);
+                height = mate_rr_output_info_get_preferred_height (output);
+                mate_rr_output_info_set_geometry (output, x, y, width, height);
+                mate_rr_output_info_set_active (output, TRUE);
+
+        }
+        else{
+                mate_rr_output_info_set_active (output, FALSE);
+        }
+
+        error = NULL;
+        if (!mate_rr_config_save (priv->configuration, &error)) {
+                error_message (manager, _("Could not save monitor configuration"), error, NULL);
+                if (error)
+                        g_error_free (error);
+
+                return;
+        }
+
+        try_to_apply_intended_configuration (manager, NULL, gtk_get_current_event_time (), NULL); 
+}
+
+static void
 output_rotation_item_activate_cb (GtkCheckMenuItem *item, gpointer data)
 {
         MsdXrandrManager *manager = MSD_XRANDR_MANAGER (data);
@@ -2049,6 +2090,47 @@ add_rotation_items_for_output (MsdXrandrManager *manager, MateRROutputInfo *outp
 }
 
 static void
+add_enable_option_for_output (MsdXrandrManager *manager, MateRROutputInfo *output)
+{
+        struct MsdXrandrManagerPrivate *priv = manager->priv; 
+        GtkWidget *item;
+        gulong activate_id;
+
+        item = gtk_check_menu_item_new();
+
+        if (mate_rr_output_info_is_active (output)){
+                gtk_menu_item_set_label (GTK_MENU_ITEM(item), "Using this monitor");
+                gtk_widget_set_tooltip_text(item, "Turn this monitor off");
+        }
+        else {
+                gtk_menu_item_set_label (GTK_MENU_ITEM(item), "Not using this monitor");
+                gtk_widget_set_tooltip_text(item ,"Turn this monitor on");
+        }
+
+        gtk_widget_show_all (item);
+        gtk_menu_shell_append (GTK_MENU_SHELL (priv->popup_menu), item);
+
+        g_object_set_data (G_OBJECT (item), "output", output);
+
+        activate_id = g_signal_connect (item, "activate",
+                                G_CALLBACK (monitor_activate_cb), manager);
+
+        /* Block the signal temporarily so our callback won't be called;
+        * we are just setting up the UI.
+        */
+        g_signal_handler_block (item, activate_id);
+
+        if (mate_rr_output_info_is_active (output)){
+            gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(item), TRUE);
+        }
+        else{
+            gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(item), FALSE);
+        }
+
+        g_signal_handler_unblock (item, activate_id);
+}
+
+static void
 add_menu_items_for_output (MsdXrandrManager *manager, MateRROutputInfo *output)
 {
         struct MsdXrandrManagerPrivate *priv = manager->priv;
@@ -2057,6 +2139,7 @@ add_menu_items_for_output (MsdXrandrManager *manager, MateRROutputInfo *output)
         item = make_menu_item_for_output_title (manager, output);
         gtk_menu_shell_append (GTK_MENU_SHELL (priv->popup_menu), item);
 
+        add_enable_option_for_output (manager, output);
         add_rotation_items_for_output (manager, output);
 }
 
