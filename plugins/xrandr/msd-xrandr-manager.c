@@ -1725,6 +1725,7 @@ make_menu_item_for_output_title (MsdXrandrManager *manager, MateRROutputInfo *ou
         GdkRGBA color;
         gchar *css, *color_string, *theme_name;
         GtkSettings *settings;
+        GSettings *icon_settings;
 
         struct MsdXrandrManagerPrivate *priv = manager->priv;
 
@@ -1750,7 +1751,11 @@ make_menu_item_for_output_title (MsdXrandrManager *manager, MateRROutputInfo *ou
         gtk_widget_set_margin_top (label, OUTPUT_TITLE_ITEM_BORDER + OUTPUT_TITLE_ITEM_PADDING);
         gtk_widget_set_margin_bottom (label, OUTPUT_TITLE_ITEM_BORDER + OUTPUT_TITLE_ITEM_PADDING);
 
-        gtk_container_add (GTK_CONTAINER (box), image);
+        /*Load the icon unless the user has icons in menus turned off*/
+        icon_settings = g_settings_new ("org.mate.interface");
+        if (g_settings_get_boolean (icon_settings, "menus-have-icons")){
+            gtk_container_add (GTK_CONTAINER (box), image);
+            }
         gtk_container_add (GTK_CONTAINER (box), label);
         gtk_container_add (GTK_CONTAINER (item), box);
 
