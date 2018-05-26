@@ -1769,12 +1769,23 @@ make_menu_item_for_output_title (MsdXrandrManager *manager, MateRROutputInfo *ou
         /*g_string_append (string, "color: black;"); Does not work-overridden in all themes*/
         g_string_append (string, "padding-left: 4px; padding-right: 4px;");
         g_string_append (string, "border-color: gray;");
-        g_string_append (string,"border-width: 1px;");
-        g_string_append (string,"border-style: inset;");
+        g_string_append (string, "border-width: 1px;");
+        g_string_append (string, "border-style: inset;");
         g_string_append (string, "background-image: none;");
-        g_string_append (string, "background-color:");
-        g_string_append (string, color_string);
-        g_string_append (string," }");
+        /*Bright color for active monitor, dimmed for inactive monitor*/
+        if (mate_rr_output_info_is_active (output)){
+                g_string_append (string, "background-color:");
+                g_string_append (string, color_string);
+                g_string_append (string, ";");
+                g_string_append (string," }");
+        }
+        else{
+                g_string_append (string, "background-color: alpha(");
+                g_string_append (string, color_string);
+                g_string_append (string, ", 0.4);");
+                g_string_append (string," }");
+                gtk_style_context_add_class (context, "monitor-off");
+        }
 
         css = g_string_free (string, FALSE);
 
@@ -1808,7 +1819,7 @@ make_menu_item_for_output_title (MsdXrandrManager *manager, MateRROutputInfo *ou
 					GTK_STYLE_PROVIDER (provider),
 					GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        /*Deal with the GNOME themes*/
+        /*Deal with the GNOME and *bird themes, match display capplet theme */
         provider2 = gtk_css_provider_new ();
         settings = gtk_settings_get_default();
         context = gtk_widget_get_style_context (label);
@@ -1825,6 +1836,9 @@ make_menu_item_for_output_title (MsdXrandrManager *manager, MateRROutputInfo *ou
             gtk_css_provider_load_from_data (provider2,
                     ".mate-panel-menu-bar menuitem.xrandr-applet:disabled>box>label{\n"
                     "color: black;\n"
+                    "}"
+                    ".mate-panel-menu-bar menuitem.xrandr-applet.monitor-off:disabled>box>label{\n"
+                     "color: alpha (black, 0.6);\n"
                     "}",
                     -1, NULL);
             gtk_style_context_add_provider(context,
@@ -2044,6 +2058,10 @@ add_items_for_rotations (MsdXrandrManager *manager, MateRROutputInfo *output, Ma
                 }
 
                 item = gtk_radio_menu_item_new_with_label (group, _(rotations[i].name));
+                /*HERE*/
+                if (!(mate_rr_output_info_is_active (output))){
+                    gtk_widget_set_sensitive (item, FALSE); /*Rotation can't be set from the OFF state*/
+                }
                 gtk_widget_show_all (item);
                 gtk_menu_shell_append (GTK_MENU_SHELL (priv->popup_menu), item);
 
@@ -2099,11 +2117,11 @@ add_enable_option_for_output (MsdXrandrManager *manager, MateRROutputInfo *outpu
         item = gtk_check_menu_item_new();
 
         if (mate_rr_output_info_is_active (output)){
-                gtk_menu_item_set_label (GTK_MENU_ITEM(item), "Using this monitor");
+                gtk_menu_item_set_label (GTK_MENU_ITEM(item), "ON");
                 gtk_widget_set_tooltip_text(item, "Turn this monitor off");
         }
         else {
-                gtk_menu_item_set_label (GTK_MENU_ITEM(item), "Not using this monitor");
+                gtk_menu_item_set_label (GTK_MENU_ITEM(item), "OFF");
                 gtk_widget_set_tooltip_text(item ,"Turn this monitor on");
         }
 
