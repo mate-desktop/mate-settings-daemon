@@ -54,6 +54,7 @@
 #define CURSOR_THEME_KEY      "cursor-theme"
 #define CURSOR_SIZE_KEY       "cursor-size"
 #define SCALING_FACTOR_KEY    "window-scaling-factor"
+#define SCALING_FACTOR_QT_KEY "window-scaling-factor-qt-sync"
 
 #define FONT_RENDER_SCHEMA    "org.mate.font-rendering"
 #define FONT_ANTIALIASING_KEY "antialiasing"
@@ -525,14 +526,18 @@ scale_change_workarounds (MateXSettingsManager *manager, int new_scale)
         /* This is only useful during the Initialization phase, so we guard against
          * unnecessarily attempting to set it later. */
         if (!manager->priv->window_scale) {
-                /* Set env variables to properly scale QT applications */
-                if (!update_user_env_variable ("QT_AUTO_SCREEN_SCALE_FACTOR", "0", &error)) {
-                        g_warning ("There was a problem when setting QT_AUTO_SCREEN_SCALE_FACTOR=0: %s", error->message);
-                        g_clear_error (&error);
-                }
-                if (!update_user_env_variable ("QT_SCALE_FACTOR", new_scale == 2 ? "2" : "1", &error)) {
-                        g_warning ("There was a problem when setting QT_SCALE_FACTOR=%d: %s", new_scale, error->message);
-                        g_clear_error (&error);
+                GSettings   *gsettings;
+                gsettings = g_hash_table_lookup (manager->priv->gsettings, INTERFACE_SCHEMA);
+                /* If enabled, set env variables to properly scale QT applications */
+                if (g_settings_get_boolean (gsettings, SCALING_FACTOR_QT_KEY)) {
+                        if (!update_user_env_variable ("QT_AUTO_SCREEN_SCALE_FACTOR", "0", &error)) {
+                                g_warning ("There was a problem when setting QT_AUTO_SCREEN_SCALE_FACTOR=0: %s", error->message);
+                                g_clear_error (&error);
+                        }
+                        if (!update_user_env_variable ("QT_SCALE_FACTOR", new_scale == 2 ? "2" : "1", &error)) {
+                                g_warning ("There was a problem when setting QT_SCALE_FACTOR=%d: %s", new_scale, error->message);
+                                g_clear_error (&error);
+                        }
                 }
         } else {
                 /* Restart marco */
