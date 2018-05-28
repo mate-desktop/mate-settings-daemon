@@ -642,6 +642,16 @@ is_laptop (MateRRScreen *screen, MateRROutputInfo *output)
 }
 
 static gboolean
+is_primary (MateRRScreen *screen, MateRROutputInfo *output)
+{
+        MateRROutput *rr_output;
+
+        rr_output = mate_rr_screen_get_output_by_name (screen, mate_rr_output_info_get_name (output));
+        return mate_rr_output_get_is_primary(rr_output);
+}
+
+
+static gboolean
 get_clone_size (MateRRScreen *screen, int *width, int *height)
 {
         MateRRMode **modes = mate_rr_screen_list_clone_modes (screen);
@@ -758,9 +768,7 @@ make_clone_setup (MateRRScreen *screen)
                                 h = mate_rr_mode_get_height (mode);
 
                                 if (w == width && h == height) {
-                                        int r = mate_rr_mode_get_freq (mode);
-                                        if (r > best_rate)
-                                                best_rate = r;
+                                        best_rate = mate_rr_mode_get_freq (mode);
                                 }
                         }
 
@@ -849,6 +857,35 @@ turn_on (MateRRScreen *screen,
         }
 
         return FALSE;
+}
+
+static MateRRConfig *
+make_primary_only_setup (MateRRScreen *screen)
+{
+        /*Leave all of the monitors turned on, just change from mirror to xinerama layout*/
+        MateRRConfig *result = mate_rr_config_new_current (screen, NULL);
+        MateRROutputInfo **outputs = mate_rr_config_get_outputs (result);
+        int i, x, width,height;
+        x = 0;
+
+        for (i = 0; outputs[i] != NULL; ++i) {
+                MateRROutputInfo *info = outputs[i];
+                width = mate_rr_output_info_get_preferred_width (info);
+                height = mate_rr_output_info_get_preferred_height (info);
+                mate_rr_output_info_set_geometry (info, x, 0, width, height);
+                mate_rr_output_info_set_active (info, TRUE);
+                x = x + width;
+        }
+
+        if (result && config_is_all_off (result)) {
+                g_object_unref (G_OBJECT (result));
+                result = NULL;
+        }
+
+        mate_rr_config_set_clone (result, FALSE);
+        print_configuration (result, "Primary only setup");
+
+        return result;
 }
 
 static MateRRConfig *
@@ -2018,6 +2055,41 @@ output_rotation_item_activate_cb (GtkCheckMenuItem *item, gpointer data)
 }
 
 static void
+mirror_outputs_cb(GtkCheckMenuItem *item, gpointer data)
+{
+        MsdXrandrManager *manager = MSD_XRANDR_MANAGER (data);
+        struct MsdXrandrManagerPrivate *priv = manager->priv;
+        MateRRScreen *screen = priv->rw_screen;
+
+        if (gtk_check_menu_item_get_active(item)){
+
+                MateRRConfig *config;
+                config = make_clone_setup (screen);
+                if (!config || config == NULL){
+                        error_message (manager, _("Mirroring outputs not supported"), NULL, NULL);
+                }
+
+                mate_rr_config_save (config, NULL);
+                try_to_apply_intended_configuration (manager, NULL, gtk_get_current_event_time (), NULL); 
+
+                g_object_unref (config);
+
+        }
+        else{
+
+                MateRRConfig *config;
+                config = make_primary_only_setup (screen);
+                /*If nothing worked, bring up the display capplet so the user can reconfigure*/
+                if (config == NULL)
+                         run_display_capplet(GTK_WIDGET(item));
+                mate_rr_config_save (config, NULL);
+                try_to_apply_intended_configuration (manager, NULL, gtk_get_current_event_time (), NULL); 
+
+                g_object_unref (config);
+
+        }
+}
+static void
 add_items_for_rotations (MsdXrandrManager *manager, MateRROutputInfo *output, MateRRRotation allowed_rotations)
 {
         typedef struct {
@@ -2176,6 +2248,31 @@ add_menu_items_for_outputs (MsdXrandrManager *manager)
 }
 
 static void
+add_menu_items_for_clone (MsdXrandrManager *manager)
+{
+        struct MsdXrandrManagerPrivate *priv = manager->priv;
+        GtkWidget *item;
+        gulong activate_id;
+
+        item = gtk_check_menu_item_new_with_label("Same output all monitors");
+        gtk_widget_set_tooltip_text(item, "Mirror same output to all monitors and turn them on");        
+        gtk_widget_show_all (item);
+        gtk_menu_shell_append (GTK_MENU_SHELL (priv->popup_menu), item);
+        activate_id =  g_signal_connect (item, "activate",
+                                G_CALLBACK (mirror_outputs_cb), manager);
+        /*Block the handler until the GUI is set up no matter what the monitor state*/
+        g_signal_handler_block (item, activate_id);
+
+        if (mate_rr_config_get_clone(priv->configuration)){
+            gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(item), TRUE);
+        }
+        else{
+            gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(item), FALSE);
+        }
+        g_signal_handler_unblock (item, activate_id);
+}
+
+static void
 status_icon_popup_menu (MsdXrandrManager *manager, guint button, guint32 timestamp)
 {
         struct MsdXrandrManagerPrivate *priv = manager->priv;
@@ -2196,7 +2293,10 @@ status_icon_popup_menu (MsdXrandrManager *manager, guint button, guint32 timesta
         gtk_widget_show (item);
         gtk_menu_shell_append (GTK_MENU_SHELL (priv->popup_menu), item);
 
+        add_menu_items_for_clone (manager);
+
         item = gtk_menu_item_new_with_mnemonic (_("_Configure Display Settings…"));
+        gtk_widget_set_tooltip_text(item, "Open the display configuration dialog (all settings)");
         g_signal_connect (item, "activate",
                           G_CALLBACK (popup_menu_configure_display_cb), manager);
         gtk_widget_show (item);
