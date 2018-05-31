@@ -2277,6 +2277,10 @@ status_icon_popup_menu (MsdXrandrManager *manager, guint button, guint32 timesta
 {
         struct MsdXrandrManagerPrivate *priv = manager->priv;
         GtkWidget *item;
+        GtkWidget *image;
+        GtkWidget *label;
+        GtkWidget *box;
+        GSettings *icon_settings;
 
         g_assert (priv->configuration == NULL);
         priv->configuration = mate_rr_config_new_current (priv->rw_screen, NULL);
@@ -2295,11 +2299,23 @@ status_icon_popup_menu (MsdXrandrManager *manager, guint button, guint32 timesta
 
         add_menu_items_for_clone (manager);
 
-        item = gtk_menu_item_new_with_mnemonic (_("_Configure Display Settings…"));
+        item = gtk_menu_item_new();
+        box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 10);
+        image = gtk_image_new_from_icon_name ("preferences-system", GTK_ICON_SIZE_MENU);
+        label = gtk_label_new_with_mnemonic("_Configure Display Settings…");
+        /*Load the icon unless the user has icons in menus turned off*/
+        icon_settings = g_settings_new ("org.mate.interface");
+        if (g_settings_get_boolean (icon_settings, "menus-have-icons")){
+            gtk_container_add (GTK_CONTAINER (box), image);
+            g_signal_connect (item, "size-allocate",
+                          G_CALLBACK (title_item_size_allocate_cb), NULL);
+            }
+        gtk_container_add (GTK_CONTAINER (box), label);
+        gtk_container_add (GTK_CONTAINER (item), box);
         gtk_widget_set_tooltip_text(item, "Open the display configuration dialog (all settings)");
         g_signal_connect (item, "activate",
                           G_CALLBACK (popup_menu_configure_display_cb), manager);
-        gtk_widget_show (item);
+        gtk_widget_show_all (item);
         gtk_menu_shell_append (GTK_MENU_SHELL (priv->popup_menu), item);
 
         g_signal_connect (priv->popup_menu, "selection-done",
