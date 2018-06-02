@@ -1,3 +1,28 @@
+### mate-settings-daemon 1.21.0
+
+    sync with transifex
+    xrandr-applet-popup: add an icon for configuration item
+    xrandr-applet-popup: add item to mirror displays
+    bump mate-desktop requirement
+    Make setting QT_SCALE_FACTOR optional.
+    xrandr-applet-popup: dim menuitems for disabled monitor
+    xrandr-applet-popup: enable turning monitors on an off
+    xrandr-applet-popup: show icon only if "menus-have-icons" is not turned off
+    xrandr-applet-popup: handle Greybird (etc) XFCE themes
+    Xrandr-applet-popup: Special case the GNOME themes for black text on monitor labels
+    xrander-applet-popup: remove draw callback
+    xrandr:fix indent
+    xrandr-applet-popup: allow themes to override monitor label colors
+    xrandr-applet-popup: add a border to colored monitor labels
+    xrandr-applet-popup: use colored bg again in monitor labels
+    xrandr applet popup: add monitor icons to monitor label menuitems
+    xrandr-applet: add a style class for menuitems
+    xrandr-applet: drop non-working bg from menu
+    xrandr-applet: don't hard code label colors in menu
+    Support background fallback on HiDPI
+    Prevent media-keys bindings from swallowing modifier keys
+    Scale OSD size correctly on HiDPI displays (#212)
+
 ### mate-settings-daemon 1.20.0
 
     bump required version of mate-desktop
