@@ -1,25 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Adi Roiban https://launchpad.net/~adiroiban, 2008, 2009
-# corneliu.e <corneliueva@yahoo.com>, 2014
-# Daniel <danny3@tutanota.com>, 2015-2016
-# Daniel <danny3@tutanota.com>, 2017
-# Lucian Adrian Grijincu <lucian.grijincu@gmail.com>, 2010
-# Mișu Moldovan <dumol@mate.ro> 2003, 2004
-# Mugurel Tudor <mugurelu@mate.ro>, 2002, 2003
-# sorinn <nemes.sorin@gmail.com>, 2014-2015
-# Sebastian Ivan <sebastian.ivan@ubuntu.ro>, 2005
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 21:52+0300\n"
-"PO-Revision-Date: 2017-09-19 11:21+0000\n"
-"Last-Translator: Daniel <danny3@tutanota.com>\n"
-"Language-Team: Romanian (http://www.transifex.com/mate/MATE/language/ro/)\n"
+"POT-Creation-Date: 2018-03-17 15:39+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: sorinn <nemes.sorin@gmail.com>, 2018\n"
+"Language-Team: Romanian (https://www.transifex.com/mate/teams/13566/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -77,7 +69,9 @@ msgstr "DPI"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "Rezoluția folosită pentru conversia mărimii literelor din pixeli, în puncte per țol."
+msgstr ""
+"Rezoluția folosită pentru conversia mărimii literelor din pixeli, în puncte "
+"per țol."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
@@ -88,7 +82,11 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "Tipul de antialiasing folosit la redarea caracterelor de literă. Valori posibile sunt: „none” pentru dezactivare antialiasing, „grayscale” pentru antialiasing standard în nuanțe de gri și „rgba” pentru antialiasing la nivel de sub-pixeli (doar pentru ecranele LCD)."
+msgstr ""
+"Tipul de antialiasing folosit la redarea caracterelor de literă. Valori "
+"posibile sunt: „none” pentru dezactivare antialiasing, „grayscale” pentru "
+"antialiasing standard în nuanțe de gri și „rgba” pentru antialiasing la "
+"nivel de sub-pixeli (doar pentru ecranele LCD)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
@@ -99,7 +97,11 @@ msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "Tipul de indiciu folosit la afișarea fonturilor. Valorile posibile sunt: „none” pentru niciun indiciu, „slight” pentru cel de bază, „medium” pentru moderat și  „full” pentru maxim (poate cauza distorsionarea formei literelor)."
+msgstr ""
+"Tipul de indiciu folosit la afișarea fonturilor. Valorile posibile sunt: "
+"„none” pentru niciun indiciu, „slight” pentru cel de bază, „medium” pentru "
+"moderat și  „full” pentru maxim (poate cauza distorsionarea formei "
+"literelor)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
@@ -111,7 +113,11 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "Ordinea elementelor subpixeli dintr-un ecran LCD; folosit doar când antialiasing-ul este setat pe „rgba”. Valorile posibile sunt: „rgb” pentru roșu la stânga (cel mai comun), „bgr” pentru albastru la stânga, „vrgb” pentru roșu sus, „vbgr” pentru roșu jos."
+msgstr ""
+"Ordinea elementelor subpixeli dintr-un ecran LCD; folosit doar când "
+"antialiasing-ul este setat pe „rgba”. Valorile posibile sunt: „rgb” pentru "
+"roșu la stânga (cel mai comun), „bgr” pentru albastru la stânga, „vrgb” "
+"pentru roșu sus, „vbgr” pentru roșu jos."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -121,7 +127,9 @@ msgstr "Acțiune la scoaterea smartcardului"
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr "Definiți această cheie la „none”, „lock_screen” sau „force_logout”. Acțiunea va fi efectuată când smartcardul utilizat la autentificare este scos."
+msgstr ""
+"Definiți această cheie la „none”, „lock_screen” sau „force_logout”. Acțiunea"
+" va fi efectuată când smartcardul utilizat la autentificare este scos."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:1
 msgid "Disable touchpad while typing"
@@ -131,7 +139,9 @@ msgstr "Dezactivare zonă tactilă în timpul tastării"
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "Definiți ca „TRUE” dacă aveți probleme cu atingerea accidentală a zonei tactile în timp ce tastați."
+msgstr ""
+"Definiți ca „TRUE” dacă aveți probleme cu atingerea accidentală a zonei "
+"tactile în timp ce tastați."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:3
 msgid "Enable mouse clicks with touchpad"
@@ -140,7 +150,9 @@ msgstr "Activare clic maus cu zona tactilă"
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "Definiți ca „TRUE” pentru a putea trimite clicuri de maus prin atingerea zonei tactile."
+msgstr ""
+"Definiți ca „TRUE” pentru a putea trimite clicuri de maus prin atingerea "
+"zonei tactile."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Enable vertical edge scrolling"
@@ -180,7 +192,9 @@ msgstr "Derulare naturală"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
-msgstr "Definiți ca adevărat pentru a activa derularea naturală (inversă) pentru zonele tactile"
+msgstr ""
+"Definiți ca adevărat pentru a activa derularea naturală (inversă) pentru "
+"zonele tactile"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
 msgid "Enable touchpad"
@@ -340,7 +354,9 @@ msgstr "Prioritatea de folosit pentru acest plugin"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
-msgstr "Prioritatea de folosit pentru acest plugin în coada de start a mate-settings-daemon"
+msgstr ""
+"Prioritatea de folosit pentru acest plugin în coada de start a mate-"
+"settings-daemon"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:5
 msgid "Free percentage notify threshold"
@@ -350,7 +366,10 @@ msgstr "Prag pentru notificare procent liber"
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr "Procentul pragului de spațiu liber pentru avertizarea inițială de spațiu liber redus pe disc. Dacă procentul spațiului liber scade sub această valoare, se va afișa o avertizare."
+msgstr ""
+"Procentul pragului de spațiu liber pentru avertizarea inițială de spațiu "
+"liber redus pe disc. Dacă procentul spațiului liber scade sub această "
+"valoare, se va afișa o avertizare."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
 msgid "Subsequent free percentage notify threshold"
@@ -360,7 +379,9 @@ msgstr "Prag procentaj spațiu liber pentru notificare subsecventă"
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
-msgstr "Specifică procentajul de reducere a spațiului liber înainte de a trimite un o nouă avertizare."
+msgstr ""
+"Specifică procentajul de reducere a spațiului liber înainte de a trimite un "
+"o nouă avertizare."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:9
 msgid "Free space no notify threshold"
@@ -370,7 +391,9 @@ msgstr "Prag fără notificare procent liber"
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr "Specifică o valoare în GB. Dacă spațiul liber este mai mare, nu se va afișa nicio avertizare."
+msgstr ""
+"Specifică o valoare în GB. Dacă spațiul liber este mai mare, nu se va afișa "
+"nicio avertizare."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:11
 msgid "Minimum notify period for repeated warnings"
@@ -380,7 +403,9 @@ msgstr "Perioada minimă de notificare pentru avertizările repetitive"
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "Specifică un interval de timp în minute. Avertizări repetate pentru un volum nu vor apărea mai des decât acest interval."
+msgstr ""
+"Specifică un interval de timp în minute. Avertizări repetate pentru un volum"
+" nu vor apărea mai des decât acest interval."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
@@ -388,7 +413,9 @@ msgstr "Căi de montare de ignorat"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr "Specifică o listă de căi pentru montare ce vor fi ignorate atunci când mai au puțin spațiu liber."
+msgstr ""
+"Specifică o listă de căi pentru montare ce vor fi ignorate atunci când mai "
+"au puțin spațiu liber."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
@@ -396,7 +423,9 @@ msgstr "Arată notificare pe ecran"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:4
 msgid "Whether an OSD notification is shown to notify about changes"
-msgstr "Dacă să fie afișată o notificare pe ecran pentru a vă informa despre schimbări"
+msgstr ""
+"Dacă să fie afișată o notificare pe ecran pentru a vă informa despre "
+"schimbări"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:7
 msgid "Volume step"
@@ -448,7 +477,7 @@ msgstr "Asociere cu oprirea."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
 msgid "Log out"
-msgstr "Închidere sesiune"
+msgstr "Deconectare"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:20
 msgid "Binding to log out."
@@ -472,7 +501,7 @@ msgstr "Asociere pentru deschiderea dosarului personal."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
 msgid "Search"
-msgstr "Căutare"
+msgstr "Caută"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:26
 msgid "Binding to launch the search tool."
@@ -586,7 +615,9 @@ msgstr "Arată monitoarele în zona de notificare"
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
-msgstr "Dacă să fie afișată în panou o pictogramă de notificare cu informații legate de ecran."
+msgstr ""
+"Dacă să fie afișată în panou o pictogramă de notificare cu informații legate"
+" de ecran."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:7
 msgid "Do not touch monitor configuration"
@@ -600,7 +631,13 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr "De obicei,  mate-settings-daemon configurează monitoarele interne și externe după stabilirile turn_on_external_monitors_at_startup și  turn_on_laptop_monitor_at_startup și determină astfel o aranjare de tip unul-langă-altul sau de tip clonă.  Setând valoarea acestei chei ca True, se  dezactivează acest comportament, iar stabilirile monitorului vor rămâne neatinse (în caz că nu există o configurare explicită facută de utilizator)."
+msgstr ""
+"De obicei,  mate-settings-daemon configurează monitoarele interne și externe"
+" după stabilirile turn_on_external_monitors_at_startup și  "
+"turn_on_laptop_monitor_at_startup și determină astfel o aranjare de tip "
+"unul-langă-altul sau de tip clonă.  Setând valoarea acestei chei ca True, se"
+"  dezactivează acest comportament, iar stabilirile monitorului vor rămâne "
+"neatinse (în caz că nu există o configurare explicită facută de utilizator)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:9
 msgid "Turn on external monitor after system boot"
@@ -610,7 +647,9 @@ msgstr "Pornește monitorul extern după pornirea sistemului"
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
-msgstr "Pornește monitorul extern după pornirea sistemului dacă utilizatorul conectează un monitor la pornirea sistemului."
+msgstr ""
+"Pornește monitorul extern după pornirea sistemului dacă utilizatorul "
+"conectează un monitor la pornirea sistemului."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:11
 msgid "Turn on laptop monitor after system boot"
@@ -620,7 +659,9 @@ msgstr "Pornește monitorul laptopului după pornirea sistemului"
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr "Pornește monitorul laptopului după pornirea sistemului dacă utilizatorul conectează un monitor la pornirea sistemului."
+msgstr ""
+"Pornește monitorul laptopului după pornirea sistemului dacă utilizatorul "
+"conectează un monitor la pornirea sistemului."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:13
 msgid "File for default configuration for RandR"
@@ -633,7 +674,12 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr "Modulul XRandR va căuta configurația implicită în fișierul specificat de această cheie. Este similar cu ~/.config/monitors.xml care în mod normal este stocat în dosarul personal al utilizatorului. Dacă un utilizator nu are un astfel de fișier, sau dacă acesta nu se potrivește cu configurația monitoarelor, se va utiliza fișierul specificat de această cheie."
+msgstr ""
+"Modulul XRandR va căuta configurația implicită în fișierul specificat de "
+"această cheie. Este similar cu ~/.config/monitors.xml care în mod normal "
+"este stocat în dosarul personal al utilizatorului. Dacă un utilizator nu are"
+" un astfel de fișier, sau dacă acesta nu se potrivește cu configurația "
+"monitoarelor, se va utiliza fișierul specificat de această cheie."
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
@@ -641,7 +687,7 @@ msgstr "Serviciul de configurări MATE"
 
 #: ../mate-settings-daemon/main.c:65
 msgid "Enable debugging code"
-msgstr "Activează codul pentru depanare"
+msgstr "Activează codul de depanare"
 
 #: ../mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
@@ -663,102 +709,109 @@ msgstr "Accesibilitate tastatură"
 msgid "Accessibility keyboard plugin"
 msgstr "Modul accesibilitate tastatură"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "A intervenit o eroare la afișarea ajutorului: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
 msgid "Do you want to activate Slow Keys?"
 msgstr "Doriți să activați „Tastele încete”?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Doriți să dezactivați „Tastele încete”?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "Ați ținut tasta Shift apăsată timp de opt secunde. Aceasta este tasta ce activează „Tastele încete” și schimbă modul de funcționare al tastaturii."
+msgstr ""
+"Ați ținut tasta Shift apăsată timp de opt secunde. Aceasta este tasta ce "
+"activează „Tastele încete” și schimbă modul de funcționare al tastaturii."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't activate"
 msgstr "Nu activa"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't deactivate"
 msgstr "Nu dezactiva"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Activate"
 msgstr "Activează"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Deactivate"
 msgstr "Dezactivează"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't activate"
 msgstr "_Nu activa"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't deactivate"
 msgstr "_Nu dezactiva"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Activate"
 msgstr "_Activează"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Deactivate"
 msgstr "_Dezactivează"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Slow Keys Alert"
 msgstr "Alertă pentru „Taste încete”"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Doriți să activați „Modificatorii persistenți”?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Doriți să dezactivați „Modificatorii persistenți”?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "Ați apăsat Shift de cinci ori la rând. Aceasta este combinația ce activează „Modificatorii persistenți” și schimbă modul de funcționare al tastaturii."
+msgstr ""
+"Ați apăsat Shift de cinci ori la rând. Aceasta este combinația ce activează "
+"„Modificatorii persistenți” și schimbă modul de funcționare al tastaturii."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "Ați apăsat două taste în același timp sau ați apăsat Shift de cinci ori la rând. Aceste acțiuni inactivează „Modificatorii persistenți” și schimbă modul de funcționare al tastaturii."
+msgstr ""
+"Ați apăsat două taste în același timp sau ați apăsat Shift de cinci ori la "
+"rând. Aceste acțiuni inactivează „Modificatorii persistenți” și schimbă "
+"modul de funcționare al tastaturii."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Sticky Keys Alert"
 msgstr "Alertă „Modificatori persistenți”"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Preferințe acces universal"
@@ -841,40 +894,51 @@ msgstr "Acest calculator mai are doar %s spațiu liber pe disc."
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "Puteți obține mai mult spațiu liber prin golirea coșului de gunoi, ștergerea programelor sau fișierelor nefolosite sau prin mutarea fișierelor pe un alt disc sau partiție."
+msgstr ""
+"Puteți obține mai mult spațiu liber prin golirea coșului de gunoi, ștergerea"
+" programelor sau fișierelor nefolosite sau prin mutarea fișierelor pe un alt"
+" disc sau partiție."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
-msgstr "Puteți obține mai mult spațiu liber prin ștergerea programelor sau fișierelor nefolosite sau prin mutarea fișierelor pe un alt disc sau partiție."
+msgstr ""
+"Puteți obține mai mult spațiu liber prin ștergerea programelor sau "
+"fișierelor nefolosite sau prin mutarea fișierelor pe un alt disc sau "
+"partiție."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "Puteți obține mai mult spațiu liber prin golirea coșului de gunoi, ștergerea programelor sau fișierelor nefolosite sau prin mutarea fișierelor pe un disc extern."
+msgstr ""
+"Puteți obține mai mult spațiu liber prin golirea coșului de gunoi, ștergerea"
+" programelor sau fișierelor nefolosite sau prin mutarea fișierelor pe un "
+"disc extern."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:110
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
-msgstr "Puteți obține mai mult spațiu liber prin ștergerea programelor sau fișierelor nefolosite sau prin mutarea fișierelor pe un disc extern."
+msgstr ""
+"Puteți obține mai mult spațiu liber prin ștergerea programelor sau "
+"fișierelor nefolosite sau prin mutarea fișierelor pe un disc extern."
 
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:207
 msgid "Low Disk Space"
 msgstr "Spațiu redus pe disc"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
 msgstr "Golește coșul de gunoi"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
 msgstr "Examinează…"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Ignore"
 msgstr "Ignoră"
 
@@ -886,33 +950,36 @@ msgstr "Se șterge elementul: %lu din %lu"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 msgid "Removing: %s"
-msgstr "Se șterge: %s"
+msgstr "Se elimină: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr "Se golește coșul de gunoi"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr "Se pregătește golirea coșului de gunoi…"
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr "De la:"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
-msgstr "Goliți cu totul coșul de gunoi?"
+msgstr "Goliți toate elementele din coșul de gunoi?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "Dacă alegeți să goliți coșul de gunoi, toate elementele vor fi șterse definitiv. De asemenea puteți să ștergeți elementele și individual."
+msgstr ""
+"Dacă alegeți să goliți coșul de gunoi, toate elementele din el vor fi "
+"pierdute pentru totdeauna. Nu uitați că elementele din coșul de gunoi pot fi"
+" șterse și independent unul de celălalt."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
 msgstr "Gol_ește coșul de gunoi"
 
@@ -926,12 +993,14 @@ msgstr "Asocierea de taste (%s) nu este validă"
 msgid "Key binding (%s) is incomplete"
 msgstr "Asocierea de taste (%s) este incompletă"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:486
+#: ../plugins/keybindings/msd-keybindings-manager.c:490
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "Eroare la pornirea (%s)\ncare este mapat cheii (%s)"
+msgstr ""
+"Eroare la pornirea (%s)\n"
+"care este mapat cheii (%s)"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
@@ -982,14 +1051,18 @@ msgstr "Afișează aranjamentul a_ctual"
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "Nu s-a putut obține terminalul implicit. Asigurați-vă că terminalul implicit e setat și conectat la o aplicație valabilă."
+msgstr ""
+"Nu s-a putut obține terminalul implicit. Asigurați-vă că terminalul implicit"
+" e setat și conectat la o aplicație valabilă."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "Nu s-a putut executa comanda: %s\nAsigurați-vă că aceasta este o comandă validă."
+msgstr ""
+"Nu s-a putut executa comanda: %s\n"
+"Asigurați-vă că aceasta este o comandă validă."
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1006,7 +1079,9 @@ msgstr "Nu s-au putut activa facilitățile pentru accesibilitatea mausului"
 #: ../plugins/mouse/msd-mouse-manager.c:1442
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
-msgstr "Accesibilitățile mausului necesită instalarea Mousetweaks în sistemul dumneavoastră."
+msgstr ""
+"Accesibilitățile mausului necesită instalarea Mousetweaks în sistemul "
+"dumneavoastră."
 
 #: ../plugins/mouse/msd-mouse-manager.c:1445
 msgid "Mouse Preferences"
@@ -1054,16 +1129,17 @@ msgstr "Nu s-a putut restaura configurația ecranului"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:422
 msgid "Could not restore the display's configuration from a backup"
-msgstr "Nu s-a putut restaura configurația ecranului dintr-o copie de siguranță"
+msgstr ""
+"Nu s-a putut restaura configurația ecranului dintr-o copie de siguranță"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:443
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Ecranul va fi restaurat la configurația anterioară în %d secundă"
-msgstr[1] "Ecranul va fi restaurat la configurația anterioară în %d secunde"
-msgstr[2] "Ecranul va fi restaurat la configurația anterioară în %d de secunde"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1090,39 +1166,39 @@ msgstr "Nu s-a putut reîncărca informația ecranului: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Se încearcă oricum comutarea configurării monitorului."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1889
+#: ../plugins/xrandr/msd-xrandr-manager.c:1885
 msgid "Rotation not supported"
 msgstr "Rotirea nu este suportată"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1945
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Could not save monitor configuration"
 msgstr "Nu s-a putut salva configurația monitorului"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1959
 msgid "Normal"
-msgstr "Normal"
+msgstr "Normală"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1960
 msgid "Left"
 msgstr "Stânga"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1961
 msgid "Right"
 msgstr "Dreapta"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1966
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Upside Down"
 msgstr "Răsturnat"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2088
+#: ../plugins/xrandr/msd-xrandr-manager.c:2084
 msgid "_Configure Display Settings…"
 msgstr "_Configurare preferințe ecran…"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2141
+#: ../plugins/xrandr/msd-xrandr-manager.c:2137
 msgid "Configure display settings"
 msgstr "Configurare preferințe ecran"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2201
+#: ../plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Nu s-a putut aplica configurația stocată pentru monitoare"
 
@@ -1182,7 +1258,9 @@ msgstr "nu se pot urmări evenimentele inițiate de card - %s"
 #: ../plugins/smartcard/msd-smartcard-manager.c:1105
 #, c-format
 msgid "encountered unexpected error while waiting for smartcard events"
-msgstr "s-a întâlnit o eroare neașteptată în timp ce se așteptau evenimente de la smartcard"
+msgstr ""
+"s-a întâlnit o eroare neașteptată în timp ce se așteptau evenimente de la "
+"smartcard"
 
 #: ../plugins/smartcard/msd-smartcard.c:154
 msgid "Slot ID"
@@ -1235,4 +1313,5 @@ msgstr "Configurează ceasul fizic al calculatorului"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:6
 msgid "Privileges are required to configure the hardware clock."
-msgstr "Sunt necesare privilegii pentru a modifica ceasul fizic al calculatorului."
+msgstr ""
+"Sunt necesare privilegii pentru a modifica ceasul fizic al calculatorului."

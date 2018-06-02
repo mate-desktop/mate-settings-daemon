@@ -1,20 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Ivar Smolin <okul@linux.ee>, 2014-2016
-# Lauris Kaplinski <lauris ariman ee>, 1999
-# Priit Laes <plaes plaes org>, 2005, 2006, 2009
-# Tõivo Leedjärv <toivo linux ee>, 2002, 2003
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 21:52+0300\n"
-"PO-Revision-Date: 2017-09-19 11:21+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Estonian (http://www.transifex.com/mate/MATE/language/et/)\n"
+"POT-Creation-Date: 2018-03-17 15:39+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
+"Language-Team: Estonian (https://www.transifex.com/mate/teams/13566/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -72,7 +69,9 @@ msgstr "DPI"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "Eraldusvõime, mida kasutatakse kirjasuuruste pikslitesse teisendamisel. Ühik punkti tollile."
+msgstr ""
+"Eraldusvõime, mida kasutatakse kirjasuuruste pikslitesse teisendamisel. Ühik"
+" punkti tollile."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
@@ -83,7 +82,11 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "Kirjatüüpide renderdamisel kasutatav sakisilumise meetod. Võimalikud väärtused on: \"none\" sakisilumise keelamiseks, \"grayscale\" standardseks halltoonides sakisilumiseks ja \"rgba\" alampiksli sakisilumiseks (ainult LCD ekraanidel)."
+msgstr ""
+"Kirjatüüpide renderdamisel kasutatav sakisilumise meetod. Võimalikud "
+"väärtused on: \"none\" sakisilumise keelamiseks, \"grayscale\" standardseks "
+"halltoonides sakisilumiseks ja \"rgba\" alampiksli sakisilumiseks (ainult "
+"LCD ekraanidel)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
@@ -94,7 +97,11 @@ msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "Fontide renderdamisel kasutatav varjundamise liik. Võimaliku väärtused on \"none\" varjundamise keelamiseks, \"slight\" lihtsa, \"medium\" keskmise ja \"full\" maksimaalse varjundamise jaoks (võib põhjustada tähekujude moondumist)."
+msgstr ""
+"Fontide renderdamisel kasutatav varjundamise liik. Võimaliku väärtused on "
+"\"none\" varjundamise keelamiseks, \"slight\" lihtsa, \"medium\" keskmise ja"
+" \"full\" maksimaalse varjundamise jaoks (võib põhjustada tähekujude "
+"moondumist)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
@@ -106,7 +113,11 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "Alampikslite elementide järjestus LCD-ekraanil. Kasutatakse ainult juhul, kui sakisilumise väärtuseks on määratud \"rgba\". Võimalikud väärtused: \"rgb\" - punane on vasakul (enimkasutatav), \"bgr\" - sinine on vasakul, \"vrgb\" - punane on üleval, \"vbgr\" - punane on all."
+msgstr ""
+"Alampikslite elementide järjestus LCD-ekraanil. Kasutatakse ainult juhul, "
+"kui sakisilumise väärtuseks on määratud \"rgba\". Võimalikud väärtused: "
+"\"rgb\" - punane on vasakul (enimkasutatav), \"bgr\" - sinine on vasakul, "
+"\"vrgb\" - punane on üleval, \"vbgr\" - punane on all."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -116,7 +127,10 @@ msgstr "Smartcardi eemaldamise tegevus"
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr "Määra selle väärtuseks \"none\" (puudub), \"lock_screen\" (lukustatakse ekraan) või \"force_logout\" (väljalogimise nõudmine). See tegevus käivitatakse, kui eemaldatakse smartcard, mida kasutati sisselogimiseks."
+msgstr ""
+"Määra selle väärtuseks \"none\" (puudub), \"lock_screen\" (lukustatakse "
+"ekraan) või \"force_logout\" (väljalogimise nõudmine). See tegevus "
+"käivitatakse, kui eemaldatakse smartcard, mida kasutati sisselogimiseks."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:1
 msgid "Disable touchpad while typing"
@@ -126,7 +140,9 @@ msgstr "Puuteplaadi keelamine tippimise ajaks"
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "Märgi see väärtus juhul, kui sind segab, et sa tippimise ajal kogemata puuteplaati puudutad."
+msgstr ""
+"Märgi see väärtus juhul, kui sind segab, et sa tippimise ajal kogemata "
+"puuteplaati puudutad."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:3
 msgid "Enable mouse clicks with touchpad"
@@ -135,7 +151,8 @@ msgstr "Hiireklõpsude lubamine puuteplaadilt"
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "Kui märgitud, siis tõlgendatakse puuteplaadil toksimist hiireklõpsudena."
+msgstr ""
+"Kui märgitud, siis tõlgendatakse puuteplaadil toksimist hiireklõpsudena."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Enable vertical edge scrolling"
@@ -175,7 +192,9 @@ msgstr "Naturaalne kerimine"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
-msgstr "Selle valiku märkimise korralo on naturaalne (äraspidine) kerimine puutepatjade jaoks lubatud"
+msgstr ""
+"Selle valiku märkimise korralo on naturaalne (äraspidine) kerimine "
+"puutepatjade jaoks lubatud"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
 msgid "Enable touchpad"
@@ -191,7 +210,8 @@ msgstr "Nupuklõpsu emuleerimine kahe sõrme abil"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:18
 msgid "0 thru 3, 0 is inactive, 1-3 is button to emulate"
-msgstr "0-st kuni 3-ni, 0 tähendab mitteaktiivset, 1-3 tähendab emuleeritavat nuppu"
+msgstr ""
+"0-st kuni 3-ni, 0 tähendab mitteaktiivset, 1-3 tähendab emuleeritavat nuppu"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:19
 msgid "Enable three-finger button-click emulation"
@@ -205,7 +225,11 @@ msgstr "Ühe sõrmega toksimise nupp"
 msgid ""
 "Select the button mapping for one-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Hiirenupu valik puuteplaadi toksimisel ühe sõrmega. Toetatud väärtused on 1: vasak hiirenupp, 2: keskmine hiirenupp, 3: parem hiirenupp.\n\n\n Select the button mapping for one-finger tap. Supported values are: 1: left mouse button 2: middle mouse button 3: right mouse button"
+msgstr ""
+"Hiirenupu valik puuteplaadi toksimisel ühe sõrmega. Toetatud väärtused on 1: vasak hiirenupp, 2: keskmine hiirenupp, 3: parem hiirenupp.\n"
+"\n"
+"\n"
+" Select the button mapping for one-finger tap. Supported values are: 1: left mouse button 2: middle mouse button 3: right mouse button"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
 msgid "Two finger tap button"
@@ -215,7 +239,9 @@ msgstr "Kahe sõrmega toksimise nupp"
 msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Hiirenupu valik puuteplaadi toksimisel kahe sõrmega. Toetatud väärtused on 1: vasak hiirenupp, 2: keskmine hiirenupp, 3: parem hiirenupp."
+msgstr ""
+"Hiirenupu valik puuteplaadi toksimisel kahe sõrmega. Toetatud väärtused on "
+"1: vasak hiirenupp, 2: keskmine hiirenupp, 3: parem hiirenupp."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
 msgid "Three finger tap button"
@@ -225,7 +251,9 @@ msgstr "Kolme sõrmega toksimise nupp"
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Hiirenupu valik puuteplaadi toksimisel kolme sõrmega. Toetatud väärtused on 1: vasak hiirenupp, 2: keskmine hiirenupp, 3: parem hiirenupp."
+msgstr ""
+"Hiirenupu valik puuteplaadi toksimisel kolme sõrmega. Toetatud väärtused on "
+"1: vasak hiirenupp, 2: keskmine hiirenupp, 3: parem hiirenupp."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:26
 msgid "Touchpad button orientation"
@@ -249,7 +277,7 @@ msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
-msgstr ""
+msgstr "Liikumise lävi"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:31
 msgid ""
@@ -295,7 +323,8 @@ msgstr "Selle plugina aktiveerimine"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr "Kas see plugin võib olla mate-settings-daemon'i poolt aktiveeritud või mitte"
+msgstr ""
+"Kas see plugin võib olla mate-settings-daemon'i poolt aktiveeritud või mitte"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:3
@@ -345,7 +374,9 @@ msgstr "Vaba kettaruumi protsendi teavituslävi"
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr "Hoiatuse kuvamiseks vajaliku vaba kettaruumi lävi protsentides. Hoiatust kuvatakse juhul, kui vaba kettaruumi jääb määratud protsendist vähem."
+msgstr ""
+"Hoiatuse kuvamiseks vajaliku vaba kettaruumi lävi protsentides. Hoiatust "
+"kuvatakse juhul, kui vaba kettaruumi jääb määratud protsendist vähem."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
 msgid "Subsequent free percentage notify threshold"
@@ -355,7 +386,9 @@ msgstr "Vaba kettaruumi protsendi lävi enne kordushoiatust"
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
-msgstr "Mitme protsendini peab vaba kettaruum enne kordushoiatuse näitamist kahanema."
+msgstr ""
+"Mitme protsendini peab vaba kettaruum enne kordushoiatuse näitamist "
+"kahanema."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:9
 msgid "Free space no notify threshold"
@@ -365,7 +398,9 @@ msgstr "Vaba kettaruumi teavitusläve piir"
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr "Maht tuleb määrata gigabaitides. Kui vaba ruumi on sellest väärtusest rohkem, siis ei näidata mingit hoiatust."
+msgstr ""
+"Maht tuleb määrata gigabaitides. Kui vaba ruumi on sellest väärtusest "
+"rohkem, siis ei näidata mingit hoiatust."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:11
 msgid "Minimum notify period for repeated warnings"
@@ -375,7 +410,9 @@ msgstr "Vähim teavituste vahe kordushoiatuste jaoks"
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "Aeg tuleb määrata minutites. Kordushoiatused sama köite kohta ei ilmu enne määratud aja möödumist."
+msgstr ""
+"Aeg tuleb määrata minutites. Kordushoiatused sama köite kohta ei ilmu enne "
+"määratud aja möödumist."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
@@ -443,7 +480,7 @@ msgstr "Klahviseos seiskamiseks."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
 msgid "Log out"
-msgstr "Väljalogimine"
+msgstr "Logi välja"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:20
 msgid "Binding to log out."
@@ -595,7 +632,13 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr "Harilikult määrab mate-settings-daemon sisemise ja välimise kuvari sätted vastavalt võtmetele turn_on_external_monitors_at_startup ja turn_on_laptop_monitor_at_startup settings ning valib kuvaritele sobiva režiimi: kloonimise või külg külje kõrval näitamise. Selle võtme märkimine keelab kuvari sätete muutmise täielikult (kuniks kasutaja pole selleks eraldi sätteid määranud)."
+msgstr ""
+"Harilikult määrab mate-settings-daemon sisemise ja välimise kuvari sätted "
+"vastavalt võtmetele turn_on_external_monitors_at_startup ja "
+"turn_on_laptop_monitor_at_startup settings ning valib kuvaritele sobiva "
+"režiimi: kloonimise või külg külje kõrval näitamise. Selle võtme märkimine "
+"keelab kuvari sätete muutmise täielikult (kuniks kasutaja pole selleks "
+"eraldi sätteid määranud)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:9
 msgid "Turn on external monitor after system boot"
@@ -605,7 +648,9 @@ msgstr "Välise monitori sisselülitamine pärast süsteemi alglaadimist"
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
-msgstr "Kui kasutaja ühendab süsteemi alglaadimisel välise monitori, siis lülitatakse see alglaadimise järel sisse."
+msgstr ""
+"Kui kasutaja ühendab süsteemi alglaadimisel välise monitori, siis "
+"lülitatakse see alglaadimise järel sisse."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:11
 msgid "Turn on laptop monitor after system boot"
@@ -615,7 +660,9 @@ msgstr "Sülearvuti monitori sisselülitamine pärast süsteemi alglaadimist"
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr "Kui alglaadimisel ühendatakse väline monitor, siis pärast süsteemi alglaadimist lülitatakse sülearvuti monitor sisse."
+msgstr ""
+"Kui alglaadimisel ühendatakse väline monitor, siis pärast süsteemi "
+"alglaadimist lülitatakse sülearvuti monitor sisse."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:13
 msgid "File for default configuration for RandR"
@@ -628,7 +675,11 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr "XRandR plugin otsib vaikesätteid selle võtmega määratud failist. See on samasugune fail, nagu ~/.config/monitors.xml kasutaja kodukataloogis. Kui kasutajal ei ole nimetatud faili või see fail ei sobi kasutaja monitoride arvuga, siis kasutatakse hoopis käesoleva võtmega määratud faili."
+msgstr ""
+"XRandR plugin otsib vaikesätteid selle võtmega määratud failist. See on "
+"samasugune fail, nagu ~/.config/monitors.xml kasutaja kodukataloogis. Kui "
+"kasutajal ei ole nimetatud faili või see fail ei sobi kasutaja monitoride "
+"arvuga, siis kasutatakse hoopis käesoleva võtmega määratud faili."
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
@@ -636,7 +687,7 @@ msgstr "MATE sätetedeemon"
 
 #: ../mate-settings-daemon/main.c:65
 msgid "Enable debugging code"
-msgstr "Silumiskoodi lubamine"
+msgstr "Silumise lubamine"
 
 #: ../mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
@@ -658,102 +709,111 @@ msgstr "Hõlbustustega klaviatuur"
 msgid "Accessibility keyboard plugin"
 msgstr "Hõlbustustega klaviatuuri plugin"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Abiteabe kuvamisel tekkis viga: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
 msgid "Do you want to activate Slow Keys?"
 msgstr "Kas soovid aeglased klahvid sisse lülitada?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Kas soovid aeglased klahvid välja lülitada?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "Sa hoidsid Shift klahvi all 8 sekundi vältel.  See on kiirklahv, mis lülitab sisse aeglaste klahvide funktsionaalsuse ja seetõttu muudab ka Sinu klaviatuuri käitumist."
+msgstr ""
+"Sa hoidsid Shift klahvi all 8 sekundi vältel.  See on kiirklahv, mis lülitab"
+" sisse aeglaste klahvide funktsionaalsuse ja seetõttu muudab ka Sinu "
+"klaviatuuri käitumist."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't activate"
 msgstr "Ära lülita sisse"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't deactivate"
 msgstr "Ära lülita välja"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Activate"
 msgstr "Lülita sisse"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Deactivate"
 msgstr "Lülita välja"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't activate"
 msgstr "Ä_ra lülita sisse"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't deactivate"
 msgstr "Ä_ra lülita välja"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Activate"
-msgstr "Lülita _sisse"
+msgstr "_Aktiveeri"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Deactivate"
-msgstr "Lülita _välja"
+msgstr "_Deaktiveeri"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Slow Keys Alert"
 msgstr "Aeglaste klahvide hoiatus"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Kas soovid kleepuvad klahvid sisse lülitada?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Kas soovid kleepuvad klahvid välja lülitadada?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "Sa vajutasid Shift klahvi 5 korda järjest.  See on kiirklahv, mis lülitab sisse kleepuvate klahvide funktsionaalsuse ja seetõttu muudab ka Sinu klaviatuuri käitumist."
+msgstr ""
+"Sa vajutasid Shift klahvi 5 korda järjest.  See on kiirklahv, mis lülitab "
+"sisse kleepuvate klahvide funktsionaalsuse ja seetõttu muudab ka Sinu "
+"klaviatuuri käitumist."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "Sa vajutasid korraga kahte klahvi või vajutasid Shift klahvi 5 korda järjest. See lülitab sisse kleepuvate klahvide funktsionaalsuse ja seetõttu muudab ka Sinu klaviatuuri käitumist."
+msgstr ""
+"Sa vajutasid korraga kahte klahvi või vajutasid Shift klahvi 5 korda "
+"järjest. See lülitab sisse kleepuvate klahvide funktsionaalsuse ja seetõttu "
+"muudab ka Sinu klaviatuuri käitumist."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Sticky Keys Alert"
 msgstr "Kleepuvate klahvide hoiatus"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Universaalse ligipääsu eelistused"
@@ -780,7 +840,9 @@ msgstr "_Tekst on suurem ja seda on lihtsam lugeda"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
-msgstr "_Kiirklahvide kombinatsioone on võimalik valida klahvhaaval (kleepuvad klahvid)"
+msgstr ""
+"_Kiirklahvide kombinatsioone on võimalik valida klahvhaaval (kleepuvad "
+"klahvid)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
@@ -788,7 +850,8 @@ msgstr "Klahvide topeltvajutusi _eiratakse (hüpikklahvid)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "Press and _hold keys to accept them (Slow Keys)"
-msgstr "Vajutusega nõustumiseks tuleb klahvi pikalt all _hoida (aeglased klahvid)"
+msgstr ""
+"Vajutusega nõustumiseks tuleb klahvi pikalt all _hoida (aeglased klahvid)"
 
 #: ../plugins/background/background.mate-settings-plugin.in.h:1
 msgid "Background"
@@ -836,40 +899,51 @@ msgstr "Sellel arvutil on ainult %s vaba kettaruumi."
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "Kettaruumi on võimalik vabastada prügikasti tühjendamisega, kasutusel mitteolevate failide või programmide eemaldamisega või failide ümbertõstmisega teisele kettale või partitsioonile."
+msgstr ""
+"Kettaruumi on võimalik vabastada prügikasti tühjendamisega, kasutusel "
+"mitteolevate failide või programmide eemaldamisega või failide "
+"ümbertõstmisega teisele kettale või partitsioonile."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
-msgstr "Kettaruumi on võimalik vabastada kasutusel mitteolevate failide või programmide eemaldamisega või failide ümbertõstmisega teisele kettale või partitsioonile."
+msgstr ""
+"Kettaruumi on võimalik vabastada kasutusel mitteolevate failide või "
+"programmide eemaldamisega või failide ümbertõstmisega teisele kettale või "
+"partitsioonile."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "Kettaruumi on võimalik vabastada prügikasti tühjendamisega, kasutusel mitteolevate failide või programmide eemaldamisega või failide ümbertõstmisega välisele kettale."
+msgstr ""
+"Kettaruumi on võimalik vabastada prügikasti tühjendamisega, kasutusel "
+"mitteolevate failide või programmide eemaldamisega või failide "
+"ümbertõstmisega välisele kettale."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:110
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
-msgstr "Kettaruumi on võimalik vabastada kasutusel mitteolevate failide või programmide eemaldamisega või failide ümbertõstmisega välisele kettale."
+msgstr ""
+"Kettaruumi on võimalik vabastada kasutusel mitteolevate failide või "
+"programmide eemaldamisega või failide ümbertõstmisega välisele kettale."
 
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:207
 msgid "Low Disk Space"
 msgstr "Kettal on vähe ruumi"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
 msgstr "Tühjenda prügikast"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
 msgstr "Uuri olukorda…"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Ignore"
 msgstr "Eira"
 
@@ -884,30 +958,32 @@ msgid "Removing: %s"
 msgstr "Eemaldamine: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr "Prügikasti tühjendamine"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr "Ettevalmistused prügikasti tühjendamiseks…"
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr "Kust:"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
-msgstr "Kas tühjendada kogu prügikast?"
+msgstr "Kas tühjendada prügikast kõigist asjadest?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "Kui sa valid prügikasti tühjendamise, siis kõik seal asuvad asjad visatakse jäädavalt minema. Vajadusel saab neid asju ka ükshaaval minema visata."
+msgstr ""
+"Kui sa valid prügikasti tühjendamise, siis visatakse kõik seal asuvad asjad "
+"jäädavalt minema. Neid asju on võimalik aga ka ükshaaval kustutada."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
 msgstr "_Tühjenda prügikast"
 
@@ -921,12 +997,14 @@ msgstr "Klahviseos (%s) on vigane"
 msgid "Key binding (%s) is incomplete"
 msgstr "Klahviseos (%s) on poolik"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:486
+#: ../plugins/keybindings/msd-keybindings-manager.c:490
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "Viga (%s) kävitamise proovimisel,\nmis on ühendatud klahviga (%s)"
+msgstr ""
+"Viga (%s) kävitamise proovimisel,\n"
+"mis on ühendatud klahviga (%s)"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
@@ -959,7 +1037,19 @@ msgid ""
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr "Viga XKB sätete aktiveerimisel.\nSee võib juhtuda mitmete asjaolude tõttu:\n • viga libxklavier teegis\n • viga X-serveris (utiliidid xkbcomp ja xmodmap)\n • ühildamatus libxkbfile ja X-serveri vahel\n\nX-serveri versiooniandmed:\n%s\n%d\nKui sa plaanid olukorra kohta vearaporti saata, siis lisa sinna ka:\n • <b>%s</b> tulemus\n • <b>%s</b> tulemus"
+msgstr ""
+"Viga XKB sätete aktiveerimisel.\n"
+"See võib juhtuda mitmete asjaolude tõttu:\n"
+" • viga libxklavier teegis\n"
+" • viga X-serveris (utiliidid xkbcomp ja xmodmap)\n"
+" • ühildamatus libxkbfile ja X-serveri vahel\n"
+"\n"
+"X-serveri versiooniandmed:\n"
+"%s\n"
+"%d\n"
+"Kui sa plaanid olukorra kohta vearaporti saata, siis lisa sinna ka:\n"
+" • <b>%s</b> tulemus\n"
+" • <b>%s</b> tulemus"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:279
 msgid "_Layouts"
@@ -977,14 +1067,18 @@ msgstr "Näita _praegust paigutust"
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "Vaikimisi terminali pole võimalik hankida. Veendu, et vaikimisi terminali käsuks on määratud sobilik rakendus."
+msgstr ""
+"Vaikimisi terminali pole võimalik hankida. Veendu, et vaikimisi terminali "
+"käsuks on määratud sobilik rakendus."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "Käsku pole võimalik käivitada: %s\nVeendu, et selline käsk on olemas."
+msgstr ""
+"Käsku pole võimalik käivitada: %s\n"
+"Veendu, et selline käsk on olemas."
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1056,8 +1150,8 @@ msgstr "Kuva sätteid pole võimalik varukoopiast taastada"
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Kuva eelmised sätted taastatakse %d sekundi pärast"
-msgstr[1] "Kuva eelmised sätted taastatakse %d sekundi pärast"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1084,39 +1178,39 @@ msgstr "Ekraaniteavet pole võimalik värskendada: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Sellest hoolimata proovitakse kuvari häälestust muuta."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1889
+#: ../plugins/xrandr/msd-xrandr-manager.c:1885
 msgid "Rotation not supported"
 msgstr "Pööramine pole toetatud"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1945
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Could not save monitor configuration"
 msgstr "Kuvari häälestust pole võimalik salvestada"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1959
 msgid "Normal"
 msgstr "Tavaline"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1960
 msgid "Left"
-msgstr "Vasakule"
+msgstr "Vasak"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1961
 msgid "Right"
-msgstr "Paremale"
+msgstr "Parem"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1966
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Upside Down"
-msgstr "Tagurpidi"
+msgstr "Pea peal"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2088
+#: ../plugins/xrandr/msd-xrandr-manager.c:2084
 msgid "_Configure Display Settings…"
 msgstr "_Seadista kuva…"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2141
+#: ../plugins/xrandr/msd-xrandr-manager.c:2137
 msgid "Configure display settings"
 msgstr "Kuva sätete määramine"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2201
+#: ../plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Kuvarite jaoks salvestatud häälestust pole võimalik rakendada"
 

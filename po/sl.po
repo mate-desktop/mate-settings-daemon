@@ -1,19 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Andraž Tori <andraz.tori1@guest.arnes.si>, 2002
-# Damir Jerovšek <jierro@windowslive.com>, 2013
-# Helena S <ele@tutamail.com>, 2017
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 21:52+0300\n"
-"PO-Revision-Date: 2017-09-23 18:08+0000\n"
-"Last-Translator: Helena S <ele@tutamail.com>\n"
-"Language-Team: Slovenian (http://www.transifex.com/mate/MATE/language/sl/)\n"
+"POT-Creation-Date: 2018-03-17 15:39+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Helena S <ele@tutamail.com>, 2018\n"
+"Language-Team: Slovenian (https://www.transifex.com/mate/teams/13566/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -71,7 +69,9 @@ msgstr "DPI"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "Ločljivost, uporabljena za pretvarjanje velikosti pisav v točkovne vrednosti (točke na inč)."
+msgstr ""
+"Ločljivost, uporabljena za pretvarjanje velikosti pisav v točkovne vrednosti"
+" (točke na inč)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
@@ -82,7 +82,10 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "Vrsta glajenja robov med izrisovanjem pisave. Mogoče vrednosti so: \"brez\" za prezrto glajenje, \"sivinsko\" za običajno glajenje sivin in \"rgba\" za glajenje podtočk (samo zasloni LCD)."
+msgstr ""
+"Vrsta glajenja robov med izrisovanjem pisave. Mogoče vrednosti so: \"brez\" "
+"za prezrto glajenje, \"sivinsko\" za običajno glajenje sivin in \"rgba\" za "
+"glajenje podtočk (samo zasloni LCD)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
@@ -93,7 +96,10 @@ msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "Vrsta glajenje pisave, uporabljena med izrisovanjem pisav. Mogoče vrednosti so \"brez\" za prezrto glajenje, \"rahlo\" za osnovno, \"srednje\" za zmerno in \"polno\" za največje glajenje (lahko popači obliko črk)."
+msgstr ""
+"Vrsta glajenje pisave, uporabljena med izrisovanjem pisav. Mogoče vrednosti "
+"so \"brez\" za prezrto glajenje, \"rahlo\" za osnovno, \"srednje\" za zmerno"
+" in \"polno\" za največje glajenje (lahko popači obliko črk)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
@@ -105,7 +111,11 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "Vrstni red elementov podtočk na zaslonu LCD; uporabno le, kadar je glajenje robov nastavljeno kot  \"rgba\". Mogoče vrednosti so: \"rgb\" za rdeče na levi (običajno), \"bgr\" za modro na levi, \"vrgb\" za rdečo na vrhu, \"vbgr\"  za rdečo na dnu."
+msgstr ""
+"Vrstni red elementov podtočk na zaslonu LCD; uporabno le, kadar je glajenje "
+"robov nastavljeno kot  \"rgba\". Mogoče vrednosti so: \"rgb\" za rdeče na "
+"levi (običajno), \"bgr\" za modro na levi, \"vrgb\" za rdečo na vrhu, "
+"\"vbgr\"  za rdečo na dnu."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -115,7 +125,10 @@ msgstr "Dejanje odstranitve pametne kartice"
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr "Določite eno možnost: \"none\" (brez), \"lock_screen\" (zakleni zaslon) ali pa \"force_logout\" (vsili odjavo). Dejanje bo izvedeno v trenutku, ko uporabnik odstrani pametno kartico, uporabljeno za prijavo."
+msgstr ""
+"Določite eno možnost: \"none\" (brez), \"lock_screen\" (zakleni zaslon) ali "
+"pa \"force_logout\" (vsili odjavo). Dejanje bo izvedeno v trenutku, ko "
+"uporabnik odstrani pametno kartico, uporabljeno za prijavo."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:1
 msgid "Disable touchpad while typing"
@@ -125,7 +138,9 @@ msgstr "Onemogoči sledilno ploščico med tipkanjem"
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "Izbrana možnost je uporabna, če pogosto nepričakovano udarite po sledilni ploščici med tipkanjem."
+msgstr ""
+"Izbrana možnost je uporabna, če pogosto nepričakovano udarite po sledilni "
+"ploščici med tipkanjem."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:3
 msgid "Enable mouse clicks with touchpad"
@@ -234,7 +249,9 @@ msgstr "Usmerjenost gumbov sledilne ploščice"
 msgid ""
 "Swap left and right buttons for left-handed touchpads with 'left', 'right' "
 "for right-handed, 'mouse' to follow the mouse setting."
-msgstr "Zamenjaj levi in desni gumb sledilne ploščice primeren za levičarje, z 'levim' in 'desnim' za desničarje, 'miška' sledi nastavitvam za miško."
+msgstr ""
+"Zamenjaj levi in desni gumb sledilne ploščice primeren za levičarje, z "
+"'levim' in 'desnim' za desničarje, 'miška' sledi nastavitvam za miško."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
 msgid "Motion Acceleration"
@@ -254,7 +271,9 @@ msgstr "Prag premikanja"
 msgid ""
 "Distance in pixels the pointer must move before accelerated touchpad motion "
 "is activated. A value of -1 is the system default."
-msgstr "Razdalja v slikovnih točkah, v kateri se mora premakniti kazalec, preden se omogoči premikanje miške. Privzeta sistemska vrednost je -1."
+msgstr ""
+"Razdalja v slikovnih točkah, v kateri se mora premakniti kazalec, preden se "
+"omogoči premikanje miške. Privzeta sistemska vrednost je -1."
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
@@ -334,7 +353,8 @@ msgstr "Uporaba prednosti za ta vstavek"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
-msgstr "Uporaba prednosti za ta vstavek v uvrstitvi zagona mate-settings-daemon"
+msgstr ""
+"Uporaba prednosti za ta vstavek v uvrstitvi zagona mate-settings-daemon"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:5
 msgid "Free percentage notify threshold"
@@ -344,7 +364,10 @@ msgstr "Prag obveščanja o deležu razpoložljivega prostora"
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr "Prag razpoložljivega prostora za začetno obvestilo o pomanjkanju prostora. V primeru, da odstotek razpoložljivega prostora pade pod določeno vrednost, se pokaže opozorilo."
+msgstr ""
+"Prag razpoložljivega prostora za začetno obvestilo o pomanjkanju prostora. V"
+" primeru, da odstotek razpoložljivega prostora pade pod določeno vrednost, "
+"se pokaže opozorilo."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
 msgid "Subsequent free percentage notify threshold"
@@ -354,7 +377,9 @@ msgstr "Prag naknadnega obveščanja o deležu razpoložljivega prostora"
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
-msgstr "Določitev odstotka zmanjšanja razpoložljivega prostora na disku, preden se prikaže opozorilo."
+msgstr ""
+"Določitev odstotka zmanjšanja razpoložljivega prostora na disku, preden se "
+"prikaže opozorilo."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:9
 msgid "Free space no notify threshold"
@@ -364,7 +389,9 @@ msgstr "Prag obveščanja o deležu zasedenega prostora"
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr "Določitev prostora v GB. V primeru, da je razpoložljivega prostora manj, kot je določen tu, se pokaže opozorilo."
+msgstr ""
+"Določitev prostora v GB. V primeru, da je razpoložljivega prostora manj, kot"
+" je določen tu, se pokaže opozorilo."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:11
 msgid "Minimum notify period for repeated warnings"
@@ -382,7 +409,8 @@ msgstr "Prezrte poti priklopa"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr "Določitev seznama priklopnih poti, ki so prezrte pri pomanjkanju prostora."
+msgstr ""
+"Določitev seznama priklopnih poti, ki so prezrte pri pomanjkanju prostora."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
@@ -594,7 +622,12 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr "Običajno mate-settings-daemon nastavi notranje in zunanje zaslone glede na nastavitve turn_on_external_monitors_at_startup in turn_on_laptop_monitor_at_startup in določi primerno podvajanje/način slika-ob-sliki. Omogočenje tega ključa to onemogoči in nastavitve zaslona se ne spreminja (razen če obstaja izrecna uporabniška nastavitev)."
+msgstr ""
+"Običajno mate-settings-daemon nastavi notranje in zunanje zaslone glede na "
+"nastavitve turn_on_external_monitors_at_startup in "
+"turn_on_laptop_monitor_at_startup in določi primerno podvajanje/način slika-"
+"ob-sliki. Omogočenje tega ključa to onemogoči in nastavitve zaslona se ne "
+"spreminja (razen če obstaja izrecna uporabniška nastavitev)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:9
 msgid "Turn on external monitor after system boot"
@@ -604,7 +637,9 @@ msgstr "Vklopi zunanji zaslon po zagonu sistema."
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
-msgstr "Vklopi zunanji zaslon po zagonu sistema, če uporabnik priključi zunanji zaslon ob zagonu sistema."
+msgstr ""
+"Vklopi zunanji zaslon po zagonu sistema, če uporabnik priključi zunanji "
+"zaslon ob zagonu sistema."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:11
 msgid "Turn on laptop monitor after system boot"
@@ -614,7 +649,9 @@ msgstr "Vklopi zaslon prenosnika po zagonu sistema"
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr "Vklopi zaslon prenosnika po zagonu sistema, če uporabnik priključi zunanji zaslon ob zagonu sistema."
+msgstr ""
+"Vklopi zaslon prenosnika po zagonu sistema, če uporabnik priključi zunanji "
+"zaslon ob zagonu sistema."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:13
 msgid "File for default configuration for RandR"
@@ -627,7 +664,12 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr "Vstavek XRandR preišče privzete nastavitve v datoteki, ki je določena s tem ključem. To je podobno datoteki ~/.config/monitors.xml, ki je običajno shranjena v uporabnikovih domačih mapah. V kolikor uporabnik te datoteke nima, ali pa jo ima, vendar ni skladna z nastavitvami zaslonov, bo uporabljena datoteka, določena s tem ključem."
+msgstr ""
+"Vstavek XRandR preišče privzete nastavitve v datoteki, ki je določena s tem "
+"ključem. To je podobno datoteki ~/.config/monitors.xml, ki je običajno "
+"shranjena v uporabnikovih domačih mapah. V kolikor uporabnik te datoteke "
+"nima, ali pa jo ima, vendar ni skladna z nastavitvami zaslonov, bo "
+"uporabljena datoteka, določena s tem ključem."
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
@@ -635,7 +677,7 @@ msgstr "Ozadnji program nastavitev MATE"
 
 #: ../mate-settings-daemon/main.c:65
 msgid "Enable debugging code"
-msgstr "Omogoči razhroščevanje kode"
+msgstr "Omogoči kodo za razhroščevanje"
 
 #: ../mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
@@ -657,102 +699,109 @@ msgstr "Tipkovnica za dostopnost"
 msgid "Accessibility keyboard plugin"
 msgstr "Vstavek tipkovnice dostopnosti"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr "Med prikazovanjem pomoči se je zgodila napaka: %s"
+msgstr "Med prikazovanjem pomoči je prišlo do napake: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
 msgid "Do you want to activate Slow Keys?"
 msgstr "Ali želite omogočiti počasne tipke?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Ali želite onemogočiti počasne tipke?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "Držite tipko Shift 8 sekund. To je bližnjica za možnost počasnih tipk, ki vpliva na delovanje vaše tipkovnice."
+msgstr ""
+"Držite tipko Shift 8 sekund. To je bližnjica za možnost počasnih tipk, ki "
+"vpliva na delovanje vaše tipkovnice."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't activate"
 msgstr "Ne omogoči"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't deactivate"
 msgstr "Ne onemogoči"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Activate"
 msgstr "Omogoči"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Deactivate"
 msgstr "Onemogoči"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't activate"
 msgstr "_Ne omogoči"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't deactivate"
 msgstr "_Ne onemogoči"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Activate"
 msgstr "_Omogoči"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Deactivate"
-msgstr "_Onemogoči"
+msgstr "O_nemogoči"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Slow Keys Alert"
 msgstr "Opozorilo o počasnih tipkah"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Ali želite omogočiti lepljive tipke?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Ali želite onemogočiti lepljive tipke?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "Pravkar ste pritisnili tipko Shift 5-krat zapovrstjo. To je bližnjica za možnost lepljivih tipk, ki vpliva na delovanje vaše tipkovnice."
+msgstr ""
+"Pravkar ste pritisnili tipko Shift 5-krat zapovrstjo. To je bližnjica za "
+"možnost lepljivih tipk, ki vpliva na delovanje vaše tipkovnice."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "Pravkar ste pritisnili dve tipki hkrati ali tipko Shift 5-krat zapovrstjo. S tem ste onemogočiti možnost lepljivih tipk, ki vpliva na delovanje vaše tipkovnice."
+msgstr ""
+"Pravkar ste pritisnili dve tipki hkrati ali tipko Shift 5-krat zapovrstjo. S"
+" tem ste onemogočiti možnost lepljivih tipk, ki vpliva na delovanje vaše "
+"tipkovnice."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Sticky Keys Alert"
 msgstr "Opozorilo o lepljivih tipkah"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Možnosti splošnega dostopa"
@@ -835,40 +884,50 @@ msgstr "Računalnik ima na voljo le še %s prostora na disku."
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "Prostor na disku lahko povečate, če izpraznite smeti, odstranite redko uporabljene programe in datoteke ali pa tako, da datoteke prestavite na drug razdelek."
+msgstr ""
+"Prostor na disku lahko povečate, če izpraznite smeti, odstranite redko "
+"uporabljene programe in datoteke ali pa tako, da datoteke prestavite na drug"
+" razdelek."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
-msgstr "Prostor na disku lahko povečate, če odstranite redko uporabljene programe in datoteke ali pa tako, da datoteke prestavite na drug razdelek."
+msgstr ""
+"Prostor na disku lahko povečate, če odstranite redko uporabljene programe in"
+" datoteke ali pa tako, da datoteke prestavite na drug razdelek."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "Prostor na disku lahko povečate, če izpraznite smeti, odstranite redko uporabljene programe in datoteke ali pa tako, da datoteke prestavite na zunanji disk."
+msgstr ""
+"Prostor na disku lahko povečate, če izpraznite smeti, odstranite redko "
+"uporabljene programe in datoteke ali pa tako, da datoteke prestavite na "
+"zunanji disk."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:110
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
-msgstr "Prostor na disku lahko povečate, če odstranite redko uporabljene programe in datoteke ali pa tako, da datoteke prestavite na zunanji disk."
+msgstr ""
+"Prostor na disku lahko povečate, če odstranite redko uporabljene programe in"
+" datoteke ali pa tako, da datoteke prestavite na zunanji disk."
 
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:207
 msgid "Low Disk Space"
 msgstr "Na disku zmanjkuje prostora"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
 msgstr "Izprazni smeti"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
 msgstr "Preišči ..."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Ignore"
 msgstr "Prezri"
 
@@ -883,32 +942,34 @@ msgid "Removing: %s"
 msgstr "Odstranjevanje: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr "Praznjenje smeti"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr "Priprava na praznjenje smeti ..."
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr "Od:"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
 msgstr "Ali naj se izbrišejo vsi predmeti iz smeti?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "V primeru, da se odločite izprazniti smeti, bodo vsi predmeti trajno izgubljeni. Predmete lahko izbrišete tudi ločeno."
+msgstr ""
+"V primeru, da se odločite izprazniti smeti, bodo vsi predmeti trajno "
+"izgubljeni. Predmete lahko izbrišete tudi ločeno."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
-msgstr "Izprazni _smeti"
+msgstr "_Izprazni smeti"
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:112
 #, c-format
@@ -920,12 +981,14 @@ msgstr "Tipkovna bližnjica (%s) je neveljavna"
 msgid "Key binding (%s) is incomplete"
 msgstr "Tipkovna bližnjica (%s) je nepopolna"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:486
+#: ../plugins/keybindings/msd-keybindings-manager.c:490
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "Napaka med poskusom zagona (%s),\nki je povezan s tipko (%s)"
+msgstr ""
+"Napaka med poskusom zagona (%s),\n"
+"ki je povezan s tipko (%s)"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
@@ -976,14 +1039,18 @@ msgstr "Pokaži trenutni _razpored"
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "Ni mogoče priklicati privzetega terminala. Preverite, če je ukaz za zagon terminala ustrezno določen."
+msgstr ""
+"Ni mogoče priklicati privzetega terminala. Preverite, če je ukaz za zagon "
+"terminala ustrezno določen."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "Ni mogoče izvesti ukaza: %s\nPreverite, ali je ukaz veljaven."
+msgstr ""
+"Ni mogoče izvesti ukaza: %s\n"
+"Preverite, ali je ukaz veljaven."
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1055,10 +1122,10 @@ msgstr "Ni mogoče obnoviti nastavitve zaslona iz varnostne kopije"
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Zaslon se bo ponastavil na predhodno nastavitev v %d sekundi"
-msgstr[1] "Zaslon se bo ponastavil na predhodno nastavitev v %d sekundah"
-msgstr[2] "Zaslon se bo ponastavil na predhodno nastavitev v %d sekundah"
-msgstr[3] "Zaslon se bo ponastavil na predhodno nastavitev v %d sekundah"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1085,39 +1152,39 @@ msgstr "Podrobnosti zaslona ni mogoče osvežiti: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Poskus preklopa nastavitve zaslona."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1889
+#: ../plugins/xrandr/msd-xrandr-manager.c:1885
 msgid "Rotation not supported"
 msgstr "Vrtenje ni podprto"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1945
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Could not save monitor configuration"
 msgstr "Nastavitve zaslona ni mogoče shraniti."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1959
 msgid "Normal"
 msgstr "Običajno"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1960
 msgid "Left"
 msgstr "Levo"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1961
 msgid "Right"
 msgstr "Desno"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1966
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Upside Down"
 msgstr "Zgoraj navzdol"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2088
+#: ../plugins/xrandr/msd-xrandr-manager.c:2084
 msgid "_Configure Display Settings…"
 msgstr "_Nastavitve zaslona ..."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2141
+#: ../plugins/xrandr/msd-xrandr-manager.c:2137
 msgid "Configure display settings"
 msgstr "Nastavitve zaslona"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2201
+#: ../plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Shranjenih nastavitev za zaslone ni mogoče uveljaviti."
 
@@ -1177,7 +1244,8 @@ msgstr "ni mogoče nadzorovati prihajajočih dogodkov kartice - %s"
 #: ../plugins/smartcard/msd-smartcard-manager.c:1105
 #, c-format
 msgid "encountered unexpected error while waiting for smartcard events"
-msgstr "med čakanjem na dogodke pametne kartice je prišlo do nepričakovane napake "
+msgstr ""
+"med čakanjem na dogodke pametne kartice je prišlo do nepričakovane napake "
 
 #: ../plugins/smartcard/msd-smartcard.c:154
 msgid "Slot ID"

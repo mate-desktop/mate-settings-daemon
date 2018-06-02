@@ -1,25 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Akira TAGOH <tagoh@gnome.gr.jp>, 2001
-# Eiichiro ITANI <emu@ceres.dti.ne.jp>, 1999
-# Hideki Yamane <henrich@debian.or.jp>, 2010
-# KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>, 2003
-# Kenzo Matsumoto <dicegeist@gmail.com>, 2016
-# Mika Kobayashi, 2014,2017
-# Noritada Kobayashi <noritadak@gmail.com>, 2010
-# Satoru SATOH <ss@gnome.gr.jp>, 2006
-# Yukihiro Nakai <Nakai@abricot.co.jp>, 1998
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 21:52+0300\n"
-"PO-Revision-Date: 2017-09-19 11:21+0000\n"
-"Last-Translator: Mika Kobayashi\n"
-"Language-Team: Japanese (http://www.transifex.com/mate/MATE/language/ja/)\n"
+"POT-Creation-Date: 2018-03-17 15:39+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kenzo Matsumoto <dicegeist@gmail.com>, 2018\n"
+"Language-Team: Japanese (https://www.transifex.com/mate/teams/13566/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -88,18 +80,24 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "フォントを描画する際に使用するアンチエイリアスの種類を指定します。利用可能な値: \"none\" はアンチエイリアスを無効にする、\"grayscale\" は標準的なグレースケールのアンチエイリアス、\"rgba\" はサブピクセルをアンチエイリアスする (LCD 画面の場合のみ)"
+msgstr ""
+"フォントを描画する際に使用するアンチエイリアスの種類を指定します。利用可能な値: \"none\" "
+"はアンチエイリアスを無効にする、\"grayscale\" は標準的なグレースケールのアンチエイリアス、\"rgba\" "
+"はサブピクセルをアンチエイリアスする (LCD 画面の場合のみ)"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
-msgstr "ヒンティング"
+msgstr "線幅の補正 (ヒンティング)"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:6
 msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "フォントを描画する際に使用するヒンティング (線幅を補正する) の種類を指定します。利用可能な値: \"none\" はヒンティングを無効にする、\"slight\" は基本的なヒンティングのみ、\"medium\" は穏やかなヒンテイング、\"full\" は最大限のヒンテイング (文字の形状に歪みが発生する可能性あり)"
+msgstr ""
+"フォントを描画する際に使用するヒンティング (線幅を補正する) の種類を指定します。利用可能な値: \"none\" "
+"はヒンティングを無効にする、\"slight\" は基本的なヒンティングのみ、\"medium\" は穏やかなヒンテイング、\"full\" "
+"は最大限のヒンテイング (文字の形状に歪みが発生する可能性あり)"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
@@ -111,7 +109,10 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "LCD 画面でサブピクセルの各要素の順番を指定します (これは Antialiasing を \"rgba\" にセットした時にのみ適用されます)。利用可能な値: \"rgb\" は左端が赤色 (最も一般的)、\"bgr\" は左端が青色、\"vrgb\" は上端が赤色、\"vbgr\" は下端が赤色"
+msgstr ""
+"LCD 画面でサブピクセルの各要素の順番を指定します (これは Antialiasing を \"rgba\" "
+"にセットした時にのみ適用されます)。利用可能な値: \"rgb\" は左端が赤色 (最も一般的)、\"bgr\" は左端が青色、\"vrgb\" "
+"は上端が赤色、\"vbgr\" は下端が赤色"
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -121,7 +122,9 @@ msgstr "スマートカードを抜いた時のアクション"
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr "\"none\"、\"lock_screen\"、あるいは \"force_logout\" のうちの一つを指定します。スマートカードがログインに使用されたり、取り出された場合にそのアクションが実行されます。"
+msgstr ""
+"\"none\"、\"lock_screen\"、あるいは \"force_logout\" "
+"のうちの一つを指定します。スマートカードがログインに使用されたり、取り出された場合にそのアクションが実行されます。"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:1
 msgid "Disable touchpad while typing"
@@ -254,7 +257,7 @@ msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
-msgstr ""
+msgstr "移動時のしきい値"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:31
 msgid ""
@@ -350,7 +353,8 @@ msgstr "空きパーセンテージ通知の閾値"
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr "ディスクの残り容量が少なくなった時に最初に警告する閾値となる残り容量のパーセンテージ。残り容量のパーセンテージがこの値を下まわれば、警告が表示されます。"
+msgstr ""
+"ディスクの残り容量が少なくなった時に最初に警告する閾値となる残り容量のパーセンテージ。残り容量のパーセンテージがこの値を下まわれば、警告が表示されます。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
 msgid "Subsequent free percentage notify threshold"
@@ -472,7 +476,7 @@ msgstr "ホーム・フォルダを開くキー・バインディングです。
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
 msgid "Search"
-msgstr "検索する"
+msgstr "検索"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:26
 msgid "Binding to launch the search tool."
@@ -600,7 +604,9 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr "通常、 MATE設定デーモンは、スタートアップ時に外部モニタやラップトップモニタがオンになっているかどうかを検出して内蔵および外付けのモニタを設定し、クローンモードとサイドバイサイドモードのどちらが適切かを判断します。これらの機能はこのキーをTrueにすることで無効にすることができ、モニタの設定には(明示的なユーザ設定がある場合を除き)一切関与しなくなります。"
+msgstr ""
+"通常、 "
+"MATE設定デーモンは、スタートアップ時に外部モニタやラップトップモニタがオンになっているかどうかを検出して内蔵および外付けのモニタを設定し、クローンモードとサイドバイサイドモードのどちらが適切かを判断します。これらの機能はこのキーをTrueにすることで無効にすることができ、モニタの設定には(明示的なユーザ設定がある場合を除き)一切関与しなくなります。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:9
 msgid "Turn on external monitor after system boot"
@@ -633,7 +639,11 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr "XRandR プラグインはこのキーで指定されたファイルをデフォルトの設定ファイルとして検索します。これはユーザのふつう、ホームディレクトリに保存されている ~/.config/monitors.xml と同様のものです。もしそのようなファイルが無い場合、あるいはあったとしてもモニタの設定に合わない場合、このキーで指定されたファイルが代わりに使われます。"
+msgstr ""
+"XRandR "
+"プラグインはこのキーで指定されたファイルをデフォルトの設定ファイルとして検索します。これはユーザのふつう、ホームディレクトリに保存されている "
+"~/.config/monitors.xml "
+"と同様のものです。もしそのようなファイルが無い場合、あるいはあったとしてもモニタの設定に合わない場合、このキーで指定されたファイルが代わりに使われます。"
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
@@ -641,7 +651,7 @@ msgstr "MATE 設定デーモン"
 
 #: ../mate-settings-daemon/main.c:65
 msgid "Enable debugging code"
-msgstr "デバッグ情報を有効にする"
+msgstr "デバッグモードにする"
 
 #: ../mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
@@ -663,102 +673,104 @@ msgstr "アクセシビリティ・キーボード"
 msgid "Accessibility keyboard plugin"
 msgstr "アクセシビリティ・キーボードのプラグイン"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "ヘルプを表示する際にエラーが発生しました: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
 msgid "Do you want to activate Slow Keys?"
 msgstr "スロー・キーを有効にしますか?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "スロー・キーを無効にしますか?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
 msgstr "[SHIFT] キーを8秒間押下しました。これはスロー・キー機能のショートカットとして、キーボード操作に影響を与えるものです。"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't activate"
 msgstr "有効にしない"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't deactivate"
 msgstr "無効にしない"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Activate"
 msgstr "有効にする"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Deactivate"
 msgstr "無効にする"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't activate"
 msgstr "有効にしない(_N)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't deactivate"
 msgstr "無効にしない(_N)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Activate"
 msgstr "有効にする(_A)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Deactivate"
 msgstr "無効にする(_D)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Slow Keys Alert"
 msgstr "スロー・キーの警告"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Do you want to activate Sticky Keys?"
 msgstr "スティッキー・キーを有効にしますか?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "スティッキー・キーを無効にしますか?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
 msgstr "[SHIFT] キーを連続して5回押下しました。これはスティッキー・キー機能のショートカットとして、キーボード操作に影響を与えるものです。"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "キーを一度に2回押下したか、あるいは [SHIFT] キーを連続して 5回押下しました。これはスティッキー・キー機能を無効にし、キーボード操作に影響を与えるものです。"
+msgstr ""
+"キーを一度に2回押下したか、あるいは [SHIFT] キーを連続して "
+"5回押下しました。これはスティッキー・キー機能を無効にし、キーボード操作に影響を与えるものです。"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Sticky Keys Alert"
 msgstr "スティッキー・キーの警告"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "ユニバーサル・アクセスの設定"
@@ -841,7 +853,8 @@ msgstr "このコンピュータにはディスクの残りが %s しかあり�
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "ゴミ箱を空にしたり、使っていないプログラムやファイルを削除したり、他のディスクやパーティションにファイルを移動することで、ディスクの空き容量を増やせます。"
+msgstr ""
+"ゴミ箱を空にしたり、使っていないプログラムやファイルを削除したり、他のディスクやパーティションにファイルを移動することで、ディスクの空き容量を増やせます。"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
@@ -853,7 +866,8 @@ msgstr "使っていないプログラムやファイルを削除したり、他
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "ゴミ箱を空にしたり、使っていないプログラムやファイルを削除したり、外付けディスクにファイルを移動することで、ディスクの空き容量を増やせます。"
+msgstr ""
+"ゴミ箱を空にしたり、使っていないプログラムやファイルを削除したり、外付けディスクにファイルを移動することで、ディスクの空き容量を増やせます。"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:110
 msgid ""
@@ -866,15 +880,15 @@ msgstr "使っていないプログラムやファイルを削除したり、外
 msgid "Low Disk Space"
 msgstr "ディスクの空き容量が少ないです"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
 msgstr "ゴミ箱を空にする"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
 msgstr "調査中…"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Ignore"
 msgstr "無視"
 
@@ -889,30 +903,30 @@ msgid "Removing: %s"
 msgstr "削除中: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr "ゴミ箱を空にしています"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr "ゴミ箱を空にする準備中…"
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr "From: "
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
-msgstr "ゴミ箱の中のすべてのアイテムを空にしますか?"
+msgstr "ゴミ箱にあるすべてのアイテムを空にしてもよろしいですか?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "ゴミ箱を空にすることを選択すると、すべてのアイテムは永遠に失なわれます。別途、それらを削除できることに留意してください。"
+msgstr "ゴミ箱を空にすると、アイテムを復活させることはできません。それぞれ個別に削除することも可能です。"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
 msgstr "ゴミ箱を空にする(_E)"
 
@@ -926,12 +940,14 @@ msgstr "キー・バインディング (%s) が無効です"
 msgid "Key binding (%s) is incomplete"
 msgstr "キー・バインディング (%s) が完了していません"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:486
+#: ../plugins/keybindings/msd-keybindings-manager.c:490
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "(%s) を実行する際にエラーが発生しました。\nこれはキー (%s) にリンクしています。"
+msgstr ""
+"(%s) を実行する際にエラーが発生しました。\n"
+"これはキー (%s) にリンクしています。"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
@@ -982,14 +998,17 @@ msgstr "現在のレイアウトを表示(_C)"
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "デフォルトの端末を起動できませんでした。デフォルトの端末を起動するコマンドが指定され、それに対応するアプリケーションがインストールされているか確認して下さい。"
+msgstr ""
+"デフォルトの端末を起動できませんでした。デフォルトの端末を起動するコマンドが指定され、それに対応するアプリケーションがインストールされているか確認して下さい。"
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "コマンドを実行できませんでした: %s\nこのコマンドがインストールされているか確認してください。"
+msgstr ""
+"コマンドを実行できませんでした: %s\n"
+"このコマンドがインストールされているか確認してください。"
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1061,7 +1080,7 @@ msgstr "バックアップしたディスプレイの設定に戻せませんで
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] " %d秒後に元のディスプレイの設定に戻ります"
+msgstr[0] ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1088,39 +1107,39 @@ msgstr "スクリーンの情報を更新できませんでした: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "いずれにせよ、モニタの設定を切り替えてみます"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1889
+#: ../plugins/xrandr/msd-xrandr-manager.c:1885
 msgid "Rotation not supported"
 msgstr "回転はサポートしていません"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1945
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Could not save monitor configuration"
 msgstr "モニタの設定を保存できませんでした"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1959
 msgid "Normal"
 msgstr "標準"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1960
 msgid "Left"
 msgstr "左"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1961
 msgid "Right"
 msgstr "右"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1966
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Upside Down"
 msgstr "逆さま"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2088
+#: ../plugins/xrandr/msd-xrandr-manager.c:2084
 msgid "_Configure Display Settings…"
 msgstr "ディスプレイの設定(_C)…"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2141
+#: ../plugins/xrandr/msd-xrandr-manager.c:2137
 msgid "Configure display settings"
 msgstr "ディスプレイの設定を変更します"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2201
+#: ../plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Could not apply the stored configuration for monitors"
 msgstr "保存したモニタの設定を適用できませんでした"
 

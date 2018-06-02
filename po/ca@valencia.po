@@ -1,23 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Ivan Vilata i Balaguer <ivan@selidor.net>, 1999-2000
-# Jordi Mallach <jordi@sindominio.net>, 2002-2005
-# Josep Puigdemont <josep.puigdemont@gmail.com>, 2005, 2006, 2007
-# Josep Puigdemont <josep.puigdemont@gmail.com>, 2005-2007
-# Pilar Embid <embid.mar@gmail.com>, 2017
-# Pilar Embid Giner <embid_mar@gva.es>, 2016
-# Softcatalà <linux@softcatala.org>, 2000-2001
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 21:52+0300\n"
-"PO-Revision-Date: 2017-12-13 10:12+0000\n"
-"Last-Translator: Pilar Embid <embid.mar@gmail.com>\n"
-"Language-Team: Catalan (Valencian) (http://www.transifex.com/mate/MATE/language/ca%40valencia/)\n"
+"POT-Creation-Date: 2018-03-17 15:39+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Pilar Embid <embid.mar@gmail.com>, 2018\n"
+"Language-Team: Catalan (Valencian) (https://www.transifex.com/mate/teams/13566/ca%40valencia/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -75,7 +69,9 @@ msgstr "PPP"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "La resolució que s'utilitzarà per a convertir les mides dels tipus de lletra a mides de píxels, en punts per polzada."
+msgstr ""
+"La resolució que s'utilitzarà per a convertir les mides dels tipus de lletra"
+" a mides de píxels, en punts per polzada."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
@@ -86,7 +82,12 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "El tipus d'antialiàsing que s'utilitzarà per a mostrar els tipus de lletra. Els valors possibles són: «none» (cap) per no aplicar cap antialiàsing, «grayscale» (escala de grisos) per a antialiàsing d'escala de grisos estàndard i «RGBA» per a antialiàsing de subpíxel (només per a pantalles LCD)."
+msgstr ""
+"El tipus d'antialiàsing que s'utilitzarà per a mostrar els tipus de lletra. "
+"Els valors possibles són: «none» (cap) per no aplicar cap antialiàsing, "
+"«grayscale» (escala de grisos) per a antialiàsing d'escala de grisos "
+"estàndard i «RGBA» per a antialiàsing de subpíxel (només per a pantalles "
+"LCD)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
@@ -97,7 +98,11 @@ msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "El tipus de contorn que s'utilitzarà per a mostrar els tipus de lletra. Els valors possibles són: «none» (cap) cap contorn, «slight» (lleu) contorn xicotet, «medium» (mitjà) contorn moderat i «full» (complet) contorn màxim (pot produir distorsió en les formes de les lletres)."
+msgstr ""
+"El tipus de contorn que s'utilitzarà per a mostrar els tipus de lletra. Els "
+"valors possibles són: «none» (cap) cap contorn, «slight» (lleu) contorn "
+"xicotet, «medium» (mitjà) contorn moderat i «full» (complet) contorn màxim "
+"(pot produir distorsió en les formes de les lletres)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
@@ -109,7 +114,11 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "L'ordre dels elements de subpíxel d'una pantalla LCD. Només s'utilitza si l'antialiàsing és «RGBA». Els valors possibles són: «RGB» per al roig (R) a l'esquerra (el més comú), «BGR» per al blau (B) a l'esquerra, «VRGB» per al roig a dalt, «VBGR» per al roig a baix."
+msgstr ""
+"L'ordre dels elements de subpíxel d'una pantalla LCD. Només s'utilitza si "
+"l'antialiàsing és «RGBA». Els valors possibles són: «RGB» per al roig (R) a "
+"l'esquerra (el més comú), «BGR» per al blau (B) a l'esquerra, «VRGB» per al "
+"roig a dalt, «VBGR» per al roig a baix."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -119,7 +128,11 @@ msgstr "Acció en l'extracció de la targeta intel·ligent"
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr "Establiu-ho a un dels valors següents: \"none\" (cap), \"lock_screen\" (bloqueja la pantalla), o \"force_logout\" (imposa el tancament de la sessió). L'acció es realitza quan s'extrau la targeta intel·ligent utilitzada per a l'inici de sessió."
+msgstr ""
+"Establiu-ho a un dels valors següents: \"none\" (cap), \"lock_screen\" "
+"(bloqueja la pantalla), o \"force_logout\" (imposa el tancament de la "
+"sessió). L'acció es realitza quan s'extrau la targeta intel·ligent "
+"utilitzada per a l'inici de sessió."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:1
 msgid "Disable touchpad while typing"
@@ -129,7 +142,9 @@ msgstr "Inhabilita el ratolí tàctil mentre s'escriu"
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "Establiu-ho a «True» (cert) si accidentalment toqueu el ratolí tàctil mentre escriviu."
+msgstr ""
+"Establiu-ho a «True» (cert) si accidentalment toqueu el ratolí tàctil mentre"
+" escriviu."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:3
 msgid "Enable mouse clicks with touchpad"
@@ -138,7 +153,9 @@ msgstr "Permet fer clic amb el ratolí tàctil"
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "Establiu-ho a «True» (cert) per a permetre enviar clics de ratolí en prémer el ratolí tàctil."
+msgstr ""
+"Establiu-ho a «True» (cert) per a permetre enviar clics de ratolí en prémer "
+"el ratolí tàctil."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Enable vertical edge scrolling"
@@ -146,7 +163,8 @@ msgstr "Habilita el desplaçament vertical de la vora"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:6
 msgid "Set this to TRUE to allow vertical edge scrolling"
-msgstr "Establiu-ho a «TRUE» per a permetre el desplaçament vertical de la vora"
+msgstr ""
+"Establiu-ho a «TRUE» per a permetre el desplaçament vertical de la vora"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:7
 msgid "Enable horizontal edge scrolling"
@@ -154,7 +172,8 @@ msgstr "Habilita el desplaçament horitzontal de la vora"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:8
 msgid "Set this to TRUE to allow horizontal edge scrolling"
-msgstr "Establiu-ho a «TRUE» per a permetre el desplaçament horitzontal de la vora"
+msgstr ""
+"Establiu-ho a «TRUE» per a permetre el desplaçament horitzontal de la vora"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:9
 msgid "Enable vertical two-finger scrolling"
@@ -162,7 +181,8 @@ msgstr "Habilita el desplaçament vertical amb dos dits"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:10
 msgid "Set this to TRUE to allow vertical two-finger scrolling"
-msgstr "Establiu-ho a «TRUE» per a permetre el desplaçament vertical amb dos dits"
+msgstr ""
+"Establiu-ho a «TRUE» per a permetre el desplaçament vertical amb dos dits"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:11
 msgid "Enable horizontal two-finger scrolling"
@@ -170,7 +190,8 @@ msgstr "Habilita el desplaçament horitzontal amb dos dits"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
 msgid "Set this to TRUE to allow horizontal two-finger scrolling"
-msgstr "Establiu-ho a «TRUE» per a permetre el desplaçament horitzontal amb dos dits"
+msgstr ""
+"Establiu-ho a «TRUE» per a permetre el desplaçament horitzontal amb dos dits"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
 msgid "Natural scrolling"
@@ -178,7 +199,9 @@ msgstr "Desplaçament natural"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
-msgstr "Establiu-ho a «TRUE» per a habilitar el desplaçament natural (invers) per als ratolins tàctils"
+msgstr ""
+"Establiu-ho a «TRUE» per a habilitar el desplaçament natural (invers) per "
+"als ratolins tàctils"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
 msgid "Enable touchpad"
@@ -186,7 +209,8 @@ msgstr "Habilita el ratolí tàctil"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:16
 msgid "Set this to TRUE to enable all touchpads."
-msgstr "Establiu-ho a «True» (cert) per a habilitar tots els ratolins tàctils."
+msgstr ""
+"Establiu-ho a «True» (cert) per a habilitar tots els ratolins tàctils."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:17
 msgid "Enabled two-finger button-click emulation"
@@ -208,7 +232,10 @@ msgstr "Botó per a toc amb un dit"
 msgid ""
 "Select the button mapping for one-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Seleccioneu el mapatge del botó per a toc amb un dit. Els valors admesos són: 1 per al botó esquerre del ratolí; 2 per al botó del mig; 3 per al botó dret"
+msgstr ""
+"Seleccioneu el mapatge del botó per a toc amb un dit. Els valors admesos "
+"són: 1 per al botó esquerre del ratolí; 2 per al botó del mig; 3 per al botó"
+" dret"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
 msgid "Two finger tap button"
@@ -218,7 +245,10 @@ msgstr "Botó per a toc amb dos dits"
 msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Seleccioneu el mapatge del botó per a toc amb dos dits. Els valors admesos són: 1 per al botó esquerre del ratolí; 2 per al botó del mig; 3 per al botó dret"
+msgstr ""
+"Seleccioneu el mapatge del botó per a toc amb dos dits. Els valors admesos "
+"són: 1 per al botó esquerre del ratolí; 2 per al botó del mig; 3 per al botó"
+" dret"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
 msgid "Three finger tap button"
@@ -228,7 +258,10 @@ msgstr "Botó per a toc amb tres dits"
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Seleccioneu el mapatge del botó per a toc amb tres dita. Els valors admesos són: 1 per al botó esquerre del ratolí; 2 per al botó del mig; 3 per al botó dret"
+msgstr ""
+"Seleccioneu el mapatge del botó per a toc amb tres dita. Els valors admesos "
+"són: 1 per al botó esquerre del ratolí; 2 per al botó del mig; 3 per al botó"
+" dret"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:26
 msgid "Touchpad button orientation"
@@ -238,7 +271,10 @@ msgstr "Orientació del botó del ratolí tàctil"
 msgid ""
 "Swap left and right buttons for left-handed touchpads with 'left', 'right' "
 "for right-handed, 'mouse' to follow the mouse setting."
-msgstr "Intercanvia els botons esquerre i dret per als ratolins tàctils per a esquerrans amb 'esquerre', 'dret' per a dretans, 'ratolí' per a seguir el paràmetre del ratolí."
+msgstr ""
+"Intercanvia els botons esquerre i dret per als ratolins tàctils per a "
+"esquerrans amb 'esquerre', 'dret' per a dretans, 'ratolí' per a seguir el "
+"paràmetre del ratolí."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
 msgid "Motion Acceleration"
@@ -248,7 +284,9 @@ msgstr "Acceleració del moviment"
 msgid ""
 "Acceleration multiplier for touchpad motion. A value of -1 is the system "
 "default."
-msgstr "Multiplicador de l'acceleració per al moviment del ratolí tàctil. Un valor de -1 és el valor predeterminat."
+msgstr ""
+"Multiplicador de l'acceleració per al moviment del ratolí tàctil. Un valor "
+"de -1 és el valor predeterminat."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
@@ -258,7 +296,10 @@ msgstr "Llindar del moviment"
 msgid ""
 "Distance in pixels the pointer must move before accelerated touchpad motion "
 "is activated. A value of -1 is the system default."
-msgstr "Distància en píxels a què s'ha de moure el punter abans que s'active el moviment accelerat del ratolí tàctil. Un valor de -1 és el valor predeterminat."
+msgstr ""
+"Distància en píxels a què s'ha de moure el punter abans que s'active el "
+"moviment accelerat del ratolí tàctil. Un valor de -1 és el valor "
+"predeterminat."
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
@@ -338,7 +379,9 @@ msgstr "Prioritat per a utilitzar aquest connector."
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
-msgstr "La prioritat en la cua d'inici per a utilitzar aquest connector del mate-settings-daemon"
+msgstr ""
+"La prioritat en la cua d'inici per a utilitzar aquest connector del mate-"
+"settings-daemon"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:5
 msgid "Free percentage notify threshold"
@@ -348,7 +391,10 @@ msgstr "Llindar per a notificar el percentatge lliure"
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr "El percentatge del llindar d'espai lliure per a l'avís inicial de poc espai de disc. Si el percentatge d'espai lliure baixa per davall d'aquest, es mostrarà un avís."
+msgstr ""
+"El percentatge del llindar d'espai lliure per a l'avís inicial de poc espai "
+"de disc. Si el percentatge d'espai lliure baixa per davall d'aquest, es "
+"mostrarà un avís."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
 msgid "Subsequent free percentage notify threshold"
@@ -358,7 +404,9 @@ msgstr "Llindar de notificació de percentatge lliure subsegüent"
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
-msgstr "Especifica el percentatge d'espai de disc lliure que s'ha de reduir abans de mostrar més avisos."
+msgstr ""
+"Especifica el percentatge d'espai de disc lliure que s'ha de reduir abans de"
+" mostrar més avisos."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:9
 msgid "Free space no notify threshold"
@@ -368,7 +416,9 @@ msgstr "Llindar per a no notificar el percentatge lliure"
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr "Especifica una quantitat en GB. Si l'espai lliure és més gran, no es mostrarà cap avís."
+msgstr ""
+"Especifica una quantitat en GB. Si l'espai lliure és més gran, no es "
+"mostrarà cap avís."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:11
 msgid "Minimum notify period for repeated warnings"
@@ -378,7 +428,9 @@ msgstr "Període mínim entre notificacions d'avisos repetits"
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "Especifica un temps en minuts. Els pròxims avisos per a un volum no apareixeran abans d'aquest període de temps."
+msgstr ""
+"Especifica un temps en minuts. Els pròxims avisos per a un volum no "
+"apareixeran abans d'aquest període de temps."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
@@ -386,7 +438,9 @@ msgstr "Camins de muntatge que s'han d'ignorar"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr "Especifica una llista de camins de muntatge que s'han d'ignorar quan els queda poc espai lliure."
+msgstr ""
+"Especifica una llista de camins de muntatge que s'han d'ignorar quan els "
+"queda poc espai lliure."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
@@ -530,7 +584,9 @@ msgstr "Reprodueix (o reprodueix/fes una pausa)"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
 msgid "Binding to start playback (or toggle play/pause)."
-msgstr "Vinculació per a iniciar el reproductor (o commutar entre reproducció/en pausa)."
+msgstr ""
+"Vinculació per a iniciar el reproductor (o commutar entre reproducció/en "
+"pausa)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
 msgid "Pause playback"
@@ -584,7 +640,9 @@ msgstr "Mostra les pantalles a l'àrea de notificació"
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
-msgstr "Si s'ha de mostrar al quadre una icona de notificació amb les coses relacionades amb la pantalla"
+msgstr ""
+"Si s'ha de mostrar al quadre una icona de notificació amb les coses "
+"relacionades amb la pantalla"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:7
 msgid "Do not touch monitor configuration"
@@ -598,7 +656,13 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr "Normalment, el mate-settings-daemon configura els monitors extern i intern d'acord amb els paràmetres turn_on_external_monitors_at_startup i turn_on_laptop_monitor_at_startup i determina un mode apropiat de clonatge/«un al costat de l'altre». Si s'estableix a «True» aquesta clau, s'inhabilita, i la configuració del monitor no es toca en absolut (llevat que hi haja explícita una configuració de l'usuari)."
+msgstr ""
+"Normalment, el mate-settings-daemon configura els monitors extern i intern "
+"d'acord amb els paràmetres turn_on_external_monitors_at_startup i "
+"turn_on_laptop_monitor_at_startup i determina un mode apropiat de "
+"clonatge/«un al costat de l'altre». Si s'estableix a «True» aquesta clau, "
+"s'inhabilita, i la configuració del monitor no es toca en absolut (llevat "
+"que hi haja explícita una configuració de l'usuari)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:9
 msgid "Turn on external monitor after system boot"
@@ -608,17 +672,22 @@ msgstr "Engega el monitor extern després de l'arrancada del sistema"
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
-msgstr "Engega el monitor extern després de l'arrancada del sistema, si l'usuari connecta el monitor extern en l'arrancada del sistema."
+msgstr ""
+"Engega el monitor extern després de l'arrancada del sistema, si l'usuari "
+"connecta el monitor extern en l'arrancada del sistema."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:11
 msgid "Turn on laptop monitor after system boot"
-msgstr "Engega el monitor de l'ordinador portàtil després de l'arrancada del sistema"
+msgstr ""
+"Engega el monitor de l'ordinador portàtil després de l'arrancada del sistema"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:12
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr "Engega el monitor de l'ordinador portàtil després de l'arrancada del sistema, si l'usuari connecta el monitor extern en l'arrancada del sistema."
+msgstr ""
+"Engega el monitor de l'ordinador portàtil després de l'arrancada del "
+"sistema, si l'usuari connecta el monitor extern en l'arrancada del sistema."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:13
 msgid "File for default configuration for RandR"
@@ -631,7 +700,13 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr "El connector XRandR buscarà la configuració per defecte en el fitxer especificat per aquesta clau. Aquest és semblant al ~/.config/monitors.xml que normalment s'emmagatzema al directori d'usuari. Si un usuari no té aquest fitxer o en té un que no coincideix amb la configuració de monitors de l'usuari, llavors en lloc seu s'utilitzarà el fitxer especificat per aquesta clau."
+msgstr ""
+"El connector XRandR buscarà la configuració per defecte en el fitxer "
+"especificat per aquesta clau. Aquest és semblant al ~/.config/monitors.xml "
+"que normalment s'emmagatzema al directori d'usuari. Si un usuari no té "
+"aquest fitxer o en té un que no coincideix amb la configuració de monitors "
+"de l'usuari, llavors en lloc seu s'utilitzarà el fitxer especificat per "
+"aquesta clau."
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
@@ -661,102 +736,111 @@ msgstr "Teclat accessible"
 msgid "Accessibility keyboard plugin"
 msgstr "Connector de l'accessibilitat de teclat"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "S'ha produït un error en mostrar l'ajuda: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
 msgid "Do you want to activate Slow Keys?"
 msgstr "Voleu activar les «tecles lentes»?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Voleu desactivar les «tecles lentes»?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "Heu mantingut premuda la tecla de majúscules durant 8 segons.  Aquesta és la drecera per a la funcionalitat «tecles lentes», que afecta la manera de funcionar del teclat."
+msgstr ""
+"Heu mantingut premuda la tecla de majúscules durant 8 segons.  Aquesta és la"
+" drecera per a la funcionalitat «tecles lentes», que afecta la manera de "
+"funcionar del teclat."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't activate"
 msgstr "No actives"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't deactivate"
 msgstr "No desactives"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Activate"
 msgstr "Activa"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Deactivate"
 msgstr "Desactiva"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't activate"
 msgstr "_No actives"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't deactivate"
 msgstr "_No desactives"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Activate"
 msgstr "_Activa"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Deactivate"
-msgstr "_Desactiva"
+msgstr "_Inactiva"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Slow Keys Alert"
 msgstr "Alerta de «tecles lentes»"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Voleu activar les «tecles permanents»?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Voleu desactivar les «tecles permanents»?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "Heu premut la tecla de majúscules 5 vegades seguides. Aquesta és la drecera per a la funcionalitat «tecles permanents», que afecta la manera de funcionar del teclat."
+msgstr ""
+"Heu premut la tecla de majúscules 5 vegades seguides. Aquesta és la drecera "
+"per a la funcionalitat «tecles permanents», que afecta la manera de "
+"funcionar del teclat."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "Heu premut dues tecles alhora, o heu premut la tecla de majúscules 5 vegades seguides. Això desactiva les «tecles permanents», que afecta la manera de funcionar del teclat."
+msgstr ""
+"Heu premut dues tecles alhora, o heu premut la tecla de majúscules 5 vegades"
+" seguides. Això desactiva les «tecles permanents», que afecta la manera de "
+"funcionar del teclat."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Sticky Keys Alert"
 msgstr "Avís de «tecles permanents»"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Preferències d'accés universal"
@@ -783,7 +867,8 @@ msgstr "Fes el _text més gran i més fàcil de llegir"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
-msgstr "_Prem les tecles de drecera de teclat d'una en una (tecles permanents)"
+msgstr ""
+"_Prem les tecles de drecera de teclat d'una en una (tecles permanents)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
@@ -839,40 +924,48 @@ msgstr "A aquest ordinador només li resta %s d'espai de disc."
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "Podeu alliberar espai de disc buidant la paperera, suprimint programes o fitxers que no utilitzeu o movent fitxers a un altre disc o partició."
+msgstr ""
+"Podeu alliberar espai de disc buidant la paperera, suprimint programes o "
+"fitxers que no utilitzeu o movent fitxers a un altre disc o partició."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
-msgstr "Podeu alliberar espai de disc suprimint programes o fitxers que no utilitzeu o movent fitxers a un altre disc o partició."
+msgstr ""
+"Podeu alliberar espai de disc suprimint programes o fitxers que no utilitzeu"
+" o movent fitxers a un altre disc o partició."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "Podeu alliberar espai de disc buidant la paperera, suprimint programes o fitxers que no utilitzeu o movent fitxers a un disc extern."
+msgstr ""
+"Podeu alliberar espai de disc buidant la paperera, suprimint programes o "
+"fitxers que no utilitzeu o movent fitxers a un disc extern."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:110
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
-msgstr "Podeu alliberar espai de disc suprimint programes o fitxers que no utilitzeu o movent fitxers a un disc extern."
+msgstr ""
+"Podeu alliberar espai de disc suprimint programes o fitxers que no utilitzeu"
+" o movent fitxers a un disc extern."
 
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:207
 msgid "Low Disk Space"
 msgstr "Poc d'espai al disc"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
 msgstr "Buida la paperera"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
 msgstr "Examina..."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Ignore"
 msgstr "Ignora"
 
@@ -887,30 +980,32 @@ msgid "Removing: %s"
 msgstr "S'està suprimint: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr "S'està buidant la paperera"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr "S'està preparant per a buidar la paperera..."
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr "Des de: "
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
 msgstr "Voleu buidar tots els elements de la paperera?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "Si buideu la paperera, se'n perdran tots els elements per sempre. Tingueu en compte que també podeu seleccionar elements per separat."
+msgstr ""
+"Si buideu la paperera, se'n perdran tots els elements per sempre. Tingueu en"
+" compte que també podeu eliminar-los separadament."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
 msgstr "_Buida la paperera"
 
@@ -924,12 +1019,14 @@ msgstr "La vinculació de tecla (%s) no és vàlida"
 msgid "Key binding (%s) is incomplete"
 msgstr "La vinculació de tecla (%s) és incompleta"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:486
+#: ../plugins/keybindings/msd-keybindings-manager.c:490
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "S'ha produït un error en intentar executar (%s),\nque està enllaçat a la tecla (%s)"
+msgstr ""
+"S'ha produït un error en intentar executar (%s),\n"
+"que està enllaçat a la tecla (%s)"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
@@ -962,7 +1059,19 @@ msgid ""
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr "S'ha produït un error en activar la configuració XKB.\nAixò pot passar per diversos motius:\n- un error de programació en la biblioteca libxklavier\n- un error de programació en el servidor de les X (utilitats xkbcomp, xmodmap)\n- Un servidor de les X amb una implementació incompatible de libxkbfile\n\nDades de la versió del servidor de les X:\n%s\n%d\nSi informeu d'aquesta situació en un informe d'error, incloeu-hi:\n- El resultat de <b>%s</b>\n- El resultat de <b>%s</b>"
+msgstr ""
+"S'ha produït un error en activar la configuració XKB.\n"
+"Això pot passar per diversos motius:\n"
+"- un error de programació en la biblioteca libxklavier\n"
+"- un error de programació en el servidor de les X (utilitats xkbcomp, xmodmap)\n"
+"- Un servidor de les X amb una implementació incompatible de libxkbfile\n"
+"\n"
+"Dades de la versió del servidor de les X:\n"
+"%s\n"
+"%d\n"
+"Si informeu d'aquesta situació en un informe d'error, incloeu-hi:\n"
+"- El resultat de <b>%s</b>\n"
+"- El resultat de <b>%s</b>"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:279
 msgid "_Layouts"
@@ -980,14 +1089,18 @@ msgstr "Mostra la disposició a_ctual"
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "No s'ha pogut obtindre el terminal per defecte. Verifiqueu que l'ordre que teniu establida per al terminal per defecte existisca."
+msgstr ""
+"No s'ha pogut obtindre el terminal per defecte. Verifiqueu que l'ordre que "
+"teniu establida per al terminal per defecte existisca."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "No s'ha pogut executar l'ordre: %s\nVerifiqueu que siga una ordre vàlida."
+msgstr ""
+"No s'ha pogut executar l'ordre: %s\n"
+"Verifiqueu que siga una ordre vàlida."
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -999,12 +1112,15 @@ msgstr "Connector de les tecles multimèdia"
 
 #: ../plugins/mouse/msd-mouse-manager.c:1440
 msgid "Could not enable mouse accessibility features"
-msgstr "No s'han pogut habilitar les funcionalitats d'accessibilitat del ratolí"
+msgstr ""
+"No s'han pogut habilitar les funcionalitats d'accessibilitat del ratolí"
 
 #: ../plugins/mouse/msd-mouse-manager.c:1442
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
-msgstr "L'accessibilitat del ratolí requereix que s'instal·le el Mousetweaks al vostre sistema."
+msgstr ""
+"L'accessibilitat del ratolí requereix que s'instal·le el Mousetweaks al "
+"vostre sistema."
 
 #: ../plugins/mouse/msd-mouse-manager.c:1445
 msgid "Mouse Preferences"
@@ -1052,15 +1168,19 @@ msgstr "No s'ha pogut restaurar la configuració de la pantalla"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:422
 msgid "Could not restore the display's configuration from a backup"
-msgstr "No s'ha pogut restaurar la configuració de la pantalla des d'una còpia de seguretat"
+msgstr ""
+"No s'ha pogut restaurar la configuració de la pantalla des d'una còpia de "
+"seguretat"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:443
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Es reiniciarà la pantalla a la configuració anterior d'ací a %d segon"
-msgstr[1] "Es reiniciarà la pantalla a la configuració anterior d'ací a %d segons"
+msgstr[0] ""
+"Es reinicialitzarà la pantalla a la configuració anterior d'ací a %d segon"
+msgstr[1] ""
+"Es reinicialitzarà la pantalla a la configuració anterior d'ací a %d segons"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1085,41 +1205,42 @@ msgstr "No s'ha pogut refrescar la informació de la pantalla: %s"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:1157
 msgid "Trying to switch the monitor configuration anyway."
-msgstr "S'està intentant commutar la configuració del monitor de totes maneres."
+msgstr ""
+"S'està intentant commutar la configuració del monitor de totes maneres."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1889
+#: ../plugins/xrandr/msd-xrandr-manager.c:1885
 msgid "Rotation not supported"
 msgstr "No és compatible amb la rotació"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1945
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Could not save monitor configuration"
 msgstr "No s'ha pogut guardar la configuració del monitor"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1959
 msgid "Normal"
 msgstr "Normal"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1960
 msgid "Left"
-msgstr "Esquerra"
+msgstr "Esquerre"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1961
 msgid "Right"
-msgstr "Dreta"
+msgstr "Dret"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1966
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Upside Down"
 msgstr "De cap per avall"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2088
+#: ../plugins/xrandr/msd-xrandr-manager.c:2084
 msgid "_Configure Display Settings…"
 msgstr "_Configura els paràmetres de la pantalla..."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2141
+#: ../plugins/xrandr/msd-xrandr-manager.c:2137
 msgid "Configure display settings"
 msgstr "Configura els paràmetres de la pantalla"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2201
+#: ../plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Could not apply the stored configuration for monitors"
 msgstr "No s'ha pogut aplicar la configuració emmagatzemada per als monitors"
 
@@ -1164,7 +1285,8 @@ msgstr "No s'ha pogut inicialitzar el sistema de seguretat NSS"
 #: ../plugins/smartcard/msd-smartcard-manager.c:654
 #, c-format
 msgid "no suitable smartcard driver could be found"
-msgstr "no s'ha pogut trobar cap controlador adequat per a la targeta intel·ligent"
+msgstr ""
+"no s'ha pogut trobar cap controlador adequat per a la targeta intel·ligent"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:674
 #, c-format
@@ -1174,12 +1296,15 @@ msgstr "no s'ha pogut carregar el controlador de la targeta intel·ligent «%s»
 #: ../plugins/smartcard/msd-smartcard-manager.c:758
 #, c-format
 msgid "could not watch for incoming card events - %s"
-msgstr "no s'ha pogut observar si hi ha esdeveniments d'entrada de targeta - %s"
+msgstr ""
+"no s'ha pogut observar si hi ha esdeveniments d'entrada de targeta - %s"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:1105
 #, c-format
 msgid "encountered unexpected error while waiting for smartcard events"
-msgstr "s'ha trobat un error inesperat mentre s'esperaven esdeveniments de la targeta intel·ligent"
+msgstr ""
+"s'ha trobat un error inesperat mentre s'esperaven esdeveniments de la "
+"targeta intel·ligent"
 
 #: ../plugins/smartcard/msd-smartcard.c:154
 msgid "Slot ID"

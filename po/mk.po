@@ -1,25 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Aleksandar Savic <savica@mt.net.mk>, 2003
-# Arangel Angov <arangel@linux.net.mk>, 2007
-# Arangel Angov <ufo@linux.net.mk>, 2003, 2004, 2005, 2006, 2007, 2008
-# Ivan Stojmirov <stojmir@linux.net.mk>, 2003
-# Jovan Kostovski <chombium@freemail.com.mk>, 2003
-# Jovan Naumovski <jovan@lugola.net>, 2006, 2007, 2008
-# Maratonec 4 <maraton@localhost.localdomain>, 2002
-# Tomislav Markovski <herrera@users.sourceforge.net>, 2004
-# Арангел Ангов <ufo@linux.net.mk>, 2005
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 21:52+0300\n"
-"PO-Revision-Date: 2017-09-19 11:21+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Macedonian (http://www.transifex.com/mate/MATE/language/mk/)\n"
+"POT-Creation-Date: 2018-03-17 15:39+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: exoos <mince.lesovski@gmail.com>, 2018\n"
+"Language-Team: Macedonian (https://www.transifex.com/mate/teams/13566/mk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,7 +20,7 @@ msgstr ""
 
 #: ../data/50-accessibility.xml.in.h:1
 msgid "Accessibility"
-msgstr ""
+msgstr "Пристапност"
 
 #: ../data/50-accessibility.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
@@ -77,7 +69,9 @@ msgstr "DPI"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "Резолуцијата користена за конверзија на големината на фонтовите во пикселни големини, во точки на инч."
+msgstr ""
+"Резолуцијата користена за конверзија на големината на фонтовите во пикселни "
+"големини, во точки на инч."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
@@ -88,7 +82,10 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "Типот на антиалиасинг кој ќе се користи при исцртување на фонтовите: Можни вредности се: „ништо“ за без антиалиасинг, „grayscale“ за стандарден сив антиалиасинг, „rgba“ за субпиксел антиалиасинг (само за LCD екрани)."
+msgstr ""
+"Типот на антиалиасинг кој ќе се користи при исцртување на фонтовите: Можни "
+"вредности се: „ништо“ за без антиалиасинг, „grayscale“ за стандарден сив "
+"антиалиасинг, „rgba“ за субпиксел антиалиасинг (само за LCD екрани)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
@@ -99,7 +96,11 @@ msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "Типот на хинтинг кој ќе се користи за рендерирање на фонтови. Можни вредности се „none“ за без хинтинг, „slight“ основен хинтинг, „medium“ - среден хинтинг и „full“ за целосен хинтинг (кој може да предизвика искривување на формата на фонтот)."
+msgstr ""
+"Типот на хинтинг кој ќе се користи за рендерирање на фонтови. Можни "
+"вредности се „none“ за без хинтинг, „slight“ основен хинтинг, „medium“ - "
+"среден хинтинг и „full“ за целосен хинтинг (кој може да предизвика "
+"искривување на формата на фонтот)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
@@ -111,7 +112,11 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "Редоследот на подпикселните елементи на LCD екранот; се користи само кога антиалијасингот е поставен на „rgba“. Можни вредности се „rgb“ за црвено на левата страна (вообичаено), „bgr“ за сино на левата страна, „vrgb“ за црвено на врвот и „vbgr“ за црвено на дното."
+msgstr ""
+"Редоследот на подпикселните елементи на LCD екранот; се користи само кога "
+"антиалијасингот е поставен на „rgba“. Можни вредности се „rgb“ за црвено на "
+"левата страна (вообичаено), „bgr“ за сино на левата страна, „vrgb“ за црвено"
+" на врвот и „vbgr“ за црвено на дното."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -254,7 +259,7 @@ msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
-msgstr ""
+msgstr "Праг на движење"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:31
 msgid ""
@@ -448,7 +453,7 @@ msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
 msgid "Log out"
-msgstr "Одјави се"
+msgstr "Одјава"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:20
 msgid "Binding to log out."
@@ -641,7 +646,7 @@ msgstr "Демонот за поставувања на MATE"
 
 #: ../mate-settings-daemon/main.c:65
 msgid "Enable debugging code"
-msgstr "Вклучи го кодот за дебагирање"
+msgstr "Овозможи дебагирачки код"
 
 #: ../mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
@@ -649,7 +654,7 @@ msgstr ""
 
 #: ../mate-settings-daemon/main.c:67
 msgid "Don't become a daemon"
-msgstr "Не станувај даемон"
+msgstr "Не станувај Демон"
 
 #: ../mate-settings-daemon/main.c:68
 msgid "Exit after a time (for debugging)"
@@ -663,102 +668,111 @@ msgstr "Тастатура за пристапност"
 msgid "Accessibility keyboard plugin"
 msgstr "Додаток за пристапност на тастатурата"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr "Се појави грешка при прикажувањето на помошта: %s"
+msgstr "Се појави грешка при прикажување на помошта: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
 msgid "Do you want to activate Slow Keys?"
 msgstr "Дали сакате да ги активирате спорите копчиња?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Дали сакате да ги деактивирате спорите копчиња?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "Го држевте копчето Shift 8 секунди.  Ова е кратенка за опцијата за спори копчиња, која што прави промени на начинот на кој што работи Вашата тастатура."
+msgstr ""
+"Го држевте копчето Shift 8 секунди.  Ова е кратенка за опцијата за спори "
+"копчиња, која што прави промени на начинот на кој што работи Вашата "
+"тастатура."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't activate"
 msgstr "Не активирај"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't deactivate"
 msgstr "Не деактивирај"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Activate"
 msgstr "Активирај"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Deactivate"
 msgstr "Деактивирај"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't activate"
 msgstr "Н_е активирај"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't deactivate"
 msgstr "Н_е деактивирај"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Activate"
 msgstr "_Активирај"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Deactivate"
 msgstr "_Деактивирај"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Slow Keys Alert"
 msgstr "Аларм за спори копчиња"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Дали сакате да ги активирате лепливите копчиња?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Дали сакате да ги деактивирате лепливите копчиња?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "Го притиснавте копчето Shift 5 пати по ред.  Ова е кратенка за опцијата за лепливи копчиња, која што прави промени на начинот на кој што работи Вашата тастатура."
+msgstr ""
+"Го притиснавте копчето Shift 5 пати по ред.  Ова е кратенка за опцијата за "
+"лепливи копчиња, која што прави промени на начинот на кој што работи Вашата "
+"тастатура."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "Притиснавте две копчиа одеднаш, или пак го притиснавте копчето Shift 5 пати по ред.  Ова ја исклучува опцијата за лепливи копчиња, која што прави промени на начинот на работењето на Вашата тастатура."
+msgstr ""
+"Притиснавте две копчиа одеднаш, или пак го притиснавте копчето Shift 5 пати "
+"по ред.  Ова ја исклучува опцијата за лепливи копчиња, која што прави "
+"промени на начинот на работењето на Вашата тастатура."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Sticky Keys Alert"
 msgstr "Аларм за лепливи копчиња"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Преференции за универзален пристап"
@@ -785,7 +799,8 @@ msgstr "Направи го текстот _поголем и полесен з�
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
-msgstr "_Притиснете на кратенките на тастатурата едно по едно (лепливи копчиња)"
+msgstr ""
+"_Притиснете на кратенките на тастатурата едно по едно (лепливи копчиња)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
@@ -866,17 +881,17 @@ msgstr ""
 msgid "Low Disk Space"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
-msgstr ""
+msgstr "Испразни го ѓубрето"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Ignore"
-msgstr ""
+msgstr "Игнорирај"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:97
 #, c-format
@@ -889,32 +904,34 @@ msgid "Removing: %s"
 msgstr ""
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr ""
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
-msgstr ""
+msgstr "Дали сте сигурни дека сакате да ја испразните корпата?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
 msgstr ""
+"Доколку го испразните ѓубрето, предметите ќе бидат трајно избришани. Ве "
+"молам имајте на ум дека можете да ги бришете и поединечно."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
-msgstr ""
+msgstr "_Испразни го ѓубрето"
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:112
 #, c-format
@@ -926,12 +943,14 @@ msgstr "Поврзувањето на копчињата (%s) e невалидн
 msgid "Key binding (%s) is incomplete"
 msgstr "Поврзувањето на копчињата (%s) е некомплетно"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:486
+#: ../plugins/keybindings/msd-keybindings-manager.c:490
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "Грешка при обидување да се вклучи (%s)\nкое е поврзано со копчето (%s)"
+msgstr ""
+"Грешка при обидување да се вклучи (%s)\n"
+"кое е поврзано со копчето (%s)"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
@@ -982,14 +1001,19 @@ msgstr ""
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "Не можам да го добијам стандардниот терминал. Проверете дали Вашата стандардна команда за терминал е поставена и покажува кон валидна апликација."
+msgstr ""
+"Не можам да го добијам стандардниот терминал. Проверете дали Вашата "
+"стандардна команда за терминал е поставена и покажува кон валидна "
+"апликација."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "Не можам да ја извршам командата: %s\nОсигурајте се дека оваа команда е валидна."
+msgstr ""
+"Не можам да ја извршам командата: %s\n"
+"Осигурајте се дека оваа команда е валидна."
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1010,7 +1034,7 @@ msgstr ""
 
 #: ../plugins/mouse/msd-mouse-manager.c:1445
 msgid "Mouse Preferences"
-msgstr "Параметри на глушецот"
+msgstr "Преференци на глушецот"
 
 #: ../plugins/mouse/mouse.mate-settings-plugin.in.h:1
 msgid "Mouse"
@@ -1089,39 +1113,39 @@ msgstr ""
 msgid "Trying to switch the monitor configuration anyway."
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1889
+#: ../plugins/xrandr/msd-xrandr-manager.c:1885
 msgid "Rotation not supported"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1945
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Could not save monitor configuration"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1959
 msgid "Normal"
 msgstr "Нормално"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1960
 msgid "Left"
 msgstr "Лево"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1961
 msgid "Right"
 msgstr "Десно"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1966
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Upside Down"
-msgstr "Отпревртено"
+msgstr "Обратно"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2088
+#: ../plugins/xrandr/msd-xrandr-manager.c:2084
 msgid "_Configure Display Settings…"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2141
+#: ../plugins/xrandr/msd-xrandr-manager.c:2137
 msgid "Configure display settings"
 msgstr "Конфигурирај ги поставувањата за приказот"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2201
+#: ../plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Could not apply the stored configuration for monitors"
 msgstr ""
 

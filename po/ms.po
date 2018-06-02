@@ -1,19 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# 1. Hasbullah Bin Pit (sebol) <sebol@ikhlas.com>, 2002
-# 2. Khairulanuar Abd Majid (khai) <khairul@ikhlas.com>, 2002
-# abuyop <abuyop@gmail.com>, 2013,2015-2016
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 21:52+0300\n"
-"PO-Revision-Date: 2017-09-19 11:21+0000\n"
-"Last-Translator: abuyop <abuyop@gmail.com>\n"
-"Language-Team: Malay (http://www.transifex.com/mate/MATE/language/ms/)\n"
+"POT-Creation-Date: 2018-03-17 15:39+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
+"Language-Team: Malay (https://www.transifex.com/mate/teams/13566/ms/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -71,7 +69,8 @@ msgstr "DPI"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "Resolusi diguna untuk menukar saiz fon ke saiz piksel, dalam titik per inci."
+msgstr ""
+"Resolusi diguna untuk menukar saiz fon ke saiz piksel, dalam titik per inci."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
@@ -82,18 +81,25 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "Jenis antialias yang diguna bila menerap fon. Nilai yang mungkin adalah: \"none\" untuk tanpa antialias, \"grayscale\" untuk antialias skala kelabu piawai, dan \"rgba\" untuk antialias subpiksel (skrin LCD sahaja)."
+msgstr ""
+"Jenis antialias yang diguna bila menerap fon. Nilai yang mungkin adalah: "
+"\"none\" untuk tanpa antialias, \"grayscale\" untuk antialias skala kelabu "
+"piawai, dan \"rgba\" untuk antialias subpiksel (skrin LCD sahaja)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
-msgstr "Pembayangan"
+msgstr "Pembayang"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:6
 msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "Jenis pembayangan yang diguna bila menerap fon. Nilai yang mungkin adalah: \"none\" tanpa pembayangan, \"slight\" untuk asas, \"medium\" untuk sederhana, dan \"full\" untuk pembayangan maksimum (mungkin menyebabkan herotan bentuk huruf)."
+msgstr ""
+"Jenis pembayangan yang diguna bila menerap fon. Nilai yang mungkin adalah: "
+"\"none\" tanpa pembayangan, \"slight\" untuk asas, \"medium\" untuk "
+"sederhana, dan \"full\" untuk pembayangan maksimum (mungkin menyebabkan "
+"herotan bentuk huruf)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
@@ -105,7 +111,11 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "Tertib unsur subpiksel bagi skrin LCD; hanya digunakan bila antialias ditetapkan ke \"rgba\". Nilai yang mungkin adalah: \"rgb\" untuk merah dikiri (paling umum), \"bgr\" untuk biru dikiri, \"vrgb\" untuk merah diatas, \"vgbr\" untuk merah dibawah."
+msgstr ""
+"Tertib unsur subpiksel bagi skrin LCD; hanya digunakan bila antialias "
+"ditetapkan ke \"rgba\". Nilai yang mungkin adalah: \"rgb\" untuk merah "
+"dikiri (paling umum), \"bgr\" untuk biru dikiri, \"vrgb\" untuk merah "
+"diatas, \"vgbr\" untuk merah dibawah."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -115,7 +125,10 @@ msgstr "Tindakan pembuangan kad pintar"
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr "Tetapkan ini ke salah satu dari \"none\", \"lock_screen\", atau \"force_logout\". Tindakan akan dibuat bila kad pintar diguna unutk daftar masuk telah dibuang."
+msgstr ""
+"Tetapkan ini ke salah satu dari \"none\", \"lock_screen\", atau "
+"\"force_logout\". Tindakan akan dibuat bila kad pintar diguna unutk daftar "
+"masuk telah dibuang."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:1
 msgid "Disable touchpad while typing"
@@ -125,7 +138,9 @@ msgstr "Lumpuhkan pad sentuh semasa menaip"
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "Tetapkan ini kepada BENAR jika anda mempunyai masalah dengan pembayangan pad sentuh semasa menaip."
+msgstr ""
+"Tetapkan ini kepada BENAR jika anda mempunyai masalah dengan pembayangan pad"
+" sentuh semasa menaip."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:3
 msgid "Enable mouse clicks with touchpad"
@@ -134,7 +149,9 @@ msgstr "Benarkan klik tetikus dengan pad sentuh"
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "Tetapkan ini kepada BENAR untuk boleh hantar klik tetikus dengan mengetuk pada pad sentuh."
+msgstr ""
+"Tetapkan ini kepada BENAR untuk boleh hantar klik tetikus dengan mengetuk "
+"pada pad sentuh."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Enable vertical edge scrolling"
@@ -174,7 +191,9 @@ msgstr "Penatalan tabii"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
-msgstr "Tetapkan ini kepada benar untuk benarkan penatalan tabii (songsang) untuk pad sentuh"
+msgstr ""
+"Tetapkan ini kepada benar untuk benarkan penatalan tabii (songsang) untuk "
+"pad sentuh"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
 msgid "Enable touchpad"
@@ -204,7 +223,9 @@ msgstr "Butang ketik satu jari"
 msgid ""
 "Select the button mapping for one-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Pilih pemetaan butang untuk ketikan satu-jari. Nilai disokong adalah: 1: butang tetikus kiri 2: butang tetikus tengah 3: butang tetikus kanan"
+msgstr ""
+"Pilih pemetaan butang untuk ketikan satu-jari. Nilai disokong adalah: 1: "
+"butang tetikus kiri 2: butang tetikus tengah 3: butang tetikus kanan"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
 msgid "Two finger tap button"
@@ -214,7 +235,9 @@ msgstr "Butang ketik dua jari"
 msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Pilih pemetaan butang untuk ketikan dua-jari. Nilai disokong adalah: 1: butang tetikus kiri 2: butang tetikus tengah 3: butang tetikus kanan"
+msgstr ""
+"Pilih pemetaan butang untuk ketikan dua-jari. Nilai disokong adalah: 1: "
+"butang tetikus kiri 2: butang tetikus tengah 3: butang tetikus kanan"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
 msgid "Three finger tap button"
@@ -224,7 +247,9 @@ msgstr "Butang ketik tiga jari"
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Pilih pemetaan butang untuk ketikan tiga-jari. Nilai disokong adalah: 1: butang tetikus kiri 2: butang tetikus tengah 3: butang tetikus kanan"
+msgstr ""
+"Pilih pemetaan butang untuk ketikan tiga-jari. Nilai disokong adalah: 1: "
+"butang tetikus kiri 2: butang tetikus tengah 3: butang tetikus kanan"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:26
 msgid "Touchpad button orientation"
@@ -234,7 +259,9 @@ msgstr "Orientasi butang pad sentuh"
 msgid ""
 "Swap left and right buttons for left-handed touchpads with 'left', 'right' "
 "for right-handed, 'mouse' to follow the mouse setting."
-msgstr "Silih butang kiri dan kanan untuk pad sentuh kidal dengan 'kiri', 'kanan' untuk bukan kidal, 'mouse' diikuti dengan tetapan tetikus."
+msgstr ""
+"Silih butang kiri dan kanan untuk pad sentuh kidal dengan 'kiri', 'kanan' "
+"untuk bukan kidal, 'mouse' diikuti dengan tetapan tetikus."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
 msgid "Motion Acceleration"
@@ -244,7 +271,9 @@ msgstr "Pemecutan Gerakan"
 msgid ""
 "Acceleration multiplier for touchpad motion. A value of -1 is the system "
 "default."
-msgstr "Pengganda pemecutan bagi pergerakan pad sentih. Nilai -1 adalah lalai sistem."
+msgstr ""
+"Pengganda pemecutan bagi pergerakan pad sentih. Nilai -1 adalah lalai "
+"sistem."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
@@ -254,7 +283,9 @@ msgstr "Ambang Gerakan"
 msgid ""
 "Distance in pixels the pointer must move before accelerated touchpad motion "
 "is activated. A value of -1 is the system default."
-msgstr "Jarak dalam piksel dimana penuding mesti gerak sebelum gerakan pad sentuh terpecut diaktifkan. Nilai -1 adalah lalai sistem."
+msgstr ""
+"Jarak dalam piksel dimana penuding mesti gerak sebelum gerakan pad sentuh "
+"terpecut diaktifkan. Nilai -1 adalah lalai sistem."
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
@@ -294,7 +325,9 @@ msgstr "Pengaktifan pemalam ini"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr "Sama ada pemalam ini patut diaktifkan oleh mate-setting-daemon atau pun tidak"
+msgstr ""
+"Sama ada pemalam ini patut diaktifkan oleh mate-setting-daemon atau pun "
+"tidak"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:3
@@ -334,7 +367,9 @@ msgstr "Keutamaan untuk guna pemalam ini"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
-msgstr "Keutamaan untuk guna pemalam ini dalam baris gilir permulaan mate-setting-daemon"
+msgstr ""
+"Keutamaan untuk guna pemalam ini dalam baris gilir permulaan mate-setting-"
+"daemon"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:5
 msgid "Free percentage notify threshold"
@@ -344,7 +379,9 @@ msgstr "Ambang maklum peratus bebas"
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr "Peratus ambang ruang bebas untuk amaran awal ruang cakera rendah. Jika peratus ruang cakera bebas dibawah nilai ini, satu amaran akan ditunjukkan."
+msgstr ""
+"Peratus ambang ruang bebas untuk amaran awal ruang cakera rendah. Jika "
+"peratus ruang cakera bebas dibawah nilai ini, satu amaran akan ditunjukkan."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
 msgid "Subsequent free percentage notify threshold"
@@ -354,7 +391,9 @@ msgstr "Ambang maklum peratus bebas terkemudian"
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
-msgstr "Nyatakan peratus yang mana ruang cakera bebas patut kurang sebelum mengeluarkan amaran berturutan."
+msgstr ""
+"Nyatakan peratus yang mana ruang cakera bebas patut kurang sebelum "
+"mengeluarkan amaran berturutan."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:9
 msgid "Free space no notify threshold"
@@ -364,7 +403,9 @@ msgstr "Ambang maklum tiada ruang bebas"
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr "Nyatakan amaun dalam GB. Jika amaun ruang bebas lebih dari nilai ini, tiada amaran akan ditunjukkan."
+msgstr ""
+"Nyatakan amaun dalam GB. Jika amaun ruang bebas lebih dari nilai ini, tiada "
+"amaran akan ditunjukkan."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:11
 msgid "Minimum notify period for repeated warnings"
@@ -374,7 +415,9 @@ msgstr "Tempoh maklum minimum untuk amaran berulang"
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "Nyatakan masa dalam minit. Amaran berturutan bagi volum tidak akan muncul lebih kerap dari tempoh ini."
+msgstr ""
+"Nyatakan masa dalam minit. Amaran berturutan bagi volum tidak akan muncul "
+"lebih kerap dari tempoh ini."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
@@ -382,7 +425,8 @@ msgstr "Lekap laluan untuk diabaikan"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr "Nyatakan senarai laluan lekap untuk diabaikan bila ruang semakin rendah."
+msgstr ""
+"Nyatakan senarai laluan lekap untuk diabaikan bila ruang semakin rendah."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
@@ -390,7 +434,8 @@ msgstr "Tunjuk pemberitahuan OSD"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:4
 msgid "Whether an OSD notification is shown to notify about changes"
-msgstr "Sama ada pemberitahuan OSD ditunjukkan untuk maklumkan jika ada perubahan"
+msgstr ""
+"Sama ada pemberitahuan OSD ditunjukkan untuk maklumkan jika ada perubahan"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:7
 msgid "Volume step"
@@ -580,7 +625,9 @@ msgstr "Tunjuk Paparan dalam Kawasan Pemberitahuan"
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
-msgstr "Sama ada ikon pemberitahuan dengan perkara berkaitan-paparan patut ditunjukkan dalam panel."
+msgstr ""
+"Sama ada ikon pemberitahuan dengan perkara berkaitan-paparan patut "
+"ditunjukkan dalam panel."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:7
 msgid "Do not touch monitor configuration"
@@ -594,7 +641,13 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr "Biasanya, mate-settings-daemon konfigur monitor dalaman dan luaran berdasarkan pada tetapan turn_on_external_monitors_at_startup dan turn_on_laptop_monitor_at_startup serta tentukan mod pengklonan/sisi-ke-sisi yang sesuai. Menetap kekunci ini kepada Benar lumpuhkannya, dan tetapan monitor tidak disentuh langsung (melainkan terdapa konfigurasi pengguna eksplisit)."
+msgstr ""
+"Biasanya, mate-settings-daemon konfigur monitor dalaman dan luaran "
+"berdasarkan pada tetapan turn_on_external_monitors_at_startup dan "
+"turn_on_laptop_monitor_at_startup serta tentukan mod pengklonan/sisi-ke-sisi"
+" yang sesuai. Menetap kekunci ini kepada Benar lumpuhkannya, dan tetapan "
+"monitor tidak disentuh langsung (melainkan terdapa konfigurasi pengguna "
+"eksplisit)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:9
 msgid "Turn on external monitor after system boot"
@@ -604,7 +657,9 @@ msgstr "Hidupkan monitor luar selepas but sistem"
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
-msgstr "Hidupkan monitor luar selepas but sistem jika pengguna palamkan monitor luar semasa but sistem."
+msgstr ""
+"Hidupkan monitor luar selepas but sistem jika pengguna palamkan monitor luar"
+" semasa but sistem."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:11
 msgid "Turn on laptop monitor after system boot"
@@ -614,7 +669,9 @@ msgstr "Hidupkan monitor komputer riba selepas but sistem"
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr "Hidupkan monitor komputer riba selepas but sistem jika pengguna palamkan monitor luar semasa but sistem."
+msgstr ""
+"Hidupkan monitor komputer riba selepas but sistem jika pengguna palamkan "
+"monitor luar semasa but sistem."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:13
 msgid "File for default configuration for RandR"
@@ -627,7 +684,13 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr "Pemalam XRandR akan cari konfigurasi lalai di dalam fail yang dinyatakan oleh kunci ini. Ia seupa dengan ~/.config/monitors.xml yang biasanya disimpan dalam direktori rumah pengguna. Jika pengguna tidak mempunyai fail tersebut, atau mempunyainya tetapi tidak sepadan dengan persediaan monitor pengguna, maka fail yang dinyatakan oleh kunci ini akan digunakan sebagai ganti."
+msgstr ""
+"Pemalam XRandR akan cari konfigurasi lalai di dalam fail yang dinyatakan "
+"oleh kunci ini. Ia seupa dengan ~/.config/monitors.xml yang biasanya "
+"disimpan dalam direktori rumah pengguna. Jika pengguna tidak mempunyai fail "
+"tersebut, atau mempunyainya tetapi tidak sepadan dengan persediaan monitor "
+"pengguna, maka fail yang dinyatakan oleh kunci ini akan digunakan sebagai "
+"ganti."
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
@@ -635,7 +698,7 @@ msgstr "Daemon Tetapan MATE"
 
 #: ../mate-settings-daemon/main.c:65
 msgid "Enable debugging code"
-msgstr "Benarkan kod pengnyahpepijatan"
+msgstr "Benarkan kod penyahpepijatan"
 
 #: ../mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
@@ -657,102 +720,111 @@ msgstr "Papan Kekunci Kebolehcapaian"
 msgid "Accessibility keyboard plugin"
 msgstr "Pemalam papan kekunci kebolehcapaian"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Terdapat ralat memapar bantuan: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
 msgid "Do you want to activate Slow Keys?"
 msgstr "Anda ingin mengaktifkan Kekunci Perlahan?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Anda hendak nyahaktif Kekunci Lambat?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "Anda baru sahaja menahan kekunci Shift selama 8 saat. Ia merupakan pintasan untuk fitur Kekunci Lambat, yang mempengaruhi cara papan kekunci anda berfungsi."
+msgstr ""
+"Anda baru sahaja menahan kekunci Shift selama 8 saat. Ia merupakan pintasan "
+"untuk fitur Kekunci Lambat, yang mempengaruhi cara papan kekunci anda "
+"berfungsi."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't activate"
 msgstr "Jangan aktifkan"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't deactivate"
 msgstr "Jangan nyahaktifkan"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Activate"
 msgstr "Aktifkan"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Deactivate"
 msgstr "Nyahaktifkan"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't activate"
 msgstr "Ja_ngan aktifkan"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't deactivate"
 msgstr "Ja_ngan nyahaktifkan"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Activate"
 msgstr "_Aktifkan"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Deactivate"
-msgstr "N_yahaktifkan"
+msgstr "_Nyahaktifkan"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Slow Keys Alert"
 msgstr "Amaran Kekunci Perlahan"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Anda ingin mengaktifkan Kekunci Lekat?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Adakah anda ingin menyahaktifkan Kekunci Lekat?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "Anda baru sahaja menahan kekunci Shift sebanyak 5 kali berturutan. Ia merupakan pintasan untuk fitur Kekunci Lekat, yang mempengaruhi cara papan kekunci anda berfungsi."
+msgstr ""
+"Anda baru sahaja menahan kekunci Shift sebanyak 5 kali berturutan. Ia "
+"merupakan pintasan untuk fitur Kekunci Lekat, yang mempengaruhi cara papan "
+"kekunci anda berfungsi."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "Anda baru sahaja mengetuk dua kekunci serentak, atau tekan kekunci Shift 5 kali secara berturutan. Ia merupakan pintasan untuk fitur Kekunci Lekat, yang mempengaruhi cara papan kekunci anda berfungsi."
+msgstr ""
+"Anda baru sahaja mengetuk dua kekunci serentak, atau tekan kekunci Shift 5 "
+"kali secara berturutan. Ia merupakan pintasan untuk fitur Kekunci Lekat, "
+"yang mempengaruhi cara papan kekunci anda berfungsi."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Sticky Keys Alert"
 msgstr "Amaran Kekunci Lekat"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Keutamaan Capaian Universal"
@@ -779,7 +851,8 @@ msgstr "Jadikan _teks lebih besar dan lebih mudah dibaca"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
-msgstr "T_ekan pintasan papan kekunci satu kekunci pada satu masa (Kekunci Lekat)"
+msgstr ""
+"T_ekan pintasan papan kekunci satu kekunci pada satu masa (Kekunci Lekat)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
@@ -835,40 +908,49 @@ msgstr "Komputer ini hanya mempunyai %s ruang cakera berbaki."
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "Anda boleh bebaskan ruang cakera dengan mengosongkan Tong Sampah, membuang program atau fail yang tidak diguna, atau mengalih fail ke cakera atau sekatan lain."
+msgstr ""
+"Anda boleh bebaskan ruang cakera dengan mengosongkan Tong Sampah, membuang "
+"program atau fail yang tidak diguna, atau mengalih fail ke cakera atau "
+"sekatan lain."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
-msgstr "Anda boleh bebaskan ruang cakera dengan membuang fail yang tidak diguna, atau mengalih fail ke cakera atau sekatan lain."
+msgstr ""
+"Anda boleh bebaskan ruang cakera dengan membuang fail yang tidak diguna, "
+"atau mengalih fail ke cakera atau sekatan lain."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "Anda boleh bebaskan ruang cakera dengan mengosongkan Tong Sampah, membuang program atau fail yang tidak diguna, atau mengalih fail ke cakera luaran."
+msgstr ""
+"Anda boleh bebaskan ruang cakera dengan mengosongkan Tong Sampah, membuang "
+"program atau fail yang tidak diguna, atau mengalih fail ke cakera luaran."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:110
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
-msgstr "Anda boleh bebaskan ruang cakera dengan membuang program atau fail yang tidak diguna, atau mengalih fail ke cakera luaran."
+msgstr ""
+"Anda boleh bebaskan ruang cakera dengan membuang program atau fail yang "
+"tidak diguna, atau mengalih fail ke cakera luaran."
 
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:207
 msgid "Low Disk Space"
 msgstr "Ruang Cakera Rendah"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
 msgstr "Kosongkan Tong Sampah"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
 msgstr "Periksa.."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Ignore"
 msgstr "Abai"
 
@@ -883,30 +965,32 @@ msgid "Removing: %s"
 msgstr "Membuang: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr "Mengosongkan tong sampah"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr "Menyediakan tong sampah kosong..."
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr "Dari:"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
 msgstr "Kosongkan semua item dari tong sampah?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "Jika anda pilih hendak mengosongkan tong sampah, semua item didalamnya akan kekal hilang. Perhatian, anda juga boleh memadamnya secara berasingan."
+msgstr ""
+"Jika anda pilih hendak mengosongkan tong sampah, semua item didalamnya akan "
+"kekal hilang. Perhatian, anda juga boleh memadamnya secara berasingan."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
 msgstr "_Kosongkan Tong Sampah"
 
@@ -920,12 +1004,14 @@ msgstr "Pengikatan kunci (%s) tidak sah"
 msgid "Key binding (%s) is incomplete"
 msgstr "Pengikatan kunci (%s) tidak lengkap"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:486
+#: ../plugins/keybindings/msd-keybindings-manager.c:490
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "Ralat semasa cuba menjalankan (%s)\ndimana ianya dipautkan ke kekunci (%s)"
+msgstr ""
+"Ralat semasa cuba menjalankan (%s)\n"
+"dimana ianya dipautkan ke kekunci (%s)"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
@@ -958,7 +1044,19 @@ msgid ""
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr "Ralat mengaktifkan konfigurasi XKB.\nIa boleh berlaku atas pelbagai sebab:\n • pepijat dalam pustaka libxklavier\n • pepijat dalam pelayan X (utiliti xkbcomp, xmodmap)\n • pelayan X dengan pelaksanaan libxkbfile yang tidak serasi\n\nData versi pelayan X:\n%s\n%d\nJika anda laporkan situasi ini sebagai pepijat, sila sertakan:\n • Keputusan <b>%s</b>\n • Keputusan <b>%s</b>"
+msgstr ""
+"Ralat mengaktifkan konfigurasi XKB.\n"
+"Ia boleh berlaku atas pelbagai sebab:\n"
+" • pepijat dalam pustaka libxklavier\n"
+" • pepijat dalam pelayan X (utiliti xkbcomp, xmodmap)\n"
+" • pelayan X dengan pelaksanaan libxkbfile yang tidak serasi\n"
+"\n"
+"Data versi pelayan X:\n"
+"%s\n"
+"%d\n"
+"Jika anda laporkan situasi ini sebagai pepijat, sila sertakan:\n"
+" • Keputusan <b>%s</b>\n"
+" • Keputusan <b>%s</b>"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:279
 msgid "_Layouts"
@@ -976,14 +1074,18 @@ msgstr "Tunjuk Bentangan _Semasa"
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "Tidak dapatkan terminal lalai. Sahkan sama ada perintah terminal lalai anda ditetapkan dan menuju ke aplikasi yang sah."
+msgstr ""
+"Tidak dapatkan terminal lalai. Sahkan sama ada perintah terminal lalai anda "
+"ditetapkan dan menuju ke aplikasi yang sah."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "Tidak dapat lakukan perintah: %s⏎\nSahkan sama ada ia merupakan perintah yang sah."
+msgstr ""
+"Tidak dapat lakukan perintah: %s⏎\n"
+"Sahkan sama ada ia merupakan perintah yang sah."
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1000,7 +1102,9 @@ msgstr "Tidak dapat benarkan fitur kebolehcapaian tetikus"
 #: ../plugins/mouse/msd-mouse-manager.c:1442
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
-msgstr "Kebolehcapaian tetikus memerlukan Mousetweaks untuk dipasang pada sistem anda."
+msgstr ""
+"Kebolehcapaian tetikus memerlukan Mousetweaks untuk dipasang pada sistem "
+"anda."
 
 #: ../plugins/mouse/msd-mouse-manager.c:1445
 msgid "Mouse Preferences"
@@ -1055,7 +1159,8 @@ msgstr "Tidak dapat pulihkan konfigurasi paparan dari sandar"
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Paparan akan ditetap semula ke konfigurasi terdahulu dalam tempoh %d saat"
+msgstr[0] ""
+"Paparan akan ditetap semula ke konfigurasi terdahulu dalam tempoh %d saat"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1082,39 +1187,39 @@ msgstr "Tidak dapat segar semula maklumat skrin: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Cuba menukar konfigurasi monitor jua."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1889
+#: ../plugins/xrandr/msd-xrandr-manager.c:1885
 msgid "Rotation not supported"
 msgstr "Putaran tidak disokong"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1945
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Could not save monitor configuration"
 msgstr "Tidak dapat simpan konfigurasi monitor"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1959
 msgid "Normal"
 msgstr "Biasa"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1960
 msgid "Left"
 msgstr "Kiri"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1961
 msgid "Right"
 msgstr "Kanan"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1966
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Upside Down"
-msgstr "Tunggang Terbalik"
+msgstr "Terbalik"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2088
+#: ../plugins/xrandr/msd-xrandr-manager.c:2084
 msgid "_Configure Display Settings…"
 msgstr "_Konfigur Tetapan Paparan..."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2141
+#: ../plugins/xrandr/msd-xrandr-manager.c:2137
 msgid "Configure display settings"
 msgstr "Konfigur tetapan paparan"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2201
+#: ../plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Tidak dapat laksana konfigurasi tersimpan untuk monitor"
 

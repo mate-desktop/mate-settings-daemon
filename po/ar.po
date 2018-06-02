@@ -1,27 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Abdelmonam Kouka <abdelmonam.kouka@ubuntume.com>, 2008
-# Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>, 2004
-# Anas El Husseini <linux.anas@gmail.com>, 2007
-# Arafat Medini <lumina@silverpen.de>, 2003
-# Djihed Afifi <djihed@gmail.com>, 2006
-# Isam Bayazidi <bayazidi@arabeyes.org>, 2002
-# Khaled Hosny <khaledhosny@eglug.org>, 2006-2010
-# Mosaab Alzoubi <moceap@hotmail.com>, 2013
-# noureddin <noureddin@barid.com>, 2012
-# noureddin <noureddin@barid.com>, 2012
-# Sayed Jaffer Al-Mosawi <mosawi@arabeyes.org>, 2002
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 21:52+0300\n"
-"PO-Revision-Date: 2017-09-23 18:08+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Arabic (http://www.transifex.com/mate/MATE/language/ar/)\n"
+"POT-Creation-Date: 2018-03-17 15:39+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Hayder Majid <cteehayder@gmail.com>, 2018\n"
+"Language-Team: Arabic (https://www.transifex.com/mate/teams/13566/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -90,18 +80,24 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "نوع التنعيم للاستخدام عند تصيير الخطوط. القيم الممكنة هي : \"none\" بدون تنعيم، \"grayscale\" تنعيم متدرج رمادي، و \"rgba\" لإزالة التسنن على مستوى جزء البكسل (فقط لشاشات LCD )."
+msgstr ""
+"نوع التنعيم للاستخدام عند تصيير الخطوط. القيم الممكنة هي : \"none\" بدون "
+"تنعيم، \"grayscale\" تنعيم متدرج رمادي، و \"rgba\" لإزالة التسنن على مستوى "
+"جزء البكسل (فقط لشاشات LCD )."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
-msgstr "التلميحات"
+msgstr "التلميح"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:6
 msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "نوع التلميحات المستعمل عند تصيير الخطوط. القيم الممكنة هي : \"none\" بدون ه، \"slight\" بدائي، \"medium\" قليل، و \"full\" أقصى ه (يمكن أن يؤدي إلى اعوجاج شكل الحروف)."
+msgstr ""
+"نوع التلميحات المستعمل عند تصيير الخطوط. القيم الممكنة هي : \"none\" بدون ه،"
+" \"slight\" بدائي، \"medium\" قليل، و \"full\" أقصى ه (يمكن أن يؤدي إلى "
+"اعوجاج شكل الحروف)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
@@ -113,7 +109,10 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "ترتيب عناصر أجزاء البكسل على شاشة LCD؛ يُستخدم فقط عند ضبط تنعيم إلى \"rgba\". القيم الممكنة هي : \"rgb\" أحمر على اليسار (الأكثر انتشارا)، \"bgr\" أزرق على اليسار، \"vrgb\" أحمر على الأعلى، \"vbgr\" أحمر على الأسفل."
+msgstr ""
+"ترتيب عناصر أجزاء البكسل على شاشة LCD؛ يُستخدم فقط عند ضبط تنعيم إلى "
+"\"rgba\". القيم الممكنة هي : \"rgb\" أحمر على اليسار (الأكثر انتشارا)، "
+"\"bgr\" أزرق على اليسار، \"vrgb\" أحمر على الأعلى، \"vbgr\" أحمر على الأسفل."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -123,7 +122,10 @@ msgstr "نشاط إزالة البطاقة الذكية"
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr "اضبط إلى واحد من \"لا شيء\" 'none' ، \"قفل الشاشة\" 'lock_screen'، \"الخروج القسري\" 'force_logout'. سيتم تأدية هذا العمل عند إزالة البطاقة الذّكية المخصصّة للولوج."
+msgstr ""
+"اضبط إلى واحد من \"لا شيء\" 'none' ، \"قفل الشاشة\" 'lock_screen'، \"الخروج "
+"القسري\" 'force_logout'. سيتم تأدية هذا العمل عند إزالة البطاقة الذّكية "
+"المخصصّة للولوج."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:1
 msgid "Disable touchpad while typing"
@@ -133,7 +135,9 @@ msgstr "عطّل لوحة اللمس أثناء الكتابة"
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "اضبطه كصحيح ، في حال حدوث مشاكل بسبب نقرات عارضة على لوحة اللّمس أثناء الكتابة."
+msgstr ""
+"اضبطه كصحيح ، في حال حدوث مشاكل بسبب نقرات عارضة على لوحة اللّمس أثناء "
+"الكتابة."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:3
 msgid "Enable mouse clicks with touchpad"
@@ -256,7 +260,7 @@ msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
-msgstr ""
+msgstr "حدود الحركة"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:31
 msgid ""
@@ -352,7 +356,9 @@ msgstr "النسبة المئوية التي ينّبه عندها"
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr "النسبة المئوية للمساحة الحرّة التي يبدأ التنبيه عندها لانخفاض مساحة القرص. أي عند وصول النسبة المئوية إلى حد أدنى من المحدّد ، فإن التحذيرات ستظهر."
+msgstr ""
+"النسبة المئوية للمساحة الحرّة التي يبدأ التنبيه عندها لانخفاض مساحة القرص. "
+"أي عند وصول النسبة المئوية إلى حد أدنى من المحدّد ، فإن التحذيرات ستظهر."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
 msgid "Subsequent free percentage notify threshold"
@@ -362,7 +368,9 @@ msgstr "النسبة المئوية التالية التي ينّبه عنده�
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
-msgstr "حدّد النسبة المئوية لمساحة القرص الحرّة التي يجب أن يتم تجاوزها نقصانًا قبل إصدار أي تحذيرٍ لاحق."
+msgstr ""
+"حدّد النسبة المئوية لمساحة القرص الحرّة التي يجب أن يتم تجاوزها نقصانًا قبل "
+"إصدار أي تحذيرٍ لاحق."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:9
 msgid "Free space no notify threshold"
@@ -372,7 +380,9 @@ msgstr "المساحة الحرة التي لا ينبه عندها"
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr "حدّد حجمًا بالجيجابايت. لن تظهر أي تحذيرات ما دام حجم المساحة الحرّة لا يقل عنه."
+msgstr ""
+"حدّد حجمًا بالجيجابايت. لن تظهر أي تحذيرات ما دام حجم المساحة الحرّة لا يقل "
+"عنه."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:11
 msgid "Minimum notify period for repeated warnings"
@@ -382,7 +392,8 @@ msgstr "أقل مدة تنبيه للتحذيرات المتكررة"
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "حدّد وقتًا بالدّقائق. التّحذيرات القادمة في الصّوت لن تظهر بعد هذه المدّة."
+msgstr ""
+"حدّد وقتًا بالدّقائق. التّحذيرات القادمة في الصّوت لن تظهر بعد هذه المدّة."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
@@ -588,7 +599,8 @@ msgstr "أظهر أجهزة العرض في منطقة التبليغ"
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
-msgstr "ما إذا كانت ستعرض أيقونة تبليغ تحتوي على أشياء متعلقة بجهاز العرض في اللوحة."
+msgstr ""
+"ما إذا كانت ستعرض أيقونة تبليغ تحتوي على أشياء متعلقة بجهاز العرض في اللوحة."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:7
 msgid "Do not touch monitor configuration"
@@ -602,7 +614,12 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr "عادةً ، محثّ إعدادات متّة يقوم بتهيئة الشاشات الداخليّة و الخارجيّة بناءً على إعدادات \"الشاشات الخارجية المشغّلة عند الإقلاع\" و \"شاشات الأجهزة المحمولة المشغّلة عند الإقلاع\" و يحدد وضع \"المستنسخ/العمل جنبًا لجنب\". تحديد هذا الإعداد إلى \"صحيح\" سيعطل هذه الآليّة، و لن تُمس إعدادات الشّاشة مطلقًا ( ما لم تصرّح بها إعدادات المستخدم ) ."
+msgstr ""
+"عادةً ، محثّ إعدادات متّة يقوم بتهيئة الشاشات الداخليّة و الخارجيّة بناءً "
+"على إعدادات \"الشاشات الخارجية المشغّلة عند الإقلاع\" و \"شاشات الأجهزة "
+"المحمولة المشغّلة عند الإقلاع\" و يحدد وضع \"المستنسخ/العمل جنبًا لجنب\". "
+"تحديد هذا الإعداد إلى \"صحيح\" سيعطل هذه الآليّة، و لن تُمس إعدادات الشّاشة "
+"مطلقًا ( ما لم تصرّح بها إعدادات المستخدم ) ."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:9
 msgid "Turn on external monitor after system boot"
@@ -622,7 +639,8 @@ msgstr "شغّل شاشة الحاسوب المحمول بعد إقلاع الن
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr "شغّل شاشة الحاسب المحمول بعد إقلاع النظام لو المستخدم وصّلها عند الإقلاع."
+msgstr ""
+"شغّل شاشة الحاسب المحمول بعد إقلاع النظام لو المستخدم وصّلها عند الإقلاع."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:13
 msgid "File for default configuration for RandR"
@@ -635,7 +653,12 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr "إن إضافة XRandR ستظهر ضمن الإعدادات الافتراضية الموجودة ضمن ملف و المعيّنة في هذا المفتاح. هذا يماثل ~/.config/monitors.xml و الموجود طبيعيًا ضمن أدلة المنازل لكل مستخدم. في حال عدم امتلاك المستخدم لهذا الملف ، أو أنّ ملفه لا يطابق إعداداته للشاشة ، عندها سيتم التعديل على الملف ليلاءم هذا المفتاح و الذي سيعدّ بديلًا."
+msgstr ""
+"إن إضافة XRandR ستظهر ضمن الإعدادات الافتراضية الموجودة ضمن ملف و المعيّنة "
+"في هذا المفتاح. هذا يماثل ~/.config/monitors.xml و الموجود طبيعيًا ضمن أدلة "
+"المنازل لكل مستخدم. في حال عدم امتلاك المستخدم لهذا الملف ، أو أنّ ملفه لا "
+"يطابق إعداداته للشاشة ، عندها سيتم التعديل على الملف ليلاءم هذا المفتاح و "
+"الذي سيعدّ بديلًا."
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
@@ -643,7 +666,7 @@ msgstr "محثّ إعدادات متّة"
 
 #: ../mate-settings-daemon/main.c:65
 msgid "Enable debugging code"
-msgstr "فعّل كود تتبع الأخطاء"
+msgstr "فعّل كود التنقيح"
 
 #: ../mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
@@ -651,7 +674,7 @@ msgstr "استبدل المحثّ الحالي"
 
 #: ../mate-settings-daemon/main.c:67
 msgid "Don't become a daemon"
-msgstr "لا تجعله محثًّا"
+msgstr "لا تصبح مُحثًا"
 
 #: ../mate-settings-daemon/main.c:68
 msgid "Exit after a time (for debugging)"
@@ -665,102 +688,108 @@ msgstr "إتاحة لوحة المفاتيح"
 msgid "Accessibility keyboard plugin"
 msgstr "ملحق إتاحة لوحة المفاتيح"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr "حدث خطأ عند عرض المساعدة: %s"
+msgstr "حصل خطأ عند عرض المساعدة: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
 msgid "Do you want to activate Slow Keys?"
 msgstr "أتريد تفعيل المفاتيح البطيئة؟"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "أتريد تعطيل المفاتيح البطيئة؟"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "لقد ضغطت مفتاح Shift لثمان ثوان. إنّ هذا إختصار ميزة المفاتيح البطيئة المؤثّر على طريقة عمل لوحة مفاتيحك."
+msgstr ""
+"لقد ضغطت مفتاح Shift لثمان ثوان. إنّ هذا إختصار ميزة المفاتيح البطيئة "
+"المؤثّر على طريقة عمل لوحة مفاتيحك."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't activate"
 msgstr "لا تنشط"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't deactivate"
 msgstr "لا تعطل"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Activate"
 msgstr "نَشِّط"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Deactivate"
 msgstr "عَطِّل"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't activate"
 msgstr "_لا تنشط"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't deactivate"
 msgstr "_لا تعطل"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Activate"
-msgstr "_نَشِّط"
+msgstr "_فعّل"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Deactivate"
-msgstr "_عَطِّل"
+msgstr "_عطّل"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Slow Keys Alert"
 msgstr "تنبيه المفاتيح البطيئة"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Do you want to activate Sticky Keys?"
 msgstr "أتريد تفعيل المفاتيح اللاصقة؟"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "أتريد تعطيل المفاتيح اللاصقة؟"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "لقد نقرت مفتاح Shift خمس مرات متتالية. هذا اختصار ميزة المفاتيح اللاصقة المؤثّر على طريقة عمل لوحة مفاتيحك."
+msgstr ""
+"لقد نقرت مفتاح Shift خمس مرات متتالية. هذا اختصار ميزة المفاتيح اللاصقة "
+"المؤثّر على طريقة عمل لوحة مفاتيحك."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "لقد ضغطت على مفتاحان في آن واحد أو نقرت مفتاح Shift خمس مرّات متتالية. يعطّل هذا ميزة المفاتيح اللاصقة المؤثّر على طريقة عمل لوحة مفاتيحك."
+msgstr ""
+"لقد ضغطت على مفتاحان في آن واحد أو نقرت مفتاح Shift خمس مرّات متتالية. يعطّل"
+" هذا ميزة المفاتيح اللاصقة المؤثّر على طريقة عمل لوحة مفاتيحك."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Sticky Keys Alert"
 msgstr "تنبيه المفاتيح اللاصقة"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "تفضيلات الإتاحة العالمية"
@@ -843,40 +872,48 @@ msgstr "يحتوي الحاسوب على %s فقط من المساحة الخا�
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "يمكنك إخلاء بعض المساحة بإفراغ المهملات، أو حذف البرامج أو الملفات غير المُستخدمة أو نقل الملفات إلى قرص أو قسم آخر."
+msgstr ""
+"يمكنك إخلاء بعض المساحة بإفراغ المهملات، أو حذف البرامج أو الملفات غير "
+"المُستخدمة أو نقل الملفات إلى قرص أو قسم آخر."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
-msgstr "يمكنك إخلاء بعض المساحة بحذف البرامج أو الملفات غير المُستخدمة أو نقل الملفات إلى قرص أو قسم آخر."
+msgstr ""
+"يمكنك إخلاء بعض المساحة بحذف البرامج أو الملفات غير المُستخدمة أو نقل "
+"الملفات إلى قرص أو قسم آخر."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "يمكنك إخلاء بعض المساحة بإفراغ المهملات، أو حذف البرامج أو الملفات غير المُستخدمة أو نقل الملفات إلى قرص خارجي."
+msgstr ""
+"يمكنك إخلاء بعض المساحة بإفراغ المهملات، أو حذف البرامج أو الملفات غير "
+"المُستخدمة أو نقل الملفات إلى قرص خارجي."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:110
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
-msgstr "يمكنك إخلاء بعض المساحة بحذف البرامج أو الملفات غير المُستخدمة أو نقل الملفات إلى قرص خارجي."
+msgstr ""
+"يمكنك إخلاء بعض المساحة بحذف البرامج أو الملفات غير المُستخدمة أو نقل "
+"الملفات إلى قرص خارجي."
 
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:207
 msgid "Low Disk Space"
 msgstr "المساحة المتوفرة قليلة"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
 msgstr "أفرغ المهملات"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
 msgstr "افحص…"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Ignore"
 msgstr "تجاهل"
 
@@ -891,32 +928,34 @@ msgid "Removing: %s"
 msgstr "يحذف: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr "يفرغ المهملات"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr "يحضّر لإفراغ المهملات…"
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr "من:"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
-msgstr "أأحذف كل العناصر من المهملات؟"
+msgstr "هل أفرغ كل العناصر من المهملات؟"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "إذا اخترت إفراغ المهملات، ستضيع محتوياتها نهائيا. لاحظ أيضا أنه يمكن حذفها منفصلة."
+msgstr ""
+"إذا اخترت إفراغ المهملات، ستفقد كل العناصر الموجودة بها نهائيًا. لاحظ رجاءً "
+"إمكانية حذفهم بشكل منفصل."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
-msgstr "أ_فرغ المهملات"
+msgstr "أ_فرِغ المهملات"
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:112
 #, c-format
@@ -928,12 +967,14 @@ msgstr "ارتباط المفتاح (%s) غير صالح"
 msgid "Key binding (%s) is incomplete"
 msgstr "ارتباط المفتاح (%s) غير مكتمل"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:486
+#: ../plugins/keybindings/msd-keybindings-manager.c:490
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "خطأ عند محاولة تشغيل(%s)\nالمربوط بالمفتاح (%s)"
+msgstr ""
+"خطأ عند محاولة تشغيل(%s)\n"
+"المربوط بالمفتاح (%s)"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
@@ -984,14 +1025,18 @@ msgstr "اعرض ال_تخطيط الحالي"
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "تعذر معرفة الطرفية الافتراضية. تحقق من أن أمر الطرفية الافتراضية لديك مُعدّ ويشير إلى تطبيق صالح."
+msgstr ""
+"تعذر معرفة الطرفية الافتراضية. تحقق من أن أمر الطرفية الافتراضية لديك مُعدّ "
+"ويشير إلى تطبيق صالح."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "تعذّر تنفيذ الأمر: %s\nتأكّد من أن هذا الأمر صالح."
+msgstr ""
+"تعذّر تنفيذ الأمر: %s\n"
+"تأكّد من أن هذا الأمر صالح."
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1032,7 +1077,7 @@ msgstr "ملحق Mpris"
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:1
 msgid "Typing Break"
-msgstr "استراحة الكتابة"
+msgstr "استراحة عن الكتابة"
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:2
 msgid "Typing break plugin"
@@ -1063,12 +1108,12 @@ msgstr "تعّذرت استعادة إعدادات الشاشة من الحفظ 
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "ستُعاد الشاشة إلى الإعدادات السابقة الآن"
-msgstr[1] "ستُعاد الشاشة إلى الإعدادات السابقة خلال ثانية"
-msgstr[2] "ستُعاد الشاشة إلى الإعدادات السابقة خلال ثانيتين"
-msgstr[3] "ستُعاد الشاشة إلى الإعدادات السابقة خلال %d ثوان"
-msgstr[4] "ستُعاد الشاشة إلى الإعدادات السابقة خلال %d ثانية"
-msgstr[5] "ستُعاد الشاشة إلى الإعدادات السابقة خلال %d ثانية"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1095,39 +1140,39 @@ msgstr "تعذّر تحديث معلومات الشاشة: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "يحاول تبديل إعدادات الشاشة على أي حال."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1889
+#: ../plugins/xrandr/msd-xrandr-manager.c:1885
 msgid "Rotation not supported"
 msgstr "التدوير غير مدعوم"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1945
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Could not save monitor configuration"
 msgstr "تعذّر حفظ إعدادات الشاشة"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1959
 msgid "Normal"
-msgstr "طبيعي"
+msgstr "عادية"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1960
 msgid "Left"
 msgstr "يسار"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1961
 msgid "Right"
 msgstr "يمين"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1966
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Upside Down"
 msgstr "رأسا على عقب"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2088
+#: ../plugins/xrandr/msd-xrandr-manager.c:2084
 msgid "_Configure Display Settings…"
 msgstr "ا_ضبط إعدادات أجهزة العرض…"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2141
+#: ../plugins/xrandr/msd-xrandr-manager.c:2137
 msgid "Configure display settings"
 msgstr "اضبط إعدادات أجهزة العرض"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2201
+#: ../plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Could not apply the stored configuration for monitors"
 msgstr "تعذّر تطبيق الإعدادات المحفوظة على الشاشات"
 

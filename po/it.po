@@ -1,26 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Alessio Dessì <alkex@inwind.it>, 2003, 2004, 2005, 2006, 2007
-# Christopher R. Gabriel, 2001, 2002
-# Giuseppe Pignataro (Fasbyte01) <rogepix@gmail.com>, 2017
-# Giuseppe Pignataro (Fasbyte01) <rogepix@gmail.com>, 2015
-# Luca Ferretti <lferrett@gnome.org>, 2003, 2004, 2005, 2007, 2008, 2009, 2010
-# Marco Bartolucci <nap.84@live.it>, 2016
-# Marco Z. <minaz666@gmail.com>, 2016
-# Marco Mangiacavalli, 2013
-# theo the best <enthusedquill6@gmail.com>, 2016
-# Stefano Karapetsas <stefano@karapetsas.com>, 2013
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 21:52+0300\n"
-"PO-Revision-Date: 2017-09-19 11:21+0000\n"
-"Last-Translator: Giuseppe Pignataro (Fasbyte01) <rogepix@gmail.com>\n"
-"Language-Team: Italian (http://www.transifex.com/mate/MATE/language/it/)\n"
+"POT-Creation-Date: 2018-03-17 15:39+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Marco Z. <minaz666@gmail.com>, 2018\n"
+"Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -78,7 +69,9 @@ msgstr "DPI"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "La risoluzione usata per convertire le dimensioni dei tipi di carattere in dimensioni dei pixel, espressa in punti per pollice."
+msgstr ""
+"La risoluzione usata per convertire le dimensioni dei tipi di carattere in "
+"dimensioni dei pixel, espressa in punti per pollice."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
@@ -89,18 +82,26 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "Il tipo di antialiasing da usare nella resa a schermo dei tipi di caratteri. Valori ammessi sono: \"none\" per nessun antialiasing, \"grayscale\" per antialiasing standard in scala di grigi, \"rgba\" per antialiasing sul subpixel (solo per schermi LCD)."
+msgstr ""
+"Il tipo di antialiasing da usare nella resa a schermo dei tipi di caratteri."
+" Valori ammessi sono: \"none\" per nessun antialiasing, \"grayscale\" per "
+"antialiasing standard in scala di grigi, \"rgba\" per antialiasing sul "
+"subpixel (solo per schermi LCD)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
-msgstr "Approssimazione"
+msgstr "Approssimazione (hinting)"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:6
 msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "Il tipo di approssimazione (hinting) da usare nella resa a schermo dei tipi di carattere. Valori ammessi sono: \"none\" per nessuna approssimazione, \"slight\" per essenziale, \"medium\" per moderata e \"full\" per la massima approssimazione (può causare distorsioni nella forma delle lettere)."
+msgstr ""
+"Il tipo di approssimazione (hinting) da usare nella resa a schermo dei tipi "
+"di carattere. Valori ammessi sono: \"none\" per nessuna approssimazione, "
+"\"slight\" per essenziale, \"medium\" per moderata e \"full\" per la massima"
+" approssimazione (può causare distorsioni nella forma delle lettere)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
@@ -112,7 +113,11 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "L'ordine degli elementi subpixel su uno schermo LCD; usato solo quando antialiasing è impostato a \"rgba\". Valori possibili sono: \"rgb\" per rosso a sinistra (il più comune), \"bgr\" per blu a sinistra, \"vrgb\" per rosso in alto, \"vbgr\" per rosso in basso."
+msgstr ""
+"L'ordine degli elementi subpixel su uno schermo LCD; usato solo quando "
+"antialiasing è impostato a \"rgba\". Valori possibili sono: \"rgb\" per "
+"rosso a sinistra (il più comune), \"bgr\" per blu a sinistra, \"vrgb\" per "
+"rosso in alto, \"vbgr\" per rosso in basso."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -122,7 +127,10 @@ msgstr "Azione rimozione smartcard"
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr "Impostare questa chiave a \"none\", \"lock_screen\" oppure \"force_logoout\". L'azione indicata viene eseguita quando si rimuove la smartcard usata per accedere."
+msgstr ""
+"Impostare questa chiave a \"none\", \"lock_screen\" oppure "
+"\"force_logoout\". L'azione indicata viene eseguita quando si rimuove la "
+"smartcard usata per accedere."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:1
 msgid "Disable touchpad while typing"
@@ -132,7 +140,9 @@ msgstr "Disabilita il touchpad durante la digitazione"
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "Impostare a VERO se si hanno problemi con pressioni accidentali del touchpad mentre si digita."
+msgstr ""
+"Impostare a VERO se si hanno problemi con pressioni accidentali del touchpad"
+" mentre si digita."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:3
 msgid "Enable mouse clicks with touchpad"
@@ -141,7 +151,9 @@ msgstr "Abilita clic del mouse col touchpad"
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "Impostare a VERO per essere in grado di inviare clic del mouse facendo tap sul touchpad."
+msgstr ""
+"Impostare a VERO per essere in grado di inviare clic del mouse facendo tap "
+"sul touchpad."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Enable vertical edge scrolling"
@@ -149,7 +161,8 @@ msgstr "Abilita lo scorrimento verticale"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:6
 msgid "Set this to TRUE to allow vertical edge scrolling"
-msgstr "Impostare questa opzione su VERO per abilitare lo scorrimento verticale"
+msgstr ""
+"Impostare questa opzione su VERO per abilitare lo scorrimento verticale"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:7
 msgid "Enable horizontal edge scrolling"
@@ -157,7 +170,8 @@ msgstr "Abilita lo scorrimento del bordo orizzontale"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:8
 msgid "Set this to TRUE to allow horizontal edge scrolling"
-msgstr "Impostare questa opzione su VERO per abilitare lo scorrimento orizzontale"
+msgstr ""
+"Impostare questa opzione su VERO per abilitare lo scorrimento orizzontale"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:9
 msgid "Enable vertical two-finger scrolling"
@@ -165,7 +179,9 @@ msgstr "Abilita lo scorrimento verticale a due dita"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:10
 msgid "Set this to TRUE to allow vertical two-finger scrolling"
-msgstr "Impostare questa opzione su VERO per abilitare lo scorrimento verticale con due dita"
+msgstr ""
+"Impostare questa opzione su VERO per abilitare lo scorrimento verticale con "
+"due dita"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:11
 msgid "Enable horizontal two-finger scrolling"
@@ -173,7 +189,9 @@ msgstr "Abilita lo scorrimento orizzontale a due dita"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
 msgid "Set this to TRUE to allow horizontal two-finger scrolling"
-msgstr "Impostare questa opzione su VERO per abilitare lo scorrimento orizzontale con due dita"
+msgstr ""
+"Impostare questa opzione su VERO per abilitare lo scorrimento orizzontale "
+"con due dita"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
 msgid "Natural scrolling"
@@ -181,7 +199,9 @@ msgstr "Scorrimento naturale"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
-msgstr "Impostare a vero per abilitare lo scorrimento naturale (invertito) per i touchpad"
+msgstr ""
+"Impostare a vero per abilitare lo scorrimento naturale (invertito) per i "
+"touchpad"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
 msgid "Enable touchpad"
@@ -211,7 +231,10 @@ msgstr "Tocco con un dito"
 msgid ""
 "Select the button mapping for one-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Seleziona la mappatura pulsanti per il tocco con un dito. I valori supportati sono: 1: pulsante mouse sinistro 2: pulsante mouse centrale 3: pulsante mouse destro"
+msgstr ""
+"Seleziona la mappatura pulsanti per il tocco con un dito. I valori "
+"supportati sono: 1: pulsante mouse sinistro 2: pulsante mouse centrale 3: "
+"pulsante mouse destro"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
 msgid "Two finger tap button"
@@ -221,7 +244,10 @@ msgstr "Tocco con due dita"
 msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Seleziona la mappatura pulsanti per il tocco con due dita. I valori supportati sono: 1: pulsante mouse sinistro 2: pulsante mouse centrale 3: pulsante mouse destro"
+msgstr ""
+"Seleziona la mappatura pulsanti per il tocco con due dita. I valori "
+"supportati sono: 1: pulsante mouse sinistro 2: pulsante mouse centrale 3: "
+"pulsante mouse destro"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
 msgid "Three finger tap button"
@@ -231,7 +257,10 @@ msgstr "Tocco con tre dita"
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Seleziona la mappatura pulsanti per il tocco con tre dita. I valori supportati sono: 1: pulsante mouse sinistro 2: pulsante mouse centrale 3: pulsante mouse destro"
+msgstr ""
+"Seleziona la mappatura pulsanti per il tocco con tre dita. I valori "
+"supportati sono: 1: pulsante mouse sinistro 2: pulsante mouse centrale 3: "
+"pulsante mouse destro"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:26
 msgid "Touchpad button orientation"
@@ -241,7 +270,10 @@ msgstr "Orientamento dei tasti del touchpad"
 msgid ""
 "Swap left and right buttons for left-handed touchpads with 'left', 'right' "
 "for right-handed, 'mouse' to follow the mouse setting."
-msgstr "Scambia il pulsante sinistro e destro del touchpad per mancini con 'sinistra', 'destra' per destrimani, 'mouse' per seguire l'impostazione del mouse."
+msgstr ""
+"Scambia il pulsante sinistro e destro del touchpad per mancini con "
+"'sinistra', 'destra' per destrimani, 'mouse' per seguire l'impostazione del "
+"mouse."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
 msgid "Motion Acceleration"
@@ -251,7 +283,9 @@ msgstr "Accelerazione del Movimento"
 msgid ""
 "Acceleration multiplier for touchpad motion. A value of -1 is the system "
 "default."
-msgstr "Moltiplicatore dell'accelerazione per il movimento del mouse. Impostare a -1 per usare le preferenze di sistema."
+msgstr ""
+"Moltiplicatore dell'accelerazione per il movimento del mouse. Impostare a -1"
+" per usare le preferenze di sistema."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
@@ -261,7 +295,10 @@ msgstr "Soglia del Movimento"
 msgid ""
 "Distance in pixels the pointer must move before accelerated touchpad motion "
 "is activated. A value of -1 is the system default."
-msgstr "Numero di pixel di cui muovere il puntatore prima che il movimento accelerato del touchpad sia attivato. Impostare a -1 per usare le preferenze di sistema."
+msgstr ""
+"Numero di pixel di cui muovere il puntatore prima che il movimento "
+"accelerato del touchpad sia attivato. Impostare a -1 per usare le preferenze"
+" di sistema."
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
@@ -301,7 +338,8 @@ msgstr "Attivazione di questo plugin"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr "Se questo plugin sarebbe stato attivato dal mate-settings-daemon oppure no"
+msgstr ""
+"Se questo plugin sarebbe stato attivato dal mate-settings-daemon oppure no"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:3
@@ -341,7 +379,9 @@ msgstr "Priorità da usare per questo plugin"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
-msgstr "Priorità da usare per questo plugin nella coda di avvio del mate-settings-daemon"
+msgstr ""
+"Priorità da usare per questo plugin nella coda di avvio del mate-settings-"
+"daemon"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:5
 msgid "Free percentage notify threshold"
@@ -351,7 +391,10 @@ msgstr "Limite di percentuale libera per notifica"
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr "Limite di percentuale di spazio libero per l'avvertimento iniziale di spazio disco in esaurimento. Se la percentuale di spazio libero scende sotto questo valore, viene mostrato un avvertimento."
+msgstr ""
+"Limite di percentuale di spazio libero per l'avvertimento iniziale di spazio"
+" disco in esaurimento. Se la percentuale di spazio libero scende sotto "
+"questo valore, viene mostrato un avvertimento."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
 msgid "Subsequent free percentage notify threshold"
@@ -361,7 +404,9 @@ msgstr "Limite di successiva percentuale libera per notifica"
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
-msgstr "Specifica di quanto lo spazio libero su disco si debba ridurre in percentuale prima di emettere un ulteriore avvertimento."
+msgstr ""
+"Specifica di quanto lo spazio libero su disco si debba ridurre in "
+"percentuale prima di emettere un ulteriore avvertimento."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:9
 msgid "Free space no notify threshold"
@@ -371,7 +416,9 @@ msgstr "Limite di spazio libero senza notifica"
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr "Specifica una quantità in GB. Se la quantità di spazio libero è maggiore di questo valore, non viene mostrato alcun avvertimento."
+msgstr ""
+"Specifica una quantità in GB. Se la quantità di spazio libero è maggiore di "
+"questo valore, non viene mostrato alcun avvertimento."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:11
 msgid "Minimum notify period for repeated warnings"
@@ -381,7 +428,9 @@ msgstr "Intervallo di notifica minimo per avvertimenti ripetuti"
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "Specifica un tempo in minuti. I successivi avvertimenti per un volume non appaiono più frequentemente di quanto qui indicato."
+msgstr ""
+"Specifica un tempo in minuti. I successivi avvertimenti per un volume non "
+"appaiono più frequentemente di quanto qui indicato."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
@@ -389,7 +438,9 @@ msgstr "Percorsi di mount da ignorare"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr "Specifica un elenco di percorsi di mount da ignorare quando lo spazio sta per esaurirsi."
+msgstr ""
+"Specifica un elenco di percorsi di mount da ignorare quando lo spazio sta "
+"per esaurirsi."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
@@ -473,7 +524,7 @@ msgstr "Associazione per aprire la cartella home."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
 msgid "Search"
-msgstr "Cerca"
+msgstr "Ricerca"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:26
 msgid "Binding to launch the search tool."
@@ -533,7 +584,8 @@ msgstr "Riproduci (o Riproduci/Pausa)"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
 msgid "Binding to start playback (or toggle play/pause)."
-msgstr "Associazione per avviare la riproduzione (o commutare tra riproduci/pausa)."
+msgstr ""
+"Associazione per avviare la riproduzione (o commutare tra riproduci/pausa)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
 msgid "Pause playback"
@@ -587,7 +639,8 @@ msgstr "Mostra i display nell'area di notifica"
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
-msgstr "Indica se è mostrata sul pannello un'icona di notifica relativa al display."
+msgstr ""
+"Indica se è mostrata sul pannello un'icona di notifica relativa al display."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:7
 msgid "Do not touch monitor configuration"
@@ -601,7 +654,14 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr "Di solito, mate-settings-daemon configura schermi interni ed esterni secondo le impostazioni accendi_schermi_esterni_all'avvio e accendi_lo_schermo_del_computer_all'avvio e determina un'appropriata modalità clona/uno accanto all'altro. Impostando questa chiave su Vero lo disabiliti, e le impostazioni dello schermo non saranno modificate del tutto (fino a quando non ci sarà una configurazione esplicita da parte dell'utente)."
+msgstr ""
+"Di solito, mate-settings-daemon configura schermi interni ed esterni secondo"
+" le impostazioni accendi_schermi_esterni_all'avvio e "
+"accendi_lo_schermo_del_computer_all'avvio e determina un'appropriata "
+"modalità clona/uno accanto all'altro. Impostando questa chiave su Vero lo "
+"disabiliti, e le impostazioni dello schermo non saranno modificate del tutto"
+" (fino a quando non ci sarà una configurazione esplicita da parte "
+"dell'utente)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:9
 msgid "Turn on external monitor after system boot"
@@ -611,7 +671,9 @@ msgstr "Attiva il monitor esterno dopo il boot di sistema"
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
-msgstr "Attiva il monitor esterno dopo il boot del sistema se l'utente collega un monitor esterno durante il boot."
+msgstr ""
+"Attiva il monitor esterno dopo il boot del sistema se l'utente collega un "
+"monitor esterno durante il boot."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:11
 msgid "Turn on laptop monitor after system boot"
@@ -621,7 +683,9 @@ msgstr "Attiva il monitor del portatile dopo il boot di sistema"
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr "Attiva il monitor del portatile dopo il boot del sistema se l'utente collega un monitor esterno durante il boot."
+msgstr ""
+"Attiva il monitor del portatile dopo il boot del sistema se l'utente collega"
+" un monitor esterno durante il boot."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:13
 msgid "File for default configuration for RandR"
@@ -634,7 +698,13 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr "Il plugin XRandR controlla la presenza di una configurazione predefinita nel file specificato da questa chiave. Tale file è simile al file ~/.config/monitors.xml che normalmente viene memorizzato nelle directory home degli utenti. Se un utente non ha tale file, oppure se ne ha uno che non corrisponde alla impostazione dei monitor, allora viene usato il file specificato in questa chiave."
+msgstr ""
+"Il plugin XRandR controlla la presenza di una configurazione predefinita nel"
+" file specificato da questa chiave. Tale file è simile al file "
+"~/.config/monitors.xml che normalmente viene memorizzato nelle directory "
+"home degli utenti. Se un utente non ha tale file, oppure se ne ha uno che "
+"non corrisponde alla impostazione dei monitor, allora viene usato il file "
+"specificato in questa chiave."
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
@@ -642,7 +712,7 @@ msgstr "Demone di impostazioni per MATE"
 
 #: ../mate-settings-daemon/main.c:65
 msgid "Enable debugging code"
-msgstr "Abilita il codice di debug"
+msgstr "Abilitare il codice di debug"
 
 #: ../mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
@@ -650,7 +720,7 @@ msgstr "Rimpiazza il demone attuale"
 
 #: ../mate-settings-daemon/main.c:67
 msgid "Don't become a daemon"
-msgstr "Non operare come demone"
+msgstr "Non diventare un demone"
 
 #: ../mate-settings-daemon/main.c:68
 msgid "Exit after a time (for debugging)"
@@ -664,102 +734,111 @@ msgstr "Accessibilità tastiera"
 msgid "Accessibility keyboard plugin"
 msgstr "Plugin per l'accesso universale alla tastiera"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr "Errore nel mostrare la documentazione. %s"
+msgstr "Si è verificato un errore nel visualizzare il manuale: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
 msgid "Do you want to activate Slow Keys?"
 msgstr "Attivare il rallentamento dei tasti?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Disattivare il rallentamento dei tasti?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "Si è tenuto premuto il tasto «Maiusc» per otto secondi. Questa è la scorciatoia per la funzione di rallentamento dei tasti, che determina il modo in cui opera la tastiera."
+msgstr ""
+"Si è tenuto premuto il tasto «Maiusc» per otto secondi. Questa è la "
+"scorciatoia per la funzione di rallentamento dei tasti, che determina il "
+"modo in cui opera la tastiera."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't activate"
 msgstr "Non attivare"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't deactivate"
 msgstr "Non disattivare"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Activate"
 msgstr "Attiva"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Deactivate"
 msgstr "Disattiva"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't activate"
 msgstr "_Non attivare"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't deactivate"
 msgstr "_Non disattivare"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Activate"
 msgstr "_Attiva"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Deactivate"
 msgstr "_Disattiva"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Slow Keys Alert"
 msgstr "Allerta rallentamento dei tasti"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Attivare la permanenza dei tasti?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Disattivare la permanenza dei tasti?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "È stato premuto per cinque volte consecutive il tasto «Maiusc». Questa è la scorciatoia per la funzione di permanenza dei tasti, che determina il modo in cui opera la tastiera."
+msgstr ""
+"È stato premuto per cinque volte consecutive il tasto «Maiusc». Questa è la "
+"scorciatoia per la funzione di permanenza dei tasti, che determina il modo "
+"in cui opera la tastiera."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "Sono stati premuti due tasti contemporaneamente o cinque volte consecutive il tasto «Maiusc». Questo disabilita la funzione di permanenza dei tasti, che determina il modo in cui opera la tastiera."
+msgstr ""
+"Sono stati premuti due tasti contemporaneamente o cinque volte consecutive "
+"il tasto «Maiusc». Questo disabilita la funzione di permanenza dei tasti, "
+"che determina il modo in cui opera la tastiera."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Sticky Keys Alert"
 msgstr "Allerta permanenza dei tasti"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Preferenze di accesso universale"
@@ -786,7 +865,8 @@ msgstr "Rendere il _testo più grande e semplice da leggere"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
-msgstr "Premere le _scorciatoie da tastiera un tasto per volta (permanenza tasti)"
+msgstr ""
+"Premere le _scorciatoie da tastiera un tasto per volta (permanenza tasti)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
@@ -794,7 +874,8 @@ msgstr "_Ignorare pressioni di tasto duplicate (tasti ravvicinati)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "Press and _hold keys to accept them (Slow Keys)"
-msgstr "_Premere e tenere premuti i tasti per accettarli (rallentamento tasti)"
+msgstr ""
+"_Premere e tenere premuti i tasti per accettarli (rallentamento tasti)"
 
 #: ../plugins/background/background.mate-settings-plugin.in.h:1
 msgid "Background"
@@ -842,40 +923,49 @@ msgstr "Su questo computer rimangono solo %s di spazio disco."
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "È possibile liberare spazio su disco svuotando il cestino, rimuovendo programmi o file non utilizzati, oppure spostando file su un altro disco o partizione."
+msgstr ""
+"È possibile liberare spazio su disco svuotando il cestino, rimuovendo "
+"programmi o file non utilizzati, oppure spostando file su un altro disco o "
+"partizione."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
-msgstr "È possibile liberare spazio su disco rimuovendo programmi o file non utilizzati, oppure spostando file su un altro disco o partizione."
+msgstr ""
+"È possibile liberare spazio su disco rimuovendo programmi o file non "
+"utilizzati, oppure spostando file su un altro disco o partizione."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "È possibile liberare spazio su disco svuotando il cestino, rimuovendo programmi o file non utilizzati, oppure spostando file su un disco esterno."
+msgstr ""
+"È possibile liberare spazio su disco svuotando il cestino, rimuovendo "
+"programmi o file non utilizzati, oppure spostando file su un disco esterno."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:110
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
-msgstr "È possibile liberare spazio su disco rimuovendo programmi o file non utilizzati, oppure spostando file su un disco esterno."
+msgstr ""
+"È possibile liberare spazio su disco rimuovendo programmi o file non "
+"utilizzati, oppure spostando file su un disco esterno."
 
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:207
 msgid "Low Disk Space"
 msgstr "Poco spazio disco"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
 msgstr "Svuota cestino"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
 msgstr "Esamina..."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Ignore"
 msgstr "Ignora"
 
@@ -890,30 +980,33 @@ msgid "Removing: %s"
 msgstr "Rimozione: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr "Svuotamento del cestino"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr "Preparazione allo svuotamento del cestino..."
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr "Da: "
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
 msgstr "Svuotare il cestino da tutti gli oggetti presenti?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "Scegliendo di svuotare il cestino, tutti gli oggetti in esso contenuti sono perduti in modo permanente. Notare che è anche possibile eliminarli uno ad uno."
+msgstr ""
+"Scegliendo di svuotare il cestino, tutti gli oggetti in esso contenuti sono "
+"perduti in modo definitivo. Notare che è anche possibile eliminarli uno ad "
+"uno."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
 msgstr "S_vuota cestino"
 
@@ -927,12 +1020,15 @@ msgstr "L'associazione di tasti (%s) non è valida"
 msgid "Key binding (%s) is incomplete"
 msgstr "L'associazione di tasti (%s) è incompleta"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:486
+#: ../plugins/keybindings/msd-keybindings-manager.c:490
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "Errore durante il tentativo di eseguire l'azione\n  %s\nche è collegata al tasto «%s»"
+msgstr ""
+"Errore durante il tentativo di eseguire l'azione\n"
+"  %s\n"
+"che è collegata al tasto «%s»"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
@@ -965,7 +1061,19 @@ msgid ""
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr "Errore nell'attivare la configurazione XKB.\nCiò può accadere in diverse circostanze:\n• un bug nella libreria libxklavier\n• un bug nel server X (utilità xkbcomp, xmodmap)\n• server X con implementazione di libxkbfile non compatibile\n\nDati della versione del server X:\n%s\n%d\nPer segnalare questa situazione come bug, includere anche:\n• Il risultato di <b>%s</b>\n• Il risultato di <b>%s</b>"
+msgstr ""
+"Errore nell'attivare la configurazione XKB.\n"
+"Ciò può accadere in diverse circostanze:\n"
+"• un bug nella libreria libxklavier\n"
+"• un bug nel server X (utilità xkbcomp, xmodmap)\n"
+"• server X con implementazione di libxkbfile non compatibile\n"
+"\n"
+"Dati della versione del server X:\n"
+"%s\n"
+"%d\n"
+"Per segnalare questa situazione come bug, includere anche:\n"
+"• Il risultato di <b>%s</b>\n"
+"• Il risultato di <b>%s</b>"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:279
 msgid "_Layouts"
@@ -983,14 +1091,19 @@ msgstr "_Mostra disposizione corrente"
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "Impossibile ottenere il terminale predefinito. Verificare che il proprio comando predefinito per il terminale sia impostato e punti a un'applicazione valida."
+msgstr ""
+"Impossibile ottenere il terminale predefinito. Verificare che il proprio "
+"comando predefinito per il terminale sia impostato e punti a un'applicazione"
+" valida."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "Impossibile eseguire il comando: %s\nVerificare si tratti di un comando valido."
+msgstr ""
+"Impossibile eseguire il comando: %s\n"
+"Verificare si tratti di un comando valido."
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1007,7 +1120,9 @@ msgstr "Impossibile abilitare le funzioni di accessibilità del mouse"
 #: ../plugins/mouse/msd-mouse-manager.c:1442
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
-msgstr "Le funzioni di accesso universale per il mouse richiedono che Mousetweaks sia installato sul sistema in uso."
+msgstr ""
+"Le funzioni di accesso universale per il mouse richiedono che Mousetweaks "
+"sia installato sul sistema in uso."
 
 #: ../plugins/mouse/msd-mouse-manager.c:1445
 msgid "Mouse Preferences"
@@ -1055,15 +1170,17 @@ msgstr "Impossibile ripristinare la configurazione del display"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:422
 msgid "Could not restore the display's configuration from a backup"
-msgstr "Impossibile ripristinare la configurazione del display da una copia di sicurezza"
+msgstr ""
+"Impossibile ripristinare la configurazione del display da una copia di "
+"sicurezza"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:443
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Il display sarà riportato alla sua configurazione precedente entro %d secondo"
-msgstr[1] "Il display sarà riportato alla sua configurazione precedente entro %d secondi"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1090,39 +1207,39 @@ msgstr "Impossibile aggiornare le informazioni dello schermo: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Tentativo di cambiare comunque la configurazione del monitor."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1889
+#: ../plugins/xrandr/msd-xrandr-manager.c:1885
 msgid "Rotation not supported"
 msgstr "Rotazione non supportata"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1945
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Could not save monitor configuration"
 msgstr "Impossibile salvare la configurazione del monitor"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1959
 msgid "Normal"
 msgstr "Normale"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1960
 msgid "Left"
 msgstr "Sinistra"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1961
 msgid "Right"
 msgstr "Destra"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1966
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Upside Down"
-msgstr "Capovolta"
+msgstr "Capovolto"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2088
+#: ../plugins/xrandr/msd-xrandr-manager.c:2084
 msgid "_Configure Display Settings…"
 msgstr "_Configura impostazioni display..."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2141
+#: ../plugins/xrandr/msd-xrandr-manager.c:2137
 msgid "Configure display settings"
 msgstr "Configura le impostazioni del display"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2201
+#: ../plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Impossibile applicare la configurazione memorizzata per i monitor"
 

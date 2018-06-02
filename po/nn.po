@@ -1,20 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Åsmund Skjæveland <aasmunds@fys.uio.no>, 2003, 2004, 2006
-# Copyright (C) Roy-Magne Mo <rmo@sunnmore.net>, 2001
-# Roy-Magne Mo <rmo@sunnmore.net>, 2001
-# Torstein Adolf Winterseth <kvikende@fsfe.org>, 2010
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 21:52+0300\n"
-"PO-Revision-Date: 2017-09-19 11:21+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Norwegian Nynorsk (http://www.transifex.com/mate/MATE/language/nn/)\n"
+"POT-Creation-Date: 2018-03-17 15:39+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Øystein Steffensen-Alværvik <internett@protonmail.com>, 2018\n"
+"Language-Team: Norwegian Nynorsk (https://www.transifex.com/mate/teams/13566/nn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -72,7 +69,9 @@ msgstr "DPI"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "Oppløysing som brukast for å konvertera skriftstorleikar til pikselstorleikar i punkt per tomme."
+msgstr ""
+"Oppløysing som brukast for å konvertera skriftstorleikar til "
+"pikselstorleikar i punkt per tomme."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
@@ -83,7 +82,10 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "Type utjamning som skal brukast ved teikning av skrifter. Moglege verdiar er: «none» for inga utjamning, «grayscale» for vanleg gråtoneutjamning og «rgba» for underpikselutjamning (berre LCD-skjermer)."
+msgstr ""
+"Type utjamning som skal brukast ved teikning av skrifter. Moglege verdiar "
+"er: «none» for inga utjamning, «grayscale» for vanleg gråtoneutjamning og "
+"«rgba» for underpikselutjamning (berre LCD-skjermer)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
@@ -94,7 +96,10 @@ msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "Type hinting som skal brukast ved rendring av skrifter. Moglege verdiar er «none» for inga hinting, «slight» for grunnleggjande, «medium» for moderat, og «full» for maksimal hinting (kan forårsake forvrenging av bokstavformer)."
+msgstr ""
+"Type hinting som skal brukast ved rendring av skrifter. Moglege verdiar er "
+"«none» for inga hinting, «slight» for grunnleggjande, «medium» for moderat, "
+"og «full» for maksimal hinting (kan forårsake forvrenging av bokstavformer)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
@@ -106,7 +111,11 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "Rekkjefølgja for underpikselelementer på ein LCD-skjerm; brukast berre når utjevning er sett til «rgba». Moglege verdiar er «rgb» for raud til venstre (mest vanleg), «bgr» for blå til venstre, «vrgb» for raud øvst, «vbgr» for raud nedst."
+msgstr ""
+"Rekkjefølgja for underpikselelementer på ein LCD-skjerm; brukast berre når "
+"utjevning er sett til «rgba». Moglege verdiar er «rgb» for raud til venstre "
+"(mest vanleg), «bgr» for blå til venstre, «vrgb» for raud øvst, «vbgr» for "
+"raud nedst."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -126,7 +135,9 @@ msgstr "Slå av styreplata medan du skriv"
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "Set denne til TRUE viss du har problem med at du uheldigvis treff skriveplata medan du skriv."
+msgstr ""
+"Set denne til TRUE viss du har problem med at du uheldigvis treff "
+"skriveplata medan du skriv."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:3
 msgid "Enable mouse clicks with touchpad"
@@ -135,7 +146,8 @@ msgstr "Slå på museklikk med styreplata"
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "Set denne til TRUE for å kunna klikka med musa ved å trykkja på styreplata."
+msgstr ""
+"Set denne til TRUE for å kunna klikka med musa ved å trykkja på styreplata."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Enable vertical edge scrolling"
@@ -249,7 +261,7 @@ msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
-msgstr ""
+msgstr "Rørslegrense"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:31
 msgid ""
@@ -375,7 +387,9 @@ msgstr "Minimal tid mellom åtvaringar"
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "Oppgje ei tid i minutt. Etterfølgjande varsel for ei lagringseining vil ikkje visast oftare enn den gjevne tida."
+msgstr ""
+"Oppgje ei tid i minutt. Etterfølgjande varsel for ei lagringseining vil "
+"ikkje visast oftare enn den gjevne tida."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
@@ -383,7 +397,8 @@ msgstr "Monteringsstiger å ignorera"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr "Oppgje ei liste med monteringsstiger å oversjå når dei har lite diskplass."
+msgstr ""
+"Oppgje ei liste med monteringsstiger å oversjå når dei har lite diskplass."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
@@ -636,7 +651,7 @@ msgstr "MATE innstillingsnisse"
 
 #: ../mate-settings-daemon/main.c:65
 msgid "Enable debugging code"
-msgstr "Aktiver feilsøkingskode"
+msgstr "Aktiver avlusingskode"
 
 #: ../mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
@@ -644,7 +659,7 @@ msgstr ""
 
 #: ../mate-settings-daemon/main.c:67
 msgid "Don't become a daemon"
-msgstr "Ikkje køyr som ein nisse"
+msgstr "Ikkje køyr som teneste"
 
 #: ../mate-settings-daemon/main.c:68
 msgid "Exit after a time (for debugging)"
@@ -658,102 +673,108 @@ msgstr "Tastatur for tilgjenge"
 msgid "Accessibility keyboard plugin"
 msgstr "Tillegg for tastatur for tilgjenge"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr "Ein feil oppstod når hjelpeteksten skulle visast: %s"
+msgstr "Ein feil oppstod under framvising av hjelp: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
 msgid "Do you want to activate Slow Keys?"
 msgstr "Vil du slå på trege tastar?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Vil du slå av trege tastar?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "Du heldt nede Shift-tasten i 8 sekund. Dette er snøggtasten for trege tastar-funksjonen, som påverkar korleis tastaturet ditt virkar."
+msgstr ""
+"Du heldt nede Shift-tasten i 8 sekund. Dette er snøggtasten for trege "
+"tastar-funksjonen, som påverkar korleis tastaturet ditt virkar."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't activate"
 msgstr "Ikkje slå på"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't deactivate"
 msgstr "Ikkje slå av"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Activate"
 msgstr "Slå på"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Deactivate"
 msgstr "Slå av"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't activate"
 msgstr "Ikk_je slå på"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't deactivate"
 msgstr "Ikk_je slå av"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Activate"
-msgstr "Slå _på"
+msgstr "_Aktiver"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Deactivate"
-msgstr "Slå _av"
+msgstr "_Deaktiver"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Slow Keys Alert"
 msgstr "Varsel om trege tastar"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Vil du slå på seige tastar?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Vil du slå av seige tastar?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "Du trykte Shift fem gongar på rad. Det er snøggtasten til seige tastar-eigenskapen, som påverkar korleis tastaturet ditt fungerer."
+msgstr ""
+"Du trykte Shift fem gongar på rad. Det er snøggtasten til seige tastar-"
+"eigenskapen, som påverkar korleis tastaturet ditt fungerer."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "Du trykte to tastar på ein gong, eller trykte Shift fem gongar på rad. Det slår av seige tastareigenskapen, som påverkar korleis tastaturet fungerer."
+msgstr ""
+"Du trykte to tastar på ein gong, eller trykte Shift fem gongar på rad. Det "
+"slår av seige tastareigenskapen, som påverkar korleis tastaturet fungerer."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Sticky Keys Alert"
 msgstr "Varsel om seige tastar"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Universale tilgjengeval"
@@ -836,42 +857,50 @@ msgstr "Denne datamaskina har berre %s diskplass att."
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "Du kan frigjera diskplass ved å tømma papirkorga, fjerna ubrukte program og filer, eller flytta filer til ei anna lagringseining eller partisjon."
+msgstr ""
+"Du kan frigjera diskplass ved å tømma papirkorga, fjerna ubrukte program og "
+"filer, eller flytta filer til ei anna lagringseining eller partisjon."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
-msgstr "Du kan frigjera diskplass ved å fjerna ubrukte program og filer, eller flytta filer til ei anna lagringseining eller partisjon."
+msgstr ""
+"Du kan frigjera diskplass ved å fjerna ubrukte program og filer, eller "
+"flytta filer til ei anna lagringseining eller partisjon."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "Du kan frigjera diskplass ved å tømma papirkorga, fjerna ubrukte program og filer, eller flytta filer til ei ekstern lagringseining."
+msgstr ""
+"Du kan frigjera diskplass ved å tømma papirkorga, fjerna ubrukte program og "
+"filer, eller flytta filer til ei ekstern lagringseining."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:110
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
-msgstr "Du kan frigjera diskplass ved å fjerna ubrukte program og filer, eller flytta filer til ei ekstern lagringseining."
+msgstr ""
+"Du kan frigjera diskplass ved å fjerna ubrukte program og filer, eller "
+"flytta filer til ei ekstern lagringseining."
 
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:207
 msgid "Low Disk Space"
 msgstr "Lite diskplass"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
 msgstr "Tøm papirkorga"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Ignore"
-msgstr "Ignorer"
+msgstr "Ignorar"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:97
 #, c-format
@@ -881,33 +910,35 @@ msgstr "Fjernar oppføring %lu av %lu"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 msgid "Removing: %s"
-msgstr ""
+msgstr "Fjernar: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr "Tømmar papirkorga"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr ""
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr "Frå: "
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
-msgstr "Slett alle oppføringane i papirkorga?"
+msgstr "Fjern alle oppføringar i papirkorga?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "Dersom du tømmar papirkorga, vert oppføringane sletta for godt. Legg merke til at du kan velja kva for filer du vil sletta."
+msgstr ""
+"Dersom du tømer papirkorga vil alt som er i henne gå tapt. Merk at du kan "
+"også sletta ting derfrå enkeltvis."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
 msgstr "_Tøm papirkorg"
 
@@ -921,12 +952,14 @@ msgstr "Snøggtast «%s» er ikkje gyldig"
 msgid "Key binding (%s) is incomplete"
 msgstr "Snøggtast «%s» er ufullstendig"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:486
+#: ../plugins/keybindings/msd-keybindings-manager.c:490
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "Feil i freistnad på å køyra «%s»\nsom er bunde til tasten «%s»"
+msgstr ""
+"Feil i freistnad på å køyra «%s»\n"
+"som er bunde til tasten «%s»"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
@@ -977,14 +1010,18 @@ msgstr ""
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "Klarte ikkje finna forvald terminal. Sjekk at kommando for forvald terminal er sett og peikar til eit gyldig program."
+msgstr ""
+"Klarte ikkje finna forvald terminal. Sjekk at kommando for forvald terminal "
+"er sett og peikar til eit gyldig program."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "Klarte ikkje køyra kommandoen: %s\nSjekk om dette er ein gyldig kommando."
+msgstr ""
+"Klarte ikkje køyra kommandoen: %s\n"
+"Sjekk om dette er ein gyldig kommando."
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1056,8 +1093,8 @@ msgstr "Klarte ikkje gjenoppretta skjerminnstillingane frå ein reservekopi"
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Skjermen vil gjenoppretta tidlegare innstillingar om %d sekund"
-msgstr[1] "Skjermen vil gjenoppretta tidlegare innstillingar om %d sekund"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1084,39 +1121,39 @@ msgstr "Klarte ikkje oppfriska skjerminformasjonen: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Prøver å byta skjerminnstillingar likevel."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1889
+#: ../plugins/xrandr/msd-xrandr-manager.c:1885
 msgid "Rotation not supported"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1945
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Could not save monitor configuration"
 msgstr "Klarte ikkje lagra av skjerminnstillingar"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1959
 msgid "Normal"
 msgstr "Normal"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1960
 msgid "Left"
 msgstr "Venstre"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1961
 msgid "Right"
-msgstr "Høgre:"
+msgstr "Høgre"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1966
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Upside Down"
 msgstr "Opp-ned"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2088
+#: ../plugins/xrandr/msd-xrandr-manager.c:2084
 msgid "_Configure Display Settings…"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2141
+#: ../plugins/xrandr/msd-xrandr-manager.c:2137
 msgid "Configure display settings"
 msgstr "Still inn skjermen"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2201
+#: ../plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Klarte ikkje å bruka dei lagra innstillingane for skjermar"
 

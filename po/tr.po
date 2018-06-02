@@ -1,26 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# tarakbumba <tarakbumba@gmail.com>, 2014
-# Baris Cicek <baris@teamforce.name.tr>, 2004-2005,2008-2009
-# Butterfly <gokhanlnx@gmail.com>, 2015,2017
-# Emre FIRAT <emrefirat93@gmail.com>, 2016
-# Fatih Demir <kabalak@gtranslator.org>, 2000
-# mauron, 2012-2013
-# mauron, 2013,2016-2017
-# mauron, 2012
-# Nilgün Belma Bugüner <nilgun@fide.org>, 2001
-# Rahmi GENÇ <bt06sof@gmail.com>, 2017
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 21:52+0300\n"
-"PO-Revision-Date: 2017-09-19 11:21+0000\n"
-"Last-Translator: mauron\n"
-"Language-Team: Turkish (http://www.transifex.com/mate/MATE/language/tr/)\n"
+"POT-Creation-Date: 2018-03-17 15:39+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Rahmi GENÇ <bt06sof@gmail.com>, 2018\n"
+"Language-Team: Turkish (https://www.transifex.com/mate/teams/13566/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -78,7 +69,9 @@ msgstr "DPI"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "Yazıtipi boyutlarını piksel boyutlarına çevirmek için kullanılan çözünürlük, inç başına nokta olarak."
+msgstr ""
+"Yazıtipi boyutlarını piksel boyutlarına çevirmek için kullanılan çözünürlük,"
+" inç başına nokta olarak."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
@@ -89,7 +82,10 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "Yazıtipleri taranırken kullanılacak yumuşatma türü. Geçerli değerler: \"none\" - yumuşatma yok. \"grayscale\" - standart gri ölçek yumuşatma ve \"rgba\"  - alt piksel yumuşatma (sadece LCD ekranlar)."
+msgstr ""
+"Yazıtipleri taranırken kullanılacak yumuşatma türü. Geçerli değerler: "
+"\"none\" - yumuşatma yok. \"grayscale\" - standart gri ölçek yumuşatma ve "
+"\"rgba\"  - alt piksel yumuşatma (sadece LCD ekranlar)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
@@ -100,7 +96,10 @@ msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "Yazıtiplerinde kullanılacak düzeltme türü. Geçerli değerler \"none\" - düzeltme yok, \"slight\", \"medium\", ve \"full\" - mümkün olduğunca çok düzeltme (harf biçimlerinde bozulmalara sebep olabilir)."
+msgstr ""
+"Yazıtiplerinde kullanılacak düzeltme türü. Geçerli değerler \"none\" - "
+"düzeltme yok, \"slight\", \"medium\", ve \"full\" - mümkün olduğunca çok "
+"düzeltme (harf biçimlerinde bozulmalara sebep olabilir)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
@@ -112,7 +111,11 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "LCD ekranında kullanılacak alt piksel öğelerinin sırası; sadece yumuşatma \"rgba\" olarak atandığında kullanılır. Geçerli değerler: \"rgb\" - kırmızı solda (en yaygın), \"bgr\" - mavi solda. \"vrgb\"- kırmızı yukarıda. \"vbgr\" - kırmızı aşağıda."
+msgstr ""
+"LCD ekranında kullanılacak alt piksel öğelerinin sırası; sadece yumuşatma "
+"\"rgba\" olarak atandığında kullanılır. Geçerli değerler: \"rgb\" - kırmızı "
+"solda (en yaygın), \"bgr\" - mavi solda. \"vrgb\"- kırmızı yukarıda. "
+"\"vbgr\" - kırmızı aşağıda."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -122,7 +125,10 @@ msgstr "Akıllı kart kaldırma faaliyeti"
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr "Bunu \"none\" (boş), \"lock_screen\" (ekranı kilitle), veya \"force_logout\" (çıkışı zorla) değerlerinden birine atayın. Etkinlik, giriş yapmak için kullanılan akıllı kart çıkarıldığında gerçekleştirilecektir."
+msgstr ""
+"Bunu \"none\" (boş), \"lock_screen\" (ekranı kilitle), veya \"force_logout\""
+" (çıkışı zorla) değerlerinden birine atayın. Etkinlik, giriş yapmak için "
+"kullanılan akıllı kart çıkarıldığında gerçekleştirilecektir."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:1
 msgid "Disable touchpad while typing"
@@ -132,7 +138,9 @@ msgstr "Yazarken touchpad'i devre dışı bırak"
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "Eğer yazarken touchpad'e dokunma sorunu yaşıyorsanız bunu doğru olarak atayın."
+msgstr ""
+"Eğer yazarken touchpad'e dokunma sorunu yaşıyorsanız bunu doğru olarak "
+"atayın."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:3
 msgid "Enable mouse clicks with touchpad"
@@ -141,7 +149,9 @@ msgstr "Touchpad ile fare tıklamasını etkinleştir"
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "Touchpad üzerine vurarak fare tıklamaları göndermek istiyorsanız bunu doğru olarak atayın."
+msgstr ""
+"Touchpad üzerine vurarak fare tıklamaları göndermek istiyorsanız bunu doğru "
+"olarak atayın."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Enable vertical edge scrolling"
@@ -165,7 +175,8 @@ msgstr "Dikeyi iki parmakla kaydırmayı etkinleştir"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:10
 msgid "Set this to TRUE to allow vertical two-finger scrolling"
-msgstr "Dikeyi iki parmakla kaydırma izin vermek için bunu DOĞRU olarak ayarla"
+msgstr ""
+"Dikeyi iki parmakla kaydırma izin vermek için bunu DOĞRU olarak ayarla"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:11
 msgid "Enable horizontal two-finger scrolling"
@@ -173,7 +184,8 @@ msgstr "Yatayı iki parmak kaydırmayı etkinleştir"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
 msgid "Set this to TRUE to allow horizontal two-finger scrolling"
-msgstr "Yatayı iki parmakla kaydırmaya izin vermek için bunu DOĞRU olarak ayarla"
+msgstr ""
+"Yatayı iki parmakla kaydırmaya izin vermek için bunu DOĞRU olarak ayarla"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
 msgid "Natural scrolling"
@@ -181,7 +193,9 @@ msgstr "Doğal kaydırma"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
-msgstr "Dokunmatik panel doğal (ters) kaydırmayı etkinleştirmek için bunu doğru/true olarak ayarlayın"
+msgstr ""
+"Dokunmatik panel doğal (ters) kaydırmayı etkinleştirmek için bunu doğru/true"
+" olarak ayarlayın"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
 msgid "Enable touchpad"
@@ -211,7 +225,9 @@ msgstr "Tek parmakla tıklama düğmesi"
 msgid ""
 "Select the button mapping for one-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Tek parmak tıklaması için düğme atamasını seç. Desteklenen değerler: 1: sol fare düğmesi 2: orta fare düğmesi 3: sağ fare düğmesi"
+msgstr ""
+"Tek parmak tıklaması için düğme atamasını seç. Desteklenen değerler: 1: sol "
+"fare düğmesi 2: orta fare düğmesi 3: sağ fare düğmesi"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
 msgid "Two finger tap button"
@@ -221,7 +237,9 @@ msgstr "Çift parmakla tıklama düğmesi"
 msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Çift parmak tıklaması için düğme atamasını seç. Desteklenen değerler: 1: sol fare düğmesi 2: orta fare düğmesi 3: sağ fare düğmesi"
+msgstr ""
+"Çift parmak tıklaması için düğme atamasını seç. Desteklenen değerler: 1: sol"
+" fare düğmesi 2: orta fare düğmesi 3: sağ fare düğmesi"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
 msgid "Three finger tap button"
@@ -231,7 +249,9 @@ msgstr "Üç parmakla tıklama düğmesi"
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Üç parmak tıklaması için düğme atamasını seç. Desteklenen değerler: 1: sol fare düğmesi 2: orta fare düğmesi 3: sağ fare düğmesi"
+msgstr ""
+"Üç parmak tıklaması için düğme atamasını seç. Desteklenen değerler: 1: sol "
+"fare düğmesi 2: orta fare düğmesi 3: sağ fare düğmesi"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:26
 msgid "Touchpad button orientation"
@@ -241,7 +261,9 @@ msgstr "Touchpad button dizilimi"
 msgid ""
 "Swap left and right buttons for left-handed touchpads with 'left', 'right' "
 "for right-handed, 'mouse' to follow the mouse setting."
-msgstr "sağ-el mause için \"sağ\", sol el mause için \"sol\", mause ayarları için \"mouse\" yi seçin."
+msgstr ""
+"sağ-el mause için \"sağ\", sol el mause için \"sol\", mause ayarları için "
+"\"mouse\" yi seçin."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
 msgid "Motion Acceleration"
@@ -251,7 +273,9 @@ msgstr "Hareket Hızlandırma"
 msgid ""
 "Acceleration multiplier for touchpad motion. A value of -1 is the system "
 "default."
-msgstr "Dokunmatik panel hareketi için hızlanma çarpanı. Sistem varsayılanı -1 değeridir."
+msgstr ""
+"Dokunmatik panel hareketi için hızlanma çarpanı. Sistem varsayılanı -1 "
+"değeridir."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
@@ -261,7 +285,10 @@ msgstr "Hareket Eşiği"
 msgid ""
 "Distance in pixels the pointer must move before accelerated touchpad motion "
 "is activated. A value of -1 is the system default."
-msgstr "Hızlandırılmış dokunmatik yüzey hareketi etkinleştirilmeden önce imlecin piksel olarak katetmesi gereken mesafe. -1 değeri varsayılan sistem değeridir."
+msgstr ""
+"Hızlandırılmış dokunmatik yüzey hareketi etkinleştirilmeden önce imlecin "
+"piksel olarak katetmesi gereken mesafe. -1 değeri varsayılan sistem "
+"değeridir."
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
@@ -301,7 +328,9 @@ msgstr "Bu eklentinin etkinleştirilmesi"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr "Bu eklentinin mate-settings-daemon tarafından etkinleştirilip etkinleştirilmeyeceğini belirler"
+msgstr ""
+"Bu eklentinin mate-settings-daemon tarafından etkinleştirilip "
+"etkinleştirilmeyeceğini belirler"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:3
@@ -341,7 +370,9 @@ msgstr "Bu eklenti için kullanılacak öncelik"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
-msgstr "mate-settings-daemon başlangıç kuyruğunda bu eklenti için kullanılacak öncelik"
+msgstr ""
+"mate-settings-daemon başlangıç kuyruğunda bu eklenti için kullanılacak "
+"öncelik"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:5
 msgid "Free percentage notify threshold"
@@ -351,7 +382,9 @@ msgstr "Boş yüzdesi bildirme eşiği"
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr "İlk düşük disk alanı uyarısı için boş alan yüzdesi eşiği. Eğer boş alan yüzdesi bunun altına inerse bir uyarı gösterilecektir."
+msgstr ""
+"İlk düşük disk alanı uyarısı için boş alan yüzdesi eşiği. Eğer boş alan "
+"yüzdesi bunun altına inerse bir uyarı gösterilecektir."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
 msgid "Subsequent free percentage notify threshold"
@@ -361,7 +394,9 @@ msgstr "Art arda boş yüzdesi bildirim eşiği"
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
-msgstr "Bir sonraki uyarının gösterilmesinden önce boş disk alanının yüzde olarak ne kadar düşmesi gerektiğini belirtin."
+msgstr ""
+"Bir sonraki uyarının gösterilmesinden önce boş disk alanının yüzde olarak ne"
+" kadar düşmesi gerektiğini belirtin."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:9
 msgid "Free space no notify threshold"
@@ -371,7 +406,9 @@ msgstr "Boş alan bildirim eşiği"
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr "GB olarak bir miktar belirtin. Boş disk alanı bundan fazlaysa hiçbir uyarı gösterilmeyecektir."
+msgstr ""
+"GB olarak bir miktar belirtin. Boş disk alanı bundan fazlaysa hiçbir uyarı "
+"gösterilmeyecektir."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:11
 msgid "Minimum notify period for repeated warnings"
@@ -381,7 +418,9 @@ msgstr "Tekrarlanan uyarılar için azami süre"
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "Dakika olarak bir süre belirleyin. Bir birim için birbirini izleyen uyarılar bu dönemden daha sık gösterilmeyecek."
+msgstr ""
+"Dakika olarak bir süre belirleyin. Bir birim için birbirini izleyen uyarılar"
+" bu dönemden daha sık gösterilmeyecek."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
@@ -389,7 +428,9 @@ msgstr "Yok sayılacak bağlama yolları"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr "Boş alanı düşük olduğunda gözardı edilecek bağlama yollarının listesini belirtin."
+msgstr ""
+"Boş alanı düşük olduğunda gözardı edilecek bağlama yollarının listesini "
+"belirtin."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
@@ -413,7 +454,9 @@ msgstr "Touchpad'ı etkinleştir veya devre dışı bırak"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:10
 msgid "Binding to enable or disable the touchpad."
-msgstr "Dokunmatik panelin etkinleştirilmesi veya devre dışı bırakılması için kısayol."
+msgstr ""
+"Dokunmatik panelin etkinleştirilmesi veya devre dışı bırakılması için "
+"kısayol."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:11
 msgid "Volume mute"
@@ -473,7 +516,7 @@ msgstr "Başlangıç dizinini açmak için kısayol."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
 msgid "Search"
-msgstr "Arama"
+msgstr "Ara"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:26
 msgid "Binding to launch the search tool."
@@ -587,7 +630,9 @@ msgstr "Uyarı Alanında Ekranlar Göster"
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
-msgstr "Ekranla ilişkili unsurlar için panelde bir bildirim ikonu görüntülenip görüntülenmeyeceğini ayarlar."
+msgstr ""
+"Ekranla ilişkili unsurlar için panelde bir bildirim ikonu görüntülenip "
+"görüntülenmeyeceğini ayarlar."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:7
 msgid "Do not touch monitor configuration"
@@ -601,7 +646,13 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr "Genelde mate-settings-daemon dahili ve harici monitörleri  turn_on_external_monitors_at_startup ve turn_on_laptop_monitor_at_startup ayarlarına dayanarak yapılandırır ve uygun bir klonlama/yan yana kipi seçer. Bu anahtarı Doğru olarak ayarlamak bunu devre dışı bırakır ve monitör ayarlarına hiç dokunulmaz (kullanıcının alenen hazırladığı bir yapılandırma olmadığı sürece)."
+msgstr ""
+"Genelde mate-settings-daemon dahili ve harici monitörleri  "
+"turn_on_external_monitors_at_startup ve turn_on_laptop_monitor_at_startup "
+"ayarlarına dayanarak yapılandırır ve uygun bir klonlama/yan yana kipi seçer."
+" Bu anahtarı Doğru olarak ayarlamak bunu devre dışı bırakır ve monitör "
+"ayarlarına hiç dokunulmaz (kullanıcının alenen hazırladığı bir yapılandırma "
+"olmadığı sürece)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:9
 msgid "Turn on external monitor after system boot"
@@ -611,7 +662,9 @@ msgstr "Sistemin başlatılmasının ardından harici ekranı etkinleştir"
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
-msgstr "Sistemin başlatılmasının ardından kullanıcı harici ekran bağladıysa onu etkinleştir."
+msgstr ""
+"Sistemin başlatılmasının ardından kullanıcı harici ekran bağladıysa onu "
+"etkinleştir."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:11
 msgid "Turn on laptop monitor after system boot"
@@ -621,7 +674,9 @@ msgstr "Sistemin başlatılmasının ardından dizüstü ekranını etkinleştir
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr "Sistemin başlatılmasının ardından kullanıcı harici ekran bağladıysa dizüstü ekranını etkinleştir."
+msgstr ""
+"Sistemin başlatılmasının ardından kullanıcı harici ekran bağladıysa dizüstü "
+"ekranını etkinleştir."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:13
 msgid "File for default configuration for RandR"
@@ -634,7 +689,12 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr "XRandR eklentisi bu anahtar tarafından belirtilen dosyada varsayılan yapılandırma arayacaktır. Bu kullanıcıların ev dizinlerinde tutulan ~/.config/monitors.xml dosyasına benzer. Eğer kullanıcı böyle bir dosyaya sahip değilse ya da kullanıcının dosyası ekran yapılandırmasına denk gelmiyorsa, bu anahtar tarafından belirtilen dosya kullanılacaktır."
+msgstr ""
+"XRandR eklentisi bu anahtar tarafından belirtilen dosyada varsayılan "
+"yapılandırma arayacaktır. Bu kullanıcıların ev dizinlerinde tutulan "
+"~/.config/monitors.xml dosyasına benzer. Eğer kullanıcı böyle bir dosyaya "
+"sahip değilse ya da kullanıcının dosyası ekran yapılandırmasına denk "
+"gelmiyorsa, bu anahtar tarafından belirtilen dosya kullanılacaktır."
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
@@ -650,7 +710,7 @@ msgstr "Güncel servisin yerine geç"
 
 #: ../mate-settings-daemon/main.c:67
 msgid "Don't become a daemon"
-msgstr "Bir servis olma"
+msgstr "Bir servis haline gelme"
 
 #: ../mate-settings-daemon/main.c:68
 msgid "Exit after a time (for debugging)"
@@ -664,102 +724,108 @@ msgstr "Erişilebilirlik Klavyesi"
 msgid "Accessibility keyboard plugin"
 msgstr "Erişilebilirlik klavyesi eklentisi"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr "Yardım dosyasının görüntülenmesinde bir hata oluştu: %s"
+msgstr "Yardım görüntülenirken hata oluştu: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
 msgid "Do you want to activate Slow Keys?"
 msgstr "Tuş Yavaşlatmasını aktif hale getirmek istiyor musunuz?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Tuş Yavaşlatmasını kapatmak istiyor musunuz?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "Sadece Shift tuşunu 8 saniye basılı tutun.  Bu klavyenizin çalışma biçimini etkileyecek Tuş Yavaşlatması özelliği için bir kısayoldur."
+msgstr ""
+"Sadece Shift tuşunu 8 saniye basılı tutun.  Bu klavyenizin çalışma biçimini "
+"etkileyecek Tuş Yavaşlatması özelliği için bir kısayoldur."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't activate"
 msgstr "Etkinleştirme"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't deactivate"
 msgstr "Devre dışı bırakma"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Activate"
 msgstr "Etkinleştir"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Deactivate"
 msgstr "Devre dışı bırak"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't activate"
 msgstr "_Etkinleştirme"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't deactivate"
 msgstr "Etki_sizleştirme"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Activate"
 msgstr "_Etkinleştir"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Deactivate"
-msgstr "E_tkisizleştir"
+msgstr "_Devre Dışı Bırak"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Slow Keys Alert"
 msgstr "Tuş Yavaşlatması Uyarısı"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Yapışkan Tuşlar özelliğini aktif hale getirmek istiyor musunuz?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Yapışkan Tuşları kapatmak istiyor musunuz?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "Sadece Shift tuşuna 5 kere art arda basın.  Bu klavyenizin çalışma biçimini etkileyecek Yapışkan Tuşlar özelliği için bir kısayoldur."
+msgstr ""
+"Sadece Shift tuşuna 5 kere art arda basın.  Bu klavyenizin çalışma biçimini "
+"etkileyecek Yapışkan Tuşlar özelliği için bir kısayoldur."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "Aynı anda iki tuşa bastınız veya Shift tuşuna art arda 5 kere bastınız.  Bu klavyenizin çalışma biçimini etkileyecek Yapışkan Tuşlar özelliğini kapatır."
+msgstr ""
+"Aynı anda iki tuşa bastınız veya Shift tuşuna art arda 5 kere bastınız.  Bu "
+"klavyenizin çalışma biçimini etkileyecek Yapışkan Tuşlar özelliğini kapatır."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Sticky Keys Alert"
 msgstr "Yapışkan Tuş Uyarısı"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Evrensel Erişim Tercihleri"
@@ -842,40 +908,50 @@ msgstr "Bu bilgisayarda sadece %s disk alanı kaldı."
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "Çöp'ü boşaltarak, kullanmadığınız programları ya da dosyaları silerek ya da dosyaları başka bir diske veya bölümlemeye taşıyarak disk boş alanınızı arttırabilirsiniz."
+msgstr ""
+"Çöp'ü boşaltarak, kullanmadığınız programları ya da dosyaları silerek ya da "
+"dosyaları başka bir diske veya bölümlemeye taşıyarak disk boş alanınızı "
+"arttırabilirsiniz."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
-msgstr "Kullanmadığınız programları ya da dosyaları silerek ya da dosyaları başka bir diske veya bölümlemeye taşıyarak disk boş alanınızı arttırabilirsiniz."
+msgstr ""
+"Kullanmadığınız programları ya da dosyaları silerek ya da dosyaları başka "
+"bir diske veya bölümlemeye taşıyarak disk boş alanınızı arttırabilirsiniz."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "Çöp'ü boşaltarak, kullanmadığınız programları ya da dosyaları silerek ya da dosyaları başka bir harici diske taşıyarak disk boş alanınızı arttırabilirsiniz."
+msgstr ""
+"Çöp'ü boşaltarak, kullanmadığınız programları ya da dosyaları silerek ya da "
+"dosyaları başka bir harici diske taşıyarak disk boş alanınızı "
+"arttırabilirsiniz."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:110
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
-msgstr "Kullanmadığınız programları ya da dosyaları silerek ya da dosyaları başka bir harici diske taşıyarak disk boş alanınızı arttırabilirsiniz."
+msgstr ""
+"Kullanmadığınız programları ya da dosyaları silerek ya da dosyaları başka "
+"bir harici diske taşıyarak disk boş alanınızı arttırabilirsiniz."
 
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:207
 msgid "Low Disk Space"
 msgstr "Düşük Disk Alanı"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
 msgstr "Çöpü Boşalt"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
 msgstr "İncele..."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Ignore"
 msgstr "Yoksay"
 
@@ -890,30 +966,32 @@ msgid "Removing: %s"
 msgstr "Kaldırılıyor: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr "Çöp boşaltılıyor"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr "Çöpün boşaltılmasına hazırlanılıyor..."
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr "Kaynak:"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
-msgstr "Çöpten tüm öğeler boşaltılsın mı?"
+msgstr "Çöpteki bütün öğeleri boşaltmak istediğinize emin misiniz?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "Eğer çöpü boşaltmayı seçerseniz, içindeki tüm öğeler kalıcı olarak silinecek. Lütfen onları ayrı ayrı da silebileceğinizi unutmayın."
+msgstr ""
+"Eğer Çöpü boşaltmayı seçerseniz, çöpteki bütün öğeler tamamen kaybolacaktır."
+" Bunları ayrı ayrı da silebilirsiniz."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
 msgstr "Çöpü _Boşalt"
 
@@ -927,12 +1005,14 @@ msgstr "Tuş bağı (%s) geçersiz"
 msgid "Key binding (%s) is incomplete"
 msgstr "Tuş bağı (%s) eksik"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:486
+#: ../plugins/keybindings/msd-keybindings-manager.c:490
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "(%s) çalıştırırken hata\n(%s) tuşu ile bağlı"
+msgstr ""
+"(%s) çalıştırırken hata\n"
+"(%s) tuşu ile bağlı"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
@@ -965,7 +1045,19 @@ msgid ""
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr "XKB yapılandıması etkinleştirilirken hata.\nBu çeşitli şartlar altında gerçekleşebilir.\n• libxklavier library kütüphanesinde bir böcek/hata\n• X sunucusunda (xkbcomp, xmodmap araçları) bir böcek/hata\n• libxkbfile uyguaması ile uyumsuz X sunucusu\n\nX sunucusu sürüm verisi:\n%s\n%d\nEğer bu durumu rapor edecekseniz, lütfen şunları ekleyiniz:\n• <b>%s</b> sonucu\n• <b>%s</b> sonucu"
+msgstr ""
+"XKB yapılandıması etkinleştirilirken hata.\n"
+"Bu çeşitli şartlar altında gerçekleşebilir.\n"
+"• libxklavier library kütüphanesinde bir böcek/hata\n"
+"• X sunucusunda (xkbcomp, xmodmap araçları) bir böcek/hata\n"
+"• libxkbfile uyguaması ile uyumsuz X sunucusu\n"
+"\n"
+"X sunucusu sürüm verisi:\n"
+"%s\n"
+"%d\n"
+"Eğer bu durumu rapor edecekseniz, lütfen şunları ekleyiniz:\n"
+"• <b>%s</b> sonucu\n"
+"• <b>%s</b> sonucu"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:279
 msgid "_Layouts"
@@ -983,14 +1075,18 @@ msgstr "_Güncel Düzeni Göster"
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "Öntanımlı uçbirim alınamadı. Öntanımlı uçbirim komutunuzun atandığını ve geçerli bir uygulamayı işaret ettiğini kontrol edin."
+msgstr ""
+"Öntanımlı uçbirim alınamadı. Öntanımlı uçbirim komutunuzun atandığını ve "
+"geçerli bir uygulamayı işaret ettiğini kontrol edin."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "Komut çalıştırılamadı: %s\nBu komutun geçerli olup olmadığını kontrol edin."
+msgstr ""
+"Komut çalıştırılamadı: %s\n"
+"Bu komutun geçerli olup olmadığını kontrol edin."
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1007,7 +1103,9 @@ msgstr "Klavye erişilebilirlik özelliklerini etkinleştirilemedi"
 #: ../plugins/mouse/msd-mouse-manager.c:1442
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
-msgstr "Fare yardımcısı Mousetweaks programının sisteminizde kurulu olmasını gerektirir."
+msgstr ""
+"Fare yardımcısı Mousetweaks programının sisteminizde kurulu olmasını "
+"gerektirir."
 
 #: ../plugins/mouse/msd-mouse-manager.c:1445
 msgid "Mouse Preferences"
@@ -1090,39 +1188,39 @@ msgstr "Ekran bilgilerini yenilenemedi: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Gene de ekran yapılandırmasına geçmeye çalışılıyor."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1889
+#: ../plugins/xrandr/msd-xrandr-manager.c:1885
 msgid "Rotation not supported"
 msgstr "Döndürme desteklenmemektedir"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1945
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Could not save monitor configuration"
 msgstr "Ekran yapılandırması kaydedilemedi"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1959
 msgid "Normal"
 msgstr "Normal"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1960
 msgid "Left"
 msgstr "Sol"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1961
 msgid "Right"
 msgstr "Sağ"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1966
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Upside Down"
-msgstr "Yukarıdan Aşağı"
+msgstr "Baş Aşağı"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2088
+#: ../plugins/xrandr/msd-xrandr-manager.c:2084
 msgid "_Configure Display Settings…"
 msgstr "Ekran Ayarlarını _Yapılandır..."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2141
+#: ../plugins/xrandr/msd-xrandr-manager.c:2137
 msgid "Configure display settings"
 msgstr "Ekran ayarlarını yapılandır"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2201
+#: ../plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Ekranlar için kayıtlı yapılandırma uygulanamadı"
 
@@ -1182,7 +1280,8 @@ msgstr "gelen kart olayları izlenemedi - %s"
 #: ../plugins/smartcard/msd-smartcard-manager.c:1105
 #, c-format
 msgid "encountered unexpected error while waiting for smartcard events"
-msgstr "akıllı kart olayları beklenirken beklenmedik bir hata ile karşılaşıldı"
+msgstr ""
+"akıllı kart olayları beklenirken beklenmedik bir hata ile karşılaşıldı"
 
 #: ../plugins/smartcard/msd-smartcard.c:154
 msgid "Slot ID"

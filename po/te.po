@@ -1,18 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Krishnababu Krothapalli <kkrothap@redhat.com>, 2008, 2009, 2010
-# Prajasakti Localisation Team <localisation@prajasakti.com>, 2005
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 21:52+0300\n"
-"PO-Revision-Date: 2017-09-19 11:21+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Telugu (http://www.transifex.com/mate/MATE/language/te/)\n"
+"POT-Creation-Date: 2018-03-17 15:39+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
+"Language-Team: Telugu (https://www.transifex.com/mate/teams/13566/te/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -70,7 +69,9 @@ msgstr "DPI"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "ఫాంటు పరిమాణాలు పిగ్జెల్ పరిమాణానికి మార్చుటకు ఉపయోగించిన తీవ్రత, ఒక్కో అంగుళకు బందివులలో."
+msgstr ""
+"ఫాంటు పరిమాణాలు పిగ్జెల్ పరిమాణానికి మార్చుటకు ఉపయోగించిన తీవ్రత, ఒక్కో "
+"అంగుళకు బందివులలో."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
@@ -81,7 +82,11 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "ఫాంట్లను ప్రస్పుటంచేస్తున్నప్పుడు ఉపయోగించు వ్యతిరేకఉపనామకరణం రకం. సాద్యమగు విలువలు: \"ఏదీకాదు\" వ్యతిరేకఉపనామకరణం లేదు కు, \"గ్రేస్కేల్\" ప్రామాణిక గ్రేస్కేల్ వ్యతిరేకఉపనామకరణకు, మరియు \"rgba\" ఉపపిగ్జెల్ వ్యతిరేకఉపనామకరణంకు (LCD తెరలు మాత్రమే)."
+msgstr ""
+"ఫాంట్లను ప్రస్పుటంచేస్తున్నప్పుడు ఉపయోగించు వ్యతిరేకఉపనామకరణం రకం. సాద్యమగు "
+"విలువలు: \"ఏదీకాదు\" వ్యతిరేకఉపనామకరణం లేదు కు, \"గ్రేస్కేల్\" ప్రామాణిక "
+"గ్రేస్కేల్ వ్యతిరేకఉపనామకరణకు, మరియు \"rgba\" ఉపపిగ్జెల్ వ్యతిరేకఉపనామకరణంకు"
+" (LCD తెరలు మాత్రమే)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
@@ -92,7 +97,11 @@ msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "ఫాంట్లను ప్రస్పుటం చేస్తున్నప్పుడు ఉపయోగించవలిసిన హింటింగ్ రకం. సాధ్యమగు విలువలు: \"ఏదీకాదు\" హింటింగ్ కొరకు, \"స్వల్ప\" ప్రాదమికంకు, \"మద్యమం\" నవీనతకు, మరియు \"పూర్తిగా\" గరిష్ఠ హింటింగ్ కు (ఆక్షర రూపాల యొక్క విరూపంకు కారణం అవ్వొచ్చు)."
+msgstr ""
+"ఫాంట్లను ప్రస్పుటం చేస్తున్నప్పుడు ఉపయోగించవలిసిన హింటింగ్ రకం. సాధ్యమగు "
+"విలువలు: \"ఏదీకాదు\" హింటింగ్ కొరకు, \"స్వల్ప\" ప్రాదమికంకు, \"మద్యమం\" "
+"నవీనతకు, మరియు \"పూర్తిగా\" గరిష్ఠ హింటింగ్ కు (ఆక్షర రూపాల యొక్క విరూపంకు "
+"కారణం అవ్వొచ్చు)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
@@ -104,7 +113,11 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "LCD తెరపైన ఉపపిగ్జెల్సు మూలకాల యొక్క క్రమము; వ్యతిరేకఉపనామకరణం \"rgba\" కు అమర్చినప్పుడు మాత్రమే ఉపయోగించబడుతుంది. సాద్యమగు విలువలు: \"rgb\" ఎరుపు ఎడమవైపు ఉంచుటకు (దాదాపు సాదారణంగా), \"bgr\" బులుగు ఎడమవైపున ఉంచుటకు, \"vrgb\" ఎరుపు పైన ఉంచుటకు, \"vbgr\" ఎరుపు క్రిందన ఉంచుటకు."
+msgstr ""
+"LCD తెరపైన ఉపపిగ్జెల్సు మూలకాల యొక్క క్రమము; వ్యతిరేకఉపనామకరణం \"rgba\" కు "
+"అమర్చినప్పుడు మాత్రమే ఉపయోగించబడుతుంది. సాద్యమగు విలువలు: \"rgb\" ఎరుపు "
+"ఎడమవైపు ఉంచుటకు (దాదాపు సాదారణంగా), \"bgr\" బులుగు ఎడమవైపున ఉంచుటకు, "
+"\"vrgb\" ఎరుపు పైన ఉంచుటకు, \"vbgr\" ఎరుపు క్రిందన ఉంచుటకు."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -124,7 +137,9 @@ msgstr "టైపుచేయునప్పుడు టచ్‌పాడ్�
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "టైపు చేయునప్పుడు మీరు ప్రమాదవశాత్తు టచ్‌పాడ్‌ను తగిలే సమస్యవుంటే దీనిని TRUEకు అమర్చుము."
+msgstr ""
+"టైపు చేయునప్పుడు మీరు ప్రమాదవశాత్తు టచ్‌పాడ్‌ను తగిలే సమస్యవుంటే దీనిని "
+"TRUEకు అమర్చుము."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:3
 msgid "Enable mouse clicks with touchpad"
@@ -133,7 +148,9 @@ msgstr "టచ్‌పాడ్‌తో మౌస్ నొక్కులన�
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "టట్‌పాడ్ పై టాప్‌చేయుట ద్వారా మౌస్ నొక్కులను పంపుటకు దీనిని TRUE కు అమర్చుము."
+msgstr ""
+"టట్‌పాడ్ పై టాప్‌చేయుట ద్వారా మౌస్ నొక్కులను పంపుటకు దీనిని TRUE కు "
+"అమర్చుము."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Enable vertical edge scrolling"
@@ -247,7 +264,7 @@ msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
-msgstr ""
+msgstr "గమనం త్రెష్‌హోల్డు"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:31
 msgid ""
@@ -373,7 +390,9 @@ msgstr "పునరావృత హెచ్చరికలు తెలుప�
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "నిముషాలలో సమయాన్ని తెలుపుము. ఈ సమయంకు మించి తరచుగా వాల్యూమ్ గురించి హెచ్చరికలు కనిపించవు."
+msgstr ""
+"నిముషాలలో సమయాన్ని తెలుపుము. ఈ సమయంకు మించి తరచుగా వాల్యూమ్ గురించి "
+"హెచ్చరికలు కనిపించవు."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
@@ -381,7 +400,9 @@ msgstr "వదిలివేయవలసిన మౌంట్ పాత్‌�
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr "తక్కువ డిస్కు జాగానందు నడుచునప్పుడు వదిలివేయవలసిన మౌంట్ పాత్‌ల జాబితాను తెలుపుము."
+msgstr ""
+"తక్కువ డిస్కు జాగానందు నడుచునప్పుడు వదిలివేయవలసిన మౌంట్ పాత్‌ల జాబితాను "
+"తెలుపుము."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
@@ -465,7 +486,7 @@ msgstr "నివాస సంచయంను తెరుచుటకు బం
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
 msgid "Search"
-msgstr "శోధన"
+msgstr "శోధించు"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:26
 msgid "Binding to launch the search tool."
@@ -525,7 +546,8 @@ msgstr "ప్లే (లేదా ప్లే/నిలిపిఉంచు)"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
 msgid "Binding to start playback (or toggle play/pause)."
-msgstr "ప్లేబ్యాక్ ప్రారంభించుటకు బందనం అయిఉంది (లేదా ప్లే/నిలిపిఉంచు మార్చుము)."
+msgstr ""
+"ప్లేబ్యాక్ ప్రారంభించుటకు బందనం అయిఉంది (లేదా ప్లే/నిలిపిఉంచు మార్చుము)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
 msgid "Pause playback"
@@ -634,7 +656,7 @@ msgstr "MATE అమర్పుల డెమోన్"
 
 #: ../mate-settings-daemon/main.c:65
 msgid "Enable debugging code"
-msgstr "డీబగ్గింగ్ కోడ్‌ను చేతనంచేయుము"
+msgstr "లోపనిర్మూలన సంకేతాన్ని ఉపయోగించు"
 
 #: ../mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
@@ -642,7 +664,7 @@ msgstr ""
 
 #: ../mate-settings-daemon/main.c:67
 msgid "Don't become a daemon"
-msgstr "డెమోన్ కావద్దు"
+msgstr "సూత్రదారి అవ్వకు"
 
 #: ../mate-settings-daemon/main.c:68
 msgid "Exit after a time (for debugging)"
@@ -656,102 +678,109 @@ msgstr "అందుబాటు కీబోర్డు"
 msgid "Accessibility keyboard plugin"
 msgstr "అందుబాటు కీబోర్డు ప్లగ్ఇన్"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr "సహాయం ప్రదర్శించుటలో దోషం: %s"
+msgstr "సహాయం ప్రదర్శించుటలో అక్కడ ఒక దోషం ఉంది: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
 msgid "Do you want to activate Slow Keys?"
 msgstr "నెమ్మది మీటలను క్రియాశీలం చేయాలా?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "నెమ్మది మీటల సౌకర్యాన్ని క్రియాహీనం చేయాలా?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "మీరు షిఫ్ట్ మీటను ౮8 సెకన్లు నొక్కివుంచారు. ఇది నెమ్మది మీటల విశిష్ఠ అంశానికి అడ్డదారి ఇది మీ మీటలపలకం పనిచేయు విధానంపై ప్రభావం చూపుతుంది."
+msgstr ""
+"మీరు షిఫ్ట్ మీటను ౮8 సెకన్లు నొక్కివుంచారు. ఇది నెమ్మది మీటల విశిష్ఠ "
+"అంశానికి అడ్డదారి ఇది మీ మీటలపలకం పనిచేయు విధానంపై ప్రభావం చూపుతుంది."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't activate"
 msgstr "క్రియాశీలం చేయవద్దు"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't deactivate"
 msgstr "క్రియాహీనం చేయవద్దు"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Activate"
 msgstr "క్రియాశీలించు"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Deactivate"
 msgstr "క్రియాహీనంచేయి"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't activate"
 msgstr "క్రియాశీలం చేయవద్దు(_n)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't deactivate"
 msgstr "క్రియాహీనం చేయవద్దు(_n)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Activate"
-msgstr "క్రియాశీలం(_A)"
+msgstr "క్రియాశీలం (_A)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Deactivate"
-msgstr "క్రియాహీనం(_D)"
+msgstr "క్రియాహీనం (_D)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Slow Keys Alert"
 msgstr "నెమ్మది మీటల అప్రమత్తం"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Do you want to activate Sticky Keys?"
 msgstr "చీటీ మీటలను క్రియాశీలం చేయాలా?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "చీటీ మీటలను క్రియాహీనం చేయాలా?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "షిఫ్ట్ మీటను మీరు వరుసక్రమంలో 5సార్లు నొక్కారు. ఇది చీటీ మీటల సౌకర్యానికి అడ్డదారిఇది మీ మీటల పలకం పనిపై ప్రభావం చూపుతుంది."
+msgstr ""
+"షిఫ్ట్ మీటను మీరు వరుసక్రమంలో 5సార్లు నొక్కారు. ఇది చీటీ మీటల సౌకర్యానికి "
+"అడ్డదారిఇది మీ మీటల పలకం పనిపై ప్రభావం చూపుతుంది."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "మీరు రెండు షిఫ్ట్ మీటలను ఒకేసారి నొక్కారు. షిఫ్ట్ మీటను మీరు వరుసక్రమంలో 5సార్లు నొక్కారు. ఇది చీటీ మీటల సౌకర్యానికి అడ్డదారి, ఇది మీ మీటల పలకం పనిపై ప్రభావం చూపుతుంది."
+msgstr ""
+"మీరు రెండు షిఫ్ట్ మీటలను ఒకేసారి నొక్కారు. షిఫ్ట్ మీటను మీరు వరుసక్రమంలో "
+"5సార్లు నొక్కారు. ఇది చీటీ మీటల సౌకర్యానికి అడ్డదారి, ఇది మీ మీటల పలకం పనిపై"
+" ప్రభావం చూపుతుంది."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Sticky Keys Alert"
 msgstr "చీటీ మీటల అప్రమత్తత"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "యూనివర్సల్ యాక్సిస్ అభీష్టాలు"
@@ -834,40 +863,50 @@ msgstr "కంప్యూటర్‌నందు %s డిస్కు జా�
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "మీరు చెత్తకుండీను ఖాళీ చేయుట ద్వారా డిస్కు జాగాను ఖాళీ చేయవచ్చు, వుపయోగించని ప్రోగ్రాములను లేదా ఫైళ్ళను తీసివేసి, లేదా ఫైళ్ళను వేరే డిస్కు లేదా విభజనకు కదిల్చి."
+msgstr ""
+"మీరు చెత్తకుండీను ఖాళీ చేయుట ద్వారా డిస్కు జాగాను ఖాళీ చేయవచ్చు, వుపయోగించని"
+" ప్రోగ్రాములను లేదా ఫైళ్ళను తీసివేసి, లేదా ఫైళ్ళను వేరే డిస్కు లేదా విభజనకు "
+"కదిల్చి."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
-msgstr "ఉపయోగించని ఫైళ్ళను లేదా ప్రోగ్రాములను తీసివేయుటద్వారా, లేదా ఫైళ్ళను వేరే డిస్కు లేదా విభజనకు కదుల్చుట ద్వారా మీరు డిస్కును ఖాళీ చేయవచ్చు."
+msgstr ""
+"ఉపయోగించని ఫైళ్ళను లేదా ప్రోగ్రాములను తీసివేయుటద్వారా, లేదా ఫైళ్ళను వేరే "
+"డిస్కు లేదా విభజనకు కదుల్చుట ద్వారా మీరు డిస్కును ఖాళీ చేయవచ్చు."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "మీరు చెత్తకుండీను ఖాళీ చేయుట ద్వారా డిస్కు జాగాను ఖాళీ చేయవచ్చు, వుపయోగించని ప్రోగ్రాములను లేదా ఫైళ్ళను తీసివేసి, లేదా ఫైళ్ళను బాహ్య డిస్కునకు కదుల్చుట ద్వారా."
+msgstr ""
+"మీరు చెత్తకుండీను ఖాళీ చేయుట ద్వారా డిస్కు జాగాను ఖాళీ చేయవచ్చు, వుపయోగించని"
+" ప్రోగ్రాములను లేదా ఫైళ్ళను తీసివేసి, లేదా ఫైళ్ళను బాహ్య డిస్కునకు కదుల్చుట "
+"ద్వారా."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:110
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
-msgstr "ఉపయోగించని ఫైళ్ళను లేదా ప్రోగ్రాములను తీసివేయుటద్వారా, లేదా ఫైళ్ళను బాహ్య డిస్కునకు కదుల్చుట ద్వారా మీరు డిస్కును ఖాళీ చేయవచ్చు."
+msgstr ""
+"ఉపయోగించని ఫైళ్ళను లేదా ప్రోగ్రాములను తీసివేయుటద్వారా, లేదా ఫైళ్ళను బాహ్య "
+"డిస్కునకు కదుల్చుట ద్వారా మీరు డిస్కును ఖాళీ చేయవచ్చు."
 
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:207
 msgid "Low Disk Space"
 msgstr "తక్కువ డిస్కు జాగా"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
 msgstr "చెత్తకుండీ ఖాళీచేయుము"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Ignore"
 msgstr "వదిలివేయి"
 
@@ -879,35 +918,37 @@ msgstr "%2$lu యొక్క %1$lu అంశమును తీసివేయ�
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 msgid "Removing: %s"
-msgstr ""
+msgstr "తీసివేయుచున్నది: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr "చెత్తకుండీను ఖాళీ చేయుచున్నది"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr ""
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr "నుండి: "
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
-msgstr "చెత్తకుండీనుండి అన్ని అంశములను ఖాళీ చేయాలా?"
+msgstr "చెత్తకుండిలోని మొత్తము అంశములను తొలగించు "
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "మీరు చెత్తకుండీను ఖాళీ చేయుటకు యెంచుకొంటే, దీనినందలి అన్ని అంశములు శాశ్వతంగా పోతాయి. మీరు వాటిని వేరుగాకూడా తొలగించగలరని దయచేసి గమనించండి."
+msgstr ""
+"మీరు చెత్తకుండీని ఖాళీ చేయుట ఎంచుకుంటే, దానిలోని అన్ని అంశములు శాశ్వతంగా "
+"పోతాయి. మీరు వాటిని వేరుగా తొలగించగలరని గమనించండి."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
-msgstr "ఖాళీ చెత్తకుండీ (_E)"
+msgstr "చెత్తకుండీని ఖాళీచేయుము (_E)"
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:112
 #, c-format
@@ -919,12 +960,14 @@ msgstr "కీ బైండింగ్ (%s) చెల్లనిది"
 msgid "Key binding (%s) is incomplete"
 msgstr "కీ బైండింగ్ (%s) పూర్తికానటువంటిది"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:486
+#: ../plugins/keybindings/msd-keybindings-manager.c:490
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "(%s)\nను నడుపుటలో దోషం (%s)మీటతో బంధం ఏర్పడింది"
+msgstr ""
+"(%s)\n"
+"ను నడుపుటలో దోషం (%s)మీటతో బంధం ఏర్పడింది"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
@@ -975,14 +1018,19 @@ msgstr ""
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "అప్రమేయ టెర్మినల్‌ను పొందలేకపోతోంది. మీ అప్రమేయ టెర్మినల్ ఆదేశం అమర్చబడిఉంటునట్లు మరియు చెల్లునటువంటి అనువర్తనంను సూచించునట్లు నిర్ధారించుము."
+msgstr ""
+"అప్రమేయ టెర్మినల్‌ను పొందలేకపోతోంది. మీ అప్రమేయ టెర్మినల్ ఆదేశం "
+"అమర్చబడిఉంటునట్లు మరియు చెల్లునటువంటి అనువర్తనంను సూచించునట్లు "
+"నిర్ధారించుము."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "ఆదేశాన్ని నిర్వర్తించలేదు: %s\nఈ ఆదేశం వున్నదోలేదో సరిచూసుకోండి."
+msgstr ""
+"ఆదేశాన్ని నిర్వర్తించలేదు: %s\n"
+"ఈ ఆదేశం వున్నదోలేదో సరిచూసుకోండి."
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1054,8 +1102,8 @@ msgstr "బ్యాకప్‌నుండి ప్రదర్శనయొ�
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "ప్రదర్శన దాని గత ఆకృతీకరణకు %d సెకనులో తిరిగివుంచబడుతుంది"
-msgstr[1] "ప్రదర్శన దాని గత ఆకృతీకరణకు %d సెకనులలో తిరిగివుంచబడుతుంది"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1082,39 +1130,39 @@ msgstr "తెర సమాచారమును రీఫ్రెష్ చే
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "ఏమైనప్పటికి మానిటర్ ఆకృతీకరణను స్విచ్ చేయుటకు ప్రయత్నిస్తోంది."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1889
+#: ../plugins/xrandr/msd-xrandr-manager.c:1885
 msgid "Rotation not supported"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1945
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Could not save monitor configuration"
 msgstr "మానిటర్ ఆకృతీకరణను దాయలేక పోయింది"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1959
 msgid "Normal"
-msgstr "సాదారణముగా"
+msgstr "సాదారణ"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1960
 msgid "Left"
 msgstr "ఎడమ"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1961
 msgid "Right"
 msgstr "కుడి"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1966
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Upside Down"
-msgstr "పైప్రక్క క్రిందన"
+msgstr "పైనప్రక్క క్రిందకు"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2088
+#: ../plugins/xrandr/msd-xrandr-manager.c:2084
 msgid "_Configure Display Settings…"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2141
+#: ../plugins/xrandr/msd-xrandr-manager.c:2137
 msgid "Configure display settings"
 msgstr "ప్రదర్శన అమర్పులను ఆకృతీకరించుము"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2201
+#: ../plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Could not apply the stored configuration for monitors"
 msgstr "మానిటర్ల కొరకు నిల్వవుంచిన ఆకృతీకరణను ఆపాదించలేక పోయింది"
 

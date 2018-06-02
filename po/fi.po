@@ -1,20 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Lasse Liehu <larso@gmx.com>, 2015
-# nomen omen <vapoursoft@gmail.com>, 2017
-# Timo Jyrinki <timo.jyrinki@iki.fi>, 2010
-# Tommi Vainikainen <thv@iki.fi>, 2009
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 21:52+0300\n"
-"PO-Revision-Date: 2017-09-19 11:21+0000\n"
-"Last-Translator: nomen omen <vapoursoft@gmail.com>\n"
-"Language-Team: Finnish (http://www.transifex.com/mate/MATE/language/fi/)\n"
+"POT-Creation-Date: 2018-03-17 15:39+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: nomen omen, 2018\n"
+"Language-Team: Finnish (https://www.transifex.com/mate/teams/13566/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -72,7 +69,9 @@ msgstr "DPI"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "Tarkkuus, jota käytetään muuntamaan fonttikoot pikselikooksi, pisteinä tuumaa kohti."
+msgstr ""
+"Tarkkuus, jota käytetään muuntamaan fonttikoot pikselikooksi, pisteinä "
+"tuumaa kohti."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
@@ -83,7 +82,10 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "Fonttien piirtoon käytetyn antialiasoinnin tyyppi. Mahdolliset arvot ovat: \"none\" (ei antialiasointia), \"grayscale (tavallinen harmaasävyihin perustuva) ja \"rgba\" (alipisteiden antialiasointi, vain LCD-näytöt)."
+msgstr ""
+"Fonttien piirtoon käytetyn antialiasoinnin tyyppi. Mahdolliset arvot ovat: "
+"\"none\" (ei antialiasointia), \"grayscale (tavallinen harmaasävyihin "
+"perustuva) ja \"rgba\" (alipisteiden antialiasointi, vain LCD-näytöt)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
@@ -94,7 +96,11 @@ msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "Fontteja piirrettäessä käytettävä vihjeistystapa. Mahdolliset arvot ovat: \"none\" (ei vihjeistystä), \"slight\" (kevyt vihjeistys), \"medium\" (tavallinen vihjeistys) \"full\" (suurin mahdollinen, saattaa aiheuttaa kirjainmuotojen säröytymistä)"
+msgstr ""
+"Fontteja piirrettäessä käytettävä vihjeistystapa. Mahdolliset arvot ovat: "
+"\"none\" (ei vihjeistystä), \"slight\" (kevyt vihjeistys), \"medium\" "
+"(tavallinen vihjeistys) \"full\" (suurin mahdollinen, saattaa aiheuttaa "
+"kirjainmuotojen säröytymistä)"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
@@ -106,7 +112,11 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "Pikselin osien järjestys LCD-näytöllä: käytetään vain, kun antialiasointi on arvossa \"rgba\". Mahdolliset arvot ovat: \"rgb\" - punainen vasemmalla (yleisin), \"bgr\" punainen vasemmalla, \"vrgb\" punainen ylhäällä, \"vbgr\" punainen alhaalla."
+msgstr ""
+"Pikselin osien järjestys LCD-näytöllä: käytetään vain, kun antialiasointi on"
+" arvossa \"rgba\". Mahdolliset arvot ovat: \"rgb\" - punainen vasemmalla "
+"(yleisin), \"bgr\" punainen vasemmalla, \"vrgb\" punainen ylhäällä, \"vbgr\""
+" punainen alhaalla."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -126,7 +136,9 @@ msgstr "Poista kosketuslevy käytöstä kirjoitettaessa"
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "Aseta tämä todeksi jos sinulla on ongelmia osuessasi vahingossa kosketuslevyyn kirjoitettaessa."
+msgstr ""
+"Aseta tämä todeksi jos sinulla on ongelmia osuessasi vahingossa "
+"kosketuslevyyn kirjoitettaessa."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:3
 msgid "Enable mouse clicks with touchpad"
@@ -135,7 +147,9 @@ msgstr "Ota käyttöön hiiren napsautukset kosketuslevyllä"
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "Aseta tämä todeksi jos haluat lähettää hiiren napsautuksia kosketuslevyä napauttamalla."
+msgstr ""
+"Aseta tämä todeksi jos haluat lähettää hiiren napsautuksia kosketuslevyä "
+"napauttamalla."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Enable vertical edge scrolling"
@@ -249,7 +263,7 @@ msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
-msgstr ""
+msgstr "Liikekynnys"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:31
 msgid ""
@@ -375,7 +389,9 @@ msgstr "Lyhin huomautusväli toistuville varoituksille"
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "Määritä aika minuutteina. Seuraavat varoitukset taltiolle eivät näy useammin kuin tämän aikavälin kuluttua."
+msgstr ""
+"Määritä aika minuutteina. Seuraavat varoitukset taltiolle eivät näy useammin"
+" kuin tämän aikavälin kuluttua."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
@@ -383,7 +399,9 @@ msgstr "Ohitettavat liitospolut"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr "Määritä luettelo liitospoluista, jotka ohitetaan vaikka niissä olisi vähän tilaa jäljellä."
+msgstr ""
+"Määritä luettelo liitospoluista, jotka ohitetaan vaikka niissä olisi vähän "
+"tilaa jäljellä."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
@@ -640,7 +658,7 @@ msgstr "Käytä vianetsintätilaa"
 
 #: ../mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
-msgstr ""
+msgstr "Korvaa nykyinen taustaprosessi"
 
 #: ../mate-settings-daemon/main.c:67
 msgid "Don't become a daemon"
@@ -658,102 +676,110 @@ msgstr "Näppäimistön esteettömyys"
 msgid "Accessibility keyboard plugin"
 msgstr "Näppäimistön esteettömyysliitännäinen"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr "Virhe ohjeen näyttämisessä: %s"
+msgstr "Virhe näytettäessä ohjetta: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
 msgid "Do you want to activate Slow Keys?"
 msgstr "Haluatko ottaa hitaat näppäimet käyttöön?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Haluatko poistaa hitaat näppäimet käytöstä?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "Pidit juuri vaihtonäppäintä painettuna 8 sekuntia. Tämä on hitaat näppäimet -ominaisuuden pikanäppäily, ja muuttaa tapaa, jolla näppäimistö toimii."
+msgstr ""
+"Pidit juuri vaihtonäppäintä painettuna 8 sekuntia. Tämä on hitaat näppäimet "
+"-ominaisuuden pikanäppäily, ja muuttaa tapaa, jolla näppäimistö toimii."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't activate"
 msgstr "Älä ota käyttöön"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't deactivate"
 msgstr "Älä poista käytöstä"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Activate"
 msgstr "Ota käyttöön"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Deactivate"
 msgstr "Poista käytöstä"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't activate"
 msgstr "Ä_lä ota käyttöön"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't deactivate"
 msgstr "Ä_lä poista käytöstä"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Activate"
-msgstr "_Ota käyttöön"
+msgstr "_Avaa"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Deactivate"
-msgstr "_Poista käytöstä"
+msgstr "_Katkaise"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Slow Keys Alert"
 msgstr "Hitaat näppäimet -ilmoitus"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Haluatko ottaa pohjaan jäävät näppäimet käyttöön?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Haluatko poistaa pohjaan jäävät näppäimet käytöstä?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "Painoit juuri vaihtonäppäintä 5 kertaa peräkkäin. Tämä on pohjaan jäävät näppäimet -ominaisuuden pikanäppäily, ja muuttaa tapaa, jolla näppäimistö toimii."
+msgstr ""
+"Painoit juuri vaihtonäppäintä 5 kertaa peräkkäin. Tämä on pohjaan jäävät "
+"näppäimet -ominaisuuden pikanäppäily, ja muuttaa tapaa, jolla näppäimistö "
+"toimii."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "Painoit juuri kahta näppäintä samalla tai vaihtonäppäintä 5 kertaa peräkkäin. Tämä on pohjaan jäävät näppäimet -ominaisuuden pikanäppäily, ja muuttaa tapaa, jolla näppäimistö toimii."
+msgstr ""
+"Painoit juuri kahta näppäintä samalla tai vaihtonäppäintä 5 kertaa "
+"peräkkäin. Tämä on pohjaan jäävät näppäimet -ominaisuuden pikanäppäily, ja "
+"muuttaa tapaa, jolla näppäimistö toimii."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Sticky Keys Alert"
 msgstr "Pohjaan jäävät näppäimet -ilmoitus"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Esteettömyysasetukset"
@@ -780,7 +806,8 @@ msgstr "Tee _tekstistä suurempaa ja helppolukuisempaa"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
-msgstr "Syötä _pikanäppäimet yksi näppäin kerrallaan (pohjaan jäävät näppäimet)"
+msgstr ""
+"Syötä _pikanäppäimet yksi näppäin kerrallaan (pohjaan jäävät näppäimet)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
@@ -788,11 +815,12 @@ msgstr "_Jätä kahdennetut näppäilyt huomioimatta (kimmonäppäimet)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "Press and _hold keys to accept them (Slow Keys)"
-msgstr "Paina ja _pidä näppäimet alhaalla, jotta ne hyväksytään (hitaat näppäimet)"
+msgstr ""
+"Paina ja _pidä näppäimet alhaalla, jotta ne hyväksytään (hitaat näppäimet)"
 
 #: ../plugins/background/background.mate-settings-plugin.in.h:1
 msgid "Background"
-msgstr "Taustakuva"
+msgstr "Tausta"
 
 #: ../plugins/background/background.mate-settings-plugin.in.h:2
 msgid "Background plugin"
@@ -836,40 +864,50 @@ msgstr "Tällä tietokoneella on vain %s levytilaa jäljellä."
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "Voit vapauttaa levytilaa tyhjentämällä roskakorin, poistamalla käyttämättömiä ohjelmia ja tiedostoja tai siirtämällä tiedostoja toisille levyille tai osioille."
+msgstr ""
+"Voit vapauttaa levytilaa tyhjentämällä roskakorin, poistamalla "
+"käyttämättömiä ohjelmia ja tiedostoja tai siirtämällä tiedostoja toisille "
+"levyille tai osioille."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
-msgstr "Voit vapauttaa levytilaa poistamalla käyttämättömiä ohjelmia ja tiedostoja tai siirtämällä tiedostoja toisille levyille tai osioille."
+msgstr ""
+"Voit vapauttaa levytilaa poistamalla käyttämättömiä ohjelmia ja tiedostoja "
+"tai siirtämällä tiedostoja toisille levyille tai osioille."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "Voit vapauttaa levytilaa tyhjentämällä roskakorin, poistamalla käyttämättömiä ohjelmia ja tiedostoja tai siirtämällä tiedostoja ulkoiselle levylle."
+msgstr ""
+"Voit vapauttaa levytilaa tyhjentämällä roskakorin, poistamalla "
+"käyttämättömiä ohjelmia ja tiedostoja tai siirtämällä tiedostoja ulkoiselle "
+"levylle."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:110
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
-msgstr "Voit vapauttaa levytilaa poistamalla käyttämättömiä ohjelmia ja tiedostoja tai siirtämällä tiedostoja ulkoiselle levylle."
+msgstr ""
+"Voit vapauttaa levytilaa poistamalla käyttämättömiä ohjelmia ja tiedostoja "
+"tai siirtämällä tiedostoja ulkoiselle levylle."
 
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:207
 msgid "Low Disk Space"
 msgstr "Levytila vähissä"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
 msgstr "Tyhjennä roskakori"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Ignore"
 msgstr "Älä huomioi"
 
@@ -881,35 +919,37 @@ msgstr "Poistetaan kohdetta %lu/%lu"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 msgid "Removing: %s"
-msgstr ""
+msgstr "Poistetaan: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr "Tyhjennetään roskakoria"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr ""
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr "Kohteesta: "
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
 msgstr "Poista kaikki roskakorissa olevat tiedostot?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "Jos tyhjennät roskakorin, tuhotaan kaikki siellä olevat tiedostot pysyvästi. Huomaa että voit poistaa roskakorista tiedostoja myös yksitellen."
+msgstr ""
+"Jos tyhjennät roskakorin, tuhotaan kaikki siellä olevat tiedostot pysyvästi."
+" Huomaa että voit poistaa roskakorista tiedostoja myös yksitellen."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
-msgstr "_Tyhjennä roskakori"
+msgstr "Tyhjennä roskakori"
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:112
 #, c-format
@@ -921,12 +961,14 @@ msgstr "Näppäinsidonta (%s) on virheellinen"
 msgid "Key binding (%s) is incomplete"
 msgstr "Näppäinsidonta (%s) on epätäydellinen"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:486
+#: ../plugins/keybindings/msd-keybindings-manager.c:490
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "Näppäimeen (%2$s) kytketyn toiminnon\n(%1$s) suorittaminen epäonnistui."
+msgstr ""
+"Näppäimeen (%2$s) kytketyn toiminnon\n"
+"(%1$s) suorittaminen epäonnistui."
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
@@ -963,7 +1005,7 @@ msgstr ""
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:279
 msgid "_Layouts"
-msgstr ""
+msgstr "_Asetelmat"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:286
 msgid "Keyboard _Preferences"
@@ -971,20 +1013,24 @@ msgstr "Näppäimistön _asetukset"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:292
 msgid "Show _Current Layout"
-msgstr ""
+msgstr "Näytä _nykyinen asetelma"
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:184
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "Oletuspäätettä ei löytynyt. Varmista, että oletuspäätteen komento on asetettu ja että se osoittaa toimivaan päätekomentoon."
+msgstr ""
+"Oletuspäätettä ei löytynyt. Varmista, että oletuspäätteen komento on "
+"asetettu ja että se osoittaa toimivaan päätekomentoon."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "Komentoa ei voitu suorittaa: %s\nTarkista, että tämä komento on olemassa."
+msgstr ""
+"Komentoa ei voitu suorittaa: %s\n"
+"Tarkista, että tämä komento on olemassa."
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1056,8 +1102,8 @@ msgstr "Näyttöasetuksia ei voitu palauttaa varmuuskopiosta"
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Näyttö palautetaan edelliseen asetuksiin %d sekunnin kuluttua"
-msgstr[1] "Näyttö palautetaan edelliseen asetuksiin %d sekunnin kuluttua"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1084,39 +1130,39 @@ msgstr "Näytön tietoja ei voitu virkistää: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Yritetään vaihtaa näytön asetuksia joka tapauksessa."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1889
+#: ../plugins/xrandr/msd-xrandr-manager.c:1885
 msgid "Rotation not supported"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1945
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Could not save monitor configuration"
 msgstr "Näytön asetuksia ei voitu tallentaa"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1959
 msgid "Normal"
 msgstr "Tavallinen"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1960
 msgid "Left"
-msgstr "Vasen"
+msgstr "vasen"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1961
 msgid "Right"
-msgstr "Oikea"
+msgstr "oikea"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1966
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Upside Down"
 msgstr "Ylösalaisin"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2088
+#: ../plugins/xrandr/msd-xrandr-manager.c:2084
 msgid "_Configure Display Settings…"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2141
+#: ../plugins/xrandr/msd-xrandr-manager.c:2137
 msgid "Configure display settings"
 msgstr "Määrittele näytön asetukset"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2201
+#: ../plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Tallennettua näyttöjen asetusta ei voitu toteuttaa"
 
@@ -1213,7 +1259,7 @@ msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:2
 msgid "Privileges are required to change the system time zone."
-msgstr ""
+msgstr "Järjestelmän aikavyöhykkeen muuttaminen vaatii lisäoikeuksia."
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:3
 msgid "Change system time"
@@ -1221,7 +1267,7 @@ msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:4
 msgid "Privileges are required to change the system time."
-msgstr ""
+msgstr "Järjestelmän ajan muuttaminen vaatii lisäoikeuksia."
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:5
 msgid "Configure hardware clock"
@@ -1229,4 +1275,4 @@ msgstr ""
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:6
 msgid "Privileges are required to configure the hardware clock."
-msgstr ""
+msgstr "Tietokoneen sisäisen kellon muuttaminen vaatii lisäoikeuksia."
