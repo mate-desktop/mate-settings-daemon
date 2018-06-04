@@ -1,19 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Artis Trops <hornet@navigators.lv>, 2001
-# Raivis Dejus <orvils@gmail.com>, 2006, 2007
-# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2010
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 21:52+0300\n"
-"PO-Revision-Date: 2017-09-19 11:21+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Latvian (http://www.transifex.com/mate/MATE/language/lv/)\n"
+"POT-Creation-Date: 2018-03-17 15:36+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Imants Liepiņš <imzzinator@gmail.com>, 2018\n"
+"Language-Team: Latvian (https://www.transifex.com/mate/teams/13566/lv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -71,7 +69,9 @@ msgstr "DPI"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "Izmantojamā izšķirtspēja, kad pārveido fontu izmērus uz pikseļu izmēriem. Norāda punktus collā."
+msgstr ""
+"Izmantojamā izšķirtspēja, kad pārveido fontu izmērus uz pikseļu izmēriem. "
+"Norāda punktus collā."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
@@ -82,18 +82,25 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "Kāda veida kropļojumnovērsi izmantot, kad renderē fontus. Iespējamās vērtības ir: \"none\", lai neizmantotu kropļojumnovērsi, \"grayscale\" standarta pelēktoņu kropļojumnovērsei, un \"rgba\" apakšpikseļu kropļojumnovērsei (tikai LCD ekrāniem)."
+msgstr ""
+"Kāda veida kropļojumnovērsi izmantot, kad renderē fontus. Iespējamās "
+"vērtības ir: \"none\", lai neizmantotu kropļojumnovērsi, \"grayscale\" "
+"standarta pelēktoņu kropļojumnovērsei, un \"rgba\" apakšpikseļu "
+"kropļojumnovērsei (tikai LCD ekrāniem)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
-msgstr "Norādīšana"
+msgstr "Instruēšana"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:6
 msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "Kāda veida norādīšanu izmantot, kad renderē fontus. Iespējamās vērtības ir \"none\" – bez norādīšanas, \"slight\" vienkāršai, \"medium\" vidējai, \"full\" maksimālai norādīšanai (var radīt kropļojumus burtu formās)."
+msgstr ""
+"Kāda veida norādīšanu izmantot, kad renderē fontus. Iespējamās vērtības ir "
+"\"none\" – bez norādīšanas, \"slight\" vienkāršai, \"medium\" vidējai, "
+"\"full\" maksimālai norādīšanai (var radīt kropļojumus burtu formās)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
@@ -105,7 +112,11 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "Apakšpikseļu secība LCD ekrānā; tiek izmantots tikai, kad kropļojumnovērse ir iestatīta uz \"rgba\". Iespējamās  vērtības ir \"rgb\", kad pa kreisi ir sarkanā (visizplatītākā), \"bgr\", kad pa kreisi ir zilā, \"vbgr\", kad sarkanā ir apakšā."
+msgstr ""
+"Apakšpikseļu secība LCD ekrānā; tiek izmantots tikai, kad kropļojumnovērse "
+"ir iestatīta uz \"rgba\". Iespējamās  vērtības ir \"rgb\", kad pa kreisi ir "
+"sarkanā (visizplatītākā), \"bgr\", kad pa kreisi ir zilā, \"vbgr\", kad "
+"sarkanā ir apakšā."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -125,7 +136,9 @@ msgstr "Atslēgt skārienpaliktni, kad raksta"
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "Iestatiet šo uz PATIESS, ja jums ir problēmas ar netīšu skārienpaliktņa nospiešanu, kamēr rakstāt."
+msgstr ""
+"Iestatiet šo uz PATIESS, ja jums ir problēmas ar netīšu skārienpaliktņa "
+"nospiešanu, kamēr rakstāt."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:3
 msgid "Enable mouse clicks with touchpad"
@@ -134,7 +147,9 @@ msgstr "Ieslēgt peles klikšķus ar skārienpaliktni"
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "Iestatiet šo uz PATIESS, lai varētu sūtīt peles klikšķus, uzsitot uz skārienpaliktņa."
+msgstr ""
+"Iestatiet šo uz PATIESS, lai varētu sūtīt peles klikšķus, uzsitot uz "
+"skārienpaliktņa."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Enable vertical edge scrolling"
@@ -248,7 +263,7 @@ msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
-msgstr ""
+msgstr "Kustības slieksnis"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:31
 msgid ""
@@ -374,7 +389,9 @@ msgstr "Minimālais paziņojumu periods atkārtotiem brīdinājumiem"
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "Norādiet laiku minūtēs. Atkārtojošies brīdinājumi netiks rādīti biežāk kā norādītajā periodā."
+msgstr ""
+"Norādiet laiku minūtēs. Atkārtojošies brīdinājumi netiks rādīti biežāk kā "
+"norādītajā periodā."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
@@ -382,7 +399,9 @@ msgstr "Montēšanas ceļi, kurus ignorēt"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr "Norādiet sarakstu ar montēšanas ceļiem, kuriem neskatīties, cik atlicis brīvās vietas."
+msgstr ""
+"Norādiet sarakstu ar montēšanas ceļiem, kuriem neskatīties, cik atlicis "
+"brīvās vietas."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
@@ -657,102 +676,111 @@ msgstr "Pieejamības tastatūra"
 msgid "Accessibility keyboard plugin"
 msgstr "Pieejamības tastatūras spraudnis"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr "Kļūda, parādot palīdzību: %s"
+msgstr "Gadījās kļūda parādot palīdzību: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
 msgid "Do you want to activate Slow Keys?"
 msgstr "Vai vēlaties aktivizēt lēnos taustiņus?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Vai vēlaties deaktivizēt lēnos taustiņus?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "Jūs nupat noturējāt Shift taustiņu piespiestu vairāk kā 8 sekundes. Tā ir tastatūras lēno taustiņu funkcijas saīsne, kas ietekmē to, kā darbojas jūsu tastatūra."
+msgstr ""
+"Jūs nupat noturējāt Shift taustiņu piespiestu vairāk kā 8 sekundes. Tā ir "
+"tastatūras lēno taustiņu funkcijas saīsne, kas ietekmē to, kā darbojas jūsu "
+"tastatūra."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't activate"
 msgstr "Neaktivizēt"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't deactivate"
 msgstr "Nedeaktivizēt"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Activate"
 msgstr "Aktivizēt"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Deactivate"
 msgstr "Deaktivizēt"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't activate"
 msgstr "N_eaktivizēt"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't deactivate"
 msgstr "N_edeaktivizēt"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Activate"
 msgstr "_Aktivizēt"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Deactivate"
 msgstr "_Deaktivizēt"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Slow Keys Alert"
 msgstr "Lēno taustiņu brīdinājums"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Vai vēlaties aktivizēt lipīgo taustiņu funkciju?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Vai vēlaties deaktivizēt lipīgo taustiņu funkciju?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "Jūs tikko piespiedāt Shift taustiņu 5 reizes pēc kārtas.  Tā ir klaviatūras Lipīgo taustiņu funkcijas saīsne, kas ietekmē to kā darbojas jūsu klaviatūra."
+msgstr ""
+"Jūs tikko piespiedāt Shift taustiņu 5 reizes pēc kārtas.  Tā ir klaviatūras "
+"Lipīgo taustiņu funkcijas saīsne, kas ietekmē to kā darbojas jūsu "
+"klaviatūra."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "Jūs tikko vienlaicīgi piespiedāt divus taustiņus vai Shift taustiņu 5 reizes pēc kārtas.  Tas atslēdz klaviatūras lipīgo taustiņu funkciju, kas ietekmē to kā darbojas jūsu klaviatūra."
+msgstr ""
+"Jūs tikko vienlaicīgi piespiedāt divus taustiņus vai Shift taustiņu 5 reizes"
+" pēc kārtas.  Tas atslēdz klaviatūras lipīgo taustiņu funkciju, kas ietekmē "
+"to kā darbojas jūsu klaviatūra."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Sticky Keys Alert"
 msgstr "Lipīgo taustiņu brīdinājums"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Universālās pieejas iestatījumi"
@@ -835,40 +863,48 @@ msgstr "Šajā datorā ir atlicis tikai %s diska vietas."
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "Jūs varat atbrīvot diska vietu, iztukšojot miskasti, noņemot neizmantotas programmas vai failus, vai pārvietojot failus uz citu disku vai sadaļu."
+msgstr ""
+"Jūs varat atbrīvot diska vietu, iztukšojot miskasti, noņemot neizmantotas "
+"programmas vai failus, vai pārvietojot failus uz citu disku vai sadaļu."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
-msgstr "Jūs varat atbrīvot diska vietu, noņemot neizmantotas programmas vai failus, vai pārvietojot failus uz citu disku vai sadaļu."
+msgstr ""
+"Jūs varat atbrīvot diska vietu, noņemot neizmantotas programmas vai failus, "
+"vai pārvietojot failus uz citu disku vai sadaļu."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "Jūs varat atbrīvot diska vietu, iztukšojot miskasti, noņemot neizmantotas programmas vai failus, vai pārvietojot failus uz ārējo cieto disku."
+msgstr ""
+"Jūs varat atbrīvot diska vietu, iztukšojot miskasti, noņemot neizmantotas "
+"programmas vai failus, vai pārvietojot failus uz ārējo cieto disku."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:110
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
-msgstr "Jūs varat atbrīvot diska vietu, noņemot neizmantotas programmas vai failus, vai pārvietojot failus uz ārējo cieto disku."
+msgstr ""
+"Jūs varat atbrīvot diska vietu, noņemot neizmantotas programmas vai failus, "
+"vai pārvietojot failus uz ārējo cieto disku."
 
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:207
 msgid "Low Disk Space"
 msgstr "Maz diska vietas"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
 msgstr "Iztukšot miskasti"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Ignore"
 msgstr "Ignorēt"
 
@@ -880,35 +916,37 @@ msgstr "Noņem vienību %lu no %lu"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 msgid "Removing: %s"
-msgstr ""
+msgstr "Aizvāc: %s</i>"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr "Iztukšo miskasti"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr ""
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr "No:"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
-msgstr "Iztukšot visu miskasti?"
+msgstr "Iztukšot visas vienības no miskastes?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "Ja izvēlēsieties iztukšot miskasti, visas vienības tajā tiks neatgriezeniski zaudētas. Atcerieties, ka tās iespējams dzēst atsevišķi."
+msgstr ""
+"Iztukšojot miskasti, viss tās saturs būs neglābjami zudis. Miskastē esošās "
+"vienības var dzēst arī pa vienai."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
-msgstr "_Iztukšot miskasti"
+msgstr "_Tukšot miskasti"
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:112
 #, c-format
@@ -920,12 +958,14 @@ msgstr "Taustiņu sasaiste (%s) ir nederīga"
 msgid "Key binding (%s) is incomplete"
 msgstr "Taustiņu sasaiste (%s) ir nepilnīga"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:486
+#: ../plugins/keybindings/msd-keybindings-manager.c:490
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "Kļūda, mēģinot palaist (%s),\nkurš ir saistīts ar taustiņu (%s)"
+msgstr ""
+"Kļūda, mēģinot palaist (%s),\n"
+"kurš ir saistīts ar taustiņu (%s)"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
@@ -976,14 +1016,18 @@ msgstr ""
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "Nevarēja iegūt noklusēto termināli. Pārliecinieties, ka jūsu noklusētā termināļa komanda ir iestatīta un norāda uz derīgu lietotni."
+msgstr ""
+"Nevarēja iegūt noklusēto termināli. Pārliecinieties, ka jūsu noklusētā "
+"termināļa komanda ir iestatīta un norāda uz derīgu lietotni."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "Nevarēja izpildīt komandu: %s\nPārliecinieties, ka tā ir derīga komanda."
+msgstr ""
+"Nevarēja izpildīt komandu: %s\n"
+"Pārliecinieties, ka tā ir derīga komanda."
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1024,7 +1068,7 @@ msgstr ""
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:1
 msgid "Typing Break"
-msgstr "Rakstīšanas pārtraukums"
+msgstr "Drukāšanas pārtraukums"
 
 #: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:2
 msgid "Typing break plugin"
@@ -1055,9 +1099,9 @@ msgstr "Nevarēja atjaunot displeja konfigurāciju no rezerves kopijas"
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Ekrāns tiks atstatīts uz iepriekšējo konfigurāciju pēc %d sekundes"
-msgstr[1] "Ekrāns tiks atstatīts uz iepriekšējo konfigurāciju pēc %d sekundēm"
-msgstr[2] "Ekrāns tiks atstatīts uz iepriekšējo konfigurāciju pēc %d sekundēm"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1084,39 +1128,39 @@ msgstr "Nevar atsvaidzināt ekrāna informāciju: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Mēģina tāpat pārslēgt monitora konfigurāciju."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1889
+#: ../plugins/xrandr/msd-xrandr-manager.c:1885
 msgid "Rotation not supported"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1945
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Could not save monitor configuration"
 msgstr "Nevar saglabāt monitora konfigurāciju"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1959
 msgid "Normal"
-msgstr "Normāls"
+msgstr "Parasts"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1960
 msgid "Left"
-msgstr "Pa kreisi"
+msgstr "Pa Kreisi"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1961
 msgid "Right"
-msgstr "Pa labi"
+msgstr "Pa Labi"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1966
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Upside Down"
-msgstr "Apgriezt otrādi"
+msgstr "Otrādi"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2088
+#: ../plugins/xrandr/msd-xrandr-manager.c:2084
 msgid "_Configure Display Settings…"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2141
+#: ../plugins/xrandr/msd-xrandr-manager.c:2137
 msgid "Configure display settings"
 msgstr "Konfigurēt ekrāna iestatījumus..."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2201
+#: ../plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Nevarēja piemērot monitoriem saglabāto konfigurāciju"
 

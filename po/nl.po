@@ -1,30 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Almer S. Tigelaar <almer@gnome.org>, 2001
-# Dennis Smit <synap@area101.penguin.nl>, 2000
-# dragnadh <dragnadh@gmail.com>, 2016-2017
-# Hannie Dumoleyn <lafeber-dumoleyn2@zonnet.nl>, 2010
-# Huib Kleinhout <huib@stack.nl>, 2002
-# Jan-Willem Harmanny <jwharmanny@hotmail.com>, 2002
-# Kees Lijkendijk <clkndk@gmail.com>, 2016
-# Michael Steenbeek <m.o.steenbeek@gmail.com>, 2012-2013
-# Pjotr <pjotrvertaalt@gmail.com>, 2017
-# Rob van den Berg <linuxned@gmail.com>, 2010
-# Ronald Hummelink <ronald@hummelink.xs4all.nl>, 2002
-# Stef Pletinck <stef.plet@gmail.com>, 2015
-# Tino Meinen <a.t.meinen@chello.nl>, 2004, 2006, 2007, 2008
-# Volluta <volluta@tutanota.com>, 2015
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 21:52+0300\n"
-"PO-Revision-Date: 2017-09-23 18:08+0000\n"
-"Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
-"Language-Team: Dutch (http://www.transifex.com/mate/MATE/language/nl/)\n"
+"POT-Creation-Date: 2018-03-17 15:36+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kees Lijkendijk <clkndk@gmail.com>, 2018\n"
+"Language-Team: Dutch (https://www.transifex.com/mate/teams/13566/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -82,7 +69,9 @@ msgstr "DPI"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "De resolutie die gebruikt wordt voor het omrekenen van lettertypegroottes naar beeldpuntgroottes, in punten per inch."
+msgstr ""
+"De resolutie die gebruikt wordt voor het omrekenen van lettertypegroottes "
+"naar beeldpuntgroottes, in punten per inch."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
@@ -93,7 +82,11 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "Het soort gladmaken (antialiasing) dat gebruikt wordt bij het weergeven van lettertypes. Mogelijke waardes zijn: ‘none’ voor niet gladmaken, ‘grayscale’ voor standaard gladmaken met grijswaarden, en ‘rgba’ voor subpixel-gladmaken (alleen bij LCD-schermen)."
+msgstr ""
+"Het soort gladmaken (antialiasing) dat gebruikt wordt bij het weergeven van "
+"lettertypes. Mogelijke waardes zijn: ‘none’ voor niet gladmaken, ‘grayscale’"
+" voor standaard gladmaken met grijswaarden, en ‘rgba’ voor subpixel-"
+"gladmaken (alleen bij LCD-schermen)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
@@ -104,7 +97,11 @@ msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "Het type vormsuggesties dat gebruikt wordt bij het weergeven van lettertypes. Mogelijke waarden zijn: ‘none’ voor geen vormsuggesties, ‘slight’ voor weinig, ‘medium’ voor gemiddeld, en ‘full’ voor maximale vormsuggesties (kan vervorming van letters veroorzaken)."
+msgstr ""
+"Het type vormsuggesties dat gebruikt wordt bij het weergeven van "
+"lettertypes. Mogelijke waarden zijn: ‘none’ voor geen vormsuggesties, "
+"‘slight’ voor weinig, ‘medium’ voor gemiddeld, en ‘full’ voor maximale "
+"vormsuggesties (kan vervorming van letters veroorzaken)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
@@ -116,7 +113,11 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "De volgorde van subpixel-elementen op een LCD-scherm; wordt alleen gebruikt wanneer gladmaken (antialiasing) ingesteld is op ‘rgba’. Mogelijke waarden zijn: ‘rgb’ voor rood op links (meest voorkomend), ‘bgr’ voor blauw op links, ‘vrgb’ voor rood bovenop, ‘vbgr’ voor rood onderop."
+msgstr ""
+"De volgorde van subpixel-elementen op een LCD-scherm; wordt alleen gebruikt "
+"wanneer gladmaken (antialiasing) ingesteld is op ‘rgba’. Mogelijke waarden "
+"zijn: ‘rgb’ voor rood op links (meest voorkomend), ‘bgr’ voor blauw op "
+"links, ‘vrgb’ voor rood bovenop, ‘vbgr’ voor rood onderop."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -126,7 +127,10 @@ msgstr "Actie bij verwijderen van smartcard"
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr "Zet dit op 'none', 'lock_screen' of 'force_logout'. De actie zal worden uitgevoerd wanneer de smartcard die wordt gebruikt voor aanmelden, wordt verwijderd."
+msgstr ""
+"Zet dit op 'none', 'lock_screen' of 'force_logout'. De actie zal worden "
+"uitgevoerd wanneer de smartcard die wordt gebruikt voor aanmelden, wordt "
+"verwijderd."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:1
 msgid "Disable touchpad while typing"
@@ -136,7 +140,9 @@ msgstr "Touchpad uitschakelen tijdens het tikken"
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "Geef de waarde TRUE wanneer u problemen heeft met het per ongeluk aanraken van uw touchpad tijdens het tikken."
+msgstr ""
+"Geef de waarde TRUE wanneer u problemen heeft met het per ongeluk aanraken "
+"van uw touchpad tijdens het tikken."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:3
 msgid "Enable mouse clicks with touchpad"
@@ -145,7 +151,9 @@ msgstr "Muisklikken met touchpad inschakelen"
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "Geef de waarde TRUE voor de mogelijkheid om muisklikken na te bootsen door te tikken op het touchpad."
+msgstr ""
+"Geef de waarde TRUE voor de mogelijkheid om muisklikken na te bootsen door "
+"te tikken op het touchpad."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Enable vertical edge scrolling"
@@ -169,7 +177,8 @@ msgstr "Verticaal schuiven met twee vingers inschakelen"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:10
 msgid "Set this to TRUE to allow vertical two-finger scrolling"
-msgstr "Geef de waarde TRUE om verticaal schuiven met twee vingers toe te staan"
+msgstr ""
+"Geef de waarde TRUE om verticaal schuiven met twee vingers toe te staan"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:11
 msgid "Enable horizontal two-finger scrolling"
@@ -177,7 +186,8 @@ msgstr "Horizontaal schuiven met twee vingers inschakelen"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
 msgid "Set this to TRUE to allow horizontal two-finger scrolling"
-msgstr "Geef de waarde TRUE om horizontaal schuiven met twee vingers toe te staan"
+msgstr ""
+"Geef de waarde TRUE om horizontaal schuiven met twee vingers toe te staan"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
 msgid "Natural scrolling"
@@ -185,7 +195,9 @@ msgstr "Natuurlijk schuiven"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
-msgstr "Geef de waarde TRUE om natuurlijk (omgekeerd) schuiven voor touchpads in te schakelen"
+msgstr ""
+"Geef de waarde TRUE om natuurlijk (omgekeerd) schuiven voor touchpads in te "
+"schakelen"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
 msgid "Enable touchpad"
@@ -215,7 +227,9 @@ msgstr "Knop voor tikken met één vinger"
 msgid ""
 "Select the button mapping for one-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Kies de knop voor tikken met één vinger. Ondersteunde waarden zijn: 1: linkermuisknop 2: middelste muisknop 3: rechtermuisknop"
+msgstr ""
+"Kies de knop voor tikken met één vinger. Ondersteunde waarden zijn: 1: "
+"linkermuisknop 2: middelste muisknop 3: rechtermuisknop"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
 msgid "Two finger tap button"
@@ -225,7 +239,9 @@ msgstr "Knop voor tikken met twee vingers"
 msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Selecteer de knop voor tikken met twee vingers. Ondersteunde waarden zijn: 1 - linkermuisknop 2 - middelste muisknop 3 - rechtermuisknop"
+msgstr ""
+"Selecteer de knop voor tikken met twee vingers. Ondersteunde waarden zijn: 1"
+" - linkermuisknop 2 - middelste muisknop 3 - rechtermuisknop"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
 msgid "Three finger tap button"
@@ -235,7 +251,9 @@ msgstr "Knop voor tikken met drie vingers"
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Selecteer de knop voor tikken met drie vingers. Ondersteunde waarden zijn: 1 - linkermuisknop 2 - middelste muisknop 3 - rechtermuisknop"
+msgstr ""
+"Selecteer de knop voor tikken met drie vingers. Ondersteunde waarden zijn: 1"
+" - linkermuisknop 2 - middelste muisknop 3 - rechtermuisknop"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:26
 msgid "Touchpad button orientation"
@@ -245,17 +263,21 @@ msgstr "Touchpad-knoporiëntatie"
 msgid ""
 "Swap left and right buttons for left-handed touchpads with 'left', 'right' "
 "for right-handed, 'mouse' to follow the mouse setting."
-msgstr "Vervang de knoppen links en rechts voor linkshandige touchpads door 'links', 'rechts' voor rechtshandige, 'muis' om de muisinstelling te volgen."
+msgstr ""
+"Vervang de knoppen links en rechts voor linkshandige touchpads door 'links',"
+" 'rechts' voor rechtshandige, 'muis' om de muisinstelling te volgen."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
 msgid "Motion Acceleration"
-msgstr "Bewegingsversneller"
+msgstr "Bewegingsversnelling"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:29
 msgid ""
 "Acceleration multiplier for touchpad motion. A value of -1 is the system "
 "default."
-msgstr "Versnellingsfactor voor touchpadbewegingen. Een waarde van -1 is de systeemstandaard."
+msgstr ""
+"Versnellingsfactor voor touchpadbewegingen. Een waarde van -1 is de "
+"systeemstandaard."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
@@ -265,7 +287,9 @@ msgstr "Bewegingsdrempel"
 msgid ""
 "Distance in pixels the pointer must move before accelerated touchpad motion "
 "is activated. A value of -1 is the system default."
-msgstr "Afstand die de touchpadaanwijzer moet afleggen voordat de versnelling wordt ingeschakeld. Een waarde van -1 is de systeemstandaard."
+msgstr ""
+"Afstand die de touchpadaanwijzer moet afleggen voordat de versnelling wordt "
+"ingeschakeld. Een waarde van -1 is de systeemstandaard."
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
@@ -305,7 +329,8 @@ msgstr "Activering van deze invoegtoepassing"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr "Of deze invoegtoepassing wordt geactiveerd door mate-settings-daemon of niet"
+msgstr ""
+"Of deze invoegtoepassing wordt geactiveerd door mate-settings-daemon of niet"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:3
@@ -345,7 +370,9 @@ msgstr "Prioriteit van deze invoegtoepassing"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
-msgstr "De te gebruiken prioriteit voor deze invoegtoepassing in de opstartvolgorde van mate-settings-daemon"
+msgstr ""
+"De te gebruiken prioriteit voor deze invoegtoepassing in de opstartvolgorde "
+"van mate-settings-daemon"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:5
 msgid "Free percentage notify threshold"
@@ -355,7 +382,10 @@ msgstr "Meldingsdrempel voor percentage vrije ruimte"
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr "Procentuele drempelwaarde voor eerste waarschuwing inzake te weinig vrije schijfruimte. Als het percentage vrije ruimte hieronder komt, wordt er een waarschuwing weergegeven."
+msgstr ""
+"Procentuele drempelwaarde voor eerste waarschuwing inzake te weinig vrije "
+"schijfruimte. Als het percentage vrije ruimte hieronder komt, wordt er een "
+"waarschuwing weergegeven."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
 msgid "Subsequent free percentage notify threshold"
@@ -365,7 +395,9 @@ msgstr "Drempel voor volgende melding inzake percentage vrije ruimte"
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
-msgstr "Specificeer het percentage waarmee de vrije schijfruimte moet afnemen voordat er een nieuwe waarschuwing wordt gegeven."
+msgstr ""
+"Specificeer het percentage waarmee de vrije schijfruimte moet afnemen "
+"voordat er een nieuwe waarschuwing wordt gegeven."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:9
 msgid "Free space no notify threshold"
@@ -375,7 +407,9 @@ msgstr "Drempel voor niet-melden van vrije ruimte"
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr "Specificeer een hoeveelheid in GB. Als de hoeveelheid vrije schijfruimte meer is dan dit, wordt er geen waarschuwing weergegeven."
+msgstr ""
+"Specificeer een hoeveelheid in GB. Als de hoeveelheid vrije schijfruimte "
+"meer is dan dit, wordt er geen waarschuwing weergegeven."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:11
 msgid "Minimum notify period for repeated warnings"
@@ -385,7 +419,9 @@ msgstr "Minimale meldingsperiode voor herhaalde waarschuwingen"
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "Specificeer een tijd in minuten, zodat vervolgwaarschuwingen voor een schijf niet vaker zullen verschijnen dan deze periode."
+msgstr ""
+"Specificeer een tijd in minuten, zodat vervolgwaarschuwingen voor een schijf"
+" niet vaker zullen verschijnen dan deze periode."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
@@ -393,7 +429,8 @@ msgstr "Te negeren aankoppelpaden"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr "Specificeer een lijst met te negeren aankoppelpaden bij weinig schijfruimte."
+msgstr ""
+"Specificeer een lijst met te negeren aankoppelpaden bij weinig schijfruimte."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
@@ -537,7 +574,8 @@ msgstr "Afspelen (of afspelen/pauzeren)"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
 msgid "Binding to start playback (or toggle play/pause)."
-msgstr "Sneltoets om af te spelen (of te schakelen tussen afspelen en pauzeren)."
+msgstr ""
+"Sneltoets om af te spelen (of te schakelen tussen afspelen en pauzeren)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
 msgid "Pause playback"
@@ -591,7 +629,9 @@ msgstr "Beeldschermen tonen in meldingengebied"
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
-msgstr "Of er een meldingspictogram met beeldschermgerelateerde instellingen moet worden weergegeven in de werkbalk."
+msgstr ""
+"Of er een meldingspictogram met beeldschermgerelateerde instellingen moet "
+"worden weergegeven in de werkbalk."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:7
 msgid "Do not touch monitor configuration"
@@ -605,7 +645,14 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr "Normaal gesproken configureert mate-settings-daemon interne en externe beeldschermen volgens de instellingen in turn_on_external_monitors_at_startup en turn_on_laptop_monitor_at_startup. Het bepaalt dan een geschikte modus om de schermen hetzelfde beeld te laten weergeven of om het beeld te verdelen over de schermen. Wanneer deze sleutel op TRUE staat wordt dit niet gedaan, en worden de beeldscherminstellingen niet aangepast (tenzij de gebruiker dit expliciet heeft ingesteld)."
+msgstr ""
+"Normaal gesproken configureert mate-settings-daemon interne en externe "
+"beeldschermen volgens de instellingen in "
+"turn_on_external_monitors_at_startup en turn_on_laptop_monitor_at_startup. "
+"Het bepaalt dan een geschikte modus om de schermen hetzelfde beeld te laten "
+"weergeven of om het beeld te verdelen over de schermen. Wanneer deze sleutel"
+" op TRUE staat wordt dit niet gedaan, en worden de beeldscherminstellingen "
+"niet aangepast (tenzij de gebruiker dit expliciet heeft ingesteld)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:9
 msgid "Turn on external monitor after system boot"
@@ -615,7 +662,9 @@ msgstr "Na systeemstart extern beeldscherm inschakelen"
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
-msgstr "Na systeemstart extern beeldscherm inschakelen als de gebruiker een extern beeldscherm aansluit tijdens de systeemstart."
+msgstr ""
+"Na systeemstart extern beeldscherm inschakelen als de gebruiker een extern "
+"beeldscherm aansluit tijdens de systeemstart."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:11
 msgid "Turn on laptop monitor after system boot"
@@ -625,7 +674,9 @@ msgstr "Na systeemstart laptopscherm inschakelen"
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr "Na systeemstart laptopscherm inschakelen als de gebruiker een extern beeldscherm aansluit tijdens de systeemstart."
+msgstr ""
+"Na systeemstart laptopscherm inschakelen als de gebruiker een extern "
+"beeldscherm aansluit tijdens de systeemstart."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:13
 msgid "File for default configuration for RandR"
@@ -638,7 +689,13 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr "De XrandR-invoegtoepassing kijkt voor een standaardconfiguratie in het gespecificeerde bestand. Dit lijkt op ~/.config/monitors.xml dat normaal gesproken in de mappen van de gebruikers wordt opgeslagen. Als de gebruiker dit bestand niet heeft, of er één heeft dat niet overeenkomt met de beeldscherminstellingen, wordt in plaats daarvan het opgegeven bestand gebruikt."
+msgstr ""
+"De XrandR-invoegtoepassing kijkt voor een standaardconfiguratie in het "
+"gespecificeerde bestand. Dit lijkt op ~/.config/monitors.xml dat normaal "
+"gesproken in de mappen van de gebruikers wordt opgeslagen. Als de gebruiker "
+"dit bestand niet heeft, of er één heeft dat niet overeenkomt met de "
+"beeldscherminstellingen, wordt in plaats daarvan het opgegeven bestand "
+"gebruikt."
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
@@ -668,102 +725,111 @@ msgstr "Toetsenbord-toegankelijkheid"
 msgid "Accessibility keyboard plugin"
 msgstr "Invoegtoepassing voor toetsenbord-toegankelijkheid"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Er is een fout opgetreden bij de hulptekstweergave: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
 msgid "Do you want to activate Slow Keys?"
 msgstr "Wilt u Trage Toetsen activeren?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Wilt u Trage Toetsen deactiveren?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "U heeft zojuist de Shift-toets gedurende acht seconden ingedrukt gehouden. Dat is de sneltoets voor de Trage-Toetsen-modus, hetgeen invloed heeft op de manier waarop uw toetsenbord functioneert."
+msgstr ""
+"U heeft zojuist de Shift-toets gedurende acht seconden ingedrukt gehouden. "
+"Dat is de sneltoets voor de Trage-Toetsen-modus, hetgeen invloed heeft op de"
+" manier waarop uw toetsenbord functioneert."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't activate"
 msgstr "Niet activeren"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't deactivate"
 msgstr "Niet deactiveren"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Activate"
 msgstr "Activeren"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Deactivate"
 msgstr "Deactiveren"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't activate"
 msgstr "_Niet activeren"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't deactivate"
 msgstr "_Niet deactiveren"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Activate"
 msgstr "_Activeren"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Deactivate"
 msgstr "_Deactiveren"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Slow Keys Alert"
 msgstr "Trage Toetsen-waarschuwing"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Wilt u Plaktoetsen activeren?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Wilt u Plaktoetsen deactiveren?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "U heeft zojuist de Shift-toets vijf keer achter elkaar ingedrukt.  Dat is de sneltoets voor de Plaktoetsen-modus, hetgeen invloed heeft op de manier waarop uw toetsenbord functioneert."
+msgstr ""
+"U heeft zojuist de Shift-toets vijf keer achter elkaar ingedrukt.  Dat is de"
+" sneltoets voor de Plaktoetsen-modus, hetgeen invloed heeft op de manier "
+"waarop uw toetsenbord functioneert."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "U heeft zojuist twee toetsen tegelijk ingedrukt, of de Shift-toets 5 keer na elkaar ingedrukt.  Dat zet de Plaktoetsen-modus uit, hetgeen invloed heeft op de manier waarop uw toetsenbord functioneert."
+msgstr ""
+"U heeft zojuist twee toetsen tegelijk ingedrukt, of de Shift-toets 5 keer na"
+" elkaar ingedrukt.  Dat zet de Plaktoetsen-modus uit, hetgeen invloed heeft "
+"op de manier waarop uw toetsenbord functioneert."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Sticky Keys Alert"
 msgstr "Plaktoetsen-waarschuwing"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Voorkeuren voor Universele toegankelijkheid"
@@ -846,40 +912,51 @@ msgstr "Deze computer heeft nog maar %s schijfruimte over."
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "U kunt schijfruimte vrijmaken door de prullenbak te ledigen, ongebruikte bestanden of toepassingen te verwijderen of door bestanden naar een andere schijf of partitie te verplaatsen."
+msgstr ""
+"U kunt schijfruimte vrijmaken door de prullenbak te ledigen, ongebruikte "
+"bestanden of toepassingen te verwijderen of door bestanden naar een andere "
+"schijf of partitie te verplaatsen."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
-msgstr "U kunt schijfruimte vrijmaken door ongebruikte bestanden of toepassingen te verwijderen of door bestanden naar een andere schijf of partitie te verplaatsen."
+msgstr ""
+"U kunt schijfruimte vrijmaken door ongebruikte bestanden of toepassingen te "
+"verwijderen of door bestanden naar een andere schijf of partitie te "
+"verplaatsen."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "U kunt schijfruimte vrijmaken door de prullenbak te ledigen, ongebruikte bestanden of toepassingen te verwijderen of door bestanden naar een externe schijf te verplaatsen."
+msgstr ""
+"U kunt schijfruimte vrijmaken door de prullenbak te ledigen, ongebruikte "
+"bestanden of toepassingen te verwijderen of door bestanden naar een externe "
+"schijf te verplaatsen."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:110
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
-msgstr "U kunt schijfruimte vrijmaken door ongebruikte bestanden of toepassingen te verwijderen of door bestanden naar een externe schijf te verplaatsen."
+msgstr ""
+"U kunt schijfruimte vrijmaken door ongebruikte bestanden of toepassingen te "
+"verwijderen of door bestanden naar een externe schijf te verplaatsen."
 
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:207
 msgid "Low Disk Space"
 msgstr "Weinig schijfruimte"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
 msgstr "Prullenbak ledigen"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
 msgstr "Onderzoeken..."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Ignore"
 msgstr "Negeren"
 
@@ -894,30 +971,32 @@ msgid "Removing: %s"
 msgstr "Verwijderen: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr "Prullenbak ledigen..."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr "Voorbereiden van ledigen van prullenbak..."
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr "Van:"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
 msgstr "Alle elementen in de prullenbak verwijderen?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "Als u ervoor kiest de prullenbak te ledigen, zullen alle elementen erin, blijvend verloren gaan. U kunt deze elementen ook afzonderlijk verwijderen."
+msgstr ""
+"Als u ervoor kiest de prullenbak te ledigen, zullen alle elementen erin, "
+"blijvend verloren gaan. U kunt deze elementen ook afzonderlijk verwijderen."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
 msgstr "_Prullenbak ledigen"
 
@@ -931,12 +1010,14 @@ msgstr "Sneltoets (%s) is ongeldig"
 msgid "Key binding (%s) is incomplete"
 msgstr "Sneltoets (%s) is onvolledig"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:486
+#: ../plugins/keybindings/msd-keybindings-manager.c:490
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "Er is een fout opgetreden bij het uitvoeren van (%s)\nwelke gekoppeld is aan de sleutel (%s)"
+msgstr ""
+"Er is een fout opgetreden bij het uitvoeren van (%s)\n"
+"welke gekoppeld is aan de sleutel (%s)"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
@@ -969,7 +1050,19 @@ msgid ""
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr "Fout bij het activeren van de XKB-configuratie.\nDit kan optreden in verschillende omstandigheden:\n • een fout in de libxklavier-bibliotheek\n • een fout in de X-server (de hulpmiddelen xkbcomp, xmodmap)\n • een X-server met een incompatible libxkbfile-implementatie\n\nVerslaggegevens van de X-server:\n%s\n%d\nAls u deze situatie als fout rapporteert, voeg dan dit toe:\n • Het resultaat van <b>%s</b>\n • Het resultaat van <b>%s</b>"
+msgstr ""
+"Fout bij het activeren van de XKB-configuratie.\n"
+"Dit kan optreden in verschillende omstandigheden:\n"
+" • een fout in de libxklavier-bibliotheek\n"
+" • een fout in de X-server (de hulpmiddelen xkbcomp, xmodmap)\n"
+" • een X-server met een incompatible libxkbfile-implementatie\n"
+"\n"
+"Verslaggegevens van de X-server:\n"
+"%s\n"
+"%d\n"
+"Als u deze situatie als fout rapporteert, voeg dan dit toe:\n"
+" • Het resultaat van <b>%s</b>\n"
+" • Het resultaat van <b>%s</b>"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:279
 msgid "_Layouts"
@@ -987,14 +1080,19 @@ msgstr "Huidige indeling tonen"
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "Kan de standaardterminalvenster niet opvragen. Controleer of uw standaardterminalvenster-opdracht is ingesteld en naar een geldige toepassing verwijst."
+msgstr ""
+"Kan de standaardterminalvenster niet opvragen. Controleer of uw "
+"standaardterminalvenster-opdracht is ingesteld en naar een geldige "
+"toepassing verwijst."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "Deze opdracht kon niet worden uitgevoerd: %s\nControleer of dit een geldige opdracht is."
+msgstr ""
+"Deze opdracht kon niet worden uitgevoerd: %s\n"
+"Controleer of dit een geldige opdracht is."
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1066,8 +1164,12 @@ msgstr "Kon de scherminstellingen niet terugzetten vanuit een reservekopie"
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Het scherm zal ingesteld worden op de vorige instelling over %d seconde"
-msgstr[1] "Het scherm zal over %d seconden teruggezet worden op zijn vorige instellingen"
+msgstr[0] ""
+"Het beeldscherm zal over %d seconde worden teruggezet op zijn vorige "
+"instellingen"
+msgstr[1] ""
+"Het beeldscherm zal over %d seconden worden teruggezet op zijn vorige "
+"instellingen"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1094,39 +1196,39 @@ msgstr "Kon de scherminformatie niet verversen: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Toch aan het proberen om de beeldscherminstellingen om te schakelen."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1889
+#: ../plugins/xrandr/msd-xrandr-manager.c:1885
 msgid "Rotation not supported"
 msgstr "Draaiing niet ondersteund"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1945
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Could not save monitor configuration"
 msgstr "Kon beeldscherminstellingen niet opslaan"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1959
 msgid "Normal"
 msgstr "Normaal"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1960
 msgid "Left"
 msgstr "Links"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1961
 msgid "Right"
 msgstr "Rechts"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1966
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Upside Down"
 msgstr "Ondersteboven"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2088
+#: ../plugins/xrandr/msd-xrandr-manager.c:2084
 msgid "_Configure Display Settings…"
 msgstr "Scherminstellingen _configureren..."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2141
+#: ../plugins/xrandr/msd-xrandr-manager.c:2137
 msgid "Configure display settings"
 msgstr "Scherminstellingen configureren"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2201
+#: ../plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Kon de opgeslagen beeldscherminstellingen niet toepassen"
 
@@ -1186,7 +1288,8 @@ msgstr "kon niet naar inkomende kaartgebeurtenissen uitkijken - %s"
 #: ../plugins/smartcard/msd-smartcard-manager.c:1105
 #, c-format
 msgid "encountered unexpected error while waiting for smartcard events"
-msgstr "onbekende fout opgetreden tijdens het wachten op smartcard-gebeurtenissen"
+msgstr ""
+"onbekende fout opgetreden tijdens het wachten op smartcard-gebeurtenissen"
 
 #: ../plugins/smartcard/msd-smartcard.c:154
 msgid "Slot ID"
@@ -1223,7 +1326,8 @@ msgstr "Tijdzone van systeem wijzigen"
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:2
 msgid "Privileges are required to change the system time zone."
-msgstr "Er zijn rechten benodigd om de tijdzone van het systeem te veranderen."
+msgstr ""
+"Er zijn rechten benodigd om de tijdzone van het systeem te veranderen."
 
 #: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:3
 msgid "Change system time"

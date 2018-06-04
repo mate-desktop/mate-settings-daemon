@@ -1,38 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# David Šauer <davids@penguin.cz>, 1999
-# Jakub Friedl <jfriedl@suse.cz>, 2006-2007
-# Jiří Lebl <jirka@5z.cz>, 2002
-# Lucas Lommer <drom@kdyne.net>, 2016
-# Lukáš Kvídera <lukas.kvidera@seznam.cz>, 2013
-# Lukas Novotny <lukasnov@cvs.gnome.org>, 2006
-# LiberteCzech <liberte.czech@gmail.com>, 2016
-# Michal Bukovjan <bukm@centrum.cz>, 2002-2003
-# Michal <sinope@seznam.cz>, 2013
-# Miloslav Trmač <mitr@volny.cz>, 2003, 2004, 2005, 2006
-# Miloslav Trmač <mitr@volny.cz>, 2003-2006
-# Ondřej Kolín <ondrej.kolin@gmail.com>, 2012-2013
-# Petr Kovar <pmkovar@gmail.com>, 2008, 2009, 2010
-# Petr Kovar <pmkovar@gmail.com>, 2008-2010
-# Petr Šimáček <petr.simacek@gmail.com>, 2016
-# Petr Tomeš <ptomes@gmail.com>, 2006
-# Stanislav Kučera <inactive+kacernator@transifex.com>, 2015
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 21:52+0300\n"
-"PO-Revision-Date: 2017-09-19 11:21+0000\n"
-"Last-Translator: LiberteCzech <liberte.czech@gmail.com>\n"
-"Language-Team: Czech (http://www.transifex.com/mate/MATE/language/cs/)\n"
+"POT-Creation-Date: 2018-03-17 15:36+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Roman Horník <roman.hornik@debian-linux.cz>, 2018\n"
+"Language-Team: Czech (https://www.transifex.com/mate/teams/13566/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: cs\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 #: ../data/50-accessibility.xml.in.h:1
 msgid "Accessibility"
@@ -85,7 +69,9 @@ msgstr "DPI"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "Rozlišení užité při konverzi velikosti písem na velikost pixelů, v obrazových bodech na palec."
+msgstr ""
+"Rozlišení užité při konverzi velikosti písem na velikost pixelů, v "
+"obrazových bodech na palec."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
@@ -96,7 +82,10 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "Typ vyhlazování užitý při vykreslování písem. Možnými hodnotami jsou: „none” značí žádné vyhlazování, „grayscale” značí standardní vyhlazování v odstínech šedi a „rgba” značí subpixelové vyhlazování (pouze obrazovky LCD)."
+msgstr ""
+"Typ vyhlazování užitý při vykreslování písem. Možnými hodnotami jsou: „none”"
+" značí žádné vyhlazování, „grayscale” značí standardní vyhlazování v "
+"odstínech šedi a „rgba” značí subpixelové vyhlazování (pouze obrazovky LCD)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
@@ -107,7 +96,11 @@ msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "Typ hintingu užitý při vykreslování písem. Možnými hodnotami jsou: „none” značí žádný hinting, „slight” značí základní, „medium” značí střední a „full” značí maximální hinting (může způsobit zkreslení jednotlivých písmen)."
+msgstr ""
+"Typ hintingu užitý při vykreslování písem. Možnými hodnotami jsou: „none” "
+"značí žádný hinting, „slight” značí základní, „medium” značí střední a "
+"„full” značí maximální hinting (může způsobit zkreslení jednotlivých "
+"písmen)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
@@ -119,7 +112,11 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "Pořadí subpixelových prvků na obrazovce LCD; užito pouze při vyhlazování nastaveném na „rgba”. Možnými hodnotami jsou: „rgb” značí červenou vlevo (nejběžnější), „bgr” značí modrou vlevo, „vrgb” značí červenou nahoře, „vbgr” značí červenou dole."
+msgstr ""
+"Pořadí subpixelových prvků na obrazovce LCD; užito pouze při vyhlazování "
+"nastaveném na „rgba”. Možnými hodnotami jsou: „rgb” značí červenou vlevo "
+"(nejběžnější), „bgr” značí modrou vlevo, „vrgb” značí červenou nahoře, "
+"„vbgr” značí červenou dole."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -129,7 +126,9 @@ msgstr "Akce při odebrání smartcard"
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr "Nastavte na jedno z: „none”, „lock_screen”, nebo „force_logout”. Akce bude provedena, když je smartcard použitá k přihlášení odebrána."
+msgstr ""
+"Nastavte na jedno z: „none”, „lock_screen”, nebo „force_logout”. Akce bude "
+"provedena, když je smartcard použitá k přihlášení odebrána."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:1
 msgid "Disable touchpad while typing"
@@ -148,7 +147,9 @@ msgstr "Povolit kliknutí myší pomocí zařízení touchpad"
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "Nastavte na „TRUE”, chcete-li odeslat kliknutí myší poklepáním prsty na touchpad."
+msgstr ""
+"Nastavte na „TRUE”, chcete-li odeslat kliknutí myší poklepáním prsty na "
+"touchpad."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Enable vertical edge scrolling"
@@ -188,7 +189,8 @@ msgstr "Přirozené posouvání"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
-msgstr "Nastavte na pravda (true) pro povolení opačného posouvání pomocí touchpadu"
+msgstr ""
+"Nastavte na pravda (true) pro povolení opačného posouvání pomocí touchpadu"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
 msgid "Enable touchpad"
@@ -218,7 +220,10 @@ msgstr "Tlačítko klepnutí jedním prstem"
 msgid ""
 "Select the button mapping for one-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Zvolte tlačítko použité pro klepnutí jedním prstem. Podporované hodnoty jsou: „1” pro levé tlačítko myši, „2” pro prostřední tlačítko myši a „3” pro pravé tlačítko myši."
+msgstr ""
+"Zvolte tlačítko použité pro klepnutí jedním prstem. Podporované hodnoty "
+"jsou: „1” pro levé tlačítko myši, „2” pro prostřední tlačítko myši a „3” pro"
+" pravé tlačítko myši."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
 msgid "Two finger tap button"
@@ -228,7 +233,10 @@ msgstr "Tlačítko klepnutí dvěma prsty"
 msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Zvolte tlačítko použité pro klepnutí dvěma prsty. Podporované hodnoty jsou: „1” pro levé tlačítko myši, „2” pro prostřední tlačítko myši a „3” pro pravé tlačítko myši."
+msgstr ""
+"Zvolte tlačítko použité pro klepnutí dvěma prsty. Podporované hodnoty jsou: "
+"„1” pro levé tlačítko myši, „2” pro prostřední tlačítko myši a „3” pro pravé"
+" tlačítko myši."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
 msgid "Three finger tap button"
@@ -238,7 +246,10 @@ msgstr "Tlačítko klepnutí třemi prsty"
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Zvolte tlačítko použité pro klepnutí třemi prsty. Podporované hodnoty jsou: „1” pro levé tlačítko myši, „2” pro prostřední tlačítko myši a „3” pro pravé tlačítko myši."
+msgstr ""
+"Zvolte tlačítko použité pro klepnutí třemi prsty. Podporované hodnoty jsou: "
+"„1” pro levé tlačítko myši, „2” pro prostřední tlačítko myši a „3” pro pravé"
+" tlačítko myši."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:26
 msgid "Touchpad button orientation"
@@ -248,7 +259,9 @@ msgstr "Orientace tlačítek myši touchpadu"
 msgid ""
 "Swap left and right buttons for left-handed touchpads with 'left', 'right' "
 "for right-handed, 'mouse' to follow the mouse setting."
-msgstr "Prohodit levé a pravé tlačítko touchpadu pro leváky s \"levá\", \"pravá\" pro praváky, \"myš\", podle nastavení myši."
+msgstr ""
+"Prohodit levé a pravé tlačítko touchpadu pro leváky s \"levá\", \"pravá\" "
+"pro praváky, \"myš\", podle nastavení myši."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
 msgid "Motion Acceleration"
@@ -258,7 +271,8 @@ msgstr "Akcelerace pohybu"
 msgid ""
 "Acceleration multiplier for touchpad motion. A value of -1 is the system "
 "default."
-msgstr "Násobitel zrychlení pohybu touchpadu. Hodnota -1 je implicitní pro systém."
+msgstr ""
+"Násobitel zrychlení pohybu touchpadu. Hodnota -1 je implicitní pro systém."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
@@ -268,7 +282,9 @@ msgstr "Práh pohybu"
 msgid ""
 "Distance in pixels the pointer must move before accelerated touchpad motion "
 "is activated. A value of -1 is the system default."
-msgstr "Vzdálenost v pixelech, o kterou se musí kurzor posunout, než je aktivován zrychlený pohyb touchpadu. Hodnota -1 je implicitní pro systém."
+msgstr ""
+"Vzdálenost v pixelech, o kterou se musí kurzor posunout, než je aktivován "
+"zrychlený pohyb touchpadu. Hodnota -1 je implicitní pro systém."
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
@@ -308,7 +324,8 @@ msgstr "Aktivace tohoto zásuvného modulu"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr "Zda bude tento zásuvný modul aktivován pomocí mate-settings-daemon nebo ne"
+msgstr ""
+"Zda bude tento zásuvný modul aktivován pomocí mate-settings-daemon nebo ne"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:3
@@ -348,7 +365,8 @@ msgstr "Priorita k používání tohoto zásuvného modulu"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
-msgstr "Priorita použití tohoto zásuvného modulu při spuštění mate-settings-daemon"
+msgstr ""
+"Priorita použití tohoto zásuvného modulu při spuštění mate-settings-daemon"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:5
 msgid "Free percentage notify threshold"
@@ -358,7 +376,9 @@ msgstr "Práh upozorňování na procenta volného"
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr "Procentuální množství, které spustí varování „Málo místa na disku”. Pokud hodnota klesne pod zadanou mez, bude zobrazeno upozornění."
+msgstr ""
+"Procentuální množství, které spustí varování „Málo místa na disku”. Pokud "
+"hodnota klesne pod zadanou mez, bude zobrazeno upozornění."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
 msgid "Subsequent free percentage notify threshold"
@@ -368,7 +388,9 @@ msgstr "Práh upozorňování na procenta volného místa"
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
-msgstr "Pro snížení možnosti zobrazení dalšího varování, určete procentuální volné místo na disku."
+msgstr ""
+"Pro snížení možnosti zobrazení dalšího varování, určete procentuální volné "
+"místo na disku."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:9
 msgid "Free space no notify threshold"
@@ -378,7 +400,9 @@ msgstr "Práh neupozorňování na volné místo"
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr "Definuj množství v GB. Pokud je množství volného místa větší než tohle, žádné varování nebude zobrazeno."
+msgstr ""
+"Definuj množství v GB. Pokud je množství volného místa větší než tohle, "
+"žádné varování nebude zobrazeno."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:11
 msgid "Minimum notify period for repeated warnings"
@@ -388,7 +412,9 @@ msgstr "Minimální doba upozorňování u opakovaných varování"
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "Zadejte čas v minutách. Následná varování u svazku se nezobrazí dříve než po této době."
+msgstr ""
+"Zadejte čas v minutách. Následná varování u svazku se nezobrazí dříve než po"
+" této době."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
@@ -396,7 +422,9 @@ msgstr "Cesty připojení, které se mají ignorovat"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr "Zadejte seznam cest připojení, které se mají ignorovat, pokud jim dochází místo."
+msgstr ""
+"Zadejte seznam cest připojení, které se mají ignorovat, pokud jim dochází "
+"místo."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
@@ -540,7 +568,8 @@ msgstr "Přehrát (nebo přehrát/pozastavit)"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
 msgid "Binding to start playback (or toggle play/pause)."
-msgstr "Zkratka ke spuštění přehrávání (nebo přepnutí přehrávání/pozastavení)."
+msgstr ""
+"Zkratka ke spuštění přehrávání (nebo přepnutí přehrávání/pozastavení)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
 msgid "Pause playback"
@@ -594,7 +623,9 @@ msgstr "Zobrazit displeje v oznamovací oblasti"
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
-msgstr "Zda notifikační ikona věcí, které mají něco společného s displejem, má být zobrazena na panelu."
+msgstr ""
+"Zda notifikační ikona věcí, které mají něco společného s displejem, má být "
+"zobrazena na panelu."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:7
 msgid "Do not touch monitor configuration"
@@ -608,7 +639,12 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr "Běžně mate-settings-daemon konfiguruje externí monitory podle nastavení turn_on_external_monitors_at_startup a turn_on_laptop_monitor_at_startup a zvolí odpovídající klonovací/rozšiřující režim. Nastavením tohoto klíče na True se tato funkcionalita zakáže a nastavení monitoru nebude změněno (vyjma explicitni konfigurace uživatelem)."
+msgstr ""
+"Běžně mate-settings-daemon konfiguruje externí monitory podle nastavení "
+"turn_on_external_monitors_at_startup a turn_on_laptop_monitor_at_startup a "
+"zvolí odpovídající klonovací/rozšiřující režim. Nastavením tohoto klíče na "
+"True se tato funkcionalita zakáže a nastavení monitoru nebude změněno (vyjma"
+" explicitni konfigurace uživatelem)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:9
 msgid "Turn on external monitor after system boot"
@@ -618,7 +654,9 @@ msgstr "Zapněte externí monitor po nastartování systému"
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
-msgstr "Zapnout externí monitor po nastartování systému, pokud jej uživatel připojil při bootování"
+msgstr ""
+"Zapnout externí monitor po nastartování systému, pokud jej uživatel připojil"
+" při bootování"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:11
 msgid "Turn on laptop monitor after system boot"
@@ -628,7 +666,9 @@ msgstr "Zapněte monitor vašeho notebooku po nastartování systému"
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr "Zapnout monitor přenosného počítače po nastartování systému, pokud uživatel připojil externí monitor"
+msgstr ""
+"Zapnout monitor přenosného počítače po nastartování systému, pokud uživatel "
+"připojil externí monitor"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:13
 msgid "File for default configuration for RandR"
@@ -641,7 +681,12 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr "Zásuvný modul XRandR bude hledat výchozí konfiguraci v souboru stanoveném tímto klíčem. Soubor je podobný souboru ~/.config/monitors.xml, který je obvykle uložen v domovských adresářích uživatelů. Pokud uživatel nemá takový soubor, nebo má ten, který neodpovídá uživatelskému nastavení monitorů, pak soubor určený tímto klíčem bude používán místo něho."
+msgstr ""
+"Zásuvný modul XRandR bude hledat výchozí konfiguraci v souboru stanoveném "
+"tímto klíčem. Soubor je podobný souboru ~/.config/monitors.xml, který je "
+"obvykle uložen v domovských adresářích uživatelů. Pokud uživatel nemá takový"
+" soubor, nebo má ten, který neodpovídá uživatelskému nastavení monitorů, pak"
+" soubor určený tímto klíčem bude používán místo něho."
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
@@ -649,7 +694,7 @@ msgstr "Démon nastavení MATE"
 
 #: ../mate-settings-daemon/main.c:65
 msgid "Enable debugging code"
-msgstr "Povolit ladicí kód"
+msgstr "Povolí ladící kód"
 
 #: ../mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
@@ -657,7 +702,7 @@ msgstr "Nahradit aktuální daemon"
 
 #: ../mate-settings-daemon/main.c:67
 msgid "Don't become a daemon"
-msgstr "Nestát se démonem"
+msgstr "Nestane se démonem"
 
 #: ../mate-settings-daemon/main.c:68
 msgid "Exit after a time (for debugging)"
@@ -671,102 +716,109 @@ msgstr "Zpřístupnění klávesnice"
 msgid "Accessibility keyboard plugin"
 msgstr "Zásuvný modul zpřístupnění klávesnice"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Při zobrazování nápovědy došlo k chybě: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
 msgid "Do you want to activate Slow Keys?"
 msgstr "Chcete aktivovat Pomalé klávesy?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Chcete deaktivovat Pomalé klávesy?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "Právě jste na 8 sekund podrželi klávesu Shift. To je zkratka funkce Pomalé klávesy, která má vliv na způsob fungování vaší klávesnice."
+msgstr ""
+"Právě jste na 8 sekund podrželi klávesu Shift. To je zkratka funkce Pomalé "
+"klávesy, která má vliv na způsob fungování vaší klávesnice."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't activate"
 msgstr "Neaktivovat"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't deactivate"
 msgstr "Nedeaktivovat"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Activate"
 msgstr "Aktivovat"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Deactivate"
 msgstr "Deaktivovat"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't activate"
 msgstr "_Neaktivovat"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't deactivate"
 msgstr "_Nedeaktivovat"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Activate"
 msgstr "_Aktivovat"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Deactivate"
 msgstr "_Deaktivovat"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Slow Keys Alert"
 msgstr "Upozornění na Pomalé klávesy"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Chcete aktivovat Lepící klávesy?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Chcete deaktivovat Lepící klávesy?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "Právě jste pětkrát za sebou stiskli klávesu Shift. To je zkratka funkce Lepící klávesy, která má vliv na způsob fungování vaší klávesnice."
+msgstr ""
+"Právě jste pětkrát za sebou stiskli klávesu Shift. To je zkratka funkce "
+"Lepící klávesy, která má vliv na způsob fungování vaší klávesnice."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "Právě jste stiskli dvě klávesy zároveň, nebo jste pětkrát za sebou stiskli klávesu Shift. To vypíná funkci Lepící klávesy, která má vliv na způsob fungování vaší klávesnice."
+msgstr ""
+"Právě jste stiskli dvě klávesy zároveň, nebo jste pětkrát za sebou stiskli "
+"klávesu Shift. To vypíná funkci Lepící klávesy, která má vliv na způsob "
+"fungování vaší klávesnice."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Sticky Keys Alert"
 msgstr "Lepící klávesy"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Předvolby zpřístupnění"
@@ -793,7 +845,8 @@ msgstr "Zvětšit _text a zvýšit jeho čitelnost"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
-msgstr "Za_dávat klávesové zkratky postupným stisknutím kláves (lepící klávesy)"
+msgstr ""
+"Za_dávat klávesové zkratky postupným stisknutím kláves (lepící klávesy)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
@@ -801,7 +854,8 @@ msgstr "_Ignorovat vícenásobné stisky kláves"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "Press and _hold keys to accept them (Slow Keys)"
-msgstr "_Stisknutím a podržením kláves dojde k jejich přijmutí (pomalé klávesy)"
+msgstr ""
+"_Stisknutím a podržením kláves dojde k jejich přijmutí (pomalé klávesy)"
 
 #: ../plugins/background/background.mate-settings-plugin.in.h:1
 msgid "Background"
@@ -849,40 +903,48 @@ msgstr "Počítači zbývá pouze %s volného místa na disku."
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "Místo na disku můžete uvolnit vyprázdněním koše, odstraněním nepotřebných programů nebo souborů, či přesunutím souborů na jiný disk nebo oddíl."
+msgstr ""
+"Místo na disku můžete uvolnit vyprázdněním koše, odstraněním nepotřebných "
+"programů nebo souborů, či přesunutím souborů na jiný disk nebo oddíl."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
-msgstr "Místo na disku můžete uvolnit odstraněním nepotřebných programů nebo souborů, či přesunutím souborů na jiný disk nebo oddíl."
+msgstr ""
+"Místo na disku můžete uvolnit odstraněním nepotřebných programů nebo "
+"souborů, či přesunutím souborů na jiný disk nebo oddíl."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "Místo na disku můžete uvolnit vyprázdněním koše, odstraněním nepotřebných programů nebo souborů, či přesunutím souborů na externí disk."
+msgstr ""
+"Místo na disku můžete uvolnit vyprázdněním koše, odstraněním nepotřebných "
+"programů nebo souborů, či přesunutím souborů na externí disk."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:110
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
-msgstr "Místo na disku můžete uvolnit odstraněním nepotřebných programů nebo souborů, či přesunutím souborů na externí disk."
+msgstr ""
+"Místo na disku můžete uvolnit odstraněním nepotřebných programů nebo "
+"souborů, či přesunutím souborů na externí disk."
 
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:207
 msgid "Low Disk Space"
 msgstr "Nedostatek místa na disku"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
 msgstr "Vyprázdnit koš"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
 msgstr "Zkoumá se…"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Ignore"
 msgstr "Ignorovat"
 
@@ -897,32 +959,34 @@ msgid "Removing: %s"
 msgstr "Odpojování: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr "Vyprazdňování koše"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr "Připrava na vysypání koše"
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr "Z: "
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
 msgstr "Odstranit všechny položky z koše?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "Pokud se rozhodnete vyprázdnit koš, budou položky natrvalo odstraněny. Všimněte si, že je také můžete odstranit po jedné."
+msgstr ""
+"Pokud se rozhodnete vyprázdnit koš, všechny položky v něm budou natrvalo "
+"smazány. Vezměte prosím na vědomí, že je lze mazat po jedné."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
-msgstr "Vyprázdnit _koš"
+msgstr "_Vyprázdnit koš"
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:112
 #, c-format
@@ -934,12 +998,14 @@ msgstr "Svázání s klávesami (%s) není platné"
 msgid "Key binding (%s) is incomplete"
 msgstr "Svázání s klávesami (%s) není úplné"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:486
+#: ../plugins/keybindings/msd-keybindings-manager.c:490
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "Chyba při pokusu o spuštění (%s),\ncož je svázáno s klávesou (%s)"
+msgstr ""
+"Chyba při pokusu o spuštění (%s),\n"
+"což je svázáno s klávesou (%s)"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
@@ -972,7 +1038,18 @@ msgid ""
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr "Chyba při aktivaci konfigurace XKB.\nTato situace může nastat za několika okolností:\n • chyba v knihovně libxklavier • chyba v X serveru (xkbcomp, utility xmodmap)\n • X server využívá nekompatabilní implementaci libxkbfile\n\nData o verzi X serveru:\n%s\n%d\nPokud tuto situaci oznámíte jako chybu, přidejte prosím následující:\n • Výsledek <b>%s</b>\n • Výsledek <b>%s</b>"
+msgstr ""
+"Chyba při aktivaci konfigurace XKB.\n"
+"Tato situace může nastat za několika okolností:\n"
+" • chyba v knihovně libxklavier • chyba v X serveru (xkbcomp, utility xmodmap)\n"
+" • X server využívá nekompatabilní implementaci libxkbfile\n"
+"\n"
+"Data o verzi X serveru:\n"
+"%s\n"
+"%d\n"
+"Pokud tuto situaci oznámíte jako chybu, přidejte prosím následující:\n"
+" • Výsledek <b>%s</b>\n"
+" • Výsledek <b>%s</b>"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:279
 msgid "_Layouts"
@@ -990,14 +1067,18 @@ msgstr "Zobrazit _Současné rozložení"
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "Nelze nalézt výchozí terminál. Ověřte prosím, zda je zadán příkaz výchozího terminálu a zda směřuje k platné aplikaci."
+msgstr ""
+"Nelze nalézt výchozí terminál. Ověřte prosím, zda je zadán příkaz výchozího "
+"terminálu a zda směřuje k platné aplikaci."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "Nelze spustit příkaz: %s\nOvěřte prosím platnost příkazu."
+msgstr ""
+"Nelze spustit příkaz: %s\n"
+"Ověřte prosím platnost příkazu."
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1014,7 +1095,9 @@ msgstr "Nezdařilo se povolení vlastností zpřístupnění myši"
 #: ../plugins/mouse/msd-mouse-manager.c:1442
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
-msgstr "Přizpůsobení myši vyžaduje mít nainstalované \"Mousetweaks\" ve vašem systému"
+msgstr ""
+"Přizpůsobení myši vyžaduje mít nainstalované \"Mousetweaks\" ve vašem "
+"systému"
 
 #: ../plugins/mouse/msd-mouse-manager.c:1445
 msgid "Mouse Preferences"
@@ -1069,9 +1152,10 @@ msgstr "Ze zálohy nelze obnovit nastavení displeje"
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Nastavení displeje bude resetováno na původní konfiguraci za %d sekundu"
-msgstr[1] "Nastavení displeje bude resetováno na původní konfiguraci za %d sekundy"
-msgstr[2] "Nastavení displeje bude resetováno na původní konfiguraci za %d sekund"
+msgstr[0] "Obrazovka bude přenastavena do původní konfigurace za %d sekundu"
+msgstr[1] "Obrazovka bude přenastavena do původní konfigurace za %d sekundy"
+msgstr[2] "Obrazovka bude přenastavena do původní konfigurace za %d sekund"
+msgstr[3] "Obrazovka bude přenastavena do původní konfigurace za %d sekund"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1098,39 +1182,39 @@ msgstr "Nelze obnovit informace o obrazovce: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Přesto probíhá pokus o přepnutí nastavení monitoru."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1889
+#: ../plugins/xrandr/msd-xrandr-manager.c:1885
 msgid "Rotation not supported"
 msgstr "Rotace není podporována"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1945
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Could not save monitor configuration"
 msgstr "Nelze uložit nastavení monitoru"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1959
 msgid "Normal"
-msgstr "Běžné"
+msgstr "Normální"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1960
 msgid "Left"
 msgstr "Vlevo"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1961
 msgid "Right"
 msgstr "Vpravo"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1966
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Upside Down"
 msgstr "Převrátit"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2088
+#: ../plugins/xrandr/msd-xrandr-manager.c:2084
 msgid "_Configure Display Settings…"
 msgstr "_Konfigurovat nastavení displeje…"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2141
+#: ../plugins/xrandr/msd-xrandr-manager.c:2137
 msgid "Configure display settings"
 msgstr "Konfigurovat nastavení displeje"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2201
+#: ../plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Nelze použít uložené nastavení monitorů"
 

@@ -1,17 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Siranush <ss.m.95@mail.ru>, 2015-2016
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 21:52+0300\n"
-"PO-Revision-Date: 2017-09-22 14:45+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Armenian (http://www.transifex.com/mate/MATE/language/hy/)\n"
+"POT-Creation-Date: 2018-03-17 15:36+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Siranush <ss.m.95@mail.ru>, 2018\n"
+"Language-Team: Armenian (https://www.transifex.com/mate/teams/13566/hy/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../data/50-accessibility.xml.in.h:1
 msgid "Accessibility"
-msgstr " Մատչելիություն"
+msgstr "Մատչելիություն"
 
 #: ../data/50-accessibility.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
@@ -69,7 +69,9 @@ msgstr "DPI"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "Բանաձևը օգտագործվում է տառատեսակի չափի կերպափոխման համար պիքսելի չափի, կետերի մեջ մեկ մատնաչափ։"
+msgstr ""
+"Բանաձևը օգտագործվում է տառատեսակի չափի կերպափոխման համար պիքսելի չափի, "
+"կետերի մեջ մեկ մատնաչափ։"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
@@ -80,7 +82,11 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "Ինֆորմացիայի աղավաղման տիպը օգտագործվում է, երբ ներկայացվում են տառատեսակները։ Հնարավոր արժեքներն են՝ \"none\" ինֆորմացիայի աղավաղման համար, \"grayscale\" ստանդարտ grayscale հակաինֆորմացիայի աղավաղման համար և \"rgba\" ենթակետիկ հակաինֆորմացիայի աղավաղման համար (LCD էկրանների միայն)։"
+msgstr ""
+"Ինֆորմացիայի աղավաղման տիպը օգտագործվում է, երբ ներկայացվում են "
+"տառատեսակները։ Հնարավոր արժեքներն են՝ \"none\" ինֆորմացիայի աղավաղման համար,"
+" \"grayscale\" ստանդարտ grayscale հակաինֆորմացիայի աղավաղման համար և "
+"\"rgba\" ենթակետիկ հակաինֆորմացիայի աղավաղման համար (LCD էկրանների միայն)։"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
@@ -91,7 +97,11 @@ msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "Ակնարկի տեսակը օգտագործել, երբ ներկայացվում են տառատեսակները։ Հնարավոր արժեքներն են՝ \"none\" ոչ ակնարկի համար, \"slight\" հիմնականի համար, \"medium\" չափավորի համար, և \"full\" առավելագույն ակնարկի համար  (կարող է հանգեցնել տառերի ձևերի աղավաղման)։"
+msgstr ""
+"Ակնարկի տեսակը օգտագործել, երբ ներկայացվում են տառատեսակները։ Հնարավոր "
+"արժեքներն են՝ \"none\" ոչ ակնարկի համար, \"slight\" հիմնականի համար, "
+"\"medium\" չափավորի համար, և \"full\" առավելագույն ակնարկի համար  (կարող է "
+"հանգեցնել տառերի ձևերի աղավաղման)։"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
@@ -103,7 +113,11 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "Ենթակետիկի տարրերը LCD էկրանի վրա, միայն այն օգտագործվում է, երբ հակաինֆորմացիայի աղավաղումը սահմանում է \"rgba\"։ Հնարավոր արժեքներն են՝ \"rgb\" ձախի վրա կարմիրի համար (ամենատարածված), \"bgr\" ձախ կապույտի  համար, \"vrgb\" վերև կարմիրի համար, \"vbgr\" ներքև կարմիրի համար։"
+msgstr ""
+"Ենթակետիկի տարրերը LCD էկրանի վրա, միայն այն օգտագործվում է, երբ "
+"հակաինֆորմացիայի աղավաղումը սահմանում է \"rgba\"։ Հնարավոր արժեքներն են՝ "
+"\"rgb\" ձախի վրա կարմիրի համար (ամենատարածված), \"bgr\" ձախ կապույտի  համար,"
+" \"vrgb\" վերև կարմիրի համար, \"vbgr\" ներքև կարմիրի համար։"
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -113,7 +127,10 @@ msgstr "Խելացի քարտի հեռացման գործողություն"
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr "Սահմանել սա \"none\", \"lock_screen\", կամ \"force_logout\" մեկը։ Գործողությունը կատարված կլինի, երբ Smart քարտը օգտագործվում է մուտքի հեռացման համար։"
+msgstr ""
+"Սահմանել սա \"none\", \"lock_screen\", կամ \"force_logout\" մեկը։ "
+"Գործողությունը կատարված կլինի, երբ Smart քարտը օգտագործվում է մուտքի "
+"հեռացման համար։"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:1
 msgid "Disable touchpad while typing"
@@ -123,7 +140,9 @@ msgstr "Անջատել զգայուն վահանակը մինչ մուքագրո
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "Սահմանել այս ճշմարիտ, եթե դուք ունեք խնդիրներ պատահաբար սեղմելու հետ touchpad հետ մինչ մուտքագրումը։"
+msgstr ""
+"Սահմանել այս ճշմարիտ, եթե դուք ունեք խնդիրներ պատահաբար սեղմելու հետ "
+"touchpad հետ մինչ մուտքագրումը։"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:3
 msgid "Enable mouse clicks with touchpad"
@@ -132,7 +151,9 @@ msgstr "Միացնել մկնիկի սեղմումը զգայուն վահանա
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "Սահմանել այս ճշմարիտ, որպեսզի կարողանաք ուղարկել մկնիկի կտտոց մուտքագրման կողմից touchpad վրա։"
+msgstr ""
+"Սահմանել այս ճշմարիտ, որպեսզի կարողանաք ուղարկել մկնիկի կտտոց մուտքագրման "
+"կողմից touchpad վրա։"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Enable vertical edge scrolling"
@@ -172,7 +193,9 @@ msgstr "Բնական ոլորում"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
-msgstr "Սահմանել սա ճիշտ, որ հնարավորություն տա նական (հակադարձ) պտտել touchpad֊ների համար"
+msgstr ""
+"Սահմանել սա ճիշտ, որ հնարավորություն տա նական (հակադարձ) պտտել touchpad֊ների"
+" համար"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
 msgid "Enable touchpad"
@@ -202,7 +225,9 @@ msgstr "Մեկ մատ կոճակը վերև"
 msgid ""
 "Select the button mapping for one-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Ընտրել կոճակը տեղագրման համար մեկ մատ վերև։ Աջակցվող արժեքներն են՝ 1:մկնիկի ձախ կոճակ, 2: մկնիկի մեջտեղի կոճակ, 3: մկնիկի աջ կոճակ"
+msgstr ""
+"Ընտրել կոճակը տեղագրման համար մեկ մատ վերև։ Աջակցվող արժեքներն են՝ 1:մկնիկի "
+"ձախ կոճակ, 2: մկնիկի մեջտեղի կոճակ, 3: մկնիկի աջ կոճակ"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
 msgid "Two finger tap button"
@@ -212,7 +237,9 @@ msgstr "Երկու մատ կոճակը վերև"
 msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Ընտրել կոճակի տեղագրման համար երկու մատ վերև։ Աջակցվող արժեքներն են՝ 1:մկնիկի ձախ կոճակ, 2: մկնիկի մեջտեղի կոճակ, 3: մկնիկի աջ կոճակ"
+msgstr ""
+"Ընտրել կոճակի տեղագրման համար երկու մատ վերև։ Աջակցվող արժեքներն են՝ "
+"1:մկնիկի ձախ կոճակ, 2: մկնիկի մեջտեղի կոճակ, 3: մկնիկի աջ կոճակ"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
 msgid "Three finger tap button"
@@ -222,7 +249,9 @@ msgstr "Երեք մատ կոճակը վերև"
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Ընտրել կոճակի տեղագրման համար երեք մատ վերև։ Աջակցվող արժեքներն են՝ 1:մկնիկի ձախ կոճակ, 2: մկնիկի մեջտեղի կոճակ, 3: մկնիկի աջ կոճակ"
+msgstr ""
+"Ընտրել կոճակի տեղագրման համար երեք մատ վերև։ Աջակցվող արժեքներն են՝ 1:մկնիկի"
+" ձախ կոճակ, 2: մկնիկի մեջտեղի կոճակ, 3: մկնիկի աջ կոճակ"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:26
 msgid "Touchpad button orientation"
@@ -246,7 +275,7 @@ msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
-msgstr ""
+msgstr "Շարժման Շեմը"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:31
 msgid ""
@@ -292,7 +321,8 @@ msgstr "Այս կոնտակտների ակտիվացում"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr "Արդյոք այս միացումը կարող է ակտիվացվել mate-settings-daemon կողմից, թե ոչ"
+msgstr ""
+"Արդյոք այս միացումը կարող է ակտիվացվել mate-settings-daemon կողմից, թե ոչ"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:3
@@ -332,7 +362,9 @@ msgstr "Այս կոնտակտների օդտագործման առաջայնու�
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
-msgstr "Առաջնահերթությունը օգտագործել այս միացման համար mate-settings-daemon գործարկման հարցման մեջ"
+msgstr ""
+"Առաջնահերթությունը օգտագործել այս միացման համար mate-settings-daemon "
+"գործարկման հարցման մեջ"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:5
 msgid "Free percentage notify threshold"
@@ -342,7 +374,10 @@ msgstr "Ազատ տոկոսային հարաբերության տեղեկացմ�
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr "Տոկոսային ազատ տարածության շեմը սկավառակի ցածր տարածության նախնական զգուշացման համար։ Եթե տոկոսային ազատ տարածություն նվազում է, ապա նախազգուշացումը ցուցադրվում է։"
+msgstr ""
+"Տոկոսային ազատ տարածության շեմը սկավառակի ցածր տարածության նախնական "
+"զգուշացման համար։ Եթե տոկոսային ազատ տարածություն նվազում է, ապա "
+"նախազգուշացումը ցուցադրվում է։"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
 msgid "Subsequent free percentage notify threshold"
@@ -352,7 +387,9 @@ msgstr "Հետագա ազատ տոկոսային հարաբերության տե
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
-msgstr "Նշել տոկոսային հարաբերությունը, որ ազատ սկավառակի տարածությունը պետք է կրճատել նախքան հերթական նախազգուշացումը։"
+msgstr ""
+"Նշել տոկոսային հարաբերությունը, որ ազատ սկավառակի տարածությունը պետք է "
+"կրճատել նախքան հերթական նախազգուշացումը։"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:9
 msgid "Free space no notify threshold"
@@ -362,7 +399,9 @@ msgstr "Ազատ տարածք ոչ ծանուցման շեմ"
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr "Նշել գումարային GB։ Եթե ազատ տարածության գումարը ավելի է քան այս, նախազգուշացում չպետք է ցուցադրել։"
+msgstr ""
+"Նշել գումարային GB։ Եթե ազատ տարածության գումարը ավելի է քան այս, "
+"նախազգուշացում չպետք է ցուցադրել։"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:11
 msgid "Minimum notify period for repeated warnings"
@@ -372,7 +411,9 @@ msgstr "Նվազագույն ծանուցման ժամանակահատվածը �
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "Որոշակիացնել ժամանակը րոպեներով։ Հաջորդ նախազգուշացումները ծավալի համար այս ժամանակաշրջանից ավելի հաճախ չեն հայտնվելու:"
+msgstr ""
+"Որոշակիացնել ժամանակը րոպեներով։ Հաջորդ նախազգուշացումները ծավալի համար այս "
+"ժամանակաշրջանից ավելի հաճախ չեն հայտնվելու:"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
@@ -380,7 +421,9 @@ msgstr "Տեղադրված ուղիները անտեսել"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr "Նշել տեղադրման ուղղիների ցանկը անտեսելու համար, երբ նրանք գործարկում են ցածր տարածք։"
+msgstr ""
+"Նշել տեղադրման ուղղիների ցանկը անտեսելու համար, երբ նրանք գործարկում են ցածր"
+" տարածք։"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
@@ -464,7 +507,7 @@ msgstr "Պարտադիր է բացել Տուն պանակը։"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
 msgid "Search"
-msgstr "Որոնում"
+msgstr "Որոնել"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:26
 msgid "Binding to launch the search tool."
@@ -578,7 +621,9 @@ msgstr "Ցույց տալ Ցուցասարքի Ծանուցման Տարածքը
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
-msgstr "Արդյոք ծանուցուման պատկերանշանը display-related տարրերի հետ միասին պետք է ցուցադրել վահանակի մեջ։"
+msgstr ""
+"Արդյոք ծանուցուման պատկերանշանը display-related տարրերի հետ միասին պետք է "
+"ցուցադրել վահանակի մեջ։"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:7
 msgid "Do not touch monitor configuration"
@@ -592,7 +637,13 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr "Սովորաբար mate-settings-daemon կարգավորում է արտաքին և ներքին մոնիտորները ըստ  turn_on_external_monitors_at_startup և turn_on_laptop_monitor_at_startup պարամետրերը և որոշում է համապատասխան  cloning/side-by-side ռեժիմ։ Այս ստեղնի պարամետրը Ճիշտ է անջատում է այն, և մոնիտորի պարամետրերը չեն անդրադարձել բոլորին (եթե կա բացահայտ օգտվողի կոնֆիգուրացիա)։"
+msgstr ""
+"Սովորաբար mate-settings-daemon կարգավորում է արտաքին և ներքին մոնիտորները "
+"ըստ  turn_on_external_monitors_at_startup և "
+"turn_on_laptop_monitor_at_startup պարամետրերը և որոշում է համապատասխան  "
+"cloning/side-by-side ռեժիմ։ Այս ստեղնի պարամետրը Ճիշտ է անջատում է այն, և "
+"մոնիտորի պարամետրերը չեն անդրադարձել բոլորին (եթե կա բացահայտ օգտվողի "
+"կոնֆիգուրացիա)։"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:9
 msgid "Turn on external monitor after system boot"
@@ -602,7 +653,9 @@ msgstr "Համակարգային բեռնավորումից հետո միացն�
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
-msgstr "Համակարգային բեռնավորումից հետո միացնել արտաքին մոնիտորը, եթե օգտատերը միացնի արտաքին մոնիտորը համակարգային բեռնավորումով:"
+msgstr ""
+"Համակարգային բեռնավորումից հետո միացնել արտաքին մոնիտորը, եթե օգտատերը "
+"միացնի արտաքին մոնիտորը համակարգային բեռնավորումով:"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:11
 msgid "Turn on laptop monitor after system boot"
@@ -612,7 +665,9 @@ msgstr "Համակարգային բեռնավորումից հետո միացն�
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr "Համակարգային բեռնավորումից հետո միացնել համակարգչի մոնիտորը, եթե օգտատերը միացնի արտաքին մոնիտորը համակարգային բեռնավորումով:"
+msgstr ""
+"Համակարգային բեռնավորումից հետո միացնել համակարգչի մոնիտորը, եթե օգտատերը "
+"միացնի արտաքին մոնիտորը համակարգային բեռնավորումով:"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:13
 msgid "File for default configuration for RandR"
@@ -625,7 +680,12 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr "XRandR միացումը կլինի դիտել նախնական կոնֆիգուրացիայի համար նշված ֆայլի մեջ այս ստեղնի կողմից։ Սա միանման է ~/.config/monitors.xml, որը սովորաբար ստանում է պահվող օգտատերերի գլխավոր ֆայլապանակները։ Եթե օգտագործողը չունի նման ֆայլ, կամ ունի մեկը, որ չի համապատասխանում օգտվողի մեկնարկի վերահսկմանը, ապա այս ստեղնի կողմից նշված ֆայլը կգործարկվի դրա փոխարեն։"
+msgstr ""
+"XRandR միացումը կլինի դիտել նախնական կոնֆիգուրացիայի համար նշված ֆայլի մեջ "
+"այս ստեղնի կողմից։ Սա միանման է ~/.config/monitors.xml, որը սովորաբար "
+"ստանում է պահվող օգտատերերի գլխավոր ֆայլապանակները։ Եթե օգտագործողը չունի "
+"նման ֆայլ, կամ ունի մեկը, որ չի համապատասխանում օգտվողի մեկնարկի "
+"վերահսկմանը, ապա այս ստեղնի կողմից նշված ֆայլը կգործարկվի դրա փոխարեն։"
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
@@ -655,102 +715,110 @@ msgstr "Մատչելի Ստեղնաշար"
 msgid "Accessibility keyboard plugin"
 msgstr "Ստեղնաշարի հասանելի կոնտակտներ"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Օգնության պատուհանը ցույց տալու սխալ կար այստեղ: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
 msgid "Do you want to activate Slow Keys?"
 msgstr "Ցանկանու՞մ եք ակտիվացնել Դանդաղ Ստեղներ։"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Ցանկանու՞մ եք ապաակտիվացնել Դանդաղ Ստեղներ։"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "Դուք պարզապես իջեցրեք Shift ստեղնը 8 վարկյան։ Սա անջատում է  Slow Keys առանձնահատկությունը, որն ազդում է ձեր ստեղնաշարի աշխատանքի վրա։"
+msgstr ""
+"Դուք պարզապես իջեցրեք Shift ստեղնը 8 վարկյան։ Սա անջատում է  Slow Keys "
+"առանձնահատկությունը, որն ազդում է ձեր ստեղնաշարի աշխատանքի վրա։"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't activate"
 msgstr "Չակտիվացնել"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't deactivate"
 msgstr "Չապաակտիվացնել"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Activate"
 msgstr "Ակտիվացնել"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Deactivate"
 msgstr "Ապաակտիվացնել"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't activate"
 msgstr "Չակտիվացնել"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't deactivate"
 msgstr "Չապաակտիվացնել"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Activate"
 msgstr "_Ակտիվացնել"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Deactivate"
 msgstr "_Ապաակտիվացնել"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Slow Keys Alert"
 msgstr "Դանդաղ Ստեղների Ազդանշան"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Ցանկանու՞մ եք ակտիվացնել Կպչուն Ստեղները։"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Ցանկանու՞մ եք ապաակտիվացնել Կպչուն Ստեղները։"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "Դուք պարզապես սեղմվեք Shift ստեղնը 5 անգամ անընդմեջ։ Սա կրճատ ստեղնաշարային հրաման է Sticky Keys առանձնահատկության համար, որը ազդում է ձեր համակարգչի աշխատանքի ճանապարհի վրա։"
+msgstr ""
+"Դուք պարզապես սեղմվեք Shift ստեղնը 5 անգամ անընդմեջ։ Սա կրճատ ստեղնաշարային "
+"հրաման է Sticky Keys առանձնահատկության համար, որը ազդում է ձեր համակարգչի "
+"աշխատանքի ճանապարհի վրա։"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "Դուք պարզապես սեղմեք երկու ստեղները միանգամից կամ սեղմեք Shift ստեղնը 5 անգամ։ Սա անջատում է Sticky Keys առանձնահատկությունը, որն ազդում է ձեր ստեղնաշարի աշխատանքի վրա։"
+msgstr ""
+"Դուք պարզապես սեղմեք երկու ստեղները միանգամից կամ սեղմեք Shift ստեղնը 5 "
+"անգամ։ Սա անջատում է Sticky Keys առանձնահատկությունը, որն ազդում է ձեր "
+"ստեղնաշարի աշխատանքի վրա։"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Sticky Keys Alert"
 msgstr "Կպչուն Ստեղների Ազդանշան"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Ունիվերսալ Մուտքի Նախապատվություններ"
@@ -777,7 +845,8 @@ msgstr "Դարձնել _տեքստը ավելի մեծ և ավելի հեշտ կ
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
-msgstr "_Սեղմեք ստեղնաշարի դյուրանցումների մեկ ստեղնը միաժամանակ (Sticky Keys)"
+msgstr ""
+"_Սեղմեք ստեղնաշարի դյուրանցումների մեկ ստեղնը միաժամանակ (Sticky Keys)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
@@ -789,7 +858,7 @@ msgstr "Սեղմեք և պահեք ստեղները դրանք ընդունել�
 
 #: ../plugins/background/background.mate-settings-plugin.in.h:1
 msgid "Background"
-msgstr "Հետին պլան"
+msgstr "Ֆոն"
 
 #: ../plugins/background/background.mate-settings-plugin.in.h:2
 msgid "Background plugin"
@@ -833,40 +902,48 @@ msgstr "Այս համակարգիչը ունի միայն %s մանցած սկա
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "Դուք կարող եք ազատել սկավառակի տարածքը ջնջելով չօգտագործվող ծրագրերը և ֆայլերը, կամ տեղափոխել ֆայլերը այլ սկավառակ կամ մաս։"
+msgstr ""
+"Դուք կարող եք ազատել սկավառակի տարածքը ջնջելով չօգտագործվող ծրագրերը և "
+"ֆայլերը, կամ տեղափոխել ֆայլերը այլ սկավառակ կամ մաս։"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
-msgstr "Դուք կարող եք ազատել սկավառակի տարածքը ջնջելով չօգտագործվող ծրագրերը և ֆայլերը, կամ տեղափոխել ֆայլերը այլ սկավառակ կամ մաս։"
+msgstr ""
+"Դուք կարող եք ազատել սկավառակի տարածքը ջնջելով չօգտագործվող ծրագրերը և "
+"ֆայլերը, կամ տեղափոխել ֆայլերը այլ սկավառակ կամ մաս։"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "Դուք կարող եք ազատել սկավառակի տարածքը դատարկելով Զամբյուղը, ջնջելով չօգտագործվող ծրագրերը և ֆայլերը, կամ տեղափոխել ֆայլերը արտաքին սկավառակ։"
+msgstr ""
+"Դուք կարող եք ազատել սկավառակի տարածքը դատարկելով Զամբյուղը, ջնջելով "
+"չօգտագործվող ծրագրերը և ֆայլերը, կամ տեղափոխել ֆայլերը արտաքին սկավառակ։"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:110
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
-msgstr "Դուք կարող եք ազատել սկավառակի տարածքը ջնջելով չօգտագործվող ծրագրերը և ֆայլերը, կամ տեղափոխել ֆայլերը արտաքին սկավառակ։"
+msgstr ""
+"Դուք կարող եք ազատել սկավառակի տարածքը ջնջելով չօգտագործվող ծրագրերը և "
+"ֆայլերը, կամ տեղափոխել ֆայլերը արտաքին սկավառակ։"
 
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:207
 msgid "Low Disk Space"
 msgstr "Ցածր Սկավառակի Տարածություն"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
 msgstr "Դատարկ Աղբարկղ"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
 msgstr "Ուսումնասիրել..."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Ignore"
 msgstr "Անտեսել"
 
@@ -881,30 +958,32 @@ msgid "Removing: %s"
 msgstr "Հեռացում: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr "Դատարկվում է աղբարկղը"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr "Նախապատրաստվում է դատարկել աղբարկղը..."
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr "–ից: "
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
 msgstr "Դատարկե՞լ զամբյուղի բոլոր տարրերը։"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "Եթե դուք ընտրեք դատարկել զամբյուղը, ապա բոլոր տարրերը ընդմիշտ կկորցրեք։ Խնդրում ենք նկատի ունենալ, որ դուք կարող եք նաև ջնջել դրանք առանձին-առանձին:"
+msgstr ""
+"Եթե դուք ընտրեք դատարկել զամբյուղը, ապա բոլոր տարրերը ընդմիշտ կկորցրեք։ "
+"Խնդրում ենք նկատի ունենալ, որ դուք կարող եք նաև ջնջել դրանք առանձին-առանձին:"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
 msgstr "_Դատարկ Աղբարկղ"
 
@@ -918,12 +997,14 @@ msgstr "Առանցքային կապը (%s) անվավեր է"
 msgid "Key binding (%s) is incomplete"
 msgstr "Առանցքային կապը (%s) անավարտ է"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:486
+#: ../plugins/keybindings/msd-keybindings-manager.c:490
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "Սխալ մինչ դեռ փորձում է մեկնարկել (%s)\nորը միացվում է ստեղնին (%s)"
+msgstr ""
+"Սխալ մինչ դեռ փորձում է մեկնարկել (%s)\n"
+"որը միացվում է ստեղնին (%s)"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
@@ -956,7 +1037,19 @@ msgid ""
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr "XKB կոնֆիգուրացիայի ակտիվացման սխալ։\nԴա կարող է տեղի ունենալ տարբեր հանգամանքներում:t\n• սխալ libxklavier գրադարանում\n• սխալ X սերվերում (xkbcomp, xmodmap օժանդակ ծրագրեր)\n• X սերվերի հետ անհամատեղ libxkbfile իրականացումը\n\nX սերվերի տարբերակի տվյալներ:\n%s\n%d\nԵթե Դուք զեկուցեք այս իրավիճակը որպես ծրագրային սխալ, խնդրում ենք ներառել․\n• Արդյունքը <b>%s</b>\n• Արդյունքը <b>%s</b>"
+msgstr ""
+"XKB կոնֆիգուրացիայի ակտիվացման սխալ։\n"
+"Դա կարող է տեղի ունենալ տարբեր հանգամանքներում:t\n"
+"• սխալ libxklavier գրադարանում\n"
+"• սխալ X սերվերում (xkbcomp, xmodmap օժանդակ ծրագրեր)\n"
+"• X սերվերի հետ անհամատեղ libxkbfile իրականացումը\n"
+"\n"
+"X սերվերի տարբերակի տվյալներ:\n"
+"%s\n"
+"%d\n"
+"Եթե Դուք զեկուցեք այս իրավիճակը որպես ծրագրային սխալ, խնդրում ենք ներառել․\n"
+"• Արդյունքը <b>%s</b>\n"
+"• Արդյունքը <b>%s</b>"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:279
 msgid "_Layouts"
@@ -974,14 +1067,18 @@ msgstr "Ցույց տալ _Ընթացիկ Դասավորությունը"
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "Չի կարող ստանալ նախնական տերմինալը։ Ստուգել, որ ձեր նախնական տերմինալի հրամանը սահմանված է և կետերը վավերական ծրագրի։"
+msgstr ""
+"Չի կարող ստանալ նախնական տերմինալը։ Ստուգել, որ ձեր նախնական տերմինալի "
+"հրամանը սահմանված է և կետերը վավերական ծրագրի։"
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "Չհաջողվեց կատարել հրաման: %s\nՍտուգել, որ սա վավեր հրաման է․"
+msgstr ""
+"Չհաջողվեց կատարել հրաման: %s\n"
+"Ստուգել, որ սա վավեր հրաման է․"
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -998,7 +1095,8 @@ msgstr "Չհաջողվեց ակտիվացնել մկնիկի մատչելիու�
 #: ../plugins/mouse/msd-mouse-manager.c:1442
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
-msgstr "Մկնիկի հասանելիությունը պահանջում է Mousetweaks տեղադրել ձեր համակարգը։"
+msgstr ""
+"Մկնիկի հասանելիությունը պահանջում է Mousetweaks տեղադրել ձեր համակարգը։"
 
 #: ../plugins/mouse/msd-mouse-manager.c:1445
 msgid "Mouse Preferences"
@@ -1053,8 +1151,8 @@ msgstr "Չհաջողվեց վերականգնել ցուցադրման կոնֆ�
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Ցուցադրումը կվերականգնի իր նախնական կոնֆիգուրացիան %d վարկյանում"
-msgstr[1] "Ցուցադրումը կվերականգնի իր նախնական կոնֆիգուրացիան %d վարկյաններում"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1081,39 +1179,39 @@ msgstr "Չհաջողվեց թարմացնել էկրանի տեղեկությո�
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Համենայն դեպս փորձել անցնել մոնիտորի կոնֆիգուրացիաներին։"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1889
+#: ../plugins/xrandr/msd-xrandr-manager.c:1885
 msgid "Rotation not supported"
 msgstr "Պտույտը չի ապահովվում"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1945
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Could not save monitor configuration"
 msgstr "Չհաջողվեց պահպանել մոնիտորի կոնֆիգուրացիան"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1959
 msgid "Normal"
 msgstr "Նորմալ"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1960
 msgid "Left"
 msgstr "Ձախ"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1961
 msgid "Right"
 msgstr "Աջ"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1966
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Upside Down"
 msgstr "Գլխիվայր շուռ տված"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2088
+#: ../plugins/xrandr/msd-xrandr-manager.c:2084
 msgid "_Configure Display Settings…"
 msgstr "_Կոնֆիգուրացնել Ցուցաբերման Պարամետրերը․․․"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2141
+#: ../plugins/xrandr/msd-xrandr-manager.c:2137
 msgid "Configure display settings"
 msgstr "Կոնֆիգուրացնել ցուցաբերման պարամետրերը"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2201
+#: ../plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Չհաջողվեց կիրառել պահվող կոնֆիգուրացիան մոնիտորների համար"
 

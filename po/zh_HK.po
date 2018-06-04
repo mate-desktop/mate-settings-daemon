@@ -1,19 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Abel Cheung <abel@oaka.org>, 2001-2003, 2005
-# Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>, 2008
-# S.J. Luo <crystal@mickey.ee.nctu.edu.tw>, 1999
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 21:52+0300\n"
-"PO-Revision-Date: 2017-09-19 11:21+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Chinese (Hong Kong) (http://www.transifex.com/mate/MATE/language/zh_HK/)\n"
+"POT-Creation-Date: 2018-03-17 15:36+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Janfy Tan <janfytan@gmail.com>, 2018\n"
+"Language-Team: Chinese (Hong Kong) (https://www.transifex.com/mate/teams/13566/zh_HK/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,7 +20,7 @@ msgstr ""
 
 #: ../data/50-accessibility.xml.in.h:1
 msgid "Accessibility"
-msgstr "無障礙功能"
+msgstr "無障礙環境"
 
 #: ../data/50-accessibility.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
@@ -82,18 +80,22 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "繪製字型時所用的平滑化類型。可能的數值有：「none」為不使用平滑化，「grayscale」為標準的灰階平滑化，而「rgba」是子像素平滑化（只適用 LCD 螢幕）。"
+msgstr ""
+"繪製字型時所用的平滑化類型。可能的數值有：「none」為不使用平滑化，「grayscale」為標準的灰階平滑化，而「rgba」是子像素平滑化（只適用 "
+"LCD 螢幕）。"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
-msgstr "Hinting"
+msgstr "字型提示"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:6
 msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "繪製字型時所用的 hinting 類型。可能的數值有：「none」為不使用 hinting，「slight」為基本式，「medium」為中等程度，而「full」是最大的 hinting（可能造成字體破碎）。"
+msgstr ""
+"繪製字型時所用的 hinting 類型。可能的數值有：「none」為不使用 "
+"hinting，「slight」為基本式，「medium」為中等程度，而「full」是最大的 hinting（可能造成字體破碎）。"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
@@ -105,7 +107,9 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "在 LCD 螢幕上子像素元素的順序；只有在平滑化設為「rgba」時才能使用。可能的數值有：「rgb」為紅色在左(最常用)，「bgr」為藍色在左，「vrgb」為紅色在上，「vbgr」為紅色在下。"
+msgstr ""
+"在 LCD "
+"螢幕上子像素元素的順序；只有在平滑化設為「rgba」時才能使用。可能的數值有：「rgb」為紅色在左(最常用)，「bgr」為藍色在左，「vrgb」為紅色在上，「vbgr」為紅色在下。"
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -248,7 +252,7 @@ msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
-msgstr ""
+msgstr "移動距離界限"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:31
 msgid ""
@@ -627,7 +631,9 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr "XRandR 外掛程式會在這個設定鍵指定的檔案中尋找預設的組態。這很類似通常儲存在使用者家目錄的 ~/.config/monitors.xml。如果使用者沒有這個檔案，或是雖然有卻不符含使用者的螢幕設定，就會以這個設定鍵指定的檔案來代替。"
+msgstr ""
+"XRandR 外掛程式會在這個設定鍵指定的檔案中尋找預設的組態。這很類似通常儲存在使用者家目錄的 "
+"~/.config/monitors.xml。如果使用者沒有這個檔案，或是雖然有卻不符含使用者的螢幕設定，就會以這個設定鍵指定的檔案來代替。"
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
@@ -643,7 +649,7 @@ msgstr ""
 
 #: ../mate-settings-daemon/main.c:67
 msgid "Don't become a daemon"
-msgstr "不要以伺服程式狀態執行"
+msgstr "不要成為服務程式"
 
 #: ../mate-settings-daemon/main.c:68
 msgid "Exit after a time (for debugging)"
@@ -657,102 +663,102 @@ msgstr "鍵盤可存取性"
 msgid "Accessibility keyboard plugin"
 msgstr "鍵盤可存取性引掛程式"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr "顯示說明文件時發生錯誤：%s"
+msgstr "顯示說明文件時出現錯誤：%s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
 msgid "Do you want to activate Slow Keys?"
 msgstr "是否啟用遲緩按鍵？"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "是否停用遲緩按鍵？"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
 msgstr "你按住 Shift 鍵達 8 秒。這是使用遲緩鍵功能的捷徑，那會影響鍵盤的操作方式。"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't activate"
 msgstr "不要使用"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't deactivate"
 msgstr "不要停用"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Activate"
 msgstr "使用"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Deactivate"
 msgstr "停用"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't activate"
 msgstr "不要啟用(_N)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't deactivate"
 msgstr "不要停用(_N)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Activate"
-msgstr "使用(_A)"
+msgstr "連線(_A)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Deactivate"
-msgstr "不使用(_D)"
+msgstr "斷線(_D)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Slow Keys Alert"
 msgstr "遲緩按鍵警告"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Do you want to activate Sticky Keys?"
 msgstr "是否啟用黏性特殊鍵？"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "是否停用黏性特殊鍵？"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
 msgstr "你連續按了 5 下 Shift 鍵。這是使用黏性特殊鍵功能的捷徑，那會影響鍵盤的操作方式。"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
 msgstr "你同時按下兩個鍵，或是連續按下5次 Shift 鍵。這會停用黏性特殊鍵功能，那會影響鍵盤的操作方式。"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Sticky Keys Alert"
 msgstr "黏性特殊鍵警告"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "無障礙偏好設定"
@@ -860,15 +866,15 @@ msgstr "你可以藉由移除未使用的程式或檔案，或將檔案移至外
 msgid "Low Disk Space"
 msgstr "磁碟空間不足"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
 msgstr "清理回收筒"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
 msgstr "檢查…"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Ignore"
 msgstr "忽略"
 
@@ -883,30 +889,30 @@ msgid "Removing: %s"
 msgstr "正在移除：%s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr "正在清理回收筒"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr "準備清理回收筒…"
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr "從："
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
-msgstr "是否清理回收筒所有項目？"
+msgstr "要清除回收筒中所有的項目？"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "如果你選擇清理回收筒，所有在回收筒裏的項目會永遠消失。請注意你也可以個別刪除它們。"
+msgstr "如果要清理回收筒，裏面的項目將會永久地刪除。請記得你是可以將它們逐一刪除的。"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
 msgstr "清理回收筒(_E)"
 
@@ -920,12 +926,14 @@ msgstr "按鍵組合 (%s) 無效"
 msgid "Key binding (%s) is incomplete"
 msgstr "按鍵組合 (%s) 不完整"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:486
+#: ../plugins/keybindings/msd-keybindings-manager.c:490
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "執行 (%s) 時發生錯誤；\n有關的按鍵組合是 (%s)"
+msgstr ""
+"執行 (%s) 時發生錯誤；\n"
+"有關的按鍵組合是 (%s)"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
@@ -983,7 +991,9 @@ msgstr "無法取得預設的終端機。請檢查你預設的終端機指令已
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "不能執行指令： %s\n請檢查該指令是否為有效的指令。"
+msgstr ""
+"不能執行指令： %s\n"
+"請檢查該指令是否為有效的指令。"
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1055,7 +1065,7 @@ msgstr "無法從備份還原畫面的組態"
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "畫面將會在 %d 秒後重設為先前的組態"
+msgstr[0] ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1082,39 +1092,39 @@ msgstr "無法重新整理螢幕的資訊：%s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "嘗試強制切換顯示器。"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1889
+#: ../plugins/xrandr/msd-xrandr-manager.c:1885
 msgid "Rotation not supported"
 msgstr "不支援旋轉"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1945
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Could not save monitor configuration"
 msgstr "無法儲存顯示器組態"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1959
 msgid "Normal"
-msgstr "一般"
+msgstr "正常"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1960
 msgid "Left"
 msgstr "左"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1961
 msgid "Right"
 msgstr "右"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1966
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Upside Down"
 msgstr "由上而下"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2088
+#: ../plugins/xrandr/msd-xrandr-manager.c:2084
 msgid "_Configure Display Settings…"
 msgstr "設定顯示設定值(_C)…"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2141
+#: ../plugins/xrandr/msd-xrandr-manager.c:2137
 msgid "Configure display settings"
 msgstr "設定顯示設定值"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2201
+#: ../plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Could not apply the stored configuration for monitors"
 msgstr "無法套用已儲存的顯示器組態"
 

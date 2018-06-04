@@ -1,16 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 21:52+0300\n"
-"PO-Revision-Date: 2017-09-19 17:23+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Urdu (http://www.transifex.com/mate/MATE/language/ur/)\n"
+"POT-Creation-Date: 2018-03-17 15:36+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: mauron, 2018\n"
+"Language-Team: Urdu (https://www.transifex.com/mate/teams/13566/ur/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -112,7 +113,10 @@ msgstr "سمارٹ کارڈ نکالنے کا عمل"
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr "اسے ان میں سے کسی پر متعین کردیں \"none\", \"lock_screen\", یا \"force_logout\". یہ عمل تب انجام دیا جائے گا جب لاگ ان کے لیے استعمال ہونے والا سمارٹ کارڈ نکال دیا جائے گا."
+msgstr ""
+"اسے ان میں سے کسی پر متعین کردیں \"none\", \"lock_screen\", یا "
+"\"force_logout\". یہ عمل تب انجام دیا جائے گا جب لاگ ان کے لیے استعمال ہونے "
+"والا سمارٹ کارڈ نکال دیا جائے گا."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:1
 msgid "Disable touchpad while typing"
@@ -341,7 +345,9 @@ msgstr ""
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr "خالی جگہ کے تعملی حد کا فیصد برائے ابتدائی انتباہ. اگر خالی جگہ کی شرح اس سے کم ہوگئی تو انتباہ دکھایا جائے گا."
+msgstr ""
+"خالی جگہ کے تعملی حد کا فیصد برائے ابتدائی انتباہ. اگر خالی جگہ کی شرح اس سے"
+" کم ہوگئی تو انتباہ دکھایا جائے گا."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
 msgid "Subsequent free percentage notify threshold"
@@ -361,7 +367,9 @@ msgstr ""
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr "گیگا بائٹ میں مقدار متعین کریں. اگر خالی جگہ کی مقدار اس سے بڑھ گئی، کوئی اطلاع نہیں دکھائی جائے گی."
+msgstr ""
+"گیگا بائٹ میں مقدار متعین کریں. اگر خالی جگہ کی مقدار اس سے بڑھ گئی، کوئی "
+"اطلاع نہیں دکھائی جائے گی."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:11
 msgid "Minimum notify period for repeated warnings"
@@ -632,7 +640,7 @@ msgstr "میٹ ترتیبات ڈیمن"
 
 #: ../mate-settings-daemon/main.c:65
 msgid "Enable debugging code"
-msgstr ""
+msgstr "ڈی بگنگ کوڈ فعال کریں"
 
 #: ../mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
@@ -654,102 +662,102 @@ msgstr "رسائی پذیری کیبورڈ"
 msgid "Accessibility keyboard plugin"
 msgstr "رسائی پذیری کیبورڈ دخیلہ"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr "ہدایات دکھاتے ہوئے غلطی ہوئی ہے: %s"
+msgstr "ہدایات کو دکھاتے ہوئے غلطی ہوئی ہے: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
 msgid "Do you want to activate Slow Keys?"
 msgstr "کیا آپ سست کلیدیں فعال کرنا چاہتے ہیں؟"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "کیا آپ سست کلیدیں غیر فعال کرنا چاہتے ہیں؟"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
 msgstr ""
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't activate"
 msgstr "فعال مت کریں"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't deactivate"
 msgstr "غیر فعال مت کریں"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Activate"
 msgstr "فعال کریں"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Deactivate"
 msgstr "غیر فعال کریں"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't activate"
 msgstr "_فعال مت کریں"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't deactivate"
 msgstr "_غیر فعال مت کریں"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Activate"
 msgstr "ف_عال کریں"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Deactivate"
 msgstr "_غیر فعال کریں"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Slow Keys Alert"
 msgstr "سست کلید انتباہ"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Do you want to activate Sticky Keys?"
 msgstr "کیا آپ چسپاں کلیدیں فعال کرنا چاہتے ہیں؟"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "کیا آپ چسپاں کلیدیں غیر فعال کرنا چاہتے ہیں؟"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
 msgstr ""
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
 msgstr ""
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Sticky Keys Alert"
 msgstr "چسپاں کلید انتباہ"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "ہمہ گیر رسائی ترجیحات"
@@ -857,15 +865,15 @@ msgstr ""
 msgid "Low Disk Space"
 msgstr "کم ڈسک جگہ"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
 msgstr "ردی خالی کریں"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
 msgstr "جانچا جا رہا ہے..."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Ignore"
 msgstr "نظر انداز کریں"
 
@@ -880,30 +888,32 @@ msgid "Removing: %s"
 msgstr "حذف کیا جارہا ہے: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr "ردی خالی کی جارہی ہے"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr "ردی خالی کرنے کی تیاری کی جارہی ہے..."
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr "از طرف:"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
 msgstr "کیا ردی سے تمام عناصر حذف کردیے جائیں؟"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "اگر آپ نے ردی خالی کرنا منتخب کیا تو اس میں موجود تمام عناصر ہمیشہ کے لیے ضائع ہوجائیں گے. یاد رہے کہ آپ انہیں ایک ایک کرکے بھی حذف کر سکتے ہیں."
+msgstr ""
+"اگر آپ نے ردی خالی کرنا منتخب کیا تو اس میں موجود تمام عناصر ہمیشہ کے لیے "
+"ضائع ہوجائیں گے. یاد رہے کہ آپ انہیں ایک ایک کرکے بھی حذف کر سکتے ہیں."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
 msgstr "ردی _خالی کریں"
 
@@ -917,7 +927,7 @@ msgstr ""
 msgid "Key binding (%s) is incomplete"
 msgstr ""
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:486
+#: ../plugins/keybindings/msd-keybindings-manager.c:490
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -973,14 +983,18 @@ msgstr "حالیہ _خاکہ دکھائیں"
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "طے شُدہ ٹرمنل حاصل نہیں کیا جاسکتا. تصدیق کریں کہ آپ کے طے شُدہ ٹرمنل کی کمانڈ موزوں اطلاقیے پر مُتعین  ہے."
+msgstr ""
+"طے شُدہ ٹرمنل حاصل نہیں کیا جاسکتا. تصدیق کریں کہ آپ کے طے شُدہ ٹرمنل کی "
+"کمانڈ موزوں اطلاقیے پر مُتعین  ہے."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "کمانڈ کا نفاذ نہیں کیا جاسکتا: %s\nتصدیق کریں کہ کیا یہ موزوں کمانڈ ہے."
+msgstr ""
+"کمانڈ کا نفاذ نہیں کیا جاسکتا: %s\n"
+"تصدیق کریں کہ کیا یہ موزوں کمانڈ ہے."
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1052,8 +1066,8 @@ msgstr "بیک اپ سے ڈسپلے کی تشکیل بحال نہیں کی جا�
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "ڈسپلے %d سیکنڈوں میں اپنی سابقہ تشکیل پر بحال کردیا جائے گا"
-msgstr[1] "ڈسپلے %d سیکنڈوں میں اپنی سابقہ تشکیل پر بحال کردیا جائے گا"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1080,39 +1094,39 @@ msgstr "سکرین کی معلومات تازہ نہیں کی جاسکتی: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "ہر حال میں مانیٹر کی تشکیل بدلنے کی کوشش کی جارہی ہے."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1889
+#: ../plugins/xrandr/msd-xrandr-manager.c:1885
 msgid "Rotation not supported"
 msgstr "گھماؤ کی معاونت نہیں ہے"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1945
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Could not save monitor configuration"
 msgstr "مانیٹر کی تشکیل محفوظ نہیں کی جاسکتی"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1959
 msgid "Normal"
 msgstr "عام"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1960
 msgid "Left"
 msgstr "بائیں"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1961
 msgid "Right"
 msgstr "دائیں"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1966
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Upside Down"
-msgstr ""
+msgstr "اوپری حصہ نیچے"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2088
+#: ../plugins/xrandr/msd-xrandr-manager.c:2084
 msgid "_Configure Display Settings…"
 msgstr "ڈسپلے کی ترتیبات کی _تشکیل کریں..."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2141
+#: ../plugins/xrandr/msd-xrandr-manager.c:2137
 msgid "Configure display settings"
 msgstr "ڈسپلے کی ترتیبات کی تشکیل کریں"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2201
+#: ../plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Could not apply the stored configuration for monitors"
 msgstr "مانیٹروں کے لیے ذخیرہ کردہ تشکیل لاگو نہیں کی جاسکتی"
 

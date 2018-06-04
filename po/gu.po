@@ -1,19 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Ankit Patel <ankit644@yahoo.com>, 2005, 2006
-# Ankit Patel <ankit@redhat.com>, 2006, 2007, 2009
-# sweta <swkothar@redhat.com>, 2009
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 21:52+0300\n"
-"PO-Revision-Date: 2017-09-19 11:21+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Gujarati (http://www.transifex.com/mate/MATE/language/gu/)\n"
+"POT-Creation-Date: 2018-03-17 15:36+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
+"Language-Team: Gujarati (https://www.transifex.com/mate/teams/13566/gu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -71,7 +69,9 @@ msgstr "DPI"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "ફોન્ટ માપોને પિક્સેલ માપોમાં ફેરવવા માટે વાપરવામાં આવતું રીઝોલ્યુશન, ઈંચ પ્રતિ ડોટમાં."
+msgstr ""
+"ફોન્ટ માપોને પિક્સેલ માપોમાં ફેરવવા માટે વાપરવામાં આવતું રીઝોલ્યુશન, ઈંચ "
+"પ્રતિ ડોટમાં."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
@@ -82,7 +82,11 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "જ્યારે ફોન્ટ રેન્ડર કરી રહ્યા હોય ત્યારે વાપરવાનો એન્ટીએલીઆઝીંગ પ્રકાર. શક્ય કિંમતો: કોઈપણ એન્ટીએલીઆઝીંગ નહિં હોય તે માટે \"કંઈનહિં\", પ્રમાણભૂત ગ્રેસ્કેલ એન્ટીએલિઆઝીંગ માટે \"ગ્રેસ્કેલ\", અને ઉપપિક્સેલ એન્ટીએલિઆઝીંગ માટે \"rgba\" (માત્ર LCD સ્ક્રીન જ)."
+msgstr ""
+"જ્યારે ફોન્ટ રેન્ડર કરી રહ્યા હોય ત્યારે વાપરવાનો એન્ટીએલીઆઝીંગ પ્રકાર. શક્ય"
+" કિંમતો: કોઈપણ એન્ટીએલીઆઝીંગ નહિં હોય તે માટે \"કંઈનહિં\", પ્રમાણભૂત "
+"ગ્રેસ્કેલ એન્ટીએલિઆઝીંગ માટે \"ગ્રેસ્કેલ\", અને ઉપપિક્સેલ એન્ટીએલિઆઝીંગ માટે"
+" \"rgba\" (માત્ર LCD સ્ક્રીન જ)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
@@ -93,7 +97,11 @@ msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "જ્યારે ફોન્ટ રેન્ડર કરી રહ્યા હોય ત્યારે વાપરવાનો હીંટીંગ પ્રકાર. શક્ય કિંમતો: કોઈપણ હીંટીંગ નહિં હોય તે માટે \"કંઈનહિં\", મૂળભૂત માટે \"આછું\", મધ્યમ માટે \"મધ્યમ\", મહત્તમ હીંટીંગ માટે \"પૂર્ણ\" (અક્ષર સ્વરૂપોના ભંગાણનું કારણ સર્જી શકશે)."
+msgstr ""
+"જ્યારે ફોન્ટ રેન્ડર કરી રહ્યા હોય ત્યારે વાપરવાનો હીંટીંગ પ્રકાર. શક્ય "
+"કિંમતો: કોઈપણ હીંટીંગ નહિં હોય તે માટે \"કંઈનહિં\", મૂળભૂત માટે \"આછું\", "
+"મધ્યમ માટે \"મધ્યમ\", મહત્તમ હીંટીંગ માટે \"પૂર્ણ\" (અક્ષર સ્વરૂપોના "
+"ભંગાણનું કારણ સર્જી શકશે)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
@@ -105,7 +113,11 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "LCD સ્ક્રીન પર ઉપપિક્સેલ ઘટકોનો ક્રમ; માત્ર ત્યારે જ વપરાય છે જ્યારે એન્ટીએલિઆઝીંગ \"rgba\" માં સુયોજીત થયેલ હોય. શક્ય કિંમતો: ડાબી બાજુએ લાલ માટે \"rgb\" (એકદમ સામાન્ય), ડાબી બાજુએ ભૂરા માટે \"bgr\", ટોચ પર લાલ માટે \"vrgb\", તળિયે લાલ માટે \"vbgr\"."
+msgstr ""
+"LCD સ્ક્રીન પર ઉપપિક્સેલ ઘટકોનો ક્રમ; માત્ર ત્યારે જ વપરાય છે જ્યારે "
+"એન્ટીએલિઆઝીંગ \"rgba\" માં સુયોજીત થયેલ હોય. શક્ય કિંમતો: ડાબી બાજુએ લાલ "
+"માટે \"rgb\" (એકદમ સામાન્ય), ડાબી બાજુએ ભૂરા માટે \"bgr\", ટોચ પર લાલ માટે "
+"\"vrgb\", તળિયે લાલ માટે \"vbgr\"."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -125,7 +137,9 @@ msgstr "જ્યારે ટાઇપ કરતા હોય ત્યાર�
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "જ્યારે ટાઇપ કરતા હોય ત્યારે ટચપેડ સાથે આકસ્મિક રીતે અથડાવાથી જો તમને સમસ્યા હોય તો આ TRUE ને સુયોજિત કરો."
+msgstr ""
+"જ્યારે ટાઇપ કરતા હોય ત્યારે ટચપેડ સાથે આકસ્મિક રીતે અથડાવાથી જો તમને સમસ્યા "
+"હોય તો આ TRUE ને સુયોજિત કરો."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:3
 msgid "Enable mouse clicks with touchpad"
@@ -134,7 +148,9 @@ msgstr "ટચપેડ સાથે માઉસ ક્લિકોને સ�
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "ટચપેડ પર ટેપીંગ દ્દારા માઉસ ક્લિકોને મોકલવાનું સક્ષમ કરવા માટે આ TRUE ને સુયોજિત કરો."
+msgstr ""
+"ટચપેડ પર ટેપીંગ દ્દારા માઉસ ક્લિકોને મોકલવાનું સક્ષમ કરવા માટે આ TRUE ને "
+"સુયોજિત કરો."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Enable vertical edge scrolling"
@@ -248,7 +264,7 @@ msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
-msgstr ""
+msgstr "ગતિ થ્રેશોલ્ડ"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:31
 msgid ""
@@ -374,7 +390,9 @@ msgstr "પુનરાવર્તિત ચેતવણીઓ માટે ન
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "મિનિટોમાં સમયને સ્પષ્ટ કરો. અવાજ માટે અનુગામી ચેતવણીઓ આ સમયગાળા કરતા વધારે વારંવાર દેખાશે નહિં."
+msgstr ""
+"મિનિટોમાં સમયને સ્પષ્ટ કરો. અવાજ માટે અનુગામી ચેતવણીઓ આ સમયગાળા કરતા વધારે "
+"વારંવાર દેખાશે નહિં."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
@@ -382,7 +400,9 @@ msgstr "અવગણવા માટે માઉન્ટ પાથો"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr "જ્યારે જગ્યા પર ઓછાને ચલાવતા હોય ત્યારે અવગણવા માટે માઉન્ટ પાથોની યાદીને સ્પષ્ટ કરો."
+msgstr ""
+"જ્યારે જગ્યા પર ઓછાને ચલાવતા હોય ત્યારે અવગણવા માટે માઉન્ટ પાથોની યાદીને "
+"સ્પષ્ટ કરો."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
@@ -635,7 +655,7 @@ msgstr "MATE સુયોજનો ડેઇમન"
 
 #: ../mate-settings-daemon/main.c:65
 msgid "Enable debugging code"
-msgstr "ડિબગીંગ કોડને સક્રિય કરો"
+msgstr "ડિબગીંગ કોડ સક્રિય કરો"
 
 #: ../mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
@@ -643,7 +663,7 @@ msgstr ""
 
 #: ../mate-settings-daemon/main.c:67
 msgid "Don't become a daemon"
-msgstr "ડેઇમન બનો નહિં"
+msgstr "ડિમન બનશો નહિં"
 
 #: ../mate-settings-daemon/main.c:68
 msgid "Exit after a time (for debugging)"
@@ -657,102 +677,109 @@ msgstr "સુલભતા કિબોર્ડ"
 msgid "Accessibility keyboard plugin"
 msgstr "સુલભતા કિબોર્ડ પ્લગઇન"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr "મદદ દર્શાવવામાં ભૂલ હતી: %s"
+msgstr "મદદ દર્શાવવામાં ભૂલ છે: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
 msgid "Do you want to activate Slow Keys?"
 msgstr "શું તમે આ ધીમી કીઓને સક્રિય કરવા માંગો છો?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "શું તમે આ ધીમી કીઓને નિષ્ક્રિય કરવા માંગો છો?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "તમારે ફક્ત ૮ સેકન્ડો સુધી Shift કી દબાવી રાખવી પડશે. આ ધીમી કીના લક્ષણો માટેનુ ટુંકાણ છે, કે જે તમારા કીબોર્ડને કામ કરવામાં અસર કરશે."
+msgstr ""
+"તમારે ફક્ત ૮ સેકન્ડો સુધી Shift કી દબાવી રાખવી પડશે. આ ધીમી કીના લક્ષણો "
+"માટેનુ ટુંકાણ છે, કે જે તમારા કીબોર્ડને કામ કરવામાં અસર કરશે."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't activate"
 msgstr "સક્રિય કરશો નહિં"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't deactivate"
 msgstr "નિષ્ક્રિય કરશો નહિં"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Activate"
 msgstr "સક્રિય કરો"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Deactivate"
 msgstr "નિષ્ક્રિય કરો"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't activate"
 msgstr "સક્રિય કરશો નહિં (_n)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't deactivate"
 msgstr "નિષ્ક્રિય કરશો નહિં (_n)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Activate"
 msgstr "સક્રિય કરો (_A)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Deactivate"
 msgstr "નિષ્ક્રિય કરો (_D)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Slow Keys Alert"
 msgstr "કીની ચેતવણી બતાવો"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Do you want to activate Sticky Keys?"
 msgstr "શું તમે આ સ્ટીકી કીઓને સક્રિય કરવા માંગો છો?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "શું તમે આ સ્ટીકી કીઓને નિષ્ક્રિય કરવા માંગો છો?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "તમારે ફક્ત ૫ સેકન્ડો સુધી Shift કી દબાવી રાખવી પડશે. આ ધીમી કીના લક્ષણો માટેનુ ટુંકાણ છે, કે જે તમારા કીબોર્ડને કામ કરવામાં અસર કરશે."
+msgstr ""
+"તમારે ફક્ત ૫ સેકન્ડો સુધી Shift કી દબાવી રાખવી પડશે. આ ધીમી કીના લક્ષણો "
+"માટેનુ ટુંકાણ છે, કે જે તમારા કીબોર્ડને કામ કરવામાં અસર કરશે."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "તમારે ફક્ત એક સાથે બે કીઓ દબાવી રાખવી પડશે અથવા ૫ વખત Shift કી હરોળમાં દબાવી રાખવી પડશે. આ ધીમી કીના લક્ષણો માટેનુ ટુંકાણ છે, કે જે તમારા કીબોર્ડને કામ કરવામાં અસર કરશે."
+msgstr ""
+"તમારે ફક્ત એક સાથે બે કીઓ દબાવી રાખવી પડશે અથવા ૫ વખત Shift કી હરોળમાં દબાવી"
+" રાખવી પડશે. આ ધીમી કીના લક્ષણો માટેનુ ટુંકાણ છે, કે જે તમારા કીબોર્ડને કામ "
+"કરવામાં અસર કરશે."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Sticky Keys Alert"
 msgstr "સ્ટીકી કીઓની ચેતવણી"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "સાર્વત્રિક વપરાશ પસંદગીઓ"
@@ -835,40 +862,49 @@ msgstr "આ કમ્પ્યૂટર પાસે ફક્ત %s ડિસ�
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "કચરાપેટીને ખાલી કરતી વખતે, બિનઉપયોગી પ્રક્રિયાઓ અથવા ફાઇલો, અથવા બીજા ડિસ્ક અથવા પાર્ટીશનમાં ફાઇલોને ખસેડતી વખતે તમે ડિસ્ક જગ્યાને ખાલી કરી શકો છો."
+msgstr ""
+"કચરાપેટીને ખાલી કરતી વખતે, બિનઉપયોગી પ્રક્રિયાઓ અથવા ફાઇલો, અથવા બીજા ડિસ્ક "
+"અથવા પાર્ટીશનમાં ફાઇલોને ખસેડતી વખતે તમે ડિસ્ક જગ્યાને ખાલી કરી શકો છો."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
-msgstr "બિનઉપયોગી પ્રક્રિયાઓ અને ફાઇલોને દૂર કરતી વખતે તમે ડિસ્ક જગ્યાને ખાલી કરી શકો છો, અથવા બીજી ડિસ્ક અથવા પાર્ટીશનમાં ફાઇલોને ખસેડી રહ્યા છે."
+msgstr ""
+"બિનઉપયોગી પ્રક્રિયાઓ અને ફાઇલોને દૂર કરતી વખતે તમે ડિસ્ક જગ્યાને ખાલી કરી "
+"શકો છો, અથવા બીજી ડિસ્ક અથવા પાર્ટીશનમાં ફાઇલોને ખસેડી રહ્યા છે."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "કચરાપેટીને ખાલી કરતી વખતે તમે ડિસ્ક જગ્યાને ખાલી કરી શકો છો, બિનઉપયોગી પ્રક્રિયાઓ અને ફાઇલોને દૂર કરી રહ્યા છે, અથવા બહારની ડિસ્ક માં ફાઇલોને ખસેડી રહ્યા છે."
+msgstr ""
+"કચરાપેટીને ખાલી કરતી વખતે તમે ડિસ્ક જગ્યાને ખાલી કરી શકો છો, બિનઉપયોગી "
+"પ્રક્રિયાઓ અને ફાઇલોને દૂર કરી રહ્યા છે, અથવા બહારની ડિસ્ક માં ફાઇલોને ખસેડી"
+" રહ્યા છે."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:110
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
-msgstr "બિનઉપયોગી પ્રક્રિયાઓ અથવા ફાઇલોને દૂર કરતી વખતે ડિસ્ક જગ્યાને મુક્ત કરી શકો છો."
+msgstr ""
+"બિનઉપયોગી પ્રક્રિયાઓ અથવા ફાઇલોને દૂર કરતી વખતે ડિસ્ક જગ્યાને મુક્ત કરી શકો "
+"છો."
 
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:207
 msgid "Low Disk Space"
 msgstr "નીચી ડિસ્ક જગ્યા"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
 msgstr "કચરાપેટી ને ખાલી કરો"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Ignore"
 msgstr "અવગણો"
 
@@ -880,35 +916,37 @@ msgstr "%lu નું વસ્તુ %lu ને દૂર કરી રહ્�
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 msgid "Removing: %s"
-msgstr ""
+msgstr "દૂર કરી રહ્યા છીએ: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr "કચરાપેટીને ખાલી કરી રહ્યા છે"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr ""
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr "માંથી: "
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
-msgstr "શું કચરાપેટી માંથી બધી વસ્તુઓને ખાલી કરો છો?"
+msgstr "કચરાપેટીમાંથી બધી વસ્તુઓ ખાલી કરવી છે?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "જો તમે કચરાપેટીને ખાલી કરવા માટે પસંદ કરો તો, તેમાં બધી વસ્તુઓને કાયમ માટે ગુમાવવી પડશે. મહેરબાની કરીને નોંધો કે જે તમે તેઓને અલગ રીતે પણ કાઢી શકો છો."
+msgstr ""
+"જો તમે કચરાપેટી ખાલી કરવાનું પસંદ કરો, તો તેમાંની બધી વસ્તુઓ કાયમ માટે નાશ "
+"થઈ જશે. મહેરબાની કરીને નોંધ કરો કે તમે તેમને અલગ અલગ રીતે પણ કાઢી શકો છો."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
-msgstr "કચરાપેટીને ખાલી કરો (_E)"
+msgstr "કચરાપેટી ખાલી કરો (_E)"
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:112
 #, c-format
@@ -920,12 +958,14 @@ msgstr "કી જોડાણ (%s) અયોગ્ય છે"
 msgid "Key binding (%s) is incomplete"
 msgstr "કી જોડાણ (%s) અધૂરુ છે"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:486
+#: ../plugins/keybindings/msd-keybindings-manager.c:490
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "(%s) ને ચલાવવાના પ્રયત્નમાં ભૂલ થઈ\nકે જે કી (%s) સાથે સંકળાયેલ છે"
+msgstr ""
+"(%s) ને ચલાવવાના પ્રયત્નમાં ભૂલ થઈ\n"
+"કે જે કી (%s) સાથે સંકળાયેલ છે"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
@@ -976,14 +1016,18 @@ msgstr ""
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "મૂળભૂત ટર્મિનલ મેળવી શક્યા નહિં. ખાતરી કરો કે તમારો મૂળભૂત ટર્મિનલ આદેશ સુયોજિત છે અને માન્ય કાર્યક્રમનો નિર્દેશ કરે છે."
+msgstr ""
+"મૂળભૂત ટર્મિનલ મેળવી શક્યા નહિં. ખાતરી કરો કે તમારો મૂળભૂત ટર્મિનલ આદેશ "
+"સુયોજિત છે અને માન્ય કાર્યક્રમનો નિર્દેશ કરે છે."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "આદેશ ચલાવી શક્યા નહિં: %s\nખાતરી કરો કે આ માન્ય આદેશ છે."
+msgstr ""
+"આદેશ ચલાવી શક્યા નહિં: %s\n"
+"ખાતરી કરો કે આ માન્ય આદેશ છે."
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1055,8 +1099,8 @@ msgstr "બેકઅપ માંથી દર્શાવોનાં રૂપ
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "દર્શાવ તેના પહેલાંના રૂપરેખાંકનમાં %d સેકન્ડમાં પુનઃસુયોજીત થઈ જશે"
-msgstr[1] "દર્શાવ તેના પહેલાંના રૂપરેખાંકનમાં %d સેકન્ડોમાં પુનઃસુયોજીત થઈ જશે"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1083,39 +1127,39 @@ msgstr "સ્ક્રીનની જાણકારી ને ફરીથી
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "મોનીટર રૂપરેખાંકનને ગમે તે રીતે બદલવાનો પ્રયાસ કરી રહ્યા છીએ."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1889
+#: ../plugins/xrandr/msd-xrandr-manager.c:1885
 msgid "Rotation not supported"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1945
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Could not save monitor configuration"
 msgstr "મોનિટર રૂપરેખાંકનનો સંગ્રહ કરી શકાયો નહિં"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1959
 msgid "Normal"
 msgstr "સામાન્ય"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1960
 msgid "Left"
 msgstr "ડાબું"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1961
 msgid "Right"
 msgstr "જમણું"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1966
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Upside Down"
-msgstr "ઉપરથી નીચે"
+msgstr "અસ્તવ્યસ્ત"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2088
+#: ../plugins/xrandr/msd-xrandr-manager.c:2084
 msgid "_Configure Display Settings…"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2141
+#: ../plugins/xrandr/msd-xrandr-manager.c:2137
 msgid "Configure display settings"
 msgstr "દર્શાવ સુયોજનો ને રૂપરેખાંકિત કરો"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2201
+#: ../plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Could not apply the stored configuration for monitors"
 msgstr "મોનિટરો માટે સંગ્રહ થયેલ રૂપરેખાંકન ને લાગુ કરી શકાયુ નહિં"
 

@@ -1,29 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Andras Timar <timar at mate dot hu>, 2001-2003
-# darabosj <darabosj@gmail.com>, 2016
-# Emese Kovacs <emese at mate dot hu>, 2001
-# Gabor Kelemen <kelemeng at mate dot hu>, 2004-2010
-# Gabor Sari <saga at mate dot hu>, 2003
-# KAMI KAMI <kami911@gmail.com>, 2014,2016-2017
-# KAMI KAMI <kami911@gmail.com>, 2014-2015
-# Laszlo Dvornik <dvornik at mate dot hu>, 2004
-# Mate ORY <orymate at gmail d0t com>, 2006
-# Peter Doma <zelin at pointernet dot hu>, 2002
-# Rezső Páder <rezso@rezso.net>, 2013
-# Szabolcs Ban <shooby at mate dot hu>, 1998-2000
-# Zoltán Rápolthy <real_zolee@hotmail.com>, 2017
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 21:52+0300\n"
-"PO-Revision-Date: 2017-09-19 11:21+0000\n"
-"Last-Translator: KAMI KAMI <kami911@gmail.com>\n"
-"Language-Team: Hungarian (http://www.transifex.com/mate/MATE/language/hu/)\n"
+"POT-Creation-Date: 2018-03-17 15:36+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Balázs Meskó <meskobalazs@gmail.com>, 2018\n"
+"Language-Team: Hungarian (https://www.transifex.com/mate/teams/13566/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -81,7 +69,9 @@ msgstr "DPI"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "A betűméretek képpontméretekké alakításához használt felbontás hüvelykenkénti képpontszámban."
+msgstr ""
+"A betűméretek képpontméretekké alakításához használt felbontás "
+"hüvelykenkénti képpontszámban."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
@@ -92,7 +82,10 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "A betűkészletek megjelenítéséhez használandó élsimítás típusa. A lehetséges értékek: „none” (élsimítás kikapcsolása), „grayscale” (szürkeárnyalatos élsimítás) és „rgba” (képponton belüli élsimítás, csak LCD képernyőkhöz)."
+msgstr ""
+"A betűkészletek megjelenítéséhez használandó élsimítás típusa. A lehetséges "
+"értékek: „none” (élsimítás kikapcsolása), „grayscale” (szürkeárnyalatos "
+"élsimítás) és „rgba” (képponton belüli élsimítás, csak LCD képernyőkhöz)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
@@ -103,7 +96,10 @@ msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "A betűkészletek megjelenítéséhez használandó hinting típusa. A lehetséges értékek: „none” (hinting kikapcsolása), „slight” (alapszintű), „medium” (mérsékelt) és „full” (teljes - ez torzíthatja a betűformákat)."
+msgstr ""
+"A betűkészletek megjelenítéséhez használandó hinting típusa. A lehetséges "
+"értékek: „none” (hinting kikapcsolása), „slight” (alapszintű), „medium” "
+"(mérsékelt) és „full” (teljes - ez torzíthatja a betűformákat)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
@@ -115,7 +111,11 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "Az LCD képernyő alképpont-elemeinek sorrendje; csak akkor kerül felhasználásra, ha az élsimítás típusa „rgba”. A lehetséges értékek: „rgb” (vörös a bal oldalon - a leggyakoribb), „bgr” (kék a bal oldalon), „vrgb” (vörös fent), „vbgr” (vörös lent)."
+msgstr ""
+"Az LCD képernyő alképpont-elemeinek sorrendje; csak akkor kerül "
+"felhasználásra, ha az élsimítás típusa „rgba”. A lehetséges értékek: „rgb” "
+"(vörös a bal oldalon - a leggyakoribb), „bgr” (kék a bal oldalon), „vrgb” "
+"(vörös fent), „vbgr” (vörös lent)."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -125,7 +125,10 @@ msgstr "Intelligenskártya-eltávolítási művelet"
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
-msgstr "Állítsa a „none” (semmi), „lock_screen” (képernyő zárolása) vagy „force_logout” (kijelentkeztetés) egyikére. A művelet a bejelentkezéshez használt intelligens kártya eltávolításakor kerül végrehajtásra."
+msgstr ""
+"Állítsa a „none” (semmi), „lock_screen” (képernyő zárolása) vagy "
+"„force_logout” (kijelentkeztetés) egyikére. A művelet a bejelentkezéshez "
+"használt intelligens kártya eltávolításakor kerül végrehajtásra."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:1
 msgid "Disable touchpad while typing"
@@ -135,7 +138,9 @@ msgstr "Érintőtábla letiltása gépelés közben"
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "Állítsa igazra, ha problémát okoz az érintőtábla véletlen megérintése gépelés közben."
+msgstr ""
+"Állítsa igazra, ha problémát okoz az érintőtábla véletlen megérintése "
+"gépelés közben."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:3
 msgid "Enable mouse clicks with touchpad"
@@ -144,7 +149,8 @@ msgstr "Egérkattintások engedélyezése az érintőtáblán"
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:4
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
-msgstr "Állítsa igazra egérkattintások küldéséhez az érintőtáblára koppintással."
+msgstr ""
+"Állítsa igazra egérkattintások küldéséhez az érintőtáblára koppintással."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
 msgid "Enable vertical edge scrolling"
@@ -184,7 +190,9 @@ msgstr "Természetes görgetés"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
-msgstr "Állítsa „igaz”-ra a természetes (fordított) görgetés engedélyezéséhez az érintőtábláknál"
+msgstr ""
+"Állítsa „igaz”-ra a természetes (fordított) görgetés engedélyezéséhez az "
+"érintőtábláknál"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
 msgid "Enable touchpad"
@@ -192,7 +200,8 @@ msgstr "Érintőtábla engedélyezése"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:16
 msgid "Set this to TRUE to enable all touchpads."
-msgstr "Állítsa igazra egérkattintások küldéséhez az érintőtáblára koppintással."
+msgstr ""
+"Állítsa igazra egérkattintások küldéséhez az érintőtáblára koppintással."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:17
 msgid "Enabled two-finger button-click emulation"
@@ -200,7 +209,9 @@ msgstr "Két ujjas kattintás emulációjának engedélyezése"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:18
 msgid "0 thru 3, 0 is inactive, 1-3 is button to emulate"
-msgstr "A lehetséges értékek: 0-tól 3-ig. „0”: kikapcsolva, 1-től 3-ig az emulálandó gomb."
+msgstr ""
+"A lehetséges értékek: 0-tól 3-ig. „0”: kikapcsolva, 1-től 3-ig az emulálandó"
+" gomb."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:19
 msgid "Enable three-finger button-click emulation"
@@ -214,7 +225,9 @@ msgstr "Egy ujjas koppintás gomb"
 msgid ""
 "Select the button mapping for one-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Válassza ki a gomb hozzárendelést az egyujjas koppintáshoz. Támogatott értékek: 1: bal egérgomb; 2: középső egérgomb; 3: jobb egérgomb"
+msgstr ""
+"Válassza ki a gomb hozzárendelést az egyujjas koppintáshoz. Támogatott "
+"értékek: 1: bal egérgomb; 2: középső egérgomb; 3: jobb egérgomb"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
 msgid "Two finger tap button"
@@ -224,7 +237,9 @@ msgstr "Két ujjas koppintás gomb"
 msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Válassza ki a gomb hozzárendelést az kétujjas koppintáshoz. Támogatott értékek: 1: bal egérgomb; 2: középső egérgomb; 3: jobb egérgomb"
+msgstr ""
+"Válassza ki a gomb hozzárendelést az kétujjas koppintáshoz. Támogatott "
+"értékek: 1: bal egérgomb; 2: középső egérgomb; 3: jobb egérgomb"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
 msgid "Three finger tap button"
@@ -234,7 +249,9 @@ msgstr "Három ujjas koppintás gomb"
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
-msgstr "Válassza ki a gomb hozzárendelést az háromujjas koppintáshoz. Támogatott értékek: 1: bal egérgomb; 2: középső egérgomb; 3: jobb egérgomb"
+msgstr ""
+"Válassza ki a gomb hozzárendelést az háromujjas koppintáshoz. Támogatott "
+"értékek: 1: bal egérgomb; 2: középső egérgomb; 3: jobb egérgomb"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:26
 msgid "Touchpad button orientation"
@@ -244,7 +261,10 @@ msgstr "Érintőtábla gombjainak elhelyezkedése"
 msgid ""
 "Swap left and right buttons for left-handed touchpads with 'left', 'right' "
 "for right-handed, 'mouse' to follow the mouse setting."
-msgstr "Felcseréli a bal és jobb gombokat a balkezes érintőtábláknál a „left” értéket megadva. Adja meg a „right” értéket a jobbkezes működéshez, vagy a „mouse” értéket az egérbeállítások használatához."
+msgstr ""
+"Felcseréli a bal és jobb gombokat a balkezes érintőtábláknál a „left” "
+"értéket megadva. Adja meg a „right” értéket a jobbkezes működéshez, vagy a "
+"„mouse” értéket az egérbeállítások használatához."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
 msgid "Motion Acceleration"
@@ -254,7 +274,9 @@ msgstr "Mozgás gyorsítás"
 msgid ""
 "Acceleration multiplier for touchpad motion. A value of -1 is the system "
 "default."
-msgstr "Gyorsítási szorzó az érintőtábla mozgatásához. A -1 érték a rendszer alapértelmezése."
+msgstr ""
+"Gyorsítási szorzó az érintőtábla mozgatásához. A -1 érték a rendszer "
+"alapértelmezése."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
@@ -264,7 +286,10 @@ msgstr "Mozgási küszöbérték"
 msgid ""
 "Distance in pixels the pointer must move before accelerated touchpad motion "
 "is activated. A value of -1 is the system default."
-msgstr "Az a távolság képpontokban, amit az érintőpad mutatónak meg kell tennie, mielőtt a gyorsított érintőpad mozgatás aktivizálódik. A -1 érték a rendszer alapértelmezése."
+msgstr ""
+"Az a távolság képpontokban, amit az érintőpad mutatónak meg kell tennie, "
+"mielőtt a gyorsított érintőpad mozgatás aktivizálódik. A -1 érték a rendszer"
+" alapértelmezése."
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
@@ -354,7 +379,10 @@ msgstr "Szabad hely százalékos arányának értesítési küszöbe"
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
-msgstr "Szabad hely százalékos arányának küszöbértéke az első figyelmeztetéshez a kevés szabad helyről. Ha a szabad terület százalékos aránya ez alá csökken, akkor megjelenik egy figyelmeztetés."
+msgstr ""
+"Szabad hely százalékos arányának küszöbértéke az első figyelmeztetéshez a "
+"kevés szabad helyről. Ha a szabad terület százalékos aránya ez alá csökken, "
+"akkor megjelenik egy figyelmeztetés."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
 msgid "Subsequent free percentage notify threshold"
@@ -364,7 +392,9 @@ msgstr "Szabad hely fogyásáról szóló újabb értesítés küszöbértéke"
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
-msgstr "Adja meg azt a százalékos arányt, amelyet a szabad lemezterületnek el kell érnie újabb figyelmeztetés kiadásához."
+msgstr ""
+"Adja meg azt a százalékos arányt, amelyet a szabad lemezterületnek el kell "
+"érnie újabb figyelmeztetés kiadásához."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:9
 msgid "Free space no notify threshold"
@@ -374,7 +404,9 @@ msgstr "Szabad hely értesítés letiltásának küszöbe"
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
-msgstr "Adjon meg egy értéket GB-ban. Ha a szabad hely mennyisége ennél több, nem jelenik meg figyelmeztetés."
+msgstr ""
+"Adjon meg egy értéket GB-ban. Ha a szabad hely mennyisége ennél több, nem "
+"jelenik meg figyelmeztetés."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:11
 msgid "Minimum notify period for repeated warnings"
@@ -384,7 +416,9 @@ msgstr "Minimális értesítési időköz ismételt figyelmeztetésekhez"
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "A kötetre vonatkozó figyelmeztetések nem jelennek meg ennyi percnél gyakrabban."
+msgstr ""
+"A kötetre vonatkozó figyelmeztetések nem jelennek meg ennyi percnél "
+"gyakrabban."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
@@ -392,7 +426,9 @@ msgstr "Figyelmen kívül hagyandó csatolások"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:14
 msgid "Specify a list of mount paths to ignore when they run low on space."
-msgstr "Adja meg azon csatolási útvonalak listáját, amelyeken az elfogyó szabad hely figyelmen kívül hagyandó."
+msgstr ""
+"Adja meg azon csatolási útvonalak listáját, amelyeken az elfogyó szabad hely"
+" figyelmen kívül hagyandó."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
 msgid "Show OSD notification"
@@ -536,7 +572,9 @@ msgstr "Lejátszás (vagy lejátszás/szünet)"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
 msgid "Binding to start playback (or toggle play/pause)."
-msgstr "Billentyűparancs a lejátszás indításához (vagy a lejátszás/szünet váltáshoz)."
+msgstr ""
+"Billentyűparancs a lejátszás indításához (vagy a lejátszás/szünet "
+"váltáshoz)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
 msgid "Pause playback"
@@ -604,7 +642,13 @@ msgid ""
 "cloning/side-by-side mode. Setting this key to True disables this, and the "
 "monitor settings are not touched at all (unless there is an explicit user "
 "configuration)."
-msgstr "Általában a mate-settings-daemon beállítja a belső és a csatlakoztatott monitorokat a „turn_on_external_monitors_at_startup” és a „turn_on_laptop_monitor_at_startup” beállításoknak megfelelően valamint meghatározza a megfelelő klónozási és elrendezési beállításokat. A beállítás engedélyezésével letiltja ezt a működést és monitorok nem lesznek átállítva (kivéve, ha vannak egyedi felhasználói beállítások)."
+msgstr ""
+"Általában a mate-settings-daemon beállítja a belső és a csatlakoztatott "
+"monitorokat a „turn_on_external_monitors_at_startup” és a "
+"„turn_on_laptop_monitor_at_startup” beállításoknak megfelelően valamint "
+"meghatározza a megfelelő klónozási és elrendezési beállításokat. A beállítás"
+" engedélyezésével letiltja ezt a működést és monitorok nem lesznek átállítva"
+" (kivéve, ha vannak egyedi felhasználói beállítások)."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:9
 msgid "Turn on external monitor after system boot"
@@ -614,7 +658,9 @@ msgstr "Külső monitor bekapcsolása rendszerindítás után"
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
-msgstr "Külső monitor bekapcsolása rendszerindítás után, ha a felhasználó külső monitort csatlakoztat a rendszerindításkor."
+msgstr ""
+"Külső monitor bekapcsolása rendszerindítás után, ha a felhasználó külső "
+"monitort csatlakoztat a rendszerindításkor."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:11
 msgid "Turn on laptop monitor after system boot"
@@ -624,7 +670,9 @@ msgstr "Laptopmonitor bekapcsolása rendszerindítás után"
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
-msgstr "Laptopmonitor bekapcsolása rendszerindítás után, ha a felhasználó külső monitort csatlakoztat a rendszerindításkor."
+msgstr ""
+"Laptopmonitor bekapcsolása rendszerindítás után, ha a felhasználó külső "
+"monitort csatlakoztat a rendszerindításkor."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:13
 msgid "File for default configuration for RandR"
@@ -637,7 +685,12 @@ msgid ""
 "normally gets stored in users' home directories. If a user does not have "
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
-msgstr "Az XRandR bővítmény az itt megadott fájlban keresi az alapértelmezett beállításokat. Ez hasonló felhasználók saját könyvtárában tárolt ~/.config/monitors.xml fájlhoz. Ha a felhasználónak nincs ilyen fájlja, vagy a meglévő nem nem felel meg a felhasználó monitorainak, akkor az itt megadott fájl kerül felhasználásra."
+msgstr ""
+"Az XRandR bővítmény az itt megadott fájlban keresi az alapértelmezett "
+"beállításokat. Ez hasonló felhasználók saját könyvtárában tárolt "
+"~/.config/monitors.xml fájlhoz. Ha a felhasználónak nincs ilyen fájlja, vagy"
+" a meglévő nem nem felel meg a felhasználó monitorainak, akkor az itt "
+"megadott fájl kerül felhasználásra."
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
@@ -667,102 +720,109 @@ msgstr "Billentyűzet akadálymentesítése"
 msgid "Accessibility keyboard plugin"
 msgstr "Billentyűzet akadálymentesítése bővítmény"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Hiba történt a súgó megjelenítése közben: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
 msgid "Do you want to activate Slow Keys?"
 msgstr "Szeretné aktiválni a Lassú billentyűket?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Ki szeretné kapcsolni a Lassú billentyűket?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "Lenyomva tartotta a Shift billentyűt 8 másodpercig. Ez a Lassú billentyűk szolgáltatás gyorsbillentyűje, ami a billentyűzet működését befolyásolja."
+msgstr ""
+"Lenyomva tartotta a Shift billentyűt 8 másodpercig. Ez a Lassú billentyűk "
+"szolgáltatás gyorsbillentyűje, ami a billentyűzet működését befolyásolja."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't activate"
 msgstr "Ne kerüljön aktiválásra"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't deactivate"
 msgstr "Ne kerüljön deaktiválásra"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Activate"
 msgstr "Aktiválás"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Deactivate"
 msgstr "Deaktiválás"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't activate"
 msgstr "_Ne kerüljön aktiválásra"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't deactivate"
 msgstr "N_e kerüljön deaktiválásra"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Activate"
 msgstr "_Aktiválás"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Deactivate"
 msgstr "_Deaktiválás"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Slow Keys Alert"
 msgstr "Lassú billentyűk figyelmeztetés"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Szeretné bekapcsolni a Ragadós billentyűket?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Ki szeretné kapcsolni a Ragadós billentyűket?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "Egymás után ötször nyomta meg a Shift billentyűt. Ez a Ragadós billentyűk szolgáltatás gyorsbillentyűje, ami a billentyűzet viselkedését befolyásolja."
+msgstr ""
+"Egymás után ötször nyomta meg a Shift billentyűt. Ez a Ragadós billentyűk "
+"szolgáltatás gyorsbillentyűje, ami a billentyűzet viselkedését befolyásolja."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "Egyszerre két, vagy a Shift billentyűt egymás után ötször nyomta meg. Ez kikapcsolja a Ragadós billentyűk szolgáltatást, ami a billentyűzet viselkedését befolyásolja."
+msgstr ""
+"Egyszerre két, vagy a Shift billentyűt egymás után ötször nyomta meg. Ez "
+"kikapcsolja a Ragadós billentyűk szolgáltatást, ami a billentyűzet "
+"viselkedését befolyásolja."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Sticky Keys Alert"
 msgstr "Ragadós billentyűk figyelmeztetés"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Akadálymentesítés beállításai"
@@ -845,40 +905,49 @@ msgstr "A számítógépen már csak %s lemezhely maradt."
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "Lemezterületet szabadíthat fel a Kuka ürítésével, használaton kívüli programok vagy fájlok törlésével, vagy fájlok másik lemezre vagy partícióra mozgatásával."
+msgstr ""
+"Lemezterületet szabadíthat fel a Kuka ürítésével, használaton kívüli "
+"programok vagy fájlok törlésével, vagy fájlok másik lemezre vagy partícióra "
+"mozgatásával."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
-msgstr "Lemezterületet szabadíthat fel a használaton kívüli programok vagy fájlok törlésével, vagy fájlok másik lemezre vagy partícióra mozgatásával."
+msgstr ""
+"Lemezterületet szabadíthat fel a használaton kívüli programok vagy fájlok "
+"törlésével, vagy fájlok másik lemezre vagy partícióra mozgatásával."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "Lemezterületet szabadíthat fel a Kuka ürítésével, használaton kívüli programok vagy fájlok törlésével, vagy fájlok külső lemezre mozgatásával."
+msgstr ""
+"Lemezterületet szabadíthat fel a Kuka ürítésével, használaton kívüli "
+"programok vagy fájlok törlésével, vagy fájlok külső lemezre mozgatásával."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:110
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
-msgstr "Lemezterületet szabadíthat fel a használaton kívüli programok vagy fájlok törlésével, vagy fájlok külső lemezre mozgatásával."
+msgstr ""
+"Lemezterületet szabadíthat fel a használaton kívüli programok vagy fájlok "
+"törlésével, vagy fájlok külső lemezre mozgatásával."
 
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:207
 msgid "Low Disk Space"
 msgstr "Kevés a lemezterület"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
 msgstr "Kuka ürítése"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
 msgstr "Vizsgálat…"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Ignore"
 msgstr "Mellőzés"
 
@@ -893,30 +962,32 @@ msgid "Removing: %s"
 msgstr "Eltávolítás: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr "A Kuka ürítése"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr "Felkészülés a Kuka ürítésére…"
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr "Innen: "
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
-msgstr "Törölni akarja az összes elemet a Kukából?"
+msgstr "Ki akarja üríteni az összes elemet a Kukából?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "Ha a Kuka kiürítését választja, minden elem véglegesen elvész. Ne feledje, hogy ezeket egyenként is törölheti."
+msgstr ""
+"Ha a Kuka kiürítését választja, minden elem véglegesen elvész. Ne feledje, "
+"hogy egyenként is törölheti őket."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
 msgstr "_Kuka ürítése"
 
@@ -930,12 +1001,14 @@ msgstr "A billentyűparancs (%s) érvénytelen"
 msgid "Key binding (%s) is incomplete"
 msgstr "A billentyűparancs (%s) hiányos"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:486
+#: ../plugins/keybindings/msd-keybindings-manager.c:490
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "Hiba (%s) futtatása közben\nami ehhez a billentyűhöz van kapcsolva: (%s)"
+msgstr ""
+"Hiba (%s) futtatása közben\n"
+"ami ehhez a billentyűhöz van kapcsolva: (%s)"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
@@ -968,7 +1041,19 @@ msgid ""
 "If you report this situation as a bug, please include:\n"
 " • The result of <b>%s</b>\n"
 " • The result of <b>%s</b>"
-msgstr "Hiba az XKB konfiguráció aktiválásakor.\nEz több ok miatt is megtörténhet:\n • A libxklavier programkönyvtárbeli hiba miatt\n • Az X-kiszolgálóbeli hiba miatt (xkbcomp, xmodmap eszközök)\n • Az X-kiszolgáló inkompatibilis libxkbfile megvalósítást használ\n\nAz X-kiszolgáló verzióadatai:\n%s\n%d\nHa hibaként szeretné jelenteni ezt a problémát, csatolja a következőket:\n • A(z) <b>%s</b> eredményét\n • A(z) <b>%s</b> eredményét"
+msgstr ""
+"Hiba az XKB konfiguráció aktiválásakor.\n"
+"Ez több ok miatt is megtörténhet:\n"
+" • A libxklavier programkönyvtárbeli hiba miatt\n"
+" • Az X-kiszolgálóbeli hiba miatt (xkbcomp, xmodmap eszközök)\n"
+" • Az X-kiszolgáló inkompatibilis libxkbfile megvalósítást használ\n"
+"\n"
+"Az X-kiszolgáló verzióadatai:\n"
+"%s\n"
+"%d\n"
+"Ha hibaként szeretné jelenteni ezt a problémát, csatolja a következőket:\n"
+" • A(z) <b>%s</b> eredményét\n"
+" • A(z) <b>%s</b> eredményét"
 
 #: ../plugins/keyboard/msd-keyboard-xkb.c:279
 msgid "_Layouts"
@@ -986,14 +1071,19 @@ msgstr "Aktuális _kiosztás megjelenítése"
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "Nem kérhető le az alapértelmezett terminál. Ellenőrizze, hogy az alapértelmezett terminál parancs be van állítva és érvényes alkalmazásra mutat."
+msgstr ""
+"Nem kérhető le az alapértelmezett terminál. Ellenőrizze, hogy az "
+"alapértelmezett terminál parancs be van állítva és érvényes alkalmazásra "
+"mutat."
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "A(z) %s parancs nem hajtható végre.\nEllenőrizze, hogy ez a parancs érvényes-e."
+msgstr ""
+"A(z) %s parancs nem hajtható végre.\n"
+"Ellenőrizze, hogy ez a parancs érvényes-e."
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1010,7 +1100,9 @@ msgstr "A billentyűzet akadálymentesítési szolgáltatásai nem engedélyezhe
 #: ../plugins/mouse/msd-mouse-manager.c:1442
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
-msgstr "Az egér akadálymentesítése megköveteli a Mousetweaks jelenlétét a rendszeren."
+msgstr ""
+"Az egér akadálymentesítése megköveteli a Mousetweaks jelenlétét a "
+"rendszeren."
 
 #: ../plugins/mouse/msd-mouse-manager.c:1445
 msgid "Mouse Preferences"
@@ -1093,39 +1185,39 @@ msgstr "A kijelzőinformációk nem frissíthetők: %s"
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Kísérlet a monitor beállításainak átváltására mindenképp."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1889
+#: ../plugins/xrandr/msd-xrandr-manager.c:1885
 msgid "Rotation not supported"
 msgstr "A forgatás nem támogatott"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1945
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Could not save monitor configuration"
 msgstr "A monitor beállításai nem menthetők"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1959
 msgid "Normal"
-msgstr "Normál"
+msgstr "Átlagos"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1960
 msgid "Left"
-msgstr "Balra"
+msgstr "Bal"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1961
 msgid "Right"
-msgstr "Jobbra"
+msgstr "Jobb"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1966
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Upside Down"
 msgstr "Fejjel lefelé"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2088
+#: ../plugins/xrandr/msd-xrandr-manager.c:2084
 msgid "_Configure Display Settings…"
 msgstr "Ké_pernyő beállítása…"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2141
+#: ../plugins/xrandr/msd-xrandr-manager.c:2137
 msgid "Configure display settings"
 msgstr "Kijelző beállítása"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2201
+#: ../plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Could not apply the stored configuration for monitors"
 msgstr "A tárolt beállítás nem alkalmazható a monitorokra"
 
@@ -1185,7 +1277,8 @@ msgstr "Nem figyelhetők a bejövő kártyaeseményeket - %s"
 #: ../plugins/smartcard/msd-smartcard-manager.c:1105
 #, c-format
 msgid "encountered unexpected error while waiting for smartcard events"
-msgstr "Váratlan hiba történt az intelligenskártya-eseményekre várakozás közben"
+msgstr ""
+"Váratlan hiba történt az intelligenskártya-eseményekre várakozás közben"
 
 #: ../plugins/smartcard/msd-smartcard.c:154
 msgid "Slot ID"

@@ -1,21 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Chanchai Junlouchai <taz@opentle.org>, 2004
-# Paisa Seeluangsawat <paisa@users.sf.net>, 2003, 2004
-# Supakorn Siddhichai <supakorn.siddhichai@nectec.or.th>, 2004
-# Supranee Thirawatthanasuk <supranee@opentle.org>, 2004
-# Surichat Sumrit <nook@opentle.org>, 2004
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 21:52+0300\n"
-"PO-Revision-Date: 2017-09-19 11:21+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Thai (http://www.transifex.com/mate/MATE/language/th/)\n"
+"POT-Creation-Date: 2018-03-17 15:36+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Aefgh Threenine <aefgh3962@gmail.com>, 2018\n"
+"Language-Team: Thai (https://www.transifex.com/mate/teams/13566/th/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -73,7 +69,8 @@ msgstr "DPI"
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
-msgstr "ความละเอียดที่จะใช้แปลงจากขนาดแบบอักษรไปเป็นจำนวนจุด ในหน่วยจุดต่อนิ้ว"
+msgstr ""
+"ความละเอียดที่จะใช้แปลงจากขนาดแบบอักษรไปเป็นจำนวนจุด ในหน่วยจุดต่อนิ้ว"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
@@ -84,7 +81,10 @@ msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
-msgstr "วิธีการขจัดรอยหยักเมื่อวาดตัวอักษร ค่าที่เป็นไปได้คือ: \"none\" คือไม่ทำ, \"grayscale\" คือการไล่สีเทาตามปกติ และ \"rgba\" คือใช้พิกเซลย่อย (สำหรับจอ LCD เท่านั้น)"
+msgstr ""
+"วิธีการขจัดรอยหยักเมื่อวาดตัวอักษร ค่าที่เป็นไปได้คือ: \"none\" คือไม่ทำ, "
+"\"grayscale\" คือการไล่สีเทาตามปกติ และ \"rgba\" คือใช้พิกเซลย่อย (สำหรับจอ "
+"LCD เท่านั้น)"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
@@ -95,7 +95,10 @@ msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
 "\"full\" for maximum hinting (may cause distortion of letter forms)."
-msgstr "วิธีการ hint ที่จะใช้เมื่อวาดแบบอักษร ค่าที่เป็นไปได้คือ: \"none\" คือไม่ hint, \"slight\" คือ hint แบบพื้นฐาน, \"medium\" คือ hint แบบปานกลาง, และ \"full\" คือ hint แบบเต็มที่ (การ hint อาจทำให้รูปร่างของตัวอักษรเปลี่ยนไป)"
+msgstr ""
+"วิธีการ hint ที่จะใช้เมื่อวาดแบบอักษร ค่าที่เป็นไปได้คือ: \"none\" คือไม่ "
+"hint, \"slight\" คือ hint แบบพื้นฐาน, \"medium\" คือ hint แบบปานกลาง, และ "
+"\"full\" คือ hint แบบเต็มที่ (การ hint อาจทำให้รูปร่างของตัวอักษรเปลี่ยนไป)"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:7
 msgid "RGBA order"
@@ -107,7 +110,11 @@ msgid ""
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
-msgstr "ลำดับของพิกเซลย่อยบนจอ LCD ซึ่งจะใช้เมื่อใช้การขจัดรอยหยักด้วยวิธี \"rgba\" ค่าที่เป็นไปได้คือ: \"rgb\" คือจุดสีแดงอยู่ซ้าย (พบมากที่สุด), \"bgr\" คือจุดสีน้ำเงินอยู่ซ้าย, \"vrgb\" คือจุดสีแดงอยู่บน, \"vbgr\" คือจุดสีแดงอยู่ล่าง"
+msgstr ""
+"ลำดับของพิกเซลย่อยบนจอ LCD ซึ่งจะใช้เมื่อใช้การขจัดรอยหยักด้วยวิธี \"rgba\" "
+"ค่าที่เป็นไปได้คือ: \"rgb\" คือจุดสีแดงอยู่ซ้าย (พบมากที่สุด), \"bgr\" "
+"คือจุดสีน้ำเงินอยู่ซ้าย, \"vrgb\" คือจุดสีแดงอยู่บน, \"vbgr\" "
+"คือจุดสีแดงอยู่ล่าง"
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -127,7 +134,8 @@ msgstr "ปิดทัชแพดขณะพิมพ์"
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
-msgstr "กำหนดค่านี้เป็น TRUE ถ้าคุณมีปัญหากับการโดนทัชแพดโดยไม่ตั้งใจในขณะพิมพ์"
+msgstr ""
+"กำหนดค่านี้เป็น TRUE ถ้าคุณมีปัญหากับการโดนทัชแพดโดยไม่ตั้งใจในขณะพิมพ์"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:3
 msgid "Enable mouse clicks with touchpad"
@@ -250,7 +258,7 @@ msgstr ""
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
-msgstr ""
+msgstr "ระยะเร่ง"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:31
 msgid ""
@@ -376,7 +384,9 @@ msgstr "ช่วงเวลาต่ำสุดของการแจ้ง
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
-msgstr "ระบุเวลาเป็นนาที การเตือนเกี่ยวกับเนื้อที่ว่างในโวลุมในครั้งถัดๆ ไป จะถี่ไม่เกินช่วงที่กำหนดนี้"
+msgstr ""
+"ระบุเวลาเป็นนาที การเตือนเกี่ยวกับเนื้อที่ว่างในโวลุมในครั้งถัดๆ ไป "
+"จะถี่ไม่เกินช่วงที่กำหนดนี้"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
 msgid "Mount paths to ignore"
@@ -645,7 +655,7 @@ msgstr ""
 
 #: ../mate-settings-daemon/main.c:67
 msgid "Don't become a daemon"
-msgstr "ไม่ต้องเปิดเป็นดีมอน"
+msgstr "ไม่ต้องเป็นดีมอน"
 
 #: ../mate-settings-daemon/main.c:68
 msgid "Exit after a time (for debugging)"
@@ -659,102 +669,108 @@ msgstr "สิ่งอำนวยความสะดวกสำหรับ
 msgid "Accessibility keyboard plugin"
 msgstr "ปลั๊กอินจัดการสิ่งอำนวยความสะดวกสำหรับแป้นพิมพ์"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:448
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr "เกิดข้อผิดพลาดขณะแสดงวิธีใช้: %s"
+msgstr "เกิดข้อผิดพลาดในการแสดงแนะนำวิธี: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
 msgid "Do you want to activate Slow Keys?"
 msgstr "จะเริ่มใช้การพิมพ์แบบช้าหรือไม่?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:577
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:641
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "จะเลิกใช้การพิมพ์แบบช้าหรือไม่?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:578
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:642
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
-msgstr "คุณเพิ่งกดปุ่ม Shift ค้างไว้แปดวินาที นี่เป็นสัญญาณเรียกใช้การพิมพ์แบบช้า ซึ่งจะมีผลต่อการทำงานของแป้นพิมพ์"
+msgstr ""
+"คุณเพิ่งกดปุ่ม Shift ค้างไว้แปดวินาที นี่เป็นสัญญาณเรียกใช้การพิมพ์แบบช้า "
+"ซึ่งจะมีผลต่อการทำงานของแป้นพิมพ์"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't activate"
 msgstr "ไม่เริ่มใช้"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 msgid "Don't deactivate"
 msgstr "ไม่เลิกใช้"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Activate"
 msgstr "เริ่มใช้"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:607
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:744
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
 msgid "Deactivate"
 msgstr "เลิกใช้"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't activate"
 msgstr "ไ_ม่เริ่มใช้"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:663
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:802
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do_n't deactivate"
 msgstr "ไ_ม่เลิกใช้"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Activate"
-msgstr "เ_ริ่มใช้"
+msgstr "เ_ชื่อมต่อ"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid "_Deactivate"
-msgstr "เ_ลิกใช้"
+msgstr "_ตัดการเชื่อมต่อ"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:670
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
 msgid "Slow Keys Alert"
 msgstr "เริ่มใช้การพิมพ์แบบช้า"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:710
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:776
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
 msgid "Do you want to activate Sticky Keys?"
 msgstr "จะเริ่มใช้การค้างปุ่มกดหรือไม่?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "จะเลิกใช้การค้างปุ่มกดหรือไม่?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
-msgstr "คุณเพิ่งกดปุ่ม Shift ห้าครั้งต่อเนื่องกัน นี่เป็นสัญญาณเรียกใช้การค้างปุ่มกด ซึ่งจะมีผลต่อการทำงานของแป้นพิมพ์"
+msgstr ""
+"คุณเพิ่งกดปุ่ม Shift ห้าครั้งต่อเนื่องกัน นี่เป็นสัญญาณเรียกใช้การค้างปุ่มกด"
+" ซึ่งจะมีผลต่อการทำงานของแป้นพิมพ์"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:715
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:781
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
-msgstr "คุณเพิ่งกดสองปุ่มพร้อมกัน หรือกดปุ่ม Shift ห้าครั้งต่อเนื่องกัน นี่เป็นสัญญาณสำหรับปิดการค้างปุ่มกด ซึ่งจะมีผลต่อการทำงานของแป้นพิมพ์"
+msgstr ""
+"คุณเพิ่งกดสองปุ่มพร้อมกัน หรือกดปุ่ม Shift ห้าครั้งต่อเนื่องกัน "
+"นี่เป็นสัญญาณสำหรับปิดการค้างปุ่มกด ซึ่งจะมีผลต่อการทำงานของแป้นพิมพ์"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:809
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Sticky Keys Alert"
 msgstr "เลิกใช้การค้างปุ่มกด"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:765
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "ปรับแต่งการอำนวยความสะดวกทั่วไป"
@@ -837,42 +853,51 @@ msgstr "คอมพิวเตอร์เครื่องนี้มีเ
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
-msgstr "คุณสามารถคืนเนื้อที่ว่างในดิสก์ได้โดยเทขยะในถังขยะทิ้ง หรือลบโปรแกรมหรือแฟ้มที่ไม่ใช้แล้ว หรือย้ายแฟ้มต่างๆ ไปที่ดิสก์หรือพาร์ทิชันอื่น"
+msgstr ""
+"คุณสามารถคืนเนื้อที่ว่างในดิสก์ได้โดยเทขยะในถังขยะทิ้ง "
+"หรือลบโปรแกรมหรือแฟ้มที่ไม่ใช้แล้ว หรือย้ายแฟ้มต่างๆ "
+"ไปที่ดิสก์หรือพาร์ทิชันอื่น"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
-msgstr "คุณสามารถคืนเนื้อที่ว่างในดิสก์ได้โดยลบโปรแกรมหรือแฟ้มที่ไม่ใช้แล้ว หรือย้ายแฟ้มต่างๆ ไปที่ดิสก์หรือพาร์ทิชันอื่น"
+msgstr ""
+"คุณสามารถคืนเนื้อที่ว่างในดิสก์ได้โดยลบโปรแกรมหรือแฟ้มที่ไม่ใช้แล้ว "
+"หรือย้ายแฟ้มต่างๆ ไปที่ดิสก์หรือพาร์ทิชันอื่น"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:107
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
-msgstr "คุณสามารถคืนเนื้อที่ว่างในดิสก์ได้โดยเทขยะในถังขยะทิ้ง หรือลบโปรแกรมหรือแฟ้มที่ไม่ใช้แล้ว หรือย้ายแฟ้มต่างๆ ไปที่ดิสก์ภายนอก"
+msgstr ""
+"คุณสามารถคืนเนื้อที่ว่างในดิสก์ได้โดยเทขยะในถังขยะทิ้ง "
+"หรือลบโปรแกรมหรือแฟ้มที่ไม่ใช้แล้ว หรือย้ายแฟ้มต่างๆ ไปที่ดิสก์ภายนอก"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:110
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
-msgstr "คุณสามารถคืนเนื้อที่ว่างในดิสก์ได้โดยลบโปรแกรมหรือแฟ้มที่ไม่ใช้แล้ว หรือย้ายแฟ้มต่างๆ ไปที่ดิสก์ภายนอก"
+msgstr ""
+"คุณสามารถคืนเนื้อที่ว่างในดิสก์ได้โดยลบโปรแกรมหรือแฟ้มที่ไม่ใช้แล้ว "
+"หรือย้ายแฟ้มต่างๆ ไปที่ดิสก์ภายนอก"
 
 #. Set up all the window stuff here
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:207
 msgid "Low Disk Space"
 msgstr "พื้นที่ดิสก์เหลือน้อย"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
 msgstr "เทขยะ"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:460
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:467
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
 msgid "Ignore"
-msgstr "ไม่สนใจ"
+msgstr "ละเลย"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:97
 #, c-format
@@ -882,35 +907,37 @@ msgstr "กำลังลบรายการที่ %lu จาก %lu"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 msgid "Removing: %s"
-msgstr ""
+msgstr "กำลังลบ: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:316
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr "กำลังเทขยะ"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:292
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr ""
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:319
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr "จาก: "
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:371
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
-msgstr "จะเทรายการต่างๆ ในถังขยะทิ้งหรือไม่?"
+msgstr "แน่ใจหรือว่าต้องการลบทุกอย่างในถังขยะอย่างถาวร?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:374
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
-msgstr "ถ้าคุณเลือกเทถังขยะ รายการทั้งหมดก็จะสูญหายอย่างถาวร อย่าลืมว่าคุณสามารถลบรายการต่างๆ ทีละรายการได้เช่นกัน"
+msgstr ""
+"เทถังขยะแล้วข้อมูลจะถูกลบทิ้งโดยถาวร "
+"สังเกตว่าคุณสามารถสั่งลบข้อมูลทีละชิ้นได้เช่นกัน"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:381
+#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
-msgstr "เ_ทขยะ"
+msgstr "เ_ทขยะทิ้ง"
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:112
 #, c-format
@@ -922,12 +949,14 @@ msgstr "การกำหนดปุ่มลัด (%s) ผิดรูปแ
 msgid "Key binding (%s) is incomplete"
 msgstr "การกำหนดปุ่มลัด (%s) ไม่สมบูรณ์"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:486
+#: ../plugins/keybindings/msd-keybindings-manager.c:490
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
-msgstr "เกิดความผิดพลาดขณะเรียกทำงาน (%s)\nซึ่งเชื่อมโยงกับปุ่ม (%s)"
+msgstr ""
+"เกิดความผิดพลาดขณะเรียกทำงาน (%s)\n"
+"ซึ่งเชื่อมโยงกับปุ่ม (%s)"
 
 #: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
 msgid "Keybindings"
@@ -978,14 +1007,19 @@ msgstr ""
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
-msgstr "ไม่สามารถอ่านค่าเทอร์มินัลปริยาย กรุณาตรวจสอบว่าคุณได้กำหนดคำสั่งเทอร์มินัลปริยายไว้ โดยกำหนดเป็นโปรแกรมที่เรียกใช้ได้"
+msgstr ""
+"ไม่สามารถอ่านค่าเทอร์มินัลปริยาย "
+"กรุณาตรวจสอบว่าคุณได้กำหนดคำสั่งเทอร์มินัลปริยายไว้ "
+"โดยกำหนดเป็นโปรแกรมที่เรียกใช้ได้"
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
-msgstr "ไม่สามารถเรียกใช้คำสั่ง: %s\nกรุณาตรวจดูคำสั่งว่าเป็นคำสั่งที่ถูกต้องหรือไม่"
+msgstr ""
+"ไม่สามารถเรียกใช้คำสั่ง: %s\n"
+"กรุณาตรวจดูคำสั่งว่าเป็นคำสั่งที่ถูกต้องหรือไม่"
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1057,7 +1091,7 @@ msgstr "ไม่สามารถเรียกคืนค่าตั้ง
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "จอแสดงผลจะคืนค่าสู่ค่าตั้งก่อนหน้านี้ภายใน %d วินาที"
+msgstr[0] ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1084,39 +1118,39 @@ msgstr "ไม่สามารถปรับแสดงข้อมูลข
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "จะพยายามเปลี่ยนค่าตั้งของจอภาพต่อไป"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1889
+#: ../plugins/xrandr/msd-xrandr-manager.c:1885
 msgid "Rotation not supported"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1945
+#: ../plugins/xrandr/msd-xrandr-manager.c:1941
 msgid "Could not save monitor configuration"
 msgstr "ไม่สามารถบันทึกค่าตั้งของจอภาพ"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1963
+#: ../plugins/xrandr/msd-xrandr-manager.c:1959
 msgid "Normal"
 msgstr "ปกติ"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1964
+#: ../plugins/xrandr/msd-xrandr-manager.c:1960
 msgid "Left"
 msgstr "ซ้าย"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1965
+#: ../plugins/xrandr/msd-xrandr-manager.c:1961
 msgid "Right"
 msgstr "ขวา"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1966
+#: ../plugins/xrandr/msd-xrandr-manager.c:1962
 msgid "Upside Down"
 msgstr "กลับหัว"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2088
+#: ../plugins/xrandr/msd-xrandr-manager.c:2084
 msgid "_Configure Display Settings…"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2141
+#: ../plugins/xrandr/msd-xrandr-manager.c:2137
 msgid "Configure display settings"
 msgstr "ตั้งค่าหน้าจอ"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2201
+#: ../plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Could not apply the stored configuration for monitors"
 msgstr "ไม่สามารถเริ่มใช้ค่าตั้งของจอภาพที่บันทึกไว้"
 
