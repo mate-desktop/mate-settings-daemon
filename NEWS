@@ -1,3 +1,10 @@
+### mate-settings-daemon 1.20.2
+
+  * Translations update
+  * bump mate-desktop requirement
+  * Make setting QT_SCALE_FACTOR optional.
+  * Support background fallback on HiDPI
+
 ### mate-settings-daemon 1.20.1
 
   * Prevent media-keys bindings from swallowing modifier keys
