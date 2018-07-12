@@ -387,7 +387,7 @@ egg_accelerator_parse_virtual (const gchar            *accelerator,
 	      GdkKeymapKey *keys;
 	      gint n_keys, i, j;
 
-	      if (!gdk_keymap_get_entries_for_keyval (gdk_keymap_get_default(), keyval, &keys, &n_keys)) {
+	      if (!gdk_keymap_get_entries_for_keyval (gdk_keymap_get_for_display (gdk_display_get_default ()), keyval, &keys, &n_keys)) {
  	 	bad_keyval = TRUE;
 	      } else {
 		*accelerator_codes = g_new0 (guint, n_keys + 1);
@@ -647,7 +647,7 @@ egg_keymap_get_modmap (GdkKeymap *keymap)
   EggModmap *modmap;
 
   if (keymap == NULL)
-    keymap = gdk_keymap_get_default ();
+    keymap = gdk_keymap_get_for_display (gdk_display_get_default ());
 
   /* This is all a hack, much simpler when we can just
    * modify GDK directly.
