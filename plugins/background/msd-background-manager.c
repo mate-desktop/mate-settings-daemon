@@ -104,6 +104,7 @@ caja_is_drawing_bg (MsdBackgroundManager *manager)
 	int            format;
 	unsigned long  nitems, after;
 	unsigned char *data;
+	GdkDisplay    *gdk_display;
 	gboolean       running = FALSE;
 
 	if (!manager->priv->caja_can_draw)
@@ -129,14 +130,15 @@ caja_is_drawing_bg (MsdBackgroundManager *manager)
 	if (wmclass_prop == None)
 		return FALSE;
 
-	gdk_error_trap_push();
+	gdk_display = gdk_display_get_default ();
+	gdk_x11_display_error_trap_push (gdk_display);
 
 	XGetWindowProperty (display, caja_window, wmclass_prop, 0, 20, False,
 			    XA_STRING, &type, &format, &nitems, &after, &data);
 
 	XSync (display, False);
 
-	if (gdk_error_trap_pop() == BadWindow || data == NULL)
+	if (gdk_x11_display_error_trap_pop (gdk_display) == BadWindow || data == NULL)
 		return FALSE;
 
 	/* See: caja_desktop_window_new(), in src/caja-desktop-window.c */
