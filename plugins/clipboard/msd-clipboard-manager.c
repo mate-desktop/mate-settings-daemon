@@ -130,6 +130,7 @@ send_selection_notify (MsdClipboardManager *manager,
                        Bool                 success)
 {
         XSelectionEvent notify;
+        GdkDisplay     *display;
 
         notify.type = SelectionNotify;
         notify.serial = 0;
@@ -141,7 +142,8 @@ send_selection_notify (MsdClipboardManager *manager,
         notify.property = success ? manager->priv->property : None;
         notify.time = manager->priv->time;
 
-        gdk_error_trap_push ();
+        display = gdk_display_get_default ();
+        gdk_x11_display_error_trap_push (display);
 
         XSendEvent (manager->priv->display,
                     manager->priv->requestor,
@@ -150,7 +152,7 @@ send_selection_notify (MsdClipboardManager *manager,
                     (XEvent *)&notify);
         XSync (manager->priv->display, False);
 
-        gdk_error_trap_pop_ignored ();
+        gdk_x11_display_error_trap_pop_ignored (display);
 }
 
 static void
@@ -159,6 +161,7 @@ finish_selection_request (MsdClipboardManager *manager,
                           Bool                 success)
 {
         XSelectionEvent notify;
+        GdkDisplay     *display;
 
         notify.type = SelectionNotify;
         notify.serial = 0;
@@ -170,14 +173,15 @@ finish_selection_request (MsdClipboardManager *manager,
         notify.property = success ? xev->xselectionrequest.property : None;
         notify.time = xev->xselectionrequest.time;
 
-        gdk_error_trap_push ();
+        display = gdk_display_get_default ();
+        gdk_x11_display_error_trap_push (display);
 
         XSendEvent (xev->xselectionrequest.display,
                     xev->xselectionrequest.requestor,
                     False, NoEventMask, (XEvent *) &notify);
         XSync (manager->priv->display, False);
 
-        gdk_error_trap_pop_ignored ();
+        gdk_x11_display_error_trap_pop_ignored (display);
 }
 
 static int
@@ -399,11 +403,14 @@ static void
 convert_clipboard_manager (MsdClipboardManager *manager,
                            XEvent              *xev)
 {
+        GdkDisplay    *display;
         Atom          type = None;
         int           format;
         unsigned long nitems;
         unsigned long remaining;
         Atom         *targets = NULL;
+
+        display = gdk_display_get_default ();
 
         if (xev->xselectionrequest.target == XA_SAVE_TARGETS) {
                 if (manager->priv->requestor != None || manager->priv->contents != NULL) {
@@ -412,7 +419,7 @@ convert_clipboard_manager (MsdClipboardManager *manager,
                          */
                         finish_selection_request (manager, xev, False);
                 } else {
-                        gdk_error_trap_push ();
+                        gdk_x11_display_error_trap_push (display);
 
                         clipboard_manager_watch_cb (manager,
                                                     xev->xselectionrequest.requestor,
@@ -424,10 +431,10 @@ convert_clipboard_manager (MsdClipboardManager *manager,
                                       StructureNotifyMask);
                         XSync (manager->priv->display, False);
 
-                        if (gdk_error_trap_pop () != Success)
+                        if (gdk_x11_display_error_trap_pop (display) != Success)
                                 return;
 
-                        gdk_error_trap_push ();
+                        gdk_x11_display_error_trap_push (display);
 
                         if (xev->xselectionrequest.property != None) {
                                 XGetWindowProperty (manager->priv->display,
@@ -437,7 +444,7 @@ convert_clipboard_manager (MsdClipboardManager *manager,
                                                     &type, &format, &nitems, &remaining,
                                                     (unsigned char **) &targets);
 
-                                if (gdk_error_trap_pop () != Success) {
+                                if (gdk_x11_display_error_trap_pop (display) != Success) {
                                         if (targets)
                                                 XFree (targets);
 
@@ -487,12 +494,15 @@ static void
 convert_clipboard_target (IncrConversion      *rdata,
                           MsdClipboardManager *manager)
 {
+        GdkDisplay       *display;
         TargetData       *tdata;
         Atom             *targets;
         int               n_targets;
         List             *list;
         unsigned long     items;
         XWindowAttributes atts;
+
+        display = gdk_display_get_default ();
 
         if (rdata->target == XA_TARGETS) {
                 n_targets = list_length (manager->priv->contents) + 2;
@@ -540,7 +550,7 @@ convert_clipboard_target (IncrConversion      *rdata,
                         /* start incremental transfer */
                         rdata->offset = 0;
 
-                        gdk_error_trap_push ();
+                        gdk_x11_display_error_trap_push (display);
 
                         XGetWindowAttributes (manager->priv->display, rdata->requestor, &atts);
                         XSelectInput (manager->priv->display, rdata->requestor,
@@ -553,7 +563,7 @@ convert_clipboard_target (IncrConversion      *rdata,
 
                         XSync (manager->priv->display, False);
 
-                        gdk_error_trap_pop_ignored ();
+                        gdk_x11_display_error_trap_pop_ignored (display);
                 }
         }
 }
