@@ -242,6 +242,7 @@ apply_settings (GSettings          *settings,
         int              bell_pitch;
         int              bell_duration;
         char            *volume_string;
+        GdkDisplay      *display;
 #ifdef HAVE_X11_EXTENSIONS_XKB_H
         gboolean         rnumlock;
 #endif /* HAVE_X11_EXTENSIONS_XKB_H */
@@ -258,11 +259,12 @@ apply_settings (GSettings          *settings,
         bell_volume   = (volume_string && !strcmp (volume_string, "on")) ? 50 : 0;
         g_free (volume_string);
 
-        gdk_error_trap_push ();
+        display = gdk_display_get_default ();
+        gdk_x11_display_error_trap_push (display);
         if (repeat) {
                 gboolean rate_set = FALSE;
 
-                XAutoRepeatOn (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()));
+                XAutoRepeatOn (GDK_DISPLAY_XDISPLAY (display));
                 /* Use XKB in preference */
 #ifdef HAVE_X11_EXTENSIONS_XKB_H
                 rate_set = xkb_set_keyboard_autorepeat_rate (delay, rate);
@@ -275,7 +277,7 @@ apply_settings (GSettings          *settings,
                         g_warning ("Neither XKeyboard not Xfree86's keyboard extensions are available,\n"
                                    "no way to support keyboard autorepeat rate settings");
         } else {
-                XAutoRepeatOff (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()));
+                XAutoRepeatOff (GDK_DISPLAY_XDISPLAY (display));
         }
 
         /* as percentage from 0..100 inclusive */
@@ -302,8 +304,8 @@ apply_settings (GSettings          *settings,
         }
 #endif /* HAVE_X11_EXTENSIONS_XKB_H */
 
-        XSync (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), FALSE);
-        gdk_error_trap_pop_ignored ();
+        XSync (GDK_DISPLAY_XDISPLAY (display), FALSE);
+        gdk_x11_display_error_trap_pop_ignored (display);
 }
 
 void
