@@ -128,6 +128,7 @@ static void
 set_devicepresence_handler (MsdA11yKeyboardManager *manager)
 {
         Display *display;
+        GdkDisplay *gdk_display;
         XEventClass class_presence;
         G_GNUC_UNUSED int xi_presence;
 
@@ -136,7 +137,9 @@ set_devicepresence_handler (MsdA11yKeyboardManager *manager)
 
         display = gdk_x11_get_default_xdisplay ();
 
-        gdk_error_trap_push ();
+        gdk_display = gdk_display_get_default ();
+
+        gdk_x11_display_error_trap_push (gdk_display);
         DevicePresence (display, xi_presence, class_presence);
         /* FIXME:
          * Note that this might overwrite other events, see:
@@ -146,8 +149,8 @@ set_devicepresence_handler (MsdA11yKeyboardManager *manager)
                                RootWindow (display, DefaultScreen (display)),
                                &class_presence, 1);
 
-        gdk_flush ();
-        if (!gdk_error_trap_pop ())
+        gdk_display_flush (gdk_display);
+        if (!gdk_x11_display_error_trap_pop (gdk_display))
                 gdk_window_add_filter (NULL, devicepresence_filter, manager);
 }
 
@@ -171,16 +174,19 @@ xkb_enabled (MsdA11yKeyboardManager *manager)
 static XkbDescRec *
 get_xkb_desc_rec (MsdA11yKeyboardManager *manager)
 {
+        GdkDisplay *display;
         XkbDescRec *desc;
         Status      status = Success;
 
-        gdk_error_trap_push ();
-        desc = XkbGetMap (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), XkbAllMapComponentsMask, XkbUseCoreKbd);
+        display = gdk_display_get_default ();
+
+        gdk_x11_display_error_trap_push (display);
+        desc = XkbGetMap (GDK_DISPLAY_XDISPLAY(display), XkbAllMapComponentsMask, XkbUseCoreKbd);
         if (desc != NULL) {
                 desc->ctrls = NULL;
-                status = XkbGetControls (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), XkbAllControlsMask, desc);
+                status = XkbGetControls (GDK_DISPLAY_XDISPLAY(display), XkbAllControlsMask, desc);
         }
-        gdk_error_trap_pop_ignored ();
+        gdk_x11_display_error_trap_pop_ignored (display);
 
         g_return_val_if_fail (desc != NULL, NULL);
         g_return_val_if_fail (desc->ctrls != NULL, NULL);
@@ -260,6 +266,7 @@ set_server_from_settings (MsdA11yKeyboardManager *manager)
 {
         XkbDescRec      *desc;
         gboolean         enable_accessX;
+        GdkDisplay      *display;
 
         mate_settings_profile_start (NULL);
 
@@ -371,8 +378,10 @@ set_server_from_settings (MsdA11yKeyboardManager *manager)
         g_debug ("CHANGE to : 0x%x (2)", desc->ctrls->ax_options);
         */
 
-        gdk_error_trap_push ();
-        XkbSetControls (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
+        display = gdk_display_get_default ();
+
+        gdk_x11_display_error_trap_push (display);
+        XkbSetControls (GDK_DISPLAY_XDISPLAY(display),
                         XkbSlowKeysMask         |
                         XkbBounceKeysMask       |
                         XkbStickyKeysMask       |
@@ -386,8 +395,8 @@ set_server_from_settings (MsdA11yKeyboardManager *manager)
 
         XkbFreeKeyboard (desc, XkbAllComponentsMask, True);
 
-        XSync (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), FALSE);
-        gdk_error_trap_pop_ignored ();
+        XSync (GDK_DISPLAY_XDISPLAY(display), FALSE);
+        gdk_x11_display_error_trap_pop_ignored (display);
 
         mate_settings_profile_end (NULL);
 }
@@ -1043,8 +1052,11 @@ msd_a11y_keyboard_manager_start (MsdA11yKeyboardManager *manager,
 static void
 restore_server_xkb_config (MsdA11yKeyboardManager *manager)
 {
-        gdk_error_trap_push ();
-        XkbSetControls (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
+        GdkDisplay      *display;
+
+        display = gdk_display_get_default ();
+        gdk_x11_display_error_trap_push (display);
+        XkbSetControls (GDK_DISPLAY_XDISPLAY(display),
                         XkbSlowKeysMask         |
                         XkbBounceKeysMask       |
                         XkbStickyKeysMask       |
@@ -1059,8 +1071,8 @@ restore_server_xkb_config (MsdA11yKeyboardManager *manager)
         XkbFreeKeyboard (manager->priv->original_xkb_desc,
                          XkbAllComponentsMask, True);
 
-        XSync (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), FALSE);
-        gdk_error_trap_pop_ignored ();
+        XSync (GDK_DISPLAY_XDISPLAY(display), FALSE);
+        gdk_x11_display_error_trap_pop_ignored (display);
 
         manager->priv->original_xkb_desc = NULL;
 }
