@@ -397,9 +397,9 @@ dialog_show (MsdMediaKeysManager *manager)
         int            screen_h;
         int            x;
         int            y;
-        GdkDisplay *display;
-        GdkDeviceManager *device_manager;
-        GdkDevice *pointer;
+        GdkDisplay    *display;
+        GdkSeat       *seat;
+        GdkDevice     *pointer;
         int            pointer_x;
         int            pointer_y;
         GtkRequisition win_req;
@@ -431,8 +431,8 @@ dialog_show (MsdMediaKeysManager *manager)
 
         pointer_screen = NULL;
         display = gdk_screen_get_display (manager->priv->current_screen);
-        device_manager = gdk_display_get_device_manager (display);
-        pointer = gdk_device_manager_get_client_pointer (device_manager);
+        seat = gdk_display_get_default_seat (display);
+        pointer = gdk_seat_get_pointer (seat);
 
         gdk_device_get_position (pointer,
                                  &pointer_screen,
