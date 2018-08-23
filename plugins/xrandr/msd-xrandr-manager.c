@@ -2539,6 +2539,8 @@ gboolean
 msd_xrandr_manager_start (MsdXrandrManager *manager,
                           GError          **error)
 {
+        GdkDisplay      *display;
+
         g_debug ("Starting xrandr manager");
         mate_settings_profile_start (NULL);
 
@@ -2568,28 +2570,30 @@ msd_xrandr_manager_start (MsdXrandrManager *manager,
                           G_CALLBACK (on_config_changed),
                           manager);
 
+        display = gdk_display_get_default ();
+
         if (manager->priv->switch_video_mode_keycode) {
-                gdk_error_trap_push ();
+                gdk_x11_display_error_trap_push (display);
 
                 XGrabKey (gdk_x11_get_default_xdisplay(),
                           manager->priv->switch_video_mode_keycode, AnyModifier,
                           gdk_x11_get_default_root_xwindow(),
                           True, GrabModeAsync, GrabModeAsync);
 
-                gdk_flush ();
-                gdk_error_trap_pop_ignored ();
+                gdk_display_flush (display);
+                gdk_x11_display_error_trap_pop_ignored (display);
         }
 
         if (manager->priv->rotate_windows_keycode) {
-                gdk_error_trap_push ();
+                gdk_x11_display_error_trap_push (display);
 
                 XGrabKey (gdk_x11_get_default_xdisplay(),
                           manager->priv->rotate_windows_keycode, AnyModifier,
                           gdk_x11_get_default_root_xwindow(),
                           True, GrabModeAsync, GrabModeAsync);
 
-                gdk_flush ();
-                gdk_error_trap_pop_ignored ();
+                gdk_display_flush (display);
+                gdk_x11_display_error_trap_pop_ignored (display);
         }
 
         show_timestamps_dialog (manager, "Startup");
@@ -2617,28 +2621,32 @@ msd_xrandr_manager_start (MsdXrandrManager *manager,
 void
 msd_xrandr_manager_stop (MsdXrandrManager *manager)
 {
+        GdkDisplay      *display;
+
         g_debug ("Stopping xrandr manager");
 
         manager->priv->running = FALSE;
 
+        display = gdk_display_get_default ();
+
         if (manager->priv->switch_video_mode_keycode) {
-                gdk_error_trap_push ();
+                gdk_x11_display_error_trap_push (display);
 
                 XUngrabKey (gdk_x11_get_default_xdisplay(),
                             manager->priv->switch_video_mode_keycode, AnyModifier,
                             gdk_x11_get_default_root_xwindow());
 
-                gdk_error_trap_pop_ignored ();
+                gdk_x11_display_error_trap_pop_ignored (display);
         }
 
         if (manager->priv->rotate_windows_keycode) {
-                gdk_error_trap_push ();
+                gdk_x11_display_error_trap_push (display);
 
                 XUngrabKey (gdk_x11_get_default_xdisplay(),
                             manager->priv->rotate_windows_keycode, AnyModifier,
                             gdk_x11_get_default_root_xwindow());
 
-                gdk_error_trap_pop_ignored ();
+                gdk_x11_display_error_trap_pop_ignored (display);
         }
 
         gdk_window_remove_filter (gdk_get_default_root_window (),
