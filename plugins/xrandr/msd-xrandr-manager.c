@@ -642,16 +642,6 @@ is_laptop (MateRRScreen *screen, MateRROutputInfo *output)
 }
 
 static gboolean
-is_primary (MateRRScreen *screen, MateRROutputInfo *output)
-{
-        MateRROutput *rr_output;
-
-        rr_output = mate_rr_screen_get_output_by_name (screen, mate_rr_output_info_get_name (output));
-        return mate_rr_output_get_is_primary(rr_output);
-}
-
-
-static gboolean
 get_clone_size (MateRRScreen *screen, int *width, int *height)
 {
         MateRRMode **modes = mate_rr_screen_list_clone_modes (screen);
