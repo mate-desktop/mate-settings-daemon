@@ -174,6 +174,7 @@ is_schema (const char *schema)
         GSettingsSchemaSource *source = NULL;
         gchar **non_relocatable = NULL;
         gchar **relocatable = NULL;
+        gboolean in_schema;
 
         source = g_settings_schema_source_get_default ();
         if (!source)
@@ -181,8 +182,14 @@ is_schema (const char *schema)
 
         g_settings_schema_source_list_schemas (source, TRUE, &non_relocatable, &relocatable);
 
-        return (is_item_in_schema (non_relocatable, schema) ||
+        in_schema = (is_item_in_schema (non_relocatable, schema) ||
                 is_item_in_schema (relocatable, schema));
+
+
+        g_strfreev (non_relocatable);
+        g_strfreev (relocatable);
+
+        return in_schema;
 }
 
 static void
