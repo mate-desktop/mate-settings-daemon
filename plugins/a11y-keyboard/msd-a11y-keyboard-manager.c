@@ -359,7 +359,9 @@ set_server_from_settings (MsdA11yKeyboardManager *manager)
                                  manager->priv->settings,
                                  "stickykeys-enable",
                                  XkbStickyKeysMask)) {
-                desc->ctrls->ax_options |= XkbAX_LatchToLockMask;
+                desc->ctrls->ax_options = set_clear (g_settings_get_boolean (manager->priv->settings, "stickykeys-latch-to-lock"),
+                                                     desc->ctrls->ax_options,
+                                                     XkbAccessXFeedbackMask | XkbAX_LatchToLockMask);
                 desc->ctrls->ax_options = set_clear (g_settings_get_boolean (manager->priv->settings, "stickykeys-two-key-off"),
                                                      desc->ctrls->ax_options,
                                                      XkbAccessXFeedbackMask | XkbAX_TwoKeysMask);
@@ -910,6 +912,9 @@ set_settings_from_server (MsdA11yKeyboardManager *manager)
         stickykeys_changed = set_bool (settings,
                                        "stickykeys-enable",
                                        desc->ctrls->enabled_ctrls & XkbStickyKeysMask);
+        changed |= set_bool (settings,
+                             "stickykeys-latch-to-lock",
+                             desc->ctrls->ax_options & XkbAX_LatchToLockMask);
         changed |= set_bool (settings,
                              "stickykeys-two-key-off",
                              desc->ctrls->ax_options & XkbAX_TwoKeysMask);
