@@ -586,6 +586,15 @@ do_eject_action (MsdMediaKeysManager *manager)
 }
 
 static void
+do_touchpad_osd_action (MsdMediaKeysManager *manager, gboolean state)
+{
+        dialog_init (manager);
+        msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
+                                                 state ? "touchpad-enabled" : "touchpad-disabled",
+                                                 FALSE);
+        dialog_show (manager);
+}
+static void
 do_touchpad_action (MsdMediaKeysManager *manager)
 {
         GSettings *settings = g_settings_new (TOUCHPAD_SCHEMA);
@@ -929,6 +938,12 @@ do_action (MsdMediaKeysManager *manager,
         switch (type) {
         case TOUCHPAD_KEY:
                 do_touchpad_action (manager);
+                break;
+        case TOUCHPAD_ON_KEY:
+                do_touchpad_osd_action(manager, TRUE);
+                break;
+        case TOUCHPAD_OFF_KEY:
+                do_touchpad_osd_action(manager, FALSE);
                 break;
         case MUTE_KEY:
         case VOLUME_DOWN_KEY:
