@@ -601,17 +601,11 @@ do_touchpad_action (MsdMediaKeysManager *manager)
         gboolean state = g_settings_get_boolean (settings, TOUCHPAD_ENABLED_KEY);
 
         if (touchpad_is_present () == FALSE) {
-                dialog_init (manager);
-                msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
-                                                         "touchpad-disabled", FALSE);
+                do_touchpad_osd_action (manager, FALSE);
                 return;
         }
 
-        dialog_init (manager);
-        msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
-                                                 (!state) ? "touchpad-enabled" : "touchpad-disabled",
-                                                 FALSE);
-        dialog_show (manager);
+        do_touchpad_osd_action (manager, !state);
 
         g_settings_set_boolean (settings, TOUCHPAD_ENABLED_KEY, !state);
         g_object_unref (settings);
