@@ -95,6 +95,20 @@ update_state (GtkWidget *window)
 
                 gtk_widget_show (window);
                 break;
+	case 8:
+                msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (window),
+                                                         "touchpad-disabled",
+                                                         FALSE);
+
+                gtk_widget_show (window);
+                break;
+        case 9:
+                msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (window),
+                                                         "input-touchpad",
+                                                          FALSE);
+
+                gtk_widget_show (window);
+                break;
         default:
                 gtk_main_quit ();
                 break;
