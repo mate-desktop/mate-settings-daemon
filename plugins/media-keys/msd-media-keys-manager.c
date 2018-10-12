@@ -976,6 +976,12 @@ do_action (MsdMediaKeysManager *manager,
         case EMAIL_KEY:
                 do_url_action (manager, "mailto");
                 break;
+        case CONTROL_CENTER_KEY:
+                if ((cmd = g_find_program_in_path ("mate-control-center")))
+                        execute (manager, "mate-control-center", FALSE, FALSE);
+
+                g_free (cmd);
+                break;
         case SCREENSAVER_KEY:
                 if ((cmd = g_find_program_in_path ("mate-screensaver-command"))) {
                         execute (manager, "mate-screensaver-command --lock", FALSE, FALSE);
