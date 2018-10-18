@@ -83,6 +83,11 @@ struct _MsdMediaKeysManagerPrivate
         GdkScreen        *current_screen;
         GSList           *screens;
 
+        /* RFKill stuff */
+        guint            rfkill_watch_id;
+        GDBusProxy      *rfkill_proxy;
+        GCancellable    *rfkill_cancellable;
+
         GList            *media_players;
 
         DBusGConnection  *connection;
@@ -389,6 +394,18 @@ static void init_kbd(MsdMediaKeysManager* manager)
 }
 
 static void
+ensure_cancellable (GCancellable **cancellable)
+{
+        if (*cancellable == NULL) {
+                *cancellable = g_cancellable_new ();
+                g_object_add_weak_pointer (G_OBJECT (*cancellable),
+                                           (gpointer *)cancellable);
+        } else {
+                g_object_ref (*cancellable);
+        }
+}
+
+static void
 dialog_show (MsdMediaKeysManager *manager)
 {
         int            orig_w;
@@ -594,6 +611,7 @@ do_touchpad_osd_action (MsdMediaKeysManager *manager, gboolean state)
                                                  FALSE);
         dialog_show (manager);
 }
+
 static void
 do_touchpad_action (MsdMediaKeysManager *manager)
 {
@@ -782,6 +800,115 @@ on_context_stream_removed (MateMixerContext    *context,
         }
 }
 #endif /* HAVE_LIBMATEMIXER */
+
+static gboolean
+get_rfkill_property (MsdMediaKeysManager *manager,
+                     const char          *property)
+{
+        GVariant *v;
+        gboolean ret;
+
+        v = g_dbus_proxy_get_cached_property (manager->priv->rfkill_proxy, property);
+        if (!v)
+                return FALSE;
+        ret = g_variant_get_boolean (v);
+        g_variant_unref (v);
+
+        return ret;
+}
+
+typedef struct {
+        MsdMediaKeysManager *manager;
+        char *property;
+        gboolean bluetooth;
+        gboolean target_state;
+} RfkillData;
+
+static void
+set_rfkill_complete (GObject      *object,
+                     GAsyncResult *result,
+                     gpointer      user_data)
+{
+        GError *error = NULL;
+        GVariant *variant;
+        RfkillData *data = user_data;
+
+        variant = g_dbus_proxy_call_finish (G_DBUS_PROXY (object), result, &error);
+
+        if (variant == NULL) {
+                if (!g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
+                        g_warning ("Failed to set '%s' property: %s", data->property, error->message);
+                g_error_free (error);
+                goto out;
+        }
+        g_variant_unref (variant);
+
+        g_debug ("Finished changing rfkill, property %s is now %s",
+                 data->property, data->target_state ? "true" : "false");
+
+        if (data->bluetooth)
+                msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (data->manager->priv->dialog),
+                                                         data->target_state ? "bluetooth-disabled-symbolic"
+                                                         : "bluetooth-active-symbolic",
+                                                        FALSE);
+        else
+                msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (data->manager->priv->dialog),
+                                                        data->target_state ? "airplane-mode-symbolic"
+                                                        : "network-wireless-signal-excellent-symbolic",
+                                                        FALSE);
+        dialog_show (data->manager);
+out:
+        g_free (data->property);
+        g_free (data);
+}
+
+static void
+do_rfkill_action (MsdMediaKeysManager *manager,
+                  gboolean             bluetooth)
+{
+        const char *has_mode, *hw_mode, *mode;
+        gboolean new_state;
+        RfkillData *data;
+
+        dialog_init (manager);
+
+        has_mode = bluetooth ? "BluetoothHasAirplaneMode" : "HasAirplaneMode";
+        hw_mode = bluetooth ? "BluetoothHardwareAirplaneMode" : "HardwareAirplaneMode";
+        mode = bluetooth ? "BluetoothAirplaneMode" : "AirplaneMode";
+
+        if (manager->priv->rfkill_proxy == NULL)
+                return;
+
+        if (get_rfkill_property (manager, has_mode) == FALSE)
+                return;
+
+        if (get_rfkill_property (manager, hw_mode)) {
+                msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
+                                                        "airplane-mode-symbolic",
+                                                        FALSE);
+                dialog_show (manager);
+                return;
+        }
+
+        new_state = !get_rfkill_property (manager, mode);
+        data = g_new0 (RfkillData, 1);
+        data->manager = manager;
+        data->property = g_strdup (mode);
+        data->bluetooth = bluetooth;
+        data->target_state = new_state;
+        g_dbus_proxy_call (manager->priv->rfkill_proxy,
+                           "org.freedesktop.DBus.Properties.Set",
+                           g_variant_new ("(ssv)",
+                                          "org.mate.SettingsDaemon.Rfkill",
+                                          data->property,
+                                          g_variant_new_boolean (new_state)),
+                           G_DBUS_CALL_FLAGS_NONE, -1,
+                           manager->priv->rfkill_cancellable,
+                           set_rfkill_complete, data);
+
+        g_debug ("Setting rfkill property %s to %s",
+                 data->property, new_state ? "true" : "false");
+}
 
 static gint
 find_by_application (gconstpointer a,
@@ -1038,6 +1165,12 @@ do_action (MsdMediaKeysManager *manager,
         case ON_SCREEN_KEYBOARD_KEY:
                 do_on_screen_keyboard_action (manager);
                 break;
+        case RFKILL_KEY:
+                do_rfkill_action (manager, FALSE);
+                break;
+        case BLUETOOTH_RFKILL_KEY:
+                do_rfkill_action (manager, TRUE);
+                break;
         default:
                 g_assert_not_reached ();
         }
@@ -1105,6 +1238,34 @@ acme_filter_events (GdkXEvent           *xevent,
         return GDK_FILTER_CONTINUE;
 }
 
+static void
+on_rfkill_proxy_ready (GObject      *source,
+                       GAsyncResult *result,
+                       gpointer      data)
+{
+        MsdMediaKeysManager *manager = data;
+
+        manager->priv->rfkill_proxy =
+                g_dbus_proxy_new_for_bus_finish (result, NULL);
+}
+
+static void
+rfkill_appeared_cb (GDBusConnection *connection,
+                    const gchar     *name,
+                    const gchar     *name_owner,
+                    gpointer         user_data)
+{
+        MsdMediaKeysManager *manager = user_data;
+
+        g_dbus_proxy_new_for_bus (G_BUS_TYPE_SESSION,
+                                  0, NULL,
+                                  "org.mate.SettingsDaemon.Rfkill",
+                                  "/org/mate/SettingsDaemon/Rfkill",
+                                  "org.mate.SettingsDaemon.Rfkill",
+                                  manager->priv->rfkill_cancellable,
+                                  on_rfkill_proxy_ready, manager);
+}
+
 static gboolean
 start_media_keys_idle_cb (MsdMediaKeysManager *manager)
 {
@@ -1120,6 +1281,8 @@ start_media_keys_idle_cb (MsdMediaKeysManager *manager)
 
         manager->priv->volume_monitor = g_volume_monitor_get ();
         manager->priv->settings = g_settings_new (BINDING_SCHEMA);
+
+        ensure_cancellable (&manager->priv->rfkill_cancellable);
 
         init_screens (manager);
         init_kbd (manager);
@@ -1150,6 +1313,13 @@ start_media_keys_idle_cb (MsdMediaKeysManager *manager)
 
                 mate_settings_profile_end ("gdk_window_add_filter");
         }
+
+        manager->priv->rfkill_watch_id = g_bus_watch_name (G_BUS_TYPE_SESSION,
+                                                           "org.mate.SettingsDaemon.Rfkill",
+                                                           G_BUS_NAME_WATCHER_FLAGS_NONE,
+                                                           rfkill_appeared_cb,
+                                                           NULL,
+                                                           manager, NULL);
 
         mate_settings_profile_end (NULL);
 
@@ -1210,6 +1380,11 @@ msd_media_keys_manager_stop (MsdMediaKeysManager *manager)
                                           manager);
         }
 
+        if (manager->priv->rfkill_watch_id > 0) {
+                g_bus_unwatch_name (manager->priv->rfkill_watch_id);
+                manager->priv->rfkill_watch_id = 0;
+        }
+
         if (priv->settings != NULL) {
                 g_object_unref (priv->settings);
                 priv->settings = NULL;
@@ -1247,6 +1422,11 @@ msd_media_keys_manager_stop (MsdMediaKeysManager *manager)
 
         g_slist_free (priv->screens);
         priv->screens = NULL;
+
+        if (priv->rfkill_cancellable != NULL) {
+                g_cancellable_cancel (priv->rfkill_cancellable);
+                g_clear_object (&priv->rfkill_cancellable);
+        }
 
 #ifdef HAVE_LIBMATEMIXER
         g_clear_object (&priv->stream);
