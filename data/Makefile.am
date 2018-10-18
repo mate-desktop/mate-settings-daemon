@@ -16,6 +16,7 @@ msd_gschemas_in = \
 	org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in \
 	org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in \
 	org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in \
+	org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in \
 	org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in \
 	org.mate.SettingsDaemon.plugins.sound.gschema.xml.in \
 	org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in \
