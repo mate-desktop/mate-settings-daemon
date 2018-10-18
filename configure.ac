@@ -356,6 +356,21 @@ AC_SUBST(POLKIT_CFLAGS)
 AC_SUBST(POLKIT_LIBS)
 
 # ---------------------------------------------------------------------------
+# Rfkill
+# ---------------------------------------------------------------------------
+
+AC_ARG_ENABLE(rfkill,
+              AS_HELP_STRING([--disable-rfkill], [disable rfkill support (default: enabled)]),,
+              enable_rfkill=yes, enabled_rfkill=no)
+
+if test x"$enable_rfkill" != x"no" ; then
+  AC_CHECK_HEADERS([linux/rfkill.h],,
+                   AC_MSG_ERROR([RFKill headers not found but rfkill support requested]))
+fi
+
+AM_CONDITIONAL(BUILD_RFKILL, [test x"$enable_rfkill" = x"yes"])
+
+# ---------------------------------------------------------------------------
 # Enable Profiling
 # ---------------------------------------------------------------------------
 AC_ARG_ENABLE(profiling,
@@ -454,6 +469,7 @@ plugins/keyboard/Makefile
 plugins/media-keys/Makefile
 plugins/mpris/Makefile
 plugins/mouse/Makefile
+plugins/rfkill/Makefile
 plugins/smartcard/Makefile
 plugins/sound/Makefile
 plugins/typing-break/Makefile
@@ -480,6 +496,7 @@ data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml
 data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml
 data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml
 data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml
+data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml
 data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml
 data/org.mate.SettingsDaemon.plugins.sound.gschema.xml
 data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml
@@ -521,6 +538,7 @@ echo "
     Libcanberra support:      ${have_libcanberra}
     Libmatemixer support:     ${have_libmatemixer}
     Smartcard support:        ${have_smartcard_support}
+    RFKill support:           ${enable_rfkill}
 ${NSS_DATABASE:+\
     System nssdb:             ${NSS_DATABASE}
 }\

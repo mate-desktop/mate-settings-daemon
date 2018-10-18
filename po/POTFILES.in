@@ -16,6 +16,7 @@ data/50-accessibility.xml.in
 [type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in
 [type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in
 [type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in
 [type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in
 [type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in
 [type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in
@@ -50,6 +51,7 @@ plugins/xrdb/msd-xrdb-manager.c
 [type: gettext/ini]plugins/xrdb/xrdb.mate-settings-plugin.in
 plugins/xsettings/msd-xsettings-manager.c
 [type: gettext/ini]plugins/xsettings/xsettings.mate-settings-plugin.in
+[type: gettext/ini]plugins/rfkill/rfkill.mate-settings-plugin.in
 plugins/smartcard/msd-smartcard-manager.c
 plugins/smartcard/msd-smartcard.c
 plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in

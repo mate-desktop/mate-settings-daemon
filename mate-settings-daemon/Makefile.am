@@ -59,6 +59,8 @@ api_DATA = 				\
 
 mate_settings_daemon_SOURCES =		\
 	main.c				\
+	mate-settings-bus.c	\
+	mate-settings-bus.h	\
 	mate-settings-manager.c	\
 	mate-settings-manager.h	\
 	mate-settings-plugin.c		\
