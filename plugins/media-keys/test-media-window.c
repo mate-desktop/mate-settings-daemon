@@ -68,41 +68,14 @@ update_state (GtkWidget *window)
 
                 gtk_widget_show (window);
                 break;
-        case 5:
-                msd_media_keys_window_set_volume_level (MSD_MEDIA_KEYS_WINDOW (window),
-                                                        0);
-                msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (window),
-                                                         "gpm-brightness-lcd",
-                                                         TRUE);
-
-                gtk_widget_show (window);
-                break;
-        case 6:
-                msd_media_keys_window_set_volume_level (MSD_MEDIA_KEYS_WINDOW (window),
-                                                        50);
-                msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (window),
-                                                         "gpm-brightness-lcd",
-                                                         TRUE);
-
-                gtk_widget_show (window);
-                break;
-        case 7:
-                msd_media_keys_window_set_volume_level (MSD_MEDIA_KEYS_WINDOW (window),
-                                                        100);
-                msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (window),
-                                                         "gpm-brightness-lcd",
-                                                         TRUE);
-
-                gtk_widget_show (window);
-                break;
-	case 8:
+	case 5:
                 msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (window),
                                                          "touchpad-disabled",
                                                          FALSE);
 
                 gtk_widget_show (window);
                 break;
-        case 9:
+        case 6:
                 msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (window),
                                                          "input-touchpad",
                                                           FALSE);
@@ -154,9 +127,6 @@ main (int    argc,
                 g_error_free (error);
                 exit (1);
         }
-
-        gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),
-                                           DATADIR G_DIR_SEPARATOR_S "mate-power-manager" G_DIR_SEPARATOR_S "icons");
 
         test_window ();
 
