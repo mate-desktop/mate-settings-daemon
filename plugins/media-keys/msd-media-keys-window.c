@@ -38,7 +38,6 @@ struct MsdMediaKeysWindowPrivate
 {
         MsdMediaKeysWindowAction action;
         char                    *icon_name;
-        gboolean                 show_level;
 
         guint                    volume_muted : 1;
         int                      volume_level;
@@ -90,7 +89,7 @@ action_changed (MsdMediaKeysWindow *window)
 
                         break;
                 case MSD_MEDIA_KEYS_WINDOW_ACTION_CUSTOM:
-                        volume_controls_set_visible (window, window->priv->show_level);
+                        volume_controls_set_visible (window, FALSE);
                         window_set_icon_name (window, window->priv->icon_name);
                         break;
                 default:
@@ -148,19 +147,16 @@ msd_media_keys_window_set_action (MsdMediaKeysWindow      *window,
 
 void
 msd_media_keys_window_set_action_custom (MsdMediaKeysWindow      *window,
-                                         const char              *icon_name,
-                                         gboolean                 show_level)
+                                         const char              *icon_name)
 {
         g_return_if_fail (MSD_IS_MEDIA_KEYS_WINDOW (window));
         g_return_if_fail (icon_name != NULL);
 
         if (window->priv->action != MSD_MEDIA_KEYS_WINDOW_ACTION_CUSTOM ||
-            g_strcmp0 (window->priv->icon_name, icon_name) != 0 ||
-            window->priv->show_level != show_level) {
+            g_strcmp0 (window->priv->icon_name, icon_name) != 0) {
                 window->priv->action = MSD_MEDIA_KEYS_WINDOW_ACTION_CUSTOM;
                 g_free (window->priv->icon_name);
                 window->priv->icon_name = g_strdup (icon_name);
-                window->priv->show_level = show_level;
                 action_changed (window);
         } else {
                 msd_osd_window_update_and_hide (MSD_OSD_WINDOW (window));
@@ -578,23 +574,15 @@ draw_action_custom (MsdMediaKeysWindow *window,
         double icon_box_height;
         double icon_box_x0;
         double icon_box_y0;
-        double bright_box_x0;
-        double bright_box_y0;
-        double bright_box_width;
-        double bright_box_height;
         gboolean res;
 
         gtk_window_get_size (GTK_WINDOW (window), &window_width, &window_height);
 
         icon_box_width = round (window_width * 0.65);
         icon_box_height = round (window_height * 0.65);
-        bright_box_width = round (icon_box_width);
-        bright_box_height = round (window_height * 0.05);
 
         icon_box_x0 = (window_width - icon_box_width) / 2;
-        icon_box_y0 = (window_height - icon_box_height - bright_box_height) / 2;
-        bright_box_x0 = round (icon_box_x0);
-        bright_box_y0 = round (icon_box_height + icon_box_y0);
+        icon_box_y0 = (window_height - icon_box_height) / 2;
 
 #if 0
         g_message ("icon box: w=%f h=%f _x0=%f _y0=%f",
@@ -602,11 +590,6 @@ draw_action_custom (MsdMediaKeysWindow *window,
                    icon_box_height,
                    icon_box_x0,
                    icon_box_y0);
-        g_message ("brightness box: w=%f h=%f _x0=%f _y0=%f",
-                   bright_box_width,
-                   bright_box_height,
-                   bright_box_x0,
-                   bright_box_y0);
 #endif
 
         res = render_custom (window,
@@ -618,17 +601,6 @@ draw_action_custom (MsdMediaKeysWindow *window,
                 draw_eject (cr,
                             icon_box_x0, icon_box_y0,
                             icon_box_width, icon_box_height);
-        }
-
-        if (window->priv->show_level != FALSE) {
-                /* draw volume meter */
-                draw_volume_boxes (window,
-                                   cr,
-                                   (double)window->priv->volume_level / 100.0,
-                                   bright_box_x0,
-                                   bright_box_y0,
-                                   bright_box_width,
-                                   bright_box_height);
         }
 }
 

@@ -581,8 +581,7 @@ do_eject_action (MsdMediaKeysManager *manager)
         /* Show the dialogue */
         dialog_init (manager);
         msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
-                                                 "media-eject",
-                                                 FALSE);
+                                                 "media-eject");
         dialog_show (manager);
 
         /* Clean up the drive selection and exit if no suitable
@@ -607,8 +606,7 @@ do_touchpad_osd_action (MsdMediaKeysManager *manager, gboolean state)
 {
         dialog_init (manager);
         msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
-                                                 state ? "input-touchpad" : "touchpad-disabled",
-                                                 FALSE);
+                                                 state ? "input-touchpad" : "touchpad-disabled");
         dialog_show (manager);
 }
 
@@ -849,13 +847,11 @@ set_rfkill_complete (GObject      *object,
         if (data->bluetooth)
                 msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (data->manager->priv->dialog),
                                                          data->target_state ? "bluetooth-disabled-symbolic"
-                                                         : "bluetooth-active-symbolic",
-                                                        FALSE);
+                                                         : "bluetooth-active-symbolic");
         else
                 msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (data->manager->priv->dialog),
                                                         data->target_state ? "airplane-mode-symbolic"
-                                                        : "network-wireless-signal-excellent-symbolic",
-                                                        FALSE);
+                                                        : "network-wireless-signal-excellent-symbolic");
         dialog_show (data->manager);
 out:
         g_free (data->property);
@@ -884,8 +880,7 @@ do_rfkill_action (MsdMediaKeysManager *manager,
 
         if (get_rfkill_property (manager, hw_mode)) {
                 msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
-                                                        "airplane-mode-symbolic",
-                                                        FALSE);
+                                                        "airplane-mode-symbolic");
                 dialog_show (manager);
                 return;
         }

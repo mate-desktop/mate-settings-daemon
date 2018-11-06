@@ -63,8 +63,7 @@ GtkWidget *           msd_media_keys_window_new               (void);
 void                  msd_media_keys_window_set_action        (MsdMediaKeysWindow      *window,
                                                                MsdMediaKeysWindowAction action);
 void                  msd_media_keys_window_set_action_custom (MsdMediaKeysWindow      *window,
-                                                               const char              *icon_name,
-                                                               gboolean                 show_level);
+                                                               const char              *icon_name);
 void                  msd_media_keys_window_set_volume_muted  (MsdMediaKeysWindow      *window,
                                                                gboolean                 muted);
 void                  msd_media_keys_window_set_volume_level  (MsdMediaKeysWindow      *window,
