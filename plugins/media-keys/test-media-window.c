@@ -63,22 +63,19 @@ update_state (GtkWidget *window)
                 break;
         case 4:
                 msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (window),
-                                                         "media-eject",
-                                                         FALSE);
+                                                         "media-eject");
 
                 gtk_widget_show (window);
                 break;
 	case 5:
                 msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (window),
-                                                         "touchpad-disabled",
-                                                         FALSE);
+                                                         "touchpad-disabled");
 
                 gtk_widget_show (window);
                 break;
         case 6:
                 msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (window),
-                                                         "input-touchpad",
-                                                          FALSE);
+                                                         "input-touchpad");
 
                 gtk_widget_show (window);
                 break;
