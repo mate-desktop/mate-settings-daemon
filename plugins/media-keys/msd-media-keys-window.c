@@ -38,12 +38,14 @@ struct MsdMediaKeysWindowPrivate
 {
         MsdMediaKeysWindowAction action;
         char                    *icon_name;
+        char                    *description;
 
         guint                    volume_muted : 1;
         int                      volume_level;
 
         GtkImage                *image;
         GtkWidget               *progress;
+        GtkWidget               *label;
 };
 
 G_DEFINE_TYPE (MsdMediaKeysWindow, msd_media_keys_window, MSD_TYPE_OSD_WINDOW)
@@ -59,6 +61,18 @@ volume_controls_set_visible (MsdMediaKeysWindow *window,
                 gtk_widget_show (window->priv->progress);
         } else {
                 gtk_widget_hide (window->priv->progress);
+        }
+}
+
+static void
+description_label_set_visible (MsdMediaKeysWindow *window,
+                               gboolean            visible)
+{
+        if (visible) {
+                gtk_label_set_text (GTK_LABEL (window->priv->label), window->priv->description);
+                gtk_widget_show (window->priv->label);
+        } else {
+                gtk_widget_hide (window->priv->label);
         }
 }
 
@@ -80,6 +94,7 @@ action_changed (MsdMediaKeysWindow *window)
                 switch (window->priv->action) {
                 case MSD_MEDIA_KEYS_WINDOW_ACTION_VOLUME:
                         volume_controls_set_visible (window, TRUE);
+                        description_label_set_visible (window, FALSE);
 
                         if (window->priv->volume_muted) {
                                 window_set_icon_name (window, "audio-volume-muted");
@@ -90,6 +105,7 @@ action_changed (MsdMediaKeysWindow *window)
                         break;
                 case MSD_MEDIA_KEYS_WINDOW_ACTION_CUSTOM:
                         volume_controls_set_visible (window, FALSE);
+                        description_label_set_visible (window, TRUE);
                         window_set_icon_name (window, window->priv->icon_name);
                         break;
                 default:
@@ -147,16 +163,20 @@ msd_media_keys_window_set_action (MsdMediaKeysWindow      *window,
 
 void
 msd_media_keys_window_set_action_custom (MsdMediaKeysWindow      *window,
-                                         const char              *icon_name)
+                                         const char              *icon_name,
+                                         const char              *description)
 {
         g_return_if_fail (MSD_IS_MEDIA_KEYS_WINDOW (window));
         g_return_if_fail (icon_name != NULL);
 
         if (window->priv->action != MSD_MEDIA_KEYS_WINDOW_ACTION_CUSTOM ||
-            g_strcmp0 (window->priv->icon_name, icon_name) != 0) {
+            g_strcmp0 (window->priv->icon_name, icon_name) != 0 ||
+            g_strcmp0 (window->priv->description, description) != 0) {
                 window->priv->action = MSD_MEDIA_KEYS_WINDOW_ACTION_CUSTOM;
                 g_free (window->priv->icon_name);
                 window->priv->icon_name = g_strdup (icon_name);
+                g_free (window->priv->description);
+                window->priv->description = g_strdup (description);
                 action_changed (window);
         } else {
                 msd_osd_window_update_and_hide (MSD_OSD_WINDOW (window));
@@ -389,6 +409,23 @@ render_speaker (MsdMediaKeysWindow *window,
 }
 
 static void
+draw_description_label (MsdMediaKeysWindow *window,
+                        cairo_t            *cr,
+                        double              _y0,
+                        double              width)
+{
+        cairo_text_extents_t extents;
+
+        cairo_set_source_rgb (cr, 1, 1, 1);
+        cairo_set_font_size (cr, 14);
+
+        /* centered text */
+        cairo_text_extents (cr, window->priv->description, &extents);
+        cairo_move_to (cr, width / 2 - extents.width / 2, _y0);
+        cairo_show_text (cr, window->priv->description);
+}
+
+static void
 draw_volume_boxes (MsdMediaKeysWindow *window,
                    cairo_t            *cr,
                    double              percentage,
@@ -574,15 +611,21 @@ draw_action_custom (MsdMediaKeysWindow *window,
         double icon_box_height;
         double icon_box_x0;
         double icon_box_y0;
+        double label_box_y0;
+        double label_box_width;
+        double label_box_height;
         gboolean res;
 
         gtk_window_get_size (GTK_WINDOW (window), &window_width, &window_height);
 
         icon_box_width = round (window_width * 0.65);
         icon_box_height = round (window_height * 0.65);
+        label_box_width = round (window_width);
+        label_box_height = round (window_height * 0.175);
 
         icon_box_x0 = (window_width - icon_box_width) / 2;
         icon_box_y0 = (window_height - icon_box_height) / 2;
+        label_box_y0 = round (window_height - label_box_height / 2);
 
 #if 0
         g_message ("icon box: w=%f h=%f _x0=%f _y0=%f",
@@ -590,6 +633,10 @@ draw_action_custom (MsdMediaKeysWindow *window,
                    icon_box_height,
                    icon_box_x0,
                    icon_box_y0);
+        g_message ("label box: w=%f h=%f _x0=0.0 _y0=%f",
+                   label_box_width,
+                   label_box_height,
+                   label_box_y0);
 #endif
 
         res = render_custom (window,
@@ -601,6 +648,14 @@ draw_action_custom (MsdMediaKeysWindow *window,
                 draw_eject (cr,
                             icon_box_x0, icon_box_y0,
                             icon_box_width, icon_box_height);
+        }
+
+        if (window->priv->description != NULL) {
+                /* draw description label meter */
+                draw_description_label (window,
+                                        cr,
+                                        label_box_y0,
+                                        label_box_width);
         }
 }
 
@@ -650,6 +705,7 @@ msd_media_keys_window_init (MsdMediaKeysWindow *window)
 
                 window->priv->image = GTK_IMAGE (gtk_builder_get_object (builder, "acme_image"));
                 window->priv->progress = GTK_WIDGET (gtk_builder_get_object (builder, "acme_volume_progressbar"));
+                window->priv->label = GTK_WIDGET (gtk_builder_get_object (builder, "acme_label"));
                 box = GTK_WIDGET (gtk_builder_get_object (builder, "acme_box"));
 
                 if (box != NULL) {
