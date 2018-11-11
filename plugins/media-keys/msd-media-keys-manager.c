@@ -608,7 +608,7 @@ do_touchpad_osd_action (MsdMediaKeysManager *manager, gboolean state)
         dialog_init (manager);
         msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
                                                  state ? "input-touchpad" : "touchpad-disabled",
-                                                 NULL);
+                                                 state ? _("Touchpad enabled") : _("Touchpad disabled"));
         dialog_show (manager);
 }
 
