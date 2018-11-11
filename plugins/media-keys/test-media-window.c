@@ -82,6 +82,34 @@ update_state (GtkWidget *window)
 
                 gtk_widget_show (window);
                 break;
+	case 7:
+                msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (window),
+                                                         "bluetooth-disabled-symbolic",
+                                                         _("Bluetooth disabled"));
+
+                gtk_widget_show (window);
+                break;
+        case 8:
+                msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (window),
+                                                         "bluetooth-active-symbolic",
+                                                         _("Bluetooth enabled"));
+
+                gtk_widget_show (window);
+                break;
+        case 9:
+                msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (window),
+                                                         "airplane-mode-symbolic",
+                                                         _("Airplane mode enabled"));
+
+                gtk_widget_show (window);
+                break;
+        case 10:
+                msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (window),
+                                                         "network-wireless-signal-excellent-symbolic",
+                                                         _("Airplane mode disabled"));
+
+                gtk_widget_show (window);
+                break;
         default:
                 gtk_main_quit ();
                 break;
