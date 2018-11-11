@@ -71,14 +71,14 @@ update_state (GtkWidget *window)
 	case 5:
                 msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (window),
                                                          "touchpad-disabled",
-                                                         NULL);
+                                                         _("Touchpad disabled"));
 
                 gtk_widget_show (window);
                 break;
         case 6:
                 msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (window),
                                                          "input-touchpad",
-                                                         NULL);
+                                                         _("Touchpad enabled"));
 
                 gtk_widget_show (window);
                 break;
