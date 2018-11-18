@@ -2,8 +2,9 @@ plugin_LTLIBRARIES = librfkill.la
 
 librfkill_la_SOURCES = 		\
 	msd-rfkill-plugin.c	\
-	msd-rfkill-manager.h	\
+	msd-rfkill-plugin.h	\
 	msd-rfkill-manager.c	\
+	msd-rfkill-manager.h	\
 	rfkill-glib.c		\
 	rfkill-glib.h		\
 	rfkill.h

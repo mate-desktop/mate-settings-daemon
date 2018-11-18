@@ -41,6 +41,7 @@ plugins/keybindings/msd-keybindings-manager.c
 plugins/keyboard/msd-keyboard-xkb.c
 plugins/media-keys/msd-media-keys-manager.c
 [type: gettext/ini]plugins/media-keys/media-keys.mate-settings-plugin.in
+plugins/media-keys/test-media-window.c
 plugins/mouse/msd-mouse-manager.c
 [type: gettext/ini]plugins/mouse/mouse.mate-settings-plugin.in
 [type: gettext/ini]plugins/mpris/mpris.mate-settings-plugin.in
