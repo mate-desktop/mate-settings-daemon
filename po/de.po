@@ -3,14 +3,22 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Xpistian <xpistianbecker2@web.de>, 2018
+# Franco Della-Monica <franco.della.monica@gmail.com>, 2018
+# nautilusx, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Ettore Atalan <atalanttore@googlemail.com>, 2018
+# Tobias Bannert <tobannert@gmail.com>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-17 15:39+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: nautilusx, 2018\n"
+"POT-Creation-Date: 2018-06-02 16:31+0200\n"
+"PO-Revision-Date: 2018-03-12 08:16+0000\n"
+"Last-Translator: Tobias Bannert <tobannert@gmail.com>, 2018\n"
 "Language-Team: German (https://www.transifex.com/mate/teams/13566/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1197,48 +1205,49 @@ msgstr "_Diese Einstellungen beibehalten"
 msgid "The selected configuration for displays could not be applied"
 msgstr "Die gewählte Bildschirmkonfiguration konnte nicht angewendet werden"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1153
+#: ../plugins/xrandr/msd-xrandr-manager.c:1190
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "Bildschirminformationen konnten nicht aktualisiert werden: %s"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1157
+#: ../plugins/xrandr/msd-xrandr-manager.c:1194
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Es wird trotzdem versucht, die Bildschirmkonfiguration zu ändern."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1885
+#: ../plugins/xrandr/msd-xrandr-manager.c:1950
 msgid "Rotation not supported"
 msgstr "Drehung wird nicht unterstützt"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1941
+#: ../plugins/xrandr/msd-xrandr-manager.c:2015
+#: ../plugins/xrandr/msd-xrandr-manager.c:2047
 msgid "Could not save monitor configuration"
 msgstr "Bildschirmkonfiguration konnte nicht gespeichert werden"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1959
+#: ../plugins/xrandr/msd-xrandr-manager.c:2069
+msgid "Mirroring outputs not supported"
+msgstr "Ausgaben spiegeln wird nicht unterstützt"
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2100
 msgid "Normal"
 msgstr "Normal"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1960
+#: ../plugins/xrandr/msd-xrandr-manager.c:2101
 msgid "Left"
 msgstr "Links"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1961
+#: ../plugins/xrandr/msd-xrandr-manager.c:2102
 msgid "Right"
 msgstr "Rechts"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1962
+#: ../plugins/xrandr/msd-xrandr-manager.c:2103
 msgid "Upside Down"
 msgstr "Kopfüber"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2084
-msgid "_Configure Display Settings…"
-msgstr "_Bildschirmeinstellungen …"
-
-#: ../plugins/xrandr/msd-xrandr-manager.c:2137
+#: ../plugins/xrandr/msd-xrandr-manager.c:2368
 msgid "Configure display settings"
 msgstr "Bildschirmeinstellungen festlegen"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2197
+#: ../plugins/xrandr/msd-xrandr-manager.c:2428
 msgid "Could not apply the stored configuration for monitors"
 msgstr ""
 "Die gespeicherte Bildschirmkonfiguration konnte nicht angewendet werden"

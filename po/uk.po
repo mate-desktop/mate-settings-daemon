@@ -3,14 +3,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# zubr139, 2018
+# Шаповалов Анатолій Романович <elrond.716.smith@gmail.com>, 2018
+# Микола Ткач <znadibnyk@gmail.com>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-17 15:39+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Шаповалов Анатолій Романович <elrond.716.smith@gmail.com>, 2018\n"
+"POT-Creation-Date: 2018-06-02 16:31+0200\n"
+"PO-Revision-Date: 2018-03-12 08:16+0000\n"
+"Last-Translator: Микола Ткач <znadibnyk@gmail.com>, 2018\n"
 "Language-Team: Ukrainian (https://www.transifex.com/mate/teams/13566/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1154,10 +1160,10 @@ msgstr "Не вдається відновити конфігурацію мон
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Конфигурацію моніторів буде відновлено через %d секунду"
+msgstr[1] "Конфигурацію моніторів буде відновлено через %d секунди"
+msgstr[2] "Конфигурацію моніторів буде відновлено через %d секунд"
+msgstr[3] "Конфигурацію моніторів буде відновлено через %d секунд"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1175,48 +1181,49 @@ msgstr "_Застосувати поточну конфігурацію"
 msgid "The selected configuration for displays could not be applied"
 msgstr "Не вдається застосувати обрану конфігурацію моніторів"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1153
+#: ../plugins/xrandr/msd-xrandr-manager.c:1190
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "Не вдається оновити інформацію про екран: %s"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1157
+#: ../plugins/xrandr/msd-xrandr-manager.c:1194
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Конфігурація моніторів застосовується примусово."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1885
+#: ../plugins/xrandr/msd-xrandr-manager.c:1950
 msgid "Rotation not supported"
 msgstr "Поворот екрану не підтримується"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1941
+#: ../plugins/xrandr/msd-xrandr-manager.c:2015
+#: ../plugins/xrandr/msd-xrandr-manager.c:2047
 msgid "Could not save monitor configuration"
 msgstr "Не вдається зберегти конфігурацію моніторів"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1959
+#: ../plugins/xrandr/msd-xrandr-manager.c:2069
+msgid "Mirroring outputs not supported"
+msgstr "Дзеркалювання виходів не підтримується"
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2100
 msgid "Normal"
 msgstr "Початковий"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1960
+#: ../plugins/xrandr/msd-xrandr-manager.c:2101
 msgid "Left"
 msgstr "Лівий"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1961
+#: ../plugins/xrandr/msd-xrandr-manager.c:2102
 msgid "Right"
 msgstr "Правий"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1962
+#: ../plugins/xrandr/msd-xrandr-manager.c:2103
 msgid "Upside Down"
 msgstr "Догоридриґа"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2084
-msgid "_Configure Display Settings…"
-msgstr "_Налаштувати параметри дисплею…"
-
-#: ../plugins/xrandr/msd-xrandr-manager.c:2137
+#: ../plugins/xrandr/msd-xrandr-manager.c:2368
 msgid "Configure display settings"
 msgstr "Налаштувати параметри екрану"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2197
+#: ../plugins/xrandr/msd-xrandr-manager.c:2428
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Не вдається застосувати збережену конфігурацію моніторів"
 

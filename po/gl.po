@@ -3,14 +3,18 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-17 15:39+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
+"POT-Creation-Date: 2018-06-02 16:31+0200\n"
+"PO-Revision-Date: 2018-03-12 08:16+0000\n"
+"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>, 2018\n"
 "Language-Team: Galician (https://www.transifex.com/mate/teams/13566/gl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1195,48 +1199,49 @@ msgstr "_Manter esta configuración"
 msgid "The selected configuration for displays could not be applied"
 msgstr "Non é posíbel aplicar a configuración seleccionada para as pantallas"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1153
+#: ../plugins/xrandr/msd-xrandr-manager.c:1190
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "Non foi posíbel actualizar a información de pantalla: %s"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1157
+#: ../plugins/xrandr/msd-xrandr-manager.c:1194
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Tentando mudar a configuración da pantalla de todas formas."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1885
+#: ../plugins/xrandr/msd-xrandr-manager.c:1950
 msgid "Rotation not supported"
 msgstr "A rotación non está permitida"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1941
+#: ../plugins/xrandr/msd-xrandr-manager.c:2015
+#: ../plugins/xrandr/msd-xrandr-manager.c:2047
 msgid "Could not save monitor configuration"
 msgstr "Non foi posíbel gardar a configuración do monitor"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1959
+#: ../plugins/xrandr/msd-xrandr-manager.c:2069
+msgid "Mirroring outputs not supported"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2100
 msgid "Normal"
 msgstr "Normal"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1960
+#: ../plugins/xrandr/msd-xrandr-manager.c:2101
 msgid "Left"
 msgstr "Esquerda"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1961
+#: ../plugins/xrandr/msd-xrandr-manager.c:2102
 msgid "Right"
 msgstr "Dereita"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1962
+#: ../plugins/xrandr/msd-xrandr-manager.c:2103
 msgid "Upside Down"
 msgstr "Arriba e abaixo"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2084
-msgid "_Configure Display Settings…"
-msgstr "_Configurar as opcións da pantalla…"
-
-#: ../plugins/xrandr/msd-xrandr-manager.c:2137
+#: ../plugins/xrandr/msd-xrandr-manager.c:2368
 msgid "Configure display settings"
 msgstr "Configurar as características da pantalla"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2197
+#: ../plugins/xrandr/msd-xrandr-manager.c:2428
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Non se lle puido aplicar a configuración almacenada aos monitores"
 

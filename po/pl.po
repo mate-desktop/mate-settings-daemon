@@ -3,14 +3,27 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Piotr Strębski <strebski@gmail.com>, 2018
+# Darek Witkowski, 2018
+# Marcin Mikołajczak <me@m4sk.in>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Marcin Kralka <marcink96@gmail.com>, 2018
+# emariusek <wisniowy@g.pl>, 2018
+# Paweł Bandura <gawelx@gmail.com>, 2018
+# Beniamin Pawlus <kupwzywcu@o2.pl>, 2018
+# Lukasz Kaminski <inactive+elpikej@transifex.com>, 2018
+# Piotr Drąg <piotrdrag@gmail.com>, 2018
+# pietrasagh <pietrasagh@gmail.com>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-17 15:39+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Piotr Kowalik <pietrasagh@gmail.com>, 2018\n"
+"POT-Creation-Date: 2018-06-02 16:31+0200\n"
+"PO-Revision-Date: 2018-03-12 08:16+0000\n"
+"Last-Translator: pietrasagh <pietrasagh@gmail.com>, 2018\n"
 "Language-Team: Polish (https://www.transifex.com/mate/teams/13566/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1168,7 +1181,7 @@ msgstr "Nie można odtworzyć konfiguracji ekranu z kopii zapasowej"
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Poprzednie ustawienia zostaną przywrócone w ciągu %d sekundzie"
+msgstr[0] "Poprzednie ustawienia zostaną przywrócone w ciągu %d sekundy"
 msgstr[1] "Poprzednie ustawienia zostaną przywrócone w ciągu %d sekund"
 msgstr[2] "Poprzednie ustawienia zostaną przywrócone w ciągu %d sekund"
 msgstr[3] "Poprzednie ustawienia zostaną przywrócone w ciągu %d sekund"
@@ -1189,48 +1202,49 @@ msgstr "_Zachowaj konfigurację"
 msgid "The selected configuration for displays could not be applied"
 msgstr "Wybrana konfiguracja ekranów nie mogła zostać zastosowana"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1153
+#: ../plugins/xrandr/msd-xrandr-manager.c:1190
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "Nie można odświeżyć informacji o ekranie: %s"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1157
+#: ../plugins/xrandr/msd-xrandr-manager.c:1194
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Mimo to zostanie podjęta próba przełączenia konfiguracji monitora."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1885
+#: ../plugins/xrandr/msd-xrandr-manager.c:1950
 msgid "Rotation not supported"
 msgstr "Brak obsługi obracania"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1941
+#: ../plugins/xrandr/msd-xrandr-manager.c:2015
+#: ../plugins/xrandr/msd-xrandr-manager.c:2047
 msgid "Could not save monitor configuration"
 msgstr "Nie można zapisać konfiguracji monitora"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1959
+#: ../plugins/xrandr/msd-xrandr-manager.c:2069
+msgid "Mirroring outputs not supported"
+msgstr "Kopie lustrzane wyjść nie wspierane"
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2100
 msgid "Normal"
 msgstr "Zwykły"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1960
+#: ../plugins/xrandr/msd-xrandr-manager.c:2101
 msgid "Left"
 msgstr "Lewo"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1961
+#: ../plugins/xrandr/msd-xrandr-manager.c:2102
 msgid "Right"
 msgstr "Prawo"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1962
+#: ../plugins/xrandr/msd-xrandr-manager.c:2103
 msgid "Upside Down"
 msgstr "Do góry nogami"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2084
-msgid "_Configure Display Settings…"
-msgstr "_Skonfiguruj ustawienia wyświetlania…"
-
-#: ../plugins/xrandr/msd-xrandr-manager.c:2137
+#: ../plugins/xrandr/msd-xrandr-manager.c:2368
 msgid "Configure display settings"
 msgstr "Konfiguruje ustawienia wyświetlania"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2197
+#: ../plugins/xrandr/msd-xrandr-manager.c:2428
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Nie można zastosować zachowanej konfiguracji dla monitorów"
 

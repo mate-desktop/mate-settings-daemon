@@ -3,14 +3,25 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Petr Šimáček <petr.simacek@gmail.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Ondřej Kolín <ondrej.kolin@gmail.com>, 2018
+# Lukáš Kvídera <lukas.kvidera@seznam.cz>, 2018
+# Michal <sinope@seznam.cz>, 2018
+# Lucas Lommer <drom@kdyne.net>, 2018
+# LiberteCzech <liberte.czech@gmail.com>, 2018
+# Stanislav Kučera <inactive+kacernator@transifex.com>, 2018
+# ToMáš Marný, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-17 15:39+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Stanislav Kučera <inactive+kacernator@transifex.com>, 2018\n"
+"POT-Creation-Date: 2018-06-02 16:31+0200\n"
+"PO-Revision-Date: 2018-03-12 08:16+0000\n"
+"Last-Translator: ToMáš Marný, 2018\n"
 "Language-Team: Czech (https://www.transifex.com/mate/teams/13566/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1177,48 +1188,49 @@ msgstr "Z_achovat toto nastavení"
 msgid "The selected configuration for displays could not be applied"
 msgstr "Vybrané nastavení displejů nemůže být použito"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1153
+#: ../plugins/xrandr/msd-xrandr-manager.c:1190
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "Nelze obnovit informace o obrazovce: %s"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1157
+#: ../plugins/xrandr/msd-xrandr-manager.c:1194
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Přesto probíhá pokus o přepnutí nastavení monitoru."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1885
+#: ../plugins/xrandr/msd-xrandr-manager.c:1950
 msgid "Rotation not supported"
 msgstr "Rotace není podporována"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1941
+#: ../plugins/xrandr/msd-xrandr-manager.c:2015
+#: ../plugins/xrandr/msd-xrandr-manager.c:2047
 msgid "Could not save monitor configuration"
 msgstr "Nelze uložit nastavení monitoru"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1959
+#: ../plugins/xrandr/msd-xrandr-manager.c:2069
+msgid "Mirroring outputs not supported"
+msgstr "Zrcadlení výstupů není podporováno"
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2100
 msgid "Normal"
 msgstr "Normální"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1960
+#: ../plugins/xrandr/msd-xrandr-manager.c:2101
 msgid "Left"
 msgstr "Vlevo"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1961
+#: ../plugins/xrandr/msd-xrandr-manager.c:2102
 msgid "Right"
 msgstr "Vpravo"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1962
+#: ../plugins/xrandr/msd-xrandr-manager.c:2103
 msgid "Upside Down"
 msgstr "Převrátit"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2084
-msgid "_Configure Display Settings…"
-msgstr "_Konfigurovat nastavení displeje…"
-
-#: ../plugins/xrandr/msd-xrandr-manager.c:2137
+#: ../plugins/xrandr/msd-xrandr-manager.c:2368
 msgid "Configure display settings"
 msgstr "Konfigurovat nastavení displeje"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2197
+#: ../plugins/xrandr/msd-xrandr-manager.c:2428
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Nelze použít uložené nastavení monitorů"
 

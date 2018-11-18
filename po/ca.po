@@ -3,14 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Albert Català <casulleres@gmail.com>, 2018
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-17 15:39+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Albert Català <casulleres@gmail.com>, 2018\n"
+"POT-Creation-Date: 2018-06-02 16:31+0200\n"
+"PO-Revision-Date: 2018-03-12 08:16+0000\n"
+"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2018\n"
 "Language-Team: Catalan (https://www.transifex.com/mate/teams/13566/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -226,8 +231,8 @@ msgid ""
 "mouse button 2: middle mouse button 3: right mouse button"
 msgstr ""
 "Seleccioneu l'assignació del botó per a un toc d'un sol dit. Els valors "
-"compatibles són: 1: botó esquerre del ratolí 2: botó mig del ratolí 3: botó "
-"dret del ratolí"
+"compatibles són: 1: botó esquerre del ratolí 2: botó central del ratolí 3: "
+"botó dret del ratolí"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
 msgid "Two finger tap button"
@@ -238,6 +243,9 @@ msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
 msgstr ""
+"Seleccioneu l'assignació del botó per a un toc amb dos dits. Els valors "
+"compatibles són: 1: botó esquerre del ratolí 2: botó central del ratolí 3: "
+"botó dret del ratolí"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
 msgid "Three finger tap button"
@@ -248,6 +256,9 @@ msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
 msgstr ""
+"Seleccioneu l'assignació del botó per a un toc amb tres dits. Els valors "
+"compatibles són: 1: botó esquerre del ratolí 2: botó central del ratolí 3: "
+"botó dret del ratolí"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:26
 msgid "Touchpad button orientation"
@@ -268,6 +279,8 @@ msgid ""
 "Acceleration multiplier for touchpad motion. A value of -1 is the system "
 "default."
 msgstr ""
+"Multiplicador d'acceleració per al moviment del ratolí tàctil. Un valor de "
+"-1 és el predeterminat del sistema."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
 msgid "Motion Threshold"
@@ -278,6 +291,9 @@ msgid ""
 "Distance in pixels the pointer must move before accelerated touchpad motion "
 "is activated. A value of -1 is the system default."
 msgstr ""
+"Distància en píxels que s'ha de moure el punter abans que s'activi el "
+"moviment accelerat del ratolí tàctil. Un valor de -1 és el predeterminat del"
+" sistema."
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
@@ -317,7 +333,7 @@ msgstr "Activació d'aquest connector"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr ""
+msgstr "Si aquest connector podria activar-se o no amb mate-settings-daemon"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:3
@@ -358,6 +374,8 @@ msgstr "Prioritat a utilitzar amb aquest connector."
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
 msgstr ""
+"Prioritat a utilitzar per a aquest connector a la cua d'inici de mate-"
+"settings-daemon"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:5
 msgid "Free percentage notify threshold"
@@ -368,6 +386,9 @@ msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
 msgstr ""
+"El llindar del percentatge d'espai lliure per a l'avís inicial d'espai de "
+"disc baix. Si el percentatge d'espai lliure baixa per sota d'aquest, es "
+"mostrarà un avís."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
 msgid "Subsequent free percentage notify threshold"
@@ -378,6 +399,8 @@ msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
 msgstr ""
+"Especifiqueu el percentatge que s'hauria de reduir l'espai de disc lliure "
+"abans d'emetre un avís subseqüent."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:9
 msgid "Free space no notify threshold"
@@ -388,6 +411,8 @@ msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
 msgstr ""
+"Especifiqueu una quantitat en GB. Si la quantitat d'espai lliure és més gran"
+" que aquest valor, no es mostrarà cap avís."
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:11
 msgid "Minimum notify period for repeated warnings"
@@ -417,7 +442,7 @@ msgstr "Mostra la notificació OSD"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:4
 msgid "Whether an OSD notification is shown to notify about changes"
-msgstr ""
+msgstr "Si es mostra una notificació OSD per notificar sobre els canvis"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:7
 msgid "Volume step"
@@ -603,7 +628,7 @@ msgstr "Vinculació per mostrar el teclat a la pantalla."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:5
 msgid "Show Displays in Notification Area"
-msgstr "Mostra les pantalles a l'àrea de notificació"
+msgstr "Mostra les pantalles a l'àrea de notificacions"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:6
 msgid ""
@@ -829,7 +854,7 @@ msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
-msgstr "_Ignora les pressions duplicades de les tecles (tecles de rebot)"
+msgstr "_Ignora les pressions de tecles duplicades (tecles de rebot)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "Press and _hold keys to accept them (Slow Keys)"
@@ -1125,7 +1150,9 @@ msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
 msgstr[0] ""
+"La pantalla es restablirà a l'anterior configuració d'aquí %d segon"
 msgstr[1] ""
+"La pantalla es restablirà a l'anterior configuració d'aquí %d segons"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
@@ -1143,49 +1170,50 @@ msgstr "_Mantén aquesta configuració"
 msgid "The selected configuration for displays could not be applied"
 msgstr "No s'ha pogut aplicar la configuració seleccionada per a pantalles"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1153
+#: ../plugins/xrandr/msd-xrandr-manager.c:1190
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "No s'ha pogut refrescar la informació de la pantalla: %s"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1157
+#: ../plugins/xrandr/msd-xrandr-manager.c:1194
 msgid "Trying to switch the monitor configuration anyway."
 msgstr ""
 "S'està intentant commutar la configuració del monitor de totes maneres."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1885
+#: ../plugins/xrandr/msd-xrandr-manager.c:1950
 msgid "Rotation not supported"
 msgstr "No és compatible amb la rotació"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1941
+#: ../plugins/xrandr/msd-xrandr-manager.c:2015
+#: ../plugins/xrandr/msd-xrandr-manager.c:2047
 msgid "Could not save monitor configuration"
 msgstr "No s'ha pogut desar la configuració del monitor"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1959
+#: ../plugins/xrandr/msd-xrandr-manager.c:2069
+msgid "Mirroring outputs not supported"
+msgstr "No és compatible amb la replicació de la sortida"
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2100
 msgid "Normal"
 msgstr "Normal"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1960
+#: ../plugins/xrandr/msd-xrandr-manager.c:2101
 msgid "Left"
 msgstr "Esquerre"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1961
+#: ../plugins/xrandr/msd-xrandr-manager.c:2102
 msgid "Right"
 msgstr "Dret"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1962
+#: ../plugins/xrandr/msd-xrandr-manager.c:2103
 msgid "Upside Down"
 msgstr "De cap per avall"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2084
-msgid "_Configure Display Settings…"
-msgstr "_Configura els ajusts de la pantalla…"
-
-#: ../plugins/xrandr/msd-xrandr-manager.c:2137
+#: ../plugins/xrandr/msd-xrandr-manager.c:2368
 msgid "Configure display settings"
 msgstr "Configura els ajusts de la pantalla"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2197
+#: ../plugins/xrandr/msd-xrandr-manager.c:2428
 msgid "Could not apply the stored configuration for monitors"
 msgstr "No s'ha pogut aplicar la configuració emmagatzemada per als monitors"
 
@@ -1220,12 +1248,12 @@ msgstr "camí al controlador de targeta intel·ligent PKCS #11"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:496
 msgid "received error or hang up from event source"
-msgstr ""
+msgstr "ha rebut un error o tall des de l'origen de l'esdeveniment"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:585
 #, c-format
 msgid "NSS security system could not be initialized"
-msgstr ""
+msgstr "No s'ha pogut inicialitzar el sistema de seguretat NSS"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:654
 #, c-format
@@ -1257,15 +1285,15 @@ msgstr "Id. sòcol"
 
 #: ../plugins/smartcard/msd-smartcard.c:155
 msgid "The slot the card is in"
-msgstr ""
+msgstr "La ranura on està la targeta"
 
 #: ../plugins/smartcard/msd-smartcard.c:161
 msgid "Slot Series"
-msgstr ""
+msgstr "Sèrie de ranures"
 
 #: ../plugins/smartcard/msd-smartcard.c:162
 msgid "per-slot card identifier"
-msgstr ""
+msgstr "identificador de targeta per ranura"
 
 #: ../plugins/smartcard/msd-smartcard.c:168
 #: ../plugins/smartcard/msd-smartcard.c:169
