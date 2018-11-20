@@ -636,6 +636,9 @@ update_dialog (MsdMediaKeysManager *manager,
                gboolean             muted,
                gboolean             sound_changed)
 {
+        if (muted)
+                volume = 0.0;
+
         dialog_init (manager);
 
         msd_media_keys_window_set_volume_muted (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
