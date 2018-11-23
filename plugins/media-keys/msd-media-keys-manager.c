@@ -918,6 +918,27 @@ do_rfkill_action (MsdMediaKeysManager *manager,
                  data->property, new_state ? "true" : "false");
 }
 
+static void
+do_display_osd_action (MsdMediaKeysManager *manager)
+{
+        GdkDisplay *display;
+        int         n_monitors;
+
+        display = gdk_display_get_default ();
+        n_monitors = gdk_display_get_n_monitors (display);
+
+        dialog_init (manager);
+        if (n_monitors > 1)
+                msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
+                                                         "video-joined-displays-symbolic",
+                                                         _("Changing Screen Layout"));
+        else
+                msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
+                                                         "video-single-display-symbolic",
+                                                         _("No External Display"));
+        dialog_show (manager);
+}
+
 static gint
 find_by_application (gconstpointer a,
                      gconstpointer b)
@@ -1178,6 +1199,9 @@ do_action (MsdMediaKeysManager *manager,
                 break;
         case BLUETOOTH_RFKILL_KEY:
                 do_rfkill_action (manager, TRUE);
+                break;
+        case DISPLAY_KEY:
+                do_display_osd_action (manager);
                 break;
         default:
                 g_assert_not_reached ();
