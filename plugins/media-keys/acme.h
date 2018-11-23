@@ -58,6 +58,7 @@ enum {
         LOGOUT_KEY,
         RFKILL_KEY,
         BLUETOOTH_RFKILL_KEY,
+        DISPLAY_KEY,
         HANDLED_KEYS,
 };
 
@@ -99,7 +100,8 @@ static struct {
         { ON_SCREEN_KEYBOARD_KEY, "on-screen-keyboard", NULL, NULL },
         { LOGOUT_KEY, "logout", NULL, NULL },
         { RFKILL_KEY, NULL, "XF86WLAN", NULL },
-        { BLUETOOTH_RFKILL_KEY, NULL, "XF86Bluetooth", NULL }
+        { BLUETOOTH_RFKILL_KEY, NULL, "XF86Bluetooth", NULL },
+        { DISPLAY_KEY, NULL, "XF86Display", NULL }
 };
 
 #endif /* __ACME_H__ */
