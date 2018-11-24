@@ -110,6 +110,20 @@ update_state (GtkWidget *window)
 
                 gtk_widget_show (window);
                 break;
+        case 11:
+                msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (window),
+                                                         "video-single-display-symbolic",
+                                                         _("No External Display"));
+
+                gtk_widget_show (window);
+                break;
+        case 12:
+                msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (window),
+                                                         "video-joined-displays-symbolic",
+                                                         _("Changing Screen Layout"));
+
+                gtk_widget_show (window);
+                break;
         default:
                 gtk_main_quit ();
                 break;
