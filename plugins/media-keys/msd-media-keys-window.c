@@ -490,9 +490,9 @@ draw_action_volume (MsdMediaKeysWindow *window,
         volume_box_height = round (window_height * 0.05);
 
         icon_box_x0 = (window_width - icon_box_width) / 2;
-        icon_box_y0 = (window_height - icon_box_height - volume_box_height) / 2;
+        icon_box_y0 = (window_height - icon_box_height) / 2;
         volume_box_x0 = round (icon_box_x0);
-        volume_box_y0 = round (icon_box_height + icon_box_y0);
+        volume_box_y0 = round (window_height - icon_box_y0 / 2 - volume_box_height);
 
 #if 0
         g_message ("icon box: w=%f h=%f _x0=%f _y0=%f",
