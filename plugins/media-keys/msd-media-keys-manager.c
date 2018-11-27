@@ -634,7 +634,8 @@ static void
 update_dialog (MsdMediaKeysManager *manager,
                guint                volume,
                gboolean             muted,
-               gboolean             sound_changed)
+               gboolean             sound_changed,
+               gboolean             quiet)
 {
         if (muted)
                 volume = 0.0;
@@ -651,7 +652,7 @@ update_dialog (MsdMediaKeysManager *manager,
         dialog_show (manager);
 
 #ifdef HAVE_LIBCANBERRA
-        if (sound_changed != FALSE && muted == FALSE)
+        if (quiet == FALSE && sound_changed != FALSE && muted == FALSE)
                 ca_gtk_play_for_widget (manager->priv->dialog, 0,
                                         CA_PROP_EVENT_ID, "audio-volume-change",
                                         CA_PROP_EVENT_DESCRIPTION, "Volume changed through key press",
@@ -663,7 +664,9 @@ update_dialog (MsdMediaKeysManager *manager,
 }
 
 static void
-do_sound_action (MsdMediaKeysManager *manager, int type)
+do_sound_action (MsdMediaKeysManager *manager,
+                 int type,
+                 gboolean quiet)
 {
         gboolean muted;
         gboolean muted_last;
@@ -735,7 +738,8 @@ do_sound_action (MsdMediaKeysManager *manager, int type)
         update_dialog (manager,
                        CLAMP (100 * volume / (volume_max - volume_min), 0, 100),
                        muted,
-                       sound_changed);
+                       sound_changed,
+                       quiet);
 }
 
 static void
@@ -1099,7 +1103,22 @@ do_action (MsdMediaKeysManager *manager,
         case VOLUME_DOWN_KEY:
         case VOLUME_UP_KEY:
 #ifdef HAVE_LIBMATEMIXER
-                do_sound_action (manager, type);
+                do_sound_action (manager, type, FALSE);
+#endif
+                break;
+        case MUTE_QUIET_KEY:
+#ifdef HAVE_LIBMATEMIXER
+                do_sound_action (manager, MUTE_KEY, TRUE);
+#endif
+                break;
+        case VOLUME_DOWN_QUIET_KEY:
+#ifdef HAVE_LIBMATEMIXER
+                do_sound_action (manager, VOLUME_DOWN_KEY, TRUE);
+#endif
+                break;
+        case VOLUME_UP_QUIET_KEY:
+#ifdef HAVE_LIBMATEMIXER
+                do_sound_action (manager, VOLUME_UP_KEY, TRUE);
 #endif
                 break;
         case POWER_KEY:
@@ -1250,6 +1269,8 @@ acme_filter_events (GdkXEvent           *xevent,
                         switch (keys[i].key_type) {
                         case VOLUME_DOWN_KEY:
                         case VOLUME_UP_KEY:
+                        case VOLUME_DOWN_QUIET_KEY:
+                        case VOLUME_UP_QUIET_KEY:
                                 /* auto-repeatable keys */
                                 if (xev->type != KeyPress) {
                                         return GDK_FILTER_CONTINUE;
