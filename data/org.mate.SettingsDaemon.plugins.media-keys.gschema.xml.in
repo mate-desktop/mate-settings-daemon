@@ -40,6 +40,21 @@
       <summary>Volume up</summary>
       <description>Binding to raise the system volume.</description>
     </key>
+    <key name="volume-mute-quiet" type="s">
+      <default>'&lt;Alt&gt;XF86AudioMute'</default>
+      <summary>Mute the audio quietly</summary>
+      <description>Binding to mute the system volume quietly.</description>
+    </key>
+    <key name="volume-down-quiet" type="s">
+      <default>'&lt;Alt&gt;XF86AudioLowerVolume'</default>
+      <summary>Turn the volume down quietly</summary>
+      <description>Binding to lower the system volume quietly.</description>
+    </key>
+    <key name="volume-up-quiet" type="s">
+      <default>'&lt;Alt&gt;XF86AudioRaiseVolume'</default>
+      <summary>Turn the volume up quietly</summary>
+      <description>Binding to raise the system volume quietly.</description>
+    </key>
     <key name="power" type="s">
       <default>'&lt;Control&gt;&lt;Alt&gt;Delete'</default>
       <summary>Shut down</summary>
