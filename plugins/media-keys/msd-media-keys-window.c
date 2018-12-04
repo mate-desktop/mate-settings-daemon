@@ -43,6 +43,8 @@ struct MsdMediaKeysWindowPrivate
         char                    *description;
 
         guint                    volume_muted : 1;
+        guint                    mic_muted : 1;
+        guint                    is_mic :1;
         int                      volume_level;
 
         GtkImage                *image;
@@ -98,10 +100,16 @@ action_changed (MsdMediaKeysWindow *window)
                         volume_controls_set_visible (window, TRUE);
                         description_label_set_visible (window, FALSE);
 
-                        if (window->priv->volume_muted) {
-                                window_set_icon_name (window, "audio-volume-muted");
+                        if (window->priv->is_mic) {
+                                if (window->priv->mic_muted)
+                                        window_set_icon_name (window, "microphone-sensitivity-muted");
+                                else
+                                        window_set_icon_name (window, "microphone-sensitivity-high");
                         } else {
-                                window_set_icon_name (window, "audio-volume-high");
+                                if (window->priv->volume_muted)
+                                        window_set_icon_name (window, "audio-volume-muted");
+                                else
+                                        window_set_icon_name (window, "audio-volume-high");
                         }
 
                         break;
@@ -148,6 +156,20 @@ volume_muted_changed (MsdMediaKeysWindow *window)
         }
 }
 
+static void
+mic_muted_changed (MsdMediaKeysWindow *window)
+{
+        msd_osd_window_update_and_hide (MSD_OSD_WINDOW (window));
+
+        if (!msd_osd_window_is_composited (MSD_OSD_WINDOW (window))) {
+                if (window->priv->mic_muted) {
+                        window_set_icon_name (window, "microphone-sensitivity-muted");
+                } else {
+                        window_set_icon_name (window, "microphone-sensitivity-high");
+                }
+        }
+}
+
 void
 msd_media_keys_window_set_action (MsdMediaKeysWindow      *window,
                                   MsdMediaKeysWindowAction action)
@@ -159,6 +181,17 @@ msd_media_keys_window_set_action (MsdMediaKeysWindow      *window,
                 window->priv->action = action;
                 action_changed (window);
         } else {
+                if (window->priv->is_mic) {
+                        if (window->priv->mic_muted)
+                                window_set_icon_name (window, "microphone-sensitivity-muted");
+                        else
+                                window_set_icon_name (window, "microphone-sensitivity-high");
+                } else {
+                        if (window->priv->volume_muted)
+                                window_set_icon_name (window, "audio-volume-muted");
+                        else
+                                window_set_icon_name (window, "audio-volume-high");
+                }
                 msd_osd_window_update_and_hide (MSD_OSD_WINDOW (window));
         }
 }
@@ -195,6 +228,20 @@ msd_media_keys_window_set_volume_muted (MsdMediaKeysWindow *window,
                 window->priv->volume_muted = muted;
                 volume_muted_changed (window);
         }
+        window->priv->is_mic = FALSE;
+}
+
+void
+msd_media_keys_window_set_mic_muted (MsdMediaKeysWindow *window,
+                                     gboolean            muted)
+{
+        g_return_if_fail (MSD_IS_MEDIA_KEYS_WINDOW (window));
+
+        if (window->priv->mic_muted != muted) {
+                window->priv->mic_muted = muted;
+                mic_muted_changed (window);
+        }
+        window->priv->is_mic = TRUE;
 }
 
 void
@@ -379,18 +426,35 @@ render_speaker (MsdMediaKeysWindow *window,
                 "audio-volume-low",
                 "audio-volume-medium",
                 "audio-volume-high",
+                "microphone-sensitivity-muted",
+                "microphone-sensitivity-low",
+                "microphone-sensitivity-medium",
+                "microphone-sensitivity-high",
                 NULL
         };
-
-        if (window->priv->volume_muted) {
-                n = 0;
+        if (!window->priv->is_mic) {
+                if (window->priv->volume_muted) {
+                        n = 0;
+                } else {
+                        /* select volume image */
+                        n = 3 * window->priv->volume_level / 100 + 1;
+                        if (n < 1) {
+                                n = 1;
+                        } else if (n > 3) {
+                                n = 3;
+                        }
+                }
         } else {
-                /* select image */
-                n = 3 * window->priv->volume_level / 100 + 1;
-                if (n < 1) {
-                        n = 1;
-                } else if (n > 3) {
-                        n = 3;
+                if (window->priv->mic_muted) {
+                        n = 4;
+                } else {
+                        /* select microphone image */
+                        n = 3 * window->priv->volume_level / 100 + 5;
+                        if (n < 5) {
+                                n = 5;
+                        } else if (n > 7) {
+                                n = 7;
+                        }
                 }
         }
 
