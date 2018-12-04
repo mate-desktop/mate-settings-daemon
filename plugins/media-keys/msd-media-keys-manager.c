@@ -73,7 +73,9 @@ struct _MsdMediaKeysManagerPrivate
         /* Volume bits */
         MateMixerContext       *context;
         MateMixerStream        *stream;
+        MateMixerStream        *source_stream;
         MateMixerStreamControl *control;
+        MateMixerStreamControl *source_control;
 #endif
         GtkWidget        *dialog;
         GSettings        *settings;
@@ -635,15 +637,21 @@ update_dialog (MsdMediaKeysManager *manager,
                guint                volume,
                gboolean             muted,
                gboolean             sound_changed,
-               gboolean             quiet)
+               gboolean             quiet,
+               gboolean             is_mic)
 {
         if (muted)
                 volume = 0.0;
 
         dialog_init (manager);
 
-        msd_media_keys_window_set_volume_muted (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
-                                                muted);
+        if (is_mic)
+                msd_media_keys_window_set_mic_muted (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
+                                                     muted);
+        else
+                msd_media_keys_window_set_volume_muted (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
+                                                        muted);
+
         msd_media_keys_window_set_volume_level (MSD_MEDIA_KEYS_WINDOW (manager->priv->dialog),
                                                 volume);
 
@@ -652,7 +660,7 @@ update_dialog (MsdMediaKeysManager *manager,
         dialog_show (manager);
 
 #ifdef HAVE_LIBCANBERRA
-        if (quiet == FALSE && sound_changed != FALSE && muted == FALSE)
+        if (quiet == FALSE && sound_changed != FALSE && muted == FALSE && is_mic == FALSE)
                 ca_gtk_play_for_widget (manager->priv->dialog, 0,
                                         CA_PROP_EVENT_ID, "audio-volume-change",
                                         CA_PROP_EVENT_DESCRIPTION, "Volume changed through key press",
@@ -675,14 +683,21 @@ do_sound_action (MsdMediaKeysManager *manager,
         guint    volume_min, volume_max;
         guint    volume_step;
         guint    volume_last;
+        MateMixerStreamControl *control;
 
-        if (manager->priv->control == NULL)
+        gboolean is_input_control =
+                type == MIC_MUTE_KEY ? TRUE : FALSE;
+        if (is_input_control)
+                control = manager->priv->source_control;
+        else
+                control = manager->priv->control;
+        if (control == NULL)
                 return;
 
         /* Theoretically the volume limits might be different for different
          * streams, also the minimum might not always start at 0 */
-        volume_min = mate_mixer_stream_control_get_min_volume (manager->priv->control);
-        volume_max = mate_mixer_stream_control_get_normal_volume (manager->priv->control);
+        volume_min = mate_mixer_stream_control_get_min_volume (control);
+        volume_max = mate_mixer_stream_control_get_normal_volume (control);
 
         volume_step = g_settings_get_int (manager->priv->settings, "volume-step");
         if (volume_step <= 0 ||
@@ -693,12 +708,13 @@ do_sound_action (MsdMediaKeysManager *manager,
         volume_step = (volume_max - volume_min) * volume_step / 100;
 
         volume = volume_last =
-                mate_mixer_stream_control_get_volume (manager->priv->control);
+                mate_mixer_stream_control_get_volume (control);
         muted = muted_last =
-                mate_mixer_stream_control_get_mute (manager->priv->control);
+                mate_mixer_stream_control_get_mute (control);
 
         switch (type) {
         case MUTE_KEY:
+        case MIC_MUTE_KEY:
                 muted = !muted;
                 break;
         case VOLUME_DOWN_KEY:
@@ -723,13 +739,14 @@ do_sound_action (MsdMediaKeysManager *manager,
         }
 
         if (muted != muted_last) {
-                if (mate_mixer_stream_control_set_mute (manager->priv->control, muted))
+                if (mate_mixer_stream_control_set_mute (control, muted))
                         sound_changed = TRUE;
                 else
                         muted = muted_last;
         }
-        if (volume != mate_mixer_stream_control_get_volume (manager->priv->control)) {
-                if (mate_mixer_stream_control_set_volume (manager->priv->control, volume))
+
+        if (volume != mate_mixer_stream_control_get_volume (control)) {
+                if (mate_mixer_stream_control_set_volume (control, volume))
                         sound_changed = TRUE;
                 else
                         volume = volume_last;
@@ -739,7 +756,8 @@ do_sound_action (MsdMediaKeysManager *manager,
                        CLAMP (100 * volume / (volume_max - volume_min), 0, 100),
                        muted,
                        sound_changed,
-                       quiet);
+                       quiet,
+                       is_input_control);
 }
 
 static void
@@ -776,11 +794,44 @@ update_default_output (MsdMediaKeysManager *manager)
 }
 
 static void
+update_default_input (MsdMediaKeysManager *manager)
+{
+        MateMixerStream        *stream;
+        MateMixerStreamControl *control = NULL;
+
+        stream = mate_mixer_context_get_default_input_stream (manager->priv->context);
+        if (stream != NULL)
+                control = mate_mixer_stream_get_default_control (stream);
+
+        if (stream == manager->priv->source_stream)
+                return;
+
+        g_clear_object (&manager->priv->source_stream);
+        g_clear_object (&manager->priv->source_control);
+
+        if (control != NULL) {
+                MateMixerStreamControlFlags flags = mate_mixer_stream_control_get_flags (control);
+
+                /* Do not use the stream if it is not possible to mute it or
+                 * change the volume */
+                if (!(flags & MATE_MIXER_STREAM_CONTROL_MUTE_WRITABLE))
+                        return;
+
+                manager->priv->source_stream  = g_object_ref (stream);
+                manager->priv->source_control = g_object_ref (control);
+                g_debug ("Default input stream updated to %s",
+                         mate_mixer_stream_get_name (stream));
+        } else
+                g_debug ("Default input stream unset");
+}
+
+static void
 on_context_state_notify (MateMixerContext    *context,
                          GParamSpec          *pspec,
                          MsdMediaKeysManager *manager)
 {
         update_default_output (manager);
+        update_default_input (manager);
 }
 
 static void
@@ -789,6 +840,14 @@ on_context_default_output_notify (MateMixerContext    *context,
                                   MsdMediaKeysManager *manager)
 {
         update_default_output (manager);
+}
+
+static void
+on_context_default_input_notify (MateMixerContext    *context,
+                                 GParamSpec          *pspec,
+                                 MsdMediaKeysManager *manager)
+{
+        update_default_input (manager);
 }
 
 static void
@@ -803,6 +862,15 @@ on_context_stream_removed (MateMixerContext    *context,
                 if (stream == manager->priv->stream) {
                         g_clear_object (&manager->priv->stream);
                         g_clear_object (&manager->priv->control);
+                }
+        }
+        if (manager->priv->source_stream != NULL) {
+                MateMixerStream *stream =
+                        mate_mixer_context_get_stream (manager->priv->context, name);
+
+                if (stream == manager->priv->source_stream) {
+                        g_clear_object (&manager->priv->source_stream);
+                        g_clear_object (&manager->priv->source_control);
                 }
         }
 }
@@ -1102,6 +1170,7 @@ do_action (MsdMediaKeysManager *manager,
         case MUTE_KEY:
         case VOLUME_DOWN_KEY:
         case VOLUME_UP_KEY:
+        case MIC_MUTE_KEY:
 #ifdef HAVE_LIBMATEMIXER
                 do_sound_action (manager, type, FALSE);
 #endif
@@ -1399,6 +1468,10 @@ msd_media_keys_manager_start (MsdMediaKeysManager *manager, GError **error)
                                   G_CALLBACK (on_context_default_output_notify),
                                   manager);
                 g_signal_connect (manager->priv->context,
+                                  "notify::default-input-stream",
+                                  G_CALLBACK (on_context_default_input_notify),
+                                  manager);
+                g_signal_connect (manager->priv->context,
                                   "stream-removed",
                                   G_CALLBACK (on_context_stream_removed),
                                   manager);
@@ -1483,7 +1556,9 @@ msd_media_keys_manager_stop (MsdMediaKeysManager *manager)
 
 #ifdef HAVE_LIBMATEMIXER
         g_clear_object (&priv->stream);
+        g_clear_object (&priv->source_stream);
         g_clear_object (&priv->control);
+        g_clear_object (&priv->source_control);
         g_clear_object (&priv->context);
 #endif
 

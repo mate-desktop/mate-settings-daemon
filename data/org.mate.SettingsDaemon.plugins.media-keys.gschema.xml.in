@@ -55,6 +55,11 @@
       <summary>Turn the volume up quietly</summary>
       <description>Binding to raise the system volume quietly.</description>
     </key>
+    <key name="mic-mute" type="s">
+      <default>'XF86AudioMicMute'</default>
+      <summary>Microphone mute/unmute</summary>
+      <description>Binding to mute/unmute the microphone.</description>
+    </key>
     <key name="power" type="s">
       <default>'&lt;Control&gt;&lt;Alt&gt;Delete'</default>
       <summary>Shut down</summary>
