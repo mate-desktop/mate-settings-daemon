@@ -500,6 +500,7 @@ msd_xrdb_manager_start (MsdXrdbManager *manager,
                           manager);
 
         manager->priv->widget = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+        gtk_widget_realize (manager->priv->widget);
 
         mate_settings_profile_end (NULL);
 
