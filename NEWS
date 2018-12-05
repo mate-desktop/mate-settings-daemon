@@ -1,3 +1,19 @@
+### mate-settings-daemon 1.21.2
+
+  * update translations
+  * media-keys: Add microphone mute key support
+  * msd-xrdb-manager: realize the widget
+  * media-keys: Make sound changes quiet with Alt
+  * msd-xrdb-manager.c: avoid deprecated 'gtk_widget_ensure_style'
+  * media-keys: always round the render coordinates for media icons
+  * media-keys: Tweak the OSD's volume bar position
+  * osd-window: make the window smaller
+  * media-keys: Make icon smaller in OSD
+  * media-keys: Use constant for icon size in OSD
+  * media-keys: Add test for display switch OSD icons
+  * media-keys: Add support for display switch OSD
+  * media-keys: Don't show a level when muted
+
 ### mate-settings-daemon 1.21.1
 
   * update translations
