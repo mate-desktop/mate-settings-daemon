@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-02 16:31+0200\n"
+"POT-Creation-Date: 2018-11-18 11:09+0100\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
 "Last-Translator: Joel Barrios <darkshram@gmail.com>, 2018\n"
 "Language-Team: Spanish (https://www.transifex.com/mate/teams/13566/es/)\n"
@@ -34,17 +34,17 @@ msgid "Accessibility"
 msgstr "Accesibilidad"
 
 #: ../data/50-accessibility.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
 msgid "Toggle magnifier"
 msgstr "Conmutar el magnificador"
 
 #: ../data/50-accessibility.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
 msgid "Toggle screen reader"
 msgstr "Conmutar el lector de pantalla"
 
 #: ../data/50-accessibility.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
 msgid "Toggle on-screen keyboard"
 msgstr "Conmutar el teclado en pantalla"
 
@@ -321,6 +321,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:1
@@ -341,6 +342,7 @@ msgstr "Activación de este plugin"
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:2
@@ -361,6 +363,7 @@ msgstr "Si el plugin será activado por  mate-settings-daemon o  no"
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:5
 #: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:3
@@ -381,6 +384,7 @@ msgstr "Prioridad a utilizar para este plugin"
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:6
 #: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:4
@@ -548,95 +552,103 @@ msgid "Binding to launch the email client."
 msgstr "Vínculo para lanzar el cliente de correo-e."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:29
+msgid "Launch settings"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:30
+msgid "Binding to launch MATE settings."
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:31
 msgid "Lock screen"
 msgstr "Bloquear la pantalla"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:30
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
 msgid "Binding to lock the screen."
 msgstr "Vínculo para bloquear la pantalla."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:31
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
 msgid "Launch help browser"
 msgstr "Lanzar el visor de ayuda"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
 msgid "Binding to launch the help browser."
 msgstr "Vínculo para lanzar el visor de ayuda."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
 msgid "Launch calculator"
 msgstr "Lanzar la calculadora"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
 msgid "Binding to launch the calculator."
 msgstr "Vínculo para lanzar la calculadora."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
 msgid "Launch web browser"
 msgstr "Lanzar navegador web"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
 msgid "Binding to launch the web browser."
 msgstr "Vínculo para lanzar el navegador web."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
 msgid "Launch media player"
 msgstr "Lanzar el reproductor multimedia"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
 msgid "Binding to launch the media player."
 msgstr "Vínculo para lanzar el reproductor multimedia."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
 msgid "Play (or play/pause)"
 msgstr "Reproducir (o reproducir/pausar)"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:42
 msgid "Binding to start playback (or toggle play/pause)."
 msgstr ""
 "Vínculo para iniciar la reproducción (o conmutar entre reproducción/pausa)."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
 msgid "Pause playback"
 msgstr "Pausar la resproducción"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:42
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
 msgid "Binding to pause playback."
 msgstr "Vínculo para pausar la reproducción."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
 msgid "Stop playback"
 msgstr "Detener la reproducción"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
 msgid "Binding to stop playback."
 msgstr "Vínculo para parar la reproducción."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
 msgid "Previous track"
 msgstr "Pista anterior"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
 msgid "Binding to skip to previous track."
 msgstr "Vínculo para saltar a la pista anterior."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
 msgid "Next track"
 msgstr "Siguiente pista"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
 msgid "Binding to skip to next track."
 msgstr "Vínculo para saltar a la siguiente pista."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
 msgid "Binding to show the screen magnifier"
 msgstr "Vínculo para mostrar el magnificador de pantalla."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
 msgid "Binding to start the screen reader"
 msgstr "Vínculo para iniciar el lector de pantalla"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
 msgid "Binding to show the on-screen keyboard"
 msgstr "Vínculo para mostrar el teclado en pantalla"
 
@@ -740,23 +752,23 @@ msgstr "Accesibilidad del teclado"
 msgid "Accessibility keyboard plugin"
 msgstr "Complemento de accesibilidad del teclado"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:446
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Ha ocurrido un error al mostrar ayuda: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
 msgid "Do you want to activate Slow Keys?"
 msgstr "¿Desea activar las «Teclas lentas»?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:575
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:639
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "¿Desea desactivar las «Teclas lentas»?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -765,62 +777,62 @@ msgstr ""
 "combinación de teclas para la característica «Teclas lentas», que afecta la "
 "forma en que funciona el teclado."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
 msgid "Don't activate"
 msgstr "No activar"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
 msgid "Don't deactivate"
 msgstr "No desactivar"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
 msgid "Activate"
 msgstr "Activar"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
 msgid "Deactivate"
 msgstr "Desactivar"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
 msgid "Do_n't activate"
 msgstr "_No activar"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
 msgid "Do_n't deactivate"
 msgstr "_No desactivar"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
 msgid "_Activate"
 msgstr "_Activar"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
 msgid "_Deactivate"
 msgstr "_Desactivar"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:668
 msgid "Slow Keys Alert"
 msgstr "Alerta de teclas lentas"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:708
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:774
 msgid "Do you want to activate Sticky Keys?"
 msgstr "¿Quiere activar las «Teclas persistentes»?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "¿Desea desactivar las «Teclas persistentes»?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -829,8 +841,8 @@ msgstr ""
 " la característica «Teclas persistentes», que afecta la manera en que "
 "funciona el teclado."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -840,7 +852,7 @@ msgstr ""
 "veces seguidas. Esto desactiva la característica de «Teclas persistentes», "
 "lo cual afecta a la forma en que funciona su teclado."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:807
 msgid "Sticky Keys Alert"
 msgstr "Alerta de teclas persistentes"
 
@@ -1088,7 +1100,7 @@ msgstr "Prefere_ncias del teclado"
 msgid "Show _Current Layout"
 msgstr "Mostrar distribución _actual"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:184
+#: ../plugins/media-keys/msd-media-keys-manager.c:189
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
@@ -1097,7 +1109,7 @@ msgstr ""
 "predeterminada de la consola esté configurada y apunte a una aplicación "
 "válida."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:224
+#: ../plugins/media-keys/msd-media-keys-manager.c:229
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1105,6 +1117,40 @@ msgid ""
 msgstr ""
 "No se pudo ejecutar la orden: %s\n"
 "Compruebe que es una orden válida."
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:611
+#: ../plugins/media-keys/test-media-window.c:81
+msgid "Touchpad enabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:611
+#: ../plugins/media-keys/test-media-window.c:74
+msgid "Touchpad disabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:852
+#: ../plugins/media-keys/test-media-window.c:88
+msgid "Bluetooth disabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:855
+#: ../plugins/media-keys/test-media-window.c:95
+msgid "Bluetooth enabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:859
+#: ../plugins/media-keys/test-media-window.c:102
+msgid "Airplane mode enabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:862
+#: ../plugins/media-keys/test-media-window.c:109
+msgid "Airplane mode disabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:893
+msgid "Hardware Airplane Mode"
+msgstr ""
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1114,18 +1160,18 @@ msgstr "Teclas multimedia"
 msgid "Media keys plugin"
 msgstr "Complemento de teclas multimedia"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1440
+#: ../plugins/mouse/msd-mouse-manager.c:1490
 msgid "Could not enable mouse accessibility features"
 msgstr "No se pudieron activar las características de accesibilidad del ratón"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1442
+#: ../plugins/mouse/msd-mouse-manager.c:1492
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 "La accesibilidad del ratón requiere que los ajustes finos del ratón estén "
 "instalados en su sistema."
 
-#: ../plugins/mouse/msd-mouse-manager.c:1445
+#: ../plugins/mouse/msd-mouse-manager.c:1495
 msgid "Mouse Preferences"
 msgstr "Preferencias del ratón"
 
@@ -1199,49 +1245,49 @@ msgstr "_Mantener esta configuración"
 msgid "The selected configuration for displays could not be applied"
 msgstr "No se pudo aplicar la configuración seleccionada para las pantallas"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1190
+#: ../plugins/xrandr/msd-xrandr-manager.c:1180
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "No se pudo refrescar la información de la pantalla: %s"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1194
+#: ../plugins/xrandr/msd-xrandr-manager.c:1184
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Intentando cambiar la configuración del monitor de todas formas."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1950
+#: ../plugins/xrandr/msd-xrandr-manager.c:1940
 msgid "Rotation not supported"
 msgstr "La rotación no está soportada"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2015
-#: ../plugins/xrandr/msd-xrandr-manager.c:2047
+#: ../plugins/xrandr/msd-xrandr-manager.c:2005
+#: ../plugins/xrandr/msd-xrandr-manager.c:2037
 msgid "Could not save monitor configuration"
 msgstr "No se pudo guardar la configuración del monitor"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2069
+#: ../plugins/xrandr/msd-xrandr-manager.c:2059
 msgid "Mirroring outputs not supported"
 msgstr "No hay soporte para las salidas de espejo"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2100
+#: ../plugins/xrandr/msd-xrandr-manager.c:2090
 msgid "Normal"
 msgstr "Normal"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2101
+#: ../plugins/xrandr/msd-xrandr-manager.c:2091
 msgid "Left"
 msgstr "Izquierda"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2102
+#: ../plugins/xrandr/msd-xrandr-manager.c:2092
 msgid "Right"
 msgstr "Derecha"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2103
+#: ../plugins/xrandr/msd-xrandr-manager.c:2093
 msgid "Upside Down"
 msgstr "Hacia abajo"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2368
+#: ../plugins/xrandr/msd-xrandr-manager.c:2358
 msgid "Configure display settings"
 msgstr "Configurar los ajustes de la pantalla"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2428
+#: ../plugins/xrandr/msd-xrandr-manager.c:2418
 msgid "Could not apply the stored configuration for monitors"
 msgstr "No se pudo aplicar la configuración almacenada para los monitores"
 
@@ -1265,6 +1311,15 @@ msgstr "Ajustes de las X"
 #: ../plugins/xsettings/xsettings.mate-settings-plugin.in.h:2
 msgid "Manage X Settings"
 msgstr "Gestionar los ajustes de las X"
+
+#. Priority=100
+#: ../plugins/rfkill/rfkill.mate-settings-plugin.in.h:2
+msgid "Rfkill"
+msgstr ""
+
+#: ../plugins/rfkill/rfkill.mate-settings-plugin.in.h:3
+msgid "Rfkill plugin"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:167
 msgid "Module Path"

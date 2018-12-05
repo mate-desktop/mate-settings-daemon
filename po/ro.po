@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-02 16:31+0200\n"
+"POT-Creation-Date: 2018-11-18 11:09+0100\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
 "Last-Translator: sorinn <nemes.sorin@gmail.com>, 2018\n"
 "Language-Team: Romanian (https://www.transifex.com/mate/teams/13566/ro/)\n"
@@ -29,17 +29,17 @@ msgid "Accessibility"
 msgstr "Accesibilitate"
 
 #: ../data/50-accessibility.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
 msgid "Toggle magnifier"
 msgstr "Comută lupa"
 
 #: ../data/50-accessibility.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
 msgid "Toggle screen reader"
 msgstr "Activare / Dezactivare  cititor ecran"
 
 #: ../data/50-accessibility.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
 msgid "Toggle on-screen keyboard"
 msgstr "Activare  / Dezactivare tastatură pe ecran"
 
@@ -293,6 +293,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:1
@@ -313,6 +314,7 @@ msgstr "Activarea acestui plugin"
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:2
@@ -333,6 +335,7 @@ msgstr "Dacă acest plugin va fi activat de mate-settings-daemon sau nu"
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:5
 #: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:3
@@ -353,6 +356,7 @@ msgstr "Prioritatea de folosit pentru acest plugin"
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:6
 #: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:4
@@ -522,94 +526,102 @@ msgid "Binding to launch the email client."
 msgstr "Asociere pentru pornirea clientului de email."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:29
+msgid "Launch settings"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:30
+msgid "Binding to launch MATE settings."
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:31
 msgid "Lock screen"
 msgstr "Blochează ecranul"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:30
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
 msgid "Binding to lock the screen."
 msgstr "Asociere pentru blocarea ecranului."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:31
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
 msgid "Launch help browser"
 msgstr "Lansare fereastră de ajutor"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
 msgid "Binding to launch the help browser."
 msgstr "Asociere pentru pornirea programului de ajutor."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
 msgid "Launch calculator"
 msgstr "Lansare calculator"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
 msgid "Binding to launch the calculator."
 msgstr "Asociere pentru pornirea calculatorului."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
 msgid "Launch web browser"
 msgstr "Lansare navigator web"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
 msgid "Binding to launch the web browser."
 msgstr "Asociere pentru pornirea navigatorului Web."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
 msgid "Launch media player"
 msgstr "Lansare lector multimedia"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
 msgid "Binding to launch the media player."
 msgstr "Asociere pentru pornirea lectorului media."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
 msgid "Play (or play/pause)"
 msgstr "Redare (sau redare/pauză)"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:42
 msgid "Binding to start playback (or toggle play/pause)."
 msgstr "Asociere pentru pornire redare (sau comutare redare/pauză)."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
 msgid "Pause playback"
 msgstr "Suspendă redarea"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:42
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
 msgid "Binding to pause playback."
 msgstr "Asociere pentru pauză redare."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
 msgid "Stop playback"
 msgstr "Oprire redare"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
 msgid "Binding to stop playback."
 msgstr "Asociere pentru oprire redare."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
 msgid "Previous track"
 msgstr "Piesa precedentă"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
 msgid "Binding to skip to previous track."
 msgstr "Asociere pentru salt la piesa precedentă."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
 msgid "Next track"
 msgstr "Piesa următoare"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
 msgid "Binding to skip to next track."
 msgstr "Asociere pentru salt la piesa următoare."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
 msgid "Binding to show the screen magnifier"
 msgstr "Asociere pentru afișarea lupei"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
 msgid "Binding to start the screen reader"
 msgstr "Asociere pentru pornirea cititorului de ecran"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
 msgid "Binding to show the on-screen keyboard"
 msgstr "Asociere pentru afișarea tastaturii pe ecran"
 
@@ -715,23 +727,23 @@ msgstr "Accesibilitate tastatură"
 msgid "Accessibility keyboard plugin"
 msgstr "Modul accesibilitate tastatură"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:446
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "A intervenit o eroare la afișarea ajutorului: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
 msgid "Do you want to activate Slow Keys?"
 msgstr "Doriți să activați „Tastele încete”?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:575
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:639
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Doriți să dezactivați „Tastele încete”?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -739,62 +751,62 @@ msgstr ""
 "Ați ținut tasta Shift apăsată timp de opt secunde. Aceasta este tasta ce "
 "activează „Tastele încete” și schimbă modul de funcționare al tastaturii."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
 msgid "Don't activate"
 msgstr "Nu activa"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
 msgid "Don't deactivate"
 msgstr "Nu dezactiva"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
 msgid "Activate"
 msgstr "Activează"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
 msgid "Deactivate"
 msgstr "Dezactivează"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
 msgid "Do_n't activate"
 msgstr "_Nu activa"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
 msgid "Do_n't deactivate"
 msgstr "_Nu dezactiva"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
 msgid "_Activate"
 msgstr "_Activează"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
 msgid "_Deactivate"
 msgstr "_Dezactivează"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:668
 msgid "Slow Keys Alert"
 msgstr "Alertă pentru „Taste încete”"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:708
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:774
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Doriți să activați „Modificatorii persistenți”?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Doriți să dezactivați „Modificatorii persistenți”?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -802,8 +814,8 @@ msgstr ""
 "Ați apăsat Shift de cinci ori la rând. Aceasta este combinația ce activează "
 "„Modificatorii persistenți” și schimbă modul de funcționare al tastaturii."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -813,7 +825,7 @@ msgstr ""
 "rând. Aceste acțiuni inactivează „Modificatorii persistenți” și schimbă "
 "modul de funcționare al tastaturii."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:807
 msgid "Sticky Keys Alert"
 msgstr "Alertă „Modificatori persistenți”"
 
@@ -1053,7 +1065,7 @@ msgstr "_Preferințe tastatură"
 msgid "Show _Current Layout"
 msgstr "Afișează aranjamentul a_ctual"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:184
+#: ../plugins/media-keys/msd-media-keys-manager.c:189
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
@@ -1061,7 +1073,7 @@ msgstr ""
 "Nu s-a putut obține terminalul implicit. Asigurați-vă că terminalul implicit"
 " e setat și conectat la o aplicație valabilă."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:224
+#: ../plugins/media-keys/msd-media-keys-manager.c:229
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1069,6 +1081,40 @@ msgid ""
 msgstr ""
 "Nu s-a putut executa comanda: %s\n"
 "Asigurați-vă că aceasta este o comandă validă."
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:611
+#: ../plugins/media-keys/test-media-window.c:81
+msgid "Touchpad enabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:611
+#: ../plugins/media-keys/test-media-window.c:74
+msgid "Touchpad disabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:852
+#: ../plugins/media-keys/test-media-window.c:88
+msgid "Bluetooth disabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:855
+#: ../plugins/media-keys/test-media-window.c:95
+msgid "Bluetooth enabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:859
+#: ../plugins/media-keys/test-media-window.c:102
+msgid "Airplane mode enabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:862
+#: ../plugins/media-keys/test-media-window.c:109
+msgid "Airplane mode disabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:893
+msgid "Hardware Airplane Mode"
+msgstr ""
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1078,18 +1124,18 @@ msgstr "Taste media"
 msgid "Media keys plugin"
 msgstr "Modul taste media"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1440
+#: ../plugins/mouse/msd-mouse-manager.c:1490
 msgid "Could not enable mouse accessibility features"
 msgstr "Nu s-au putut activa facilitățile pentru accesibilitatea mausului"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1442
+#: ../plugins/mouse/msd-mouse-manager.c:1492
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 "Accesibilitățile mausului necesită instalarea Mousetweaks în sistemul "
 "dumneavoastră."
 
-#: ../plugins/mouse/msd-mouse-manager.c:1445
+#: ../plugins/mouse/msd-mouse-manager.c:1495
 msgid "Mouse Preferences"
 msgstr "Preferințe maus"
 
@@ -1163,49 +1209,49 @@ msgstr "_Păstrează această configurație"
 msgid "The selected configuration for displays could not be applied"
 msgstr "Configurația aleasă pentru ecrane nu a putut fi aplicată"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1190
+#: ../plugins/xrandr/msd-xrandr-manager.c:1180
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "Nu s-a putut reîncărca informația ecranului: %s"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1194
+#: ../plugins/xrandr/msd-xrandr-manager.c:1184
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Se încearcă oricum comutarea configurării monitorului."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1950
+#: ../plugins/xrandr/msd-xrandr-manager.c:1940
 msgid "Rotation not supported"
 msgstr "Rotirea nu este suportată"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2015
-#: ../plugins/xrandr/msd-xrandr-manager.c:2047
+#: ../plugins/xrandr/msd-xrandr-manager.c:2005
+#: ../plugins/xrandr/msd-xrandr-manager.c:2037
 msgid "Could not save monitor configuration"
 msgstr "Nu s-a putut salva configurația monitorului"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2069
+#: ../plugins/xrandr/msd-xrandr-manager.c:2059
 msgid "Mirroring outputs not supported"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2100
+#: ../plugins/xrandr/msd-xrandr-manager.c:2090
 msgid "Normal"
 msgstr "Normală"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2101
+#: ../plugins/xrandr/msd-xrandr-manager.c:2091
 msgid "Left"
 msgstr "Stânga"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2102
+#: ../plugins/xrandr/msd-xrandr-manager.c:2092
 msgid "Right"
 msgstr "Dreapta"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2103
+#: ../plugins/xrandr/msd-xrandr-manager.c:2093
 msgid "Upside Down"
 msgstr "Răsturnat"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2368
+#: ../plugins/xrandr/msd-xrandr-manager.c:2358
 msgid "Configure display settings"
 msgstr "Configurare preferințe ecran"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2428
+#: ../plugins/xrandr/msd-xrandr-manager.c:2418
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Nu s-a putut aplica configurația stocată pentru monitoare"
 
@@ -1229,6 +1275,15 @@ msgstr "Configurări X"
 #: ../plugins/xsettings/xsettings.mate-settings-plugin.in.h:2
 msgid "Manage X Settings"
 msgstr "Administrare de configurări X"
+
+#. Priority=100
+#: ../plugins/rfkill/rfkill.mate-settings-plugin.in.h:2
+msgid "Rfkill"
+msgstr ""
+
+#: ../plugins/rfkill/rfkill.mate-settings-plugin.in.h:3
+msgid "Rfkill plugin"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:167
 msgid "Module Path"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-02 16:31+0200\n"
+"POT-Creation-Date: 2018-11-18 11:09+0100\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
 "Language-Team: Telugu (https://www.transifex.com/mate/teams/13566/te/)\n"
@@ -26,17 +26,17 @@ msgid "Accessibility"
 msgstr "అందుబాటు"
 
 #: ../data/50-accessibility.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
 msgid "Toggle magnifier"
 msgstr "పెద్దదిచేయుదాన్ని మార్చుము"
 
 #: ../data/50-accessibility.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
 msgid "Toggle screen reader"
 msgstr "తెర చదువరిని మార్చుము"
 
 #: ../data/50-accessibility.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
 msgid "Toggle on-screen keyboard"
 msgstr "తెర-పైని కీబోర్డును మార్చుము"
 
@@ -286,6 +286,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:1
@@ -306,6 +307,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:2
@@ -326,6 +328,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:5
 #: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:3
@@ -346,6 +349,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:6
 #: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:4
@@ -504,95 +508,103 @@ msgid "Binding to launch the email client."
 msgstr "ఈమెయిల్ కక్షిదారును దించుటకు బందనం అయిఉంది."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:29
+msgid "Launch settings"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:30
+msgid "Binding to launch MATE settings."
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:31
 msgid "Lock screen"
 msgstr "తెరను లాక్‌చేయుము"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:30
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
 msgid "Binding to lock the screen."
 msgstr "తెరను లాక్‌చేయుటకు బందనం అయిఉంది."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:31
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
 msgid "Launch help browser"
 msgstr "సహయక అన్వేషణిని దింపుము"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
 msgid "Binding to launch the help browser."
 msgstr "సహాయక అన్వేషణిను దించుటకు బందనం అయిఉంది."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
 msgid "Launch calculator"
 msgstr "గణనపరికరంను దింపుము"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
 msgid "Binding to launch the calculator."
 msgstr "గణనపరికరం ను దించుటకు బందనం అయిఉంది."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
 msgid "Launch web browser"
 msgstr "వెబ్ అన్వేషణిని దింపుము"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
 msgid "Binding to launch the web browser."
 msgstr "వెబ్ అన్వేషణిని దించుటకు బందనం అయిఉంది."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
 msgid "Launch media player"
 msgstr "మాద్యమం ప్లేయర్‌ను దింపుము"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
 msgid "Binding to launch the media player."
 msgstr "మాద్యమం ప్లేయర్‌ను దించుటకు బందనం అయిఉంది."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
 msgid "Play (or play/pause)"
 msgstr "ప్లే (లేదా ప్లే/నిలిపిఉంచు)"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:42
 msgid "Binding to start playback (or toggle play/pause)."
 msgstr ""
 "ప్లేబ్యాక్ ప్రారంభించుటకు బందనం అయిఉంది (లేదా ప్లే/నిలిపిఉంచు మార్చుము)."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
 msgid "Pause playback"
 msgstr "ప్లేబ్యాక్ నిలిపిఉంచుము"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:42
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
 msgid "Binding to pause playback."
 msgstr "ప్లేబ్యాక్ ను నిలిపిఉంచుటకు బందనం అయిఉంది."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
 msgid "Stop playback"
 msgstr "ప్లేబ్యాక్ ను నిలిపిఉంచు"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
 msgid "Binding to stop playback."
 msgstr "ప్లేబ్యాక్ ను ఆపుటకు బందనం అయిఉంది."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
 msgid "Previous track"
 msgstr "మునుపటి ట్రాక్"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
 msgid "Binding to skip to previous track."
 msgstr "మునుపటి ట్రాక్‌కు వదిలివెళ్ళుటకు బదనం అయిఉంది."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
 msgid "Next track"
 msgstr "తర్వాతి ట్రాక్"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
 msgid "Binding to skip to next track."
 msgstr "తర్వాతి ట్రాక్‌కు వదిలివెళ్ళుటకు బందనం అయిఉంది."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
 msgid "Binding to show the screen magnifier"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
 msgid "Binding to start the screen reader"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
 msgid "Binding to show the on-screen keyboard"
 msgstr ""
 
@@ -681,23 +693,23 @@ msgstr "అందుబాటు కీబోర్డు"
 msgid "Accessibility keyboard plugin"
 msgstr "అందుబాటు కీబోర్డు ప్లగ్ఇన్"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:446
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "సహాయం ప్రదర్శించుటలో అక్కడ ఒక దోషం ఉంది: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
 msgid "Do you want to activate Slow Keys?"
 msgstr "నెమ్మది మీటలను క్రియాశీలం చేయాలా?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:575
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:639
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "నెమ్మది మీటల సౌకర్యాన్ని క్రియాహీనం చేయాలా?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -705,62 +717,62 @@ msgstr ""
 "మీరు షిఫ్ట్ మీటను ౮8 సెకన్లు నొక్కివుంచారు. ఇది నెమ్మది మీటల విశిష్ఠ "
 "అంశానికి అడ్డదారి ఇది మీ మీటలపలకం పనిచేయు విధానంపై ప్రభావం చూపుతుంది."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
 msgid "Don't activate"
 msgstr "క్రియాశీలం చేయవద్దు"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
 msgid "Don't deactivate"
 msgstr "క్రియాహీనం చేయవద్దు"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
 msgid "Activate"
 msgstr "క్రియాశీలించు"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
 msgid "Deactivate"
 msgstr "క్రియాహీనంచేయి"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
 msgid "Do_n't activate"
 msgstr "క్రియాశీలం చేయవద్దు(_n)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
 msgid "Do_n't deactivate"
 msgstr "క్రియాహీనం చేయవద్దు(_n)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
 msgid "_Activate"
 msgstr "క్రియాశీలం (_A)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
 msgid "_Deactivate"
 msgstr "క్రియాహీనం (_D)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:668
 msgid "Slow Keys Alert"
 msgstr "నెమ్మది మీటల అప్రమత్తం"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:708
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:774
 msgid "Do you want to activate Sticky Keys?"
 msgstr "చీటీ మీటలను క్రియాశీలం చేయాలా?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "చీటీ మీటలను క్రియాహీనం చేయాలా?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -768,8 +780,8 @@ msgstr ""
 "షిఫ్ట్ మీటను మీరు వరుసక్రమంలో 5సార్లు నొక్కారు. ఇది చీటీ మీటల సౌకర్యానికి "
 "అడ్డదారిఇది మీ మీటల పలకం పనిపై ప్రభావం చూపుతుంది."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -779,7 +791,7 @@ msgstr ""
 "5సార్లు నొక్కారు. ఇది చీటీ మీటల సౌకర్యానికి అడ్డదారి, ఇది మీ మీటల పలకం పనిపై"
 " ప్రభావం చూపుతుంది."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:807
 msgid "Sticky Keys Alert"
 msgstr "చీటీ మీటల అప్రమత్తత"
 
@@ -1017,7 +1029,7 @@ msgstr ""
 msgid "Show _Current Layout"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:184
+#: ../plugins/media-keys/msd-media-keys-manager.c:189
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
@@ -1026,7 +1038,7 @@ msgstr ""
 "అమర్చబడిఉంటునట్లు మరియు చెల్లునటువంటి అనువర్తనంను సూచించునట్లు "
 "నిర్ధారించుము."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:224
+#: ../plugins/media-keys/msd-media-keys-manager.c:229
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1034,6 +1046,40 @@ msgid ""
 msgstr ""
 "ఆదేశాన్ని నిర్వర్తించలేదు: %s\n"
 "ఈ ఆదేశం వున్నదోలేదో సరిచూసుకోండి."
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:611
+#: ../plugins/media-keys/test-media-window.c:81
+msgid "Touchpad enabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:611
+#: ../plugins/media-keys/test-media-window.c:74
+msgid "Touchpad disabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:852
+#: ../plugins/media-keys/test-media-window.c:88
+msgid "Bluetooth disabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:855
+#: ../plugins/media-keys/test-media-window.c:95
+msgid "Bluetooth enabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:859
+#: ../plugins/media-keys/test-media-window.c:102
+msgid "Airplane mode enabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:862
+#: ../plugins/media-keys/test-media-window.c:109
+msgid "Airplane mode disabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:893
+msgid "Hardware Airplane Mode"
+msgstr ""
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1043,16 +1089,16 @@ msgstr "మాద్యమం కీలు"
 msgid "Media keys plugin"
 msgstr "మాద్యమం కీల ప్లగ్ఇన్"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1440
+#: ../plugins/mouse/msd-mouse-manager.c:1490
 msgid "Could not enable mouse accessibility features"
 msgstr "మౌస్ అందుబాటు సౌలభ్యాలను చేతనం చేయలేకపోయింది"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1442
+#: ../plugins/mouse/msd-mouse-manager.c:1492
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 
-#: ../plugins/mouse/msd-mouse-manager.c:1445
+#: ../plugins/mouse/msd-mouse-manager.c:1495
 msgid "Mouse Preferences"
 msgstr "మౌస్ అభీష్టాలు"
 
@@ -1124,49 +1170,49 @@ msgstr "ఈ ఆకృతీకరణను కలిగివుండుము 
 msgid "The selected configuration for displays could not be applied"
 msgstr "ప్రదర్శన కొరకు యెంపికచేసిన ఆకృతీకరణలు ఆపాదింప బడలేవు"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1190
+#: ../plugins/xrandr/msd-xrandr-manager.c:1180
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "తెర సమాచారమును రీఫ్రెష్ చేయలేము: %s"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1194
+#: ../plugins/xrandr/msd-xrandr-manager.c:1184
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "ఏమైనప్పటికి మానిటర్ ఆకృతీకరణను స్విచ్ చేయుటకు ప్రయత్నిస్తోంది."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1950
+#: ../plugins/xrandr/msd-xrandr-manager.c:1940
 msgid "Rotation not supported"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2015
-#: ../plugins/xrandr/msd-xrandr-manager.c:2047
+#: ../plugins/xrandr/msd-xrandr-manager.c:2005
+#: ../plugins/xrandr/msd-xrandr-manager.c:2037
 msgid "Could not save monitor configuration"
 msgstr "మానిటర్ ఆకృతీకరణను దాయలేక పోయింది"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2069
+#: ../plugins/xrandr/msd-xrandr-manager.c:2059
 msgid "Mirroring outputs not supported"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2100
+#: ../plugins/xrandr/msd-xrandr-manager.c:2090
 msgid "Normal"
 msgstr "సాదారణ"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2101
+#: ../plugins/xrandr/msd-xrandr-manager.c:2091
 msgid "Left"
 msgstr "ఎడమ"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2102
+#: ../plugins/xrandr/msd-xrandr-manager.c:2092
 msgid "Right"
 msgstr "కుడి"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2103
+#: ../plugins/xrandr/msd-xrandr-manager.c:2093
 msgid "Upside Down"
 msgstr "పైనప్రక్క క్రిందకు"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2368
+#: ../plugins/xrandr/msd-xrandr-manager.c:2358
 msgid "Configure display settings"
 msgstr "ప్రదర్శన అమర్పులను ఆకృతీకరించుము"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2428
+#: ../plugins/xrandr/msd-xrandr-manager.c:2418
 msgid "Could not apply the stored configuration for monitors"
 msgstr "మానిటర్ల కొరకు నిల్వవుంచిన ఆకృతీకరణను ఆపాదించలేక పోయింది"
 
@@ -1190,6 +1236,15 @@ msgstr "X అమరికలు"
 #: ../plugins/xsettings/xsettings.mate-settings-plugin.in.h:2
 msgid "Manage X Settings"
 msgstr "X అమరికలను నిర్వహించు"
+
+#. Priority=100
+#: ../plugins/rfkill/rfkill.mate-settings-plugin.in.h:2
+msgid "Rfkill"
+msgstr ""
+
+#: ../plugins/rfkill/rfkill.mate-settings-plugin.in.h:3
+msgid "Rfkill plugin"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:167
 msgid "Module Path"

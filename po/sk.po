@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-02 16:31+0200\n"
+"POT-Creation-Date: 2018-11-18 11:09+0100\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
 "Last-Translator: Erik Bročko <erik.brocko@letemsvetemapplem.eu>, 2018\n"
 "Language-Team: Slovak (https://www.transifex.com/mate/teams/13566/sk/)\n"
@@ -34,17 +34,17 @@ msgid "Accessibility"
 msgstr "Prístupnosť"
 
 #: ../data/50-accessibility.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
 msgid "Toggle magnifier"
 msgstr "Prepnúť lupu"
 
 #: ../data/50-accessibility.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
 msgid "Toggle screen reader"
 msgstr "Prepnúť čítač obrazovky"
 
 #: ../data/50-accessibility.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
 msgid "Toggle on-screen keyboard"
 msgstr "Prepnúť klávesnicu na obrazovke"
 
@@ -313,6 +313,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:1
+#: ../data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:1
@@ -333,6 +334,7 @@ msgstr "Aktivácia tohto pluginu"
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:2
+#: ../data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:2
@@ -355,6 +357,7 @@ msgstr ""
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:5
 #: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:3
+#: ../data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:3
@@ -375,6 +378,7 @@ msgstr "Priorita na používanie tohto pluginu"
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:6
 #: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:4
+#: ../data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:4
 #: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:4
@@ -540,94 +544,102 @@ msgid "Binding to launch the email client."
 msgstr "Klávesová skratka na spustenie emailového klienta."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:29
+msgid "Launch settings"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:30
+msgid "Binding to launch MATE settings."
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:31
 msgid "Lock screen"
 msgstr "Uzamknúť obrazovku"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:30
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
 msgid "Binding to lock the screen."
 msgstr "Klávesová skratka na uzamknutie obrazovky."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:31
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
 msgid "Launch help browser"
 msgstr "Spustiť prehliadač pomocníka"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
 msgid "Binding to launch the help browser."
 msgstr "Klávesová skratka na spustenie prehliadača pomocníka."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
 msgid "Launch calculator"
 msgstr "Spustiť kalkulačku"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
 msgid "Binding to launch the calculator."
 msgstr "Klávesová skratka na spustenie kalkulačky."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
 msgid "Launch web browser"
 msgstr "Spustiť webový prehliadač"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
 msgid "Binding to launch the web browser."
 msgstr "Klávesová skratka na spustenie webového prehliadača."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
 msgid "Launch media player"
 msgstr "Spustiť prehrávač hudby/videa"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
 msgid "Binding to launch the media player."
 msgstr "Klávesová skratka na spustenie prehrávača médií."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
 msgid "Play (or play/pause)"
 msgstr "Hrať (alebo hrať/pozastaviť)"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:42
 msgid "Binding to start playback (or toggle play/pause)."
 msgstr "Klávesová skratka na začatie prehrávania (alebo hrať/pozastaviť)."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
 msgid "Pause playback"
 msgstr "Pozastaviť prehrávanie"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:42
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
 msgid "Binding to pause playback."
 msgstr "Klávesová skratka na pozastavenie prehrávania."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
 msgid "Stop playback"
 msgstr "Zastaviť prehrávanie"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
 msgid "Binding to stop playback."
 msgstr "Klávesová skratka na zastavenie prehrávania."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
 msgid "Previous track"
 msgstr "Predchádzajúca stopa"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
 msgid "Binding to skip to previous track."
 msgstr "Klávesová skratka na preskočenie na predchádzajúcu stopu."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
 msgid "Next track"
 msgstr "Nasledujúca stopa"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
 msgid "Binding to skip to next track."
 msgstr "Klávesová skratka na preskočenie na nasledujúcu stopu."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
 msgid "Binding to show the screen magnifier"
 msgstr "Klávesová skratka na zobrazenie lupy."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
 msgid "Binding to start the screen reader"
 msgstr "Klávesová skratka na spustenie čítača obrazovky."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
 msgid "Binding to show the on-screen keyboard"
 msgstr "Klávesová skratka na zobrazenie klávesnice na obrazovke."
 
@@ -730,23 +742,23 @@ msgstr "Prístupnosť klávesnice"
 msgid "Accessibility keyboard plugin"
 msgstr "Modul prístupnosti klávesnice"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:446
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Pri pokuse o zobrazenie pomocníka nastala chyba: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
 msgid "Do you want to activate Slow Keys?"
 msgstr "Chcete použiť Pomalé klávesy?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:564
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:628
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:575
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:639
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Chcete zrušiť používanie Pomalých kláves?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:565
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:629
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -754,62 +766,62 @@ msgstr ""
 "Práve ste stlačili kláves Shift 8 sekúnd. To je skratka pre funkciu Pomalé "
 "klávesy, ktorá ovplyvňuje fungovanie vašej klávesnice."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
 msgid "Don't activate"
 msgstr "Neaktivovať"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
 msgid "Don't deactivate"
 msgstr "Nedeaktivovať"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
 msgid "Activate"
 msgstr "Aktivovať"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:594
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:731
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
 msgid "Deactivate"
 msgstr "Deaktivovať"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
 msgid "Do_n't activate"
 msgstr "_Neaktivovať"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:650
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
 msgid "Do_n't deactivate"
 msgstr "_Nedeaktivovať"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
 msgid "_Activate"
 msgstr "_Aktivovať"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
 msgid "_Deactivate"
 msgstr "_Deaktivovať"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:668
 msgid "Slow Keys Alert"
 msgstr "Upozornenie na pomalé klávesy"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:697
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:763
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:708
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:774
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Chcete použiť Lepkavé klávesy?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:698
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:764
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Chcete zrušiť používanie Lepkavých klávesov?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:700
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:766
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -817,8 +829,8 @@ msgstr ""
 "Práve ste stlačili kláves Shift 5-krát za sebou. To je skratka pre funkciu "
 "Lepkavé klávesy, ktorá ovplyvňuje fungovanie vašej klávesnice."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:702
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:768
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -828,7 +840,7 @@ msgstr ""
 " vypína funkciu Lepkavé klávesy, ktorá ovplyvňuje fungovanie vašej "
 "klávesnice."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:807
 msgid "Sticky Keys Alert"
 msgstr "Upozornenie na Lepkavé klávesy"
 
@@ -1076,7 +1088,7 @@ msgstr "Nas_tavenia klávesnice"
 msgid "Show _Current Layout"
 msgstr "Zobraziť aktuálne _rozloženie"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:184
+#: ../plugins/media-keys/msd-media-keys-manager.c:189
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
@@ -1084,7 +1096,7 @@ msgstr ""
 "Nepodarilo sa získať predvolený terminál. Overte si, či máte nastavený "
 "príkaz pre terminál, a či je to platný program."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:224
+#: ../plugins/media-keys/msd-media-keys-manager.c:229
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1092,6 +1104,40 @@ msgid ""
 msgstr ""
 "Nepodarilo sa spustiť príkaz: %s\n"
 "Skontrolujte, či je to platný príkaz."
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:611
+#: ../plugins/media-keys/test-media-window.c:81
+msgid "Touchpad enabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:611
+#: ../plugins/media-keys/test-media-window.c:74
+msgid "Touchpad disabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:852
+#: ../plugins/media-keys/test-media-window.c:88
+msgid "Bluetooth disabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:855
+#: ../plugins/media-keys/test-media-window.c:95
+msgid "Bluetooth enabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:859
+#: ../plugins/media-keys/test-media-window.c:102
+msgid "Airplane mode enabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:862
+#: ../plugins/media-keys/test-media-window.c:109
+msgid "Airplane mode disabled"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:893
+msgid "Hardware Airplane Mode"
+msgstr ""
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1101,17 +1147,17 @@ msgstr "Multimediálne klávesy"
 msgid "Media keys plugin"
 msgstr "Modul multimediálnych kláves"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1440
+#: ../plugins/mouse/msd-mouse-manager.c:1490
 msgid "Could not enable mouse accessibility features"
 msgstr "Nepodarilo sa povoliť sprístupnenie myši"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1442
+#: ../plugins/mouse/msd-mouse-manager.c:1492
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 "Sprístupnenie myši vyžaduje na vašom systéme nainštalované Mousetweaks."
 
-#: ../plugins/mouse/msd-mouse-manager.c:1445
+#: ../plugins/mouse/msd-mouse-manager.c:1495
 msgid "Mouse Preferences"
 msgstr "Nastavenia myši"
 
@@ -1189,49 +1235,49 @@ msgstr "Ponechať _tieto nastavenia"
 msgid "The selected configuration for displays could not be applied"
 msgstr "Zvolené nastavenia pre monitory nemôžu byť použité"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1190
+#: ../plugins/xrandr/msd-xrandr-manager.c:1180
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "Nepodarilo sa obnoviť informácie o obrazovke: %s"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1194
+#: ../plugins/xrandr/msd-xrandr-manager.c:1184
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Napriek tomu sa pokúsiť prepnúť nastavenia monitora."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1950
+#: ../plugins/xrandr/msd-xrandr-manager.c:1940
 msgid "Rotation not supported"
 msgstr "Rotácia nieje podporovaná"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2015
-#: ../plugins/xrandr/msd-xrandr-manager.c:2047
+#: ../plugins/xrandr/msd-xrandr-manager.c:2005
+#: ../plugins/xrandr/msd-xrandr-manager.c:2037
 msgid "Could not save monitor configuration"
 msgstr "Nepodarilo sa uložiť nastavenia monitora"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2069
+#: ../plugins/xrandr/msd-xrandr-manager.c:2059
 msgid "Mirroring outputs not supported"
 msgstr "Zrkadlenie výstupov nie je podporované"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2100
+#: ../plugins/xrandr/msd-xrandr-manager.c:2090
 msgid "Normal"
 msgstr "Normálna"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2101
+#: ../plugins/xrandr/msd-xrandr-manager.c:2091
 msgid "Left"
 msgstr "Vľavo"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2102
+#: ../plugins/xrandr/msd-xrandr-manager.c:2092
 msgid "Right"
 msgstr "Vpravo"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2103
+#: ../plugins/xrandr/msd-xrandr-manager.c:2093
 msgid "Upside Down"
 msgstr "Dolu hlavou"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2368
+#: ../plugins/xrandr/msd-xrandr-manager.c:2358
 msgid "Configure display settings"
 msgstr "Konfigurovať nastavenia obrazovky"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2428
+#: ../plugins/xrandr/msd-xrandr-manager.c:2418
 msgid "Could not apply the stored configuration for monitors"
 msgstr "Nepodarilo sa použiť uložené nastavenia pre monitory"
 
@@ -1255,6 +1301,15 @@ msgstr "Nastavenia X"
 #: ../plugins/xsettings/xsettings.mate-settings-plugin.in.h:2
 msgid "Manage X Settings"
 msgstr "Spravovanie nastavenia X"
+
+#. Priority=100
+#: ../plugins/rfkill/rfkill.mate-settings-plugin.in.h:2
+msgid "Rfkill"
+msgstr ""
+
+#: ../plugins/rfkill/rfkill.mate-settings-plugin.in.h:3
+msgid "Rfkill plugin"
+msgstr ""
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:167
 msgid "Module Path"
