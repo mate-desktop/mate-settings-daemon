@@ -527,6 +527,22 @@ do_media_action (MsdMediaKeysManager *manager)
 }
 
 static void
+do_calculator_action (MsdMediaKeysManager *manager)
+{
+        GSettings *settings;
+        char *calc;
+
+        settings = g_settings_new ("org.mate.applications-calculator");
+        calc = g_settings_get_string (settings, "exec");
+
+        if (calc)
+                execute (manager, calc, FALSE, FALSE);
+
+        g_free (calc);
+        g_object_unref (settings);
+}
+
+static void
 do_shutdown_action (MsdMediaKeysManager *manager)
 {
         execute (manager, "mate-session-save --shutdown-dialog", FALSE, FALSE);
@@ -1245,15 +1261,7 @@ do_action (MsdMediaKeysManager *manager,
                 do_media_action (manager);
                 break;
         case CALCULATOR_KEY:
-                if ((cmd = g_find_program_in_path ("galculator"))) {
-                        execute (manager, "galculator", FALSE, FALSE);
-                } else if ((cmd = g_find_program_in_path ("mate-calc"))) {
-                        execute (manager, "mate-calc", FALSE, FALSE);
-                } else {
-                        execute (manager, "gnome-calculator", FALSE, FALSE);
-                }
-
-                g_free (cmd);
+                do_calculator_action (manager);
                 break;
         case PLAY_KEY:
                 return do_multimedia_player_action (manager, "Play");
