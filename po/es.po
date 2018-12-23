@@ -3,14 +3,25 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Lluís Tusquellas <lutusq@gmail.com>, 2018
+# Angel Mireles <lamborghinilph710@gmail.com>, 2018
+# Adolfo Jayme-Barrientos, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# ebray187 <ebray187@gmail.com>, 2018
+# Benjamin Perez Carrillo <benperezc@gmail.com>, 2018
+# Emiliano Fascetti, 2018
+# Ivan Nieto <ivan.n.s@tuta.io>, 2018
+# Joel Barrios <darkshram@gmail.com>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-17 15:36+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Ivan Nieto <ivan.n.s@tuta.io>, 2018\n"
+"PO-Revision-Date: 2018-03-12 08:17+0000\n"
+"Last-Translator: Joel Barrios <darkshram@gmail.com>, 2018\n"
 "Language-Team: Spanish (https://www.transifex.com/mate/teams/13566/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1168,7 +1179,9 @@ msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
 msgstr[0] ""
+"La pantalla se restablecerá a su configuración anterior en %d segundo"
 msgstr[1] ""
+"La pantalla se restablecerá a su configuración anterior en %d segundos"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"

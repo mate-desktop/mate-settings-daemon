@@ -3,14 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Allan Nordhøy <epost@anotheragency.no>, 2018
+# Joe Hansen <joedalton2@yahoo.dk>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-17 15:36+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>, 2018\n"
+"PO-Revision-Date: 2018-03-12 08:17+0000\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>, 2018\n"
 "Language-Team: Danish (https://www.transifex.com/mate/teams/13566/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -546,11 +551,11 @@ msgstr "Genvej til at starte lommeregneren."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
 msgid "Launch web browser"
-msgstr "Start webbrowser"
+msgstr "Start internetbrowser"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
 msgid "Binding to launch the web browser."
-msgstr "Genvej til at starte webbrowseren."
+msgstr "Genvej til at starte internetbrowseren."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
 msgid "Launch media player"
@@ -842,7 +847,7 @@ msgstr "Gør _teksten større og lettere at læse"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
-msgstr "Anvend _tastekombinationer en enkelt tast ad gangen (klæbetaster)"
+msgstr "Anvend _tastekombinationer en enkelt tast ad gangen (blivende taster)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"

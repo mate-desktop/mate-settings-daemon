@@ -3,13 +3,18 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Iñigo Varela <ivarela@softastur.org>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Ḷḷumex03 <tornes@opmbx.org>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-17 15:36+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2018-03-12 08:17+0000\n"
 "Last-Translator: Ḷḷumex03 <tornes@opmbx.org>, 2018\n"
 "Language-Team: Asturian (https://www.transifex.com/mate/teams/13566/ast/)\n"
 "MIME-Version: 1.0\n"
@@ -510,11 +515,11 @@ msgstr "Vínculu pa bloquiar la pantalla."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:31
 msgid "Launch help browser"
-msgstr "Llanzar el visor d'aida"
+msgstr "Llanzar el visor d'ayuda"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
 msgid "Binding to launch the help browser."
-msgstr "Vínculu pa llanzar el visor d'aida."
+msgstr "Vínculu pa llanzar el visor d'ayuda."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
 msgid "Launch calculator"
@@ -681,7 +686,7 @@ msgstr "Complementu d'accesibilidá del tecláu"
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:435
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr "Hebo un fallu al amosar l'aida: %s"
+msgstr "Hebo un fallu al amosar l'ayuda: %s"
 
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:563
 #: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:627

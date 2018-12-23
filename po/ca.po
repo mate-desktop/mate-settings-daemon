@@ -3,14 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Albert Català <casulleres@gmail.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-17 15:36+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Albert Català <casulleres@gmail.com>, 2018\n"
+"PO-Revision-Date: 2018-03-12 08:17+0000\n"
+"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2018\n"
 "Language-Team: Catalan (https://www.transifex.com/mate/teams/13566/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -226,8 +231,8 @@ msgid ""
 "mouse button 2: middle mouse button 3: right mouse button"
 msgstr ""
 "Seleccioneu l'assignació del botó per a un toc d'un sol dit. Els valors "
-"compatibles són: 1: botó esquerre del ratolí 2: botó mig del ratolí 3: botó "
-"dret del ratolí"
+"compatibles són: 1: botó esquerre del ratolí 2: botó central del ratolí 3: "
+"botó dret del ratolí"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
 msgid "Two finger tap button"
@@ -239,8 +244,8 @@ msgid ""
 "mouse button 2: middle mouse button 3: right mouse button"
 msgstr ""
 "Seleccioneu l'assignació del botó per a un toc amb dos dits. Els valors "
-"compatibles són: 1: botó esquerre del ratolí 2: botó mig del ratolí 3: botó "
-"dret del ratolí"
+"compatibles són: 1: botó esquerre del ratolí 2: botó central del ratolí 3: "
+"botó dret del ratolí"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
 msgid "Three finger tap button"
@@ -252,8 +257,8 @@ msgid ""
 "left mouse button 2: middle mouse button 3: right mouse button"
 msgstr ""
 "Seleccioneu l'assignació del botó per a un toc amb tres dits. Els valors "
-"compatibles són: 1: botó esquerre del ratolí 2: botó mig del ratolí 3: botó "
-"dret del ratolí"
+"compatibles són: 1: botó esquerre del ratolí 2: botó central del ratolí 3: "
+"botó dret del ratolí"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:26
 msgid "Touchpad button orientation"
@@ -623,7 +628,7 @@ msgstr "Vinculació per mostrar el teclat a la pantalla."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:5
 msgid "Show Displays in Notification Area"
-msgstr "Mostra les pantalles a l'àrea de notificació"
+msgstr "Mostra les pantalles a l'àrea de notificacions"
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:6
 msgid ""
@@ -849,7 +854,7 @@ msgstr ""
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
-msgstr "_Ignora les pressions duplicades de les tecles (tecles de rebot)"
+msgstr "_Ignora les pressions de tecles duplicades (tecles de rebot)"
 
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
 msgid "Press and _hold keys to accept them (Slow Keys)"
