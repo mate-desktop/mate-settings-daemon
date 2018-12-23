@@ -9,6 +9,9 @@ SUBDIRS = 			\
 	po 			\
 	$(NULL)
 
+DISTCHECK_CONFIGURE_FLAGS = \
+	CFLAGS='-Wno-deprecated-declarations'
+
 EXTRA_DIST = \
 	autogen.sh		\
 	ChangeLog		\
