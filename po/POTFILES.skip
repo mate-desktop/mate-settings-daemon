@@ -7,3 +7,4 @@
 # remove these unless you fix "make distcheck" a different way.
 #
 data/mate-settings-daemon.desktop.in
+sub/data/mate-settings-daemon.desktop.in
