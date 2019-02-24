@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-18 11:09+0100\n"
+"POT-Creation-Date: 2018-12-23 18:24+0100\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
 "Language-Team: Bengali (https://www.transifex.com/mate/teams/13566/bn/)\n"
@@ -26,17 +26,17 @@ msgid "Accessibility"
 msgstr "সহায়ক প্রযুক্তি"
 
 #: ../data/50-accessibility.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:59
 msgid "Toggle magnifier"
 msgstr "বিবর্ধক টগল করা হবে"
 
 #: ../data/50-accessibility.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:61
 msgid "Toggle screen reader"
 msgstr "পর্দা পাঠের ব্যবস্থা টগল করা হবে"
 
 #: ../data/50-accessibility.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:63
 msgid "Toggle on-screen keyboard"
 msgstr "পর্দার কী-বোর্ড টগল করা হবে"
 
@@ -465,152 +465,184 @@ msgid "Binding to raise the system volume."
 msgstr "সিস্টেমের আওয়াজ বৃদ্ধির জন্য বাইন্ড করুন।"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:17
-msgid "Shut down"
+msgid "Mute the audio quietly"
 msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:18
-msgid "Binding to shut down."
+msgid "Binding to mute the system volume quietly."
 msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
-msgid "Log out"
-msgstr "লগ-আউট"
+msgid "Turn the volume down quietly"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:20
-msgid "Binding to log out."
-msgstr "লগ-আউটের জন্য বাইন্ড করুন।"
+msgid "Binding to lower the system volume quietly."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:21
-msgid "Eject"
-msgstr "বের করা"
+msgid "Turn the volume up quietly"
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:22
-msgid "Binding to eject an optical disc."
+msgid "Binding to raise the system volume quietly."
 msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:23
-msgid "Home folder"
-msgstr "ব্যক্তিগত ফোল্ডার"
-
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:24
-msgid "Binding to open the Home folder."
-msgstr "ব্যক্তিগত ফোল্ডার খোলার জন্য বাইন্ড করুন।"
-
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
-msgid "Search"
-msgstr "সন্ধান"
-
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:26
-msgid "Binding to launch the search tool."
-msgstr "অনুসন্ধানের সামগ্রী আরম্ভ করতে বাইন্ড করুন।"
-
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:27
-msgid "Launch email client"
-msgstr "ই-মেইল ক্লায়েন্ট আরম্ভ করুন"
-
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:28
-msgid "Binding to launch the email client."
-msgstr "ই-মেইল ক্লায়েন্ট আরম্ভ করার জন্য বাইন্ড করুন।"
-
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:29
-msgid "Launch settings"
+msgid "Microphone mute/unmute"
 msgstr ""
 
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:24
+msgid "Binding to mute/unmute the microphone."
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
+msgid "Shut down"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:26
+msgid "Binding to shut down."
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:27
+msgid "Log out"
+msgstr "লগ-আউট"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:28
+msgid "Binding to log out."
+msgstr "লগ-আউটের জন্য বাইন্ড করুন।"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:29
+msgid "Eject"
+msgstr "বের করা"
+
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:30
-msgid "Binding to launch MATE settings."
+msgid "Binding to eject an optical disc."
 msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:31
+msgid "Home folder"
+msgstr "ব্যক্তিগত ফোল্ডার"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
+msgid "Binding to open the Home folder."
+msgstr "ব্যক্তিগত ফোল্ডার খোলার জন্য বাইন্ড করুন।"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
+msgid "Search"
+msgstr "সন্ধান"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
+msgid "Binding to launch the search tool."
+msgstr "অনুসন্ধানের সামগ্রী আরম্ভ করতে বাইন্ড করুন।"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
+msgid "Launch email client"
+msgstr "ই-মেইল ক্লায়েন্ট আরম্ভ করুন"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
+msgid "Binding to launch the email client."
+msgstr "ই-মেইল ক্লায়েন্ট আরম্ভ করার জন্য বাইন্ড করুন।"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
+msgid "Launch settings"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
+msgid "Binding to launch MATE settings."
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
 msgid "Lock screen"
 msgstr "পর্দা নিষ্ক্রিয় করো"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
 msgid "Binding to lock the screen."
 msgstr "পর্দা লক করার জন্য বাইন্ড করুন।"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
 msgid "Launch help browser"
 msgstr "সহায়িকা প্রদর্শক ব্রাউজার চালু করুন"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:42
 msgid "Binding to launch the help browser."
 msgstr "সহায়ক তথ্যের ব্রাউজার আরম্ভ করতে বাইন্ড করুন।"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
 msgid "Launch calculator"
 msgstr "ক্যালকুলেটর আরম্ভ করুন"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
 msgid "Binding to launch the calculator."
 msgstr "ক্যালকুলেটর আরম্ভের জন্য বাইন্ড করুন।"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
 msgid "Launch web browser"
 msgstr "ওয়েব ব্রাউজার চালু করুন"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
 msgid "Binding to launch the web browser."
 msgstr "ওয়েব ব্রাউজার আরম্ভ করতে বাউন্ড করুন।"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
 msgid "Launch media player"
 msgstr "মিডিয়া প্লেয়ার আরম্ভ করুন"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
 msgid "Binding to launch the media player."
 msgstr "মিডিয়া প্লেয়ার আরম্ভ করতে বাইন্ড করুন।"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
 msgid "Play (or play/pause)"
 msgstr "বাজাও (বা বাজাও/বিরতি)"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:42
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
 msgid "Binding to start playback (or toggle play/pause)."
 msgstr ""
 "প্লে-ব্যাক অর্থাৎ চালনার আরম্ভের জন্য বাইন্ড করুন (অথবা চালনা/স্থগিত কর্মের "
 "মধ্যে পরিবর্তন)।"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
 msgid "Pause playback"
 msgstr "প্লে-ব্যাক স্থগিত করুন"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
 msgid "Binding to pause playback."
 msgstr "প্লে-ব্যাক স্থগিত করার জন্য বাইন্ড করুন।"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
 msgid "Stop playback"
 msgstr "প্লে-ব্যাক বন্ধ করুন"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
 msgid "Binding to stop playback."
 msgstr "প্লে-ব্যাক বন্ধ করার জন্য বাইন্ড করুন।"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
 msgid "Previous track"
 msgstr "পূর্ববর্তী গান"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
 msgid "Binding to skip to previous track."
 msgstr "পূর্ববর্তী গানে পিছিয়ে যাওয়ার জন্য বাইন্ড করুন।"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:57
 msgid "Next track"
 msgstr "পরবর্তী গান"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:58
 msgid "Binding to skip to next track."
 msgstr "পরবর্তী গানে এগিয়ে চলনার জন্য বাইন্ড করুন।"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:60
 msgid "Binding to show the screen magnifier"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:62
 msgid "Binding to start the screen reader"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:64
 msgid "Binding to show the on-screen keyboard"
 msgstr ""
 
@@ -1037,7 +1069,7 @@ msgstr "কীবোর্ড পছন্দসমূহ (_P)"
 msgid "Show _Current Layout"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:189
+#: ../plugins/media-keys/msd-media-keys-manager.c:191
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
@@ -1046,7 +1078,7 @@ msgstr ""
 "টার্মিনালের কমান্ড ধার্য করে তা একটি বৈধ অ্যাপ্লিকেশনের প্রতি নির্দেশ করা "
 "হয়েছে কি না।"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:229
+#: ../plugins/media-keys/msd-media-keys-manager.c:231
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1055,38 +1087,48 @@ msgstr ""
 "চিহ্নিত কমান্ডটি চালানো যায়নি: %s\n"
 "কমান্ডের বৈধতা নিশ্চিত করুন।"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:611
+#: ../plugins/media-keys/msd-media-keys-manager.c:629
 #: ../plugins/media-keys/test-media-window.c:81
 msgid "Touchpad enabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:611
+#: ../plugins/media-keys/msd-media-keys-manager.c:629
 #: ../plugins/media-keys/test-media-window.c:74
 msgid "Touchpad disabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:852
+#: ../plugins/media-keys/msd-media-keys-manager.c:943
 #: ../plugins/media-keys/test-media-window.c:88
 msgid "Bluetooth disabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:855
+#: ../plugins/media-keys/msd-media-keys-manager.c:946
 #: ../plugins/media-keys/test-media-window.c:95
 msgid "Bluetooth enabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:859
+#: ../plugins/media-keys/msd-media-keys-manager.c:950
 #: ../plugins/media-keys/test-media-window.c:102
 msgid "Airplane mode enabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:862
+#: ../plugins/media-keys/msd-media-keys-manager.c:953
 #: ../plugins/media-keys/test-media-window.c:109
 msgid "Airplane mode disabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:893
+#: ../plugins/media-keys/msd-media-keys-manager.c:984
 msgid "Hardware Airplane Mode"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:1022
+#: ../plugins/media-keys/test-media-window.c:123
+msgid "Changing Screen Layout"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:1026
+#: ../plugins/media-keys/test-media-window.c:116
+msgid "No External Display"
 msgstr ""
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1

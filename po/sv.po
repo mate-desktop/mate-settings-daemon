@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-18 11:09+0100\n"
+"POT-Creation-Date: 2018-12-23 18:24+0100\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
 "Last-Translator: Philip Andersen <renegadevi@codeofmagi.net>, 2018\n"
 "Language-Team: Swedish (https://www.transifex.com/mate/teams/13566/sv/)\n"
@@ -31,17 +31,17 @@ msgid "Accessibility"
 msgstr "Hjälpmedel"
 
 #: ../data/50-accessibility.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:59
 msgid "Toggle magnifier"
 msgstr "Växla förstorare"
 
 #: ../data/50-accessibility.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:61
 msgid "Toggle screen reader"
 msgstr "Växla skärmläsare"
 
 #: ../data/50-accessibility.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:63
 msgid "Toggle on-screen keyboard"
 msgstr "Växla skärmtangentbord"
 
@@ -491,150 +491,182 @@ msgid "Binding to raise the system volume."
 msgstr "Bindning för att höja ljudvolymen."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:17
+msgid "Mute the audio quietly"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:18
+msgid "Binding to mute the system volume quietly."
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
+msgid "Turn the volume down quietly"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:20
+msgid "Binding to lower the system volume quietly."
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:21
+msgid "Turn the volume up quietly"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:22
+msgid "Binding to raise the system volume quietly."
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:23
+msgid "Microphone mute/unmute"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:24
+msgid "Binding to mute/unmute the microphone."
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
 msgid "Shut down"
 msgstr "Stäng ner"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:18
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:26
 msgid "Binding to shut down."
 msgstr "Bindning för att stänga ner."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:27
 msgid "Log out"
 msgstr "Logga ut"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:20
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:28
 msgid "Binding to log out."
 msgstr "Bindning för att logga ut."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:21
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:29
 msgid "Eject"
 msgstr "Mata ut"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:22
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:30
 msgid "Binding to eject an optical disc."
 msgstr "Bindning för att mata ut en optisk skiva."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:23
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:31
 msgid "Home folder"
 msgstr "Hemmapp"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:24
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
 msgid "Binding to open the Home folder."
 msgstr "Bindning för att öppna hemmappen."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
 msgid "Search"
 msgstr "Sök"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:26
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
 msgid "Binding to launch the search tool."
 msgstr "Bindning för att starta sökverktyget."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:27
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
 msgid "Launch email client"
 msgstr "Starta e-postklient"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:28
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
 msgid "Binding to launch the email client."
 msgstr "Bindning för att starta e-postklienten."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:29
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
 msgid "Launch settings"
 msgstr "Starta inställningar"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:30
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
 msgid "Binding to launch MATE settings."
 msgstr "Bindning för att starta MATE inställningar"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:31
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
 msgid "Lock screen"
 msgstr "Lås skärmen"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
 msgid "Binding to lock the screen."
 msgstr "Bindning för att låsa skärmen."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
 msgid "Launch help browser"
 msgstr "Starta hjälpvisare"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:42
 msgid "Binding to launch the help browser."
 msgstr "Bindning för att starta hjälpvisaren."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
 msgid "Launch calculator"
 msgstr "Starta miniräknare"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
 msgid "Binding to launch the calculator."
 msgstr "Bindning för att starta miniräknaren."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
 msgid "Launch web browser"
 msgstr "Starta webbläsare"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
 msgid "Binding to launch the web browser."
 msgstr "Bindning för att starta webbläsaren."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
 msgid "Launch media player"
 msgstr "Starta mediaspelare"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
 msgid "Binding to launch the media player."
 msgstr "Bindning för att starta mediaspelaren."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
 msgid "Play (or play/pause)"
 msgstr "Spela (eller spela/gör paus)"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:42
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
 msgid "Binding to start playback (or toggle play/pause)."
 msgstr "Bindning för att starta uppspelningen (eller växla spela/pausa)."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
 msgid "Pause playback"
 msgstr "Gör paus i uppspelning"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
 msgid "Binding to pause playback."
 msgstr "Bindning för att göra paus i uppspelningen."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
 msgid "Stop playback"
 msgstr "Stoppa uppspelning"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
 msgid "Binding to stop playback."
 msgstr "Bindning för att stoppa uppspelningen."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
 msgid "Previous track"
 msgstr "Föregående spår"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
 msgid "Binding to skip to previous track."
 msgstr "Bindning för att hoppa till föregående spår."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:57
 msgid "Next track"
 msgstr "Nästa spår"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:58
 msgid "Binding to skip to next track."
 msgstr "Bindning för att hoppa till nästa spår."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:60
 msgid "Binding to show the screen magnifier"
 msgstr "Bindning för att visa skärmförstoraren"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:62
 msgid "Binding to start the screen reader"
 msgstr "Bindning för att starta skärmläsaren"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:64
 msgid "Binding to show the on-screen keyboard"
 msgstr "Bindning för att visa skärmtangentbordet."
 
@@ -1086,7 +1118,7 @@ msgstr "Tangentbordsins_tällningar"
 msgid "Show _Current Layout"
 msgstr "Visa a_ktuell layout"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:189
+#: ../plugins/media-keys/msd-media-keys-manager.c:191
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
@@ -1094,7 +1126,7 @@ msgstr ""
 "Kunde inte hitta standardterminalen. Verifiera att kommandot för din "
 "standardterminal är inställt och pekar på ett giltigt program."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:229
+#: ../plugins/media-keys/msd-media-keys-manager.c:231
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1103,39 +1135,49 @@ msgstr ""
 "Kunde inte köra kommandot: %s\n"
 "Verifiera att det här är ett giltigt kommando."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:611
+#: ../plugins/media-keys/msd-media-keys-manager.c:629
 #: ../plugins/media-keys/test-media-window.c:81
 msgid "Touchpad enabled"
 msgstr "Pekplatta aktiverad"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:611
+#: ../plugins/media-keys/msd-media-keys-manager.c:629
 #: ../plugins/media-keys/test-media-window.c:74
 msgid "Touchpad disabled"
 msgstr "Pekplatta inaktiverad"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:852
+#: ../plugins/media-keys/msd-media-keys-manager.c:943
 #: ../plugins/media-keys/test-media-window.c:88
 msgid "Bluetooth disabled"
 msgstr "Bluetooth inaktiverat"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:855
+#: ../plugins/media-keys/msd-media-keys-manager.c:946
 #: ../plugins/media-keys/test-media-window.c:95
 msgid "Bluetooth enabled"
 msgstr "Bluetooth aktiverat"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:859
+#: ../plugins/media-keys/msd-media-keys-manager.c:950
 #: ../plugins/media-keys/test-media-window.c:102
 msgid "Airplane mode enabled"
 msgstr "Flygplansläge aktiverat"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:862
+#: ../plugins/media-keys/msd-media-keys-manager.c:953
 #: ../plugins/media-keys/test-media-window.c:109
 msgid "Airplane mode disabled"
 msgstr "Flygplansläge inaktiverat"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:893
+#: ../plugins/media-keys/msd-media-keys-manager.c:984
 msgid "Hardware Airplane Mode"
 msgstr "Hårdvara Flygplansläge"
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:1022
+#: ../plugins/media-keys/test-media-window.c:123
+msgid "Changing Screen Layout"
+msgstr ""
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:1026
+#: ../plugins/media-keys/test-media-window.c:116
+msgid "No External Display"
+msgstr ""
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"

@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-18 11:09+0100\n"
+"POT-Creation-Date: 2018-12-23 18:24+0100\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>, 2018\n"
 "Language-Team: Dutch (https://www.transifex.com/mate/teams/13566/nl/)\n"
@@ -33,17 +33,17 @@ msgid "Accessibility"
 msgstr "Toegankelijkheid"
 
 #: ../data/50-accessibility.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:59
 msgid "Toggle magnifier"
 msgstr "Vergrootglas aan- of uitzetten"
 
 #: ../data/50-accessibility.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:61
 msgid "Toggle screen reader"
 msgstr "Schermle_zer aan- of uitzetten"
 
 #: ../data/50-accessibility.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:63
 msgid "Toggle on-screen keyboard"
 msgstr "Toetsen_bord-op-scherm aan- of uitzetten"
 
@@ -495,151 +495,183 @@ msgid "Binding to raise the system volume."
 msgstr "Sneltoets om het geluid harder te zetten."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:17
+msgid "Mute the audio quietly"
+msgstr "Het geluid stil dempen"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:18
+msgid "Binding to mute the system volume quietly."
+msgstr "Sneltoets om het geluid stil te dempen."
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
+msgid "Turn the volume down quietly"
+msgstr "Geluidvolume stil verlagen"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:20
+msgid "Binding to lower the system volume quietly."
+msgstr "Sneltoets om het geluidvolume stil te verlagen."
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:21
+msgid "Turn the volume up quietly"
+msgstr "Het geluid stil verhogen"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:22
+msgid "Binding to raise the system volume quietly."
+msgstr "Sneltoets om het geluidvolume stil te verhogen."
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:23
+msgid "Microphone mute/unmute"
+msgstr "Microfoon uitzetten / aanzetten"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:24
+msgid "Binding to mute/unmute the microphone."
+msgstr "Sneltoets om de microfoon uit- of aan te zetten."
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
 msgid "Shut down"
 msgstr "Afsluiten"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:18
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:26
 msgid "Binding to shut down."
 msgstr "Sneltoets om af te sluiten."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:27
 msgid "Log out"
 msgstr "Afmelden"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:20
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:28
 msgid "Binding to log out."
 msgstr "Sneltoets om af te melden."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:21
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:29
 msgid "Eject"
 msgstr "Uitwerpen"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:22
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:30
 msgid "Binding to eject an optical disc."
 msgstr "Sneltoets om een optische schijf uit te werpen."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:23
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:31
 msgid "Home folder"
 msgstr "Persoonlijke map"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:24
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
 msgid "Binding to open the Home folder."
 msgstr "Sneltoets om de persoonlijke map te openen met de bestandsbeheerder."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
 msgid "Search"
 msgstr "Zoeken"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:26
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
 msgid "Binding to launch the search tool."
 msgstr "Sneltoets om het zoekprogramma te starten."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:27
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
 msgid "Launch email client"
 msgstr "E-mailprogramma starten"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:28
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
 msgid "Binding to launch the email client."
 msgstr "Sneltoets om het e-mailprogramma te starten."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:29
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
 msgid "Launch settings"
 msgstr "Start instellingen"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:30
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
 msgid "Binding to launch MATE settings."
 msgstr "Koppeling om MATE-instellingen te starten."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:31
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
 msgid "Lock screen"
 msgstr "Scherm vergrendelen"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
 msgid "Binding to lock the screen."
 msgstr "Sneltoets om het scherm te vergrendelen."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
 msgid "Launch help browser"
 msgstr "Hulptekst openen"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:42
 msgid "Binding to launch the help browser."
 msgstr "Sneltoets om de hulptekst te openen."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
 msgid "Launch calculator"
 msgstr "Rekenmachine starten"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
 msgid "Binding to launch the calculator."
 msgstr "Sneltoets om de rekenmachine te starten."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
 msgid "Launch web browser"
 msgstr "Webbrowser starten"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
 msgid "Binding to launch the web browser."
 msgstr "Sneltoets om de webbrowser te starten."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
 msgid "Launch media player"
 msgstr "Mediaspeler starten"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
 msgid "Binding to launch the media player."
 msgstr "Sneltoets om de mediaspeler te starten."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
 msgid "Play (or play/pause)"
 msgstr "Afspelen (of afspelen/pauzeren)"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:42
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
 msgid "Binding to start playback (or toggle play/pause)."
 msgstr ""
 "Sneltoets om af te spelen (of te schakelen tussen afspelen en pauzeren)."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
 msgid "Pause playback"
 msgstr "Afspelen pauzeren"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
 msgid "Binding to pause playback."
 msgstr "Sneltoets om afspelen te pauzeren."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
 msgid "Stop playback"
 msgstr "Afspelen staken"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
 msgid "Binding to stop playback."
 msgstr "Sneltoets om afspelen stil te zetten."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
 msgid "Previous track"
 msgstr "Vorige nummer"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
 msgid "Binding to skip to previous track."
 msgstr "Sneltoets om naar het vorige nummer te gaan."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:57
 msgid "Next track"
 msgstr "Volgende nummer"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:58
 msgid "Binding to skip to next track."
 msgstr "Sneltoets om naar het volgende nummer te gaan."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:60
 msgid "Binding to show the screen magnifier"
 msgstr "Sneltoets om het schermvergrootglas te tonen."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:62
 msgid "Binding to start the screen reader"
 msgstr "Sneltoets om de schermlezer aan te zetten."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:64
 msgid "Binding to show the on-screen keyboard"
 msgstr "Sneltoets om het schermtoetsenbord te tonen."
 
@@ -1098,7 +1130,7 @@ msgstr "Toetsenbord_voorkeuren"
 msgid "Show _Current Layout"
 msgstr "Huidige indeling tonen"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:189
+#: ../plugins/media-keys/msd-media-keys-manager.c:191
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
@@ -1107,7 +1139,7 @@ msgstr ""
 "standaardterminalvenster-opdracht is ingesteld en naar een geldige "
 "toepassing verwijst."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:229
+#: ../plugins/media-keys/msd-media-keys-manager.c:231
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1116,39 +1148,49 @@ msgstr ""
 "Deze opdracht kon niet worden uitgevoerd: %s\n"
 "Controleer of dit een geldige opdracht is."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:611
+#: ../plugins/media-keys/msd-media-keys-manager.c:629
 #: ../plugins/media-keys/test-media-window.c:81
 msgid "Touchpad enabled"
 msgstr "Aanraakveld ingeschakeld"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:611
+#: ../plugins/media-keys/msd-media-keys-manager.c:629
 #: ../plugins/media-keys/test-media-window.c:74
 msgid "Touchpad disabled"
 msgstr "Aanraakveld uitgeschakeld"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:852
+#: ../plugins/media-keys/msd-media-keys-manager.c:943
 #: ../plugins/media-keys/test-media-window.c:88
 msgid "Bluetooth disabled"
 msgstr "Bluetooth uitgeschakeld"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:855
+#: ../plugins/media-keys/msd-media-keys-manager.c:946
 #: ../plugins/media-keys/test-media-window.c:95
 msgid "Bluetooth enabled"
 msgstr "Bluetooth ingeschakeld"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:859
+#: ../plugins/media-keys/msd-media-keys-manager.c:950
 #: ../plugins/media-keys/test-media-window.c:102
 msgid "Airplane mode enabled"
 msgstr "Vliegtuigmodus ingeschakeld"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:862
+#: ../plugins/media-keys/msd-media-keys-manager.c:953
 #: ../plugins/media-keys/test-media-window.c:109
 msgid "Airplane mode disabled"
 msgstr "Vliegtuigmodus uitgeschakeld"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:893
+#: ../plugins/media-keys/msd-media-keys-manager.c:984
 msgid "Hardware Airplane Mode"
 msgstr "Vliegtuigmodus voor apparatuur"
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:1022
+#: ../plugins/media-keys/test-media-window.c:123
+msgid "Changing Screen Layout"
+msgstr "Schermvormgeving veranderen"
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:1026
+#: ../plugins/media-keys/test-media-window.c:116
+msgid "No External Display"
+msgstr "Geen extern beeldscherm"
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"

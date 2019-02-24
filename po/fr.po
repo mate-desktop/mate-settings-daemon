@@ -11,15 +11,16 @@
 # yoplait <yoplait@tememe.org>, 2018
 # Étienne Deparis <etienne@depar.is>, 2018
 # bf437f16c5a5796ac2a6f350075b40dc, 2018
+# sire cartier <ppd491@gmail.com>, 2018
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-18 11:09+0100\n"
+"POT-Creation-Date: 2018-12-23 18:24+0100\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: bf437f16c5a5796ac2a6f350075b40dc, 2018\n"
+"Last-Translator: sire cartier <ppd491@gmail.com>, 2018\n"
 "Language-Team: French (https://www.transifex.com/mate/teams/13566/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,17 +33,17 @@ msgid "Accessibility"
 msgstr "Accessibilité"
 
 #: ../data/50-accessibility.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:59
 msgid "Toggle magnifier"
 msgstr "Activer ou désactiver la loupe"
 
 #: ../data/50-accessibility.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:61
 msgid "Toggle screen reader"
 msgstr "Activer ou désactiver le lecteur d'écran"
 
 #: ../data/50-accessibility.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:63
 msgid "Toggle on-screen keyboard"
 msgstr "Activer ou désactiver le clavier visuel"
 
@@ -504,150 +505,182 @@ msgid "Binding to raise the system volume."
 msgstr "Raccourci pour augmenter le volume général du son."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:17
+msgid "Mute the audio quietly"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:18
+msgid "Binding to mute the system volume quietly."
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
+msgid "Turn the volume down quietly"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:20
+msgid "Binding to lower the system volume quietly."
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:21
+msgid "Turn the volume up quietly"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:22
+msgid "Binding to raise the system volume quietly."
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:23
+msgid "Microphone mute/unmute"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:24
+msgid "Binding to mute/unmute the microphone."
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
 msgid "Shut down"
 msgstr "Éteindre"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:18
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:26
 msgid "Binding to shut down."
 msgstr "Raccourci pour éteindre."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:27
 msgid "Log out"
 msgstr "Se déconnecte"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:20
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:28
 msgid "Binding to log out."
 msgstr "Raccourci pour se déconnecter."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:21
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:29
 msgid "Eject"
 msgstr "Éjection"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:22
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:30
 msgid "Binding to eject an optical disc."
 msgstr "Raccourci pour éjecter un disque optique."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:23
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:31
 msgid "Home folder"
 msgstr "Dossier personnel"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:24
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
 msgid "Binding to open the Home folder."
 msgstr "Raccourci pour ouvrir le dossier personnel."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
 msgid "Search"
 msgstr "Rechercher"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:26
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
 msgid "Binding to launch the search tool."
 msgstr "Raccourci pour lancer l'outil de recherche."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:27
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
 msgid "Launch email client"
 msgstr "Lancer le logiciel de messagerie"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:28
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
 msgid "Binding to launch the email client."
 msgstr "Raccourci pour lancer le logiciel de messagerie."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:29
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
 msgid "Launch settings"
-msgstr ""
+msgstr "ouvrir les réglages"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:30
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
 msgid "Binding to launch MATE settings."
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:31
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
 msgid "Lock screen"
 msgstr "Verrouiller l'écran"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
 msgid "Binding to lock the screen."
 msgstr "Raccourci pour verrouiller l'écran."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
 msgid "Launch help browser"
 msgstr "Lancer le navigateur d'aide"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:42
 msgid "Binding to launch the help browser."
 msgstr "Raccourci pour lancer le navigateur d'aide."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
 msgid "Launch calculator"
 msgstr "Lancer la calculatrice"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
 msgid "Binding to launch the calculator."
 msgstr "Raccourci pour lancer la calculatrice."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
 msgid "Launch web browser"
 msgstr "Lancer le navigateur Web"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
 msgid "Binding to launch the web browser."
 msgstr "Raccourci pour lancer le navigateur Web."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
 msgid "Launch media player"
 msgstr "Lancer le lecteur multimédia"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
 msgid "Binding to launch the media player."
 msgstr "Raccourci pour lancer le lecteur multimédia."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
 msgid "Play (or play/pause)"
 msgstr "Lecture (ou Lecture/Pause)"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:42
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
 msgid "Binding to start playback (or toggle play/pause)."
 msgstr "Raccourci pour démarrer (ou suspendre) la lecture."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
 msgid "Pause playback"
 msgstr "Mettre en pause la lecture"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
 msgid "Binding to pause playback."
 msgstr "Raccourci pour mettre en pause la lecture."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
 msgid "Stop playback"
 msgstr "Arrêter la lecture"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
 msgid "Binding to stop playback."
 msgstr "Raccourci pour interrompre la lecture."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
 msgid "Previous track"
 msgstr "Piste précédente"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
 msgid "Binding to skip to previous track."
 msgstr "Raccourci pour revenir à la piste précédente."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:57
 msgid "Next track"
 msgstr "Piste suivante"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:58
 msgid "Binding to skip to next track."
 msgstr "Raccourci pour passer à la piste suivante."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:60
 msgid "Binding to show the screen magnifier"
 msgstr "Raccourci pour montrer la loupe d'écran"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:62
 msgid "Binding to start the screen reader"
 msgstr "Raccourci pour commencer le lecteur d'écran."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:64
 msgid "Binding to show the on-screen keyboard"
 msgstr "Raccourci pour montrer le clavier visuel."
 
@@ -1110,7 +1143,7 @@ msgstr "_Préférences du clavier"
 msgid "Show _Current Layout"
 msgstr "Affic_her l'agencement actuel"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:189
+#: ../plugins/media-keys/msd-media-keys-manager.c:191
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
@@ -1118,7 +1151,7 @@ msgstr ""
 "Impossible de trouver le terminal par défaut. Vérifiez que la commande de "
 "votre terminal par défaut est renseignée et désigne une application valide."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:229
+#: ../plugins/media-keys/msd-media-keys-manager.c:231
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1127,38 +1160,48 @@ msgstr ""
 "Impossible d'exécuter la commande : %s\n"
 "Vérifiez que cette commande est valide."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:611
+#: ../plugins/media-keys/msd-media-keys-manager.c:629
 #: ../plugins/media-keys/test-media-window.c:81
 msgid "Touchpad enabled"
-msgstr ""
+msgstr "Pavé tactile activé"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:611
+#: ../plugins/media-keys/msd-media-keys-manager.c:629
 #: ../plugins/media-keys/test-media-window.c:74
 msgid "Touchpad disabled"
-msgstr ""
+msgstr "Pavé tactile désactivé"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:852
+#: ../plugins/media-keys/msd-media-keys-manager.c:943
 #: ../plugins/media-keys/test-media-window.c:88
 msgid "Bluetooth disabled"
-msgstr ""
+msgstr "Bluetooth désactivé"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:855
+#: ../plugins/media-keys/msd-media-keys-manager.c:946
 #: ../plugins/media-keys/test-media-window.c:95
 msgid "Bluetooth enabled"
-msgstr ""
+msgstr "Bluetooth activé"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:859
+#: ../plugins/media-keys/msd-media-keys-manager.c:950
 #: ../plugins/media-keys/test-media-window.c:102
 msgid "Airplane mode enabled"
-msgstr ""
+msgstr "Mode avion activé"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:862
+#: ../plugins/media-keys/msd-media-keys-manager.c:953
 #: ../plugins/media-keys/test-media-window.c:109
 msgid "Airplane mode disabled"
+msgstr "Mode avion désactivé"
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:984
+msgid "Hardware Airplane Mode"
+msgstr "Mode avion"
+
+#: ../plugins/media-keys/msd-media-keys-manager.c:1022
+#: ../plugins/media-keys/test-media-window.c:123
+msgid "Changing Screen Layout"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:893
-msgid "Hardware Airplane Mode"
+#: ../plugins/media-keys/msd-media-keys-manager.c:1026
+#: ../plugins/media-keys/test-media-window.c:116
+msgid "No External Display"
 msgstr ""
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
