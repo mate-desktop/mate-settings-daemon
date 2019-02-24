@@ -1,3 +1,10 @@
+### mate-settings-daemon 1.22.0
+
+  * update translations
+  * Initialize travis support
+  * disable deprecation warnings for distcheck
+  * media-keys: Execute default calculator application defined by schema
+
 ### mate-settings-daemon 1.21.2
 
   * update translations
