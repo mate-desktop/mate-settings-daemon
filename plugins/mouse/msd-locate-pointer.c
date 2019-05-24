@@ -465,11 +465,7 @@ event_filter (GdkXEvent *gdkxevent,
       if (keyval == GDK_KEY_Control_L || keyval == GDK_KEY_Control_R)
         {
           if (xevent->xany.type == KeyRelease)
-            { 
-              XUngrabButton (xevent->xany.display,
-                             AnyButton,
-                             AnyModifier,
-                             xevent->xany.window);
+            {
               XAllowEvents (xevent->xany.display,
                             AsyncKeyboard,
                             xevent->xkey.time);
@@ -480,16 +476,6 @@ event_filter (GdkXEvent *gdkxevent,
               XAllowEvents (xevent->xany.display,
                             SyncKeyboard,
                             xevent->xkey.time);
-              XGrabButton (xevent->xany.display,
-                           AnyButton,
-                           AnyModifier,
-                           xevent->xany.window,
-                           False,
-                           ButtonPressMask,
-                           GrabModeSync,
-                           GrabModeAsync,
-                           None,
-                           None);
             }
         }
       else
