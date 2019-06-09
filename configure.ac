@@ -8,7 +8,7 @@ m4_define([msd_api_version],
 
 AC_INIT([mate-settings-daemon],
 	[msd_api_version_major.msd_api_version_minor.msd_api_version_micro],
-	[http://www.mate-desktop.org/])
+	[https://mate-desktop.org/])
 
 AC_CONFIG_SRCDIR([mate-settings-daemon/mate-settings-manager.c])
 AC_CONFIG_MACRO_DIR([m4])
