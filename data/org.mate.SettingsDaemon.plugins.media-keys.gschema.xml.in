@@ -110,6 +110,11 @@
       <summary>Launch calculator</summary>
       <description>Binding to launch the calculator.</description>
     </key>
+    <key name="messenger" type="s">
+      <default>'XF86Messenger'</default>
+      <summary>Launch instant messenger</summary>
+      <description>Binding to launch the instant messenger.</description>
+    </key>
     <key name="www" type="s">
       <default>'XF86WWW'</default>
       <summary>Launch web browser</summary>

@@ -543,6 +543,22 @@ do_calculator_action (MsdMediaKeysManager *manager)
 }
 
 static void
+do_messenger_action (MsdMediaKeysManager *manager)
+{
+        GSettings *settings;
+        char *messenger;
+
+        settings = g_settings_new ("org.mate.applications-messenger");
+        messenger = g_settings_get_string (settings, "exec");
+
+        if (messenger)
+                execute (manager, messenger, FALSE, FALSE);
+
+        g_free (messenger);
+        g_object_unref (settings);
+}
+
+static void
 do_shutdown_action (MsdMediaKeysManager *manager)
 {
         execute (manager, "mate-session-save --shutdown-dialog", FALSE, FALSE);
@@ -1262,6 +1278,9 @@ do_action (MsdMediaKeysManager *manager,
                 break;
         case CALCULATOR_KEY:
                 do_calculator_action (manager);
+                break;
+        case MESSENGER_KEY:
+                do_messenger_action (manager);
                 break;
         case PLAY_KEY:
                 return do_multimedia_player_action (manager, "Play");
