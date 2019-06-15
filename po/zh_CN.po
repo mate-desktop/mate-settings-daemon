@@ -8,10 +8,10 @@
 # Wylmer Wang, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
 # nyanyh <rebuilty@gmail.com>, 2018
-# Mingcong Bai <jeffbai@aosc.xyz>, 2018
-# liushuyu011 <liushuyu011@gmail.com>, 2018
 # biqiu-ssw <shenshuaiwen@gmail.com>, 2018
+# liushuyu011 <liushuyu011@gmail.com>, 2018
 # zhangxianwei8 <zhang.xianwei8@zte.com.cn>, 2018
+# Mingcong Bai <jeffbai@aosc.xyz>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -20,7 +20,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-23 18:24+0100\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: zhangxianwei8 <zhang.xianwei8@zte.com.cn>, 2018\n"
+"Last-Translator: Mingcong Bai <jeffbai@aosc.xyz>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/mate/teams/13566/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -449,35 +449,35 @@ msgstr "升高系统音量的键绑定。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:17
 msgid "Mute the audio quietly"
-msgstr ""
+msgstr "静默静音"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:18
 msgid "Binding to mute the system volume quietly."
-msgstr ""
+msgstr "用于静默关闭系统音量的键绑定。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
 msgid "Turn the volume down quietly"
-msgstr ""
+msgstr "静默降低音量"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:20
 msgid "Binding to lower the system volume quietly."
-msgstr ""
+msgstr "用于静默降低系统音量的键绑定。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:21
 msgid "Turn the volume up quietly"
-msgstr ""
+msgstr "静默提高音量"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:22
 msgid "Binding to raise the system volume quietly."
-msgstr ""
+msgstr "用于静默提高系统音量的键绑定。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:23
 msgid "Microphone mute/unmute"
-msgstr ""
+msgstr "开关话筒"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:24
 msgid "Binding to mute/unmute the microphone."
-msgstr ""
+msgstr "用于开关话筒的键绑定。"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
 msgid "Shut down"
@@ -1098,12 +1098,12 @@ msgstr "硬件飞行模式"
 #: ../plugins/media-keys/msd-media-keys-manager.c:1022
 #: ../plugins/media-keys/test-media-window.c:123
 msgid "Changing Screen Layout"
-msgstr ""
+msgstr "更改屏幕布局"
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:1026
 #: ../plugins/media-keys/test-media-window.c:116
 msgid "No External Display"
-msgstr ""
+msgstr "无外部显示器"
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"

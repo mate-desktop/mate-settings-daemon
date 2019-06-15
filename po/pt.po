@@ -6,9 +6,9 @@
 # Translators:
 # Sérgio Marques <smarquespt@gmail.com>, 2018
 # Carlos Moreira, 2018
-# MS <manuelarodsilva@gmail.com>, 2018
 # José Vieira <jvieira33@sapo.pt>, 2018
 # Rui <xymarior@yandex.com>, 2018
+# Manuela Silva <manuelarodsilva@gmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -17,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-23 18:24+0100\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Rui <xymarior@yandex.com>, 2018\n"
+"Last-Translator: Manuela Silva <manuelarodsilva@gmail.com>, 2019\n"
 "Language-Team: Portuguese (https://www.transifex.com/mate/teams/13566/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -342,7 +342,7 @@ msgstr "Ativação deste suplemento"
 #: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:2
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:2
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr "Se este suplemento seria ativado pelo mate-settings-daemon ou não"
+msgstr "Se este plug-in deveria ser ativado ou não por mate-settings-daemon"
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:3
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:3
@@ -385,7 +385,7 @@ msgstr "Prioridade para usar este suplemento"
 #: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:4
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
 msgstr ""
-"Prioridade para usar este suplemento na fila de início do mate-settings-"
+"Prioridade para utilizar este plug-in na fila de arranque de mate-settings-"
 "daemon"
 
 #: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:5
@@ -753,7 +753,7 @@ msgstr ""
 
 #: ../data/mate-settings-daemon.desktop.in.in.h:1
 msgid "MATE Settings Daemon"
-msgstr "Servidor de Definições MATE"
+msgstr "Servidor de Definições do MATE"
 
 #: ../mate-settings-daemon/main.c:65
 msgid "Enable debugging code"
@@ -1322,7 +1322,7 @@ msgstr "Virado ao Contrário"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2358
 msgid "Configure display settings"
-msgstr "Configure as definições do ecrã"
+msgstr "Configure as definições de ecrã"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2418
 msgid "Could not apply the stored configuration for monitors"

@@ -8,10 +8,11 @@
 # Mat V <enthusedquill6@gmail.com>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
 # Marco Mangiacavalli, 2018
-# Giuseppe Pignataro (Fastbyte01) <rogepix@gmail.com>, 2018
+# Giuseppe Pignataro <rogepix@gmail.com>, 2018
 # Marco Bartolucci <nap.84@live.it>, 2018
 # Marco Z. <minaz666@gmail.com>, 2018
 # Enrico B. <enricobe@hotmail.com>, 2019
+# andrea pittaro <transifex@andreapittaro.it>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -20,7 +21,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-23 18:24+0100\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Enrico B. <enricobe@hotmail.com>, 2019\n"
+"Last-Translator: andrea pittaro <transifex@andreapittaro.it>, 2019\n"
 "Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -506,27 +507,28 @@ msgstr "Associazione per alzare il volume di sistema."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:17
 msgid "Mute the audio quietly"
-msgstr ""
+msgstr "Muta l'audio senza emettere suoni"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:18
 msgid "Binding to mute the system volume quietly."
 msgstr ""
+"Combinazione per mutare il volume di sistema senza emettere alcun suono"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
 msgid "Turn the volume down quietly"
-msgstr ""
+msgstr "Abbassa il volume senza emettere suoni"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:20
 msgid "Binding to lower the system volume quietly."
-msgstr ""
+msgstr "Combinazione per abbassare il volume senza emettere alcun suono"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:21
 msgid "Turn the volume up quietly"
-msgstr ""
+msgstr "Abbassa il volume senza emettere suoni"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:22
 msgid "Binding to raise the system volume quietly."
-msgstr ""
+msgstr "Combinazione per alzare il volume senza emettere alcun suono"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:23
 msgid "Microphone mute/unmute"
@@ -534,7 +536,7 @@ msgstr "Silenzia/riattiva microfono"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:24
 msgid "Binding to mute/unmute the microphone."
-msgstr ""
+msgstr "Combinazione per mutare o abilitare il microfono"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
 msgid "Shut down"
@@ -586,11 +588,11 @@ msgstr "Associazione per lanciare il client email."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
 msgid "Launch settings"
-msgstr ""
+msgstr "Avvio della finestra delle impostazioni"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
 msgid "Binding to launch MATE settings."
-msgstr ""
+msgstr "Combinazione per avviare la finestra delle impostazioni di MATE"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
 msgid "Lock screen"
@@ -1318,7 +1320,7 @@ msgstr "Impossibile salvare la configurazione del monitor"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2059
 msgid "Mirroring outputs not supported"
-msgstr ""
+msgstr "La stessa immagine in entrambi i display non è supportata"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2090
 msgid "Normal"

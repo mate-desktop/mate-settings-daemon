@@ -6,7 +6,7 @@
 # Translators:
 # Piotr Strębski <strebski@gmail.com>, 2018
 # Darek Witkowski, 2018
-# Marcin Mikołajczak <me@m4sk.in>, 2018
+# Marcin Mikołajczak <me@mkljczk.pl>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
 # Marcin Kralka <marcink96@gmail.com>, 2018
 # emariusek <wisniowy@g.pl>, 2018
@@ -14,7 +14,7 @@
 # Beniamin Pawlus <kupwzywcu@o2.pl>, 2018
 # Lukasz Kaminski <inactive+elpikej@transifex.com>, 2018
 # Piotr Drąg <piotrdrag@gmail.com>, 2018
-# pietrasagh <pietrasagh@gmail.com>, 2018
+# Piotr Kowalik <pietrasagh@gmail.com>, 2018
 # Dominik Adrian Grzywak, 2018
 # 
 #, fuzzy
