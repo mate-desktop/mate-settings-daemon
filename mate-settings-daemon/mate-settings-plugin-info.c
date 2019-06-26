@@ -78,7 +78,7 @@ enum {
 
 static guint signals [LAST_SIGNAL] = { 0, };
 
-G_DEFINE_TYPE (MateSettingsPluginInfo, mate_settings_plugin_info, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (MateSettingsPluginInfo, mate_settings_plugin_info, G_TYPE_OBJECT)
 
 static void
 mate_settings_plugin_info_finalize (GObject *object)
@@ -143,8 +143,6 @@ mate_settings_plugin_info_class_init (MateSettingsPluginInfoClass *klass)
                               g_cclosure_marshal_VOID__VOID,
                               G_TYPE_NONE,
                               0);
-
-        g_type_class_add_private (klass, sizeof (MateSettingsPluginInfoPrivate));
 }
 
 static void
