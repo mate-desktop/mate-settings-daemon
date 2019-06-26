@@ -44,8 +44,6 @@
 
 #define PLUGIN_EXT ".mate-settings-plugin"
 
-#define MATE_SETTINGS_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MATE_TYPE_SETTINGS_MANAGER, MateSettingsManagerPrivate))
-
 struct MateSettingsManagerPrivate
 {
         DBusGConnection            *connection;
@@ -66,7 +64,7 @@ static void     mate_settings_manager_class_init  (MateSettingsManagerClass *kla
 static void     mate_settings_manager_init        (MateSettingsManager      *settings_manager);
 static void     mate_settings_manager_finalize    (GObject                   *object);
 
-G_DEFINE_TYPE (MateSettingsManager, mate_settings_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (MateSettingsManager, mate_settings_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -429,8 +427,6 @@ mate_settings_manager_class_init (MateSettingsManagerClass *klass)
                               G_TYPE_NONE,
                               1, G_TYPE_STRING);
 
-        g_type_class_add_private (klass, sizeof (MateSettingsManagerPrivate));
-
         dbus_g_object_type_install_info (MATE_TYPE_SETTINGS_MANAGER, &dbus_glib_mate_settings_manager_object_info);
 }
 
@@ -440,7 +436,7 @@ mate_settings_manager_init (MateSettingsManager *manager)
         char      *schema;
         GSettings *settings;
 
-        manager->priv = MATE_SETTINGS_MANAGER_GET_PRIVATE (manager);
+        manager->priv = mate_settings_manager_get_instance_private (manager);
 
         schema = g_strdup_printf ("%s.plugins", DEFAULT_SETTINGS_PREFIX);
         if (is_schema (schema)) {
