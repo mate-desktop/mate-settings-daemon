@@ -268,7 +268,7 @@ status_icon_popup_menu_cb (GtkStatusIcon * icon, guint button, guint time)
 	/* Fix any failures of compiz/other wm's to communicate with gtk for transparency */
 	screen = gtk_widget_get_screen(GTK_WIDGET(toplevel));
 	visual = gdk_screen_get_rgba_visual(screen);
-	gtk_widget_set_visual(GTK_WIDGET(toplevel), visual); 
+	gtk_widget_set_visual(GTK_WIDGET(toplevel), visual);
 	/* Set menu and it's toplevel window to follow panel theme */
 	context = gtk_widget_get_style_context (GTK_WIDGET(toplevel));
 	gtk_style_context_add_class(context,"gnome-panel-menu-bar");

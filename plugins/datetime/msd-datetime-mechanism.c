@@ -96,7 +96,7 @@ GType
 msd_datetime_mechanism_error_get_type (void)
 {
         static GType etype = 0;
-        
+
         if (etype == 0)
         {
                 static const GEnumValue values[] =
@@ -106,12 +106,12 @@ msd_datetime_mechanism_error_get_type (void)
                                 ENUM_ENTRY (MSD_DATETIME_MECHANISM_ERROR_INVALID_TIMEZONE_FILE, "InvalidTimezoneFile"),
                                 { 0, 0, 0 }
                         };
-                
+
                 g_assert (MSD_DATETIME_MECHANISM_NUM_ERRORS == G_N_ELEMENTS (values) - 1);
-                
+
                 etype = g_enum_register_static ("MsdDatetimeMechanismError", values);
         }
-        
+
         return etype;
 }
 
@@ -194,7 +194,7 @@ register_mechanism (MsdDatetimeMechanism *mechanism)
                 goto error;
         }
 
-        dbus_g_connection_register_g_object (mechanism->priv->system_bus_connection, "/", 
+        dbus_g_connection_register_g_object (mechanism->priv->system_bus_connection, "/",
                                              G_OBJECT (mechanism));
 
         mechanism->priv->system_bus_proxy = dbus_g_proxy_new_for_name (mechanism->priv->system_bus_connection,
@@ -287,7 +287,7 @@ _set_time (MsdDatetimeMechanism  *mechanism,
         if (settimeofday (tv, NULL) != 0) {
                 error = g_error_new (MSD_DATETIME_MECHANISM_ERROR,
                                      MSD_DATETIME_MECHANISM_ERROR_GENERAL,
-                                     "Error calling settimeofday({%ld,%ld}): %s", 
+                                     "Error calling settimeofday({%ld,%ld}): %s",
                                      (gint64) tv->tv_sec, (gint64) tv->tv_usec,
                                      strerror (errno));
                 dbus_g_method_return_error (context, error);
@@ -295,7 +295,7 @@ _set_time (MsdDatetimeMechanism  *mechanism,
                 return FALSE;
         }
 
-        if (g_file_test ("/sbin/hwclock", 
+        if (g_file_test ("/sbin/hwclock",
                          G_FILE_TEST_EXISTS | G_FILE_TEST_IS_REGULAR | G_FILE_TEST_IS_EXECUTABLE)) {
                 int exit_status;
                 if (!g_spawn_command_line_sync ("/sbin/hwclock --systohc", NULL, NULL, &exit_status, &error)) {
@@ -333,7 +333,7 @@ _rh_update_etc_sysconfig_clock (DBusGMethodInvocation *context, const char *key,
                 char *data;
                 gsize len;
                 GError *error;
-                
+
                 error = NULL;
 
                 if (!g_file_get_contents ("/etc/sysconfig/clock", &data, &len, &error)) {
@@ -425,7 +425,7 @@ msd_datetime_mechanism_adjust_time (MsdDatetimeMechanism  *mechanism,
         }
 
         tv.tv_sec += (time_t) seconds_to_add;
-        return _set_time (mechanism, &tv, context);        
+        return _set_time (mechanism, &tv, context);
 }
 
 
@@ -450,7 +450,7 @@ msd_datetime_mechanism_set_timezone (MsdDatetimeMechanism  *mechanism,
 
                 if (error->code == SYSTEM_TIMEZONE_ERROR_INVALID_TIMEZONE_FILE)
                         code = MSD_DATETIME_MECHANISM_ERROR_INVALID_TIMEZONE_FILE;
-                else 
+                else
                         code = MSD_DATETIME_MECHANISM_ERROR_GENERAL;
 
                 error2 = g_error_new (MSD_DATETIME_MECHANISM_ERROR,
@@ -551,7 +551,7 @@ msd_datetime_mechanism_set_hardware_clock_using_utc (MsdDatetimeMechanism  *mech
                                        "org.mate.settingsdaemon.datetimemechanism.configurehwclock"))
                 return FALSE;
 
-        if (g_file_test ("/sbin/hwclock", 
+        if (g_file_test ("/sbin/hwclock",
                          G_FILE_TEST_EXISTS | G_FILE_TEST_IS_REGULAR | G_FILE_TEST_IS_EXECUTABLE)) {
                 int exit_status;
                 char *cmd;

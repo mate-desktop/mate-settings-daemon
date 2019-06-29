@@ -1615,7 +1615,7 @@ msd_mouse_manager_idle_cb (MsdMouseManager *manager)
 
 #if 0   /* FIXME need to fork (?) mousetweaks for this to work */
         set_mousetweaks_daemon (manager,
-                                g_settings_get_boolean (manager->priv->settings_mouse_a11y, 
+                                g_settings_get_boolean (manager->priv->settings_mouse_a11y,
                                                         KEY_MOUSE_A11Y_DWELL_ENABLE),
                                 g_settings_get_boolean (manager->priv->settings_mouse_a11y,
                                                         KEY_MOUSE_A11Y_DELAY_ENABLE));

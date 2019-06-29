@@ -15,7 +15,7 @@
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL RED HAT
  * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
  * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
- * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN 
+ * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
  * Author:  Owen Taylor, Red Hat, Inc.
@@ -47,7 +47,7 @@ struct _XSettingsManager
 
 static XSettingsList *settings;
 
-typedef struct 
+typedef struct
 {
   Window window;
   Atom timestamp_prop_atom;
@@ -74,9 +74,9 @@ timestamp_predicate (Display *display,
  * @window: a #Window, used for communication with the server.
  *          The window must have PropertyChangeMask in its
  *          events mask or a hang will result.
- * 
- * Routine to get the current X server time stamp. 
- * 
+ *
+ * Routine to get the current X server time stamp.
+ *
  * Return value: the time stamp.
  **/
 static Time
@@ -106,7 +106,7 @@ xsettings_manager_check_running (Display *display,
 {
   char buffer[256];
   Atom selection_atom;
-  
+
   sprintf(buffer, "_XSETTINGS_S%d", screen);
   selection_atom = XInternAtom (display, buffer, False);
 
@@ -127,7 +127,7 @@ xsettings_manager_new (Display                *display,
   XClientMessageEvent xev;
 
   char buffer[256];
-  
+
   manager = malloc (sizeof *manager);
   if (!manager)
     return NULL;
@@ -174,7 +174,7 @@ xsettings_manager_new (Display                *display,
       xev.data.l[2] = manager->window;
       xev.data.l[3] = 0;	/* manager specific data */
       xev.data.l[4] = 0;	/* manager specific data */
-      
+
       XSendEvent (display, RootWindow (display, screen),
 		  False, StructureNotifyMask, (XEvent *)&xev);
     }
@@ -182,7 +182,7 @@ xsettings_manager_new (Display                *display,
     {
       manager->terminate (manager->cb_data);
     }
-  
+
   return manager;
 }
 
@@ -190,7 +190,7 @@ void
 xsettings_manager_destroy (XSettingsManager *manager)
 {
   XDestroyWindow (manager->display, manager->window);
-  
+
   xsettings_list_free (manager->settings);
   free (manager);
 }
@@ -242,11 +242,11 @@ xsettings_manager_set_setting (XSettingsManager *manager,
   new_setting = xsettings_setting_copy (setting);
   if (!new_setting)
     return XSETTINGS_NO_MEM;
-  
+
   new_setting->last_change_serial = manager->serial;
-  
+
   result = xsettings_list_insert (&settings, new_setting);
-  
+
   if (result != XSETTINGS_SUCCESS)
     xsettings_setting_free (new_setting);
 
@@ -335,7 +335,7 @@ setting_store (XSettingsSetting *setting,
   memcpy (buffer->pos, setting->name, string_len);
   length -= string_len;
   buffer->pos += string_len;
-  
+
   while (length > 0)
     {
       *(buffer->pos++) = 0;
@@ -355,12 +355,12 @@ setting_store (XSettingsSetting *setting,
       string_len = strlen (setting->data.v_string);
       *(CARD32 *)(buffer->pos) = string_len;
       buffer->pos += 4;
-      
+
       length = XSETTINGS_PAD (string_len, 4);
       memcpy (buffer->pos, setting->data.v_string, string_len);
       length -= string_len;
       buffer->pos += string_len;
-      
+
       while (length > 0)
 	{
 	  *(buffer->pos++) = 0;

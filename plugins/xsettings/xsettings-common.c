@@ -15,7 +15,7 @@
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL RED HAT
  * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
  * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
- * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN 
+ * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
  * Author:  Owen Taylor, Red Hat, Inc.
@@ -33,7 +33,7 @@ xsettings_setting_copy (XSettingsSetting *setting)
 {
   XSettingsSetting *result;
   size_t str_len;
-  
+
   result = malloc (sizeof *result);
   if (!result)
     return NULL;
@@ -73,7 +73,7 @@ xsettings_setting_copy (XSettingsSetting *setting)
   if (result->name)
     free (result->name);
   free (result);
-  
+
   return NULL;
 }
 
@@ -105,7 +105,7 @@ xsettings_list_copy (XSettingsList *list)
 	new = new_node;
 
       new_iter = new_node;
-      
+
       old_iter = old_iter->next;
     }
 
@@ -147,7 +147,7 @@ xsettings_setting_free (XSettingsSetting *setting)
 {
   if (setting->type == XSETTINGS_TYPE_STRING)
     free (setting->data.v_string);
-  
+
   if (setting->name)
     free (setting->name);
 
@@ -197,14 +197,14 @@ xsettings_list_insert (XSettingsList    **list,
       last = iter;
       iter = iter->next;
     }
-  
+
   if (last)
     last->next = node;
   else
     *list = node;
-  
+
   node->next = iter;
-  
+
   return XSETTINGS_SUCCESS;
 }
 
@@ -224,7 +224,7 @@ xsettings_list_delete (XSettingsList **list,
 	    last->next = iter->next;
 	  else
 	    *list = iter->next;
-  
+
 	  xsettings_setting_free (iter->setting);
 	  free (iter);
 

@@ -15,7 +15,7 @@
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL RED HAT
  * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
  * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
- * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN 
+ * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
  * Author:  Matthias Clasen, Red Hat, Inc.
@@ -46,7 +46,7 @@ void
 init_atoms (Display *display)
 {
   unsigned long max_request_size;
-  
+
   if (SELECTION_MAX_SIZE > 0)
     return;
 
@@ -63,17 +63,17 @@ init_atoms (Display *display)
   XA_SAVE_TARGETS = XInternAtom (display, "SAVE_TARGETS", False);
   XA_TARGETS = XInternAtom (display, "TARGETS", False);
   XA_TIMESTAMP = XInternAtom (display, "TIMESTAMP", False);
-  
+
   max_request_size = XExtendedMaxRequestSize (display);
   if (max_request_size == 0)
     max_request_size = XMaxRequestSize (display);
-  
+
   SELECTION_MAX_SIZE = max_request_size - 100;
   if (SELECTION_MAX_SIZE > 262144)
     SELECTION_MAX_SIZE =  262144;
 }
 
-typedef struct 
+typedef struct
 {
   Window window;
   Atom timestamp_prop_atom;

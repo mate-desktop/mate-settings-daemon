@@ -244,7 +244,7 @@ ldsm_mount_has_space (LdsmMountInfo *mount)
         /* enough free space, nothing to do */
         if (free_space > free_percent_notify)
                 return TRUE;
-                
+
         if (((gint64) mount->buf.f_frsize * (gint64) mount->buf.f_bavail) > ((gint64) free_size_gb_no_notify * GIGABYTE))
                 return TRUE;
 
@@ -277,7 +277,7 @@ ldsm_mount_is_user_ignore (const gchar *path)
                 return TRUE;
         else
                 return FALSE;
-}                
+}
 
 
 static gboolean
@@ -296,11 +296,11 @@ static gboolean
 ldsm_mount_should_ignore (GUnixMountEntry *mount)
 {
         const gchar *fs, *device, *path;
-        
+
         path = g_unix_mount_get_mount_path (mount);
         if (ldsm_mount_is_user_ignore (path))
                 return TRUE;
-        
+
         /* This is borrowed from GLib and used as a way to determine
          * which mounts we should ignore by default. GLib doesn't
          * expose this in a way that allows it to be used for this
@@ -354,13 +354,13 @@ ldsm_mount_should_ignore (GUnixMountEntry *mount)
                 "/dev/vn",
                 NULL
         };
-        
+
         fs = g_unix_mount_get_fs_type (mount);
         device = g_unix_mount_get_device_path (mount);
-        
+
         if (is_in (fs, ignore_fs))
                 return TRUE;
-  
+
         if (is_in (device, ignore_devices))
                 return TRUE;
 

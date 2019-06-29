@@ -15,7 +15,7 @@
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL RED HAT
  * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
  * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
- * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN 
+ * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
  * Author:  Matthias Clasen, Red Hat, Inc.
@@ -24,23 +24,23 @@
 #define LIST_H
 
 
-typedef struct _List      List;       
-typedef void (*Callback) (void *data, 
+typedef struct _List      List;
+typedef void (*Callback) (void *data,
 			  void *user_data);
 
 
-struct _List 
+struct _List
 {
   void *data;
 
   List *next;
 };
 
-typedef int (*ListFindFunc) (void *data, 
+typedef int (*ListFindFunc) (void *data,
 			     void *user_data);
 
-void  list_foreach (List         *list, 
-		    Callback      func, 
+void  list_foreach (List         *list,
+		    Callback      func,
 		    void         *user_data);
 List *list_prepend (List         *list,
 		    void         *data);
