@@ -15,7 +15,7 @@
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL RED HAT
  * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
  * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
- * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN 
+ * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
  * Author:  Matthias Clasen, Red Hat, Inc.
@@ -26,8 +26,8 @@
 
 
 void
-list_foreach (List     *list, 
-	      Callback  func, 
+list_foreach (List     *list,
+	      Callback  func,
 	      void     *user_data)
 {
   while (list)
@@ -57,14 +57,14 @@ list_free (List *list)
   while (list)
     {
       List *next = list->next;
-      
+
       free (list);
 
       list = next;
     }
 }
 
-List *  
+List *
 list_find (List         *list,
 	   ListFindFunc  func,
 	   void         *user_data)
@@ -85,7 +85,7 @@ list_remove  (List *list,
 	      void *data)
 {
   List *tmp, *prev;
-  
+
   prev = NULL;
   for (tmp = list; tmp; tmp = tmp->next)
     {
@@ -93,7 +93,7 @@ list_remove  (List *list,
 	{
 	  if (prev)
 	    prev->next = tmp->next;
-	  else 
+	  else
 	    list = tmp->next;
 
 	  free (tmp);
@@ -115,7 +115,7 @@ list_length (List *list)
   length = 0;
   for (tmp = list; tmp; tmp = tmp->next)
     length++;
-  
+
   return length;
 }
 
@@ -131,7 +131,7 @@ list_copy (List *list)
       new_list = (List *) malloc (sizeof (List));
       new_list->data = list->data;
       new_list->next = NULL;
-      
+
       last = new_list;
       list = list->next;
 
@@ -142,9 +142,9 @@ list_copy (List *list)
 	  last->data = list->data;
 	  list = list->next;
 	}
-      
+
       last->next = NULL;
     }
-  
+
   return new_list;
 }

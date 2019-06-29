@@ -183,7 +183,7 @@ on_media_player_key_pressed (MsdMprisManager  *manager,
     {
         mpris_head = g_queue_peek_head (manager->priv->media_player_queue);
         mpris_name = g_strdup_printf (MPRIS_PREFIX "%s", mpris_head);
-        
+
         g_debug ("MPRIS Sending '%s' to '%s'!", mpris_key, mpris_head);
 
         proxy = g_dbus_proxy_new_for_bus_sync(G_BUS_TYPE_SESSION,
@@ -321,7 +321,7 @@ msd_mpris_manager_start (MsdMprisManager   *manager,
 {
     GBusNameWatcherFlags flags = G_BUS_NAME_WATCHER_FLAGS_NONE;
     int i;
-    
+
     g_debug ("Starting mpris manager");
     mate_settings_profile_start (NULL);
 

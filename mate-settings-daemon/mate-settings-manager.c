@@ -216,7 +216,7 @@ _load_file (MateSettingsManager *manager,
         schema = g_strdup_printf ("%s.plugins.%s",
                                   DEFAULT_SETTINGS_PREFIX,
                                   mate_settings_plugin_info_get_location (info));
-        
+
 	/* Ignore unknown schemas or else we'll assert */
 	if (is_schema (schema)) {
 	       manager->priv->plugins = g_slist_prepend (manager->priv->plugins,

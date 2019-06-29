@@ -2009,7 +2009,7 @@ monitor_activate_cb (GtkCheckMenuItem *item, gpointer data)
                 return;
         }
 
-        try_to_apply_intended_configuration (manager, NULL, gtk_get_current_event_time (), NULL); 
+        try_to_apply_intended_configuration (manager, NULL, gtk_get_current_event_time (), NULL);
 }
 
 static void
@@ -2060,7 +2060,7 @@ mirror_outputs_cb(GtkCheckMenuItem *item, gpointer data)
                 }
 
                 mate_rr_config_save (config, NULL);
-                try_to_apply_intended_configuration (manager, NULL, gtk_get_current_event_time (), NULL); 
+                try_to_apply_intended_configuration (manager, NULL, gtk_get_current_event_time (), NULL);
 
                 g_object_unref (config);
 
@@ -2073,7 +2073,7 @@ mirror_outputs_cb(GtkCheckMenuItem *item, gpointer data)
                 if (config == NULL)
                          run_display_capplet(GTK_WIDGET(item));
                 mate_rr_config_save (config, NULL);
-                try_to_apply_intended_configuration (manager, NULL, gtk_get_current_event_time (), NULL); 
+                try_to_apply_intended_configuration (manager, NULL, gtk_get_current_event_time (), NULL);
 
                 g_object_unref (config);
 
@@ -2172,7 +2172,7 @@ add_rotation_items_for_output (MsdXrandrManager *manager, MateRROutputInfo *outp
 static void
 add_enable_option_for_output (MsdXrandrManager *manager, MateRROutputInfo *output)
 {
-        struct MsdXrandrManagerPrivate *priv = manager->priv; 
+        struct MsdXrandrManagerPrivate *priv = manager->priv;
         GtkWidget *item;
         gulong activate_id;
 
@@ -2245,7 +2245,7 @@ add_menu_items_for_clone (MsdXrandrManager *manager)
         gulong activate_id;
 
         item = gtk_check_menu_item_new_with_label("Same output all monitors");
-        gtk_widget_set_tooltip_text(item, "Mirror same output to all monitors and turn them on");        
+        gtk_widget_set_tooltip_text(item, "Mirror same output to all monitors and turn them on");
         gtk_widget_show_all (item);
         gtk_menu_shell_append (GTK_MENU_SHELL (priv->popup_menu), item);
         activate_id =  g_signal_connect (item, "activate",
@@ -2310,7 +2310,7 @@ status_icon_popup_menu (MsdXrandrManager *manager, guint button, guint32 timesta
 
         g_signal_connect (priv->popup_menu, "selection-done",
                           G_CALLBACK (status_icon_popup_menu_selection_done_cb), manager);
-                          
+
         /*Set up custom theming and forced transparency support*/
         GtkWidget *toplevel = gtk_widget_get_toplevel (priv->popup_menu);
         /*Fix any failures of compiz/other wm's to communicate with gtk for transparency */
