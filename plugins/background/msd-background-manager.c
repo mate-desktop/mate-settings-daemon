@@ -49,8 +49,6 @@
 #define MATE_SESSION_MANAGER_DBUS_NAME "org.gnome.SessionManager"
 #define MATE_SESSION_MANAGER_DBUS_PATH "/org/gnome/SessionManager"
 
-#define MSD_BACKGROUND_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_BACKGROUND_MANAGER, MsdBackgroundManagerPrivate))
-
 struct MsdBackgroundManagerPrivate {
 	GSettings       *settings;
 	MateBG          *bg;
@@ -69,7 +67,7 @@ struct MsdBackgroundManagerPrivate {
 	guint            proxy_signal_id;
 };
 
-G_DEFINE_TYPE (MsdBackgroundManager, msd_background_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (MsdBackgroundManager, msd_background_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -566,7 +564,7 @@ msd_background_manager_finalize (GObject *object)
 static void
 msd_background_manager_init (MsdBackgroundManager* manager)
 {
-	manager->priv = MSD_BACKGROUND_MANAGER_GET_PRIVATE(manager);
+	manager->priv = msd_background_manager_get_instance_private(manager);
 }
 
 static void
@@ -576,8 +574,6 @@ msd_background_manager_class_init (MsdBackgroundManagerClass *klass)
 
 	object_class->constructor = msd_background_manager_constructor;
 	object_class->finalize = msd_background_manager_finalize;
-
-	g_type_class_add_private(klass, sizeof(MsdBackgroundManagerPrivate));
 }
 
 MsdBackgroundManager*
