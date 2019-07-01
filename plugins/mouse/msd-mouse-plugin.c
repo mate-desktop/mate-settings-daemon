@@ -31,14 +31,12 @@ struct MsdMousePluginPrivate {
         MsdMouseManager *manager;
 };
 
-#define MSD_MOUSE_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), MSD_TYPE_MOUSE_PLUGIN, MsdMousePluginPrivate))
-
-MATE_SETTINGS_PLUGIN_REGISTER (MsdMousePlugin, msd_mouse_plugin)
+MATE_SETTINGS_PLUGIN_REGISTER_WITH_PRIVATE (MsdMousePlugin, msd_mouse_plugin)
 
 static void
 msd_mouse_plugin_init (MsdMousePlugin *plugin)
 {
-        plugin->priv = MSD_MOUSE_PLUGIN_GET_PRIVATE (plugin);
+        plugin->priv = msd_mouse_plugin_get_instance_private (plugin);
 
         g_debug ("MsdMousePlugin initializing");
 
@@ -99,8 +97,6 @@ msd_mouse_plugin_class_init (MsdMousePluginClass *klass)
 
         plugin_class->activate = impl_activate;
         plugin_class->deactivate = impl_deactivate;
-
-        g_type_class_add_private (klass, sizeof (MsdMousePluginPrivate));
 }
 
 static void

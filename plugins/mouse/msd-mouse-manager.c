@@ -48,8 +48,6 @@
 #include "msd-mouse-manager.h"
 #include "msd-input-helper.h"
 
-#define MSD_MOUSE_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_MOUSE_MANAGER, MsdMouseManagerPrivate))
-
 /* Keys with same names for both touchpad and mouse */
 #define KEY_LEFT_HANDED                  "left-handed"          /*  a boolean for mouse, an enum for touchpad */
 #define KEY_MOTION_ACCELERATION          "motion-acceleration"
@@ -115,7 +113,7 @@ static void     set_tap_to_click_synaptics    (XDeviceInfo          *device_info
                                                gint                  three_finger_tap);
 
 
-G_DEFINE_TYPE (MsdMouseManager, msd_mouse_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (MsdMouseManager, msd_mouse_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -125,8 +123,6 @@ msd_mouse_manager_class_init (MsdMouseManagerClass *klass)
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
         object_class->finalize = msd_mouse_manager_finalize;
-
-        g_type_class_add_private (klass, sizeof (MsdMouseManagerPrivate));
 }
 
 static void
@@ -1590,7 +1586,7 @@ touchpad_callback (GSettings          *settings,
 static void
 msd_mouse_manager_init (MsdMouseManager *manager)
 {
-        manager->priv = MSD_MOUSE_MANAGER_GET_PRIVATE (manager);
+        manager->priv = msd_mouse_manager_get_instance_private (manager);
 }
 
 static gboolean
