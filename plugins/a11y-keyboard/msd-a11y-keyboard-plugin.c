@@ -31,14 +31,12 @@ struct MsdA11yKeyboardPluginPrivate {
         MsdA11yKeyboardManager *manager;
 };
 
-#define MSD_A11Y_KEYBOARD_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), MSD_TYPE_A11Y_KEYBOARD_PLUGIN, MsdA11yKeyboardPluginPrivate))
-
-MATE_SETTINGS_PLUGIN_REGISTER (MsdA11yKeyboardPlugin, msd_a11y_keyboard_plugin)
+MATE_SETTINGS_PLUGIN_REGISTER_WITH_PRIVATE (MsdA11yKeyboardPlugin, msd_a11y_keyboard_plugin)
 
 static void
 msd_a11y_keyboard_plugin_init (MsdA11yKeyboardPlugin *plugin)
 {
-        plugin->priv = MSD_A11Y_KEYBOARD_PLUGIN_GET_PRIVATE (plugin);
+        plugin->priv = msd_a11y_keyboard_plugin_get_instance_private (plugin);
 
         g_debug ("MsdA11yKeyboardPlugin initializing");
 
@@ -99,8 +97,6 @@ msd_a11y_keyboard_plugin_class_init (MsdA11yKeyboardPluginClass *klass)
 
         plugin_class->activate = impl_activate;
         plugin_class->deactivate = impl_deactivate;
-
-        g_type_class_add_private (klass, sizeof (MsdA11yKeyboardPluginPrivate));
 }
 
 static void
