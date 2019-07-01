@@ -22,14 +22,13 @@
 #include <math.h>
 #include "msd-timeline.h"
 
-#define MSD_TIMELINE_GET_PRIV(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), MSD_TYPE_TIMELINE, MsdTimelinePriv))
 #define MSECS_PER_SEC 1000
 #define FRAME_INTERVAL(nframes) (MSECS_PER_SEC / nframes)
 #define DEFAULT_FPS 30
 
-typedef struct MsdTimelinePriv MsdTimelinePriv;
+typedef struct _MsdTimelinePrivate MsdTimelinePrivate;
 
-struct MsdTimelinePriv
+struct _MsdTimelinePrivate
 {
   guint duration;
   guint fps;
@@ -76,9 +75,7 @@ static void  msd_timeline_get_property  (GObject         *object,
 					 GParamSpec      *pspec);
 static void  msd_timeline_finalize      (GObject *object);
 
-
-G_DEFINE_TYPE (MsdTimeline, msd_timeline, G_TYPE_OBJECT)
-
+G_DEFINE_TYPE_WITH_PRIVATE (MsdTimeline, msd_timeline, G_TYPE_OBJECT)
 
 GType
 msd_timeline_direction_get_type (void)
@@ -213,16 +210,14 @@ msd_timeline_class_init (MsdTimelineClass *class)
 		  g_cclosure_marshal_VOID__DOUBLE,
 		  G_TYPE_NONE, 1,
 		  G_TYPE_DOUBLE);
-
-  g_type_class_add_private (class, sizeof (MsdTimelinePriv));
 }
 
 static void
 msd_timeline_init (MsdTimeline *timeline)
 {
-  MsdTimelinePriv *priv;
+  MsdTimelinePrivate *priv;
 
-  priv = MSD_TIMELINE_GET_PRIV (timeline);
+  priv = msd_timeline_get_instance_private (timeline);
 
   priv->fps = DEFAULT_FPS;
   priv->duration = 0;
@@ -273,10 +268,10 @@ msd_timeline_get_property (GObject    *object,
 			   GParamSpec *pspec)
 {
   MsdTimeline *timeline;
-  MsdTimelinePriv *priv;
+  MsdTimelinePrivate *priv;
 
   timeline = MSD_TIMELINE (object);
-  priv = MSD_TIMELINE_GET_PRIV (timeline);
+  priv = msd_timeline_get_instance_private (timeline);
 
   switch (prop_id)
     {
@@ -306,9 +301,9 @@ msd_timeline_get_property (GObject    *object,
 static void
 msd_timeline_finalize (GObject *object)
 {
-  MsdTimelinePriv *priv;
+  MsdTimelinePrivate *priv;
 
-  priv = MSD_TIMELINE_GET_PRIV (object);
+  priv = msd_timeline_get_instance_private (MSD_TIMELINE (object));
 
   if (priv->source_id)
     {
@@ -350,12 +345,12 @@ static gboolean
 msd_timeline_run_frame (MsdTimeline *timeline,
 			gboolean     enable_animations)
 {
-  MsdTimelinePriv *priv;
+  MsdTimelinePrivate *priv;
   gdouble linear_progress, progress;
   guint elapsed_time;
   MsdTimelineProgressFunc progress_func = NULL;
 
-  priv = MSD_TIMELINE_GET_PRIV (timeline);
+  priv = msd_timeline_get_instance_private (timeline);
 
   if (enable_animations)
     {
@@ -446,13 +441,13 @@ msd_timeline_new_for_screen (guint      duration,
 void
 msd_timeline_start (MsdTimeline *timeline)
 {
-  MsdTimelinePriv *priv;
+  MsdTimelinePrivate *priv;
   GtkSettings *settings;
   gboolean enable_animations = FALSE;
 
   g_return_if_fail (MSD_IS_TIMELINE (timeline));
 
-  priv = MSD_TIMELINE_GET_PRIV (timeline);
+  priv = msd_timeline_get_instance_private (timeline);
 
   if (priv->screen)
     {
@@ -501,11 +496,11 @@ msd_timeline_start (MsdTimeline *timeline)
 void
 msd_timeline_pause (MsdTimeline *timeline)
 {
-  MsdTimelinePriv *priv;
+  MsdTimelinePrivate *priv;
 
   g_return_if_fail (MSD_IS_TIMELINE (timeline));
 
-  priv = MSD_TIMELINE_GET_PRIV (timeline);
+  priv = msd_timeline_get_instance_private (timeline);
 
   if (priv->source_id)
     {
@@ -525,11 +520,11 @@ msd_timeline_pause (MsdTimeline *timeline)
 void
 msd_timeline_rewind (MsdTimeline *timeline)
 {
-  MsdTimelinePriv *priv;
+  MsdTimelinePrivate *priv;
 
   g_return_if_fail (MSD_IS_TIMELINE (timeline));
 
-  priv = MSD_TIMELINE_GET_PRIV (timeline);
+  priv = msd_timeline_get_instance_private (timeline);
 
   /* destroy and re-create timer if neccesary  */
   if (priv->timer)
@@ -554,11 +549,11 @@ msd_timeline_rewind (MsdTimeline *timeline)
 gboolean
 msd_timeline_is_running (MsdTimeline *timeline)
 {
-  MsdTimelinePriv *priv;
+  MsdTimelinePrivate *priv;
 
   g_return_val_if_fail (MSD_IS_TIMELINE (timeline), FALSE);
 
-  priv = MSD_TIMELINE_GET_PRIV (timeline);
+  priv = msd_timeline_get_instance_private (timeline);
 
   return (priv->source_id != 0);
 }
@@ -574,11 +569,11 @@ msd_timeline_is_running (MsdTimeline *timeline)
 guint
 msd_timeline_get_fps (MsdTimeline *timeline)
 {
-  MsdTimelinePriv *priv;
+  MsdTimelinePrivate *priv;
 
   g_return_val_if_fail (MSD_IS_TIMELINE (timeline), 1);
 
-  priv = MSD_TIMELINE_GET_PRIV (timeline);
+  priv = msd_timeline_get_instance_private (timeline);
   return priv->fps;
 }
 
@@ -594,12 +589,12 @@ void
 msd_timeline_set_fps (MsdTimeline *timeline,
 		      guint        fps)
 {
-  MsdTimelinePriv *priv;
+  MsdTimelinePrivate *priv;
 
   g_return_if_fail (MSD_IS_TIMELINE (timeline));
   g_return_if_fail (fps > 0);
 
-  priv = MSD_TIMELINE_GET_PRIV (timeline);
+  priv = msd_timeline_get_instance_private (timeline);
 
   priv->fps = fps;
 
@@ -626,11 +621,11 @@ msd_timeline_set_fps (MsdTimeline *timeline,
 gboolean
 msd_timeline_get_loop (MsdTimeline *timeline)
 {
-  MsdTimelinePriv *priv;
+  MsdTimelinePrivate *priv;
 
   g_return_val_if_fail (MSD_IS_TIMELINE (timeline), FALSE);
 
-  priv = MSD_TIMELINE_GET_PRIV (timeline);
+  priv = msd_timeline_get_instance_private (timeline);
   return priv->loop;
 }
 
@@ -646,11 +641,11 @@ void
 msd_timeline_set_loop (MsdTimeline *timeline,
 		       gboolean     loop)
 {
-  MsdTimelinePriv *priv;
+  MsdTimelinePrivate *priv;
 
   g_return_if_fail (MSD_IS_TIMELINE (timeline));
 
-  priv = MSD_TIMELINE_GET_PRIV (timeline);
+  priv = msd_timeline_get_instance_private (timeline);
   priv->loop = loop;
 
   g_object_notify (G_OBJECT (timeline), "loop");
@@ -660,11 +655,11 @@ void
 msd_timeline_set_duration (MsdTimeline *timeline,
 			   guint        duration)
 {
-  MsdTimelinePriv *priv;
+  MsdTimelinePrivate *priv;
 
   g_return_if_fail (MSD_IS_TIMELINE (timeline));
 
-  priv = MSD_TIMELINE_GET_PRIV (timeline);
+  priv = msd_timeline_get_instance_private (timeline);
 
   priv->duration = duration;
 
@@ -674,11 +669,11 @@ msd_timeline_set_duration (MsdTimeline *timeline,
 guint
 msd_timeline_get_duration (MsdTimeline *timeline)
 {
-  MsdTimelinePriv *priv;
+  MsdTimelinePrivate *priv;
 
   g_return_val_if_fail (MSD_IS_TIMELINE (timeline), 0);
 
-  priv = MSD_TIMELINE_GET_PRIV (timeline);
+  priv = msd_timeline_get_instance_private (timeline);
 
   return priv->duration;
 }
@@ -694,11 +689,11 @@ msd_timeline_get_duration (MsdTimeline *timeline)
 MsdTimelineDirection
 msd_timeline_get_direction (MsdTimeline *timeline)
 {
-  MsdTimelinePriv *priv;
+  MsdTimelinePrivate *priv;
 
   g_return_val_if_fail (MSD_IS_TIMELINE (timeline), MSD_TIMELINE_DIRECTION_FORWARD);
 
-  priv = MSD_TIMELINE_GET_PRIV (timeline);
+  priv = msd_timeline_get_instance_private (timeline);
   return priv->direction;
 }
 
@@ -713,11 +708,11 @@ void
 msd_timeline_set_direction (MsdTimeline          *timeline,
 			    MsdTimelineDirection  direction)
 {
-  MsdTimelinePriv *priv;
+  MsdTimelinePrivate *priv;
 
   g_return_if_fail (MSD_IS_TIMELINE (timeline));
 
-  priv = MSD_TIMELINE_GET_PRIV (timeline);
+  priv = msd_timeline_get_instance_private (timeline);
   priv->direction = direction;
 
   g_object_notify (G_OBJECT (timeline), "direction");
@@ -726,11 +721,11 @@ msd_timeline_set_direction (MsdTimeline          *timeline,
 GdkScreen *
 msd_timeline_get_screen (MsdTimeline *timeline)
 {
-  MsdTimelinePriv *priv;
+  MsdTimelinePrivate *priv;
 
   g_return_val_if_fail (MSD_IS_TIMELINE (timeline), NULL);
 
-  priv = MSD_TIMELINE_GET_PRIV (timeline);
+  priv = msd_timeline_get_instance_private (timeline);
   return priv->screen;
 }
 
@@ -738,12 +733,12 @@ void
 msd_timeline_set_screen (MsdTimeline *timeline,
 			 GdkScreen   *screen)
 {
-  MsdTimelinePriv *priv;
+  MsdTimelinePrivate *priv;
 
   g_return_if_fail (MSD_IS_TIMELINE (timeline));
   g_return_if_fail (GDK_IS_SCREEN (screen));
 
-  priv = MSD_TIMELINE_GET_PRIV (timeline);
+  priv = msd_timeline_get_instance_private (timeline);
 
   if (priv->screen)
     g_object_unref (priv->screen);
@@ -757,11 +752,11 @@ void
 msd_timeline_set_progress_type (MsdTimeline             *timeline,
 				MsdTimelineProgressType  type)
 {
-  MsdTimelinePriv *priv;
+  MsdTimelinePrivate *priv;
 
   g_return_if_fail (MSD_IS_TIMELINE (timeline));
 
-  priv = MSD_TIMELINE_GET_PRIV (timeline);
+  priv = msd_timeline_get_instance_private (timeline);
 
   priv->progress_type = type;
 
@@ -771,11 +766,11 @@ msd_timeline_set_progress_type (MsdTimeline             *timeline,
 MsdTimelineProgressType
 msd_timeline_get_progress_type (MsdTimeline *timeline)
 {
-  MsdTimelinePriv *priv;
+  MsdTimelinePrivate *priv;
 
   g_return_val_if_fail (MSD_IS_TIMELINE (timeline), MSD_TIMELINE_PROGRESS_LINEAR);
 
-  priv = MSD_TIMELINE_GET_PRIV (timeline);
+  priv = msd_timeline_get_instance_private (timeline);
 
   if (priv->progress_func)
     return MSD_TIMELINE_PROGRESS_LINEAR;
@@ -800,25 +795,25 @@ void
 msd_timeline_set_progress_func (MsdTimeline             *timeline,
 				MsdTimelineProgressFunc  progress_func)
 {
-  MsdTimelinePriv *priv;
+  MsdTimelinePrivate *priv;
 
   g_return_if_fail (MSD_IS_TIMELINE (timeline));
 
-  priv = MSD_TIMELINE_GET_PRIV (timeline);
+  priv = msd_timeline_get_instance_private (timeline);
   priv->progress_func = progress_func;
 }
 
 gdouble
 msd_timeline_get_progress (MsdTimeline *timeline)
 {
-  MsdTimelinePriv *priv;
+  MsdTimelinePrivate *priv;
   MsdTimelineProgressFunc progress_func = NULL;
   gdouble linear_progress, progress;
   guint elapsed_time;
 
   g_return_val_if_fail (MSD_IS_TIMELINE (timeline), 0.0);
 
-  priv = MSD_TIMELINE_GET_PRIV (timeline);
+  priv = msd_timeline_get_instance_private (timeline);
 
   if (!priv->timer)
     return 0.;
