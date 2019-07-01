@@ -54,8 +54,6 @@
 #define CONFIG_SCHEMA "org.mate.accessibility-keyboard"
 #define NOTIFICATION_TIMEOUT 30
 
-#define MSD_A11Y_KEYBOARD_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_A11Y_KEYBOARD_MANAGER, MsdA11yKeyboardManagerPrivate))
-
 struct MsdA11yKeyboardManagerPrivate
 {
         int        xkbEventBase;
@@ -80,7 +78,7 @@ static void     msd_a11y_keyboard_manager_finalize    (GObject             *obje
 static void     msd_a11y_keyboard_manager_ensure_status_icon (MsdA11yKeyboardManager *manager);
 static void     set_server_from_settings (MsdA11yKeyboardManager *manager);
 
-G_DEFINE_TYPE (MsdA11yKeyboardManager, msd_a11y_keyboard_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (MsdA11yKeyboardManager, msd_a11y_keyboard_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -1123,8 +1121,6 @@ msd_a11y_keyboard_manager_class_init (MsdA11yKeyboardManagerClass *klass)
         GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
         object_class->finalize = msd_a11y_keyboard_manager_finalize;
-
-        g_type_class_add_private (klass, sizeof (MsdA11yKeyboardManagerPrivate));
 }
 
 static void
@@ -1181,7 +1177,7 @@ msd_a11y_keyboard_manager_ensure_status_icon (MsdA11yKeyboardManager *manager)
 static void
 msd_a11y_keyboard_manager_init (MsdA11yKeyboardManager *manager)
 {
-        manager->priv = MSD_A11Y_KEYBOARD_MANAGER_GET_PRIVATE (manager);
+        manager->priv = msd_a11y_keyboard_manager_get_instance_private (manager);
 }
 
 static void

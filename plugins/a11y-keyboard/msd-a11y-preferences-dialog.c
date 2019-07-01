@@ -42,8 +42,6 @@
 #define SM_DBUS_INTERFACE "org.gnome.SessionManager"
 
 
-#define MSD_A11Y_PREFERENCES_DIALOG_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_A11Y_PREFERENCES_DIALOG, MsdA11yPreferencesDialogPrivate))
-
 #define GTKBUILDER_UI_FILE "msd-a11y-preferences-dialog.ui"
 
 #define KEY_A11Y_SCHEMA              "org.mate.accessibility-keyboard"
@@ -115,7 +113,7 @@ static void     msd_a11y_preferences_dialog_class_init  (MsdA11yPreferencesDialo
 static void     msd_a11y_preferences_dialog_init        (MsdA11yPreferencesDialog      *a11y_preferences_dialog);
 static void     msd_a11y_preferences_dialog_finalize    (GObject                       *object);
 
-G_DEFINE_TYPE (MsdA11yPreferencesDialog, msd_a11y_preferences_dialog, GTK_TYPE_DIALOG)
+G_DEFINE_TYPE_WITH_PRIVATE (MsdA11yPreferencesDialog, msd_a11y_preferences_dialog, GTK_TYPE_DIALOG)
 
 static void
 msd_a11y_preferences_dialog_class_init (MsdA11yPreferencesDialogClass *klass)
@@ -123,8 +121,6 @@ msd_a11y_preferences_dialog_class_init (MsdA11yPreferencesDialogClass *klass)
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
         object_class->finalize = msd_a11y_preferences_dialog_finalize;
-
-        g_type_class_add_private (klass, sizeof (MsdA11yPreferencesDialogPrivate));
 }
 
 static void
@@ -740,7 +736,7 @@ msd_a11y_preferences_dialog_init (MsdA11yPreferencesDialog *dialog)
         GError *error = NULL;
         GtkBuilder  *builder;
 
-        dialog->priv = MSD_A11Y_PREFERENCES_DIALOG_GET_PRIVATE (dialog);
+        dialog->priv = msd_a11y_preferences_dialog_get_instance_private (dialog);
 
         dialog->priv->settings_a11y = g_settings_new (KEY_A11Y_SCHEMA);
         dialog->priv->settings_at = g_settings_new (KEY_AT_SCHEMA);
