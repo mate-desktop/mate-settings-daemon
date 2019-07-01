@@ -25,9 +25,8 @@
 #include <glib-object.h>
 #include <gmodule.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+G_BEGIN_DECLS
+
 #define MATE_TYPE_SETTINGS_PLUGIN              (mate_settings_plugin_get_type())
 #define MATE_SETTINGS_PLUGIN(obj)              (G_TYPE_CHECK_INSTANCE_CAST((obj), MATE_TYPE_SETTINGS_PLUGIN, MateSettingsPlugin))
 #define MATE_SETTINGS_PLUGIN_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST((klass),  MATE_TYPE_SETTINGS_PLUGIN, MateSettingsPluginClass))
@@ -59,11 +58,7 @@ void             mate_settings_plugin_deactivate         (MateSettingsPlugin *pl
  *
  * use: MATE_SETTINGS_PLUGIN_REGISTER (PluginName, plugin_name)
  */
-#define MATE_SETTINGS_PLUGIN_REGISTER(PluginName, plugin_name)                 \
-        G_DEFINE_DYNAMIC_TYPE (PluginName,                                     \
-                               plugin_name,                                    \
-                               MATE_TYPE_SETTINGS_PLUGIN)                      \
-                                                                               \
+#define _REGISTER_PLUGIN_FUNC(plugin_name)                                     \
 G_MODULE_EXPORT GType                                                          \
 register_mate_settings_plugin (GTypeModule *type_module)                       \
 {                                                                              \
@@ -72,8 +67,22 @@ register_mate_settings_plugin (GTypeModule *type_module)                       \
         return plugin_name##_get_type();                                       \
 }
 
-#ifdef __cplusplus
-}
-#endif
+#define MATE_SETTINGS_PLUGIN_REGISTER(PluginName, plugin_name)                 \
+        G_DEFINE_DYNAMIC_TYPE (PluginName,                                     \
+                               plugin_name,                                    \
+                               MATE_TYPE_SETTINGS_PLUGIN)                      \
+                                                                               \
+_REGISTER_PLUGIN_FUNC(plugin_name)
+
+#define MATE_SETTINGS_PLUGIN_REGISTER_WITH_PRIVATE(PluginName, plugin_name)    \
+        G_DEFINE_DYNAMIC_TYPE_EXTENDED (PluginName,                            \
+                                        plugin_name,                           \
+                                        MATE_TYPE_SETTINGS_PLUGIN,             \
+                                        0,                                     \
+                                        G_ADD_PRIVATE_DYNAMIC(PluginName))     \
+                                                                               \
+_REGISTER_PLUGIN_FUNC(plugin_name)
+
+G_END_DECLS
 
 #endif  /* __MATE_SETTINGS_PLUGIN_H__ */
