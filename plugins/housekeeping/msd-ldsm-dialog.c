@@ -160,7 +160,7 @@ ignore_check_button_toggled_cb (GtkToggleButton *button,
 
         settings_list = g_settings_get_strv (settings, SETTINGS_IGNORE_PATHS);
 
-        for (i = 0; i < G_N_ELEMENTS (settings_list); i++) {
+        for (i = 0; i < g_strv_length (settings_list); i++) {
                 if (settings_list[i] != NULL)
                         ignore_paths = g_slist_prepend (ignore_paths, g_strdup (settings_list[i]));
         }
