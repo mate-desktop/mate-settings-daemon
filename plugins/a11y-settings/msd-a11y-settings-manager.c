@@ -37,8 +37,6 @@
 #include "mate-settings-profile.h"
 #include "msd-a11y-settings-manager.h"
 
-#define MSD_A11Y_SETTINGS_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_A11Y_SETTINGS_MANAGER, MsdA11ySettingsManagerPrivate))
-
 struct MsdA11ySettingsManagerPrivate
 {
         GSettings *interface_settings;
@@ -53,7 +51,7 @@ static void     msd_a11y_settings_manager_class_init  (MsdA11ySettingsManagerCla
 static void     msd_a11y_settings_manager_init        (MsdA11ySettingsManager      *a11y_settings_manager);
 static void     msd_a11y_settings_manager_finalize    (GObject                     *object);
 
-G_DEFINE_TYPE (MsdA11ySettingsManager, msd_a11y_settings_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (MsdA11ySettingsManager, msd_a11y_settings_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -149,14 +147,12 @@ msd_a11y_settings_manager_class_init (MsdA11ySettingsManagerClass *klass)
         object_class->constructor = msd_a11y_settings_manager_constructor;
         object_class->dispose = msd_a11y_settings_manager_dispose;
         object_class->finalize = msd_a11y_settings_manager_finalize;
-
-        g_type_class_add_private (klass, sizeof (MsdA11ySettingsManagerPrivate));
 }
 
 static void
 msd_a11y_settings_manager_init (MsdA11ySettingsManager *manager)
 {
-        manager->priv = MSD_A11Y_SETTINGS_MANAGER_GET_PRIVATE (manager);
+        manager->priv = msd_a11y_settings_manager_get_instance_private (manager);
 
 }
 

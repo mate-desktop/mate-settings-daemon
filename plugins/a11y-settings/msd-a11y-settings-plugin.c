@@ -31,14 +31,12 @@ struct MsdA11ySettingsPluginPrivate {
         MsdA11ySettingsManager *manager;
 };
 
-#define MSD_A11Y_SETTINGS_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), MSD_TYPE_A11Y_SETTINGS_PLUGIN, MsdA11ySettingsPluginPrivate))
-
-MATE_SETTINGS_PLUGIN_REGISTER (MsdA11ySettingsPlugin, msd_a11y_settings_plugin)
+MATE_SETTINGS_PLUGIN_REGISTER_WITH_PRIVATE (MsdA11ySettingsPlugin, msd_a11y_settings_plugin)
 
 static void
 msd_a11y_settings_plugin_init (MsdA11ySettingsPlugin *plugin)
 {
-        plugin->priv = MSD_A11Y_SETTINGS_PLUGIN_GET_PRIVATE (plugin);
+        plugin->priv = msd_a11y_settings_plugin_get_instance_private (plugin);
 
         g_debug ("MsdA11ySettingsPlugin initializing");
 
@@ -99,8 +97,6 @@ msd_a11y_settings_plugin_class_init (MsdA11ySettingsPluginClass *klass)
 
         plugin_class->activate = impl_activate;
         plugin_class->deactivate = impl_deactivate;
-
-        g_type_class_add_private (klass, sizeof (MsdA11ySettingsPluginPrivate));
 }
 
 static void
