@@ -50,12 +50,11 @@ libmedia_keys_la_CFLAGS = \
 libmedia_keys_la_LDFLAGS = 		\
 	$(MSD_PLUGIN_LDFLAGS)
 
-libmedia_keys_la_LIBADD  = 		\
-	$(top_builddir)/plugins/common/libcommon.la			\
-	$(SETTINGS_PLUGIN_LIBS)						\
-    $(LIBMATEMIXER_LIBS)                     \
-    $(LIBCANBERRA_LIBS)         \
-	$(XF86MISC_LIBS)						\
+libmedia_keys_la_LIBADD  = \
+	$(top_builddir)/plugins/common/libcommon.la \
+	$(SETTINGS_PLUGIN_LIBS) \
+	$(LIBMATEMIXER_LIBS) \
+	$(LIBCANBERRA_LIBS) \
 	-lm
 
 plugin_in_files = 		\
@@ -91,7 +90,6 @@ test_media_window_LDADD = \
 	$(top_builddir)/plugins/common/libcommon.la			\
 	$(SETTINGS_DAEMON_LIBS)			\
 	$(SETTINGS_PLUGIN_LIBS)			\
-	$(XF86MISC_LIBS)			\
 	$(GST_LIBS)				\
 	-lm
 
@@ -119,13 +117,12 @@ test_media_keys_CFLAGS = \
 	$(AM_CFLAGS)
 
 test_media_keys_LDADD = \
-	$(top_builddir)/mate-settings-daemon/libmsd-profile.la		\
-	$(top_builddir)/plugins/common/libcommon.la			\
-	$(SETTINGS_DAEMON_LIBS)			\
-	$(SETTINGS_PLUGIN_LIBS)			\
-    $(LIBMATEMIXER_LIBS)         \
-    $(LIBCANBERRA_LIBS)         \
-	$(XF86MISC_LIBS)			\
+	$(top_builddir)/mate-settings-daemon/libmsd-profile.la \
+	$(top_builddir)/plugins/common/libcommon.la \
+	$(SETTINGS_DAEMON_LIBS) \
+	$(SETTINGS_PLUGIN_LIBS) \
+	$(LIBMATEMIXER_LIBS) \
+	$(LIBCANBERRA_LIBS) \
 	-lm
 
 gtkbuilderdir = $(pkgdatadir)
