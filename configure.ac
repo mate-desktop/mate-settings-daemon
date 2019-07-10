@@ -197,12 +197,6 @@ dnl ---------------------------------------------------------------------------
 dnl - Keyboard plugin stuff
 dnl ---------------------------------------------------------------------------
 
-AC_CHECK_X_LIB(Xxf86misc, XF86MiscQueryExtension, [
-  AC_CHECK_X_HEADERS([X11/extensions/xf86misc.h],
-      [XF86MISC_LIBS="-lXxf86misc"], :,
-      [#include <X11/Xlib.h>])], : ,
-      -lXxf86misc $x_libs)
-AC_SUBST(XF86MISC_LIBS)
 AC_CHECK_X_HEADERS([X11/extensions/XKB.h])
 
 PKG_CHECK_MODULES(LIBMATEKBDUI, [libmatekbdui >= $LIBMATEKBD_REQUIRED_VERSION libmatekbd >= $LIBMATEKBD_REQUIRED_VERSION libxklavier >= 5.2])

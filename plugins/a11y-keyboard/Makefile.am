@@ -61,7 +61,6 @@ liba11y_keyboard_la_LDFLAGS = 		\
 
 liba11y_keyboard_la_LIBADD  = 		\
 	$(SETTINGS_PLUGIN_LIBS)		\
-	$(XF86MISC_LIBS)		\
 	$(LIBNOTIFY_LIBS)		\
 	$(NULL)
 

@@ -41,7 +41,6 @@ libkeyboard_la_LDFLAGS = 	\
 
 libkeyboard_la_LIBADD  = 	\
 	$(SETTINGS_PLUGIN_LIBS)	\
-	$(XF86MISC_LIBS)	\
 	$(LIBMATEKBDUI_LIBS)	\
 	$(NULL)
 
