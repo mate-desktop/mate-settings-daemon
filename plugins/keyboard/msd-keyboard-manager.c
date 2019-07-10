@@ -36,10 +36,6 @@
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
 
-#ifdef HAVE_X11_EXTENSIONS_XF86MISC_H
-#include <X11/extensions/xf86misc.h>
-#endif
-
 #ifdef HAVE_X11_EXTENSIONS_XKB_H
 #include <X11/XKBlib.h>
 #include <X11/keysym.h>
@@ -82,31 +78,6 @@ G_DEFINE_TYPE (MsdKeyboardManager, msd_keyboard_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
-
-#ifdef HAVE_X11_EXTENSIONS_XF86MISC_H
-static gboolean xfree86_set_keyboard_autorepeat_rate(int delay, int rate)
-{
-        gboolean res = FALSE;
-        int      event_base_return;
-        int      error_base_return;
-
-        if (XF86MiscQueryExtension (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
-                                    &event_base_return,
-                                    &error_base_return) == True) {
-                /* load the current settings */
-                XF86MiscKbdSettings kbdsettings;
-                XF86MiscGetKbdSettings (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), &kbdsettings);
-
-                /* assign the new values */
-                kbdsettings.delay = delay;
-                kbdsettings.rate = rate;
-                XF86MiscSetKbdSettings (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()), &kbdsettings);
-                res = TRUE;
-        }
-
-        return res;
-}
-#endif /* HAVE_X11_EXTENSIONS_XF86MISC_H */
 
 #ifdef HAVE_X11_EXTENSIONS_XKB_H
 static gboolean xkb_set_keyboard_autorepeat_rate(int delay, int rate)
@@ -268,10 +239,6 @@ apply_settings (GSettings          *settings,
                 /* Use XKB in preference */
 #ifdef HAVE_X11_EXTENSIONS_XKB_H
                 rate_set = xkb_set_keyboard_autorepeat_rate (delay, rate);
-#endif
-#ifdef HAVE_X11_EXTENSIONS_XF86MISC_H
-                if (!rate_set)
-                        rate_set = xfree86_set_keyboard_autorepeat_rate (delay, rate);
 #endif
                 if (!rate_set)
                         g_warning ("Neither XKeyboard not Xfree86's keyboard extensions are available,\n"
