@@ -2179,12 +2179,12 @@ add_enable_option_for_output (MsdXrandrManager *manager, MateRROutputInfo *outpu
         item = gtk_check_menu_item_new();
 
         if (mate_rr_output_info_is_active (output)){
-                gtk_menu_item_set_label (GTK_MENU_ITEM(item), "ON");
-                gtk_widget_set_tooltip_text(item, "Turn this monitor off");
+                gtk_menu_item_set_label (GTK_MENU_ITEM(item), _("ON"));
+                gtk_widget_set_tooltip_text(item, _("Turn this monitor off"));
         }
         else {
-                gtk_menu_item_set_label (GTK_MENU_ITEM(item), "OFF");
-                gtk_widget_set_tooltip_text(item ,"Turn this monitor on");
+                gtk_menu_item_set_label (GTK_MENU_ITEM(item), _("OFF"));
+                gtk_widget_set_tooltip_text(item, _("Turn this monitor on"));
         }
 
         gtk_widget_show_all (item);
@@ -2244,8 +2244,8 @@ add_menu_items_for_clone (MsdXrandrManager *manager)
         GtkWidget *item;
         gulong activate_id;
 
-        item = gtk_check_menu_item_new_with_label("Same output all monitors");
-        gtk_widget_set_tooltip_text(item, "Mirror same output to all monitors and turn them on");
+        item = gtk_check_menu_item_new_with_label(_("Same output all monitors"));
+        gtk_widget_set_tooltip_text(item, _("Mirror same output to all monitors and turn them on"));
         gtk_widget_show_all (item);
         gtk_menu_shell_append (GTK_MENU_SHELL (priv->popup_menu), item);
         activate_id =  g_signal_connect (item, "activate",
@@ -2292,7 +2292,7 @@ status_icon_popup_menu (MsdXrandrManager *manager, guint button, guint32 timesta
         item = gtk_menu_item_new();
         box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 10);
         image = gtk_image_new_from_icon_name ("preferences-system", GTK_ICON_SIZE_MENU);
-        label = gtk_label_new_with_mnemonic("_Configure Display Settings…");
+        label = gtk_label_new_with_mnemonic(_("_Configure Display Settings…"));
         /*Load the icon unless the user has icons in menus turned off*/
         icon_settings = g_settings_new ("org.mate.interface");
         if (g_settings_get_boolean (icon_settings, "menus-have-icons")){
@@ -2302,7 +2302,7 @@ status_icon_popup_menu (MsdXrandrManager *manager, guint button, guint32 timesta
             }
         gtk_container_add (GTK_CONTAINER (box), label);
         gtk_container_add (GTK_CONTAINER (item), box);
-        gtk_widget_set_tooltip_text(item, "Open the display configuration dialog (all settings)");
+        gtk_widget_set_tooltip_text(item, _("Open the display configuration dialog (all settings)"));
         g_signal_connect (item, "activate",
                           G_CALLBACK (popup_menu_configure_display_cb), manager);
         gtk_widget_show_all (item);
