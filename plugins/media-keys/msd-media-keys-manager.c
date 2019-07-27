@@ -58,8 +58,6 @@
 #define TOUCHPAD_SCHEMA "org.mate.peripherals-touchpad"
 #define TOUCHPAD_ENABLED_KEY "touchpad-enabled"
 
-#define VOLUME_STEP 6
-
 #define MSD_MEDIA_KEYS_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_MEDIA_KEYS_MANAGER, MsdMediaKeysManagerPrivate))
 
 typedef struct {
@@ -732,9 +730,11 @@ do_sound_action (MsdMediaKeysManager *manager,
         volume_max = mate_mixer_stream_control_get_normal_volume (control);
 
         volume_step = g_settings_get_int (manager->priv->settings, "volume-step");
-        if (volume_step <= 0 ||
-            volume_step > 100)
-                volume_step = VOLUME_STEP;
+        if (volume_step <= 0 || volume_step > 100) {
+                GVariant *variant = g_settings_get_default_value (manager->priv->settings, "volume-step");
+                volume_step = g_variant_get_int32 (variant);
+                g_variant_unref (variant);
+        }
 
         /* Scale the volume step size accordingly to the range used by the control */
         volume_step = (volume_max - volume_min) * volume_step / 100;

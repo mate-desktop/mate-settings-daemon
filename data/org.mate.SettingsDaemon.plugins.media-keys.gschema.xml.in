@@ -16,7 +16,7 @@
       <description>Priority to use for this plugin in mate-settings-daemon startup queue</description>
     </key>
     <key name="volume-step" type="i">
-      <default>6</default>
+      <default>5</default>
       <summary>Volume step</summary>
       <description>Volume step as percentage of volume.</description>
     </key>
