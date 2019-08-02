@@ -4,6 +4,11 @@
     <value nick="left" value="1"/>
     <value nick="mouse" value="2"/>
   </enum>
+  <enum id="org.mate.peripherals-touchpad.AccelProfile">
+    <value nick="default" value="0"/>
+    <value nick="adaptive" value="1"/>
+    <value nick="flat" value="2"/>
+  </enum>
   <schema id="org.mate.peripherals-touchpad" path="/org/mate/desktop/peripherals/touchpad/">
     <key name="disable-while-typing" type="b">
       <default>false</default>
@@ -84,6 +89,11 @@
       <default>-1</default>
       <summary>Motion Threshold</summary>
       <description>Distance in pixels the pointer must move before accelerated touchpad motion is activated.  A value of -1 is the system default.</description>
+    </key>
+    <key name="accel-profile" enum="org.mate.peripherals-touchpad.AccelProfile">
+      <default>'default'</default>
+      <summary>Acceleration profile</summary>
+      <description>Acceleration profile used for touchpad. The acceleration profile can be set to either default ('default') which uses the default acceleration profile for each device, flat ('flat'), which accelerates by a device specific constant factor derived from the configured pointer speed, or adaptive ('adaptive') which adapts the acceleration depending on the touchpad movement. If a touchpad doesn't support the configured profile, 'default' will be used.</description>
     </key>
   </schema>
 </schemalist>

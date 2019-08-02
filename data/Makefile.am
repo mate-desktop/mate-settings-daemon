@@ -3,6 +3,7 @@ NULL =
 msd_gschemas_in = \
 	org.mate.applications-at.gschema.xml.in \
 	org.mate.font-rendering.gschema.xml.in \
+	org.mate.peripherals-mouse.gschema.xml.in \
 	org.mate.peripherals-smartcard.gschema.xml.in \
 	org.mate.peripherals-touchpad.gschema.xml.in \
 	org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in \
