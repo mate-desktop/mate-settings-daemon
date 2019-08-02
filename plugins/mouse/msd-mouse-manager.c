@@ -52,6 +52,7 @@
 #define KEY_LEFT_HANDED                  "left-handed"          /*  a boolean for mouse, an enum for touchpad */
 #define KEY_MOTION_ACCELERATION          "motion-acceleration"
 #define KEY_MOTION_THRESHOLD             "motion-threshold"
+#define KEY_ACCEL_PROFILE                "accel-profile"
 
 /* Mouse settings */
 #define MATE_MOUSE_SCHEMA                "org.mate.peripherals-mouse"
@@ -100,6 +101,12 @@ typedef enum {
         TOUCHPAD_HANDEDNESS_LEFT,
         TOUCHPAD_HANDEDNESS_MOUSE
 } TouchpadHandedness;
+
+typedef enum {
+        ACCEL_PROFILE_DEFAULT,
+        ACCEL_PROFILE_ADAPTIVE,
+        ACCEL_PROFILE_FLAT
+} AccelProfile;
 
 static void     msd_mouse_manager_class_init  (MsdMouseManagerClass *klass);
 static void     msd_mouse_manager_init        (MsdMouseManager      *mouse_manager);
@@ -208,6 +215,75 @@ static Atom
 property_from_name (const char *property_name)
 {
         return XInternAtom (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), property_name, True);
+}
+
+static void *
+get_property (XDevice     *device,
+              const gchar *property,
+              Atom         type,
+              int          format,
+              gulong       nitems)
+{
+        GdkDisplay *display;
+        gulong nitems_ret, bytes_after_ret;
+        int rc, format_ret;
+        Atom property_atom, type_ret;
+        guchar *data = NULL;
+
+        property_atom = property_from_name (property);
+        if (!property_atom)
+                return NULL;
+
+        display = gdk_display_get_default ();
+
+        gdk_x11_display_error_trap_push (display);
+
+        rc = XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (display), device, property_atom,
+                                 0, 10, False, type, &type_ret, &format_ret,
+                                 &nitems_ret, &bytes_after_ret, &data);
+
+        gdk_x11_display_error_trap_pop_ignored (display);
+
+        if (rc == Success && type_ret == type && format_ret == format && nitems_ret >= nitems)
+                return data;
+
+        if (data)
+                XFree (data);
+
+        return NULL;
+}
+
+static void
+change_property (XDevice     *device,
+                 const gchar *property,
+                 Atom         type,
+                 int          format,
+                 void        *data,
+                 gulong       nitems)
+{
+        GdkDisplay *display;
+        Atom property_atom;
+        guchar *data_ret;
+
+        property_atom = property_from_name (property);
+        if (!property_atom)
+                return;
+
+        data_ret = get_property (device, property, type, format, nitems);
+        if (!data_ret)
+                return;
+
+        display = gdk_display_get_default ();
+
+        gdk_x11_display_error_trap_push (display);
+
+        XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (display), device,
+                               property_atom, type, format,
+                               PropModeReplace, data, nitems);
+
+        gdk_x11_display_error_trap_pop_ignored (display);
+
+        XFree (data_ret);
 }
 
 static gboolean
@@ -915,6 +991,96 @@ set_disable_w_typing (MsdMouseManager *manager,
                 set_disable_w_typing_libinput (manager, state);
 }
 
+static void
+set_accel_profile_libinput (MsdMouseManager *manager,
+                            XDeviceInfo     *device_info)
+{
+        XDevice *device;
+        GdkDisplay *display;
+        GSettings *settings;
+        guchar *available, *defaults, *values;
+
+        display = gdk_display_get_default ();
+
+        device = device_is_touchpad (device_info);
+
+        if (device != NULL) {
+                settings = manager->priv->settings_touchpad;
+        } else {
+                gdk_x11_display_error_trap_push (display);
+                device = XOpenDevice (GDK_DISPLAY_XDISPLAY (display), device_info->id);
+                if ((gdk_x11_display_error_trap_pop (display) != 0) || (device == NULL))
+                        return;
+
+                settings = manager->priv->settings_mouse;
+        }
+
+        available = get_property (device, "libinput Accel Profiles Available", XA_INTEGER, 8, 2);
+        if (!available)
+                return;
+        XFree (available);
+
+        defaults = get_property (device, "libinput Accel Profile Enabled Default", XA_INTEGER, 8, 2);
+        if (!defaults)
+                return;
+
+        values = get_property (device, "libinput Accel Profile Enabled", XA_INTEGER, 8, 2);
+        if (!values) {
+                XFree (defaults);
+                return;
+        }
+
+        /* 2 boolean values (8 bit, 0 or 1), in order "adaptive", "flat". */
+        switch (g_settings_get_enum (settings, KEY_ACCEL_PROFILE)) {
+                case ACCEL_PROFILE_ADAPTIVE:
+                        values[0] = 1; /* enable adaptive */
+                        values[1] = 0; /* disable flat */
+                        break;
+                case ACCEL_PROFILE_FLAT:
+                        values[0] = 0; /* disable adaptive */
+                        values[1] = 1; /* enable flat */
+                        break;
+                case ACCEL_PROFILE_DEFAULT:
+                default:
+                        values[0] = defaults[0];
+                        values[1] = defaults[1];
+                        break;
+        }
+
+        change_property (device, "libinput Accel Profile Enabled", XA_INTEGER, 8, values, 2);
+
+        XCloseDevice (GDK_DISPLAY_XDISPLAY (display), device);
+
+        XFree (defaults);
+        XFree (values);
+}
+
+static void
+set_accel_profile (MsdMouseManager *manager,
+                   XDeviceInfo     *device_info)
+{
+        if (property_exists_on_device (device_info, "libinput Accel Profile Enabled"))
+                set_accel_profile_libinput (manager, device_info);
+
+        /* TODO: Add acceleration profiles for synaptics/legacy drivers */
+}
+
+static void
+set_accel_profile_all (MsdMouseManager *manager)
+{
+        int numdevices, i;
+        XDeviceInfo *devicelist = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &numdevices);
+
+        if (devicelist == NULL)
+                return;
+
+        for (i = 0; i < numdevices; i++) {
+                set_accel_profile (manager, &devicelist[i]);
+        }
+
+        XFreeDeviceList (devicelist);
+}
+
 static gboolean
 get_touchpad_handedness (MsdMouseManager *manager,
                          gboolean         mouse_left_handed)
@@ -1517,6 +1683,7 @@ set_mouse_settings (MsdMouseManager *manager)
         set_scrolling_all (manager->priv->settings_touchpad);
         set_natural_scroll_all (manager);
         set_touchpad_enabled_all (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_ENABLED));
+        set_accel_profile_all (manager);
 }
 
 static void
@@ -1531,6 +1698,8 @@ mouse_callback (GSettings          *settings,
         } else if ((g_strcmp0 (key, KEY_MOTION_ACCELERATION) == 0)
                 || (g_strcmp0 (key, KEY_MOTION_THRESHOLD) == 0)) {
                 set_motion_all (manager);
+        } else if (g_strcmp0 (key, KEY_ACCEL_PROFILE) == 0) {
+                set_accel_profile_all (manager);
         } else if (g_strcmp0 (key, KEY_MIDDLE_BUTTON_EMULATION) == 0) {
                 set_middle_button_all (g_settings_get_boolean (settings, key));
         } else if (g_strcmp0 (key, KEY_MOUSE_LOCATE_POINTER) == 0) {
@@ -1580,6 +1749,8 @@ touchpad_callback (GSettings          *settings,
         } else if ((g_strcmp0 (key, KEY_MOTION_ACCELERATION) == 0)
                 || (g_strcmp0 (key, KEY_MOTION_THRESHOLD) == 0)) {
                 set_motion_all (manager);
+        } else if (g_strcmp0 (key, KEY_ACCEL_PROFILE) == 0) {
+                set_accel_profile_all (manager);
         }
 }
 
