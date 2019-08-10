@@ -2,7 +2,7 @@ AC_PREREQ([2.60])
 
 m4_define([msd_api_version_major],[1])
 m4_define([msd_api_version_minor],[23])
-m4_define([msd_api_version_micro],[0])
+m4_define([msd_api_version_micro],[1])
 m4_define([msd_api_version],
 	[msd_api_version_major.msd_api_version_minor.msd_api_version_micro])
 
@@ -54,7 +54,7 @@ DBUS_GLIB_REQUIRED_VERSION=0.74
 GLIB_REQUIRED_VERSION=2.50.0
 GIO_REQUIRED_VERSION=2.50.0
 GTK_REQUIRED_VERSION=3.22.0
-MATE_DESKTOP_REQUIRED_VERSION=1.21.2
+MATE_DESKTOP_REQUIRED_VERSION=1.23.2
 LIBMATEKBD_REQUIRED_VERSION=1.17.0
 LIBNOTIFY_REQUIRED_VERSION=0.7.0
 LIBMATEMIXER_REQUIRED_VERSION=1.10.0

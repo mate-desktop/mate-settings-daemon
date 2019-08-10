@@ -1,12 +1,14 @@
+### mate-settings-daemon 1.23.1
+
 ### mate-settings-daemon 1.23.0
 
-    tx: sync with transifex
-    media-keys: Execute default instant messaging application defined by schema
-    Change url project's website
-    locate-pointer: Do not grab pointer button when trying to locate
-    Create FUNDING.yml
-    [ci] Add cppcheck html report
-    [ci] Enable Clang Static Analyzer
+  * tx: sync with transifex
+  * media-keys: Execute default instant messaging application defined by schema
+  * Change url project's website
+  * locate-pointer: Do not grab pointer button when trying to locate
+  * Create FUNDING.yml
+  * [ci] Add cppcheck html report
+  * [ci] Enable Clang Static Analyzer
 
 ### mate-settings-daemon 1.22.0
 
