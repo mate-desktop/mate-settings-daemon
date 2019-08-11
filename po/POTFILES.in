@@ -3,6 +3,7 @@
 data/50-accessibility.xml.in
 [type: gettext/gsettings]data/org.mate.applications-at.gschema.xml.in
 [type: gettext/gsettings]data/org.mate.font-rendering.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.peripherals-keyboard.gschema.xml.in
 [type: gettext/gsettings]data/org.mate.peripherals-mouse.gschema.xml.in
 [type: gettext/gsettings]data/org.mate.peripherals-smartcard.gschema.xml.in
 [type: gettext/gsettings]data/org.mate.peripherals-touchpad.gschema.xml.in

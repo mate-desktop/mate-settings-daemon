@@ -477,6 +477,7 @@ data/mate-settings-daemon.pc
 data/mate-settings-daemon-uninstalled.pc
 data/org.mate.applications-at.gschema.xml
 data/org.mate.font-rendering.gschema.xml
+data/org.mate.peripherals-keyboard.gschema.xml
 data/org.mate.peripherals-mouse.gschema.xml
 data/org.mate.peripherals-smartcard.gschema.xml
 data/org.mate.peripherals-touchpad.gschema.xml
