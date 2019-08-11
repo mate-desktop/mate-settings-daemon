@@ -8,21 +8,21 @@
 # Emiliano Fascetti, 2018
 # Angel Mireles <lamborghinilph710@gmail.com>, 2018
 # Fito JB, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
 # Lluís Tusquellas <lutusq@gmail.com>, 2018
 # Benjamin Perez Carrillo <benperezc@gmail.com>, 2018
 # Ivan Nieto <ivan.n.s@tuta.io>, 2018
 # Joel Barrios <darkshram@gmail.com>, 2018
 # Toni Estévez <toni.estevez@gmail.com>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-23 18:24+0100\n"
+"POT-Creation-Date: 2019-07-31 13:03+0200\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Toni Estévez <toni.estevez@gmail.com>, 2019\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
 "Language-Team: Spanish (https://www.transifex.com/mate/teams/13566/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,17 +35,17 @@ msgid "Accessibility"
 msgstr "Accesibilidad"
 
 #: ../data/50-accessibility.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:59
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:61
 msgid "Toggle magnifier"
 msgstr "Activar o desactivar el magnificador"
 
 #: ../data/50-accessibility.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:61
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:63
 msgid "Toggle screen reader"
 msgstr "Activar o desactivar el lector de pantalla"
 
 #: ../data/50-accessibility.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:63
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:65
 msgid "Toggle on-screen keyboard"
 msgstr "Activar o desactivar el teclado en pantalla"
 
@@ -135,7 +135,7 @@ msgstr ""
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
-msgstr "Acción al quitar la tarjeta inteligente"
+msgstr "Acción al eliminar la tarjeta inteligente"
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:2
 msgid ""
@@ -144,7 +144,8 @@ msgid ""
 msgstr ""
 "Establecer esto a una de las siguientes: «none» (ninguna), «lock_screen» "
 "(bloquear la pantalla) o «force_logout» (forzar la salida). La acción se "
-"realizará cuando se quite la tarjeta inteligente usada para iniciar sesión."
+"realizará cuando se elimine la tarjeta inteligente usada para iniciar "
+"sesión."
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:1
 msgid "Disable touchpad while typing"
@@ -547,11 +548,11 @@ msgstr "Combinación de teclas para apagar."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:27
 msgid "Log out"
-msgstr "Cerrar la sesión"
+msgstr "Cerrar sesión"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:28
 msgid "Binding to log out."
-msgstr "Combinación de teclas para salir de la sesión."
+msgstr "Combinación de teclas para cerrar sesión."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:29
 msgid "Eject"
@@ -575,7 +576,7 @@ msgstr "Buscar"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
 msgid "Binding to launch the search tool."
-msgstr "Combinación de teclas para lanzar la herramienta de búsqueda."
+msgstr "Combinación de teclas para iniciar la herramienta de búsqueda."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
 msgid "Launch email client"
@@ -583,7 +584,7 @@ msgstr "Lanzar el cliente de correo-e"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
 msgid "Binding to launch the email client."
-msgstr "Combinación de teclas para lanzar el cliente de correo-e."
+msgstr "Combinación de teclas para iniciar el cliente de correo-e."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
 msgid "Launch settings"
@@ -607,7 +608,7 @@ msgstr "Lanzar el visor de la ayuda"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:42
 msgid "Binding to launch the help browser."
-msgstr "Combinación de teclas para lanzar el visor de la ayuda."
+msgstr "Combinación de teclas para iniciar el visor de la ayuda."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
 msgid "Launch calculator"
@@ -615,75 +616,83 @@ msgstr "Lanzar la calculadora"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
 msgid "Binding to launch the calculator."
-msgstr "Combinación de teclas para lanzar la calculadora."
+msgstr "Combinación de teclas para iniciar la calculadora."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
+msgid "Launch instant messenger"
+msgstr "Iniciar la mensajería instantánea"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
+msgid "Binding to launch the instant messenger."
+msgstr "Combinación para iniciar la aplicación de mensajería instantánea"
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
 msgid "Launch web browser"
 msgstr "Lanzar navegador web"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
 msgid "Binding to launch the web browser."
-msgstr "Combinación de teclas para lanzar el navegador web."
+msgstr "Combinación de teclas para iniciar el navegador web."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
 msgid "Launch media player"
 msgstr "Lanzar el reproductor multimedia"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
 msgid "Binding to launch the media player."
-msgstr "Combinación de teclas para lanzar el reproductor multimedia."
+msgstr "Combinación de teclas para iniciar el reproductor multimedia."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
 msgid "Play (or play/pause)"
 msgstr "Reproducir (o reproducir/pausar)"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
 msgid "Binding to start playback (or toggle play/pause)."
 msgstr ""
 "Combinación de teclas para iniciar la reproducción (o alternar entre "
 "reproducción/pausa)."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
 msgid "Pause playback"
 msgstr "Pausar la resproducción"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
 msgid "Binding to pause playback."
 msgstr "Combinación de teclas para pausar la reproducción."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
 msgid "Stop playback"
 msgstr "Detener la reproducción"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
 msgid "Binding to stop playback."
 msgstr "Combinación de teclas para parar la reproducción."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:57
 msgid "Previous track"
 msgstr "Pista anterior"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:58
 msgid "Binding to skip to previous track."
 msgstr "Combinación de teclas para saltar a la pista anterior."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:57
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:59
 msgid "Next track"
 msgstr "Pista siguiente"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:58
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:60
 msgid "Binding to skip to next track."
 msgstr "Combinación de teclas para saltar a la pista siguiente."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:60
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:62
 msgid "Binding to show the screen magnifier"
 msgstr "Combinación de teclas para mostrar el magnificador de pantalla."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:62
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:64
 msgid "Binding to start the screen reader"
 msgstr "Combinación de teclas para iniciar el lector de pantalla"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:64
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:66
 msgid "Binding to show the on-screen keyboard"
 msgstr "Combinación de teclas para mostrar el teclado en pantalla"
 
@@ -696,7 +705,7 @@ msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
 msgstr ""
-"Indica si se debería mostrar en el panel un icono de notificación para la "
+"Indica si se debe mostrar en el panel un icono de notificación para la "
 "pantalla."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:7
@@ -729,7 +738,7 @@ msgid ""
 " on system boot."
 msgstr ""
 "Encender el monitor externo después de arrancar el sistema si el usuario "
-"conectó el monitor externo al arrancar el sistema."
+"conecta el monitor externo al arrancar el sistema."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:11
 msgid "Turn on laptop monitor after system boot"
@@ -741,7 +750,7 @@ msgid ""
 "on system boot."
 msgstr ""
 "Encender el monitor del portátil después de arrancar el sistema si el "
-"usuario conectó el monitor externo al arrancar el sistema."
+"usuario conecta el monitor externo al arrancar el sistema."
 
 #: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:13
 msgid "File for default configuration for RandR"
@@ -1006,19 +1015,19 @@ msgstr ""
 "archivos a un disco externo."
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:207
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:206
 msgid "Low Disk Space"
 msgstr "Espacio de disco bajo"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:443
 msgid "Empty Trash"
 msgstr "Vacía la papelera"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:451
 msgid "Examine…"
 msgstr "Examinar…"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:458
 msgid "Ignore"
 msgstr "Ignorar"
 
@@ -1030,7 +1039,7 @@ msgstr "Eliminando el elemento %lu de %lu"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 msgid "Removing: %s"
-msgstr "Quitando: %s"
+msgstr "Eliminando: %s"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
@@ -1055,9 +1064,8 @@ msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
 msgstr ""
-"Si elije vaciar la papelera, todos los elementos dentro de ella se "
-"eliminarán y se perderán para siempre. También puede eliminarlos por "
-"separado."
+"Si elije vaciar la papelera, todos elementos que contiene se perderán para "
+"siempre. Tenga en cuenta que también puede eliminarlos por separado."
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
@@ -1139,7 +1147,7 @@ msgstr "Prefere_ncias del teclado"
 msgid "Show _Current Layout"
 msgstr "Mostrar la distribución _actual"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:191
+#: ../plugins/media-keys/msd-media-keys-manager.c:189
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
@@ -1148,7 +1156,7 @@ msgstr ""
 "del terminal predeterminada esté configurada y apunte a una aplicación "
 "válida."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:231
+#: ../plugins/media-keys/msd-media-keys-manager.c:229
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1157,46 +1165,46 @@ msgstr ""
 "No se ha podido ejecutar la orden: %s\n"
 "Compruebe que es una orden válida."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:629
+#: ../plugins/media-keys/msd-media-keys-manager.c:643
 #: ../plugins/media-keys/test-media-window.c:81
 msgid "Touchpad enabled"
 msgstr "Panel táctil activado"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:629
+#: ../plugins/media-keys/msd-media-keys-manager.c:643
 #: ../plugins/media-keys/test-media-window.c:74
 msgid "Touchpad disabled"
 msgstr "Panel táctil desactivado"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:943
+#: ../plugins/media-keys/msd-media-keys-manager.c:959
 #: ../plugins/media-keys/test-media-window.c:88
 msgid "Bluetooth disabled"
 msgstr "Bluetooth desactivado"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:946
+#: ../plugins/media-keys/msd-media-keys-manager.c:962
 #: ../plugins/media-keys/test-media-window.c:95
 msgid "Bluetooth enabled"
 msgstr "Bluetooth activado"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:950
+#: ../plugins/media-keys/msd-media-keys-manager.c:966
 #: ../plugins/media-keys/test-media-window.c:102
 msgid "Airplane mode enabled"
 msgstr "Modo avión activado"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:953
+#: ../plugins/media-keys/msd-media-keys-manager.c:969
 #: ../plugins/media-keys/test-media-window.c:109
 msgid "Airplane mode disabled"
 msgstr "Modo avión desactivado"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:984
+#: ../plugins/media-keys/msd-media-keys-manager.c:1000
 msgid "Hardware Airplane Mode"
 msgstr "Modo Avión por Hardware"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:1022
+#: ../plugins/media-keys/msd-media-keys-manager.c:1038
 #: ../plugins/media-keys/test-media-window.c:123
 msgid "Changing Screen Layout"
 msgstr "Cambiar la distribución de la pantalla"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:1026
+#: ../plugins/media-keys/msd-media-keys-manager.c:1042
 #: ../plugins/media-keys/test-media-window.c:116
 msgid "No External Display"
 msgstr "Sin Pantalla Externa"
@@ -1209,19 +1217,19 @@ msgstr "Teclas multimedia"
 msgid "Media keys plugin"
 msgstr "Complemento de teclas multimedia"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1490
+#: ../plugins/mouse/msd-mouse-manager.c:1486
 msgid "Could not enable mouse accessibility features"
 msgstr ""
 "No se han podido activar las características de accesibilidad del ratón"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1492
+#: ../plugins/mouse/msd-mouse-manager.c:1488
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 "La accesibilidad del ratón requiere que se instale el servicio mousetweaks "
 "en el sistema."
 
-#: ../plugins/mouse/msd-mouse-manager.c:1495
+#: ../plugins/mouse/msd-mouse-manager.c:1491
 msgid "Mouse Preferences"
 msgstr "Preferencias del ratón"
 
@@ -1283,7 +1291,7 @@ msgstr[1] ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"
-msgstr "¿Se ve bien la pantalla?"
+msgstr "¿Se ve correctamente la pantalla?"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:499
 msgid "_Restore Previous Configuration"
@@ -1336,6 +1344,38 @@ msgstr "Derecha"
 msgid "Upside Down"
 msgstr "Hacia abajo"
 
+#: ../plugins/xrandr/msd-xrandr-manager.c:2182
+msgid "ON"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2183
+msgid "Turn this monitor off"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2186
+msgid "OFF"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2187
+msgid "Turn this monitor on"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2247
+msgid "Same output all monitors"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2248
+msgid "Mirror same output to all monitors and turn them on"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2295
+msgid "_Configure Display Settings…"
+msgstr "_Configurar ajustes de pantalla…"
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2305
+msgid "Open the display configuration dialog (all settings)"
+msgstr ""
+
 #: ../plugins/xrandr/msd-xrandr-manager.c:2358
 msgid "Configure display settings"
 msgstr "Configurar los ajustes de la pantalla"
@@ -1385,7 +1425,7 @@ msgstr "ruta al controlador de tarjetas inteligentes PKCS #11"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:496
 msgid "received error or hang up from event source"
-msgstr "se recibió un error o un cuelgue desde el origen de eventos"
+msgstr "se ha recibido un error o un cuelgue desde el origen de eventos"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:585
 #, c-format

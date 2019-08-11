@@ -5,19 +5,19 @@
 # 
 # Translators:
 # Alan Lee <bkrhlim@aol.com>, 2018
-# Seong-ho Cho <darkcircle.0426@gmail.com>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
 # D.K Kim <pepct84@gmail.com>, 2018
 # 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2019
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-23 18:24+0100\n"
+"POT-Creation-Date: 2019-07-31 13:03+0200\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2019\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>, 2019\n"
 "Language-Team: Korean (https://www.transifex.com/mate/teams/13566/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,17 +30,17 @@ msgid "Accessibility"
 msgstr "접근성 기능"
 
 #: ../data/50-accessibility.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:59
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:61
 msgid "Toggle magnifier"
 msgstr "돋보기 토글"
 
 #: ../data/50-accessibility.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:61
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:63
 msgid "Toggle screen reader"
 msgstr "화면 읽기 프로그램 토글"
 
 #: ../data/50-accessibility.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:63
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:65
 msgid "Toggle on-screen keyboard"
 msgstr "화면 키보드 토글"
 
@@ -568,70 +568,78 @@ msgid "Binding to launch the calculator."
 msgstr "계산기를 실행하는 바인딩."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
+msgid "Launch instant messenger"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
+msgid "Binding to launch the instant messenger."
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
 msgid "Launch web browser"
 msgstr "웹 브라우저 실행"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
 msgid "Binding to launch the web browser."
 msgstr "웹 브라우저를 실행하는 바인딩."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
 msgid "Launch media player"
 msgstr "미디어 플레이어 실행"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
 msgid "Binding to launch the media player."
 msgstr "미디어 플레이어를 실행하는 바인딩."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
 msgid "Play (or play/pause)"
 msgstr "재생 (또는 재생/일시 중지)"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
 msgid "Binding to start playback (or toggle play/pause)."
 msgstr "재생을 시작하는 (아니면 재생/일시 중지를 토글하는) 바인딩."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
 msgid "Pause playback"
 msgstr "재생 일시 중지"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
 msgid "Binding to pause playback."
 msgstr "재생을 일시 중지하는 바인딩."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
 msgid "Stop playback"
 msgstr "재생 일시 중지"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
 msgid "Binding to stop playback."
 msgstr "재생을 중지할 바인딩."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:57
 msgid "Previous track"
 msgstr "이전 트랙"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:58
 msgid "Binding to skip to previous track."
 msgstr "이전 트랙으로 넘어가는 바인딩."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:57
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:59
 msgid "Next track"
 msgstr "다음 트랙"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:58
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:60
 msgid "Binding to skip to next track."
 msgstr "다음 트랙으로 넘어가는 바인딩."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:60
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:62
 msgid "Binding to show the screen magnifier"
 msgstr "화면 돋보기용 바인딩"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:62
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:64
 msgid "Binding to start the screen reader"
 msgstr "스크린 리더용 바인딩"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:64
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:66
 msgid "Binding to show the on-screen keyboard"
 msgstr "스크린 키보드용 바인딩"
 
@@ -934,19 +942,19 @@ msgid ""
 msgstr "사용하지 않는 프로그램이나 파일을 지우거나, 파일을 외장 디스크로 옮기는 방법으로 디스크 공간을 확보할 수 있습니다."
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:207
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:206
 msgid "Low Disk Space"
 msgstr "디스크 공간 부족"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:443
 msgid "Empty Trash"
 msgstr "휴지통 비우기"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:451
 msgid "Examine…"
 msgstr "시험..."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:458
 msgid "Ignore"
 msgstr "무시"
 
@@ -1064,13 +1072,13 @@ msgstr "키보드 기본 설정(_P)"
 msgid "Show _Current Layout"
 msgstr "현재 배치 표시(_C)"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:191
+#: ../plugins/media-keys/msd-media-keys-manager.c:189
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
 msgstr "기본 터미널을 얻을 수 없습니다. 기본 터미널 명령이 설정되어 있고 올바른 프로그램인지 확인해보시기 바랍니다."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:231
+#: ../plugins/media-keys/msd-media-keys-manager.c:229
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1079,46 +1087,46 @@ msgstr ""
 "명령을 실행할 수 없습니다: %s\n"
 "명령이 있는지 확인해보십시오."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:629
+#: ../plugins/media-keys/msd-media-keys-manager.c:643
 #: ../plugins/media-keys/test-media-window.c:81
 msgid "Touchpad enabled"
 msgstr "터치패드 사용"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:629
+#: ../plugins/media-keys/msd-media-keys-manager.c:643
 #: ../plugins/media-keys/test-media-window.c:74
 msgid "Touchpad disabled"
 msgstr "터치패드 사용 안 함"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:943
+#: ../plugins/media-keys/msd-media-keys-manager.c:959
 #: ../plugins/media-keys/test-media-window.c:88
 msgid "Bluetooth disabled"
 msgstr "블루투스 사용 안 함"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:946
+#: ../plugins/media-keys/msd-media-keys-manager.c:962
 #: ../plugins/media-keys/test-media-window.c:95
 msgid "Bluetooth enabled"
 msgstr "블루투스 사용"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:950
+#: ../plugins/media-keys/msd-media-keys-manager.c:966
 #: ../plugins/media-keys/test-media-window.c:102
 msgid "Airplane mode enabled"
 msgstr "비행기 모드 사용"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:953
+#: ../plugins/media-keys/msd-media-keys-manager.c:969
 #: ../plugins/media-keys/test-media-window.c:109
 msgid "Airplane mode disabled"
 msgstr "비행기 모드 사용 안 함"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:984
+#: ../plugins/media-keys/msd-media-keys-manager.c:1000
 msgid "Hardware Airplane Mode"
 msgstr "하드웨어 비행기 모드"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:1022
+#: ../plugins/media-keys/msd-media-keys-manager.c:1038
 #: ../plugins/media-keys/test-media-window.c:123
 msgid "Changing Screen Layout"
 msgstr "화면 배치 바꾸기"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:1026
+#: ../plugins/media-keys/msd-media-keys-manager.c:1042
 #: ../plugins/media-keys/test-media-window.c:116
 msgid "No External Display"
 msgstr "외부 모니터 없음"
@@ -1131,16 +1139,16 @@ msgstr "미디어 키"
 msgid "Media keys plugin"
 msgstr "미디어 키 플러그인"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1490
+#: ../plugins/mouse/msd-mouse-manager.c:1486
 msgid "Could not enable mouse accessibility features"
 msgstr "마우스 접근성 기능을 사용할 수 없습니다"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1492
+#: ../plugins/mouse/msd-mouse-manager.c:1488
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr "마우스 접근성 기능을 사용하려면 시스템에 마우스트윅스를 설치해야 합니다."
 
-#: ../plugins/mouse/msd-mouse-manager.c:1495
+#: ../plugins/mouse/msd-mouse-manager.c:1491
 msgid "Mouse Preferences"
 msgstr "마우스 기본 설정"
 
@@ -1248,6 +1256,38 @@ msgstr "오른쪽"
 #: ../plugins/xrandr/msd-xrandr-manager.c:2093
 msgid "Upside Down"
 msgstr "위 아래"
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2182
+msgid "ON"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2183
+msgid "Turn this monitor off"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2186
+msgid "OFF"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2187
+msgid "Turn this monitor on"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2247
+msgid "Same output all monitors"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2248
+msgid "Mirror same output to all monitors and turn them on"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2295
+msgid "_Configure Display Settings…"
+msgstr "디스플레이 설정 구성(_C)..."
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2305
+msgid "Open the display configuration dialog (all settings)"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2358
 msgid "Configure display settings"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-23 18:24+0100\n"
+"POT-Creation-Date: 2019-07-31 13:03+0200\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
 "Language-Team: Telugu (https://www.transifex.com/mate/teams/13566/te/)\n"
@@ -26,17 +26,17 @@ msgid "Accessibility"
 msgstr "అందుబాటు"
 
 #: ../data/50-accessibility.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:59
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:61
 msgid "Toggle magnifier"
 msgstr "పెద్దదిచేయుదాన్ని మార్చుము"
 
 #: ../data/50-accessibility.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:61
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:63
 msgid "Toggle screen reader"
 msgstr "తెర చదువరిని మార్చుము"
 
 #: ../data/50-accessibility.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:63
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:65
 msgid "Toggle on-screen keyboard"
 msgstr "తెర-పైని కీబోర్డును మార్చుము"
 
@@ -572,71 +572,79 @@ msgid "Binding to launch the calculator."
 msgstr "గణనపరికరం ను దించుటకు బందనం అయిఉంది."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
+msgid "Launch instant messenger"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
+msgid "Binding to launch the instant messenger."
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
 msgid "Launch web browser"
 msgstr "వెబ్ అన్వేషణిని దింపుము"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
 msgid "Binding to launch the web browser."
 msgstr "వెబ్ అన్వేషణిని దించుటకు బందనం అయిఉంది."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
 msgid "Launch media player"
 msgstr "మాద్యమం ప్లేయర్‌ను దింపుము"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
 msgid "Binding to launch the media player."
 msgstr "మాద్యమం ప్లేయర్‌ను దించుటకు బందనం అయిఉంది."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
 msgid "Play (or play/pause)"
 msgstr "ప్లే (లేదా ప్లే/నిలిపిఉంచు)"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
 msgid "Binding to start playback (or toggle play/pause)."
 msgstr ""
 "ప్లేబ్యాక్ ప్రారంభించుటకు బందనం అయిఉంది (లేదా ప్లే/నిలిపిఉంచు మార్చుము)."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
 msgid "Pause playback"
 msgstr "ప్లేబ్యాక్ నిలిపిఉంచుము"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
 msgid "Binding to pause playback."
 msgstr "ప్లేబ్యాక్ ను నిలిపిఉంచుటకు బందనం అయిఉంది."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
 msgid "Stop playback"
 msgstr "ప్లేబ్యాక్ ను నిలిపిఉంచు"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
 msgid "Binding to stop playback."
 msgstr "ప్లేబ్యాక్ ను ఆపుటకు బందనం అయిఉంది."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:57
 msgid "Previous track"
 msgstr "మునుపటి ట్రాక్"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:58
 msgid "Binding to skip to previous track."
 msgstr "మునుపటి ట్రాక్‌కు వదిలివెళ్ళుటకు బదనం అయిఉంది."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:57
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:59
 msgid "Next track"
 msgstr "తర్వాతి ట్రాక్"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:58
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:60
 msgid "Binding to skip to next track."
 msgstr "తర్వాతి ట్రాక్‌కు వదిలివెళ్ళుటకు బందనం అయిఉంది."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:60
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:62
 msgid "Binding to show the screen magnifier"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:62
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:64
 msgid "Binding to start the screen reader"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:64
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:66
 msgid "Binding to show the on-screen keyboard"
 msgstr ""
 
@@ -941,19 +949,19 @@ msgstr ""
 "డిస్కునకు కదుల్చుట ద్వారా మీరు డిస్కును ఖాళీ చేయవచ్చు."
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:207
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:206
 msgid "Low Disk Space"
 msgstr "తక్కువ డిస్కు జాగా"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:443
 msgid "Empty Trash"
 msgstr "చెత్తకుండీ ఖాళీచేయుము"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:451
 msgid "Examine…"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:458
 msgid "Ignore"
 msgstr "వదిలివేయి"
 
@@ -1061,7 +1069,7 @@ msgstr ""
 msgid "Show _Current Layout"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:191
+#: ../plugins/media-keys/msd-media-keys-manager.c:189
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
@@ -1070,7 +1078,7 @@ msgstr ""
 "అమర్చబడిఉంటునట్లు మరియు చెల్లునటువంటి అనువర్తనంను సూచించునట్లు "
 "నిర్ధారించుము."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:231
+#: ../plugins/media-keys/msd-media-keys-manager.c:229
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1079,46 +1087,46 @@ msgstr ""
 "ఆదేశాన్ని నిర్వర్తించలేదు: %s\n"
 "ఈ ఆదేశం వున్నదోలేదో సరిచూసుకోండి."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:629
+#: ../plugins/media-keys/msd-media-keys-manager.c:643
 #: ../plugins/media-keys/test-media-window.c:81
 msgid "Touchpad enabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:629
+#: ../plugins/media-keys/msd-media-keys-manager.c:643
 #: ../plugins/media-keys/test-media-window.c:74
 msgid "Touchpad disabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:943
+#: ../plugins/media-keys/msd-media-keys-manager.c:959
 #: ../plugins/media-keys/test-media-window.c:88
 msgid "Bluetooth disabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:946
+#: ../plugins/media-keys/msd-media-keys-manager.c:962
 #: ../plugins/media-keys/test-media-window.c:95
 msgid "Bluetooth enabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:950
+#: ../plugins/media-keys/msd-media-keys-manager.c:966
 #: ../plugins/media-keys/test-media-window.c:102
 msgid "Airplane mode enabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:953
+#: ../plugins/media-keys/msd-media-keys-manager.c:969
 #: ../plugins/media-keys/test-media-window.c:109
 msgid "Airplane mode disabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:984
+#: ../plugins/media-keys/msd-media-keys-manager.c:1000
 msgid "Hardware Airplane Mode"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:1022
+#: ../plugins/media-keys/msd-media-keys-manager.c:1038
 #: ../plugins/media-keys/test-media-window.c:123
 msgid "Changing Screen Layout"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:1026
+#: ../plugins/media-keys/msd-media-keys-manager.c:1042
 #: ../plugins/media-keys/test-media-window.c:116
 msgid "No External Display"
 msgstr ""
@@ -1131,16 +1139,16 @@ msgstr "మాద్యమం కీలు"
 msgid "Media keys plugin"
 msgstr "మాద్యమం కీల ప్లగ్ఇన్"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1490
+#: ../plugins/mouse/msd-mouse-manager.c:1486
 msgid "Could not enable mouse accessibility features"
 msgstr "మౌస్ అందుబాటు సౌలభ్యాలను చేతనం చేయలేకపోయింది"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1492
+#: ../plugins/mouse/msd-mouse-manager.c:1488
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 
-#: ../plugins/mouse/msd-mouse-manager.c:1495
+#: ../plugins/mouse/msd-mouse-manager.c:1491
 msgid "Mouse Preferences"
 msgstr "మౌస్ అభీష్టాలు"
 
@@ -1249,6 +1257,38 @@ msgstr "కుడి"
 #: ../plugins/xrandr/msd-xrandr-manager.c:2093
 msgid "Upside Down"
 msgstr "పైనప్రక్క క్రిందకు"
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2182
+msgid "ON"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2183
+msgid "Turn this monitor off"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2186
+msgid "OFF"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2187
+msgid "Turn this monitor on"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2247
+msgid "Same output all monitors"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2248
+msgid "Mirror same output to all monitors and turn them on"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2295
+msgid "_Configure Display Settings…"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2305
+msgid "Open the display configuration dialog (all settings)"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2358
 msgid "Configure display settings"

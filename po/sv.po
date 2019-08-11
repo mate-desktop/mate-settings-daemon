@@ -6,19 +6,19 @@
 # Translators:
 # Kristoffer Grundström <hamnisdude@gmail.com>, 2018
 # Jonatan Nyberg, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
 # Patrik Nilsson <asavartzeth@gmail.com>, 2018
 # Tobias Lekare <lekare@linux.com>, 2018
 # Philip Andersen <renegadevi@codeofmagi.net>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-23 18:24+0100\n"
+"POT-Creation-Date: 2019-07-31 13:03+0200\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Philip Andersen <renegadevi@codeofmagi.net>, 2018\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
 "Language-Team: Swedish (https://www.transifex.com/mate/teams/13566/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,17 +31,17 @@ msgid "Accessibility"
 msgstr "Hjälpmedel"
 
 #: ../data/50-accessibility.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:59
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:61
 msgid "Toggle magnifier"
 msgstr "Växla förstorare"
 
 #: ../data/50-accessibility.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:61
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:63
 msgid "Toggle screen reader"
 msgstr "Växla skärmläsare"
 
 #: ../data/50-accessibility.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:63
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:65
 msgid "Toggle on-screen keyboard"
 msgstr "Växla skärmtangentbord"
 
@@ -603,70 +603,78 @@ msgid "Binding to launch the calculator."
 msgstr "Bindning för att starta miniräknaren."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
+msgid "Launch instant messenger"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
+msgid "Binding to launch the instant messenger."
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
 msgid "Launch web browser"
 msgstr "Starta webbläsare"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
 msgid "Binding to launch the web browser."
 msgstr "Bindning för att starta webbläsaren."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
 msgid "Launch media player"
 msgstr "Starta mediaspelare"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
 msgid "Binding to launch the media player."
 msgstr "Bindning för att starta mediaspelaren."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
 msgid "Play (or play/pause)"
 msgstr "Spela (eller spela/gör paus)"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
 msgid "Binding to start playback (or toggle play/pause)."
 msgstr "Bindning för att starta uppspelningen (eller växla spela/pausa)."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
 msgid "Pause playback"
 msgstr "Gör paus i uppspelning"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
 msgid "Binding to pause playback."
 msgstr "Bindning för att göra paus i uppspelningen."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
 msgid "Stop playback"
 msgstr "Stoppa uppspelning"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
 msgid "Binding to stop playback."
 msgstr "Bindning för att stoppa uppspelningen."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:57
 msgid "Previous track"
 msgstr "Föregående spår"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:58
 msgid "Binding to skip to previous track."
 msgstr "Bindning för att hoppa till föregående spår."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:57
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:59
 msgid "Next track"
 msgstr "Nästa spår"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:58
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:60
 msgid "Binding to skip to next track."
 msgstr "Bindning för att hoppa till nästa spår."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:60
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:62
 msgid "Binding to show the screen magnifier"
 msgstr "Bindning för att visa skärmförstoraren"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:62
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:64
 msgid "Binding to start the screen reader"
 msgstr "Bindning för att starta skärmläsaren"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:64
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:66
 msgid "Binding to show the on-screen keyboard"
 msgstr "Bindning för att visa skärmtangentbordet."
 
@@ -986,19 +994,19 @@ msgstr ""
 "eller flytta filer till en extern disk."
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:207
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:206
 msgid "Low Disk Space"
 msgstr "Lågt diskutrymme"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:443
 msgid "Empty Trash"
 msgstr "Töm papperskorgen"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:451
 msgid "Examine…"
 msgstr "Undersök..."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:458
 msgid "Ignore"
 msgstr "Ignorera"
 
@@ -1118,7 +1126,7 @@ msgstr "Tangentbordsins_tällningar"
 msgid "Show _Current Layout"
 msgstr "Visa a_ktuell layout"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:191
+#: ../plugins/media-keys/msd-media-keys-manager.c:189
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
@@ -1126,7 +1134,7 @@ msgstr ""
 "Kunde inte hitta standardterminalen. Verifiera att kommandot för din "
 "standardterminal är inställt och pekar på ett giltigt program."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:231
+#: ../plugins/media-keys/msd-media-keys-manager.c:229
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1135,46 +1143,46 @@ msgstr ""
 "Kunde inte köra kommandot: %s\n"
 "Verifiera att det här är ett giltigt kommando."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:629
+#: ../plugins/media-keys/msd-media-keys-manager.c:643
 #: ../plugins/media-keys/test-media-window.c:81
 msgid "Touchpad enabled"
 msgstr "Pekplatta aktiverad"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:629
+#: ../plugins/media-keys/msd-media-keys-manager.c:643
 #: ../plugins/media-keys/test-media-window.c:74
 msgid "Touchpad disabled"
 msgstr "Pekplatta inaktiverad"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:943
+#: ../plugins/media-keys/msd-media-keys-manager.c:959
 #: ../plugins/media-keys/test-media-window.c:88
 msgid "Bluetooth disabled"
 msgstr "Bluetooth inaktiverat"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:946
+#: ../plugins/media-keys/msd-media-keys-manager.c:962
 #: ../plugins/media-keys/test-media-window.c:95
 msgid "Bluetooth enabled"
 msgstr "Bluetooth aktiverat"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:950
+#: ../plugins/media-keys/msd-media-keys-manager.c:966
 #: ../plugins/media-keys/test-media-window.c:102
 msgid "Airplane mode enabled"
 msgstr "Flygplansläge aktiverat"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:953
+#: ../plugins/media-keys/msd-media-keys-manager.c:969
 #: ../plugins/media-keys/test-media-window.c:109
 msgid "Airplane mode disabled"
 msgstr "Flygplansläge inaktiverat"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:984
+#: ../plugins/media-keys/msd-media-keys-manager.c:1000
 msgid "Hardware Airplane Mode"
 msgstr "Hårdvara Flygplansläge"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:1022
+#: ../plugins/media-keys/msd-media-keys-manager.c:1038
 #: ../plugins/media-keys/test-media-window.c:123
 msgid "Changing Screen Layout"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:1026
+#: ../plugins/media-keys/msd-media-keys-manager.c:1042
 #: ../plugins/media-keys/test-media-window.c:116
 msgid "No External Display"
 msgstr ""
@@ -1187,18 +1195,18 @@ msgstr "Mediatangenter"
 msgid "Media keys plugin"
 msgstr "Insticksmodul för mediatangenter"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1490
+#: ../plugins/mouse/msd-mouse-manager.c:1486
 msgid "Could not enable mouse accessibility features"
 msgstr "Kunde inte aktivera mushjälpmedelsfunktioner"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1492
+#: ../plugins/mouse/msd-mouse-manager.c:1488
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 "Mushjälpmedel kräver att Mousetweaks (Musjusteringar) är installerat på ditt"
 " system."
 
-#: ../plugins/mouse/msd-mouse-manager.c:1495
+#: ../plugins/mouse/msd-mouse-manager.c:1491
 msgid "Mouse Preferences"
 msgstr "Musinställningar"
 
@@ -1310,6 +1318,38 @@ msgstr "Höger"
 #: ../plugins/xrandr/msd-xrandr-manager.c:2093
 msgid "Upside Down"
 msgstr "Upp och ned"
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2182
+msgid "ON"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2183
+msgid "Turn this monitor off"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2186
+msgid "OFF"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2187
+msgid "Turn this monitor on"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2247
+msgid "Same output all monitors"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2248
+msgid "Mirror same output to all monitors and turn them on"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2295
+msgid "_Configure Display Settings…"
+msgstr "_Konfigurera skärminställningar..."
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2305
+msgid "Open the display configuration dialog (all settings)"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2358
 msgid "Configure display settings"

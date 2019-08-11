@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-23 18:24+0100\n"
+"POT-Creation-Date: 2019-07-31 13:03+0200\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
 "Language-Team: Vietnamese (https://www.transifex.com/mate/teams/13566/vi/)\n"
@@ -28,17 +28,17 @@ msgid "Accessibility"
 msgstr "Khả năng truy cập"
 
 #: ../data/50-accessibility.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:59
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:61
 msgid "Toggle magnifier"
 msgstr "Bật/tắt kính lúp"
 
 #: ../data/50-accessibility.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:61
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:63
 msgid "Toggle screen reader"
 msgstr "Bật/tắt bộ đọc màn hình"
 
 #: ../data/50-accessibility.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:63
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:65
 msgid "Toggle on-screen keyboard"
 msgstr "Bật/tắt bàn phím trên màn hình"
 
@@ -571,70 +571,78 @@ msgid "Binding to launch the calculator."
 msgstr "Tổ hợp để khởi chạy bàn tính."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
+msgid "Launch instant messenger"
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
+msgid "Binding to launch the instant messenger."
+msgstr ""
+
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
 msgid "Launch web browser"
 msgstr "Khởi chạy bộ duyệt Web"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
 msgid "Binding to launch the web browser."
 msgstr "Tổ hợp để khởi chạy bộ duyệt Web."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
 msgid "Launch media player"
 msgstr "Khởi chạy bộ Phát Nhạc/Phim"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
 msgid "Binding to launch the media player."
 msgstr "Tổ hợp để khởi chạy bộ phát nhạc/phim."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
 msgid "Play (or play/pause)"
 msgstr "Phát (hay phát/tạm dừng)"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
 msgid "Binding to start playback (or toggle play/pause)."
 msgstr "Tổ hợp để bắt đầu phát lại (hoặc bật/tắt phát/tạm dừng)."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
 msgid "Pause playback"
 msgstr "Tạm dừng phát lại"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
 msgid "Binding to pause playback."
 msgstr "Tổ hợp để tạm dừng phát lại. "
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
 msgid "Stop playback"
 msgstr "Dừng phát lại"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
 msgid "Binding to stop playback."
 msgstr "Tổ hợp để dừng phát lại."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:57
 msgid "Previous track"
 msgstr "Rãnh trước"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:58
 msgid "Binding to skip to previous track."
 msgstr "Tổ hợp để nhảy về rãnh trước."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:57
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:59
 msgid "Next track"
 msgstr "Rãnh sau"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:58
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:60
 msgid "Binding to skip to next track."
 msgstr "Tổ hợp để nhảy tới rãnh kế tiếp."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:60
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:62
 msgid "Binding to show the screen magnifier"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:62
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:64
 msgid "Binding to start the screen reader"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:64
+#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:66
 msgid "Binding to show the on-screen keyboard"
 msgstr ""
 
@@ -937,19 +945,19 @@ msgstr ""
 "tin không dùng, hoặc chuyển tập tin sang đĩa ở ngoài."
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:207
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:206
 msgid "Low Disk Space"
 msgstr "Ít chỗ đĩa"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:444
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:443
 msgid "Empty Trash"
 msgstr "Đổ sọt rác"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:452
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:451
 msgid "Examine…"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:459
+#: ../plugins/housekeeping/msd-ldsm-dialog.c:458
 msgid "Ignore"
 msgstr "Bỏ qua"
 
@@ -1057,7 +1065,7 @@ msgstr ""
 msgid "Show _Current Layout"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:191
+#: ../plugins/media-keys/msd-media-keys-manager.c:189
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
@@ -1065,7 +1073,7 @@ msgstr ""
 "Không thể lấy thiết bị cuối mặc định. Hãy kiểm tra xem câu lệnh thiết bị "
 "cuối mặc định đã được đặt và chỉ tới một ứng dụng hợp lệ."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:231
+#: ../plugins/media-keys/msd-media-keys-manager.c:229
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1074,46 +1082,46 @@ msgstr ""
 "Không thể thực hiện câu lệnh: %s\n"
 "Hãy kiểm tra xem nó là một câu lệnh hợp lệ."
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:629
+#: ../plugins/media-keys/msd-media-keys-manager.c:643
 #: ../plugins/media-keys/test-media-window.c:81
 msgid "Touchpad enabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:629
+#: ../plugins/media-keys/msd-media-keys-manager.c:643
 #: ../plugins/media-keys/test-media-window.c:74
 msgid "Touchpad disabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:943
+#: ../plugins/media-keys/msd-media-keys-manager.c:959
 #: ../plugins/media-keys/test-media-window.c:88
 msgid "Bluetooth disabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:946
+#: ../plugins/media-keys/msd-media-keys-manager.c:962
 #: ../plugins/media-keys/test-media-window.c:95
 msgid "Bluetooth enabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:950
+#: ../plugins/media-keys/msd-media-keys-manager.c:966
 #: ../plugins/media-keys/test-media-window.c:102
 msgid "Airplane mode enabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:953
+#: ../plugins/media-keys/msd-media-keys-manager.c:969
 #: ../plugins/media-keys/test-media-window.c:109
 msgid "Airplane mode disabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:984
+#: ../plugins/media-keys/msd-media-keys-manager.c:1000
 msgid "Hardware Airplane Mode"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:1022
+#: ../plugins/media-keys/msd-media-keys-manager.c:1038
 #: ../plugins/media-keys/test-media-window.c:123
 msgid "Changing Screen Layout"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:1026
+#: ../plugins/media-keys/msd-media-keys-manager.c:1042
 #: ../plugins/media-keys/test-media-window.c:116
 msgid "No External Display"
 msgstr ""
@@ -1126,16 +1134,16 @@ msgstr "Phím nhạc/phim"
 msgid "Media keys plugin"
 msgstr "Phần mở rộng phím nhạc/phim"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1490
+#: ../plugins/mouse/msd-mouse-manager.c:1486
 msgid "Could not enable mouse accessibility features"
 msgstr "Không thể hiệu lực các tính năng khả năng truy cập bàn phím"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1492
+#: ../plugins/mouse/msd-mouse-manager.c:1488
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 
-#: ../plugins/mouse/msd-mouse-manager.c:1495
+#: ../plugins/mouse/msd-mouse-manager.c:1491
 msgid "Mouse Preferences"
 msgstr "Tùy thích Con chuột"
 
@@ -1243,6 +1251,38 @@ msgstr "Phải"
 #: ../plugins/xrandr/msd-xrandr-manager.c:2093
 msgid "Upside Down"
 msgstr "Trên xuống"
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2182
+msgid "ON"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2183
+msgid "Turn this monitor off"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2186
+msgid "OFF"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2187
+msgid "Turn this monitor on"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2247
+msgid "Same output all monitors"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2248
+msgid "Mirror same output to all monitors and turn them on"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2295
+msgid "_Configure Display Settings…"
+msgstr ""
+
+#: ../plugins/xrandr/msd-xrandr-manager.c:2305
+msgid "Open the display configuration dialog (all settings)"
+msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2358
 msgid "Configure display settings"
