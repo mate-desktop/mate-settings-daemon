@@ -1,8 +1,28 @@
 ### mate-settings-daemon 1.23.1
 
+  * update translations
+  * travis: update mate-desktop required version
+  * Add remaining peripheral schemas from mate-desktop
+  * mouse: Add acceleration profiles
+  * plugins a11y-settings: fix deprecated g_type_class_add_private
+  * plugins a11y-keyboard: fix deprecated g_type_class_add_private
+  * plugins mouse: fix deprecated g_type_class_add_private
+  * Change media-keys volume-step default from 6 to 5 in the gschema
+    and use only that instead of a redundant constant in the code.
+  * plugins background: fix deprecated g_type_class_add_private
+  * xrandr plugin: i18n dropdown menu
+  * plugins keyboard: fix deprecated g_type_class_add_private
+  * add new macro MATE_SETTINGS_PLUGIN_REGISTER_WITH_PRIVATE
+  * plugins: drop libXxf86 dependency
+  * plugins housekeeping: optimization code
+  * Avoid build warning
+  * plugins common: fix deprecated g_type_class_add_private
+  * Remove trailing whitespaces
+  * fix deprecated g_type_class_add_private
+
 ### mate-settings-daemon 1.23.0
 
-  * tx: sync with transifex
+  * update translations
   * media-keys: Execute default instant messaging application defined by schema
   * Change url project's website
   * locate-pointer: Do not grab pointer button when trying to locate
