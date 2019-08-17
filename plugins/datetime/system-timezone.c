@@ -76,8 +76,6 @@ static char *files_to_check[CHECK_NB] = {
 
 static GObject *systz_singleton = NULL;
 
-G_DEFINE_TYPE (SystemTimezone, system_timezone, G_TYPE_OBJECT)
-
 typedef struct {
         char *tz;
         char *env_tz;
@@ -88,6 +86,8 @@ enum {
 	CHANGED,
 	LAST_SIGNAL
 };
+
+G_DEFINE_TYPE_WITH_PRIVATE (SystemTimezone, system_timezone, G_TYPE_OBJECT)
 
 static guint system_timezone_signals[LAST_SIGNAL] = { 0 };
 
@@ -102,8 +102,6 @@ static void system_timezone_monitor_changed (GFileMonitor *handle,
                                              GFileMonitorEvent event,
                                              gpointer user_data);
 
-#define PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), SYSTEM_TIMEZONE_TYPE, SystemTimezonePrivate))
-
 SystemTimezone *
 system_timezone_new (void)
 {
@@ -117,7 +115,7 @@ system_timezone_get (SystemTimezone *systz)
 
         g_return_val_if_fail (IS_SYSTEM_TIMEZONE (systz), NULL);
 
-        priv = PRIVATE (systz);
+        priv = system_timezone_get_instance_private (systz);
         return priv->tz;
 }
 
@@ -128,7 +126,7 @@ system_timezone_get_env (SystemTimezone *systz)
 
         g_return_val_if_fail (IS_SYSTEM_TIMEZONE (systz), NULL);
 
-        priv = PRIVATE (systz);
+        priv = system_timezone_get_instance_private (systz);
         return priv->env_tz;
 }
 
@@ -148,15 +146,13 @@ system_timezone_class_init (SystemTimezoneClass *class)
 			      NULL, NULL,
 			      g_cclosure_marshal_VOID__STRING,
 			      G_TYPE_NONE, 1, G_TYPE_STRING);
-
-        g_type_class_add_private (class, sizeof (SystemTimezonePrivate));
 }
 
 static void
 system_timezone_init (SystemTimezone *systz)
 {
         int i;
-        SystemTimezonePrivate *priv = PRIVATE (systz);
+        SystemTimezonePrivate *priv = system_timezone_get_instance_private (systz);
 
         priv->tz = NULL;
         priv->env_tz = NULL;
@@ -182,7 +178,7 @@ system_timezone_constructor (GType                  type,
                                                 n_construct_properties,
                                                 construct_properties);
 
-        priv = PRIVATE (obj);
+        priv = system_timezone_get_instance_private (SYSTEM_TIMEZONE (obj));
 
         priv->tz = system_timezone_find ();
 
@@ -228,7 +224,7 @@ static void
 system_timezone_finalize (GObject *obj)
 {
         int i;
-        SystemTimezonePrivate *priv = PRIVATE (obj);
+        SystemTimezonePrivate *priv = system_timezone_get_instance_private (SYSTEM_TIMEZONE (obj));
 
         if (priv->tz) {
                 g_free (priv->tz);
@@ -260,7 +256,7 @@ system_timezone_monitor_changed (GFileMonitor *handle,
                                  GFileMonitorEvent event,
                                  gpointer user_data)
 {
-        SystemTimezonePrivate *priv = PRIVATE (user_data);
+        SystemTimezonePrivate *priv = system_timezone_get_instance_private (SYSTEM_TIMEZONE (user_data));
         char *new_tz;
 
         if (event != G_FILE_MONITOR_EVENT_CHANGED &&
