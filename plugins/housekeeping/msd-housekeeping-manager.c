@@ -44,12 +44,10 @@ struct MsdHousekeepingManagerPrivate {
         GSettings *settings;
 };
 
-#define MSD_HOUSEKEEPING_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_HOUSEKEEPING_MANAGER, MsdHousekeepingManagerPrivate))
-
 static void     msd_housekeeping_manager_class_init  (MsdHousekeepingManagerClass *klass);
 static void     msd_housekeeping_manager_init        (MsdHousekeepingManager      *housekeeping_manager);
 
-G_DEFINE_TYPE (MsdHousekeepingManager, msd_housekeeping_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (MsdHousekeepingManager, msd_housekeeping_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -302,13 +300,12 @@ msd_housekeeping_manager_stop (MsdHousekeepingManager *manager)
 static void
 msd_housekeeping_manager_class_init (MsdHousekeepingManagerClass *klass)
 {
-        g_type_class_add_private (klass, sizeof (MsdHousekeepingManagerPrivate));
 }
 
 static void
 msd_housekeeping_manager_init (MsdHousekeepingManager *manager)
 {
-        manager->priv = MSD_HOUSEKEEPING_MANAGER_GET_PRIVATE (manager);
+        manager->priv = msd_housekeeping_manager_get_instance_private (manager);
 }
 
 MsdHousekeepingManager *
