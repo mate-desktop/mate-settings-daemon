@@ -49,12 +49,10 @@ struct MsdLdsmDialogPrivate
         gchar *mount_path;
 };
 
-#define MSD_LDSM_DIALOG_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_LDSM_DIALOG, MsdLdsmDialogPrivate))
-
 static void     msd_ldsm_dialog_class_init  (MsdLdsmDialogClass *klass);
 static void     msd_ldsm_dialog_init        (MsdLdsmDialog      *dialog);
 
-G_DEFINE_TYPE (MsdLdsmDialog, msd_ldsm_dialog, GTK_TYPE_DIALOG);
+G_DEFINE_TYPE_WITH_PRIVATE (MsdLdsmDialog, msd_ldsm_dialog, GTK_TYPE_DIALOG);
 
 static const gchar*
 msd_ldsm_dialog_get_checkbutton_text (MsdLdsmDialog *dialog)
@@ -198,7 +196,7 @@ msd_ldsm_dialog_init (MsdLdsmDialog *dialog)
         GtkWidget *main_vbox, *text_vbox, *hbox;
         GtkWidget *image;
 
-        dialog->priv = MSD_LDSM_DIALOG_GET_PRIVATE (dialog);
+        dialog->priv = msd_ldsm_dialog_get_instance_private (dialog);
 
         main_vbox = gtk_dialog_get_content_area (GTK_DIALOG (dialog));
 
@@ -409,8 +407,6 @@ msd_ldsm_dialog_class_init (MsdLdsmDialogClass *klass)
                                                               "Specify the mount path for the partition",
                                                               "Unknown",
                                                               G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
-
-        g_type_class_add_private (klass, sizeof (MsdLdsmDialogPrivate));
 }
 
 MsdLdsmDialog*
