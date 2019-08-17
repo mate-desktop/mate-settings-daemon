@@ -73,9 +73,7 @@ struct MsdDatetimeMechanismPrivate
 
 static void     msd_datetime_mechanism_finalize    (GObject     *object);
 
-G_DEFINE_TYPE (MsdDatetimeMechanism, msd_datetime_mechanism, G_TYPE_OBJECT)
-
-#define MSD_DATETIME_MECHANISM_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_DATETIME_TYPE_MECHANISM, MsdDatetimeMechanismPrivate))
+G_DEFINE_TYPE_WITH_PRIVATE (MsdDatetimeMechanism, msd_datetime_mechanism, G_TYPE_OBJECT)
 
 GQuark
 msd_datetime_mechanism_error_quark (void)
@@ -139,8 +137,6 @@ msd_datetime_mechanism_class_init (MsdDatetimeMechanismClass *klass)
         object_class->constructor = msd_datetime_mechanism_constructor;
         object_class->finalize = msd_datetime_mechanism_finalize;
 
-        g_type_class_add_private (klass, sizeof (MsdDatetimeMechanismPrivate));
-
         dbus_g_object_type_install_info (MSD_DATETIME_TYPE_MECHANISM, &dbus_glib_msd_datetime_mechanism_object_info);
 
         dbus_g_error_domain_register (MSD_DATETIME_MECHANISM_ERROR, NULL, MSD_DATETIME_MECHANISM_TYPE_ERROR);
@@ -150,7 +146,7 @@ msd_datetime_mechanism_class_init (MsdDatetimeMechanismClass *klass)
 static void
 msd_datetime_mechanism_init (MsdDatetimeMechanism *mechanism)
 {
-        mechanism->priv = MSD_DATETIME_MECHANISM_GET_PRIVATE (mechanism);
+        mechanism->priv = msd_datetime_mechanism_get_instance_private (mechanism);
 
 }
 
