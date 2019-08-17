@@ -49,8 +49,6 @@
 #define GSETTINGS_KEYBINDINGS_DIR "/org/mate/desktop/keybindings/"
 #define CUSTOM_KEYBINDING_SCHEMA "org.mate.control-center.keybinding"
 
-#define MSD_KEYBINDINGS_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_KEYBINDINGS_MANAGER, MsdKeybindingsManagerPrivate))
-
 typedef struct {
         char *binding_str;
         char *action;
@@ -70,7 +68,7 @@ static void     msd_keybindings_manager_class_init  (MsdKeybindingsManagerClass 
 static void     msd_keybindings_manager_init        (MsdKeybindingsManager      *keybindings_manager);
 static void     msd_keybindings_manager_finalize    (GObject             *object);
 
-G_DEFINE_TYPE (MsdKeybindingsManager, msd_keybindings_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (MsdKeybindingsManager, msd_keybindings_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -598,14 +596,12 @@ msd_keybindings_manager_class_init (MsdKeybindingsManagerClass *klass)
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
         object_class->finalize = msd_keybindings_manager_finalize;
-
-        g_type_class_add_private (klass, sizeof (MsdKeybindingsManagerPrivate));
 }
 
 static void
 msd_keybindings_manager_init (MsdKeybindingsManager *manager)
 {
-        manager->priv = MSD_KEYBINDINGS_MANAGER_GET_PRIVATE (manager);
+        manager->priv = msd_keybindings_manager_get_instance_private (manager);
 
 }
 
