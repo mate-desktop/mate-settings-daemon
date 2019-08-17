@@ -31,14 +31,12 @@ struct MsdHousekeepingPluginPrivate {
         MsdHousekeepingManager *manager;
 };
 
-#define MSD_HOUSEKEEPING_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), MSD_TYPE_HOUSEKEEPING_PLUGIN, MsdHousekeepingPluginPrivate))
-
-MATE_SETTINGS_PLUGIN_REGISTER (MsdHousekeepingPlugin, msd_housekeeping_plugin)
+MATE_SETTINGS_PLUGIN_REGISTER_WITH_PRIVATE (MsdHousekeepingPlugin, msd_housekeeping_plugin)
 
 static void
 msd_housekeeping_plugin_init (MsdHousekeepingPlugin *plugin)
 {
-        plugin->priv = MSD_HOUSEKEEPING_PLUGIN_GET_PRIVATE (plugin);
+        plugin->priv = msd_housekeeping_plugin_get_instance_private (plugin);
 
         g_debug ("MsdHousekeepingPlugin initializing");
 
@@ -99,8 +97,6 @@ msd_housekeeping_plugin_class_init (MsdHousekeepingPluginClass *klass)
 
         plugin_class->activate = impl_activate;
         plugin_class->deactivate = impl_deactivate;
-
-        g_type_class_add_private (klass, sizeof (MsdHousekeepingPluginPrivate));
 }
 
 static void
