@@ -40,8 +40,6 @@
 #include "mate-settings-profile.h"
 #include "msd-xrdb-manager.h"
 
-#define MSD_XRDB_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_XRDB_MANAGER, MsdXrdbManagerPrivate))
-
 #define SYSTEM_AD_DIR    SYSCONFDIR "/xrdb"
 #define GENERAL_AD       SYSTEM_AD_DIR "/General.ad"
 #define USER_AD_DIR      ".config/mate/xrdb"
@@ -57,7 +55,7 @@ static void     msd_xrdb_manager_class_init  (MsdXrdbManagerClass *klass);
 static void     msd_xrdb_manager_init        (MsdXrdbManager      *xrdb_manager);
 static void     msd_xrdb_manager_finalize    (GObject             *object);
 
-G_DEFINE_TYPE (MsdXrdbManager, msd_xrdb_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (MsdXrdbManager, msd_xrdb_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 static void
@@ -530,14 +528,12 @@ msd_xrdb_manager_class_init (MsdXrdbManagerClass *klass)
         GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
         object_class->finalize = msd_xrdb_manager_finalize;
-
-        g_type_class_add_private (klass, sizeof (MsdXrdbManagerPrivate));
 }
 
 static void
 msd_xrdb_manager_init (MsdXrdbManager *manager)
 {
-        manager->priv = MSD_XRDB_MANAGER_GET_PRIVATE (manager);
+        manager->priv = msd_xrdb_manager_get_instance_private (manager);
 
 }
 
