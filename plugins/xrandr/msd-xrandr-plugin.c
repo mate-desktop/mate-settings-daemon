@@ -31,14 +31,12 @@ struct MsdXrandrPluginPrivate {
         MsdXrandrManager *manager;
 };
 
-#define MSD_XRANDR_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), MSD_TYPE_XRANDR_PLUGIN, MsdXrandrPluginPrivate))
-
-MATE_SETTINGS_PLUGIN_REGISTER (MsdXrandrPlugin, msd_xrandr_plugin)
+MATE_SETTINGS_PLUGIN_REGISTER_WITH_PRIVATE (MsdXrandrPlugin, msd_xrandr_plugin)
 
 static void
 msd_xrandr_plugin_init (MsdXrandrPlugin *plugin)
 {
-        plugin->priv = MSD_XRANDR_PLUGIN_GET_PRIVATE (plugin);
+        plugin->priv = msd_xrandr_plugin_get_instance_private (plugin);
 
         g_debug ("MsdXrandrPlugin initializing");
 
@@ -99,8 +97,6 @@ msd_xrandr_plugin_class_init (MsdXrandrPluginClass *klass)
 
         plugin_class->activate = impl_activate;
         plugin_class->deactivate = impl_deactivate;
-
-        g_type_class_add_private (klass, sizeof (MsdXrandrPluginPrivate));
 }
 
 static void
