@@ -41,8 +41,6 @@
 #include "mate-settings-profile.h"
 #include "msd-typing-break-manager.h"
 
-#define MSD_TYPING_BREAK_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_TYPING_BREAK_MANAGER, MsdTypingBreakManagerPrivate))
-
 #define MATE_BREAK_SCHEMA "org.mate.typing-break"
 
 struct MsdTypingBreakManagerPrivate
@@ -58,7 +56,7 @@ static void     msd_typing_break_manager_class_init  (MsdTypingBreakManagerClass
 static void     msd_typing_break_manager_init        (MsdTypingBreakManager      *typing_break_manager);
 static void     msd_typing_break_manager_finalize    (GObject             *object);
 
-G_DEFINE_TYPE (MsdTypingBreakManager, msd_typing_break_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (MsdTypingBreakManager, msd_typing_break_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -221,14 +219,12 @@ msd_typing_break_manager_class_init (MsdTypingBreakManagerClass *klass)
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
         object_class->finalize = msd_typing_break_manager_finalize;
-
-        g_type_class_add_private (klass, sizeof (MsdTypingBreakManagerPrivate));
 }
 
 static void
 msd_typing_break_manager_init (MsdTypingBreakManager *manager)
 {
-        manager->priv = MSD_TYPING_BREAK_MANAGER_GET_PRIVATE (manager);
+        manager->priv = msd_typing_break_manager_get_instance_private (manager);
 
 }
 
