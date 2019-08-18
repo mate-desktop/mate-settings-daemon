@@ -31,14 +31,12 @@ struct MateXSettingsPluginPrivate {
         MateXSettingsManager *manager;
 };
 
-#define MATE_XSETTINGS_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), MATE_TYPE_XSETTINGS_PLUGIN, MateXSettingsPluginPrivate))
-
-MATE_SETTINGS_PLUGIN_REGISTER (MateXSettingsPlugin, mate_xsettings_plugin)
+MATE_SETTINGS_PLUGIN_REGISTER_WITH_PRIVATE (MateXSettingsPlugin, mate_xsettings_plugin)
 
 static void
 mate_xsettings_plugin_init (MateXSettingsPlugin *plugin)
 {
-        plugin->priv = MATE_XSETTINGS_PLUGIN_GET_PRIVATE (plugin);
+        plugin->priv = mate_xsettings_plugin_get_instance_private (plugin);
 
         g_debug ("MateXSettingsPlugin initializing");
 
@@ -99,8 +97,6 @@ mate_xsettings_plugin_class_init (MateXSettingsPluginClass *klass)
 
         plugin_class->activate = impl_activate;
         plugin_class->deactivate = impl_deactivate;
-
-        g_type_class_add_private (klass, sizeof (MateXSettingsPluginPrivate));
 }
 
 static void
