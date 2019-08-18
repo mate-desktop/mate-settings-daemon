@@ -31,14 +31,12 @@ struct MsdDummyPluginPrivate {
         MsdDummyManager *manager;
 };
 
-#define MSD_DUMMY_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), MSD_TYPE_DUMMY_PLUGIN, MsdDummyPluginPrivate))
-
-MATE_SETTINGS_PLUGIN_REGISTER (MsdDummyPlugin, msd_dummy_plugin)
+MATE_SETTINGS_PLUGIN_REGISTER_WITH_PRIVATE (MsdDummyPlugin, msd_dummy_plugin)
 
 static void
 msd_dummy_plugin_init (MsdDummyPlugin *plugin)
 {
-        plugin->priv = MSD_DUMMY_PLUGIN_GET_PRIVATE (plugin);
+        plugin->priv = msd_dummy_plugin_get_instance_private (plugin);
 
         g_debug ("MsdDummyPlugin initializing");
 
@@ -99,8 +97,6 @@ msd_dummy_plugin_class_init (MsdDummyPluginClass *klass)
 
         plugin_class->activate = impl_activate;
         plugin_class->deactivate = impl_deactivate;
-
-        g_type_class_add_private (klass, sizeof (MsdDummyPluginPrivate));
 }
 
 static void
