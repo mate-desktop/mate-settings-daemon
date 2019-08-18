@@ -71,8 +71,6 @@ static const gchar *BUS_NAMES[] = {"org.mpris.MediaPlayer2.audacious",
                                    "org.mpris.MediaPlayer2.gmusicbrowser",
                                    "org.mpris.MediaPlayer2.spotify"};
 
-#define MSD_MPRIS_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_MPRIS_MANAGER, MsdMprisManagerPrivate))
-
 struct MsdMprisManagerPrivate
 {
         GQueue       *media_player_queue;
@@ -88,7 +86,7 @@ static void     msd_mpris_manager_class_init  (MsdMprisManagerClass *klass);
 static void     msd_mpris_manager_init        (MsdMprisManager      *mpris_manager);
 static void     msd_mpris_manager_finalize    (GObject              *object);
 
-G_DEFINE_TYPE (MsdMprisManager, msd_mpris_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (MsdMprisManager, msd_mpris_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -373,14 +371,12 @@ msd_mpris_manager_class_init (MsdMprisManagerClass *klass)
     GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
     object_class->finalize = msd_mpris_manager_finalize;
-
-    g_type_class_add_private (klass, sizeof (MsdMprisManagerPrivate));
 }
 
 static void
 msd_mpris_manager_init (MsdMprisManager *manager)
 {
-        manager->priv = MSD_MPRIS_MANAGER_GET_PRIVATE (manager);
+        manager->priv = msd_mpris_manager_get_instance_private (manager);
 
 }
 
