@@ -53,8 +53,6 @@
 #include "mate-settings-profile.h"
 #include "msd-xrandr-manager.h"
 
-#define MSD_XRANDR_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_XRANDR_MANAGER, MsdXrandrManagerPrivate))
-
 #define CONF_SCHEMA                                    "org.mate.SettingsDaemon.plugins.xrandr"
 #define CONF_KEY_SHOW_NOTIFICATION_ICON                "show-notification-icon"
 #define CONF_KEY_USE_XORG_MONITOR_SETTINGS             "use-xorg-monitor-settings"
@@ -130,7 +128,7 @@ static void get_allowed_rotations_for_output (MateRRConfig *config,
                                               int *out_num_rotations,
                                               MateRRRotation *out_rotations);
 
-G_DEFINE_TYPE (MsdXrandrManager, msd_xrandr_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (MsdXrandrManager, msd_xrandr_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -2673,8 +2671,6 @@ msd_xrandr_manager_class_init (MsdXrandrManagerClass *klass)
         object_class->finalize = msd_xrandr_manager_finalize;
 
         dbus_g_object_type_install_info (MSD_TYPE_XRANDR_MANAGER, &dbus_glib_msd_xrandr_manager_object_info);
-
-        g_type_class_add_private (klass, sizeof (MsdXrandrManagerPrivate));
 }
 
 static guint
@@ -2692,7 +2688,7 @@ get_keycode_for_keysym_name (const char *name)
 static void
 msd_xrandr_manager_init (MsdXrandrManager *manager)
 {
-        manager->priv = MSD_XRANDR_MANAGER_GET_PRIVATE (manager);
+        manager->priv = msd_xrandr_manager_get_instance_private (manager);
 
         manager->priv->switch_video_mode_keycode = get_keycode_for_keysym_name (VIDEO_KEYSYM);
         manager->priv->rotate_windows_keycode = get_keycode_for_keysym_name (ROTATE_KEYSYM);
