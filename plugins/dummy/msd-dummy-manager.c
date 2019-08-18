@@ -39,8 +39,6 @@
 #include "mate-settings-profile.h"
 #include "msd-dummy-manager.h"
 
-#define MSD_DUMMY_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_DUMMY_MANAGER, MsdDummyManagerPrivate))
-
 struct MsdDummyManagerPrivate
 {
         gboolean padding;
@@ -54,7 +52,7 @@ static void     msd_dummy_manager_class_init  (MsdDummyManagerClass *klass);
 static void     msd_dummy_manager_init        (MsdDummyManager      *dummy_manager);
 static void     msd_dummy_manager_finalize    (GObject             *object);
 
-G_DEFINE_TYPE (MsdDummyManager, msd_dummy_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (MsdDummyManager, msd_dummy_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -130,14 +128,12 @@ msd_dummy_manager_class_init (MsdDummyManagerClass *klass)
         object_class->constructor = msd_dummy_manager_constructor;
         object_class->dispose = msd_dummy_manager_dispose;
         object_class->finalize = msd_dummy_manager_finalize;
-
-        g_type_class_add_private (klass, sizeof (MsdDummyManagerPrivate));
 }
 
 static void
 msd_dummy_manager_init (MsdDummyManager *manager)
 {
-        manager->priv = MSD_DUMMY_MANAGER_GET_PRIVATE (manager);
+        manager->priv = msd_dummy_manager_get_instance_private (manager);
 
 }
 
