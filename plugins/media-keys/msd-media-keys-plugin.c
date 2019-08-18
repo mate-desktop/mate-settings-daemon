@@ -38,14 +38,12 @@ struct _MsdMediaKeysPluginPrivate
         MsdMediaKeysManager *manager;
 };
 
-#define MSD_MEDIA_KEYS_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), MSD_TYPE_MEDIA_KEYS_PLUGIN, MsdMediaKeysPluginPrivate))
-
-MATE_SETTINGS_PLUGIN_REGISTER (MsdMediaKeysPlugin, msd_media_keys_plugin)
+MATE_SETTINGS_PLUGIN_REGISTER_WITH_PRIVATE (MsdMediaKeysPlugin, msd_media_keys_plugin)
 
 static void
 msd_media_keys_plugin_init (MsdMediaKeysPlugin *plugin)
 {
-        plugin->priv = MSD_MEDIA_KEYS_PLUGIN_GET_PRIVATE (plugin);
+        plugin->priv = msd_media_keys_plugin_get_instance_private (plugin);
 
         g_debug ("MsdMediaKeysPlugin initializing");
 
@@ -101,8 +99,6 @@ msd_media_keys_plugin_class_init (MsdMediaKeysPluginClass *klass)
 
         plugin_class->activate = impl_activate;
         plugin_class->deactivate = impl_deactivate;
-
-        g_type_class_add_private (klass, sizeof (MsdMediaKeysPluginPrivate));
 }
 
 static void
