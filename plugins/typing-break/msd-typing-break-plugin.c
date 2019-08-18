@@ -31,14 +31,12 @@ struct MsdTypingBreakPluginPrivate {
         MsdTypingBreakManager *manager;
 };
 
-#define MSD_TYPING_BREAK_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), MSD_TYPE_TYPING_BREAK_PLUGIN, MsdTypingBreakPluginPrivate))
-
-MATE_SETTINGS_PLUGIN_REGISTER (MsdTypingBreakPlugin, msd_typing_break_plugin)
+MATE_SETTINGS_PLUGIN_REGISTER_WITH_PRIVATE (MsdTypingBreakPlugin, msd_typing_break_plugin)
 
 static void
 msd_typing_break_plugin_init (MsdTypingBreakPlugin *plugin)
 {
-        plugin->priv = MSD_TYPING_BREAK_PLUGIN_GET_PRIVATE (plugin);
+        plugin->priv = msd_typing_break_plugin_get_instance_private (plugin);
 
         g_debug ("MsdTypingBreakPlugin initializing");
 
@@ -99,8 +97,6 @@ msd_typing_break_plugin_class_init (MsdTypingBreakPluginClass *klass)
 
         plugin_class->activate = impl_activate;
         plugin_class->deactivate = impl_deactivate;
-
-        g_type_class_add_private (klass, sizeof (MsdTypingBreakPluginPrivate));
 }
 
 static void
