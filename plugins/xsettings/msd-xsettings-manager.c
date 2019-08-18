@@ -45,8 +45,6 @@
 #include "fontconfig-monitor.h"
 #include "wm-common.h"
 
-#define MATE_XSETTINGS_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MATE_TYPE_XSETTINGS_MANAGER, MateXSettingsManagerPrivate))
-
 #define MOUSE_SCHEMA          "org.mate.peripherals-mouse"
 #define INTERFACE_SCHEMA      "org.mate.interface"
 #define SOUND_SCHEMA          "org.mate.sound"
@@ -116,7 +114,7 @@ static void     mate_xsettings_manager_class_init  (MateXSettingsManagerClass *k
 static void     mate_xsettings_manager_init        (MateXSettingsManager      *xsettings_manager);
 static void     mate_xsettings_manager_finalize    (GObject                  *object);
 
-G_DEFINE_TYPE (MateXSettingsManager, mate_xsettings_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (MateXSettingsManager, mate_xsettings_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -1015,14 +1013,12 @@ mate_xsettings_manager_class_init (MateXSettingsManagerClass *klass)
         GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
         object_class->finalize = mate_xsettings_manager_finalize;
-
-        g_type_class_add_private (klass, sizeof (MateXSettingsManagerPrivate));
 }
 
 static void
 mate_xsettings_manager_init (MateXSettingsManager *manager)
 {
-        manager->priv = MATE_XSETTINGS_MANAGER_GET_PRIVATE (manager);
+        manager->priv = mate_xsettings_manager_get_instance_private (manager);
 }
 
 static void
