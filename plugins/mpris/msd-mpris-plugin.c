@@ -33,14 +33,12 @@ struct MsdMprisPluginPrivate {
         MsdMprisManager *manager;
 };
 
-#define MSD_MPRIS_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), MSD_TYPE_MPRIS_PLUGIN, MsdMprisPluginPrivate))
-
-MATE_SETTINGS_PLUGIN_REGISTER (MsdMprisPlugin, msd_mpris_plugin)
+MATE_SETTINGS_PLUGIN_REGISTER_WITH_PRIVATE (MsdMprisPlugin, msd_mpris_plugin)
 
 static void
 msd_mpris_plugin_init (MsdMprisPlugin *plugin)
 {
-        plugin->priv = MSD_MPRIS_PLUGIN_GET_PRIVATE (plugin);
+        plugin->priv = msd_mpris_plugin_get_instance_private (plugin);
 
         g_debug ("MsdMprisPlugin initializing");
 
@@ -101,8 +99,6 @@ msd_mpris_plugin_class_init (MsdMprisPluginClass *klass)
 
         plugin_class->activate = impl_activate;
         plugin_class->deactivate = impl_deactivate;
-
-        g_type_class_add_private (klass, sizeof (MsdMprisPluginPrivate));
 }
 
 static void
