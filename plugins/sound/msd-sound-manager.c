@@ -43,8 +43,6 @@
 #include "msd-sound-manager.h"
 #include "mate-settings-profile.h"
 
-#define MSD_SOUND_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_SOUND_MANAGER, MsdSoundManagerPrivate))
-
 struct MsdSoundManagerPrivate
 {
         GSettings *settings;
@@ -58,7 +56,7 @@ static void msd_sound_manager_class_init (MsdSoundManagerClass *klass);
 static void msd_sound_manager_init (MsdSoundManager *sound_manager);
 static void msd_sound_manager_finalize (GObject *object);
 
-G_DEFINE_TYPE (MsdSoundManager, msd_sound_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (MsdSoundManager, msd_sound_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -348,14 +346,12 @@ msd_sound_manager_class_init (MsdSoundManagerClass *klass)
 
         object_class->dispose = msd_sound_manager_dispose;
         object_class->finalize = msd_sound_manager_finalize;
-
-        g_type_class_add_private (klass, sizeof (MsdSoundManagerPrivate));
 }
 
 static void
 msd_sound_manager_init (MsdSoundManager *manager)
 {
-        manager->priv = MSD_SOUND_MANAGER_GET_PRIVATE (manager);
+        manager->priv = msd_sound_manager_get_instance_private (manager);
 }
 
 static void
