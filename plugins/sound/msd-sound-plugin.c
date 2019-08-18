@@ -31,14 +31,12 @@ struct MsdSoundPluginPrivate {
         MsdSoundManager *manager;
 };
 
-#define MSD_SOUND_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), MSD_TYPE_SOUND_PLUGIN, MsdSoundPluginPrivate))
-
-MATE_SETTINGS_PLUGIN_REGISTER (MsdSoundPlugin, msd_sound_plugin)
+MATE_SETTINGS_PLUGIN_REGISTER_WITH_PRIVATE (MsdSoundPlugin, msd_sound_plugin)
 
 static void
 msd_sound_plugin_init (MsdSoundPlugin *plugin)
 {
-        plugin->priv = MSD_SOUND_PLUGIN_GET_PRIVATE (plugin);
+        plugin->priv = msd_sound_plugin_get_instance_private (plugin);
 
         g_debug ("MsdSoundPlugin initializing");
 
@@ -95,8 +93,6 @@ msd_sound_plugin_class_init (MsdSoundPluginClass *klass)
 
         plugin_class->activate = impl_activate;
         plugin_class->deactivate = impl_deactivate;
-
-        g_type_class_add_private (klass, sizeof (MsdSoundPluginPrivate));
 }
 
 static void
