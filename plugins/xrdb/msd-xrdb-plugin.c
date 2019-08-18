@@ -31,14 +31,12 @@ struct MsdXrdbPluginPrivate {
         MsdXrdbManager *manager;
 };
 
-#define MSD_XRDB_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), MSD_TYPE_XRDB_PLUGIN, MsdXrdbPluginPrivate))
-
-MATE_SETTINGS_PLUGIN_REGISTER (MsdXrdbPlugin, msd_xrdb_plugin)
+MATE_SETTINGS_PLUGIN_REGISTER_WITH_PRIVATE (MsdXrdbPlugin, msd_xrdb_plugin)
 
 static void
 msd_xrdb_plugin_init (MsdXrdbPlugin *plugin)
 {
-        plugin->priv = MSD_XRDB_PLUGIN_GET_PRIVATE (plugin);
+        plugin->priv = msd_xrdb_plugin_get_instance_private (plugin);
 
         g_debug ("MsdXrdbPlugin initializing");
 
@@ -99,8 +97,6 @@ msd_xrdb_plugin_class_init (MsdXrdbPluginClass *klass)
 
         plugin_class->activate = impl_activate;
         plugin_class->deactivate = impl_deactivate;
-
-        g_type_class_add_private (klass, sizeof (MsdXrdbPluginPrivate));
 }
 
 static void
