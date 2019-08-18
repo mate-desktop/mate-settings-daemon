@@ -58,8 +58,6 @@
 #define TOUCHPAD_SCHEMA "org.mate.peripherals-touchpad"
 #define TOUCHPAD_ENABLED_KEY "touchpad-enabled"
 
-#define MSD_MEDIA_KEYS_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_MEDIA_KEYS_MANAGER, MsdMediaKeysManagerPrivate))
-
 typedef struct {
         char   *application;
         guint32 time;
@@ -104,7 +102,7 @@ static guint signals[LAST_SIGNAL] = { 0 };
 static void     msd_media_keys_manager_class_init  (MsdMediaKeysManagerClass *klass);
 static void     msd_media_keys_manager_init        (MsdMediaKeysManager      *media_keys_manager);
 
-G_DEFINE_TYPE (MsdMediaKeysManager, msd_media_keys_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (MsdMediaKeysManager, msd_media_keys_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -1620,14 +1618,12 @@ msd_media_keys_manager_class_init (MsdMediaKeysManagerClass *klass)
                               G_TYPE_STRING);
 
         dbus_g_object_type_install_info (MSD_TYPE_MEDIA_KEYS_MANAGER, &dbus_glib_msd_media_keys_manager_object_info);
-
-        g_type_class_add_private (klass, sizeof (MsdMediaKeysManagerPrivate));
 }
 
 static void
 msd_media_keys_manager_init (MsdMediaKeysManager *manager)
 {
-        manager->priv = MSD_MEDIA_KEYS_MANAGER_GET_PRIVATE (manager);
+        manager->priv = msd_media_keys_manager_get_instance_private (manager);
 }
 
 static gboolean
