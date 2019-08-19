@@ -33,14 +33,12 @@ struct _MsdRfkillPluginPrivate
         MsdRfkillManager *manager;
 };
 
-#define MSD_RFKILL_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), MSD_TYPE_RFKILL_PLUGIN, MsdRfkillPluginPrivate))
-
-MATE_SETTINGS_PLUGIN_REGISTER (MsdRfkillPlugin, msd_rfkill_plugin)
+MATE_SETTINGS_PLUGIN_REGISTER_WITH_PRIVATE (MsdRfkillPlugin, msd_rfkill_plugin)
 
 static void
 msd_rfkill_plugin_init (MsdRfkillPlugin *plugin)
 {
-        plugin->priv = MSD_RFKILL_PLUGIN_GET_PRIVATE (plugin);
+        plugin->priv = msd_rfkill_plugin_get_instance_private (plugin);
 
         g_debug ("MsdRfkillPlugin initializing");
 
@@ -101,8 +99,6 @@ msd_rfkill_plugin_class_init (MsdRfkillPluginClass *klass)
 
         plugin_class->activate = impl_activate;
         plugin_class->deactivate = impl_deactivate;
-
-        g_type_class_add_private (klass, sizeof (MsdRfkillPluginPrivate));
 }
 
 static void
