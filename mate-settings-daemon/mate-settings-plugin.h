@@ -56,7 +56,7 @@ void             mate_settings_plugin_deactivate         (MateSettingsPlugin *pl
 /*
  * Utility macro used to register plugins
  *
- * use: MATE_SETTINGS_PLUGIN_REGISTER (PluginName, plugin_name)
+ * use: MATE_SETTINGS_PLUGIN_REGISTER_WITH_PRIVATE (PluginName, plugin_name)
  */
 #define _REGISTER_PLUGIN_FUNC(plugin_name)                                     \
 G_MODULE_EXPORT GType                                                          \
@@ -66,13 +66,6 @@ register_mate_settings_plugin (GTypeModule *type_module)                       \
                                                                                \
         return plugin_name##_get_type();                                       \
 }
-
-#define MATE_SETTINGS_PLUGIN_REGISTER(PluginName, plugin_name)                 \
-        G_DEFINE_DYNAMIC_TYPE (PluginName,                                     \
-                               plugin_name,                                    \
-                               MATE_TYPE_SETTINGS_PLUGIN)                      \
-                                                                               \
-_REGISTER_PLUGIN_FUNC(plugin_name)
 
 #define MATE_SETTINGS_PLUGIN_REGISTER_WITH_PRIVATE(PluginName, plugin_name)    \
         G_DEFINE_DYNAMIC_TYPE_EXTENDED (PluginName,                            \
