@@ -45,9 +45,6 @@ enum {
 
 static int signals[LAST_SIGNAL] = { 0 };
 
-#define CC_RFKILL_GLIB_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE((obj), \
-				CC_RFKILL_TYPE_GLIB, CcRfkillGlibPrivate))
-
 struct CcRfkillGlibPrivate {
 	GOutputStream *stream;
 	GIOChannel *channel;
@@ -60,7 +57,7 @@ struct CcRfkillGlibPrivate {
 	GCancellable *cancellable;
 };
 
-G_DEFINE_TYPE(CcRfkillGlib, cc_rfkill_glib, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (CcRfkillGlib, cc_rfkill_glib, G_TYPE_OBJECT)
 
 #define CHANGE_ALL_TIMEOUT 500
 
@@ -385,7 +382,7 @@ cc_rfkill_glib_init (CcRfkillGlib *rfkill)
 {
 	CcRfkillGlibPrivate *priv;
 
-	priv = CC_RFKILL_GLIB_GET_PRIVATE (rfkill);
+	priv = cc_rfkill_glib_get_instance_private (rfkill);
 	rfkill->priv = priv;
 }
 
@@ -496,7 +493,6 @@ cc_rfkill_glib_class_init(CcRfkillGlibClass *klass)
 {
 	GObjectClass *object_class = (GObjectClass *) klass;
 
-	g_type_class_add_private(klass, sizeof(CcRfkillGlibPrivate));
 	object_class->finalize = cc_rfkill_glib_finalize;
 
 	signals[CHANGED] =
