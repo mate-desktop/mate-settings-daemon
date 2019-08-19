@@ -43,9 +43,6 @@ struct _MsdSmartcardPrivate {
 
         PK11SlotInfo *slot;
         char *name;
-
-        CERTCertificate *signing_certificate;
-        CERTCertificate *encryption_certificate;
 };
 
 static void msd_smartcard_finalize (GObject *object);
