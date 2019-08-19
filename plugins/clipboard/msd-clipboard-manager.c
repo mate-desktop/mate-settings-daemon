@@ -46,8 +46,6 @@
 #include "mate-settings-profile.h"
 #include "msd-clipboard-manager.h"
 
-#define MSD_CLIPBOARD_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_CLIPBOARD_MANAGER, MsdClipboardManagerPrivate))
-
 struct MsdClipboardManagerPrivate
 {
         Display *display;
@@ -91,7 +89,7 @@ static void     clipboard_manager_watch_cb        (MsdClipboardManager *manager,
                                                    long                 mask,
                                                    void                *cb_data);
 
-G_DEFINE_TYPE (MsdClipboardManager, msd_clipboard_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (MsdClipboardManager, msd_clipboard_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -970,14 +968,12 @@ msd_clipboard_manager_class_init (MsdClipboardManagerClass *klass)
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
         object_class->finalize = msd_clipboard_manager_finalize;
-
-        g_type_class_add_private (klass, sizeof (MsdClipboardManagerPrivate));
 }
 
 static void
 msd_clipboard_manager_init (MsdClipboardManager *manager)
 {
-        manager->priv = MSD_CLIPBOARD_MANAGER_GET_PRIVATE (manager);
+        manager->priv = msd_clipboard_manager_get_instance_private (manager);
 
         manager->priv->display = GDK_DISPLAY_XDISPLAY (gdk_display_get_default ());
 
