@@ -60,9 +60,7 @@ typedef enum
 #define MSD_SMARTCARD_SCHEMA "org.mate.peripherals-smartcard"
 #define KEY_REMOVE_ACTION "removal-action"
 
-#define MSD_SMARTCARD_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), MSD_TYPE_SMARTCARD_PLUGIN, MsdSmartcardPluginPrivate))
-
-MATE_SETTINGS_PLUGIN_REGISTER (MsdSmartcardPlugin, msd_smartcard_plugin);
+MATE_SETTINGS_PLUGIN_REGISTER_WITH_PRIVATE (MsdSmartcardPlugin, msd_smartcard_plugin);
 
 static void
 simulate_user_activity (MsdSmartcardPlugin *plugin)
@@ -131,7 +129,7 @@ force_logout (MsdSmartcardPlugin *plugin)
 static void
 msd_smartcard_plugin_init (MsdSmartcardPlugin *plugin)
 {
-        plugin->priv = MSD_SMARTCARD_PLUGIN_GET_PRIVATE (plugin);
+        plugin->priv = msd_smartcard_plugin_get_instance_private (plugin);
 
         g_debug ("MsdSmartcardPlugin initializing");
 
@@ -335,8 +333,6 @@ msd_smartcard_plugin_class_init (MsdSmartcardPluginClass *klass)
 
         plugin_class->activate = impl_activate;
         plugin_class->deactivate = impl_deactivate;
-
-        g_type_class_add_private (klass, sizeof (MsdSmartcardPluginPrivate));
 }
 
 static void
