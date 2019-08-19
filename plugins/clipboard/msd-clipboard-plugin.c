@@ -31,14 +31,12 @@ struct MsdClipboardPluginPrivate {
         MsdClipboardManager *manager;
 };
 
-#define MSD_CLIPBOARD_PLUGIN_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), MSD_TYPE_CLIPBOARD_PLUGIN, MsdClipboardPluginPrivate))
-
-MATE_SETTINGS_PLUGIN_REGISTER (MsdClipboardPlugin, msd_clipboard_plugin)
+MATE_SETTINGS_PLUGIN_REGISTER_WITH_PRIVATE (MsdClipboardPlugin, msd_clipboard_plugin)
 
 static void
 msd_clipboard_plugin_init (MsdClipboardPlugin *plugin)
 {
-        plugin->priv = MSD_CLIPBOARD_PLUGIN_GET_PRIVATE (plugin);
+        plugin->priv = msd_clipboard_plugin_get_instance_private (plugin);
 
         g_debug ("MsdClipboardPlugin initializing");
 
@@ -99,8 +97,6 @@ msd_clipboard_plugin_class_init (MsdClipboardPluginClass *klass)
 
         plugin_class->activate = impl_activate;
         plugin_class->deactivate = impl_deactivate;
-
-        g_type_class_add_private (klass, sizeof (MsdClipboardPluginPrivate));
 }
 
 static void
