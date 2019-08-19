@@ -97,7 +97,7 @@ enum {
 
 static guint msd_smartcard_signals[NUMBER_OF_SIGNALS] = { 0 };
 
-G_DEFINE_TYPE (MsdSmartcard, msd_smartcard, G_TYPE_OBJECT);
+G_DEFINE_TYPE_WITH_PRIVATE (MsdSmartcard, msd_smartcard, G_TYPE_OBJECT);
 
 static void
 msd_smartcard_class_init (MsdSmartcardClass *card_class)
@@ -110,9 +110,6 @@ msd_smartcard_class_init (MsdSmartcardClass *card_class)
 
         msd_smartcard_class_install_signals (card_class);
         msd_smartcard_class_install_properties (card_class);
-
-        g_type_class_add_private (card_class,
-                                  sizeof (MsdSmartcardPrivate));
 }
 
 static void
@@ -393,9 +390,7 @@ msd_smartcard_init (MsdSmartcard *card)
 
         g_debug ("initializing smartcard ");
 
-        card->priv = G_TYPE_INSTANCE_GET_PRIVATE (card,
-                                                  MSD_TYPE_SMARTCARD,
-                                                  MsdSmartcardPrivate);
+        card->priv = msd_smartcard_get_instance_private (card);
 
         if (card->priv->slot != NULL) {
                 card->priv->name = g_strdup (PK11_GetTokenName (card->priv->slot));
