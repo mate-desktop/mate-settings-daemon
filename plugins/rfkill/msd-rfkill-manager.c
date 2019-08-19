@@ -31,8 +31,6 @@
 #include "rfkill-glib.h"
 #include "mate-settings-bus.h"
 
-#define MSD_RFKILL_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MSD_TYPE_RFKILL_MANAGER, MsdRfkillManagerPrivate))
-
 struct MsdRfkillManagerPrivate
 {
         GDBusNodeInfo           *introspection_data;
@@ -84,7 +82,7 @@ static void     msd_rfkill_manager_class_init  (MsdRfkillManagerClass *klass);
 static void     msd_rfkill_manager_init        (MsdRfkillManager      *rfkill_manager);
 static void     msd_rfkill_manager_finalize    (GObject                    *object);
 
-G_DEFINE_TYPE (MsdRfkillManager, msd_rfkill_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (MsdRfkillManager, msd_rfkill_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -94,14 +92,12 @@ msd_rfkill_manager_class_init (MsdRfkillManagerClass *klass)
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
         object_class->finalize = msd_rfkill_manager_finalize;
-
-        g_type_class_add_private (klass, sizeof (MsdRfkillManagerPrivate));
 }
 
 static void
 msd_rfkill_manager_init (MsdRfkillManager *manager)
 {
-        manager->priv = MSD_RFKILL_MANAGER_GET_PRIVATE (manager);
+        manager->priv = msd_rfkill_manager_get_instance_private (manager);
 }
 
 static gboolean
