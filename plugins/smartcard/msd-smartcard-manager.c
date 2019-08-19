@@ -134,9 +134,9 @@ enum {
 
 static guint msd_smartcard_manager_signals[NUMBER_OF_SIGNALS] = { 0 };
 
-G_DEFINE_TYPE (MsdSmartcardManager,
-               msd_smartcard_manager,
-               G_TYPE_OBJECT);
+G_DEFINE_TYPE_WITH_PRIVATE (MsdSmartcardManager,
+                            msd_smartcard_manager,
+                            G_TYPE_OBJECT);
 
 static void
 msd_smartcard_manager_class_init (MsdSmartcardManagerClass *manager_class)
@@ -149,9 +149,6 @@ msd_smartcard_manager_class_init (MsdSmartcardManagerClass *manager_class)
 
         msd_smartcard_manager_class_install_signals (manager_class);
         msd_smartcard_manager_class_install_properties (manager_class);
-
-        g_type_class_add_private (manager_class,
-                                  sizeof (MsdSmartcardManagerPrivate));
 }
 
 static void
@@ -328,9 +325,7 @@ msd_smartcard_manager_init (MsdSmartcardManager *manager)
 {
         g_debug ("initializing smartcard manager");
 
-        manager->priv = G_TYPE_INSTANCE_GET_PRIVATE (manager,
-                                                     MSD_TYPE_SMARTCARD_MANAGER,
-                                                     MsdSmartcardManagerPrivate);
+        manager->priv = msd_smartcard_manager_get_instance_private (manager);
         manager->priv->poll_timeout_id = 0;
         manager->priv->is_unstoppable = FALSE;
         manager->priv->module = NULL;
