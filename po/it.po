@@ -7,21 +7,21 @@
 # Dario Di Nucci <linkin88mail@gmail.com>, 2018
 # Mat V <enthusedquill6@gmail.com>, 2018
 # Marco Mangiacavalli, 2018
-# Giuseppe Pignataro <rogepix@gmail.com>, 2018
-# Marco Bartolucci <nap.84@live.it>, 2018
-# Marco Z. <minaz666@gmail.com>, 2018
-# Enrico B. <enricobe@hotmail.com>, 2019
 # andrea pittaro <transifex@andreapittaro.it>, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Marco Bartolucci <nap.84@live.it>, 2019
+# Marco Z. <minaz666@gmail.com>, 2019
+# Giuseppe Pignataro <rogepix@gmail.com>, 2019
+# Enrico B. <enricobe@hotmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-31 13:03+0200\n"
+"POT-Creation-Date: 2019-08-11 19:37+0200\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
+"Last-Translator: Enrico B. <enricobe@hotmail.com>, 2019\n"
 "Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -129,6 +129,152 @@ msgstr ""
 "antialiasing è impostato a \"rgba\". Valori possibili sono: \"rgb\" per "
 "rosso a sinistra (il più comune), \"bgr\" per blu a sinistra, \"vrgb\" per "
 "rosso in alto, \"vbgr\" per rosso in basso."
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:1
+msgid "possible values are \"on\", \"off\", and \"custom\"."
+msgstr "Valori ammessi sono \"on\" \"off\" e \"custom\"."
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:2
+msgid "Keyboard Bell Custom Filename"
+msgstr "Nome del file personalizzato della campanella da tastiera"
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:3
+msgid "File name of the bell sound to be played."
+msgstr "Nome del file del suono della campanella da riprodurre."
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:4
+msgid "Remember NumLock state"
+msgstr "Ricorda lo stato di BlocNum"
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:5
+msgid ""
+"When set to true, MATE will remember the state of the NumLock LED between "
+"sessions."
+msgstr ""
+"Quando impostato a \"true\", MATE ricorderà lo stato del LED BlocNum da una "
+"sessione all'altra."
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:6
+msgid "NumLock state"
+msgstr "Stato BlocNum"
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:7
+msgid "The remembered state of the NumLock LED."
+msgstr "Lo stato salvato del LED BlocNum."
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:1
+msgid "Mouse button orientation"
+msgstr "Orientazione tasti del mouse"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:2
+msgid "Swap left and right mouse buttons for left-handed mice."
+msgstr "Inverte i tasti destro e sinistro del mouse per mancini."
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:3
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
+msgid "Motion Acceleration"
+msgstr "Accelerazione del Movimento"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:4
+msgid ""
+"Acceleration multiplier for mouse motion. A value of -1 is the system "
+"default."
+msgstr ""
+"Moltiplicatore dell'accelerazione per il movimento del mouse. Impostare a -1"
+" per usare le preferenze di sistema."
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:5
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
+msgid "Motion Threshold"
+msgstr "Soglia del Movimento"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:6
+msgid ""
+"Distance in pixels the pointer must move before accelerated mouse motion is "
+"activated. A value of -1 is the system default."
+msgstr ""
+"Numero di pixel di cui muovere il puntatore prima che il movimento "
+"accelerato del mouse sia attivato. Impostare a -1 per usare le preferenze di"
+" sistema."
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:7
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:32
+msgid "Acceleration profile"
+msgstr "Profilo di accelerazione"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:8
+msgid ""
+"Acceleration profile used for connected mice. The acceleration profile can "
+"be set to either default ('default') which uses the default acceleration "
+"profile for each device, flat ('flat'), which accelerates by a device "
+"specific constant factor derived from the configured pointer speed, or "
+"adaptive ('adaptive') which adapts the acceleration depending on the mouse "
+"movement. If a mouse doesn't support the configured profile, 'default' will "
+"be used."
+msgstr ""
+"Profilo di accelerazione usato per i mouse collegati. Può essere impostato "
+"come predefinito ('default') che utilizza il profilo di accelerazione "
+"predefinito per ogni dispositivo, come piatto ('flat') che accelera in base "
+"ad una costante specifica del dispositivo derivata dalla velocità del "
+"puntatore configurato, o come adattivo ('adaptive') che adatta "
+"l'accelerazione a seconda del movimento del mouse. Se il mouse non supporta "
+"il profilo configurato, verrà utilizzato il 'default'."
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:9
+msgid "Drag Threshold"
+msgstr "Soglia trascinamento"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:10
+msgid "Distance before a drag is started."
+msgstr "Distanza prima di avviare un trascinamento."
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:11
+msgid "Double Click Time"
+msgstr "Tempo del doppio clic"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:12
+msgid "Length of a double click."
+msgstr "Durata di un doppio clic."
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:13
+msgid "Middle button emulation"
+msgstr "Emulazione pulsante centrale"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:14
+msgid ""
+"Enables middle mouse button emulation through simultaneous left and right "
+"button click."
+msgstr ""
+"Abilita l'emulazione del pulsante centrale del mouse attraverso la pressione"
+" simultanea dei tasti sinistro e destro."
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:15
+msgid "Locate Pointer"
+msgstr "Localizza puntatore"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:16
+msgid ""
+"Highlights the current location of the pointer when the Control key is "
+"pressed and released."
+msgstr ""
+"Evidenzia la posizione attuale del puntatore quando il tasto Control è "
+"premuto e rilasciato."
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:17
+msgid "Cursor theme"
+msgstr "Tema del cursore"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:18
+msgid "Cursor theme name."
+msgstr "Nome del tema del cursore"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:19
+msgid "Cursor size"
+msgstr "Dimensione del cursore"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:20
+msgid "Size of the cursor referenced by cursor_theme."
+msgstr "Dimensione del cursore indicato da cursor_theme."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -286,10 +432,6 @@ msgstr ""
 "'sinistra', 'destra' per destrimani, 'mouse' per seguire l'impostazione del "
 "mouse."
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
-msgid "Motion Acceleration"
-msgstr "Accelerazione del Movimento"
-
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:29
 msgid ""
 "Acceleration multiplier for touchpad motion. A value of -1 is the system "
@@ -297,10 +439,6 @@ msgid ""
 msgstr ""
 "Moltiplicatore dell'accelerazione per il movimento del mouse. Impostare a -1"
 " per usare le preferenze di sistema."
-
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
-msgid "Motion Threshold"
-msgstr "Soglia del Movimento"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:31
 msgid ""
@@ -310,6 +448,24 @@ msgstr ""
 "Numero di pixel di cui muovere il puntatore prima che il movimento "
 "accelerato del touchpad sia attivato. Impostare a -1 per usare le preferenze"
 " di sistema."
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:33
+msgid ""
+"Acceleration profile used for touchpad. The acceleration profile can be set "
+"to either default ('default') which uses the default acceleration profile "
+"for each device, flat ('flat'), which accelerates by a device specific "
+"constant factor derived from the configured pointer speed, or adaptive "
+"('adaptive') which adapts the acceleration depending on the touchpad "
+"movement. If a touchpad doesn't support the configured profile, 'default' "
+"will be used."
+msgstr ""
+"Profilo di accelerazione usato per il touchpad. Può essere impostato come "
+"predefinito ('default') che utilizza il profilo di accelerazione predefinito"
+" per ogni dispositivo, come piatto ('flat') che accelera in base ad una "
+"costante specifica del dispositivo derivata dalla velocità del puntatore "
+"configurato, o come adattivo ('adaptive') che adatta l'accelerazione a "
+"seconda del movimento del mouse. Se il mouse non supporta il profilo "
+"configurato, verrà utilizzato il 'default'."
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
@@ -620,11 +776,11 @@ msgstr "Associazione per lanciare la calcolatrice."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
 msgid "Launch instant messenger"
-msgstr ""
+msgstr "Avvia messaggistica istantanea"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
 msgid "Binding to launch the instant messenger."
-msgstr ""
+msgstr "Combinazione per avviare la messaggistica istantanea."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
 msgid "Launch web browser"
@@ -798,23 +954,23 @@ msgstr "Accessibilità tastiera"
 msgid "Accessibility keyboard plugin"
 msgstr "Plugin per l'accesso universale alla tastiera"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:446
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:444
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Si è verificato un errore nel visualizzare il manuale: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:572
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:636
 msgid "Do you want to activate Slow Keys?"
 msgstr "Attivare il rallentamento dei tasti?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:575
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:639
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:573
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:637
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Disattivare il rallentamento dei tasti?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -823,62 +979,62 @@ msgstr ""
 "scorciatoia per la funzione di rallentamento dei tasti, che determina il "
 "modo in cui opera la tastiera."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
 msgid "Don't activate"
 msgstr "Non attivare"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
 msgid "Don't deactivate"
 msgstr "Non disattivare"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
 msgid "Activate"
 msgstr "Attiva"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
 msgid "Deactivate"
 msgstr "Disattiva"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
 msgid "Do_n't activate"
 msgstr "_Non attivare"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
 msgid "Do_n't deactivate"
 msgstr "_Non disattivare"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
 msgid "_Activate"
 msgstr "_Attiva"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
 msgid "_Deactivate"
 msgstr "_Disattiva"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:668
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
 msgid "Slow Keys Alert"
 msgstr "Allerta rallentamento dei tasti"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:708
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:774
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:706
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:772
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Attivare la permanenza dei tasti?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:707
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:773
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Disattivare la permanenza dei tasti?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -887,8 +1043,8 @@ msgstr ""
 "scorciatoia per la funzione di permanenza dei tasti, che determina il modo "
 "in cui opera la tastiera."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -898,11 +1054,11 @@ msgstr ""
 "il tasto «Maiusc». Questo disabilita la funzione di permanenza dei tasti, "
 "che determina il modo in cui opera la tastiera."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:807
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
 msgid "Sticky Keys Alert"
 msgstr "Allerta permanenza dei tasti"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:766
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Preferenze di accesso universale"
@@ -1221,18 +1377,18 @@ msgstr "Tasti multimediali"
 msgid "Media keys plugin"
 msgstr "Plugin per i tasti multimediali"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1486
+#: ../plugins/mouse/msd-mouse-manager.c:1652
 msgid "Could not enable mouse accessibility features"
 msgstr "Impossibile abilitare le funzioni di accessibilità del mouse"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1488
+#: ../plugins/mouse/msd-mouse-manager.c:1654
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 "Le funzioni di accesso universale per il mouse richiedono che Mousetweaks "
 "sia installato sul sistema in uso."
 
-#: ../plugins/mouse/msd-mouse-manager.c:1491
+#: ../plugins/mouse/msd-mouse-manager.c:1657
 msgid "Mouse Preferences"
 msgstr "Preferenze del mouse"
 
@@ -1348,27 +1504,27 @@ msgstr "Capovolto"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2182
 msgid "ON"
-msgstr ""
+msgstr "ON"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2183
 msgid "Turn this monitor off"
-msgstr ""
+msgstr "Spegni questo monitor"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2186
 msgid "OFF"
-msgstr ""
+msgstr "OFF"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2187
 msgid "Turn this monitor on"
-msgstr ""
+msgstr "Accendi questo monitor"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2247
 msgid "Same output all monitors"
-msgstr ""
+msgstr "Stessa uscita su tutti i monitor"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2248
 msgid "Mirror same output to all monitors and turn them on"
-msgstr ""
+msgstr "Specchia la stesso segnale in uscita su tutti i monitor e li accende"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2295
 msgid "_Configure Display Settings…"
@@ -1376,7 +1532,7 @@ msgstr "_Configura impostazioni display..."
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2305
 msgid "Open the display configuration dialog (all settings)"
-msgstr ""
+msgstr "Apri finestra di configurazione display (tutte le impostazoni)"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2358
 msgid "Configure display settings"

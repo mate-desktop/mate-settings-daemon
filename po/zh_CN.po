@@ -8,20 +8,21 @@
 # Wylmer Wang, 2018
 # nyanyh <rebuilty@gmail.com>, 2018
 # biqiu-ssw <shenshuaiwen@gmail.com>, 2018
-# liushuyu011 <liushuyu011@gmail.com>, 2018
 # zhangxianwei8 <zhang.xianwei8@zte.com.cn>, 2018
-# Mingcong Bai <jeffbai@aosc.xyz>, 2019
 # zhineng404 <zhinengge@gmail.com>, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Mingcong Bai <jeffbai@aosc.xyz>, 2019
+# liushuyu011 <liushuyu011@gmail.com>, 2019
+# Mingye Wang <arthur200126@gmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-31 13:03+0200\n"
+"POT-Creation-Date: 2019-08-11 19:37+0200\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
+"Last-Translator: Mingye Wang <arthur200126@gmail.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/mate/teams/13566/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -118,6 +119,134 @@ msgid ""
 msgstr ""
 "LCD 屏幕上次像素的顺序；仅在反锯齿设为“rgba”时有用。可能的设定值有：“rgb” - 红色在左侧，最常见设置。“bgr” - "
 "蓝色在左侧。“vrgb” - 红色在上端。“vbgr” - 红色在底部。"
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:1
+msgid "possible values are \"on\", \"off\", and \"custom\"."
+msgstr "可取的值有 \"开\", \"关\", 和 \"自定义\""
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:2
+msgid "Keyboard Bell Custom Filename"
+msgstr "自定义键盘铃声文件名"
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:3
+msgid "File name of the bell sound to be played."
+msgstr "要播放的响铃声音的文件名。"
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:4
+msgid "Remember NumLock state"
+msgstr "记忆 NumLock 状态"
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:5
+msgid ""
+"When set to true, MATE will remember the state of the NumLock LED between "
+"sessions."
+msgstr "设定为 true 时，MATE 将在不同会话间记住 NumLock 灯的状态。"
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:6
+msgid "NumLock state"
+msgstr "NumLock 状态"
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:7
+msgid "The remembered state of the NumLock LED."
+msgstr "记忆的 NumLock LED 的状态"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:1
+msgid "Mouse button orientation"
+msgstr "鼠标键方向"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:2
+msgid "Swap left and right mouse buttons for left-handed mice."
+msgstr "为左手鼠标交换左右鼠标按键。"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:3
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
+msgid "Motion Acceleration"
+msgstr "触摸板移动加速度"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:4
+msgid ""
+"Acceleration multiplier for mouse motion. A value of -1 is the system "
+"default."
+msgstr "鼠标运动加速度的乘数。-1 是系统默认值。"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:5
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
+msgid "Motion Threshold"
+msgstr "运动阈值"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:6
+msgid ""
+"Distance in pixels the pointer must move before accelerated mouse motion is "
+"activated. A value of -1 is the system default."
+msgstr "启动鼠标运动加速前鼠标必须移动的像素点数。系统默认的值是 -1。"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:7
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:32
+msgid "Acceleration profile"
+msgstr ""
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:8
+msgid ""
+"Acceleration profile used for connected mice. The acceleration profile can "
+"be set to either default ('default') which uses the default acceleration "
+"profile for each device, flat ('flat'), which accelerates by a device "
+"specific constant factor derived from the configured pointer speed, or "
+"adaptive ('adaptive') which adapts the acceleration depending on the mouse "
+"movement. If a mouse doesn't support the configured profile, 'default' will "
+"be used."
+msgstr ""
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:9
+msgid "Drag Threshold"
+msgstr "拖动阈值"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:10
+msgid "Distance before a drag is started."
+msgstr "拖动开始前的过渡距离"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:11
+msgid "Double Click Time"
+msgstr "双击时间"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:12
+msgid "Length of a double click."
+msgstr "双击间隔。"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:13
+msgid "Middle button emulation"
+msgstr "中键模拟"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:14
+msgid ""
+"Enables middle mouse button emulation through simultaneous left and right "
+"button click."
+msgstr "通过同时按下鼠标左右键来模拟鼠标中键点击。"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:15
+msgid "Locate Pointer"
+msgstr "定位光标"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:16
+msgid ""
+"Highlights the current location of the pointer when the Control key is "
+"pressed and released."
+msgstr "当按下并放开 Ctrl 键时，高亮显示鼠标指针的当前位置。"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:17
+msgid "Cursor theme"
+msgstr "光标主题"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:18
+msgid "Cursor theme name."
+msgstr "光标主题名称"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:19
+msgid "Cursor size"
+msgstr "光标大小"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:20
+msgid "Size of the cursor referenced by cursor_theme."
+msgstr "cursor_theme 引用的光标大小。"
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -248,25 +377,28 @@ msgid ""
 "for right-handed, 'mouse' to follow the mouse setting."
 msgstr "交换触摸板上的左右按键，左撇子使用 ‘左’ 选项，右撇子使用 ‘右’ 选项，选择 ‘鼠标’ 可以跟随鼠标的设置。"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
-msgid "Motion Acceleration"
-msgstr "触摸板移动加速度"
-
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:29
 msgid ""
 "Acceleration multiplier for touchpad motion. A value of -1 is the system "
 "default."
 msgstr "触摸板运动的加速倍数。系统的默认值是 -1。"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
-msgid "Motion Threshold"
-msgstr "运动阈值"
-
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:31
 msgid ""
 "Distance in pixels the pointer must move before accelerated touchpad motion "
 "is activated. A value of -1 is the system default."
 msgstr "启动触摸板运动加速前鼠标必须移动的像素点数。系统默认的值是 -1。"
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:33
+msgid ""
+"Acceleration profile used for touchpad. The acceleration profile can be set "
+"to either default ('default') which uses the default acceleration profile "
+"for each device, flat ('flat'), which accelerates by a device specific "
+"constant factor derived from the configured pointer speed, or adaptive "
+"('adaptive') which adapts the acceleration depending on the touchpad "
+"movement. If a touchpad doesn't support the configured profile, 'default' "
+"will be used."
+msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
@@ -726,102 +858,102 @@ msgstr "辅助功能键盘"
 msgid "Accessibility keyboard plugin"
 msgstr "辅助功能键盘插件"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:446
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:444
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "显示帮助时出错：%s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:572
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:636
 msgid "Do you want to activate Slow Keys?"
 msgstr "您想要激活迟缓按键吗？"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:575
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:639
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:573
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:637
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "您想要禁用迟缓按键吗？"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
 msgstr "您已经按下了 Shift 键 8 秒。这是迟缓按键功能的快捷键，这将影响您键盘工作的方式。"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
 msgid "Don't activate"
 msgstr "不激活"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
 msgid "Don't deactivate"
 msgstr "不禁用"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
 msgid "Activate"
 msgstr "激活"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
 msgid "Deactivate"
 msgstr "禁用"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
 msgid "Do_n't activate"
 msgstr "不激活(_N)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
 msgid "Do_n't deactivate"
 msgstr "不禁用(_N)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
 msgid "_Activate"
 msgstr "激活(_A)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
 msgid "_Deactivate"
 msgstr "断开(_D)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:668
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
 msgid "Slow Keys Alert"
 msgstr "迟缓按键提醒"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:708
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:774
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:706
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:772
 msgid "Do you want to activate Sticky Keys?"
 msgstr "您想要激活粘滞键吗？"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:707
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:773
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "您想要禁用粘滞键吗？"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
 msgstr "您刚刚连续按了五次 Shift 键。这是粘滞键特性的快捷键，这将影响您键盘的工作方式。"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
 msgstr "您刚刚同时按下了两个键，或连续按了五次 Shift 键。这是取消粘滞键特性的快捷键，这将影响您键盘的工作方式。"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:807
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
 msgid "Sticky Keys Alert"
 msgstr "粘滞键提醒"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:766
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "通用访问首选项"
@@ -1122,16 +1254,16 @@ msgstr "媒体键"
 msgid "Media keys plugin"
 msgstr "媒体键插件"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1486
+#: ../plugins/mouse/msd-mouse-manager.c:1652
 msgid "Could not enable mouse accessibility features"
 msgstr "不能启用鼠标快捷键功能"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1488
+#: ../plugins/mouse/msd-mouse-manager.c:1654
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr "鼠标辅助功能需要在您的系统中安装 Mousetweaks。"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1491
+#: ../plugins/mouse/msd-mouse-manager.c:1657
 msgid "Mouse Preferences"
 msgstr "鼠标首选项"
 

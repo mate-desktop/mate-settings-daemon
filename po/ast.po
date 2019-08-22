@@ -5,17 +5,17 @@
 # 
 # Translators:
 # Ḷḷumex03 <tornes@opmbx.org>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Iñigo Varela <ivarela@softastur.org>, 2018
+# Iñigo Varela <ivarela@softastur.org>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-31 13:03+0200\n"
+"POT-Creation-Date: 2019-08-11 19:37+0200\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Iñigo Varela <ivarela@softastur.org>, 2018\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
 "Language-Team: Asturian (https://www.transifex.com/mate/teams/13566/ast/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -123,6 +123,141 @@ msgstr ""
 "l'antialies ta configuráu en \"rgba\". Los valores dables son \"rgb\" pa "
 "bermeyu a la esquierda, (el más avezáu), \"bgr\" p'azul a la esquierda, "
 "\"vrgb\" pa bermeyu arriba y \"vbgr\" pa bermeyu abaxo."
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:1
+msgid "possible values are \"on\", \"off\", and \"custom\"."
+msgstr "los valores posibles con \"on\", \"off\" y \"custom\""
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:2
+msgid "Keyboard Bell Custom Filename"
+msgstr "Nome del ficheru personalizáu pa la campana del tecláu"
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:3
+msgid "File name of the bell sound to be played."
+msgstr "Nome del ficheru de soníu de campana a reproducir."
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:4
+msgid "Remember NumLock state"
+msgstr "Recordar l'estáu de BloqNum"
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:5
+msgid ""
+"When set to true, MATE will remember the state of the NumLock LED between "
+"sessions."
+msgstr ""
+"Si se conseña braero, MATE recordará l'estáu del LED de bloquéu numbéricu "
+"ente sesiones."
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:6
+msgid "NumLock state"
+msgstr ""
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:7
+msgid "The remembered state of the NumLock LED."
+msgstr ""
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:1
+msgid "Mouse button orientation"
+msgstr "Orientación de los botones del ratón"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:2
+msgid "Swap left and right mouse buttons for left-handed mice."
+msgstr "Camuda los botones esquierdu y drechu del mur pa mures zurdos."
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:3
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
+msgid "Motion Acceleration"
+msgstr ""
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:4
+msgid ""
+"Acceleration multiplier for mouse motion. A value of -1 is the system "
+"default."
+msgstr ""
+"Multiplicador d'aceleración pal movimientu del mur. El valor -1 ye'l "
+"predetermináu del sistema."
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:5
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
+msgid "Motion Threshold"
+msgstr "Umbral de movimientu"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:6
+msgid ""
+"Distance in pixels the pointer must move before accelerated mouse motion is "
+"activated. A value of -1 is the system default."
+msgstr ""
+"Distancia en pixels que tien que movese'l punteru enantes d'activar "
+"l'aceleración del mur. El valor -1 ye'l predetermináu del sistema."
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:7
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:32
+msgid "Acceleration profile"
+msgstr ""
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:8
+msgid ""
+"Acceleration profile used for connected mice. The acceleration profile can "
+"be set to either default ('default') which uses the default acceleration "
+"profile for each device, flat ('flat'), which accelerates by a device "
+"specific constant factor derived from the configured pointer speed, or "
+"adaptive ('adaptive') which adapts the acceleration depending on the mouse "
+"movement. If a mouse doesn't support the configured profile, 'default' will "
+"be used."
+msgstr ""
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:9
+msgid "Drag Threshold"
+msgstr "Umbral d'arrastre"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:10
+msgid "Distance before a drag is started."
+msgstr "Distancia enantes d'entamar un arrastre."
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:11
+msgid "Double Click Time"
+msgstr "Tiempu de doble clic"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:12
+msgid "Length of a double click."
+msgstr "Duración d'un doble clic."
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:13
+msgid "Middle button emulation"
+msgstr ""
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:14
+msgid ""
+"Enables middle mouse button emulation through simultaneous left and right "
+"button click."
+msgstr ""
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:15
+msgid "Locate Pointer"
+msgstr "Llocalizar el punteru"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:16
+msgid ""
+"Highlights the current location of the pointer when the Control key is "
+"pressed and released."
+msgstr ""
+"Resalta la posición actual del punteru al calcar y soltar la tecla Control."
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:17
+msgid "Cursor theme"
+msgstr "Tema del cursor"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:18
+msgid "Cursor theme name."
+msgstr ""
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:19
+msgid "Cursor size"
+msgstr "Tamañu del cursor"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:20
+msgid "Size of the cursor referenced by cursor_theme."
+msgstr "Tamañu del cursor indicáu por cursor_theme."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -257,24 +392,27 @@ msgid ""
 "for right-handed, 'mouse' to follow the mouse setting."
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
-msgid "Motion Acceleration"
-msgstr ""
-
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:29
 msgid ""
 "Acceleration multiplier for touchpad motion. A value of -1 is the system "
 "default."
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
-msgid "Motion Threshold"
-msgstr "Umbral de movimientu"
-
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:31
 msgid ""
 "Distance in pixels the pointer must move before accelerated touchpad motion "
 "is activated. A value of -1 is the system default."
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:33
+msgid ""
+"Acceleration profile used for touchpad. The acceleration profile can be set "
+"to either default ('default') which uses the default acceleration profile "
+"for each device, flat ('flat'), which accelerates by a device specific "
+"constant factor derived from the configured pointer speed, or adaptive "
+"('adaptive') which adapts the acceleration depending on the touchpad "
+"movement. If a touchpad doesn't support the configured profile, 'default' "
+"will be used."
 msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
@@ -735,23 +873,23 @@ msgstr "Accesibilidá del tecláu"
 msgid "Accessibility keyboard plugin"
 msgstr "Complementu d'accesibilidá del tecláu"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:446
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:444
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Hebo un fallu al amosar l'ayuda: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:572
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:636
 msgid "Do you want to activate Slow Keys?"
 msgstr "¿Quies activar les «Tecles lentes»?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:575
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:639
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:573
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:637
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "¿Quies desactivar les «Tecles lentes»?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -760,62 +898,62 @@ msgstr ""
 "combinación de tecles pa la carauterística «Tecles lentes», qu'afeuta al mou"
 " nel que furrula'l tecláu."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
 msgid "Don't activate"
 msgstr "Nun activar"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
 msgid "Don't deactivate"
 msgstr "Nun desactivar"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
 msgid "Activate"
 msgstr "Activar"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
 msgid "Deactivate"
 msgstr "Desactivar"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
 msgid "Do_n't activate"
 msgstr "Nu_n activar"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
 msgid "Do_n't deactivate"
 msgstr "Nu_n desactivar"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
 msgid "_Activate"
 msgstr "_Activar"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
 msgid "_Deactivate"
 msgstr "_Desactivar"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:668
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
 msgid "Slow Keys Alert"
 msgstr "Alerta de tecles lentes"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:708
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:774
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:706
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:772
 msgid "Do you want to activate Sticky Keys?"
 msgstr "¿Quies activar les «Tecles persistentes»?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:707
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:773
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "¿Quies desactivar les «Tecles persistentes»?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -824,8 +962,8 @@ msgstr ""
 "la carauterística «Tecles persistentes», qu'afeuta al mou nel que furrula el"
 " tecláu."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -835,11 +973,11 @@ msgstr ""
 "5 vegaes siguíes. Esto desautiva la carauterística de «Tecles persistentes»,"
 " lo qu'afeuta al mou nel que furrula'l tecláu."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:807
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
 msgid "Sticky Keys Alert"
 msgstr "Alerta de tecles persistentes"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:766
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "Preferencies d'accesu universal"
@@ -1140,16 +1278,16 @@ msgstr "Tecles multimedia"
 msgid "Media keys plugin"
 msgstr "Complementu de tecles multimedia"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1486
+#: ../plugins/mouse/msd-mouse-manager.c:1652
 msgid "Could not enable mouse accessibility features"
 msgstr "Nun pudieron activase les carauterístiques d'accesibilidá del mur"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1488
+#: ../plugins/mouse/msd-mouse-manager.c:1654
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 
-#: ../plugins/mouse/msd-mouse-manager.c:1491
+#: ../plugins/mouse/msd-mouse-manager.c:1657
 msgid "Mouse Preferences"
 msgstr "Preferencies del Mur"
 

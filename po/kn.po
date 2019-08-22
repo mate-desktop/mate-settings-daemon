@@ -5,17 +5,17 @@
 # 
 # Translators:
 # Yogesh K S <yogesh@karnatakaeducation.org.in>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
 # karthik holla <karthikholla87@gmail.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-31 13:03+0200\n"
+"POT-Creation-Date: 2019-08-11 19:37+0200\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: karthik holla <karthikholla87@gmail.com>, 2018\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
 "Language-Team: Kannada (https://www.transifex.com/mate/teams/13566/kn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -123,6 +123,143 @@ msgstr ""
 " ಮಾಡುವಾಗ ಮಾತ್ರ ಬಳಸಲಾಗುತ್ತದೆ. ಸಾಧ್ಯವಿರುವ ಮೌಲ್ಯಗಳೆಂದರೆ: ಎಡಭಾಗದಲ್ಲಿ ಕೆಂಪಿಗಾಗಿ "
 "\"rgb\" (ಸರ್ವೆ ಸಾಮಾನ್ಯ), ಎಡಭಾಗದಲ್ಲಿ ನೀಲಿಗಾಗಿ \"bgr\", ಮೇಲ್ಭಾಗದಲ್ಲಿ ಕೆಂಪಿಗಾಗಿ"
 " \"vrgb\", ಅಡಿಭಾಗದಲ್ಲಿ ಕೆಂಪಿಗಾಗಿ \"vbgr\"."
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:1
+msgid "possible values are \"on\", \"off\", and \"custom\"."
+msgstr "ಸಾಧ್ಯವಿರುವ ಮೌಲ್ಯಗಳೆಂದರೆ \"on\", \"off\", ಹಾಗು \"custom\"."
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:2
+msgid "Keyboard Bell Custom Filename"
+msgstr "ಕೀಲಿಮಣೆ ಬೆಲ್ ಕಸ್ಟಮ್ ಕಡತದ ಹೆಸರು"
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:3
+msgid "File name of the bell sound to be played."
+msgstr "ಚಲಾಯಿಸಬೇಕಿರುವ ಬೆಲ್ ಶಬ್ಧದ ಕಡತ."
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:4
+msgid "Remember NumLock state"
+msgstr "NumLock ಸ್ಥಿತಿಯನ್ನು ನೆನಪಿಟ್ಟುಕೊ"
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:5
+msgid ""
+"When set to true, MATE will remember the state of the NumLock LED between "
+"sessions."
+msgstr ""
+"true ಗೆ ಹೊಂದಿಸಿದಲ್ಲಿ, ಅಧಿವೇಶನದ ನಡುವೆ umLock LED ಯ ಸ್ಥಿತಿಯನ್ನು MATE "
+"ನೆನಪಿಟ್ಟುಕೊಳ್ಳುತ್ತದೆ."
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:6
+msgid "NumLock state"
+msgstr ""
+
+#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:7
+msgid "The remembered state of the NumLock LED."
+msgstr ""
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:1
+msgid "Mouse button orientation"
+msgstr "ಮೌಸ್‌ಗುಂಡಿಯ ವಾಲಿಕೆ"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:2
+msgid "Swap left and right mouse buttons for left-handed mice."
+msgstr "ಎಡಗೈಯ ಮೌಸುಗಳಿಗಾಗಿ ಎಡ ಹಾಗು ಬಲ ಮೌಸ್‌ನ ಗುಂಡಿಗಳನ್ನು ಅದಲು ಬದಲು ಮಾಡು."
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:3
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
+msgid "Motion Acceleration"
+msgstr ""
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:4
+msgid ""
+"Acceleration multiplier for mouse motion. A value of -1 is the system "
+"default."
+msgstr ""
+"ಮೌಸ್‌ನ ಚಲನೆಗಾಗಿನ ವೇಗವರ್ಧಕ ಗುಣಕ. ಮೌಲ್ಯವು -1 ಆಗಿದ್ದಲ್ಲಿ ಅದು ಪೂರ್ವನಿಯೋಜಿತವನ್ನು "
+"ಸೂಚಿಸುತ್ತದೆ."
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:5
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
+msgid "Motion Threshold"
+msgstr "ಚಲನೆಯ ಮಿತಿ"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:6
+msgid ""
+"Distance in pixels the pointer must move before accelerated mouse motion is "
+"activated. A value of -1 is the system default."
+msgstr ""
+"ವೇಗವರ್ಧಿತವಾದ ಮೌಸ್‌ನ ಚಲನೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸುವ ಮೊದಲು ತೆರೆಸೂಚಕವು "
+"ಚಲಾಯಿತಗೊಳ್ಳಬೇಕಿರುವ ದೂರ, ಪಿಕ್ಸೆಲ್‌ಗಳಲ್ಲಿ. ಮೌಲ್ಯವು -1 ಆಗಿದ್ದಲ್ಲಿ ಅದು "
+"ಪೂರ್ವನಿಯೋಜಿತವನ್ನು ಸೂಚಿಸುತ್ತದೆ."
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:7
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:32
+msgid "Acceleration profile"
+msgstr ""
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:8
+msgid ""
+"Acceleration profile used for connected mice. The acceleration profile can "
+"be set to either default ('default') which uses the default acceleration "
+"profile for each device, flat ('flat'), which accelerates by a device "
+"specific constant factor derived from the configured pointer speed, or "
+"adaptive ('adaptive') which adapts the acceleration depending on the mouse "
+"movement. If a mouse doesn't support the configured profile, 'default' will "
+"be used."
+msgstr ""
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:9
+msgid "Drag Threshold"
+msgstr "ಎಳೆಯುವಿಕೆಯ ಮಿತಿ"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:10
+msgid "Distance before a drag is started."
+msgstr "ಎಳೆಯುವಿಕೆಯ ಆರಂಭಗೊಳ್ಳುವ ಮುಂಚಿನ ದೂರ."
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:11
+msgid "Double Click Time"
+msgstr "ಎರಡು ಬಾರಿ ಒತ್ತುವ ಸಮಯ"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:12
+msgid "Length of a double click."
+msgstr "ಎರಡು ಕ್ಲಿಕ್‌ ನಡುವಿನ ಸಮಯದ ಅಂತರ."
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:13
+msgid "Middle button emulation"
+msgstr ""
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:14
+msgid ""
+"Enables middle mouse button emulation through simultaneous left and right "
+"button click."
+msgstr ""
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:15
+msgid "Locate Pointer"
+msgstr "ಸೂಚಕವನ್ನು ಪತ್ತೆ ಮಾಡು"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:16
+msgid ""
+"Highlights the current location of the pointer when the Control key is "
+"pressed and released."
+msgstr ""
+"Control ಕೀಲಿಯನ್ನು ಒತ್ತಿಹಿಡಿದು ನಂತರ ಬಿಟ್ಟಾಗ ಸೂಚಕವು ಪ್ರಸಕ್ತ ಇರುವ ಸ್ಥಳವನ್ನು "
+"ಸುಪ್ರಕಾಶಗೊಳಿಸುತ್ತದೆ."
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:17
+msgid "Cursor theme"
+msgstr "ತೆರೆಸೂಚಕದ ಪರಿಸರವಿನ್ಯಾಸ"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:18
+msgid "Cursor theme name."
+msgstr ""
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:19
+msgid "Cursor size"
+msgstr "ತೆರೆಸೂಚಕದ ಗಾತ್ರ"
+
+#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:20
+msgid "Size of the cursor referenced by cursor_theme."
+msgstr "cursor_theme ನಿಂದ ಉಲ್ಲೇಖಿಸಲಾದ ತೆರೆಸೂಚಕದ ಗಾತ್ರ."
 
 #: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
 msgid "Smartcard removal action"
@@ -257,24 +394,27 @@ msgid ""
 "for right-handed, 'mouse' to follow the mouse setting."
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
-msgid "Motion Acceleration"
-msgstr ""
-
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:29
 msgid ""
 "Acceleration multiplier for touchpad motion. A value of -1 is the system "
 "default."
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
-msgid "Motion Threshold"
-msgstr "ಚಲನೆಯ ಮಿತಿ"
-
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:31
 msgid ""
 "Distance in pixels the pointer must move before accelerated touchpad motion "
 "is activated. A value of -1 is the system default."
+msgstr ""
+
+#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:33
+msgid ""
+"Acceleration profile used for touchpad. The acceleration profile can be set "
+"to either default ('default') which uses the default acceleration profile "
+"for each device, flat ('flat'), which accelerates by a device specific "
+"constant factor derived from the configured pointer speed, or adaptive "
+"('adaptive') which adapts the acceleration depending on the touchpad "
+"movement. If a touchpad doesn't support the configured profile, 'default' "
+"will be used."
 msgstr ""
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
@@ -736,23 +876,23 @@ msgstr "ನಿಲುಕಣಾ ಕೀಲಿಮಣೆ"
 msgid "Accessibility keyboard plugin"
 msgstr "ನಿಲುಕಣಾ ಕೀಲಿಮಣೆ ಪ್ಲಗ್ಇನ್"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:446
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:444
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "ನೆರವನ್ನು ತೋರಿಸುವಾಗ ಒಂದು ದೋಷ ಉಂಟಾಗಿದೆ: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:572
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:636
 msgid "Do you want to activate Slow Keys?"
 msgstr "ನಿಧಾನ ಕೀಲಿಗಳನ್ನು ನೀವು ಸಕ್ರಿಯಗೊಳಿಸಲು ಬಯಸುತ್ತೀರೆ?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:575
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:639
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:573
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:637
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "ನಿಧಾನ ಕೀಲಿಗಳನ್ನು ನೀವು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲು ಬಯಸುತ್ತೀರೆ?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:576
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:640
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -761,62 +901,62 @@ msgstr ""
 "ಶಾರ್ಟ್-ಕಟ್, ನಿಧಾನ ಕೀಲಿಗಳ ಸವಲತ್ತಾಗಿದ್ದು, ನಿಮ್ಮ ಕೀಲಿಮಣೆ ಕೆಲಸಮಾಡುವ ರೀತಿಯ ಮೇಲೆ "
 "ಇದು ಪರಿಣಾಮ ಬೀರುತ್ತದೆ."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
 msgid "Don't activate"
 msgstr "ಸಕ್ರಿಯಗೊಳಿಸಬೇಡ"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:599
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:736
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
 msgid "Don't deactivate"
 msgstr "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಬೇಡ"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
 msgid "Activate"
 msgstr "ಸಕ್ರಿಯಗೊಳಿಸು"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:605
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:742
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
 msgid "Deactivate"
 msgstr "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸು"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
 msgid "Do_n't activate"
 msgstr "ಸಕ್ರಿಯಗೊಳಿಸಬೇಡ(_n)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:661
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:800
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
 msgid "Do_n't deactivate"
 msgstr "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಬೇಡ(_n)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
 msgid "_Activate"
 msgstr "ಸಕ್ರಿಯಗೊಳಿಸು(_A)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
 msgid "_Deactivate"
 msgstr "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸು(_D)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:668
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
 msgid "Slow Keys Alert"
 msgstr "ನಿಧಾನ ಕೀಲಿಗಳ ಎಚ್ಚರಿಕೆ"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:708
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:774
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:706
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:772
 msgid "Do you want to activate Sticky Keys?"
 msgstr "ನೀವು ಸ್ಟಿಕಿ ಕೀಲಿಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲು ಬಯಸುತ್ತೀರೆ?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:707
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:773
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "ನೀವು ಸ್ಟಿಕಿ ಕೀಲಿಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲು ಬಯಸುತ್ತೀರೆ?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -825,8 +965,8 @@ msgstr ""
 "ಸ್ಟಿಕಿ ಕೀಲಿಗಳ ಸವಲತ್ತಾಗಿದ್ದು, ನಿಮ್ಮ ಕೀಲಿಮಣೆ ಕೆಲಸಮಾಡುವ ರೀತಿಯ ಮೇಲೆ ಇದು ಪರಿಣಾಮ "
 "ಬೀರುತ್ತದೆ."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:713
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:779
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -836,11 +976,11 @@ msgstr ""
 "ಬಾರಿ ಒತ್ತಿದ್ದೀರಿ  ಈ ಶಾರ್ಟ್-ಕಟ್, ಸ್ಟಿಕಿ ಕೀಲಿಗಳ ಸವಲತ್ತಾಗಿದ್ದು, ನಿಮ್ಮ ಕೀಲಿಮಣೆ "
 "ಕೆಲಸಮಾಡುವ ರೀತಿಯ ಮೇಲೆ ಇದು ಪರಿಣಾಮ ಬೀರುತ್ತದೆ."
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:807
+#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
 msgid "Sticky Keys Alert"
 msgstr "ಸ್ಟಿಕಿ ಕೀಲಿಗಳ ಎಚ್ಚರಿಕೆ"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:770
+#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:766
 #: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
 msgid "Universal Access Preferences"
 msgstr "ಜಾಗತಿಕ ನಿಲುಕಣಾ ಆದ್ಯತೆಗಳು"
@@ -1146,16 +1286,16 @@ msgstr "ಮೀಡಿಯಾ ಕೀಲಿಗಳು"
 msgid "Media keys plugin"
 msgstr "ಮೀಡಿಯಾ ಕೀಲಿಗಳು ಪ್ಲಗ್ಇನ್"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1486
+#: ../plugins/mouse/msd-mouse-manager.c:1652
 msgid "Could not enable mouse accessibility features"
 msgstr "ಮೌಸ್‌ ನಿಲುಕಣಾ ಸೌಕರ್ಯಗಳನ್ನು ಶಕ್ತಗೊಳಿಸಲಾಗಿಲ್ಲ"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1488
+#: ../plugins/mouse/msd-mouse-manager.c:1654
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 
-#: ../plugins/mouse/msd-mouse-manager.c:1491
+#: ../plugins/mouse/msd-mouse-manager.c:1657
 msgid "Mouse Preferences"
 msgstr "ಮೌಸ್ ಆದ್ಯತೆಗಳು"
 
