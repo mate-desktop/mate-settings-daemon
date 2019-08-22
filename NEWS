@@ -1,3 +1,42 @@
+### mate-settings-daemon 1.23.2
+
+  * update translations
+  * mate-settings-plugin: remove useless macro MATE_SETTINGS_PLUGIN_REGISTER
+  * msd-clipboard-plugin: avoid 'g_type_class_add_private'
+  * msd-clipboard-manager: avoid 'g_type_class_add_private'
+  * msd-smartcard-plugin: avoid 'g_type_class_add_private'
+  * msd-smartcard-manager: avoid 'g_type_class_add_private'
+  * msd-smartcard: remove unused struct members
+  * msd-smartcard: avoid 'g_type_class_add_private'
+  * msd-rfkill-manager: avoid 'g_type_class_add_private'
+  * rfkill-glib: avoid 'g_type_class_add_private'
+  * msd-rfkill-plugin: avoid 'g_type_class_add_private'
+  * msd-xsettings-manager: avoid 'g_type_class_add_private'
+  * msd-xsettings-plugin: avoid 'g_type_class_add_private'
+  * msd-xrdb-manager: avoid 'g_type_class_add_private'
+  * msd-xrdb-plugin: avoid 'g_type_class_add_private'
+  * msd-media-keys-window: avoid 'g_type_class_add_private'
+  * msd-media-keys-manager: avoid 'g_type_class_add_private'
+  * msd-media-keys-plugin: avoid 'g_type_class_add_private'
+  * msd-xrandr-plugin: avoid 'g_type_class_add_private'
+  * msd-xrandr-manager: avoid 'g_type_class_add_private'
+  * msd-sound-plugin: avoid 'g_type_class_add_private'
+  * msd-sound-manager: avoid 'g_type_class_add_private'
+  * msd-typing-break-plugin: avoid 'g_type_class_add_private'
+  * msd-typing-break-manager: avoid 'g_type_class_add_private'
+  * msd-dummy-plugin: avoid 'g_type_class_add_private'
+  * msd-dummy-manager: avoid 'g_type_class_add_private'
+  * msd-mpris-manager: avoid 'g_type_class_add_private'
+  * msd-mpris-plugin: avoid 'g_type_class_add_private'
+  * msd-ldsm-dialog: avoid 'g_type_class_add_private'
+  * msd-housekeeping-plugin: avoid 'g_type_class_add_private'
+  * msd-housekeeping-manager: avoid 'g_type_class_add_private'
+  * msd-keybindings-plugin: avoid 'g_type_class_add_private'
+  * msd-keybindings-manager: avoid 'g_type_class_add_private'
+  * system-timezone: avoid 'g_type_class_add_private'
+  * msd-datetime-mechanism: avoid 'g_type_class_add_private'
+  * CI: fix mate-desktop version for using cppcheck
+
 ### mate-settings-daemon 1.23.1
 
   * update translations
