@@ -16,6 +16,7 @@ EXTRA_DIST = \
 	autogen.sh		\
 	ChangeLog		\
 	README			\
+	its			\
 	$(NULL)
 
 DISTCLEANFILES = \
