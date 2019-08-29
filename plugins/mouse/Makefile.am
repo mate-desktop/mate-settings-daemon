@@ -26,9 +26,9 @@ libmouse_la_LIBADD  =							\
 	$(X11_LIBS)							\
 	$(XINPUT_LIBS)
 
-plugin_in_files = mouse.mate-settings-plugin.in
+plugin_in_files = mouse.mate-settings-plugin.desktop.in
 
-plugin_DATA = $(plugin_in_files:.mate-settings-plugin.in=.mate-settings-plugin)
+plugin_DATA = $(plugin_in_files:.mate-settings-plugin.desktop.in=.mate-settings-plugin)
 
 libexec_PROGRAMS = msd-locate-pointer
 
@@ -51,4 +51,5 @@ EXTRA_DIST = $(plugin_in_files)
 CLEANFILES = $(plugin_DATA)
 DISTCLEANFILES = $(plugin_DATA)
 
-@MSD_INTLTOOL_PLUGIN_RULE@
+$(plugin_DATA): $(plugin_in_files)
+	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@

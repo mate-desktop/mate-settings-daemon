@@ -3,8 +3,8 @@ Module=rfkill
 IAge=0
 # Default Priority
 # Priority=100
-_Name=Rfkill
-_Description=Rfkill plugin
+Name=Rfkill
+Description=Rfkill plugin
 Authors=Bastien Nocera
 Copyright=Copyright © 2013
 Website=

@@ -3,10 +3,10 @@ NULL =
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
 SUBDIRS = 			\
+	po 			\
 	mate-settings-daemon	\
 	plugins			\
 	data			\
-	po 			\
 	$(NULL)
 
 DISTCHECK_CONFIGURE_FLAGS = \

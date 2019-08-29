@@ -1,8 +1,8 @@
 [MATE Settings Plugin]
-Module=background
+Module=typing-break
 IAge=0
-_Name=Background
-_Description=Background plugin
+Name=Typing Break
+Description=Typing break plugin
 Authors=
 Copyright=Copyright © 2007
 Website=

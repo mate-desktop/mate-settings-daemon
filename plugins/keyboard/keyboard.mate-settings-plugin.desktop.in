@@ -1,8 +1,8 @@
 [MATE Settings Plugin]
-Module=typing-break
+Module=keyboard
 IAge=0
-_Name=Typing Break
-_Description=Typing break plugin
+Name=Keyboard
+Description=Keyboard plugin
 Authors=
 Copyright=Copyright © 2007
 Website=
