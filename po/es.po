@@ -12,8 +12,9 @@
 # Joel Barrios <darkshram@gmail.com>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Adolfo Jayme-Barrientos, 2019
-# Toni Estévez <toni.estevez@gmail.com>, 2019
 # Benjamin Perez Carrillo <benperezc@gmail.com>, 2019
+# Toni Estévez <toni.estevez@gmail.com>, 2019
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -22,7 +23,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-11 19:37+0200\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Benjamin Perez Carrillo <benperezc@gmail.com>, 2019\n"
+"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2019\n"
 "Language-Team: Spanish (https://www.transifex.com/mate/teams/13566/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -87,7 +88,7 @@ msgstr ""
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:3
 msgid "Antialiasing"
-msgstr "Suavizado de contorno"
+msgstr "Suavizado del contorno"
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:4
 msgid ""
@@ -95,11 +96,10 @@ msgid ""
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
 msgstr ""
-"El tipo de suavizado de contorno que se usará para representar las "
+"El tipo de suavizado del contorno que se usará para representar las "
 "tipografías. Los valores posibles son: \"none\" para desactivar el suavizado"
-" de contorno, \"grayscale\" para el suavizado de contorno de escala de "
-"grises, \"rgba\" para el suavizado de contorno de subpíxeles (solo para "
-"pantallas LCD)."
+" de contorno, \"grayscale\" para el suavizado en escala de grises, \"rgba\" "
+"para el suavizado de los subpíxeles (solo para pantallas LCD)."
 
 #: ../data/org.mate.font-rendering.gschema.xml.in.h:5
 msgid "Hinting"
@@ -129,7 +129,7 @@ msgid ""
 " on bottom."
 msgstr ""
 "El orden de los subpíxeles en una pantalla LCD; solo se usa cuando el "
-"suavizado de contorno se configura en \"rgba\". Los valores posibles son: "
+"suavizado del contorno se configura en \"rgba\". Los valores posibles son: "
 "\"rgb\" para el rojo a la izquierda (el más común), \"bgr\" para el azul a "
 "la izquierda, \"vrgb\" para el rojo arriba y \"vbgr\" para el rojo abajo."
 
@@ -205,7 +205,7 @@ msgstr ""
 #: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:7
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:32
 msgid "Acceleration profile"
-msgstr ""
+msgstr "Perfil de aceleración"
 
 #: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:8
 msgid ""
@@ -217,6 +217,14 @@ msgid ""
 "movement. If a mouse doesn't support the configured profile, 'default' will "
 "be used."
 msgstr ""
+"El perfil de aceleración usado para los ratones conectados. El perfil de "
+"aceleración se puede configurar como predeterminado («default»), que usa el "
+"perfil de aceleración predeterminado para todos los dispositivos, como plano"
+" («flat»), que acelera con un factor constante específico de cada "
+"dispositivo, derivado de la velocidad del puntero configurada, o como "
+"adaptativo («adaptative»), que adapta la aceleración en función del "
+"movimiento del ratón. Si un ratón no soporta el perfil configurado, se usará"
+" el perfil «default»."
 
 #: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:9
 msgid "Drag Threshold"
@@ -453,6 +461,14 @@ msgid ""
 "movement. If a touchpad doesn't support the configured profile, 'default' "
 "will be used."
 msgstr ""
+"El perfil de aceleración usado para el panel táctil. El perfil de "
+"aceleración se puede configurar como predeterminado («default»), que usa el "
+"perfil de aceleración predeterminado para todos los dispositivos, como plano"
+" («flat»), que acelera con un factor constante específico de cada "
+"dispositivo, derivado de la velocidad del puntero configurada, o como "
+"adaptativo («adaptative»), que adapta la aceleración en función del "
+"movimiento del panel táctil. Si un panel táctil no soporta el perfil "
+"configurado, se usará el perfil «default»."
 
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
 #: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
@@ -1273,8 +1289,8 @@ msgstr ""
 " • un servidor X con implementación incompatible de libxlbfile\n"
 "\n"
 "Versión de los datos del servidor X:\n"
-"%d\n"
 "%s\n"
+"%d\n"
 "Si informa de esta situación como un error incluya:\n"
 " • El resultado de <b>%s</b>\n"
 " • El resultado de <b>%s</b> "
@@ -1494,7 +1510,7 @@ msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2183
 msgid "Turn this monitor off"
-msgstr ""
+msgstr "Enciender este monitor"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2186
 msgid "OFF"
@@ -1502,15 +1518,16 @@ msgstr ""
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2187
 msgid "Turn this monitor on"
-msgstr ""
+msgstr "Apagar este monitor"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2247
 msgid "Same output all monitors"
-msgstr ""
+msgstr "La misma salida en todos los monitores"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2248
 msgid "Mirror same output to all monitors and turn them on"
 msgstr ""
+"Encender todos los monitores y replicar la misma salida en todos ellos"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2295
 msgid "_Configure Display Settings…"
@@ -1518,7 +1535,7 @@ msgstr "_Configurar ajustes de pantalla…"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2305
 msgid "Open the display configuration dialog (all settings)"
-msgstr ""
+msgstr "Abrir el diálogo de configuración de la pantalla (todos los ajustes)"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2358
 msgid "Configure display settings"
