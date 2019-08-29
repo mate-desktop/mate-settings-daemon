@@ -23,9 +23,9 @@ libdummy_la_LIBADD  = 		\
 	$(SETTINGS_PLUGIN_LIBS)
 
 plugin_in_files = 		\
-	dummy.mate-settings-plugin.in
+	dummy.mate-settings-plugin.desktop.in
 
-plugin_DATA = $(plugin_in_files:.mate-settings-plugin.in=.mate-settings-plugin)
+plugin_DATA = $(plugin_in_files:.mate-settings-plugin.desktop.in=.mate-settings-plugin)
 
 EXTRA_DIST = 			\
 	$(plugin_in_files)
@@ -36,7 +36,8 @@ CLEANFILES = 			\
 DISTCLEANFILES =		\
 	$(plugin_DATA)
 
-@MSD_INTLTOOL_PLUGIN_RULE@
+$(plugin_DATA): $(plugin_in_files)
+	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
 
 # override to _not_ install the test plugin
 # do not copy into your plugin

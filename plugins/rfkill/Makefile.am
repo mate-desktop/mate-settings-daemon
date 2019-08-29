@@ -29,9 +29,12 @@ librfkill_la_LIBADD  =						\
 	$(RFKILL_LIBS)						\
 	$(SETTINGS_PLUGIN_LIBS)
 
-plugin_in_files = rfkill.mate-settings-plugin.in
+plugin_in_files = rfkill.mate-settings-plugin.desktop.in
 
-plugin_DATA = $(plugin_in_files:.mate-settings-plugin.in=.mate-settings-plugin)
+plugin_DATA = $(plugin_in_files:.mate-settings-plugin.desktop.in=.mate-settings-plugin)
+
+$(plugin_DATA): $(plugin_in_files)
+	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
 
 udevrulesdir = $(prefix)/lib/udev/rules.d
 udevrules_DATA = 61-mate-settings-daemon-rfkill.rules
@@ -39,5 +42,3 @@ udevrules_DATA = 61-mate-settings-daemon-rfkill.rules
 EXTRA_DIST = $(plugin_in_files) $(udevrules_DATA)
 CLEANFILES = $(plugin_DATA)
 DISTCLEANFILES = $(plugin_DATA)
-
-@MSD_INTLTOOL_PLUGIN_RULE@

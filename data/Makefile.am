@@ -28,16 +28,16 @@ msd_gschemas_in = \
 	org.mate.SettingsDaemon.plugins.gschema.xml.in \
 	$(NULL)
 
-@INTLTOOL_XML_NOMERGE_RULE@
-
 gsettings_SCHEMAS = $(msd_gschemas_in:.xml.in=.xml)
 
 @GSETTINGS_RULES@
 
-@INTLTOOL_DESKTOP_RULE@
 desktopdir = $(sysconfdir)/xdg/autostart
 desktop_in_files = mate-settings-daemon.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+
+$(desktop_DATA): $(desktop_in_files)
+	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
 
 servicedir = $(datadir)/dbus-1/services
 service_in_files = org.mate.SettingsDaemon.service.in
@@ -54,12 +54,13 @@ man_MANS = \
 	msd-datetime-mechanism.1 \
 	msd-locate-pointer.1
 
-@INTLTOOL_XML_NOMERGE_RULE@
-
 #disabled until we support it
 xmldir = @MATE_KEYBINDINGS_KEYSDIR@
 xml_in_files = 50-accessibility.xml.in
 xml_DATA = $(xml_in_files:.xml.in=.xml)
+
+$(xml_DATA): $(xml_in_files)
+	$(AM_V_GEN) GETTEXTDATADIR=$(top_srcdir) $(MSGFMT) --xml --template $< -d $(top_srcdir)/po -o $@
 
 EXTRA_DIST = 				\
 	$(msd_gschemas_in)		\

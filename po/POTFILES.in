@@ -1,60 +1,64 @@
 # Files with translatable strings.
 # Please keep this file in alphabetical order.
 data/50-accessibility.xml.in
-[type: gettext/gsettings]data/org.mate.applications-at.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.font-rendering.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.peripherals-keyboard.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.peripherals-mouse.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.peripherals-smartcard.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.peripherals-touchpad.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in
-[type: gettext/gsettings]data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in
+data/org.mate.applications-at.gschema.xml.in
+data/org.mate.font-rendering.gschema.xml.in
+data/org.mate.peripherals-keyboard.gschema.xml.in
+data/org.mate.peripherals-mouse.gschema.xml.in
+data/org.mate.peripherals-smartcard.gschema.xml.in
+data/org.mate.peripherals-touchpad.gschema.xml.in
+data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in
+data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in
+data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in
+data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in
+data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in
+data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in
+data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in
+data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in
+data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in
+data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in
+data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in
+data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in
+data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in
+data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in
+data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in
+data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in
+data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in
+data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in
 data/mate-settings-daemon.desktop.in.in
 mate-settings-daemon/main.c
-[type: gettext/ini]plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.in
+plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.desktop.in
 plugins/a11y-keyboard/msd-a11y-keyboard-manager.c
 plugins/a11y-keyboard/msd-a11y-preferences-dialog.c
-[type: gettext/glade]plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui
-[type: gettext/ini]plugins/background/background.mate-settings-plugin.in
-[type: gettext/ini]plugins/clipboard/clipboard.mate-settings-plugin.in
-[type: gettext/ini]plugins/dummy/dummy.mate-settings-plugin.in
+plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui
+plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in
+plugins/background/background.mate-settings-plugin.desktop.in
+plugins/clipboard/clipboard.mate-settings-plugin.desktop.in
+plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in
+plugins/dummy/dummy.mate-settings-plugin.desktop.in
+plugins/housekeeping/housekeeping.mate-settings-plugin.desktop.in
 plugins/housekeeping/msd-disk-space.c
 plugins/housekeeping/msd-ldsm-dialog.c
 plugins/housekeeping/msd-ldsm-trash-empty.c
+plugins/keybindings/keybindings.mate-settings-plugin.desktop.in
 plugins/keybindings/msd-keybindings-manager.c
-[type: gettext/ini]plugins/keybindings/keybindings.mate-settings-plugin.in
-[type: gettext/ini]plugins/keyboard/keyboard.mate-settings-plugin.in
+plugins/keyboard/keyboard.mate-settings-plugin.desktop.in
 plugins/keyboard/msd-keyboard-xkb.c
+plugins/media-keys/media-keys.mate-settings-plugin.desktop.in
 plugins/media-keys/msd-media-keys-manager.c
-[type: gettext/ini]plugins/media-keys/media-keys.mate-settings-plugin.in
 plugins/media-keys/test-media-window.c
+plugins/mouse/mouse.mate-settings-plugin.desktop.in
 plugins/mouse/msd-mouse-manager.c
-[type: gettext/ini]plugins/mouse/mouse.mate-settings-plugin.in
-[type: gettext/ini]plugins/mpris/mpris.mate-settings-plugin.in
-[type: gettext/ini]plugins/typing-break/typing-break.mate-settings-plugin.in
-[type: gettext/ini]plugins/xrandr/xrandr.mate-settings-plugin.in
-plugins/xrandr/msd-xrandr-manager.c
-plugins/xrdb/msd-xrdb-manager.c
-[type: gettext/ini]plugins/xrdb/xrdb.mate-settings-plugin.in
-plugins/xsettings/msd-xsettings-manager.c
-[type: gettext/ini]plugins/xsettings/xsettings.mate-settings-plugin.in
-[type: gettext/ini]plugins/rfkill/rfkill.mate-settings-plugin.in
+plugins/mpris/mpris.mate-settings-plugin.desktop.in
+plugins/rfkill/rfkill.mate-settings-plugin.desktop.in
 plugins/smartcard/msd-smartcard-manager.c
 plugins/smartcard/msd-smartcard.c
-plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in
+plugins/smartcard/smartcard.mate-settings-plugin.desktop.in
+plugins/sound/sound.mate-settings-plugin.desktop.in
+plugins/typing-break/typing-break.mate-settings-plugin.desktop.in
+plugins/xrandr/msd-xrandr-manager.c
+plugins/xrandr/xrandr.mate-settings-plugin.desktop.in
+plugins/xrdb/msd-xrdb-manager.c
+plugins/xrdb/xrdb.mate-settings-plugin.desktop.in
+plugins/xsettings/msd-xsettings-manager.c
+plugins/xsettings/xsettings.mate-settings-plugin.desktop.in

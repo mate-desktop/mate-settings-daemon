@@ -58,9 +58,9 @@ libmedia_keys_la_LIBADD  = \
 	-lm
 
 plugin_in_files = 		\
-	media-keys.mate-settings-plugin.in
+	media-keys.mate-settings-plugin.desktop.in
 
-plugin_DATA = $(plugin_in_files:.mate-settings-plugin.in=.mate-settings-plugin)
+plugin_DATA = $(plugin_in_files:.mate-settings-plugin.desktop.in=.mate-settings-plugin)
 
 noinst_PROGRAMS =				\
 	test-media-keys				\
@@ -143,4 +143,5 @@ CLEANFILES = 			\
 DISTCLEANFILES =		\
 	$(plugin_DATA)
 
-@MSD_INTLTOOL_PLUGIN_RULE@
+$(plugin_DATA): $(plugin_in_files)
+	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@

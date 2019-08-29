@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-_Name=MATE Settings Daemon
+Name=MATE Settings Daemon
 Exec=@LIBEXECDIR@/mate-settings-daemon
 OnlyShowIn=MATE;
 X-MATE-Autostart-Phase=Initialization

@@ -1,8 +1,8 @@
 [MATE Settings Plugin]
-Module=keyboard
+Module=background
 IAge=0
-_Name=Keyboard
-_Description=Keyboard plugin
+Name=Background
+Description=Background plugin
 Authors=
 Copyright=Copyright © 2007
 Website=

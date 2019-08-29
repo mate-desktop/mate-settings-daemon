@@ -67,12 +67,13 @@ libxrandr_la_LIBADD  =			\
 	$(MATE_DESKTOP_LIBS)
 
 plugin_in_files =			\
-	xrandr.mate-settings-plugin.in
+	xrandr.mate-settings-plugin.desktop.in
 
-plugin_DATA = $(plugin_in_files:.mate-settings-plugin.in=.mate-settings-plugin)
+plugin_DATA = $(plugin_in_files:.mate-settings-plugin.desktop.in=.mate-settings-plugin)
 
 EXTRA_DIST = $(plugin_in_files) $(ICON_FILES) msd-xrandr-manager.xml
 CLEANFILES = $(plugin_DATA) $(BUILT_SOURCES)
 DISTCLEANFILES = $(plugin_DATA)
 
-@MSD_INTLTOOL_PLUGIN_RULE@
+$(plugin_DATA): $(plugin_in_files)
+	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@

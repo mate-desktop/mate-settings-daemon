@@ -23,9 +23,9 @@ libmpris_la_LIBADD  = 		\
 	$(SETTINGS_PLUGIN_LIBS)
 
 plugin_in_files = 		\
-	mpris.mate-settings-plugin.in
+	mpris.mate-settings-plugin.desktop.in
 
-plugin_DATA = $(plugin_in_files:.mate-settings-plugin.in=.mate-settings-plugin)
+plugin_DATA = $(plugin_in_files:.mate-settings-plugin.desktop.in=.mate-settings-plugin)
 
 EXTRA_DIST = 			\
 	$(plugin_in_files)
@@ -36,5 +36,6 @@ CLEANFILES = 			\
 DISTCLEANFILES =		\
 	$(plugin_DATA)
 
-@MSD_INTLTOOL_PLUGIN_RULE@
+$(plugin_DATA): $(plugin_in_files)
+	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
 

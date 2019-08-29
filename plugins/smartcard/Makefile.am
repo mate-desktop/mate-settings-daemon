@@ -30,12 +30,13 @@ libsmartcard_la_LIBADD = \
 	$(SETTINGS_PLUGIN_LIBS)	\
 	$(NSS_LIBS)
 
-@MSD_INTLTOOL_PLUGIN_RULE@
-
 plugin_in_files = \
-	smartcard.mate-settings-plugin.in
+	smartcard.mate-settings-plugin.desktop.in
 
-plugin_DATA = $(plugin_in_files:.mate-settings-plugin.in=.mate-settings-plugin)
+plugin_DATA = $(plugin_in_files:.mate-settings-plugin.desktop.in=.mate-settings-plugin)
+
+$(plugin_DATA): $(plugin_in_files)
+	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
 
 EXTRA_DIST = \
 	$(plugin_in_files)
