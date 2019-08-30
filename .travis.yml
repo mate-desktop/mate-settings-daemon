@@ -115,6 +115,7 @@ requires:
     - libxt-dev
     - make
     - mate-common
+    - policykit-1
     - x11proto-kb-dev
 
   fedora:
