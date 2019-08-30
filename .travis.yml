@@ -85,6 +85,7 @@ requires:
   debian:
     # Useful URL: https://github.com/mate-desktop/debian-packages
     # Useful URL: https://salsa.debian.org/debian-mate-team/mate-settings-daemon
+    - autopoint
     - clang
     - clang-tools
     - cppcheck
@@ -143,6 +144,7 @@ requires:
     - redhat-rpm-config
 
   ubuntu:
+    - autopoint
     - clang
     - clang-tools
     - git
