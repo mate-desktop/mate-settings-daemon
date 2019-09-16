@@ -1,5 +1,5 @@
 dbus_servicesdir = $(datadir)/dbus-1/system-services
-dbus_confdir = $(sysconfdir)/dbus-1/system.d
+dbus_confdir = $(datadir)/dbus-1/system.d
 polkitdir = $(datadir)/polkit-1/actions
 
 dbus_services_in_files = org.mate.SettingsDaemon.DateTimeMechanism.service.in
