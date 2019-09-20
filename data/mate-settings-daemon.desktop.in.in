@@ -6,3 +6,4 @@ OnlyShowIn=MATE;
 X-MATE-Autostart-Phase=Initialization
 X-MATE-Autostart-Notify=true
 X-MATE-AutoRestart=true
+NoDisplay=true
