@@ -4,8 +4,8 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-23 18:24+0100\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
+"PO-Revision-Date: 2019-03-15 20:31+0000\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>, 2019\n"
 "Language-Team: Serbian (https://www.transifex.com/mate/teams/13566/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -489,35 +489,35 @@ msgstr "Пречица за појачавање звука система."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:17
 msgid "Mute the audio quietly"
-msgstr ""
+msgstr "Тихо искључивање звука"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:18
 msgid "Binding to mute the system volume quietly."
-msgstr ""
+msgstr "Пречица за тихо искључивање звука система."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
 msgid "Turn the volume down quietly"
-msgstr ""
+msgstr "Тихо утишавање јачине звука"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:20
 msgid "Binding to lower the system volume quietly."
-msgstr ""
+msgstr "Пречица за тихо снижавање јачине звука система."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:21
 msgid "Turn the volume up quietly"
-msgstr ""
+msgstr "Тихо појачавање јачине звука"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:22
 msgid "Binding to raise the system volume quietly."
-msgstr ""
+msgstr "Пречица за тихо подизање звука система."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:23
 msgid "Microphone mute/unmute"
-msgstr ""
+msgstr "Утишавање/појачавање микрофона"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:24
 msgid "Binding to mute/unmute the microphone."
-msgstr ""
+msgstr "Пречица за утишавање/појачавање микрофона."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
 msgid "Shut down"
@@ -569,11 +569,11 @@ msgstr "Пречица за покретање програма за е-пошт
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
 msgid "Launch settings"
-msgstr ""
+msgstr "Подешавања покретања"
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
 msgid "Binding to launch MATE settings."
-msgstr ""
+msgstr "Пречица за покретање Мејтових подешавања."
 
 #: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
 msgid "Lock screen"
@@ -1134,46 +1134,46 @@ msgstr ""
 #: ../plugins/media-keys/msd-media-keys-manager.c:629
 #: ../plugins/media-keys/test-media-window.c:81
 msgid "Touchpad enabled"
-msgstr ""
+msgstr "Додирна табла је укључена"
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:629
 #: ../plugins/media-keys/test-media-window.c:74
 msgid "Touchpad disabled"
-msgstr ""
+msgstr "Додирна табла је искључена"
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:943
 #: ../plugins/media-keys/test-media-window.c:88
 msgid "Bluetooth disabled"
-msgstr ""
+msgstr "Блутут је искључен"
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:946
 #: ../plugins/media-keys/test-media-window.c:95
 msgid "Bluetooth enabled"
-msgstr ""
+msgstr "Блутут је укључен"
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:950
 #: ../plugins/media-keys/test-media-window.c:102
 msgid "Airplane mode enabled"
-msgstr ""
+msgstr "Режим у авиону је укључен"
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:953
 #: ../plugins/media-keys/test-media-window.c:109
 msgid "Airplane mode disabled"
-msgstr ""
+msgstr "Режим у авиону је искључен"
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:984
 msgid "Hardware Airplane Mode"
-msgstr ""
+msgstr "Хардверски режим у авиону"
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:1022
 #: ../plugins/media-keys/test-media-window.c:123
 msgid "Changing Screen Layout"
-msgstr ""
+msgstr "Промена распореда екрана"
 
 #: ../plugins/media-keys/msd-media-keys-manager.c:1026
 #: ../plugins/media-keys/test-media-window.c:116
 msgid "No External Display"
-msgstr ""
+msgstr "Нема спољног екрана"
 
 #: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
 msgid "Media keys"
@@ -1287,7 +1287,7 @@ msgstr "Не могу да сачувам подешавања монитора"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2059
 msgid "Mirroring outputs not supported"
-msgstr ""
+msgstr "Излази огледалског приказа нису подржани"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:2090
 msgid "Normal"
@@ -1337,11 +1337,11 @@ msgstr "Уреди подешавања Икса"
 #. Priority=100
 #: ../plugins/rfkill/rfkill.mate-settings-plugin.in.h:2
 msgid "Rfkill"
-msgstr ""
+msgstr "Рф-убиј"
 
 #: ../plugins/rfkill/rfkill.mate-settings-plugin.in.h:3
 msgid "Rfkill plugin"
-msgstr ""
+msgstr "Прикључак Рф-убиј"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:167
 msgid "Module Path"

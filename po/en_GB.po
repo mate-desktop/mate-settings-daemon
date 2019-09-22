@@ -4,9 +4,10 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Martin Wimpress <code@flexion.org>, 2018
-# Andi Chandler <andi@gowling.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Andi Chandler <andi@gowling.com>, 2019
+# Martin Wimpress <code@flexion.org>, 2019
+# Steven Maddox <s.maddox@lantizia.me.uk>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -14,8 +15,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-23 18:24+0100\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Andi Chandler <andi@gowling.com>, 2018\n"
+"PO-Revision-Date: 2019-03-15 20:31+0000\n"
+"Last-Translator: Steven Maddox <s.maddox@lantizia.me.uk>, 2019\n"
 "Language-Team: English (United Kingdom) (https://www.transifex.com/mate/teams/13566/en_GB/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -946,8 +947,8 @@ msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
 msgstr ""
-"You can free up disk space by emptying the Wastebasket, removing unused "
-"programs or files, or moving files to another disk or partition."
+"You can free up disk space by emptying the Bin, removing unused programs or "
+"files, or moving files to another disk or partition."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
@@ -962,8 +963,8 @@ msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
 msgstr ""
-"You can free up disk space by emptying the Wastebasket, removing unused "
-"programs or files, or moving files to an external disk."
+"You can free up disk space by emptying the Bin, removing unused programs or "
+"files, or moving files to an external disk."
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:110
 msgid ""
@@ -980,7 +981,7 @@ msgstr "Low Disk Space"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Empty Trash"
-msgstr "Empty Wastebasket"
+msgstr "Empty Bin"
 
 #: ../plugins/housekeeping/msd-ldsm-dialog.c:452
 msgid "Examine…"
@@ -1003,11 +1004,11 @@ msgstr "Removing: %s"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
-msgstr "Emptying the wastebasket"
+msgstr "Emptying the bin"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
-msgstr "Preparing to empty wastebasket…"
+msgstr "Preparing to empty bin…"
 
 #. Translators: "Emptying trash from <device>"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
@@ -1016,19 +1017,19 @@ msgstr "From: "
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
-msgstr "Empty all of the items from the wastebasket?"
+msgstr "Empty all of the items from the bin?"
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
 msgstr ""
-"If you choose to empty the wastebasket, all items in it will be permanently "
-"lost. Please note that you can also delete them separately."
+"If you choose to empty the bin, all items in it will be permanently lost. "
+"Please note that you can also delete them separately."
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
-msgstr "_Empty the Wastebasket"
+msgstr "_Empty Bin"
 
 #: ../plugins/keybindings/msd-keybindings-manager.c:112
 #, c-format
@@ -1239,9 +1240,7 @@ msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
 msgstr[0] ""
-"The display will be reset to its previous configuration in %d second"
 msgstr[1] ""
-"The display will be reset to its previous configuration in %d seconds"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:492
 msgid "Does the display look OK?"

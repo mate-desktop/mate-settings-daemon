@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Miguel Anxo Bouzada <mbouzada@gmail.com>, 2019
 # 
 #, fuzzy
@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-23 18:24+0100\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
+"PO-Revision-Date: 2019-03-15 20:31+0000\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>, 2019\n"
 "Language-Team: Galician (https://www.transifex.com/mate/teams/13566/gl/)\n"
 "MIME-Version: 1.0\n"
@@ -166,8 +166,8 @@ msgstr "Activar o desprazamento vertical no bordo "
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:6
 msgid "Set this to TRUE to allow vertical edge scrolling"
 msgstr ""
-"Estabelecer isto como VERDADEIRO para permitir o desprazamento vertical no "
-"bordo"
+"Estabelecer isto como VERDADEIRO para permitir o desprazamento vertical do "
+"borde"
 
 #: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:7
 msgid "Enable horizontal edge scrolling"
@@ -301,7 +301,7 @@ msgid ""
 "Distance in pixels the pointer must move before accelerated touchpad motion "
 "is activated. A value of -1 is the system default."
 msgstr ""
-"A distancia en píxeles que o punteiro se debe mover antes de que a "
+"A distancia en píxeis que o punteiro se debe mover antes de que a "
 "aceleración do panel táctil sexa activada. Un valor de -1 é o predeterminado"
 " do sistema."
 
@@ -1038,7 +1038,7 @@ msgstr "Preparándose para baleirar o lixo..."
 #. Translators: "Emptying trash from <device>"
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
-msgstr "Desde: "
+msgstr "Dende: "
 
 #: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
@@ -1259,7 +1259,7 @@ msgstr "Non foi posíbel restaurar a configuración de pantalla"
 #: ../plugins/xrandr/msd-xrandr-manager.c:422
 msgid "Could not restore the display's configuration from a backup"
 msgstr ""
-"Non foi posíbel restaurar a configuración de pantalla desde a copia de "
+"Non foi posíbel restaurar a configuración de pantalla dende a copia de "
 "seguranza"
 
 #: ../plugins/xrandr/msd-xrandr-manager.c:443
@@ -1352,7 +1352,7 @@ msgstr "Axustes das X"
 
 #: ../plugins/xsettings/xsettings.mate-settings-plugin.in.h:2
 msgid "Manage X Settings"
-msgstr "Xestionar os axustes de X"
+msgstr "Xestionar os axustes das X"
 
 #. Priority=100
 #: ../plugins/rfkill/rfkill.mate-settings-plugin.in.h:2
@@ -1373,7 +1373,7 @@ msgstr "ruta ao controlador PKCS #11 da tarxeta intelixente"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:496
 msgid "received error or hang up from event source"
-msgstr "recibiuse un erro ou un bloqueo desde o evento orixe"
+msgstr "recibiuse un erro ou un bloqueo dende o evento orixe"
 
 #: ../plugins/smartcard/msd-smartcard-manager.c:585
 #, c-format
