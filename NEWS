@@ -1,3 +1,10 @@
+### mate-settings-daemon 1.22.1
+
+  * update translations
+  * Hide MATE Settings Daemon from Startup Applications capplet
+  * plugins: drop libXxf86 dependency
+  * locate-pointer: Do not grab pointer button when trying to locate
+
 ### mate-settings-daemon 1.22.0
 
   * update translations
