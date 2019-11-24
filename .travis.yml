@@ -94,7 +94,6 @@ requires:
     - gtk3-devel
     - iso-codes-devel
     - libSM-devel
-    - libXxf86misc-devel
     - libcanberra-devel
     - libmatekbd-devel
     - libmatemixer-devel
