@@ -9,6 +9,9 @@ ICON_FILES = 			\
 	msd-xrandr-22.png	\
 	msd-xrandr-24.png	\
 	msd-xrandr-32.png	\
+	msd-xrandr-48.png	\
+	msd-xrandr-64.png	\
+	msd-xrandr-96.png	\
 	msd-xrandr.svg
 
 install-data-local:
@@ -17,11 +20,17 @@ install-data-local:
 	$(mkinstalldirs) $(DESTDIR)$(icondir)/22x22/$(context)
 	$(mkinstalldirs) $(DESTDIR)$(icondir)/24x24/$(context)
 	$(mkinstalldirs) $(DESTDIR)$(icondir)/32x32/$(context)
+	$(mkinstalldirs) $(DESTDIR)$(icondir)/48x48/$(context)
+	$(mkinstalldirs) $(DESTDIR)$(icondir)/64x64/$(context)
+	$(mkinstalldirs) $(DESTDIR)$(icondir)/96x96/$(context)
 	$(mkinstalldirs) $(DESTDIR)$(icondir)/scalable/$(context)
 	$(INSTALL_DATA) $(srcdir)/msd-xrandr-16.png $(DESTDIR)$(icondir)/16x16/$(context)/msd-xrandr.png
 	$(INSTALL_DATA) $(srcdir)/msd-xrandr-22.png $(DESTDIR)$(icondir)/22x22/$(context)/msd-xrandr.png
 	$(INSTALL_DATA) $(srcdir)/msd-xrandr-24.png $(DESTDIR)$(icondir)/24x24/$(context)/msd-xrandr.png
 	$(INSTALL_DATA) $(srcdir)/msd-xrandr-32.png $(DESTDIR)$(icondir)/32x32/$(context)/msd-xrandr.png
+	$(INSTALL_DATA) $(srcdir)/msd-xrandr-48.png $(DESTDIR)$(icondir)/48x48/$(context)/msd-xrandr.png
+	$(INSTALL_DATA) $(srcdir)/msd-xrandr-64.png $(DESTDIR)$(icondir)/64x64/$(context)/msd-xrandr.png
+	$(INSTALL_DATA) $(srcdir)/msd-xrandr-96.png $(DESTDIR)$(icondir)/96x96/$(context)/msd-xrandr.png
 	$(INSTALL_DATA) $(srcdir)/msd-xrandr.svg $(DESTDIR)$(icondir)/scalable/$(context)/msd-xrandr.svg
 
 uninstall-local:
@@ -29,6 +38,9 @@ uninstall-local:
 	rm -f $(DESTDIR)$(icondir)/22x22/$(context)/msd-xrandr.png
 	rm -f $(DESTDIR)$(icondir)/24x24/$(context)/msd-xrandr.png
 	rm -f $(DESTDIR)$(icondir)/32x32/$(context)/msd-xrandr.png
+	rm -f $(DESTDIR)$(icondir)/48x48/$(context)/msd-xrandr.png
+	rm -f $(DESTDIR)$(icondir)/64x64/$(context)/msd-xrandr.png
+	rm -f $(DESTDIR)$(icondir)/96x96/$(context)/msd-xrandr.png
 	rm -f $(DESTDIR)$(icondir)/scalable/$(context)/msd-xrandr.svg
 
 plugin_LTLIBRARIES = \
