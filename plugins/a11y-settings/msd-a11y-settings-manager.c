@@ -47,9 +47,7 @@ enum {
         PROP_0,
 };
 
-static void     msd_a11y_settings_manager_class_init  (MsdA11ySettingsManagerClass *klass);
-static void     msd_a11y_settings_manager_init        (MsdA11ySettingsManager      *a11y_settings_manager);
-static void     msd_a11y_settings_manager_finalize    (GObject                     *object);
+static void     msd_a11y_settings_manager_finalize    (GObject *object);
 
 G_DEFINE_TYPE_WITH_PRIVATE (MsdA11ySettingsManager, msd_a11y_settings_manager, G_TYPE_OBJECT)
 

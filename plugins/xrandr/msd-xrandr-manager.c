@@ -114,9 +114,7 @@ static const MateRRRotation possible_rotations[] = {
         /* We don't allow REFLECT_X or REFLECT_Y for now, as mate-display-properties doesn't allow them, either */
 };
 
-static void     msd_xrandr_manager_class_init  (MsdXrandrManagerClass *klass);
-static void     msd_xrandr_manager_init        (MsdXrandrManager      *xrandr_manager);
-static void     msd_xrandr_manager_finalize    (GObject             *object);
+static void msd_xrandr_manager_finalize (GObject *object);
 
 static void error_message (MsdXrandrManager *mgr, const char *primary_text, GError *error_to_display, const char *secondary_text);
 

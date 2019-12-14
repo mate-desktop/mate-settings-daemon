@@ -108,9 +108,7 @@ typedef enum {
         ACCEL_PROFILE_FLAT
 } AccelProfile;
 
-static void     msd_mouse_manager_class_init  (MsdMouseManagerClass *klass);
-static void     msd_mouse_manager_init        (MsdMouseManager      *mouse_manager);
-static void     msd_mouse_manager_finalize    (GObject             *object);
+static void     msd_mouse_manager_finalize    (GObject              *object);
 static void     set_mouse_settings            (MsdMouseManager      *manager);
 static void     set_tap_to_click_synaptics    (XDeviceInfo          *device_info,
                                                gboolean              state,

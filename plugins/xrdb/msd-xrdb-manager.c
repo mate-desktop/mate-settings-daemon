@@ -51,9 +51,7 @@ struct MsdXrdbManagerPrivate {
 	GtkWidget* widget;
 };
 
-static void     msd_xrdb_manager_class_init  (MsdXrdbManagerClass *klass);
-static void     msd_xrdb_manager_init        (MsdXrdbManager      *xrdb_manager);
-static void     msd_xrdb_manager_finalize    (GObject             *object);
+static void msd_xrdb_manager_finalize (GObject *object);
 
 G_DEFINE_TYPE_WITH_PRIVATE (MsdXrdbManager, msd_xrdb_manager, G_TYPE_OBJECT)
 

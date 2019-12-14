@@ -52,8 +52,6 @@ struct MsdSoundManagerPrivate
 
 #define MATE_SOUND_SCHEMA "org.mate.sound"
 
-static void msd_sound_manager_class_init (MsdSoundManagerClass *klass);
-static void msd_sound_manager_init (MsdSoundManager *sound_manager);
 static void msd_sound_manager_finalize (GObject *object);
 
 G_DEFINE_TYPE_WITH_PRIVATE (MsdSoundManager, msd_sound_manager, G_TYPE_OBJECT)

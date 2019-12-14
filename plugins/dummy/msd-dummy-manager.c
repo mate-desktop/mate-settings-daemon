@@ -48,9 +48,7 @@ enum {
         PROP_0,
 };
 
-static void     msd_dummy_manager_class_init  (MsdDummyManagerClass *klass);
-static void     msd_dummy_manager_init        (MsdDummyManager      *dummy_manager);
-static void     msd_dummy_manager_finalize    (GObject             *object);
+static void     msd_dummy_manager_finalize    (GObject *object);
 
 G_DEFINE_TYPE_WITH_PRIVATE (MsdDummyManager, msd_dummy_manager, G_TYPE_OBJECT)
 

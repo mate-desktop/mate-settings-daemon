@@ -64,9 +64,7 @@ struct MsdKeybindingsManagerPrivate
         GSList      *screens;
 };
 
-static void     msd_keybindings_manager_class_init  (MsdKeybindingsManagerClass *klass);
-static void     msd_keybindings_manager_init        (MsdKeybindingsManager      *keybindings_manager);
-static void     msd_keybindings_manager_finalize    (GObject             *object);
+static void     msd_keybindings_manager_finalize    (GObject *object);
 
 G_DEFINE_TYPE_WITH_PRIVATE (MsdKeybindingsManager, msd_keybindings_manager, G_TYPE_OBJECT)
 

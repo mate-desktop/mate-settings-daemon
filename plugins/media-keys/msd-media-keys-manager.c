@@ -99,9 +99,6 @@ enum {
 
 static guint signals[LAST_SIGNAL] = { 0 };
 
-static void     msd_media_keys_manager_class_init  (MsdMediaKeysManagerClass *klass);
-static void     msd_media_keys_manager_init        (MsdMediaKeysManager      *media_keys_manager);
-
 G_DEFINE_TYPE_WITH_PRIVATE (MsdMediaKeysManager, msd_media_keys_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;

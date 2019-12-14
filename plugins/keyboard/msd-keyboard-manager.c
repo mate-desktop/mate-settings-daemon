@@ -67,9 +67,7 @@ struct MsdKeyboardManagerPrivate {
 	GSettings  *settings;
 };
 
-static void     msd_keyboard_manager_class_init  (MsdKeyboardManagerClass* klass);
-static void     msd_keyboard_manager_init        (MsdKeyboardManager*      keyboard_manager);
-static void     msd_keyboard_manager_finalize    (GObject*                 object);
+static void     msd_keyboard_manager_finalize    (GObject *object);
 
 G_DEFINE_TYPE_WITH_PRIVATE (MsdKeyboardManager, msd_keyboard_manager, G_TYPE_OBJECT)
 

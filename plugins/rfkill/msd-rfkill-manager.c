@@ -78,9 +78,7 @@ static const gchar introspection_xml[] =
 "  </interface>"
 "</node>";
 
-static void     msd_rfkill_manager_class_init  (MsdRfkillManagerClass *klass);
-static void     msd_rfkill_manager_init        (MsdRfkillManager      *rfkill_manager);
-static void     msd_rfkill_manager_finalize    (GObject                    *object);
+static void msd_rfkill_manager_finalize (GObject *object);
 
 G_DEFINE_TYPE_WITH_PRIVATE (MsdRfkillManager, msd_rfkill_manager, G_TYPE_OBJECT)
 

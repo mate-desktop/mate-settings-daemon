@@ -110,9 +110,7 @@ enum {
         MSD_XSETTINGS_ERROR_INIT
 };
 
-static void     mate_xsettings_manager_class_init  (MateXSettingsManagerClass *klass);
-static void     mate_xsettings_manager_init        (MateXSettingsManager      *xsettings_manager);
-static void     mate_xsettings_manager_finalize    (GObject                  *object);
+static void mate_xsettings_manager_finalize (GObject *object);
 
 G_DEFINE_TYPE_WITH_PRIVATE (MateXSettingsManager, mate_xsettings_manager, G_TYPE_OBJECT)
 

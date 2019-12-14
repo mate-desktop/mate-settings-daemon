@@ -44,9 +44,6 @@ struct MsdHousekeepingManagerPrivate {
         GSettings *settings;
 };
 
-static void     msd_housekeeping_manager_class_init  (MsdHousekeepingManagerClass *klass);
-static void     msd_housekeeping_manager_init        (MsdHousekeepingManager      *housekeeping_manager);
-
 G_DEFINE_TYPE_WITH_PRIVATE (MsdHousekeepingManager, msd_housekeeping_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
