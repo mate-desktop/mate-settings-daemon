@@ -79,9 +79,7 @@ typedef struct
         int         offset;
 } IncrConversion;
 
-static void     msd_clipboard_manager_class_init  (MsdClipboardManagerClass *klass);
-static void     msd_clipboard_manager_init        (MsdClipboardManager      *clipboard_manager);
-static void     msd_clipboard_manager_finalize    (GObject                  *object);
+static void     msd_clipboard_manager_finalize    (GObject *object);
 
 static void     clipboard_manager_watch_cb        (MsdClipboardManager *manager,
                                                    Window               window,

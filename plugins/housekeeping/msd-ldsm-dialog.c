@@ -49,9 +49,6 @@ struct MsdLdsmDialogPrivate
         gchar *mount_path;
 };
 
-static void     msd_ldsm_dialog_class_init  (MsdLdsmDialogClass *klass);
-static void     msd_ldsm_dialog_init        (MsdLdsmDialog      *dialog);
-
 G_DEFINE_TYPE_WITH_PRIVATE (MsdLdsmDialog, msd_ldsm_dialog, GTK_TYPE_DIALOG);
 
 static const gchar*

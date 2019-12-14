@@ -52,9 +52,7 @@ struct MsdTypingBreakManagerPrivate
         GSettings *settings;
 };
 
-static void     msd_typing_break_manager_class_init  (MsdTypingBreakManagerClass *klass);
-static void     msd_typing_break_manager_init        (MsdTypingBreakManager      *typing_break_manager);
-static void     msd_typing_break_manager_finalize    (GObject             *object);
+static void msd_typing_break_manager_finalize (GObject *object);
 
 G_DEFINE_TYPE_WITH_PRIVATE (MsdTypingBreakManager, msd_typing_break_manager, G_TYPE_OBJECT)
 

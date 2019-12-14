@@ -109,9 +109,7 @@ enum {
         PROP_0,
 };
 
-static void     msd_a11y_preferences_dialog_class_init  (MsdA11yPreferencesDialogClass *klass);
-static void     msd_a11y_preferences_dialog_init        (MsdA11yPreferencesDialog      *a11y_preferences_dialog);
-static void     msd_a11y_preferences_dialog_finalize    (GObject                       *object);
+static void     msd_a11y_preferences_dialog_finalize    (GObject *object);
 
 G_DEFINE_TYPE_WITH_PRIVATE (MsdA11yPreferencesDialog, msd_a11y_preferences_dialog, GTK_TYPE_DIALOG)
 

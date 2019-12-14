@@ -82,9 +82,7 @@ enum {
         PROP_0,
 };
 
-static void     msd_mpris_manager_class_init  (MsdMprisManagerClass *klass);
-static void     msd_mpris_manager_init        (MsdMprisManager      *mpris_manager);
-static void     msd_mpris_manager_finalize    (GObject              *object);
+static void     msd_mpris_manager_finalize    (GObject *object);
 
 G_DEFINE_TYPE_WITH_PRIVATE (MsdMprisManager, msd_mpris_manager, G_TYPE_OBJECT)
 

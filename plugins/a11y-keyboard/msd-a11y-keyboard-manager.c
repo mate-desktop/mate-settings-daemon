@@ -72,9 +72,7 @@ struct MsdA11yKeyboardManagerPrivate
 #endif /* HAVE_LIBNOTIFY */
 };
 
-static void     msd_a11y_keyboard_manager_class_init  (MsdA11yKeyboardManagerClass *klass);
-static void     msd_a11y_keyboard_manager_init        (MsdA11yKeyboardManager      *a11y_keyboard_manager);
-static void     msd_a11y_keyboard_manager_finalize    (GObject             *object);
+static void     msd_a11y_keyboard_manager_finalize (GObject *object);
 static void     msd_a11y_keyboard_manager_ensure_status_icon (MsdA11yKeyboardManager *manager);
 static void     set_server_from_settings (MsdA11yKeyboardManager *manager);
 

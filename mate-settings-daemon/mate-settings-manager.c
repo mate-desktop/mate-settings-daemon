@@ -60,9 +60,7 @@ enum {
 
 static guint signals [LAST_SIGNAL] = { 0, };
 
-static void     mate_settings_manager_class_init  (MateSettingsManagerClass *klass);
-static void     mate_settings_manager_init        (MateSettingsManager      *settings_manager);
-static void     mate_settings_manager_finalize    (GObject                   *object);
+static void     mate_settings_manager_finalize    (GObject *object);
 
 G_DEFINE_TYPE_WITH_PRIVATE (MateSettingsManager, mate_settings_manager, G_TYPE_OBJECT)
 
