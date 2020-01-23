@@ -1,17 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR MATE Desktop Environment team
+# This file is distributed under the same license as the mate-settings-daemon package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # 
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-11 19:37+0200\n"
+"Project-Id-Version: mate-settings-daemon 1.23.2\n"
+"Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
+"POT-Creation-Date: 2019-11-19 11:28+0100\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
 "Language-Team: Malayalam (https://www.transifex.com/mate/teams/13566/ml/)\n"
@@ -21,54 +20,54 @@ msgstr ""
 "Language: ml\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../data/50-accessibility.xml.in.h:1
+#: data/50-accessibility.xml.in:2
 msgid "Accessibility"
 msgstr "സാമീപ്യത"
 
-#: ../data/50-accessibility.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:61
+#: data/50-accessibility.xml.in:4
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:155
 msgid "Toggle magnifier"
 msgstr "മാഗ്നിഫയര്‍ ടൊഗിള്‍ ചെയ്യുക"
 
-#: ../data/50-accessibility.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:63
+#: data/50-accessibility.xml.in:5
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:160
 msgid "Toggle screen reader"
 msgstr "സ്ക്രീന്‍ റീഡര്‍ ടൊഗിള്‍ ചെയ്യുക"
 
-#: ../data/50-accessibility.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:65
+#: data/50-accessibility.xml.in:6
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:165
 msgid "Toggle on-screen keyboard"
 msgstr "ഓണ്‍ സ്ക്രീന്‍ കീബോര്‍ഡ് ടൊഗിള്‍ ചെയ്യുക"
 
-#: ../data/org.mate.applications-at.gschema.xml.in.h:1
+#: data/org.mate.applications-at.gschema.xml.in:5
 msgid "On-screen keyboard"
 msgstr "ഓണ്‍ സ്ക്രീന്‍ കീബോര്‍ഡ്"
 
-#: ../data/org.mate.applications-at.gschema.xml.in.h:2
+#: data/org.mate.applications-at.gschema.xml.in:6
 msgid "Whether the on-screen keyboard is turned on."
 msgstr "ഓണ്‍-സ്ക്രീന്‍ കീബോര്‍ഡ് ഓണ്‍ ആണോ എന്നു്."
 
-#: ../data/org.mate.applications-at.gschema.xml.in.h:3
+#: data/org.mate.applications-at.gschema.xml.in:10
 msgid "Screen magnifier"
 msgstr "സ്ക്രീന്‍വലിപ്പം കൂട്ടാനുള്ള ഉപകരണം "
 
-#: ../data/org.mate.applications-at.gschema.xml.in.h:4
+#: data/org.mate.applications-at.gschema.xml.in:11
 msgid "Whether the screen magnifier is turned on."
 msgstr "സ്ക്രീന്‍ മാഗ്നിഫയര്‍ ഓണ്‍ ആണോ എന്നു്."
 
-#: ../data/org.mate.applications-at.gschema.xml.in.h:5
+#: data/org.mate.applications-at.gschema.xml.in:15
 msgid "Screen reader"
 msgstr "സ്ക്രീന്‍ വായനക്കാരന്‍"
 
-#: ../data/org.mate.applications-at.gschema.xml.in.h:6
+#: data/org.mate.applications-at.gschema.xml.in:16
 msgid "Whether the screen reader is turned on."
 msgstr "സ്ക്രീന്‍ റീഡര്‍ ഓണ്‍ ആണോ എന്നു്."
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.h:1
+#: data/org.mate.font-rendering.gschema.xml.in:22
 msgid "DPI"
 msgstr "ഡി.പി.ഐ"
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.h:2
+#: data/org.mate.font-rendering.gschema.xml.in:23
 msgid ""
 "The resolution used for converting font sizes to pixel sizes, in dots per "
 "inch."
@@ -76,11 +75,11 @@ msgstr ""
 "ലിപി-വലിപ്പങ്ങള്‍ പിക്സെല്‍ (ചിത്ര-അണു) വലിപ്പങ്ങളായി മാറ്റാനുള്ള റെസലൂഷന്‍,"
 " ഇഞ്ചില്‍ എത്ര ബിന്ദുക്കള്‍ എന്ന എണ്ണത്തില്‍ (ഡോട്സ് പര്‍ ഇഞ്ച്)"
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.h:3
+#: data/org.mate.font-rendering.gschema.xml.in:27
 msgid "Antialiasing"
 msgstr "ആന്റി-എലയാസിങ്ങ്"
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.h:4
+#: data/org.mate.font-rendering.gschema.xml.in:28
 msgid ""
 "The type of antialiasing to use when rendering fonts. Possible values are: "
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
@@ -92,11 +91,11 @@ msgstr ""
 "ആന്റി-എലയാസിങ്ങിനായ്,\"rgba\"( \"ആര്‍.ജി.ബി.എ\") സബ്-പിക്സെല്‍ (രണ്ടാം തരം "
 "ചിത്ര-അണു) എലയാസിങ്ങിനായ് (എല്‍.സി.ഡി സ്ക്രീനിനു മാത്രം)."
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.h:5
+#: data/org.mate.font-rendering.gschema.xml.in:32
 msgid "Hinting"
 msgstr "ഹിന്റിങ്ങ്"
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.h:6
+#: data/org.mate.font-rendering.gschema.xml.in:33
 msgid ""
 "The type of hinting to use when rendering fonts. Possible values are: "
 "\"none\" for no hinting, \"slight\" for basic, \"medium\" for moderate, and "
@@ -108,11 +107,11 @@ msgstr ""
 "\"പരിമിതം\") പരിമിതമായതിനായ് ,\"full\"( \"മുഴുവന്‍\") ഏറ്റവും കൂടുതല്‍ "
 "നിര്‍ദ്ദേശങ്ങള്‍ക്കായ് (അക്ഷര രൂപങ്ങളില്‍ വ്യത്യാസം വരുത്തിയേക്കാം)."
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.h:7
+#: data/org.mate.font-rendering.gschema.xml.in:37
 msgid "RGBA order"
 msgstr "ആര്‍.ജി.ബി.എ ക്രമം"
 
-#: ../data/org.mate.font-rendering.gschema.xml.in.h:8
+#: data/org.mate.font-rendering.gschema.xml.in:38
 msgid ""
 "The order of subpixel elements on an LCD screen; only used when antialiasing"
 " is set to \"rgba\". Possible values are: \"rgb\" for red on left (most "
@@ -126,23 +125,23 @@ msgstr ""
 "വലതുവശത്തേക്കായ്,\"vrgb\"(\"വി.ആര്‍.ജി.ബി\") മുകളിലായ്, \"vbgr\" "
 "(\"വി.ബി.ജി.ആര്‍\" ) ചുവപ്പ് താഴെയായ് വരാന്‍."
 
-#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:1
+#: data/org.mate.peripherals-keyboard.gschema.xml.in:25
 msgid "possible values are \"on\", \"off\", and \"custom\"."
 msgstr "സാധ്യമുളള മൂല്ല്യങ്ങള്‍ ആണ് -  \"on\", \"off\", \"custom\"."
 
-#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:2
+#: data/org.mate.peripherals-keyboard.gschema.xml.in:35
 msgid "Keyboard Bell Custom Filename"
 msgstr "കീബോര്‍ഡ് ബെല്‍ കസ്റ്റം ഫയല്‍നെയിം"
 
-#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:3
+#: data/org.mate.peripherals-keyboard.gschema.xml.in:36
 msgid "File name of the bell sound to be played."
 msgstr "കേള്‍പ്പിയ്ക്കാന്‍ പോകുന്ന മണിനാദമുള്ള ഫയലിന്റെ പേരു്."
 
-#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:4
+#: data/org.mate.peripherals-keyboard.gschema.xml.in:40
 msgid "Remember NumLock state"
 msgstr "NumLock-ന്റെ അവസ്ഥ ഓര്‍മ്മിക്കുക"
 
-#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:5
+#: data/org.mate.peripherals-keyboard.gschema.xml.in:41
 msgid ""
 "When set to true, MATE will remember the state of the NumLock LED between "
 "sessions."
@@ -150,28 +149,28 @@ msgstr ""
 "ശരിയെന്നു് സജ്ജീകരിച്ചാല്‍ ഗ്നോം നംലോക്ക് എന്ന എല്‍ഇഡിയുടെ അവസ്ഥ "
 "സെഷനുകള്‍ക്കിടയില്‍ ഓര്‍ത്തുവയ്ക്കും."
 
-#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:6
+#: data/org.mate.peripherals-keyboard.gschema.xml.in:45
 msgid "NumLock state"
 msgstr ""
 
-#: ../data/org.mate.peripherals-keyboard.gschema.xml.in.h:7
+#: data/org.mate.peripherals-keyboard.gschema.xml.in:46
 msgid "The remembered state of the NumLock LED."
 msgstr ""
 
-#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:1
+#: data/org.mate.peripherals-mouse.gschema.xml.in:10
 msgid "Mouse button orientation"
 msgstr "മൌസ് ബട്ടന്റെ ചായ്‌വു്"
 
-#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:2
+#: data/org.mate.peripherals-mouse.gschema.xml.in:11
 msgid "Swap left and right mouse buttons for left-handed mice."
 msgstr "ഇടംകൈയ്യന്‍ മൈസിനു് വേണ്ടി ഇടതുവലതു് മൌസ് ബട്ടണുകളെ പരസ്പരം മാറ്റുക."
 
-#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:3
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:28
+#: data/org.mate.peripherals-mouse.gschema.xml.in:15
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:85
 msgid "Motion Acceleration"
 msgstr ""
 
-#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:4
+#: data/org.mate.peripherals-mouse.gschema.xml.in:16
 msgid ""
 "Acceleration multiplier for mouse motion. A value of -1 is the system "
 "default."
@@ -179,12 +178,12 @@ msgstr ""
 "മൌസിന്റെ നീക്കത്തിനുള്ള വേഗവര്‍ദ്ധനയ്ക്കായുള്ള ഗുണോത്തരം. -1 എന്ന വിലയാണു് "
 "സിസ്റ്റത്തിലെ സഹജമായതു്."
 
-#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:5
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:30
+#: data/org.mate.peripherals-mouse.gschema.xml.in:20
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:90
 msgid "Motion Threshold"
 msgstr "നീക്കത്തിനുള്ള കുറഞ്ഞ വില"
 
-#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:6
+#: data/org.mate.peripherals-mouse.gschema.xml.in:21
 msgid ""
 "Distance in pixels the pointer must move before accelerated mouse motion is "
 "activated. A value of -1 is the system default."
@@ -192,12 +191,12 @@ msgstr ""
 "വേഗം കൂടിയ മൌസിന്റെ നീക്കം സജീവമാക്കുന്നതിനു് മുമ്പു് സൂചിക "
 "നീങ്ങിയിരിയ്ക്കേണ്ട ദൂരം പിക്സലില്‍. -1 എന്ന വിലയാണു് സഹജമായിട്ടുള്ളതു്."
 
-#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:7
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:32
+#: data/org.mate.peripherals-mouse.gschema.xml.in:25
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:95
 msgid "Acceleration profile"
 msgstr ""
 
-#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:8
+#: data/org.mate.peripherals-mouse.gschema.xml.in:26
 msgid ""
 "Acceleration profile used for connected mice. The acceleration profile can "
 "be set to either default ('default') which uses the default acceleration "
@@ -208,37 +207,37 @@ msgid ""
 "be used."
 msgstr ""
 
-#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:9
+#: data/org.mate.peripherals-mouse.gschema.xml.in:30
 msgid "Drag Threshold"
 msgstr "വലിച്ചിഴയ്ക്കുന്നതിനുള്ള കുറഞ്ഞവില"
 
-#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:10
+#: data/org.mate.peripherals-mouse.gschema.xml.in:31
 msgid "Distance before a drag is started."
 msgstr "വലിച്ചിഴയ്ക്കാന്‍ തുടങ്ങുന്നതിനു് മുമ്പത്തെ ദൂരം"
 
-#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:11
+#: data/org.mate.peripherals-mouse.gschema.xml.in:35
 msgid "Double Click Time"
 msgstr "രണ്ട് ക്ളിക്ക് ചെയ്യുന്ന സമയം"
 
-#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:12
+#: data/org.mate.peripherals-mouse.gschema.xml.in:36
 msgid "Length of a double click."
 msgstr "ഇരട്ട ഞെക്കിനെത്ര സമയം"
 
-#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:13
+#: data/org.mate.peripherals-mouse.gschema.xml.in:40
 msgid "Middle button emulation"
 msgstr ""
 
-#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:14
+#: data/org.mate.peripherals-mouse.gschema.xml.in:41
 msgid ""
 "Enables middle mouse button emulation through simultaneous left and right "
 "button click."
 msgstr ""
 
-#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:15
+#: data/org.mate.peripherals-mouse.gschema.xml.in:45
 msgid "Locate Pointer"
 msgstr "സൂചിക കണ്ടുപിടിക്കുക"
 
-#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:16
+#: data/org.mate.peripherals-mouse.gschema.xml.in:46
 msgid ""
 "Highlights the current location of the pointer when the Control key is "
 "pressed and released."
@@ -246,37 +245,37 @@ msgstr ""
 "കണ്ട്രോള്‍ കീ അമര്‍ത്തി വിടുമ്പോള്‍ സൂചികയുടെ ഇപ്പോഴത്തെ സ്ഥാനം "
 "എടുത്തുകാട്ടുന്നു."
 
-#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:17
+#: data/org.mate.peripherals-mouse.gschema.xml.in:50
 msgid "Cursor theme"
 msgstr "സൂചകത്തിന്റെ രംഗവിതാനം"
 
-#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:18
+#: data/org.mate.peripherals-mouse.gschema.xml.in:51
 msgid "Cursor theme name."
 msgstr ""
 
-#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:19
+#: data/org.mate.peripherals-mouse.gschema.xml.in:55
 msgid "Cursor size"
 msgstr "സൂചകത്തിന്റെ വലുപ്പം"
 
-#: ../data/org.mate.peripherals-mouse.gschema.xml.in.h:20
+#: data/org.mate.peripherals-mouse.gschema.xml.in:56
 msgid "Size of the cursor referenced by cursor_theme."
 msgstr "കര്‍സ_തീം (cursor_theme) കാണുന്ന കര്‍സറിന്റെ വലിപ്പം."
 
-#: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:1
+#: data/org.mate.peripherals-smartcard.gschema.xml.in:6
 msgid "Smartcard removal action"
 msgstr ""
 
-#: ../data/org.mate.peripherals-smartcard.gschema.xml.in.h:2
+#: data/org.mate.peripherals-smartcard.gschema.xml.in:7
 msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:1
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:15
 msgid "Disable touchpad while typing"
 msgstr "ടൈപ്പ് ചെയ്യുമ്പോള്‍ ടച്ച്പാഡ് പ്രവര്‍ത്തന രഹിതമാക്കുക"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:2
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:16
 msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
@@ -284,130 +283,131 @@ msgstr ""
 "ടൈപ്പ് ചെയ്യുമ്പോള്‍ അബന്ധത്തില്‍ ടച്ച്പാഡില്‍ ഹിറ്റ് ചെയ്യുന്നതു് "
 "പ്രശ്നമുണ്ടാക്കുന്നുണ്ടെങ്കില്‍, ഇതു് TRUE ആയി സജ്ജമാക്കുക. "
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:3
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:20
 msgid "Enable mouse clicks with touchpad"
 msgstr "ടച്ച്പാഡില്‍ മൌസ് ക്ലിക്കുകള്‍ പ്രവര്‍ത്തന സജ്ജമാക്കുക"
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:4
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:21
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
 msgstr ""
 "ടച്ച്പാഡില്‍ ടാപ്പ് ചെയ്തു മൌസ് ക്ലിക്കുകള്‍ അയയ്ക്കുന്നതിനായി ഇതു് TRUE ആയി"
 " സജ്ജമാക്കുക."
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:5
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:25
 msgid "Enable vertical edge scrolling"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:6
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:26
 msgid "Set this to TRUE to allow vertical edge scrolling"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:7
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:30
 msgid "Enable horizontal edge scrolling"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:8
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:31
 msgid "Set this to TRUE to allow horizontal edge scrolling"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:9
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:35
 msgid "Enable vertical two-finger scrolling"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:10
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:36
 msgid "Set this to TRUE to allow vertical two-finger scrolling"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:11
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:40
 msgid "Enable horizontal two-finger scrolling"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:12
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:41
 msgid "Set this to TRUE to allow horizontal two-finger scrolling"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:13
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:45
 msgid "Natural scrolling"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:14
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:46
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:15
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:50
 msgid "Enable touchpad"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:16
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:51
 msgid "Set this to TRUE to enable all touchpads."
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:17
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:55
 msgid "Enabled two-finger button-click emulation"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:18
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:56
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:61
 msgid "0 thru 3, 0 is inactive, 1-3 is button to emulate"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:19
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:60
 msgid "Enable three-finger button-click emulation"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:20
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:65
 msgid "One finger tap button"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:21
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:66
 msgid ""
 "Select the button mapping for one-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:22
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:70
 msgid "Two finger tap button"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:23
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:71
 msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:24
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:75
 msgid "Three finger tap button"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:25
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:76
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:26
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:80
 msgid "Touchpad button orientation"
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:27
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:81
 msgid ""
 "Swap left and right buttons for left-handed touchpads with 'left', 'right' "
 "for right-handed, 'mouse' to follow the mouse setting."
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:29
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:86
 msgid ""
 "Acceleration multiplier for touchpad motion. A value of -1 is the system "
 "default."
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:31
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:91
 msgid ""
 "Distance in pixels the pointer must move before accelerated touchpad motion "
 "is activated. A value of -1 is the system default."
 msgstr ""
 
-#: ../data/org.mate.peripherals-touchpad.gschema.xml.in.h:33
+#: data/org.mate.peripherals-touchpad.gschema.xml.in:96
 msgid ""
 "Acceleration profile used for touchpad. The acceleration profile can be set "
 "to either default ('default') which uses the default acceleration profile "
@@ -418,126 +418,126 @@ msgid ""
 "will be used."
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:1
-#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:1
+#: data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in:5
+#: data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in:5
+#: data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in:5
+#: data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in:5
+#: data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in:5
+#: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:5
+#: data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in:5
+#: data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in:5
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:5
+#: data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in:5
+#: data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in:5
+#: data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in:5
+#: data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in:5
+#: data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in:5
+#: data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in:5
+#: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:5
+#: data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in:5
+#: data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in:5
 msgid "Activation of this plugin"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:2
-#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:2
+#: data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in:6
+#: data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in:6
+#: data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in:6
+#: data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in:6
+#: data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in:6
+#: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:6
+#: data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in:6
+#: data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in:6
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:6
+#: data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in:6
+#: data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in:6
+#: data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in:6
+#: data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in:6
+#: data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in:6
+#: data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in:6
+#: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:6
+#: data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in:6
+#: data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in:6
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:5
-#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:3
-#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:3
+#: data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in:10
+#: data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in:10
+#: data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in:10
+#: data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in:10
+#: data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in:10
+#: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:10
+#: data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in:10
+#: data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in:10
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:15
+#: data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in:10
+#: data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in:10
+#: data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in:10
+#: data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in:10
+#: data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in:10
+#: data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in:10
+#: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:10
+#: data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in:10
+#: data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in:10
 msgid "Priority to use for this plugin"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:6
-#: ../data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in.h:4
-#: ../data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in.h:4
+#: data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in:11
+#: data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in:11
+#: data/org.mate.SettingsDaemon.plugins.background.gschema.xml.in:11
+#: data/org.mate.SettingsDaemon.plugins.clipboard.gschema.xml.in:11
+#: data/org.mate.SettingsDaemon.plugins.datetime.gschema.xml.in:11
+#: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:11
+#: data/org.mate.SettingsDaemon.plugins.keybindings.gschema.xml.in:11
+#: data/org.mate.SettingsDaemon.plugins.keyboard.gschema.xml.in:11
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:16
+#: data/org.mate.SettingsDaemon.plugins.mouse.gschema.xml.in:11
+#: data/org.mate.SettingsDaemon.plugins.mpris.gschema.xml.in:11
+#: data/org.mate.SettingsDaemon.plugins.rfkill.gschema.xml.in:11
+#: data/org.mate.SettingsDaemon.plugins.smartcard.gschema.xml.in:11
+#: data/org.mate.SettingsDaemon.plugins.sound.gschema.xml.in:11
+#: data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in:11
+#: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:11
+#: data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in:11
+#: data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in:11
 msgid "Priority to use for this plugin in mate-settings-daemon startup queue"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:5
+#: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:15
 msgid "Free percentage notify threshold"
 msgstr "Free percentage notify threshold"
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:6
+#: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:16
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:7
+#: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:20
 msgid "Subsequent free percentage notify threshold"
 msgstr "Subsequent free percentage notify threshold"
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:8
+#: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:21
 msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:9
+#: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:25
 msgid "Free space no notify threshold"
 msgstr "Free space no notify threshold"
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:10
+#: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:26
 msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:11
+#: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:30
 msgid "Minimum notify period for repeated warnings"
 msgstr ""
 "ആവര്‍ത്തിച്ചുള്ള മുന്നറിയിപ്പുകള്‍ക്കുള്ള ഏറ്റവും കുറഞ്ഞ അറിയിപ്പു് സമയം"
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:12
+#: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:31
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
@@ -545,268 +545,268 @@ msgstr ""
 "സമയം മിനിറ്റുകളില്‍ വ്യക്തമാക്കുക. ഈ സമയത്തിലല്ലാതെ, ഒരു വോള്യത്തിനുള്ള "
 "മുന്നറിയിപ്പുകള്‍ ലഭ്യമാകുന്നതല്ല."
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:13
+#: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:35
 msgid "Mount paths to ignore"
 msgstr "അവഗണിക്കുവാനുള്ള മൌണ്ട് പാഥുകള്‍"
 
-#: ../data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in.h:14
+#: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:36
 msgid "Specify a list of mount paths to ignore when they run low on space."
 msgstr ""
 "സ്ഥലം കുറവാകുമ്പോള്‍ അവഗണിക്കുവാനുള്ള മൌണ്ട് പാഥുകളുടെ പട്ടിക വ്യക്തമാക്കുക."
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:3
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:10
 msgid "Show OSD notification"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:4
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:11
 msgid "Whether an OSD notification is shown to notify about changes"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:7
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:20
 msgid "Volume step"
 msgstr "ശബ്ദം ഉയര്‍ത്തേണ്ട ക്രമം"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:8
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:21
 msgid "Volume step as percentage of volume."
 msgstr "ശബ്ദത്തിനെ ശതമാനക്കണക്കില്‍ ഉയര്‍ത്തുക"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:9
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:25
 msgid "Toggle touchpad"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:10
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:26
 msgid "Binding to enable or disable the touchpad."
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:11
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:30
 msgid "Volume mute"
 msgstr "നിശ്ശബ്ദമാക്കുക"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:12
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:31
 msgid "Binding to mute the system volume."
 msgstr "സിസ്റ്റം നിശബ്ദമാക്കാനുള്ള ബന്ധം"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:13
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:35
 msgid "Volume down"
 msgstr "ശബ്ദം കുറയ്ക്കുക"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:14
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:36
 msgid "Binding to lower the system volume."
 msgstr "സിസ്റ്റത്തിലെ ശബ്ദം കുറയ്ക്കാനുള്ള ബന്ധം"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:15
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:40
 msgid "Volume up"
 msgstr "ശബ്ദം കൂട്ടുക"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:16
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:41
 msgid "Binding to raise the system volume."
 msgstr "സിസ്റ്റത്തിലെ ശബ്ദം കൂട്ടാനുള്ള ബന്ധം"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:17
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:45
 msgid "Mute the audio quietly"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:18
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:46
 msgid "Binding to mute the system volume quietly."
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:19
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:50
 msgid "Turn the volume down quietly"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:20
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:51
 msgid "Binding to lower the system volume quietly."
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:21
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:55
 msgid "Turn the volume up quietly"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:22
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:56
 msgid "Binding to raise the system volume quietly."
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:23
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:60
 msgid "Microphone mute/unmute"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:24
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:61
 msgid "Binding to mute/unmute the microphone."
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:25
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:65
 msgid "Shut down"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:26
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:66
 msgid "Binding to shut down."
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:27
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:70
 msgid "Log out"
 msgstr "പുറത്തിറങ്ങുക"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:28
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:71
 msgid "Binding to log out."
 msgstr "പുറത്തിറങ്ങാനുള്ള ബന്ധം"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:29
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:75
 msgid "Eject"
 msgstr "പുറത്തെടുക്കുക"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:30
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:76
 msgid "Binding to eject an optical disc."
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:31
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:80
 msgid "Home folder"
 msgstr "തട്ടകം"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:32
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:81
 msgid "Binding to open the Home folder."
 msgstr "'വീട്' അറ തുറക്കാനുള്ള ബന്ധം"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:33
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:85
 msgid "Search"
 msgstr "തെരച്ചില്‍"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:34
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:86
 msgid "Binding to launch the search tool."
 msgstr "തിരയല്‍ ഉപകരണം തുടങ്ങാനുള്ള ബന്ധം"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:35
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:90
 msgid "Launch email client"
 msgstr "ഇ-മെയില്‍ ക്ലയന്റ് തുടങ്ങുക"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:36
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:91
 msgid "Binding to launch the email client."
 msgstr "ഇ-മെയില്‍ ക്ലയന്റ് തുടങ്ങാനുള്ള ബന്ധം"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:37
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:95
 msgid "Launch settings"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:38
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:96
 msgid "Binding to launch MATE settings."
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:39
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:100
 msgid "Lock screen"
 msgstr "സ്ക്രീന്‍ പൂട്ടുക"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:40
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:101
 msgid "Binding to lock the screen."
 msgstr "സ്ക്രീന്‍ പൂട്ടാനുള്ള ബന്ധം"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:41
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:105
 msgid "Launch help browser"
 msgstr "സഹായകബ്രൌസര്‍ തുറക്കുക"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:42
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:106
 msgid "Binding to launch the help browser."
 msgstr "സഹായകബ്രൌസര്‍ തുടങ്ങുവാനുള്ള ബന്ധം"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:43
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:110
 msgid "Launch calculator"
 msgstr "കാല്‍ക്കുലേറ്റര്‍ തുടങ്ങുക"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:44
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:111
 msgid "Binding to launch the calculator."
 msgstr "കാല്‍കുലേറ്റര്‍ തുടങ്ങാനുള്ള ബന്ധം"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:45
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:115
 msgid "Launch instant messenger"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:46
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:116
 msgid "Binding to launch the instant messenger."
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:47
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:120
 msgid "Launch web browser"
 msgstr "ബ്രൌസര്‍ തുറക്കുക"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:48
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:121
 msgid "Binding to launch the web browser."
 msgstr "ബ്രൌസര്‍ തുടങ്ങുവാനുള്ള ബന്ധം"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:49
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:125
 msgid "Launch media player"
 msgstr "ചലച്ചിത്രദര്‍ശിനി തുടങ്ങുക"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:50
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:126
 msgid "Binding to launch the media player."
 msgstr "മാധ്യമ പ്ലേയര്‍ തുടങ്ങാനുള്ള ബന്ധം"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:51
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:130
 msgid "Play (or play/pause)"
 msgstr "പാടുക"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:52
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:131
 msgid "Binding to start playback (or toggle play/pause)."
 msgstr ""
 "പ്ലേബാക്ക് തുടങ്ങാനുള്ള ബന്ധം (അല്ലെങ്കില്‍ തുടങ്ങുക/താല്‍കാലികമായി "
 "നിര്‍ത്തുക തമ്മില്‍ മാറാനുള്ളത്)"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:53
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:135
 msgid "Pause playback"
 msgstr "പ്ലേബാക്ക് താല്‍കാലികമായി നിര്‍ത്താനുള്ള കീ"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:54
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:136
 msgid "Binding to pause playback."
 msgstr "പ്ലേബാക്ക് താല്‍കാലികമായി നിര്‍ത്താനുള്ള ബന്ധം"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:55
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:140
 msgid "Stop playback"
 msgstr "പ്ലേബാക്ക് നിര്‍ത്താനുള്ള കീ"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:56
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:141
 msgid "Binding to stop playback."
 msgstr "പ്ലേബാക്ക് നിര്‍ത്താനുള്ള ബന്ധം"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:57
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:145
 msgid "Previous track"
 msgstr "മുമ്പുളള ട്രാക്"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:58
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:146
 msgid "Binding to skip to previous track."
 msgstr "മുമ്പുളളതിലേയ്ക്കു് പോകുവാനുള്ള ബന്ധം"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:59
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:150
 msgid "Next track"
 msgstr "അടുത്ത ട്രാക്ക്"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:60
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:151
 msgid "Binding to skip to next track."
 msgstr "അടുത്ത ട്രാക്കിലേയ്ക്കു് പോകുവാനുള്ള ബന്ധം"
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:62
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:156
 msgid "Binding to show the screen magnifier"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:64
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:161
 msgid "Binding to start the screen reader"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in.h:66
+#: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:166
 msgid "Binding to show the on-screen keyboard"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:5
+#: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:15
 msgid "Show Displays in Notification Area"
 msgstr "അവതരണങ്ങള്‍ അറിയിപ്പ് വിഭഗത്തില്‍ കാണിക്കുക"
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:6
+#: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:16
 msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:7
+#: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:20
 msgid "Do not touch monitor configuration"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:8
+#: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:21
 msgid ""
 "Usually, mate-settings-daemon configures internal and external monitors "
 "according to the turn_on_external_monitors_at_startup and "
@@ -816,31 +816,31 @@ msgid ""
 "configuration)."
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:9
+#: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:25
 msgid "Turn on external monitor after system boot"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:10
+#: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:26
 msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:11
+#: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:30
 msgid "Turn on laptop monitor after system boot"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:12
+#: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:31
 msgid ""
 "Turn on laptop monitor after system boot if user plugs in external monitor "
 "on system boot."
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:13
+#: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:35
 msgid "File for default configuration for RandR"
 msgstr ""
 
-#: ../data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in.h:14
+#: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:36
 msgid ""
 "The XRandR plugin will look for a default configuration in the file "
 "specified by this key. This is similar to the ~/.config/monitors.xml that "
@@ -849,51 +849,51 @@ msgid ""
 "then the file specified by this key will be used instead."
 msgstr ""
 
-#: ../data/mate-settings-daemon.desktop.in.in.h:1
+#: data/mate-settings-daemon.desktop.in.in:4
 msgid "MATE Settings Daemon"
 msgstr "ഗ്നോമിലെ സജ്ജീകരണങ്ങളുടെ നിരന്തരപ്രവൃത്തി"
 
-#: ../mate-settings-daemon/main.c:65
+#: mate-settings-daemon/main.c:65
 msgid "Enable debugging code"
 msgstr "പിഴവ് തിരുത്തുന്നതിന് സഹായകമായ കോഡ് പ്രവര്‍ത്തികമാക്കുക"
 
-#: ../mate-settings-daemon/main.c:66
+#: mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
 msgstr ""
 
-#: ../mate-settings-daemon/main.c:67
+#: mate-settings-daemon/main.c:67
 msgid "Don't become a daemon"
 msgstr "ഒരു നിരന്തരപ്രക്രിയയാകേണ്ടതില്ല"
 
-#: ../mate-settings-daemon/main.c:68
+#: mate-settings-daemon/main.c:68
 msgid "Exit after a time (for debugging)"
 msgstr ""
 
-#: ../plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.in.h:1
+#: plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.desktop.in:5
 msgid "Accessibility Keyboard"
 msgstr "സാമീപ്യത കീബോര്‍ഡ്"
 
-#: ../plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.in.h:2
+#: plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.desktop.in:6
 msgid "Accessibility keyboard plugin"
 msgstr "സാമീപ്യത കീബോര്‍ഡ് സമ്യോജകം"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:444
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:444
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "സഹായം ലഭിക്കുന്നതില്‍ തകരാറ്: %s"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:572
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:636
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:572
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:636
 msgid "Do you want to activate Slow Keys?"
 msgstr "നിങ്ങള്‍ക്ക് വേഗത കുറഞ്ഞ കീ പ്രവര്‍ത്തിപ്പിക്കണമോ?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:573
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:637
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:573
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:637
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "നിങ്ങള്‍ക്ക് വേഗത കുറഞ്ഞ കീ പ്രവര്‍ത്തന രഹിതമാക്കണമോ?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -902,62 +902,62 @@ msgstr ""
 "കീ സൌകര്യത്തിനുള്ള കുറുക്കു കീ ആണ്. കീബോര്‍ഡ് പ്രവര്‍ത്തിക്കുന്ന രീതിയെ ഇത് "
 "ബാധിക്കും. "
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
 msgid "Don't activate"
 msgstr "സജ്ജമാക്കേണ്ടതില്ല"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
 msgid "Don't deactivate"
 msgstr "സജ്ജമാക്കാതിരിക്കേണ്ടതില്ല"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
 msgid "Activate"
 msgstr "സജ്ജമാക്കുക"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
 msgid "Deactivate"
 msgstr "നിര്‍ത്തുക"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
 msgid "Do_n't activate"
 msgstr "പ്രവര്‍ത്തനം _സജ്ജമാക്കേണ്ടതില്ല"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
 msgid "Do_n't deactivate"
 msgstr "പ്രവര്‍ത്തനം നിര്‍ത്തേണ്ട_തില്ല"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
 msgid "_Activate"
 msgstr "സജീവമാക്കുക"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
 msgid "_Deactivate"
 msgstr "_നിര്‍ജ്ജീവമാക്കുക"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
 msgid "Slow Keys Alert"
 msgstr "വേഗത കുറഞ്ഞ കീ അറിയിപ്പ്"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:706
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:772
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:706
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:772
 msgid "Do you want to activate Sticky Keys?"
 msgstr "നിങ്ങള്‍ക്ക് സ്റ്റിക്കി കീകള്‍ സജ്ജമാക്കണമോ?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:707
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:773
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:707
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:773
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "നിങ്ങള്‍ക്ക് സ്റ്റിക്കി കീകളുടെ പ്രവര്‍ത്തനം നിര്‍ത്തണമോ?"
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -966,8 +966,8 @@ msgstr ""
 "കീ സൌകര്യത്തിനുള്ള കുറുക്കു കീ ആണ്. കീബോര്‍ഡ് പ്രവര്‍ത്തിക്കുന്ന രീതിയെ ഇത് "
 "ബാധിക്കും. "
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -977,93 +977,135 @@ msgstr ""
 "വരിയില്‍ അമര്‍ത്തിപ്പിടിച്ചു. ഇത് സ്റ്റിക്കി കീ സൌകര്യം നിര്‍ത്താനുള്ള "
 "കുറുക്കു കീ ആണ്. കീബോര്‍ഡ് പ്രവര്‍ത്തിക്കുന്ന രീതിയെ ഇത് ബാധിക്കും. "
 
-#: ../plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
 msgid "Sticky Keys Alert"
 msgstr "സ്റ്റിക്കി കീ അറിയിപ്പ്"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:766
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:1
+#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:766
+#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:14
 msgid "Universal Access Preferences"
 msgstr "ആഗോള സമീപന മുന്‍ഗണനകള്‍"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:2
+#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:86
 msgid "Use on-screen _keyboard"
 msgstr "ഓണ്‍ സ്ക്രീന്‍ (_k)കീബോര്‍ഡ് ഉപയോഗിക്കുക"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:3
+#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:102
 msgid "Use screen _reader"
 msgstr "സ്ക്രീന്‍ (_r)വായനക്കാരന്‍"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:4
+#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:118
 msgid "Use screen _magnifier"
 msgstr "സ്ക്രീന്‍ (_m)വലിപ്പം കൂട്ടാനുള്ള ഉപകരണം ഉപയോഗിക്കുക"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:5
+#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:134
 msgid "Enhance _contrast in colors"
 msgstr "(_)നിറ-വ്യത്യാസം കൂട്ടുക"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:6
+#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:150
 msgid "Make _text larger and easier to read"
 msgstr "(_t)അക്ഷരങ്ങള്‍ വലുതും വായിക്കാന്‍ എളുപ്പവും ആക്കുക"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:7
+#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:166
 msgid "_Press keyboard shortcuts one key at a time (Sticky Keys)"
 msgstr ""
 "കീബോര്‍ട് ചുരുക്കവഴി-കീകള്‍ ഓരോന്നായി അമര്‍ത്തുക (സ്റ്റിക്കി കീകള്‍)_Press "
 "keyboard shortcuts one key at a time (Sticky Keys)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:8
+#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:182
 msgid "_Ignore duplicate keypresses (Bounce Keys)"
 msgstr "ഈ സമയത്തിനിടയിലെ ഇരട്ട കീ അമര്‍ത്തലുകളെ അവഗണിക്കുക(_I)"
 
-#: ../plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui.h:9
+#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:198
 msgid "Press and _hold keys to accept them (Slow Keys)"
 msgstr ""
 "കീകള്‍ അമര്‍ത്തി (_h)പിടിക്കുക അവ അംഗീകരിക്കാന്‍ (പതുക്കെയുള്ള കീകള്‍)"
 
-#: ../plugins/background/background.mate-settings-plugin.in.h:1
+#: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:5
+msgid "Accessibility settings"
+msgstr ""
+
+#: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:6
+msgid "Accessibility settings plugin"
+msgstr ""
+
+#: plugins/background/background.mate-settings-plugin.desktop.in:5
 msgid "Background"
 msgstr "പശ്ചാത്തലം"
 
-#: ../plugins/background/background.mate-settings-plugin.in.h:2
+#: plugins/background/background.mate-settings-plugin.desktop.in:6
 msgid "Background plugin"
 msgstr "പശ്ചാത്തലചിത്രം സമ്യോജകം "
 
-#: ../plugins/clipboard/clipboard.mate-settings-plugin.in.h:1
+#: plugins/clipboard/clipboard.mate-settings-plugin.desktop.in:5
 msgid "Clipboard"
 msgstr "താല്‍കാലിക വിവര ശേഖരം"
 
-#: ../plugins/clipboard/clipboard.mate-settings-plugin.in.h:2
+#: plugins/clipboard/clipboard.mate-settings-plugin.desktop.in:6
 msgid "Clipboard plugin"
 msgstr "താല്‍കാലിക വിവര ശേഖരം  സംയോജകം"
 
-#: ../plugins/dummy/dummy.mate-settings-plugin.in.h:1
+#: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:12
+msgid "Change system time zone"
+msgstr ""
+
+#: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:13
+msgid "Privileges are required to change the system time zone."
+msgstr ""
+
+#: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:21
+msgid "Change system time"
+msgstr ""
+
+#: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:22
+msgid "Privileges are required to change the system time."
+msgstr ""
+
+#: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:30
+msgid "Configure hardware clock"
+msgstr ""
+
+#: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:31
+msgid "Privileges are required to configure the hardware clock."
+msgstr ""
+
+#: plugins/dummy/dummy.mate-settings-plugin.desktop.in:5
 msgid "Dummy"
 msgstr "വ്യാജന്‍"
 
-#: ../plugins/dummy/dummy.mate-settings-plugin.in.h:2
+#: plugins/dummy/dummy.mate-settings-plugin.desktop.in:6
 msgid "Dummy plugin"
 msgstr "വ്യാജന്‍ സംയോജകം"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:65
+#: plugins/housekeeping/housekeeping.mate-settings-plugin.desktop.in:5
+msgid "Housekeeping"
+msgstr ""
+
+#: plugins/housekeeping/housekeeping.mate-settings-plugin.desktop.in:6
+msgid ""
+"Automatically prunes thumbnail caches and other transient files, and warns "
+"about low disk space"
+msgstr ""
+
+#: plugins/housekeeping/msd-ldsm-dialog.c:63
 msgid "Don't show any warnings again for this file system"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:67
+#: plugins/housekeeping/msd-ldsm-dialog.c:65
 msgid "Don't show any warnings again"
 msgstr " ഈ മുന്നറിയിപ്പുകള് ഇനി കാണിക്കരുതു്ല"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:80
+#: plugins/housekeeping/msd-ldsm-dialog.c:78
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr "വോള്യം \"%s\"-നു് %s ഡിസ്ക് സ്പെയിസ് മാത്രമേ ബാക്കിയുള്ളൂ."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:83
+#: plugins/housekeeping/msd-ldsm-dialog.c:81
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr "%s ഡിസ്ക് സ്പെയിസ് മാത്രമേ ഈ കമ്പ്യൂട്ടറില്‍ ബാക്കിയുള്ളൂ."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:99
+#: plugins/housekeeping/msd-ldsm-dialog.c:97
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
@@ -1073,7 +1115,7 @@ msgstr ""
 "അല്ലെങ്കില്‍ പാര്‍ട്ടീഷനിലേക്ക് ഫയലുകള്‍ മാറ്റി നിങ്ങള്‍ക്കു് ഡിസ്കില്‍ "
 "സ്ഥലം ലഭ്യമാക്കാം."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:102
+#: plugins/housekeeping/msd-ldsm-dialog.c:100
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
@@ -1082,7 +1124,7 @@ msgstr ""
 "അല്ലെങ്കില്‍ പുറമേയുള്ളൊരു ഡിസ്ക് അല്ലെങ്കില്‍ പാര്‍ട്ടീഷനിലേക്ക് ഫയലുകള്‍ "
 "മാറ്റി നിങ്ങള്‍ക്കു് ഡിസ്കില്‍ സ്ഥലം ലഭ്യമാക്കാം."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:107
+#: plugins/housekeeping/msd-ldsm-dialog.c:105
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
@@ -1091,7 +1133,7 @@ msgstr ""
 "അല്ലെങ്കില്‍ ഫയലുകള്‍ നീക്കം ചെയ്തു് അല്ലെങ്കില്‍ പുറമേയുള്ളൊരു ഡിസ്കിലേക്ക്"
 " ഫയലുകള്‍ മാറ്റി നിങ്ങള്‍ക്കു് ഡിസ്കില്‍ സ്ഥലം ലഭ്യമാക്കാം."
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:110
+#: plugins/housekeeping/msd-ldsm-dialog.c:108
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
@@ -1101,51 +1143,51 @@ msgstr ""
 "ഡിസ്കില്‍ സ്ഥലം ലഭ്യമാക്കാം."
 
 #. Set up all the window stuff here
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:206
+#: plugins/housekeeping/msd-ldsm-dialog.c:204
 msgid "Low Disk Space"
 msgstr "കുറഞ്ഞ ഡിസ്ക് സ്ഥലം"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:443
+#: plugins/housekeeping/msd-ldsm-dialog.c:439
 msgid "Empty Trash"
 msgstr "ചവറ്റുകുട്ട കാലിയാക്കുക"
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:451
+#: plugins/housekeeping/msd-ldsm-dialog.c:447
 msgid "Examine…"
 msgstr ""
 
-#: ../plugins/housekeeping/msd-ldsm-dialog.c:458
+#: plugins/housekeeping/msd-ldsm-dialog.c:454
 msgid "Ignore"
 msgstr "അവഗണിക്കുക"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:97
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:97
 #, c-format
 msgid "Removing item %lu of %lu"
 msgstr "%lu/%lu വസ്തു നീക്കം ചെയ്യുന്നു"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:117
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 msgid "Removing: %s"
 msgstr "നീക്കം ചെയ്യുന്നു: %s"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:300
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:247
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:300
 msgid "Emptying the trash"
 msgstr "ചവറ്റുകുട്ട കാലിയാക്കുന്നു"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:276
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:276
 msgid "Preparing to empty trash…"
 msgstr ""
 
 #. Translators: "Emptying trash from <device>"
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:303
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:303
 msgid "From: "
 msgstr "എവിടെ നിന്നു്:"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:355
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:355
 msgid "Empty all of the items from the trash?"
 msgstr "ചവറ്റുകുട്ടയില്‍ നിന്നും എല്ലാ വസ്തുക്കളും കാലിയാക്കുക?"
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:358
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:358
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
@@ -1154,21 +1196,29 @@ msgstr ""
 "എന്നേക്കുമായി നീക്കം ചെയ്യപ്പെടും. അവ ഓരോന്നായും നിങ്ങള്‍ക്ക് വെട്ടി "
 "നീക്കുവാന്‍ സാധിക്കും എന്നത് പ്രത്യേകം ശ്രദ്ധിക്കുക."
 
-#: ../plugins/housekeeping/msd-ldsm-trash-empty.c:365
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
 msgstr "ചവറ്റുകുട്ട _കാലിയാക്കുക"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:112
+#: plugins/keybindings/keybindings.mate-settings-plugin.desktop.in:5
+msgid "Keybindings"
+msgstr "കീ-ബന്ധങ്ങള്‍ "
+
+#: plugins/keybindings/keybindings.mate-settings-plugin.desktop.in:6
+msgid "Keybindings plugin"
+msgstr "കീ-ബന്ധങ്ങള്‍ സംയോജകം"
+
+#: plugins/keybindings/msd-keybindings-manager.c:110
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "കീ ബന്ധനം(%s) അസാധുവാണ്"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:148
+#: plugins/keybindings/msd-keybindings-manager.c:146
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "കീ ബന്ധനം(%s) അപൂര്‍ണ്ണമാണ്"
 
-#: ../plugins/keybindings/msd-keybindings-manager.c:490
+#: plugins/keybindings/msd-keybindings-manager.c:488
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -1177,23 +1227,15 @@ msgstr ""
 "(%s) പ്രവര്‍ത്തിപ്പിക്കുന്നതില്‍ പിശക് ,\n"
 "ഇത് (%s) കീയുമായി ലിങ്ക് ചെയ്തിരിക്കുന്നു."
 
-#: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:1
-msgid "Keybindings"
-msgstr "കീ-ബന്ധങ്ങള്‍ "
-
-#: ../plugins/keybindings/keybindings.mate-settings-plugin.in.h:2
-msgid "Keybindings plugin"
-msgstr "കീ-ബന്ധങ്ങള്‍ സംയോജകം"
-
-#: ../plugins/keyboard/keyboard.mate-settings-plugin.in.h:1
+#: plugins/keyboard/keyboard.mate-settings-plugin.desktop.in:5
 msgid "Keyboard"
 msgstr "കീബോര്‍ഡ്"
 
-#: ../plugins/keyboard/keyboard.mate-settings-plugin.in.h:2
+#: plugins/keyboard/keyboard.mate-settings-plugin.desktop.in:6
 msgid "Keyboard plugin"
 msgstr "കീബോര്‍ഡ് സംയോജകം"
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:119
+#: plugins/keyboard/msd-keyboard-xkb.c:119
 #, c-format
 msgid ""
 "Error activating XKB configuration.\n"
@@ -1210,19 +1252,27 @@ msgid ""
 " • The result of <b>%s</b>"
 msgstr ""
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:279
+#: plugins/keyboard/msd-keyboard-xkb.c:279
 msgid "_Layouts"
 msgstr ""
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:286
+#: plugins/keyboard/msd-keyboard-xkb.c:286
 msgid "Keyboard _Preferences"
 msgstr ""
 
-#: ../plugins/keyboard/msd-keyboard-xkb.c:292
+#: plugins/keyboard/msd-keyboard-xkb.c:292
 msgid "Show _Current Layout"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:189
+#: plugins/media-keys/media-keys.mate-settings-plugin.desktop.in:5
+msgid "Media keys"
+msgstr "മാധ്യമ സംയോജകം"
+
+#: plugins/media-keys/media-keys.mate-settings-plugin.desktop.in:6
+msgid "Media keys plugin"
+msgstr " സംയോജകം"
+
+#: plugins/media-keys/msd-media-keys-manager.c:187
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
@@ -1231,7 +1281,7 @@ msgstr ""
 "ക്രമീകരിച്ചിരിക്കുന്നുവെന്നും, അത് ശരിയായ പ്രയോഗത്തിലേയ്ക്കാണ് "
 "ചൂണ്ടുന്നതെന്നും ഉറപ്പുവരുത്തുക"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:229
+#: plugins/media-keys/msd-media-keys-manager.c:227
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1240,118 +1290,190 @@ msgstr ""
 "ആജ്ഞ നടപ്പിലാക്കാന്‍ പറ്റിയില്ല.:  %s\n"
 " ഈ ആജ്ഞ നിലവിലുണ്ടെന്ന് ഉറപ്പുവരുത്തുക"
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:643
-#: ../plugins/media-keys/test-media-window.c:81
+#: plugins/media-keys/msd-media-keys-manager.c:641
+#: plugins/media-keys/test-media-window.c:81
 msgid "Touchpad enabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:643
-#: ../plugins/media-keys/test-media-window.c:74
+#: plugins/media-keys/msd-media-keys-manager.c:641
+#: plugins/media-keys/test-media-window.c:74
 msgid "Touchpad disabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:959
-#: ../plugins/media-keys/test-media-window.c:88
+#: plugins/media-keys/msd-media-keys-manager.c:957
+#: plugins/media-keys/test-media-window.c:88
 msgid "Bluetooth disabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:962
-#: ../plugins/media-keys/test-media-window.c:95
+#: plugins/media-keys/msd-media-keys-manager.c:960
+#: plugins/media-keys/test-media-window.c:95
 msgid "Bluetooth enabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:966
-#: ../plugins/media-keys/test-media-window.c:102
+#: plugins/media-keys/msd-media-keys-manager.c:964
+#: plugins/media-keys/test-media-window.c:102
 msgid "Airplane mode enabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:969
-#: ../plugins/media-keys/test-media-window.c:109
+#: plugins/media-keys/msd-media-keys-manager.c:967
+#: plugins/media-keys/test-media-window.c:109
 msgid "Airplane mode disabled"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:1000
+#: plugins/media-keys/msd-media-keys-manager.c:998
 msgid "Hardware Airplane Mode"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:1038
-#: ../plugins/media-keys/test-media-window.c:123
+#: plugins/media-keys/msd-media-keys-manager.c:1036
+#: plugins/media-keys/test-media-window.c:123
 msgid "Changing Screen Layout"
 msgstr ""
 
-#: ../plugins/media-keys/msd-media-keys-manager.c:1042
-#: ../plugins/media-keys/test-media-window.c:116
+#: plugins/media-keys/msd-media-keys-manager.c:1040
+#: plugins/media-keys/test-media-window.c:116
 msgid "No External Display"
 msgstr ""
 
-#: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:1
-msgid "Media keys"
-msgstr "മാധ്യമ സംയോജകം"
+#: plugins/mouse/mouse.mate-settings-plugin.desktop.in:5
+msgid "Mouse"
+msgstr "മൌസ്"
 
-#: ../plugins/media-keys/media-keys.mate-settings-plugin.in.h:2
-msgid "Media keys plugin"
-msgstr " സംയോജകം"
+#: plugins/mouse/mouse.mate-settings-plugin.desktop.in:6
+msgid "Mouse plugin"
+msgstr "മൌസ് സംയോജകം"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1652
+#: plugins/mouse/msd-mouse-manager.c:1652
 msgid "Could not enable mouse accessibility features"
 msgstr "മൌസ് ഉപയുക്തി സവിശേഷതകള്‍  പ്രാവര്‍ത്തികമാക്കാനായില്ല"
 
-#: ../plugins/mouse/msd-mouse-manager.c:1654
+#: plugins/mouse/msd-mouse-manager.c:1654
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 
-#: ../plugins/mouse/msd-mouse-manager.c:1657
+#: plugins/mouse/msd-mouse-manager.c:1657
 msgid "Mouse Preferences"
 msgstr "മൌസ് മുന്‍‌ഗണനകള്‍"
 
-#: ../plugins/mouse/mouse.mate-settings-plugin.in.h:1
-msgid "Mouse"
-msgstr "മൌസ്"
-
-#: ../plugins/mouse/mouse.mate-settings-plugin.in.h:2
-msgid "Mouse plugin"
-msgstr "മൌസ് സംയോജകം"
-
-#: ../plugins/mpris/mpris.mate-settings-plugin.in.h:1
+#: plugins/mpris/mpris.mate-settings-plugin.desktop.in:5
 msgid "Mpris"
 msgstr ""
 
-#: ../plugins/mpris/mpris.mate-settings-plugin.in.h:2
+#: plugins/mpris/mpris.mate-settings-plugin.desktop.in:6
 msgid "Mpris plugin"
 msgstr ""
 
-#: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:1
+#. Default Priority
+#. Priority=100
+#: plugins/rfkill/rfkill.mate-settings-plugin.desktop.in:7
+msgid "Rfkill"
+msgstr ""
+
+#: plugins/rfkill/rfkill.mate-settings-plugin.desktop.in:8
+msgid "Rfkill plugin"
+msgstr ""
+
+#: plugins/smartcard/msd-smartcard-manager.c:164
+msgid "Module Path"
+msgstr ""
+
+#: plugins/smartcard/msd-smartcard-manager.c:165
+msgid "path to smartcard PKCS #11 driver"
+msgstr ""
+
+#: plugins/smartcard/msd-smartcard-manager.c:491
+msgid "received error or hang up from event source"
+msgstr ""
+
+#: plugins/smartcard/msd-smartcard-manager.c:580
+msgid "NSS security system could not be initialized"
+msgstr ""
+
+#: plugins/smartcard/msd-smartcard-manager.c:649
+msgid "no suitable smartcard driver could be found"
+msgstr ""
+
+#: plugins/smartcard/msd-smartcard-manager.c:669
+#, c-format
+msgid "smartcard driver '%s' could not be loaded"
+msgstr ""
+
+#: plugins/smartcard/msd-smartcard-manager.c:753
+#, c-format
+msgid "could not watch for incoming card events - %s"
+msgstr ""
+
+#: plugins/smartcard/msd-smartcard-manager.c:1100
+msgid "encountered unexpected error while waiting for smartcard events"
+msgstr ""
+
+#: plugins/smartcard/msd-smartcard.c:148
+msgid "Slot ID"
+msgstr ""
+
+#: plugins/smartcard/msd-smartcard.c:149
+msgid "The slot the card is in"
+msgstr ""
+
+#: plugins/smartcard/msd-smartcard.c:155
+msgid "Slot Series"
+msgstr ""
+
+#: plugins/smartcard/msd-smartcard.c:156
+msgid "per-slot card identifier"
+msgstr ""
+
+#: plugins/smartcard/msd-smartcard.c:162 plugins/smartcard/msd-smartcard.c:163
+msgid "name"
+msgstr ""
+
+#: plugins/smartcard/msd-smartcard.c:167
+msgid "Module"
+msgstr ""
+
+#: plugins/smartcard/msd-smartcard.c:168
+msgid "smartcard driver"
+msgstr ""
+
+#: plugins/smartcard/smartcard.mate-settings-plugin.desktop.in:5
+msgid "Smartcard"
+msgstr ""
+
+#: plugins/smartcard/smartcard.mate-settings-plugin.desktop.in:6
+msgid "Smartcard plugin"
+msgstr ""
+
+#: plugins/sound/sound.mate-settings-plugin.desktop.in:5
+msgid "Sound"
+msgstr "ശബ്ദം"
+
+#: plugins/sound/sound.mate-settings-plugin.desktop.in:6
+msgid "Sound Sample Cache plugin"
+msgstr ""
+
+#: plugins/typing-break/typing-break.mate-settings-plugin.desktop.in:5
 msgid "Typing Break"
 msgstr "ടൈപ്പിങ്ങ് വിശ്രമവേള"
 
-#: ../plugins/typing-break/typing-break.mate-settings-plugin.in.h:2
+#: plugins/typing-break/typing-break.mate-settings-plugin.desktop.in:6
 msgid "Typing break plugin"
 msgstr "ടൈപ്പിങ്ങ് വിശ്രമവേള  സംയോജകം"
 
-#: ../plugins/xrandr/xrandr.mate-settings-plugin.in.h:1
-msgid "XRandR"
-msgstr "XRandR(എക്സ്-റാന്റ്-ആര്‍)"
-
-#: ../plugins/xrandr/xrandr.mate-settings-plugin.in.h:2
-msgid "Set up screen size and rotation settings"
-msgstr "സ്ക്രീന്‍ വലിപ്പവും തിരിക്കലും സജ്ജീകരിക്കുക"
-
-#: ../plugins/xrandr/msd-xrandr-manager.c:373
+#: plugins/xrandr/msd-xrandr-manager.c:371
 msgid "Could not switch the monitor configuration"
 msgstr "മോണിറ്റര്‍ ക്രമീകരണം സ്വിച്ച് ചെയ്യുവാന്‍ സാധ്യമായില്ല"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:397
+#: plugins/xrandr/msd-xrandr-manager.c:395
 msgid "Could not restore the display's configuration"
 msgstr "പ്രദര്‍ശനത്തിനുള്ള ക്രമീകരണം വീണ്ടെടുക്കുവാന്‍ സാധ്യമല്ല"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:422
+#: plugins/xrandr/msd-xrandr-manager.c:420
 msgid "Could not restore the display's configuration from a backup"
 msgstr ""
 "ഒരു ബാക്കപ്പില്‍ നിന്നും പ്രദര്‍ശനത്തിനുള്ള ക്രമീകരണം വീണ്ടെടുക്കുവാന്‍ "
 "സാധ്യമല്ല"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:443
+#: plugins/xrandr/msd-xrandr-manager.c:441
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
@@ -1359,218 +1481,126 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:492
+#: plugins/xrandr/msd-xrandr-manager.c:490
 msgid "Does the display look OK?"
 msgstr "പ്രദര്‍ശനം ശരിയാണോ?"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:499
+#: plugins/xrandr/msd-xrandr-manager.c:497
 msgid "_Restore Previous Configuration"
 msgstr "മുമ്പുള്ള ക്രമീകരണം _വീണ്ടെടുക്കുക"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:500
+#: plugins/xrandr/msd-xrandr-manager.c:498
 msgid "_Keep This Configuration"
 msgstr "ഈ ക്രമീകരണം _സൂക്ഷിക്കുക"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:581
+#: plugins/xrandr/msd-xrandr-manager.c:579
 msgid "The selected configuration for displays could not be applied"
 msgstr "പ്രദര്‍ശനത്തിനായി തെരഞ്ഞെടുത്ത ക്രമീകരണം പ്രായോഗികമാക്കാനായില്ല"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1180
+#: plugins/xrandr/msd-xrandr-manager.c:1178
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "സ്ക്രീന്‍ വിവരം പുതുക്കുവാന്‍ സാധ്യമായില്ല: %s"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1184
+#: plugins/xrandr/msd-xrandr-manager.c:1182
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "മോണിറ്റര്‍ ക്രമീകരണം എങ്ങനെയെങ്കിലും സ്വിച്ച് ചെയ്യുവാന്‍ ശ്രമിക്കുക."
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:1940
+#: plugins/xrandr/msd-xrandr-manager.c:1938
 msgid "Rotation not supported"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2005
-#: ../plugins/xrandr/msd-xrandr-manager.c:2037
+#: plugins/xrandr/msd-xrandr-manager.c:2003
+#: plugins/xrandr/msd-xrandr-manager.c:2035
 msgid "Could not save monitor configuration"
 msgstr "മോണിറ്റര്‍ ക്രമീകരണം സൂക്ഷിക്കുവാന്‍ സാധ്യമായില്ല"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2059
+#: plugins/xrandr/msd-xrandr-manager.c:2057
 msgid "Mirroring outputs not supported"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2090
+#: plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "Normal"
 msgstr "സാധാരണ"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2091
+#: plugins/xrandr/msd-xrandr-manager.c:2089
 msgid "Left"
 msgstr "ഇടത്"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2092
+#: plugins/xrandr/msd-xrandr-manager.c:2090
 msgid "Right"
 msgstr "വലത്"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2093
+#: plugins/xrandr/msd-xrandr-manager.c:2091
 msgid "Upside Down"
 msgstr "മുകളില്‍ നിന്നും താഴേക്കു്"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2182
+#: plugins/xrandr/msd-xrandr-manager.c:2180
 msgid "ON"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2183
+#: plugins/xrandr/msd-xrandr-manager.c:2181
 msgid "Turn this monitor off"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2186
+#: plugins/xrandr/msd-xrandr-manager.c:2184
 msgid "OFF"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2187
+#: plugins/xrandr/msd-xrandr-manager.c:2185
 msgid "Turn this monitor on"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2247
+#: plugins/xrandr/msd-xrandr-manager.c:2245
 msgid "Same output all monitors"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2248
+#: plugins/xrandr/msd-xrandr-manager.c:2246
 msgid "Mirror same output to all monitors and turn them on"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2295
+#: plugins/xrandr/msd-xrandr-manager.c:2293
 msgid "_Configure Display Settings…"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2305
+#: plugins/xrandr/msd-xrandr-manager.c:2303
 msgid "Open the display configuration dialog (all settings)"
 msgstr ""
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2358
+#: plugins/xrandr/msd-xrandr-manager.c:2356
 msgid "Configure display settings"
 msgstr "അവതരണ സജ്ജീകരണങ്ങള്‍ ക്രമീകരിക്കുക"
 
-#: ../plugins/xrandr/msd-xrandr-manager.c:2418
+#: plugins/xrandr/msd-xrandr-manager.c:2416
 msgid "Could not apply the stored configuration for monitors"
 msgstr ""
 "മോണിറ്ററുകള്‍ക്കുള്ള സൂക്ഷിച്ചിട്ടുള്ള ക്രമീകരണം പ്രായോഗികമാക്കുവാന്‍ "
 "സാധ്യമായില്ല"
 
-#: ../plugins/xrdb/msd-xrdb-manager.c:253
-#: ../plugins/xrdb/msd-xrdb-manager.c:322
+#: plugins/xrandr/xrandr.mate-settings-plugin.desktop.in:5
+msgid "XRandR"
+msgstr "XRandR(എക്സ്-റാന്റ്-ആര്‍)"
+
+#: plugins/xrandr/xrandr.mate-settings-plugin.desktop.in:6
+msgid "Set up screen size and rotation settings"
+msgstr "സ്ക്രീന്‍ വലിപ്പവും തിരിക്കലും സജ്ജീകരിക്കുക"
+
+#: plugins/xrdb/msd-xrdb-manager.c:251 plugins/xrdb/msd-xrdb-manager.c:320
 msgid "Cannot determine user's home directory"
 msgstr "ഉപയോക്താവിന്റെ സ്വന്തം തട്ട് ലഭ്യമല്ല"
 
-#: ../plugins/xrdb/xrdb.mate-settings-plugin.in.h:1
+#: plugins/xrdb/xrdb.mate-settings-plugin.desktop.in:5
 msgid "X Resource Database"
 msgstr "എക്സ്-വിഭവ വിവരസംഭരണി"
 
-#: ../plugins/xrdb/xrdb.mate-settings-plugin.in.h:2
+#: plugins/xrdb/xrdb.mate-settings-plugin.desktop.in:6
 msgid "Manage the X resource database"
 msgstr "എക്സ്-വിഭവ വിവരസംഭരണി കയ്കാര്യം ചെയ്യുക"
 
-#: ../plugins/xsettings/xsettings.mate-settings-plugin.in.h:1
+#: plugins/xsettings/xsettings.mate-settings-plugin.desktop.in:5
 msgid "X Settings"
 msgstr "എക്സ് സജ്ജീകരണങ്ങള്‍"
 
-#: ../plugins/xsettings/xsettings.mate-settings-plugin.in.h:2
+#: plugins/xsettings/xsettings.mate-settings-plugin.desktop.in:6
 msgid "Manage X Settings"
 msgstr "എക്സ് സജ്ജീകരണങ്ങള്‍ കയ്കാര്യം ചെയ്യുക"
-
-#. Priority=100
-#: ../plugins/rfkill/rfkill.mate-settings-plugin.in.h:2
-msgid "Rfkill"
-msgstr ""
-
-#: ../plugins/rfkill/rfkill.mate-settings-plugin.in.h:3
-msgid "Rfkill plugin"
-msgstr ""
-
-#: ../plugins/smartcard/msd-smartcard-manager.c:167
-msgid "Module Path"
-msgstr ""
-
-#: ../plugins/smartcard/msd-smartcard-manager.c:168
-msgid "path to smartcard PKCS #11 driver"
-msgstr ""
-
-#: ../plugins/smartcard/msd-smartcard-manager.c:496
-msgid "received error or hang up from event source"
-msgstr ""
-
-#: ../plugins/smartcard/msd-smartcard-manager.c:585
-#, c-format
-msgid "NSS security system could not be initialized"
-msgstr ""
-
-#: ../plugins/smartcard/msd-smartcard-manager.c:654
-#, c-format
-msgid "no suitable smartcard driver could be found"
-msgstr ""
-
-#: ../plugins/smartcard/msd-smartcard-manager.c:674
-#, c-format
-msgid "smartcard driver '%s' could not be loaded"
-msgstr ""
-
-#: ../plugins/smartcard/msd-smartcard-manager.c:758
-#, c-format
-msgid "could not watch for incoming card events - %s"
-msgstr ""
-
-#: ../plugins/smartcard/msd-smartcard-manager.c:1105
-#, c-format
-msgid "encountered unexpected error while waiting for smartcard events"
-msgstr ""
-
-#: ../plugins/smartcard/msd-smartcard.c:154
-msgid "Slot ID"
-msgstr ""
-
-#: ../plugins/smartcard/msd-smartcard.c:155
-msgid "The slot the card is in"
-msgstr ""
-
-#: ../plugins/smartcard/msd-smartcard.c:161
-msgid "Slot Series"
-msgstr ""
-
-#: ../plugins/smartcard/msd-smartcard.c:162
-msgid "per-slot card identifier"
-msgstr ""
-
-#: ../plugins/smartcard/msd-smartcard.c:168
-#: ../plugins/smartcard/msd-smartcard.c:169
-msgid "name"
-msgstr ""
-
-#: ../plugins/smartcard/msd-smartcard.c:173
-msgid "Module"
-msgstr ""
-
-#: ../plugins/smartcard/msd-smartcard.c:174
-msgid "smartcard driver"
-msgstr ""
-
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:1
-msgid "Change system time zone"
-msgstr ""
-
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:2
-msgid "Privileges are required to change the system time zone."
-msgstr ""
-
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:3
-msgid "Change system time"
-msgstr ""
-
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:4
-msgid "Privileges are required to change the system time."
-msgstr ""
-
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:5
-msgid "Configure hardware clock"
-msgstr ""
-
-#: ../plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in.h:6
-msgid "Privileges are required to configure the hardware clock."
-msgstr ""
