@@ -1,3 +1,18 @@
+### mate-settings-daemon 1.23.3
+
+  * update translations
+  * require DBUS >= 1.10.0
+  * actually use the configured dbus directory
+  * Default DBUS_SYS_DIR to ${datadir}/dbus-1/system.d
+  * avoid redundant redeclarations
+  * xrandr: add bigger icon sizes for tray-applet
+  * Hide MATE Settings Daemon from Startup Applications capplet
+  * setup GETTEXTDATADIRS environment variable for xgettext
+  * add its files for marco keybindings xml file
+  * switch to use gettext
+  * Fix placeholder in Spanish translation
+
+
 ### mate-settings-daemon 1.23.2
 
   * update translations
