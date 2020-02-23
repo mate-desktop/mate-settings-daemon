@@ -1,0 +1,184 @@
+##########################################################
+# THE FOLLOWING LINES IS USED BY docker-build
+##########################################################
+requires:
+  archlinux:
+    # Useful URL: https://git.archlinux.org/svntogit/community.git/tree/trunk?h=packages/mate-settings-daemon
+    - clang
+    - dbus-glib
+    - gcc
+    - git
+    - intltool
+    - libcanberra
+    - libmatekbd
+    - libmatemixer
+    - libnotify
+    - make
+    - mate-common
+    - mate-desktop
+    - nss
+    - polkit
+    - pulseaudio
+    - python
+    - which
+
+  debian:
+    # Useful URL: https://github.com/mate-desktop/debian-packages
+    # Useful URL: https://salsa.debian.org/debian-mate-team/mate-settings-daemon
+    - autopoint
+    - clang
+    - clang-tools
+    - cppcheck
+    - gcc
+    - g++
+    - git
+    - libcanberra-gtk3-dev
+    - libdbus-glib-1-dev
+    - libdconf-dev
+    - libfontconfig1-dev
+    - libglib2.0-dev
+    - libgtk-3-dev
+    - libmate-desktop-dev
+    - libmatekbd-dev
+    - libmatemixer-dev
+    - libnotify-dev
+    - libnss3-dev
+    - libpolkit-agent-1-dev
+    - libpolkit-gobject-1-dev
+    - libpulse-dev
+    - libstartup-notification0-dev
+    - libx11-dev
+    - libxext-dev
+    - libxi-dev
+    - libxklavier-dev
+    - libxrandr-dev
+    - libxt-dev
+    - make
+    - mate-common
+    - policykit-1
+    - x11proto-kb-dev
+
+  fedora:
+    # Useful URL: https://src.fedoraproject.org/cgit/rpms/mate-settings-daemon.git
+    - clang
+    - clang-analyzer
+    - cppcheck-htmlreport
+    - dbus-glib-devel
+    - dconf-devel
+    - desktop-file-utils
+    - gcc
+    - git
+    - gtk3-devel
+    - iso-codes-devel
+    - libSM-devel
+    - libcanberra-devel
+    - libmatekbd-devel
+    - libmatemixer-devel
+    - libnotify-devel
+    - make
+    - mate-common
+    - mate-desktop-devel
+    - nss-devel
+    - polkit-devel
+    - pulseaudio-libs-devel
+    - redhat-rpm-config
+
+  ubuntu:
+    - autopoint
+    - clang
+    - clang-tools
+    - git
+    - libcanberra-gtk3-dev
+    - libdbus-glib-1-dev
+    - libdconf-dev
+    - libfontconfig1-dev
+    - libglib2.0-dev
+    - libgtk-3-dev
+    - libmate-desktop-dev
+    - libmatekbd-dev
+    - libmatemixer-dev
+    - libnotify-dev
+    - libnss3-dev
+    - libpolkit-agent-1-dev
+    - libpolkit-gobject-1-dev
+    - libpulse-dev
+    - libstartup-notification0-dev
+    - libx11-dev
+    - libxext-dev
+    - libxi-dev
+    - libxklavier-dev
+    - libxrandr-dev
+    - libxt-dev
+    - make
+    - mate-common
+    - x11proto-kb-dev
+
+variables:
+  - CFLAGS="-Wall -Werror=format-security -Wredundant-decls"
+  - 'CHECKERS="
+    -enable-checker deadcode.DeadStores
+    -enable-checker alpha.deadcode.UnreachableCode
+    -enable-checker alpha.core.CastSize
+    -enable-checker alpha.core.CastToStruct
+    -enable-checker alpha.core.IdenticalExpr
+    -enable-checker alpha.core.SizeofPtr
+    -enable-checker alpha.security.ArrayBoundV2
+    -enable-checker alpha.security.MallocOverflow
+    -enable-checker alpha.security.ReturnPtrRange
+    -enable-checker alpha.unix.SimpleStream
+    -enable-checker alpha.unix.cstring.BufferOverlap
+    -enable-checker alpha.unix.cstring.NotNullTerminated
+    -enable-checker alpha.unix.cstring.OutOfBounds
+    -enable-checker alpha.core.FixedAddr
+    -enable-checker security.insecureAPI.strcpy"'
+
+before_scripts:
+  - if [ ${DISTRO_NAME} == "debian" ];then
+  -     curl -Ls -o debian.sh https://github.com/mate-desktop/mate-dev-scripts/raw/master/travis/debian.sh
+  - bash ./debian.sh
+  - fi
+
+  - cd ${START_DIR}
+  - '[ -f mate-desktop-1.23.2.tar.xz ] || curl -Ls -o mate-desktop-1.23.2.tar.xz http://pub.mate-desktop.org/releases/1.23/mate-desktop-1.23.2.tar.xz'
+  - tar xf mate-desktop-1.23.2.tar.xz
+  - cd mate-desktop-1.23.2
+  - if [ ${DISTRO_NAME} == "debian" -o ${DISTRO_NAME} == "ubuntu" ];then
+  -     ./configure --prefix=/usr --libdir=/usr/lib/x86_64-linux-gnu --libexecdir=/usr/lib/x86_64-linux-gnu
+  - else
+  -     ./configure --prefix=/usr
+  - fi
+  - make
+  - make install
+
+build_scripts:
+  - ./autogen.sh
+  - scan-build $CHECKERS ./configure --prefix=/usr --enable-pulse
+  - if [ $CPU_COUNT -gt 1 ]; then
+  -     scan-build $CHECKERS --keep-cc -o html-report make -j $CPU_COUNT
+  - else
+  -     scan-build $CHECKERS --keep-cc -o html-report make
+  - fi
+  - if [ ${DISTRO_NAME} == "debian" ];then
+  -     cppcheck --enable=warning,style,performance,portability,information,missingInclude -i'mate-desktop-1.23.2' .
+  - fi
+
+after_scripts:
+  - if [ ${DISTRO_NAME} == "fedora" ];then
+  -   cppcheck --xml --output-file=cppcheck.xml --enable=warning,style,performance,portability,information,missingInclude -i'mate-desktop-1.23.2' .
+  -   cppcheck-htmlreport --title=${REPO_NAME} --file=cppcheck.xml --report-dir=cppcheck-htmlreport
+  -   ./gen-index -l 20 -i https://github.com/${OWNER_NAME}/mate-applets/raw/master/cpufreq/pixmaps/cpufreq-100.png
+  - fi
+  - make distcheck
+
+releases:
+  draft: false
+  prerelease: false
+  checksum: true
+  file_glob: true
+  files: mate-settings-daemon-*.tar.xz
+  github_release:
+    tags: true
+    overwrite: true
+    base_version: 1.20.0
+    notify_servers:
+      - https://release.mate-desktop.org/release
