@@ -443,7 +443,7 @@ msd_ldsm_dialog_new (gboolean     other_usable_partitions,
                 button_analyze = gtk_dialog_add_button (GTK_DIALOG (dialog),
                                                         _("Examine…"),
                                                         MSD_LDSM_DIALOG_RESPONSE_ANALYZE);
-                analyze_image = gtk_image_new_from_icon_name ("baobab", GTK_ICON_SIZE_BUTTON);
+                analyze_image = gtk_image_new_from_icon_name ("mate-disk-usage-analyzer", GTK_ICON_SIZE_BUTTON);
                 gtk_button_set_image (GTK_BUTTON (button_analyze), analyze_image);
         }
 
