@@ -62,7 +62,6 @@ requires:
     # Useful URL: https://src.fedoraproject.org/cgit/rpms/mate-settings-daemon.git
     - clang
     - clang-analyzer
-    - cppcheck-htmlreport
     - dbus-glib-devel
     - dconf-devel
     - desktop-file-utils
@@ -163,11 +162,6 @@ build_scripts:
   - fi
 
 after_scripts:
-  - if [ ${DISTRO_NAME} == "fedora" ];then
-  -   cppcheck --xml --output-file=cppcheck.xml --enable=warning,style,performance,portability,information,missingInclude -i'mate-desktop-1.23.2' .
-  -   cppcheck-htmlreport --title=${REPO_NAME} --file=cppcheck.xml --report-dir=cppcheck-htmlreport
-  -   ./gen-index -l 20 -i https://github.com/${OWNER_NAME}/mate-applets/raw/master/cpufreq/pixmaps/cpufreq-100.png
-  - fi
   - make distcheck
 
 releases:
