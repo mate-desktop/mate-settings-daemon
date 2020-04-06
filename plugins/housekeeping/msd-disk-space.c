@@ -584,7 +584,7 @@ ldsm_is_hash_item_in_ignore_paths (gpointer key,
 }
 
 static void
-msd_ldsm_get_config ()
+msd_ldsm_get_config (void)
 {
         gchar **settings_list;
 

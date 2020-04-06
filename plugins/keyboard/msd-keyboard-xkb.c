@@ -163,7 +163,7 @@ apply_desktop_settings_cb (GSettings *settings, gchar *key, gpointer   user_data
 }
 
 static void
-popup_menu_launch_capplet ()
+popup_menu_launch_capplet (void)
 {
 	GAppInfo *info;
 	GdkAppLaunchContext *context;
@@ -195,7 +195,7 @@ show_layout_destroy (GtkWidget * dialog, gint group)
 }
 
 static void
-popup_menu_show_layout ()
+popup_menu_show_layout (void)
 {
 	GtkWidget *dialog;
 	XklEngine *engine = xkl_engine_get_instance (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()));
@@ -285,13 +285,13 @@ status_icon_popup_menu_cb (GtkStatusIcon * icon, guint button, guint time)
 	item =
 	    gtk_menu_item_new_with_mnemonic (_("Keyboard _Preferences"));
 	gtk_widget_show (item);
-	g_signal_connect (item, "activate", popup_menu_launch_capplet,
+	g_signal_connect (item, "activate", G_CALLBACK (popup_menu_launch_capplet),
 			  NULL);
 	gtk_menu_shell_append (GTK_MENU_SHELL (popup_menu), item);
 
 	item = gtk_menu_item_new_with_mnemonic (_("Show _Current Layout"));
 	gtk_widget_show (item);
-	g_signal_connect (item, "activate", popup_menu_show_layout, NULL);
+	g_signal_connect (item, "activate", G_CALLBACK (popup_menu_show_layout), NULL);
 	gtk_menu_shell_append (GTK_MENU_SHELL (popup_menu), item);
 
 	for (i = 0; *current_name; i++, current_name++) {
@@ -330,7 +330,7 @@ status_icon_popup_menu_cb (GtkStatusIcon * icon, guint button, guint time)
 }
 
 static void
-show_hide_icon ()
+show_hide_icon (void)
 {
 	if (g_strv_length (current_kbd_config.layouts_variants) > 1) {
 		if (icon == NULL) {
@@ -512,7 +512,7 @@ msd_keyboard_new_device (XklEngine * engine)
 }
 
 static void
-msd_keyboard_update_indicator_icons ()
+msd_keyboard_update_indicator_icons (void)
 {
 	Bool state;
 	int new_state, i;
