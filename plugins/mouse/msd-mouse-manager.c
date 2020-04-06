@@ -1360,11 +1360,11 @@ set_natural_scroll_synaptics (XDeviceInfo *device_info,
         if (rc == Success && type == XA_INTEGER && format == 32 && nitems >= 2) {
                 ptr = (glong *) data;
                 if (natural_scroll) {
-                        ptr[0] = -abs(ptr[0]);
-                        ptr[1] = -abs(ptr[1]);
+                        ptr[0] = -labs(ptr[0]);
+                        ptr[1] = -labs(ptr[1]);
                 } else {
-                        ptr[0] = abs(ptr[0]);
-                        ptr[1] = abs(ptr[1]);
+                        ptr[0] = labs(ptr[0]);
+                        ptr[1] = labs(ptr[1]);
                 }
 
                 XChangeDeviceProperty (GDK_DISPLAY_XDISPLAY (display), device, prop,
