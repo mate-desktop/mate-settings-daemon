@@ -17,7 +17,8 @@ libcommon_la_CPPFLAGS = \
 libcommon_la_CFLAGS = \
 	$(SETTINGS_PLUGIN_CFLAGS)	\
 	$(XINPUT_CFLAGS)		\
-	$(AM_CFLAGS)
+	$(AM_CFLAGS)			\
+	$(WARN_CFLAGS)
 
 libcommon_la_LDFLAGS = \
 	$(MSD_PLUGIN_LDFLAGS) $(XINPUT_LIBS) $(X11_LIBS)

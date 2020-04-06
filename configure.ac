@@ -13,6 +13,8 @@ AC_INIT([mate-settings-daemon],
 AC_CONFIG_SRCDIR([mate-settings-daemon/mate-settings-manager.c])
 AC_CONFIG_MACRO_DIR([m4])
 
+MATE_COMPILE_WARNINGS
+
 AM_INIT_AUTOMAKE([1.9 no-dist-gzip dist-xz tar-ustar check-news])
 AM_MAINTAINER_MODE([enable])
 
@@ -57,8 +59,6 @@ MATE_DESKTOP_REQUIRED_VERSION=1.23.2
 LIBMATEKBD_REQUIRED_VERSION=1.17.0
 LIBNOTIFY_REQUIRED_VERSION=0.7.0
 LIBMATEMIXER_REQUIRED_VERSION=1.10.0
-
-EXTRA_COMPILE_WARNINGS(yes)
 
 PKG_CHECK_MODULES(SETTINGS_DAEMON,
 	glib-2.0 >= $GLIB_REQUIRED_VERSION
@@ -386,47 +386,6 @@ dnl - Finish
 dnl ---------------------------------------------------------------------------
 
 
-# Turn on the additional warnings last, so warnings don't affect other tests.
-
-AC_ARG_ENABLE(more-warnings,
-	[AC_HELP_STRING([--enable-more-warnings],
-	[Maximum compiler warnings])],
-	set_more_warnings="$enableval",[
-        	if test -d $srcdir/.git; then
-        		set_more_warnings=yes
-              	else
-                  	set_more_warnings=no
-              	fi
-        ])
-AC_MSG_CHECKING(for more warnings)
-if test "$GCC" = "yes" -a "$set_more_warnings" != "no"; then
-        AC_MSG_RESULT(yes)
-        CFLAGS="\
-        -Wall \
-        -Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes \
-        -Wnested-externs -Wpointer-arith \
-        -Wcast-align -Wsign-compare \
-        $CFLAGS"
-
-        for option in -Wno-strict-aliasing -Wno-sign-compare; do
-                SAVE_CFLAGS="$CFLAGS"
-                CFLAGS="$CFLAGS $option"
-                AC_MSG_CHECKING([whether gcc understands $option])
-                AC_TRY_COMPILE([], [],
-                        has_option=yes,
-                        has_option=no,)
-                if test $has_option = no; then
-                        CFLAGS="$SAVE_CFLAGS"
-                fi
-                AC_MSG_RESULT($has_option)
-                unset has_option
-                unset SAVE_CFLAGS
-        done
-        unset option
-else
-        AC_MSG_RESULT(no)
-fi
-
 #
 # Enable Debug
 #
@@ -523,6 +482,7 @@ echo "
     source code location:     ${srcdir}
     compiler:                 ${CC}
     cflags:                   ${CFLAGS}
+    warning cflags:           ${WARN_CFLAGS}
     Maintainer mode:          ${USE_MAINTAINER_MODE}
 
     dbus-1 system.d dir:      ${DBUS_SYS_DIR}

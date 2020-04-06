@@ -18,13 +18,15 @@ test_a11y_preferences_dialog_SOURCES =		\
 test_a11y_preferences_dialog_CPPFLAGS = \
 	-I$(top_srcdir)/mate-settings-daemon			\
 	-DPIXMAPDIR=\""$(pkgdatadir)"\"				\
-	-DGTKBUILDERDIR=\""$(pkgdatadir)"\"				\
+	-DGTKBUILDERDIR=\""$(pkgdatadir)"\"			\
 	-DMATE_SETTINGS_LOCALEDIR=\""$(datadir)/locale"\"	\
 	$(AM_CPPFLAGS)
 
-test_a11y_preferences_dialog_CFLAGS = \
+test_a11y_preferences_dialog_CFLAGS =	\
 	$(SETTINGS_PLUGIN_CFLAGS)	\
-	$(AM_CFLAGS)
+	$(AM_CFLAGS)			\
+	$(WARN_CFLAGS)			\
+	$(NULL)
 
 test_a11y_preferences_dialog_LDADD = \
 	$(SETTINGS_DAEMON_LIBS)			\
@@ -50,10 +52,12 @@ liba11y_keyboard_la_CPPFLAGS = \
 	-DGTKBUILDERDIR=\""$(gtkbuilderdir)"\" \
 	$(AM_CPPFLAGS)
 
-liba11y_keyboard_la_CFLAGS = \
+liba11y_keyboard_la_CFLAGS =		\
 	$(SETTINGS_PLUGIN_CFLAGS)	\
 	$(LIBNOTIFY_CFLAGS)		\
-	$(AM_CFLAGS)
+	$(AM_CFLAGS)			\
+	$(WARN_CFLAGS)			\
+	$(NULL)
 
 liba11y_keyboard_la_LDFLAGS = 		\
 	$(MSD_PLUGIN_LDFLAGS)		\

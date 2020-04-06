@@ -15,10 +15,11 @@ test_background_CPPFLAGS = \
 	-DMATE_SETTINGS_LOCALEDIR=\""$(datadir)/locale"\" \
 	$(AM_CPPFLAGS)
 
-test_background_CFLAGS = \
+test_background_CFLAGS =		\
 	$(SETTINGS_PLUGIN_CFLAGS)	\
 	$(MATE_DESKTOP_CFLAGS)		\
-	$(AM_CFLAGS)
+	$(AM_CFLAGS)			\
+	$(WARN_CFLAGS)
 
 test_background_LDADD =		\
 	$(top_builddir)/mate-settings-daemon/libmsd-profile.la	\
@@ -44,10 +45,11 @@ libbackground_la_CPPFLAGS = \
 	-DMATE_SETTINGS_LOCALEDIR=\""$(datadir)/locale"\" \
 	$(AM_CPPFLAGS)
 
-libbackground_la_CFLAGS = \
+libbackground_la_CFLAGS =		\
 	$(SETTINGS_PLUGIN_CFLAGS)	\
 	$(MATE_DESKTOP_CFLAGS)		\
-	$(AM_CFLAGS)
+	$(AM_CFLAGS)			\
+	$(WARN_CFLAGS)
 
 libbackground_la_LDFLAGS = 		\
 	$(MSD_PLUGIN_LDFLAGS)		\

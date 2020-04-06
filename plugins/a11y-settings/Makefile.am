@@ -14,10 +14,11 @@ liba11y_settings_la_CPPFLAGS = \
 	-DMATE_SETTINGS_LOCALEDIR=\""$(datadir)/locale"\" \
 	$(AM_CPPFLAGS)
 
-liba11y_settings_la_CFLAGS = \
+liba11y_settings_la_CFLAGS =		\
 	$(PLUGIN_CFLAGS)		\
 	$(SETTINGS_PLUGIN_CFLAGS)	\
-	$(AM_CFLAGS)
+	$(AM_CFLAGS)			\
+	$(WARN_CFLAGS)
 
 liba11y_settings_la_LDFLAGS = 		\
 	$(MSD_PLUGIN_LDFLAGS)

@@ -18,10 +18,11 @@ libsmartcard_la_CPPFLAGS = \
 	$(AM_CPPFLAGS)
 
 libsmartcard_la_CFLAGS = \
-	$(SETTINGS_PLUGIN_CFLAGS) \
-	$(MATE_CFLAGS)	\
-	$(NSS_CFLAGS)	\
-	$(AM_CFLAGS)
+	$(SETTINGS_PLUGIN_CFLAGS)	\
+	$(MATE_CFLAGS)			\
+	$(NSS_CFLAGS)			\
+	$(AM_CFLAGS)			\
+	$(WARN_CFLAGS)
 
 libsmartcard_la_LDFLAGS = \
 	$(MSD_PLUGIN_LDFLAGS)

@@ -14,9 +14,10 @@ libsound_la_CPPFLAGS = \
 
 libsound_la_CFLAGS = \
 	$(SETTINGS_PLUGIN_CFLAGS) \
-	$(MATE_CFLAGS)	\
-	$(PULSE_CFLAGS)	\
-	$(AM_CFLAGS)
+	$(MATE_CFLAGS) \
+	$(PULSE_CFLAGS) \
+	$(AM_CFLAGS) \
+	$(WARN_CFLAGS)
 
 libsound_la_LDFLAGS = \
 	$(MSD_PLUGIN_LDFLAGS)

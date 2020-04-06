@@ -30,10 +30,12 @@ libkeyboard_la_CPPFLAGS = \
 	-DMATE_SETTINGS_LOCALEDIR=\""$(datadir)/locale"\" \
 	$(AM_CPPFLAGS)
 
-libkeyboard_la_CFLAGS = \
+libkeyboard_la_CFLAGS =			\
 	$(SETTINGS_PLUGIN_CFLAGS)	\
 	$(LIBMATEKBDUI_CFLAGS)		\
-	$(AM_CFLAGS)
+	$(AM_CFLAGS)			\
+	$(WARN_CFLAGS)			\
+	$(NULL)
 
 libkeyboard_la_LDFLAGS = 	\
 	$(MSD_PLUGIN_LDFLAGS)	\
