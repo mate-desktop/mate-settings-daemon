@@ -233,7 +233,7 @@ trash_empty_job (GIOSchedulerJob *job,
 /* Worker thread end */
 
 static void
-trash_empty_start ()
+trash_empty_start (void)
 {
         GtkWidget *vbox1, *vbox2, *hbox;
         GtkWidget *label1, *label3;
@@ -340,7 +340,7 @@ trash_empty_require_confirmation (void)
 }
 
 static void
-trash_empty_show_confirmation_dialog ()
+trash_empty_show_confirmation_dialog (void)
 {
         GtkWidget *button;
 

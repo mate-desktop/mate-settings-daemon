@@ -227,7 +227,7 @@ translate_bool_int },
  * A lot of this code is shamelessly copied and adapted from Linux Mint/Cinnamon.
  */
 static int
-get_window_scale_auto ()
+get_window_scale_auto (void)
 {
         GdkDisplay   *display;
         GdkMonitor   *monitor;
