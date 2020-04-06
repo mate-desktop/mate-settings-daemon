@@ -19,10 +19,11 @@ libkeybindings_la_CPPFLAGS = \
 	-DMATE_SETTINGS_LOCALEDIR=\""$(datadir)/locale"\" \
 	$(AM_CPPFLAGS)
 
-libkeybindings_la_CFLAGS = \
+libkeybindings_la_CFLAGS =		\
 	$(SETTINGS_PLUGIN_CFLAGS)	\
-	$(DCONF_CFLAGS)	\
-	$(AM_CFLAGS)
+	$(DCONF_CFLAGS)			\
+	$(AM_CFLAGS)			\
+	$(WARN_CFLAGS)
 
 libkeybindings_la_LDFLAGS = 		\
 	$(MSD_PLUGIN_LDFLAGS)	\

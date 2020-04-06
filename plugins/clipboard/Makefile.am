@@ -20,9 +20,10 @@ libclipboard_la_CPPFLAGS = \
 	-DMATE_SETTINGS_LOCALEDIR=\""$(datadir)/locale"\" \
 	$(AM_CPPFLAGS)
 
-libclipboard_la_CFLAGS = \
+libclipboard_la_CFLAGS =		\
 	$(SETTINGS_PLUGIN_CFLAGS)	\
-	$(AM_CFLAGS)
+	$(AM_CFLAGS)			\
+	$(WARN_CFLAGS)
 
 libclipboard_la_LDFLAGS = 	\
 	$(MSD_PLUGIN_LDFLAGS)	\

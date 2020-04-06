@@ -1,7 +1,7 @@
 icondir = $(datadir)/icons/hicolor
 context = apps
 
-BUILT_SOURCES =				\
+BUILT_SOURCES =			\
 	msd-xrandr-manager-glue.h
 
 ICON_FILES = 			\
@@ -68,7 +68,8 @@ libxrandr_la_CFLAGS =			\
 	$(SETTINGS_PLUGIN_CFLAGS)	\
 	$(LIBNOTIFY_CFLAGS)		\
 	$(MATE_DESKTOP_CFLAGS)		\
-	$(AM_CFLAGS)
+	$(AM_CFLAGS)			\
+	$(WARN_CFLAGS)
 
 libxrandr_la_LDFLAGS = 			\
 	$(MSD_PLUGIN_LDFLAGS)

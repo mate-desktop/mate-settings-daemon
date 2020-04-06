@@ -1,7 +1,7 @@
 NULL =
 
-plugin_LTLIBRARIES = \
-	libtyping-break.la		\
+plugin_LTLIBRARIES =		\
+	libtyping-break.la	\
 	$(NULL)
 
 libtyping_break_la_SOURCES = 		\
@@ -16,15 +16,17 @@ libtyping_break_la_CPPFLAGS = \
 	-DMATE_SETTINGS_LOCALEDIR=\""$(datadir)/locale"\" \
 	$(AM_CPPFLAGS)
 
-libtyping_break_la_CFLAGS = \
+libtyping_break_la_CFLAGS =		\
 	$(SETTINGS_PLUGIN_CFLAGS)	\
-	$(AM_CFLAGS)
+	$(AM_CFLAGS)			\
+	$(WARN_CFLAGS)			\
+	$(NULL)
 
-libtyping_break_la_LDFLAGS = 		\
+libtyping_break_la_LDFLAGS =	\
 	$(MSD_PLUGIN_LDFLAGS)	\
 	$(NULL)
 
-libtyping_break_la_LIBADD  = 		\
+libtyping_break_la_LIBADD =	\
 	$(SETTINGS_PLUGIN_LIBS)	\
 	$(NULL)
 

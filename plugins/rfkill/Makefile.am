@@ -16,11 +16,12 @@ librfkill_la_CPPFLAGS = \
 	-DLIBEXECDIR=\""$(libexecdir)"\" 		\
 	$(AM_CPPFLAGS)
 
-librfkill_la_CFLAGS = \
+librfkill_la_CFLAGS =			\
 	$(PLUGIN_CFLAGS)		\
 	$(RFKILL_CFLAGS)		\
 	$(SETTINGS_PLUGIN_CFLAGS)	\
-	$(AM_CFLAGS)
+	$(AM_CFLAGS)			\
+	$(WARN_CFLAGS)
 
 librfkill_la_LDFLAGS = 		\
 	$(MSD_PLUGIN_LDFLAGS)

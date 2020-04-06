@@ -116,7 +116,6 @@ requires:
     - x11proto-kb-dev
 
 variables:
-  - CFLAGS="-Wall -Werror=format-security -Wredundant-decls"
   - 'CHECKERS="
     -enable-checker deadcode.DeadStores
     -enable-checker alpha.deadcode.UnreachableCode
@@ -154,7 +153,7 @@ before_scripts:
 
 build_scripts:
   - ./autogen.sh
-  - scan-build $CHECKERS ./configure --prefix=/usr --enable-pulse
+  - scan-build $CHECKERS ./configure --prefix=/usr --enable-pulse --enable-compile-warnings=maximum
   - if [ $CPU_COUNT -gt 1 ]; then
   -     scan-build $CHECKERS --keep-cc -o html-report make -j $CPU_COUNT
   - else

@@ -1,10 +1,10 @@
 NULL =
 
-plugin_LTLIBRARIES = \
+plugin_LTLIBRARIES =		\
 	libxsettings.la		\
 	$(NULL)
 
-libxsettings_la_SOURCES = 	\
+libxsettings_la_SOURCES =	\
 	msd-xsettings-plugin.h	\
 	msd-xsettings-plugin.c	\
 	msd-xsettings-manager.h	\
@@ -15,8 +15,8 @@ libxsettings_la_SOURCES = 	\
 	xsettings-manager.c	\
 	fontconfig-monitor.h	\
 	fontconfig-monitor.c	\
-	wm-common.h	\
-	wm-common.c	\
+	wm-common.h		\
+	wm-common.c		\
 	$(NULL)
 
 libxsettings_la_CPPFLAGS = \
@@ -24,10 +24,12 @@ libxsettings_la_CPPFLAGS = \
 	-DMATE_SETTINGS_LOCALEDIR=\""$(datadir)/locale"\" \
 	$(AM_CPPFLAGS)
 
-libxsettings_la_CFLAGS = \
+libxsettings_la_CFLAGS =		\
 	$(SETTINGS_PLUGIN_CFLAGS)	\
 	$(FONTCONFIG_CFLAGS)		\
-	$(AM_CFLAGS)
+	$(AM_CFLAGS)			\
+	$(WARN_CFLAGS)			\
+	$(NULL)
 
 libxsettings_la_LDFLAGS = 	\
 	$(MSD_PLUGIN_LDFLAGS)	\
@@ -39,7 +41,7 @@ libxsettings_la_LIBADD  = 	\
 	$(NULL)
 
 plugin_in_files = 		\
-	xsettings.mate-settings-plugin.desktop.in	\
+	xsettings.mate-settings-plugin.desktop.in \
 	$(NULL)
 
 plugin_DATA = $(plugin_in_files:.mate-settings-plugin.desktop.in=.mate-settings-plugin)

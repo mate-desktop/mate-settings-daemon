@@ -13,9 +13,10 @@ libmouse_la_CPPFLAGS = \
 	-DLIBEXECDIR=\""$(libexecdir)"\" \
 	$(AM_CPPFLAGS)
 
-libmouse_la_CFLAGS = \
+libmouse_la_CFLAGS =			\
 	$(SETTINGS_PLUGIN_CFLAGS)	\
-	$(AM_CFLAGS)
+	$(AM_CFLAGS)			\
+	$(WARN_CFLAGS)
 
 libmouse_la_LDFLAGS = 		\
 	$(MSD_PLUGIN_LDFLAGS)
@@ -38,9 +39,10 @@ msd_locate_pointer_SOURCES = 	\
 	msd-timeline.h		\
 	msd-timeline.c
 
-msd_locate_pointer_CFLAGS = \
+msd_locate_pointer_CFLAGS =		\
 	$(SETTINGS_PLUGIN_CFLAGS)	\
-	$(AM_CFLAGS)
+	$(AM_CFLAGS)			\
+	$(WARN_CFLAGS)
 
 msd_locate_pointer_LDADD  = 		\
 	$(SETTINGS_PLUGIN_LIBS)		\
