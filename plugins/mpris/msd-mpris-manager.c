@@ -44,38 +44,18 @@
 
 #include "mate-settings-profile.h"
 #include "msd-mpris-manager.h"
+#include "bus-watch-namespace.h"
 
 #define MPRIS_OBJECT_PATH  "/org/mpris/MediaPlayer2"
 #define MPRIS_INTERFACE    "org.mpris.MediaPlayer2.Player"
 #define MPRIS_PREFIX       "org.mpris.MediaPlayer2."
-
-/* Number of media players supported.
- * Correlates to the number of elements in BUS_NAMES */
-static const gint NUM_BUS_NAMES = 16;
-
-/* Names to we want to watch */
-static const gchar *BUS_NAMES[] = {"org.mpris.MediaPlayer2.audacious",
-                                   "org.mpris.MediaPlayer2.clementine",
-                                   "org.mpris.MediaPlayer2.vlc",
-                                   "org.mpris.MediaPlayer2.mpd",
-                                   "org.mpris.MediaPlayer2.exaile",
-                                   "org.mpris.MediaPlayer2.banshee",
-                                   "org.mpris.MediaPlayer2.rhythmbox",
-                                   "org.mpris.MediaPlayer2.pragha",
-                                   "org.mpris.MediaPlayer2.quodlibet",
-                                   "org.mpris.MediaPlayer2.guayadeque",
-                                   "org.mpris.MediaPlayer2.amarok",
-                                   "org.mpris.MediaPlayer2.nuvolaplayer",
-                                   "org.mpris.MediaPlayer2.xbmc",
-                                   "org.mpris.MediaPlayer2.xnoise",
-                                   "org.mpris.MediaPlayer2.gmusicbrowser",
-                                   "org.mpris.MediaPlayer2.spotify"};
 
 struct MsdMprisManagerPrivate
 {
         GQueue       *media_player_queue;
         GDBusProxy   *media_keys_proxy;
         guint         watch_id;
+        guint         namespace_watcher_id;
 };
 
 enum {
@@ -111,8 +91,9 @@ static void
 mp_name_appeared (GDBusConnection  *connection,
                   const gchar      *name,
                   const gchar      *name_owner,
-                  MsdMprisManager  *manager)
+                  gpointer          user_data)
 {
+    MsdMprisManager *manager = user_data;
     gchar *player_name;
 
     g_debug ("MPRIS Name acquired: %s\n", name);
@@ -127,8 +108,9 @@ mp_name_appeared (GDBusConnection  *connection,
 static void
 mp_name_vanished (GDBusConnection *connection,
                   const gchar     *name,
-                  MsdMprisManager *manager)
+                  gpointer         user_data)
 {
+    MsdMprisManager *manager = user_data;
     gchar *player_name;
     GList *player_list;
 
@@ -315,26 +297,18 @@ gboolean
 msd_mpris_manager_start (MsdMprisManager   *manager,
                          GError           **error)
 {
-    GBusNameWatcherFlags flags = G_BUS_NAME_WATCHER_FLAGS_NONE;
-    int i;
-
     g_debug ("Starting mpris manager");
     mate_settings_profile_start (NULL);
 
     manager->priv->media_player_queue = g_queue_new();
 
-    /* Register all the names we wish to watch.*/
-    for (i = 0; i < NUM_BUS_NAMES; i++)
-    {
-        g_bus_watch_name(G_BUS_TYPE_SESSION,
-                         BUS_NAMES[i],
-                         flags,
-                         (GBusNameAppearedCallback) mp_name_appeared,
-                         (GBusNameVanishedCallback) mp_name_vanished,
-                         manager,
-                         NULL);
-    }
-
+    /* Register the namespace we wish to watch. */
+    manager->priv->namespace_watcher_id = bus_watch_namespace (G_BUS_TYPE_SESSION,
+                                                               "org.mpris.MediaPlayer2",
+                                                               mp_name_appeared,
+                                                               mp_name_vanished,
+                                                               manager,
+                                                               NULL);
 
     manager->priv->watch_id = g_bus_watch_name (G_BUS_TYPE_SESSION,
                                                 "org.mate.SettingsDaemon",
@@ -361,6 +335,12 @@ msd_mpris_manager_stop (MsdMprisManager *manager)
         g_bus_unwatch_name (manager->priv->watch_id);
         manager->priv->watch_id = 0;
     }
+
+    if (manager->priv->namespace_watcher_id != 0) {
+        bus_unwatch_namespace (manager->priv->namespace_watcher_id);
+        manager->priv->namespace_watcher_id = 0;
+    }
+
 }
 
 static void

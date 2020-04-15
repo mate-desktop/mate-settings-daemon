@@ -2,6 +2,8 @@ plugin_LTLIBRARIES = \
 	libmpris.la
 
 libmpris_la_SOURCES = 		\
+	bus-watch-namespace.c	\
+	bus-watch-namespace.h	\
 	msd-mpris-manager.c	\
 	msd-mpris-manager.h	\
 	msd-mpris-plugin.c	\
