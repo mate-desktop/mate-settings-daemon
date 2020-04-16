@@ -17,7 +17,7 @@ msd-media-keys-manager-glue.h: msd-media-keys-manager.xml Makefile
 	&& rm -f xgen-$(@F)
 
 msd-marshal.c: msd-marshal.list
-	$(AM_V_GEN) $(GLIB_GENMARSHAL) --prefix=msd_marshal $< --header --body --internal > $@
+	$(AM_V_GEN) $(GLIB_GENMARSHAL) --prefix=msd_marshal $< --body --prototypes --internal > $@
 
 msd-marshal.h: msd-marshal.list
 	$(AM_V_GEN) $(GLIB_GENMARSHAL) --prefix=msd_marshal $< --header --internal > $@
