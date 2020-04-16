@@ -152,6 +152,7 @@ before_scripts:
   - fi
   - make
   - make install
+
   - cd ${START_DIR}
   - '[ -f mate-common-1.24.1.tar.xz ] || curl -Ls -o mate-common-1.24.1.tar.xz https://github.com/mate-desktop/mate-common/releases/download/v1.24.1/mate-common-1.24.1.tar.xz'
   - tar xf mate-common-1.24.1.tar.xz
@@ -165,15 +166,17 @@ before_scripts:
   - make install
 
 build_scripts:
+  - if [ ${DISTRO_NAME} == "debian" ];then
+  -     export CFLAGS+=" -Wsign-compare -Wunused-parameter"
+  -     cppcheck --enable=warning,style,performance,portability,information,missingInclude -i'mate-desktop-1.23.2' .
+  - fi
+
   - ./autogen.sh
   - scan-build $CHECKERS ./configure --prefix=/usr --enable-pulse --enable-compile-warnings=maximum
   - if [ $CPU_COUNT -gt 1 ]; then
   -     scan-build $CHECKERS --keep-cc -o html-report make -j $CPU_COUNT
   - else
   -     scan-build $CHECKERS --keep-cc -o html-report make
-  - fi
-  - if [ ${DISTRO_NAME} == "debian" ];then
-  -     cppcheck --enable=warning,style,performance,portability,information,missingInclude -i'mate-desktop-1.23.2' .
   - fi
 
 after_scripts:
