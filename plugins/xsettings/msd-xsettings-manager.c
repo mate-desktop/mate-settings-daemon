@@ -508,8 +508,11 @@ static gboolean
 delayed_toggle_bg_draw (gboolean value)
 {
         GSettings *settings;
+
         settings = g_settings_new ("org.mate.background");
         g_settings_set_boolean (settings, "show-desktop-icons", value);
+        g_object_unref (settings);
+
         return FALSE;
 }
 
@@ -574,6 +577,7 @@ scale_change_workarounds (MateXSettingsManager *manager, int new_scale)
                         g_timeout_add_seconds (1, (GSourceFunc) delayed_toggle_bg_draw, (gpointer) FALSE);
                         g_timeout_add_seconds (2, (GSourceFunc) delayed_toggle_bg_draw, (gpointer) TRUE);
                 }
+                g_object_unref (desktop_settings);
         }
 
         /* Store new scale value */
