@@ -36,3 +36,5 @@ endif
 
 SUBDIRS = common $(enabled_plugins)
 DIST_SUBDIRS = $(SUBDIRS) $(disabled_plugins)
+
+-include $(top_srcdir)/git.mk

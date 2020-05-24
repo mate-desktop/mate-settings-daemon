@@ -96,5 +96,6 @@ CLEANFILES = 				\
 	$(BUILT_SOURCES)		\
 	$(NULL)
 
+-include $(top_srcdir)/git.mk
 
 # vim: ts=8

@@ -13,3 +13,5 @@ xrdb_DATA =		\
 EXTRA_DIST = 		\
 	$(xrdb_DATA)	\
 	$(NULL)
+
+-include $(top_srcdir)/git.mk

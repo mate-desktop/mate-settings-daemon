@@ -40,3 +40,5 @@ DISTCLEANFILES = $(plugin_DATA)
 
 $(plugin_DATA): $(plugin_in_files)
 	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
+
+-include $(top_srcdir)/git.mk
