@@ -26,3 +26,5 @@ libcommon_la_LDFLAGS = \
 libcommon_la_LIBADD  = \
 	$(SETTINGS_PLUGIN_LIBS)		\
 	$(XINPUT_LIBS)
+
+-include $(top_srcdir)/git.mk

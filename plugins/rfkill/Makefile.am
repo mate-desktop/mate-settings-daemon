@@ -43,3 +43,5 @@ udevrules_DATA = 61-mate-settings-daemon-rfkill.rules
 EXTRA_DIST = $(plugin_in_files) $(udevrules_DATA)
 CLEANFILES = $(plugin_DATA)
 DISTCLEANFILES = $(plugin_DATA)
+
+-include $(top_srcdir)/git.mk

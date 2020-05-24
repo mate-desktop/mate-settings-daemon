@@ -58,3 +58,5 @@ CLEANFILES = 		\
 	org.mate.SettingsDaemon.DateTimeMechanism.service	\
 	org.mate.settingsdaemon.datetimemechanism.policy	\
 	$(BUILT_SOURCES)
+
+-include $(top_srcdir)/git.mk
