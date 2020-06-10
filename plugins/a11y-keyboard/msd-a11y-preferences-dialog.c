@@ -49,6 +49,7 @@
 #define KEY_BOUNCE_KEYS_ENABLED      "bouncekeys-enable"
 #define KEY_SLOW_KEYS_ENABLED        "slowkeys-enable"
 #define KEY_MOUSE_KEYS_ENABLED       "mousekeys-enable"
+#define KEY_CAPSLOCK_BEEP_ENABLED    "capslock-beep-enable"
 
 #define KEY_AT_SCHEMA                   "org.mate.applications-at"
 #define KEY_AT_SCREEN_KEYBOARD_ENABLED  "screen-keyboard-enabled"
@@ -91,6 +92,7 @@ struct MsdA11yPreferencesDialogPrivate
         GtkWidget *sticky_keys_checkbutton;
         GtkWidget *slow_keys_checkbutton;
         GtkWidget *bounce_keys_checkbutton;
+        GtkWidget *capslock_beep_checkbutton;
 
         GtkWidget *large_print_checkbutton;
         GtkWidget *high_contrast_checkbutton;
@@ -323,6 +325,18 @@ config_set_slow_keys (MsdA11yPreferencesDialog *dialog, gboolean enabled)
 }
 
 static gboolean
+config_get_capslock_beep (MsdA11yPreferencesDialog *dialog, gboolean *is_writable)
+{
+        return config_get_bool (dialog->priv->settings_a11y, KEY_CAPSLOCK_BEEP_ENABLED, is_writable);
+}
+
+static void
+config_set_capslock_beep (MsdA11yPreferencesDialog *dialog, gboolean enabled)
+{
+        g_settings_set_boolean (dialog->priv->settings_a11y, KEY_CAPSLOCK_BEEP_ENABLED, enabled);
+}
+
+static gboolean
 config_have_at_gsettings_condition (const char *condition)
 {
         DBusGProxy      *sm_proxy;
@@ -422,6 +436,13 @@ on_slow_keys_checkbutton_toggled (GtkToggleButton          *button,
 }
 
 static void
+on_capslock_beep_checkbutton_toggled (GtkToggleButton          *button,
+                                      MsdA11yPreferencesDialog *dialog)
+{
+        config_set_capslock_beep (dialog, gtk_toggle_button_get_active (button));
+}
+
+static void
 on_high_contrast_checkbutton_toggled (GtkToggleButton          *button,
                                       MsdA11yPreferencesDialog *dialog)
 {
@@ -489,6 +510,18 @@ ui_set_slow_keys (MsdA11yPreferencesDialog *dialog,
         active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->priv->slow_keys_checkbutton));
         if (active != enabled) {
                 gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->priv->slow_keys_checkbutton), enabled);
+        }
+}
+
+static void
+ui_set_capslock_beep (MsdA11yPreferencesDialog *dialog,
+                      gboolean                  enabled)
+{
+        gboolean active;
+
+        active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->priv->capslock_beep_checkbutton));
+        if (active != enabled) {
+                gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->priv->capslock_beep_checkbutton), enabled);
         }
 }
 
@@ -569,6 +602,10 @@ key_changed_cb (GSettings                *settings,
                 gboolean enabled;
                 enabled = g_settings_get_boolean (settings, key);
                 ui_set_slow_keys (dialog, enabled);
+        } else if (g_strcmp0 (key, KEY_CAPSLOCK_BEEP_ENABLED) == 0) {
+                gboolean enabled;
+                enabled = g_settings_get_boolean (settings, key);
+                ui_set_capslock_beep (dialog, enabled);
         } else if (g_strcmp0 (key, KEY_AT_SCREEN_READER_ENABLED) == 0) {
                 gboolean enabled;
                 enabled = g_settings_get_boolean (settings, key);
@@ -629,6 +666,19 @@ setup_dialog (MsdA11yPreferencesDialog *dialog,
                           dialog);
         enabled = config_get_slow_keys (dialog, &is_writable);
         ui_set_slow_keys (dialog, enabled);
+        if (! is_writable) {
+                gtk_widget_set_sensitive (widget, FALSE);
+        }
+
+        widget = GTK_WIDGET (gtk_builder_get_object (builder,
+                                                     "capslock_beep_checkbutton"));
+        dialog->priv->capslock_beep_checkbutton = widget;
+        g_signal_connect (widget,
+                          "toggled",
+                          G_CALLBACK (on_capslock_beep_checkbutton_toggled),
+                          dialog);
+        enabled = config_get_capslock_beep (dialog, &is_writable);
+        ui_set_capslock_beep (dialog, enabled);
         if (! is_writable) {
                 gtk_widget_set_sensitive (widget, FALSE);
         }

@@ -49,9 +49,11 @@
 
 #include "mate-settings-profile.h"
 #include "msd-a11y-keyboard-manager.h"
+#include "msd-a11y-keyboard-atspi.h"
 #include "msd-a11y-preferences-dialog.h"
 
 #define CONFIG_SCHEMA "org.mate.accessibility-keyboard"
+#define KEY_CAPSLOCK_BEEP_ENABLED "capslock-beep-enable"
 #define NOTIFICATION_TIMEOUT 30
 
 struct MsdA11yKeyboardManagerPrivate
@@ -64,6 +66,7 @@ struct MsdA11yKeyboardManagerPrivate
         GtkWidget *preferences_dialog;
         GtkStatusIcon *status_icon;
         XkbDescRec *original_xkb_desc;
+        MsdA11yKeyboardAtspi *capslock_beep;
 
         GSettings  *settings;
 
@@ -984,6 +987,17 @@ keyboard_callback (GSettings              *settings,
         maybe_show_status_icon (manager);
 }
 
+static void
+capslock_beep_callback (GSettings              *settings,
+                        gchar                  *key G_GNUC_UNUSED,
+                        MsdA11yKeyboardManager *manager)
+{
+        if (g_settings_get_boolean (settings, KEY_CAPSLOCK_BEEP_ENABLED))
+                msd_a11y_keyboard_atspi_start (manager->priv->capslock_beep);
+        else
+                msd_a11y_keyboard_atspi_stop (manager->priv->capslock_beep);
+}
+
 static gboolean
 start_a11y_keyboard_idle_cb (MsdA11yKeyboardManager *manager)
 {
@@ -992,10 +1006,17 @@ start_a11y_keyboard_idle_cb (MsdA11yKeyboardManager *manager)
         g_debug ("Starting a11y_keyboard manager");
         mate_settings_profile_start (NULL);
 
+        manager->priv->settings = g_settings_new (CONFIG_SCHEMA);
+
+        manager->priv->capslock_beep = msd_a11y_keyboard_atspi_new ();
+        if (g_settings_get_boolean (manager->priv->settings, KEY_CAPSLOCK_BEEP_ENABLED))
+                msd_a11y_keyboard_atspi_start (manager->priv->capslock_beep);
+        g_signal_connect (manager->priv->settings, "changed::"KEY_CAPSLOCK_BEEP_ENABLED,
+                          G_CALLBACK (capslock_beep_callback), manager);
+
         if (!xkb_enabled (manager))
                 goto out;
 
-        manager->priv->settings = g_settings_new (CONFIG_SCHEMA);
         g_signal_connect (manager->priv->settings, "changed", G_CALLBACK (keyboard_callback), manager);
 
         set_devicepresence_handler (manager);
@@ -1104,6 +1125,8 @@ msd_a11y_keyboard_manager_stop (MsdA11yKeyboardManager *manager)
 
         p->slowkeys_shortcut_val = FALSE;
         p->stickykeys_shortcut_val = FALSE;
+
+        g_clear_object (&p->capslock_beep);
 }
 
 static void

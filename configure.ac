@@ -59,6 +59,7 @@ GTK_REQUIRED_VERSION=3.22.0
 MATE_DESKTOP_REQUIRED_VERSION=1.23.2
 LIBMATEKBD_REQUIRED_VERSION=1.17.0
 LIBNOTIFY_REQUIRED_VERSION=0.7.0
+LIBATSPI_REQUIRED_VERSION=2.0
 LIBMATEMIXER_REQUIRED_VERSION=1.10.0
 
 PKG_CHECK_MODULES(SETTINGS_DAEMON,
@@ -114,6 +115,14 @@ if test "x$with_libnotify" != "xno"; then
 fi
 AC_SUBST(LIBNOTIFY_CFLAGS)
 AC_SUBST(LIBNOTIFY_LIBS)
+
+dnl ---------------------------------------------------------------------------
+dnl - Check for libatspi
+dnl ---------------------------------------------------------------------------
+
+PKG_CHECK_MODULES(LIBATSPI, atspi-2 >= $LIBATSPI_REQUIRED_VERSION,
+          [AC_DEFINE(HAVE_LIBATSPI, 1, [Define if libatspi is available])
+          have_libatspi=yes], have_libatspi=no)
 
 dnl ---------------------------------------------------------------------------
 dnl - Check for D-Bus
