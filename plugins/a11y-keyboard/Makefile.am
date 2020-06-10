@@ -42,6 +42,8 @@ liba11y_keyboard_la_SOURCES = 		\
 	msd-a11y-keyboard-plugin.c	\
 	msd-a11y-keyboard-manager.h	\
 	msd-a11y-keyboard-manager.c	\
+	msd-a11y-keyboard-atspi.h	\
+	msd-a11y-keyboard-atspi.c	\
 	msd-a11y-preferences-dialog.h	\
 	msd-a11y-preferences-dialog.c	\
 	$(NULL)
@@ -55,6 +57,7 @@ liba11y_keyboard_la_CPPFLAGS = \
 liba11y_keyboard_la_CFLAGS =		\
 	$(SETTINGS_PLUGIN_CFLAGS)	\
 	$(LIBNOTIFY_CFLAGS)		\
+	$(LIBATSPI_CFLAGS)		\
 	$(AM_CFLAGS)			\
 	$(WARN_CFLAGS)			\
 	$(NULL)
@@ -66,6 +69,7 @@ liba11y_keyboard_la_LDFLAGS = 		\
 liba11y_keyboard_la_LIBADD  = 		\
 	$(SETTINGS_PLUGIN_LIBS)		\
 	$(LIBNOTIFY_LIBS)		\
+	$(LIBATSPI_LIBS)		\
 	$(NULL)
 
 plugin_in_files = 		\
