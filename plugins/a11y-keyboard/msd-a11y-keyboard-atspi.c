@@ -27,25 +27,8 @@
 #include <gdk/gdk.h>
 #include <atspi/atspi.h>
 
-
-/* ugly workaround https://gitlab.gnome.org/GNOME/at-spi2-core/-/issues/22 */
-static AtspiDeviceListener *
-WORKAROUND_atspi_device_listener_new (AtspiDeviceListenerCB callback,
-                                      void                 *user_data,
-                                      GDestroyNotify        callback_destroyed)
-{
-        AtspiDeviceListener *listener;
-
-        listener = atspi_device_listener_new (callback, user_data,
-                                              callback_destroyed);
-
-        /* Yes, we do leak a reference.  But we have to, because there's a
-         * nasty bug in libatspi [1] where if a listener is destroyed it leads
-         * to invalid memory access and potentially a crash.
-         * [1] https://gitlab.gnome.org/GNOME/at-spi2-core/-/issues/22 */
-        return g_object_ref (listener);
-}
-#define atspi_device_listener_new WORKAROUND_atspi_device_listener_new
+/* See https://gitlab.gnome.org/GNOME/at-spi2-core/-/issues/22 */
+#define DESTROYING_ATSPI_LISTENER_CRASHES 1
 
 
 struct MsdA11yKeyboardAtspiPrivate
@@ -94,18 +77,19 @@ msd_a11y_keyboard_atspi_init (MsdA11yKeyboardAtspi *self)
 {
         self->priv = msd_a11y_keyboard_atspi_get_instance_private (self);
 
+        self->priv->listener = NULL;
+        self->priv->listening = FALSE;
+
+#if DESTROYING_ATSPI_LISTENER_CRASHES
         /* init AT-SPI if needed */
         atspi_init ();
 
-        /* Ideally we'd create the listener in start() only -- we don't need
-         * it otherwise.  But there's a bug [1] in libatspi where destroying a
-         * listener leads to a crash, so we have a workaround keeping the
-         * listener alive, and thus try and avoid creating (and not destroying)
-         * listener more often than absolutely necessary.
-         * [1] https://gitlab.gnome.org/GNOME/at-spi2-core/-/issues/22 */
         self->priv->listener = atspi_device_listener_new (on_key_press_event,
                                                           self, NULL);
-        self->priv->listening = FALSE;
+        /* leak a reference so that this listener is *never* destroyed, to
+         * prevent the crash even if our object gets destroyed. */
+        g_object_ref (self->priv->listener);
+#endif
 }
 
 static void
@@ -153,8 +137,6 @@ register_deregister_events (MsdA11yKeyboardAtspi *self,
         }
 
         g_array_unref (shiftlock_key_set);
-
-        self->priv->listening = do_register;
 }
 
 void
@@ -162,8 +144,18 @@ msd_a11y_keyboard_atspi_start (MsdA11yKeyboardAtspi *self)
 {
         g_return_if_fail (MSD_IS_A11Y_KEYBOARD_ATSPI (self));
 
-        if (! self->priv->listening)
-                register_deregister_events (self, TRUE);
+        if (self->priv->listening)
+                return;
+
+#if ! DESTROYING_ATSPI_LISTENER_CRASHES
+        /* init AT-SPI if needed */
+        atspi_init ();
+
+        self->priv->listener = atspi_device_listener_new (on_key_press_event,
+                                                          self, NULL);
+#endif
+        register_deregister_events (self, TRUE);
+        self->priv->listening = TRUE;
 }
 
 void
@@ -171,8 +163,15 @@ msd_a11y_keyboard_atspi_stop (MsdA11yKeyboardAtspi *self)
 {
         g_return_if_fail (MSD_IS_A11Y_KEYBOARD_ATSPI (self));
 
-        if (self->priv->listening)
-                register_deregister_events (self, FALSE);
+        if (! self->priv->listening)
+                return;
+
+#if DESTROYING_ATSPI_LISTENER_CRASHES
+        register_deregister_events (self, FALSE);
+#else
+        g_clear_object (&self->priv->listener);
+#endif
+        self->priv->listening = FALSE;
 }
 
 #else /* ! defined(HAVE_LIBATSPI): AT-SPI is not available, provide stubs */
