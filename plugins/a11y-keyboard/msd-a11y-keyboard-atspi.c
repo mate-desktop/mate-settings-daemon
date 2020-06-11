@@ -62,9 +62,9 @@ static gboolean
 on_key_press_event (const AtspiDeviceEvent *event,
                     void                   *user_data G_GNUC_UNUSED)
 {
-        /* don't ring when disabling capslock */
-        if (event->id == GDK_KEY_Caps_Lock &&
-            event->modifiers & (1 << ATSPI_MODIFIER_SHIFTLOCK))
+        /* don't ring on capslock itself, that's taken care of by togglekeys
+         * if the user want it. */
+        if (event->id == GDK_KEY_Caps_Lock)
                 return FALSE;
 
         gdk_display_beep (gdk_display_get_default ());
@@ -96,47 +96,29 @@ static void
 register_deregister_events (MsdA11yKeyboardAtspi *self,
                             gboolean              do_register)
 {
-        AtspiKeyDefinition shiftlock_key;
-        GArray *shiftlock_key_set;
-
         g_return_if_fail (MSD_IS_A11Y_KEYBOARD_ATSPI (self));
         g_return_if_fail (ATSPI_IS_DEVICE_LISTENER (self->priv->listener));
 
-        /* register listeners for CAPS_LOCK with any modifier but CAPS_LOCK,
-         * and all keys with CAPS_LOCK modifier, so we grab when CAPS_LOCK is
-         * active or gets activated */
-        shiftlock_key.keycode = 0;
-        shiftlock_key.keysym = GDK_KEY_Caps_Lock;
-        shiftlock_key.keystring = NULL;
-
-        shiftlock_key_set = g_array_new (FALSE, FALSE, sizeof shiftlock_key);
-        g_array_append_val (shiftlock_key_set, shiftlock_key);
-
+        /* register listeners for all keys with CAPS_LOCK modifier */
         for (AtspiKeyMaskType mod_mask = 0; mod_mask < 256; mod_mask++)
         {
-                GArray *key_set;
-
-                if (mod_mask & (1 << ATSPI_MODIFIER_SHIFTLOCK))
-                        key_set = NULL;
-                else
-                        key_set = shiftlock_key_set;
+                if (! (mod_mask & (1 << ATSPI_MODIFIER_SHIFTLOCK)))
+                        continue;
 
                 if (do_register)
                         atspi_register_keystroke_listener (self->priv->listener,
-                                                           key_set,
+                                                           NULL,
                                                            mod_mask,
                                                            1 << ATSPI_KEY_PRESSED_EVENT,
                                                            ATSPI_KEYLISTENER_NOSYNC,
                                                            NULL);
                 else
                         atspi_deregister_keystroke_listener (self->priv->listener,
-                                                             key_set,
+                                                             NULL,
                                                              mod_mask,
                                                              1 << ATSPI_KEY_PRESSED_EVENT,
                                                              NULL);
         }
-
-        g_array_unref (shiftlock_key_set);
 }
 
 void
