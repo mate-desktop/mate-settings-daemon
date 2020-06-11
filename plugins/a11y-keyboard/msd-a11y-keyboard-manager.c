@@ -957,6 +957,53 @@ set_settings_from_server (MsdA11yKeyboardManager *manager)
         g_object_unref (settings);
 }
 
+typedef struct {
+        GdkDisplay *display;
+        gint count;
+} BeepSequenceData;
+
+static gboolean
+on_beep_dequence_timeout (gpointer user_data)
+{
+        BeepSequenceData *data = user_data;
+
+        gdk_display_beep (data->display);
+        data->count--;
+
+        return data->count > 0;
+}
+
+static void
+beep_sequence (MsdA11yKeyboardManager  *manager,
+               GdkDisplay              *display,
+               gint                     count,
+               gint                     delay)
+{
+        g_return_if_fail (MSD_IS_A11Y_KEYBOARD_MANAGER (manager));
+
+        if (count < 1)
+                return;
+
+        if (! display)
+                display = gdk_display_get_default ();
+
+        gdk_display_beep (display);
+        if (count > 1) {
+                BeepSequenceData *data = g_malloc (sizeof *data);
+
+                data->display = display;
+                data->count = count - 1;
+
+                /* don't allow a delay below 50ms, it doesn't make much sense
+                 * anyway and is more likely to be a broken setting */
+                g_warn_if_fail (delay >= 50);
+                delay = MAX (delay, 50);
+
+                g_timeout_add_full (G_PRIORITY_DEFAULT, (guint) delay,
+                                    on_beep_dequence_timeout, data, g_free);
+        }
+}
+
 static GdkFilterReturn
 cb_xkb_event_filter (GdkXEvent              *xevent,
                      GdkEvent               *ignored1,
@@ -979,6 +1026,21 @@ cb_xkb_event_filter (GdkXEvent              *xevent,
                          * set_settings_from_server().
                          */
                 }
+        } else if (xev->xany.type == (manager->priv->xkbEventBase + XkbEventCode) &&
+                   xkbEv->any.xkb_type == XkbIndicatorStateNotify &&
+                   g_settings_get_boolean (manager->priv->settings, "togglekeys-enable")) {
+                GdkDisplay *display = gdk_x11_lookup_xdisplay (xkbEv->any.display);
+                gint beep_count;
+                gint beep_delay;
+
+                if (xkbEv->indicators.state & xkbEv->indicators.changed) {
+                        beep_count = g_settings_get_int (manager->priv->settings, "togglekeys-enable-beep-count");
+                        beep_delay = g_settings_get_int (manager->priv->settings, "togglekeys-enable-beep-delay");
+                } else {
+                        beep_count = g_settings_get_int (manager->priv->settings, "togglekeys-disable-beep-count");
+                        beep_delay = g_settings_get_int (manager->priv->settings, "togglekeys-disable-beep-delay");
+                }
+                beep_sequence (manager, display, beep_count, beep_delay);
         }
 
         return GDK_FILTER_CONTINUE;
@@ -1036,6 +1098,7 @@ start_a11y_keyboard_idle_cb (MsdA11yKeyboardManager *manager)
         manager->priv->original_xkb_desc = get_xkb_desc_rec (manager);
 
         event_mask = XkbControlsNotifyMask;
+        event_mask |= XkbIndicatorStateNotifyMask;
 #ifdef MATE_ENABLE_DEBUG
         event_mask |= XkbAccessXNotifyMask; /* make default when AXN_AXKWarning works */
 #endif /* MATE_ENABLE_DEBUG */
