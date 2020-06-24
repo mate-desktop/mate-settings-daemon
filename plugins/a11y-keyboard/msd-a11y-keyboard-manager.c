@@ -991,13 +991,16 @@ beep_sequence (MsdA11yKeyboardManager  *manager,
         if (count > 1) {
                 BeepSequenceData *data = g_malloc (sizeof *data);
 
-                data->display = display;
-                data->count = count - 1;
+                /* don't allow more than 8 beeps total, nor a delay outside
+                 * the range 50ms-5s: anything outside this is not very
+                 * reasonable and is more likely to be a broken setting,
+                 * and we don't want to be beeping forever. */
+                g_warn_if_fail (count <= 8);
+                g_warn_if_fail (delay >= 50 && delay <= 5000);
 
-                /* don't allow a delay below 50ms, it doesn't make much sense
-                 * anyway and is more likely to be a broken setting */
-                g_warn_if_fail (delay >= 50);
-                delay = MAX (delay, 50);
+                data->display = display;
+                data->count = MIN (8, count) - 1;
+                delay = CLAMP (delay, 50, 5000);
 
                 g_timeout_add_full (G_PRIORITY_DEFAULT, (guint) delay,
                                     on_beep_dequence_timeout, data, g_free);
