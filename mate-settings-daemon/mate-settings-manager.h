@@ -24,9 +24,7 @@
 
 #include <glib-object.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+G_BEGIN_DECLS
 
 #define MATE_TYPE_SETTINGS_MANAGER         (mate_settings_manager_get_type ())
 #define MATE_SETTINGS_MANAGER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), MATE_TYPE_SETTINGS_MANAGER, MateSettingsManager))
@@ -67,21 +65,18 @@ enum
 
 #define MATE_SETTINGS_MANAGER_ERROR mate_settings_manager_error_quark ()
 
-GQuark                 mate_settings_manager_error_quark         (void);
-GType                  mate_settings_manager_get_type   (void);
+GQuark                 mate_settings_manager_error_quark   (void);
+GType                  mate_settings_manager_get_type      (void);
 
 MateSettingsManager * mate_settings_manager_new        (void);
 
-gboolean               mate_settings_manager_start      (MateSettingsManager *manager,
-                                                          gint                load_init_flag,
-                                                          GError            **error);
-void                   mate_settings_manager_stop       (MateSettingsManager *manager);
+gboolean              mate_settings_manager_start      (MateSettingsManager *manager,
+                                                        gint                 load_init_flag,
+                                                        GError             **error);
+void                  mate_settings_manager_stop       (MateSettingsManager *manager);
+gboolean              mate_settings_manager_awake      (MateSettingsManager *manager,
+                                                        GError              **error);
 
-gboolean               mate_settings_manager_awake      (MateSettingsManager *manager,
-                                                          GError              **error);
-
-#ifdef __cplusplus
-}
-#endif
+G_END_DECLS
 
 #endif /* __MATE_SETTINGS_MANAGER_H */
