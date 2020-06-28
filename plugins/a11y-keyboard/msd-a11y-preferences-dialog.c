@@ -31,9 +31,6 @@
 #include <glib-object.h>
 #include <gtk/gtk.h>
 #include <gdk/gdkx.h>
-
-#include <dbus/dbus-glib.h>
-
 #include <gio/gio.h>
 
 #include "msd-a11y-preferences-dialog.h"
@@ -343,41 +340,44 @@ config_set_capslock_beep (MsdA11yPreferencesDialog *dialog, gboolean enabled)
 static gboolean
 config_have_at_gsettings_condition (const char *condition)
 {
-        DBusGProxy      *sm_proxy;
-        DBusGConnection *connection;
-        GError          *error;
-        gboolean         res;
-        gboolean         is_handled;
+        GDBusProxy *proxy = NULL;
+        GError     *error = NULL;
+        GVariant   *ret;
+        gboolean    is_handled;
 
-        error = NULL;
-        connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
-        if (connection == NULL) {
+        proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SYSTEM,
+                                               G_DBUS_PROXY_FLAGS_NONE,
+                                               NULL,
+                                               SM_DBUS_NAME,
+                                               SM_DBUS_PATH,
+                                               SM_DBUS_INTERFACE,
+                                               NULL,
+                                               &error);
+        if (proxy == NULL) {
                 g_warning ("Unable to connect to session bus: %s", error->message);
-                return FALSE;
-        }
-        sm_proxy = dbus_g_proxy_new_for_name (connection,
-                                              SM_DBUS_NAME,
-                                              SM_DBUS_PATH,
-                                              SM_DBUS_INTERFACE);
-        if (sm_proxy == NULL) {
+                g_error_free (error);
                 return FALSE;
         }
 
         is_handled = FALSE;
-        res = dbus_g_proxy_call (sm_proxy,
-                                 "IsAutostartConditionHandled",
-                                 &error,
-                                 G_TYPE_STRING, condition,
-                                 G_TYPE_INVALID,
-                                 G_TYPE_BOOLEAN, &is_handled,
-                                 G_TYPE_INVALID);
-        if (! res) {
+        ret = g_dbus_proxy_call_sync (proxy,
+                                      "IsAutostartConditionHandled",
+                                      g_variant_new ("(s)", condition),
+                                      G_DBUS_CALL_FLAGS_NONE,
+                                      -1,
+                                      NULL,
+                                      &error);
+        if (ret == NULL) {
                 g_warning ("Unable to call IsAutostartConditionHandled (%s): %s",
                            condition,
                            error->message);
+                g_error_free (error);
+        } else {
+                g_variant_get (ret, "(b)", &is_handled);
+                g_variant_unref (ret);
         }
 
-        g_object_unref (sm_proxy);
+        g_object_unref (proxy);
 
         return is_handled;
 }
