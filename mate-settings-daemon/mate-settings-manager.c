@@ -26,28 +26,45 @@
 #include <unistd.h>
 #include <string.h>
 
-#include <glib.h>
 #include <glib/gi18n.h>
-#include <glib-object.h>
-#define DBUS_API_SUBJECT_TO_CHANGE
-#include <dbus/dbus-glib.h>
-#include <dbus/dbus-glib-lowlevel.h>
 #include <gio/gio.h>
+#include <gtk/gtk.h>
 
 #include "mate-settings-plugin-info.h"
 #include "mate-settings-manager.h"
-#include "mate-settings-manager-glue.h"
 #include "mate-settings-profile.h"
 
 #define MSD_MANAGER_DBUS_PATH "/org/mate/SettingsDaemon"
+#define MSD_MANAGER_DBUS_NAME "org.mate.SettingsDaemon"
 
 #define DEFAULT_SETTINGS_PREFIX "org.mate.SettingsDaemon"
 
 #define PLUGIN_EXT ".mate-settings-plugin"
 
+static void
+mate_settings_manager_finalize (GObject *object);
+
+static const gchar introspection_xml[] =
+"<node name='/org/mate/SettingsDaemon'>"
+"  <interface name='org.mate.SettingsDaemon'>"
+"    <method name='Awake'/>"
+"    <method name='Start'/>"
+"    <signal name='PluginActivated'>"
+"      <arg name='name' type='s'/>"
+"    </signal>"
+"    <signal name='PluginDeactivated'>"
+"      <arg name='name' type='s'/>"
+"    </signal>"
+"  </interface>"
+"</node>";
+
 struct MateSettingsManagerPrivate
 {
-        DBusGConnection            *connection;
+        GDBusNodeInfo              *introspection_data;
+        GDBusConnection            *connection;
+        guint                       dbus_register_object_id;
+        GCancellable               *cancellable;
+
         GSList                     *plugins;
         gint                        init_load_priority;
         gint                        load_init_flag;
@@ -60,8 +77,6 @@ enum {
 };
 
 static guint signals [LAST_SIGNAL] = { 0, };
-
-static void     mate_settings_manager_finalize    (GObject *object);
 
 G_DEFINE_TYPE_WITH_PRIVATE (MateSettingsManager, mate_settings_manager, G_TYPE_OBJECT)
 
@@ -318,23 +333,78 @@ mate_settings_manager_awake (MateSettingsManager *manager,
         return mate_settings_manager_start (manager, PLUGIN_LOAD_ALL, error);
 }
 
-static gboolean
-register_manager (MateSettingsManager *manager)
+static void
+handle_method_call (GDBusConnection       *connection,
+                    const gchar           *sender,
+                    const gchar           *object_path,
+                    const gchar           *interface_name,
+                    const gchar           *method_name,
+                    GVariant              *parameters,
+                    GDBusMethodInvocation *invocation,
+                    gpointer               user_data)
 {
+        MateSettingsManager *manager = (MateSettingsManager *) user_data;
         GError *error = NULL;
 
-        manager->priv->connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
-        if (manager->priv->connection == NULL) {
-                if (error != NULL) {
-                        g_critical ("error getting system bus: %s", error->message);
-                        g_error_free (error);
-                }
-                return FALSE;
+        g_debug ("Calling method '%s' for settings daemon", method_name);
+
+        if (g_strcmp0 (method_name, "Awake") == 0) {
+                if (mate_settings_manager_awake (manager, &error) == FALSE)
+                        g_dbus_method_invocation_return_gerror (invocation, error);
+                else
+                        g_dbus_method_invocation_return_value (invocation, NULL);
+        } else if (g_strcmp0 (method_name, "Start") == 0) {
+                if (mate_settings_manager_start (manager, PLUGIN_LOAD_INIT, &error) == FALSE)
+                        g_dbus_method_invocation_return_gerror (invocation, error);
+                else
+                        g_dbus_method_invocation_return_value (invocation, NULL);
         }
+}
 
-        dbus_g_connection_register_g_object (manager->priv->connection, MSD_MANAGER_DBUS_PATH, G_OBJECT (manager));
+static const GDBusInterfaceVTable interface_vtable =
+{
+  .method_call = handle_method_call
+};
 
-        return TRUE;
+static void
+on_bus_gotten (GObject             *source_object,
+               GAsyncResult        *res,
+               MateSettingsManager *manager)
+{
+        GDBusConnection *connection;
+        GError *error = NULL;
+
+        connection = g_bus_get_finish (res, &error);
+        if (connection == NULL) {
+                if (!g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
+                        g_warning ("Could not get session bus: %s", error->message);
+                g_error_free (error);
+                return;
+        }
+        manager->priv->connection = connection;
+
+        manager->priv->dbus_register_object_id = g_dbus_connection_register_object (connection,
+                                                                                    MSD_MANAGER_DBUS_PATH,
+                                                                                    manager->priv->introspection_data->interfaces[0],
+										    &interface_vtable,
+                                                                                    manager,
+                                                                                    NULL,
+                                                                                    NULL);
+        g_assert (manager->priv->dbus_register_object_id > 0);
+}
+
+static void
+register_manager (MateSettingsManager *manager)
+{
+        manager->priv->introspection_data = g_dbus_node_info_new_for_xml (introspection_xml, NULL);
+        g_assert (manager->priv->introspection_data != NULL);
+
+        manager->priv->cancellable = g_cancellable_new ();
+
+        g_bus_get (G_BUS_TYPE_SESSION,
+                   manager->priv->cancellable,
+                   (GAsyncReadyCallback) on_bus_gotten,
+                   manager);
 }
 
 gboolean
@@ -362,6 +432,7 @@ mate_settings_manager_start (MateSettingsManager *manager,
 
         manager->priv->load_init_flag = load_init_flag;
         _load_all (manager);
+        mate_settings_profile_end ("initializing plugins");
 
         ret = TRUE;
  out:
@@ -418,8 +489,6 @@ mate_settings_manager_class_init (MateSettingsManagerClass *klass)
                               g_cclosure_marshal_VOID__STRING,
                               G_TYPE_NONE,
                               1, G_TYPE_STRING);
-
-        dbus_g_object_type_install_info (MATE_TYPE_SETTINGS_MANAGER, &dbus_glib_mate_settings_manager_object_info);
 }
 
 static void
@@ -461,17 +530,11 @@ mate_settings_manager_new (void)
         if (manager_object != NULL) {
                 g_object_ref (manager_object);
         } else {
-                gboolean res;
-
                 manager_object = g_object_new (MATE_TYPE_SETTINGS_MANAGER,
                                                NULL);
                 g_object_add_weak_pointer (manager_object,
                                            (gpointer *) &manager_object);
-                res = register_manager (manager_object);
-                if (! res) {
-                        g_object_unref (manager_object);
-                        return NULL;
-                }
+                register_manager (manager_object);
         }
 
         return MATE_SETTINGS_MANAGER (manager_object);

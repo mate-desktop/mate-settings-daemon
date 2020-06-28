@@ -33,8 +33,6 @@
 #include "mate-settings-plugin.h"
 #include "mate-settings-profile.h"
 
-#define MATE_SETTINGS_PLUGIN_INFO_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MATE_TYPE_SETTINGS_PLUGIN_INFO, MateSettingsPluginInfoPrivate))
-
 #define PLUGIN_GROUP "MATE Settings Plugin"
 
 #define PLUGIN_PRIORITY_MAX 1
@@ -148,7 +146,7 @@ mate_settings_plugin_info_class_init (MateSettingsPluginInfoClass *klass)
 static void
 mate_settings_plugin_info_init (MateSettingsPluginInfo *info)
 {
-        info->priv = MATE_SETTINGS_PLUGIN_INFO_GET_PRIVATE (info);
+        info->priv = mate_settings_plugin_info_get_instance_private (info);
 }
 
 static void

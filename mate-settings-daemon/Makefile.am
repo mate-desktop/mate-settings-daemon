@@ -41,20 +41,8 @@ msddir = $(libexecdir)
 msd_PROGRAMS = \
 	mate-settings-daemon
 
-mate-settings-manager-glue.h: mate-settings-manager.xml Makefile.am
-	$(AM_V_GEN) dbus-binding-tool --prefix=mate_settings_manager --mode=glib-server $< > $@
-
-mate-settings-client.h: mate-settings-manager.xml Makefile.am
-	$(AM_V_GEN) dbus-binding-tool --prefix=mate_settings_manager --mode=glib-client $< > $@
-
-BUILT_SOURCES = 			\
-	mate-settings-manager-glue.h	\
-	mate-settings-client.h		\
-	$(NULL)
-
 apidir   = $(includedir)/mate-settings-daemon
 api_DATA = 				\
-	mate-settings-client.h		\
 	mate-settings-plugin.h
 
 mate_settings_daemon_SOURCES =		\
@@ -86,15 +74,6 @@ mate_settings_daemon_LDADD = 		\
 	$(SETTINGS_DAEMON_LIBS)	\
 	$(MATE_DESKTOP_LIBS)    \
 	$(LIBNOTIFY_LIBS)
-
-EXTRA_DIST = 				\
-	$(Dbusapi_DATA)			\
-	mate-settings-manager.xml	\
-	$(NULL)
-
-CLEANFILES = 				\
-	$(BUILT_SOURCES)		\
-	$(NULL)
 
 -include $(top_srcdir)/git.mk
 
