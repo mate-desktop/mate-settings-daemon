@@ -6,15 +6,9 @@ NULL =
 plugin_LTLIBRARIES = libmedia-keys.la
 
 BUILT_SOURCES = 			\
-	msd-media-keys-manager-glue.h	\
 	msd-marshal.h			\
 	msd-marshal.c			\
 	$(NULL)
-
-msd-media-keys-manager-glue.h: msd-media-keys-manager.xml Makefile
-	$(AM_V_GEN) dbus-binding-tool --prefix=msd_media_keys_manager --mode=glib-server $< > xgen-$(@F) \
-	&& ( cmp -s xgen-$(@F) $@ || cp xgen-$(@F) $@ ) \
-	&& rm -f xgen-$(@F)
 
 msd-marshal.c: msd-marshal.list
 	$(AM_V_GEN) $(GLIB_GENMARSHAL) --prefix=msd_marshal $< --body --prototypes --internal > $@
@@ -137,7 +131,6 @@ gtkbuilder_DATA =	\
 	$(NULL)
 
 EXTRA_DIST = 				\
-	msd-media-keys-manager.xml	\
 	msd-marshal.list		\
 	$(plugin_in_files)		\
 	$(gtkbuilder_DATA)

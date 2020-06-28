@@ -60,14 +60,6 @@ gboolean              msd_media_keys_manager_start                     (MsdMedia
                                                                         GError             **error);
 void                  msd_media_keys_manager_stop                      (MsdMediaKeysManager *manager);
 
-gboolean              msd_media_keys_manager_grab_media_player_keys    (MsdMediaKeysManager *manager,
-                                                                        const char          *application,
-                                                                        guint32              time,
-                                                                        GError             **error);
-gboolean              msd_media_keys_manager_release_media_player_keys (MsdMediaKeysManager *manager,
-                                                                        const char          *application,
-                                                                        GError             **error);
-
 G_END_DECLS
 
 #endif /* __MSD_MEDIA_KEYS_MANAGER_H */
