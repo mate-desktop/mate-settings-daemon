@@ -26,9 +26,6 @@
 
 #include <glib.h>
 #include <glib-object.h>
-
-#include <dbus/dbus-glib.h>
-
 #include <gio/gio.h>
 
 #include "mate-settings-plugin.h"
@@ -37,8 +34,7 @@
 
 struct MsdSmartcardPluginPrivate {
         MsdSmartcardManager *manager;
-        DBusGConnection     *bus_connection;
-
+        GDBusProxy          *screensaver_proxy;
         guint32              is_active : 1;
 };
 
@@ -66,62 +62,82 @@ MATE_SETTINGS_PLUGIN_REGISTER_WITH_PRIVATE (MsdSmartcardPlugin, msd_smartcard_pl
 static void
 simulate_user_activity (MsdSmartcardPlugin *plugin)
 {
-        DBusGProxy *screensaver_proxy;
+        GError     *error = NULL;
+        GVariant   *ret;
 
         g_debug ("MsdSmartcardPlugin telling screensaver about smart card insertion");
-        screensaver_proxy = dbus_g_proxy_new_for_name (plugin->priv->bus_connection,
-                                                       SCREENSAVER_DBUS_NAME,
-                                                       SCREENSAVER_DBUS_PATH,
-                                                       SCREENSAVER_DBUS_INTERFACE);
-
-        dbus_g_proxy_call_no_reply (screensaver_proxy,
-                                    "SimulateUserActivity",
-                                    G_TYPE_INVALID, G_TYPE_INVALID);
-
-        g_object_unref (screensaver_proxy);
+        ret = g_dbus_proxy_call_sync (plugin->priv->screensaver_proxy,
+                                     "SimulateUserActivity",
+                                      g_variant_new ("()"),
+                                      G_DBUS_CALL_FLAGS_NONE,
+                                      -1,
+                                      NULL,
+                                      &error);
+        if (ret == NULL) {
+                g_warning ("MsdSmartcardPlugin Unable to force logout: %s", error->message);
+                g_error_free (error);
+        } else {
+                g_variant_unref (ret);
+        }
 }
 
 static void
 lock_screen (MsdSmartcardPlugin *plugin)
 {
-        DBusGProxy *screensaver_proxy;
+        GError     *error = NULL;
+        GVariant   *ret;
 
         g_debug ("MsdSmartcardPlugin telling screensaver to lock screen");
-        screensaver_proxy = dbus_g_proxy_new_for_name (plugin->priv->bus_connection,
-                                                       SCREENSAVER_DBUS_NAME,
-                                                       SCREENSAVER_DBUS_PATH,
-                                                       SCREENSAVER_DBUS_INTERFACE);
 
-        dbus_g_proxy_call_no_reply (screensaver_proxy,
-                                    "Lock",
-                                    G_TYPE_INVALID, G_TYPE_INVALID);
-
-        g_object_unref (screensaver_proxy);
+        ret = g_dbus_proxy_call_sync (plugin->priv->screensaver_proxy,
+                                     "Lock",
+                                      g_variant_new ("()"),
+                                      G_DBUS_CALL_FLAGS_NONE,
+                                      -1,
+                                      NULL,
+                                      &error);
+        if (ret == NULL) {
+                g_warning ("MsdSmartcardPlugin Unable to force logout: %s", error->message);
+                g_error_free (error);
+        } else {
+                g_variant_unref (ret);
+        }
 }
 
 static void
 force_logout (MsdSmartcardPlugin *plugin)
 {
-        DBusGProxy *sm_proxy;
-        GError     *error;
-        gboolean    res;
+        GDBusProxy *sm_proxy;
+        GError     *error = NULL;
+        GVariant   *ret;
 
         g_debug ("MsdSmartcardPlugin telling session manager to force logout");
-        sm_proxy = dbus_g_proxy_new_for_name (plugin->priv->bus_connection,
-                                              SM_DBUS_NAME,
-                                              SM_DBUS_PATH,
-                                              SM_DBUS_INTERFACE);
+        sm_proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+                                                  G_DBUS_PROXY_FLAGS_NONE,
+                                                  NULL,
+                                                  SM_DBUS_NAME,
+                                                  SM_DBUS_PATH,
+                                                  SM_DBUS_INTERFACE,
+                                                  NULL,
+                                                  &error);
+        if (sm_proxy == NULL) {
+                g_warning ("Unable to contact session manager daemon: %s\n", error->message);
+                g_error_free (error);
+                return;
+        }
 
-        error = NULL;
-        res = dbus_g_proxy_call (sm_proxy,
-                                 "Logout",
-                                 &error,
-                                 G_TYPE_UINT, SM_LOGOUT_MODE_FORCE,
-                                 G_TYPE_INVALID, G_TYPE_INVALID);
-
-        if (! res) {
+        ret = g_dbus_proxy_call_sync (sm_proxy,
+                                      "Logout",
+                                      g_variant_new ("(u", SM_LOGOUT_MODE_FORCE),
+                                      G_DBUS_CALL_FLAGS_NONE,
+                                      -1,
+                                      NULL,
+                                      &error);
+        if (ret == NULL) {
                 g_warning ("MsdSmartcardPlugin Unable to force logout: %s", error->message);
                 g_error_free (error);
+        } else {
+                g_variant_unref (ret);
         }
 
         g_object_unref (sm_proxy);
@@ -271,10 +287,18 @@ impl_activate (MateSettingsPlugin *plugin)
         g_debug ("MsdSmartcardPlugin Activating smartcard plugin");
 
         error = NULL;
-        smartcard_plugin->priv->bus_connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
+        smartcard_plugin->priv->screensaver_proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+                                                                                   G_DBUS_PROXY_FLAGS_NONE,
+                                                                                   NULL,
+                                                                                   SCREENSAVER_DBUS_NAME,
+                                                                                   SCREENSAVER_DBUS_PATH,
+                                                                                   SCREENSAVER_DBUS_INTERFACE,
+                                                                                   NULL,
+                                                                                   &error);
 
-        if (smartcard_plugin->priv->bus_connection == NULL) {
+        if (smartcard_plugin->priv->screensaver_proxy == NULL) {
                 g_warning ("MsdSmartcardPlugin Unable to connect to session bus: %s", error->message);
+                g_error_free (error);
                 return;
         }
 
@@ -320,7 +344,8 @@ impl_deactivate (MateSettingsPlugin *plugin)
 
         g_signal_handlers_disconnect_by_func (smartcard_plugin->priv->manager,
                                               smartcard_inserted_cb, smartcard_plugin);
-        smartcard_plugin->priv->bus_connection = NULL;
+        if (smartcard_plugin->priv->screensaver_proxy != NULL)
+                g_object_unref (smartcard_plugin->priv->screensaver_proxy);
         smartcard_plugin->priv->is_active = FALSE;
 }
 
