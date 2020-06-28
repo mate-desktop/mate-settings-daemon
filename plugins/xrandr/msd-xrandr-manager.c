@@ -39,7 +39,6 @@
 #include <gdk/gdkx.h>
 #include <gtk/gtk.h>
 #include <gio/gio.h>
-#include <dbus/dbus-glib.h>
 
 #define MATE_DESKTOP_USE_UNSTABLE_API
 #include <libmate-desktop/mate-rr-config.h>
@@ -77,12 +76,30 @@
 
 #define MSD_DBUS_PATH "/org/mate/SettingsDaemon"
 #define MSD_DBUS_NAME "org.mate.SettingsDaemon"
-#define MSD_XRANDR_DBUS_PATH MSD_DBUS_PATH "/XRANDR"
 #define MSD_XRANDR_DBUS_NAME MSD_DBUS_NAME ".XRANDR"
+#define MSD_XRANDR_DBUS_PATH MSD_DBUS_PATH "/XRANDR"
+
+static const gchar introspection_xml[] =
+"<node>"
+"  <interface name='org.mate.SettingsDaemon.XRANDR'>"
+"    <method name='ApplyConfiguration'>"
+"    </method>"
+"  </interface>"
+""
+"  <interface name='org.mate.SettingsDaemon.XRANDR_2'>"
+"    <method name='ApplyConfiguration'>"
+"      <arg name='parent_window_id' type='x' direction='in'/>"
+"      <arg name='timestamp' type='x' direction='in'/>"
+"    </method>"
+"  </interface>"
+"</node>";
 
 struct MsdXrandrManagerPrivate
 {
-        DBusGConnection *dbus_connection;
+        GDBusConnection *connection;
+        GDBusNodeInfo   *introspection_data;
+        GCancellable    *bus_cancellable;
+        guint            owner_id;
 
         /* Key code of the XF86Display key (Fn-F7 on Thinkpads, Fn-F4 on HP machines, etc.) */
         guint switch_video_mode_keycode;
@@ -627,9 +644,6 @@ msd_xrandr_manager_2_apply_configuration (MsdXrandrManager *manager,
 
         return result;
 }
-
-/* We include this after the definition of msd_xrandr_manager_apply_configuration() so the prototype will already exist */
-#include "msd-xrandr-manager-glue.h"
 
 static gboolean
 is_laptop (MateRRScreen *screen, MateRROutputInfo *output)
@@ -2653,11 +2667,18 @@ msd_xrandr_manager_stop (MsdXrandrManager *manager)
                 manager->priv->rw_screen = NULL;
         }
 
-        if (manager->priv->dbus_connection != NULL) {
-                dbus_g_connection_unref (manager->priv->dbus_connection);
-                manager->priv->dbus_connection = NULL;
+        if (manager->priv->owner_id > 0) {
+                g_bus_unown_name (manager->priv->owner_id);
+                manager->priv->owner_id = 0;
         }
 
+        if (manager->priv->connection != NULL) {
+                g_object_unref (manager->priv->connection);
+                manager->priv->connection = NULL;
+        }
+
+
+        g_clear_pointer (&manager->priv->introspection_data, g_dbus_node_info_unref);
         status_icon_stop (manager);
 
         log_open ();
@@ -2671,8 +2692,6 @@ msd_xrandr_manager_class_init (MsdXrandrManagerClass *klass)
         GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
         object_class->finalize = msd_xrandr_manager_finalize;
-
-        dbus_g_object_type_install_info (MSD_TYPE_XRANDR_MANAGER, &dbus_glib_msd_xrandr_manager_object_info);
 }
 
 static guint
@@ -2714,24 +2733,114 @@ msd_xrandr_manager_finalize (GObject *object)
         G_OBJECT_CLASS (msd_xrandr_manager_parent_class)->finalize (object);
 }
 
-static gboolean
-register_manager_dbus (MsdXrandrManager *manager)
+static void
+handle_method_call (GDBusConnection       *connection,
+                    const gchar           *sender,
+                    const gchar           *object_path,
+                    const gchar           *interface_name,
+                    const gchar           *method_name,
+                    GVariant              *parameters,
+                    GDBusMethodInvocation *invocation,
+                    gpointer               user_data)
 {
+        MsdXrandrManager *manager = (MsdXrandrManager *) user_data;
+        g_autoptr (GError) error = NULL;
+
+        g_debug ("Calling method '%s' for xrandr", method_name);
+
+        if (g_strcmp0 (method_name, "ApplyConfiguration") == 0) {
+                msd_xrandr_manager_apply_configuration(manager, &error);
+                if (error != NULL)
+                        g_dbus_method_invocation_return_gerror (invocation, error);
+                else
+                        g_dbus_method_invocation_return_value (invocation, NULL);
+        }
+}
+
+static void
+handle_method_call2 (GDBusConnection       *connection,
+                     const gchar           *sender,
+                     const gchar           *object_path,
+                     const gchar           *interface_name,
+                     const gchar           *method_name,
+                     GVariant              *parameters,
+                     GDBusMethodInvocation *invocation,
+                     gpointer               user_data)
+{
+        MsdXrandrManager *manager = (MsdXrandrManager *) user_data;
+        g_autoptr (GError) error = NULL;
+
+        g_debug ("Calling method '%s' for xrandr", method_name);
+
+        if (g_strcmp0 (method_name, "ApplyConfiguration") == 0) {
+                gint64 parent_window_id;
+                gint64 timestamp;
+                g_variant_get (parameters, "(xx)", &parent_window_id, &timestamp);
+                msd_xrandr_manager_2_apply_configuration (manager, parent_window_id, timestamp, &error);
+                if (error != NULL)
+                        g_dbus_method_invocation_return_gerror (invocation, error);
+                else
+                        g_dbus_method_invocation_return_value (invocation, NULL);
+        }
+}
+
+static const GDBusInterfaceVTable interface_vtable =
+{
+        .method_call = handle_method_call,
+};
+
+static const GDBusInterfaceVTable interface_vtable2 =
+{
+        .method_call = handle_method_call2,
+};
+
+static void
+on_bus_gotten (GObject          *source_object,
+               GAsyncResult     *res,
+               MsdXrandrManager *manager)
+{
+        GDBusConnection *connection;
         GError *error = NULL;
 
-        manager->priv->dbus_connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
-        if (manager->priv->dbus_connection == NULL) {
-                if (error != NULL) {
-                        g_warning ("Error getting session bus: %s", error->message);
-                        g_error_free (error);
-                }
-                return FALSE;
+        connection = g_bus_get_finish (res, &error);
+        if (connection == NULL) {
+                if (!g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
+                        g_warning ("Could not get session bus: %s", error->message);
+                g_error_free (error);
+                return;
         }
+        manager->priv->connection = connection;
 
-        /* Hmm, should we do this in msd_xrandr_manager_start()? */
-        dbus_g_connection_register_g_object (manager->priv->dbus_connection, MSD_XRANDR_DBUS_PATH, G_OBJECT (manager));
+        g_dbus_connection_register_object (connection,
+                                           MSD_XRANDR_DBUS_PATH,
+                                           manager->priv->introspection_data->interfaces[0],
+                                           &interface_vtable,
+                                           manager,
+                                           NULL,
+                                           NULL);
+        g_dbus_connection_register_object (connection,
+                                           MSD_XRANDR_DBUS_PATH,
+                                           manager->priv->introspection_data->interfaces[1],
+                                           &interface_vtable2,
+                                           manager,
+                                           NULL,
+                                           NULL);
 
-        return TRUE;
+        manager->priv->owner_id = g_bus_own_name_on_connection (manager->priv->connection,
+                                                                MSD_DBUS_NAME,
+                                                                G_BUS_NAME_OWNER_FLAGS_ALLOW_REPLACEMENT,
+                                                                NULL, NULL, NULL, NULL);
+}
+
+static void
+register_manager_dbus (MsdXrandrManager *manager)
+{
+        manager->priv->introspection_data = g_dbus_node_info_new_for_xml (introspection_xml, NULL);
+        manager->priv->bus_cancellable = g_cancellable_new ();
+        g_bus_get (G_BUS_TYPE_SESSION,
+                   manager->priv->bus_cancellable,
+                   (GAsyncReadyCallback) on_bus_gotten,
+                   manager);
 }
 
 MsdXrandrManager *
@@ -2744,10 +2853,7 @@ msd_xrandr_manager_new (void)
                 g_object_add_weak_pointer (manager_object,
                                            (gpointer *) &manager_object);
 
-                if (!register_manager_dbus (manager_object)) {
-                        g_object_unref (manager_object);
-                        return NULL;
-                }
+                register_manager_dbus (manager_object);
         }
 
         return MSD_XRANDR_MANAGER (manager_object);
