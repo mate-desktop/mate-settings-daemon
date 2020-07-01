@@ -23,11 +23,8 @@
 #define MSD_DATETIME_MECHANISM_H
 
 #include <glib-object.h>
-#include <dbus/dbus-glib.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+G_BEGIN_DECLS
 
 #define MSD_DATETIME_TYPE_MECHANISM         (msd_datetime_mechanism_get_type ())
 #define MSD_DATETIME_MECHANISM(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), MSD_DATETIME_TYPE_MECHANISM, MsdDatetimeMechanism))
@@ -64,38 +61,8 @@ GType msd_datetime_mechanism_error_get_type (void);
 
 GQuark                     msd_datetime_mechanism_error_quark         (void);
 GType                      msd_datetime_mechanism_get_type            (void);
-MsdDatetimeMechanism      *msd_datetime_mechanism_new                 (void);
+MsdDatetimeMechanism      *msd_datetime_mechanism_new                 (GMainLoop *loop);
 
-/* exported methods */
-gboolean            msd_datetime_mechanism_get_timezone (MsdDatetimeMechanism   *mechanism,
-                                                         DBusGMethodInvocation  *context);
-gboolean            msd_datetime_mechanism_set_timezone (MsdDatetimeMechanism   *mechanism,
-                                                         const char             *zone_file,
-                                                         DBusGMethodInvocation  *context);
-
-gboolean            msd_datetime_mechanism_can_set_timezone (MsdDatetimeMechanism  *mechanism,
-                                                             DBusGMethodInvocation *context);
-
-gboolean            msd_datetime_mechanism_set_time     (MsdDatetimeMechanism  *mechanism,
-                                                         gint64                 seconds_since_epoch,
-                                                         DBusGMethodInvocation *context);
-
-gboolean            msd_datetime_mechanism_can_set_time (MsdDatetimeMechanism  *mechanism,
-                                                         DBusGMethodInvocation *context);
-
-gboolean            msd_datetime_mechanism_adjust_time  (MsdDatetimeMechanism  *mechanism,
-                                                         gint64                 seconds_to_add,
-                                                         DBusGMethodInvocation *context);
-
-gboolean            msd_datetime_mechanism_get_hardware_clock_using_utc  (MsdDatetimeMechanism  *mechanism,
-                                                                          DBusGMethodInvocation *context);
-
-gboolean            msd_datetime_mechanism_set_hardware_clock_using_utc  (MsdDatetimeMechanism  *mechanism,
-                                                                          gboolean               using_utc,
-                                                                          DBusGMethodInvocation *context);
-
-#ifdef __cplusplus
-}
-#endif
+G_END_DECLS
 
 #endif /* MSD_DATETIME_MECHANISM_H */
