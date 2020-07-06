@@ -13,6 +13,7 @@ AC_INIT([mate-settings-daemon],
 AC_CONFIG_SRCDIR([mate-settings-daemon/mate-settings-manager.c])
 AC_CONFIG_MACRO_DIR([m4])
 
+MATE_DEBUG_CHECK
 MATE_COMPILE_WARNINGS
 
 AM_INIT_AUTOMAKE([1.9 no-dist-gzip dist-xz tar-ustar check-news])
