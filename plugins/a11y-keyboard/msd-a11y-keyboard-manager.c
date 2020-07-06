@@ -80,13 +80,6 @@ G_DEFINE_TYPE_WITH_PRIVATE (MsdA11yKeyboardManager, msd_a11y_keyboard_manager, G
 
 static gpointer manager_object = NULL;
 
-#undef DEBUG_ACCESSIBILITY
-#ifdef DEBUG_ACCESSIBILITY
-#define d(str)          g_debug (str)
-#else
-#define d(str)          do { } while (0)
-#endif
-
 static GdkFilterReturn
 devicepresence_filter (GdkXEvent *xevent,
                        GdkEvent  *event,
@@ -209,11 +202,11 @@ set_int (GSettings      *settings,
 {
         int pre_val = g_settings_get_int (settings, key);
         g_settings_set_int (settings, key, val);
-#ifdef DEBUG_ACCESSIBILITY
+#ifdef MATE_ENABLE_DEBUG
         if (val != pre_val) {
                 g_warning ("%s changed", key);
         }
-#endif
+#endif /* MATE_ENABLE_DEBUG */
         return val != pre_val;
 }
 
@@ -226,12 +219,12 @@ set_bool (GSettings      *settings,
         gboolean pre_val = g_settings_get_boolean (settings, key);
 
         g_settings_set_boolean (settings, key, bval ? TRUE : FALSE);
-#ifdef DEBUG_ACCESSIBILITY
+#ifdef MATE_ENABLE_DEBUG
         if (bval != pre_val) {
                 d ("%s changed", key);
                 return TRUE;
         }
-#endif
+#endif /* MATE_ENABLE_DEBUG */
         return (bval != pre_val);
 }
 
@@ -1012,9 +1005,9 @@ start_a11y_keyboard_idle_cb (MsdA11yKeyboardManager *manager)
         manager->priv->original_xkb_desc = get_xkb_desc_rec (manager);
 
         event_mask = XkbControlsNotifyMask;
-#ifdef DEBUG_ACCESSIBILITY
+#ifdef MATE_ENABLE_DEBUG
         event_mask |= XkbAccessXNotifyMask; /* make default when AXN_AXKWarning works */
-#endif
+#endif /* MATE_ENABLE_DEBUG */
 
         /* be sure to init before starting to monitor the server */
         set_server_from_settings (manager);
