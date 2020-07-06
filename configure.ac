@@ -385,25 +385,6 @@ dnl ---------------------------------------------------------------------------
 dnl - Finish
 dnl ---------------------------------------------------------------------------
 
-
-#
-# Enable Debug
-#
-AC_ARG_ENABLE(debug,
-	[AC_HELP_STRING([--enable-debug],
-	[turn on debugging])],
-	, enable_debug=yes)
-if test "$enable_debug" = "yes"; then
-	DEBUG_CFLAGS="-DG_ENABLE_DEBUG"
-else
-	if test "x$enable_debug" = "xno"; then
-		DEBUG_CFLAGS="-DG_DISABLE_ASSERT -DG_DISABLE_CHECKS"
-  	else
-    		DEBUG_CFLAGS=""
-  	fi
-fi
-AC_SUBST(DEBUG_CFLAGS)
-
 AC_OUTPUT([
 Makefile
 mate-settings-daemon/Makefile
