@@ -221,7 +221,7 @@ set_bool (GSettings      *settings,
         g_settings_set_boolean (settings, key, bval ? TRUE : FALSE);
 #ifdef MATE_ENABLE_DEBUG
         if (bval != pre_val) {
-                d ("%s changed", key);
+                g_debug ("%s changed", key);
                 return TRUE;
         }
 #endif /* MATE_ENABLE_DEBUG */
@@ -407,7 +407,7 @@ ax_response_callback (MsdA11yKeyboardManager *manager,
         case GTK_RESPONSE_CANCEL:
 
                 /* we're reverting, so we invert sense of 'enabled' flag */
-                d ("cancelling AccessX request");
+                g_debug ("cancelling AccessX request");
                 if (revert_controls_mask == XkbStickyKeysMask) {
                         g_settings_set_boolean (manager->priv->settings,
                                                "stickykeys-enable",
@@ -958,12 +958,12 @@ cb_xkb_event_filter (GdkXEvent              *xevent,
 
         if (xev->xany.type == (manager->priv->xkbEventBase + XkbEventCode) &&
             xkbEv->any.xkb_type == XkbControlsNotify) {
-                d ("XKB state changed");
+                g_debug ("XKB state changed");
                 set_settings_from_server (manager);
         } else if (xev->xany.type == (manager->priv->xkbEventBase + XkbEventCode) &&
                    xkbEv->any.xkb_type == XkbAccessXNotify) {
                 if (xkbEv->accessx.detail == XkbAXN_AXKWarning) {
-                        d ("About to turn on an AccessX feature from the keyboard!");
+                        g_debug ("About to turn on an AccessX feature from the keyboard!");
                         /*
                          * TODO: when XkbAXN_AXKWarnings start working, we need to
                          * invoke ax_keys_warning_dialog_run here instead of in
