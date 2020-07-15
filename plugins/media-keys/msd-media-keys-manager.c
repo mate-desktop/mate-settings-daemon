@@ -780,7 +780,7 @@ do_sound_action (MsdMediaKeysManager *manager,
         }
 
         update_dialog (manager,
-                       CLAMP (100 * volume / (volume_max - volume_min), 0, 100),
+                       MIN (100 * volume / (volume_max - volume_min), 100),
                        muted,
                        sound_changed,
                        quiet,
