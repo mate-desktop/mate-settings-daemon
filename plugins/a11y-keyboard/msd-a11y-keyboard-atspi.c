@@ -27,10 +27,6 @@
 #include <gdk/gdk.h>
 #include <atspi/atspi.h>
 
-/* See https://gitlab.gnome.org/GNOME/at-spi2-core/-/issues/22 */
-#define DESTROYING_ATSPI_LISTENER_CRASHES 1
-
-
 struct MsdA11yKeyboardAtspiPrivate
 {
         AtspiDeviceListener *listener;
@@ -80,14 +76,15 @@ msd_a11y_keyboard_atspi_init (MsdA11yKeyboardAtspi *self)
         self->priv->listener = NULL;
         self->priv->listening = FALSE;
 
-#if DESTROYING_ATSPI_LISTENER_CRASHES
+#ifndef DESTROYING_ATSPI_LISTENER_DOES_NOT_CRASH
         /* init AT-SPI if needed */
         atspi_init ();
 
         self->priv->listener = atspi_device_listener_new (on_key_press_event,
                                                           self, NULL);
         /* leak a reference so that this listener is *never* destroyed, to
-         * prevent the crash even if our object gets destroyed. */
+         * prevent the crash even if our object gets destroyed.
+         * See https://gitlab.gnome.org/GNOME/at-spi2-core/-/issues/22 */
         g_object_ref (self->priv->listener);
 #endif
 }
@@ -129,7 +126,7 @@ msd_a11y_keyboard_atspi_start (MsdA11yKeyboardAtspi *self)
         if (self->priv->listening)
                 return;
 
-#if ! DESTROYING_ATSPI_LISTENER_CRASHES
+#ifdef DESTROYING_ATSPI_LISTENER_DOES_NOT_CRASH
         /* init AT-SPI if needed */
         atspi_init ();
 
@@ -148,10 +145,10 @@ msd_a11y_keyboard_atspi_stop (MsdA11yKeyboardAtspi *self)
         if (! self->priv->listening)
                 return;
 
-#if DESTROYING_ATSPI_LISTENER_CRASHES
-        register_deregister_events (self, FALSE);
-#else
+#ifdef DESTROYING_ATSPI_LISTENER_DOES_NOT_CRASH
         g_clear_object (&self->priv->listener);
+#else
+        register_deregister_events (self, FALSE);
 #endif
         self->priv->listening = FALSE;
 }
