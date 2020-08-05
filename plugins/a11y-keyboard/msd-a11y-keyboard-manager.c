@@ -1102,7 +1102,11 @@ msd_a11y_keyboard_manager_start (MsdA11yKeyboardManager *manager,
 {
         mate_settings_profile_start (NULL);
 
-        g_idle_add ((GSourceFunc) start_a11y_keyboard_idle_cb, manager);
+        /* give our initialization a lower priority over msd-keyoboard so it
+         * restores the numlock state before we might start monitoring it */
+        g_idle_add_full (G_PRIORITY_LOW,
+                         (GSourceFunc) start_a11y_keyboard_idle_cb, manager,
+                         NULL);
 
         mate_settings_profile_end (NULL);
 
