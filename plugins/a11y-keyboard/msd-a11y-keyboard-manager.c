@@ -72,6 +72,14 @@ struct MsdA11yKeyboardManagerPrivate
 #endif /* HAVE_LIBNOTIFY */
 };
 
+/* Keep in sync with the org.mate.accessibility-keyboard.TogglekeysBackend
+ * enum from the org.mate.accessibility-keyboard schema. */
+typedef enum
+{
+        TOGGLEKEYS_BACKEND_XKB,
+        TOGGLEKEYS_BACKEND_INTERNAL,
+} TogglekeysBackend;
+
 static void     msd_a11y_keyboard_manager_finalize (GObject *object);
 static void     msd_a11y_keyboard_manager_ensure_status_icon (MsdA11yKeyboardManager *manager);
 static void     set_server_from_settings (MsdA11yKeyboardManager *manager);
@@ -79,6 +87,14 @@ static void     set_server_from_settings (MsdA11yKeyboardManager *manager);
 G_DEFINE_TYPE_WITH_PRIVATE (MsdA11yKeyboardManager, msd_a11y_keyboard_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
+
+static gboolean
+togglekeys_backend_enabled (MsdA11yKeyboardManager *manager,
+                            TogglekeysBackend       backend)
+{
+        return (g_settings_get_boolean (manager->priv->settings, "togglekeys-enable") &&
+                g_settings_get_enum (manager->priv->settings, "togglekeys-backend") == (gint) backend);
+}
 
 static GdkFilterReturn
 devicepresence_filter (GdkXEvent *xevent,
@@ -360,7 +376,7 @@ set_server_from_settings (MsdA11yKeyboardManager *manager)
         }
 
         /* toggle keys */
-        desc->ctrls->ax_options = set_clear (g_settings_get_boolean (manager->priv->settings, "togglekeys-enable"),
+        desc->ctrls->ax_options = set_clear (togglekeys_backend_enabled (manager, TOGGLEKEYS_BACKEND_XKB),
                                              desc->ctrls->ax_options,
                                              XkbAccessXFeedbackMask | XkbAX_IndicatorFBMask);
 
@@ -911,9 +927,11 @@ set_settings_from_server (MsdA11yKeyboardManager *manager)
                              "stickykeys-modifier-beep",
                              desc->ctrls->ax_options & XkbAX_StickyKeysFBMask);
 
-        changed |= set_bool (settings,
-                             "togglekeys-enable",
-                             desc->ctrls->ax_options & XkbAX_IndicatorFBMask);
+        if (g_settings_get_enum (manager->priv->settings, "togglekeys-backend") == TOGGLEKEYS_BACKEND_XKB) {
+                changed |= set_bool (settings,
+                                     "togglekeys-enable",
+                                     desc->ctrls->ax_options & XkbAX_IndicatorFBMask);
+        }
 
         if (!changed && stickykeys_changed ^ slowkeys_changed) {
                 /*
@@ -1022,7 +1040,7 @@ cb_xkb_event_filter (GdkXEvent              *xevent,
                 }
         } else if (xev->xany.type == (manager->priv->xkbEventBase + XkbEventCode) &&
                    xkbEv->any.xkb_type == XkbIndicatorStateNotify &&
-                   g_settings_get_boolean (manager->priv->settings, "togglekeys-enable")) {
+                   togglekeys_backend_enabled (manager, TOGGLEKEYS_BACKEND_INTERNAL)) {
                 GdkDisplay *display = gdk_x11_lookup_xdisplay (xkbEv->any.display);
                 gint beep_count;
                 gint beep_delay;
