@@ -123,6 +123,9 @@ dnl ---------------------------------------------------------------------------
 PKG_CHECK_MODULES(LIBATSPI, atspi-2 >= $LIBATSPI_REQUIRED_VERSION,
           [AC_DEFINE(HAVE_LIBATSPI, 1, [Define if libatspi is available])
           have_libatspi=yes], have_libatspi=no)
+PKG_CHECK_EXISTS([atspi-2 > 2.36.0],
+                 [AC_DEFINE([DESTROYING_ATSPI_LISTENER_DOES_NOT_CRASH], [1], [Define if libatspi does not have bug 22])],
+                 [])
 
 dnl ---------------------------------------------------------------------------
 dnl - Check for D-Bus
