@@ -134,6 +134,7 @@ variables:
     -enable-checker alpha.unix.cstring.OutOfBounds
     -enable-checker alpha.core.FixedAddr
     -enable-checker security.insecureAPI.strcpy"'
+  - MATE_DESKTOP_VERSION=1.25.0
 
 before_scripts:
   - if [ ${DISTRO_NAME} == "debian" ];then
@@ -142,7 +143,6 @@ before_scripts:
   - fi
 
   - cd ${START_DIR}
-  - MATE_DESKTOP_VERSION=1.25.0
   - '[ -f mate-desktop-${MATE_DESKTOP_VERSION}.tar.xz ] || curl -Ls -o mate-desktop-${MATE_DESKTOP_VERSION}.tar.xz http://pub.mate-desktop.org/releases/${MATE_DESKTOP_VERSION%.*}/mate-desktop-${MATE_DESKTOP_VERSION}.tar.xz'
   - tar xf mate-desktop-${MATE_DESKTOP_VERSION}.tar.xz
   - cd mate-desktop-${MATE_DESKTOP_VERSION}
@@ -169,7 +169,7 @@ before_scripts:
 build_scripts:
   - if [ ${DISTRO_NAME} == "debian" ];then
   -     export CFLAGS+=" -Wsign-compare -Wunused-parameter"
-  -     cppcheck --enable=warning,style,performance,portability,information,missingInclude -i'mate-desktop-1.23.2' .
+  -     cppcheck --enable=warning,style,performance,portability,information,missingInclude -i"mate-desktop-${MATE_DESKTOP_VERSION}" .
   - fi
 
   - NOCONFIGURE=1 ./autogen.sh
@@ -190,7 +190,7 @@ build_scripts:
 
 after_scripts:
   - if [ ${DISTRO_NAME} == "fedora" ];then
-  -   cppcheck --xml --output-file=cppcheck.xml --enable=warning,style,performance,portability,information,missingInclude -i'mate-desktop-1.23.2' .
+  -   cppcheck --xml --output-file=cppcheck.xml --enable=warning,style,performance,portability,information,missingInclude -i"mate-desktop-${MATE_DESKTOP_VERSION}" .
   -   cppcheck-htmlreport --title=${REPO_NAME} --file=cppcheck.xml --report-dir=cppcheck-htmlreport
   -   ./gen-index -l 20 -i https://github.com/${OWNER_NAME}/mate-applets/raw/master/cpufreq/pixmaps/cpufreq-100.png
   - fi
