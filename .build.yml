@@ -142,9 +142,10 @@ before_scripts:
   - fi
 
   - cd ${START_DIR}
-  - '[ -f mate-desktop-1.23.2.tar.xz ] || curl -Ls -o mate-desktop-1.23.2.tar.xz http://pub.mate-desktop.org/releases/1.23/mate-desktop-1.23.2.tar.xz'
-  - tar xf mate-desktop-1.23.2.tar.xz
-  - cd mate-desktop-1.23.2
+  - MATE_DESKTOP_VERSION=1.25.0
+  - '[ -f mate-desktop-${MATE_DESKTOP_VERSION}.tar.xz ] || curl -Ls -o mate-desktop-${MATE_DESKTOP_VERSION}.tar.xz http://pub.mate-desktop.org/releases/${MATE_DESKTOP_VERSION%.*}/mate-desktop-${MATE_DESKTOP_VERSION}.tar.xz'
+  - tar xf mate-desktop-${MATE_DESKTOP_VERSION}.tar.xz
+  - cd mate-desktop-${MATE_DESKTOP_VERSION}
   - if [ ${DISTRO_NAME} == "debian" -o ${DISTRO_NAME} == "ubuntu" ];then
   -     ./configure --prefix=/usr --libdir=/usr/lib/x86_64-linux-gnu --libexecdir=/usr/lib/x86_64-linux-gnu
   - else
