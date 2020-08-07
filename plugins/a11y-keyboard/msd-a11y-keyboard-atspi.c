@@ -22,8 +22,6 @@
 #include "msd-a11y-keyboard-atspi.h"
 
 #include <glib-object.h>
-
-#ifdef HAVE_LIBATSPI
 #include <gdk/gdk.h>
 #include <atspi/atspi.h>
 
@@ -151,37 +149,6 @@ msd_a11y_keyboard_atspi_stop (MsdA11yKeyboardAtspi *self)
 #endif
         self->listening = FALSE;
 }
-
-#else /* ! defined(HAVE_LIBATSPI): AT-SPI is not available, provide stubs */
-
-struct _MsdA11yKeyboardAtspi
-{
-        GObject parent;
-};
-
-G_DEFINE_TYPE (MsdA11yKeyboardAtspi, msd_a11y_keyboard_atspi, G_TYPE_OBJECT)
-
-static void
-msd_a11y_keyboard_atspi_class_init (MsdA11yKeyboardAtspiClass *klass G_GNUC_UNUSED)
-{
-}
-
-static void
-msd_a11y_keyboard_atspi_init (MsdA11yKeyboardAtspi *self G_GNUC_UNUSED)
-{
-}
-
-void
-msd_a11y_keyboard_atspi_start (MsdA11yKeyboardAtspi *self G_GNUC_UNUSED)
-{
-}
-
-void
-msd_a11y_keyboard_atspi_stop (MsdA11yKeyboardAtspi *self G_GNUC_UNUSED)
-{
-}
-
-#endif /* ! defined(HAVE_LIBATSPI) */
 
 MsdA11yKeyboardAtspi *
 msd_a11y_keyboard_atspi_new ()
