@@ -92,7 +92,9 @@ struct MsdA11yPreferencesDialogPrivate
         GtkWidget *sticky_keys_checkbutton;
         GtkWidget *slow_keys_checkbutton;
         GtkWidget *bounce_keys_checkbutton;
+#ifdef HAVE_LIBATSPI
         GtkWidget *capslock_beep_checkbutton;
+#endif
 
         GtkWidget *large_print_checkbutton;
         GtkWidget *high_contrast_checkbutton;
@@ -324,6 +326,7 @@ config_set_slow_keys (MsdA11yPreferencesDialog *dialog, gboolean enabled)
         g_settings_set_boolean (dialog->priv->settings_a11y, KEY_SLOW_KEYS_ENABLED, enabled);
 }
 
+#ifdef HAVE_LIBATSPI
 static gboolean
 config_get_capslock_beep (MsdA11yPreferencesDialog *dialog, gboolean *is_writable)
 {
@@ -335,6 +338,7 @@ config_set_capslock_beep (MsdA11yPreferencesDialog *dialog, gboolean enabled)
 {
         g_settings_set_boolean (dialog->priv->settings_a11y, KEY_CAPSLOCK_BEEP_ENABLED, enabled);
 }
+#endif
 
 static gboolean
 config_have_at_gsettings_condition (const char *condition)
@@ -435,12 +439,14 @@ on_slow_keys_checkbutton_toggled (GtkToggleButton          *button,
         config_set_slow_keys (dialog, gtk_toggle_button_get_active (button));
 }
 
+#ifdef HAVE_LIBATSPI
 static void
 on_capslock_beep_checkbutton_toggled (GtkToggleButton          *button,
                                       MsdA11yPreferencesDialog *dialog)
 {
         config_set_capslock_beep (dialog, gtk_toggle_button_get_active (button));
 }
+#endif
 
 static void
 on_high_contrast_checkbutton_toggled (GtkToggleButton          *button,
@@ -513,6 +519,7 @@ ui_set_slow_keys (MsdA11yPreferencesDialog *dialog,
         }
 }
 
+#ifdef HAVE_LIBATSPI
 static void
 ui_set_capslock_beep (MsdA11yPreferencesDialog *dialog,
                       gboolean                  enabled)
@@ -524,6 +531,7 @@ ui_set_capslock_beep (MsdA11yPreferencesDialog *dialog,
                 gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->priv->capslock_beep_checkbutton), enabled);
         }
 }
+#endif
 
 static void
 ui_set_high_contrast (MsdA11yPreferencesDialog *dialog,
@@ -602,10 +610,12 @@ key_changed_cb (GSettings                *settings,
                 gboolean enabled;
                 enabled = g_settings_get_boolean (settings, key);
                 ui_set_slow_keys (dialog, enabled);
+#ifdef HAVE_LIBATSPI
         } else if (g_strcmp0 (key, KEY_CAPSLOCK_BEEP_ENABLED) == 0) {
                 gboolean enabled;
                 enabled = g_settings_get_boolean (settings, key);
                 ui_set_capslock_beep (dialog, enabled);
+#endif
         } else if (g_strcmp0 (key, KEY_AT_SCREEN_READER_ENABLED) == 0) {
                 gboolean enabled;
                 enabled = g_settings_get_boolean (settings, key);
@@ -672,6 +682,10 @@ setup_dialog (MsdA11yPreferencesDialog *dialog,
 
         widget = GTK_WIDGET (gtk_builder_get_object (builder,
                                                      "capslock_beep_checkbutton"));
+#ifndef HAVE_LIBATSPI
+        gtk_widget_hide (widget);
+        gtk_widget_set_no_show_all (widget, TRUE);
+#else
         dialog->priv->capslock_beep_checkbutton = widget;
         g_signal_connect (widget,
                           "toggled",
@@ -682,6 +696,7 @@ setup_dialog (MsdA11yPreferencesDialog *dialog,
         if (! is_writable) {
                 gtk_widget_set_sensitive (widget, FALSE);
         }
+#endif
 
         widget = GTK_WIDGET (gtk_builder_get_object (builder,
                                                      "high_contrast_checkbutton"));
