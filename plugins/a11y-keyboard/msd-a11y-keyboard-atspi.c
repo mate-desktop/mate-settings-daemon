@@ -27,21 +27,22 @@
 #include <gdk/gdk.h>
 #include <atspi/atspi.h>
 
-struct MsdA11yKeyboardAtspiPrivate
+struct _MsdA11yKeyboardAtspi
 {
+        GObject              parent;
         AtspiDeviceListener *listener;
         gboolean             listening;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (MsdA11yKeyboardAtspi, msd_a11y_keyboard_atspi, G_TYPE_OBJECT)
+G_DEFINE_TYPE (MsdA11yKeyboardAtspi, msd_a11y_keyboard_atspi, G_TYPE_OBJECT)
 
 static void
 msd_a11y_keyboard_atspi_finalize (GObject *obj)
 {
         MsdA11yKeyboardAtspi *self = MSD_A11Y_KEYBOARD_ATSPI (obj);
 
-        g_clear_object (&self->priv->listener);
-        self->priv->listening = FALSE;
+        g_clear_object (&self->listener);
+        self->listening = FALSE;
 
         G_OBJECT_CLASS (msd_a11y_keyboard_atspi_parent_class)->finalize (obj);
 }
@@ -71,21 +72,19 @@ on_key_press_event (const AtspiDeviceEvent *event,
 static void
 msd_a11y_keyboard_atspi_init (MsdA11yKeyboardAtspi *self)
 {
-        self->priv = msd_a11y_keyboard_atspi_get_instance_private (self);
-
-        self->priv->listener = NULL;
-        self->priv->listening = FALSE;
+        self->listener = NULL;
+        self->listening = FALSE;
 
 #ifndef DESTROYING_ATSPI_LISTENER_DOES_NOT_CRASH
         /* init AT-SPI if needed */
         atspi_init ();
 
-        self->priv->listener = atspi_device_listener_new (on_key_press_event,
-                                                          self, NULL);
+        self->listener = atspi_device_listener_new (on_key_press_event,
+                                                    self, NULL);
         /* leak a reference so that this listener is *never* destroyed, to
          * prevent the crash even if our object gets destroyed.
          * See https://gitlab.gnome.org/GNOME/at-spi2-core/-/issues/22 */
-        g_object_ref (self->priv->listener);
+        g_object_ref (self->listener);
 #endif
 }
 
@@ -94,7 +93,7 @@ register_deregister_events (MsdA11yKeyboardAtspi *self,
                             gboolean              do_register)
 {
         g_return_if_fail (MSD_IS_A11Y_KEYBOARD_ATSPI (self));
-        g_return_if_fail (ATSPI_IS_DEVICE_LISTENER (self->priv->listener));
+        g_return_if_fail (ATSPI_IS_DEVICE_LISTENER (self->listener));
 
         /* register listeners for all keys with CAPS_LOCK modifier */
         for (AtspiKeyMaskType mod_mask = 0; mod_mask < 256; mod_mask++)
@@ -103,14 +102,14 @@ register_deregister_events (MsdA11yKeyboardAtspi *self,
                         continue;
 
                 if (do_register)
-                        atspi_register_keystroke_listener (self->priv->listener,
+                        atspi_register_keystroke_listener (self->listener,
                                                            NULL,
                                                            mod_mask,
                                                            1 << ATSPI_KEY_PRESSED_EVENT,
                                                            ATSPI_KEYLISTENER_NOSYNC,
                                                            NULL);
                 else
-                        atspi_deregister_keystroke_listener (self->priv->listener,
+                        atspi_deregister_keystroke_listener (self->listener,
                                                              NULL,
                                                              mod_mask,
                                                              1 << ATSPI_KEY_PRESSED_EVENT,
@@ -123,18 +122,18 @@ msd_a11y_keyboard_atspi_start (MsdA11yKeyboardAtspi *self)
 {
         g_return_if_fail (MSD_IS_A11Y_KEYBOARD_ATSPI (self));
 
-        if (self->priv->listening)
+        if (self->listening)
                 return;
 
 #ifdef DESTROYING_ATSPI_LISTENER_DOES_NOT_CRASH
         /* init AT-SPI if needed */
         atspi_init ();
 
-        self->priv->listener = atspi_device_listener_new (on_key_press_event,
-                                                          self, NULL);
+        self->listener = atspi_device_listener_new (on_key_press_event,
+                                                    self, NULL);
 #endif
         register_deregister_events (self, TRUE);
-        self->priv->listening = TRUE;
+        self->listening = TRUE;
 }
 
 void
@@ -142,18 +141,23 @@ msd_a11y_keyboard_atspi_stop (MsdA11yKeyboardAtspi *self)
 {
         g_return_if_fail (MSD_IS_A11Y_KEYBOARD_ATSPI (self));
 
-        if (! self->priv->listening)
+        if (! self->listening)
                 return;
 
 #ifdef DESTROYING_ATSPI_LISTENER_DOES_NOT_CRASH
-        g_clear_object (&self->priv->listener);
+        g_clear_object (&self->listener);
 #else
         register_deregister_events (self, FALSE);
 #endif
-        self->priv->listening = FALSE;
+        self->listening = FALSE;
 }
 
 #else /* ! defined(HAVE_LIBATSPI): AT-SPI is not available, provide stubs */
+
+struct _MsdA11yKeyboardAtspi
+{
+        GObject parent;
+};
 
 G_DEFINE_TYPE (MsdA11yKeyboardAtspi, msd_a11y_keyboard_atspi, G_TYPE_OBJECT)
 
