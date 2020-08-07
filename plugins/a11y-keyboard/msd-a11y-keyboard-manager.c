@@ -49,11 +49,15 @@
 
 #include "mate-settings-profile.h"
 #include "msd-a11y-keyboard-manager.h"
-#include "msd-a11y-keyboard-atspi.h"
+#ifdef HAVE_LIBATSPI
+# include "msd-a11y-keyboard-atspi.h"
+#endif
 #include "msd-a11y-preferences-dialog.h"
 
 #define CONFIG_SCHEMA "org.mate.accessibility-keyboard"
-#define KEY_CAPSLOCK_BEEP_ENABLED "capslock-beep-enable"
+#ifdef HAVE_LIBATSPI
+# define KEY_CAPSLOCK_BEEP_ENABLED "capslock-beep-enable"
+#endif
 #define NOTIFICATION_TIMEOUT 30
 
 struct MsdA11yKeyboardManagerPrivate
@@ -66,7 +70,9 @@ struct MsdA11yKeyboardManagerPrivate
         GtkWidget *preferences_dialog;
         GtkStatusIcon *status_icon;
         XkbDescRec *original_xkb_desc;
+#ifdef HAVE_LIBATSPI
         MsdA11yKeyboardAtspi *capslock_beep;
+#endif
 
         GSettings  *settings;
 
@@ -987,6 +993,7 @@ keyboard_callback (GSettings              *settings,
         maybe_show_status_icon (manager);
 }
 
+#ifdef HAVE_LIBATSPI
 static void
 capslock_beep_callback (GSettings              *settings,
                         gchar                  *key G_GNUC_UNUSED,
@@ -997,6 +1004,7 @@ capslock_beep_callback (GSettings              *settings,
         else
                 msd_a11y_keyboard_atspi_stop (manager->priv->capslock_beep);
 }
+#endif
 
 static gboolean
 start_a11y_keyboard_idle_cb (MsdA11yKeyboardManager *manager)
@@ -1008,11 +1016,13 @@ start_a11y_keyboard_idle_cb (MsdA11yKeyboardManager *manager)
 
         manager->priv->settings = g_settings_new (CONFIG_SCHEMA);
 
+#ifdef HAVE_LIBATSPI
         manager->priv->capslock_beep = msd_a11y_keyboard_atspi_new ();
         if (g_settings_get_boolean (manager->priv->settings, KEY_CAPSLOCK_BEEP_ENABLED))
                 msd_a11y_keyboard_atspi_start (manager->priv->capslock_beep);
         g_signal_connect (manager->priv->settings, "changed::"KEY_CAPSLOCK_BEEP_ENABLED,
                           G_CALLBACK (capslock_beep_callback), manager);
+#endif
 
         if (!xkb_enabled (manager))
                 goto out;
@@ -1126,7 +1136,9 @@ msd_a11y_keyboard_manager_stop (MsdA11yKeyboardManager *manager)
         p->slowkeys_shortcut_val = FALSE;
         p->stickykeys_shortcut_val = FALSE;
 
+#ifdef HAVE_LIBATSPI
         g_clear_object (&p->capslock_beep);
+#endif
 }
 
 static void
