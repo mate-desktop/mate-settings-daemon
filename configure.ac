@@ -120,13 +120,21 @@ dnl ---------------------------------------------------------------------------
 dnl - Check for libatspi
 dnl ---------------------------------------------------------------------------
 
-PKG_CHECK_MODULES(LIBATSPI, atspi-2 >= $LIBATSPI_REQUIRED_VERSION,
-          [AC_DEFINE(HAVE_LIBATSPI, 1, [Define if libatspi is available])
-          have_libatspi=yes], have_libatspi=no)
+AC_ARG_WITH([libatspi],
+            [AS_HELP_STRING([--without-libatspi], [Disable key monitoring support (default: auto)])],
+            [with_libatspi=$withval], [with_libatspi=auto])
+
+have_libatspi=no
+AS_IF([test "x$with_libatspi" != xno],
+      [PKG_CHECK_MODULES([LIBATSPI], [atspi-2 >= $LIBATSPI_REQUIRED_VERSION],
+                         [AC_DEFINE([HAVE_LIBATSPI], [1], [Define if libatspi is available])
+                          have_libatspi=yes], [have_libatspi=no])
+       AS_IF([test "x$have_libatspi" = xno -a "x$with_libatspi" = xyes],
+             [AC_MSG_ERROR([libatspi support requested but libraries not found])])
+       PKG_CHECK_EXISTS([atspi-2 > 2.36.0],
+                        [AC_DEFINE([DESTROYING_ATSPI_LISTENER_DOES_NOT_CRASH], [1], [Define if libatspi does not have bug 22])],
+                        [])])
 AM_CONDITIONAL([HAVE_LIBATSPI], [test "x$have_libatspi" = xyes])
-PKG_CHECK_EXISTS([atspi-2 > 2.36.0],
-                 [AC_DEFINE([DESTROYING_ATSPI_LISTENER_DOES_NOT_CRASH], [1], [Define if libatspi does not have bug 22])],
-                 [])
 
 dnl ---------------------------------------------------------------------------
 dnl - Check for D-Bus
@@ -485,6 +493,7 @@ echo "
 
     PulseAudio support:       ${have_pulse}
     Libnotify support:        ${have_libnotify}
+    Libatspi support:         ${have_libatspi}
     Libcanberra support:      ${have_libcanberra}
     Libmatemixer support:     ${have_libmatemixer}
     Smartcard support:        ${have_smartcard_support}
