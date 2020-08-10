@@ -554,8 +554,8 @@ ldsm_is_hash_item_not_in_mounts (gpointer key,
 }
 
 static void
-ldsm_mounts_changed (GObject  *monitor,
-                     gpointer  data)
+ldsm_mounts_changed (GObject  *monitor G_GNUC_UNUSED,
+                     gpointer  data G_GNUC_UNUSED)
 {
         GList *mounts;
 
@@ -636,9 +636,9 @@ msd_ldsm_get_config (void)
 }
 
 static void
-msd_ldsm_update_config (GSettings *settings,
-                        gchar *key,
-                        gpointer user_data)
+msd_ldsm_update_config (GSettings *settings G_GNUC_UNUSED,
+                        gchar *key G_GNUC_UNUSED,
+                        gpointer user_data G_GNUC_UNUSED)
 {
         msd_ldsm_get_config ();
 }

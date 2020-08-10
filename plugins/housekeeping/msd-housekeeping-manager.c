@@ -232,9 +232,9 @@ do_cleanup_soon (MsdHousekeepingManager *manager)
 }
 
 static void
-settings_changed_callback (GSettings              *settings,
-			   const char             *key,
-			   MsdHousekeepingManager *manager)
+settings_changed_callback (GSettings              *settings G_GNUC_UNUSED,
+                           const char             *key G_GNUC_UNUSED,
+                           MsdHousekeepingManager *manager)
 {
         do_cleanup_soon (manager);
 }

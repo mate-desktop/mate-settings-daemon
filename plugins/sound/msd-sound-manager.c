@@ -201,18 +201,18 @@ trigger_flush (MsdSoundManager *manager)
 }
 
 static void
-gsettings_notify_cb (GSettings *client,
-                     gchar *key,
+gsettings_notify_cb (GSettings *client G_GNUC_UNUSED,
+                     gchar *key G_GNUC_UNUSED,
                      MsdSoundManager *manager)
 {
         trigger_flush (manager);
 }
 
 static void
-file_monitor_changed_cb (GFileMonitor *monitor,
-                         GFile *file,
-                         GFile *other_file,
-                         GFileMonitorEvent event,
+file_monitor_changed_cb (GFileMonitor *monitor G_GNUC_UNUSED,
+                         GFile *file G_GNUC_UNUSED,
+                         GFile *other_file G_GNUC_UNUSED,
+                         GFileMonitorEvent event G_GNUC_UNUSED,
                          MsdSoundManager *manager)
 {
         g_debug ("Theme dir changed");

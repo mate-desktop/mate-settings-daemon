@@ -126,7 +126,7 @@ msd_a11y_preferences_dialog_class_init (MsdA11yPreferencesDialogClass *klass)
 }
 
 static void
-on_response (MsdA11yPreferencesDialog *dialog,
+on_response (MsdA11yPreferencesDialog *dialog G_GNUC_UNUSED,
              gint                      response_id)
 {
         switch (response_id) {
@@ -478,7 +478,7 @@ on_at_screen_magnifier_checkbutton_toggled (GtkToggleButton          *button,
 
 static void
 on_large_print_checkbutton_toggled (GtkToggleButton          *button,
-                                    MsdA11yPreferencesDialog *dialog)
+                                    MsdA11yPreferencesDialog *dialog G_GNUC_UNUSED)
 {
         config_set_large_print (gtk_toggle_button_get_active (button));
 }

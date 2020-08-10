@@ -232,7 +232,7 @@ draw_background (MsdBackgroundManager *manager,
 }
 
 static void
-on_bg_changed (MateBG               *bg,
+on_bg_changed (MateBG               *bg G_GNUC_UNUSED,
 	       MsdBackgroundManager *manager)
 {
 	g_debug ("Background changed");
@@ -240,7 +240,7 @@ on_bg_changed (MateBG               *bg,
 }
 
 static void
-on_bg_transitioned (MateBG               *bg,
+on_bg_transitioned (MateBG               *bg G_GNUC_UNUSED,
 		    MsdBackgroundManager *manager)
 {
 	g_debug ("Background transitioned");
@@ -308,9 +308,9 @@ settings_change_event_idle_cb (MsdBackgroundManager *manager)
 }
 
 static gboolean
-settings_change_event_cb (GSettings            *settings,
-			  gpointer              keys,
-			  gint                  n_keys,
+settings_change_event_cb (GSettings            *settings G_GNUC_UNUSED,
+			  gpointer              keys G_GNUC_UNUSED,
+			  gint                  n_keys G_GNUC_UNUSED,
 			  MsdBackgroundManager *manager)
 {
 	MsdBackgroundManagerPrivate *p = manager->priv;
@@ -375,8 +375,8 @@ remove_background (MsdBackgroundManager *manager)
 }
 
 static void
-on_bg_handling_changed (GSettings            *settings,
-			const char           *key,
+on_bg_handling_changed (GSettings            *settings G_GNUC_UNUSED,
+			const char           *key G_GNUC_UNUSED,
 			MsdBackgroundManager *manager)
 {
 	MsdBackgroundManagerPrivate *p = manager->priv;
@@ -433,10 +433,10 @@ disconnect_session_manager_listener (MsdBackgroundManager* manager)
 }
 
 static void
-on_session_manager_signal (GDBusProxy   *proxy,
-			   const gchar  *sender_name,
+on_session_manager_signal (GDBusProxy   *proxy G_GNUC_UNUSED,
+			   const gchar  *sender_name G_GNUC_UNUSED,
 			   const gchar  *signal_name,
-			   GVariant     *parameters,
+			   GVariant     *parameters G_GNUC_UNUSED,
 			   gpointer      user_data)
 {
 	MsdBackgroundManager *manager = MSD_BACKGROUND_MANAGER (user_data);

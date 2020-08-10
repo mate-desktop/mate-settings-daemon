@@ -250,9 +250,9 @@ system_timezone_finalize (GObject *obj)
 }
 
 static void
-system_timezone_monitor_changed (GFileMonitor *handle,
-                                 GFile *file,
-                                 GFile *other_file,
+system_timezone_monitor_changed (GFileMonitor *handle G_GNUC_UNUSED,
+                                 GFile *file G_GNUC_UNUSED,
+                                 GFile *other_file G_GNUC_UNUSED,
                                  GFileMonitorEvent event,
                                  gpointer user_data)
 {

@@ -157,7 +157,9 @@ apply_desktop_settings (void)
 }
 
 static void
-apply_desktop_settings_cb (GSettings *settings, gchar *key, gpointer   user_data)
+apply_desktop_settings_cb (GSettings *settings G_GNUC_UNUSED,
+                           gchar     *key G_GNUC_UNUSED,
+                           gpointer   user_data G_GNUC_UNUSED)
 {
     apply_desktop_settings ();
 }
@@ -189,7 +191,8 @@ popup_menu_launch_capplet (void)
 }
 
 static void
-show_layout_destroy (GtkWidget * dialog, gint group)
+show_layout_destroy (GtkWidget *dialog G_GNUC_UNUSED,
+                     gint       group)
 {
 	g_hash_table_remove (preview_dialogs, GINT_TO_POINTER (group));
 }
@@ -228,7 +231,8 @@ popup_menu_show_layout (void)
 }
 
 static void
-popup_menu_set_group (GtkMenuItem * item, gpointer param)
+popup_menu_set_group (GtkMenuItem *item G_GNUC_UNUSED,
+                      gpointer     param)
 {
 	gint group_number = GPOINTER_TO_INT (param);
 	XklEngine *engine = matekbd_status_get_xkl_engine ();
@@ -471,7 +475,9 @@ apply_xkb_settings (void)
 }
 
 static void
-apply_xkb_settings_cb (GSettings *settings, gchar *key, gpointer   user_data)
+apply_xkb_settings_cb (GSettings *settings G_GNUC_UNUSED,
+                       gchar     *key G_GNUC_UNUSED,
+                       gpointer   user_data G_GNUC_UNUSED)
 {
     apply_xkb_settings ();
 }
@@ -505,7 +511,7 @@ msd_keyboard_xkb_evt_filter (GdkXEvent * xev, GdkEvent * event)
 
 /* When new Keyboard is plugged in - reload the settings */
 static void
-msd_keyboard_new_device (XklEngine * engine)
+msd_keyboard_new_device (XklEngine * engine G_GNUC_UNUSED)
 {
 	apply_desktop_settings ();
 	apply_xkb_settings ();
@@ -543,8 +549,10 @@ msd_keyboard_update_indicator_icons (void)
 }
 
 static void
-msd_keyboard_state_changed (XklEngine * engine, XklEngineStateChange type,
-			    gint new_group, gboolean restore)
+msd_keyboard_state_changed (XklEngine           *engine G_GNUC_UNUSED,
+                            XklEngineStateChange type,
+                            gint                 new_group,
+                            gboolean             restore)
 {
 	xkl_debug (160,
 		   "State changed: type %d, new group: %d, restore: %d.\n",

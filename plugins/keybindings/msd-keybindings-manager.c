@@ -500,10 +500,10 @@ keybindings_filter (GdkXEvent             *gdk_xevent,
 }
 
 static void
-bindings_callback (DConfClient           *client,
-                   gchar                 *prefix,
-                   GStrv                  changes,
-                   gchar                 *tag,
+bindings_callback (DConfClient           *client G_GNUC_UNUSED,
+                   gchar                 *prefix G_GNUC_UNUSED,
+                   GStrv                  changes G_GNUC_UNUSED,
+                   gchar                 *tag G_GNUC_UNUSED,
                    MsdKeybindingsManager *manager)
 {
         g_debug ("keybindings: received 'changed' signal from dconf");

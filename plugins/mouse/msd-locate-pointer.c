@@ -166,7 +166,7 @@ update_shape (MsdLocatePointerData *data)
 }
 
 static void
-timeline_frame_cb (MsdTimeline *timeline,
+timeline_frame_cb (MsdTimeline *timeline G_GNUC_UNUSED,
 		   gdouble      progress,
 		   gpointer     user_data)
 {
@@ -250,7 +250,7 @@ composited_changed (GdkScreen            *screen,
 }
 
 static void
-timeline_finished_cb (MsdTimeline *timeline,
+timeline_finished_cb (MsdTimeline *timeline G_GNUC_UNUSED,
 		      gpointer     user_data)
 {
   MsdLocatePointerData *data = (MsdLocatePointerData *) user_data;
@@ -266,7 +266,7 @@ timeline_finished_cb (MsdTimeline *timeline,
 }
 
 static void
-locate_pointer_unrealize_cb (GtkWidget            *widget,
+locate_pointer_unrealize_cb (GtkWidget            *widget G_GNUC_UNUSED,
                              MsdLocatePointerData *data)
 {
   if (data->window != NULL)
@@ -279,7 +279,7 @@ locate_pointer_unrealize_cb (GtkWidget            *widget,
 }
 
 static void
-locate_pointer_realize_cb (GtkWidget            *widget,
+locate_pointer_realize_cb (GtkWidget            *widget G_GNUC_UNUSED,
                            MsdLocatePointerData *data)
 {
   GdkDisplay *display;
@@ -321,7 +321,7 @@ locate_pointer_realize_cb (GtkWidget            *widget,
 }
 
 static gboolean
-locate_pointer_draw_cb (GtkWidget      *widget,
+locate_pointer_draw_cb (GtkWidget      *widget G_GNUC_UNUSED,
                         cairo_t        *cr,
                         gpointer        user_data)
 {

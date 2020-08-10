@@ -158,7 +158,7 @@ msd_smartcard_plugin_finalize (GObject *object)
 }
 
 static void
-smartcard_inserted_cb (MsdSmartcardManager *card_monitor,
+smartcard_inserted_cb (MsdSmartcardManager *card_monitor G_GNUC_UNUSED,
                        MsdSmartcard        *card,
                        MsdSmartcardPlugin  *plugin)
 {
@@ -229,7 +229,7 @@ process_smartcard_removal (MsdSmartcardPlugin *plugin)
 }
 
 static void
-smartcard_removed_cb (MsdSmartcardManager *card_monitor,
+smartcard_removed_cb (MsdSmartcardManager *card_monitor G_GNUC_UNUSED,
                       MsdSmartcard        *card,
                       MsdSmartcardPlugin  *plugin)
 {

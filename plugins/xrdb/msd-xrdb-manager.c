@@ -473,8 +473,8 @@ apply_settings (MsdXrdbManager *manager,
 }
 
 static void
-theme_changed (GtkSettings    *settings,
-               GParamSpec     *pspec,
+theme_changed (GtkSettings    *settings G_GNUC_UNUSED,
+               GParamSpec     *pspec G_GNUC_UNUSED,
                MsdXrdbManager *manager)
 {
         apply_settings (manager, gtk_widget_get_style (manager->priv->widget));

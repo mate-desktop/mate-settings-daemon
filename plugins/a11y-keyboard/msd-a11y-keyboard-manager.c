@@ -497,7 +497,7 @@ maybe_show_status_icon (MsdA11yKeyboardManager *manager)
 
 #ifdef HAVE_LIBNOTIFY
 static void
-on_notification_closed (NotifyNotification     *notification,
+on_notification_closed (NotifyNotification     *notification G_GNUC_UNUSED,
                         MsdA11yKeyboardManager *manager)
 {
         g_object_unref (manager->priv->notification);
@@ -985,8 +985,8 @@ cb_xkb_event_filter (GdkXEvent              *xevent,
 }
 
 static void
-keyboard_callback (GSettings              *settings,
-                   gchar                  *key,
+keyboard_callback (GSettings              *settings G_GNUC_UNUSED,
+                   gchar                  *key G_GNUC_UNUSED,
                    MsdA11yKeyboardManager *manager)
 {
         set_server_from_settings (manager);
@@ -1151,7 +1151,7 @@ msd_a11y_keyboard_manager_class_init (MsdA11yKeyboardManagerClass *klass)
 
 static void
 on_preferences_dialog_response (GtkDialog              *dialog,
-                                int                     response,
+                                int                     response G_GNUC_UNUSED,
                                 MsdA11yKeyboardManager *manager)
 {
         g_signal_handlers_disconnect_by_func (dialog,
@@ -1163,7 +1163,7 @@ on_preferences_dialog_response (GtkDialog              *dialog,
 }
 
 static void
-on_status_icon_activate (GtkStatusIcon          *status_icon,
+on_status_icon_activate (GtkStatusIcon          *status_icon G_GNUC_UNUSED,
                          MsdA11yKeyboardManager *manager)
 {
         if (manager->priv->preferences_dialog == NULL) {

@@ -249,9 +249,9 @@ engine_properties_changed (MsdRfkillManager *manager)
 }
 
 static void
-rfkill_changed (CcRfkillGlib     *rfkill,
-		GList            *events,
-		MsdRfkillManager  *manager)
+rfkill_changed (CcRfkillGlib     *rfkill G_GNUC_UNUSED,
+                GList            *events,
+                MsdRfkillManager *manager)
 {
 	GList *l;
         int value;
@@ -519,7 +519,7 @@ sync_wwan_enabled (MsdRfkillManager *manager)
 
 static void
 nm_signal (GDBusProxy *proxy,
-           char       *sender_name,
+           char       *sender_name G_GNUC_UNUSED,
            char       *signal_name,
            GVariant   *parameters,
            gpointer    user_data)
@@ -575,8 +575,8 @@ on_nm_proxy_gotten (GObject      *source,
 
 static void
 sync_wwan_interesting (GDBusObjectManager *object_manager,
-                       GDBusObject        *object,
-                       GDBusInterface     *interface,
+                       GDBusObject        *object G_GNUC_UNUSED,
+                       GDBusInterface     *interface G_GNUC_UNUSED,
                        gpointer            user_data)
 {
         MsdRfkillManager *manager = user_data;

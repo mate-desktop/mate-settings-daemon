@@ -317,7 +317,7 @@ trash_empty_start (void)
 static void
 trash_empty_confirmation_response (GtkDialog *dialog,
                                    gint       response_id,
-                                   gpointer   user_data)
+                                   gpointer   user_data G_GNUC_UNUSED)
 {
         if (response_id == GTK_RESPONSE_YES)
                 trash_empty_start ();
