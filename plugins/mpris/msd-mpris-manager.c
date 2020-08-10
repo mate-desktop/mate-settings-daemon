@@ -223,8 +223,8 @@ grab_media_player_keys (MsdMprisManager *manager)
 }
 
 static void
-key_pressed (GDBusProxy          *proxy,
-             gchar               *sender_name,
+key_pressed (GDBusProxy          *proxy G_GNUC_UNUSED,
+             gchar               *sender_name G_GNUC_UNUSED,
              gchar               *signal_name,
              GVariant            *parameters,
              MsdMprisManager     *manager)

@@ -266,7 +266,7 @@ mate_settings_plugin_info_fill_from_file (MateSettingsPluginInfo *info,
 }
 
 static void
-plugin_enabled_cb (GSettings              *settings,
+plugin_enabled_cb (GSettings              *settings G_GNUC_UNUSED,
                    gchar                  *key,
                    MateSettingsPluginInfo *info)
 {

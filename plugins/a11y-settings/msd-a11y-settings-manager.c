@@ -54,7 +54,7 @@ G_DEFINE_TYPE_WITH_PRIVATE (MsdA11ySettingsManager, msd_a11y_settings_manager, G
 static gpointer manager_object = NULL;
 
 static void
-apps_settings_changed (GSettings              *settings,
+apps_settings_changed (GSettings              *settings G_GNUC_UNUSED,
 		       const char             *key,
 		       MsdA11ySettingsManager *manager)
 {

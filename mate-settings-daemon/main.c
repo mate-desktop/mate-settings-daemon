@@ -444,7 +444,9 @@ parse_args (int *argc, char ***argv)
             g_setenv ("G_MESSAGES_DEBUG", "all", FALSE);
 }
 
-static void debug_changed (GSettings *settings, gchar *key, gpointer user_data)
+static void debug_changed (GSettings *settings,
+                           gchar     *key G_GNUC_UNUSED,
+                           gpointer   user_data G_GNUC_UNUSED)
 {
         debug = g_settings_get_boolean (settings, DEBUG_KEY);
         if (debug) {

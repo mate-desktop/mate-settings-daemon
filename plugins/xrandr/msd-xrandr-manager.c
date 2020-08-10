@@ -460,7 +460,9 @@ timeout_cb (gpointer data)
 }
 
 static void
-timeout_response_cb (GtkDialog *dialog, int response_id, gpointer data)
+timeout_response_cb (GtkDialog *dialog G_GNUC_UNUSED,
+                     int        response_id,
+                     gpointer   data)
 {
         TimeoutDialog *timeout = data;
 
@@ -1670,13 +1672,14 @@ run_display_capplet (GtkWidget *widget)
 }
 
 static void
-popup_menu_configure_display_cb (GtkMenuItem *item, gpointer data)
+popup_menu_configure_display_cb (GtkMenuItem *item, gpointer data G_GNUC_UNUSED)
 {
         run_display_capplet (GTK_WIDGET (item));
 }
 
 static void
-status_icon_popup_menu_selection_done_cb (GtkMenuShell *menu_shell, gpointer data)
+status_icon_popup_menu_selection_done_cb (GtkMenuShell *menu_shell G_GNUC_UNUSED,
+                                          gpointer      data)
 {
         MsdXrandrManager *manager = MSD_XRANDR_MANAGER (data);
         struct MsdXrandrManagerPrivate *priv = manager->priv;
@@ -1696,7 +1699,7 @@ status_icon_popup_menu_selection_done_cb (GtkMenuShell *menu_shell, gpointer dat
 #define OUTPUT_TITLE_ITEM_PADDING 4
 
 static void
-title_item_size_allocate_cb (GtkWidget *widget, GtkAllocation *allocation, gpointer data)
+title_item_size_allocate_cb (GtkWidget *widget, GtkAllocation *allocation, gpointer data G_GNUC_UNUSED)
 {
         /* When GtkMenu does size_request on its items, it asks them for their "toggle size",
          * which will be non-zero when there are check/radio items.  GtkMenu remembers
@@ -2325,7 +2328,8 @@ status_icon_popup_menu (MsdXrandrManager *manager, guint button, guint32 timesta
 }
 
 static void
-status_icon_activate_cb (GtkStatusIcon *status_icon, gpointer data)
+status_icon_activate_cb (GtkStatusIcon *status_icon G_GNUC_UNUSED,
+                         gpointer       data)
 {
         MsdXrandrManager *manager = MSD_XRANDR_MANAGER (data);
 
@@ -2334,7 +2338,10 @@ status_icon_activate_cb (GtkStatusIcon *status_icon, gpointer data)
 }
 
 static void
-status_icon_popup_menu_cb (GtkStatusIcon *status_icon, guint button, guint32 timestamp, gpointer data)
+status_icon_popup_menu_cb (GtkStatusIcon *status_icon G_GNUC_UNUSED,
+                           guint          button,
+                           guint32        timestamp,
+                           gpointer       data)
 {
         MsdXrandrManager *manager = MSD_XRANDR_MANAGER (data);
 
@@ -2391,7 +2398,7 @@ start_or_stop_icon (MsdXrandrManager *manager)
 }
 
 static void
-on_config_changed (GSettings        *settings,
+on_config_changed (GSettings        *settings G_GNUC_UNUSED,
                    gchar            *key,
                    MsdXrandrManager *manager)
 {

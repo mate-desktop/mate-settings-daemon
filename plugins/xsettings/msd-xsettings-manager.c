@@ -704,7 +704,7 @@ update_xft_settings (MateXSettingsManager *manager)
 }
 
 static void
-recalculate_scale_callback (GdkScreen            *screen,
+recalculate_scale_callback (GdkScreen            *screen G_GNUC_UNUSED,
                             MateXSettingsManager *manager)
 {
         int i;
@@ -721,8 +721,8 @@ recalculate_scale_callback (GdkScreen            *screen,
 }
 
 static void
-xft_callback (GSettings            *gsettings,
-              const gchar          *key,
+xft_callback (GSettings            *gsettings G_GNUC_UNUSED,
+              const gchar          *key G_GNUC_UNUSED,
               MateXSettingsManager *manager)
 {
         int i;

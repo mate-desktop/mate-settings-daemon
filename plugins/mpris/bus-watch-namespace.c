@@ -240,9 +240,9 @@ names_listed (GObject      *object,
 }
 
 static void
-connection_closed (GDBusConnection *connection,
-                   gboolean         remote_peer_vanished,
-                   GError          *error,
+connection_closed (GDBusConnection *connection G_GNUC_UNUSED,
+                   gboolean         remote_peer_vanished G_GNUC_UNUSED,
+                   GError          *error G_GNUC_UNUSED,
                    gpointer         user_data)
 {
   NamespaceWatcher *watcher = user_data;
