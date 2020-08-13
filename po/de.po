@@ -4,21 +4,21 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Xpistian <xpistianbecker2@web.de>, 2018
-# Franco Della-Monica <franco.della.monica@gmail.com>, 2018
-# nautilusx, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Tobias Bannert <tobannert@gmail.com>, 2019
-# Wolfgang Ulbrich <mate@raveit.de>, 2019
-# Ettore Atalan <atalanttore@googlemail.com>, 2019
+# Xpistian <xpistianbecker2@web.de>, 2020
+# nautilusx, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Ettore Atalan <atalanttore@googlemail.com>, 2020
+# Tobias Bannert <tobannert@gmail.com>, 2020
+# Wolfgang Ulbrich <mate@raveit.de>, 2020
+# Franco Della-Monica <franco.della.monica@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-settings-daemon 1.23.2\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 11:28+0100\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Ettore Atalan <atalanttore@googlemail.com>, 2019\n"
+"PO-Revision-Date: 2020-02-16 15:02+0000\n"
+"Last-Translator: Franco Della-Monica <franco.della.monica@gmail.com>, 2020\n"
 "Language-Team: German (https://www.transifex.com/mate/teams/13566/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +28,7 @@ msgstr ""
 
 #: data/50-accessibility.xml.in:2
 msgid "Accessibility"
-msgstr "Barrierefreiheit"
+msgstr "Eingabehilfen"
 
 #: data/50-accessibility.xml.in:4
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:155
@@ -1423,7 +1423,7 @@ msgstr ""
 
 #: plugins/mouse/msd-mouse-manager.c:1657
 msgid "Mouse Preferences"
-msgstr "Mauseinstellungen"
+msgstr "Einstellungen für die Maus"
 
 #: plugins/mpris/mpris.mate-settings-plugin.desktop.in:5
 msgid "Mpris"
@@ -1550,11 +1550,7 @@ msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
 msgstr[0] ""
-"Diese Anzeige wird in %d Sekunde auf die vorherige Konfiguration "
-"zurückgesetzt"
 msgstr[1] ""
-"Diese Anzeige wird in %d Sekunden auf die vorherige Konfiguration "
-"zurückgesetzt"
 
 #: plugins/xrandr/msd-xrandr-manager.c:490
 msgid "Does the display look OK?"

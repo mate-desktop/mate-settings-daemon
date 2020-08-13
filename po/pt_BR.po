@@ -4,26 +4,27 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Matheus Macabu <mkbu95@gmail.com>, 2018
-# Aldo Oliveira <america103@gmail.com>, 2018
-# Alberto Federman Neto <mrtabac@gmail.com>, 2018
-# Felipe Rozelio <feliperozelio@gmail.com>, 2018
-# Jonatas da Silva Teixeira <jonatasteixeira@id.uff.br>, 2018
-# jose, 2018
-# Jhon Anderson <jhonandersonfotografia@gmail.com>, 2018
-# Rangel <carlosrangelsantos@gmail.com>, 2018
-# Marcelo Ghelman <marcelo.ghelman@gmail.com>, 2019
-# Victor Gonçalves <hotcyv@gmail.com>, 2019
-# Roger Araújo <roger.rf@gmail.com>, 2019
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Matheus Macabu <mkbu95@gmail.com>, 2020
+# Aldo Oliveira <america103@gmail.com>, 2020
+# Jonatas da Silva Teixeira <jonatasteixeira@id.uff.br>, 2020
+# Jhon Anderson <jhonandersonfotografia@gmail.com>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Alberto Federman Neto <mrtabac@gmail.com>, 2020
+# Felipe Rozelio <feliperozelio@gmail.com>, 2020
+# Marcelo Ghelman <marcelo.ghelman@gmail.com>, 2020
+# Victor Gonçalves <hotcyv@gmail.com>, 2020
+# Wolfgang Ulbrich <mate@raveit.de>, 2020
+# Roger Araújo <roger.rf@gmail.com>, 2020
+# Rangel <carlosrangelsantos@gmail.com>, 2020
+# gustavo s, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-settings-daemon 1.23.2\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 11:28+0100\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
+"PO-Revision-Date: 2020-02-16 15:02+0000\n"
+"Last-Translator: gustavo s, 2020\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/mate/teams/13566/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1413,7 +1414,7 @@ msgstr ""
 
 #: plugins/mouse/msd-mouse-manager.c:1657
 msgid "Mouse Preferences"
-msgstr "Preferências do mouse"
+msgstr "Preferências do Mouse"
 
 #: plugins/mpris/mpris.mate-settings-plugin.desktop.in:5
 msgid "Mpris"
@@ -1538,9 +1539,7 @@ msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
 msgstr[0] ""
-"O monitor será restaurado para sua configuração anterior em %d segundo"
 msgstr[1] ""
-"O monitor será restaurado para sua configuração anterior em %d segundos"
 
 #: plugins/xrandr/msd-xrandr-manager.c:490
 msgid "Does the display look OK?"
@@ -1598,19 +1597,19 @@ msgstr "De cabeça para baixo"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2180
 msgid "ON"
-msgstr ""
+msgstr "Ligar"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2181
 msgid "Turn this monitor off"
-msgstr ""
+msgstr "Desligue esse monitor"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2184
 msgid "OFF"
-msgstr ""
+msgstr "Desligar"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2185
 msgid "Turn this monitor on"
-msgstr ""
+msgstr "Ligue esse monitor"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2245
 msgid "Same output all monitors"

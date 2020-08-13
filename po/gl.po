@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-settings-daemon 1.23.2\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 11:28+0100\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>, 2019\n"
+"PO-Revision-Date: 2020-02-16 15:02+0000\n"
+"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>, 2020\n"
 "Language-Team: Galician (https://www.transifex.com/mate/teams/13566/gl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -313,8 +313,8 @@ msgstr "Activar o desprazamento vertical no bordo "
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:26
 msgid "Set this to TRUE to allow vertical edge scrolling"
 msgstr ""
-"Estabelecer isto como VERDADEIRO para permitir o desprazamento vertical no "
-"bordo"
+"Estabelecer isto como VERDADEIRO para permitir o desprazamento vertical do "
+"borde"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:30
 msgid "Enable horizontal edge scrolling"
@@ -1506,7 +1506,7 @@ msgstr "identificador de tarxeta por rañura"
 
 #: plugins/smartcard/msd-smartcard.c:162 plugins/smartcard/msd-smartcard.c:163
 msgid "name"
-msgstr "nome"
+msgstr "name"
 
 #: plugins/smartcard/msd-smartcard.c:167
 msgid "Module"
@@ -1683,4 +1683,4 @@ msgstr "Axustes das X"
 
 #: plugins/xsettings/xsettings.mate-settings-plugin.desktop.in:6
 msgid "Manage X Settings"
-msgstr "Xestionar os axustes de X"
+msgstr "Xestionar os axustes das X"

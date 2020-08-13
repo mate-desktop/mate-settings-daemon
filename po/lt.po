@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2018
-# Moo, 2019
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Moo, 2020
+# Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-settings-daemon 1.23.2\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 11:28+0100\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
+"PO-Revision-Date: 2020-02-16 15:02+0000\n"
+"Last-Translator: Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2020\n"
 "Language-Team: Lithuanian (https://www.transifex.com/mate/teams/13566/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -187,7 +187,7 @@ msgstr ""
 #: data/org.mate.peripherals-mouse.gschema.xml.in:25
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:95
 msgid "Acceleration profile"
-msgstr ""
+msgstr "Greitėjimo profilis"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:26
 msgid ""
@@ -199,6 +199,13 @@ msgid ""
 "movement. If a mouse doesn't support the configured profile, 'default' will "
 "be used."
 msgstr ""
+"Prijungtai pelei naudojamas greitėjimo profilis. Greitėjimo profilį galima "
+"nustayti į numatytąjį ('default'), kuris naudoja numatytąjį greitėjimo "
+"profilį kiekvienam įrenginiui, plokščiąjį ('flat'), kuris greitina pagal "
+"specifinę įrengnio konstantą, išvestą iš sukonfigūruoto žymeklio greičio, "
+"arba adaptyvųjį ('adaptive'), kuris pritaiko greitėjimą pagal pelės "
+"judėjimą. Jei pelė nepalaiko pasirinktojo profilio, bus naudojamas "
+"numatytasis profilis. "
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:30
 msgid "Drag Threshold"
@@ -434,6 +441,13 @@ msgid ""
 "movement. If a touchpad doesn't support the configured profile, 'default' "
 "will be used."
 msgstr ""
+"Prijungtam jutikliniam kilimėliui naudojamas greitėjimo profilis. Greitėjimo"
+" profilį galima nustayti į numatytąjį ('default'), kuris naudoja numatytąjį "
+"greitėjimo profilį kiekvienam įrenginiui, plokščiąjį ('flat'), kuris "
+"greitina pagal specifinę įrengnio konstantą, išvestą iš sukonfigūruoto "
+"žymeklio greičio, arba adaptyvųjį ('adaptive'), kuris pritaiko greitėjimą "
+"pagal pelės judėjimą. Jei jutiklinis kilimėlis nepalaiko pasirinktojo "
+"profilio, bus naudojamas numatytasis profilis. "
 
 #: data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in:5
 #: data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in:5
@@ -629,35 +643,35 @@ msgstr "Susiejimas sistemos garsų garsiui padidinti."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:45
 msgid "Mute the audio quietly"
-msgstr ""
+msgstr "Ramiai nutildyti garsą"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:46
 msgid "Binding to mute the system volume quietly."
-msgstr ""
+msgstr "Susiejimas ramiai nutildyti sistemos garsį."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:50
 msgid "Turn the volume down quietly"
-msgstr ""
+msgstr "Pritildyti garsį ramiai"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:51
 msgid "Binding to lower the system volume quietly."
-msgstr ""
+msgstr "Susiejimas ramiai pritildyti sistemos garsį."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:55
 msgid "Turn the volume up quietly"
-msgstr ""
+msgstr "Ramiai pagarsinti"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:56
 msgid "Binding to raise the system volume quietly."
-msgstr ""
+msgstr "Susiejimas ramiai padidinti sistemos garsį."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:60
 msgid "Microphone mute/unmute"
-msgstr ""
+msgstr "Mikrofono nutildymas/grįžimas iš nutildymo"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:61
 msgid "Binding to mute/unmute the microphone."
-msgstr ""
+msgstr "Susiejimas nutildyti mikrofoną/grąžinti iš nutildymo."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:65
 msgid "Shut down"
@@ -745,7 +759,7 @@ msgstr "Paleisti tikralaikių pokalbių programą"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:116
 msgid "Binding to launch the instant messenger."
-msgstr ""
+msgstr "Susiejimas pokalbių programai paleisti."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:120
 msgid "Launch web browser"
@@ -1057,11 +1071,11 @@ msgstr "Nuspausti ir _laikyti klavišus, norint juos įvesti (lėtieji klavišai
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:5
 msgid "Accessibility settings"
-msgstr ""
+msgstr "Pritaikymas neįgaliesiems nustatymai"
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:6
 msgid "Accessibility settings plugin"
-msgstr ""
+msgstr "Pritaikymo neįgaliesiems įskiepis"
 
 #: plugins/background/background.mate-settings-plugin.desktop.in:5
 msgid "Background"
@@ -1115,13 +1129,15 @@ msgstr "Butaforinis įskiepis"
 
 #: plugins/housekeeping/housekeeping.mate-settings-plugin.desktop.in:5
 msgid "Housekeeping"
-msgstr ""
+msgstr "Ūkvedyba"
 
 #: plugins/housekeeping/housekeeping.mate-settings-plugin.desktop.in:6
 msgid ""
 "Automatically prunes thumbnail caches and other transient files, and warns "
 "about low disk space"
 msgstr ""
+"Automatiškai sumažina miniatiūrų podėlio ir kitus laikinuosius failus bei "
+"įspėja apie mažėjančią laisvą vietą diske"
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:63
 msgid "Don't show any warnings again for this file system"
@@ -1371,7 +1387,7 @@ msgstr "Aparatinės įrangos lėktuvo veiksena"
 #: plugins/media-keys/msd-media-keys-manager.c:1036
 #: plugins/media-keys/test-media-window.c:123
 msgid "Changing Screen Layout"
-msgstr ""
+msgstr "Pakeisti ekrano išdėstymą"
 
 #: plugins/media-keys/msd-media-keys-manager.c:1040
 #: plugins/media-keys/test-media-window.c:116
@@ -1483,11 +1499,11 @@ msgstr "lustinės kortelės tvarkyklė"
 
 #: plugins/smartcard/smartcard.mate-settings-plugin.desktop.in:5
 msgid "Smartcard"
-msgstr ""
+msgstr "Lustinė kortelė"
 
 #: plugins/smartcard/smartcard.mate-settings-plugin.desktop.in:6
 msgid "Smartcard plugin"
-msgstr ""
+msgstr "Lustinės kortelės įskiepis"
 
 #: plugins/sound/sound.mate-settings-plugin.desktop.in:5
 msgid "Sound"
@@ -1495,7 +1511,7 @@ msgstr "Garsas"
 
 #: plugins/sound/sound.mate-settings-plugin.desktop.in:6
 msgid "Sound Sample Cache plugin"
-msgstr ""
+msgstr "Garso pavyzdžių podėlio įskiepis"
 
 #: plugins/typing-break/typing-break.mate-settings-plugin.desktop.in:5
 msgid "Typing Break"
@@ -1522,7 +1538,7 @@ msgstr "Nepavyko atkurti ekrano nustatymų iš atsarginės kopijos"
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Ankstesni ekrano nustatymai bus grąžinti po %d sekundės"
+msgstr[0] "Ankstesni ekrano nustatymai bus grąžinti už %d sekundžių"
 msgstr[1] "Ankstesni ekrano nustatymai bus grąžinti po %d sekundžių"
 msgstr[2] "Ankstesni ekrano nustatymai bus grąžinti po %d sekundžių"
 msgstr[3] "Ankstesni ekrano nustatymai bus grąžinti po %d sekundžių"
@@ -1583,27 +1599,27 @@ msgstr "Apversta"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2180
 msgid "ON"
-msgstr ""
+msgstr "ĮJUNGTI"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2181
 msgid "Turn this monitor off"
-msgstr ""
+msgstr "Išjungti šį vaizduoklį"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2184
 msgid "OFF"
-msgstr ""
+msgstr "IŠJUNGTA"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2185
 msgid "Turn this monitor on"
-msgstr ""
+msgstr "Įjungti šį vaizduoklį"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2245
 msgid "Same output all monitors"
-msgstr ""
+msgstr "Ta pati išvestis visiems vaizduokliams"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2246
 msgid "Mirror same output to all monitors and turn them on"
-msgstr ""
+msgstr "Siųsti veidrodinį atspindį visiems vaizduokliams ir tada juos įjungti"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2293
 msgid "_Configure Display Settings…"
@@ -1611,7 +1627,7 @@ msgstr "_Keisti ekranų nustatymus…"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2303
 msgid "Open the display configuration dialog (all settings)"
-msgstr ""
+msgstr "Atverti ekrano sąrankos dialogą (visos nuostatos)"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2356
 msgid "Configure display settings"

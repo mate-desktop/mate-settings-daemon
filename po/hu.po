@@ -4,22 +4,22 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Takler Tamás <taklertamas@gmail.com>, 2018
-# darabosj <darabosj@gmail.com>, 2018
-# Zoltán Rápolthy <real_zolee@hotmail.com>, 2018
-# Falu <info@falu.me>, 2018
-# Balázs Meskó <meskobalazs@gmail.com>, 2019
-# KAMI KAMI <kami911@gmail.com>, 2019
-# Rezső Páder <rezso@rezso.net>, 2019
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Takler Tamás <taklertamas@gmail.com>, 2020
+# Falu <info@falu.me>, 2020
+# Zoltán Rápolthy <real_zolee@hotmail.com>, 2020
+# KAMI KAMI <kami911@gmail.com>, 2020
+# Rezső Páder <rezso@rezso.net>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Balázs Meskó <meskobalazs@mailbox.org>, 2020
+# darabosj <darabosj@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-settings-daemon 1.23.2\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 11:28+0100\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
+"PO-Revision-Date: 2020-02-16 15:02+0000\n"
+"Last-Translator: darabosj <darabosj@gmail.com>, 2020\n"
 "Language-Team: Hungarian (https://www.transifex.com/mate/teams/13566/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1528,8 +1528,8 @@ msgstr "A kijelző beállításai nem állíthatók vissza a mentésből"
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "A kijelző visszaáll a korábbi beállításaira %d másodpercen belül"
-msgstr[1] "A kijelző visszaáll a korábbi beállításaira %d másodpercen belül"
+msgstr[0] ""
+msgstr[1] ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:490
 msgid "Does the display look OK?"

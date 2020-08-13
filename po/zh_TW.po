@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# 趙惟倫 <bluebat@member.fsf.org>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# 黃柏諺 <s8321414@gmail.com>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# 趙惟倫 <bluebat@member.fsf.org>, 2020
+# 黃柏諺 <s8321414@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-settings-daemon 1.23.2\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 11:28+0100\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: 黃柏諺 <s8321414@gmail.com>, 2019\n"
+"PO-Revision-Date: 2020-02-16 15:02+0000\n"
+"Last-Translator: 黃柏諺 <s8321414@gmail.com>, 2020\n"
 "Language-Team: Chinese (Taiwan) (https://www.transifex.com/mate/teams/13566/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1441,7 +1441,7 @@ msgstr "無法從備份還原畫面的組態"
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "畫面將會在 %d 秒後重設為先前的組態"
+msgstr[0] ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:490
 msgid "Does the display look OK?"

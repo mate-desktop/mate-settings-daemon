@@ -4,19 +4,19 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Kenneth Jenssen <kennethjenssen@yahoo.com>, 2018
-# Allan Nordhøy <epost@anotheragency.no>, 2019
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# b84df44fb72862b85bae7a669218c6c2, 2019
-# Kjell Cato Heskjestad <cato@heskjestad.xyz>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Allan Nordhøy <epost@anotheragency.no>, 2020
+# Kenneth Jenssen <kennethjenssen@yahoo.com>, 2020
+# b84df44fb72862b85bae7a669218c6c2, 2020
+# Kjell Cato Heskjestad <cato@heskjestad.xyz>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-settings-daemon 1.23.2\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 11:28+0100\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Kjell Cato Heskjestad <cato@heskjestad.xyz>, 2019\n"
+"PO-Revision-Date: 2020-02-16 15:02+0000\n"
+"Last-Translator: Kjell Cato Heskjestad <cato@heskjestad.xyz>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/mate/teams/13566/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -125,7 +125,7 @@ msgstr ""
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:25
 msgid "possible values are \"on\", \"off\", and \"custom\"."
-msgstr "mulige verdier er \"on, \"off\", og \"custom\"."
+msgstr "mulige verdier er «on», «off», og «custom»."
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:35
 msgid "Keyboard Bell Custom Filename"
@@ -720,7 +720,7 @@ msgstr "Binding for å starte e-postklient."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:95
 msgid "Launch settings"
-msgstr "Start innstillinger"
+msgstr "Åpne innstillinger"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:96
 msgid "Binding to launch MATE settings."

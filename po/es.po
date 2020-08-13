@@ -4,25 +4,25 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# ebray187 <ebray187@gmail.com>, 2018
-# Emiliano Fascetti, 2018
-# Angel Mireles <lamborghinilph710@gmail.com>, 2018
-# Lluís Tusquellas <lutusq@gmail.com>, 2018
-# Ivan Nieto <ivan.n.s@tuta.io>, 2018
-# Joel Barrios <darkshram@gmail.com>, 2018
-# Adolfo Jayme-Barrientos, 2019
-# Benjamin Perez Carrillo <benperezc@gmail.com>, 2019
-# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2019
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Toni Estévez <toni.estevez@gmail.com>, 2019
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2020
+# Lluís Tusquellas <lutusq@gmail.com>, 2020
+# Emiliano Fascetti, 2020
+# Angel Mireles <lamborghinilph710@gmail.com>, 2020
+# Adolfo Jayme-Barrientos, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Toni Estévez <toni.estevez@gmail.com>, 2020
+# ebray187 <ebray187@gmail.com>, 2020
+# Benjamin Perez Carrillo <benperezc@gmail.com>, 2020
+# Joel Barrios <darkshram@gmail.com>, 2020
+# Ivan Nieto <ivan.n.s@tuta.io>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-settings-daemon 1.23.2\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 11:28+0100\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Toni Estévez <toni.estevez@gmail.com>, 2019\n"
+"PO-Revision-Date: 2020-02-16 15:02+0000\n"
+"Last-Translator: Ivan Nieto <ivan.n.s@tuta.io>, 2020\n"
 "Language-Team: Spanish (https://www.transifex.com/mate/teams/13566/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -153,8 +153,8 @@ msgid ""
 "When set to true, MATE will remember the state of the NumLock LED between "
 "sessions."
 msgstr ""
-"Cuando se activa, MATE recordará el estado del LED de bloque numérico entre "
-"las sesiones."
+"Cuando se activa, MATE recordará el estado del led de la tecla Bloq Num "
+"entre sesiones."
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:45
 msgid "NumLock state"
@@ -162,7 +162,7 @@ msgstr "Estado de la tecla de bloqueo numérica"
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:46
 msgid "The remembered state of the NumLock LED."
-msgstr "El estado recordado del LED de  la tecla de bloqueo numérica"
+msgstr "El estado que se recuerda del led de la tecla Bloq Num."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:10
 msgid "Mouse button orientation"
@@ -814,7 +814,7 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:135
 msgid "Pause playback"
-msgstr "Pausar la resproducción"
+msgstr "Pausar la reproducción"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:136
 msgid "Binding to pause playback."
@@ -936,7 +936,7 @@ msgstr "Servicio de los ajustes de MATE"
 
 #: mate-settings-daemon/main.c:65
 msgid "Enable debugging code"
-msgstr "Activar código de depuración"
+msgstr "Activar el código de depuración"
 
 #: mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
@@ -1191,7 +1191,7 @@ msgid ""
 "or files, or moving files to another disk or partition."
 msgstr ""
 "Puede liberar espacio vaciando la papelera, eliminando programas o archivos "
-"sin usar o moviendo archivos a otro disco o partición."
+"que no usa o moviendo archivos a otro disco o partición."
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:100
 msgid ""
@@ -1206,8 +1206,8 @@ msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
 msgstr ""
-"Puede liberar espacio vaciando la papelera, eliminando programas usados o "
-"moviendo archivos a un disco externo."
+"Puede liberar espacio vaciando la papelera, eliminando programas que no usa "
+"o moviendo archivos a un disco externo."
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:108
 msgid ""
@@ -1272,7 +1272,7 @@ msgstr ""
 
 #: plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
-msgstr "_Vaciar papelera"
+msgstr "_Vaciar la papelera"
 
 #: plugins/keybindings/keybindings.mate-settings-plugin.desktop.in:5
 msgid "Keybindings"
@@ -1517,7 +1517,7 @@ msgstr "Identificador de tarjetas por ranura"
 
 #: plugins/smartcard/msd-smartcard.c:162 plugins/smartcard/msd-smartcard.c:163
 msgid "name"
-msgstr "nombre"
+msgstr "name"
 
 #: plugins/smartcard/msd-smartcard.c:167
 msgid "Module"
@@ -1571,9 +1571,7 @@ msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
 msgstr[0] ""
-"Se restablecerá la configuración anterior de la pantalla en %d segundo"
 msgstr[1] ""
-"Se restablecerá la configuración anterior de la pantalla en %d segundos"
 
 #: plugins/xrandr/msd-xrandr-manager.c:490
 msgid "Does the display look OK?"

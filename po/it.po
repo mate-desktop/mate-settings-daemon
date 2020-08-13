@@ -4,23 +4,24 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Dario Di Nucci <linkin88mail@gmail.com>, 2018
-# Mat V <enthusedquill6@gmail.com>, 2018
-# Marco Mangiacavalli, 2018
-# andrea pittaro <transifex@andreapittaro.it>, 2019
-# Marco Bartolucci <nap.84@live.it>, 2019
-# Marco Z. <minaz666@gmail.com>, 2019
-# Giuseppe Pignataro <rogepix@gmail.com>, 2019
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Enrico B. <enricobe@hotmail.com>, 2019
+# Dario Di Nucci <linkin88mail@gmail.com>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Marco Mangiacavalli, 2020
+# Giuseppe Pignataro <rogepix@gmail.com>, 2020
+# Enrico B. <enricobe@hotmail.com>, 2020
+# Marco Bartolucci <nap.84@live.it>, 2020
+# Mat V <enthusedquill6@gmail.com>, 2020
+# Marco Z. <minaz666@gmail.com>, 2020
+# andrea pittaro <transifex@andreapittaro.it>, 2020
+# Alessandro Volturno <alelvb@inwind.it>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-settings-daemon 1.23.2\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 11:28+0100\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Enrico B. <enricobe@hotmail.com>, 2019\n"
+"PO-Revision-Date: 2020-02-16 15:02+0000\n"
+"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2020\n"
 "Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -185,7 +186,7 @@ msgstr ""
 #: data/org.mate.peripherals-mouse.gschema.xml.in:20
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:90
 msgid "Motion Threshold"
-msgstr "Soglia del Movimento"
+msgstr "Soglia di Movimento"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:21
 msgid ""
@@ -1266,9 +1267,9 @@ msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
 msgstr ""
-"Scegliendo di svuotare il cestino, tutti gli oggetti in esso contenuti sono "
-"perduti in modo definitivo. Notare che è anche possibile eliminarli uno ad "
-"uno."
+"Scegliendo di svuotare il cestino, tutti gli oggetti in esso contenuti "
+"saranno perduti in modo definitivo. Notare che è anche possibile eliminarli "
+"uno ad uno."
 
 #: plugins/housekeeping/msd-ldsm-trash-empty.c:365
 msgid "_Empty Trash"
@@ -1276,7 +1277,7 @@ msgstr "S_vuota cestino"
 
 #: plugins/keybindings/keybindings.mate-settings-plugin.desktop.in:5
 msgid "Keybindings"
-msgstr "Associazioni di tasti"
+msgstr "Associazioni tasti"
 
 #: plugins/keybindings/keybindings.mate-settings-plugin.desktop.in:6
 msgid "Keybindings plugin"
@@ -1568,7 +1569,7 @@ msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
 msgstr[0] ""
-"Il display sarà riportato alla configurazione precedente tra  %d secondo"
+"Il display sarà riportato alla configurazione precedente tra %d secondo"
 msgstr[1] ""
 "Il display sarà riportato alla configurazione precedente tra %d secondi"
 
