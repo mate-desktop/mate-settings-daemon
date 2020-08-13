@@ -1,3 +1,11 @@
+### mate-settings-daemon 1.24.1
+
+  * update translations
+  * plugin xsettings: Fix memory leak on delayed_toggle_bg_draw
+  * mpris: Use namespace instead of a whitelist for player names
+  * build: silent build warnings for distcheck
+  * housekeeping: Fix iconname of mate-disk-usage-analyzer
+
 ### mate-settings-daemon 1.24.0
 
   * update translations
