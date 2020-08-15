@@ -266,11 +266,11 @@ mate_settings_plugin_info_fill_from_file (MateSettingsPluginInfo *info,
 }
 
 static void
-plugin_enabled_cb (GSettings              *settings G_GNUC_UNUSED,
+plugin_enabled_cb (GSettings              *settings,
                    gchar                  *key,
                    MateSettingsPluginInfo *info)
 {
-        if (g_settings_get_boolean (info->priv->settings, key)) {
+        if (g_settings_get_boolean (settings, key)) {
                 mate_settings_plugin_info_activate (info);
         } else {
                 mate_settings_plugin_info_deactivate (info);
