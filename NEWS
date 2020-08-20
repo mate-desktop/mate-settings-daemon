@@ -1,5 +1,32 @@
 ### mate-settings-daemon 1.25.0
 
+  * update translations
+  * main: Do not override detailed_signal for debugging
+  * mate-settings-plugin-info: unused parameter 'settings'
+  * add G_GNUC_UNUSED in some unused parameters
+  * Add option --without-libatspi and assorted status line
+  * a11y-keyboard: Don't show UI for unavailable feature in the pref dialog
+  * a11y-keyboard: Don't create a dummy object if AT-SPI is not available
+  * a11y-keyboard-atspi: Switch to a final type and reduce boilerplate
+  * a11y-keyboard: Depend on the right version of mate-desktop
+  * a11y-keyboard: capslock-beep: Try and detect non-buggy libatspi2
+  * a11y-keyboard: capslock-beep: Don't ring on CapsLock itself
+  * a11y-keyboard: Refactor in the hope the AT-SPI bug gets fixed
+  * a11y-keyboard: Add support for ringing the bell when CapsLock is active
+  * msd-media-keys-manager: comparison of unsigned expression in '< 0' is always false
+  * msd-a11y-keyboard-manager: implicit declaration of function 'd'
+  * build: Use MATE_DEBUG_CHECK macro
+  * build: Remove unused variable DEBUG_CFLAGS
+  * add git.mk to generate .gitignore
+  * plugin xsettings: Fix memory leak on delayed_toggle_bg_draw
+  * housekeeping: Remove the warning about GTimeVal is deprecated
+  * mpris: Use namespace instead of a whitelist for player names
+  * build: Using --header and --body at the same time is deprecated
+  * build: silent build warnings for distcheck
+  * mouse: Remove warnings about absolute value function for long
+  * Remove warnings about function declaration isn’t a prototype
+  * use MATE_COMPILE_WARNINGS from mate-common
+  * housekeeping: Fix iconname of mate-disk-usage-analyzer
 
 ### mate-settings-daemon 1.24.0
 
