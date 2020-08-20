@@ -9,6 +9,7 @@
 # Шаповалов Анатолій Романович <elrond.716.smith@gmail.com>, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Микола Ткач <chistomov@gmail.com>, 2019
+# Oleksii Khalikov <oleksii.khalikov@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
@@ -16,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 11:28+0100\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Микола Ткач <chistomov@gmail.com>, 2019\n"
+"Last-Translator: Oleksii Khalikov <oleksii.khalikov@gmail.com>, 2020\n"
 "Language-Team: Ukrainian (https://www.transifex.com/mate/teams/13566/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1122,7 +1123,7 @@ msgid ""
 "Automatically prunes thumbnail caches and other transient files, and warns "
 "about low disk space"
 msgstr ""
-"Автоматично обрізає кеши-мініатюри та инші перехідні файли та попереджає про"
+"Автоматично обрізає кеши-мініатюри та інші перехідні файли та попереджає про"
 " брак місця на диску"
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:63
@@ -1149,7 +1150,7 @@ msgid ""
 "or files, or moving files to another disk or partition."
 msgstr ""
 "Ви можете звільнити дисковий простір спорожняючи Смітник, вилучаючи зайві "
-"програми чи файли, або переміщенням файлів на инший диск чи розділ."
+"програми чи файли, або переміщенням файлів на інший диск чи розділ."
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:100
 msgid ""
@@ -1157,7 +1158,7 @@ msgid ""
 "moving files to another disk or partition."
 msgstr ""
 "Ви можете звільнити дисковий простір вилученням зайвих програм чи файлів, "
-"або переміщенням файлів на инший диск чи розділ."
+"або переміщенням файлів на інший диск чи розділ."
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:105
 msgid ""

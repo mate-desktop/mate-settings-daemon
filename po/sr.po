@@ -4,8 +4,8 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2020
 # 
 msgid ""
 msgstr ""
@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 11:28+0100\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>, 2020\n"
 "Language-Team: Serbian (https://www.transifex.com/mate/teams/13566/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -191,7 +191,7 @@ msgstr ""
 #: data/org.mate.peripherals-mouse.gschema.xml.in:25
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:95
 msgid "Acceleration profile"
-msgstr ""
+msgstr "Профил убрзања"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:26
 msgid ""
@@ -203,6 +203,12 @@ msgid ""
 "movement. If a mouse doesn't support the configured profile, 'default' will "
 "be used."
 msgstr ""
+"Профил убрзања који се користи за повезаног миша. Профил убрзања може бити "
+"подешен на подразумевано („default“) које користи основни профил убрзања за "
+"сваки уређај, обичан („flat“), који убрзава нарочитим константним чиниоцем "
+"уређаја који произилази из подешене брзине показивача, или прилагодљиви "
+"(„adaptive“) који прилагођава убрзање у зависности од покрета миша. Ако миш "
+"не подржава подешени профил, користиће се „default“."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:30
 msgid "Drag Threshold"
@@ -430,6 +436,12 @@ msgid ""
 "movement. If a touchpad doesn't support the configured profile, 'default' "
 "will be used."
 msgstr ""
+"Профил убрзања који се користи за додирну таблу. Профил убрзања може бити "
+"подешен на подразумевано („default“) које користи основни профил убрзања за "
+"сваки уређај, обичан („flat“), који убрзава нарочитим константним чиниоцем "
+"уређаја који произилази из подешене брзине показивача, или прилагодљиви "
+"(„adaptive“) који прилагођава убрзање у зависности од покрета додирне табле."
+" Ако додирна табла не подржава подешени профил, користиће се „default“."
 
 #: data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in:5
 #: data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in:5
@@ -1057,11 +1069,11 @@ msgstr "_Дуго притисни тастер (спори тастери)"
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:5
 msgid "Accessibility settings"
-msgstr ""
+msgstr "Подешавања приступачности"
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:6
 msgid "Accessibility settings plugin"
-msgstr ""
+msgstr "Додатак подешавања приступачности"
 
 #: plugins/background/background.mate-settings-plugin.desktop.in:5
 msgid "Background"
@@ -1113,13 +1125,15 @@ msgstr "Прикључак за лажњака"
 
 #: plugins/housekeeping/housekeeping.mate-settings-plugin.desktop.in:5
 msgid "Housekeeping"
-msgstr ""
+msgstr "Редарство"
 
 #: plugins/housekeeping/housekeeping.mate-settings-plugin.desktop.in:6
 msgid ""
 "Automatically prunes thumbnail caches and other transient files, and warns "
 "about low disk space"
 msgstr ""
+"Самостално умањује оставе минијатура и осталих прелазних датотека, и "
+"упозорава о недостатку простора на диску"
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:63
 msgid "Don't show any warnings again for this file system"
@@ -1478,11 +1492,11 @@ msgstr "управљач паметне картице"
 
 #: plugins/smartcard/smartcard.mate-settings-plugin.desktop.in:5
 msgid "Smartcard"
-msgstr ""
+msgstr "Паметна картица"
 
 #: plugins/smartcard/smartcard.mate-settings-plugin.desktop.in:6
 msgid "Smartcard plugin"
-msgstr ""
+msgstr "Прикључак паметне картице"
 
 #: plugins/sound/sound.mate-settings-plugin.desktop.in:5
 msgid "Sound"
@@ -1490,7 +1504,7 @@ msgstr "Звук"
 
 #: plugins/sound/sound.mate-settings-plugin.desktop.in:6
 msgid "Sound Sample Cache plugin"
-msgstr ""
+msgstr "Прикључак оставе узорка звука"
 
 #: plugins/typing-break/typing-break.mate-settings-plugin.desktop.in:5
 msgid "Typing Break"
@@ -1577,27 +1591,27 @@ msgstr "Изврнуто"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2180
 msgid "ON"
-msgstr ""
+msgstr "УКЉ"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2181
 msgid "Turn this monitor off"
-msgstr ""
+msgstr "Искључите овај монитор"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2184
 msgid "OFF"
-msgstr ""
+msgstr "ИСКЉ"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2185
 msgid "Turn this monitor on"
-msgstr ""
+msgstr "Укључите овај монитор"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2245
 msgid "Same output all monitors"
-msgstr ""
+msgstr "Исти излаз на свим мониторима"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2246
 msgid "Mirror same output to all monitors and turn them on"
-msgstr ""
+msgstr "Пресликајте исти излаз на све мониторе и укључите их"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2293
 msgid "_Configure Display Settings…"
@@ -1605,7 +1619,7 @@ msgstr "Подеси _екране…"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2303
 msgid "Open the display configuration dialog (all settings)"
-msgstr ""
+msgstr "Отворите прозорче подешавање екрана (сва подешавања)"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2356
 msgid "Configure display settings"

@@ -6,13 +6,14 @@
 # Translators:
 # Dario Di Nucci <linkin88mail@gmail.com>, 2018
 # Mat V <enthusedquill6@gmail.com>, 2018
+# Marco Z. <minaz666@gmail.com>, 2018
 # Marco Mangiacavalli, 2018
 # andrea pittaro <transifex@andreapittaro.it>, 2019
 # Marco Bartolucci <nap.84@live.it>, 2019
-# Marco Z. <minaz666@gmail.com>, 2019
 # Giuseppe Pignataro <rogepix@gmail.com>, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Enrico B. <enricobe@hotmail.com>, 2019
+# Alessandro Volturno <alelvb@inwind.it>, 2020
 # 
 msgid ""
 msgstr ""
@@ -20,7 +21,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 11:28+0100\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Enrico B. <enricobe@hotmail.com>, 2019\n"
+"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2020\n"
 "Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,15 +46,15 @@ msgstr "Commuta il lettore di schermo"
 #: data/50-accessibility.xml.in:6
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:165
 msgid "Toggle on-screen keyboard"
-msgstr "Commuta la tastiera a schermo"
+msgstr "Commuta la tastiera sullo schermo"
 
 #: data/org.mate.applications-at.gschema.xml.in:5
 msgid "On-screen keyboard"
-msgstr "Tastiera a schermo"
+msgstr "Tastiera sullo schermo"
 
 #: data/org.mate.applications-at.gschema.xml.in:6
 msgid "Whether the on-screen keyboard is turned on."
-msgstr "Indica se la tastiera a schermo è attivata."
+msgstr "Indica se la tastiera sullo schermo è attivata."
 
 #: data/org.mate.applications-at.gschema.xml.in:10
 msgid "Screen magnifier"
@@ -150,7 +151,7 @@ msgid ""
 "When set to true, MATE will remember the state of the NumLock LED between "
 "sessions."
 msgstr ""
-"Quando impostato a \"true\", MATE ricorderà lo stato del LED BlocNum da una "
+"Quando impostato a \"vero\", MATE ricorderà lo stato del LED BlocNum da una "
 "sessione all'altra."
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:45
@@ -163,7 +164,7 @@ msgstr "Lo stato salvato del LED BlocNum."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:10
 msgid "Mouse button orientation"
-msgstr "Orientazione tasti del mouse"
+msgstr "Orientamento tasti del mouse"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:11
 msgid "Swap left and right mouse buttons for left-handed mice."
@@ -172,7 +173,7 @@ msgstr "Inverte i tasti destro e sinistro del mouse per mancini."
 #: data/org.mate.peripherals-mouse.gschema.xml.in:15
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:85
 msgid "Motion Acceleration"
-msgstr "Accelerazione del Movimento"
+msgstr "Accelerazione del movimento"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:16
 msgid ""
@@ -185,7 +186,7 @@ msgstr ""
 #: data/org.mate.peripherals-mouse.gschema.xml.in:20
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:90
 msgid "Motion Threshold"
-msgstr "Soglia del Movimento"
+msgstr "Soglia del movimento"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:21
 msgid ""
@@ -211,21 +212,21 @@ msgid ""
 "movement. If a mouse doesn't support the configured profile, 'default' will "
 "be used."
 msgstr ""
-"Profilo di accelerazione usato per i mouse collegati. Può essere impostato "
-"come predefinito ('default') che utilizza il profilo di accelerazione "
-"predefinito per ogni dispositivo, come piatto ('flat') che accelera in base "
-"ad una costante specifica del dispositivo derivata dalla velocità del "
-"puntatore configurato, o come adattivo ('adaptive') che adatta "
+"Profilo di accelerazione utilizzato dai mouse collegati. Può essere "
+"impostato come predefinito ('default') che utilizza il profilo di "
+"accelerazione predefinito per ogni dispositivo, piatto ('flat') che accelera"
+" in base ad una costante specifica del dispositivo derivata dalla velocità "
+"del puntatore configurato, o come adattivo ('adaptive') che adatta "
 "l'accelerazione a seconda del movimento del mouse. Se il mouse non supporta "
-"il profilo configurato, verrà utilizzato il 'default'."
+"il profilo configurato, verrà utilizzato 'default'."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:30
 msgid "Drag Threshold"
-msgstr "Soglia trascinamento"
+msgstr "Soglia del trascinamento"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:31
 msgid "Distance before a drag is started."
-msgstr "Distanza prima di avviare un trascinamento."
+msgstr "Distanza prima di iniziare un trascinamento."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:35
 msgid "Double Click Time"
@@ -237,7 +238,7 @@ msgstr "Durata di un doppio clic."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:40
 msgid "Middle button emulation"
-msgstr "Emulazione pulsante centrale"
+msgstr "Emulazione del pulsante centrale"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:41
 msgid ""
@@ -265,7 +266,7 @@ msgstr "Tema del cursore"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:51
 msgid "Cursor theme name."
-msgstr "Nome del tema del cursore"
+msgstr "Nome del tema del cursore."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:55
 msgid "Cursor size"
@@ -284,9 +285,9 @@ msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
 msgstr ""
-"Impostare questa chiave a \"none\", \"lock_screen\" oppure "
-"\"force_logoout\". L'azione indicata viene eseguita quando si rimuove la "
-"smartcard usata per accedere."
+"Impostare questa chiave a \"none\", \"lock_screen\" oppure \"force_logout\"."
+" L'azione indicata viene eseguita quando si rimuove la smartcard usata per "
+"accedere."
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:15
 msgid "Disable touchpad while typing"
@@ -297,8 +298,8 @@ msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
 msgstr ""
-"Impostare a VERO se si hanno problemi con pressioni accidentali del touchpad"
-" mentre si digita."
+"Impostare a \"vero\" se si hanno problemi con pressioni accidentali del "
+"touchpad mentre si digita."
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:20
 msgid "Enable mouse clicks with touchpad"
@@ -308,8 +309,8 @@ msgstr "Abilita clic del mouse col touchpad"
 msgid ""
 "Set this to TRUE to be able to send mouse clicks by tapping on the touchpad."
 msgstr ""
-"Impostare a VERO per essere in grado di inviare clic del mouse facendo tap "
-"sul touchpad."
+"Impostare a \"vero\" per essere in grado di inviare clic del mouse facendo "
+"tap sul touchpad."
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:25
 msgid "Enable vertical edge scrolling"
@@ -318,7 +319,7 @@ msgstr "Abilita lo scorrimento verticale"
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:26
 msgid "Set this to TRUE to allow vertical edge scrolling"
 msgstr ""
-"Impostare questa opzione su VERO per abilitare lo scorrimento verticale"
+"Impostare questa opzione su \"vero\" per abilitare lo scorrimento verticale"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:30
 msgid "Enable horizontal edge scrolling"
@@ -327,7 +328,8 @@ msgstr "Abilita lo scorrimento del bordo orizzontale"
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:31
 msgid "Set this to TRUE to allow horizontal edge scrolling"
 msgstr ""
-"Impostare questa opzione su VERO per abilitare lo scorrimento orizzontale"
+"Impostare questa opzione su \"vero\" per abilitare lo scorrimento "
+"orizzontale"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:35
 msgid "Enable vertical two-finger scrolling"
@@ -336,8 +338,8 @@ msgstr "Abilita lo scorrimento verticale a due dita"
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:36
 msgid "Set this to TRUE to allow vertical two-finger scrolling"
 msgstr ""
-"Impostare questa opzione su VERO per abilitare lo scorrimento verticale con "
-"due dita"
+"Impostare questa opzione su \"vero\" per abilitare lo scorrimento verticale "
+"con due dita"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:40
 msgid "Enable horizontal two-finger scrolling"
@@ -346,8 +348,8 @@ msgstr "Abilita lo scorrimento orizzontale a due dita"
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:41
 msgid "Set this to TRUE to allow horizontal two-finger scrolling"
 msgstr ""
-"Impostare questa opzione su VERO per abilitare lo scorrimento orizzontale "
-"con due dita"
+"Impostare questa opzione su \"vero\" per abilitare lo scorrimento "
+"orizzontale con due dita"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:45
 msgid "Natural scrolling"
@@ -356,8 +358,8 @@ msgstr "Scorrimento naturale"
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:46
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
 msgstr ""
-"Impostare a vero per abilitare lo scorrimento naturale (invertito) per i "
-"touchpad"
+"Impostare a \"vero\" per abilitare lo scorrimento naturale (invertito) per i"
+" touchpad"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:50
 msgid "Enable touchpad"
@@ -365,11 +367,11 @@ msgstr "Abilita il touchpad"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:51
 msgid "Set this to TRUE to enable all touchpads."
-msgstr "Impostare a VERO per abilitare tutti i touchpad."
+msgstr "Impostare a \"vero\" per abilitare tutti i touchpad."
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:55
 msgid "Enabled two-finger button-click emulation"
-msgstr "Abilita emulazione click con due dita"
+msgstr "Abilita emulazione clic con due dita"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:56
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:61
@@ -378,11 +380,11 @@ msgstr "Da 0 a 3, 0 è inattivo, 1-3 sono i pulsanti da emulare"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:60
 msgid "Enable three-finger button-click emulation"
-msgstr "Abilita emulazione click con 3 dita"
+msgstr "Abilita emulazione clic con 3 dita"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:65
 msgid "One finger tap button"
-msgstr "Tocco con un dito"
+msgstr "Pulsante del tocco con un dito"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:66
 msgid ""
@@ -395,7 +397,7 @@ msgstr ""
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:70
 msgid "Two finger tap button"
-msgstr "Tocco con due dita"
+msgstr "Pulsante per tocco con due dita"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:71
 msgid ""
@@ -408,7 +410,7 @@ msgstr ""
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:75
 msgid "Three finger tap button"
-msgstr "Tocco con tre dita"
+msgstr "Pulsante per tocco con tre dita"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:76
 msgid ""
@@ -428,9 +430,8 @@ msgid ""
 "Swap left and right buttons for left-handed touchpads with 'left', 'right' "
 "for right-handed, 'mouse' to follow the mouse setting."
 msgstr ""
-"Scambia il pulsante sinistro e destro del touchpad per mancini con "
-"'sinistra', 'destra' per destrimani, 'mouse' per seguire l'impostazione del "
-"mouse."
+"Scambia il pulsante sinistro e destro del touchpad per mancini con 'left', "
+"'right' per destrimani, 'mouse' per seguire l'impostazione del mouse."
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:86
 msgid ""
@@ -461,11 +462,11 @@ msgid ""
 msgstr ""
 "Profilo di accelerazione usato per il touchpad. Può essere impostato come "
 "predefinito ('default') che utilizza il profilo di accelerazione predefinito"
-" per ogni dispositivo, come piatto ('flat') che accelera in base ad una "
-"costante specifica del dispositivo derivata dalla velocità del puntatore "
-"configurato, o come adattivo ('adaptive') che adatta l'accelerazione a "
-"seconda del movimento del mouse. Se il mouse non supporta il profilo "
-"configurato, verrà utilizzato il 'default'."
+" per ogni dispositivo, piatto ('flat') che accelera in base ad una costante "
+"specifica del dispositivo derivata dalla velocità del puntatore configurato,"
+" o come adattivo ('adaptive') che adatta l'accelerazione a seconda del "
+"movimento del mouse. Se il mouse non supporta il profilo configurato, verrà "
+"utilizzato il 'default'."
 
 #: data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in:5
 #: data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in:5
@@ -508,7 +509,7 @@ msgstr "Attivazione di questo plugin"
 #: data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in:6
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
 msgstr ""
-"Se questo plugin sarebbe stato attivato dal mate-settings-daemon oppure no"
+"Se questo plugin debba essere attivato dal mate-settings-daemon oppure no"
 
 #: data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in:10
 #: data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in:10
@@ -556,7 +557,7 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:15
 msgid "Free percentage notify threshold"
-msgstr "Limite di percentuale libera per notifica"
+msgstr "Limite di percentuale di spazio libero per la notifica"
 
 #: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:16
 msgid ""
@@ -564,12 +565,12 @@ msgid ""
 "the percentage free space drops below this, a warning will be shown."
 msgstr ""
 "Limite di percentuale di spazio libero per l'avvertimento iniziale di spazio"
-" disco in esaurimento. Se la percentuale di spazio libero scende sotto "
+" su disco in esaurimento. Se la percentuale di spazio libero scende sotto "
 "questo valore, viene mostrato un avvertimento."
 
 #: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:20
 msgid "Subsequent free percentage notify threshold"
-msgstr "Limite di successiva percentuale libera per notifica"
+msgstr "Limite di successiva percentuale di spazio libero per la notifica"
 
 #: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:21
 msgid ""
@@ -619,7 +620,7 @@ msgstr "Mostra notifica OSD"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:11
 msgid "Whether an OSD notification is shown to notify about changes"
-msgstr "Se viene visualizzata una notifica OSD per notificare i cambiamenti"
+msgstr "Se viene visualizzata una notifica OSD per notificare le modifiche"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:20
 msgid "Volume step"
@@ -663,12 +664,12 @@ msgstr "Associazione per alzare il volume di sistema."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:45
 msgid "Mute the audio quietly"
-msgstr "Muta l'audio senza emettere suoni"
+msgstr "Escludi l'audio senza emettere suoni"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:46
 msgid "Binding to mute the system volume quietly."
 msgstr ""
-"Combinazione per mutare il volume di sistema senza emettere alcun suono"
+"Associazione per escludere il volume di sistema senza emettere alcun suono."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:50
 msgid "Turn the volume down quietly"
@@ -676,7 +677,7 @@ msgstr "Abbassa il volume senza emettere suoni"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:51
 msgid "Binding to lower the system volume quietly."
-msgstr "Combinazione per abbassare il volume senza emettere alcun suono"
+msgstr "Associazione per abbassare il volume senza emettere alcun suono."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:55
 msgid "Turn the volume up quietly"
@@ -684,7 +685,7 @@ msgstr "Abbassa il volume senza emettere suoni"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:56
 msgid "Binding to raise the system volume quietly."
-msgstr "Combinazione per alzare il volume senza emettere alcun suono"
+msgstr "Associazione per alzare il volume senza emettere alcun suono."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:60
 msgid "Microphone mute/unmute"
@@ -692,7 +693,7 @@ msgstr "Silenzia/riattiva microfono"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:61
 msgid "Binding to mute/unmute the microphone."
-msgstr "Combinazione per mutare o abilitare il microfono"
+msgstr "Combinazione per escludere o abilitare il microfono."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:65
 msgid "Shut down"
@@ -748,7 +749,7 @@ msgstr "Avvio della finestra delle impostazioni"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:96
 msgid "Binding to launch MATE settings."
-msgstr "Combinazione per avviare la finestra delle impostazioni di MATE"
+msgstr "Associazione per avviare la finestra delle impostazioni di MATE."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:100
 msgid "Lock screen"
@@ -780,7 +781,7 @@ msgstr "Avvia messaggistica istantanea"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:116
 msgid "Binding to launch the instant messenger."
-msgstr "Combinazione per avviare la messaggistica istantanea."
+msgstr "Associazione per avviare la messaggistica istantanea."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:120
 msgid "Launch web browser"
@@ -809,7 +810,7 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:135
 msgid "Pause playback"
-msgstr "Riproduzione in pausa"
+msgstr "Interrompi la riproduzione"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:136
 msgid "Binding to pause playback."
@@ -860,7 +861,8 @@ msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
 msgstr ""
-"Indica se è mostrata sul pannello un'icona di notifica relativa al display."
+"Indica se deve essere mostrata sul pannello un'icona di notifica relativa "
+"agli eventi del display."
 
 #: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:20
 msgid "Do not touch monitor configuration"
@@ -878,10 +880,10 @@ msgstr ""
 "Di solito, mate-settings-daemon configura schermi interni ed esterni secondo"
 " le impostazioni accendi_schermi_esterni_all'avvio e "
 "accendi_lo_schermo_del_computer_all'avvio e determina un'appropriata "
-"modalità clona/uno accanto all'altro. Impostando questa chiave su Vero lo "
-"disabiliti, e le impostazioni dello schermo non saranno modificate del tutto"
-" (fino a quando non ci sarà una configurazione esplicita da parte "
-"dell'utente)."
+"modalità clona/uno accanto all'altro. Impostando questa chiave su \"vero\" "
+"si disabilita questo comportamento, e le impostazioni dello schermo non "
+"saranno modificate del tutto (fino a quando non ci sarà una configurazione "
+"esplicita da parte dell'utente)."
 
 #: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:25
 msgid "Turn on external monitor after system boot"
@@ -928,7 +930,7 @@ msgstr ""
 
 #: data/mate-settings-daemon.desktop.in.in:4
 msgid "MATE Settings Daemon"
-msgstr "Demone di impostazioni per MATE"
+msgstr "Demone di impostazioni di MATE"
 
 #: mate-settings-daemon/main.c:65
 msgid "Enable debugging code"
@@ -936,7 +938,7 @@ msgstr "Abilitare il codice di debug"
 
 #: mate-settings-daemon/main.c:66
 msgid "Replace the current daemon"
-msgstr "Rimpiazza il demone attuale"
+msgstr "Cambia il demone attuale"
 
 #: mate-settings-daemon/main.c:67
 msgid "Don't become a daemon"
@@ -948,7 +950,7 @@ msgstr "Esce dopo un intervallo (per il debug)"
 
 #: plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.desktop.in:5
 msgid "Accessibility Keyboard"
-msgstr "Accessibilità tastiera"
+msgstr "Accessibilità alla tastiera"
 
 #: plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.desktop.in:6
 msgid "Accessibility keyboard plugin"
@@ -1021,17 +1023,17 @@ msgstr "_Disattiva"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
 msgid "Slow Keys Alert"
-msgstr "Allerta rallentamento dei tasti"
+msgstr "Avviso rallentamento dei tasti"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:706
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:772
 msgid "Do you want to activate Sticky Keys?"
-msgstr "Attivare la permanenza dei tasti?"
+msgstr "Si vuole attivare la permanenza dei tasti?"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:707
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:773
 msgid "Do you want to deactivate Sticky Keys?"
-msgstr "Disattivare la permanenza dei tasti?"
+msgstr "Si vuole disattivare la permanenza dei tasti?"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
@@ -1056,7 +1058,7 @@ msgstr ""
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
 msgid "Sticky Keys Alert"
-msgstr "Allerta permanenza dei tasti"
+msgstr "Avviso permanenza dei tasti"
 
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:766
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:14
@@ -1065,15 +1067,15 @@ msgstr "Preferenze di accesso universale"
 
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:86
 msgid "Use on-screen _keyboard"
-msgstr "Usare la tastiera a sc_hermo"
+msgstr "Usare la tastiera sullo sc_hermo"
 
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:102
 msgid "Use screen _reader"
-msgstr "Usare il l_ettore di schermo"
+msgstr "Usare il l_ettore schermo"
 
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:118
 msgid "Use screen _magnifier"
-msgstr "Usare l'in_granditore di schermo"
+msgstr "Usare l'in_granditore dello schermo"
 
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:134
 msgid "Enhance _contrast in colors"
@@ -1099,11 +1101,11 @@ msgstr ""
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:5
 msgid "Accessibility settings"
-msgstr "Impostazioni accessibilità"
+msgstr "Impostazioni di accessibilità"
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:6
 msgid "Accessibility settings plugin"
-msgstr "Plugin di Impostazioni accessibilità"
+msgstr "Plugin di Impostazioni di accessibilità"
 
 #: plugins/background/background.mate-settings-plugin.desktop.in:5
 msgid "Background"
@@ -1123,7 +1125,7 @@ msgstr "Plugin per gli appunti"
 
 #: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:12
 msgid "Change system time zone"
-msgstr "Cambia fuso orario sistema"
+msgstr "Cambia fuso orario del sistema"
 
 #: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:13
 msgid "Privileges are required to change the system time zone."
@@ -1131,7 +1133,7 @@ msgstr "Sono richiesti privilegi per cambiare il fuso orario del sistema."
 
 #: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:21
 msgid "Change system time"
-msgstr "Cambia orario sistema"
+msgstr "Cambia l'ora di sistema"
 
 #: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:22
 msgid "Privileges are required to change the system time."
@@ -1176,12 +1178,12 @@ msgstr "Non mostrare più alcun avvertimento"
 #: plugins/housekeeping/msd-ldsm-dialog.c:78
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
-msgstr "Sul volume «%s» rimangono solo %s di spazio disco."
+msgstr "Sul volume «%s» rimangono solo %s di spazio libero sul."
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:81
 #, c-format
 msgid "This computer has only %s disk space remaining."
-msgstr "Su questo computer rimangono solo %s di spazio disco."
+msgstr "Su questo computer rimangono solo %s di spazio libero sul disco."
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:97
 msgid ""
@@ -1219,7 +1221,7 @@ msgstr ""
 #. Set up all the window stuff here
 #: plugins/housekeeping/msd-ldsm-dialog.c:204
 msgid "Low Disk Space"
-msgstr "Poco spazio disco"
+msgstr "Poco spazio sul disco"
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:439
 msgid "Empty Trash"
@@ -1241,7 +1243,7 @@ msgstr "Rimozione oggetto %lu di %lu"
 #: plugins/housekeeping/msd-ldsm-trash-empty.c:117
 #, c-format
 msgid "Removing: %s"
-msgstr "Rimozione: %s"
+msgstr "Rimozione di: %s"
 
 #: plugins/housekeeping/msd-ldsm-trash-empty.c:247
 #: plugins/housekeeping/msd-ldsm-trash-empty.c:300
@@ -1298,9 +1300,8 @@ msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
 msgstr ""
-"Errore durante il tentativo di eseguire l'azione\n"
-"  %s\n"
-"che è collegata al tasto «%s»"
+"Errore durante il tentativo di eseguire l'azione  (%s)\n"
+"che è collegata al tasto (%s)"
 
 #: plugins/keyboard/keyboard.mate-settings-plugin.desktop.in:5
 msgid "Keyboard"
@@ -1345,7 +1346,7 @@ msgstr "_Disposizioni"
 
 #: plugins/keyboard/msd-keyboard-xkb.c:286
 msgid "Keyboard _Preferences"
-msgstr "_Preferenze tastiera"
+msgstr "_Preferenze della tastiera"
 
 #: plugins/keyboard/msd-keyboard-xkb.c:292
 msgid "Show _Current Layout"
@@ -1464,7 +1465,7 @@ msgstr "Plugin Rfkill "
 
 #: plugins/smartcard/msd-smartcard-manager.c:164
 msgid "Module Path"
-msgstr "Percorso modulo"
+msgstr "Percorso del modulo"
 
 #: plugins/smartcard/msd-smartcard-manager.c:165
 msgid "path to smartcard PKCS #11 driver"
@@ -1480,7 +1481,7 @@ msgstr "Impossibile inizializzare il sistema di sicurezza NSS"
 
 #: plugins/smartcard/msd-smartcard-manager.c:649
 msgid "no suitable smartcard driver could be found"
-msgstr "nessun driver smartcard adatto disponibile"
+msgstr "nessun driver di smartcard adatto disponibile"
 
 #: plugins/smartcard/msd-smartcard-manager.c:669
 #, c-format
@@ -1494,7 +1495,7 @@ msgstr "impossibile monitorare gli eventi smartcard - %s"
 
 #: plugins/smartcard/msd-smartcard-manager.c:1100
 msgid "encountered unexpected error while waiting for smartcard events"
-msgstr "riscontrato un errore inatteso durante l'attesa di eventi smartcard"
+msgstr "riscontrato un errore durante l'attesa degli eventi smartcard"
 
 #: plugins/smartcard/msd-smartcard.c:148
 msgid "Slot ID"
@@ -1502,7 +1503,7 @@ msgstr "ID slot"
 
 #: plugins/smartcard/msd-smartcard.c:149
 msgid "The slot the card is in"
-msgstr "Lo slot in cui si trova la card"
+msgstr "Lo slot in cui si trova la smartcard"
 
 #: plugins/smartcard/msd-smartcard.c:155
 msgid "Slot Series"
@@ -1558,9 +1559,7 @@ msgstr "Impossibile ripristinare la configurazione del display"
 
 #: plugins/xrandr/msd-xrandr-manager.c:420
 msgid "Could not restore the display's configuration from a backup"
-msgstr ""
-"Impossibile ripristinare la configurazione del display da una copia di "
-"sicurezza"
+msgstr "Impossibile ripristinare la configurazione del display da un backup"
 
 #: plugins/xrandr/msd-xrandr-manager.c:441
 #, c-format
@@ -1608,7 +1607,7 @@ msgstr "Impossibile salvare la configurazione del monitor"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2057
 msgid "Mirroring outputs not supported"
-msgstr "La stessa immagine in entrambi i display non è supportata"
+msgstr "La stessa immagine su entrambi i display non è supportata"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "Normal"
@@ -1648,7 +1647,7 @@ msgstr "Stessa uscita su tutti i monitor"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2246
 msgid "Mirror same output to all monitors and turn them on"
-msgstr "Specchia la stesso segnale in uscita su tutti i monitor e li accende"
+msgstr "Invia la stesso segnale in uscita su tutti i monitor e li accende"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2293
 msgid "_Configure Display Settings…"
@@ -1672,7 +1671,7 @@ msgstr "XRandR"
 
 #: plugins/xrandr/xrandr.mate-settings-plugin.desktop.in:6
 msgid "Set up screen size and rotation settings"
-msgstr "Imposta la dimensione dello schermo e le impostazioni di rotazione"
+msgstr "Imposta le opzioni di dimensione e rotazione dello schermo"
 
 #: plugins/xrdb/msd-xrdb-manager.c:251 plugins/xrdb/msd-xrdb-manager.c:320
 msgid "Cannot determine user's home directory"
@@ -1692,4 +1691,4 @@ msgstr "Impostazioni X"
 
 #: plugins/xsettings/xsettings.mate-settings-plugin.desktop.in:6
 msgid "Manage X Settings"
-msgstr "Gestisce le impostazioni di X"
+msgstr "Gestisci le impostazioni di X"

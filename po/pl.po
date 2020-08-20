@@ -9,7 +9,7 @@
 # Marcin Kralka <marcink96@gmail.com>, 2018
 # emariusek <wisniowy@g.pl>, 2018
 # Paweł Bandura <gawelx@gmail.com>, 2018
-# Lukasz Kaminski <inactive+elpikej@transifex.com>, 2018
+# 161bd750cc8572440963b84e861d7973_ed8d533 <cbd6230593fe094da208a2693be73f8f_459393>, 2018
 # pietrasagh <pietrasagh@gmail.com>, 2018
 # Dominik Adrian Grzywak, 2018
 # Piotr Drąg <piotrdrag@gmail.com>, 2019
@@ -17,6 +17,7 @@
 # Darek Witkowski, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Marcin Net <marcin.net@linux.pl>, 2019
+# Daniel Tokarzewski <bezimo@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
@@ -24,7 +25,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 11:28+0100\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Marcin Net <marcin.net@linux.pl>, 2019\n"
+"Last-Translator: Daniel Tokarzewski <bezimo@gmail.com>, 2020\n"
 "Language-Team: Polish (https://www.transifex.com/mate/teams/13566/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -203,7 +204,7 @@ msgstr ""
 #: data/org.mate.peripherals-mouse.gschema.xml.in:25
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:95
 msgid "Acceleration profile"
-msgstr ""
+msgstr "Profil akceleracji"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:26
 msgid ""
@@ -215,6 +216,13 @@ msgid ""
 "movement. If a mouse doesn't support the configured profile, 'default' will "
 "be used."
 msgstr ""
+"Profil przyspieszenia używany dla podłączonych myszy. Profil przyspieszenia "
+"można ustawić na domyślny („default”), który wykorzystuje domyślny profil "
+"przyspieszenia dla każdego urządzenia, płaski („płaski”), który przyspiesza "
+"o stały współczynnik specyficzny dla urządzenia uzyskany ze skonfigurowanej "
+"prędkości wskaźnika, lub adaptacyjny („adaptive”), który dostosowuje "
+"przyspieszenie w zależności od ruchu myszy. Jeśli mysz nie obsługuje "
+"skonfigurowanego profilu, zostanie użyta opcja „default”."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:30
 msgid "Drag Threshold"
@@ -449,6 +457,13 @@ msgid ""
 "movement. If a touchpad doesn't support the configured profile, 'default' "
 "will be used."
 msgstr ""
+"Profil przyspieszenia używany dla touchpada. Profil przyspieszenia można "
+"ustawić na domyślny („default”), który korzysta z domyślnego profilu "
+"przyspieszenia dla każdego urządzenia, płaski („flat”), który przyspiesza "
+"przez stały współczynnik specyficzny dla urządzenia uzyskany ze "
+"skonfigurowanej prędkości wskaźnika, lub adaptacyjny („adaptive”), który "
+"dostosowuje przyspieszenie w zależności od ruchu touchpada. Jeśli touchpad "
+"nie obsługuje skonfigurowanego profilu, zostanie użyty „domyślny”."
 
 #: data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in:5
 #: data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in:5
@@ -766,7 +781,7 @@ msgstr "Uruchom komunikator"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:116
 msgid "Binding to launch the instant messenger."
-msgstr ""
+msgstr "Skrót do uruchomienia komunikatora internetowego."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:120
 msgid "Launch web browser"
@@ -1085,11 +1100,11 @@ msgstr ""
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:5
 msgid "Accessibility settings"
-msgstr ""
+msgstr "Ustawienia dostępności"
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:6
 msgid "Accessibility settings plugin"
-msgstr ""
+msgstr " Wtyczka ustawień dostępności"
 
 #: plugins/background/background.mate-settings-plugin.desktop.in:5
 msgid "Background"
@@ -1141,13 +1156,15 @@ msgstr "Przykładowa wtyczka"
 
 #: plugins/housekeeping/housekeeping.mate-settings-plugin.desktop.in:5
 msgid "Housekeeping"
-msgstr ""
+msgstr "Gospodarowanie"
 
 #: plugins/housekeeping/housekeeping.mate-settings-plugin.desktop.in:6
 msgid ""
 "Automatically prunes thumbnail caches and other transient files, and warns "
 "about low disk space"
 msgstr ""
+"Automatycznie zmniejsza miniatury w pamięci podręcznej i inne pliki "
+"przejściowe, oraz ostrzega o małej ilości miejsca na dysku"
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:63
 msgid "Don't show any warnings again for this file system"
@@ -1505,11 +1522,11 @@ msgstr "sterownik smartcard"
 
 #: plugins/smartcard/smartcard.mate-settings-plugin.desktop.in:5
 msgid "Smartcard"
-msgstr ""
+msgstr "Inteligentna karta"
 
 #: plugins/smartcard/smartcard.mate-settings-plugin.desktop.in:6
 msgid "Smartcard plugin"
-msgstr ""
+msgstr "Wtyczka Inteligentnej karty"
 
 #: plugins/sound/sound.mate-settings-plugin.desktop.in:5
 msgid "Sound"
@@ -1517,7 +1534,7 @@ msgstr "Dźwięk"
 
 #: plugins/sound/sound.mate-settings-plugin.desktop.in:6
 msgid "Sound Sample Cache plugin"
-msgstr ""
+msgstr "Wtyczka Sound Sample Cache"
 
 #: plugins/typing-break/typing-break.mate-settings-plugin.desktop.in:5
 msgid "Typing Break"
@@ -1605,27 +1622,27 @@ msgstr "Do góry nogami"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2180
 msgid "ON"
-msgstr ""
+msgstr "Włączony"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2181
 msgid "Turn this monitor off"
-msgstr ""
+msgstr "Wyłącz ten monitor"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2184
 msgid "OFF"
-msgstr ""
+msgstr "Wyłączony"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2185
 msgid "Turn this monitor on"
-msgstr ""
+msgstr "Włącz ten monitor"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2245
 msgid "Same output all monitors"
-msgstr ""
+msgstr "Ten sam obraz na wszystkich monitorach"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2246
 msgid "Mirror same output to all monitors and turn them on"
-msgstr ""
+msgstr "Wykonaj lustrzane odbicie wyjścia na wszystkich monitorach i włącz je"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2293
 msgid "_Configure Display Settings…"
@@ -1633,7 +1650,7 @@ msgstr "_Skonfiguruj ustawienia wyświetlania…"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2303
 msgid "Open the display configuration dialog (all settings)"
-msgstr ""
+msgstr "Otwórz okno konfiguracji wyświetlacza (wszystkie ustawienia)"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2356
 msgid "Configure display settings"

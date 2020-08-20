@@ -5,7 +5,7 @@
 # 
 # Translators:
 # Cravix <dr.neemous@gmail.com>, 2018
-# Wylmer Wang, 2018
+# e0c668032ced196bd60f2b6a070d982d_8f72ae0, 2018
 # gtrslower, 2018
 # biqiu-ssw <shenshuaiwen@gmail.com>, 2018
 # zhangxianwei8 <zhang.xianwei8@zte.com.cn>, 2018

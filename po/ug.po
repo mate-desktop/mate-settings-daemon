@@ -13,12 +13,12 @@ msgstr ""
 "POT-Creation-Date: 2019-11-19 11:28+0100\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
-"Language-Team: Uighur (https://www.transifex.com/mate/teams/13566/ug/)\n"
+"Language-Team: Uyghur (https://www.transifex.com/mate/teams/13566/ug/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ug\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/50-accessibility.xml.in:2
 msgid "Accessibility"
@@ -1408,6 +1408,7 @@ msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
 msgstr[0] ""
+msgstr[1] ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:490
 msgid "Does the display look OK?"

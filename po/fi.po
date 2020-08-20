@@ -9,6 +9,7 @@
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # nomen omen, 2019
 # Wolfgang Ulbrich <mate@raveit.de>, 2019
+# Kimmo Kujansuu <mrkujansuu@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
@@ -16,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 11:28+0100\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>, 2019\n"
+"Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>, 2020\n"
 "Language-Team: Finnish (https://www.transifex.com/mate/teams/13566/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -151,7 +152,7 @@ msgstr ""
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:45
 msgid "NumLock state"
-msgstr ""
+msgstr "NumLock-näppäimen asento"
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:46
 msgid "The remembered state of the NumLock LED."
@@ -223,7 +224,7 @@ msgstr "Kaksoisnapsautuksen kesto."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:40
 msgid "Middle button emulation"
-msgstr ""
+msgstr "Keskimmäisen painikkeen emulointi"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:41
 msgid ""
@@ -249,7 +250,7 @@ msgstr "Kohdistin teema"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:51
 msgid "Cursor theme name."
-msgstr ""
+msgstr "Kohdistimen teeman nimi."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:55
 msgid "Cursor size"
@@ -342,7 +343,7 @@ msgstr "Aseta tämä todeksi jos haluat ottaa kaikki kosketuslevyt käyttöön."
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:55
 msgid "Enabled two-finger button-click emulation"
-msgstr ""
+msgstr "Ota käyttöön kahden sormen painikkeen napsauttaminen -emulointi"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:56
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:61
@@ -355,7 +356,7 @@ msgstr ""
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:65
 msgid "One finger tap button"
-msgstr ""
+msgstr "Yhden sormen napautuspainike"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:66
 msgid ""
@@ -365,7 +366,7 @@ msgstr ""
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:70
 msgid "Two finger tap button"
-msgstr ""
+msgstr "Kahden sormen napautuspainike"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:71
 msgid ""
@@ -385,7 +386,7 @@ msgstr ""
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:80
 msgid "Touchpad button orientation"
-msgstr ""
+msgstr "Kosketuslevyn painikkeen suunta"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:81
 msgid ""
@@ -435,7 +436,7 @@ msgstr ""
 #: data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in:5
 #: data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in:5
 msgid "Activation of this plugin"
-msgstr ""
+msgstr "Tämän laajennuksen aktivointi"
 
 #: data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in:6
 #: data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in:6
@@ -477,7 +478,7 @@ msgstr ""
 #: data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in:10
 #: data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in:10
 msgid "Priority to use for this plugin"
-msgstr ""
+msgstr "Tämän laajennuksen käyttö on etusijalla"
 
 #: data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in:11
 #: data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in:11
@@ -554,7 +555,7 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:10
 msgid "Show OSD notification"
-msgstr ""
+msgstr "Näytä OSD ilmoitus"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:11
 msgid "Whether an OSD notification is shown to notify about changes"
@@ -602,23 +603,24 @@ msgstr "Sidos äänenvoimakkuuden kasvattamiseksi."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:45
 msgid "Mute the audio quietly"
-msgstr ""
+msgstr "Mykistä ääni hiljaa"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:46
 msgid "Binding to mute the system volume quietly."
 msgstr ""
+"Sidonta, jos haluat mykistää järjestelmän äänenvoimakkuuden hiljaisesti."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:50
 msgid "Turn the volume down quietly"
-msgstr ""
+msgstr "Käännä äänenvoimakkuutta hiljaa"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:51
 msgid "Binding to lower the system volume quietly."
-msgstr ""
+msgstr "Sidonta, jos haluat vähentää järjestelmän äänenvoimakkuutta hiljaa."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:55
 msgid "Turn the volume up quietly"
-msgstr ""
+msgstr "Käännä äänenvoimakkuutta ylös hiljaa"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:56
 msgid "Binding to raise the system volume quietly."
@@ -626,7 +628,7 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:60
 msgid "Microphone mute/unmute"
-msgstr ""
+msgstr "Mikrofonin mykistys/vapautus"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:61
 msgid "Binding to mute/unmute the microphone."
@@ -634,7 +636,7 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:65
 msgid "Shut down"
-msgstr ""
+msgstr "Sammuta"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:66
 msgid "Binding to shut down."
@@ -682,7 +684,7 @@ msgstr "Sidos sähköpostiohjelman käynnistämiseksi."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:95
 msgid "Launch settings"
-msgstr ""
+msgstr "Käynnistä asetukset"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:96
 msgid "Binding to launch MATE settings."
@@ -714,7 +716,7 @@ msgstr "Sidos laskimen käynnistämiseksi."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:115
 msgid "Launch instant messenger"
-msgstr ""
+msgstr "Käynnistä pikaviesti"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:116
 msgid "Binding to launch the instant messenger."
@@ -1414,7 +1416,7 @@ msgstr ""
 
 #: plugins/smartcard/msd-smartcard.c:162 plugins/smartcard/msd-smartcard.c:163
 msgid "name"
-msgstr ""
+msgstr "nimi"
 
 #: plugins/smartcard/msd-smartcard.c:167
 msgid "Module"

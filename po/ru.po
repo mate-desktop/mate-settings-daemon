@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Alexei Sorokin <sor.alexei@meowr.ru>, 2018
+# Alexei Sorokin, 2018
 # Dmitriy Kulikov <kulikov@dima.perm.ru>, 2018
 # Alex Putz, 2018
 # Дмитрий Михирев, 2019
@@ -12,6 +12,8 @@
 # monsta <monsta@inbox.ru>, 2019
 # alsoijw <alsoijw@yandex.ru>, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Anna Vyalkova <cybertailor@gmail.com>, 2020
+# Nikolay Strelkov, 2020
 # 
 msgid ""
 msgstr ""
@@ -19,7 +21,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 11:28+0100\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
+"Last-Translator: Nikolay Strelkov, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/mate/teams/13566/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -196,7 +198,7 @@ msgstr ""
 #: data/org.mate.peripherals-mouse.gschema.xml.in:25
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:95
 msgid "Acceleration profile"
-msgstr ""
+msgstr "Профиль ускорения"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:26
 msgid ""
@@ -208,6 +210,13 @@ msgid ""
 "movement. If a mouse doesn't support the configured profile, 'default' will "
 "be used."
 msgstr ""
+"Профиль ускорения для подсоединённой мыши. Профиль ускорения может принимать"
+" следующие значения: по умолчанию ('default'), то есть использовать профиль "
+"по умолчанию для каждого устройства; плоский ('flat'), то есть ускорять на "
+"постоянную величину, взятую для каждого устройства из настроек скорости "
+"курсора; адаптивный ('adaptive'), то есть подстраивать ускорение в "
+"зависимости от движения мыши. Если мышь не поддерживает выбранный профиль, "
+"будет установлен профиль 'default'."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:30
 msgid "Drag Threshold"
@@ -442,6 +451,13 @@ msgid ""
 "movement. If a touchpad doesn't support the configured profile, 'default' "
 "will be used."
 msgstr ""
+"Профиль ускорения для тачпада. Профиль ускорения может принимать следующие "
+"значения: по умолчанию ('default'), то есть использовать профиль по "
+"умолчанию для каждого устройства; плоский ('flat'), то есть ускорять на "
+"постоянную величину, взятую для каждого устройства из настроек скорости "
+"курсора; адаптивный ('adaptive'), то есть подстраивать ускорение в "
+"зависимости от движения тачпада. Если тачпад не поддерживает выбранный "
+"профиль, будет установлен профиль 'default'."
 
 #: data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in:5
 #: data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in:5
@@ -638,35 +654,35 @@ msgstr "Комбинация клавиш для увеличения систе
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:45
 msgid "Mute the audio quietly"
-msgstr ""
+msgstr "Бесшумно отключить звук"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:46
 msgid "Binding to mute the system volume quietly."
-msgstr ""
+msgstr "Комбинация клавиш для бесшумного приглушения системной громкости. "
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:50
 msgid "Turn the volume down quietly"
-msgstr ""
+msgstr "Бесшумно уменьшить громкость"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:51
 msgid "Binding to lower the system volume quietly."
-msgstr ""
+msgstr "Комбинация клавиш для бесшумного уменьшения системной громкости."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:55
 msgid "Turn the volume up quietly"
-msgstr ""
+msgstr "Бесшумно увеличить громкость"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:56
 msgid "Binding to raise the system volume quietly."
-msgstr ""
+msgstr "Комбинация клавиш для бесшумного увеличения системной громкости."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:60
 msgid "Microphone mute/unmute"
-msgstr ""
+msgstr "Включить/выключить микрофон"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:61
 msgid "Binding to mute/unmute the microphone."
-msgstr ""
+msgstr "Комбинация клавиш для включения/выключения микрофона."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:65
 msgid "Shut down"
@@ -718,11 +734,11 @@ msgstr "Комбинация клавиш для запуска почтовог
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:95
 msgid "Launch settings"
-msgstr ""
+msgstr "Запустить центр настройки"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:96
 msgid "Binding to launch MATE settings."
-msgstr ""
+msgstr "Комбинация клавиш для запуска центра настройки MATE."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:100
 msgid "Lock screen"
@@ -750,11 +766,11 @@ msgstr "Комбинация клавиш для запуска калькуля
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:115
 msgid "Launch instant messenger"
-msgstr ""
+msgstr "Запустить мессенджер"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:116
 msgid "Binding to launch the instant messenger."
-msgstr ""
+msgstr "Комбинация клавиш для запуска мессенджера."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:120
 msgid "Launch web browser"
@@ -1069,11 +1085,11 @@ msgstr "Нажимать и _удерживать клавиши (медленн
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:5
 msgid "Accessibility settings"
-msgstr ""
+msgstr "Настройки специальных возможностей"
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:6
 msgid "Accessibility settings plugin"
-msgstr ""
+msgstr "Плагин настройки специальных возможностей"
 
 #: plugins/background/background.mate-settings-plugin.desktop.in:5
 msgid "Background"
@@ -1125,13 +1141,15 @@ msgstr "Модуль-заглушка"
 
 #: plugins/housekeeping/housekeeping.mate-settings-plugin.desktop.in:5
 msgid "Housekeeping"
-msgstr ""
+msgstr "Очистка"
 
 #: plugins/housekeeping/housekeeping.mate-settings-plugin.desktop.in:6
 msgid ""
 "Automatically prunes thumbnail caches and other transient files, and warns "
 "about low disk space"
 msgstr ""
+"Автоматически удаляет кеш предпросмотра и другие временные файлы, а также "
+"предупреждает, когда остаётся мало места на диске"
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:63
 msgid "Don't show any warnings again for this file system"
@@ -1345,46 +1363,46 @@ msgstr ""
 #: plugins/media-keys/msd-media-keys-manager.c:641
 #: plugins/media-keys/test-media-window.c:81
 msgid "Touchpad enabled"
-msgstr ""
+msgstr "Тачпад включен"
 
 #: plugins/media-keys/msd-media-keys-manager.c:641
 #: plugins/media-keys/test-media-window.c:74
 msgid "Touchpad disabled"
-msgstr ""
+msgstr "Тачпад выключен"
 
 #: plugins/media-keys/msd-media-keys-manager.c:957
 #: plugins/media-keys/test-media-window.c:88
 msgid "Bluetooth disabled"
-msgstr ""
+msgstr "Bluetooth выключен"
 
 #: plugins/media-keys/msd-media-keys-manager.c:960
 #: plugins/media-keys/test-media-window.c:95
 msgid "Bluetooth enabled"
-msgstr ""
+msgstr "Bluetooth включен"
 
 #: plugins/media-keys/msd-media-keys-manager.c:964
 #: plugins/media-keys/test-media-window.c:102
 msgid "Airplane mode enabled"
-msgstr ""
+msgstr "Режим полёта включен"
 
 #: plugins/media-keys/msd-media-keys-manager.c:967
 #: plugins/media-keys/test-media-window.c:109
 msgid "Airplane mode disabled"
-msgstr ""
+msgstr "Режим полёта выключен"
 
 #: plugins/media-keys/msd-media-keys-manager.c:998
 msgid "Hardware Airplane Mode"
-msgstr ""
+msgstr "Аппаратный режим полёта"
 
 #: plugins/media-keys/msd-media-keys-manager.c:1036
 #: plugins/media-keys/test-media-window.c:123
 msgid "Changing Screen Layout"
-msgstr ""
+msgstr "Изменение макета экрана"
 
 #: plugins/media-keys/msd-media-keys-manager.c:1040
 #: plugins/media-keys/test-media-window.c:116
 msgid "No External Display"
-msgstr ""
+msgstr "Внешний монитор отсутствует"
 
 #: plugins/mouse/mouse.mate-settings-plugin.desktop.in:5
 msgid "Mouse"
@@ -1421,11 +1439,11 @@ msgstr "Модуль Mpris"
 #. Priority=100
 #: plugins/rfkill/rfkill.mate-settings-plugin.desktop.in:7
 msgid "Rfkill"
-msgstr ""
+msgstr "Rfkill"
 
 #: plugins/rfkill/rfkill.mate-settings-plugin.desktop.in:8
 msgid "Rfkill plugin"
-msgstr ""
+msgstr "Плагин Rfkill"
 
 #: plugins/smartcard/msd-smartcard-manager.c:164
 msgid "Module Path"
@@ -1491,11 +1509,11 @@ msgstr "драйвер смарт-карты"
 
 #: plugins/smartcard/smartcard.mate-settings-plugin.desktop.in:5
 msgid "Smartcard"
-msgstr ""
+msgstr "Smartcard"
 
 #: plugins/smartcard/smartcard.mate-settings-plugin.desktop.in:6
 msgid "Smartcard plugin"
-msgstr ""
+msgstr "Плагин Smartcard"
 
 #: plugins/sound/sound.mate-settings-plugin.desktop.in:5
 msgid "Sound"
@@ -1503,7 +1521,7 @@ msgstr "Звук"
 
 #: plugins/sound/sound.mate-settings-plugin.desktop.in:6
 msgid "Sound Sample Cache plugin"
-msgstr ""
+msgstr "Плагин кеширования звука"
 
 #: plugins/typing-break/typing-break.mate-settings-plugin.desktop.in:5
 msgid "Typing Break"
@@ -1591,27 +1609,27 @@ msgstr "сверху вниз"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2180
 msgid "ON"
-msgstr ""
+msgstr "ВКЛ"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2181
 msgid "Turn this monitor off"
-msgstr ""
+msgstr "Выключить этот монитор"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2184
 msgid "OFF"
-msgstr ""
+msgstr "ВЫКЛ"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2185
 msgid "Turn this monitor on"
-msgstr ""
+msgstr "Включить этот монитор"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2245
 msgid "Same output all monitors"
-msgstr ""
+msgstr "Одинаковое изображение на всех мониторах"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2246
 msgid "Mirror same output to all monitors and turn them on"
-msgstr ""
+msgstr "Включить все мониторы и показывать на них одинаковое изображение"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2293
 msgid "_Configure Display Settings…"
@@ -1619,7 +1637,7 @@ msgstr "_Настроить параметры дисплея…"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2303
 msgid "Open the display configuration dialog (all settings)"
-msgstr ""
+msgstr "Открыть диалог конфигурации монитора (все настройки)"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2356
 msgid "Configure display settings"

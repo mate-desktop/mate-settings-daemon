@@ -16,6 +16,8 @@
 # Laurent Napias <tamplan+transifex@free.fr>, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Clément GERARDIN <clement.gerardin@univ-amu.fr>, 2019
+# Rox fr <roxfr@outlook.fr>, 2020
+# Laurent Napias, 2020
 # 
 msgid ""
 msgstr ""
@@ -23,7 +25,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 11:28+0100\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Clément GERARDIN <clement.gerardin@univ-amu.fr>, 2019\n"
+"Last-Translator: Laurent Napias, 2020\n"
 "Language-Team: French (https://www.transifex.com/mate/teams/13566/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -385,8 +387,8 @@ msgid ""
 "Select the button mapping for one-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
 msgstr ""
-"Sélectionne l'utilisation du bouton  pour un clic. Les valeurs supportées "
-"sont : 1 : bouton gauche de la souris 2 : bouton du milieu de la souris 3 : "
+"Sélectionne l'utilisation du bouton pour un clic. Les valeurs supportées "
+"sont : 1 : bouton gauche de la souris 2 : bouton du milieu de la souris 3 : "
 "bouton droit de la souris"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:70
@@ -398,9 +400,9 @@ msgid ""
 "Select the button mapping for two-finger tap. Supported values are: 1: left "
 "mouse button 2: middle mouse button 3: right mouse button"
 msgstr ""
-"Sélectionne l'utilisation du bouton  pour un clic à deux doigts. Les valeurs"
-" supportées sont : 1 : bouton gauche de la souris 2 : bouton du milieu de la"
-" souris 3 : bouton droit de la souris"
+"Sélectionne l'utilisation du bouton pour un clic à deux doigts. Les valeurs "
+"supportées sont : 1 : bouton gauche de la souris 2 : bouton du milieu de la "
+"souris 3 : bouton droit de la souris"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:75
 msgid "Three finger tap button"
@@ -411,9 +413,9 @@ msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
 msgstr ""
-"Sélectionne l'utilisation du bouton  pour un clic à trois doigts. Les "
-"valeurs supportées sont : 1 : bouton gauche de la souris 2 : bouton du "
-"milieu de la souris 3 : bouton droit de la souris"
+"Sélectionne l'utilisation du bouton pour un clic à trois doigts. Les valeurs"
+" supportées sont : 1 : bouton gauche de la souris 2 : bouton du milieu de la"
+" souris 3 : bouton droit de la souris"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:80
 msgid "Touchpad button orientation"
@@ -653,19 +655,19 @@ msgstr "Raccourci pour augmenter le volume général du son."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:45
 msgid "Mute the audio quietly"
-msgstr ""
+msgstr "Couper le son tranquillement"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:46
 msgid "Binding to mute the system volume quietly."
-msgstr ""
+msgstr "Raccourci pour couper le volume du système tranquillement. "
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:50
 msgid "Turn the volume down quietly"
-msgstr ""
+msgstr "Diminue le volume tranquillement"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:51
 msgid "Binding to lower the system volume quietly."
-msgstr ""
+msgstr "Raccourci pour couper le volume du système discrètement."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:55
 msgid "Turn the volume up quietly"
@@ -677,11 +679,11 @@ msgstr "Raccourci pour augmenter le volume du système tranquillement."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:60
 msgid "Microphone mute/unmute"
-msgstr ""
+msgstr "Désactiver/réactiver le microphone"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:61
 msgid "Binding to mute/unmute the microphone."
-msgstr ""
+msgstr "Raccourci pour activer ou désactiver le microphone."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:65
 msgid "Shut down"
@@ -769,7 +771,7 @@ msgstr "Démarre la messagerie instantanée"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:116
 msgid "Binding to launch the instant messenger."
-msgstr ""
+msgstr "Raccourci pour lancer le logiciel de messagerie."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:120
 msgid "Launch web browser"
@@ -1089,7 +1091,7 @@ msgstr ""
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:5
 msgid "Accessibility settings"
-msgstr ""
+msgstr "Paramètres d'accessibilité"
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:6
 msgid "Accessibility settings plugin"
@@ -1454,7 +1456,7 @@ msgstr "Rfkill"
 
 #: plugins/rfkill/rfkill.mate-settings-plugin.desktop.in:8
 msgid "Rfkill plugin"
-msgstr ""
+msgstr "Greffon Rfkill"
 
 #: plugins/smartcard/msd-smartcard-manager.c:164
 msgid "Module Path"
@@ -1520,11 +1522,11 @@ msgstr "pilote de carte à puce"
 
 #: plugins/smartcard/smartcard.mate-settings-plugin.desktop.in:5
 msgid "Smartcard"
-msgstr ""
+msgstr "Carte à puce"
 
 #: plugins/smartcard/smartcard.mate-settings-plugin.desktop.in:6
 msgid "Smartcard plugin"
-msgstr ""
+msgstr "Greffon de carte à puce"
 
 #: plugins/sound/sound.mate-settings-plugin.desktop.in:5
 msgid "Sound"
@@ -1622,19 +1624,19 @@ msgstr "Inversée"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2180
 msgid "ON"
-msgstr ""
+msgstr "Allumé"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2181
 msgid "Turn this monitor off"
-msgstr ""
+msgstr "Éteindre ce moniteur"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2184
 msgid "OFF"
-msgstr ""
+msgstr "Éteint"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2185
 msgid "Turn this monitor on"
-msgstr ""
+msgstr "Allumer ce moniteur"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2245
 msgid "Same output all monitors"

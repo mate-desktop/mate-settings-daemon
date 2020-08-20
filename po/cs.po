@@ -8,11 +8,11 @@
 # Ondřej Kolín <ondrej.kolin@gmail.com>, 2018
 # Lukáš Kvídera <lukas.kvidera@seznam.cz>, 2018
 # Michal <sinope@seznam.cz>, 2018
-# Lucas Lommer <drom@kdyne.net>, 2019
 # LiberteCzech <liberte.czech@gmail.com>, 2019
-# Stanislav Kučera <inactive+kacernator@transifex.com>, 2019
+# 6e833d5535e2fe0dd9dfa7fe5bf473f2_d78f422 <64c38a0ff10419c64e8e03d54c72b3bd_352524>, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # ToMáš Marný, 2019
+# Lucas Lommer <drom@kdyne.net>, 2020
 # 
 msgid ""
 msgstr ""
@@ -20,7 +20,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-19 11:28+0100\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: ToMáš Marný, 2019\n"
+"Last-Translator: Lucas Lommer <drom@kdyne.net>, 2020\n"
 "Language-Team: Czech (https://www.transifex.com/mate/teams/13566/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -193,7 +193,7 @@ msgstr ""
 #: data/org.mate.peripherals-mouse.gschema.xml.in:25
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:95
 msgid "Acceleration profile"
-msgstr ""
+msgstr "Profil zrychlení"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:26
 msgid ""
@@ -205,6 +205,12 @@ msgid ""
 "movement. If a mouse doesn't support the configured profile, 'default' will "
 "be used."
 msgstr ""
+"Profil zrychlení použitý pro připojené myši. Profil lze nastavit na výchozí "
+"(„default”), při kterém bude pro každou myš použit výchozí profil, "
+"nepřizpůsobující se („flat”), při kterém bude akcelerace nastavena pomocí "
+"konstanty odvozené z nastavené rychlosti ukazatele, či přizpusobující se "
+"(„adaptive”), který upravuje akceleraci v závislosti na pohybu myši. Pokud "
+"myš daný profil nepodporuje, bude použita volba „defailt”."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:30
 msgid "Drag Threshold"
@@ -433,6 +439,13 @@ msgid ""
 "movement. If a touchpad doesn't support the configured profile, 'default' "
 "will be used."
 msgstr ""
+"Profil zrychlení použitý pro touchpadi. Profil lze nastavit na výchozí "
+"(„default”), při kterém bude pro každé zařízení použit výchozí profil, "
+"nepřizpůsobující se („flat”), při kterém bude akcelerace nastavena pomocí "
+"konstanty odvozené z nastavené rychlosti ukazatele, či přizpusobující se "
+"(„adaptive”), který upravuje akceleraci v závislosti na pohybu ukazatele "
+"pomocí touchpadu. Pokud touchpad daný profil nepodporuje, bude použita volba"
+" „defailt”."
 
 #: data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in:5
 #: data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in:5
@@ -744,7 +757,7 @@ msgstr "Spustit program pro rychlé zasílání zpráv"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:116
 msgid "Binding to launch the instant messenger."
-msgstr ""
+msgstr "Zkratka ke spuštění Programu rychlých zpráv"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:120
 msgid "Launch web browser"
@@ -1059,11 +1072,11 @@ msgstr ""
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:5
 msgid "Accessibility settings"
-msgstr ""
+msgstr "Nastavení přístupnosti"
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:6
 msgid "Accessibility settings plugin"
-msgstr ""
+msgstr "Zásuvný modul nastavení přístupnosti"
 
 #: plugins/background/background.mate-settings-plugin.desktop.in:5
 msgid "Background"
@@ -1115,13 +1128,15 @@ msgstr "Prázdný zásuvný modul"
 
 #: plugins/housekeeping/housekeeping.mate-settings-plugin.desktop.in:5
 msgid "Housekeeping"
-msgstr ""
+msgstr "Úklid"
 
 #: plugins/housekeeping/housekeeping.mate-settings-plugin.desktop.in:6
 msgid ""
 "Automatically prunes thumbnail caches and other transient files, and warns "
 "about low disk space"
 msgstr ""
+"Automaticky promazává vyrovnávací paměť náhledů a další dočasné soubory a "
+"varuje před docházejícím místem na disku."
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:63
 msgid "Don't show any warnings again for this file system"
@@ -1479,11 +1494,11 @@ msgstr "ovladač smartcard"
 
 #: plugins/smartcard/smartcard.mate-settings-plugin.desktop.in:5
 msgid "Smartcard"
-msgstr ""
+msgstr "Smartcard"
 
 #: plugins/smartcard/smartcard.mate-settings-plugin.desktop.in:6
 msgid "Smartcard plugin"
-msgstr ""
+msgstr "Zásuvný modul Smartcard"
 
 #: plugins/sound/sound.mate-settings-plugin.desktop.in:5
 msgid "Sound"
@@ -1491,7 +1506,7 @@ msgstr "Zvuk"
 
 #: plugins/sound/sound.mate-settings-plugin.desktop.in:6
 msgid "Sound Sample Cache plugin"
-msgstr ""
+msgstr "Zásuvný modul Sound Sample Cache"
 
 #: plugins/typing-break/typing-break.mate-settings-plugin.desktop.in:5
 msgid "Typing Break"
@@ -1583,27 +1598,27 @@ msgstr "Převrátit"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2180
 msgid "ON"
-msgstr ""
+msgstr "ZAP"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2181
 msgid "Turn this monitor off"
-msgstr ""
+msgstr "Vypnout tento monitor"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2184
 msgid "OFF"
-msgstr ""
+msgstr "VYP"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2185
 msgid "Turn this monitor on"
-msgstr ""
+msgstr "Zapnout tento monitor"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2245
 msgid "Same output all monitors"
-msgstr ""
+msgstr "Stejný výstup všech monitorů"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2246
 msgid "Mirror same output to all monitors and turn them on"
-msgstr ""
+msgstr "Zapnout všechny monitory a zrcadlit na ně stejný výstup"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2293
 msgid "_Configure Display Settings…"
@@ -1611,7 +1626,7 @@ msgstr "_Konfigurovat nastavení displeje…"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2303
 msgid "Open the display configuration dialog (all settings)"
-msgstr ""
+msgstr "Otevřít okno konfigurace displeje (všechna nastavení)"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2356
 msgid "Configure display settings"
