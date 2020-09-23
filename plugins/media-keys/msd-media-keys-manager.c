@@ -1069,10 +1069,7 @@ msd_media_keys_manager_grab_media_player_keys (MsdMediaKeysManager *manager,
         MediaPlayer *media_player;
 
         if (time == GDK_CURRENT_TIME) {
-                GTimeVal tv;
-
-                g_get_current_time (&tv);
-                time = tv.tv_sec * 1000 + tv.tv_usec / 1000;
+                time = (guint32)(g_get_monotonic_time () / 1000);
         }
 
         iter = g_list_find_custom (manager->priv->media_players,
