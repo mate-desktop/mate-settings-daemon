@@ -182,8 +182,7 @@ ignore_check_button_toggled_cb (GtkToggleButton *button,
             g_ptr_array_free (array, FALSE);
         }
 
-        g_slist_foreach (ignore_paths, (GFunc) g_free, NULL);
-        g_slist_free (ignore_paths);
+        g_slist_free_full (ignore_paths, g_free);
         g_object_unref (settings);
 }
 
