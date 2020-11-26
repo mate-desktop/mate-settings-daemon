@@ -612,8 +612,7 @@ msd_ldsm_get_config (void)
                                                 SETTINGS_MIN_NOTIFY_PERIOD);
 
         if (ignore_paths != NULL) {
-                g_slist_foreach (ignore_paths, (GFunc) g_free, NULL);
-                g_slist_free (ignore_paths);
+                g_slist_free_full (ignore_paths, g_free);
                 ignore_paths = NULL;
         }
 
@@ -696,8 +695,7 @@ msd_ldsm_clean (void)
         }
 
         if (ignore_paths) {
-                g_slist_foreach (ignore_paths, (GFunc) g_free, NULL);
-                g_slist_free (ignore_paths);
+                g_slist_free_full (ignore_paths, g_free);
         }
 }
 

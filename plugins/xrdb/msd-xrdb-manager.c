@@ -236,8 +236,7 @@ scan_for_files (MsdXrdbManager *manager,
                         if (local_error != NULL) {
                                 g_propagate_error (error, local_error);
 
-                                g_slist_foreach (system_list, (GFunc)g_free, NULL);
-                                g_slist_free (system_list);
+                                g_slist_free_full (system_list, g_free);
                                 g_free (user_ad);
                                 return NULL;
                         }
@@ -447,8 +446,7 @@ apply_settings (MsdXrdbManager *manager,
                 }
         }
 
-        g_slist_foreach (list, (GFunc)g_free, NULL);
-        g_slist_free (list);
+        g_slist_free_full (list, g_free);
 
         error = NULL;
         append_xresource_file (USER_X_RESOURCES, string, &error);
