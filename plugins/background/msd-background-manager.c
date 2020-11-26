@@ -173,8 +173,7 @@ static void
 free_scr_sizes (MsdBackgroundManager *manager)
 {
 	if (manager->priv->scr_sizes != NULL) {
-		g_list_foreach (manager->priv->scr_sizes, (GFunc)g_free, NULL);
-		g_list_free (manager->priv->scr_sizes);
+		g_list_free_full (manager->priv->scr_sizes, g_free);
 		manager->priv->scr_sizes = NULL;
 	}
 }
