@@ -404,7 +404,6 @@ convert_clipboard_manager (MsdClipboardManager *manager,
         int           format;
         unsigned long nitems;
         unsigned long remaining;
-        Atom         *targets = NULL;
 
         display = gdk_display_get_default ();
 
@@ -415,6 +414,8 @@ convert_clipboard_manager (MsdClipboardManager *manager,
                          */
                         finish_selection_request (manager, xev, False);
                 } else {
+                        Atom *targets = NULL;
+
                         gdk_x11_display_error_trap_push (display);
 
                         clipboard_manager_watch_cb (manager,
