@@ -48,8 +48,6 @@ struct MsdLocatePointerData
   gdouble progress;
 };
 
-static MsdLocatePointerData *data = NULL;
-
 static void
 locate_pointer_paint (MsdLocatePointerData *data,
 		      cairo_t              *cr,
@@ -414,6 +412,7 @@ void
 msd_locate_pointer (GdkDisplay *display)
 {
   GdkScreen *screen = gdk_display_get_default_screen (display);
+  static MsdLocatePointerData *data = NULL;
 
   if (data == NULL)
     {

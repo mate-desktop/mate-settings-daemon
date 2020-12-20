@@ -635,7 +635,7 @@ msd_ldsm_get_config (void)
 }
 
 static void
-msd_ldsm_update_config (GSettings *settings G_GNUC_UNUSED,
+msd_ldsm_update_config (GSettings *gsettings G_GNUC_UNUSED,
                         gchar *key G_GNUC_UNUSED,
                         gpointer user_data G_GNUC_UNUSED)
 {

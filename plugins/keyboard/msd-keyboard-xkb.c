@@ -259,7 +259,9 @@ popup_menu_set_group (GtkMenuItem *item G_GNUC_UNUSED,
 }
 
 static void
-status_icon_popup_menu_cb (GtkStatusIcon * icon, guint button, guint time)
+status_icon_popup_menu_cb (GtkStatusIcon *status_icon,
+                           guint          button,
+                           guint          time)
 {
 	GtkWidget *toplevel;
 	GdkScreen *screen;
@@ -330,7 +332,7 @@ status_icon_popup_menu_cb (GtkStatusIcon * icon, guint button, guint time)
 
 	gtk_menu_popup (popup_menu, NULL, NULL,
 			gtk_status_icon_position_menu,
-			(gpointer) icon, button, time);
+			(gpointer) status_icon, button, time);
 }
 
 static void
