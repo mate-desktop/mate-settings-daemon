@@ -41,7 +41,6 @@
 #include <X11/Xatom.h>
 
 #include "xutils.h"
-#include "list.h"
 
 #include "mate-settings-profile.h"
 #include "msd-clipboard-manager.h"
@@ -52,8 +51,8 @@ struct MsdClipboardManagerPrivate
         Window   window;
         Time     timestamp;
 
-        List    *contents;
-        List    *conversions;
+        GSList   *contents;
+        GSList   *conversions;
 
         Window   requestor;
         Atom     property;
@@ -103,8 +102,9 @@ target_data_ref (TargetData *data)
 }
 
 static void
-target_data_unref (TargetData *data)
+target_data_unref (gpointer user_data)
 {
+        TargetData *data = user_data;
         data->refcount--;
         if (data->refcount == 0) {
                 free (data->data);
@@ -113,8 +113,9 @@ target_data_unref (TargetData *data)
 }
 
 static void
-conversion_free (IncrConversion *rdata)
+conversion_free (gpointer data)
 {
+        IncrConversion *rdata = data;
         if (rdata->data) {
                 target_data_unref (rdata->data);
         }
@@ -219,7 +220,7 @@ save_targets (MsdClipboardManager *manager,
                         tdata->type = None;
                         tdata->format = 0;
                         tdata->refcount = 1;
-                        manager->priv->contents = list_prepend (manager->priv->contents, tdata);
+                        manager->priv->contents = g_slist_prepend (manager->priv->contents, tdata);
 
                         multiple[nout++] = save_targets[i];
                         multiple[nout++] = save_targets[i];
@@ -284,7 +285,7 @@ get_property (TargetData          *tdata,
                             &data);
 
         if (type == None) {
-                manager->priv->contents = list_remove (manager->priv->contents, tdata);
+                manager->priv->contents = g_slist_remove (manager->priv->contents, tdata);
                 free (tdata);
         } else if (type == XA_INCR) {
                 tdata->type = type;
@@ -302,7 +303,7 @@ static Bool
 receive_incrementally (MsdClipboardManager *manager,
                        XEvent              *xev)
 {
-        List          *list;
+        GSList        *list;
         TargetData    *tdata;
         Atom           type;
         int            format;
@@ -312,8 +313,9 @@ receive_incrementally (MsdClipboardManager *manager,
         if (xev->xproperty.window != manager->priv->window)
                 return False;
 
-        list = list_find (manager->priv->contents,
-                          (ListFindFunc) find_content_target, (void *) xev->xproperty.atom);
+        list = g_slist_find_custom (manager->priv->contents,
+                                    (void *) xev->xproperty.atom,
+                                    (GCompareFunc) find_content_target);
 
         if (!list)
                 return False;
@@ -334,8 +336,8 @@ receive_incrementally (MsdClipboardManager *manager,
                 tdata->type = type;
                 tdata->format = format;
 
-                if (!list_find (manager->priv->contents,
-                                (ListFindFunc) find_content_type, (void *)XA_INCR)) {
+                if (!g_slist_find_custom (manager->priv->contents,
+                                          (void *)XA_INCR, (GCompareFunc) find_content_type)) {
                         /* all incremental transfers done */
                         send_selection_notify (manager, True);
                         manager->priv->requestor = None;
@@ -361,14 +363,14 @@ static Bool
 send_incrementally (MsdClipboardManager *manager,
                     XEvent              *xev)
 {
-        List           *list;
+        GSList         *list;
         IncrConversion *rdata;
         unsigned long   length;
         unsigned long   items;
         unsigned char  *data;
 
-        list = list_find (manager->priv->conversions,
-                          (ListFindFunc) find_conversion_requestor, xev);
+        list = g_slist_find_custom (manager->priv->conversions,
+                                    xev, (GCompareFunc) find_conversion_requestor);
         if (list == NULL)
                 return False;
 
@@ -388,7 +390,7 @@ send_incrementally (MsdClipboardManager *manager,
                          data, items);
 
         if (length == 0) {
-                manager->priv->conversions = list_remove (manager->priv->conversions, rdata);
+                manager->priv->conversions = g_slist_remove (manager->priv->conversions, rdata);
                 conversion_free (rdata);
         }
 
@@ -494,14 +496,14 @@ convert_clipboard_target (IncrConversion      *rdata,
         TargetData       *tdata;
         Atom             *targets;
         int               n_targets;
-        List             *list;
+        GSList           *list;
         unsigned long     items;
         XWindowAttributes atts;
 
         display = gdk_display_get_default ();
 
         if (rdata->target == XA_TARGETS) {
-                n_targets = list_length (manager->priv->contents) + 2;
+                n_targets = g_slist_length (manager->priv->contents) + 2;
                 targets = (Atom *) malloc (n_targets * sizeof (Atom));
 
                 n_targets = 0;
@@ -521,8 +523,9 @@ convert_clipboard_target (IncrConversion      *rdata,
                 free (targets);
         } else  {
                 /* Convert from stored CLIPBOARD data */
-                list = list_find (manager->priv->contents,
-                                  (ListFindFunc) find_content_target, (void *) rdata->target);
+                list = g_slist_find_custom (manager->priv->contents,
+                                            (void *) rdata->target,
+                                            (GCompareFunc) find_content_target);
 
                 /* We got a target that we don't support */
                 if (!list)
@@ -569,7 +572,7 @@ collect_incremental (IncrConversion      *rdata,
                      MsdClipboardManager *manager)
 {
         if (rdata->offset >= 0)
-                manager->priv->conversions = list_prepend (manager->priv->conversions, rdata);
+                manager->priv->conversions = g_slist_prepend (manager->priv->conversions, rdata);
         else {
                 if (rdata->data) {
                         target_data_unref (rdata->data);
@@ -583,8 +586,8 @@ static void
 convert_clipboard (MsdClipboardManager *manager,
                    XEvent              *xev)
 {
-        List           *list;
-        List           *conversions;
+        GSList         *list;
+        GSList         *conversions;
         IncrConversion *rdata;
         Atom            type;
         int             i;
@@ -617,7 +620,7 @@ convert_clipboard (MsdClipboardManager *manager,
                         rdata->property = multiple[i+1];
                         rdata->data = NULL;
                         rdata->offset = -1;
-                        conversions = list_prepend (conversions, rdata);
+                        conversions = g_slist_prepend (conversions, rdata);
                 }
         } else {
                 multiple = NULL;
@@ -628,10 +631,10 @@ convert_clipboard (MsdClipboardManager *manager,
                 rdata->property = xev->xselectionrequest.property;
                 rdata->data = NULL;
                 rdata->offset = -1;
-                conversions = list_prepend (conversions, rdata);
+                conversions = g_slist_prepend (conversions, rdata);
         }
 
-        list_foreach (conversions, (Callback) convert_clipboard_target, manager);
+        g_slist_foreach (conversions, (GFunc) convert_clipboard_target, manager);
 
         if (conversions->next == NULL &&
             ((IncrConversion *) conversions->data)->property == None) {
@@ -653,8 +656,8 @@ convert_clipboard (MsdClipboardManager *manager,
                 finish_selection_request (manager, xev, True);
         }
 
-        list_foreach (conversions, (Callback) collect_incremental, manager);
-        list_free (conversions);
+        g_slist_foreach (conversions, (GFunc) collect_incremental, manager);
+        g_slist_free (conversions);
 
         if (multiple)
                 free (multiple);
@@ -675,8 +678,7 @@ clipboard_manager_process_event (MsdClipboardManager *manager,
         switch (xev->xany.type) {
         case DestroyNotify:
                 if (xev->xdestroywindow.window == manager->priv->requestor) {
-                        list_foreach (manager->priv->contents, (Callback)target_data_unref, NULL);
-                        list_free (manager->priv->contents);
+                        g_slist_free_full (manager->priv->contents, target_data_unref);
                         manager->priv->contents = NULL;
 
                         clipboard_manager_watch_cb (manager,
@@ -701,8 +703,7 @@ clipboard_manager_process_event (MsdClipboardManager *manager,
                 if (xev->xselectionclear.selection == XA_CLIPBOARD_MANAGER) {
                         /* We lost the manager selection */
                         if (manager->priv->contents) {
-                                list_foreach (manager->priv->contents, (Callback)target_data_unref, NULL);
-                                list_free (manager->priv->contents);
+                                g_slist_free_full (manager->priv->contents, target_data_unref);
                                 manager->priv->contents = NULL;
 
                                 XSetSelectionOwner (manager->priv->display,
@@ -714,8 +715,7 @@ clipboard_manager_process_event (MsdClipboardManager *manager,
                 }
                 if (xev->xselectionclear.selection == XA_CLIPBOARD) {
                         /* We lost the clipboard selection */
-                        list_foreach (manager->priv->contents, (Callback)target_data_unref, NULL);
-                        list_free (manager->priv->contents);
+                        g_slist_free_full (manager->priv->contents, target_data_unref);
                         manager->priv->contents = NULL;
                         clipboard_manager_watch_cb (manager,
                                                     manager->priv->requestor,
@@ -744,11 +744,11 @@ clipboard_manager_process_event (MsdClipboardManager *manager,
 
                                 save_targets (manager, targets, nitems);
                         } else if (xev->xselection.property == XA_MULTIPLE) {
-                                List *tmp;
+                                GSList *tmp;
 
-                                tmp = list_copy (manager->priv->contents);
-                                list_foreach (tmp, (Callback) get_property, manager);
-                                list_free (tmp);
+                                tmp = g_slist_copy (manager->priv->contents);
+                                g_slist_foreach (tmp, (GFunc) get_property, manager);
+                                g_slist_free (tmp);
 
                                 manager->priv->time = xev->xselection.time;
                                 XSetSelectionOwner (manager->priv->display, XA_CLIPBOARD,
@@ -761,8 +761,8 @@ clipboard_manager_process_event (MsdClipboardManager *manager,
                                                          XA_ATOM, 32, PropModeReplace,
                                                          (unsigned char *)&XA_NULL, 1);
 
-                                if (!list_find (manager->priv->contents,
-                                                (ListFindFunc)find_content_type, (void *)XA_INCR)) {
+                                if (!g_slist_find_custom (manager->priv->contents,
+                                                          (void *)XA_INCR, (GCompareFunc)find_content_type)) {
                                         /* all transfers done */
                                         send_selection_notify (manager, True);
                                         clipboard_manager_watch_cb (manager,
@@ -953,11 +953,8 @@ msd_clipboard_manager_stop (MsdClipboardManager *manager)
                                     NULL);
         XDestroyWindow (manager->priv->display, manager->priv->window);
 
-        list_foreach (manager->priv->conversions, (Callback) conversion_free, NULL);
-        list_free (manager->priv->conversions);
-
-        list_foreach (manager->priv->contents, (Callback) target_data_unref, NULL);
-        list_free (manager->priv->contents);
+        g_slist_free_full (manager->priv->conversions, conversion_free);
+        g_slist_free_full (manager->priv->contents, target_data_unref);
 }
 
 static void
