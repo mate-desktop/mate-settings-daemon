@@ -1,4 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
+ * vim: set ts=8 sts=8 sw=8 expandtab:
  *
  * Copyright (C) 2007 William Jon McCann <mccann@jhu.edu>
  * Copyright (C) 2007, 2008 Red Hat, Inc
@@ -38,7 +39,6 @@
 #include <gdk/gdkx.h>
 #include <gtk/gtk.h>
 #include <gio/gio.h>
-#include <dbus/dbus-glib.h>
 
 #define MATE_DESKTOP_USE_UNSTABLE_API
 #include <libmate-desktop/mate-rr-config.h>
@@ -52,6 +52,7 @@
 
 #include "mate-settings-profile.h"
 #include "msd-xrandr-manager.h"
+#include "msd-xrandr-generated.h"
 
 #define CONF_SCHEMA                                    "org.mate.SettingsDaemon.plugins.xrandr"
 #define CONF_KEY_SHOW_NOTIFICATION_ICON                "show-notification-icon"
@@ -76,12 +77,15 @@
 
 #define MSD_DBUS_PATH "/org/mate/SettingsDaemon"
 #define MSD_DBUS_NAME "org.mate.SettingsDaemon"
-#define MSD_XRANDR_DBUS_PATH MSD_DBUS_PATH "/XRANDR"
 #define MSD_XRANDR_DBUS_NAME MSD_DBUS_NAME ".XRANDR"
+#define MSD_XRANDR_DBUS_PATH MSD_DBUS_PATH "/XRANDR"
+#define MSD_XRANDR_DBUS_PATH_2 MSD_DBUS_PATH "/XRANDR_2"
 
 struct MsdXrandrManagerPrivate
 {
-        DBusGConnection *dbus_connection;
+        MateXrandrXRANDR   *skeleton;
+        MateXrandrXRANDR_2 *skeleton_2;
+        guint               bus_name_id;
 
         /* Key code of the XF86Display key (Fn-F7 on Thinkpads, Fn-F4 on HP machines, etc.) */
         guint switch_video_mode_keycode;
@@ -125,6 +129,14 @@ static void get_allowed_rotations_for_output (MateRRConfig *config,
                                               MateRROutputInfo *output,
                                               int *out_num_rotations,
                                               MateRRRotation *out_rotations);
+static gboolean on_handle_apply_configuration (MateXrandrXRANDR *object,
+                                               GDBusMethodInvocation *invocation,
+                                               gpointer               user_data);
+static gboolean on_handle_apply_configuration_2 (MateXrandrXRANDR_2    *object,
+                                                 GDBusMethodInvocation *invocation,
+                                                 gint64                 parent_window_id,
+                                                 gint64                 timestamp,
+                                                 gpointer               user_data);
 
 G_DEFINE_TYPE_WITH_PRIVATE (MsdXrandrManager, msd_xrandr_manager, G_TYPE_OBJECT)
 
@@ -595,40 +607,6 @@ out:
 
         return result;
 }
-
-/* DBus method for org.mate.SettingsDaemon.XRANDR ApplyConfiguration; see msd-xrandr-manager.xml for the interface definition */
-static gboolean
-msd_xrandr_manager_apply_configuration (MsdXrandrManager *manager,
-                                        GError          **error)
-{
-        return try_to_apply_intended_configuration (manager, NULL, GDK_CURRENT_TIME, error);
-}
-
-/* DBus method for org.mate.SettingsDaemon.XRANDR_2 ApplyConfiguration; see msd-xrandr-manager.xml for the interface definition */
-static gboolean
-msd_xrandr_manager_2_apply_configuration (MsdXrandrManager *manager,
-                                          gint64            parent_window_id,
-                                          gint64            timestamp,
-                                          GError          **error)
-{
-        GdkWindow *parent_window;
-        gboolean result;
-
-        if (parent_window_id != 0)
-                parent_window = gdk_x11_window_foreign_new_for_display (gdk_display_get_default (), (Window) parent_window_id);
-        else
-                parent_window = NULL;
-
-        result = try_to_apply_intended_configuration (manager, parent_window, (guint32) timestamp, error);
-
-        if (parent_window)
-                g_object_unref (parent_window);
-
-        return result;
-}
-
-/* We include this after the definition of msd_xrandr_manager_apply_configuration() so the prototype will already exist */
-#include "msd-xrandr-manager-glue.h"
 
 static gboolean
 is_laptop (MateRRScreen *screen, MateRROutputInfo *output)
@@ -1780,8 +1758,8 @@ make_menu_item_for_output_title (MsdXrandrManager *manager, MateRROutputInfo *ou
         /*Load the icon unless the user has icons in menus turned off*/
         icon_settings = g_settings_new ("org.mate.interface");
         if (g_settings_get_boolean (icon_settings, "menus-have-icons")){
-            gtk_container_add (GTK_CONTAINER (box), image);
-            }
+                gtk_container_add (GTK_CONTAINER (box), image);
+        }
         gtk_container_add (GTK_CONTAINER (box), label);
         gtk_container_add (GTK_CONTAINER (item), box);
 
@@ -2656,16 +2634,172 @@ msd_xrandr_manager_stop (MsdXrandrManager *manager)
                 manager->priv->rw_screen = NULL;
         }
 
-        if (manager->priv->dbus_connection != NULL) {
-                dbus_g_connection_unref (manager->priv->dbus_connection);
-                manager->priv->dbus_connection = NULL;
-        }
-
         status_icon_stop (manager);
 
         log_open ();
         log_msg ("STOPPING XRANDR PLUGIN\n------------------------------------------------------------\n");
         log_close ();
+}
+
+/*
+ * DBus method for org.mate.SettingsDaemon.XRANDR ApplyConfiguration;
+ * see msd-xrandr-manager.xml for the interface definition
+ * */
+static gboolean
+on_handle_apply_configuration (MateXrandrXRANDR      *object,
+                               GDBusMethodInvocation *invocation,
+                               gpointer               user_data)
+{
+        MsdXrandrManager *manager;
+        GError *error = NULL;
+        gboolean result;
+
+        manager = MSD_XRANDR_MANAGER (user_data);
+        result = try_to_apply_intended_configuration (manager, NULL, GDK_CURRENT_TIME, &error);
+        if (!result) {
+                g_dbus_method_invocation_return_gerror (invocation, error);
+                g_error_free (error);
+        } else {
+                mate_xrandr_xrandr_complete_apply_configuration (object, invocation);
+        }
+        return result;
+}
+
+/*
+ * DBus method for org.mate.SettingsDaemon.XRANDR_2 ApplyConfiguration;
+ * see msd-xrandr-manager.xml for the interface definition
+ * */
+static gboolean
+on_handle_apply_configuration_2 (MateXrandrXRANDR_2    *object,
+                                 GDBusMethodInvocation *invocation,
+                                 gint64                 parent_window_id,
+                                 gint64                 timestamp,
+                                 gpointer               user_data)
+{
+        MsdXrandrManager *manager;
+        GdkWindow *parent_window;
+        gboolean result;
+        GError *error = NULL;
+
+        if (parent_window_id != 0)
+                parent_window = gdk_x11_window_foreign_new_for_display (
+                                        gdk_display_get_default (),
+                                        (Window) parent_window_id);
+        else
+                parent_window = NULL;
+
+        manager = MSD_XRANDR_MANAGER (user_data);
+        result = try_to_apply_intended_configuration (manager,
+                                                      parent_window,
+                                                      (guint32) timestamp,
+                                                      &error);
+        if (!result) {
+                g_dbus_method_invocation_return_gerror (invocation, error);
+                g_error_free (error);
+        } else {
+                mate_xrandr_xrandr_2_complete_apply_configuration (object, invocation);
+        }
+
+        if (parent_window)
+                g_object_unref (parent_window);
+
+        return result;
+}
+
+static void
+bus_acquired_handler_cb (GDBusConnection *connection,
+                         const gchar     *name G_GNUC_UNUSED,
+                         gpointer         user_data)
+{
+        MsdXrandrManager *manager;
+
+        GError *error = NULL;
+        gboolean exported;
+
+        manager = MSD_XRANDR_MANAGER (user_data);
+
+        g_signal_connect (manager->priv->skeleton,
+                          "handle-apply-configuration",
+                          G_CALLBACK (on_handle_apply_configuration),
+                          manager);
+        exported = g_dbus_interface_skeleton_export (G_DBUS_INTERFACE_SKELETON (manager->priv->skeleton),
+                                                     connection,
+                                                     MSD_XRANDR_DBUS_PATH,
+                                                     &error);
+        if (!exported)
+        {
+                g_warning ("MsdXrandrManager: Failed to export interface: %s", error->message);
+                g_error_free (error);
+                gtk_main_quit ();
+        }
+
+        g_signal_connect (manager->priv->skeleton_2,
+                          "handle-apply-configuration",
+                          G_CALLBACK (on_handle_apply_configuration_2),
+                          manager);
+        exported = g_dbus_interface_skeleton_export (G_DBUS_INTERFACE_SKELETON (manager->priv->skeleton_2),
+                                                     connection,
+                                                     MSD_XRANDR_DBUS_PATH_2,
+                                                     &error);
+        if (!exported)
+        {
+                g_warning ("MsdXrandrManager: Failed to export interface: %s", error->message);
+                g_error_free (error);
+                gtk_main_quit ();
+        }
+}
+
+static void
+msd_xrandr_manager_constructed (GObject *object)
+{
+        MsdXrandrManager *manager;
+
+        manager = MSD_XRANDR_MANAGER (object);
+
+        G_OBJECT_CLASS (msd_xrandr_manager_parent_class)->constructed (object);
+
+        manager->priv->bus_name_id = g_bus_own_name (G_BUS_TYPE_SESSION,
+                                                     MSD_XRANDR_DBUS_NAME,
+                                                     G_BUS_NAME_OWNER_FLAGS_NONE,
+                                                     bus_acquired_handler_cb,
+                                                     NULL,
+                                                     NULL,
+                                                     manager,
+                                                     NULL);
+}
+
+static void
+msd_xrandr_manager_dispose (GObject *object)
+{
+        MsdXrandrManager *manager;
+
+        manager = MSD_XRANDR_MANAGER (object);
+
+        if (manager->priv->skeleton != NULL)
+        {
+                GDBusInterfaceSkeleton *skeleton;
+
+                skeleton = G_DBUS_INTERFACE_SKELETON (manager->priv->skeleton);
+                g_dbus_interface_skeleton_unexport (skeleton);
+                g_clear_object (&manager->priv->skeleton);
+        }
+
+        if (manager->priv->skeleton_2 != NULL)
+        {
+                GDBusInterfaceSkeleton *skeleton;
+
+                skeleton = G_DBUS_INTERFACE_SKELETON (manager->priv->skeleton_2);
+                g_dbus_interface_skeleton_unexport (skeleton);
+                g_clear_object (&manager->priv->skeleton_2);
+        }
+
+        if (manager->priv->bus_name_id > 0)
+        {
+                g_bus_unown_name (manager->priv->bus_name_id);
+                manager->priv->bus_name_id = 0;
+        }
+
+        G_OBJECT_CLASS (msd_xrandr_manager_parent_class)->dispose (object);
 }
 
 static void
@@ -2674,8 +2808,8 @@ msd_xrandr_manager_class_init (MsdXrandrManagerClass *klass)
         GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
         object_class->finalize = msd_xrandr_manager_finalize;
-
-        dbus_g_object_type_install_info (MSD_TYPE_XRANDR_MANAGER, &dbus_glib_msd_xrandr_manager_object_info);
+        object_class->constructed = msd_xrandr_manager_constructed;
+        object_class->dispose = msd_xrandr_manager_dispose;
 }
 
 static guint
@@ -2700,6 +2834,8 @@ msd_xrandr_manager_init (MsdXrandrManager *manager)
 
         manager->priv->current_fn_f7_config = -1;
         manager->priv->fn_f7_configs = NULL;
+        manager->priv->skeleton = mate_xrandr_xrandr_skeleton_new ();
+        manager->priv->skeleton_2 = mate_xrandr_xrandr_2_skeleton_new ();
 }
 
 static void
@@ -2717,26 +2853,6 @@ msd_xrandr_manager_finalize (GObject *object)
         G_OBJECT_CLASS (msd_xrandr_manager_parent_class)->finalize (object);
 }
 
-static gboolean
-register_manager_dbus (MsdXrandrManager *manager)
-{
-        GError *error = NULL;
-
-        manager->priv->dbus_connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
-        if (manager->priv->dbus_connection == NULL) {
-                if (error != NULL) {
-                        g_warning ("Error getting session bus: %s", error->message);
-                        g_error_free (error);
-                }
-                return FALSE;
-        }
-
-        /* Hmm, should we do this in msd_xrandr_manager_start()? */
-        dbus_g_connection_register_g_object (manager->priv->dbus_connection, MSD_XRANDR_DBUS_PATH, G_OBJECT (manager));
-
-        return TRUE;
-}
-
 MsdXrandrManager *
 msd_xrandr_manager_new (void)
 {
@@ -2744,13 +2860,6 @@ msd_xrandr_manager_new (void)
                 g_object_ref (manager_object);
         } else {
                 manager_object = g_object_new (MSD_TYPE_XRANDR_MANAGER, NULL);
-                g_object_add_weak_pointer (manager_object,
-                                           (gpointer *) &manager_object);
-
-                if (!register_manager_dbus (manager_object)) {
-                        g_object_unref (manager_object);
-                        return NULL;
-                }
         }
 
         return MSD_XRANDR_MANAGER (manager_object);

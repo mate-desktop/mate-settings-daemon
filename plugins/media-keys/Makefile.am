@@ -6,15 +6,21 @@ NULL =
 plugin_LTLIBRARIES = libmedia-keys.la
 
 BUILT_SOURCES = 			\
-	msd-media-keys-manager-glue.h	\
+	$(msd_media_keys_built_sources) \
 	msd-marshal.h			\
 	msd-marshal.c			\
 	$(NULL)
 
-msd-media-keys-manager-glue.h: msd-media-keys-manager.xml Makefile
-	$(AM_V_GEN) dbus-binding-tool --prefix=msd_media_keys_manager --mode=glib-server $< > xgen-$(@F) \
-	&& ( cmp -s xgen-$(@F) $@ || cp xgen-$(@F) $@ ) \
-	&& rm -f xgen-$(@F)
+msd_media_keys_built_sources =	\
+	msd-media-keys-generated.h	\
+	msd-media-keys-generated.c	\
+	$(NULL)
+
+$(msd_media_keys_built_sources) : $(srcdir)/msd-media-keys-manager.xml
+	$(AM_V_GEN) $(GDBUS_CODEGEN) \
+		--interface-prefix org.mate.SettingsDaemon. \
+		--c-namespace MateSettings \
+		--generate-c-code msd-media-keys-generated $<
 
 msd-marshal.c: msd-marshal.list
 	$(AM_V_GEN) $(GLIB_GENMARSHAL) --prefix=msd_marshal $< --body --prototypes --internal > $@

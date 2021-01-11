@@ -41,23 +41,23 @@ msddir = $(libexecdir)
 msd_PROGRAMS = \
 	mate-settings-daemon
 
-mate-settings-manager-glue.h: mate-settings-manager.xml Makefile.am
-	$(AM_V_GEN) dbus-binding-tool --prefix=mate_settings_manager --mode=glib-server $< > $@
-
-mate-settings-client.h: mate-settings-manager.xml Makefile.am
-	$(AM_V_GEN) dbus-binding-tool --prefix=mate_settings_manager --mode=glib-client $< > $@
-
 BUILT_SOURCES = 			\
-	mate-settings-manager-glue.h	\
-	mate-settings-client.h		\
+	manager-dbus-generated.h \
+	manager-dbus-generated.c \
 	$(NULL)
+
+$(BUILT_SOURCES) : $(srcdir)/mate-settings-manager.xml
+	$(AM_V_GEN) $(GDBUS_CODEGEN) \
+		--interface-prefix org.mate. \
+		--c-namespace OrgMate \
+		--generate-c-code manager-dbus-generated $<
 
 apidir   = $(includedir)/mate-settings-daemon
 api_DATA = 				\
-	mate-settings-client.h		\
 	mate-settings-plugin.h
 
 mate_settings_daemon_SOURCES =		\
+	$(BUILT_SOURCES)		\
 	main.c				\
 	mate-settings-bus.c	\
 	mate-settings-bus.h	\
@@ -88,7 +88,6 @@ mate_settings_daemon_LDADD = 		\
 	$(LIBNOTIFY_LIBS)
 
 EXTRA_DIST = 				\
-	$(Dbusapi_DATA)			\
 	mate-settings-manager.xml	\
 	$(NULL)
 

@@ -1,4 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
+ * vim: set ts=8 sts=8 sw=8 expandtab:
  *
  * Copyright (C) 2007 William Jon McCann <mccann@jhu.edu>
  *
@@ -25,17 +26,13 @@
 #include <unistd.h>
 #include <string.h>
 
-#include <glib.h>
 #include <glib/gi18n.h>
-#include <glib-object.h>
-#define DBUS_API_SUBJECT_TO_CHANGE
-#include <dbus/dbus-glib.h>
-#include <dbus/dbus-glib-lowlevel.h>
 #include <gio/gio.h>
+#include <gtk/gtk.h>
 
 #include "mate-settings-plugin-info.h"
 #include "mate-settings-manager.h"
-#include "mate-settings-manager-glue.h"
+#include "manager-dbus-generated.h"
 #include "mate-settings-profile.h"
 
 #define MSD_MANAGER_DBUS_PATH "/org/mate/SettingsDaemon"
@@ -44,12 +41,21 @@
 
 #define PLUGIN_EXT ".mate-settings-plugin"
 
+enum {
+        PROP_0,
+        PROP_REPLACE,
+        PROP_INIT_FLAG,
+        LAST_PROP
+};
+
 struct MateSettingsManagerPrivate
 {
-        DBusGConnection            *connection;
         GSList                     *plugins;
         gint                        init_load_priority;
         gint                        load_init_flag;
+        OrgMateSettingsDaemon      *skeleton;
+        guint                       bus_name_id;
+        gboolean                    replace;
 };
 
 enum {
@@ -58,9 +64,16 @@ enum {
         LAST_SIGNAL
 };
 
+static GParamSpec *properties[LAST_PROP] = { NULL, };
 static guint signals [LAST_SIGNAL] = { 0, };
 
-static void     mate_settings_manager_finalize    (GObject *object);
+static void     mate_settings_manager_finalize (GObject *object);
+gboolean mate_settings_manager_awake_handler (OrgMateSettingsDaemon *object,
+                                              GDBusMethodInvocation *invocation,
+                                              gpointer               user_data);
+gboolean mate_settings_manager_start_handler (OrgMateSettingsDaemon *object,
+                                              GDBusMethodInvocation *invocation,
+                                              gpointer               user_data);
 
 G_DEFINE_TYPE_WITH_PRIVATE (MateSettingsManager, mate_settings_manager, G_TYPE_OBJECT)
 
@@ -279,21 +292,35 @@ _load_dir (MateSettingsManager *manager,
         mate_settings_profile_end (NULL);
 }
 
-static void
-_load_all (MateSettingsManager *manager)
+gboolean
+mate_settings_manager_load (MateSettingsManager *manager,
+                            GError             **error)
 {
+        gboolean ret = FALSE;
         mate_settings_profile_start (NULL);
+        if (!g_module_supported ()) {
+                g_warning ("mate-settings-daemon is not able to initialize the plugins.");
+                g_set_error (error,
+                             MATE_SETTINGS_MANAGER_ERROR,
+                             MATE_SETTINGS_MANAGER_ERROR_GENERAL,
+                             "Plugins not supported");
+                goto out;
+        }
 
         /* load system plugins */
         _load_dir (manager, MATE_SETTINGS_PLUGINDIR G_DIR_SEPARATOR_S);
 
         manager->priv->plugins = g_slist_sort (manager->priv->plugins, (GCompareFunc) compare_priority);
         g_slist_foreach (manager->priv->plugins, (GFunc) maybe_activate_plugin, manager);
+        ret = TRUE;
+out:
         mate_settings_profile_end (NULL);
+        return ret;
 }
 
 static void
-_unload_plugin (MateSettingsPluginInfo *info, gpointer user_data)
+_unload_plugin (MateSettingsPluginInfo *info,
+                gpointer user_data G_GNUC_UNUSED)
 {
         if (mate_settings_plugin_info_get_enabled (info)) {
                 mate_settings_plugin_info_deactivate (info);
@@ -317,60 +344,50 @@ _unload_all (MateSettingsManager *manager)
   org.mate.SettingsDaemon.Awake
 */
 gboolean
-mate_settings_manager_awake (MateSettingsManager *manager,
-                              GError              **error)
+mate_settings_manager_awake_handler (OrgMateSettingsDaemon *object,
+                                     GDBusMethodInvocation *invocation,
+                                     gpointer               user_data)
 {
-        g_debug ("Awake called");
-        return mate_settings_manager_start (manager, PLUGIN_LOAD_ALL, error);
-}
-
-static gboolean
-register_manager (MateSettingsManager *manager)
-{
+        gboolean ret;
         GError *error = NULL;
+        MateSettingsManager *manager;
 
-        manager->priv->connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
-        if (manager->priv->connection == NULL) {
-                if (error != NULL) {
-                        g_critical ("error getting system bus: %s", error->message);
-                        g_error_free (error);
-                }
-                return FALSE;
+        manager = MATE_SETTINGS_MANAGER (user_data);
+
+        g_debug ("Awake called");
+        mate_settings_manager_set_init_flag (manager, PLUGIN_LOAD_ALL);
+        ret = mate_settings_manager_load (manager, &error);
+        if (!ret) {
+            g_dbus_method_invocation_return_gerror (invocation, error);
+        } else {
+            org_mate_settings_daemon_complete_awake (object, invocation);
         }
-
-        dbus_g_connection_register_g_object (manager->priv->connection, MSD_MANAGER_DBUS_PATH, G_OBJECT (manager));
-
-        return TRUE;
+        return ret;
 }
 
 gboolean
-mate_settings_manager_start (MateSettingsManager *manager,
-                              gint               load_init_flag,
-                              GError             **error)
+mate_settings_manager_start_handler (OrgMateSettingsDaemon *object,
+                                     GDBusMethodInvocation *invocation,
+                                     gpointer               user_data)
 {
         gboolean ret;
+        GError *error = NULL;
+        MateSettingsManager *manager;
 
         g_debug ("Starting settings manager");
 
-        ret = FALSE;
+        manager = MATE_SETTINGS_MANAGER (user_data);
 
         mate_settings_profile_start (NULL);
 
-        if (!g_module_supported ()) {
-                g_warning ("mate-settings-daemon is not able to initialize the plugins.");
-                g_set_error (error,
-                             MATE_SETTINGS_MANAGER_ERROR,
-                             MATE_SETTINGS_MANAGER_ERROR_GENERAL,
-                             "Plugins not supported");
+        ret = mate_settings_manager_load (manager, &error);
 
-                goto out;
+        if (!ret) {
+                g_dbus_method_invocation_return_gerror (invocation, error);
+        } else {
+                org_mate_settings_daemon_complete_start (object, invocation);
         }
 
-        manager->priv->load_init_flag = load_init_flag;
-        _load_all (manager);
-
-        ret = TRUE;
- out:
         mate_settings_profile_end (NULL);
 
         return ret;
@@ -397,12 +414,135 @@ mate_settings_manager_dispose (GObject *object)
 }
 
 static void
+bus_acquired_handler_cb (GDBusConnection *connection,
+                         const gchar     *name G_GNUC_UNUSED,
+                         gpointer         user_data)
+{
+        MateSettingsManager *manager;
+
+        GError *error = NULL;
+        gboolean exported;
+
+        manager = MATE_SETTINGS_MANAGER (user_data);
+
+        g_signal_connect (manager->priv->skeleton,
+                          "handle-awake",
+                          G_CALLBACK (mate_settings_manager_awake_handler),
+                          manager);
+        g_signal_connect (manager->priv->skeleton,
+                          "handle-start",
+                          G_CALLBACK (mate_settings_manager_start_handler),
+                          manager);
+
+        exported = g_dbus_interface_skeleton_export (G_DBUS_INTERFACE_SKELETON (manager->priv->skeleton),
+                                                     connection,
+                                                     MSD_MANAGER_DBUS_PATH,
+                                                     &error);
+        if (!exported)
+        {
+                g_warning ("Failed to export interface: %s", error->message);
+                g_error_free (error);
+
+                gtk_main_quit ();
+        }
+}
+
+static void
+name_lost_handler_cb (GDBusConnection *connection G_GNUC_UNUSED,
+                      const gchar     *name G_GNUC_UNUSED,
+                      gpointer         user_data)
+{
+        MateSettingsManager *manager;
+        g_debug ("msd bus name lost\n");
+
+        manager = MATE_SETTINGS_MANAGER (user_data);
+        mate_settings_manager_stop (manager);
+        gtk_main_quit ();
+}
+
+
+static void
+mate_settings_manager_constructed (GObject *object)
+{
+        MateSettingsManager *manager;
+        GBusNameOwnerFlags flags;
+
+        manager = MATE_SETTINGS_MANAGER (object);
+
+        G_OBJECT_CLASS (mate_settings_manager_parent_class)->constructed (object);
+
+        flags = G_BUS_NAME_OWNER_FLAGS_ALLOW_REPLACEMENT;
+        if (manager->priv->replace)
+                flags |= G_BUS_NAME_OWNER_FLAGS_REPLACE;
+
+        manager->priv->bus_name_id = g_bus_own_name (G_BUS_TYPE_SESSION,
+                                                     DEFAULT_SETTINGS_PREFIX,
+                                                     flags,
+                                                     bus_acquired_handler_cb, NULL,
+                                                     name_lost_handler_cb, manager, NULL);
+}
+
+void
+mate_settings_manager_set_init_flag (MateSettingsManager *manager,
+                                     gint                 load_init_flag)
+{
+        manager->priv->load_init_flag = load_init_flag;
+}
+
+static void
+mate_settings_manager_set_property (GObject      *object,
+                                    guint         prop_id,
+                                    const GValue *value,
+                                    GParamSpec   *pspec)
+{
+        MateSettingsManager *manager;
+
+        manager = MATE_SETTINGS_MANAGER (object);
+
+        switch (prop_id)
+        {
+                case PROP_INIT_FLAG:
+                        mate_settings_manager_set_init_flag (manager, g_value_get_int (value));
+                        break;
+                case PROP_REPLACE:
+                        manager->priv->replace = g_value_get_boolean (value);
+                        break;
+                default:
+                        G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+                        break;
+        }
+}
+
+
+static void
 mate_settings_manager_class_init (MateSettingsManagerClass *klass)
 {
         GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
+        object_class->constructed = mate_settings_manager_constructed;
+        object_class->set_property = mate_settings_manager_set_property;
+
         object_class->dispose = mate_settings_manager_dispose;
         object_class->finalize = mate_settings_manager_finalize;
+
+        properties[PROP_REPLACE] =
+                g_param_spec_boolean ("replace",
+                                      "replace",
+                                      "replace",
+                                      FALSE,
+                                      G_PARAM_CONSTRUCT_ONLY | G_PARAM_WRITABLE |
+                                      G_PARAM_STATIC_STRINGS);
+
+        properties[PROP_INIT_FLAG] =
+                g_param_spec_int ("init-flag",
+                                  "load init flag",
+                                  "load init flag",
+                                  PLUGIN_LOAD_ALL,
+                                  PLUGIN_LOAD_DEFER,
+                                  PLUGIN_LOAD_ALL,
+                                  G_PARAM_WRITABLE);
+
+        g_object_class_install_properties (object_class, LAST_PROP, properties);
 
         signals [PLUGIN_ACTIVATED] =
                 g_signal_new ("plugin-activated",
@@ -424,8 +564,6 @@ mate_settings_manager_class_init (MateSettingsManagerClass *klass)
                               g_cclosure_marshal_VOID__STRING,
                               G_TYPE_NONE,
                               1, G_TYPE_STRING);
-
-        dbus_g_object_type_install_info (MATE_TYPE_SETTINGS_MANAGER, &dbus_glib_mate_settings_manager_object_info);
 }
 
 static void
@@ -441,6 +579,8 @@ mate_settings_manager_init (MateSettingsManager *manager)
                 settings = g_settings_new (schema);
                 manager->priv->init_load_priority = g_settings_get_int (settings, "init-load-priority");
         }
+        manager->priv->load_init_flag = PLUGIN_LOAD_ALL;
+        manager->priv->skeleton = org_mate_settings_daemon_skeleton_new ();
 }
 
 static void
@@ -453,28 +593,36 @@ mate_settings_manager_finalize (GObject *object)
 
         manager = MATE_SETTINGS_MANAGER (object);
 
+        if (manager->priv->skeleton != NULL)
+        {
+                GDBusInterfaceSkeleton *skeleton;
+
+                skeleton = G_DBUS_INTERFACE_SKELETON (manager->priv->skeleton);
+                g_dbus_interface_skeleton_unexport (skeleton);
+                g_clear_object (&manager->priv->skeleton);
+        }
+
+        if (manager->priv->bus_name_id > 0)
+        {
+                g_bus_unown_name (manager->priv->bus_name_id);
+                manager->priv->bus_name_id = 0;
+        }
+
         g_return_if_fail (manager->priv != NULL);
 
         G_OBJECT_CLASS (mate_settings_manager_parent_class)->finalize (object);
 }
 
 MateSettingsManager *
-mate_settings_manager_new (void)
+mate_settings_manager_new (gboolean replace)
 {
         if (manager_object != NULL) {
                 g_object_ref (manager_object);
         } else {
-                gboolean res;
-
                 manager_object = g_object_new (MATE_TYPE_SETTINGS_MANAGER,
+                                               "replace",
+                                               replace,
                                                NULL);
-                g_object_add_weak_pointer (manager_object,
-                                           (gpointer *) &manager_object);
-                res = register_manager (manager_object);
-                if (! res) {
-                        g_object_unref (manager_object);
-                        return NULL;
-                }
         }
 
         return MATE_SETTINGS_MANAGER (manager_object);

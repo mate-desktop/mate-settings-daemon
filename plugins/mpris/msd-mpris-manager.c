@@ -38,6 +38,7 @@
 
 #include <glib.h>
 #include <glib/gi18n.h>
+#include <gio/gio.h>
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
 #include <gtk/gtk.h>

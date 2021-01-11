@@ -1,4 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
+ * vim: set ts=8 sts=8 sw=8 expandtab:
  *
  * Copyright (C) 2007 William Jon McCann <mccann@jhu.edu>
  *
@@ -30,10 +31,8 @@
 
 #include <glib/gi18n.h>
 #include <glib/gstdio.h>
+#include <gio/gio.h>
 #include <gtk/gtk.h>
-
-#include <dbus/dbus-glib.h>
-#include <dbus/dbus-glib-lowlevel.h>
 
 #ifdef HAVE_LIBNOTIFY
 #include <libnotify/notify.h>
@@ -76,195 +75,63 @@ timed_exit_cb (void)
         return FALSE;
 }
 
-static DBusGProxy *
-get_bus_proxy (DBusGConnection *connection)
-{
-        DBusGProxy *bus_proxy;
-
-        bus_proxy = dbus_g_proxy_new_for_name (connection,
-                                               DBUS_SERVICE_DBUS,
-                                               DBUS_PATH_DBUS,
-                                               DBUS_INTERFACE_DBUS);
-
-        return bus_proxy;
-}
-
-static gboolean
-acquire_name_on_proxy (DBusGProxy *bus_proxy)
-{
-        GError     *error;
-        guint       result;
-        gboolean    res;
-        gboolean    ret;
-        guint32     flags;
-
-        ret = FALSE;
-
-        flags = DBUS_NAME_FLAG_DO_NOT_QUEUE|DBUS_NAME_FLAG_ALLOW_REPLACEMENT;
-        if (replace)
-            flags |= DBUS_NAME_FLAG_REPLACE_EXISTING;
-
-        error = NULL;
-        res = dbus_g_proxy_call (bus_proxy,
-                                 "RequestName",
-                                 &error,
-                                 G_TYPE_STRING, MSD_DBUS_NAME,
-                                 G_TYPE_UINT, flags,
-                                 G_TYPE_INVALID,
-                                 G_TYPE_UINT, &result,
-                                 G_TYPE_INVALID);
-        if (! res) {
-                if (error != NULL) {
-                        g_warning ("Failed to acquire %s: %s", MSD_DBUS_NAME, error->message);
-                        g_error_free (error);
-                } else {
-                        g_warning ("Failed to acquire %s", MSD_DBUS_NAME);
-                }
-                goto out;
-        }
-
-        if (result != DBUS_REQUEST_NAME_REPLY_PRIMARY_OWNER) {
-                if (error != NULL) {
-                        g_warning ("Failed to acquire %s: %s", MSD_DBUS_NAME, error->message);
-                        g_error_free (error);
-                } else {
-                        g_warning ("Failed to acquire %s", MSD_DBUS_NAME);
-                }
-                goto out;
-        }
-
-        ret = TRUE;
-
- out:
-        return ret;
-}
-
-static DBusHandlerResult
-bus_message_handler (DBusConnection *connection,
-                     DBusMessage    *message,
-                     void           *user_data)
-{
-        if (dbus_message_is_signal (message,
-                                    DBUS_INTERFACE_LOCAL,
-                                    "Disconnected")) {
-                gtk_main_quit ();
-                return DBUS_HANDLER_RESULT_HANDLED;
-        }
-        else if (dbus_message_is_signal (message,
-                                         DBUS_INTERFACE_DBUS,
-                                         "NameLost")) {
-                g_warning ("D-Bus name lost, quitting");
-                gtk_main_quit ();
-                return DBUS_HANDLER_RESULT_HANDLED;
-        }
-
-        return DBUS_HANDLER_RESULT_NOT_YET_HANDLED;
-}
-
-static DBusGConnection *
-get_session_bus (void)
-{
-        GError          *error;
-        DBusGConnection *bus;
-        DBusConnection  *connection;
-
-        error = NULL;
-        bus = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
-        if (bus == NULL) {
-                g_warning ("Couldn't connect to session bus: %s",
-                           error->message);
-                g_error_free (error);
-                goto out;
-        }
-
-        connection = dbus_g_connection_get_connection (bus);
-        dbus_connection_add_filter (connection,
-                                    (DBusHandleMessageFunction)
-                                    bus_message_handler,
-                                    NULL, NULL);
-
-        dbus_connection_set_exit_on_disconnect (connection, FALSE);
-
- out:
-        return bus;
-}
-
-static gboolean
-bus_register (DBusGConnection *bus)
-{
-        DBusGProxy      *bus_proxy;
-        gboolean         ret;
-
-        mate_settings_profile_start (NULL);
-
-        ret = FALSE;
-
-        bus_proxy = get_bus_proxy (bus);
-
-        if (bus_proxy == NULL) {
-                g_warning ("Could not construct bus_proxy object");
-                goto out;
-        }
-
-        ret = acquire_name_on_proxy (bus_proxy);
-        g_object_unref (bus_proxy);
-
-        if (!ret) {
-                g_warning ("Could not acquire name");
-                goto out;
-        }
-
-        g_debug ("Successfully connected to D-Bus");
-
- out:
-        mate_settings_profile_end (NULL);
-
-        return ret;
-}
-
 static void
-on_session_over (DBusGProxy *proxy, MateSettingsManager *manager)
+on_session_signal (GDBusProxy *proxy G_GNUC_UNUSED,
+                   gchar      *sender_name G_GNUC_UNUSED,
+                   gchar      *signal_name G_GNUC_UNUSED,
+                   GVariant   *parameters G_GNUC_UNUSED,
+                   gpointer    user_data G_GNUC_UNUSED)
 {
         /* not used, see on_session_end instead */
 }
 
 static void
-on_session_query_end (DBusGProxy *proxy, guint flags, MateSettingsManager *manager)
+on_private_signal (GDBusProxy *proxy,
+                   gchar      *sender_name G_GNUC_UNUSED,
+                   gchar      *signal_name,
+                   GVariant   *parameters G_GNUC_UNUSED,
+                   gpointer    user_data)
 {
+        MateSettingsManager *manager;
+        GVariant   *variant;
         GError *error = NULL;
-        gboolean ret = FALSE;
 
-        /* send response */
-        ret = dbus_g_proxy_call (proxy, "EndSessionResponse", &error,
-                                 G_TYPE_BOOLEAN, TRUE /* ok */,
-                                 G_TYPE_STRING, NULL /* reason */,
-                                 G_TYPE_INVALID,
-                                 G_TYPE_INVALID);
-        if (!ret) {
-                g_warning ("failed to send session response: %s", error->message);
-                g_error_free (error);
+        manager = MATE_SETTINGS_MANAGER (user_data);
+
+        if (g_strcmp0 (signal_name, "QueryEndSession") == 0) {
+                /* send response */
+                variant = g_dbus_proxy_call_sync (proxy,
+                                                  "EndSessionResponse",
+                                                  g_variant_new ("(bs)", TRUE, NULL),
+                                                  G_DBUS_CALL_FLAGS_NONE,
+                                                  -1,
+                                                  NULL,
+                                                  &error);
+                if (variant == NULL) {
+                        g_warning ("failed to send session response: %s", error->message);
+                        g_error_free (error);
+                } else {
+                        g_variant_unref (variant);
+                }
+        } else if (g_strcmp0 (signal_name, "EndSession") == 0) {
+                /* send response */
+                variant = g_dbus_proxy_call_sync (proxy,
+                                                  "EndSessionResponse",
+                                                  g_variant_new ("(bs)", TRUE, NULL),
+                                                  G_DBUS_CALL_FLAGS_NONE,
+                                                  -1,
+                                                  NULL,
+                                                  &error);
+                if (variant == NULL) {
+                        g_warning ("failed to send session response: %s", error->message);
+                        g_error_free (error);
+                } else {
+                        g_variant_unref (variant);
+                }
+
+                mate_settings_manager_stop (manager);
+                gtk_main_quit ();
         }
-}
-
-static void
-on_session_end (DBusGProxy *proxy, guint flags, MateSettingsManager *manager)
-{
-        GError *error = NULL;
-        gboolean ret = FALSE;
-
-        /* send response */
-        ret = dbus_g_proxy_call (proxy, "EndSessionResponse", &error,
-                                 G_TYPE_BOOLEAN, TRUE /* ok */,
-                                 G_TYPE_STRING, NULL /* reason */,
-                                 G_TYPE_INVALID,
-                                 G_TYPE_INVALID);
-        if (!ret) {
-                g_warning ("failed to send session response: %s", error->message);
-                g_error_free (error);
-        }
-
-        mate_settings_manager_stop (manager);
-        gtk_main_quit ();
 }
 
 static void
@@ -312,79 +179,66 @@ watch_for_term_signal (MateSettingsManager *manager)
 }
 
 static void
-set_session_over_handler (DBusGConnection *bus, MateSettingsManager *manager)
+set_session_over_handler (MateSettingsManager *manager)
 {
-        DBusGProxy *session_proxy;
-        DBusGProxy *private_proxy;
+        GDBusProxy *session_proxy;
+        GDBusProxy *private_proxy;
         gchar *client_id = NULL;
         const char *startup_id;
         GError *error = NULL;
-        gboolean res;
-
-        g_assert (bus != NULL);
 
         mate_settings_profile_start (NULL);
 
-        session_proxy =
-                 dbus_g_proxy_new_for_name (bus,
-                                            MATE_SESSION_DBUS_NAME,
-                                            MATE_SESSION_DBUS_OBJECT,
-                                            MATE_SESSION_DBUS_INTERFACE);
+        session_proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+                                                       G_DBUS_PROXY_FLAGS_NONE,
+                                                       NULL,
+                                                       MATE_SESSION_DBUS_NAME,
+                                                       MATE_SESSION_DBUS_OBJECT,
+                                                       MATE_SESSION_DBUS_INTERFACE,
+                                                       NULL,
+                                                       &error);
+        if (session_proxy == NULL) {
+                g_warning ("Unable to contact session manager daemon: %s\n", error->message);
+                g_error_free (error);
+        }
 
-        dbus_g_object_register_marshaller (
-                g_cclosure_marshal_VOID__VOID,
-                G_TYPE_NONE,
-                G_TYPE_INVALID);
-
-        dbus_g_proxy_add_signal (session_proxy,
-                                 "SessionOver",
-                                 G_TYPE_INVALID);
-
-        dbus_g_proxy_connect_signal (session_proxy,
-                                     "SessionOver",
-                                     G_CALLBACK (on_session_over),
-                                     manager,
-                                     NULL);
+        g_signal_connect (G_OBJECT (session_proxy), "g-signal", G_CALLBACK (on_session_signal), NULL);
 
         /* Register with mate-session */
         startup_id = g_getenv ("DESKTOP_AUTOSTART_ID");
         if (startup_id != NULL && *startup_id != '\0') {
-                res = dbus_g_proxy_call (session_proxy,
-                                         "RegisterClient",
-                                         &error,
-                                         G_TYPE_STRING, "mate-settings-daemon",
-                                         G_TYPE_STRING, startup_id,
-                                         G_TYPE_INVALID,
-                                         DBUS_TYPE_G_OBJECT_PATH, &client_id,
-                                         G_TYPE_INVALID);
-                if (!res) {
-                        g_warning ("failed to register client '%s': %s", startup_id, error->message);
+                GVariant   *variant;
+                variant = g_dbus_proxy_call_sync (session_proxy,
+                                                  "RegisterClient",
+                                                  g_variant_new ("(ss)", "mate-settings-daemon", startup_id),
+                                                  G_DBUS_CALL_FLAGS_NONE,
+                                                  -1,
+                                                  NULL,
+                                                  &error);
+                if (variant == NULL) {
+                        g_warning ("Could not ask session manager to log out: %s", error->message);
                         g_error_free (error);
-                }
-                else {
-                        /* get org.gnome.SessionManager.ClientPrivate interface */
-                        private_proxy = dbus_g_proxy_new_for_name_owner (bus, MATE_SESSION_DBUS_NAME,
-                                                                         client_id, MATE_SESSION_PRIVATE_DBUS_INTERFACE,
-                                                                         &error);
+                } else {
+                        g_variant_get (variant, "(o)", &client_id);
+                        g_variant_unref (variant);
+
+                        private_proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+                                                                       G_DBUS_PROXY_FLAGS_NONE,
+                                                                       NULL,
+                                                                       MATE_SESSION_DBUS_NAME,
+                                                                       client_id,
+                                                                       MATE_SESSION_PRIVATE_DBUS_INTERFACE,
+                                                                       NULL,
+                                                                       &error);
                         if (private_proxy == NULL) {
                                 g_warning ("DBUS error: %s", error->message);
                                 g_error_free (error);
                         }
-                        else {
 
-                            /* get QueryEndSession */
-                            dbus_g_proxy_add_signal (private_proxy, "QueryEndSession", G_TYPE_UINT, G_TYPE_INVALID);
-                            dbus_g_proxy_connect_signal (private_proxy, "QueryEndSession",
-                                                         G_CALLBACK (on_session_query_end),
-                                                         manager, NULL);
-
-                            /* get EndSession */
-                            dbus_g_proxy_add_signal (private_proxy, "EndSession", G_TYPE_UINT, G_TYPE_INVALID);
-                            dbus_g_proxy_connect_signal (private_proxy, "EndSession",
-                                                         G_CALLBACK (on_session_end), manager, NULL);
-
-                        }
-
+                        g_signal_connect (G_OBJECT (private_proxy),
+                                          "g-signal",
+                                          G_CALLBACK (on_private_signal),
+                                          manager);
                         g_free (client_id);
                 }
         }
@@ -462,7 +316,6 @@ int
 main (int argc, char *argv[])
 {
         MateSettingsManager *manager;
-        DBusGConnection      *bus;
         gboolean              res;
         GError               *error;
         GSettings            *debug_settings = NULL;
@@ -499,22 +352,13 @@ main (int argc, char *argv[])
 
         g_log_set_default_handler (msd_log_default_handler, NULL);
 
-        bus = get_session_bus ();
-        if (bus == NULL) {
-                g_warning ("Could not get a connection to the bus");
-                goto out;
-        }
-
-        if (! bus_register (bus)) {
-                goto out;
-        }
 
 #ifdef HAVE_LIBNOTIFY
         notify_init ("mate-settings-daemon");
 #endif /* HAVE_LIBNOTIFY */
 
+        manager = mate_settings_manager_new (replace);
         mate_settings_profile_start ("mate_settings_manager_new");
-        manager = mate_settings_manager_new ();
         mate_settings_profile_end ("mate_settings_manager_new");
         if (manager == NULL) {
                 g_warning ("Unable to register object");
@@ -525,20 +369,22 @@ main (int argc, char *argv[])
          * Initialization phase. Otherwise, wait for an Awake etc. */
         if (g_getenv ("DBUS_STARTER_BUS_TYPE") == NULL) {
                 error = NULL;
-                res = mate_settings_manager_start (manager, PLUGIN_LOAD_INIT, &error);
+                mate_settings_manager_set_init_flag (manager, PLUGIN_LOAD_INIT);
+                res = mate_settings_manager_load (manager, &error);
                 if (! res) {
                         g_warning ("Unable to start: %s", error->message);
                         g_error_free (error);
                 }
         }
 
-        set_session_over_handler (bus, manager);
+        set_session_over_handler (manager);
 
         /* If we aren't started by dbus then load the plugins automatically after
          * mate-settings-daemon has registered itself. Otherwise, wait for an Awake etc. */
         if (g_getenv ("DBUS_STARTER_BUS_TYPE") == NULL) {
                 error = NULL;
-                res = mate_settings_manager_start (manager, PLUGIN_LOAD_DEFER, &error);
+                mate_settings_manager_set_init_flag (manager, PLUGIN_LOAD_DEFER);
+                res = mate_settings_manager_load (manager, &error);
                 if (! res) {
                         g_warning ("Unable to start: %s", error->message);
                         g_error_free (error);
@@ -552,12 +398,7 @@ main (int argc, char *argv[])
 
         gtk_main ();
 
- out:
-
-        if (bus != NULL) {
-                dbus_g_connection_unref (bus);
-        }
-
+out:
         if (manager != NULL) {
                 g_object_unref (manager);
         }

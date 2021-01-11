@@ -2,17 +2,14 @@
 <node name="/">
   <interface name="org.mate.SettingsDaemon.DateTimeMechanism">
     <method name="SetTimezone">
-      <annotation name="org.freedesktop.DBus.GLib.Async" value=""/>
       <arg name="zonefile" direction="in" type="s"/>
     </method>
 
     <method name="GetTimezone">
-      <annotation name="org.freedesktop.DBus.GLib.Async" value=""/>
       <arg name="timezone" direction="out" type="s"/>
     </method>
 
     <method name="CanSetTimezone">
-      <annotation name="org.freedesktop.DBus.GLib.Async" value=""/>
       <arg name="value" direction="out" type="i">
         <doc:doc>
           <doc:summary>Whether the caller can set the timezone</doc:summary>
@@ -39,11 +36,9 @@
       </arg>
     </method>
     <method name="SetTime">
-      <annotation name="org.freedesktop.DBus.GLib.Async" value=""/>
       <arg name="seconds_since_epoch" direction="in" type="x"/>
     </method>
     <method name="CanSetTime">
-      <annotation name="org.freedesktop.DBus.GLib.Async" value=""/>
       <arg name="value" direction="out" type="i">
         <doc:doc>
           <doc:summary>Whether the caller can set the time</doc:summary>
@@ -70,16 +65,13 @@
       </arg>
     </method>
     <method name="AdjustTime">
-      <annotation name="org.freedesktop.DBus.GLib.Async" value=""/>
       <arg name="seconds_to_add" direction="in" type="x"/>
     </method>
 
     <method name="GetHardwareClockUsingUtc">
-      <annotation name="org.freedesktop.DBus.GLib.Async" value=""/>
       <arg name="is_using_utc" direction="out" type="b"/>
     </method>
     <method name="SetHardwareClockUsingUtc">
-      <annotation name="org.freedesktop.DBus.GLib.Async" value=""/>
       <arg name="is_using_utc" direction="in" type="b"/>
     </method>
 

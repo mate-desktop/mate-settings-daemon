@@ -1,9 +1,6 @@
 icondir = $(datadir)/icons/hicolor
 context = apps
 
-BUILT_SOURCES =			\
-	msd-xrandr-manager-glue.h
-
 ICON_FILES = 			\
 	msd-xrandr-16.png	\
 	msd-xrandr-22.png	\
@@ -46,13 +43,19 @@ uninstall-local:
 plugin_LTLIBRARIES = \
 	libxrandr.la
 
-msd-xrandr-manager-glue.h: msd-xrandr-manager.xml Makefile
-	$(AM_V_GEN) dbus-binding-tool --prefix=msd_xrandr_manager --mode=glib-server $< > xgen-$(@F) \
-	&& ( cmp -s xgen-$(@F) $@ || cp xgen-$(@F) $@ ) \
-	&& rm -f xgen-$(@F)
+msd_xrandr_built_sources =	\
+	msd-xrandr-generated.h	\
+	msd-xrandr-generated.c	\
+	$(NULL)
+
+$(msd_xrandr_built_sources) : $(srcdir)/msd-xrandr-manager.xml
+	$(AM_V_GEN) $(GDBUS_CODEGEN) \
+		--interface-prefix org.mate.SettingsDaemon. \
+		--c-namespace MateXrandr \
+		--generate-c-code msd-xrandr-generated $<
 
 libxrandr_la_SOURCES = 		\
-	$(BUILT_SOURCES)	\
+	$(msd_xrandr_built_sources)	\
 	msd-xrandr-plugin.h	\
 	msd-xrandr-plugin.c	\
 	msd-xrandr-manager.h	\
@@ -85,8 +88,8 @@ plugin_in_files =			\
 plugin_DATA = $(plugin_in_files:.mate-settings-plugin.desktop.in=.mate-settings-plugin)
 
 EXTRA_DIST = $(plugin_in_files) $(ICON_FILES) msd-xrandr-manager.xml
-CLEANFILES = $(plugin_DATA) $(BUILT_SOURCES)
-DISTCLEANFILES = $(plugin_DATA)
+CLEANFILES = $(plugin_DATA) $(msd_xrandr_built_sources)
+DISTCLEANFILES = $(plugin_DATA) $(msd_xrandr_built_sources)
 
 $(plugin_DATA): $(plugin_in_files)
 	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@

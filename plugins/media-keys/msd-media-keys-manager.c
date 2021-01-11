@@ -1,4 +1,5 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
+ * vim: set ts=8 sts=8 sw=8 expandtab:
  *
  * Copyright (C) 2001-2003 Bastien Nocera <hadess@hadess.net>
  * Copyright (C) 2006-2007 William Jon McCann <mccann@jhu.edu>
@@ -29,9 +30,6 @@
 #include <gtk/gtk.h>
 #include <gio/gio.h>
 
-#include <dbus/dbus-glib.h>
-#include <dbus/dbus-glib-lowlevel.h>
-
 #ifdef HAVE_LIBMATEMIXER
 #include <libmatemixer/matemixer.h>
 #endif
@@ -43,7 +41,7 @@
 #include "mate-settings-profile.h"
 #include "msd-marshal.h"
 #include "msd-media-keys-manager.h"
-#include "msd-media-keys-manager-glue.h"
+#include "msd-media-keys-generated.h"
 
 #include "eggaccelerators.h"
 #include "acme.h"
@@ -88,7 +86,10 @@ struct _MsdMediaKeysManagerPrivate
 
         GList            *media_players;
 
-        DBusGConnection  *connection;
+        GDBusConnection  *connection;
+        guint             bus_name_id;
+        MateSettingsMediaKeys *skeleton;
+
         guint             notify[HANDLED_KEYS];
 };
 
@@ -96,12 +97,20 @@ enum {
         MEDIA_PLAYER_KEY_PRESSED,
         LAST_SIGNAL
 };
-
 static guint signals[LAST_SIGNAL] = { 0 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (MsdMediaKeysManager, msd_media_keys_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
+static gboolean on_grab_media_player_keys (MateSettingsMediaKeys *object,
+                                           GDBusMethodInvocation *invocation,
+                                           const gchar           *application,
+                                           guint                  time,
+                                           gpointer               user_data);
+static gboolean on_release_media_player_keys (MateSettingsMediaKeys *object,
+                                              GDBusMethodInvocation *invocation,
+                                              const gchar           *application,
+                                              gpointer               user_data);
 
 static void
 init_screens (MsdMediaKeysManager *manager)
@@ -320,7 +329,8 @@ update_kbd_cb (GSettings           *settings,
                 g_warning ("Grab failed for some keys, another application may already have access the them.");
 }
 
-static void init_kbd(MsdMediaKeysManager* manager)
+static void
+init_kbd (MsdMediaKeysManager* manager)
 {
 	int i;
 	GdkDisplay *dpy;
@@ -1052,73 +1062,6 @@ find_by_time (gconstpointer a,
         return ((MediaPlayer *)a)->time < ((MediaPlayer *)b)->time;
 }
 
-/*
- * Register a new media player. Most applications will want to call
- * this with time = GDK_CURRENT_TIME. This way, the last registered
- * player will receive media events. In some cases, applications
- * may want to register with a lower priority (usually 1), to grab
- * events only nobody is interested.
- */
-gboolean
-msd_media_keys_manager_grab_media_player_keys (MsdMediaKeysManager *manager,
-                                               const char          *application,
-                                               guint32              time,
-                                               GError             **error)
-{
-        GList       *iter;
-        MediaPlayer *media_player;
-
-        if (time == GDK_CURRENT_TIME) {
-                time = (guint32)(g_get_monotonic_time () / 1000);
-        }
-
-        iter = g_list_find_custom (manager->priv->media_players,
-                                   application,
-                                   find_by_application);
-
-        if (iter != NULL) {
-                if (((MediaPlayer *)iter->data)->time < time) {
-                        g_free (((MediaPlayer *)iter->data)->application);
-                        g_free (iter->data);
-                        manager->priv->media_players = g_list_delete_link (manager->priv->media_players, iter);
-                } else {
-                        return TRUE;
-                }
-        }
-
-        g_debug ("Registering %s at %u", application, time);
-        media_player = g_new0 (MediaPlayer, 1);
-        media_player->application = g_strdup (application);
-        media_player->time = time;
-
-        manager->priv->media_players = g_list_insert_sorted (manager->priv->media_players,
-                                                             media_player,
-                                                             find_by_time);
-
-        return TRUE;
-}
-
-gboolean
-msd_media_keys_manager_release_media_player_keys (MsdMediaKeysManager *manager,
-                                                  const char          *application,
-                                                  GError             **error)
-{
-        GList *iter;
-
-        iter = g_list_find_custom (manager->priv->media_players,
-                                   application,
-                                   find_by_application);
-
-        if (iter != NULL) {
-                g_debug ("Deregistering %s", application);
-                g_free (((MediaPlayer *)iter->data)->application);
-                g_free (iter->data);
-                manager->priv->media_players = g_list_delete_link (manager->priv->media_players, iter);
-        }
-
-        return TRUE;
-}
-
 static gboolean
 msd_media_player_key_pressed (MsdMediaKeysManager *manager,
                               const char          *key)
@@ -1541,7 +1484,7 @@ msd_media_keys_manager_stop (MsdMediaKeysManager *manager)
         }
 
         if (priv->connection != NULL) {
-                dbus_g_connection_unref (priv->connection);
+                g_object_unref (priv->connection);
                 priv->connection = NULL;
         }
 
@@ -1595,9 +1538,168 @@ msd_media_keys_manager_stop (MsdMediaKeysManager *manager)
         priv->media_players = NULL;
 }
 
+/*
+ * Register a new media player. Most applications will want to call
+ * this with time = GDK_CURRENT_TIME. This way, the last registered
+ * player will receive media events. In some cases, applications
+ * may want to register with a lower priority (usually 1), to grab
+ * events only nobody is interested.
+ */
+static gboolean
+on_grab_media_player_keys (MateSettingsMediaKeys *object,
+                           GDBusMethodInvocation *invocation,
+                           const gchar           *application,
+                           guint                  time,
+                           gpointer               user_data)
+{
+        GList       *iter;
+        MediaPlayer *media_player;
+        MsdMediaKeysManager *manager;
+
+        if (time == GDK_CURRENT_TIME) {
+                GTimeVal tv;
+
+                g_get_current_time (&tv);
+                time = tv.tv_sec * 1000 + tv.tv_usec / 1000;
+        }
+
+        manager = MSD_MEDIA_KEYS_MANAGER (user_data);
+        iter = g_list_find_custom (manager->priv->media_players,
+                                   application,
+                                   find_by_application);
+
+        if (iter != NULL) {
+                if (((MediaPlayer *)iter->data)->time < time) {
+                        g_free (((MediaPlayer *)iter->data)->application);
+                        g_free (iter->data);
+                        manager->priv->media_players = g_list_delete_link (manager->priv->media_players, iter);
+                } else {
+                        mate_settings_media_keys_complete_grab_media_player_keys (object, invocation);
+                        return TRUE;
+                }
+        }
+
+        g_debug ("Registering %s at %u", application, time);
+        media_player = g_new0 (MediaPlayer, 1);
+        media_player->application = g_strdup (application);
+        media_player->time = time;
+
+        manager->priv->media_players = g_list_insert_sorted (manager->priv->media_players,
+                                                             media_player,
+                                                             find_by_time);
+
+        mate_settings_media_keys_complete_grab_media_player_keys (object, invocation);
+        return TRUE;
+}
+
+static gboolean
+on_release_media_player_keys (MateSettingsMediaKeys *object,
+                              GDBusMethodInvocation *invocation,
+                              const gchar           *application,
+                              gpointer               user_data)
+{
+        GList *iter;
+        MsdMediaKeysManager *manager;
+        manager = MSD_MEDIA_KEYS_MANAGER (user_data);
+
+        iter = g_list_find_custom (manager->priv->media_players,
+                                   application,
+                                   find_by_application);
+
+        if (iter != NULL) {
+                g_debug ("Deregistering %s", application);
+                g_free (((MediaPlayer *)iter->data)->application);
+                g_free (iter->data);
+                manager->priv->media_players = g_list_delete_link (manager->priv->media_players, iter);
+        }
+
+        mate_settings_media_keys_complete_release_media_player_keys (object, invocation);
+        return TRUE;
+}
+
+static void
+bus_acquired_handler_cb (GDBusConnection *connection,
+                         const gchar     *name G_GNUC_UNUSED,
+                         gpointer         user_data)
+{
+        MsdMediaKeysManager *manager;
+        GError *error = NULL;
+        gboolean exported;
+
+        manager = MSD_MEDIA_KEYS_MANAGER (user_data);
+
+        g_signal_connect (manager->priv->skeleton,
+                          "handle-grab-media-player-keys",
+                          G_CALLBACK (on_grab_media_player_keys),
+                          manager);
+        g_signal_connect (manager->priv->skeleton,
+                          "handle-release-media-player-keys",
+                          G_CALLBACK (on_release_media_player_keys),
+                          manager);
+
+        exported = g_dbus_interface_skeleton_export (
+                        G_DBUS_INTERFACE_SKELETON (manager->priv->skeleton),
+                                                   connection,
+                                                   MSD_MEDIA_KEYS_DBUS_PATH,
+                                                   &error);
+        if (!exported)
+        {
+                g_warning ("Failed to export interface: %s", error->message);
+                g_error_free (error);
+                gtk_main_quit ();
+        }
+        manager->priv->connection = g_object_ref(connection);
+}
+
+static void msd_media_keys_manager_constructed (GObject *object)
+{
+        MsdMediaKeysManager *manager;
+        manager = MSD_MEDIA_KEYS_MANAGER (object);
+
+        G_OBJECT_CLASS (msd_media_keys_manager_parent_class)->constructed (object);
+
+        manager->priv->bus_name_id = g_bus_own_name (G_BUS_TYPE_SESSION,
+                                                     MSD_MEDIA_KEYS_DBUS_NAME,
+                                                     G_BUS_NAME_OWNER_FLAGS_NONE,
+                                                     bus_acquired_handler_cb,
+                                                     NULL,
+                                                     NULL,
+                                                     manager,
+                                                     NULL);
+}
+
+static void msd_media_keys_manager_dispose (GObject *object)
+{
+        MsdMediaKeysManager *manager;
+        manager = MSD_MEDIA_KEYS_MANAGER (object);
+
+        if (manager->priv->skeleton != NULL)
+        {
+                GDBusInterfaceSkeleton *skeleton;
+
+                skeleton = G_DBUS_INTERFACE_SKELETON (manager->priv->skeleton);
+                g_dbus_interface_skeleton_unexport (skeleton);
+                g_clear_object (&manager->priv->skeleton);
+        }
+
+        if (manager->priv->bus_name_id > 0)
+        {
+                g_bus_unown_name (manager->priv->bus_name_id);
+                manager->priv->bus_name_id = 0;
+        }
+
+        G_OBJECT_CLASS (msd_media_keys_manager_parent_class)->dispose (object);
+}
+
+
 static void
 msd_media_keys_manager_class_init (MsdMediaKeysManagerClass *klass)
 {
+        GObjectClass   *object_class = G_OBJECT_CLASS (klass);
+
+        object_class->constructed = msd_media_keys_manager_constructed;
+        object_class->dispose = msd_media_keys_manager_dispose;
+
         signals[MEDIA_PLAYER_KEY_PRESSED] =
                 g_signal_new ("media-player-key-pressed",
                               G_OBJECT_CLASS_TYPE (klass),
@@ -1610,33 +1712,13 @@ msd_media_keys_manager_class_init (MsdMediaKeysManagerClass *klass)
                               2,
                               G_TYPE_STRING,
                               G_TYPE_STRING);
-
-        dbus_g_object_type_install_info (MSD_TYPE_MEDIA_KEYS_MANAGER, &dbus_glib_msd_media_keys_manager_object_info);
 }
 
 static void
 msd_media_keys_manager_init (MsdMediaKeysManager *manager)
 {
         manager->priv = msd_media_keys_manager_get_instance_private (manager);
-}
-
-static gboolean
-register_manager (MsdMediaKeysManager *manager)
-{
-        GError *error = NULL;
-
-        manager->priv->connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
-        if (manager->priv->connection == NULL) {
-                if (error != NULL) {
-                        g_error ("Error getting session bus: %s", error->message);
-                        g_error_free (error);
-                }
-                return FALSE;
-        }
-
-        dbus_g_connection_register_g_object (manager->priv->connection, MSD_MEDIA_KEYS_DBUS_PATH, G_OBJECT (manager));
-
-        return TRUE;
+        manager->priv->skeleton = mate_settings_media_keys_skeleton_new ();
 }
 
 MsdMediaKeysManager *
@@ -1645,16 +1727,7 @@ msd_media_keys_manager_new (void)
         if (manager_object != NULL) {
                 g_object_ref (manager_object);
         } else {
-                gboolean res;
-
                 manager_object = g_object_new (MSD_TYPE_MEDIA_KEYS_MANAGER, NULL);
-                g_object_add_weak_pointer (manager_object,
-                                           (gpointer *) &manager_object);
-                res = register_manager (manager_object);
-                if (! res) {
-                        g_object_unref (manager_object);
-                        return NULL;
-                }
         }
 
         return MSD_MEDIA_KEYS_MANAGER (manager_object);
