@@ -449,7 +449,7 @@ msd_ldsm_dialog_new (gboolean     other_usable_partitions,
         button_ignore = gtk_dialog_add_button (GTK_DIALOG (dialog),
                                                _("Ignore"),
                                                GTK_RESPONSE_CANCEL);
-        ignore_image = gtk_image_new_from_stock (GTK_STOCK_CANCEL, GTK_ICON_SIZE_BUTTON);
+        ignore_image = gtk_image_new_from_icon_name ("process-stop", GTK_ICON_SIZE_BUTTON);
         gtk_button_set_image (GTK_BUTTON (button_ignore), ignore_image);
 
         gtk_widget_grab_default (button_ignore);
