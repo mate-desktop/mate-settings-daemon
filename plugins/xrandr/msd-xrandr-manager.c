@@ -785,7 +785,7 @@ find_best_mode (MateRROutput *output)
         MateRRMode *preferred;
         MateRRMode **modes;
         int best_size;
-        int best_width, best_height, best_rate;
+        int best_rate;
         int i;
         MateRRMode *best_mode;
 
@@ -797,7 +797,7 @@ find_best_mode (MateRROutput *output)
         if (!modes)
                 return NULL;
 
-        best_size = best_width = best_height = best_rate = 0;
+        best_size = best_rate = 0;
         best_mode = NULL;
 
         for (i = 0; modes[i] != NULL; i++) {
@@ -812,8 +812,6 @@ find_best_mode (MateRROutput *output)
 
                 if (size > best_size) {
                         best_size   = size;
-                        best_width  = w;
-                        best_height = h;
                         best_rate   = r;
                         best_mode   = modes[i];
                 } else if (size == best_size) {

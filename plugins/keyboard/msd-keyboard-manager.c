@@ -201,8 +201,6 @@ apply_settings (GSettings          *settings,
         XKeyboardControl kbdcontrol;
         gboolean         repeat;
         gboolean         click;
-        int              rate;
-        int              delay;
         int              click_volume;
         int              bell_volume;
         int              bell_pitch;
@@ -215,8 +213,6 @@ apply_settings (GSettings          *settings,
 
         repeat        = g_settings_get_boolean  (settings, KEY_REPEAT);
         click         = g_settings_get_boolean  (settings, KEY_CLICK);
-        rate          = g_settings_get_int   (settings, KEY_RATE);
-        delay         = g_settings_get_int   (settings, KEY_DELAY);
         click_volume  = g_settings_get_int   (settings, KEY_CLICK_VOLUME);
         bell_pitch    = g_settings_get_int   (settings, KEY_BELL_PITCH);
         bell_duration = g_settings_get_int   (settings, KEY_BELL_DURATION);
@@ -233,8 +229,9 @@ apply_settings (GSettings          *settings,
                 XAutoRepeatOn (GDK_DISPLAY_XDISPLAY (display));
                 /* Use XKB in preference */
 #ifdef HAVE_X11_EXTENSIONS_XKB_H
-                rate_set = xkb_set_keyboard_autorepeat_rate (delay, rate);
-#endif
+                rate_set = xkb_set_keyboard_autorepeat_rate (g_settings_get_int (settings, KEY_DELAY),
+                                                             g_settings_get_int (settings, KEY_RATE));
+#endif /* HAVE_X11_EXTENSIONS_XKB_H */
                 if (!rate_set)
                         g_warning ("Neither XKeyboard not Xfree86's keyboard extensions are available,\n"
                                    "no way to support keyboard autorepeat rate settings");
