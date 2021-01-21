@@ -2050,11 +2050,10 @@ mirror_outputs_cb(GtkCheckMenuItem *item, gpointer data)
         struct MsdXrandrManagerPrivate *priv = manager->priv;
         MateRRScreen *screen = priv->rw_screen;
 
-        if (gtk_check_menu_item_get_active(item)){
-
+        if (gtk_check_menu_item_get_active (item)) {
                 MateRRConfig *config;
-                config = make_clone_setup (screen);
-                if (!config || config == NULL){
+
+                if ((config = make_clone_setup (screen)) == NULL) {
                         error_message (manager, _("Mirroring outputs not supported"), NULL, NULL);
                 }
 
