@@ -53,20 +53,20 @@ struct MateSettingsPluginInfoPrivate
         char                    *copyright;
         char                    *website;
 
-        MateSettingsPlugin     *plugin;
+        MateSettingsPlugin      *plugin;
 
-        int                      enabled : 1;
-        int                      active : 1;
+        guint                    enabled : 1;
+        guint                    active : 1;
 
         /* A plugin is unavailable if it is not possible to activate it
            due to an error loading the plugin module */
-        int                      available : 1;
+        guint                    available : 1;
 
         guint                    enabled_notification_id;
 
         /* Priority determines the order in which plugins are started and
          * stopped. A lower number means higher priority. */
-        guint                    priority;
+        int                      priority;
 };
 
 
@@ -515,7 +515,7 @@ mate_settings_plugin_info_set_schema (MateSettingsPluginInfo *info,
 	g_return_if_fail (MATE_IS_SETTINGS_PLUGIN_INFO (info));
 
 	info->priv->settings = g_settings_new (schema);
-	info->priv->enabled = g_settings_get_boolean (info->priv->settings, "active");
+	info->priv->enabled = g_settings_get_boolean (info->priv->settings, "active") != FALSE;
 
 	priority = g_settings_get_int (info->priv->settings, "priority");
 	if (priority > 0)

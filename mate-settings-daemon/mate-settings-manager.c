@@ -124,13 +124,7 @@ static int
 compare_priority (MateSettingsPluginInfo *a,
                   MateSettingsPluginInfo *b)
 {
-        int prio_a;
-        int prio_b;
-
-        prio_a = mate_settings_plugin_info_get_priority (a);
-        prio_b = mate_settings_plugin_info_get_priority (b);
-
-        return prio_a - prio_b;
+        return mate_settings_plugin_info_get_priority (a) - mate_settings_plugin_info_get_priority (b);
 }
 
 static void
