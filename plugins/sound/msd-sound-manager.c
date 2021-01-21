@@ -45,8 +45,10 @@
 
 struct MsdSoundManagerPrivate
 {
+#ifdef HAVE_PULSE
         GSettings *settings;
         GList* monitors;
+#endif /* HAVE_PULSE */
         guint timeout;
 };
 
