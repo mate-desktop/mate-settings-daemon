@@ -240,7 +240,6 @@ match_key (Key *key, XEvent *event)
 	}
 
 	/* The key we passed doesn't have a keysym, so try with just the keycode */
-        return (key != NULL
-                && key->state == (event->xkey.state & msd_used_mods)
+        return (key->state == (event->xkey.state & msd_used_mods)
                 && key_uses_keycode (key, event->xkey.keycode));
 }
