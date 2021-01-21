@@ -202,8 +202,7 @@ get_xkb_desc_rec (MsdA11yKeyboardManager *manager)
         }
         gdk_x11_display_error_trap_pop_ignored (display);
 
-        g_return_val_if_fail (desc != NULL, NULL);
-        g_return_val_if_fail (desc->ctrls != NULL, NULL);
+        g_return_val_if_fail (desc != NULL && desc->ctrls != NULL, NULL);
         g_return_val_if_fail (status == Success, NULL);
 
         return desc;
