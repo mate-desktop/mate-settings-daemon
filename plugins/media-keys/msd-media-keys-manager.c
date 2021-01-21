@@ -600,7 +600,6 @@ do_eject_action (MsdMediaKeysManager *manager)
                         continue;
                 if (score < SCORE_HAS_MEDIA) {
                         fav_drive = drive;
-                        score = SCORE_HAS_MEDIA;
                         break;
                 }
         }
