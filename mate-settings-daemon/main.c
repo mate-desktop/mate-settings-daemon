@@ -73,7 +73,7 @@ static gboolean
 timed_exit_cb (void)
 {
         gtk_main_quit ();
-        return FALSE;
+        return G_SOURCE_REMOVE;
 }
 
 static DBusGProxy *
@@ -547,7 +547,7 @@ main (int argc, char *argv[])
         }
 
         if (do_timed_exit) {
-                g_timeout_add_seconds (30, (GSourceFunc) timed_exit_cb, NULL);
+                g_timeout_add_seconds (30, G_SOURCE_FUNC (timed_exit_cb), NULL);
         }
 
         gtk_main ();
