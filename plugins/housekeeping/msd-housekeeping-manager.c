@@ -38,16 +38,17 @@
 #define THUMB_CACHE_KEY_AGE	"maximum-age"
 #define THUMB_CACHE_KEY_SIZE	"maximum-size"
 
-struct MsdHousekeepingManagerPrivate {
-        guint long_term_cb;
-        guint short_term_cb;
+struct _MsdHousekeepingManager {
+        GObject    parent;
+
+        guint      long_term_cb;
+        guint      short_term_cb;
         GSettings *settings;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (MsdHousekeepingManager, msd_housekeeping_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE (MsdHousekeepingManager, msd_housekeeping_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
-
 
 typedef struct {
         GDateTime *now;
@@ -55,7 +56,6 @@ typedef struct {
         goffset    total_size;
         goffset    max_size;
 } PurgeData;
-
 
 typedef struct {
         GDateTime *mtime;
@@ -155,8 +155,8 @@ purge_thumbnail_cache (MsdHousekeepingManager *manager)
 
         g_debug ("housekeeping: checking thumbnail cache size and freshness");
 
-        purge_data.max_age = g_settings_get_int (manager->priv->settings, THUMB_CACHE_KEY_AGE) * G_TIME_SPAN_DAY;
-        purge_data.max_size = g_settings_get_int (manager->priv->settings, THUMB_CACHE_KEY_SIZE) * 1024 * 1024;
+        purge_data.max_age = g_settings_get_int (manager->settings, THUMB_CACHE_KEY_AGE) * G_TIME_SPAN_DAY;
+        purge_data.max_size = g_settings_get_int (manager->settings, THUMB_CACHE_KEY_SIZE) * 1024 * 1024;
 
         /* if both are set to -1, we don't need to read anything */
         if ((purge_data.max_age < 0) && (purge_data.max_size < 0))
@@ -216,16 +216,16 @@ static gboolean
 do_cleanup_once (MsdHousekeepingManager *manager)
 {
         do_cleanup (manager);
-        manager->priv->short_term_cb = 0;
+        manager->short_term_cb = 0;
         return FALSE;
 }
 
 static void
 do_cleanup_soon (MsdHousekeepingManager *manager)
 {
-        if (manager->priv->short_term_cb == 0) {
+        if (manager->short_term_cb == 0) {
                 g_debug ("housekeeping: will tidy up in 2 minutes");
-                manager->priv->short_term_cb = g_timeout_add_seconds (INTERVAL_TWO_MINUTES,
+                manager->short_term_cb = g_timeout_add_seconds (INTERVAL_TWO_MINUTES,
                                                (GSourceFunc) do_cleanup_once,
                                                manager);
         }
@@ -248,16 +248,16 @@ msd_housekeeping_manager_start (MsdHousekeepingManager *manager,
 
         msd_ldsm_setup (FALSE);
 
-        manager->priv->settings = g_settings_new (THUMB_CACHE_SCHEMA);
+        manager->settings = g_settings_new (THUMB_CACHE_SCHEMA);
 
-	g_signal_connect (manager->priv->settings, "changed",
-			  G_CALLBACK (settings_changed_callback), manager);
+        g_signal_connect (manager->settings, "changed",
+                          G_CALLBACK (settings_changed_callback), manager);
 
         /* Clean once, a few minutes after start-up */
         do_cleanup_soon (manager);
 
         /* Clean periodically, on a daily basis. */
-        manager->priv->long_term_cb = g_timeout_add_seconds (INTERVAL_ONCE_A_DAY,
+        manager->long_term_cb = g_timeout_add_seconds (INTERVAL_ONCE_A_DAY,
                                       (GSourceFunc) do_cleanup,
                                       manager);
         mate_settings_profile_end (NULL);
@@ -268,30 +268,28 @@ msd_housekeeping_manager_start (MsdHousekeepingManager *manager,
 void
 msd_housekeeping_manager_stop (MsdHousekeepingManager *manager)
 {
-        MsdHousekeepingManagerPrivate *p = manager->priv;
-
         g_debug ("Stopping housekeeping manager");
 
-        if (p->short_term_cb) {
-                g_source_remove (p->short_term_cb);
-                p->short_term_cb = 0;
+        if (manager->short_term_cb) {
+                g_source_remove (manager->short_term_cb);
+                manager->short_term_cb = 0;
         }
 
-        if (p->long_term_cb) {
-                g_source_remove (p->long_term_cb);
-                p->long_term_cb = 0;
+        if (manager->long_term_cb) {
+                g_source_remove (manager->long_term_cb);
+                manager->long_term_cb = 0;
 
                 /* Do a clean-up on shutdown if and only if the size or age
                  * limits have been set to a paranoid level of cleaning (zero)
                  */
-                if ((g_settings_get_int (p->settings, THUMB_CACHE_KEY_AGE) == 0) ||
-                    (g_settings_get_int (p->settings, THUMB_CACHE_KEY_SIZE) == 0)) {
+                if ((g_settings_get_int (manager->settings, THUMB_CACHE_KEY_AGE) == 0) ||
+                    (g_settings_get_int (manager->settings, THUMB_CACHE_KEY_SIZE) == 0)) {
                         do_cleanup (manager);
                 }
         }
 
-       	g_object_unref (p->settings);
-       	p->settings = NULL;
+        g_object_unref (manager->settings);
+        manager->settings = NULL;
 
         msd_ldsm_clean ();
 }
@@ -304,7 +302,6 @@ msd_housekeeping_manager_class_init (MsdHousekeepingManagerClass *klass)
 static void
 msd_housekeeping_manager_init (MsdHousekeepingManager *manager)
 {
-        manager->priv = msd_housekeeping_manager_get_instance_private (manager);
 }
 
 MsdHousekeepingManager *

@@ -18,42 +18,23 @@
  *
  */
 
-#ifndef __MSD_HOUSEKEEPING_MANAGER_H
-#define __MSD_HOUSEKEEPING_MANAGER_H
+#ifndef MSD_HOUSEKEEPING_MANAGER_H
+#define MSD_HOUSEKEEPING_MANAGER_H
 
 #include <glib-object.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+G_BEGIN_DECLS
 
-#define MSD_TYPE_HOUSEKEEPING_MANAGER         (msd_housekeeping_manager_get_type ())
-#define MSD_HOUSEKEEPING_MANAGER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), MSD_TYPE_HOUSEKEEPING_MANAGER, MsdHousekeepingManager))
-#define MSD_HOUSEKEEPING_MANAGER_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), MSD_TYPE_HOUSEKEEPING_MANAGER, MsdHousekeepingManagerClass))
-#define MSD_IS_HOUSEKEEPING_MANAGER(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), MSD_TYPE_HOUSEKEEPING_MANAGER))
-#define MSD_IS_HOUSEKEEPING_MANAGER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), MSD_TYPE_HOUSEKEEPING_MANAGER))
-#define MSD_HOUSEKEEPING_MANAGER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), MSD_TYPE_HOUSEKEEPING_MANAGER, MsdHousekeepingManagerClass))
+#define MSD_TYPE_HOUSEKEEPING_MANAGER (msd_housekeeping_manager_get_type ())
 
-typedef struct MsdHousekeepingManagerPrivate MsdHousekeepingManagerPrivate;
-
-typedef struct {
-        GObject                        parent;
-        MsdHousekeepingManagerPrivate *priv;
-} MsdHousekeepingManager;
-
-typedef struct {
-        GObjectClass   parent_class;
-} MsdHousekeepingManagerClass;
-
-GType                    msd_housekeeping_manager_get_type      (void);
+G_DECLARE_FINAL_TYPE (MsdHousekeepingManager, msd_housekeeping_manager,
+                      MSD, HOUSEKEEPING_MANAGER, GObject)
 
 MsdHousekeepingManager * msd_housekeeping_manager_new           (void);
 gboolean                 msd_housekeeping_manager_start         (MsdHousekeepingManager  *manager,
                                                                  GError                 **error);
 void                     msd_housekeeping_manager_stop          (MsdHousekeepingManager  *manager);
 
-#ifdef __cplusplus
-}
-#endif
+G_END_DECLS
 
-#endif /* __MSD_HOUSEKEEPING_MANAGER_H */
+#endif /* MSD_HOUSEKEEPING_MANAGER_H */
