@@ -43,29 +43,31 @@
 
 #define MATE_BREAK_SCHEMA "org.mate.typing-break"
 
-struct MsdTypingBreakManagerPrivate
+struct _MsdTypingBreakManager
 {
-        GPid  typing_monitor_pid;
-        guint typing_monitor_idle_id;
-        guint child_watch_id;
-        guint setup_id;
+        GObject    parent;
+
+        GPid       typing_monitor_pid;
+        guint      typing_monitor_idle_id;
+        guint      child_watch_id;
+        guint      setup_id;
         GSettings *settings;
 };
 
 static void msd_typing_break_manager_finalize (GObject *object);
 
-G_DEFINE_TYPE_WITH_PRIVATE (MsdTypingBreakManager, msd_typing_break_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE (MsdTypingBreakManager, msd_typing_break_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
 static gboolean
 typing_break_timeout (MsdTypingBreakManager *manager)
 {
-        if (manager->priv->typing_monitor_pid > 0) {
-                kill (manager->priv->typing_monitor_pid, SIGKILL);
+        if (manager->typing_monitor_pid > 0) {
+                kill (manager->typing_monitor_pid, SIGKILL);
         }
 
-        manager->priv->typing_monitor_idle_id = 0;
+        manager->typing_monitor_idle_id = 0;
 
         return FALSE;
 }
@@ -75,8 +77,8 @@ child_watch (GPid                   pid,
              int                    status,
              MsdTypingBreakManager *manager)
 {
-        if (pid == manager->priv->typing_monitor_pid) {
-                manager->priv->typing_monitor_pid = 0;
+        if (pid == manager->typing_monitor_pid) {
+                manager->typing_monitor_pid = 0;
                 g_spawn_close_pid (pid);
         }
 }
@@ -88,18 +90,18 @@ setup_typing_break (MsdTypingBreakManager *manager,
         mate_settings_profile_start (NULL);
 
         if (! enabled) {
-                if (manager->priv->typing_monitor_pid != 0) {
-                        manager->priv->typing_monitor_idle_id = g_timeout_add_seconds (3, (GSourceFunc) typing_break_timeout, manager);
+                if (manager->typing_monitor_pid != 0) {
+                        manager->typing_monitor_idle_id = g_timeout_add_seconds (3, (GSourceFunc) typing_break_timeout, manager);
                 }
                 return;
         }
 
-        if (manager->priv->typing_monitor_idle_id != 0) {
-                g_source_remove (manager->priv->typing_monitor_idle_id);
-                manager->priv->typing_monitor_idle_id = 0;
+        if (manager->typing_monitor_idle_id != 0) {
+                g_source_remove (manager->typing_monitor_idle_id);
+                manager->typing_monitor_idle_id = 0;
         }
 
-        if (manager->priv->typing_monitor_pid == 0) {
+        if (manager->typing_monitor_pid == 0) {
                 GError  *error;
                 char    *argv[] = { "mate-typing-monitor", "-n", NULL };
                 gboolean res;
@@ -114,19 +116,19 @@ setup_typing_break (MsdTypingBreakManager *manager,
                                      | G_SPAWN_DO_NOT_REAP_CHILD,
                                      NULL,
                                      NULL,
-                                     &manager->priv->typing_monitor_pid,
+                                     &manager->typing_monitor_pid,
                                      &error);
                 if (! res) {
                         /* FIXME: put up a warning */
                         g_warning ("failed: %s\n", error->message);
                         g_error_free (error);
-                        manager->priv->typing_monitor_pid = 0;
+                        manager->typing_monitor_pid = 0;
                         return;
                 }
 
-                manager->priv->child_watch_id = g_child_watch_add (manager->priv->typing_monitor_pid,
-                                                                   (GChildWatchFunc)child_watch,
-                                                                   manager);
+                manager->child_watch_id = g_child_watch_add (manager->typing_monitor_pid,
+                                                             (GChildWatchFunc)child_watch,
+                                                             manager);
         }
 
         mate_settings_profile_end (NULL);
@@ -144,7 +146,7 @@ static gboolean
 really_setup_typing_break (MsdTypingBreakManager *manager)
 {
         setup_typing_break (manager, TRUE);
-        manager->priv->setup_id = 0;
+        manager->setup_id = 0;
         return FALSE;
 }
 
@@ -157,17 +159,17 @@ msd_typing_break_manager_start (MsdTypingBreakManager *manager,
         g_debug ("Starting typing_break manager");
         mate_settings_profile_start (NULL);
 
-        manager->priv->settings = g_settings_new (MATE_BREAK_SCHEMA);
+        manager->settings = g_settings_new (MATE_BREAK_SCHEMA);
 
-        g_signal_connect (manager->priv->settings,
+        g_signal_connect (manager->settings,
                           "changed::enabled",
                           G_CALLBACK (typing_break_enabled_callback),
                           manager);
 
-        enabled = g_settings_get_boolean (manager->priv->settings, "enabled");
+        enabled = g_settings_get_boolean (manager->settings, "enabled");
 
         if (enabled) {
-                manager->priv->setup_id =
+                manager->setup_id =
                         g_timeout_add_seconds (3,
                                                (GSourceFunc) really_setup_typing_break,
                                                manager);
@@ -181,33 +183,31 @@ msd_typing_break_manager_start (MsdTypingBreakManager *manager,
 void
 msd_typing_break_manager_stop (MsdTypingBreakManager *manager)
 {
-        MsdTypingBreakManagerPrivate *p = manager->priv;
-
         g_debug ("Stopping typing_break manager");
 
-        if (p->setup_id != 0) {
-                g_source_remove (p->setup_id);
-                p->setup_id = 0;
+        if (manager->setup_id != 0) {
+                g_source_remove (manager->setup_id);
+                manager->setup_id = 0;
         }
 
-        if (p->child_watch_id != 0) {
-                g_source_remove (p->child_watch_id);
-                p->child_watch_id = 0;
+        if (manager->child_watch_id != 0) {
+                g_source_remove (manager->child_watch_id);
+                manager->child_watch_id = 0;
         }
 
-        if (p->typing_monitor_idle_id != 0) {
-                g_source_remove (p->typing_monitor_idle_id);
-                p->typing_monitor_idle_id = 0;
+        if (manager->typing_monitor_idle_id != 0) {
+                g_source_remove (manager->typing_monitor_idle_id);
+                manager->typing_monitor_idle_id = 0;
         }
 
-        if (p->typing_monitor_pid > 0) {
-                kill (p->typing_monitor_pid, SIGKILL);
-                g_spawn_close_pid (p->typing_monitor_pid);
-                p->typing_monitor_pid = 0;
+        if (manager->typing_monitor_pid > 0) {
+                kill (manager->typing_monitor_pid, SIGKILL);
+                g_spawn_close_pid (manager->typing_monitor_pid);
+                manager->typing_monitor_pid = 0;
         }
 
-        if (p->settings != NULL) {
-                g_object_unref (p->settings);
+        if (manager->settings != NULL) {
+                g_object_unref (manager->settings);
         }
 }
 
@@ -222,21 +222,13 @@ msd_typing_break_manager_class_init (MsdTypingBreakManagerClass *klass)
 static void
 msd_typing_break_manager_init (MsdTypingBreakManager *manager)
 {
-        manager->priv = msd_typing_break_manager_get_instance_private (manager);
-
 }
 
 static void
 msd_typing_break_manager_finalize (GObject *object)
 {
-        MsdTypingBreakManager *typing_break_manager;
-
         g_return_if_fail (object != NULL);
         g_return_if_fail (MSD_IS_TYPING_BREAK_MANAGER (object));
-
-        typing_break_manager = MSD_TYPING_BREAK_MANAGER (object);
-
-        g_return_if_fail (typing_break_manager->priv != NULL);
 
         G_OBJECT_CLASS (msd_typing_break_manager_parent_class)->finalize (object);
 }
