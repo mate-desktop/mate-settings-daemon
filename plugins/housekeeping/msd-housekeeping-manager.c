@@ -265,6 +265,13 @@ msd_housekeeping_manager_start (MsdHousekeepingManager *manager,
         return TRUE;
 }
 
+static void
+msd_housekeeping_manager_finalize (GObject *object)
+{
+        msd_housekeeping_manager_stop (MSD_HOUSEKEEPING_MANAGER (object));
+        G_OBJECT_CLASS (msd_housekeeping_manager_parent_class)->finalize (object);
+}
+
 void
 msd_housekeeping_manager_stop (MsdHousekeepingManager *manager)
 {
@@ -297,6 +304,9 @@ msd_housekeeping_manager_stop (MsdHousekeepingManager *manager)
 static void
 msd_housekeeping_manager_class_init (MsdHousekeepingManagerClass *klass)
 {
+        GObjectClass *object_class = G_OBJECT_CLASS (klass);
+
+        object_class->finalize = msd_housekeeping_manager_finalize;
 }
 
 static void
