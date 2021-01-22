@@ -18,51 +18,24 @@
  *
  */
 
-#ifndef __MSD_BACKGROUND_MANAGER_H
-#define __MSD_BACKGROUND_MANAGER_H
+#ifndef MSD_BACKGROUND_MANAGER_H
+#define MSD_BACKGROUND_MANAGER_H
 
 #include <glib-object.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+G_BEGIN_DECLS
 
-//class MsdBackgroundManager
-//{
-	#define MSD_TYPE_BACKGROUND_MANAGER         (msd_background_manager_get_type())
-	#define MSD_BACKGROUND_MANAGER(o)           (G_TYPE_CHECK_INSTANCE_CAST((o), MSD_TYPE_BACKGROUND_MANAGER, MsdBackgroundManager))
-	#define MSD_BACKGROUND_MANAGER_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), MSD_TYPE_BACKGROUND_MANAGER, MsdBackgroundManagerClass))
-	#define MSD_IS_BACKGROUND_MANAGER(o)        (G_TYPE_CHECK_INSTANCE_TYPE((o), MSD_TYPE_BACKGROUND_MANAGER))
-	#define MSD_IS_BACKGROUND_MANAGER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE((k), MSD_TYPE_BACKGROUND_MANAGER))
-	#define MSD_BACKGROUND_MANAGER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS((o), MSD_TYPE_BACKGROUND_MANAGER, MsdBackgroundManagerClass))
+#define MSD_TYPE_BACKGROUND_MANAGER         (msd_background_manager_get_type())
 
-	typedef struct MsdBackgroundManagerPrivate MsdBackgroundManagerPrivate;
+G_DECLARE_FINAL_TYPE (MsdBackgroundManager, msd_background_manager, MSD, BACKGROUND_MANAGER, GObject)
 
-	typedef struct {
-		GObject                      parent;
-		MsdBackgroundManagerPrivate* priv;
-	} MsdBackgroundManager;
+MsdBackgroundManager * msd_background_manager_new   (void);
 
-	typedef struct {
-		GObjectClass   parent_class;
-	} MsdBackgroundManagerClass;
+gboolean               msd_background_manager_start (MsdBackgroundManager  *manager,
+                                                     GError               **error);
 
-	GType
-	msd_background_manager_get_type (void);
+void                   msd_background_manager_stop  (MsdBackgroundManager  *manager);
 
-	MsdBackgroundManager*
-	msd_background_manager_new (void);
+G_END_DECLS
 
-	gboolean
-	msd_background_manager_start (MsdBackgroundManager* manager,
-	                              GError**              error);
-
-	void
-	msd_background_manager_stop (MsdBackgroundManager* manager);
-//}
-
-#ifdef __cplusplus
-}
-#endif
-
-#endif /* __MSD_BACKGROUND_MANAGER_H */
+#endif /* MSD_BACKGROUND_MANAGER_H */
