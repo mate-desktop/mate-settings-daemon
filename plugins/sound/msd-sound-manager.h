@@ -18,44 +18,26 @@
  *
  */
 
-#ifndef __MSD_SOUND_MANAGER_H
-#define __MSD_SOUND_MANAGER_H
+#ifndef MSD_SOUND_MANAGER_H
+#define MSD_SOUND_MANAGER_H
 
 #include <glib.h>
 #include <glib-object.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+G_BEGIN_DECLS
 
-#define MSD_TYPE_SOUND_MANAGER         (msd_sound_manager_get_type ())
-#define MSD_SOUND_MANAGER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), MSD_TYPE_SOUND_MANAGER, MsdSoundManager))
-#define MSD_SOUND_MANAGER_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST ((k), MSD_TYPE_SOUND_MANAGER, MsdSoundManagerClass))
-#define MSD_IS_SOUND_MANAGER(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), MSD_TYPE_SOUND_MANAGER))
-#define MSD_IS_SOUND_MANAGER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), MSD_TYPE_SOUND_MANAGER))
-#define MSD_SOUND_MANAGER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), MSD_TYPE_SOUND_MANAGER, MsdSoundManagerClass))
+#define MSD_TYPE_SOUND_MANAGER (msd_sound_manager_get_type ())
 
-typedef struct MsdSoundManagerPrivate MsdSoundManagerPrivate;
+G_DECLARE_FINAL_TYPE (MsdSoundManager, msd_sound_manager,
+                      MSD, SOUND_MANAGER, GObject)
 
-typedef struct
-{
-        GObject parent;
-        MsdSoundManagerPrivate *priv;
-} MsdSoundManager;
+MsdSoundManager * msd_sound_manager_new   (void);
 
-typedef struct
-{
-        GObjectClass parent_class;
-} MsdSoundManagerClass;
+gboolean          msd_sound_manager_start (MsdSoundManager  *manager,
+                                           GError          **error);
 
-GType msd_sound_manager_get_type (void) G_GNUC_CONST;
+void              msd_sound_manager_stop  (MsdSoundManager *manager);
 
-MsdSoundManager *msd_sound_manager_new (void);
-gboolean msd_sound_manager_start (MsdSoundManager *manager, GError **error);
-void msd_sound_manager_stop (MsdSoundManager *manager);
+G_END_DECLS
 
-#ifdef __cplusplus
-}
-#endif
-
-#endif /* __MSD_SOUND_MANAGER_H */
+#endif /* MSD_SOUND_MANAGER_H */

@@ -43,8 +43,10 @@
 #include "msd-sound-manager.h"
 #include "mate-settings-profile.h"
 
-struct MsdSoundManagerPrivate
+struct _MsdSoundManager
 {
+        GObject    parent;
+
 #ifdef HAVE_PULSE
         GSettings *settings;
         GList* monitors;
@@ -56,7 +58,7 @@ struct MsdSoundManagerPrivate
 
 static void msd_sound_manager_finalize (GObject *object);
 
-G_DEFINE_TYPE_WITH_PRIVATE (MsdSoundManager, msd_sound_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE (MsdSoundManager, msd_sound_manager, G_TYPE_OBJECT)
 
 static gpointer manager_object = NULL;
 
@@ -186,7 +188,7 @@ static gboolean
 flush_cb (MsdSoundManager *manager)
 {
         flush_cache ();
-        manager->priv->timeout = 0;
+        manager->timeout = 0;
         return FALSE;
 }
 
@@ -194,12 +196,12 @@ static void
 trigger_flush (MsdSoundManager *manager)
 {
 
-        if (manager->priv->timeout)
-                g_source_remove (manager->priv->timeout);
+        if (manager->timeout)
+                g_source_remove (manager->timeout);
 
         /* We delay the flushing a bit so that we can coalesce
          * multiple changes into a single cache flush */
-        manager->priv->timeout = g_timeout_add (500, (GSourceFunc) flush_cb, manager);
+        manager->timeout = g_timeout_add (500, (GSourceFunc) flush_cb, manager);
 }
 
 static void
@@ -239,7 +241,7 @@ register_directory_callback (MsdSoundManager *manager,
         if (m != NULL) {
                 g_signal_connect (m, "changed", G_CALLBACK (file_monitor_changed_cb), manager);
 
-                manager->priv->monitors = g_list_prepend (manager->priv->monitors, m);
+                manager->monitors = g_list_prepend (manager->monitors, m);
 
                 succ = TRUE;
         }
@@ -267,9 +269,9 @@ msd_sound_manager_start (MsdSoundManager *manager,
 #ifdef HAVE_PULSE
 
         /* We listen for change of the selected theme ... */
-        manager->priv->settings = g_settings_new (MATE_SOUND_SCHEMA);
+        manager->settings = g_settings_new (MATE_SOUND_SCHEMA);
 
-        g_signal_connect (manager->priv->settings, "changed",  G_CALLBACK (gsettings_notify_cb), manager);
+        g_signal_connect (manager->settings, "changed",  G_CALLBACK (gsettings_notify_cb), manager);
 
         /* ... and we listen to changes of the theme base directories
          * in $HOME ...*/
@@ -309,20 +311,20 @@ msd_sound_manager_stop (MsdSoundManager *manager)
         g_debug ("Stopping sound manager");
 
 #ifdef HAVE_PULSE
-        if (manager->priv->settings != NULL) {
-                g_object_unref (manager->priv->settings);
-                manager->priv->settings = NULL;
+        if (manager->settings != NULL) {
+                g_object_unref (manager->settings);
+                manager->settings = NULL;
         }
 
-        if (manager->priv->timeout) {
-                g_source_remove (manager->priv->timeout);
-                manager->priv->timeout = 0;
+        if (manager->timeout) {
+                g_source_remove (manager->timeout);
+                manager->timeout = 0;
         }
 
-        while (manager->priv->monitors) {
-                g_file_monitor_cancel (G_FILE_MONITOR (manager->priv->monitors->data));
-                g_object_unref (manager->priv->monitors->data);
-                manager->priv->monitors = g_list_delete_link (manager->priv->monitors, manager->priv->monitors);
+        while (manager->monitors) {
+                g_file_monitor_cancel (G_FILE_MONITOR (manager->monitors->data));
+                g_object_unref (manager->monitors->data);
+                manager->monitors = g_list_delete_link (manager->monitors, manager->monitors);
         }
 #endif
 }
@@ -351,20 +353,13 @@ msd_sound_manager_class_init (MsdSoundManagerClass *klass)
 static void
 msd_sound_manager_init (MsdSoundManager *manager)
 {
-        manager->priv = msd_sound_manager_get_instance_private (manager);
 }
 
 static void
 msd_sound_manager_finalize (GObject *object)
 {
-        MsdSoundManager *sound_manager;
-
         g_return_if_fail (object != NULL);
         g_return_if_fail (MSD_IS_SOUND_MANAGER (object));
-
-        sound_manager = MSD_SOUND_MANAGER (object);
-
-        g_return_if_fail (sound_manager->priv);
 
         G_OBJECT_CLASS (msd_sound_manager_parent_class)->finalize (object);
 }
