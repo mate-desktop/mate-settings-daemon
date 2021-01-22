@@ -18,44 +18,23 @@
  *
  */
 
-#ifndef __MSD_TYPING_BREAK_MANAGER_H
-#define __MSD_TYPING_BREAK_MANAGER_H
+#ifndef MSD_TYPING_BREAK_MANAGER_H
+#define MSD_TYPING_BREAK_MANAGER_H
 
 #include <glib-object.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+G_BEGIN_DECLS
 
-#define MSD_TYPE_TYPING_BREAK_MANAGER         (msd_typing_break_manager_get_type ())
-#define MSD_TYPING_BREAK_MANAGER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), MSD_TYPE_TYPING_BREAK_MANAGER, MsdTypingBreakManager))
-#define MSD_TYPING_BREAK_MANAGER_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), MSD_TYPE_TYPING_BREAK_MANAGER, MsdTypingBreakManagerClass))
-#define MSD_IS_TYPING_BREAK_MANAGER(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), MSD_TYPE_TYPING_BREAK_MANAGER))
-#define MSD_IS_TYPING_BREAK_MANAGER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), MSD_TYPE_TYPING_BREAK_MANAGER))
-#define MSD_TYPING_BREAK_MANAGER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), MSD_TYPE_TYPING_BREAK_MANAGER, MsdTypingBreakManagerClass))
+#define MSD_TYPE_TYPING_BREAK_MANAGER (msd_typing_break_manager_get_type ())
 
-typedef struct MsdTypingBreakManagerPrivate MsdTypingBreakManagerPrivate;
-
-typedef struct
-{
-        GObject                     parent;
-        MsdTypingBreakManagerPrivate *priv;
-} MsdTypingBreakManager;
-
-typedef struct
-{
-        GObjectClass   parent_class;
-} MsdTypingBreakManagerClass;
-
-GType                   msd_typing_break_manager_get_type            (void);
+G_DECLARE_FINAL_TYPE (MsdTypingBreakManager, msd_typing_break_manager,
+                      MSD, TYPING_BREAK_MANAGER, GObject)
 
 MsdTypingBreakManager * msd_typing_break_manager_new                 (void);
 gboolean                msd_typing_break_manager_start               (MsdTypingBreakManager *manager,
                                                                       GError               **error);
 void                    msd_typing_break_manager_stop                (MsdTypingBreakManager *manager);
 
-#ifdef __cplusplus
-}
-#endif
+G_END_DECLS
 
-#endif /* __MSD_TYPING_BREAK_MANAGER_H */
+#endif /* MSD_TYPING_BREAK_MANAGER_H */
