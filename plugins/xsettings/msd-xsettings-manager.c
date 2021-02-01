@@ -82,6 +82,9 @@
  * apps to work, and it's better to just be tiny */
 #define HIDPI_MIN_HEIGHT 1500
 
+#define GPOINTER_TO_BOOLEAN(i) ((gboolean) ((GPOINTER_TO_INT(i) == 2) ? TRUE : FALSE))
+#define GBOOLEAN_TO_POINTER(i) (GINT_TO_POINTER ((i) ? 2 : 1))
+
 typedef struct _TranslationEntry TranslationEntry;
 typedef void (* TranslationFunc) (MateXSettingsManager  *manager,
                                   TranslationEntry      *trans,
@@ -505,15 +508,15 @@ update_user_env_variable (const gchar  *variable,
 }
 
 static gboolean
-delayed_toggle_bg_draw (gboolean value)
+delayed_toggle_bg_draw (gpointer value)
 {
         GSettings *settings;
 
         settings = g_settings_new ("org.mate.background");
-        g_settings_set_boolean (settings, "show-desktop-icons", value);
+        g_settings_set_boolean (settings, "show-desktop-icons", GPOINTER_TO_BOOLEAN (value));
         g_object_unref (settings);
 
-        return FALSE;
+        return G_SOURCE_REMOVE;
 }
 
 static void
@@ -574,8 +577,8 @@ scale_change_workarounds (MateXSettingsManager *manager, int new_scale)
                 desktop_settings = g_settings_new ("org.mate.background");
                 if (g_settings_get_boolean (desktop_settings, "show-desktop-icons")) {
                         /* Delay the toggle to allow enough time for the desktop to redraw */
-                        g_timeout_add_seconds (1, (GSourceFunc) delayed_toggle_bg_draw, (gpointer) FALSE);
-                        g_timeout_add_seconds (2, (GSourceFunc) delayed_toggle_bg_draw, (gpointer) TRUE);
+                        g_timeout_add_seconds (1, delayed_toggle_bg_draw, GBOOLEAN_TO_POINTER (FALSE));
+                        g_timeout_add_seconds (2, delayed_toggle_bg_draw, GBOOLEAN_TO_POINTER (TRUE));
                 }
                 g_object_unref (desktop_settings);
         }
