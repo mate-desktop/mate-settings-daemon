@@ -617,7 +617,7 @@ do_eject_action (MsdMediaKeysManager *manager)
         if (fav_drive != NULL)
                 fav_drive = g_object_ref (fav_drive);
 
-        g_list_foreach (drives, (GFunc) g_object_unref, NULL);
+        g_list_free_full (drives, g_object_unref);
         if (fav_drive == NULL)
                 return;
 
