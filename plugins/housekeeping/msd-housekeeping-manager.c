@@ -200,8 +200,7 @@ purge_thumbnail_cache (MsdHousekeepingManager *manager)
                 }
         }
 
-        g_list_foreach (files, (GFunc) thumb_data_free, NULL);
-        g_list_free (files);
+        g_list_free_full (files, thumb_data_free);
         g_date_time_unref (purge_data.now);
 }
 
