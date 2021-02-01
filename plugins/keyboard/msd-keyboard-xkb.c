@@ -504,8 +504,11 @@ msd_keyboard_xkb_set_post_activation_callback (PostActivationCallback fun,
 }
 
 static GdkFilterReturn
-msd_keyboard_xkb_evt_filter (GdkXEvent * xev, GdkEvent * event)
+msd_keyboard_xkb_evt_filter (GdkXEvent *xev,
+                             GdkEvent  *event,
+                             gpointer   data)
 {
+	(void) data;
 	XEvent *xevent = (XEvent *) xev;
 	xkl_engine_filter_events (xkl_engine, xevent);
 	return GDK_FILTER_CONTINUE;
@@ -619,8 +622,7 @@ msd_keyboard_xkb_init (MsdKeyboardManager * kbd_manager)
 		g_signal_connect (settings_kbd, "changed",
 		                  G_CALLBACK (apply_xkb_settings_cb), NULL);
 
-		gdk_window_add_filter (NULL, (GdkFilterFunc)
-				       msd_keyboard_xkb_evt_filter, NULL);
+		gdk_window_add_filter (NULL, msd_keyboard_xkb_evt_filter, NULL);
 
 		if (xkl_engine_get_features (xkl_engine) &
 		    XKLF_DEVICE_DISCOVERY)
@@ -673,8 +675,7 @@ msd_keyboard_xkb_shutdown (void)
 				XKLL_MANAGE_LAYOUTS |
 				XKLL_MANAGE_WINDOW_STATES);
 
-	gdk_window_remove_filter (NULL, (GdkFilterFunc)
-				  msd_keyboard_xkb_evt_filter, NULL);
+	gdk_window_remove_filter (NULL, msd_keyboard_xkb_evt_filter, NULL);
 
 	if (settings_desktop != NULL) {
 		g_object_unref (settings_desktop);
