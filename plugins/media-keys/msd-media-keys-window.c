@@ -43,7 +43,7 @@ struct MsdMediaKeysWindowPrivate
         guint                    volume_muted : 1;
         guint                    mic_muted : 1;
         guint                    is_mic :1;
-        int                      volume_level;
+        guint                    volume_level;
 
         GtkImage                *image;
         GtkWidget               *progress;
@@ -223,7 +223,7 @@ msd_media_keys_window_set_volume_muted (MsdMediaKeysWindow *window,
         g_return_if_fail (MSD_IS_MEDIA_KEYS_WINDOW (window));
 
         if (window->priv->volume_muted != muted) {
-                window->priv->volume_muted = muted;
+                window->priv->volume_muted = muted != FALSE;
                 volume_muted_changed (window);
         }
         window->priv->is_mic = FALSE;
@@ -236,7 +236,7 @@ msd_media_keys_window_set_mic_muted (MsdMediaKeysWindow *window,
         g_return_if_fail (MSD_IS_MEDIA_KEYS_WINDOW (window));
 
         if (window->priv->mic_muted != muted) {
-                window->priv->mic_muted = muted;
+                window->priv->mic_muted = muted != FALSE;
                 mic_muted_changed (window);
         }
         window->priv->is_mic = TRUE;
@@ -244,7 +244,7 @@ msd_media_keys_window_set_mic_muted (MsdMediaKeysWindow *window,
 
 void
 msd_media_keys_window_set_volume_level (MsdMediaKeysWindow *window,
-                                        int                 level)
+                                        guint               level)
 {
         g_return_if_fail (MSD_IS_MEDIA_KEYS_WINDOW (window));
 
@@ -284,26 +284,26 @@ draw_eject (cairo_t *cr,
             double   width,
             double   height)
 {
-        int box_height;
-        int tri_height;
-        int separation;
+        double box_height;
+        double tri_height;
+        double separation;
 
         box_height = height * 0.2;
-        separation = box_height / 3;
+        separation = box_height / 3.0;
         tri_height = height - box_height - separation;
 
         cairo_rectangle (cr, _x0, _y0 + height - box_height, width, box_height);
 
         cairo_move_to (cr, _x0, _y0 + tri_height);
-        cairo_rel_line_to (cr, width, 0);
-        cairo_rel_line_to (cr, -width / 2, -tri_height);
-        cairo_rel_line_to (cr, -width / 2, tri_height);
+        cairo_rel_line_to (cr, width, 0.0);
+        cairo_rel_line_to (cr, -width * 0.5, -tri_height);
+        cairo_rel_line_to (cr, -width * 0.5, tri_height);
         cairo_close_path (cr);
         cairo_set_source_rgba (cr, 1.0, 1.0, 1.0, MSD_OSD_WINDOW_FG_ALPHA);
         cairo_fill_preserve (cr);
 
-        cairo_set_source_rgba (cr, 0.6, 0.6, 0.6, MSD_OSD_WINDOW_FG_ALPHA / 2);
-        cairo_set_line_width (cr, 2);
+        cairo_set_source_rgba (cr, 0.6, 0.6, 0.6, MSD_OSD_WINDOW_FG_ALPHA * 0.5);
+        cairo_set_line_width (cr, 2.0);
         cairo_stroke (cr);
 }
 
@@ -418,7 +418,7 @@ render_speaker (MsdMediaKeysWindow *window,
 {
         GdkPixbuf         *pixbuf;
         int                icon_size;
-        int                n;
+        guint              n;
         static const char *icon_names[] = {
                 "audio-volume-muted",
                 "audio-volume-low",
@@ -605,7 +605,7 @@ draw_action_volume (MsdMediaKeysWindow *window,
                         wave_y0 = speaker_cy;
                         wave_radius = icon_box_width / 2;
 
-                        draw_waves (cr, wave_x0, wave_y0, wave_radius, window->priv->volume_level);
+                        draw_waves (cr, wave_x0, wave_y0, wave_radius, (int) window->priv->volume_level);
                 } else {
                         /* draw 'mute' cross */
                         double cross_x0;
