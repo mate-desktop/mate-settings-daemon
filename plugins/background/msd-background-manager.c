@@ -66,7 +66,7 @@ struct _MsdBackgroundManager {
 	guint            timeout_id;
 
 	GDBusProxy      *proxy;
-	guint            proxy_signal_id;
+	gulong           proxy_signal_id;
 };
 
 G_DEFINE_TYPE (MsdBackgroundManager, msd_background_manager, G_TYPE_OBJECT)
@@ -255,7 +255,7 @@ on_screen_size_changed (GdkScreen            *screen,
 	GdkWindow *window = gdk_screen_get_root_window (screen);
 	gint scale = gdk_window_get_scale_factor (window);
 	gint scr_num = gdk_x11_screen_get_screen_number (screen);
-	gchar *old_size = g_list_nth_data (manager->scr_sizes, scr_num);
+	gchar *old_size = g_list_nth_data (manager->scr_sizes, (guint) scr_num);
 	gchar *new_size = g_strdup_printf ("%dx%d", WidthOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale,
 						    HeightOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale);
 	if (g_strcmp0 (old_size, new_size) != 0)
