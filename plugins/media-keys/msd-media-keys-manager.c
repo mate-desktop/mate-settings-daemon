@@ -665,7 +665,7 @@ update_dialog (MsdMediaKeysManager *manager,
                gboolean             is_mic)
 {
         if (muted)
-                volume = 0.0;
+                volume = 0;
 
         dialog_init (manager);
 
@@ -705,7 +705,8 @@ do_sound_action (MsdMediaKeysManager *manager,
         gboolean sound_changed = FALSE;
         guint    volume;
         guint    volume_min, volume_max;
-        guint    volume_step;
+        gint     volume_step;
+        guint    volume_step_scaled;
         guint    volume_last;
         MateMixerStreamControl *control;
 
@@ -726,12 +727,13 @@ do_sound_action (MsdMediaKeysManager *manager,
         volume_step = g_settings_get_int (manager->priv->settings, "volume-step");
         if (volume_step <= 0 || volume_step > 100) {
                 GVariant *variant = g_settings_get_default_value (manager->priv->settings, "volume-step");
-                volume_step = g_variant_get_int32 (variant);
+                gint32 volume_step_default = g_variant_get_int32 (variant);
+                volume_step = (gint) volume_step_default;
                 g_variant_unref (variant);
         }
 
         /* Scale the volume step size accordingly to the range used by the control */
-        volume_step = (volume_max - volume_min) * volume_step / 100;
+        volume_step_scaled = (volume_max - volume_min) * (guint) volume_step / 100;
 
         volume = volume_last =
                 mate_mixer_stream_control_get_volume (control);
@@ -744,11 +746,11 @@ do_sound_action (MsdMediaKeysManager *manager,
                 muted = !muted;
                 break;
         case VOLUME_DOWN_KEY:
-                if (volume <= (volume_min + volume_step)) {
+                if (volume <= (volume_min + volume_step_scaled)) {
                         volume = volume_min;
                         muted  = TRUE;
                 } else {
-                        volume -= volume_step;
+                        volume -= volume_step_scaled;
                         muted  = FALSE;
                 }
                 break;
@@ -756,9 +758,9 @@ do_sound_action (MsdMediaKeysManager *manager,
                 if (muted) {
                         muted = FALSE;
                         if (volume <= volume_min)
-                               volume = volume_min + volume_step;
+                               volume = volume_min + volume_step_scaled;
                 } else
-                        volume = CLAMP (volume + volume_step,
+                        volume = CLAMP (volume + volume_step_scaled,
                                         volume_min,
                                         volume_max);
                 break;

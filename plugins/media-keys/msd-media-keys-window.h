@@ -70,7 +70,7 @@ void                  msd_media_keys_window_set_mic_muted     (MsdMediaKeysWindo
 void                  msd_media_keys_window_set_volume_muted  (MsdMediaKeysWindow      *window,
                                                                gboolean                 muted);
 void                  msd_media_keys_window_set_volume_level  (MsdMediaKeysWindow      *window,
-                                                               int                      level);
+                                                               guint                    level);
 gboolean              msd_media_keys_window_is_valid          (MsdMediaKeysWindow      *window);
 
 #ifdef __cplusplus
