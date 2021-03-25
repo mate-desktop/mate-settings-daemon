@@ -357,7 +357,11 @@ event_cb (GIOChannel   *source,
 
 			print_event (&event);
 
+#if GLIB_CHECK_VERSION (2, 68, 0)
+			event_ptr = g_memdup2 (&event, sizeof(event));
+#else
 			event_ptr = g_memdup (&event, sizeof(event));
+#endif
 			events = g_list_prepend (events, event_ptr);
 
 			status = g_io_channel_read_chars (source,
@@ -440,7 +444,11 @@ cc_rfkill_glib_open (CcRfkillGlib *rfkill)
 			 type_to_string (event.type),
 			 event.idx, event.soft, event.hard);
 
+#if GLIB_CHECK_VERSION (2, 68, 0)
+		event_ptr = g_memdup2 (&event, sizeof(event));
+#else
 		event_ptr = g_memdup (&event, sizeof(event));
+#endif
 		events = g_list_prepend (events, event_ptr);
 	}
 
