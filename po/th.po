@@ -11,9 +11,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.23.2\n"
+"Project-Id-Version: mate-settings-daemon 1.24.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2019-11-19 11:28+0100\n"
+"POT-Creation-Date: 2020-08-13 13:32+0200\n"
 "PO-Revision-Date: 2020-02-16 15:02+0000\n"
 "Last-Translator: Wolfgang Ulbrich <mate@raveit.de>, 2020\n"
 "Language-Team: Thai (https://www.transifex.com/mate/teams/13566/th/)\n"
@@ -860,23 +860,23 @@ msgstr "สิ่งอำนวยความสะดวกสำหรับ
 msgid "Accessibility keyboard plugin"
 msgstr "ปลั๊กอินจัดการสิ่งอำนวยความสะดวกสำหรับแป้นพิมพ์"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:444
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:442
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "เกิดข้อผิดพลาดในการแสดงแนะนำวิธี: %s"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:572
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:636
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:570
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:634
 msgid "Do you want to activate Slow Keys?"
 msgstr "จะเริ่มใช้การพิมพ์แบบช้าหรือไม่?"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:573
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:637
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:571
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:635
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "จะเลิกใช้การพิมพ์แบบช้าหรือไม่?"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:572
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:636
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -884,62 +884,62 @@ msgstr ""
 "คุณเพิ่งกดปุ่ม Shift ค้างไว้แปดวินาที นี่เป็นสัญญาณเรียกใช้การพิมพ์แบบช้า "
 "ซึ่งจะมีผลต่อการทำงานของแป้นพิมพ์"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:595
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:732
 msgid "Don't activate"
 msgstr "ไม่เริ่มใช้"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:595
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:732
 msgid "Don't deactivate"
 msgstr "ไม่เลิกใช้"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
 msgid "Activate"
 msgstr "เริ่มใช้"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
 msgid "Deactivate"
 msgstr "เลิกใช้"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Do_n't activate"
 msgstr "ไ_ม่เริ่มใช้"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Do_n't deactivate"
 msgstr "ไ_ม่เลิกใช้"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:660
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:799
 msgid "_Activate"
 msgstr "เ_ชื่อมต่อ"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:660
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:799
 msgid "_Deactivate"
 msgstr "_ตัดการเชื่อมต่อ"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
 msgid "Slow Keys Alert"
 msgstr "เริ่มใช้การพิมพ์แบบช้า"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:706
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:772
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:704
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:770
 msgid "Do you want to activate Sticky Keys?"
 msgstr "จะเริ่มใช้การค้างปุ่มกดหรือไม่?"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:707
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:773
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:705
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:771
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "จะเลิกใช้การค้างปุ่มกดหรือไม่?"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:707
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:773
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -947,8 +947,8 @@ msgstr ""
 "คุณเพิ่งกดปุ่ม Shift ห้าครั้งต่อเนื่องกัน นี่เป็นสัญญาณเรียกใช้การค้างปุ่มกด"
 " ซึ่งจะมีผลต่อการทำงานของแป้นพิมพ์"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -957,11 +957,11 @@ msgstr ""
 "คุณเพิ่งกดสองปุ่มพร้อมกัน หรือกดปุ่ม Shift ห้าครั้งต่อเนื่องกัน "
 "นี่เป็นสัญญาณสำหรับปิดการค้างปุ่มกด ซึ่งจะมีผลต่อการทำงานของแป้นพิมพ์"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
 msgid "Sticky Keys Alert"
 msgstr "เลิกใช้การค้างปุ่มกด"
 
-#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:766
+#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:764
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:14
 msgid "Universal Access Preferences"
 msgstr "ปรับแต่งการอำนวยความสะดวกทั่วไป"
@@ -1064,25 +1064,25 @@ msgid ""
 "about low disk space"
 msgstr ""
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:63
+#: plugins/housekeeping/msd-ldsm-dialog.c:60
 msgid "Don't show any warnings again for this file system"
 msgstr ""
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:65
+#: plugins/housekeeping/msd-ldsm-dialog.c:62
 msgid "Don't show any warnings again"
 msgstr "ไม่ต้องแสดงคำเตือนนี้อีก"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:78
+#: plugins/housekeeping/msd-ldsm-dialog.c:75
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr "โวลุม \"%s\" มีเนื้อที่ว่างเหลือเพียง %s"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:81
+#: plugins/housekeeping/msd-ldsm-dialog.c:78
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr "คอมพิวเตอร์เครื่องนี้มีเนื้อที่ว่างเหลือเพียง %s"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:97
+#: plugins/housekeeping/msd-ldsm-dialog.c:94
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
@@ -1091,7 +1091,7 @@ msgstr ""
 "หรือลบโปรแกรมหรือแฟ้มที่ไม่ใช้แล้ว หรือย้ายแฟ้มต่างๆ "
 "ไปที่ดิสก์หรือพาร์ทิชันอื่น"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:100
+#: plugins/housekeeping/msd-ldsm-dialog.c:97
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
@@ -1099,7 +1099,7 @@ msgstr ""
 "คุณสามารถคืนเนื้อที่ว่างในดิสก์ได้โดยลบโปรแกรมหรือแฟ้มที่ไม่ใช้แล้ว "
 "หรือย้ายแฟ้มต่างๆ ไปที่ดิสก์หรือพาร์ทิชันอื่น"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:105
+#: plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
@@ -1107,7 +1107,7 @@ msgstr ""
 "คุณสามารถคืนเนื้อที่ว่างในดิสก์ได้โดยเทขยะในถังขยะทิ้ง "
 "หรือลบโปรแกรมหรือแฟ้มที่ไม่ใช้แล้ว หรือย้ายแฟ้มต่างๆ ไปที่ดิสก์ภายนอก"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:108
+#: plugins/housekeeping/msd-ldsm-dialog.c:105
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
@@ -1116,19 +1116,19 @@ msgstr ""
 "หรือย้ายแฟ้มต่างๆ ไปที่ดิสก์ภายนอก"
 
 #. Set up all the window stuff here
-#: plugins/housekeeping/msd-ldsm-dialog.c:204
+#: plugins/housekeeping/msd-ldsm-dialog.c:201
 msgid "Low Disk Space"
 msgstr "พื้นที่ดิสก์เหลือน้อย"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:439
+#: plugins/housekeeping/msd-ldsm-dialog.c:436
 msgid "Empty Trash"
 msgstr "เทขยะ"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:447
+#: plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Examine…"
 msgstr ""
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:454
+#: plugins/housekeeping/msd-ldsm-dialog.c:451
 msgid "Ignore"
 msgstr "ละเลย"
 
@@ -1180,17 +1180,17 @@ msgstr "ปุ่มลัด"
 msgid "Keybindings plugin"
 msgstr "ปลั๊กอินจัดการปุ่มลัด"
 
-#: plugins/keybindings/msd-keybindings-manager.c:110
+#: plugins/keybindings/msd-keybindings-manager.c:108
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "การกำหนดปุ่มลัด (%s) ผิดรูปแบบ"
 
-#: plugins/keybindings/msd-keybindings-manager.c:146
+#: plugins/keybindings/msd-keybindings-manager.c:144
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "การกำหนดปุ่มลัด (%s) ไม่สมบูรณ์"
 
-#: plugins/keybindings/msd-keybindings-manager.c:488
+#: plugins/keybindings/msd-keybindings-manager.c:486
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -1244,7 +1244,7 @@ msgstr "ปุ่มสั่งการสื่อ"
 msgid "Media keys plugin"
 msgstr "ปลั๊กอินจัดการปุ่มสั่งการสื่อ"
 
-#: plugins/media-keys/msd-media-keys-manager.c:187
+#: plugins/media-keys/msd-media-keys-manager.c:184
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
@@ -1253,7 +1253,7 @@ msgstr ""
 "กรุณาตรวจสอบว่าคุณได้กำหนดคำสั่งเทอร์มินัลปริยายไว้ "
 "โดยกำหนดเป็นโปรแกรมที่เรียกใช้ได้"
 
-#: plugins/media-keys/msd-media-keys-manager.c:227
+#: plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1262,46 +1262,46 @@ msgstr ""
 "ไม่สามารถเรียกใช้คำสั่ง: %s\n"
 "กรุณาตรวจดูคำสั่งว่าเป็นคำสั่งที่ถูกต้องหรือไม่"
 
-#: plugins/media-keys/msd-media-keys-manager.c:641
+#: plugins/media-keys/msd-media-keys-manager.c:638
 #: plugins/media-keys/test-media-window.c:81
 msgid "Touchpad enabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:641
+#: plugins/media-keys/msd-media-keys-manager.c:638
 #: plugins/media-keys/test-media-window.c:74
 msgid "Touchpad disabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:957
+#: plugins/media-keys/msd-media-keys-manager.c:954
 #: plugins/media-keys/test-media-window.c:88
 msgid "Bluetooth disabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:960
+#: plugins/media-keys/msd-media-keys-manager.c:957
 #: plugins/media-keys/test-media-window.c:95
 msgid "Bluetooth enabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:964
+#: plugins/media-keys/msd-media-keys-manager.c:961
 #: plugins/media-keys/test-media-window.c:102
 msgid "Airplane mode enabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:967
+#: plugins/media-keys/msd-media-keys-manager.c:964
 #: plugins/media-keys/test-media-window.c:109
 msgid "Airplane mode disabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:998
+#: plugins/media-keys/msd-media-keys-manager.c:995
 msgid "Hardware Airplane Mode"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:1036
+#: plugins/media-keys/msd-media-keys-manager.c:1033
 #: plugins/media-keys/test-media-window.c:123
 msgid "Changing Screen Layout"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:1040
+#: plugins/media-keys/msd-media-keys-manager.c:1037
 #: plugins/media-keys/test-media-window.c:116
 msgid "No External Display"
 msgstr ""
@@ -1314,16 +1314,16 @@ msgstr "เมาส์"
 msgid "Mouse plugin"
 msgstr "ปลั๊กอินจัดการเมาส์"
 
-#: plugins/mouse/msd-mouse-manager.c:1652
+#: plugins/mouse/msd-mouse-manager.c:1650
 msgid "Could not enable mouse accessibility features"
 msgstr "ไม่สามารถเปิดใช้สิ่งอำนวยความสะดวกสำหรับเมาส์"
 
-#: plugins/mouse/msd-mouse-manager.c:1654
+#: plugins/mouse/msd-mouse-manager.c:1652
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 
-#: plugins/mouse/msd-mouse-manager.c:1657
+#: plugins/mouse/msd-mouse-manager.c:1655
 msgid "Mouse Preferences"
 msgstr "การปรับแต่งเมาส์"
 
@@ -1431,116 +1431,116 @@ msgstr "เวลาพักพิมพ์"
 msgid "Typing break plugin"
 msgstr "ปลั๊กอินจัดการเวลาพักพิมพ์"
 
-#: plugins/xrandr/msd-xrandr-manager.c:371
+#: plugins/xrandr/msd-xrandr-manager.c:369
 msgid "Could not switch the monitor configuration"
 msgstr "ไม่สามารถเปลี่ยนค่าตั้งของจอภาพ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:395
+#: plugins/xrandr/msd-xrandr-manager.c:393
 msgid "Could not restore the display's configuration"
 msgstr "ไม่สามารถเรียกคืนค่าตั้งของจอแสดงผลได้"
 
-#: plugins/xrandr/msd-xrandr-manager.c:420
+#: plugins/xrandr/msd-xrandr-manager.c:418
 msgid "Could not restore the display's configuration from a backup"
 msgstr "ไม่สามารถเรียกคืนค่าตั้งของจอแสดงผลจากข้อมูลที่สำรองไว้ได้"
 
-#: plugins/xrandr/msd-xrandr-manager.c:441
+#: plugins/xrandr/msd-xrandr-manager.c:439
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
 msgstr[0] ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:490
+#: plugins/xrandr/msd-xrandr-manager.c:488
 msgid "Does the display look OK?"
 msgstr "จอแสดงผลดูใช้ได้หรือยัง?"
 
-#: plugins/xrandr/msd-xrandr-manager.c:497
+#: plugins/xrandr/msd-xrandr-manager.c:495
 msgid "_Restore Previous Configuration"
 msgstr "เ_รียกคืนค่าตั้งก่อนหน้า"
 
-#: plugins/xrandr/msd-xrandr-manager.c:498
+#: plugins/xrandr/msd-xrandr-manager.c:496
 msgid "_Keep This Configuration"
 msgstr "ใ_ช้ค่าตั้งนี้"
 
-#: plugins/xrandr/msd-xrandr-manager.c:579
+#: plugins/xrandr/msd-xrandr-manager.c:577
 msgid "The selected configuration for displays could not be applied"
 msgstr "ไม่สามารถเริ่มใช้ค่าตั้งจอแสดงผลที่เลือก"
 
-#: plugins/xrandr/msd-xrandr-manager.c:1178
+#: plugins/xrandr/msd-xrandr-manager.c:1176
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "ไม่สามารถปรับแสดงข้อมูลของหน้าจอ: %s"
 
-#: plugins/xrandr/msd-xrandr-manager.c:1182
+#: plugins/xrandr/msd-xrandr-manager.c:1180
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "จะพยายามเปลี่ยนค่าตั้งของจอภาพต่อไป"
 
-#: plugins/xrandr/msd-xrandr-manager.c:1938
+#: plugins/xrandr/msd-xrandr-manager.c:1936
 msgid "Rotation not supported"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2003
-#: plugins/xrandr/msd-xrandr-manager.c:2035
+#: plugins/xrandr/msd-xrandr-manager.c:2001
+#: plugins/xrandr/msd-xrandr-manager.c:2033
 msgid "Could not save monitor configuration"
 msgstr "ไม่สามารถบันทึกค่าตั้งของจอภาพ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2057
+#: plugins/xrandr/msd-xrandr-manager.c:2055
 msgid "Mirroring outputs not supported"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2088
+#: plugins/xrandr/msd-xrandr-manager.c:2086
 msgid "Normal"
 msgstr "ปกติ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2089
+#: plugins/xrandr/msd-xrandr-manager.c:2087
 msgid "Left"
 msgstr "ซ้าย"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2090
+#: plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "Right"
 msgstr "ขวา"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2091
+#: plugins/xrandr/msd-xrandr-manager.c:2089
 msgid "Upside Down"
 msgstr "กลับหัว"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2180
+#: plugins/xrandr/msd-xrandr-manager.c:2178
 msgid "ON"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2181
+#: plugins/xrandr/msd-xrandr-manager.c:2179
 msgid "Turn this monitor off"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2184
+#: plugins/xrandr/msd-xrandr-manager.c:2182
 msgid "OFF"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2185
+#: plugins/xrandr/msd-xrandr-manager.c:2183
 msgid "Turn this monitor on"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2245
+#: plugins/xrandr/msd-xrandr-manager.c:2243
 msgid "Same output all monitors"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2246
+#: plugins/xrandr/msd-xrandr-manager.c:2244
 msgid "Mirror same output to all monitors and turn them on"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2293
+#: plugins/xrandr/msd-xrandr-manager.c:2291
 msgid "_Configure Display Settings…"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2303
+#: plugins/xrandr/msd-xrandr-manager.c:2301
 msgid "Open the display configuration dialog (all settings)"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2356
+#: plugins/xrandr/msd-xrandr-manager.c:2354
 msgid "Configure display settings"
 msgstr "ตั้งค่าหน้าจอ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2416
+#: plugins/xrandr/msd-xrandr-manager.c:2414
 msgid "Could not apply the stored configuration for monitors"
 msgstr "ไม่สามารถเริ่มใช้ค่าตั้งของจอภาพที่บันทึกไว้"
 
@@ -1552,7 +1552,7 @@ msgstr "XRandR"
 msgid "Set up screen size and rotation settings"
 msgstr "ตั้งค่าความละเอียดของจอภาพและการหมุนภาพบนจอ"
 
-#: plugins/xrdb/msd-xrdb-manager.c:251 plugins/xrdb/msd-xrdb-manager.c:320
+#: plugins/xrdb/msd-xrdb-manager.c:249 plugins/xrdb/msd-xrdb-manager.c:318
 msgid "Cannot determine user's home directory"
 msgstr "ไม่ทราบตำแหน่งโฟลเดอร์บ้านของผู้ใช้"
 

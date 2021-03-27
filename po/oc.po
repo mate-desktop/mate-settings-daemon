@@ -7,15 +7,15 @@
 # 48c2de07903ce5a77a8e90265f95c4c2_8909374 <837c8d0ab97b27e737893c19f79bd4de_348476>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Cédric Valmary <cvalmary@yahoo.fr>, 2020
-# Quentin PAGÈS, 2020
+# Quentin PAGÈS, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.23.2\n"
+"Project-Id-Version: mate-settings-daemon 1.24.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2019-11-19 11:28+0100\n"
+"POT-Creation-Date: 2020-08-13 13:32+0200\n"
 "PO-Revision-Date: 2020-02-16 15:02+0000\n"
-"Last-Translator: Quentin PAGÈS, 2020\n"
+"Last-Translator: Quentin PAGÈS, 2021\n"
 "Language-Team: Occitan (post 1500) (https://www.transifex.com/mate/teams/13566/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -86,6 +86,10 @@ msgid ""
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
 msgstr ""
+"Lo tipe d'anticrenelatge utilizat pel rendut de las poliças. Las valors "
+"possiblas son : « none » per cap d'anticrenelatge, « grayscale » per "
+"l'anticrenelatge classic per nivèls de gris e « rgba » per l'anticrenelatge "
+"per sospixèls (ecrans LCD unicament)."
 
 #: data/org.mate.font-rendering.gschema.xml.in:32
 msgid "Hinting"
@@ -109,6 +113,10 @@ msgid ""
 "common), \"bgr\" for blue on left, \"vrgb\" for red on top, \"vbgr\" for red"
 " on bottom."
 msgstr ""
+"L'òrdre dels elements sospixèls sus un ecran LCD ; unicament utilizat se "
+"l'anticrenelatge es definit a « rgba ». Las valors possiblas son « rgb » pel"
+" roge a esquèrra (lo mai corrent), « bgr » pel blau a esquèrra, « vrgb » pel"
+" roge amont, « vbgr » pel roge aval."
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:25
 msgid "possible values are \"on\", \"off\", and \"custom\"."
@@ -192,11 +200,11 @@ msgstr "Sulhet de desplaçament"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:31
 msgid "Distance before a drag is started."
-msgstr ""
+msgstr "Distància abans qu'un lisar siá iniciat."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:35
 msgid "Double Click Time"
-msgstr ""
+msgstr "Velocitat del clic doble"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:36
 msgid "Length of a double click."
@@ -214,13 +222,15 @@ msgstr ""
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:45
 msgid "Locate Pointer"
-msgstr ""
+msgstr "Trobar lo puntador"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:46
 msgid ""
 "Highlights the current location of the pointer when the Control key is "
 "pressed and released."
 msgstr ""
+"Met en evidéncia l'emplaçament actual del puntador quand la tòca Ctrl es "
+"quichada e relachada."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:50
 msgid "Cursor theme"
@@ -240,7 +250,7 @@ msgstr ""
 
 #: data/org.mate.peripherals-smartcard.gschema.xml.in:6
 msgid "Smartcard removal action"
-msgstr ""
+msgstr "Accion quand la carta de piuse es levada"
 
 #: data/org.mate.peripherals-smartcard.gschema.xml.in:7
 msgid ""
@@ -250,7 +260,7 @@ msgstr ""
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:15
 msgid "Disable touchpad while typing"
-msgstr ""
+msgstr "Desactivar lo pavat tactil pendent la picada"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:16
 msgid ""
@@ -271,7 +281,7 @@ msgstr ""
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:25
 msgid "Enable vertical edge scrolling"
-msgstr ""
+msgstr "Indica se lo desfilament lateral es activat"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:26
 msgid "Set this to TRUE to allow vertical edge scrolling"
@@ -479,13 +489,16 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:15
 msgid "Free percentage notify threshold"
-msgstr ""
+msgstr "Sulhet d'avertiment en percentatge d'espaci liure"
 
 #: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:16
 msgid ""
 "Percentage free space threshold for initial warning of low disk space. If "
 "the percentage free space drops below this, a warning will be shown."
 msgstr ""
+"Sulhet d'espaci liure, en percentatge, per l'alèrta iniciala d'espaci de "
+"disc feble. Se lo percentatge d'espaci liure tomba en dejós d'aqueste "
+"sulhet, una alèrta es afichada."
 
 #: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:20
 msgid "Subsequent free percentage notify threshold"
@@ -496,6 +509,8 @@ msgid ""
 "Specify the percentage that the free disk space should reduce by before "
 "issuing a subsequent warning."
 msgstr ""
+"Indica lo percentatge de reduccion d'espaci de disc abans d'emetre un novèl "
+"avertiment."
 
 #: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:25
 msgid "Free space no notify threshold"
@@ -506,24 +521,30 @@ msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
 msgstr ""
+"Indica una talha en Go. Se la quantitat d'espaci de disc disponibla es "
+"superiora a aqueste paramètre, cap d'alèrta serà pas afichada."
 
 #: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:30
 msgid "Minimum notify period for repeated warnings"
-msgstr ""
+msgstr "Interval minimum de repeticion dels avertiments"
 
 #: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:31
 msgid ""
 "Specify a time in minutes. Subsequent warnings for a volume will not appear "
 "more often than this period."
 msgstr ""
+"Indica un interval en minutas. Aqueste paramètre constituís l'interval de "
+"temps minimum entre mantuna alèrtas per un meteis volum."
 
 #: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:35
 msgid "Mount paths to ignore"
-msgstr ""
+msgstr "Camins de montatge d'ignorar"
 
 #: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:36
 msgid "Specify a list of mount paths to ignore when they run low on space."
 msgstr ""
+"Indica una lista de camins de montatge d'ignorar quand lor espaci de disc es"
+" feble."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:10
 msgid "Show OSD notification"
@@ -555,7 +576,7 @@ msgstr "Sordina"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:31
 msgid "Binding to mute the system volume."
-msgstr ""
+msgstr "Acorchi per metre lo son general en sordina."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:35
 msgid "Volume down"
@@ -563,7 +584,7 @@ msgstr "Redusir lo volum"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:36
 msgid "Binding to lower the system volume."
-msgstr ""
+msgstr "Acorchi per baissar lo volum general del son."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:40
 msgid "Volume up"
@@ -571,7 +592,7 @@ msgstr "Aumentar lo volum"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:41
 msgid "Binding to raise the system volume."
-msgstr ""
+msgstr "Acorchi per aumentar lo volum general del son."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:45
 msgid "Mute the audio quietly"
@@ -619,7 +640,7 @@ msgstr "Se desconnècta"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:71
 msgid "Binding to log out."
-msgstr ""
+msgstr "Acorchi per se desconnectar."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:75
 msgid "Eject"
@@ -627,7 +648,7 @@ msgstr "Ejectar"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:76
 msgid "Binding to eject an optical disc."
-msgstr ""
+msgstr "Acorchi per ejectar un disc optic."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:80
 msgid "Home folder"
@@ -635,7 +656,7 @@ msgstr "Repertòri personal"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:81
 msgid "Binding to open the Home folder."
-msgstr ""
+msgstr "Acorchi per dobrir lo dorsièr personal."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:85
 msgid "Search"
@@ -643,7 +664,7 @@ msgstr "Recercar"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:86
 msgid "Binding to launch the search tool."
-msgstr ""
+msgstr "Acorchi per aviar l'aisina de recèrca."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:90
 msgid "Launch email client"
@@ -651,7 +672,7 @@ msgstr "Aviar lo client de messatjariá"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:91
 msgid "Binding to launch the email client."
-msgstr ""
+msgstr "Acorchi per aviar lo logicial de messatjariá."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:95
 msgid "Launch settings"
@@ -667,7 +688,7 @@ msgstr "Varrolhar l'ecran"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:101
 msgid "Binding to lock the screen."
-msgstr ""
+msgstr "Acorchi per verrolhar l'ecran."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:105
 msgid "Launch help browser"
@@ -675,7 +696,7 @@ msgstr "Aviar lo navigador d'ajuda"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:106
 msgid "Binding to launch the help browser."
-msgstr ""
+msgstr "Acorchi per aviar lo navigador d'ajuda."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:110
 msgid "Launch calculator"
@@ -683,7 +704,7 @@ msgstr "Aviar la calculeta"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:111
 msgid "Binding to launch the calculator."
-msgstr ""
+msgstr "Acorchi per aviar la calculadoira."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:115
 msgid "Launch instant messenger"
@@ -699,7 +720,7 @@ msgstr "Aviar lo navigador web"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:121
 msgid "Binding to launch the web browser."
-msgstr ""
+msgstr "Acorchi per aviar lo navigador Web."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:125
 msgid "Launch media player"
@@ -707,7 +728,7 @@ msgstr "Aviar lo lector multimèdia"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:126
 msgid "Binding to launch the media player."
-msgstr ""
+msgstr "Acorchi per aviar lo lector multimèdia."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:130
 msgid "Play (or play/pause)"
@@ -715,15 +736,15 @@ msgstr "Lectura (o Lectura/Pausa)"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:131
 msgid "Binding to start playback (or toggle play/pause)."
-msgstr ""
+msgstr "Acorchi per aviar (o suspendre) la lectura."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:135
 msgid "Pause playback"
-msgstr ""
+msgstr "Metre en pausa la lectura"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:136
 msgid "Binding to pause playback."
-msgstr ""
+msgstr "Acorchi per metre en pausa la lectura."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:140
 msgid "Stop playback"
@@ -731,7 +752,7 @@ msgstr "Arrestar la lectura"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:141
 msgid "Binding to stop playback."
-msgstr ""
+msgstr "Acorchi per interrompre la lectura."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:145
 msgid "Previous track"
@@ -739,7 +760,7 @@ msgstr "Pista precedenta"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:146
 msgid "Binding to skip to previous track."
-msgstr ""
+msgstr "Acorchi per tornar a la pista precedenta."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:150
 msgid "Next track"
@@ -747,19 +768,19 @@ msgstr "Pista seguenta"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:151
 msgid "Binding to skip to next track."
-msgstr ""
+msgstr "Acorchi per passar a la pista seguenta."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:156
 msgid "Binding to show the screen magnifier"
-msgstr ""
+msgstr "Acorchi per afichar la lópia."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:161
 msgid "Binding to start the screen reader"
-msgstr ""
+msgstr "Acorchi per activar lo lector d'ecran."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:166
 msgid "Binding to show the on-screen keyboard"
-msgstr ""
+msgstr "Acorchi per afichar lo clavièr visual."
 
 #: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:15
 msgid "Show Displays in Notification Area"
@@ -807,7 +828,7 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:35
 msgid "File for default configuration for RandR"
-msgstr ""
+msgstr "Fichièr de configuracion per defaut de RandR"
 
 #: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:36
 msgid ""
@@ -817,6 +838,12 @@ msgid ""
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
 msgstr ""
+"L'empeuton XRandR cèrca una configuracion per defaut dins lo fichièr indicat"
+" per aquesta clau. Es lo meteis tipe de fichièr que ~/.config/monitors.xml "
+"qu'es en general emmagazinat dins lo dorsièr personal de l'utilizaire. Se "
+"l'utilizaire possedís pas aqueste fichièr o se n'a un que correspond pas a "
+"la configuracion dels ecrans, es lo fichièr indicat per aquesta clau qu'es "
+"utilizat."
 
 #: data/mate-settings-daemon.desktop.in.in:4
 msgid "MATE Settings Daemon"
@@ -840,108 +867,117 @@ msgstr "Quita aprèp un relambi (per desbugatge)"
 
 #: plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.desktop.in:5
 msgid "Accessibility Keyboard"
-msgstr ""
+msgstr "Accessibilitat del clavièr"
 
 #: plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.desktop.in:6
 msgid "Accessibility keyboard plugin"
-msgstr ""
+msgstr "Empeuton d'accessibilitat del clavièr"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:444
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:442
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "I a agut una error al moment d'afichar l'ajuda : %s"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:572
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:636
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:570
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:634
 msgid "Do you want to activate Slow Keys?"
 msgstr ""
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:573
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:637
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:571
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:635
 msgid "Do you want to deactivate Slow Keys?"
 msgstr ""
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:572
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:636
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
 msgstr ""
+"Venètz de quichar la tòca Majuscula pendent 8 segondas. S'agís de l'acorchi "
+"de clavièr per activar la foncionalitat tòcas lentas que modifica lo mòde de"
+" foncionament de vòstre clavièr."
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:595
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:732
 msgid "Don't activate"
 msgstr "Activar pas"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:595
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:732
 msgid "Don't deactivate"
 msgstr "Desactivar pas"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
 msgid "Activate"
 msgstr "Activar"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:601
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:738
 msgid "Deactivate"
 msgstr "Desactivar"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Do_n't activate"
 msgstr "Pas _activar"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:657
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:796
 msgid "Do_n't deactivate"
 msgstr "Pas _desactivar"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:660
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:799
 msgid "_Activate"
 msgstr "_Activar"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:660
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:799
 msgid "_Deactivate"
 msgstr "_Desactivar"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:664
 msgid "Slow Keys Alert"
 msgstr ""
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:706
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:772
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:704
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:770
 msgid "Do you want to activate Sticky Keys?"
+msgstr ""
+
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:705
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:771
+msgid "Do you want to deactivate Sticky Keys?"
 msgstr ""
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:707
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:773
-msgid "Do you want to deactivate Sticky Keys?"
-msgstr ""
-
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
 msgstr ""
+"Venètz de quichar la tòca Majuscula 5 còps de seguida. S'agís de l'acorchi "
+"de clavièr per activar la foncionalitat de las tòcas remanentas que modifica"
+" lo mòde de foncionament de vòstre clavièr."
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
 msgstr ""
+"Venètz de quichar 2 tòcas a l'encòp o de quichar la tòca Majuscula 5 còps de"
+" seguida. S'agís de l'acorchi de clavièr per desactivar la foncionalitat de "
+"las tòcas remanentas que modifica lo mòde de foncionament de vòstre clavièr."
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:803
 msgid "Sticky Keys Alert"
 msgstr ""
 
-#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:766
+#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:764
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:14
 msgid "Universal Access Preferences"
 msgstr "Preferéncias d'accès universal"
@@ -984,7 +1020,7 @@ msgstr "Paramètres d’accessibilitat"
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:6
 msgid "Accessibility settings plugin"
-msgstr ""
+msgstr "Empeuton dels paramètres d'accessibilitat"
 
 #: plugins/background/background.mate-settings-plugin.desktop.in:5
 msgid "Background"
@@ -1043,63 +1079,65 @@ msgid ""
 "Automatically prunes thumbnail caches and other transient files, and warns "
 "about low disk space"
 msgstr ""
+"Purga automaticament los caches de las vinhetas e autres fichièrs temporaris"
+" e avertís en cas d'espaci de disc bas"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:63
+#: plugins/housekeeping/msd-ldsm-dialog.c:60
 msgid "Don't show any warnings again for this file system"
 msgstr ""
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:65
+#: plugins/housekeeping/msd-ldsm-dialog.c:62
 msgid "Don't show any warnings again"
 msgstr "Mostrar pas mai d’avertiments"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:78
+#: plugins/housekeeping/msd-ldsm-dialog.c:75
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr "Sul disc « %s » demòra pas que %s d’espaci liure."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:81
+#: plugins/housekeeping/msd-ldsm-dialog.c:78
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr "Aqueste ordenador a pas que %s d’espaci disc liure."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:97
+#: plugins/housekeeping/msd-ldsm-dialog.c:94
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
 msgstr ""
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:100
+#: plugins/housekeeping/msd-ldsm-dialog.c:97
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
 msgstr ""
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:105
+#: plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
 msgstr ""
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:108
+#: plugins/housekeeping/msd-ldsm-dialog.c:105
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
 msgstr ""
 
 #. Set up all the window stuff here
-#: plugins/housekeeping/msd-ldsm-dialog.c:204
+#: plugins/housekeeping/msd-ldsm-dialog.c:201
 msgid "Low Disk Space"
 msgstr "Espaci de disc feble"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:439
+#: plugins/housekeeping/msd-ldsm-dialog.c:436
 msgid "Empty Trash"
 msgstr "Voidar la banasta"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:447
+#: plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Examine…"
 msgstr "Examinar…"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:454
+#: plugins/housekeeping/msd-ldsm-dialog.c:451
 msgid "Ignore"
 msgstr "Ignorar"
 
@@ -1145,23 +1183,23 @@ msgstr "_Voidar la banasta"
 
 #: plugins/keybindings/keybindings.mate-settings-plugin.desktop.in:5
 msgid "Keybindings"
-msgstr ""
+msgstr "Acorchis de clavièr"
 
 #: plugins/keybindings/keybindings.mate-settings-plugin.desktop.in:6
 msgid "Keybindings plugin"
 msgstr ""
 
-#: plugins/keybindings/msd-keybindings-manager.c:110
+#: plugins/keybindings/msd-keybindings-manager.c:108
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr ""
 
-#: plugins/keybindings/msd-keybindings-manager.c:146
+#: plugins/keybindings/msd-keybindings-manager.c:144
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr ""
 
-#: plugins/keybindings/msd-keybindings-manager.c:488
+#: plugins/keybindings/msd-keybindings-manager.c:486
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -1207,65 +1245,65 @@ msgstr ""
 
 #: plugins/media-keys/media-keys.mate-settings-plugin.desktop.in:5
 msgid "Media keys"
-msgstr ""
+msgstr "Tòcas multimèdias"
 
 #: plugins/media-keys/media-keys.mate-settings-plugin.desktop.in:6
 msgid "Media keys plugin"
-msgstr ""
+msgstr "Empeuton de las tòcas multimèdia"
 
-#: plugins/media-keys/msd-media-keys-manager.c:187
+#: plugins/media-keys/msd-media-keys-manager.c:184
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:227
+#: plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:641
+#: plugins/media-keys/msd-media-keys-manager.c:638
 #: plugins/media-keys/test-media-window.c:81
 msgid "Touchpad enabled"
 msgstr "Pavat tactil activat"
 
-#: plugins/media-keys/msd-media-keys-manager.c:641
+#: plugins/media-keys/msd-media-keys-manager.c:638
 #: plugins/media-keys/test-media-window.c:74
 msgid "Touchpad disabled"
 msgstr "Pavat tactil desactivat"
 
-#: plugins/media-keys/msd-media-keys-manager.c:957
+#: plugins/media-keys/msd-media-keys-manager.c:954
 #: plugins/media-keys/test-media-window.c:88
 msgid "Bluetooth disabled"
 msgstr "Bluetooth desactivat"
 
-#: plugins/media-keys/msd-media-keys-manager.c:960
+#: plugins/media-keys/msd-media-keys-manager.c:957
 #: plugins/media-keys/test-media-window.c:95
 msgid "Bluetooth enabled"
 msgstr "Bluetooth activat"
 
-#: plugins/media-keys/msd-media-keys-manager.c:964
+#: plugins/media-keys/msd-media-keys-manager.c:961
 #: plugins/media-keys/test-media-window.c:102
 msgid "Airplane mode enabled"
 msgstr "Mòde avion activat"
 
-#: plugins/media-keys/msd-media-keys-manager.c:967
+#: plugins/media-keys/msd-media-keys-manager.c:964
 #: plugins/media-keys/test-media-window.c:109
 msgid "Airplane mode disabled"
 msgstr "Mòde avion desactivat"
 
-#: plugins/media-keys/msd-media-keys-manager.c:998
+#: plugins/media-keys/msd-media-keys-manager.c:995
 msgid "Hardware Airplane Mode"
-msgstr ""
+msgstr "Mòde avion material"
 
-#: plugins/media-keys/msd-media-keys-manager.c:1036
+#: plugins/media-keys/msd-media-keys-manager.c:1033
 #: plugins/media-keys/test-media-window.c:123
 msgid "Changing Screen Layout"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:1040
+#: plugins/media-keys/msd-media-keys-manager.c:1037
 #: plugins/media-keys/test-media-window.c:116
 msgid "No External Display"
 msgstr ""
@@ -1276,18 +1314,18 @@ msgstr "Mirga"
 
 #: plugins/mouse/mouse.mate-settings-plugin.desktop.in:6
 msgid "Mouse plugin"
-msgstr ""
+msgstr "Empeuton de la mirga"
 
-#: plugins/mouse/msd-mouse-manager.c:1652
+#: plugins/mouse/msd-mouse-manager.c:1650
 msgid "Could not enable mouse accessibility features"
 msgstr ""
 
-#: plugins/mouse/msd-mouse-manager.c:1654
+#: plugins/mouse/msd-mouse-manager.c:1652
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 
-#: plugins/mouse/msd-mouse-manager.c:1657
+#: plugins/mouse/msd-mouse-manager.c:1655
 msgid "Mouse Preferences"
 msgstr "Preferéncias de la mirga"
 
@@ -1303,11 +1341,11 @@ msgstr "Empeuton Mpris"
 #. Priority=100
 #: plugins/rfkill/rfkill.mate-settings-plugin.desktop.in:7
 msgid "Rfkill"
-msgstr ""
+msgstr "Rfkill"
 
 #: plugins/rfkill/rfkill.mate-settings-plugin.desktop.in:8
 msgid "Rfkill plugin"
-msgstr ""
+msgstr "Empeuton Rfkill"
 
 #: plugins/smartcard/msd-smartcard-manager.c:164
 msgid "Module Path"
@@ -1345,7 +1383,7 @@ msgstr ""
 
 #: plugins/smartcard/msd-smartcard.c:148
 msgid "Slot ID"
-msgstr ""
+msgstr "ID del connectador"
 
 #: plugins/smartcard/msd-smartcard.c:149
 msgid "The slot the card is in"
@@ -1385,7 +1423,7 @@ msgstr "Son"
 
 #: plugins/sound/sound.mate-settings-plugin.desktop.in:6
 msgid "Sound Sample Cache plugin"
-msgstr ""
+msgstr "Empeuton del cache de l'escapolon de son"
 
 #: plugins/typing-break/typing-break.mate-settings-plugin.desktop.in:5
 msgid "Typing Break"
@@ -1395,117 +1433,121 @@ msgstr ""
 msgid "Typing break plugin"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:371
+#: plugins/xrandr/msd-xrandr-manager.c:369
 msgid "Could not switch the monitor configuration"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:395
+#: plugins/xrandr/msd-xrandr-manager.c:393
 msgid "Could not restore the display's configuration"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:420
+#: plugins/xrandr/msd-xrandr-manager.c:418
 msgid "Could not restore the display's configuration from a backup"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:441
+#: plugins/xrandr/msd-xrandr-manager.c:439
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
 msgstr[0] ""
+"L’afichatge serà reïnicializat a la configuracion precedenta d’aquí %d "
+"segonda"
 msgstr[1] ""
+"L’afichatge serà reïnicializat a la configuracion precedenta d’aquí %d "
+"segondas"
 
-#: plugins/xrandr/msd-xrandr-manager.c:490
+#: plugins/xrandr/msd-xrandr-manager.c:488
 msgid "Does the display look OK?"
-msgstr "L’afichatge vos sembla corrèct ?"
+msgstr "L’afichatge vos sembla corrècte ?"
 
-#: plugins/xrandr/msd-xrandr-manager.c:497
+#: plugins/xrandr/msd-xrandr-manager.c:495
 msgid "_Restore Previous Configuration"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:498
+#: plugins/xrandr/msd-xrandr-manager.c:496
 msgid "_Keep This Configuration"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:579
+#: plugins/xrandr/msd-xrandr-manager.c:577
 msgid "The selected configuration for displays could not be applied"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:1178
+#: plugins/xrandr/msd-xrandr-manager.c:1176
 #, c-format
 msgid "Could not refresh the screen information: %s"
-msgstr ""
+msgstr "Impossible d'actualizar las informacions de l'ecran : %s"
 
-#: plugins/xrandr/msd-xrandr-manager.c:1182
+#: plugins/xrandr/msd-xrandr-manager.c:1180
 msgid "Trying to switch the monitor configuration anyway."
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:1938
+#: plugins/xrandr/msd-xrandr-manager.c:1936
 msgid "Rotation not supported"
 msgstr "Rotacion pas compatibla"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2003
-#: plugins/xrandr/msd-xrandr-manager.c:2035
+#: plugins/xrandr/msd-xrandr-manager.c:2001
+#: plugins/xrandr/msd-xrandr-manager.c:2033
 msgid "Could not save monitor configuration"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2057
+#: plugins/xrandr/msd-xrandr-manager.c:2055
 msgid "Mirroring outputs not supported"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2088
+#: plugins/xrandr/msd-xrandr-manager.c:2086
 msgid "Normal"
 msgstr "Normala"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2089
+#: plugins/xrandr/msd-xrandr-manager.c:2087
 msgid "Left"
 msgstr "Esquèrra"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2090
+#: plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "Right"
 msgstr "Dreita"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2091
+#: plugins/xrandr/msd-xrandr-manager.c:2089
 msgid "Upside Down"
 msgstr "Inversat"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2180
+#: plugins/xrandr/msd-xrandr-manager.c:2178
 msgid "ON"
 msgstr "ACTIVAT"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2181
+#: plugins/xrandr/msd-xrandr-manager.c:2179
 msgid "Turn this monitor off"
 msgstr "Aqueste ecran es atudat"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2184
+#: plugins/xrandr/msd-xrandr-manager.c:2182
 msgid "OFF"
 msgstr "DESACTIVAT"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2185
+#: plugins/xrandr/msd-xrandr-manager.c:2183
 msgid "Turn this monitor on"
 msgstr "Atudar aqueste ecran"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2245
+#: plugins/xrandr/msd-xrandr-manager.c:2243
 msgid "Same output all monitors"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2246
+#: plugins/xrandr/msd-xrandr-manager.c:2244
 msgid "Mirror same output to all monitors and turn them on"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2293
+#: plugins/xrandr/msd-xrandr-manager.c:2291
 msgid "_Configure Display Settings…"
 msgstr "_Configurar los paramètres d’afichatge"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2303
+#: plugins/xrandr/msd-xrandr-manager.c:2301
 msgid "Open the display configuration dialog (all settings)"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2356
+#: plugins/xrandr/msd-xrandr-manager.c:2354
 msgid "Configure display settings"
 msgstr "Configurar los paramètres d’afichatge"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2416
+#: plugins/xrandr/msd-xrandr-manager.c:2414
 msgid "Could not apply the stored configuration for monitors"
 msgstr ""
 
@@ -1515,9 +1557,9 @@ msgstr "XRandR"
 
 #: plugins/xrandr/xrandr.mate-settings-plugin.desktop.in:6
 msgid "Set up screen size and rotation settings"
-msgstr ""
+msgstr "Definís la talha de l'ecran e los paramètres de rotacion"
 
-#: plugins/xrdb/msd-xrdb-manager.c:251 plugins/xrdb/msd-xrdb-manager.c:320
+#: plugins/xrdb/msd-xrdb-manager.c:249 plugins/xrdb/msd-xrdb-manager.c:318
 msgid "Cannot determine user's home directory"
 msgstr "Impossible de determinar lo repertòri personal de l’utilizaire"
 
