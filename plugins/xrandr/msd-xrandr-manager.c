@@ -50,6 +50,10 @@
 #include <libnotify/notify.h>
 #endif
 
+#ifdef HAVE_RDA
+#include <rda/rda.h>
+#endif
+
 #include "mate-settings-profile.h"
 #include "msd-xrandr-manager.h"
 
@@ -2408,6 +2412,12 @@ apply_intended_configuration (MsdXrandrManager *manager, const char *intended_fi
 {
         GError *my_error;
         gboolean result;
+
+#ifdef HAVE_RDA
+	if (rda_session_is_remote()) {
+		return;
+	}
+#endif
 
         my_error = NULL;
         result = apply_configuration_from_filename (manager, intended_filename, TRUE, timestamp, &my_error);

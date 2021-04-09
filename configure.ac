@@ -61,6 +61,7 @@ LIBMATEKBD_REQUIRED_VERSION=1.17.0
 LIBNOTIFY_REQUIRED_VERSION=0.7.0
 LIBATSPI_REQUIRED_VERSION=2.0
 LIBMATEMIXER_REQUIRED_VERSION=1.10.0
+RDA_REQUIRED_VERSION=0.0.3
 
 PKG_CHECK_MODULES(SETTINGS_DAEMON,
 	glib-2.0 >= $GLIB_REQUIRED_VERSION
@@ -386,6 +387,15 @@ fi
 AM_CONDITIONAL(BUILD_RFKILL, [test x"$enable_rfkill" = x"yes"])
 
 # ---------------------------------------------------------------------------
+# - Check if Remote Desktop Awareness support is available
+# ---------------------------------------------------------------------------
+
+PKG_CHECK_MODULES(RDA, rda >= $RDA_REQUIRED_VERSION, have_rda=yes, have_rda=no)
+if test "x$have_rda" = "xyes"; then
+  AC_DEFINE(HAVE_RDA, 1, [Have the Remote Desktop Awareness library])
+fi
+
+# ---------------------------------------------------------------------------
 # Enable Profiling
 # ---------------------------------------------------------------------------
 AC_ARG_ENABLE(profiling,
@@ -502,4 +512,5 @@ ${NSS_DATABASE:+\
     System nssdb:             ${NSS_DATABASE}
 }\
     Profiling support:        ${enable_profiling}
+    RD awareness:             ${have_rda}
 "
