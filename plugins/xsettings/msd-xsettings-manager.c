@@ -520,7 +520,7 @@ delayed_toggle_bg_draw (gpointer value)
 }
 
 static void
-scale_change_workarounds (MateXSettingsManager *manager, int new_scale)
+scale_change_workarounds (MateXSettingsManager *manager, int new_scale, int unscaled_dpi)
 {
         if (manager->priv->window_scale == new_scale)
                 return;
@@ -534,8 +534,11 @@ scale_change_workarounds (MateXSettingsManager *manager, int new_scale)
                 gsettings = g_hash_table_lookup (manager->priv->gsettings, INTERFACE_SCHEMA);
                 /* If enabled, set env variables to properly scale QT applications */
                 if (g_settings_get_boolean (gsettings, SCALING_FACTOR_QT_KEY)) {
-                        if (!update_user_env_variable ("QT_AUTO_SCREEN_SCALE_FACTOR", "0", &error)) {
-                                g_warning ("There was a problem when setting QT_AUTO_SCREEN_SCALE_FACTOR=0: %s", error->message);
+                        char dpibuf[G_ASCII_DTOSTR_BUF_SIZE];
+                        g_snprintf (dpibuf, sizeof (dpibuf), "%d", (int) (unscaled_dpi / 1024.0 + 0.5));
+
+                        if (!update_user_env_variable ("QT_FONT_DPI", dpibuf, &error)) {
+                                g_warning ("There was a problem when setting QT_FONT_DPI=%s: %s", dpibuf, error->message);
                                 g_clear_error (&error);
                         }
                         if (!update_user_env_variable ("QT_SCALE_FACTOR", new_scale == 2 ? "2" : "1", &error)) {
@@ -610,7 +613,7 @@ xft_settings_set_xsettings (MateXSettingsManager *manager,
         }
         mate_settings_profile_end (NULL);
 
-        scale_change_workarounds (manager, settings->window_scale);
+        scale_change_workarounds (manager, settings->window_scale, settings->dpi);
 }
 
 static void
