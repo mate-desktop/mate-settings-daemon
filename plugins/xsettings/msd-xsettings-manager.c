@@ -534,13 +534,15 @@ scale_change_workarounds (MateXSettingsManager *manager, int new_scale, int unsc
                 gsettings = g_hash_table_lookup (manager->priv->gsettings, INTERFACE_SCHEMA);
                 /* If enabled, set env variables to properly scale QT applications */
                 if (g_settings_get_boolean (gsettings, SCALING_FACTOR_QT_KEY)) {
-                        char dpibuf[G_ASCII_DTOSTR_BUF_SIZE];
-                        g_snprintf (dpibuf, sizeof (dpibuf), "%d", (int) (unscaled_dpi / 1024.0 + 0.5));
+                        char *dpi;
 
-                        if (!update_user_env_variable ("QT_FONT_DPI", dpibuf, &error)) {
-                                g_warning ("There was a problem when setting QT_FONT_DPI=%s: %s", dpibuf, error->message);
+                        dpi = g_strdup_printf ("%d", (int) (unscaled_dpi / 1024.0 + 0.5));
+                        if (!update_user_env_variable ("QT_FONT_DPI", dpi, &error)) {
+                                g_warning ("There was a problem when setting QT_FONT_DPI=%s: %s", dpi, error->message);
                                 g_clear_error (&error);
                         }
+                        g_free (dpi);
+
                         if (!update_user_env_variable ("QT_SCALE_FACTOR", new_scale == 2 ? "2" : "1", &error)) {
                                 g_warning ("There was a problem when setting QT_SCALE_FACTOR=%d: %s", new_scale, error->message);
                                 g_clear_error (&error);
@@ -651,7 +653,8 @@ static void
 xft_settings_set_xresources (MateXftSettings *settings)
 {
         GString    *add_string;
-        char        dpibuf[G_ASCII_DTOSTR_BUF_SIZE];
+        char        dtostr_buf[G_ASCII_DTOSTR_BUF_SIZE];
+        char       *dpi;
         Display    *dpy;
 
         mate_settings_profile_start (NULL);
@@ -663,8 +666,10 @@ xft_settings_set_xresources (MateXftSettings *settings)
 
         g_debug("xft_settings_set_xresources: orig res '%s'", add_string->str);
 
-        g_snprintf (dpibuf, sizeof (dpibuf), "%d", (int) (settings->scaled_dpi / 1024.0 + 0.5));
-        update_property (add_string, "Xft.dpi", dpibuf);
+        dpi = g_strdup_printf ("%d", (int) (settings->scaled_dpi / 1024.0 + 0.5));
+        update_property (add_string, "Xft.dpi", dpi);
+        g_free (dpi);
+
         update_property (add_string, "Xft.antialias",
                                 settings->antialias ? "1" : "0");
         update_property (add_string, "Xft.hinting",
@@ -678,7 +683,7 @@ xft_settings_set_xresources (MateXftSettings *settings)
         update_property (add_string, "Xcursor.theme",
                                 settings->cursor_theme);
         update_property (add_string, "Xcursor.size",
-                                g_ascii_dtostr (dpibuf, sizeof (dpibuf), (double) settings->cursor_size));
+                                g_ascii_dtostr (dtostr_buf, sizeof (dtostr_buf), (double) settings->cursor_size));
 
         g_debug("xft_settings_set_xresources: new res '%s'", add_string->str);
 
