@@ -10,9 +10,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.23.2\n"
+"Project-Id-Version: mate-settings-daemon 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2019-11-19 11:28+0100\n"
+"POT-Creation-Date: 2020-08-20 10:34+0200\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
 "Language-Team: Kannada (https://www.transifex.com/mate/teams/13566/kn/)\n"
@@ -980,7 +980,7 @@ msgstr ""
 msgid "Sticky Keys Alert"
 msgstr "ಸ್ಟಿಕಿ ಕೀಲಿಗಳ ಎಚ್ಚರಿಕೆ"
 
-#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:766
+#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:829
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:14
 msgid "Universal Access Preferences"
 msgstr "ಜಾಗತಿಕ ನಿಲುಕಣಾ ಆದ್ಯತೆಗಳು"
@@ -1017,6 +1017,10 @@ msgstr "ನಕಲಿ ಕೀಲಿಒತ್ತುಗಳನ್ನು ಆಲಕ್�
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:198
 msgid "Press and _hold keys to accept them (Slow Keys)"
 msgstr "ಕೀಲಿಗಳನ್ನು ಅಂಗೀಕರಿಸಲು ಅವನ್ನು ಒತ್ತಿ ಹಿಡಿಯಿರಿ(ನಿಧಾನ ಕೀಲಿಗಳು) (_h)"
+
+#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:214
+msgid "_Beep when pressing a key while CapsLock is active"
+msgstr ""
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:5
 msgid "Accessibility settings"
@@ -1084,25 +1088,25 @@ msgid ""
 "about low disk space"
 msgstr ""
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:63
+#: plugins/housekeeping/msd-ldsm-dialog.c:60
 msgid "Don't show any warnings again for this file system"
 msgstr ""
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:65
+#: plugins/housekeeping/msd-ldsm-dialog.c:62
 msgid "Don't show any warnings again"
 msgstr "ಈ ಸಂದೇಶವನ್ನು ಪುನಃ ತೋರಿಸಬೇಡ"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:78
+#: plugins/housekeeping/msd-ldsm-dialog.c:75
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr "ಪರಿಮಾಣ \"%s\" ದಲ್ಲಿ ಕೇವಲ %s ಡಿಸ್ಕ್ ಸ್ಥಳವು ಮಾತ್ರ ಬಾಕಿ ಇದೆ."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:81
+#: plugins/housekeeping/msd-ldsm-dialog.c:78
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr "ಈ ಗಣಕದಲ್ಲಿ ಕೇವಲ %s ಡಿಸ್ಕ್ ಸ್ಥಳವು ಮಾತ್ರ ಬಾಕಿ ಇದೆ."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:97
+#: plugins/housekeeping/msd-ldsm-dialog.c:94
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
@@ -1111,7 +1115,7 @@ msgstr ""
 "ತೆಗೆಯುವ ಮೂಲಕ, ಅಥವ ಕಡತಗಳನ್ನು ಇನ್ನೊಂದು ಡಿಸ್ಕಿಗೆ ಅಥವ ವಿಭಾಗಕ್ಕೆ ಸ್ಥಳಾಂತರಿಸುವ "
 "ಮೂಲಕ ಡಿಸ್ಕಿನಲ್ಲಿ ಸ್ಥಳವನ್ನು ಮುಕ್ತಗೊಳಿಸಬಹುದು."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:100
+#: plugins/housekeeping/msd-ldsm-dialog.c:97
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
@@ -1120,7 +1124,7 @@ msgstr ""
 "ಬೇರೊಂದು ಡಿಸ್ಕಿಗೆ ಅಥವ ವಿಭಾಗಕ್ಕೆ ಸ್ಥಳಾಂತರಿಸುವ ಮೂಲಕ ಡಿಸ್ಕಿನಲ್ಲಿ ಸ್ಥಳವನ್ನು "
 "ಮುಕ್ತಗೊಳಿಸಬಹುದು."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:105
+#: plugins/housekeeping/msd-ldsm-dialog.c:102
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
@@ -1129,7 +1133,7 @@ msgstr ""
 "ತೆಗೆಯುವ ಮೂಲಕ, ಅಥವ ಕಡತಗಳನ್ನು ಒಂದು ಹೊರಗಿನ ಡಿಸ್ಕಿಗೆ ಸ್ಥಳಾಂತರಿಸುವ ಮೂಲಕ "
 "ಡಿಸ್ಕಿನಲ್ಲಿ ಸ್ಥಳವನ್ನು ಮುಕ್ತಗೊಳಿಸಬಹುದು."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:108
+#: plugins/housekeeping/msd-ldsm-dialog.c:105
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
@@ -1138,19 +1142,19 @@ msgstr ""
 " ಹೊರಗಿನ ಡಿಸ್ಕಿಗೆ ಸ್ಥಳಾಂತರಿಸುವ ಮೂಲಕ ಡಿಸ್ಕಿನಲ್ಲಿ ಸ್ಥಳವನ್ನು ಮುಕ್ತಗೊಳಿಸಬಹುದು."
 
 #. Set up all the window stuff here
-#: plugins/housekeeping/msd-ldsm-dialog.c:204
+#: plugins/housekeeping/msd-ldsm-dialog.c:201
 msgid "Low Disk Space"
 msgstr "ಡಿಸ್ಕ್‌ ಜಾಗ ಕಡಿಮೆ ಇದೆ"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:439
+#: plugins/housekeeping/msd-ldsm-dialog.c:436
 msgid "Empty Trash"
 msgstr "ಕಸದಬುಟ್ಟಿಯನ್ನು ಖಾಲಿಮಾಡು"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:447
+#: plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Examine…"
 msgstr "ಪರೀಕ್ಷಿಸು..."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:454
+#: plugins/housekeeping/msd-ldsm-dialog.c:451
 msgid "Ignore"
 msgstr "ಅಲಕ್ಷಿಸು"
 
@@ -1203,17 +1207,17 @@ msgstr "ಕೀಲಿಬದ್ಧತೆಗಳು"
 msgid "Keybindings plugin"
 msgstr "ಕೀಲಿಬದ್ಧತೆಗಳ ಪ್ಲಗ್ಇನ್"
 
-#: plugins/keybindings/msd-keybindings-manager.c:110
+#: plugins/keybindings/msd-keybindings-manager.c:108
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "ಕೀಲಿಬದ್ಧತೆಯು (%s) ಅಮಾನ್ಯವಾಗಿದೆ"
 
-#: plugins/keybindings/msd-keybindings-manager.c:146
+#: plugins/keybindings/msd-keybindings-manager.c:144
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "ಕೀಲಿಬದ್ಧತೆ (%s) ಪೂರ್ಣವಾಗಿಲ್ಲ"
 
-#: plugins/keybindings/msd-keybindings-manager.c:488
+#: plugins/keybindings/msd-keybindings-manager.c:486
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -1247,15 +1251,15 @@ msgid ""
 " • The result of <b>%s</b>"
 msgstr ""
 
-#: plugins/keyboard/msd-keyboard-xkb.c:279
+#: plugins/keyboard/msd-keyboard-xkb.c:283
 msgid "_Layouts"
 msgstr ""
 
-#: plugins/keyboard/msd-keyboard-xkb.c:286
+#: plugins/keyboard/msd-keyboard-xkb.c:290
 msgid "Keyboard _Preferences"
 msgstr "ಕೀಲಿಮಣೆ ಆದ್ಯತೆಗಳು(_P)"
 
-#: plugins/keyboard/msd-keyboard-xkb.c:292
+#: plugins/keyboard/msd-keyboard-xkb.c:296
 msgid "Show _Current Layout"
 msgstr ""
 
@@ -1267,7 +1271,7 @@ msgstr "ಮೀಡಿಯಾ ಕೀಲಿಗಳು"
 msgid "Media keys plugin"
 msgstr "ಮೀಡಿಯಾ ಕೀಲಿಗಳು ಪ್ಲಗ್ಇನ್"
 
-#: plugins/media-keys/msd-media-keys-manager.c:187
+#: plugins/media-keys/msd-media-keys-manager.c:184
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
@@ -1275,7 +1279,7 @@ msgstr ""
 "ಪೂರ್ವನಿಯೋಜಿತಟರ್ಮಿನಲ್ ಪಡೆಯಲಾಗಿಲ್ಲ. ನಿಮ್ಮ ಪೂರ್ವನಿಯೋಜಿತ ಟರ್ಮಿನಲ್ ಆಜ್ಞೆಯನ್ನು "
 "ಹೊಂದಿಸಲಾಗಿದೆ ಹಾಗು ಒಂದು ಮಾನ್ಯವಾದ ಅನ್ವಯಕ್ಕೆ ಸೂಚಿತಗೊಂಡಿದೆ ಎಂದು ಪರಿಶೀಲಿಸಿ."
 
-#: plugins/media-keys/msd-media-keys-manager.c:227
+#: plugins/media-keys/msd-media-keys-manager.c:224
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1284,46 +1288,46 @@ msgstr ""
 "ಆಜ್ಞೆಯನ್ನು ಕಾರ್ಯಗತಗೊಳಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ: %s\n"
 "ಇದು ಒಂದು ಮಾನ್ಯವಾದ ಆಜ್ಞೆಯಾಗಿದೆ ಎಂದು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ."
 
-#: plugins/media-keys/msd-media-keys-manager.c:641
+#: plugins/media-keys/msd-media-keys-manager.c:638
 #: plugins/media-keys/test-media-window.c:81
 msgid "Touchpad enabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:641
+#: plugins/media-keys/msd-media-keys-manager.c:638
 #: plugins/media-keys/test-media-window.c:74
 msgid "Touchpad disabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:957
+#: plugins/media-keys/msd-media-keys-manager.c:954
 #: plugins/media-keys/test-media-window.c:88
 msgid "Bluetooth disabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:960
+#: plugins/media-keys/msd-media-keys-manager.c:957
 #: plugins/media-keys/test-media-window.c:95
 msgid "Bluetooth enabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:964
+#: plugins/media-keys/msd-media-keys-manager.c:961
 #: plugins/media-keys/test-media-window.c:102
 msgid "Airplane mode enabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:967
+#: plugins/media-keys/msd-media-keys-manager.c:964
 #: plugins/media-keys/test-media-window.c:109
 msgid "Airplane mode disabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:998
+#: plugins/media-keys/msd-media-keys-manager.c:995
 msgid "Hardware Airplane Mode"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:1036
+#: plugins/media-keys/msd-media-keys-manager.c:1033
 #: plugins/media-keys/test-media-window.c:123
 msgid "Changing Screen Layout"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:1040
+#: plugins/media-keys/msd-media-keys-manager.c:1037
 #: plugins/media-keys/test-media-window.c:116
 msgid "No External Display"
 msgstr ""
@@ -1336,16 +1340,16 @@ msgstr "ಮೌಸ್"
 msgid "Mouse plugin"
 msgstr "ಮೌಸ್ ಪ್ಲಗ್‌ಇನ್"
 
-#: plugins/mouse/msd-mouse-manager.c:1652
+#: plugins/mouse/msd-mouse-manager.c:1650
 msgid "Could not enable mouse accessibility features"
 msgstr "ಮೌಸ್‌ ನಿಲುಕಣಾ ಸೌಕರ್ಯಗಳನ್ನು ಶಕ್ತಗೊಳಿಸಲಾಗಿಲ್ಲ"
 
-#: plugins/mouse/msd-mouse-manager.c:1654
+#: plugins/mouse/msd-mouse-manager.c:1652
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 
-#: plugins/mouse/msd-mouse-manager.c:1657
+#: plugins/mouse/msd-mouse-manager.c:1655
 msgid "Mouse Preferences"
 msgstr "ಮೌಸ್ ಆದ್ಯತೆಗಳು"
 
@@ -1453,19 +1457,19 @@ msgstr "ಟೈಪಿಂಗ್ ವಿರಾಮ"
 msgid "Typing break plugin"
 msgstr "ಟೈಪಿಂಗ್ ವಿರಾಮ ಪ್ಲಗ್ಇನ್"
 
-#: plugins/xrandr/msd-xrandr-manager.c:371
+#: plugins/xrandr/msd-xrandr-manager.c:369
 msgid "Could not switch the monitor configuration"
 msgstr "ತೆರೆಯ ಸಂರಚನೆಯನ್ನು ಬದಲಾಯಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:395
+#: plugins/xrandr/msd-xrandr-manager.c:393
 msgid "Could not restore the display's configuration"
 msgstr "ಪ್ರದರ್ಶಕದ ಸಂರಚನೆಯನ್ನು ಮರಳಿ ಸ್ಥಾಪಿಸಲಾಗಿಲ್ಲ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:420
+#: plugins/xrandr/msd-xrandr-manager.c:418
 msgid "Could not restore the display's configuration from a backup"
 msgstr "ಪ್ರದರ್ಶಕದ ಸಂರಚನೆಯನ್ನು ಬ್ಯಾಕ್‌ಅಪ್‌ನಿಂದ ಮರಳಿ ಸ್ಥಾಪಿಸಲಾಗಿಲ್ಲ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:441
+#: plugins/xrandr/msd-xrandr-manager.c:439
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
@@ -1498,72 +1502,72 @@ msgstr "ತೆರೆಯ ಮಾಹಿತಿಯನ್ನು ಪುನಶ್ಚೇ�
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "ಆದರೂ ಸಹ ತೆರೆಯ ಸಂರಚನೆಯನ್ನು ಬದಲಾಯಿಸಲು ಪ್ರಯತ್ನಿಸಲಾಗುತ್ತಿದೆ."
 
-#: plugins/xrandr/msd-xrandr-manager.c:1938
+#: plugins/xrandr/msd-xrandr-manager.c:1939
 msgid "Rotation not supported"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2003
-#: plugins/xrandr/msd-xrandr-manager.c:2035
+#: plugins/xrandr/msd-xrandr-manager.c:2004
+#: plugins/xrandr/msd-xrandr-manager.c:2036
 msgid "Could not save monitor configuration"
 msgstr "ತೆರೆಯ ಸಂರಚನೆಯನ್ನು ಉಳಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2057
+#: plugins/xrandr/msd-xrandr-manager.c:2058
 msgid "Mirroring outputs not supported"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2088
+#: plugins/xrandr/msd-xrandr-manager.c:2089
 msgid "Normal"
 msgstr "ಸಾಮಾನ್ಯ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2089
+#: plugins/xrandr/msd-xrandr-manager.c:2090
 msgid "Left"
 msgstr "ಎಡ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2090
+#: plugins/xrandr/msd-xrandr-manager.c:2091
 msgid "Right"
 msgstr "ಬಲ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2091
+#: plugins/xrandr/msd-xrandr-manager.c:2092
 msgid "Upside Down"
 msgstr "ತಲೆ ಕೆಳಗೆ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2180
+#: plugins/xrandr/msd-xrandr-manager.c:2181
 msgid "ON"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2181
+#: plugins/xrandr/msd-xrandr-manager.c:2182
 msgid "Turn this monitor off"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2184
+#: plugins/xrandr/msd-xrandr-manager.c:2185
 msgid "OFF"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2185
+#: plugins/xrandr/msd-xrandr-manager.c:2186
 msgid "Turn this monitor on"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2245
+#: plugins/xrandr/msd-xrandr-manager.c:2246
 msgid "Same output all monitors"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2246
+#: plugins/xrandr/msd-xrandr-manager.c:2247
 msgid "Mirror same output to all monitors and turn them on"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2293
+#: plugins/xrandr/msd-xrandr-manager.c:2294
 msgid "_Configure Display Settings…"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2303
+#: plugins/xrandr/msd-xrandr-manager.c:2304
 msgid "Open the display configuration dialog (all settings)"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2356
+#: plugins/xrandr/msd-xrandr-manager.c:2361
 msgid "Configure display settings"
 msgstr "ಪ್ರದರ್ಶನ ಸಿದ್ಧತೆಗಳನ್ನು ಸಂರಚಿಸು"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2416
+#: plugins/xrandr/msd-xrandr-manager.c:2421
 msgid "Could not apply the stored configuration for monitors"
 msgstr "ತೆರೆಗಳಿಗಾಗಿ ಶೇಖರಿಸಲಾದ ಸಂರಚನೆಯನ್ನು ಅನ್ವಯಿಸಲಾಗಿಲ್ಲ"
 
@@ -1575,7 +1579,7 @@ msgstr "XRandR"
 msgid "Set up screen size and rotation settings"
 msgstr "ತೆರೆಯ ಗಾತ್ರ ಹಾಗು ಸುತ್ತುವಿಕೆಯನ್ನು ಹೊಂದಿಸು"
 
-#: plugins/xrdb/msd-xrdb-manager.c:251 plugins/xrdb/msd-xrdb-manager.c:320
+#: plugins/xrdb/msd-xrdb-manager.c:249 plugins/xrdb/msd-xrdb-manager.c:318
 msgid "Cannot determine user's home directory"
 msgstr "ಬಳಕೆದಾರರ ನೆಲೆ ಕಡತಕೋಶವನ್ನು ಕಂಡಹಿಡಿಯಲಾಗುತ್ತದೆ"
 
