@@ -1,3 +1,38 @@
+### mate-settings-daemon 1.25.1
+
+  * update translations
+  * xsettings: Improve Qt HiDPI environment settings
+  * xsettings: Set Xft.dpi in X resources to scaled_dpi
+  * rfkill: g_memdup is dreprecated from glib 2.68
+  * media-keys: memory leak
+  * keyboard: Remove warning -Wcast-function-type
+  * xsettings: Remove warning -Wcast-function-type
+  * background: Remove conversion warnings
+  * media-keys: Remove conversion warnings
+  * housekeeping: Remove warning -Wcast-function-type
+  * housekeeping: override finalize method in MsdHousekeepingManager
+  * housekeeping: promote MsdHousekeepingManager class to final type
+  * typing-break: promote MsdTypingBreakManager class to final type
+  * sound: promote MsdSoundManager class to final type
+  * build: set GETTEXT_PACKAGE=AC_PACKAGE_NAME
+  * cppcheck warning: struct member is never used
+  * background: promote MsdBackgroundManager class to final type
+  * mate-settings-daemon: Remove warning -Wcast-function-type
+  * mate-settings-daemon: Remove conversion warnings
+  * cppcheck warning: Variable is assigned a value that is never used
+  * cppcheck warning: known condition is always true
+  * cppcheck warning: null pointer redundant check
+  * housekeeping: Do not use deprecated gtk_image_new_from_stock
+  * Remove warning -Wshadow
+  * Use g_slist_free_full
+  * msd-background-manager: use g_list_free_full
+  * Remove USE_MATE2_MACROS from autogen.sh (legacy)
+  * msd-media-keys-manager: 'GTimeVal' is deprecated
+  * a11y-keyboard: Add support for togglekeys-backend setting
+  * a11y-keyboard: Delay registration of the plugin
+  * a11y-keyboard: Add sanity checks on beep sequence preferences
+  * a11y-keyboard: Manually beep for togglekeys
+
 ### mate-settings-daemon 1.25.0
 
   * update translations
