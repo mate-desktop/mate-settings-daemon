@@ -2,6 +2,7 @@
  * vim: set et sw=8 ts=8:
  *
  * Copyright (c) 2008, Novell, Inc.
+ * Copyright (C) 2012-2021 MATE Developers
  *
  * Authors: Vincent Untz <vuntz@gnome.org>
  *

@@ -4,6 +4,7 @@
  * Copyright (C) 2007 William Jon McCann <mccann@jhu.edu>
  * Copyright (C) 2007 Red Hat, Inc.
  * Copyright (C) 2012 Jasmine Hassan <jasmine.aura@gmail.com>
+ * Copyright (C) 2012-2021 MATE Developers
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

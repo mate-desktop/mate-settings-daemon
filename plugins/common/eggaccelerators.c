@@ -1,5 +1,6 @@
 /* eggaccelerators.c
  * Copyright (C) 2002  Red Hat, Inc.; Copyright 1998, 2001 Tim Janik
+ * Copyright (C) 2012-2021 MATE Developers
  * Developed by Havoc Pennington, Tim Janik
  *
  * This library is free software; you can redistribute it and/or

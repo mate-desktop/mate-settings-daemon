@@ -4,6 +4,7 @@
  *               2013 Steve Zesch <stevezesch2@gmail.com>
  *               2007 William Jon McCann <mccann@jhu.edu>
  *               2007 Jan Arne Petersen <jap@gnome.org>
+ * Copyright (C) 2012-2021 MATE Developers
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

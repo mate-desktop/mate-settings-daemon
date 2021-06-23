@@ -2,6 +2,7 @@
  *
  * msd-ldsm-dialog.c
  * Copyright (C) Chris Coulson 2009 <chrisccoulson@googlemail.com>
+ * Copyright (C) 2012-2021 MATE Developers
  *
  * msd-ldsm-dialog.c is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the

@@ -3,6 +3,7 @@
  * msd-ldsm-trash-empty.c
  * Copyright (C) Chris Coulson 2009 <chrisccoulson@googlemail.com>
  *	     (C) Ryan Lortie 2008
+ * Copyright (C) 2012-2021 MATE Developers
  *
  * msd-ldsm-trash-empty.c is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the

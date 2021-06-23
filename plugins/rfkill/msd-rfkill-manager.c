@@ -2,6 +2,7 @@
  *
  * Copyright (C) 2007 William Jon McCann <mccann@jhu.edu>
  * Copyright (C) 2010,2011 Red Hat, Inc.
+ * Copyright (C) 2012-2021 MATE Developers
  *
  * Author: Bastien Nocera <hadess@hadess.net>
  *
