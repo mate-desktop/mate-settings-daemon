@@ -1,0 +1,171 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cppcheck - HTML report - mate-settings-daemon</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+    <script>
+      function getStyle(el, styleProp) {
+        var y;
+
+        if (el.currentStyle) {
+          y = el.currentStyle[styleProp];
+        } else if (window.getComputedStyle) {
+          y = document.defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+        }
+
+        return y;
+      }
+
+      function toggle() {
+        var el = this.expandable_content;
+        var mark = this.expandable_marker;
+
+        if (el.style.display === "block") {
+          el.style.display = "none";
+          mark.textContent = "[+]";
+        } else {
+          el.style.display = "block";
+          mark.textContent = "[-]";
+        }
+      }
+
+      function initExpandables() {
+        var elements = document.querySelectorAll(".expandable");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var el = elements[i];
+          var clickable = el.querySelector("span");
+          var marker = clickable.querySelector(".marker");
+          var content = el.querySelector(".content");
+          var width = clickable.clientWidth - parseInt(getStyle(content, "padding-left")) - parseInt(getStyle(content, "padding-right"));
+          content.style.width = width + "px";
+          clickable.expandable_content = content;
+          clickable.expandable_marker = marker;
+          clickable.addEventListener("click", toggle);
+        }
+      }
+
+      function toggleDisplay(id) {
+        var elements = document.querySelectorAll("." + id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("d-none");
+        }
+      }
+
+      function toggleAll() {
+        var elements = document.querySelectorAll("input");
+
+        // starting from 1 since 0 is the "toggle all" input
+        for (var i = 1, len = elements.length; i < len; i++) {
+          var el = elements[i];
+
+          if (el.checked) {
+            el.checked = false;
+          } else {
+            el.checked = true;
+          }
+
+          toggleDisplay(el.id);
+        }
+      }
+      window.addEventListener("load", initExpandables);
+    </script>
+  </head>
+  <body>
+    <div id="header" class="header">
+      <h1>Cppcheck report - mate-settings-daemon: </h1>
+    </div>
+    <div class="wrapper">
+      <div id="menu_index">
+       <p id="filename"><a href="index.html">Defect summary;</a> </p>
+
+       <label><input type="checkbox" onclick="toggleAll()" checked> Toggle all</label>
+       <table>
+           <tr><th>Show</th><th>#</th><th>Defect ID</th></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="variableScope" name="variableScope" checked></td><td>26</td><td>variableScope</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="unknownMacro" name="unknownMacro" checked></td><td>2</td><td>unknownMacro</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="duplicateExpression" name="duplicateExpression" checked></td><td>1</td><td>duplicateExpression</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="identicalInnerCondition" name="identicalInnerCondition" checked></td><td>1</td><td>identicalInnerCondition</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="invalidPointerCast" name="invalidPointerCast" checked></td><td>1</td><td>invalidPointerCast</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="missingInclude" name="missingInclude" checked></td><td>1</td><td>missingInclude</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="redundantAssignment" name="redundantAssignment" checked></td><td>1</td><td>redundantAssignment</td></tr>
+           <tr><td></td><td>33</td><td>total</td></tr>
+       </table>
+       <p><a href="stats.html">Statistics</a></p>
+    </div>
+    <div id="content_index">
+
+       <table>
+       <tr><th>Line</th><th>Id</th><th>CWE</th><th>Severity</th><th>Message</th></tr>
+       <tr><td colspan="5"><a href="19.html"></a></td></tr>
+         <tr class="missingInclude"><td></td><td>missingInclude</td><td></td><td>information</td><td>Cppcheck cannot find all the include files (use --check-config for details)</td></tr>
+       <tr><td colspan="5"><a href="0.html">mate-settings-daemon/main.c</a></td></tr>
+       <tr class="variableScope"><td><a href="0.html#line-318">318</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;private_proxy&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="1.html">mate-settings-daemon/mate-settings-manager.c</a></td></tr>
+       <tr class="variableScope"><td><a href="1.html#line-429">429</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;settings&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="2.html">mate-settings-daemon/mate-settings-profile.c</a></td></tr>
+       <tr class="variableScope"><td><a href="2.html#line-43">43</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;args&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="3.html">plugins/a11y-keyboard/msd-a11y-preferences-dialog.c</a></td></tr>
+       <tr class="variableScope"><td><a href="3.html#line-174">174</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;scale&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="4.html">plugins/clipboard/msd-clipboard-manager.c</a></td></tr>
+       <tr class="variableScope"><td><a href="4.html#line-496">496</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;targets&apos; can be reduced.</td></tr>
+       <tr class="variableScope"><td><a href="4.html#line-497">497</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;n_targets&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="5.html">plugins/common/eggaccelerators.c</a></td></tr>
+       <tr class="duplicateExpression"><td><a href="5.html#line-410">410</a></td><td>duplicateExpression</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >Same expression on both sides of &apos;-=&apos;.</td></tr>
+       <tr><td colspan="5"><a href="6.html">plugins/datetime/msd-datetime-mechanism.c</a></td></tr>
+       <tr class="unknownMacro"><td><a href="6.html#line-76">76</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+       <tr><td colspan="5"><a href="7.html">plugins/datetime/system-timezone.c</a></td></tr>
+       <tr class="variableScope"><td><a href="7.html#line-832">832</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;tz&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="8.html">plugins/housekeeping/msd-disk-space.c</a></td></tr>
+       <tr class="identicalInnerCondition"><td><a href="8.html#line-624">624</a></td><td>identicalInnerCondition</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>warning</td><td >Identical inner &apos;if&apos; condition is always true.</td></tr>
+       <tr><td colspan="5"><a href="9.html">plugins/housekeeping/msd-ldsm-dialog.c</a></td></tr>
+       <tr class="variableScope"><td><a href="9.html#line-124">124</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;path_to_remove&apos; can be reduced.</td></tr>
+       <tr class="variableScope"><td><a href="9.html#line-418">418</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;button_empty_trash&apos; can be reduced.</td></tr>
+       <tr class="variableScope"><td><a href="9.html#line-418">418</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;button_analyze&apos; can be reduced.</td></tr>
+       <tr class="variableScope"><td><a href="9.html#line-419">419</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;empty_trash_image&apos; can be reduced.</td></tr>
+       <tr class="variableScope"><td><a href="9.html#line-419">419</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;analyze_image&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="10.html">plugins/housekeeping/msd-ldsm-trash-empty.c</a></td></tr>
+       <tr class="variableScope"><td><a href="10.html#line-167">167</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;info&apos; can be reduced.</td></tr>
+       <tr class="variableScope"><td><a href="10.html#line-168">168</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;child&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="11.html">plugins/keyboard/msd-keyboard-xkb.c</a></td></tr>
+       <tr class="variableScope"><td><a href="11.html#line-171">171</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;context&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="12.html">plugins/media-keys/msd-media-keys-manager.c</a></td></tr>
+       <tr class="redundantAssignment"><td><a href="12.html#line-307">307</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td >Variable &apos;need_flush&apos; is reassigned a value before the old one has been used.</td></tr>
+       <tr class="variableScope"><td><a href="12.html#line-1325">1325</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;window&apos; can be reduced.</td></tr>
+       <tr class="variableScope"><td><a href="12.html#line-1326">1326</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;screen&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="13.html">plugins/mouse/msd-mouse-manager.c</a></td></tr>
+       <tr class="invalidPointerCast"><td><a href="13.html#line-760">760</a></td><td>invalidPointerCast</td><td><a href="https://cwe.mitre.org/data/definitions/704.html">704</a></td><td>portability</td><td >Casting between signed long * and float * which have an incompatible binary data representation.</td></tr>
+       <tr class="variableScope"><td><a href="13.html#line-1338">1338</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;ptr&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="14.html">plugins/mouse/msd-timeline.c</a></td></tr>
+       <tr class="unknownMacro"><td><a href="14.html#line-78">78</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+       <tr><td colspan="5"><a href="15.html">plugins/rfkill/msd-rfkill-manager.c</a></td></tr>
+       <tr class="variableScope"><td><a href="15.html#line-528">528</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;changed&apos; can be reduced.</td></tr>
+       <tr class="variableScope"><td><a href="15.html#line-529">529</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;property&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="16.html">plugins/smartcard/msd-smartcard-manager.c</a></td></tr>
+       <tr class="variableScope"><td><a href="16.html#line-907">907</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;bytes_read&apos; can be reduced.</td></tr>
+       <tr class="variableScope"><td><a href="16.html#line-944">944</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;bytes_written&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="17.html">plugins/xrandr/msd-xrandr-manager.c</a></td></tr>
+       <tr class="variableScope"><td><a href="17.html#line-854">854</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;width&apos; can be reduced.</td></tr>
+       <tr class="variableScope"><td><a href="17.html#line-854">854</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;height&apos; can be reduced.</td></tr>
+       <tr class="variableScope"><td><a href="17.html#line-1487">1487</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;output&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="18.html">plugins/xsettings/msd-xsettings-manager.c</a></td></tr>
+       <tr class="variableScope"><td><a href="18.html#line-986">986</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td >The scope of the variable &apos;i&apos; can be reduced.</td></tr>
+       </table>
+      </div> <!-- /.wrapper -->
+    </div>
+    <div id="footer" class="footer">
+      <p>
+        Cppcheck 2.3 - a tool for static C/C++ code analysis<br>
+        <br>
+        Internet: <a href="http://cppcheck.net">http://cppcheck.net</a><br>
+        IRC: <a href="irc://irc.freenode.net/cppcheck">irc://irc.freenode.net/cppcheck</a><br>
+      </p>
+    </div>
+  </body>
+</html>
