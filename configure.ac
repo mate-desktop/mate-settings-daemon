@@ -1,8 +1,8 @@
 AC_PREREQ([2.60])
 
 m4_define([msd_api_version_major],[1])
-m4_define([msd_api_version_minor],[25])
-m4_define([msd_api_version_micro],[1])
+m4_define([msd_api_version_minor],[26])
+m4_define([msd_api_version_micro],[0])
 m4_define([msd_api_version],
 	[msd_api_version_major.msd_api_version_minor.msd_api_version_micro])
 
