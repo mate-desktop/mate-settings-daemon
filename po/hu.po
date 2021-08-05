@@ -15,9 +15,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.25.0\n"
+"Project-Id-Version: mate-settings-daemon 1.25.1\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2020-08-20 10:34+0200\n"
+"POT-Creation-Date: 2021-06-23 22:04+0200\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
 "Language-Team: Hungarian (https://www.transifex.com/mate/teams/13566/hu/)\n"
@@ -900,19 +900,19 @@ msgstr ""
 msgid "MATE Settings Daemon"
 msgstr "MATE beállításdémon"
 
-#: mate-settings-daemon/main.c:65
+#: mate-settings-daemon/main.c:66
 msgid "Enable debugging code"
 msgstr "Hibakeresési kód engedélyezése"
 
-#: mate-settings-daemon/main.c:66
+#: mate-settings-daemon/main.c:67
 msgid "Replace the current daemon"
 msgstr "A jelenlegi daemon cseréje"
 
-#: mate-settings-daemon/main.c:67
+#: mate-settings-daemon/main.c:68
 msgid "Don't become a daemon"
 msgstr "Ne démonként fusson"
 
-#: mate-settings-daemon/main.c:68
+#: mate-settings-daemon/main.c:69
 msgid "Exit after a time (for debugging)"
 msgstr "Kilépés egy idő után (hibakövetéshez)"
 
@@ -924,23 +924,23 @@ msgstr "Billentyűzet akadálymentesítése"
 msgid "Accessibility keyboard plugin"
 msgstr "Billentyűzet akadálymentesítése bővítmény"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:444
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:460
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "Hiba történt a súgó megjelenítése közben: %s"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:572
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:636
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:652
 msgid "Do you want to activate Slow Keys?"
 msgstr "Szeretné aktiválni a Lassú billentyűket?"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:573
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:637
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:589
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "Ki szeretné kapcsolni a Lassú billentyűket?"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:590
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:654
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -948,62 +948,62 @@ msgstr ""
 "Lenyomva tartotta a Shift billentyűt 8 másodpercig. Ez a Lassú billentyűk "
 "szolgáltatás gyorsbillentyűje, ami a billentyűzet működését befolyásolja."
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
 msgid "Don't activate"
 msgstr "Ne kerüljön aktiválásra"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
 msgid "Don't deactivate"
 msgstr "Ne kerüljön deaktiválásra"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:619
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:756
 msgid "Activate"
 msgstr "Aktiválás"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:619
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:756
 msgid "Deactivate"
 msgstr "Deaktiválás"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:675
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:814
 msgid "Do_n't activate"
 msgstr "_Ne kerüljön aktiválásra"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:675
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:814
 msgid "Do_n't deactivate"
 msgstr "N_e kerüljön deaktiválásra"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:678
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:817
 msgid "_Activate"
 msgstr "_Aktiválás"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:678
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:817
 msgid "_Deactivate"
 msgstr "_Deaktiválás"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:682
 msgid "Slow Keys Alert"
 msgstr "Lassú billentyűk figyelmeztetés"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:706
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:772
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:722
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:788
 msgid "Do you want to activate Sticky Keys?"
 msgstr "Szeretné bekapcsolni a Ragadós billentyűket?"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:707
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:773
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:723
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "Ki szeretné kapcsolni a Ragadós billentyűket?"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:791
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -1011,8 +1011,8 @@ msgstr ""
 "Egymás után ötször nyomta meg a Shift billentyűt. Ez a Ragadós billentyűk "
 "szolgáltatás gyorsbillentyűje, ami a billentyűzet viselkedését befolyásolja."
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:727
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:793
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -1022,11 +1022,11 @@ msgstr ""
 "kikapcsolja a Ragadós billentyűk szolgáltatást, ami a billentyűzet "
 "viselkedését befolyásolja."
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:821
 msgid "Sticky Keys Alert"
 msgstr "Ragadós billentyűk figyelmeztetés"
 
-#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:829
+#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:830
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:14
 msgid "Universal Access Preferences"
 msgstr "Akadálymentesítés beállításai"
@@ -1133,25 +1133,25 @@ msgid ""
 "about low disk space"
 msgstr ""
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:60
+#: plugins/housekeeping/msd-ldsm-dialog.c:61
 msgid "Don't show any warnings again for this file system"
 msgstr "Ne jelenítsen meg figyelmeztetéseket ehhez a fájlrendszerhez"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:62
+#: plugins/housekeeping/msd-ldsm-dialog.c:63
 msgid "Don't show any warnings again"
 msgstr "Ne jelenjen meg több figyelmeztetés"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:75
+#: plugins/housekeeping/msd-ldsm-dialog.c:76
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr "A(z) „%s” köteten már csak %s lemezhely maradt."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:78
+#: plugins/housekeeping/msd-ldsm-dialog.c:79
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr "A számítógépen már csak %s lemezhely maradt."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:94
+#: plugins/housekeeping/msd-ldsm-dialog.c:95
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
@@ -1160,7 +1160,7 @@ msgstr ""
 "programok vagy fájlok törlésével, vagy fájlok másik lemezre vagy partícióra "
 "mozgatásával."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:97
+#: plugins/housekeeping/msd-ldsm-dialog.c:98
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
@@ -1168,7 +1168,7 @@ msgstr ""
 "Lemezterületet szabadíthat fel a használaton kívüli programok vagy fájlok "
 "törlésével, vagy fájlok másik lemezre vagy partícióra mozgatásával."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:102
+#: plugins/housekeeping/msd-ldsm-dialog.c:103
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
@@ -1176,7 +1176,7 @@ msgstr ""
 "Lemezterületet szabadíthat fel a Kuka ürítésével, használaton kívüli "
 "programok vagy fájlok törlésével, vagy fájlok külső lemezre mozgatásával."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:105
+#: plugins/housekeeping/msd-ldsm-dialog.c:106
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
@@ -1201,35 +1201,35 @@ msgstr "Vizsgálat…"
 msgid "Ignore"
 msgstr "Mellőzés"
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:97
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:98
 #, c-format
 msgid "Removing item %lu of %lu"
 msgstr "%lu. elem eltávolítása, összesen %lu"
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:117
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:118
 #, c-format
 msgid "Removing: %s"
 msgstr "Eltávolítás: %s"
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:300
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:248
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:301
 msgid "Emptying the trash"
 msgstr "A Kuka ürítése"
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:276
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:277
 msgid "Preparing to empty trash…"
 msgstr "Felkészülés a Kuka ürítésére…"
 
 #. Translators: "Emptying trash from <device>"
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:303
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:304
 msgid "From: "
 msgstr "Innen: "
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:355
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:356
 msgid "Empty all of the items from the trash?"
 msgstr "Ki akarja üríteni az összes elemet a Kukából?"
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:358
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:359
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
@@ -1237,7 +1237,7 @@ msgstr ""
 "Ha a Kuka kiürítését választja, minden elem véglegesen elvész. Ne feledje, "
 "hogy egyenként is törölheti őket."
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:365
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:366
 msgid "_Empty Trash"
 msgstr "_Kuka ürítése"
 
@@ -1249,17 +1249,17 @@ msgstr "Billentyűparancsok"
 msgid "Keybindings plugin"
 msgstr "Billentyűparancsok bővítmény"
 
-#: plugins/keybindings/msd-keybindings-manager.c:108
+#: plugins/keybindings/msd-keybindings-manager.c:109
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "A billentyűparancs (%s) érvénytelen"
 
-#: plugins/keybindings/msd-keybindings-manager.c:144
+#: plugins/keybindings/msd-keybindings-manager.c:145
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "A billentyűparancs (%s) hiányos"
 
-#: plugins/keybindings/msd-keybindings-manager.c:486
+#: plugins/keybindings/msd-keybindings-manager.c:487
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -1276,7 +1276,7 @@ msgstr "Billentyűzet"
 msgid "Keyboard plugin"
 msgstr "Billentyűzet bővítmény"
 
-#: plugins/keyboard/msd-keyboard-xkb.c:119
+#: plugins/keyboard/msd-keyboard-xkb.c:120
 #, c-format
 msgid ""
 "Error activating XKB configuration.\n"
@@ -1305,15 +1305,15 @@ msgstr ""
 " • A(z) <b>%s</b> eredményét\n"
 " • A(z) <b>%s</b> eredményét"
 
-#: plugins/keyboard/msd-keyboard-xkb.c:283
+#: plugins/keyboard/msd-keyboard-xkb.c:286
 msgid "_Layouts"
 msgstr "_Kiosztások"
 
-#: plugins/keyboard/msd-keyboard-xkb.c:290
+#: plugins/keyboard/msd-keyboard-xkb.c:293
 msgid "Keyboard _Preferences"
 msgstr "Billentyűzet _beállításai"
 
-#: plugins/keyboard/msd-keyboard-xkb.c:296
+#: plugins/keyboard/msd-keyboard-xkb.c:299
 msgid "Show _Current Layout"
 msgstr "Aktuális _kiosztás megjelenítése"
 
@@ -1325,7 +1325,7 @@ msgstr "Médiabillentyűk"
 msgid "Media keys plugin"
 msgstr "Médiabillentyűk bővítmény"
 
-#: plugins/media-keys/msd-media-keys-manager.c:184
+#: plugins/media-keys/msd-media-keys-manager.c:185
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
@@ -1334,7 +1334,7 @@ msgstr ""
 "alapértelmezett terminál parancs be van állítva és érvényes alkalmazásra "
 "mutat."
 
-#: plugins/media-keys/msd-media-keys-manager.c:224
+#: plugins/media-keys/msd-media-keys-manager.c:225
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1344,46 +1344,46 @@ msgstr ""
 "Ellenőrizze, hogy ez a parancs érvényes-e."
 
 #: plugins/media-keys/msd-media-keys-manager.c:638
-#: plugins/media-keys/test-media-window.c:81
+#: plugins/media-keys/test-media-window.c:82
 msgid "Touchpad enabled"
 msgstr "Érintőtábla engedélyezve"
 
 #: plugins/media-keys/msd-media-keys-manager.c:638
-#: plugins/media-keys/test-media-window.c:74
+#: plugins/media-keys/test-media-window.c:75
 msgid "Touchpad disabled"
 msgstr "Érintőtábla letiltva"
 
-#: plugins/media-keys/msd-media-keys-manager.c:954
-#: plugins/media-keys/test-media-window.c:88
+#: plugins/media-keys/msd-media-keys-manager.c:956
+#: plugins/media-keys/test-media-window.c:89
 msgid "Bluetooth disabled"
 msgstr "Bluetooth letiltva"
 
-#: plugins/media-keys/msd-media-keys-manager.c:957
-#: plugins/media-keys/test-media-window.c:95
+#: plugins/media-keys/msd-media-keys-manager.c:959
+#: plugins/media-keys/test-media-window.c:96
 msgid "Bluetooth enabled"
 msgstr "Bluetooth engedélyezve"
 
-#: plugins/media-keys/msd-media-keys-manager.c:961
-#: plugins/media-keys/test-media-window.c:102
+#: plugins/media-keys/msd-media-keys-manager.c:963
+#: plugins/media-keys/test-media-window.c:103
 msgid "Airplane mode enabled"
 msgstr "Repülőgép üzemmód engedélyezve"
 
-#: plugins/media-keys/msd-media-keys-manager.c:964
-#: plugins/media-keys/test-media-window.c:109
+#: plugins/media-keys/msd-media-keys-manager.c:966
+#: plugins/media-keys/test-media-window.c:110
 msgid "Airplane mode disabled"
 msgstr "Repülőgép üzemmód letiltva"
 
-#: plugins/media-keys/msd-media-keys-manager.c:995
+#: plugins/media-keys/msd-media-keys-manager.c:997
 msgid "Hardware Airplane Mode"
 msgstr "Hardveres repülőgép üzemmód"
 
-#: plugins/media-keys/msd-media-keys-manager.c:1033
-#: plugins/media-keys/test-media-window.c:123
+#: plugins/media-keys/msd-media-keys-manager.c:1035
+#: plugins/media-keys/test-media-window.c:124
 msgid "Changing Screen Layout"
 msgstr "Képernyőkiosztás módosítása"
 
-#: plugins/media-keys/msd-media-keys-manager.c:1037
-#: plugins/media-keys/test-media-window.c:116
+#: plugins/media-keys/msd-media-keys-manager.c:1039
+#: plugins/media-keys/test-media-window.c:117
 msgid "No External Display"
 msgstr "Nincs külső kijelző"
 
@@ -1395,18 +1395,18 @@ msgstr "Egér"
 msgid "Mouse plugin"
 msgstr "Egér bővítmény"
 
-#: plugins/mouse/msd-mouse-manager.c:1650
+#: plugins/mouse/msd-mouse-manager.c:1651
 msgid "Could not enable mouse accessibility features"
 msgstr "A billentyűzet akadálymentesítési szolgáltatásai nem engedélyezhetők"
 
-#: plugins/mouse/msd-mouse-manager.c:1652
+#: plugins/mouse/msd-mouse-manager.c:1653
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 "Az egér akadálymentesítése megköveteli a Mousetweaks jelenlétét a "
 "rendszeren."
 
-#: plugins/mouse/msd-mouse-manager.c:1655
+#: plugins/mouse/msd-mouse-manager.c:1656
 msgid "Mouse Preferences"
 msgstr "Egér beállításai"
 
@@ -1428,66 +1428,66 @@ msgstr "Rfkill"
 msgid "Rfkill plugin"
 msgstr "Rfkill bővítmény"
 
-#: plugins/smartcard/msd-smartcard-manager.c:164
+#: plugins/smartcard/msd-smartcard-manager.c:165
 msgid "Module Path"
 msgstr "Modulútvonal"
 
-#: plugins/smartcard/msd-smartcard-manager.c:165
+#: plugins/smartcard/msd-smartcard-manager.c:166
 msgid "path to smartcard PKCS #11 driver"
 msgstr "Az intelligens kártya PKCS #11 illesztőprogramjának útvonala"
 
-#: plugins/smartcard/msd-smartcard-manager.c:491
+#: plugins/smartcard/msd-smartcard-manager.c:492
 msgid "received error or hang up from event source"
 msgstr "Hiba vagy bontás érkezett az eseményforrásból"
 
-#: plugins/smartcard/msd-smartcard-manager.c:580
+#: plugins/smartcard/msd-smartcard-manager.c:581
 msgid "NSS security system could not be initialized"
 msgstr "Az NSS biztonsági rendszer nem készíthető elő"
 
-#: plugins/smartcard/msd-smartcard-manager.c:649
+#: plugins/smartcard/msd-smartcard-manager.c:650
 msgid "no suitable smartcard driver could be found"
 msgstr "Nem található megfelelő intelligenskártya-illesztőprogram"
 
-#: plugins/smartcard/msd-smartcard-manager.c:669
+#: plugins/smartcard/msd-smartcard-manager.c:670
 #, c-format
 msgid "smartcard driver '%s' could not be loaded"
 msgstr "A(z) „%s” intelligenskártya-illesztőprogram nem tölthető be"
 
-#: plugins/smartcard/msd-smartcard-manager.c:753
+#: plugins/smartcard/msd-smartcard-manager.c:754
 #, c-format
 msgid "could not watch for incoming card events - %s"
 msgstr "Nem figyelhetők a bejövő kártyaeseményeket - %s"
 
-#: plugins/smartcard/msd-smartcard-manager.c:1100
+#: plugins/smartcard/msd-smartcard-manager.c:1101
 msgid "encountered unexpected error while waiting for smartcard events"
 msgstr ""
 "Váratlan hiba történt az intelligenskártya-eseményekre várakozás közben"
 
-#: plugins/smartcard/msd-smartcard.c:148
+#: plugins/smartcard/msd-smartcard.c:149
 msgid "Slot ID"
 msgstr "Nyílásazonosító"
 
-#: plugins/smartcard/msd-smartcard.c:149
+#: plugins/smartcard/msd-smartcard.c:150
 msgid "The slot the card is in"
 msgstr "A kártyát tartalmazó nyílás"
 
-#: plugins/smartcard/msd-smartcard.c:155
+#: plugins/smartcard/msd-smartcard.c:156
 msgid "Slot Series"
 msgstr "Nyílássorozatok"
 
-#: plugins/smartcard/msd-smartcard.c:156
+#: plugins/smartcard/msd-smartcard.c:157
 msgid "per-slot card identifier"
 msgstr "nyílásonkénti kártyaazonosító"
 
-#: plugins/smartcard/msd-smartcard.c:162 plugins/smartcard/msd-smartcard.c:163
+#: plugins/smartcard/msd-smartcard.c:163 plugins/smartcard/msd-smartcard.c:164
 msgid "name"
 msgstr "név"
 
-#: plugins/smartcard/msd-smartcard.c:167
+#: plugins/smartcard/msd-smartcard.c:168
 msgid "Module"
 msgstr "Modul"
 
-#: plugins/smartcard/msd-smartcard.c:168
+#: plugins/smartcard/msd-smartcard.c:169
 msgid "smartcard driver"
 msgstr "intelligenskártya-illesztőprogram"
 
@@ -1515,19 +1515,19 @@ msgstr "Gépelési szünet"
 msgid "Typing break plugin"
 msgstr "Gépelési szünet bővítmény"
 
-#: plugins/xrandr/msd-xrandr-manager.c:369
+#: plugins/xrandr/msd-xrandr-manager.c:370
 msgid "Could not switch the monitor configuration"
 msgstr "A monitor beállításai nem válthatók át"
 
-#: plugins/xrandr/msd-xrandr-manager.c:393
+#: plugins/xrandr/msd-xrandr-manager.c:394
 msgid "Could not restore the display's configuration"
 msgstr "A kijelző beállításai nem állíthatók vissza"
 
-#: plugins/xrandr/msd-xrandr-manager.c:418
+#: plugins/xrandr/msd-xrandr-manager.c:419
 msgid "Could not restore the display's configuration from a backup"
 msgstr "A kijelző beállításai nem állíthatók vissza a mentésből"
 
-#: plugins/xrandr/msd-xrandr-manager.c:439
+#: plugins/xrandr/msd-xrandr-manager.c:440
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
@@ -1535,97 +1535,97 @@ msgid_plural ""
 msgstr[0] "A kijelző visszaáll a korábbi beállításaira %d másodpercen belül"
 msgstr[1] "A kijelző visszaáll a korábbi beállításaira %d másodpercen belül"
 
-#: plugins/xrandr/msd-xrandr-manager.c:490
+#: plugins/xrandr/msd-xrandr-manager.c:491
 msgid "Does the display look OK?"
 msgstr "Megfelelően jelenik meg a kép?"
 
-#: plugins/xrandr/msd-xrandr-manager.c:497
+#: plugins/xrandr/msd-xrandr-manager.c:498
 msgid "_Restore Previous Configuration"
 msgstr "A korábbi beállítások _visszaállítása"
 
-#: plugins/xrandr/msd-xrandr-manager.c:498
+#: plugins/xrandr/msd-xrandr-manager.c:499
 msgid "_Keep This Configuration"
 msgstr "Ezen beállítások _megtartása"
 
-#: plugins/xrandr/msd-xrandr-manager.c:579
+#: plugins/xrandr/msd-xrandr-manager.c:580
 msgid "The selected configuration for displays could not be applied"
 msgstr "A kiválasztott kijelzőbeállítás nem alkalmazható"
 
-#: plugins/xrandr/msd-xrandr-manager.c:1178
+#: plugins/xrandr/msd-xrandr-manager.c:1177
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "A kijelzőinformációk nem frissíthetők: %s"
 
-#: plugins/xrandr/msd-xrandr-manager.c:1182
+#: plugins/xrandr/msd-xrandr-manager.c:1181
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "Kísérlet a monitor beállításainak átváltására mindenképp."
 
-#: plugins/xrandr/msd-xrandr-manager.c:1939
+#: plugins/xrandr/msd-xrandr-manager.c:1938
 msgid "Rotation not supported"
 msgstr "A forgatás nem támogatott"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2004
-#: plugins/xrandr/msd-xrandr-manager.c:2036
+#: plugins/xrandr/msd-xrandr-manager.c:2003
+#: plugins/xrandr/msd-xrandr-manager.c:2035
 msgid "Could not save monitor configuration"
 msgstr "A monitor beállításai nem menthetők"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2058
+#: plugins/xrandr/msd-xrandr-manager.c:2056
 msgid "Mirroring outputs not supported"
 msgstr "A kimenet tükrözése nem támogatott"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2089
+#: plugins/xrandr/msd-xrandr-manager.c:2087
 msgid "Normal"
 msgstr "Átlagos"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2090
+#: plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "Left"
 msgstr "Bal"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2091
+#: plugins/xrandr/msd-xrandr-manager.c:2089
 msgid "Right"
 msgstr "Jobb"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2092
+#: plugins/xrandr/msd-xrandr-manager.c:2090
 msgid "Upside Down"
 msgstr "Fejjel lefelé"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2181
+#: plugins/xrandr/msd-xrandr-manager.c:2179
 msgid "ON"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2182
+#: plugins/xrandr/msd-xrandr-manager.c:2180
 msgid "Turn this monitor off"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2185
+#: plugins/xrandr/msd-xrandr-manager.c:2183
 msgid "OFF"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2186
+#: plugins/xrandr/msd-xrandr-manager.c:2184
 msgid "Turn this monitor on"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2246
+#: plugins/xrandr/msd-xrandr-manager.c:2244
 msgid "Same output all monitors"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2247
+#: plugins/xrandr/msd-xrandr-manager.c:2245
 msgid "Mirror same output to all monitors and turn them on"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2294
+#: plugins/xrandr/msd-xrandr-manager.c:2292
 msgid "_Configure Display Settings…"
 msgstr "Ké_pernyő beállítása…"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2304
+#: plugins/xrandr/msd-xrandr-manager.c:2302
 msgid "Open the display configuration dialog (all settings)"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2361
+#: plugins/xrandr/msd-xrandr-manager.c:2359
 msgid "Configure display settings"
 msgstr "Kijelző beállítása"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2421
+#: plugins/xrandr/msd-xrandr-manager.c:2419
 msgid "Could not apply the stored configuration for monitors"
 msgstr "A tárolt beállítás nem alkalmazható a monitorokra"
 

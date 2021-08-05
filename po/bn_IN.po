@@ -8,9 +8,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.25.0\n"
+"Project-Id-Version: mate-settings-daemon 1.25.1\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2020-08-20 10:34+0200\n"
+"POT-Creation-Date: 2021-06-23 22:04+0200\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
 "Language-Team: Bengali (India) (https://www.transifex.com/mate/teams/13566/bn_IN/)\n"
@@ -854,19 +854,19 @@ msgstr ""
 msgid "MATE Settings Daemon"
 msgstr "MATE Settings ডেমন"
 
-#: mate-settings-daemon/main.c:65
+#: mate-settings-daemon/main.c:66
 msgid "Enable debugging code"
 msgstr "কোড ডিবাগের ব্যবস্থা সক্রিয় করা হবে"
 
-#: mate-settings-daemon/main.c:66
+#: mate-settings-daemon/main.c:67
 msgid "Replace the current daemon"
 msgstr ""
 
-#: mate-settings-daemon/main.c:67
+#: mate-settings-daemon/main.c:68
 msgid "Don't become a daemon"
 msgstr "ডেমন তৈরি করা হবে না"
 
-#: mate-settings-daemon/main.c:68
+#: mate-settings-daemon/main.c:69
 msgid "Exit after a time (for debugging)"
 msgstr ""
 
@@ -878,23 +878,23 @@ msgstr "সহায়ক প্রযুক্তি বিশিষ্ট কি
 msgid "Accessibility keyboard plugin"
 msgstr "সহায়ক প্রযুক্তি বিশিষ্ট কি-বোর্ডের প্লাগ-ইন"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:444
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:460
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "সহায়িকা প্রদর্শনের সময় একটি সমস্যা হয়েছে: %s"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:572
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:636
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:652
 msgid "Do you want to activate Slow Keys?"
 msgstr "আপনি কি ধীর কী (Key) সক্রিয় করতে চান?"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:573
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:637
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:589
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "আপনি কি ধীর কী (Key) নিষ্ক্রিয় করতে চান?"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:590
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:654
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -903,62 +903,62 @@ msgstr ""
 "(Key) সক্রিয়কারক শর্টকাট যা সম্পূর্ণ কীবোর্ড ব্যবস্থা কীভাবে কাজ করবে তা "
 "নির্ধারণ করে।"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
 msgid "Don't activate"
 msgstr "সক্রিয় করা হবে না"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
 msgid "Don't deactivate"
 msgstr "নিষ্ক্রিয় করা হবে না"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:619
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:756
 msgid "Activate"
 msgstr "সক্রিয় করুন"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:619
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:756
 msgid "Deactivate"
 msgstr "নিষ্ক্রিয় করুন"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:675
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:814
 msgid "Do_n't activate"
 msgstr "সক্রিয় করো না (_n)"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:675
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:814
 msgid "Do_n't deactivate"
 msgstr "নিষ্ক্রিয় করো না (_n)"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:678
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:817
 msgid "_Activate"
 msgstr "সক্রিয় করুন (_A)"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:678
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:817
 msgid "_Deactivate"
 msgstr "নিষ্ক্রিয় করুন (_D)"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:682
 msgid "Slow Keys Alert"
 msgstr "ধীর কী (Key) সম্পর্কিত সতর্কবাণী"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:706
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:772
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:722
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:788
 msgid "Do you want to activate Sticky Keys?"
 msgstr "আপনি কি স্টিকি কী (Key) সক্রিয় করতে চান?"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:707
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:773
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:723
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "আপনি কি স্টিকি কী (Key) নিষ্ক্রিয় করতে চান?"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:791
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -967,8 +967,8 @@ msgstr ""
 "(Key) সক্রিয়কারক শর্টকাট যা সম্পূর্ণ কীবোর্ড ব্যবস্থা কীভাবে কাজ করবে তা "
 "নির্ধারণ করে।"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:727
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:793
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -978,11 +978,11 @@ msgstr ""
 "চেপেছেন।  এর ফলে স্টিকি কী (Key) নিষ্ক্রিয় হয়ে যায় যা সম্পূর্ণ কীবোর্ড "
 "ব্যবস্থা কীভাবে কাজ করবে তা নির্ধারণ করে।"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:821
 msgid "Sticky Keys Alert"
 msgstr "স্টিকি কী (Key) সম্পর্কিত সতর্কবাণী"
 
-#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:829
+#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:830
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:14
 msgid "Universal Access Preferences"
 msgstr "সার্বজনীন ব্যবহার সংক্রান্ত পছন্দ"
@@ -1089,25 +1089,25 @@ msgid ""
 "about low disk space"
 msgstr ""
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:60
+#: plugins/housekeeping/msd-ldsm-dialog.c:61
 msgid "Don't show any warnings again for this file system"
 msgstr ""
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:62
+#: plugins/housekeeping/msd-ldsm-dialog.c:63
 msgid "Don't show any warnings again"
 msgstr "পুনরায় সতর্কবার্তা প্রদর্শন করা হবে না"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:75
+#: plugins/housekeeping/msd-ldsm-dialog.c:76
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr "\"%s\" ভলিউমের মধ্যে শুধুমাত্র %s স্থান ডিস্কে অবশিষ্ট রয়েছে।"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:78
+#: plugins/housekeeping/msd-ldsm-dialog.c:79
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr "এই কম্পিউটারের মধ্যে শুধুমাত্র %s স্থান ডিস্কে অবশিষ্ট রয়েছে।"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:94
+#: plugins/housekeeping/msd-ldsm-dialog.c:95
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
@@ -1116,7 +1116,7 @@ msgstr ""
 " প্রোগ্রাম, ফাইল মুছে ফেলে ও অন্য কোনো ডিস্ক অথবা পার্টিশনে ফাইল সরিয়েও "
 "ডিস্কের স্থান বৃদ্ধি করা যাবে।"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:97
+#: plugins/housekeeping/msd-ldsm-dialog.c:98
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
@@ -1124,7 +1124,7 @@ msgstr ""
 "অব্যবহৃত প্রোগ্রাম, ফাইল মুছে ফেলে ও অন্য কোনো ডিস্ক অথবা পার্টিশনে ফাইল "
 "সরিয়ে ডিস্কের স্থান বৃদ্ধি করা যাবে।"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:102
+#: plugins/housekeeping/msd-ldsm-dialog.c:103
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
@@ -1133,7 +1133,7 @@ msgstr ""
 " প্রোগ্রাম, ফাইল মুছে ফেলে ও কোনো বহিস্থিত ডিস্কে ফাইল সরিয়েও ডিস্কের স্থান "
 "বৃদ্ধি করা যাবে।"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:105
+#: plugins/housekeeping/msd-ldsm-dialog.c:106
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
@@ -1158,35 +1158,35 @@ msgstr ""
 msgid "Ignore"
 msgstr "উপেক্ষা করা হবে"
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:97
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:98
 #, c-format
 msgid "Removing item %lu of %lu"
 msgstr "%lu বস্তুটি মুছে ফেলা হচ্ছে, সর্বমোট %lu"
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:117
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:118
 #, c-format
 msgid "Removing: %s"
 msgstr "মুছে ফেলা হচ্ছে: %s"
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:300
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:248
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:301
 msgid "Emptying the trash"
 msgstr "আবর্জনার বাক্স ফাঁকা করা হচ্ছে"
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:276
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:277
 msgid "Preparing to empty trash…"
 msgstr ""
 
 #. Translators: "Emptying trash from <device>"
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:303
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:304
 msgid "From: "
 msgstr "উৎস: "
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:355
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:356
 msgid "Empty all of the items from the trash?"
 msgstr "আবর্জনার বাক্সের সমস্ত বস্তু মুছে ফেলা হবে কি?"
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:358
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:359
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
@@ -1194,7 +1194,7 @@ msgstr ""
 "আবর্জনার বাক্স ফাঁকা করা হলে সমস্ত বস্তু স্থায়ীরূপে মুছে ফেলা হবে। অনুগ্রহ "
 "করে প্রতিটি বস্তু পৃথকরূপে অপসারণ করুন।"
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:365
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:366
 msgid "_Empty Trash"
 msgstr "আবর্জনার বাক্স ফাঁকা করুন (_E)"
 
@@ -1206,17 +1206,17 @@ msgstr "কি-বাইন্ডিং"
 msgid "Keybindings plugin"
 msgstr "কি-বাইন্ডিং প্লাগ-ইন"
 
-#: plugins/keybindings/msd-keybindings-manager.c:108
+#: plugins/keybindings/msd-keybindings-manager.c:109
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "কি-বাইন্ডিং (%s) বৈধ নয়"
 
-#: plugins/keybindings/msd-keybindings-manager.c:144
+#: plugins/keybindings/msd-keybindings-manager.c:145
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "কি-বাইন্ডিং (%s) অসম্পূর্ণ"
 
-#: plugins/keybindings/msd-keybindings-manager.c:486
+#: plugins/keybindings/msd-keybindings-manager.c:487
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -1233,7 +1233,7 @@ msgstr "কি-বোর্ড"
 msgid "Keyboard plugin"
 msgstr "কি-বোর্ড প্লাগ-ইন"
 
-#: plugins/keyboard/msd-keyboard-xkb.c:119
+#: plugins/keyboard/msd-keyboard-xkb.c:120
 #, c-format
 msgid ""
 "Error activating XKB configuration.\n"
@@ -1250,15 +1250,15 @@ msgid ""
 " • The result of <b>%s</b>"
 msgstr ""
 
-#: plugins/keyboard/msd-keyboard-xkb.c:283
+#: plugins/keyboard/msd-keyboard-xkb.c:286
 msgid "_Layouts"
 msgstr ""
 
-#: plugins/keyboard/msd-keyboard-xkb.c:290
+#: plugins/keyboard/msd-keyboard-xkb.c:293
 msgid "Keyboard _Preferences"
 msgstr ""
 
-#: plugins/keyboard/msd-keyboard-xkb.c:296
+#: plugins/keyboard/msd-keyboard-xkb.c:299
 msgid "Show _Current Layout"
 msgstr ""
 
@@ -1270,7 +1270,7 @@ msgstr "মিডিয়া কি"
 msgid "Media keys plugin"
 msgstr "মিডিয়া-কি প্লাগ-ইন"
 
-#: plugins/media-keys/msd-media-keys-manager.c:184
+#: plugins/media-keys/msd-media-keys-manager.c:185
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
@@ -1279,7 +1279,7 @@ msgstr ""
 "টার্মিনালের কমান্ড ধার্য করে তা একটি বৈধ অ্যাপ্লিকেশনের প্রতি নির্দেশ করা "
 "হয়েছে কি না।"
 
-#: plugins/media-keys/msd-media-keys-manager.c:224
+#: plugins/media-keys/msd-media-keys-manager.c:225
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1289,46 +1289,46 @@ msgstr ""
 "কমান্ডের বৈধতা নিশ্চিত করুন।"
 
 #: plugins/media-keys/msd-media-keys-manager.c:638
-#: plugins/media-keys/test-media-window.c:81
+#: plugins/media-keys/test-media-window.c:82
 msgid "Touchpad enabled"
 msgstr ""
 
 #: plugins/media-keys/msd-media-keys-manager.c:638
-#: plugins/media-keys/test-media-window.c:74
+#: plugins/media-keys/test-media-window.c:75
 msgid "Touchpad disabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:954
-#: plugins/media-keys/test-media-window.c:88
+#: plugins/media-keys/msd-media-keys-manager.c:956
+#: plugins/media-keys/test-media-window.c:89
 msgid "Bluetooth disabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:957
-#: plugins/media-keys/test-media-window.c:95
+#: plugins/media-keys/msd-media-keys-manager.c:959
+#: plugins/media-keys/test-media-window.c:96
 msgid "Bluetooth enabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:961
-#: plugins/media-keys/test-media-window.c:102
+#: plugins/media-keys/msd-media-keys-manager.c:963
+#: plugins/media-keys/test-media-window.c:103
 msgid "Airplane mode enabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:964
-#: plugins/media-keys/test-media-window.c:109
+#: plugins/media-keys/msd-media-keys-manager.c:966
+#: plugins/media-keys/test-media-window.c:110
 msgid "Airplane mode disabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:995
+#: plugins/media-keys/msd-media-keys-manager.c:997
 msgid "Hardware Airplane Mode"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:1033
-#: plugins/media-keys/test-media-window.c:123
+#: plugins/media-keys/msd-media-keys-manager.c:1035
+#: plugins/media-keys/test-media-window.c:124
 msgid "Changing Screen Layout"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:1037
-#: plugins/media-keys/test-media-window.c:116
+#: plugins/media-keys/msd-media-keys-manager.c:1039
+#: plugins/media-keys/test-media-window.c:117
 msgid "No External Display"
 msgstr ""
 
@@ -1340,16 +1340,16 @@ msgstr "মাউস"
 msgid "Mouse plugin"
 msgstr "মাউজ প্লাগ-ইন"
 
-#: plugins/mouse/msd-mouse-manager.c:1650
+#: plugins/mouse/msd-mouse-manager.c:1651
 msgid "Could not enable mouse accessibility features"
 msgstr "মাউস ব্যবহারের বিশেষ সহায়ক বৈশিষ্ট্য সক্রিয় করতে ব্যর্থ"
 
-#: plugins/mouse/msd-mouse-manager.c:1652
+#: plugins/mouse/msd-mouse-manager.c:1653
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 
-#: plugins/mouse/msd-mouse-manager.c:1655
+#: plugins/mouse/msd-mouse-manager.c:1656
 msgid "Mouse Preferences"
 msgstr "মাউস সম্পর্কিত পছন্দ"
 
@@ -1371,65 +1371,65 @@ msgstr ""
 msgid "Rfkill plugin"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard-manager.c:164
+#: plugins/smartcard/msd-smartcard-manager.c:165
 msgid "Module Path"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard-manager.c:165
+#: plugins/smartcard/msd-smartcard-manager.c:166
 msgid "path to smartcard PKCS #11 driver"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard-manager.c:491
+#: plugins/smartcard/msd-smartcard-manager.c:492
 msgid "received error or hang up from event source"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard-manager.c:580
+#: plugins/smartcard/msd-smartcard-manager.c:581
 msgid "NSS security system could not be initialized"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard-manager.c:649
+#: plugins/smartcard/msd-smartcard-manager.c:650
 msgid "no suitable smartcard driver could be found"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard-manager.c:669
+#: plugins/smartcard/msd-smartcard-manager.c:670
 #, c-format
 msgid "smartcard driver '%s' could not be loaded"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard-manager.c:753
+#: plugins/smartcard/msd-smartcard-manager.c:754
 #, c-format
 msgid "could not watch for incoming card events - %s"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard-manager.c:1100
+#: plugins/smartcard/msd-smartcard-manager.c:1101
 msgid "encountered unexpected error while waiting for smartcard events"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard.c:148
+#: plugins/smartcard/msd-smartcard.c:149
 msgid "Slot ID"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard.c:149
+#: plugins/smartcard/msd-smartcard.c:150
 msgid "The slot the card is in"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard.c:155
+#: plugins/smartcard/msd-smartcard.c:156
 msgid "Slot Series"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard.c:156
+#: plugins/smartcard/msd-smartcard.c:157
 msgid "per-slot card identifier"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard.c:162 plugins/smartcard/msd-smartcard.c:163
+#: plugins/smartcard/msd-smartcard.c:163 plugins/smartcard/msd-smartcard.c:164
 msgid "name"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard.c:167
+#: plugins/smartcard/msd-smartcard.c:168
 msgid "Module"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard.c:168
+#: plugins/smartcard/msd-smartcard.c:169
 msgid "smartcard driver"
 msgstr ""
 
@@ -1457,19 +1457,19 @@ msgstr "টাইপিং বিরতি"
 msgid "Typing break plugin"
 msgstr "টাইপিং বিরতির প্লাগ-ইন"
 
-#: plugins/xrandr/msd-xrandr-manager.c:369
+#: plugins/xrandr/msd-xrandr-manager.c:370
 msgid "Could not switch the monitor configuration"
 msgstr "মনিটরের কনফিগারেশন পরিবর্তন করতে ব্যর্থ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:393
+#: plugins/xrandr/msd-xrandr-manager.c:394
 msgid "Could not restore the display's configuration"
 msgstr "ডিসপ্লের কনফিগারেশন পুনরুদ্ধার করতে ব্যর্থ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:418
+#: plugins/xrandr/msd-xrandr-manager.c:419
 msgid "Could not restore the display's configuration from a backup"
 msgstr "ব্যাক-আপ থেকে ডিসপ্লের কনফিগারেশন পুনরুদ্ধার করতে ব্যর্থ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:439
+#: plugins/xrandr/msd-xrandr-manager.c:440
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
@@ -1477,97 +1477,97 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:490
+#: plugins/xrandr/msd-xrandr-manager.c:491
 msgid "Does the display look OK?"
 msgstr "ডিসপ্লে কি ঠিক ভাবে প্রদর্শিত হচ্ছে?"
 
-#: plugins/xrandr/msd-xrandr-manager.c:497
+#: plugins/xrandr/msd-xrandr-manager.c:498
 msgid "_Restore Previous Configuration"
 msgstr "পূর্ববর্তী কনফিগারেশন পুনরুদ্ধার করা হবে (_R)"
 
-#: plugins/xrandr/msd-xrandr-manager.c:498
+#: plugins/xrandr/msd-xrandr-manager.c:499
 msgid "_Keep This Configuration"
 msgstr "এই কনফিগারেশন প্রয়োগ করা হবে (_K)"
 
-#: plugins/xrandr/msd-xrandr-manager.c:579
+#: plugins/xrandr/msd-xrandr-manager.c:580
 msgid "The selected configuration for displays could not be applied"
 msgstr "ডিসপ্লের জন্য নির্বাচিত কনফিগারেশন প্রয়োগ করতে ব্যর্থ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:1178
+#: plugins/xrandr/msd-xrandr-manager.c:1177
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "পর্দা সংক্রান্ত তথ্য নতুন করে প্রদর্শন করতে ব্যর্থ: %s"
 
-#: plugins/xrandr/msd-xrandr-manager.c:1182
+#: plugins/xrandr/msd-xrandr-manager.c:1181
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "তথাপি মনিটর সংক্রান্ত কনফিগারেশন পরিবর্তনের প্রয়াস করা হবে।"
 
-#: plugins/xrandr/msd-xrandr-manager.c:1939
+#: plugins/xrandr/msd-xrandr-manager.c:1938
 msgid "Rotation not supported"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2004
-#: plugins/xrandr/msd-xrandr-manager.c:2036
+#: plugins/xrandr/msd-xrandr-manager.c:2003
+#: plugins/xrandr/msd-xrandr-manager.c:2035
 msgid "Could not save monitor configuration"
 msgstr "মনিটর সংক্রান্ত কনফিগারেশন সংরক্ষণ করতে ব্যর্থ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2058
+#: plugins/xrandr/msd-xrandr-manager.c:2056
 msgid "Mirroring outputs not supported"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2089
+#: plugins/xrandr/msd-xrandr-manager.c:2087
 msgid "Normal"
 msgstr "স্বাভাবিক"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2090
+#: plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "Left"
 msgstr "বাঁদিকে"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2091
+#: plugins/xrandr/msd-xrandr-manager.c:2089
 msgid "Right"
 msgstr "ডানদিকে"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2092
+#: plugins/xrandr/msd-xrandr-manager.c:2090
 msgid "Upside Down"
 msgstr "উলটো"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2181
+#: plugins/xrandr/msd-xrandr-manager.c:2179
 msgid "ON"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2182
+#: plugins/xrandr/msd-xrandr-manager.c:2180
 msgid "Turn this monitor off"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2185
+#: plugins/xrandr/msd-xrandr-manager.c:2183
 msgid "OFF"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2186
+#: plugins/xrandr/msd-xrandr-manager.c:2184
 msgid "Turn this monitor on"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2246
+#: plugins/xrandr/msd-xrandr-manager.c:2244
 msgid "Same output all monitors"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2247
+#: plugins/xrandr/msd-xrandr-manager.c:2245
 msgid "Mirror same output to all monitors and turn them on"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2294
+#: plugins/xrandr/msd-xrandr-manager.c:2292
 msgid "_Configure Display Settings…"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2304
+#: plugins/xrandr/msd-xrandr-manager.c:2302
 msgid "Open the display configuration dialog (all settings)"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2361
+#: plugins/xrandr/msd-xrandr-manager.c:2359
 msgid "Configure display settings"
 msgstr "পর্দা সংক্রান্ত বৈশিষ্ট্য পরিবর্তন করুন"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2421
+#: plugins/xrandr/msd-xrandr-manager.c:2419
 msgid "Could not apply the stored configuration for monitors"
 msgstr "মনিটরের জন্য সংরক্ষিত কনফিগারেশন প্রয়োগ করতে ব্যর্থ"
 

@@ -10,9 +10,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.25.0\n"
+"Project-Id-Version: mate-settings-daemon 1.25.1\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2020-08-20 10:34+0200\n"
+"POT-Creation-Date: 2021-06-23 22:04+0200\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
 "Last-Translator: Omer I.S. <omeritzicschwartz@gmail.com>, 2021\n"
 "Language-Team: Hebrew (https://www.transifex.com/mate/teams/13566/he/)\n"
@@ -869,19 +869,19 @@ msgstr ""
 msgid "MATE Settings Daemon"
 msgstr "מנוע ההגדרות של MATE"
 
-#: mate-settings-daemon/main.c:65
+#: mate-settings-daemon/main.c:66
 msgid "Enable debugging code"
 msgstr "Enable debugging code"
 
-#: mate-settings-daemon/main.c:66
+#: mate-settings-daemon/main.c:67
 msgid "Replace the current daemon"
 msgstr "החלפת הסוכן הנוכחי"
 
-#: mate-settings-daemon/main.c:67
+#: mate-settings-daemon/main.c:68
 msgid "Don't become a daemon"
 msgstr "Don't become a daemon"
 
-#: mate-settings-daemon/main.c:68
+#: mate-settings-daemon/main.c:69
 msgid "Exit after a time (for debugging)"
 msgstr "Exit after a time (for debugging)"
 
@@ -893,23 +893,23 @@ msgstr "מקלדת נגישות"
 msgid "Accessibility keyboard plugin"
 msgstr "תוסף מקלדת נגישות"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:444
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:460
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "אירעה שגיאה בהצגת העזרה: %s"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:572
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:636
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:652
 msgid "Do you want to activate Slow Keys?"
 msgstr "האם ברצונך לאפשר הפעלת מקשים איטיים?"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:573
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:637
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:589
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "האם ברצונך להפסיק מקשים איטיים?"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:590
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:654
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -917,62 +917,62 @@ msgstr ""
 "כרגע הוחזק מקש ה־Shift למשך 8 שניות.  זהו הקיצור עבור תכונת המקשים האיטיים, "
 "המשפיעה על אופן פעולת המקלדת."
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
 msgid "Don't activate"
 msgstr "אל תאפשר"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
 msgid "Don't deactivate"
 msgstr "לא לכבות"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:619
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:756
 msgid "Activate"
 msgstr "הפעל"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:619
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:756
 msgid "Deactivate"
 msgstr "כבה"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:675
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:814
 msgid "Do_n't activate"
 msgstr "אל _תאפשר"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:675
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:814
 msgid "Do_n't deactivate"
 msgstr "אך ת_כבה"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:678
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:817
 msgid "_Activate"
 msgstr "_הפעלה"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:678
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:817
 msgid "_Deactivate"
 msgstr "_נטרול"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:682
 msgid "Slow Keys Alert"
 msgstr "התרעת מקשים איטיים"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:706
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:772
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:722
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:788
 msgid "Do you want to activate Sticky Keys?"
 msgstr "האם ברצונך להפעיל מקשים דביקים?"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:707
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:773
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:723
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "האם ברצונך להפסיק מקשים דביקים?"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:791
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -980,8 +980,8 @@ msgstr ""
 "כרגע לחצת על מקש ה־Shift 5 פעמים ברצף. זהו הקיצור עבור תכונת המקשים הדביקים,"
 " המשפיעה על אופן פעולת המקלדת שלך."
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:727
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:793
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -990,11 +990,11 @@ msgstr ""
 "כרגע לחצת על שני מקשים יחדיו, או שלחצת על מקש ה־Shift 5 פעמים ברצף. בכך "
 "מבוטלת תכונת המקשים הדביקים, המשפיעה על אופן פעולת המקלדת שלך."
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:821
 msgid "Sticky Keys Alert"
 msgstr "התרעת מקשים דביקים"
 
-#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:829
+#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:830
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:14
 msgid "Universal Access Preferences"
 msgstr "העדפות גישה אוניברסלית"
@@ -1101,25 +1101,25 @@ msgid ""
 "about low disk space"
 msgstr ""
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:60
+#: plugins/housekeeping/msd-ldsm-dialog.c:61
 msgid "Don't show any warnings again for this file system"
 msgstr "אין להציג אזהרות שוב עבור מערכת קבצים זו"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:62
+#: plugins/housekeeping/msd-ldsm-dialog.c:63
 msgid "Don't show any warnings again"
 msgstr "לא להציג אזהרות שוב"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:75
+#: plugins/housekeeping/msd-ldsm-dialog.c:76
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr "בכרך  \"%s\" נותר %s מקום פנוי בכונן בלבד."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:78
+#: plugins/housekeeping/msd-ldsm-dialog.c:79
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr "במחשב זה ישנם %s פנויים בכונן הקשיח."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:94
+#: plugins/housekeeping/msd-ldsm-dialog.c:95
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
@@ -1127,7 +1127,7 @@ msgstr ""
 "ניתן לפנות מקום בכונן על ידי ריקון האשפה, הסרת קבצים או תוכניות שאינם "
 "בשימוש, או על ידי העברת קבצים למחיצה אחרת או לכונן אחרים."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:97
+#: plugins/housekeeping/msd-ldsm-dialog.c:98
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
@@ -1135,7 +1135,7 @@ msgstr ""
 "ניתן לפנות מקום בכונן על ידי הסרת קבצים או תוכניות שאינם בשימוש, או על ידי "
 "העברת קבצים למחיצה אחרת או לכונן אחרים."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:102
+#: plugins/housekeeping/msd-ldsm-dialog.c:103
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
@@ -1143,7 +1143,7 @@ msgstr ""
 "ניתן לפנות מקום בכונן על ידי ריקון האשפה, הסרת תוכניות או קבצים שאינם "
 "בשימוש, או על ידי העברת קבצים לכונן חיצוני."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:105
+#: plugins/housekeeping/msd-ldsm-dialog.c:106
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
@@ -1168,42 +1168,42 @@ msgstr "בחינה..."
 msgid "Ignore"
 msgstr "התעלמות"
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:97
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:98
 #, c-format
 msgid "Removing item %lu of %lu"
 msgstr "הסרת פריט %lu מתוך %lu"
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:117
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:118
 #, c-format
 msgid "Removing: %s"
 msgstr "בהסרה: %s"
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:300
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:248
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:301
 msgid "Emptying the trash"
 msgstr "מרוקן את האשפה"
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:276
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:277
 msgid "Preparing to empty trash…"
 msgstr "בהכנות לפינוי סל המחזור..."
 
 #. Translators: "Emptying trash from <device>"
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:303
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:304
 msgid "From: "
 msgstr "מתוך:"
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:355
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:356
 msgid "Empty all of the items from the trash?"
 msgstr "האם לרוקן את כל הפריטים מהאשפה?"
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:358
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:359
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
 msgstr ""
 "פינוי האשפה יגרום לאבדן הפריטים בה לצמיתות. יש אפשרות למחוק כל פריט בנפרד."
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:365
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:366
 msgid "_Empty Trash"
 msgstr "_פינוי האשפה"
 
@@ -1215,17 +1215,17 @@ msgstr "צירופי מקשים"
 msgid "Keybindings plugin"
 msgstr "תוסף צירופי מקשים"
 
-#: plugins/keybindings/msd-keybindings-manager.c:108
+#: plugins/keybindings/msd-keybindings-manager.c:109
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "קיצור המקש (%s) אינו תקין"
 
-#: plugins/keybindings/msd-keybindings-manager.c:144
+#: plugins/keybindings/msd-keybindings-manager.c:145
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "קיצור המקש (%s) אינו שלם"
 
-#: plugins/keybindings/msd-keybindings-manager.c:486
+#: plugins/keybindings/msd-keybindings-manager.c:487
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -1242,7 +1242,7 @@ msgstr "מקלדת"
 msgid "Keyboard plugin"
 msgstr "תוסף מקלדת"
 
-#: plugins/keyboard/msd-keyboard-xkb.c:119
+#: plugins/keyboard/msd-keyboard-xkb.c:120
 #, c-format
 msgid ""
 "Error activating XKB configuration.\n"
@@ -1259,15 +1259,15 @@ msgid ""
 " • The result of <b>%s</b>"
 msgstr ""
 
-#: plugins/keyboard/msd-keyboard-xkb.c:283
+#: plugins/keyboard/msd-keyboard-xkb.c:286
 msgid "_Layouts"
 msgstr "_פריסות"
 
-#: plugins/keyboard/msd-keyboard-xkb.c:290
+#: plugins/keyboard/msd-keyboard-xkb.c:293
 msgid "Keyboard _Preferences"
 msgstr "העדפות ה_מקלדת"
 
-#: plugins/keyboard/msd-keyboard-xkb.c:296
+#: plugins/keyboard/msd-keyboard-xkb.c:299
 msgid "Show _Current Layout"
 msgstr "הצגת הפריסה ה_נוכחית"
 
@@ -1279,7 +1279,7 @@ msgstr "מקשי מדיה"
 msgid "Media keys plugin"
 msgstr "תוסף מקשי מדיה"
 
-#: plugins/media-keys/msd-media-keys-manager.c:184
+#: plugins/media-keys/msd-media-keys-manager.c:185
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
@@ -1287,7 +1287,7 @@ msgstr ""
 "לא ניתן לקבל את מסוף ברירת המחדל. יש לוודא כי פקודת מסוף ברירת המחדל מוגדרת "
 "ושהיא אכן מצביעה אל יישום תקף."
 
-#: plugins/media-keys/msd-media-keys-manager.c:224
+#: plugins/media-keys/msd-media-keys-manager.c:225
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1297,46 +1297,46 @@ msgstr ""
 "יש לוודא כי זוהי פקודה תקנית."
 
 #: plugins/media-keys/msd-media-keys-manager.c:638
-#: plugins/media-keys/test-media-window.c:81
+#: plugins/media-keys/test-media-window.c:82
 msgid "Touchpad enabled"
 msgstr ""
 
 #: plugins/media-keys/msd-media-keys-manager.c:638
-#: plugins/media-keys/test-media-window.c:74
+#: plugins/media-keys/test-media-window.c:75
 msgid "Touchpad disabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:954
-#: plugins/media-keys/test-media-window.c:88
+#: plugins/media-keys/msd-media-keys-manager.c:956
+#: plugins/media-keys/test-media-window.c:89
 msgid "Bluetooth disabled"
 msgstr "Bluetooth כבוי"
 
-#: plugins/media-keys/msd-media-keys-manager.c:957
-#: plugins/media-keys/test-media-window.c:95
+#: plugins/media-keys/msd-media-keys-manager.c:959
+#: plugins/media-keys/test-media-window.c:96
 msgid "Bluetooth enabled"
 msgstr "Bluetooth פעיל"
 
-#: plugins/media-keys/msd-media-keys-manager.c:961
-#: plugins/media-keys/test-media-window.c:102
+#: plugins/media-keys/msd-media-keys-manager.c:963
+#: plugins/media-keys/test-media-window.c:103
 msgid "Airplane mode enabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:964
-#: plugins/media-keys/test-media-window.c:109
+#: plugins/media-keys/msd-media-keys-manager.c:966
+#: plugins/media-keys/test-media-window.c:110
 msgid "Airplane mode disabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:995
+#: plugins/media-keys/msd-media-keys-manager.c:997
 msgid "Hardware Airplane Mode"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:1033
-#: plugins/media-keys/test-media-window.c:123
+#: plugins/media-keys/msd-media-keys-manager.c:1035
+#: plugins/media-keys/test-media-window.c:124
 msgid "Changing Screen Layout"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:1037
-#: plugins/media-keys/test-media-window.c:116
+#: plugins/media-keys/msd-media-keys-manager.c:1039
+#: plugins/media-keys/test-media-window.c:117
 msgid "No External Display"
 msgstr ""
 
@@ -1348,16 +1348,16 @@ msgstr "עכבר"
 msgid "Mouse plugin"
 msgstr "תוסף עכבר"
 
-#: plugins/mouse/msd-mouse-manager.c:1650
+#: plugins/mouse/msd-mouse-manager.c:1651
 msgid "Could not enable mouse accessibility features"
 msgstr "לא ניתן להפעיל את אפשרויות נגישות העכבר"
 
-#: plugins/mouse/msd-mouse-manager.c:1652
+#: plugins/mouse/msd-mouse-manager.c:1653
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr "נגישות עכבר דורשת ש־mousetweaks תהיה מותקנת במערכת."
 
-#: plugins/mouse/msd-mouse-manager.c:1655
+#: plugins/mouse/msd-mouse-manager.c:1656
 msgid "Mouse Preferences"
 msgstr "העדפות העכבר"
 
@@ -1379,65 +1379,65 @@ msgstr ""
 msgid "Rfkill plugin"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard-manager.c:164
+#: plugins/smartcard/msd-smartcard-manager.c:165
 msgid "Module Path"
 msgstr "נתיב המודול"
 
-#: plugins/smartcard/msd-smartcard-manager.c:165
+#: plugins/smartcard/msd-smartcard-manager.c:166
 msgid "path to smartcard PKCS #11 driver"
 msgstr "הנתיב למנהל ההתקן PKCS #11 של הכרטיס החכם"
 
-#: plugins/smartcard/msd-smartcard-manager.c:491
+#: plugins/smartcard/msd-smartcard-manager.c:492
 msgid "received error or hang up from event source"
 msgstr "התקבלה שגיאה או ניתוק ממקור האירוע"
 
-#: plugins/smartcard/msd-smartcard-manager.c:580
+#: plugins/smartcard/msd-smartcard-manager.c:581
 msgid "NSS security system could not be initialized"
 msgstr "לא ניתן להפעיל את מערכת האבטחה NSS"
 
-#: plugins/smartcard/msd-smartcard-manager.c:649
+#: plugins/smartcard/msd-smartcard-manager.c:650
 msgid "no suitable smartcard driver could be found"
 msgstr "לא נמצא מנהל התקן התואם לכרטיס החכם"
 
-#: plugins/smartcard/msd-smartcard-manager.c:669
+#: plugins/smartcard/msd-smartcard-manager.c:670
 #, c-format
 msgid "smartcard driver '%s' could not be loaded"
 msgstr "לא ניתן לטעון את מנהל ההתקן של הכרטיס החכם '%s' "
 
-#: plugins/smartcard/msd-smartcard-manager.c:753
+#: plugins/smartcard/msd-smartcard-manager.c:754
 #, c-format
 msgid "could not watch for incoming card events - %s"
 msgstr "לא ניתן לעקוב אחר אירועי כרטיס נכנסים - %s"
 
-#: plugins/smartcard/msd-smartcard-manager.c:1100
+#: plugins/smartcard/msd-smartcard-manager.c:1101
 msgid "encountered unexpected error while waiting for smartcard events"
 msgstr "ארעה שגיאה בלתי צפויה בעת המתנה לאירועי כרטיס חכם"
 
-#: plugins/smartcard/msd-smartcard.c:148
+#: plugins/smartcard/msd-smartcard.c:149
 msgid "Slot ID"
 msgstr "מזהה החריץ"
 
-#: plugins/smartcard/msd-smartcard.c:149
+#: plugins/smartcard/msd-smartcard.c:150
 msgid "The slot the card is in"
 msgstr "החריץ בו נמצא הכרטיס"
 
-#: plugins/smartcard/msd-smartcard.c:155
+#: plugins/smartcard/msd-smartcard.c:156
 msgid "Slot Series"
 msgstr "סדרת החריצים"
 
-#: plugins/smartcard/msd-smartcard.c:156
+#: plugins/smartcard/msd-smartcard.c:157
 msgid "per-slot card identifier"
 msgstr "מזהה כרטיס לפי חריץ"
 
-#: plugins/smartcard/msd-smartcard.c:162 plugins/smartcard/msd-smartcard.c:163
+#: plugins/smartcard/msd-smartcard.c:163 plugins/smartcard/msd-smartcard.c:164
 msgid "name"
 msgstr "שם"
 
-#: plugins/smartcard/msd-smartcard.c:167
+#: plugins/smartcard/msd-smartcard.c:168
 msgid "Module"
 msgstr "מודול"
 
-#: plugins/smartcard/msd-smartcard.c:168
+#: plugins/smartcard/msd-smartcard.c:169
 msgid "smartcard driver"
 msgstr "מנהל התקן הכרטיס החכם"
 
@@ -1465,19 +1465,19 @@ msgstr "הפסקת הקלדה"
 msgid "Typing break plugin"
 msgstr "תוסף הפסקת הקלדה"
 
-#: plugins/xrandr/msd-xrandr-manager.c:369
+#: plugins/xrandr/msd-xrandr-manager.c:370
 msgid "Could not switch the monitor configuration"
 msgstr "לא ניתן להחליף את תצורת הצג"
 
-#: plugins/xrandr/msd-xrandr-manager.c:393
+#: plugins/xrandr/msd-xrandr-manager.c:394
 msgid "Could not restore the display's configuration"
 msgstr "לא ניתן לשחזר את תצורת התצוגה"
 
-#: plugins/xrandr/msd-xrandr-manager.c:418
+#: plugins/xrandr/msd-xrandr-manager.c:419
 msgid "Could not restore the display's configuration from a backup"
 msgstr "לא ניתן לשחזר את תצורת התצוגה מגיבוי"
 
-#: plugins/xrandr/msd-xrandr-manager.c:439
+#: plugins/xrandr/msd-xrandr-manager.c:440
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
@@ -1487,97 +1487,97 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:490
+#: plugins/xrandr/msd-xrandr-manager.c:491
 msgid "Does the display look OK?"
 msgstr "האם התצוגה נראית בסדר?"
 
-#: plugins/xrandr/msd-xrandr-manager.c:497
+#: plugins/xrandr/msd-xrandr-manager.c:498
 msgid "_Restore Previous Configuration"
 msgstr "ש_חזור התצורה הקודמת"
 
-#: plugins/xrandr/msd-xrandr-manager.c:498
+#: plugins/xrandr/msd-xrandr-manager.c:499
 msgid "_Keep This Configuration"
 msgstr "_שמירת תצורה זו"
 
-#: plugins/xrandr/msd-xrandr-manager.c:579
+#: plugins/xrandr/msd-xrandr-manager.c:580
 msgid "The selected configuration for displays could not be applied"
 msgstr "לא ניתן להחיל את תצורת התצוגות הנבחרת"
 
-#: plugins/xrandr/msd-xrandr-manager.c:1178
+#: plugins/xrandr/msd-xrandr-manager.c:1177
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "לא ניתן לרענן את נתוני המסך: %s"
 
-#: plugins/xrandr/msd-xrandr-manager.c:1182
+#: plugins/xrandr/msd-xrandr-manager.c:1181
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "מתבצע נסיון להחלפת תצורת הצג בכל אופן"
 
-#: plugins/xrandr/msd-xrandr-manager.c:1939
+#: plugins/xrandr/msd-xrandr-manager.c:1938
 msgid "Rotation not supported"
 msgstr "הטיה אינה נתמכת"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2004
-#: plugins/xrandr/msd-xrandr-manager.c:2036
+#: plugins/xrandr/msd-xrandr-manager.c:2003
+#: plugins/xrandr/msd-xrandr-manager.c:2035
 msgid "Could not save monitor configuration"
 msgstr "לא ניתן לשמור את תצורת הצג"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2058
+#: plugins/xrandr/msd-xrandr-manager.c:2056
 msgid "Mirroring outputs not supported"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2089
+#: plugins/xrandr/msd-xrandr-manager.c:2087
 msgid "Normal"
 msgstr "רגיל"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2090
+#: plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "Left"
 msgstr "שמאלה"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2091
+#: plugins/xrandr/msd-xrandr-manager.c:2089
 msgid "Right"
 msgstr "ימינה"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2092
+#: plugins/xrandr/msd-xrandr-manager.c:2090
 msgid "Upside Down"
 msgstr "היפוך"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2181
+#: plugins/xrandr/msd-xrandr-manager.c:2179
 msgid "ON"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2182
+#: plugins/xrandr/msd-xrandr-manager.c:2180
 msgid "Turn this monitor off"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2185
+#: plugins/xrandr/msd-xrandr-manager.c:2183
 msgid "OFF"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2186
+#: plugins/xrandr/msd-xrandr-manager.c:2184
 msgid "Turn this monitor on"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2246
+#: plugins/xrandr/msd-xrandr-manager.c:2244
 msgid "Same output all monitors"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2247
+#: plugins/xrandr/msd-xrandr-manager.c:2245
 msgid "Mirror same output to all monitors and turn them on"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2294
+#: plugins/xrandr/msd-xrandr-manager.c:2292
 msgid "_Configure Display Settings…"
 msgstr "ה_גדרת תצורת התצוגה..."
 
-#: plugins/xrandr/msd-xrandr-manager.c:2304
+#: plugins/xrandr/msd-xrandr-manager.c:2302
 msgid "Open the display configuration dialog (all settings)"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2361
+#: plugins/xrandr/msd-xrandr-manager.c:2359
 msgid "Configure display settings"
 msgstr "הגדרות תצוגה"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2421
+#: plugins/xrandr/msd-xrandr-manager.c:2419
 msgid "Could not apply the stored configuration for monitors"
 msgstr "לא ניתן להחיל את התצורה השמורה על הצגים"
 

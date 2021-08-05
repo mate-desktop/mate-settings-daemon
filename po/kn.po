@@ -10,9 +10,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.25.0\n"
+"Project-Id-Version: mate-settings-daemon 1.25.1\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2020-08-20 10:34+0200\n"
+"POT-Creation-Date: 2021-06-23 22:04+0200\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
 "Language-Team: Kannada (https://www.transifex.com/mate/teams/13566/kn/)\n"
@@ -852,19 +852,19 @@ msgstr ""
 msgid "MATE Settings Daemon"
 msgstr "MATE ಸಂಯೋಜನೆಗಳ ಡೀಮನ್(Daemon)"
 
-#: mate-settings-daemon/main.c:65
+#: mate-settings-daemon/main.c:66
 msgid "Enable debugging code"
 msgstr "ದೋಷನಿವಾರಣಾ ಸಂಜ್ಞೆಯನ್ನು ಶಕ್ತಗೊಳಿಸು"
 
-#: mate-settings-daemon/main.c:66
+#: mate-settings-daemon/main.c:67
 msgid "Replace the current daemon"
 msgstr "ಪ್ರಸ್ತುತ ಡೀಮನ್(Daemon) ಅನ್ನು ಬದಲಿಸು"
 
-#: mate-settings-daemon/main.c:67
+#: mate-settings-daemon/main.c:68
 msgid "Don't become a daemon"
 msgstr "ಒಂದು ಡೆಮನ್ ಆಗಬೇಡ"
 
-#: mate-settings-daemon/main.c:68
+#: mate-settings-daemon/main.c:69
 msgid "Exit after a time (for debugging)"
 msgstr ""
 
@@ -876,23 +876,23 @@ msgstr "ನಿಲುಕಣಾ ಕೀಲಿಮಣೆ"
 msgid "Accessibility keyboard plugin"
 msgstr "ನಿಲುಕಣಾ ಕೀಲಿಮಣೆ ಪ್ಲಗ್ಇನ್"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:444
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:460
 #, c-format
 msgid "There was an error displaying help: %s"
 msgstr "ನೆರವನ್ನು ತೋರಿಸುವಾಗ ಒಂದು ದೋಷ ಉಂಟಾಗಿದೆ: %s"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:572
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:636
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:652
 msgid "Do you want to activate Slow Keys?"
 msgstr "ನಿಧಾನ ಕೀಲಿಗಳನ್ನು ನೀವು ಸಕ್ರಿಯಗೊಳಿಸಲು ಬಯಸುತ್ತೀರೆ?"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:573
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:637
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:589
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "ನಿಧಾನ ಕೀಲಿಗಳನ್ನು ನೀವು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲು ಬಯಸುತ್ತೀರೆ?"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:574
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:638
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:590
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:654
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -901,62 +901,62 @@ msgstr ""
 "ಶಾರ್ಟ್-ಕಟ್, ನಿಧಾನ ಕೀಲಿಗಳ ಸವಲತ್ತಾಗಿದ್ದು, ನಿಮ್ಮ ಕೀಲಿಮಣೆ ಕೆಲಸಮಾಡುವ ರೀತಿಯ ಮೇಲೆ "
 "ಇದು ಪರಿಣಾಮ ಬೀರುತ್ತದೆ."
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
 msgid "Don't activate"
 msgstr "ಸಕ್ರಿಯಗೊಳಿಸಬೇಡ"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:597
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:734
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
 msgid "Don't deactivate"
 msgstr "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಬೇಡ"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:619
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:756
 msgid "Activate"
 msgstr "ಸಕ್ರಿಯಗೊಳಿಸು"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:603
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:740
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:619
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:756
 msgid "Deactivate"
 msgstr "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸು"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:675
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:814
 msgid "Do_n't activate"
 msgstr "ಸಕ್ರಿಯಗೊಳಿಸಬೇಡ(_n)"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:659
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:798
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:675
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:814
 msgid "Do_n't deactivate"
 msgstr "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಬೇಡ(_n)"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:678
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:817
 msgid "_Activate"
 msgstr "ಸಕ್ರಿಯಗೊಳಿಸು(_A)"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:662
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:801
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:678
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:817
 msgid "_Deactivate"
 msgstr "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸು(_D)"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:666
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:682
 msgid "Slow Keys Alert"
 msgstr "ನಿಧಾನ ಕೀಲಿಗಳ ಎಚ್ಚರಿಕೆ"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:706
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:772
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:722
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:788
 msgid "Do you want to activate Sticky Keys?"
 msgstr "ನೀವು ಸ್ಟಿಕಿ ಕೀಲಿಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲು ಬಯಸುತ್ತೀರೆ?"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:707
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:773
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:723
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "ನೀವು ಸ್ಟಿಕಿ ಕೀಲಿಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲು ಬಯಸುತ್ತೀರೆ?"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:709
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:775
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:791
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -965,8 +965,8 @@ msgstr ""
 "ಸ್ಟಿಕಿ ಕೀಲಿಗಳ ಸವಲತ್ತಾಗಿದ್ದು, ನಿಮ್ಮ ಕೀಲಿಮಣೆ ಕೆಲಸಮಾಡುವ ರೀತಿಯ ಮೇಲೆ ಇದು ಪರಿಣಾಮ "
 "ಬೀರುತ್ತದೆ."
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:711
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:777
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:727
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:793
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -976,11 +976,11 @@ msgstr ""
 "ಬಾರಿ ಒತ್ತಿದ್ದೀರಿ  ಈ ಶಾರ್ಟ್-ಕಟ್, ಸ್ಟಿಕಿ ಕೀಲಿಗಳ ಸವಲತ್ತಾಗಿದ್ದು, ನಿಮ್ಮ ಕೀಲಿಮಣೆ "
 "ಕೆಲಸಮಾಡುವ ರೀತಿಯ ಮೇಲೆ ಇದು ಪರಿಣಾಮ ಬೀರುತ್ತದೆ."
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:805
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:821
 msgid "Sticky Keys Alert"
 msgstr "ಸ್ಟಿಕಿ ಕೀಲಿಗಳ ಎಚ್ಚರಿಕೆ"
 
-#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:829
+#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:830
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:14
 msgid "Universal Access Preferences"
 msgstr "ಜಾಗತಿಕ ನಿಲುಕಣಾ ಆದ್ಯತೆಗಳು"
@@ -1088,25 +1088,25 @@ msgid ""
 "about low disk space"
 msgstr ""
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:60
+#: plugins/housekeeping/msd-ldsm-dialog.c:61
 msgid "Don't show any warnings again for this file system"
 msgstr ""
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:62
+#: plugins/housekeeping/msd-ldsm-dialog.c:63
 msgid "Don't show any warnings again"
 msgstr "ಈ ಸಂದೇಶವನ್ನು ಪುನಃ ತೋರಿಸಬೇಡ"
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:75
+#: plugins/housekeeping/msd-ldsm-dialog.c:76
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
 msgstr "ಪರಿಮಾಣ \"%s\" ದಲ್ಲಿ ಕೇವಲ %s ಡಿಸ್ಕ್ ಸ್ಥಳವು ಮಾತ್ರ ಬಾಕಿ ಇದೆ."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:78
+#: plugins/housekeeping/msd-ldsm-dialog.c:79
 #, c-format
 msgid "This computer has only %s disk space remaining."
 msgstr "ಈ ಗಣಕದಲ್ಲಿ ಕೇವಲ %s ಡಿಸ್ಕ್ ಸ್ಥಳವು ಮಾತ್ರ ಬಾಕಿ ಇದೆ."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:94
+#: plugins/housekeeping/msd-ldsm-dialog.c:95
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
@@ -1115,7 +1115,7 @@ msgstr ""
 "ತೆಗೆಯುವ ಮೂಲಕ, ಅಥವ ಕಡತಗಳನ್ನು ಇನ್ನೊಂದು ಡಿಸ್ಕಿಗೆ ಅಥವ ವಿಭಾಗಕ್ಕೆ ಸ್ಥಳಾಂತರಿಸುವ "
 "ಮೂಲಕ ಡಿಸ್ಕಿನಲ್ಲಿ ಸ್ಥಳವನ್ನು ಮುಕ್ತಗೊಳಿಸಬಹುದು."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:97
+#: plugins/housekeeping/msd-ldsm-dialog.c:98
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
@@ -1124,7 +1124,7 @@ msgstr ""
 "ಬೇರೊಂದು ಡಿಸ್ಕಿಗೆ ಅಥವ ವಿಭಾಗಕ್ಕೆ ಸ್ಥಳಾಂತರಿಸುವ ಮೂಲಕ ಡಿಸ್ಕಿನಲ್ಲಿ ಸ್ಥಳವನ್ನು "
 "ಮುಕ್ತಗೊಳಿಸಬಹುದು."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:102
+#: plugins/housekeeping/msd-ldsm-dialog.c:103
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
@@ -1133,7 +1133,7 @@ msgstr ""
 "ತೆಗೆಯುವ ಮೂಲಕ, ಅಥವ ಕಡತಗಳನ್ನು ಒಂದು ಹೊರಗಿನ ಡಿಸ್ಕಿಗೆ ಸ್ಥಳಾಂತರಿಸುವ ಮೂಲಕ "
 "ಡಿಸ್ಕಿನಲ್ಲಿ ಸ್ಥಳವನ್ನು ಮುಕ್ತಗೊಳಿಸಬಹುದು."
 
-#: plugins/housekeeping/msd-ldsm-dialog.c:105
+#: plugins/housekeeping/msd-ldsm-dialog.c:106
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
@@ -1158,35 +1158,35 @@ msgstr "ಪರೀಕ್ಷಿಸು..."
 msgid "Ignore"
 msgstr "ಅಲಕ್ಷಿಸು"
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:97
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:98
 #, c-format
 msgid "Removing item %lu of %lu"
 msgstr "%lu ಅಂಶವನ್ನು (%lu ಗಳಲ್ಲಿ) ತೆಗೆದು ಹಾಕಲಾಗುತ್ತಿದೆ"
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:117
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:118
 #, c-format
 msgid "Removing: %s"
 msgstr "ತೆಗೆದು ಹಾಕಲಾಗುತ್ತಿದೆ: %s"
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:247
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:300
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:248
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:301
 msgid "Emptying the trash"
 msgstr "ಕಸದ ಬುಟ್ಟಿಯನ್ನು ಖಾಲಿ ಮಾಡಲಾಗುತ್ತಿದೆ"
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:276
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:277
 msgid "Preparing to empty trash…"
 msgstr "ಕಸದಬುಟ್ಟಿಯನ್ನು ಖಾಲಿ ಮಾಡಲು ತಯಾರಾಗುತ್ತಿದೆ..."
 
 #. Translators: "Emptying trash from <device>"
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:303
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:304
 msgid "From: "
 msgstr "ಇಂದ: "
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:355
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:356
 msgid "Empty all of the items from the trash?"
 msgstr "ಕಸದಬುಟ್ಟಿಯಲ್ಲಿನ ಎಲ್ಲಾ ಅಂಶಗಳನ್ನು ಖಾಲಿಮಾಡಬೇಕೆ?"
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:358
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:359
 msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
@@ -1195,7 +1195,7 @@ msgstr ""
 "ಶಾಶ್ವತವಾಗಿ ನಾಶಗೊಳ್ಳುತ್ತವೆ. ಅವನ್ನು ನೀವು ಪ್ರತ್ಯೇಕವಾಗಿಯೂ ಸಹ ಅಳಿಸಲು ಸಾಧ್ಯ "
 "ಎನ್ನುವದನ್ನು ದಯವಿಟ್ಟು ಗಮನಿಸಿ."
 
-#: plugins/housekeeping/msd-ldsm-trash-empty.c:365
+#: plugins/housekeeping/msd-ldsm-trash-empty.c:366
 msgid "_Empty Trash"
 msgstr "ಕಸದಬುಟ್ಟಿಯನ್ನು ಖಾಲಿಮಾಡು(_E)"
 
@@ -1207,17 +1207,17 @@ msgstr "ಕೀಲಿಬದ್ಧತೆಗಳು"
 msgid "Keybindings plugin"
 msgstr "ಕೀಲಿಬದ್ಧತೆಗಳ ಪ್ಲಗ್ಇನ್"
 
-#: plugins/keybindings/msd-keybindings-manager.c:108
+#: plugins/keybindings/msd-keybindings-manager.c:109
 #, c-format
 msgid "Key binding (%s) is invalid"
 msgstr "ಕೀಲಿಬದ್ಧತೆಯು (%s) ಅಮಾನ್ಯವಾಗಿದೆ"
 
-#: plugins/keybindings/msd-keybindings-manager.c:144
+#: plugins/keybindings/msd-keybindings-manager.c:145
 #, c-format
 msgid "Key binding (%s) is incomplete"
 msgstr "ಕೀಲಿಬದ್ಧತೆ (%s) ಪೂರ್ಣವಾಗಿಲ್ಲ"
 
-#: plugins/keybindings/msd-keybindings-manager.c:486
+#: plugins/keybindings/msd-keybindings-manager.c:487
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -1234,7 +1234,7 @@ msgstr "ಕೀಲಿಮಣೆ"
 msgid "Keyboard plugin"
 msgstr "ಕೀಲಿ ಮಣೆ ಪ್ಲಗ್ಇನ್"
 
-#: plugins/keyboard/msd-keyboard-xkb.c:119
+#: plugins/keyboard/msd-keyboard-xkb.c:120
 #, c-format
 msgid ""
 "Error activating XKB configuration.\n"
@@ -1251,15 +1251,15 @@ msgid ""
 " • The result of <b>%s</b>"
 msgstr ""
 
-#: plugins/keyboard/msd-keyboard-xkb.c:283
+#: plugins/keyboard/msd-keyboard-xkb.c:286
 msgid "_Layouts"
 msgstr ""
 
-#: plugins/keyboard/msd-keyboard-xkb.c:290
+#: plugins/keyboard/msd-keyboard-xkb.c:293
 msgid "Keyboard _Preferences"
 msgstr "ಕೀಲಿಮಣೆ ಆದ್ಯತೆಗಳು(_P)"
 
-#: plugins/keyboard/msd-keyboard-xkb.c:296
+#: plugins/keyboard/msd-keyboard-xkb.c:299
 msgid "Show _Current Layout"
 msgstr ""
 
@@ -1271,7 +1271,7 @@ msgstr "ಮೀಡಿಯಾ ಕೀಲಿಗಳು"
 msgid "Media keys plugin"
 msgstr "ಮೀಡಿಯಾ ಕೀಲಿಗಳು ಪ್ಲಗ್ಇನ್"
 
-#: plugins/media-keys/msd-media-keys-manager.c:184
+#: plugins/media-keys/msd-media-keys-manager.c:185
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
@@ -1279,7 +1279,7 @@ msgstr ""
 "ಪೂರ್ವನಿಯೋಜಿತಟರ್ಮಿನಲ್ ಪಡೆಯಲಾಗಿಲ್ಲ. ನಿಮ್ಮ ಪೂರ್ವನಿಯೋಜಿತ ಟರ್ಮಿನಲ್ ಆಜ್ಞೆಯನ್ನು "
 "ಹೊಂದಿಸಲಾಗಿದೆ ಹಾಗು ಒಂದು ಮಾನ್ಯವಾದ ಅನ್ವಯಕ್ಕೆ ಸೂಚಿತಗೊಂಡಿದೆ ಎಂದು ಪರಿಶೀಲಿಸಿ."
 
-#: plugins/media-keys/msd-media-keys-manager.c:224
+#: plugins/media-keys/msd-media-keys-manager.c:225
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1289,46 +1289,46 @@ msgstr ""
 "ಇದು ಒಂದು ಮಾನ್ಯವಾದ ಆಜ್ಞೆಯಾಗಿದೆ ಎಂದು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ."
 
 #: plugins/media-keys/msd-media-keys-manager.c:638
-#: plugins/media-keys/test-media-window.c:81
+#: plugins/media-keys/test-media-window.c:82
 msgid "Touchpad enabled"
 msgstr ""
 
 #: plugins/media-keys/msd-media-keys-manager.c:638
-#: plugins/media-keys/test-media-window.c:74
+#: plugins/media-keys/test-media-window.c:75
 msgid "Touchpad disabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:954
-#: plugins/media-keys/test-media-window.c:88
+#: plugins/media-keys/msd-media-keys-manager.c:956
+#: plugins/media-keys/test-media-window.c:89
 msgid "Bluetooth disabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:957
-#: plugins/media-keys/test-media-window.c:95
+#: plugins/media-keys/msd-media-keys-manager.c:959
+#: plugins/media-keys/test-media-window.c:96
 msgid "Bluetooth enabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:961
-#: plugins/media-keys/test-media-window.c:102
+#: plugins/media-keys/msd-media-keys-manager.c:963
+#: plugins/media-keys/test-media-window.c:103
 msgid "Airplane mode enabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:964
-#: plugins/media-keys/test-media-window.c:109
+#: plugins/media-keys/msd-media-keys-manager.c:966
+#: plugins/media-keys/test-media-window.c:110
 msgid "Airplane mode disabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:995
+#: plugins/media-keys/msd-media-keys-manager.c:997
 msgid "Hardware Airplane Mode"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:1033
-#: plugins/media-keys/test-media-window.c:123
+#: plugins/media-keys/msd-media-keys-manager.c:1035
+#: plugins/media-keys/test-media-window.c:124
 msgid "Changing Screen Layout"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:1037
-#: plugins/media-keys/test-media-window.c:116
+#: plugins/media-keys/msd-media-keys-manager.c:1039
+#: plugins/media-keys/test-media-window.c:117
 msgid "No External Display"
 msgstr ""
 
@@ -1340,16 +1340,16 @@ msgstr "ಮೌಸ್"
 msgid "Mouse plugin"
 msgstr "ಮೌಸ್ ಪ್ಲಗ್‌ಇನ್"
 
-#: plugins/mouse/msd-mouse-manager.c:1650
+#: plugins/mouse/msd-mouse-manager.c:1651
 msgid "Could not enable mouse accessibility features"
 msgstr "ಮೌಸ್‌ ನಿಲುಕಣಾ ಸೌಕರ್ಯಗಳನ್ನು ಶಕ್ತಗೊಳಿಸಲಾಗಿಲ್ಲ"
 
-#: plugins/mouse/msd-mouse-manager.c:1652
+#: plugins/mouse/msd-mouse-manager.c:1653
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 
-#: plugins/mouse/msd-mouse-manager.c:1655
+#: plugins/mouse/msd-mouse-manager.c:1656
 msgid "Mouse Preferences"
 msgstr "ಮೌಸ್ ಆದ್ಯತೆಗಳು"
 
@@ -1371,65 +1371,65 @@ msgstr ""
 msgid "Rfkill plugin"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard-manager.c:164
+#: plugins/smartcard/msd-smartcard-manager.c:165
 msgid "Module Path"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard-manager.c:165
+#: plugins/smartcard/msd-smartcard-manager.c:166
 msgid "path to smartcard PKCS #11 driver"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard-manager.c:491
+#: plugins/smartcard/msd-smartcard-manager.c:492
 msgid "received error or hang up from event source"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard-manager.c:580
+#: plugins/smartcard/msd-smartcard-manager.c:581
 msgid "NSS security system could not be initialized"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard-manager.c:649
+#: plugins/smartcard/msd-smartcard-manager.c:650
 msgid "no suitable smartcard driver could be found"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard-manager.c:669
+#: plugins/smartcard/msd-smartcard-manager.c:670
 #, c-format
 msgid "smartcard driver '%s' could not be loaded"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard-manager.c:753
+#: plugins/smartcard/msd-smartcard-manager.c:754
 #, c-format
 msgid "could not watch for incoming card events - %s"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard-manager.c:1100
+#: plugins/smartcard/msd-smartcard-manager.c:1101
 msgid "encountered unexpected error while waiting for smartcard events"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard.c:148
+#: plugins/smartcard/msd-smartcard.c:149
 msgid "Slot ID"
 msgstr "Slot(ಸ್ಲೊಟ್) ID "
 
-#: plugins/smartcard/msd-smartcard.c:149
+#: plugins/smartcard/msd-smartcard.c:150
 msgid "The slot the card is in"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard.c:155
+#: plugins/smartcard/msd-smartcard.c:156
 msgid "Slot Series"
 msgstr "Slot(ಸ್ಲೊಟ್) ಸರಣಿ"
 
-#: plugins/smartcard/msd-smartcard.c:156
+#: plugins/smartcard/msd-smartcard.c:157
 msgid "per-slot card identifier"
 msgstr ""
 
-#: plugins/smartcard/msd-smartcard.c:162 plugins/smartcard/msd-smartcard.c:163
+#: plugins/smartcard/msd-smartcard.c:163 plugins/smartcard/msd-smartcard.c:164
 msgid "name"
 msgstr "ಹೆಸರು"
 
-#: plugins/smartcard/msd-smartcard.c:167
+#: plugins/smartcard/msd-smartcard.c:168
 msgid "Module"
 msgstr "ಘಟಕ"
 
-#: plugins/smartcard/msd-smartcard.c:168
+#: plugins/smartcard/msd-smartcard.c:169
 msgid "smartcard driver"
 msgstr ""
 
@@ -1457,19 +1457,19 @@ msgstr "ಟೈಪಿಂಗ್ ವಿರಾಮ"
 msgid "Typing break plugin"
 msgstr "ಟೈಪಿಂಗ್ ವಿರಾಮ ಪ್ಲಗ್ಇನ್"
 
-#: plugins/xrandr/msd-xrandr-manager.c:369
+#: plugins/xrandr/msd-xrandr-manager.c:370
 msgid "Could not switch the monitor configuration"
 msgstr "ತೆರೆಯ ಸಂರಚನೆಯನ್ನು ಬದಲಾಯಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:393
+#: plugins/xrandr/msd-xrandr-manager.c:394
 msgid "Could not restore the display's configuration"
 msgstr "ಪ್ರದರ್ಶಕದ ಸಂರಚನೆಯನ್ನು ಮರಳಿ ಸ್ಥಾಪಿಸಲಾಗಿಲ್ಲ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:418
+#: plugins/xrandr/msd-xrandr-manager.c:419
 msgid "Could not restore the display's configuration from a backup"
 msgstr "ಪ್ರದರ್ಶಕದ ಸಂರಚನೆಯನ್ನು ಬ್ಯಾಕ್‌ಅಪ್‌ನಿಂದ ಮರಳಿ ಸ್ಥಾಪಿಸಲಾಗಿಲ್ಲ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:439
+#: plugins/xrandr/msd-xrandr-manager.c:440
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
@@ -1477,97 +1477,97 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:490
+#: plugins/xrandr/msd-xrandr-manager.c:491
 msgid "Does the display look OK?"
 msgstr "ಪ್ರದರ್ಶಕವು ಸರಿಯಾಗಿ ಕಾಣಿಸುತ್ತಿದೆಯೆ?"
 
-#: plugins/xrandr/msd-xrandr-manager.c:497
+#: plugins/xrandr/msd-xrandr-manager.c:498
 msgid "_Restore Previous Configuration"
 msgstr "ಹಿಂದಿನ ಸಂರಚನೆಯನ್ನು ಮರಳಿ ಸ್ಥಾಪಿಸು(_R)"
 
-#: plugins/xrandr/msd-xrandr-manager.c:498
+#: plugins/xrandr/msd-xrandr-manager.c:499
 msgid "_Keep This Configuration"
 msgstr "ಈ ಸಂರಚನೆಯನ್ನು ಇರಿಸಿಕೊ(_K)"
 
-#: plugins/xrandr/msd-xrandr-manager.c:579
+#: plugins/xrandr/msd-xrandr-manager.c:580
 msgid "The selected configuration for displays could not be applied"
 msgstr "ಆಯ್ಕೆ ಮಾಡಲಾದ ಪ್ರದರ್ಶಕದ ಸಂರಚನೆಯನ್ನು ಅನ್ವಯಿಸಲಾಗಿಲ್ಲ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:1178
+#: plugins/xrandr/msd-xrandr-manager.c:1177
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "ತೆರೆಯ ಮಾಹಿತಿಯನ್ನು ಪುನಶ್ಚೇತನಗೊಳಿಸಲಾಗಲಿಲ್ಲ: %s"
 
-#: plugins/xrandr/msd-xrandr-manager.c:1182
+#: plugins/xrandr/msd-xrandr-manager.c:1181
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "ಆದರೂ ಸಹ ತೆರೆಯ ಸಂರಚನೆಯನ್ನು ಬದಲಾಯಿಸಲು ಪ್ರಯತ್ನಿಸಲಾಗುತ್ತಿದೆ."
 
-#: plugins/xrandr/msd-xrandr-manager.c:1939
+#: plugins/xrandr/msd-xrandr-manager.c:1938
 msgid "Rotation not supported"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2004
-#: plugins/xrandr/msd-xrandr-manager.c:2036
+#: plugins/xrandr/msd-xrandr-manager.c:2003
+#: plugins/xrandr/msd-xrandr-manager.c:2035
 msgid "Could not save monitor configuration"
 msgstr "ತೆರೆಯ ಸಂರಚನೆಯನ್ನು ಉಳಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2058
+#: plugins/xrandr/msd-xrandr-manager.c:2056
 msgid "Mirroring outputs not supported"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2089
+#: plugins/xrandr/msd-xrandr-manager.c:2087
 msgid "Normal"
 msgstr "ಸಾಮಾನ್ಯ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2090
+#: plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "Left"
 msgstr "ಎಡ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2091
+#: plugins/xrandr/msd-xrandr-manager.c:2089
 msgid "Right"
 msgstr "ಬಲ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2092
+#: plugins/xrandr/msd-xrandr-manager.c:2090
 msgid "Upside Down"
 msgstr "ತಲೆ ಕೆಳಗೆ"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2181
+#: plugins/xrandr/msd-xrandr-manager.c:2179
 msgid "ON"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2182
+#: plugins/xrandr/msd-xrandr-manager.c:2180
 msgid "Turn this monitor off"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2185
+#: plugins/xrandr/msd-xrandr-manager.c:2183
 msgid "OFF"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2186
+#: plugins/xrandr/msd-xrandr-manager.c:2184
 msgid "Turn this monitor on"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2246
+#: plugins/xrandr/msd-xrandr-manager.c:2244
 msgid "Same output all monitors"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2247
+#: plugins/xrandr/msd-xrandr-manager.c:2245
 msgid "Mirror same output to all monitors and turn them on"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2294
+#: plugins/xrandr/msd-xrandr-manager.c:2292
 msgid "_Configure Display Settings…"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2304
+#: plugins/xrandr/msd-xrandr-manager.c:2302
 msgid "Open the display configuration dialog (all settings)"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2361
+#: plugins/xrandr/msd-xrandr-manager.c:2359
 msgid "Configure display settings"
 msgstr "ಪ್ರದರ್ಶನ ಸಿದ್ಧತೆಗಳನ್ನು ಸಂರಚಿಸು"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2421
+#: plugins/xrandr/msd-xrandr-manager.c:2419
 msgid "Could not apply the stored configuration for monitors"
 msgstr "ತೆರೆಗಳಿಗಾಗಿ ಶೇಖರಿಸಲಾದ ಸಂರಚನೆಯನ್ನು ಅನ್ವಯಿಸಲಾಗಿಲ್ಲ"
 
