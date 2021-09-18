@@ -2241,7 +2241,7 @@ add_menu_items_for_clone (MsdXrandrManager *manager)
         GtkWidget *item;
         gulong activate_id;
 
-        item = gtk_check_menu_item_new_with_label(_("Same output all monitors"));
+        item = gtk_check_menu_item_new_with_label(_("Same output on all monitors"));
         gtk_widget_set_tooltip_text(item, _("Mirror same output to all monitors and turn them on"));
         gtk_widget_show_all (item);
         gtk_menu_shell_append (GTK_MENU_SHELL (priv->popup_menu), item);
