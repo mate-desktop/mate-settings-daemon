@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.25.1\n"
+"Project-Id-Version: mate-settings-daemon 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-23 22:04+0200\n"
+"POT-Creation-Date: 2021-09-18 16:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1480,7 +1480,7 @@ msgid "Turn this monitor on"
 msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:2244
-msgid "Same output all monitors"
+msgid "Same output on all monitors"
 msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:2245
