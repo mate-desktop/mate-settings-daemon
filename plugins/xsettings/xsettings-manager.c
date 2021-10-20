@@ -283,9 +283,9 @@ xsettings_manager_set_string (XSettingsManager *manager,
 }
 
 XSettingsResult
-xsettings_manager_set_color (XSettingsManager *manager,
-			     const char       *name,
-			     XSettingsColor   *value)
+xsettings_manager_set_color (XSettingsManager       *manager,
+                             const char             *name,
+                             const XSettingsColor   *value)
 {
   XSettingsSetting setting;
 

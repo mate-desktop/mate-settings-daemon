@@ -58,9 +58,9 @@ XSettingsResult xsettings_manager_set_int        (XSettingsManager *manager,
 XSettingsResult xsettings_manager_set_string     (XSettingsManager *manager,
                                                   const char       *name,
                                                   const char       *value);
-XSettingsResult xsettings_manager_set_color      (XSettingsManager *manager,
-                                                  const char       *name,
-                                                  XSettingsColor   *value);
+XSettingsResult xsettings_manager_set_color      (XSettingsManager       *manager,
+                                                  const char             *name,
+                                                  const XSettingsColor   *value);
 XSettingsResult xsettings_manager_notify         (XSettingsManager *manager);
 
 

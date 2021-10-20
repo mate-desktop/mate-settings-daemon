@@ -291,8 +291,8 @@ msd_smartcard_manager_class_install_signals (MsdSmartcardManagerClass *manager_c
 }
 
 static gboolean
-slot_id_equal (CK_SLOT_ID *slot_id_1,
-               CK_SLOT_ID *slot_id_2)
+slot_id_equal (const CK_SLOT_ID *slot_id_1,
+               const CK_SLOT_ID *slot_id_2)
 {
         g_assert (slot_id_1 != NULL);
         g_assert (slot_id_2 != NULL);
