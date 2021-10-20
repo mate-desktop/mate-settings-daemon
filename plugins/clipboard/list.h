@@ -48,7 +48,7 @@ List *list_find    (List         *list,
 		    ListFindFunc  func,
 		    void         *user_data);
 List *list_remove  (List         *list,
-		    void         *data);
+                    const void   *data);
 int   list_length  (List         *list);
 
 List *list_copy    (List         *list);

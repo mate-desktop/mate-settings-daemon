@@ -82,7 +82,7 @@ list_find (List         *list,
 
 List *
 list_remove  (List *list,
-	      void *data)
+              const void *data)
 {
   List *tmp, *prev;
 
