@@ -69,9 +69,9 @@ append_color_define (GString        *string,
         g_string_append_printf (string,
                                 "#define %s #%2.2hx%2.2hx%2.2hx\n",
                                 name,
-                                color->red>>8,
-                                color->green>>8,
-                                color->blue>>8);
+                                (unsigned short) (color->red>>8),
+                                (unsigned short) (color->green>>8),
+                                (unsigned short) (color->blue>>8));
 }
 
 static GdkColor*
