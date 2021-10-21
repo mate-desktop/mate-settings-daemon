@@ -228,7 +228,7 @@ msd_datetime_mechanism_new (void)
 static gboolean
 _check_polkit_for_action (MsdDatetimeMechanism *mechanism, DBusGMethodInvocation *context, const char *action)
 {
-        const char *sender;
+        char *sender;
         GError *error;
         PolkitSubject *subject;
         PolkitAuthorizationResult *result;
@@ -238,6 +238,7 @@ _check_polkit_for_action (MsdDatetimeMechanism *mechanism, DBusGMethodInvocation
         /* Check that caller is privileged */
         sender = dbus_g_method_get_sender (context);
         subject = polkit_system_bus_name_new (sender);
+        g_free (sender);
 
         result = polkit_authority_check_authorization_sync (mechanism->priv->auth,
                                                             subject,
@@ -587,7 +588,7 @@ check_can_do (MsdDatetimeMechanism  *mechanism,
               const char            *action,
               DBusGMethodInvocation *context)
 {
-        const char *sender;
+        char *sender;
         PolkitSubject *subject;
         PolkitAuthorizationResult *result;
         GError *error;
@@ -595,6 +596,7 @@ check_can_do (MsdDatetimeMechanism  *mechanism,
         /* Check that caller is privileged */
         sender = dbus_g_method_get_sender (context);
         subject = polkit_system_bus_name_new (sender);
+        g_free (sender);
 
         error = NULL;
         result = polkit_authority_check_authorization_sync (mechanism->priv->auth,
