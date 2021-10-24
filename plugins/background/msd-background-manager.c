@@ -415,10 +415,16 @@ queue_timeout (MsdBackgroundManager *manager)
 static void
 disconnect_session_manager_listener (MsdBackgroundManager* manager)
 {
+#if GLIB_CHECK_VERSION(2,62,0)
+	if (manager->proxy) {
+		g_clear_signal_handler (&manager->proxy_signal_id, manager->proxy);
+	}
+#else
 	if (manager->proxy && manager->proxy_signal_id) {
 		g_signal_handler_disconnect (manager->proxy, manager->proxy_signal_id);
 		manager->proxy_signal_id = 0;
 	}
+#endif
 }
 
 static void
