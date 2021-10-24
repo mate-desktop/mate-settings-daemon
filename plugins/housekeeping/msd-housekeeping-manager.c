@@ -44,6 +44,7 @@ struct _MsdHousekeepingManager {
         guint      long_term_cb;
         guint      short_term_cb;
         GSettings *settings;
+        gulong     config_listener_id;
 };
 
 G_DEFINE_TYPE (MsdHousekeepingManager, msd_housekeeping_manager, G_TYPE_OBJECT)
@@ -244,13 +245,6 @@ msd_housekeeping_manager_start (MsdHousekeepingManager *manager,
         g_debug ("Starting housekeeping manager");
         mate_settings_profile_start (NULL);
 
-        msd_ldsm_setup (FALSE);
-
-        manager->settings = g_settings_new (THUMB_CACHE_SCHEMA);
-
-        g_signal_connect (manager->settings, "changed",
-                          G_CALLBACK (settings_changed_callback), manager);
-
         /* Clean once, a few minutes after start-up */
         do_cleanup_soon (manager);
 
@@ -266,7 +260,23 @@ msd_housekeeping_manager_start (MsdHousekeepingManager *manager,
 static void
 msd_housekeeping_manager_finalize (GObject *object)
 {
-        msd_housekeeping_manager_stop (MSD_HOUSEKEEPING_MANAGER (object));
+        MsdHousekeepingManager *manager = MSD_HOUSEKEEPING_MANAGER (object);
+        msd_housekeeping_manager_stop (manager);
+#if GLIB_CHECK_VERSION(2,62,0)
+        g_clear_signal_handler (&manager->config_listener_id,
+                                manager->settings);
+#else
+        if (manager->config_listener_id != 0) {
+                g_signal_handler_disconnect (manager->settings,
+                                             manager->config_listener_id);
+                manager->config_listener_id = 0;
+        }
+#endif
+        g_object_unref (manager->settings);
+        manager->settings = NULL;
+
+        msd_ldsm_clean ();
+
         G_OBJECT_CLASS (msd_housekeeping_manager_parent_class)->finalize (object);
 }
 
@@ -292,11 +302,6 @@ msd_housekeeping_manager_stop (MsdHousekeepingManager *manager)
                         do_cleanup (manager);
                 }
         }
-
-        g_object_unref (manager->settings);
-        manager->settings = NULL;
-
-        msd_ldsm_clean ();
 }
 
 static void
@@ -310,6 +315,12 @@ msd_housekeeping_manager_class_init (MsdHousekeepingManagerClass *klass)
 static void
 msd_housekeeping_manager_init (MsdHousekeepingManager *manager)
 {
+        msd_ldsm_setup (FALSE);
+
+        manager->settings = g_settings_new (THUMB_CACHE_SCHEMA);
+        manager->config_listener_id = g_signal_connect (manager->settings, "changed",
+                                                        G_CALLBACK (settings_changed_callback),
+                                                        manager);
 }
 
 MsdHousekeepingManager *
