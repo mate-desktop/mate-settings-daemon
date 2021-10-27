@@ -469,37 +469,39 @@ dnl - Show summary
 dnl ---------------------------------------------------------------------------
 
 echo "
-                mate-settings-daemon $VERSION
-                =============================
+Configure summary:
 
-    prefix:                   ${prefix}
-    exec_prefix:              ${exec_prefix}
-    libdir:                   ${libdir}
-    bindir:                   ${bindir}
-    sbindir:                  ${sbindir}
-    sysconfdir:               ${sysconfdir}
-    sysconfsubdir:            ${sysconfsubdir}
-    localstatedir:            ${localstatedir}
-    plugindir:                ${plugindir}
-    datadir:                  ${datadir}
-    source code location:     ${srcdir}
-    compiler:                 ${CC}
-    cflags:                   ${CFLAGS}
-    warning cflags:           ${WARN_CFLAGS}
-    Maintainer mode:          ${USE_MAINTAINER_MODE}
+    ${PACKAGE_STRING}
+    `echo $PACKAGE_STRING | sed "s/./=/g"`
 
-    dbus-1 system.d dir:      ${DBUS_SYS_DIR}
-    PolicyKit support:        ${HAVE_POLKIT}
+    prefix ..................: ${prefix}
+    exec_prefix .............: ${exec_prefix}
+    libdir ..................: ${libdir}
+    bindir ..................: ${bindir}
+    sbindir .................: ${sbindir}
+    sysconfdir...............: ${sysconfdir}
+    sysconfsubdir ...........: ${sysconfsubdir}
+    localstatedir............: ${localstatedir}
+    plugindir ...............: ${plugindir}
+    datadir..................: ${datadir}
+    source code location ....: ${srcdir}
+    compiler.................: ${CC}
+    cflags ..................: ${CFLAGS}
+    warning cflags ..........: ${WARN_CFLAGS}
+    Maintainer mode .........: ${USE_MAINTAINER_MODE}
 
-    PulseAudio support:       ${have_pulse}
-    Libnotify support:        ${have_libnotify}
-    Libatspi support:         ${have_libatspi}
-    Libcanberra support:      ${have_libcanberra}
-    Libmatemixer support:     ${have_libmatemixer}
-    Smartcard support:        ${have_smartcard_support}
-    RFKill support:           ${enable_rfkill}
+    dbus-1 system.d dir .....: ${DBUS_SYS_DIR}
+    PolicyKit support .......: ${HAVE_POLKIT}
+
+    PulseAudio support ......: ${have_pulse}
+    Libnotify support .......: ${have_libnotify}
+    Libatspi support ........: ${have_libatspi}
+    Libcanberra support .....: ${have_libcanberra}
+    Libmatemixer support ....: ${have_libmatemixer}
+    Smartcard support .......: ${have_smartcard_support}
+    RFKill support ..........: ${enable_rfkill}
 ${NSS_DATABASE:+\
-    System nssdb:             ${NSS_DATABASE}
+    System nssdb ............: ${NSS_DATABASE}
 }\
-    Profiling support:        ${enable_profiling}
+    Profiling support .......: ${enable_profiling}
 "
