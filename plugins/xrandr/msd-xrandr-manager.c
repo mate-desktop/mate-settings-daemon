@@ -1006,7 +1006,6 @@ sanitize (MsdXrandrManager *manager, GPtrArray *array)
                 }
         }
 
-
         /* Remove configurations that are duplicates of
          * configurations earlier in the cycle
          */

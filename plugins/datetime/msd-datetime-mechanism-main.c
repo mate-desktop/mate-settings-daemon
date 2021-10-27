@@ -39,7 +39,6 @@
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
 
-
 #include "msd-datetime-mechanism.h"
 
 static DBusGProxy *

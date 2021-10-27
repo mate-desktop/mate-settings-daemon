@@ -24,11 +24,9 @@
 #ifndef LIST_H
 #define LIST_H
 
-
 typedef struct _List      List;
 typedef void (*Callback) (void *data,
 			  void *user_data);
-
 
 struct _List
 {

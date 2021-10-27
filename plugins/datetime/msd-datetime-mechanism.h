@@ -62,7 +62,6 @@ typedef enum
 GType msd_datetime_mechanism_error_get_type (void);
 #define MSD_DATETIME_MECHANISM_TYPE_ERROR (msd_datetime_mechanism_error_get_type ())
 
-
 GQuark                     msd_datetime_mechanism_error_quark         (void);
 GType                      msd_datetime_mechanism_get_type            (void);
 MsdDatetimeMechanism      *msd_datetime_mechanism_new                 (void);

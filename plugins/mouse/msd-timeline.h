@@ -75,7 +75,6 @@ struct MsdTimelineClass
 
 typedef gdouble (*MsdTimelineProgressFunc) (gdouble progress);
 
-
 GType                   msd_timeline_get_type           (void) G_GNUC_CONST;
 GType                   msd_timeline_direction_get_type (void) G_GNUC_CONST;
 GType                   msd_timeline_progress_type_get_type (void) G_GNUC_CONST;
@@ -119,7 +118,6 @@ void                    msd_timeline_set_progress_func  (MsdTimeline            
 							 MsdTimelineProgressFunc  progress_func);
 
 gdouble                 msd_timeline_get_progress       (MsdTimeline             *timeline);
-
 
 #ifdef __cplusplus
 }

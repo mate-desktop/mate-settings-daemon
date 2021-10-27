@@ -1208,7 +1208,6 @@ msd_smartcard_manager_worker_run (MsdSmartcardManagerWorker *worker)
 {
         GError *error;
 
-
         error = NULL;
 
         while (msd_smartcard_manager_worker_watch_for_and_process_event (worker, &error));

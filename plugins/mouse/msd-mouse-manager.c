@@ -76,7 +76,6 @@
 #define KEY_HORIZ_TWO_FINGER_SCROLL      "horizontal-two-finger-scrolling"
 #define KEY_TOUCHPAD_ENABLED             "touchpad-enabled"
 
-
 #if 0   /* FIXME need to fork (?) mousetweaks for this to work */
 #define MATE_MOUSE_A11Y_SCHEMA           "org.mate.accessibility-mouse"
 #define KEY_MOUSE_A11Y_DWELL_ENABLE      "dwell-enable"
@@ -117,7 +116,6 @@ static void     set_tap_to_click_synaptics    (XDeviceInfo          *device_info
                                                gint                  one_finger_tap,
                                                gint                  two_finger_tap,
                                                gint                  three_finger_tap);
-
 
 G_DEFINE_TYPE_WITH_PRIVATE (MsdMouseManager, msd_mouse_manager, G_TYPE_OBJECT)
 
@@ -1626,7 +1624,6 @@ set_mousetweaks_daemon (MsdMouseManager *manager,
 
         if (run_daemon)
                 manager->priv->mousetweaks_daemon_running = TRUE;
-
 
         if (! g_spawn_command_line_async (comm, &error)) {
                 if (error->code == G_SPAWN_ERROR_NOENT &&

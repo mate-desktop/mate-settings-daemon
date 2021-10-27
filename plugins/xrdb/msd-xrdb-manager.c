@@ -47,7 +47,6 @@
 #define USER_X_RESOURCES ".Xresources"
 #define USER_X_DEFAULTS  ".Xdefaults"
 
-
 struct MsdXrdbManagerPrivate {
 	GtkWidget* widget;
 };

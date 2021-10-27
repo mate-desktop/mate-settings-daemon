@@ -176,7 +176,6 @@ is_schema (const char *schema)
         in_schema = (is_item_in_schema (non_relocatable, schema) ||
                 is_item_in_schema (relocatable, schema));
 
-
         g_strfreev (non_relocatable);
         g_strfreev (relocatable);
 

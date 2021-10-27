@@ -63,8 +63,6 @@ XSettingsResult xsettings_manager_set_color      (XSettingsManager *manager,
                                                   XSettingsColor   *value);
 XSettingsResult xsettings_manager_notify         (XSettingsManager *manager);
 
-
-
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */

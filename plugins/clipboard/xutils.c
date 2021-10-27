@@ -42,7 +42,6 @@ Atom XA_TIMESTAMP;
 
 unsigned long SELECTION_MAX_SIZE = 0;
 
-
 void
 init_atoms (Display *display)
 {

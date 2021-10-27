@@ -435,7 +435,6 @@ msd_locate_pointer (GdkDisplay *display)
   msd_timeline_start (data->timeline);
 }
 
-
 #define KEYBOARD_GROUP_SHIFT 13
 #define KEYBOARD_GROUP_MASK ((1 << 13) | (1 << 14))
 
@@ -575,7 +574,6 @@ set_locate_pointer (void)
                              display);
     }
 }
-
 
 int
 main (int argc, char *argv[])

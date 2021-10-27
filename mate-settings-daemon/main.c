@@ -420,7 +420,6 @@ parse_args (int *argc, char ***argv)
 
         mate_settings_profile_start (NULL);
 
-
         context = g_option_context_new (NULL);
 
         g_option_context_add_main_entries (context, entries, NULL);

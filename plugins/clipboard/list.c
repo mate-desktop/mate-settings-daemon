@@ -25,7 +25,6 @@
 #include <stdlib.h>
 #include <list.h>
 
-
 void
 list_foreach (List     *list,
 	      Callback  func,

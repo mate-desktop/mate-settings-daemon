@@ -860,7 +860,6 @@ start_clipboard_idle_cb (MsdClipboardManager *manager)
 {
         XClientMessageEvent xev;
 
-
         mate_settings_profile_start (NULL);
 
         init_atoms (manager->priv->display);

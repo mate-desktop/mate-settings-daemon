@@ -18,7 +18,6 @@
  * 02110-1301, USA.
  */
 
-
 #ifndef __DELAYED_DIALOG_H
 #define __DELAYED_DIALOG_H
 
