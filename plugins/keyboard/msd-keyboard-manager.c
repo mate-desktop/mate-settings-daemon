@@ -74,7 +74,6 @@ G_DEFINE_TYPE_WITH_PRIVATE (MsdKeyboardManager, msd_keyboard_manager, G_TYPE_OBJ
 
 static gpointer manager_object = NULL;
 
-
 #ifdef HAVE_X11_EXTENSIONS_XKB_H
 static gboolean xkb_set_keyboard_autorepeat_rate(int delay, int rate)
 {

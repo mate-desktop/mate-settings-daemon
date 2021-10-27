@@ -34,7 +34,6 @@ typedef struct {
         guint *keycodes;
 } Key;
 
-
 void	        grab_key_unsafe	(Key     *key,
 		        	 gboolean grab,
 			         GSList  *screens);

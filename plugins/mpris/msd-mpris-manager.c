@@ -293,7 +293,6 @@ msd_name_vanished (GDBusConnection   *connection,
     }
 }
 
-
 gboolean
 msd_mpris_manager_start (MsdMprisManager   *manager,
                          GError           **error)

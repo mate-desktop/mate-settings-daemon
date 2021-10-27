@@ -95,5 +95,4 @@ gchar* egg_virtual_accelerator_label (guint                  accelerator_key,
 }
 #endif
 
-
 #endif /* __EGG_ACCELERATORS_H__ */

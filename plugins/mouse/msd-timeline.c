@@ -65,7 +65,6 @@ enum {
 
 static guint signals [LAST_SIGNAL] = { 0, };
 
-
 static void  msd_timeline_set_property  (GObject         *object,
 					 guint            prop_id,
 					 const GValue    *value,

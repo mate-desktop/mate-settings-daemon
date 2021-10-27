@@ -74,7 +74,6 @@ monitor_files (GPtrArray *monitors,
         FcStrListDone (list);
 }
 
-
 struct _fontconfig_monitor_handle {
         GPtrArray *monitors;
 
@@ -143,7 +142,6 @@ stuff_changed (GFileMonitor *monitor G_GNUC_UNUSED,
 
         handle->timeout = g_timeout_add_seconds (TIMEOUT_SECONDS, update, data);
 }
-
 
 fontconfig_monitor_handle_t *
 fontconfig_monitor_start (GFunc    notify_callback,

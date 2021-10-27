@@ -26,7 +26,6 @@
 
 #include <X11/Xlib.h>
 
-
 extern Atom XA_ATOM_PAIR;
 extern Atom XA_CLIPBOARD_MANAGER;
 extern Atom XA_CLIPBOARD;

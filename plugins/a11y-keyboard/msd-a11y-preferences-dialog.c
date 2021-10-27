@@ -42,7 +42,6 @@
 #define SM_DBUS_PATH      "/org/gnome/SessionManager"
 #define SM_DBUS_INTERFACE "org.gnome.SessionManager"
 
-
 #define GTKBUILDER_UI_FILE "msd-a11y-preferences-dialog.ui"
 
 #define KEY_A11Y_SCHEMA              "org.mate.accessibility-keyboard"
@@ -840,7 +839,6 @@ msd_a11y_preferences_dialog_init (MsdA11yPreferencesDialog *dialog)
                           "response",
                           G_CALLBACK (on_response),
                           dialog);
-
 
         gtk_widget_show_all (GTK_WIDGET (dialog));
 }

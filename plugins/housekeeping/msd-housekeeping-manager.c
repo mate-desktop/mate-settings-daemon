@@ -29,7 +29,6 @@
 #include "msd-housekeeping-manager.h"
 #include "msd-disk-space.h"
 
-
 /* General */
 #define INTERVAL_ONCE_A_DAY 24*60*60
 #define INTERVAL_TWO_MINUTES 2*60
@@ -63,7 +62,6 @@ typedef struct {
         char      *path;
         glong      size;
 } ThumbData;
-
 
 static void
 thumb_data_free (gpointer data)

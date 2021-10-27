@@ -41,7 +41,6 @@
 #include "msd-ldsm-dialog.h"
 #include "msd-ldsm-trash-empty.h"
 
-
 #define GIGABYTE                   1024 * 1024 * 1024
 
 #define CHECK_EVERY_X_SECONDS      60
@@ -279,7 +278,6 @@ ldsm_mount_is_user_ignore (const gchar *path)
         else
                 return FALSE;
 }
-
 
 static gboolean
 is_in (const gchar *value, const gchar *set[])

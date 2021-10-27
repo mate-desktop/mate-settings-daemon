@@ -541,7 +541,6 @@ msd_keyboard_update_indicator_icons (void)
 	new_state |= (state ? 1 : 0);
 	xkl_debug (160, "Indicators state: %d\n", new_state);
 
-
 	for (i = sizeof (indicator_icons) / sizeof (indicator_icons[0]);
 	     --i >= 0;) {
 		gtk_status_icon_set_from_icon_name (indicator_icons[i],

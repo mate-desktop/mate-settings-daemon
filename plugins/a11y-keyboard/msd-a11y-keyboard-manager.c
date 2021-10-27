@@ -640,7 +640,6 @@ ax_slowkeys_warning_post_bubble (MsdA11yKeyboardManager *manager,
 #endif /* HAVE_LIBNOTIFY */
 }
 
-
 static void
 ax_slowkeys_warning_post_dialog (MsdA11yKeyboardManager *manager,
                                  gboolean                enabled)
@@ -1143,7 +1142,6 @@ start_a11y_keyboard_idle_cb (MsdA11yKeyboardManager *manager)
 
         return FALSE;
 }
-
 
 gboolean
 msd_a11y_keyboard_manager_start (MsdA11yKeyboardManager *manager,

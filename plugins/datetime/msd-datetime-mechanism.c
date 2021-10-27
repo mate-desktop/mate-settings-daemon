@@ -88,7 +88,6 @@ msd_datetime_mechanism_error_quark (void)
         return ret;
 }
 
-
 #define ENUM_ENTRY(NAME, DESC) { NAME, "" #NAME "", DESC }
 
 GType
@@ -113,7 +112,6 @@ msd_datetime_mechanism_error_get_type (void)
 
         return etype;
 }
-
 
 static GObject *
 msd_datetime_mechanism_constructor (GType                  type,
@@ -207,7 +205,6 @@ error:
         return FALSE;
 }
 
-
 MsdDatetimeMechanism *
 msd_datetime_mechanism_new (void)
 {
@@ -269,7 +266,6 @@ _check_polkit_for_action (MsdDatetimeMechanism *mechanism, DBusGMethodInvocation
 
         return TRUE;
 }
-
 
 static gboolean
 _set_time (MsdDatetimeMechanism  *mechanism,
@@ -425,7 +421,6 @@ msd_datetime_mechanism_adjust_time (MsdDatetimeMechanism  *mechanism,
         return _set_time (mechanism, &tv, context);
 }
 
-
 gboolean
 msd_datetime_mechanism_set_timezone (MsdDatetimeMechanism  *mechanism,
                                      const char            *zone_file,
@@ -464,7 +459,6 @@ msd_datetime_mechanism_set_timezone (MsdDatetimeMechanism  *mechanism,
         dbus_g_method_return (context);
         return TRUE;
 }
-
 
 gboolean
 msd_datetime_mechanism_get_timezone (MsdDatetimeMechanism   *mechism,
@@ -624,7 +618,6 @@ check_can_do (MsdDatetimeMechanism  *mechanism,
 
         g_object_unref (result);
 }
-
 
 gboolean
 msd_datetime_mechanism_can_set_time (MsdDatetimeMechanism  *mechanism,

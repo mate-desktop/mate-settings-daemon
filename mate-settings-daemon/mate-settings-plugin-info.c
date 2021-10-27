@@ -70,7 +70,6 @@ struct MateSettingsPluginInfoPrivate
         int                      priority;
 };
 
-
 enum {
         ACTIVATED,
         DEACTIVATED,
@@ -319,7 +318,6 @@ mate_settings_plugin_info_deactivate (MateSettingsPluginInfo *info)
         return TRUE;
 }
 
-
 static gboolean
 load_plugin_module (MateSettingsPluginInfo *info)
 {
@@ -480,7 +478,6 @@ mate_settings_plugin_info_get_copyright (MateSettingsPluginInfo *info)
 
         return info->priv->copyright;
 }
-
 
 const char *
 mate_settings_plugin_info_get_location (MateSettingsPluginInfo *info)
