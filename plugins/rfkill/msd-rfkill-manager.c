@@ -462,7 +462,8 @@ static const GDBusInterfaceVTable interface_vtable =
 {
         NULL,
         handle_get_property,
-        handle_set_property
+        handle_set_property,
+        { 0 }
 };
 
 static void
