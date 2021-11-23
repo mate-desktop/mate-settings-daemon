@@ -470,13 +470,9 @@ gboolean
 msd_datetime_mechanism_get_timezone (MsdDatetimeMechanism   *mechism,
                                      DBusGMethodInvocation  *context)
 {
-  gchar *timezone;
-
   reset_killtimer ();
 
-  timezone = system_timezone_find ();
-
-  dbus_g_method_return (context, timezone);
+  dbus_g_method_return (context, system_timezone_find ());
 
   return TRUE;
 }
