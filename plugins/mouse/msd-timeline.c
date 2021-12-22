@@ -646,7 +646,7 @@ msd_timeline_set_loop (MsdTimeline *timeline,
   g_return_if_fail (MSD_IS_TIMELINE (timeline));
 
   priv = msd_timeline_get_instance_private (timeline);
-  priv->loop = loop;
+  priv->loop = (loop != FALSE);
 
   g_object_notify (G_OBJECT (timeline), "loop");
 }
