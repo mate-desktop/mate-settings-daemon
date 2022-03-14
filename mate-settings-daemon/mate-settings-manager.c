@@ -427,15 +427,18 @@ static void
 mate_settings_manager_init (MateSettingsManager *manager)
 {
         char      *schema;
-        GSettings *settings;
 
         manager->priv = mate_settings_manager_get_instance_private (manager);
 
         schema = g_strdup_printf ("%s.plugins", DEFAULT_SETTINGS_PREFIX);
         if (is_schema (schema)) {
+                GSettings *settings;
+
                 settings = g_settings_new (schema);
                 manager->priv->init_load_priority = g_settings_get_int (settings, "init-load-priority");
+                g_object_unref (settings);
         }
+        g_free (schema);
 }
 
 static void
