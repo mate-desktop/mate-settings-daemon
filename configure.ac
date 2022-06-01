@@ -407,7 +407,7 @@ dnl ---------------------------------------------------------------------------
 dnl - Finish
 dnl ---------------------------------------------------------------------------
 
-AC_OUTPUT([
+AC_CONFIG_FILES([
 Makefile
 mate-settings-daemon/Makefile
 plugins/Makefile
@@ -463,6 +463,7 @@ data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml
 data/org.mate.SettingsDaemon.plugins.gschema.xml
 po/Makefile.in
 ])
+AC_OUTPUT
 
 dnl ---------------------------------------------------------------------------
 dnl - Show summary
