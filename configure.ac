@@ -102,7 +102,7 @@ dnl ---------------------------------------------------------------------------
 
 have_libnotify=no
 AC_ARG_WITH(libnotify,
-	AC_HELP_STRING([--without-libnotify], [Disable notifications (default: auto)]),
+	AS_HELP_STRING([--without-libnotify], [Disable notifications (default: auto)]),
 	with_libnotify=$withval, with_libnotify=auto)
 
 if test "x$with_libnotify" != "xno"; then
@@ -142,10 +142,10 @@ dnl ---------------------------------------------------------------------------
 
 dnl - Are we specifying a different dbus root ?
 AC_ARG_WITH(dbus-sys,
-        [AC_HELP_STRING([--with-dbus-sys=<dir>],
+        [AS_HELP_STRING([--with-dbus-sys=<dir>],
         [where D-BUS system.d directory is])])
 AC_ARG_WITH(dbus-services,
-        [AC_HELP_STRING([--with-dbus-services=<dir>],
+        [AS_HELP_STRING([--with-dbus-services=<dir>],
         [where D-BUS services directory is])])
 if ! test -z "$with_dbus_sys" ; then
         DBUS_SYS_DIR="$with_dbus_sys"
@@ -230,7 +230,7 @@ dnl ---------------------------------------------------------------------------
 
 have_pulse=false
 AC_ARG_ENABLE(pulse,
-  AC_HELP_STRING([--disable-pulse], [Disable PulseAudio support]),
+  AS_HELP_STRING([--disable-pulse], [Disable PulseAudio support]),
        [case "${enableval}" in
                yes) WANT_PULSE=yes ;;
                no)  WANT_PULSE=no ;;
@@ -252,7 +252,7 @@ AC_SUBST(PULSE_LIBS)
 
 have_libcanberra=no
 AC_ARG_WITH(libcanberra,
-    AC_HELP_STRING([--without-libcanberra], [Disable sound events (default: auto)]),
+    AS_HELP_STRING([--without-libcanberra], [Disable sound events (default: auto)]),
     with_libcanberra=$withval, with_libcanberra=auto)
 
 if test "x$with_libcanberra" != "xno"; then
@@ -268,7 +268,7 @@ AC_SUBST(LIBCANBERRA_LIBS)
 
 have_libmatemixer=no
 AC_ARG_WITH(libmatemixer,
-    AC_HELP_STRING([--without-libmatemixer], [Disable volume event handling (default: auto)]),
+    AS_HELP_STRING([--without-libmatemixer], [Disable volume event handling (default: auto)]),
     with_libmatemixer=$withval, with_libmatemixer=auto)
 
 if test "x$with_libmatemixer" != "xno"; then
@@ -295,7 +295,7 @@ dnl smartcard section
 dnl ==============================================
 have_smartcard_support=false
 AC_ARG_ENABLE(smartcard-support,
-  AC_HELP_STRING([--disable-smartcard-support],
+  AS_HELP_STRING([--disable-smartcard-support],
                  [turn off smartcard support]),
        [case "${enableval}" in
                yes) WANT_SMARTCARD_SUPPORT=yes ;;
@@ -317,7 +317,7 @@ AC_SUBST(NSS_CFLAGS)
 AC_SUBST(NSS_LIBS)
 
 AC_ARG_WITH(nssdb,
-  AC_HELP_STRING([--with-nssdb],
+  AS_HELP_STRING([--with-nssdb],
                  [where system NSS database is]))
 
 NSS_DATABASE=""
@@ -389,7 +389,7 @@ AM_CONDITIONAL(BUILD_RFKILL, [test x"$enable_rfkill" = x"yes"])
 # Enable Profiling
 # ---------------------------------------------------------------------------
 AC_ARG_ENABLE(profiling,
-	[AC_HELP_STRING([--enable-profiling],
+	[AS_HELP_STRING([--enable-profiling],
 	[turn on profiling])],
 	, enable_profiling=no)
 if test "x$enable_profiling" = "xyes"; then
