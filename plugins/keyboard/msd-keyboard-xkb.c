@@ -150,8 +150,7 @@ apply_desktop_settings (void)
 	matekbd_desktop_config_activate (&current_desktop_config);
 
 	show_leds = g_settings_get_boolean (settings_desktop, DUPLICATE_LEDS_KEY);
-	for (i = sizeof (indicator_icons) / sizeof (indicator_icons[0]);
-	     --i >= 0;) {
+	for (i = G_N_ELEMENTS (indicator_icons); --i >= 0;) {
 		gtk_status_icon_set_visible (indicator_icons[i],
 					     show_leds);
 	}
@@ -541,8 +540,7 @@ msd_keyboard_update_indicator_icons (void)
 	new_state |= (state ? 1 : 0);
 	xkl_debug (160, "Indicators state: %d\n", new_state);
 
-	for (i = sizeof (indicator_icons) / sizeof (indicator_icons[0]);
-	     --i >= 0;) {
+	for (i = G_N_ELEMENTS (indicator_icons); --i >= 0;) {
 		gtk_status_icon_set_from_icon_name (indicator_icons[i],
 						    (new_state & (1 << i))
 						    ?
@@ -582,8 +580,7 @@ msd_keyboard_xkb_init (MsdKeyboardManager * kbd_manager)
 	num_lock = XInternAtom (display, "Num Lock", False);
 	scroll_lock = XInternAtom (display, "Scroll Lock", False);
 
-	for (i = sizeof (indicator_icons) / sizeof (indicator_icons[0]);
-	     --i >= 0;) {
+	for (i = G_N_ELEMENTS (indicator_icons); --i >= 0;) {
 		indicator_icons[i] =
 		    gtk_status_icon_new_from_icon_name
 		    (indicator_off_icon_names[i]);
@@ -660,8 +657,7 @@ msd_keyboard_xkb_shutdown (void)
 	pa_callback_user_data = NULL;
 	manager = NULL;
 
-	for (i = sizeof (indicator_icons) / sizeof (indicator_icons[0]);
-	     --i >= 0;) {
+	for (i = G_N_ELEMENTS (indicator_icons); --i >= 0;) {
 		g_object_unref (G_OBJECT (indicator_icons[i]));
 		indicator_icons[i] = NULL;
 	}
