@@ -59,6 +59,9 @@
 #define TOUCHPAD_SCHEMA "org.mate.peripherals-touchpad"
 #define TOUCHPAD_ENABLED_KEY "touchpad-enabled"
 
+#define SOUND_SCHEMA "org.mate.sound"
+#define VOLUME_OVERAMPLIFIABLE_KEY "volume-overamplifiable"
+
 typedef struct {
         char   *application;
         guint32 time;
@@ -76,6 +79,7 @@ struct _MsdMediaKeysManagerPrivate
 #endif
         GtkWidget        *dialog;
         GSettings        *settings;
+        GSettings        *sound_settings;
         GVolumeMonitor   *volume_monitor;
 
         /* Multihead stuff */
@@ -723,7 +727,10 @@ do_sound_action (MsdMediaKeysManager *manager,
         /* Theoretically the volume limits might be different for different
          * streams, also the minimum might not always start at 0 */
         volume_min = mate_mixer_stream_control_get_min_volume (control);
-        volume_max = mate_mixer_stream_control_get_normal_volume (control);
+        if (g_settings_get_boolean (manager->priv->sound_settings, VOLUME_OVERAMPLIFIABLE_KEY))
+                volume_max = mate_mixer_stream_control_get_max_volume (control);
+        else
+                volume_max = mate_mixer_stream_control_get_normal_volume (control);
 
         volume_step = g_settings_get_int (manager->priv->settings, "volume-step");
         if (volume_step <= 0 || volume_step > 100) {
@@ -1424,6 +1431,7 @@ start_media_keys_idle_cb (MsdMediaKeysManager *manager)
 
         manager->priv->volume_monitor = g_volume_monitor_get ();
         manager->priv->settings = g_settings_new (BINDING_SCHEMA);
+        manager->priv->sound_settings = g_settings_new (SOUND_SCHEMA);
 
         ensure_cancellable (&manager->priv->rfkill_cancellable);
 
@@ -1535,6 +1543,11 @@ msd_media_keys_manager_stop (MsdMediaKeysManager *manager)
         if (priv->settings != NULL) {
                 g_object_unref (priv->settings);
                 priv->settings = NULL;
+        }
+
+        if (priv->sound_settings != NULL) {
+                g_object_unref (priv->sound_settings);
+                priv->sound_settings = NULL;
         }
 
         if (priv->volume_monitor != NULL) {
