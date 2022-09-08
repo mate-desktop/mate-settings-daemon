@@ -76,12 +76,14 @@
 #define DPI_HIGH_REASONABLE_VALUE 500
 
 /* The minimum resolution at which we turn on a window-scale of 2 */
-#define HIDPI_LIMIT (DPI_FALLBACK * 2)
+/* Set this to 90% of 2x DPI_FALLBACK, to catch QHD laptop screens */
+/* that are just below the 2x DPI_FALLBACK mark */
+#define HIDPI_LIMIT (DPI_FALLBACK * 2 * 90 / 100)
 
 /* The minimum screen height at which we turn on a window-scale of 2;
  * below this there just isn't enough vertical real estate for GNOME
  * apps to work, and it's better to just be tiny */
-#define HIDPI_MIN_HEIGHT 1500
+#define HIDPI_MIN_HEIGHT 1440
 
 #define GPOINTER_TO_BOOLEAN(i) ((gboolean) ((GPOINTER_TO_INT(i) == 2) ? TRUE : FALSE))
 #define GBOOLEAN_TO_POINTER(i) (GINT_TO_POINTER ((i) ? 2 : 1))
