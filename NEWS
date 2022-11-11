@@ -1,3 +1,28 @@
+### mate-settings-daemon 1.27.0
+
+  * configure.ac: The macro 'AC_HELP_STRING' is obsolete
+  * a11y-keyboard: migrate from dbus-glib to GDBus
+  * Relax High DPI limits
+  * tx: update resource
+  * tx: migrate config file
+  * msd-keyboard-xkb: use G_N_ELEMENTS macro
+  * Add setting for adjustment of audio volume above 100 per cent:  Part 3
+  * build warning: AC_OUTPUT should be used without arguments
+  * mate-settings-manager: fix memory leak
+  * Fix implicit conversion changes signedness: 'gboolean' to 'guint'
+  * datetime: declaration shadows a variable in the global scope
+  * Fix build warnings about missing field initializer
+  * Cppcheck: function parameter can be declared with const
+  * Use GLib's new g_clear_signal_handler() function to simplify code
+  * housekeeping: disconnect manager's changed settings signal on finalize
+  * ci: drop -Wunused-parameter compiler cflag from debian build
+  * xrdb: wrong type field in printf format string
+  * datetime: fix memory leak
+  * build: show configure summary using a pretty format
+  * Use a blank line at most
+  * tx: update resource
+  * xrandr: fix typo reported by translators
+
 ### mate-settings-daemon 1.26.0
 
   * update translations
