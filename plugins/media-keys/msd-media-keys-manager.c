@@ -493,26 +493,31 @@ dialog_show (MsdMediaKeysManager *manager)
 }
 
 static void
+launch_default_for_uri_cb (GObject *source_object,
+                           GAsyncResult *res,
+                           gpointer user_data)
+{
+  GError *error = NULL;
+  gchar *uri = user_data;
+
+  if (!g_app_info_launch_default_for_uri_finish (res, &error))
+    {
+      g_warning ("Could not launch '%s': %s", uri,
+                 error->message);
+      g_clear_error (&error);
+    }
+  g_free (uri);
+}
+
+static void
 do_url_action (MsdMediaKeysManager *manager,
                const gchar         *scheme)
 {
-        GError *error = NULL;
-        GAppInfo *app_info;
-
-        app_info = g_app_info_get_default_for_uri_scheme (scheme);
-
-        if (app_info != NULL) {
-           if (!g_app_info_launch (app_info, NULL, NULL, &error)) {
-                g_warning ("Could not launch '%s': %s",
-                    g_app_info_get_commandline (app_info),
-                    error->message);
-		g_object_unref (app_info);
-                g_error_free (error);
-            }
-        }
-        else {
-            g_warning ("Could not find default application for '%s' scheme", scheme);
-        }
+  g_app_info_launch_default_for_uri_async (scheme,
+                                           NULL,
+                                           NULL,
+                                           launch_default_for_uri_cb,
+                                           g_strdup (scheme));
 }
 
 static void
