@@ -1,3 +1,11 @@
+### mate-settings-daemon 1.26.1
+
+  * update translations
+    Relax High DPI limits
+    mate-settings-manager: fix memory leak
+    datetime: fix memory leak
+    xrandr: fix typo reported by translators
+
 ### mate-settings-daemon 1.26.0
 
   * update translations
