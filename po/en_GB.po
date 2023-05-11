@@ -4,19 +4,19 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Steven Maddox <s.maddox@lantizia.me.uk>, 2019
-# Andi Chandler <andi@gowling.com>, 2019
-# Martin Wimpress <code@flexion.org>, 2019
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Martin Wimpress <code@flexion.org>, 2021
+# Steven Maddox <s.maddox@lantizia.me.uk>, 2021
+# Andi Chandler <andi@gowling.com>, 2022
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.25.1\n"
+"Project-Id-Version: mate-settings-daemon 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-23 22:04+0200\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
-"Language-Team: English (United Kingdom) (https://www.transifex.com/mate/teams/13566/en_GB/)\n"
+"POT-Creation-Date: 2021-09-18 16:48+0200\n"
+"PO-Revision-Date: 2021-09-20 19:48+0000\n"
+"Last-Translator: Andi Chandler <andi@gowling.com>, 2022\n"
+"Language-Team: English (United Kingdom) (https://app.transifex.com/mate/teams/13566/en_GB/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -191,7 +191,7 @@ msgstr ""
 #: data/org.mate.peripherals-mouse.gschema.xml.in:25
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:95
 msgid "Acceleration profile"
-msgstr ""
+msgstr "Acceleration profile"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:26
 msgid ""
@@ -203,6 +203,13 @@ msgid ""
 "movement. If a mouse doesn't support the configured profile, 'default' will "
 "be used."
 msgstr ""
+"Acceleration profile used for connected mice. The acceleration profile can "
+"be set to either default ('default') which uses the default acceleration "
+"profile for each device, flat ('flat'), which accelerates by a device-"
+"specific constant factor derived from the configured pointer speed, or "
+"adaptive ('adaptive') which adapts the acceleration depending on the mouse "
+"movement. If a mouse doesn't support the configured profile, 'default' will "
+"be used."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:30
 msgid "Drag Threshold"
@@ -429,6 +436,13 @@ msgid ""
 "movement. If a touchpad doesn't support the configured profile, 'default' "
 "will be used."
 msgstr ""
+"Acceleration profile used for the touchpad. The acceleration profile can be "
+"set to either default ('default') which uses the default acceleration "
+"profile for each device, flat ('flat'), which accelerates by a device-"
+"specific constant factor derived from the configured pointer speed, or "
+"adaptive ('adaptive') which adapts the acceleration depending on the "
+"touchpad movement. If a touchpad doesn't support the configured profile, "
+"'default' will be used."
 
 #: data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in:5
 #: data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in:5
@@ -622,35 +636,35 @@ msgstr "Binding to raise the system volume."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:45
 msgid "Mute the audio quietly"
-msgstr ""
+msgstr "Mute the audio quietly"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:46
 msgid "Binding to mute the system volume quietly."
-msgstr ""
+msgstr "Binding to mute the system volume quietly."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:50
 msgid "Turn the volume down quietly"
-msgstr ""
+msgstr "Turn the volume down quietly"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:51
 msgid "Binding to lower the system volume quietly."
-msgstr ""
+msgstr "Binding to lower the system volume quietly."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:55
 msgid "Turn the volume up quietly"
-msgstr ""
+msgstr "Turn the volume up quietly"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:56
 msgid "Binding to raise the system volume quietly."
-msgstr ""
+msgstr "Binding to raise the system volume quietly."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:60
 msgid "Microphone mute/unmute"
-msgstr ""
+msgstr "Microphone mute/unmute"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:61
 msgid "Binding to mute/unmute the microphone."
-msgstr ""
+msgstr "Binding to mute/unmute the microphone."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:65
 msgid "Shut down"
@@ -702,11 +716,11 @@ msgstr "Binding to launch the e-mail client."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:95
 msgid "Launch settings"
-msgstr ""
+msgstr "Launch settings"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:96
 msgid "Binding to launch MATE settings."
-msgstr ""
+msgstr "Binding to launch MATE settings."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:100
 msgid "Lock screen"
@@ -734,11 +748,11 @@ msgstr "Binding to launch the calculator."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:115
 msgid "Launch instant messenger"
-msgstr ""
+msgstr "Launch instant messenger"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:116
 msgid "Binding to launch the instant messenger."
-msgstr ""
+msgstr "Binding to launch the instant messenger."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:120
 msgid "Launch web browser"
@@ -1051,15 +1065,15 @@ msgstr "Press and _hold keys to accept them (Slow Keys)"
 
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:214
 msgid "_Beep when pressing a key while CapsLock is active"
-msgstr ""
+msgstr "_Beep when pressing a key while CapsLock is active"
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:5
 msgid "Accessibility settings"
-msgstr ""
+msgstr "Accessibility settings"
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:6
 msgid "Accessibility settings plugin"
-msgstr ""
+msgstr "Accessibility settings plugin"
 
 #: plugins/background/background.mate-settings-plugin.desktop.in:5
 msgid "Background"
@@ -1111,13 +1125,15 @@ msgstr "Dummy plugin"
 
 #: plugins/housekeeping/housekeeping.mate-settings-plugin.desktop.in:5
 msgid "Housekeeping"
-msgstr ""
+msgstr "Housekeeping"
 
 #: plugins/housekeeping/housekeeping.mate-settings-plugin.desktop.in:6
 msgid ""
 "Automatically prunes thumbnail caches and other transient files, and warns "
 "about low disk space"
 msgstr ""
+"Automatically prunes thumbnail caches and other transient files, and warns "
+"about low disk space"
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:61
 msgid "Don't show any warnings again for this file system"
@@ -1224,7 +1240,7 @@ msgstr ""
 
 #: plugins/housekeeping/msd-ldsm-trash-empty.c:366
 msgid "_Empty Trash"
-msgstr "_Empty the Bin"
+msgstr "_Empty Bin"
 
 #: plugins/keybindings/keybindings.mate-settings-plugin.desktop.in:5
 msgid "Keybindings"
@@ -1330,46 +1346,46 @@ msgstr ""
 #: plugins/media-keys/msd-media-keys-manager.c:638
 #: plugins/media-keys/test-media-window.c:82
 msgid "Touchpad enabled"
-msgstr ""
+msgstr "Touchpad enabled"
 
 #: plugins/media-keys/msd-media-keys-manager.c:638
 #: plugins/media-keys/test-media-window.c:75
 msgid "Touchpad disabled"
-msgstr ""
+msgstr "Touchpad disabled"
 
 #: plugins/media-keys/msd-media-keys-manager.c:956
 #: plugins/media-keys/test-media-window.c:89
 msgid "Bluetooth disabled"
-msgstr ""
+msgstr "Bluetooth disabled"
 
 #: plugins/media-keys/msd-media-keys-manager.c:959
 #: plugins/media-keys/test-media-window.c:96
 msgid "Bluetooth enabled"
-msgstr ""
+msgstr "Bluetooth enabled"
 
 #: plugins/media-keys/msd-media-keys-manager.c:963
 #: plugins/media-keys/test-media-window.c:103
 msgid "Airplane mode enabled"
-msgstr ""
+msgstr "Airplane mode enabled"
 
 #: plugins/media-keys/msd-media-keys-manager.c:966
 #: plugins/media-keys/test-media-window.c:110
 msgid "Airplane mode disabled"
-msgstr ""
+msgstr "Airplane mode disabled"
 
 #: plugins/media-keys/msd-media-keys-manager.c:997
 msgid "Hardware Airplane Mode"
-msgstr ""
+msgstr "Hardware Airplane Mode"
 
 #: plugins/media-keys/msd-media-keys-manager.c:1035
 #: plugins/media-keys/test-media-window.c:124
 msgid "Changing Screen Layout"
-msgstr ""
+msgstr "Changing Screen Layout"
 
 #: plugins/media-keys/msd-media-keys-manager.c:1039
 #: plugins/media-keys/test-media-window.c:117
 msgid "No External Display"
-msgstr ""
+msgstr "No External Display"
 
 #: plugins/mouse/mouse.mate-settings-plugin.desktop.in:5
 msgid "Mouse"
@@ -1405,11 +1421,11 @@ msgstr "Mpris plug-in"
 #. Priority=100
 #: plugins/rfkill/rfkill.mate-settings-plugin.desktop.in:7
 msgid "Rfkill"
-msgstr ""
+msgstr "Rfkill"
 
 #: plugins/rfkill/rfkill.mate-settings-plugin.desktop.in:8
 msgid "Rfkill plugin"
-msgstr ""
+msgstr "Rfkill plugin"
 
 #: plugins/smartcard/msd-smartcard-manager.c:165
 msgid "Module Path"
@@ -1475,11 +1491,11 @@ msgstr "smartcard driver"
 
 #: plugins/smartcard/smartcard.mate-settings-plugin.desktop.in:5
 msgid "Smartcard"
-msgstr ""
+msgstr "Smartcard"
 
 #: plugins/smartcard/smartcard.mate-settings-plugin.desktop.in:6
 msgid "Smartcard plugin"
-msgstr ""
+msgstr "Smartcard plugin"
 
 #: plugins/sound/sound.mate-settings-plugin.desktop.in:5
 msgid "Sound"
@@ -1487,7 +1503,7 @@ msgstr "Sound"
 
 #: plugins/sound/sound.mate-settings-plugin.desktop.in:6
 msgid "Sound Sample Cache plugin"
-msgstr ""
+msgstr "Sound Sample Cache plugin"
 
 #: plugins/typing-break/typing-break.mate-settings-plugin.desktop.in:5
 msgid "Typing Break"
@@ -1575,27 +1591,27 @@ msgstr "Upside Down"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2179
 msgid "ON"
-msgstr ""
+msgstr "ON"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2180
 msgid "Turn this monitor off"
-msgstr ""
+msgstr "Turn this monitor off"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2183
 msgid "OFF"
-msgstr ""
+msgstr "OFF"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2184
 msgid "Turn this monitor on"
-msgstr ""
+msgstr "Turn this monitor on"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2244
-msgid "Same output all monitors"
-msgstr ""
+msgid "Same output on all monitors"
+msgstr "Same output on all monitors"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2245
 msgid "Mirror same output to all monitors and turn them on"
-msgstr ""
+msgstr "Mirror same output to all monitors and turn them on"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2292
 msgid "_Configure Display Settings…"
@@ -1603,7 +1619,7 @@ msgstr "_Configure Display Settings…"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2302
 msgid "Open the display configuration dialog (all settings)"
-msgstr ""
+msgstr "Open the display configuration dialog (all settings)"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2359
 msgid "Configure display settings"

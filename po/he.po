@@ -4,18 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Yaron Shahrabani <sh.yaron@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Omer I.S. <omeritzicschwartz@gmail.com>, 2021
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2021
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# 63f334ffc0709ba0fc2361b80bf3c0f0_00ffd1e <ab96c93ca0ac55ba7fa06385427e60dd_878890>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.25.1\n"
+"Project-Id-Version: mate-settings-daemon 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-23 22:04+0200\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Omer I.S. <omeritzicschwartz@gmail.com>, 2021\n"
-"Language-Team: Hebrew (https://www.transifex.com/mate/teams/13566/he/)\n"
+"POT-Creation-Date: 2021-09-18 16:48+0200\n"
+"PO-Revision-Date: 2021-09-20 19:48+0000\n"
+"Last-Translator: 63f334ffc0709ba0fc2361b80bf3c0f0_00ffd1e <ab96c93ca0ac55ba7fa06385427e60dd_878890>, 2021\n"
+"Language-Team: Hebrew (https://app.transifex.com/mate/teams/13566/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1527,15 +1527,15 @@ msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:2087
 msgid "Normal"
-msgstr "רגיל"
+msgstr "רגילה"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "Left"
-msgstr "שמאלה"
+msgstr "שמאל"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2089
 msgid "Right"
-msgstr "ימינה"
+msgstr "ימין"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2090
 msgid "Upside Down"
@@ -1558,7 +1558,7 @@ msgid "Turn this monitor on"
 msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:2244
-msgid "Same output all monitors"
+msgid "Same output on all monitors"
 msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:2245

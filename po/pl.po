@@ -4,30 +4,30 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Piotr Strębski <strebski@gmail.com>, 2018
-# Marcin Mikołajczak <me@mkljczk.pl>, 2018
-# Marcin Kralka <marcink96@gmail.com>, 2018
-# emariusek <wisniowy@g.pl>, 2018
-# Paweł Bandura <gawelx@gmail.com>, 2018
-# 161bd750cc8572440963b84e861d7973_ed8d533 <cbd6230593fe094da208a2693be73f8f_459393>, 2018
-# pietrasagh <kowalik.piotr@pm.me>, 2018
-# Dominik Adrian Grzywak, 2018
-# Piotr Drąg <piotrdrag@gmail.com>, 2019
-# Beniamin Pawlus <kupwzywcu@o2.pl>, 2019
-# Darek Witkowski, 2019
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Marcin Net <marcin.net@linux.pl>, 2019
-# Daniel Tokarzewski <bezimo@gmail.com>, 2020
-# No Ne, 2020
+# Piotr Strębski <strebski@gmail.com>, 2021
+# Darek Witkowski, 2021
+# 7d927f1adaae02ae3120b2ceacc1eadf_34fcd4b <964145c7ac0e6f1856853edaa15b3982_834090>, 2021
+# Piotr Drąg <piotrdrag@gmail.com>, 2021
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Marcin Kralka <marcink96@gmail.com>, 2021
+# Dominik Adrian Grzywak, 2021
+# emariusek <wisniowy@g.pl>, 2021
+# Paweł Bandura <gawelx@gmail.com>, 2021
+# Beniamin Pawlus <kupwzywcu@o2.pl>, 2021
+# 161bd750cc8572440963b84e861d7973_ed8d533 <cbd6230593fe094da208a2693be73f8f_459393>, 2021
+# marcin mikołajczak <me@mkljczk.pl>, 2021
+# pietrasagh <kowalik.piotr@pm.me>, 2021
+# Daniel Tokarzewski <bezimo@gmail.com>, 2021
+# Marek Adamski, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.25.1\n"
+"Project-Id-Version: mate-settings-daemon 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-23 22:04+0200\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: No Ne, 2020\n"
-"Language-Team: Polish (https://www.transifex.com/mate/teams/13566/pl/)\n"
+"POT-Creation-Date: 2021-09-18 16:48+0200\n"
+"PO-Revision-Date: 2021-09-20 19:48+0000\n"
+"Last-Translator: Marek Adamski, 2021\n"
+"Language-Team: Polish (https://app.transifex.com/mate/teams/13566/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -36,7 +36,7 @@ msgstr ""
 
 #: data/50-accessibility.xml.in:2
 msgid "Accessibility"
-msgstr "Dostępność"
+msgstr "Ułatwienia dostępu"
 
 #: data/50-accessibility.xml.in:4
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:155
@@ -1616,11 +1616,11 @@ msgstr "Zwykły"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "Left"
-msgstr "Lewo"
+msgstr "W lewo"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2089
 msgid "Right"
-msgstr "Prawo"
+msgstr "W prawo"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2090
 msgid "Upside Down"
@@ -1643,8 +1643,8 @@ msgid "Turn this monitor on"
 msgstr "Włącz ten monitor"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2244
-msgid "Same output all monitors"
-msgstr "Ten sam obraz na wszystkich monitorach"
+msgid "Same output on all monitors"
+msgstr "To samo wyjście na wszystkich monitorach"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2245
 msgid "Mirror same output to all monitors and turn them on"

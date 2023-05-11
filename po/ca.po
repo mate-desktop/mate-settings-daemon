@@ -4,18 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Albert Català <casulleres@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Albert Català <casulleres@gmail.com>, 2021
+# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2022
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.25.1\n"
+"Project-Id-Version: mate-settings-daemon 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-23 22:04+0200\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2019\n"
-"Language-Team: Catalan (https://www.transifex.com/mate/teams/13566/ca/)\n"
+"POT-Creation-Date: 2021-09-18 16:48+0200\n"
+"PO-Revision-Date: 2021-09-20 19:48+0000\n"
+"Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2022\n"
+"Language-Team: Catalan (https://app.transifex.com/mate/teams/13566/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1059,7 +1059,7 @@ msgstr "Prem i _mantén les tecles per acceptar-les (tecles lentes)"
 
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:214
 msgid "_Beep when pressing a key while CapsLock is active"
-msgstr ""
+msgstr "_Avís sonor quan es premi una tecla i la tecla Bloq Maj està activa"
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:5
 msgid "Accessibility settings"
@@ -1523,9 +1523,7 @@ msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
 msgstr[0] ""
-"La pantalla es restablirà a l'anterior configuració d'aquí %d segon"
 msgstr[1] ""
-"La pantalla es restablirà a l'anterior configuració d'aquí %d segons"
 
 #: plugins/xrandr/msd-xrandr-manager.c:491
 msgid "Does the display look OK?"
@@ -1572,11 +1570,11 @@ msgstr "Normal"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "Left"
-msgstr "Esquerre"
+msgstr "Esquerra"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2089
 msgid "Right"
-msgstr "Dret"
+msgstr "Dreta"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2090
 msgid "Upside Down"
@@ -1599,8 +1597,8 @@ msgid "Turn this monitor on"
 msgstr "Apaga aquest monitor"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2244
-msgid "Same output all monitors"
-msgstr "La mateixa sortida a tots els monitors"
+msgid "Same output on all monitors"
+msgstr "La mateixa sortida en tots els monitors"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2245
 msgid "Mirror same output to all monitors and turn them on"

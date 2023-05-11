@@ -4,19 +4,20 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# worm <thewormhole@gmail.com>, 2018
-# Damir Jerovšek <jierro@windowslive.com>, 2019
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Helena S <ele@tutamail.com>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Damir Jerovšek <jierro@windowslive.com>, 2021
+# worm <thewormhole@gmail.com>, 2021
+# Helena S <ele@tutamail.com>, 2021
+# Martin Srebotnjak <miles@filmsi.net>, 2022
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.25.1\n"
+"Project-Id-Version: mate-settings-daemon 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-23 22:04+0200\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Helena S <ele@tutamail.com>, 2020\n"
-"Language-Team: Slovenian (https://www.transifex.com/mate/teams/13566/sl/)\n"
+"POT-Creation-Date: 2021-09-18 16:48+0200\n"
+"PO-Revision-Date: 2021-09-20 19:48+0000\n"
+"Last-Translator: Martin Srebotnjak <miles@filmsi.net>, 2022\n"
+"Language-Team: Slovenian (https://app.transifex.com/mate/teams/13566/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -326,7 +327,7 @@ msgstr "Izbrana možnost omogoči vodoravno dvo-prstno drsenje"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:45
 msgid "Natural scrolling"
-msgstr ""
+msgstr "Naravno drsenje"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:46
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
@@ -619,7 +620,7 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:50
 msgid "Turn the volume down quietly"
-msgstr ""
+msgstr "Nežno tišje"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:51
 msgid "Binding to lower the system volume quietly."
@@ -627,7 +628,7 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:55
 msgid "Turn the volume up quietly"
-msgstr ""
+msgstr "Nežno glasneje"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:56
 msgid "Binding to raise the system volume quietly."
@@ -1041,7 +1042,7 @@ msgstr ""
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:5
 msgid "Accessibility settings"
-msgstr ""
+msgstr "Nastavitve dostopnosti"
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:6
 msgid "Accessibility settings plugin"
@@ -1097,7 +1098,7 @@ msgstr "Poskusni vstavek"
 
 #: plugins/housekeeping/housekeeping.mate-settings-plugin.desktop.in:5
 msgid "Housekeeping"
-msgstr ""
+msgstr "Gospodinjenje"
 
 #: plugins/housekeeping/housekeeping.mate-settings-plugin.desktop.in:6
 msgid ""
@@ -1316,22 +1317,22 @@ msgstr ""
 #: plugins/media-keys/msd-media-keys-manager.c:956
 #: plugins/media-keys/test-media-window.c:89
 msgid "Bluetooth disabled"
-msgstr ""
+msgstr "Bluetooth je onemogočen"
 
 #: plugins/media-keys/msd-media-keys-manager.c:959
 #: plugins/media-keys/test-media-window.c:96
 msgid "Bluetooth enabled"
-msgstr ""
+msgstr "Bluetooth je omogočen"
 
 #: plugins/media-keys/msd-media-keys-manager.c:963
 #: plugins/media-keys/test-media-window.c:103
 msgid "Airplane mode enabled"
-msgstr ""
+msgstr "Letalski način je omogočen"
 
 #: plugins/media-keys/msd-media-keys-manager.c:966
 #: plugins/media-keys/test-media-window.c:110
 msgid "Airplane mode disabled"
-msgstr ""
+msgstr "Letalski način je onemogočen"
 
 #: plugins/media-keys/msd-media-keys-manager.c:997
 msgid "Hardware Airplane Mode"
@@ -1566,8 +1567,8 @@ msgid "Turn this monitor on"
 msgstr "Vključi ta zaslon"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2244
-msgid "Same output all monitors"
-msgstr "Isti izhod na vseh zaslonih"
+msgid "Same output on all monitors"
+msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:2245
 msgid "Mirror same output to all monitors and turn them on"

@@ -4,16 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Caarmi, 2020
+# clefebvre <clement.lefebvre@linuxmint.com>, 2021
+# Caarmi, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.25.1\n"
+"Project-Id-Version: mate-settings-daemon 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-23 22:04+0200\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Caarmi, 2020\n"
-"Language-Team: Interlingue (https://www.transifex.com/mate/teams/13566/ie/)\n"
+"POT-Creation-Date: 2021-09-18 16:48+0200\n"
+"PO-Revision-Date: 2021-09-20 19:48+0000\n"
+"Last-Translator: Caarmi, 2021\n"
+"Language-Team: Interlingue (https://app.transifex.com/mate/teams/13566/ie/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -844,7 +845,7 @@ msgstr "Plugin de accessibilitá de tastatura"
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:460
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr "Un errore ha evenit monstrante auxilie: %s"
+msgstr "Un errore evenit monstrante auxilie: %s"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:652
@@ -1426,9 +1427,7 @@ msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
 msgstr[0] ""
-"Li monitor va esser revertet al su ultim configuration pos %d seconde"
 msgstr[1] ""
-"Li monitor va esser revertet al su ultim configuration pos %d secondes"
 
 #: plugins/xrandr/msd-xrandr-manager.c:491
 msgid "Does the display look OK?"
@@ -1474,11 +1473,11 @@ msgstr "Normal"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "Left"
-msgstr "Levul"
+msgstr "A levul"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2089
 msgid "Right"
-msgstr "Dextri"
+msgstr "A dextri"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2090
 msgid "Upside Down"
@@ -1501,8 +1500,8 @@ msgid "Turn this monitor on"
 msgstr "Comutar ti-ci monitor"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2244
-msgid "Same output all monitors"
-msgstr "Li sam image sur omni monitores"
+msgid "Same output on all monitors"
+msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:2245
 msgid "Mirror same output to all monitors and turn them on"

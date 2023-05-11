@@ -4,19 +4,20 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# 9a7df1f0a3f5f4de7c0fff80f6fa8bdc_64f795c <c0e0e9e34d0b00c2c039f4b25af104bd_91457>, 2018
-# fenris <fenris@folksprak.org>, 2018
-# Forecast <taisto@web.de>, 2019
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# 9a7df1f0a3f5f4de7c0fff80f6fa8bdc_64f795c <c0e0e9e34d0b00c2c039f4b25af104bd_91457>, 2021
+# fenris <fenris@folksprak.org>, 2021
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Forecast <taisto@web.de>, 2021
+# Alexander Richards, 2022
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.25.1\n"
+"Project-Id-Version: mate-settings-daemon 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-23 22:04+0200\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
-"Language-Team: Esperanto (https://www.transifex.com/mate/teams/13566/eo/)\n"
+"POT-Creation-Date: 2021-09-18 16:48+0200\n"
+"PO-Revision-Date: 2021-09-20 19:48+0000\n"
+"Last-Translator: Alexander Richards, 2022\n"
+"Language-Team: Esperanto (https://app.transifex.com/mate/teams/13566/eo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -614,7 +615,7 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:65
 msgid "Shut down"
-msgstr ""
+msgstr "Elŝalti"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:66
 msgid "Binding to shut down."
@@ -638,7 +639,7 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:80
 msgid "Home folder"
-msgstr ""
+msgstr "Hejma dosierujo"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:81
 msgid "Binding to open the Home folder."
@@ -670,7 +671,7 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:100
 msgid "Lock screen"
-msgstr ""
+msgstr "Ŝlosi ekranon"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:101
 msgid "Binding to lock the screen."
@@ -1497,7 +1498,7 @@ msgid "Turn this monitor on"
 msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:2244
-msgid "Same output all monitors"
+msgid "Same output on all monitors"
 msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:2245

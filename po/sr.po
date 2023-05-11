@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.25.1\n"
+"Project-Id-Version: mate-settings-daemon 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-23 22:04+0200\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>, 2020\n"
-"Language-Team: Serbian (https://www.transifex.com/mate/teams/13566/sr/)\n"
+"POT-Creation-Date: 2021-09-18 16:48+0200\n"
+"PO-Revision-Date: 2021-09-20 19:48+0000\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>, 2021\n"
+"Language-Team: Serbian (https://app.transifex.com/mate/teams/13566/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -240,7 +240,7 @@ msgstr ""
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:45
 msgid "Locate Pointer"
-msgstr "Налажење показивача"
+msgstr "Налажење курзора"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:46
 msgid ""
@@ -705,7 +705,7 @@ msgstr "Пречица за отварање личне фасцикле."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:85
 msgid "Search"
-msgstr "Потражи"
+msgstr "Претрага"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:86
 msgid "Binding to launch the search tool."
@@ -1248,7 +1248,7 @@ msgstr "_Испразни корпу"
 
 #: plugins/keybindings/keybindings.mate-settings-plugin.desktop.in:5
 msgid "Keybindings"
-msgstr "Пречице"
+msgstr "Свезе тастера"
 
 #: plugins/keybindings/keybindings.mate-settings-plugin.desktop.in:6
 msgid "Keybindings plugin"
@@ -1535,9 +1535,9 @@ msgstr "Не могу да вратим подешавања екрана из �
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Екран ће бити враћен на претходна подешавања за %d секунду"
-msgstr[1] "Екран ће бити враћен на претходна подешавања за %d секунде"
-msgstr[2] "Екран ће бити враћен на претходна подешавања за %d секунди"
+msgstr[0] "Екран ће бити враћен на претходно подешавање за %d секунду"
+msgstr[1] "Екран ће бити враћен на претходно подешавање за %d секунде"
+msgstr[2] "Екран ће бити враћен на претходно подешавање за %d секунди"
 
 #: plugins/xrandr/msd-xrandr-manager.c:491
 msgid "Does the display look OK?"
@@ -1579,7 +1579,7 @@ msgstr "Излази огледалског приказа нису подржа
 
 #: plugins/xrandr/msd-xrandr-manager.c:2087
 msgid "Normal"
-msgstr "Обична"
+msgstr "Обичан"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "Left"
@@ -1610,7 +1610,7 @@ msgid "Turn this monitor on"
 msgstr "Укључите овај монитор"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2244
-msgid "Same output all monitors"
+msgid "Same output on all monitors"
 msgstr "Исти излаз на свим мониторима"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2245

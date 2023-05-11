@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Christopher Patrick <cpatrick08@rocketmail.com>, 2021
 # 
 msgid ""
 msgstr ""
@@ -12,17 +12,17 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2021-09-18 16:48+0200\n"
 "PO-Revision-Date: 2021-09-20 19:48+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2021\n"
-"Language-Team: Azerbaijani (https://app.transifex.com/mate/teams/13566/az/)\n"
+"Last-Translator: Christopher Patrick <cpatrick08@rocketmail.com>, 2021\n"
+"Language-Team: English (United States) (https://app.transifex.com/mate/teams/13566/en_US/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: az\n"
+"Language: en_US\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/50-accessibility.xml.in:2
 msgid "Accessibility"
-msgstr ""
+msgstr "Accessibility"
 
 #: data/50-accessibility.xml.in:4
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:155
@@ -109,11 +109,11 @@ msgstr ""
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:25
 msgid "possible values are \"on\", \"off\", and \"custom\"."
-msgstr "mümkün qiymətlər \"fəal\", \"qeyri-fəal\" və \"xüsusi\"."
+msgstr ""
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:35
 msgid "Keyboard Bell Custom Filename"
-msgstr "Klaviatura Zınqırovu Özəl Fayl adı"
+msgstr ""
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:36
 msgid "File name of the bell sound to be played."
@@ -139,7 +139,7 @@ msgstr ""
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:10
 msgid "Mouse button orientation"
-msgstr "Sıçan düyməsinin istiqaməti"
+msgstr ""
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:11
 msgid "Swap left and right mouse buttons for left-handed mice."
@@ -155,21 +155,17 @@ msgid ""
 "Acceleration multiplier for mouse motion. A value of -1 is the system "
 "default."
 msgstr ""
-"Sıçan hərəkəti üçün sürət artırma. -1 dəyəri sistemin ön qurğulu qiymətidir."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:20
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:90
 msgid "Motion Threshold"
-msgstr "Hərəkət Başlanğıcı"
+msgstr ""
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:21
 msgid ""
 "Distance in pixels the pointer must move before accelerated mouse motion is "
 "activated. A value of -1 is the system default."
 msgstr ""
-"Sürətləndilirmiş siçan hərəkəti fəallaşdırılana qədər göstəricinin hərəkət "
-"etməsi məcbur olan piksel olaraq məsafə. -1 dəyəri sistemin ön qurğulu "
-"dəyəridir."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:25
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:95
@@ -189,7 +185,7 @@ msgstr ""
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:30
 msgid "Drag Threshold"
-msgstr "Daşıma Başlanğıcı"
+msgstr ""
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:31
 msgid "Distance before a drag is started."
@@ -197,7 +193,7 @@ msgstr ""
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:35
 msgid "Double Click Time"
-msgstr "Cüt Tıqlama Zamanı"
+msgstr ""
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:36
 msgid "Length of a double click."
@@ -215,7 +211,7 @@ msgstr ""
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:45
 msgid "Locate Pointer"
-msgstr "Oxun Yerini Göstər"
+msgstr ""
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:46
 msgid ""
@@ -225,7 +221,7 @@ msgstr ""
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:50
 msgid "Cursor theme"
-msgstr "Kursor örtüyü"
+msgstr ""
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:51
 msgid "Cursor theme name."
@@ -233,7 +229,7 @@ msgstr ""
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:55
 msgid "Cursor size"
-msgstr "Kursor böyüklüyü"
+msgstr ""
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:56
 msgid "Size of the cursor referenced by cursor_theme."
@@ -478,7 +474,7 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:15
 msgid "Free percentage notify threshold"
-msgstr ""
+msgstr "Free percentage notify threshold"
 
 #: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:16
 msgid ""
@@ -518,7 +514,7 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:35
 msgid "Mount paths to ignore"
-msgstr ""
+msgstr "Mount paths to ignore"
 
 #: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:36
 msgid "Specify a list of mount paths to ignore when they run low on space."
@@ -534,43 +530,43 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:20
 msgid "Volume step"
-msgstr "Səs addımı"
+msgstr "Volume step"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:21
 msgid "Volume step as percentage of volume."
-msgstr "Səs həcmi faizi olaraq səs addımı."
+msgstr "Volume step as percentage of volume."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:25
 msgid "Toggle touchpad"
-msgstr ""
+msgstr "Toggle touchpad"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:26
 msgid "Binding to enable or disable the touchpad."
-msgstr ""
+msgstr "Binding to enable or disable the touchpad."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:30
 msgid "Volume mute"
-msgstr "Səsi bağla"
+msgstr "Volume mute"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:31
 msgid "Binding to mute the system volume."
-msgstr ""
+msgstr "Binding to mute the system volume."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:35
 msgid "Volume down"
-msgstr "Səsi azalt"
+msgstr "Volume down"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:36
 msgid "Binding to lower the system volume."
-msgstr ""
+msgstr "Binding to lower the system volume."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:40
 msgid "Volume up"
-msgstr "Səsi artır"
+msgstr "Volume up"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:41
 msgid "Binding to raise the system volume."
-msgstr ""
+msgstr "Binding to raise the system volume."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:45
 msgid "Mute the audio quietly"
@@ -614,43 +610,43 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:70
 msgid "Log out"
-msgstr "İclası sonlandır"
+msgstr "Log out"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:71
 msgid "Binding to log out."
-msgstr ""
+msgstr "Binding to log out."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:75
 msgid "Eject"
-msgstr "Çıxart"
+msgstr "Eject"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:76
 msgid "Binding to eject an optical disc."
-msgstr ""
+msgstr "Binding to eject an optical disc."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:80
 msgid "Home folder"
-msgstr "Ev qovluğu"
+msgstr "Home folder"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:81
 msgid "Binding to open the Home folder."
-msgstr ""
+msgstr "Binding to open the Home folder."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:85
 msgid "Search"
-msgstr "Axtar"
+msgstr "Search"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:86
 msgid "Binding to launch the search tool."
-msgstr ""
+msgstr "Binding to launch the search tool."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:90
 msgid "Launch email client"
-msgstr ""
+msgstr "Launch email client"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:91
 msgid "Binding to launch the email client."
-msgstr ""
+msgstr "Binding to launch the email client."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:95
 msgid "Launch settings"
@@ -662,27 +658,27 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:100
 msgid "Lock screen"
-msgstr "Ekranı qıfılla"
+msgstr "Lock screen"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:101
 msgid "Binding to lock the screen."
-msgstr ""
+msgstr "Binding to lock the screen."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:105
 msgid "Launch help browser"
-msgstr "Yardım aəyyahını başlat"
+msgstr "Launch help browser"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:106
 msgid "Binding to launch the help browser."
-msgstr ""
+msgstr "Binding to launch the help browser."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:110
 msgid "Launch calculator"
-msgstr ""
+msgstr "Launch calculator"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:111
 msgid "Binding to launch the calculator."
-msgstr ""
+msgstr "Binding to launch the calculator."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:115
 msgid "Launch instant messenger"
@@ -694,59 +690,59 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:120
 msgid "Launch web browser"
-msgstr "Veb səyyahını başlat"
+msgstr "Launch web browser"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:121
 msgid "Binding to launch the web browser."
-msgstr ""
+msgstr "Binding to launch the web browser."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:125
 msgid "Launch media player"
-msgstr ""
+msgstr "Launch media player"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:126
 msgid "Binding to launch the media player."
-msgstr ""
+msgstr "Binding to launch the media player."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:130
 msgid "Play (or play/pause)"
-msgstr "Çal (ya da çal/fasilə ver)"
+msgstr "Play (or play/pause)"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:131
 msgid "Binding to start playback (or toggle play/pause)."
-msgstr ""
+msgstr "Binding to start playback (or toggle play/pause)."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:135
 msgid "Pause playback"
-msgstr ""
+msgstr "Pause playback"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:136
 msgid "Binding to pause playback."
-msgstr ""
+msgstr "Binding to pause playback."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:140
 msgid "Stop playback"
-msgstr ""
+msgstr "Stop playback"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:141
 msgid "Binding to stop playback."
-msgstr ""
+msgstr "Binding to stop playback."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:145
 msgid "Previous track"
-msgstr ""
+msgstr "Previous track"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:146
 msgid "Binding to skip to previous track."
-msgstr ""
+msgstr "Binding to skip to previous track."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:150
 msgid "Next track"
-msgstr ""
+msgstr "Next track"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:151
 msgid "Binding to skip to next track."
-msgstr ""
+msgstr "Binding to skip to next track."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:156
 msgid "Binding to show the screen magnifier"
@@ -823,7 +819,7 @@ msgstr ""
 
 #: mate-settings-daemon/main.c:66
 msgid "Enable debugging code"
-msgstr ""
+msgstr "Enable debugging code"
 
 #: mate-settings-daemon/main.c:67
 msgid "Replace the current daemon"
@@ -848,17 +844,17 @@ msgstr ""
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:460
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr "Yardım göstərilirkən xəta yarandı: %s"
+msgstr ""
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:652
 msgid "Do you want to activate Slow Keys?"
-msgstr "Yavaş Düymələri fəallaşdırmaq istəyirsiniz?"
+msgstr ""
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:589
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
 msgid "Do you want to deactivate Slow Keys?"
-msgstr "Yavaş Düymələri qeyri-fəallaşdırmaq istəyirsiniz?"
+msgstr ""
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:590
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:654
@@ -866,8 +862,6 @@ msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
 msgstr ""
-"Az öncə Shift düyməsinə basıb 8 saniyə saxladınız.  Bu Yavaş Düymələr "
-"xassəsini fəallaşdırar, bu da klaviaturanızın işləmə tərzini dəyişdirər."
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
@@ -911,17 +905,17 @@ msgstr ""
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:682
 msgid "Slow Keys Alert"
-msgstr "Yavaş Düymələr Xəbərdarlığı"
+msgstr ""
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:722
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:788
 msgid "Do you want to activate Sticky Keys?"
-msgstr "Yapışqan Düymələri fəallaşdırmaq istəyirsiniz?"
+msgstr ""
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:723
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do you want to deactivate Sticky Keys?"
-msgstr "Yapışqan Düymələri qeyri-fəallaşdırmaq istəyirsiniz?"
+msgstr ""
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:791
@@ -929,8 +923,6 @@ msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
 msgstr ""
-"Az öncə Shift düyməsinə arxa arxaya 5 dəfə basdınız.  Bu Yapışqan Düymələr "
-"xassəsini fəallaşdırar, bu da klaviaturanızın işləmə tərzini dəyişdirər."
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:727
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:793
@@ -939,13 +931,10 @@ msgid ""
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
 msgstr ""
-"Az öncə iki düyməyə bərabər ya da Shift düyməsinə arxa arxaya 5 dəfə "
-"basdınız.  Bu Yapışqan Düymələr xassəsini fəallaşdırar, bu da "
-"klaviaturanızın işləmə tərzini dəyişdirər."
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:821
 msgid "Sticky Keys Alert"
-msgstr "Yapışqan Düymələr Xəbərdarlığı"
+msgstr ""
 
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:830
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:14
@@ -998,7 +987,7 @@ msgstr ""
 
 #: plugins/background/background.mate-settings-plugin.desktop.in:5
 msgid "Background"
-msgstr "Arxa plan"
+msgstr "Background"
 
 #: plugins/background/background.mate-settings-plugin.desktop.in:6
 msgid "Background plugin"
@@ -1103,7 +1092,7 @@ msgstr ""
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:436
 msgid "Empty Trash"
-msgstr "Zibili Boşalt"
+msgstr ""
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Examine…"
@@ -1175,12 +1164,10 @@ msgid ""
 "Error while trying to run (%s)\n"
 "which is linked to the key (%s)"
 msgstr ""
-"(%2$s) düyməsinə bağlı olan\n"
-"(%1$s) icra edilməyə çalışırkən xəta yarandı"
 
 #: plugins/keyboard/keyboard.mate-settings-plugin.desktop.in:5
 msgid "Keyboard"
-msgstr "Klaviatura"
+msgstr "Keyboard"
 
 #: plugins/keyboard/keyboard.mate-settings-plugin.desktop.in:6
 msgid "Keyboard plugin"
@@ -1282,7 +1269,7 @@ msgstr ""
 
 #: plugins/mouse/mouse.mate-settings-plugin.desktop.in:5
 msgid "Mouse"
-msgstr "Siçan"
+msgstr ""
 
 #: plugins/mouse/mouse.mate-settings-plugin.desktop.in:6
 msgid "Mouse plugin"
@@ -1299,7 +1286,7 @@ msgstr ""
 
 #: plugins/mouse/msd-mouse-manager.c:1656
 msgid "Mouse Preferences"
-msgstr "Siçan Seçimləri"
+msgstr ""
 
 #: plugins/mpris/mpris.mate-settings-plugin.desktop.in:5
 msgid "Mpris"
@@ -1391,7 +1378,7 @@ msgstr ""
 
 #: plugins/sound/sound.mate-settings-plugin.desktop.in:5
 msgid "Sound"
-msgstr "Səs"
+msgstr ""
 
 #: plugins/sound/sound.mate-settings-plugin.desktop.in:6
 msgid "Sound Sample Cache plugin"
@@ -1399,7 +1386,7 @@ msgstr ""
 
 #: plugins/typing-break/typing-break.mate-settings-plugin.desktop.in:5
 msgid "Typing Break"
-msgstr "Yazma Fasiləsi"
+msgstr ""
 
 #: plugins/typing-break/typing-break.mate-settings-plugin.desktop.in:6
 msgid "Typing break plugin"
@@ -1465,15 +1452,15 @@ msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:2087
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "Left"
-msgstr ""
+msgstr "Left"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2089
 msgid "Right"
-msgstr ""
+msgstr "Right"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2090
 msgid "Upside Down"
@@ -1529,7 +1516,7 @@ msgstr ""
 
 #: plugins/xrdb/msd-xrdb-manager.c:249 plugins/xrdb/msd-xrdb-manager.c:318
 msgid "Cannot determine user's home directory"
-msgstr "İstifadəçinin ev cərgəsi müəyyən edilə bilmir"
+msgstr ""
 
 #: plugins/xrdb/xrdb.mate-settings-plugin.desktop.in:5
 msgid "X Resource Database"

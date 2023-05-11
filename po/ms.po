@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
 # abuyop <abuyop@gmail.com>, 2021
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.25.1\n"
+"Project-Id-Version: mate-settings-daemon 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-23 22:04+0200\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: abuyop <abuyop@gmail.com>, 2021\n"
-"Language-Team: Malay (https://www.transifex.com/mate/teams/13566/ms/)\n"
+"POT-Creation-Date: 2021-09-18 16:48+0200\n"
+"PO-Revision-Date: 2021-09-20 19:48+0000\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2021\n"
+"Language-Team: Malay (https://app.transifex.com/mate/teams/13566/ms/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -894,7 +894,7 @@ msgid ""
 "then the file specified by this key will be used instead."
 msgstr ""
 "Palam XRandR akan cari konfigurasi lalai di dalam fail yang dinyatakan oleh "
-"kunci ini. Ia seupa dengan ~/.config/monitors.xml yang biasanya disimpan "
+"kunci ini. Ia serupa dengan ~/.config/monitors.xml yang biasanya disimpan "
 "dalam direktori rumah pengguna. Jika pengguna tidak mempunyai fail tersebut,"
 " atau mempunyainya tetapi tidak sepadan dengan persediaan monitor pengguna, "
 "maka fail yang dinyatakan oleh kunci ini akan digunakan sebagai ganti."
@@ -1540,7 +1540,6 @@ msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
 msgstr[0] ""
-"Paparan akan ditetap semula ke konfigurasi terdahulu dalam tempoh %d saat"
 
 #: plugins/xrandr/msd-xrandr-manager.c:491
 msgid "Does the display look OK?"
@@ -1613,8 +1612,8 @@ msgid "Turn this monitor on"
 msgstr "Hidupkan monitor ini"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2244
-msgid "Same output all monitors"
-msgstr "Sama output untuk semua monitor"
+msgid "Same output on all monitors"
+msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:2245
 msgid "Mirror same output to all monitors and turn them on"

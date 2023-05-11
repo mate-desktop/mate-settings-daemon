@@ -4,30 +4,30 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Dario Di Nucci <linkin88mail@gmail.com>, 2018
-# Mat V <enthusedquill6@gmail.com>, 2018
-# Marco Z. <minaz666@gmail.com>, 2018
-# Marco Mangiacavalli, 2018
-# andrea pittaro <transifex@andreapittaro.it>, 2019
-# Marco Bartolucci <nap.84@live.it>, 2019
-# Giuseppe Pignataro <rogepix@gmail.com>, 2019
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Alessandro Volturno <alelvb@inwind.it>, 2020
-# Enrico B. <enricobe@hotmail.com>, 2020
+# Mat V <enthusedquill6@gmail.com>, 2021
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Marco Mangiacavalli, 2021
+# Dario Di Nucci <linkin88mail@gmail.com>, 2021
+# Giuseppe Pignataro <rogepix@gmail.com>, 2021
+# Enrico B. <enricobe@hotmail.com>, 2021
+# Marco Bartolucci, 2021
+# Marco Z. <minaz666@gmail.com>, 2021
+# andrea pittaro <transifex@andreapittaro.it>, 2021
+# Alessandro Volturno <alelvb@inwind.it>, 2022
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.25.1\n"
+"Project-Id-Version: mate-settings-daemon 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-23 22:04+0200\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Enrico B. <enricobe@hotmail.com>, 2020\n"
-"Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
+"POT-Creation-Date: 2021-09-18 16:48+0200\n"
+"PO-Revision-Date: 2021-09-20 19:48+0000\n"
+"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2022\n"
+"Language-Team: Italian (https://app.transifex.com/mate/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: it\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: data/50-accessibility.xml.in:2
 msgid "Accessibility"
@@ -36,12 +36,12 @@ msgstr "Accessibilità"
 #: data/50-accessibility.xml.in:4
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:155
 msgid "Toggle magnifier"
-msgstr "Commuta l'ingranditore di schermo"
+msgstr "Commuta l'ingranditore dello schermo"
 
 #: data/50-accessibility.xml.in:5
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:160
 msgid "Toggle screen reader"
-msgstr "Commuta il lettore di schermo"
+msgstr "Commuta il lettore dello schermo"
 
 #: data/50-accessibility.xml.in:6
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:165
@@ -58,19 +58,19 @@ msgstr "Indica se la tastiera sullo schermo è attivata."
 
 #: data/org.mate.applications-at.gschema.xml.in:10
 msgid "Screen magnifier"
-msgstr "Ingranditore schermo"
+msgstr "Ingranditore dello schermo"
 
 #: data/org.mate.applications-at.gschema.xml.in:11
 msgid "Whether the screen magnifier is turned on."
-msgstr "Indica se l'ingranditore di schermo è attivato."
+msgstr "Indica se l'ingranditore dello schermo è attivato."
 
 #: data/org.mate.applications-at.gschema.xml.in:15
 msgid "Screen reader"
-msgstr "Lettore schermo"
+msgstr "Lettore dello schermo"
 
 #: data/org.mate.applications-at.gschema.xml.in:16
 msgid "Whether the screen reader is turned on."
-msgstr "Indica se il lettore di schermo è attivato."
+msgstr "Indica se il lettore dello schermo è attivato."
 
 #: data/org.mate.font-rendering.gschema.xml.in:22
 msgid "DPI"
@@ -101,7 +101,7 @@ msgstr ""
 
 #: data/org.mate.font-rendering.gschema.xml.in:32
 msgid "Hinting"
-msgstr "Approssimazione (hinting)"
+msgstr "Hinting"
 
 #: data/org.mate.font-rendering.gschema.xml.in:33
 msgid ""
@@ -136,11 +136,11 @@ msgstr "Valori ammessi sono \"on\" \"off\" e \"custom\"."
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:35
 msgid "Keyboard Bell Custom Filename"
-msgstr "Nome del file personalizzato della campanella da tastiera"
+msgstr "Nome del file personalizzato dell'avviso acustico della tastiera"
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:36
 msgid "File name of the bell sound to be played."
-msgstr "Nome del file del suono della campanella da riprodurre."
+msgstr "Nome del file del suono dell'avviso da riprodurre."
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:40
 msgid "Remember NumLock state"
@@ -705,7 +705,7 @@ msgstr "Associazione per l'arresto."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:70
 msgid "Log out"
-msgstr "Termina la sessione"
+msgstr "Termina sessione"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:71
 msgid "Binding to log out."
@@ -934,7 +934,7 @@ msgstr "Demone di impostazioni di MATE"
 
 #: mate-settings-daemon/main.c:66
 msgid "Enable debugging code"
-msgstr "Abilitare il codice di debug"
+msgstr "Abilita il codice di debug"
 
 #: mate-settings-daemon/main.c:67
 msgid "Replace the current daemon"
@@ -1182,7 +1182,7 @@ msgstr "Non mostrare più alcun avvertimento"
 #: plugins/housekeeping/msd-ldsm-dialog.c:76
 #, c-format
 msgid "The volume \"%s\" has only %s disk space remaining."
-msgstr "Sul volume «%s» rimangono solo %s di spazio libero sul."
+msgstr "Sul volume «%s» rimangono solo %s di spazio libero."
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:79
 #, c-format
@@ -1272,9 +1272,9 @@ msgid ""
 "If you choose to empty the trash, all items in it will be permanently lost. "
 "Please note that you can also delete them separately."
 msgstr ""
-"Scegliendo di svuotare il cestino, tutti gli oggetti in esso contenuti sono "
-"perduti in modo definitivo. Notare che è anche possibile eliminarli uno ad "
-"uno."
+"Scegliendo di svuotare il cestino, tutti gli oggetti in esso contenuti "
+"saranno perduti in modo definitivo. Notare che è anche possibile eliminarli "
+"uno ad uno."
 
 #: plugins/housekeeping/msd-ldsm-trash-empty.c:366
 msgid "_Empty Trash"
@@ -1282,7 +1282,7 @@ msgstr "S_vuota cestino"
 
 #: plugins/keybindings/keybindings.mate-settings-plugin.desktop.in:5
 msgid "Keybindings"
-msgstr "Associazioni di tasti"
+msgstr "Associazioni tasti"
 
 #: plugins/keybindings/keybindings.mate-settings-plugin.desktop.in:6
 msgid "Keybindings plugin"
@@ -1499,7 +1499,7 @@ msgstr "impossibile monitorare gli eventi smartcard - %s"
 
 #: plugins/smartcard/msd-smartcard-manager.c:1101
 msgid "encountered unexpected error while waiting for smartcard events"
-msgstr "riscontrato un errore durante l'attesa degli eventi smartcard"
+msgstr "si è riscontrato un errore durante l'attesa degli eventi smartcard"
 
 #: plugins/smartcard/msd-smartcard.c:149
 msgid "Slot ID"
@@ -1539,7 +1539,7 @@ msgstr "Plugin Smartcard"
 
 #: plugins/sound/sound.mate-settings-plugin.desktop.in:5
 msgid "Sound"
-msgstr "Audio"
+msgstr "Suono"
 
 #: plugins/sound/sound.mate-settings-plugin.desktop.in:6
 msgid "Sound Sample Cache plugin"
@@ -1547,7 +1547,7 @@ msgstr "Plugin Sound Sample Cache"
 
 #: plugins/typing-break/typing-break.mate-settings-plugin.desktop.in:5
 msgid "Typing Break"
-msgstr "Pausa nella digitazione"
+msgstr "Pausa dalla digitazione"
 
 #: plugins/typing-break/typing-break.mate-settings-plugin.desktop.in:6
 msgid "Typing break plugin"
@@ -1571,8 +1571,10 @@ msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
 msgstr[0] ""
-"Il display sarà riportato alla configurazione precedente tra  %d secondo"
+"Il display sarà riportato alla configurazione precedente tra %d secondo"
 msgstr[1] ""
+"Il display sarà riportato alla configurazione precedente tra %d secondi"
+msgstr[2] ""
 "Il display sarà riportato alla configurazione precedente tra %d secondi"
 
 #: plugins/xrandr/msd-xrandr-manager.c:491
@@ -1646,8 +1648,8 @@ msgid "Turn this monitor on"
 msgstr "Accendi questo monitor"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2244
-msgid "Same output all monitors"
-msgstr "Stessa uscita su tutti i monitor"
+msgid "Same output on all monitors"
+msgstr "Stessa immagine su tutti i monitor"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2245
 msgid "Mirror same output to all monitors and turn them on"

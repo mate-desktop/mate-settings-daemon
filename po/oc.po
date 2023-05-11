@@ -4,19 +4,19 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# 48c2de07903ce5a77a8e90265f95c4c2_8909374 <837c8d0ab97b27e737893c19f79bd4de_348476>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Cédric Valmary <cvalmary@yahoo.fr>, 2019
-# Quentin PAGÈS, 2021
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Cédric Valmary <cvalmary@yahoo.fr>, 2021
+# 48c2de07903ce5a77a8e90265f95c4c2_8909374 <837c8d0ab97b27e737893c19f79bd4de_348476>, 2021
+# Quentin PAGÈS, 2023
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.25.1\n"
+"Project-Id-Version: mate-settings-daemon 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-23 22:04+0200\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Quentin PAGÈS, 2021\n"
-"Language-Team: Occitan (post 1500) (https://www.transifex.com/mate/teams/13566/oc/)\n"
+"POT-Creation-Date: 2021-09-18 16:48+0200\n"
+"PO-Revision-Date: 2021-09-20 19:48+0000\n"
+"Last-Translator: Quentin PAGÈS, 2023\n"
+"Language-Team: Occitan (post 1500) (https://app.transifex.com/mate/teams/13566/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -86,7 +86,7 @@ msgid ""
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
 msgstr ""
-"Lo tipe d'anticrenelatge utilizat pel rendut de las poliças. Las valors "
+"Lo tipe d'anticrenelatge utilizat pel rendut de las polissas. Las valors "
 "possiblas son : « none » per cap d'anticrenelatge, « grayscale » per "
 "l'anticrenelatge classic per nivèls de gris e « rgba » per l'anticrenelatge "
 "per sospixèls (ecrans LCD unicament)."
@@ -120,33 +120,35 @@ msgstr ""
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:25
 msgid "possible values are \"on\", \"off\", and \"custom\"."
-msgstr ""
+msgstr "valors possiblas : « on », « off » e « custom »."
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:35
 msgid "Keyboard Bell Custom Filename"
-msgstr ""
+msgstr "Nom del fichièr del bip de clavièr personalizat"
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:36
 msgid "File name of the bell sound to be played."
-msgstr ""
+msgstr "Nom del fichièr del son de campana de jogar."
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:40
 msgid "Remember NumLock state"
-msgstr ""
+msgstr "Se remembrar de l'estat del verrolh numeric"
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:41
 msgid ""
 "When set to true, MATE will remember the state of the NumLock LED between "
 "sessions."
 msgstr ""
+"Se verai, MATE se remembrarà de l'estat de la DEL verrolh numeric d'una "
+"session a l'autra."
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:45
 msgid "NumLock state"
-msgstr ""
+msgstr "Estat del verrolh numeric"
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:46
 msgid "The remembered state of the NumLock LED."
-msgstr ""
+msgstr "Se remembrar de l'estat del verrolh numeric DEL."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:10
 msgid "Mouse button orientation"
@@ -154,7 +156,7 @@ msgstr "Orientacion del boton de la mirga"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:11
 msgid "Swap left and right mouse buttons for left-handed mice."
-msgstr "Invèrsa los botons drecha e esquèrra de la mirga pels esquerrièrs"
+msgstr "Invèrsa los botons drecha e esquèrra de la mirga pels esquerrièrs."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:15
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:85
@@ -166,22 +168,26 @@ msgid ""
 "Acceleration multiplier for mouse motion. A value of -1 is the system "
 "default."
 msgstr ""
+"Multiplicador d'acceleracion pels movements de la mirga. Una valor de -1 es "
+"la valor per defaut del sistèma."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:20
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:90
 msgid "Motion Threshold"
-msgstr ""
+msgstr "Sulhet del movement"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:21
 msgid ""
 "Distance in pixels the pointer must move before accelerated mouse motion is "
 "activated. A value of -1 is the system default."
 msgstr ""
+"Distància en pixèls que lo puntador deu percórrer abans que l'accelerator de"
+" movement siá activat. Una valor de -1 es la valor per defaut del sistèma."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:25
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:95
 msgid "Acceleration profile"
-msgstr ""
+msgstr "Perfil d’acceleracion"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:26
 msgid ""
@@ -212,13 +218,15 @@ msgstr "Durada d'un doble clic."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:40
 msgid "Middle button emulation"
-msgstr ""
+msgstr "Emulacion del boton central de la mirga"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:41
 msgid ""
 "Enables middle mouse button emulation through simultaneous left and right "
 "button click."
 msgstr ""
+"Activa la simulacion del boton central de la mirga amb un clic simultanèu "
+"suls botons de dreita e esquèrra."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:45
 msgid "Locate Pointer"
@@ -257,6 +265,10 @@ msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
 msgstr ""
+"Definissètz aquesta clau segon una de las valors seguentas : « none » (pas "
+"cap), « lock-screen » (verrolhar l'ecran) o « force-logout » (forçar la "
+"desconnexion). Aquesta accion es efectuada quand la carta de piuse utilizada"
+" per se connectar es levada."
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:15
 msgid "Disable touchpad while typing"
@@ -267,6 +279,8 @@ msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
 msgstr ""
+"Activatz aquesta clau se vos arriba de tocar accidentalament lo pavat tactil"
+" quand escrivètz al clavièr."
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:20
 msgid "Enable mouse clicks with touchpad"
@@ -281,7 +295,7 @@ msgstr ""
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:25
 msgid "Enable vertical edge scrolling"
-msgstr "Indica se lo desfilament lateral es activat"
+msgstr "Indica se lo defilament lateral es activat"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:26
 msgid "Set this to TRUE to allow vertical edge scrolling"
@@ -313,7 +327,7 @@ msgstr ""
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:45
 msgid "Natural scrolling"
-msgstr "Desfilament natural"
+msgstr "Defilament natural"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:46
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
@@ -325,7 +339,7 @@ msgstr "Activar lo pavat tactil"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:51
 msgid "Set this to TRUE to enable all touchpads."
-msgstr ""
+msgstr "Activatz aquesta clau per activar totes los pavats tactils."
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:55
 msgid "Enabled two-finger button-click emulation"
@@ -556,11 +570,11 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:20
 msgid "Volume step"
-msgstr ""
+msgstr "Interval dels cambiaments de volum"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:21
 msgid "Volume step as percentage of volume."
-msgstr ""
+msgstr "Interval dels cambiaments de volum en percentatge."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:25
 msgid "Toggle touchpad"
@@ -568,7 +582,7 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:26
 msgid "Binding to enable or disable the touchpad."
-msgstr ""
+msgstr "Acorchi per activar o desactivar lo pavat tactil."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:30
 msgid "Volume mute"
@@ -596,7 +610,7 @@ msgstr "Acorchi per aumentar lo volum general del son."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:45
 msgid "Mute the audio quietly"
-msgstr ""
+msgstr "Amudir lo volum silenciosament"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:46
 msgid "Binding to mute the system volume quietly."
@@ -624,7 +638,7 @@ msgstr "Activar o desactivar lo microfòn"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:61
 msgid "Binding to mute/unmute the microphone."
-msgstr ""
+msgstr "Acorchi per copar o alucar lo microfòn."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:65
 msgid "Shut down"
@@ -680,11 +694,11 @@ msgstr "Anar als paramètres"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:96
 msgid "Binding to launch MATE settings."
-msgstr ""
+msgstr "Acorchis per lançar Paramètres de MATE."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:100
 msgid "Lock screen"
-msgstr "Verrolhar l'ecran"
+msgstr "Verrolhatge de l'ecran"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:101
 msgid "Binding to lock the screen."
@@ -784,7 +798,7 @@ msgstr "Acorchi per afichar lo clavièr visual"
 
 #: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:15
 msgid "Show Displays in Notification Area"
-msgstr ""
+msgstr "Afichar los monitors dins la zòna de notificacion"
 
 #: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:16
 msgid ""
@@ -876,7 +890,7 @@ msgstr "Empeuton d'accessibilitat del clavièr"
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:460
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr "I a agut una error al moment d'afichar l'ajuda : %s"
+msgstr "I a agut una error al moment d'afichar l'ajuda : %s"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:652
@@ -1048,7 +1062,7 @@ msgstr "Modificar la data e l'ora del sistèma"
 
 #: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:13
 msgid "Privileges are required to change the system time zone."
-msgstr ""
+msgstr "La modificacion del fus orari del sistèma exigís d'unes privilègis."
 
 #: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:21
 msgid "Change system time"
@@ -1056,15 +1070,16 @@ msgstr "Modificar la data e l'ora del sistèma"
 
 #: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:22
 msgid "Privileges are required to change the system time."
-msgstr ""
+msgstr "La modificacion de l'ora del sistèma exigís d'unes privilègis."
 
 #: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:30
 msgid "Configure hardware clock"
-msgstr ""
+msgstr "Configurar lo relòtge material"
 
 #: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:31
 msgid "Privileges are required to configure the hardware clock."
 msgstr ""
+"La modificacion del relòtge material del sistèma exigís d'unes privilègis."
 
 #: plugins/dummy/dummy.mate-settings-plugin.desktop.in:5
 msgid "Dummy"
@@ -1088,7 +1103,7 @@ msgstr ""
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:61
 msgid "Don't show any warnings again for this file system"
-msgstr ""
+msgstr "Afichar pas mai d'avertiments per aqueste sistèma de fichiers"
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:63
 msgid "Don't show any warnings again"
@@ -1109,24 +1124,35 @@ msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
 msgstr ""
+"Podètz liberar d'espaci de disc en voidant l'escobilhièr, en supriment de "
+"logicials o de fichièrs inutilizats o en desplaçant de fichièrs cap a un "
+"autre disc o una autra particion."
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:98
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
 msgstr ""
+"Podètz liberar d'espaci de disc en supriment de logicials o de fichièrs "
+"inutilizats o alara en desplaçant de fichièrs cap a un autre disc o una "
+"autra particion."
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:103
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
 msgstr ""
+"Podètz liberar d'espaci de disc en voidant l'escobilhièr, en supriment de "
+"logicials o de fichièrs inutilizats o alara en desplaçant de fichièrs cap a "
+"un disc extèrne."
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:106
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
 msgstr ""
+"Podètz liberar d'espaci de disc en supriment de logicials o de fichièrs "
+"inutilizats o alara en desplaçant de fichièrs cap a un disc extèrne."
 
 #. Set up all the window stuff here
 #: plugins/housekeeping/msd-ldsm-dialog.c:201
@@ -1135,7 +1161,7 @@ msgstr "Espaci de disc feble"
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:436
 msgid "Empty Trash"
-msgstr "Voidar l'escobilhièr"
+msgstr "Voidar l'escobilièr"
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Examine…"
@@ -1171,7 +1197,7 @@ msgstr "De : "
 
 #: plugins/housekeeping/msd-ldsm-trash-empty.c:356
 msgid "Empty all of the items from the trash?"
-msgstr "Suprimir totes los elements de l’escobilhièra ?"
+msgstr "Suprimir totes los elements de l’escobilhièr ?"
 
 #: plugins/housekeeping/msd-ldsm-trash-empty.c:359
 msgid ""
@@ -1237,7 +1263,7 @@ msgstr ""
 
 #: plugins/keyboard/msd-keyboard-xkb.c:286
 msgid "_Layouts"
-msgstr ""
+msgstr "_Disposicion"
 
 #: plugins/keyboard/msd-keyboard-xkb.c:293
 msgid "Keyboard _Preferences"
@@ -1245,7 +1271,7 @@ msgstr "_Preferéncias del clavièr"
 
 #: plugins/keyboard/msd-keyboard-xkb.c:299
 msgid "Show _Current Layout"
-msgstr ""
+msgstr "Afichar la disposicion _actuala"
 
 #: plugins/media-keys/media-keys.mate-settings-plugin.desktop.in:5
 msgid "Media keys"
@@ -1374,16 +1400,19 @@ msgstr ""
 #: plugins/smartcard/msd-smartcard-manager.c:670
 #, c-format
 msgid "smartcard driver '%s' could not be loaded"
-msgstr ""
+msgstr "lo pilòt de carta de piuse « %s » a pas pogut èsser cargat"
 
 #: plugins/smartcard/msd-smartcard-manager.c:754
 #, c-format
 msgid "could not watch for incoming card events - %s"
 msgstr ""
+"impossible de susvelhar los eveniments entrants de carta de piuse - %s"
 
 #: plugins/smartcard/msd-smartcard-manager.c:1101
 msgid "encountered unexpected error while waiting for smartcard events"
 msgstr ""
+"error inesperada rencontrada al moment de l'espèra dels eveniments de la "
+"carta de piuse"
 
 #: plugins/smartcard/msd-smartcard.c:149
 msgid "Slot ID"
@@ -1431,7 +1460,7 @@ msgstr "Empeuton del cache de l'escapolon de son"
 
 #: plugins/typing-break/typing-break.mate-settings-plugin.desktop.in:5
 msgid "Typing Break"
-msgstr ""
+msgstr "Pausa de picada"
 
 #: plugins/typing-break/typing-break.mate-settings-plugin.desktop.in:6
 msgid "Typing break plugin"
@@ -1443,11 +1472,13 @@ msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:394
 msgid "Could not restore the display's configuration"
-msgstr ""
+msgstr "Impossible de restablir la configuracion de l'afichatge"
 
 #: plugins/xrandr/msd-xrandr-manager.c:419
 msgid "Could not restore the display's configuration from a backup"
 msgstr ""
+"Impossible de restablir la configuracion de l'afichatge a partir d'un "
+"salvament"
 
 #: plugins/xrandr/msd-xrandr-manager.c:440
 #, c-format
@@ -1455,10 +1486,10 @@ msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
 msgstr[0] ""
-"L’afichatge serà reïnicializat a la configuracion precedenta d’aquí %d "
+"L'afichatge serà reïnicializat a sa configuracion precedenta d’aquí %d "
 "segonda"
 msgstr[1] ""
-"L’afichatge serà reïnicializat a la configuracion precedenta d’aquí %d "
+"L'afichatge serà reïnicializat a sa configuracion precedenta d’aquí %d "
 "segondas"
 
 #: plugins/xrandr/msd-xrandr-manager.c:491
@@ -1467,15 +1498,15 @@ msgstr "L’afichatge vos sembla corrècte ?"
 
 #: plugins/xrandr/msd-xrandr-manager.c:498
 msgid "_Restore Previous Configuration"
-msgstr ""
+msgstr "_Restablir la configuracion precedenta"
 
 #: plugins/xrandr/msd-xrandr-manager.c:499
 msgid "_Keep This Configuration"
-msgstr ""
+msgstr "_Conservar aquesta configuracion"
 
 #: plugins/xrandr/msd-xrandr-manager.c:580
 msgid "The selected configuration for displays could not be applied"
-msgstr ""
+msgstr "La configuracion d'afichatge seleccionada pòt pas èsser aplicada"
 
 #: plugins/xrandr/msd-xrandr-manager.c:1177
 #, c-format
@@ -1485,6 +1516,7 @@ msgstr "Impossible d'actualizar las informacions de l'ecran : %s"
 #: plugins/xrandr/msd-xrandr-manager.c:1181
 msgid "Trying to switch the monitor configuration anyway."
 msgstr ""
+"Malgrat tot, lo sistèma va ensajar de cambiar la configuracion de l'ecran."
 
 #: plugins/xrandr/msd-xrandr-manager.c:1938
 msgid "Rotation not supported"
@@ -1532,7 +1564,7 @@ msgid "Turn this monitor on"
 msgstr "Atudar aqueste ecran"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2244
-msgid "Same output all monitors"
+msgid "Same output on all monitors"
 msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:2245
@@ -1541,7 +1573,7 @@ msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:2292
 msgid "_Configure Display Settings…"
-msgstr "_Configurar los paramètres d’afichatge"
+msgstr "_Configurar los paramètres d’afichatge…"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2302
 msgid "Open the display configuration dialog (all settings)"
@@ -1553,7 +1585,7 @@ msgstr "Configurar los paramètres d’afichatge"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2419
 msgid "Could not apply the stored configuration for monitors"
-msgstr ""
+msgstr "Impossible d'aplicar la configuracion enregistrada pels ecrans"
 
 #: plugins/xrandr/xrandr.mate-settings-plugin.desktop.in:5
 msgid "XRandR"

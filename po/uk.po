@@ -4,21 +4,22 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# zubr139, 2018
-# Max Lyashuk <m_lyashuk@ukr.net>, 2019
-# Шаповалов Анатолій Романович <elrond.716.smith@gmail.com>, 2019
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Oleksii Khalikov <oleksii.khalikov@gmail.com>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# zubr139, 2021
 # Микола Ткач <chistomov@gmail.com>, 2021
+# Max Lyashuk <m_lyashuk@ukr.net>, 2021
+# Шаповалов Анатолій Романович <elrond.716.smith@gmail.com>, 2021
+# Oleksii Khalikov <oleksii.khalikov@gmail.com>, 2021
+# Taras Panchenko <top39@ukr.net>, 2022
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.25.1\n"
+"Project-Id-Version: mate-settings-daemon 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-23 22:04+0200\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Микола Ткач <chistomov@gmail.com>, 2021\n"
-"Language-Team: Ukrainian (https://www.transifex.com/mate/teams/13566/uk/)\n"
+"POT-Creation-Date: 2021-09-18 16:48+0200\n"
+"PO-Revision-Date: 2021-09-20 19:48+0000\n"
+"Last-Translator: Taras Panchenko <top39@ukr.net>, 2022\n"
+"Language-Team: Ukrainian (https://app.transifex.com/mate/teams/13566/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -572,7 +573,7 @@ msgid ""
 "Specify an amount in GB. If the amount of free space is more than this, no "
 "warning will be shown."
 msgstr ""
-"Вкажіть об’єм у ГБ. Якщо об’єм вільного місця більший, тоді попередження не "
+"Вкажіть об’єм у ҐБ. Якщо об’єм вільного місця більший, тоді попередження не "
 "буде показано."
 
 #: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:30
@@ -607,11 +608,11 @@ msgstr "Якщо показується сповіщення OSD, то спов�
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:20
 msgid "Volume step"
-msgstr "Крок гучности"
+msgstr "Крок гучності"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:21
 msgid "Volume step as percentage of volume."
-msgstr "Крок зміни гучности у відсотках."
+msgstr "Крок зміни гучності у відсотках."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:25
 msgid "Toggle touchpad"
@@ -627,7 +628,7 @@ msgstr "Вимкнення звуку"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:31
 msgid "Binding to mute the system volume."
-msgstr "Прив'язка для приглушення системної гучности."
+msgstr "Прив'язка для приглушення системної гучності."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:35
 msgid "Volume down"
@@ -635,7 +636,7 @@ msgstr "Зменшення гучности."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:36
 msgid "Binding to lower the system volume."
-msgstr "Прив'язка для зменшення системної гучности."
+msgstr "Прив'язка для зменшення системної гучності."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:40
 msgid "Volume up"
@@ -643,7 +644,7 @@ msgstr "Збільшення гучности"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:41
 msgid "Binding to raise the system volume."
-msgstr "Прив'язка для збільшення системної гучности."
+msgstr "Прив'язка для збільшення системної гучності."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:45
 msgid "Mute the audio quietly"
@@ -783,7 +784,7 @@ msgstr "Прив'язка для запуску мультимедійного �
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:130
 msgid "Play (or play/pause)"
-msgstr "Відтворити (або Відтворити/Призупинити)"
+msgstr "Відтворити (чи Відтворити/Призупинити)"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:131
 msgid "Binding to start playback (or toggle play/pause)."
@@ -927,7 +928,7 @@ msgstr "Вийти за сплином певного часу (для знев�
 
 #: plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.desktop.in:5
 msgid "Accessibility Keyboard"
-msgstr "Технології доступности"
+msgstr "Технології доступності"
 
 #: plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.desktop.in:6
 msgid "Accessibility keyboard plugin"
@@ -1076,7 +1077,7 @@ msgstr "Приймати клавіші лише після т_ривалого 
 
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:214
 msgid "_Beep when pressing a key while CapsLock is active"
-msgstr ""
+msgstr "Звуковий сигнал при натисканні клавіша, коли CapsLock активний"
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:5
 msgid "Accessibility settings"
@@ -1543,10 +1544,10 @@ msgstr "Не вдається відновити конфігурацію мон
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Конфигурацію моніторів буде відновлено через %d секунду"
-msgstr[1] "Конфигурацію моніторів буде відновлено через %d секунди"
-msgstr[2] "Конфигурацію моніторів буде відновлено через %d секунд"
-msgstr[3] "Конфигурацію моніторів буде відновлено через %d секунд"
+msgstr[0] "Монітор буде скинуто до попереднього налаштування за %d секунду"
+msgstr[1] "Монітор буде скинуто до попереднього налаштування за %d секунди"
+msgstr[2] "Монітор буде скинуто до попереднього налаштування за %d секунд"
+msgstr[3] "Монітор буде скинуто до попереднього налаштування за %d секунд"
 
 #: plugins/xrandr/msd-xrandr-manager.c:491
 msgid "Does the display look OK?"
@@ -1588,15 +1589,15 @@ msgstr "Дзеркалювання виходів не підтримуєтьс�
 
 #: plugins/xrandr/msd-xrandr-manager.c:2087
 msgid "Normal"
-msgstr "Початковий"
+msgstr "Початкове"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "Left"
-msgstr "Лівий"
+msgstr "Ліворуч"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2089
 msgid "Right"
-msgstr "Правий"
+msgstr "Праворуч"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2090
 msgid "Upside Down"
@@ -1619,8 +1620,8 @@ msgid "Turn this monitor on"
 msgstr "Увімкнути цей монітор"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2244
-msgid "Same output all monitors"
-msgstr "Вихід однаковий в усіх моніторів"
+msgid "Same output on all monitors"
+msgstr "Однакове зображення на всіх моніторах"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2245
 msgid "Mirror same output to all monitors and turn them on"

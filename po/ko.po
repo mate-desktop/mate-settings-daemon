@@ -4,21 +4,22 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Alan Lee <bkrhlim@aol.com>, 2018
-# D.K Kim <pepct84@gmail.com>, 2018
-# Seong-ho Cho <darkcircle.0426@gmail.com>, 2019
-# 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2019
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# JungHee Lee <daemul72@gmail.com>, 2021
+# Alan Lee <bkrhlim@aol.com>, 2021
+# Wolfgang Ulbrich <mate@raveit.de>, 2021
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2021
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# 1763f4a4329a2376c933c5e919a36cbc_341ca53 <1f851310383599d03339229d772e1290_119292>, 2021
+# D.K Kim <pepct84@gmail.com>, 2021
+# Junghee Lee <daemul72@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.25.1\n"
+"Project-Id-Version: mate-settings-daemon 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-23 22:04+0200\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: JungHee Lee <daemul72@gmail.com>, 2021\n"
-"Language-Team: Korean (https://www.transifex.com/mate/teams/13566/ko/)\n"
+"POT-Creation-Date: 2021-09-18 16:48+0200\n"
+"PO-Revision-Date: 2021-09-20 19:48+0000\n"
+"Last-Translator: Junghee Lee <daemul72@gmail.com>, 2021\n"
+"Language-Team: Korean (https://app.transifex.com/mate/teams/13566/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,7 +28,7 @@ msgstr ""
 
 #: data/50-accessibility.xml.in:2
 msgid "Accessibility"
-msgstr "접근성 기능"
+msgstr "접근성"
 
 #: data/50-accessibility.xml.in:4
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:155
@@ -594,7 +595,7 @@ msgstr "오디오를 조용히 음소거합니다"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:46
 msgid "Binding to mute the system volume quietly."
-msgstr "시스템을 조용히 음소거하기 위한 바인딩."
+msgstr "시스템 볼륨을 조용히 음소거하기 위한 바인딩."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:50
 msgid "Turn the volume down quietly"
@@ -1460,7 +1461,7 @@ msgstr "백업에서 화면 설정을 복원할 수 없습니다"
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "%d초 후에 이전 화면 설정으로 되돌아갑니다"
+msgstr[0] ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:491
 msgid "Does the display look OK?"
@@ -1533,7 +1534,7 @@ msgid "Turn this monitor on"
 msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:2244
-msgid "Same output all monitors"
+msgid "Same output on all monitors"
 msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:2245

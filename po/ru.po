@@ -4,25 +4,29 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Alexei Sorokin, 2018
-# Dmitriy Kulikov <kulikov@dima.perm.ru>, 2018
-# Alex Putz, 2018
-# Дмитрий Михирев, 2019
-# AlexL <loginov.alex.valer@gmail.com>, 2019
-# monsta <monsta@inbox.ru>, 2019
-# alsoijw <alsoijw@yandex.ru>, 2019
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Anna Vyalkova <cybertailor@gmail.com>, 2020
-# Norbert X, 2020
+# alsoijw <alsoijw@yandex.ru>, 2021
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# XRevan86, 2021
+# Дмитрий Михирев, 2021
+# AlexL <loginov.alex.valer@gmail.com>, 2021
+# Cyber Tailor <cyber@sysrq.in>, 2021
+# monsta <monsta@inbox.ru>, 2021
+# Dmitriy Kulikov <kulikov@dima.perm.ru>, 2021
+# Alex Puts, 2021
+# Дмитрий Астанков <mornie@basealt.ru>, 2021
+# Norbert X, 2021
+# Павел Коваленко, 2021
+# Arbo_Leet <koshelkov.peter@gmail.com>, 2022
+# Артём Котлубай <artemkotlubai@yandex.ru>, 2022
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.25.1\n"
+"Project-Id-Version: mate-settings-daemon 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-23 22:04+0200\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Norbert X, 2020\n"
-"Language-Team: Russian (https://www.transifex.com/mate/teams/13566/ru/)\n"
+"POT-Creation-Date: 2021-09-18 16:48+0200\n"
+"PO-Revision-Date: 2021-09-20 19:48+0000\n"
+"Last-Translator: Артём Котлубай <artemkotlubai@yandex.ru>, 2022\n"
+"Language-Team: Russian (https://app.transifex.com/mate/teams/13566/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -31,7 +35,7 @@ msgstr ""
 
 #: data/50-accessibility.xml.in:2
 msgid "Accessibility"
-msgstr "Вспомогательные технологии"
+msgstr "Особые возможности"
 
 #: data/50-accessibility.xml.in:4
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:155
@@ -260,15 +264,15 @@ msgstr ""
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:50
 msgid "Cursor theme"
-msgstr "Тема курсора"
+msgstr "Тема указателя мыши"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:51
 msgid "Cursor theme name."
-msgstr "Имя темы курсоров."
+msgstr "Имя темы указателей мыши."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:55
 msgid "Cursor size"
-msgstr "Размер курсора"
+msgstr "Размер указателя мыши"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:56
 msgid "Size of the cursor referenced by cursor_theme."
@@ -295,8 +299,8 @@ msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
 msgstr ""
-"Установите в TRUE если у вас проблемы со срабатыванием touchpad'а при наборе"
-" текста."
+"Установите в TRUE если у вас есть проблемы со срабатыванием сенсорной панели"
+" при наборе текста."
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:20
 msgid "Enable mouse clicks with touchpad"
@@ -414,15 +418,15 @@ msgstr ""
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:80
 msgid "Touchpad button orientation"
-msgstr "Ориентация кнопок тачпада"
+msgstr "Ориентация кнопок сенсорной панели"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:81
 msgid ""
 "Swap left and right buttons for left-handed touchpads with 'left', 'right' "
 "for right-handed, 'mouse' to follow the mouse setting."
 msgstr ""
-"Поменять местами левую и правую кнопки для тачпадов для левшей - 'левый', "
-"'правый' для правшей, 'мышь' для следования настройке мыши."
+"Поменять местами левую и правую кнопки для сенсорных панелей для левшей - "
+"«левый», «правый» для правшей, «мышь» для следования настройке мыши."
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:86
 msgid ""
@@ -451,13 +455,13 @@ msgid ""
 "movement. If a touchpad doesn't support the configured profile, 'default' "
 "will be used."
 msgstr ""
-"Профиль ускорения для тачпада. Профиль ускорения может принимать следующие "
-"значения: по умолчанию ('default'), то есть использовать профиль по "
-"умолчанию для каждого устройства; плоский ('flat'), то есть ускорять на "
+"Профиль ускорения для сенсорной панели. Профиль ускорения может принимать "
+"следующие значения: по умолчанию («default»), то есть использовать профиль "
+"по умолчанию для каждого устройства; плоский («flat»), то есть ускорять на "
 "постоянную величину, взятую для каждого устройства из настроек скорости "
-"курсора; адаптивный ('adaptive'), то есть подстраивать ускорение в "
-"зависимости от движения тачпада. Если тачпад не поддерживает выбранный "
-"профиль, будет установлен профиль 'default'."
+"курсора; адаптивный («adaptive»), то есть подстраивать ускорение в "
+"зависимости от движения сенсорной панели. Если сенсорная панель не "
+"поддерживает выбранный профиль, будет установлен профиль «default»."
 
 #: data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in:5
 #: data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in:5
@@ -499,7 +503,7 @@ msgstr "Активация этого модуля"
 #: data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in:6
 #: data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in:6
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr "Будет ли активирован этот модуль mate-settings-daemon или нет."
+msgstr "Будет ли задействован этот модуль mate-settings-daemon или нет."
 
 #: data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in:10
 #: data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in:10
@@ -584,7 +588,7 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:30
 msgid "Minimum notify period for repeated warnings"
-msgstr "Период между повторением оповещений"
+msgstr "Промежуток между повторением оповещений"
 
 #: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:31
 msgid ""
@@ -596,7 +600,7 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:35
 msgid "Mount paths to ignore"
-msgstr "Игнорируемые точки монтирования"
+msgstr "Неучитываемые точки монтирования"
 
 #: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:36
 msgid "Specify a list of mount paths to ignore when they run low on space."
@@ -626,7 +630,7 @@ msgstr "Переключить сенсорную панель"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:26
 msgid "Binding to enable or disable the touchpad."
-msgstr "Комбинация клавиш для включения или выключения сенсорной панели."
+msgstr "Привязка клавиш для включения или выключения сенсорной панели."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:30
 msgid "Volume mute"
@@ -634,7 +638,7 @@ msgstr "Отключить звук"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:31
 msgid "Binding to mute the system volume."
-msgstr "Комбинация клавиш для приглушения системной громкости."
+msgstr "Привязка клавиш для приглушения системной громкости."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:35
 msgid "Volume down"
@@ -642,7 +646,7 @@ msgstr "Уменьшить громкость"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:36
 msgid "Binding to lower the system volume."
-msgstr "Комбинация клавиш для уменьшения системной громкости."
+msgstr "Привязка клавиш для уменьшения системной громкости."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:40
 msgid "Volume up"
@@ -650,7 +654,7 @@ msgstr "Увеличить громкость"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:41
 msgid "Binding to raise the system volume."
-msgstr "Комбинация клавиш для увеличения системной громкости."
+msgstr "Привязка клавиш для увеличения системной громкости."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:45
 msgid "Mute the audio quietly"
@@ -658,7 +662,7 @@ msgstr "Бесшумно отключить звук"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:46
 msgid "Binding to mute the system volume quietly."
-msgstr "Комбинация клавиш для бесшумного приглушения системной громкости. "
+msgstr "Привязка клавиш для бесшумного приглушения системной громкости. "
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:50
 msgid "Turn the volume down quietly"
@@ -666,7 +670,7 @@ msgstr "Бесшумно уменьшить громкость"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:51
 msgid "Binding to lower the system volume quietly."
-msgstr "Комбинация клавиш для бесшумного уменьшения системной громкости."
+msgstr "Привязка клавиш для бесшумного уменьшения системной громкости."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:55
 msgid "Turn the volume up quietly"
@@ -682,15 +686,15 @@ msgstr "Включить/выключить микрофон"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:61
 msgid "Binding to mute/unmute the microphone."
-msgstr "Комбинация клавиш для включения/выключения микрофона."
+msgstr "Привязка клавиш для включения/выключения микрофона."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:65
 msgid "Shut down"
-msgstr "Выключить"
+msgstr "Завершить работу"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:66
 msgid "Binding to shut down."
-msgstr "Комбинация клавиш для выключения"
+msgstr "Привязка клавиш для выключения"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:70
 msgid "Log out"
@@ -698,7 +702,7 @@ msgstr "Завершить сеанс"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:71
 msgid "Binding to log out."
-msgstr "Комбинация клавиш для выхода из системы."
+msgstr "Привязка клавиш для выхода из системы."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:75
 msgid "Eject"
@@ -706,7 +710,7 @@ msgstr "Извлечь"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:76
 msgid "Binding to eject an optical disc."
-msgstr "Комбинация клавиш для извлечения оптического диска."
+msgstr "Привязка клавиш для извлечения оптического диска."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:80
 msgid "Home folder"
@@ -714,7 +718,7 @@ msgstr "Домашняя папка"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:81
 msgid "Binding to open the Home folder."
-msgstr "Комбинация клавиш для открытия домашней папки."
+msgstr "Привязка клавиш для открытия домашней папки."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:85
 msgid "Search"
@@ -722,7 +726,7 @@ msgstr "Поиск"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:86
 msgid "Binding to launch the search tool."
-msgstr "Комбинация клавиш для запуска утилиты поиска."
+msgstr "Привязка клавиш для запуска утилиты поиска."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:90
 msgid "Launch email client"
@@ -730,15 +734,15 @@ msgstr "Запустить клиент электронной почты"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:91
 msgid "Binding to launch the email client."
-msgstr "Комбинация клавиш для запуска почтового клиента."
+msgstr "Привязка клавиш для запуска почтовика."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:95
 msgid "Launch settings"
-msgstr "Запустить центр настройки"
+msgstr "Запустить приложение настроек"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:96
 msgid "Binding to launch MATE settings."
-msgstr "Комбинация клавиш для запуска центра настройки MATE."
+msgstr "Привязка клавиш для запуска центра настройки MATE."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:100
 msgid "Lock screen"
@@ -746,15 +750,15 @@ msgstr "Заблокировать экран"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:101
 msgid "Binding to lock the screen."
-msgstr "Комбинация клавиш для блокирования экрана."
+msgstr "Привязка клавиш для блокирования экрана."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:105
 msgid "Launch help browser"
-msgstr "Запустить просмотр справки"
+msgstr "Запустить браузер для справки"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:106
 msgid "Binding to launch the help browser."
-msgstr "Комбинация клавиш для запуска справочной системы."
+msgstr "Привязка клавиш для запуска справочной системы."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:110
 msgid "Launch calculator"
@@ -762,7 +766,7 @@ msgstr "Запустить калькулятор"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:111
 msgid "Binding to launch the calculator."
-msgstr "Комбинация клавиш для запуска калькулятора."
+msgstr "Привязка клавиш для запуска калькулятора."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:115
 msgid "Launch instant messenger"
@@ -770,32 +774,32 @@ msgstr "Запустить мессенджер"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:116
 msgid "Binding to launch the instant messenger."
-msgstr "Комбинация клавиш для запуска мессенджера."
+msgstr "Привязка клавиш для запуска мессенджера."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:120
 msgid "Launch web browser"
-msgstr "Запустить веб-браузер"
+msgstr "Запустить браузер"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:121
 msgid "Binding to launch the web browser."
-msgstr "Комбинация клавиш для запуска веб-браузера."
+msgstr "Привязка клавиш для запуска браузера."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:125
 msgid "Launch media player"
-msgstr "Запустить мультимедийный проигрыватель"
+msgstr "Запустить мультимедиа проигрыватель"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:126
 msgid "Binding to launch the media player."
-msgstr "Комбинация клавиш для запуска мультимедийного проигрывателя."
+msgstr "Привязка клавиш для запуска мультимедийного проигрывателя."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:130
 msgid "Play (or play/pause)"
-msgstr "Воспроизведение (или воспроизведение/пауза)"
+msgstr "Воспроизвести (или воспроизвести/приостановить)"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:131
 msgid "Binding to start playback (or toggle play/pause)."
 msgstr ""
-"Комбинация клавиш для запуска воспроизведения (или переключения "
+"Привязка клавиш для запуска воспроизведения (или переключения "
 "воспроизведение/пауза)."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:135
@@ -804,7 +808,7 @@ msgstr "Приостановить воспроизведение"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:136
 msgid "Binding to pause playback."
-msgstr "Комбинация клавиш для приостановки воспроизведения."
+msgstr "Привязка клавиш для приостановки воспроизведения."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:140
 msgid "Stop playback"
@@ -812,7 +816,7 @@ msgstr "Остановить воспроизведение"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:141
 msgid "Binding to stop playback."
-msgstr "Комбинация клавиш для остановки воспроизведения."
+msgstr "Привязка клавиш для остановки воспроизведения."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:145
 msgid "Previous track"
@@ -820,7 +824,7 @@ msgstr "Предыдущая дорожка"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:146
 msgid "Binding to skip to previous track."
-msgstr "Комбинация клавиш для перехода к предыдущей дорожке."
+msgstr "Привязка клавиш для перехода к предыдущей дорожке."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:150
 msgid "Next track"
@@ -828,19 +832,19 @@ msgstr "Следующая дорожка"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:151
 msgid "Binding to skip to next track."
-msgstr "Комбинация клавиш для перехода к следующей дорожке."
+msgstr "Привязка клавиш для перехода к следующей дорожке."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:156
 msgid "Binding to show the screen magnifier"
-msgstr "Комбинация клавиш для показа экранного увеличителя"
+msgstr "Привязка клавиш для показа экранного увеличителя"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:161
 msgid "Binding to start the screen reader"
-msgstr "Комбинация клавиш для запуска чтения с экрана"
+msgstr "Привязка клавиш для запуска чтения с экрана"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:166
 msgid "Binding to show the on-screen keyboard"
-msgstr "Комбинация клавиш для показа экранной клавиатуры"
+msgstr "Привязка клавиш для показа экранной клавиатуры"
 
 #: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:15
 msgid "Show Displays in Notification Area"
@@ -1085,7 +1089,7 @@ msgstr "Нажимать и _удерживать клавиши (медленн
 
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:214
 msgid "_Beep when pressing a key while CapsLock is active"
-msgstr ""
+msgstr "_Звуковой сигнал при нажатии клавиши при активном Caps Lock"
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:5
 msgid "Accessibility settings"
@@ -1097,7 +1101,7 @@ msgstr "Плагин настройки специальных возможно�
 
 #: plugins/background/background.mate-settings-plugin.desktop.in:5
 msgid "Background"
-msgstr "Фон"
+msgstr "Задний план"
 
 #: plugins/background/background.mate-settings-plugin.desktop.in:6
 msgid "Background plugin"
@@ -1552,10 +1556,18 @@ msgstr "Не удалось воcстановить конфигурацию м�
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Конфигурация мониторов будет восстановлена через %d секунду"
-msgstr[1] "Конфигурация мониторов будет восстановлена через %d секунд"
-msgstr[2] "Конфигурация мониторов будет восстановлена через %d секунд"
-msgstr[3] "Конфигурация мониторов будет восстановлена через %d секунд"
+msgstr[0] ""
+"Конфигурация мониторов будет возвращена к предыдущему состоянию через %d "
+"секунду"
+msgstr[1] ""
+"Конфигурация мониторов будет возвращена к предыдущему состоянию через %d "
+"секунды"
+msgstr[2] ""
+"Конфигурация мониторов будет возвращена к предыдущему состоянию через %d "
+"секунд"
+msgstr[3] ""
+"Конфигурация мониторов будет возвращена к предыдущему состоянию через %d "
+"секунд"
 
 #: plugins/xrandr/msd-xrandr-manager.c:491
 msgid "Does the display look OK?"
@@ -1601,15 +1613,15 @@ msgstr "Нормальный"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "Left"
-msgstr "Левый"
+msgstr "Слева"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2089
 msgid "Right"
-msgstr "Правый"
+msgstr "Справа"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2090
 msgid "Upside Down"
-msgstr "сверху вниз"
+msgstr "Перевёрнутый"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2179
 msgid "ON"
@@ -1628,7 +1640,7 @@ msgid "Turn this monitor on"
 msgstr "Включить этот монитор"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2244
-msgid "Same output all monitors"
+msgid "Same output on all monitors"
 msgstr "Одинаковое изображение на всех мониторах"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2245
