@@ -128,7 +128,7 @@ msd_a11y_keyboard_atspi_start (MsdA11yKeyboardAtspi *self)
         /* init AT-SPI if needed */
         atspi_init ();
 
-        self->listener = atspi_device_listener_new (on_key_press_event,
+        self->listener = atspi_device_listener_new ((AtspiDeviceListenerCB)on_key_press_event,
                                                     self, NULL);
 #endif
         register_deregister_events (self, TRUE);
