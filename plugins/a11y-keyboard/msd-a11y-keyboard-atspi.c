@@ -55,16 +55,16 @@ msd_a11y_keyboard_atspi_class_init (MsdA11yKeyboardAtspiClass *klass)
 }
 
 static gboolean
-on_key_press_event (const AtspiDeviceEvent *event,
-                    void                   *user_data G_GNUC_UNUSED)
+on_key_press_event (AtspiDeviceEvent *event,
+                    void             *user_data G_GNUC_UNUSED)
 {
         /* don't ring on capslock itself, that's taken care of by togglekeys
          * if the user want it. */
-        if (event->id == GDK_KEY_Caps_Lock)
-                return FALSE;
+        if (event->id != GDK_KEY_Caps_Lock)
+                gdk_display_beep (gdk_display_get_default ());
 
-        gdk_display_beep (gdk_display_get_default ());
-
+        /* cast the possible erroneous const away with atspi < 2.40 */
+        g_boxed_free (ATSPI_TYPE_DEVICE_EVENT, (gpointer) event);
         return FALSE;
 }
 
