@@ -68,13 +68,11 @@ PKG_CHECK_MODULES(SETTINGS_DAEMON,
 	gio-2.0 >= $GIO_REQUIRED_VERSION
 	gmodule-2.0
 	gthread-2.0
-	dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
 )
 
 PKG_CHECK_MODULES(SETTINGS_PLUGIN,
 	gtk+-3.0 >= $GTK_REQUIRED_VERSION
 	gio-2.0 >= $GIO_REQUIRED_VERSION
-	dbus-glib-1 >= $DBUS_GLIB_REQUIRED_VERSION
 )
 
 MSD_PLUGIN_LDFLAGS="-export_dynamic -module -avoid-version -no-undefined"
@@ -341,7 +339,6 @@ AC_SUBST(NSS_DATABASE)
 # ---------------------------------------------------------------------------
 
 POLKIT_REQUIRED=0.97
-DBUS_REQUIRED=1.10.0
 
 # PolicyKit detection; defaults to 'auto' (use it if it's available)
 #
@@ -357,7 +354,7 @@ if test "x$enable_polkit" = "xno" ; then
   HAVE_POLKIT=no
 else
   HAVE_POLKIT=no
-  PKG_CHECK_MODULES(POLKIT, polkit-gobject-1 >= $POLKIT_REQUIRED dbus-1 >= $DBUS_REQUIRED, HAVE_POLKIT=yes, HAVE_POLKIT=no)
+  PKG_CHECK_MODULES(POLKIT, polkit-gobject-1 >= $POLKIT_REQUIRED, HAVE_POLKIT=yes, HAVE_POLKIT=no)
 
   if test "x$enable_polkit" = "xyes" -a "x$HAVE_POLKIT" = "xno" ; then
     AC_MSG_ERROR(PolicyKit support explicity enabled but not available)
