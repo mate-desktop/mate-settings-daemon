@@ -1409,7 +1409,7 @@ rfkill_appeared_cb (GDBusConnection *connection,
 
         g_dbus_proxy_new_for_bus (G_BUS_TYPE_SESSION,
                                   0, NULL,
-                                  "org.mate.SettingsDaemon.Rfkill",
+                                  "org.mate.SettingsDaemon",
                                   "/org/mate/SettingsDaemon/Rfkill",
                                   "org.mate.SettingsDaemon.Rfkill",
                                   manager->priv->rfkill_cancellable,
