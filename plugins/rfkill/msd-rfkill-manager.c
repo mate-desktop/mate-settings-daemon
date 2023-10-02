@@ -66,9 +66,8 @@ struct MsdRfkillManagerPrivate
 #define MSD_RFKILL_DBUS_PATH MSD_DBUS_PATH "/Rfkill"
 
 static const gchar introspection_xml[] =
-"<node>"
+"<node name='/org/mate/SettingsDaemon/Rfkill'>"
 "  <interface name='org.mate.SettingsDaemon.Rfkill'>"
-"    <annotation name='org.freedesktop.DBus.GLib.CSymbol' value='msd_rfkill_manager'/>"
 "    <property name='AirplaneMode' type='b' access='readwrite'/>"
 "    <property name='HardwareAirplaneMode' type='b' access='read'/>"
 "    <property name='HasAirplaneMode' type='b' access='read'/>"
@@ -493,7 +492,7 @@ on_bus_gotten (GObject               *source_object,
 
         manager->priv->name_id = g_bus_own_name_on_connection (connection,
                                                                MSD_RFKILL_DBUS_NAME,
-                                                               G_BUS_NAME_OWNER_FLAGS_NONE,
+                                                               G_BUS_NAME_OWNER_FLAGS_ALLOW_REPLACEMENT,
                                                                NULL,
                                                                NULL,
                                                                NULL,
