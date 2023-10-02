@@ -491,7 +491,7 @@ on_bus_gotten (GObject               *source_object,
                                            NULL);
 
         manager->priv->name_id = g_bus_own_name_on_connection (connection,
-                                                               MSD_RFKILL_DBUS_NAME,
+                                                               MSD_DBUS_NAME,
                                                                G_BUS_NAME_OWNER_FLAGS_ALLOW_REPLACEMENT,
                                                                NULL,
                                                                NULL,
