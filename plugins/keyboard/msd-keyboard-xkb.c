@@ -32,6 +32,8 @@
 #include <gtk/gtk.h>
 #include <gio/gio.h>
 
+#include <libmate-desktop/mate-image-menu-item.h>
+
 #include <libmatekbd/matekbd-status.h>
 #include <libmatekbd/matekbd-keyboard-drawing.h>
 #include <libmatekbd/matekbd-desktop-config.h>
@@ -314,13 +316,11 @@ status_icon_popup_menu_cb (GtkStatusIcon *status_icon,
 			GtkWidget *img =
 			    gtk_image_new_from_pixbuf (pixbuf);
 			item =
-			    gtk_image_menu_item_new_with_label
+			    mate_image_menu_item_new_with_label
 			    (*current_name);
 			gtk_widget_show (img);
-			gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM
+			mate_image_menu_item_set_image (MATE_IMAGE_MENU_ITEM
 						       (item), img);
-			gtk_image_menu_item_set_always_show_image
-			    (GTK_IMAGE_MENU_ITEM (item), TRUE);
 			g_free (image_file);
 		}
 		gtk_widget_show (item);

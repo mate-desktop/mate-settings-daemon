@@ -33,6 +33,7 @@ libkeyboard_la_CPPFLAGS = \
 libkeyboard_la_CFLAGS =			\
 	$(SETTINGS_PLUGIN_CFLAGS)	\
 	$(LIBMATEKBDUI_CFLAGS)		\
+	$(MATE_DESKTOP_CFLAGS)		\
 	$(AM_CFLAGS)			\
 	$(WARN_CFLAGS)			\
 	$(NULL)
@@ -44,6 +45,7 @@ libkeyboard_la_LDFLAGS = 	\
 libkeyboard_la_LIBADD  = 	\
 	$(SETTINGS_PLUGIN_LIBS)	\
 	$(LIBMATEKBDUI_LIBS)	\
+	$(MATE_DESKTOP_LIBS)	\
 	$(NULL)
 
 plugin_in_files = 		\
