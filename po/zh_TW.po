@@ -6,16 +6,16 @@
 # Translators:
 # 趙惟倫 <bluebat@member.fsf.org>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# 黃柏諺 <s8321414@gmail.com>, 2020
+# 黃柏諺 <s8321414@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.25.1\n"
+"Project-Id-Version: mate-settings-daemon 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-23 22:04+0200\n"
+"POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: 黃柏諺 <s8321414@gmail.com>, 2020\n"
-"Language-Team: Chinese (Taiwan) (https://www.transifex.com/mate/teams/13566/zh_TW/)\n"
+"Last-Translator: 黃柏諺 <s8321414@gmail.com>, 2021\n"
+"Language-Team: Chinese (Taiwan) (https://app.transifex.com/mate/teams/13566/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -867,96 +867,96 @@ msgid "There was an error displaying help: %s"
 msgstr "顯示說明文件時出現錯誤：%s"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:652
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:651
 msgid "Do you want to activate Slow Keys?"
 msgstr "是否啟用遲緩按鍵？"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:589
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:652
 msgid "Do you want to deactivate Slow Keys?"
 msgstr "是否停用遲緩按鍵？"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:590
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:654
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
 msgstr "您按住 Shift 鍵達 8 秒。這是使用遲緩鍵功能的捷徑，那會影響鍵盤的操作方式。"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Don't activate"
 msgstr "不要啟用"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Don't deactivate"
 msgstr "不要停用"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:619
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:756
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:755
 msgid "Activate"
 msgstr "啟用"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:619
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:756
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:755
 msgid "Deactivate"
 msgstr "停用"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:675
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:814
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:674
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:813
 msgid "Do_n't activate"
 msgstr "不要啟用(_N)"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:675
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:814
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:674
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:813
 msgid "Do_n't deactivate"
 msgstr "不要停用(_N)"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:678
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:817
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:677
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:816
 msgid "_Activate"
 msgstr "啟用(_A)"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:678
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:817
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:677
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:816
 msgid "_Deactivate"
 msgstr "停用(_D)"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:682
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:681
 msgid "Slow Keys Alert"
 msgstr "遲緩按鍵警告"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:722
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:788
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:721
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:787
 msgid "Do you want to activate Sticky Keys?"
 msgstr "是否啟用黏性特殊鍵？"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:723
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:722
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:788
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr "是否停用黏性特殊鍵？"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:791
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:724
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:790
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
 msgstr "您連續按了 5 下 Shift 鍵。這是使用黏性特殊鍵功能的捷徑，那會影響鍵盤的操作方式。"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:727
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:793
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:726
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
 "keyboard works."
 msgstr "您同時按下兩個鍵，或是連續按下5次 Shift 鍵。這會停用黏性特殊鍵功能，那會影響鍵盤的操作方式。"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:821
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:820
 msgid "Sticky Keys Alert"
 msgstr "黏性特殊鍵警告"
 
-#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:830
+#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:829
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:14
 msgid "Universal Access Preferences"
 msgstr "無障礙偏好設定"
@@ -1178,7 +1178,7 @@ msgstr "按鍵組合 (%s) 無效"
 msgid "Key binding (%s) is incomplete"
 msgstr "按鍵組合 (%s) 不完整"
 
-#: plugins/keybindings/msd-keybindings-manager.c:487
+#: plugins/keybindings/msd-keybindings-manager.c:486
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -1224,15 +1224,15 @@ msgstr ""
 " • <b>%s</b> 的結果\n"
 " • <b>%s</b> 的結果"
 
-#: plugins/keyboard/msd-keyboard-xkb.c:286
+#: plugins/keyboard/msd-keyboard-xkb.c:285
 msgid "_Layouts"
 msgstr "配置(_L)"
 
-#: plugins/keyboard/msd-keyboard-xkb.c:293
+#: plugins/keyboard/msd-keyboard-xkb.c:292
 msgid "Keyboard _Preferences"
 msgstr "鍵盤偏好設定(_P)"
 
-#: plugins/keyboard/msd-keyboard-xkb.c:299
+#: plugins/keyboard/msd-keyboard-xkb.c:298
 msgid "Show _Current Layout"
 msgstr "顯示目前配置(_C)"
 
@@ -1244,13 +1244,13 @@ msgstr "多媒體按鍵"
 msgid "Media keys plugin"
 msgstr "多媒體按鍵外掛程式"
 
-#: plugins/media-keys/msd-media-keys-manager.c:185
+#: plugins/media-keys/msd-media-keys-manager.c:189
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
 msgstr "無法取得預設的終端機。請檢查您預設的終端機指令已設定並指向正確的應用程式。"
 
-#: plugins/media-keys/msd-media-keys-manager.c:225
+#: plugins/media-keys/msd-media-keys-manager.c:229
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
@@ -1259,46 +1259,46 @@ msgstr ""
 "不能執行指令： %s\n"
 "請檢查該指令是否為有效的指令。"
 
-#: plugins/media-keys/msd-media-keys-manager.c:638
+#: plugins/media-keys/msd-media-keys-manager.c:642
 #: plugins/media-keys/test-media-window.c:82
 msgid "Touchpad enabled"
 msgstr "觸控板已啟用"
 
-#: plugins/media-keys/msd-media-keys-manager.c:638
+#: plugins/media-keys/msd-media-keys-manager.c:642
 #: plugins/media-keys/test-media-window.c:75
 msgid "Touchpad disabled"
 msgstr "觸控板已停用"
 
-#: plugins/media-keys/msd-media-keys-manager.c:956
+#: plugins/media-keys/msd-media-keys-manager.c:963
 #: plugins/media-keys/test-media-window.c:89
 msgid "Bluetooth disabled"
 msgstr "藍牙已停用"
 
-#: plugins/media-keys/msd-media-keys-manager.c:959
+#: plugins/media-keys/msd-media-keys-manager.c:966
 #: plugins/media-keys/test-media-window.c:96
 msgid "Bluetooth enabled"
 msgstr "藍牙已啟用"
 
-#: plugins/media-keys/msd-media-keys-manager.c:963
+#: plugins/media-keys/msd-media-keys-manager.c:970
 #: plugins/media-keys/test-media-window.c:103
 msgid "Airplane mode enabled"
 msgstr "飛航模式已啟用"
 
-#: plugins/media-keys/msd-media-keys-manager.c:966
+#: plugins/media-keys/msd-media-keys-manager.c:973
 #: plugins/media-keys/test-media-window.c:110
 msgid "Airplane mode disabled"
 msgstr "飛航模式已停用"
 
-#: plugins/media-keys/msd-media-keys-manager.c:997
+#: plugins/media-keys/msd-media-keys-manager.c:1004
 msgid "Hardware Airplane Mode"
 msgstr "硬體飛航模式"
 
-#: plugins/media-keys/msd-media-keys-manager.c:1035
+#: plugins/media-keys/msd-media-keys-manager.c:1042
 #: plugins/media-keys/test-media-window.c:124
 msgid "Changing Screen Layout"
 msgstr "正在變更畫面佈局"
 
-#: plugins/media-keys/msd-media-keys-manager.c:1039
+#: plugins/media-keys/msd-media-keys-manager.c:1046
 #: plugins/media-keys/test-media-window.c:117
 msgid "No External Display"
 msgstr "沒有外部顯示器"
@@ -1311,16 +1311,16 @@ msgstr "滑鼠"
 msgid "Mouse plugin"
 msgstr "滑鼠外掛程式"
 
-#: plugins/mouse/msd-mouse-manager.c:1651
+#: plugins/mouse/msd-mouse-manager.c:1648
 msgid "Could not enable mouse accessibility features"
 msgstr "無法啟用滑鼠可存取性功能"
 
-#: plugins/mouse/msd-mouse-manager.c:1653
+#: plugins/mouse/msd-mouse-manager.c:1650
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr "滑鼠無障礙功能需要您的系統安裝 Mousetweaks。"
 
-#: plugins/mouse/msd-mouse-manager.c:1656
+#: plugins/mouse/msd-mouse-manager.c:1653
 msgid "Mouse Preferences"
 msgstr "滑鼠偏好設定"
 
@@ -1463,81 +1463,81 @@ msgstr "保留這個組態(_K)"
 msgid "The selected configuration for displays could not be applied"
 msgstr "選取的畫面組態無法套用"
 
-#: plugins/xrandr/msd-xrandr-manager.c:1177
+#: plugins/xrandr/msd-xrandr-manager.c:1176
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "無法重新整理螢幕的資訊：%s"
 
-#: plugins/xrandr/msd-xrandr-manager.c:1181
+#: plugins/xrandr/msd-xrandr-manager.c:1180
 msgid "Trying to switch the monitor configuration anyway."
 msgstr "嘗試強制切換顯示器。"
 
-#: plugins/xrandr/msd-xrandr-manager.c:1938
+#: plugins/xrandr/msd-xrandr-manager.c:1937
 msgid "Rotation not supported"
 msgstr "不支援旋轉"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2003
-#: plugins/xrandr/msd-xrandr-manager.c:2035
+#: plugins/xrandr/msd-xrandr-manager.c:2002
+#: plugins/xrandr/msd-xrandr-manager.c:2034
 msgid "Could not save monitor configuration"
 msgstr "無法儲存顯示器組態"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2056
+#: plugins/xrandr/msd-xrandr-manager.c:2055
 msgid "Mirroring outputs not supported"
 msgstr "不支援鏡像輸出"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2087
+#: plugins/xrandr/msd-xrandr-manager.c:2086
 msgid "Normal"
 msgstr "一般"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2088
+#: plugins/xrandr/msd-xrandr-manager.c:2087
 msgid "Left"
 msgstr "左邊"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2089
+#: plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "Right"
 msgstr "右邊"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2090
+#: plugins/xrandr/msd-xrandr-manager.c:2089
 msgid "Upside Down"
 msgstr "由上而下"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2179
+#: plugins/xrandr/msd-xrandr-manager.c:2178
 msgid "ON"
 msgstr "開啟"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2180
+#: plugins/xrandr/msd-xrandr-manager.c:2179
 msgid "Turn this monitor off"
 msgstr "將此顯示器關閉"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2183
+#: plugins/xrandr/msd-xrandr-manager.c:2182
 msgid "OFF"
 msgstr "關閉"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2184
+#: plugins/xrandr/msd-xrandr-manager.c:2183
 msgid "Turn this monitor on"
 msgstr "將此顯示器開啟"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2244
-msgid "Same output all monitors"
-msgstr "所有顯示器同一個輸出"
+#: plugins/xrandr/msd-xrandr-manager.c:2243
+msgid "Same output on all monitors"
+msgstr "所有螢幕都使用相同輸出"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2245
+#: plugins/xrandr/msd-xrandr-manager.c:2244
 msgid "Mirror same output to all monitors and turn them on"
 msgstr "將同一個輸出鏡像到所有顯示器上並將它們開啟"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2292
+#: plugins/xrandr/msd-xrandr-manager.c:2291
 msgid "_Configure Display Settings…"
 msgstr "設定顯示設定值(_C)…"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2302
+#: plugins/xrandr/msd-xrandr-manager.c:2301
 msgid "Open the display configuration dialog (all settings)"
 msgstr "開啟顯示設定對話框（所有設定）"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2359
+#: plugins/xrandr/msd-xrandr-manager.c:2358
 msgid "Configure display settings"
 msgstr "設定顯示設定值"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2419
+#: plugins/xrandr/msd-xrandr-manager.c:2418
 msgid "Could not apply the stored configuration for monitors"
 msgstr "無法套用已儲存的顯示器組態"
 
@@ -1549,7 +1549,7 @@ msgstr "XRandR"
 msgid "Set up screen size and rotation settings"
 msgstr "設定螢幕大小與旋轉設定值"
 
-#: plugins/xrdb/msd-xrdb-manager.c:249 plugins/xrdb/msd-xrdb-manager.c:318
+#: plugins/xrdb/msd-xrdb-manager.c:248 plugins/xrdb/msd-xrdb-manager.c:317
 msgid "Cannot determine user's home directory"
 msgstr "無法決定使用者的個人資料夾所在"
 

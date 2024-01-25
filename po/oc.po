@@ -7,16 +7,16 @@
 # 48c2de07903ce5a77a8e90265f95c4c2_8909374 <837c8d0ab97b27e737893c19f79bd4de_348476>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Cédric Valmary <cvalmary@yahoo.fr>, 2019
-# Quentin PAGÈS, 2021
+# Quentin PAGÈS, 2023
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.25.1\n"
+"Project-Id-Version: mate-settings-daemon 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-23 22:04+0200\n"
+"POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Quentin PAGÈS, 2021\n"
-"Language-Team: Occitan (post 1500) (https://www.transifex.com/mate/teams/13566/oc/)\n"
+"Last-Translator: Quentin PAGÈS, 2023\n"
+"Language-Team: Occitan (post 1500) (https://app.transifex.com/mate/teams/13566/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -86,7 +86,7 @@ msgid ""
 "\"none\" for no antialiasing, \"grayscale\" for standard grayscale "
 "antialiasing, and \"rgba\" for subpixel antialiasing (LCD screens only)."
 msgstr ""
-"Lo tipe d'anticrenelatge utilizat pel rendut de las poliças. Las valors "
+"Lo tipe d'anticrenelatge utilizat pel rendut de las polissas. Las valors "
 "possiblas son : « none » per cap d'anticrenelatge, « grayscale » per "
 "l'anticrenelatge classic per nivèls de gris e « rgba » per l'anticrenelatge "
 "per sospixèls (ecrans LCD unicament)."
@@ -120,33 +120,35 @@ msgstr ""
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:25
 msgid "possible values are \"on\", \"off\", and \"custom\"."
-msgstr ""
+msgstr "valors possiblas : « on », « off » e « custom »."
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:35
 msgid "Keyboard Bell Custom Filename"
-msgstr ""
+msgstr "Nom del fichièr del bip de clavièr personalizat"
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:36
 msgid "File name of the bell sound to be played."
-msgstr ""
+msgstr "Nom del fichièr del son de campana de jogar."
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:40
 msgid "Remember NumLock state"
-msgstr ""
+msgstr "Se remembrar de l'estat del verrolh numeric"
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:41
 msgid ""
 "When set to true, MATE will remember the state of the NumLock LED between "
 "sessions."
 msgstr ""
+"Se verai, MATE se remembrarà de l'estat de la DEL verrolh numeric d'una "
+"session a l'autra."
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:45
 msgid "NumLock state"
-msgstr ""
+msgstr "Estat del verrolh numeric"
 
 #: data/org.mate.peripherals-keyboard.gschema.xml.in:46
 msgid "The remembered state of the NumLock LED."
-msgstr ""
+msgstr "Se remembrar de l'estat del verrolh numeric DEL."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:10
 msgid "Mouse button orientation"
@@ -166,22 +168,26 @@ msgid ""
 "Acceleration multiplier for mouse motion. A value of -1 is the system "
 "default."
 msgstr ""
+"Multiplicador d'acceleracion pels movements de la mirga. Una valor de -1 es "
+"la valor per defaut del sistèma."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:20
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:90
 msgid "Motion Threshold"
-msgstr ""
+msgstr "Sulhet del movement"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:21
 msgid ""
 "Distance in pixels the pointer must move before accelerated mouse motion is "
 "activated. A value of -1 is the system default."
 msgstr ""
+"Distància en pixèls que lo puntador deu percórrer abans que l'accelerator de"
+" movement siá activat. Una valor de -1 es la valor per defaut del sistèma."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:25
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:95
 msgid "Acceleration profile"
-msgstr ""
+msgstr "Perfil d’acceleracion"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:26
 msgid ""
@@ -212,13 +218,15 @@ msgstr "Durada d'un doble clic."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:40
 msgid "Middle button emulation"
-msgstr ""
+msgstr "Emulacion del boton central de la mirga"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:41
 msgid ""
 "Enables middle mouse button emulation through simultaneous left and right "
 "button click."
 msgstr ""
+"Activa la simulacion del boton central de la mirga amb un clic simultanèu "
+"suls botons de dreita e esquèrra."
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:45
 msgid "Locate Pointer"
@@ -257,6 +265,10 @@ msgid ""
 "Set this to one of \"none\", \"lock_screen\", or \"force_logout\". The "
 "action will get performed when the smartcard used for log in is removed."
 msgstr ""
+"Definissètz aquesta clau segon una de las valors seguentas : « none » (pas "
+"cap), « lock-screen » (verrolhar l'ecran) o « force-logout » (forçar la "
+"desconnexion). Aquesta accion es efectuada quand la carta de piuse utilizada"
+" per se connectar es levada."
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:15
 msgid "Disable touchpad while typing"
@@ -267,6 +279,8 @@ msgid ""
 "Set this to TRUE if you have problems with accidentally hitting the touchpad"
 " while typing."
 msgstr ""
+"Activatz aquesta clau se vos arriba de tocar accidentalament lo pavat tactil"
+" quand escrivètz al clavièr."
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:20
 msgid "Enable mouse clicks with touchpad"
@@ -281,7 +295,7 @@ msgstr ""
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:25
 msgid "Enable vertical edge scrolling"
-msgstr "Indica se lo desfilament lateral es activat"
+msgstr "Indica se lo defilament lateral es activat"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:26
 msgid "Set this to TRUE to allow vertical edge scrolling"
@@ -313,7 +327,7 @@ msgstr ""
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:45
 msgid "Natural scrolling"
-msgstr "Desfilament natural"
+msgstr "Defilament natural"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:46
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
@@ -325,7 +339,7 @@ msgstr "Activar lo pavat tactil"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:51
 msgid "Set this to TRUE to enable all touchpads."
-msgstr ""
+msgstr "Activatz aquesta clau per activar totes los pavats tactils."
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:55
 msgid "Enabled two-finger button-click emulation"
@@ -556,11 +570,11 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:20
 msgid "Volume step"
-msgstr ""
+msgstr "Interval dels cambiaments de volum"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:21
 msgid "Volume step as percentage of volume."
-msgstr ""
+msgstr "Interval dels cambiaments de volum en percentatge."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:25
 msgid "Toggle touchpad"
@@ -568,7 +582,7 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:26
 msgid "Binding to enable or disable the touchpad."
-msgstr ""
+msgstr "Acorchi per activar o desactivar lo pavat tactil."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:30
 msgid "Volume mute"
@@ -596,7 +610,7 @@ msgstr "Acorchi per aumentar lo volum general del son."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:45
 msgid "Mute the audio quietly"
-msgstr ""
+msgstr "Amudir lo volum silenciosament"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:46
 msgid "Binding to mute the system volume quietly."
@@ -624,7 +638,7 @@ msgstr "Activar o desactivar lo microfòn"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:61
 msgid "Binding to mute/unmute the microphone."
-msgstr ""
+msgstr "Acorchi per copar o alucar lo microfòn."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:65
 msgid "Shut down"
@@ -680,7 +694,7 @@ msgstr "Anar als paramètres"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:96
 msgid "Binding to launch MATE settings."
-msgstr ""
+msgstr "Acorchis per lançar Paramètres de MATE."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:100
 msgid "Lock screen"
@@ -784,7 +798,7 @@ msgstr "Acorchi per afichar lo clavièr visual"
 
 #: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:15
 msgid "Show Displays in Notification Area"
-msgstr ""
+msgstr "Afichar los monitors dins la zòna de notificacion"
 
 #: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:16
 msgid ""
@@ -879,17 +893,17 @@ msgid "There was an error displaying help: %s"
 msgstr "I a agut una error al moment d'afichar l'ajuda : %s"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:652
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:651
 msgid "Do you want to activate Slow Keys?"
 msgstr ""
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:589
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:652
 msgid "Do you want to deactivate Slow Keys?"
 msgstr ""
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:590
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:654
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:653
 msgid ""
 "You just held down the Shift key for 8 seconds.  This is the shortcut for "
 "the Slow Keys feature, which affects the way your keyboard works."
@@ -899,61 +913,61 @@ msgstr ""
 " foncionament de vòstre clavièr."
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Don't activate"
 msgstr "Activar pas"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:750
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Don't deactivate"
 msgstr "Desactivar pas"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:619
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:756
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:755
 msgid "Activate"
 msgstr "Activar"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:619
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:756
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:755
 msgid "Deactivate"
 msgstr "Desactivar"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:675
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:814
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:674
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:813
 msgid "Do_n't activate"
 msgstr "Pas _activar"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:675
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:814
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:674
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:813
 msgid "Do_n't deactivate"
 msgstr "Pas _desactivar"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:678
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:817
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:677
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:816
 msgid "_Activate"
 msgstr "_Activar"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:678
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:817
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:677
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:816
 msgid "_Deactivate"
 msgstr "_Desactivar"
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:682
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:681
 msgid "Slow Keys Alert"
+msgstr ""
+
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:721
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:787
+msgid "Do you want to activate Sticky Keys?"
 msgstr ""
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:722
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:788
-msgid "Do you want to activate Sticky Keys?"
-msgstr ""
-
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:723
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:789
 msgid "Do you want to deactivate Sticky Keys?"
 msgstr ""
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:725
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:791
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:724
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:790
 msgid ""
 "You just pressed the Shift key 5 times in a row.  This is the shortcut for "
 "the Sticky Keys feature, which affects the way your keyboard works."
@@ -962,8 +976,8 @@ msgstr ""
 "de clavièr per activar la foncionalitat de las tòcas remanentas que modifica"
 " lo mòde de foncionament de vòstre clavièr."
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:727
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:793
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:726
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:792
 msgid ""
 "You just pressed two keys at once, or pressed the Shift key 5 times in a "
 "row.  This turns off the Sticky Keys feature, which affects the way your "
@@ -973,11 +987,11 @@ msgstr ""
 " seguida. S'agís de l'acorchi de clavièr per desactivar la foncionalitat de "
 "las tòcas remanentas que modifica lo mòde de foncionament de vòstre clavièr."
 
-#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:821
+#: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:820
 msgid "Sticky Keys Alert"
 msgstr ""
 
-#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:830
+#: plugins/a11y-keyboard/msd-a11y-preferences-dialog.c:829
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:14
 msgid "Universal Access Preferences"
 msgstr "Preferéncias d'accès universal"
@@ -1048,7 +1062,7 @@ msgstr "Modificar la data e l'ora del sistèma"
 
 #: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:13
 msgid "Privileges are required to change the system time zone."
-msgstr ""
+msgstr "La modificacion del fus orari del sistèma exigís d'unes privilègis."
 
 #: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:21
 msgid "Change system time"
@@ -1056,15 +1070,16 @@ msgstr "Modificar la data e l'ora del sistèma"
 
 #: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:22
 msgid "Privileges are required to change the system time."
-msgstr ""
+msgstr "La modificacion de l'ora del sistèma exigís d'unes privilègis."
 
 #: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:30
 msgid "Configure hardware clock"
-msgstr ""
+msgstr "Configurar lo relòtge material"
 
 #: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:31
 msgid "Privileges are required to configure the hardware clock."
 msgstr ""
+"La modificacion del relòtge material del sistèma exigís d'unes privilègis."
 
 #: plugins/dummy/dummy.mate-settings-plugin.desktop.in:5
 msgid "Dummy"
@@ -1088,7 +1103,7 @@ msgstr ""
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:61
 msgid "Don't show any warnings again for this file system"
-msgstr ""
+msgstr "Afichar pas mai d'avertiments per aqueste sistèma de fichiers"
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:63
 msgid "Don't show any warnings again"
@@ -1109,24 +1124,35 @@ msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to another disk or partition."
 msgstr ""
+"Podètz liberar d'espaci de disc en voidant l'escobilhièr, en supriment de "
+"logicials o de fichièrs inutilizats o en desplaçant de fichièrs cap a un "
+"autre disc o una autra particion."
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:98
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to another disk or partition."
 msgstr ""
+"Podètz liberar d'espaci de disc en supriment de logicials o de fichièrs "
+"inutilizats o alara en desplaçant de fichièrs cap a un autre disc o una "
+"autra particion."
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:103
 msgid ""
 "You can free up disk space by emptying the Trash, removing unused programs "
 "or files, or moving files to an external disk."
 msgstr ""
+"Podètz liberar d'espaci de disc en voidant l'escobilhièr, en supriment de "
+"logicials o de fichièrs inutilizats o alara en desplaçant de fichièrs cap a "
+"un disc extèrne."
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:106
 msgid ""
 "You can free up disk space by removing unused programs or files, or by "
 "moving files to an external disk."
 msgstr ""
+"Podètz liberar d'espaci de disc en supriment de logicials o de fichièrs "
+"inutilizats o alara en desplaçant de fichièrs cap a un disc extèrne."
 
 #. Set up all the window stuff here
 #: plugins/housekeeping/msd-ldsm-dialog.c:201
@@ -1203,7 +1229,7 @@ msgstr ""
 msgid "Key binding (%s) is incomplete"
 msgstr ""
 
-#: plugins/keybindings/msd-keybindings-manager.c:487
+#: plugins/keybindings/msd-keybindings-manager.c:486
 #, c-format
 msgid ""
 "Error while trying to run (%s)\n"
@@ -1235,17 +1261,17 @@ msgid ""
 " • The result of <b>%s</b>"
 msgstr ""
 
-#: plugins/keyboard/msd-keyboard-xkb.c:286
+#: plugins/keyboard/msd-keyboard-xkb.c:285
 msgid "_Layouts"
-msgstr ""
+msgstr "_Disposicion"
 
-#: plugins/keyboard/msd-keyboard-xkb.c:293
+#: plugins/keyboard/msd-keyboard-xkb.c:292
 msgid "Keyboard _Preferences"
 msgstr "_Preferéncias del clavièr"
 
-#: plugins/keyboard/msd-keyboard-xkb.c:299
+#: plugins/keyboard/msd-keyboard-xkb.c:298
 msgid "Show _Current Layout"
-msgstr ""
+msgstr "Afichar la disposicion _actuala"
 
 #: plugins/media-keys/media-keys.mate-settings-plugin.desktop.in:5
 msgid "Media keys"
@@ -1255,59 +1281,59 @@ msgstr "Tòcas multimèdias"
 msgid "Media keys plugin"
 msgstr "Empeuton de las tòcas multimèdia"
 
-#: plugins/media-keys/msd-media-keys-manager.c:185
+#: plugins/media-keys/msd-media-keys-manager.c:189
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:225
+#: plugins/media-keys/msd-media-keys-manager.c:229
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:638
+#: plugins/media-keys/msd-media-keys-manager.c:642
 #: plugins/media-keys/test-media-window.c:82
 msgid "Touchpad enabled"
 msgstr "Pavat tactil activat"
 
-#: plugins/media-keys/msd-media-keys-manager.c:638
+#: plugins/media-keys/msd-media-keys-manager.c:642
 #: plugins/media-keys/test-media-window.c:75
 msgid "Touchpad disabled"
 msgstr "Pavat tactil desactivat"
 
-#: plugins/media-keys/msd-media-keys-manager.c:956
+#: plugins/media-keys/msd-media-keys-manager.c:963
 #: plugins/media-keys/test-media-window.c:89
 msgid "Bluetooth disabled"
 msgstr "Bluetooth desactivat"
 
-#: plugins/media-keys/msd-media-keys-manager.c:959
+#: plugins/media-keys/msd-media-keys-manager.c:966
 #: plugins/media-keys/test-media-window.c:96
 msgid "Bluetooth enabled"
 msgstr "Bluetooth activat"
 
-#: plugins/media-keys/msd-media-keys-manager.c:963
+#: plugins/media-keys/msd-media-keys-manager.c:970
 #: plugins/media-keys/test-media-window.c:103
 msgid "Airplane mode enabled"
 msgstr "Mòde avion activat"
 
-#: plugins/media-keys/msd-media-keys-manager.c:966
+#: plugins/media-keys/msd-media-keys-manager.c:973
 #: plugins/media-keys/test-media-window.c:110
 msgid "Airplane mode disabled"
 msgstr "Mòde avion desactivat"
 
-#: plugins/media-keys/msd-media-keys-manager.c:997
+#: plugins/media-keys/msd-media-keys-manager.c:1004
 msgid "Hardware Airplane Mode"
 msgstr "Mòde avion material"
 
-#: plugins/media-keys/msd-media-keys-manager.c:1035
+#: plugins/media-keys/msd-media-keys-manager.c:1042
 #: plugins/media-keys/test-media-window.c:124
 msgid "Changing Screen Layout"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:1039
+#: plugins/media-keys/msd-media-keys-manager.c:1046
 #: plugins/media-keys/test-media-window.c:117
 msgid "No External Display"
 msgstr ""
@@ -1320,16 +1346,16 @@ msgstr "Mirga"
 msgid "Mouse plugin"
 msgstr "Empeuton de la mirga"
 
-#: plugins/mouse/msd-mouse-manager.c:1651
+#: plugins/mouse/msd-mouse-manager.c:1648
 msgid "Could not enable mouse accessibility features"
 msgstr ""
 
-#: plugins/mouse/msd-mouse-manager.c:1653
+#: plugins/mouse/msd-mouse-manager.c:1650
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
 msgstr ""
 
-#: plugins/mouse/msd-mouse-manager.c:1656
+#: plugins/mouse/msd-mouse-manager.c:1653
 msgid "Mouse Preferences"
 msgstr "Preferéncias de la mirga"
 
@@ -1374,16 +1400,19 @@ msgstr ""
 #: plugins/smartcard/msd-smartcard-manager.c:670
 #, c-format
 msgid "smartcard driver '%s' could not be loaded"
-msgstr ""
+msgstr "lo pilòt de carta de piuse « %s » a pas pogut èsser cargat"
 
 #: plugins/smartcard/msd-smartcard-manager.c:754
 #, c-format
 msgid "could not watch for incoming card events - %s"
 msgstr ""
+"impossible de susvelhar los eveniments entrants de carta de piuse - %s"
 
 #: plugins/smartcard/msd-smartcard-manager.c:1101
 msgid "encountered unexpected error while waiting for smartcard events"
 msgstr ""
+"error inesperada rencontrada al moment de l'espèra dels eveniments de la "
+"carta de piuse"
 
 #: plugins/smartcard/msd-smartcard.c:149
 msgid "Slot ID"
@@ -1431,7 +1460,7 @@ msgstr "Empeuton del cache de l'escapolon de son"
 
 #: plugins/typing-break/typing-break.mate-settings-plugin.desktop.in:5
 msgid "Typing Break"
-msgstr ""
+msgstr "Pausa de picada"
 
 #: plugins/typing-break/typing-break.mate-settings-plugin.desktop.in:6
 msgid "Typing break plugin"
@@ -1443,11 +1472,13 @@ msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:394
 msgid "Could not restore the display's configuration"
-msgstr ""
+msgstr "Impossible de restablir la configuracion de l'afichatge"
 
 #: plugins/xrandr/msd-xrandr-manager.c:419
 msgid "Could not restore the display's configuration from a backup"
 msgstr ""
+"Impossible de restablir la configuracion de l'afichatge a partir d'un "
+"salvament"
 
 #: plugins/xrandr/msd-xrandr-manager.c:440
 #, c-format
@@ -1467,93 +1498,94 @@ msgstr "L’afichatge vos sembla corrècte ?"
 
 #: plugins/xrandr/msd-xrandr-manager.c:498
 msgid "_Restore Previous Configuration"
-msgstr ""
+msgstr "_Restablir la configuracion precedenta"
 
 #: plugins/xrandr/msd-xrandr-manager.c:499
 msgid "_Keep This Configuration"
-msgstr ""
+msgstr "_Conservar aquesta configuracion"
 
 #: plugins/xrandr/msd-xrandr-manager.c:580
 msgid "The selected configuration for displays could not be applied"
-msgstr ""
+msgstr "La configuracion d'afichatge seleccionada pòt pas èsser aplicada"
 
-#: plugins/xrandr/msd-xrandr-manager.c:1177
+#: plugins/xrandr/msd-xrandr-manager.c:1176
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr "Impossible d'actualizar las informacions de l'ecran : %s"
 
-#: plugins/xrandr/msd-xrandr-manager.c:1181
+#: plugins/xrandr/msd-xrandr-manager.c:1180
 msgid "Trying to switch the monitor configuration anyway."
 msgstr ""
+"Malgrat tot, lo sistèma va ensajar de cambiar la configuracion de l'ecran."
 
-#: plugins/xrandr/msd-xrandr-manager.c:1938
+#: plugins/xrandr/msd-xrandr-manager.c:1937
 msgid "Rotation not supported"
 msgstr "Rotacion pas compatibla"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2003
-#: plugins/xrandr/msd-xrandr-manager.c:2035
+#: plugins/xrandr/msd-xrandr-manager.c:2002
+#: plugins/xrandr/msd-xrandr-manager.c:2034
 msgid "Could not save monitor configuration"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2056
+#: plugins/xrandr/msd-xrandr-manager.c:2055
 msgid "Mirroring outputs not supported"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2087
+#: plugins/xrandr/msd-xrandr-manager.c:2086
 msgid "Normal"
 msgstr "Normala"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2088
+#: plugins/xrandr/msd-xrandr-manager.c:2087
 msgid "Left"
 msgstr "Esquèrra"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2089
+#: plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "Right"
 msgstr "Drecha"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2090
+#: plugins/xrandr/msd-xrandr-manager.c:2089
 msgid "Upside Down"
 msgstr "Inversat"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2179
+#: plugins/xrandr/msd-xrandr-manager.c:2178
 msgid "ON"
 msgstr "ACTIVAT"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2180
+#: plugins/xrandr/msd-xrandr-manager.c:2179
 msgid "Turn this monitor off"
 msgstr "Aqueste ecran es atudat"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2183
+#: plugins/xrandr/msd-xrandr-manager.c:2182
 msgid "OFF"
 msgstr "DESACTIVAT"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2184
+#: plugins/xrandr/msd-xrandr-manager.c:2183
 msgid "Turn this monitor on"
 msgstr "Atudar aqueste ecran"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2244
-msgid "Same output all monitors"
+#: plugins/xrandr/msd-xrandr-manager.c:2243
+msgid "Same output on all monitors"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2245
+#: plugins/xrandr/msd-xrandr-manager.c:2244
 msgid "Mirror same output to all monitors and turn them on"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2292
+#: plugins/xrandr/msd-xrandr-manager.c:2291
 msgid "_Configure Display Settings…"
 msgstr "_Configurar los paramètres d’afichatge"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2302
+#: plugins/xrandr/msd-xrandr-manager.c:2301
 msgid "Open the display configuration dialog (all settings)"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2359
+#: plugins/xrandr/msd-xrandr-manager.c:2358
 msgid "Configure display settings"
 msgstr "Configurar los paramètres d’afichatge"
 
-#: plugins/xrandr/msd-xrandr-manager.c:2419
+#: plugins/xrandr/msd-xrandr-manager.c:2418
 msgid "Could not apply the stored configuration for monitors"
-msgstr ""
+msgstr "Impossible d'aplicar la configuracion enregistrada pels ecrans"
 
 #: plugins/xrandr/xrandr.mate-settings-plugin.desktop.in:5
 msgid "XRandR"
@@ -1563,7 +1595,7 @@ msgstr "XRandR"
 msgid "Set up screen size and rotation settings"
 msgstr "Definís la talha de l'ecran e los paramètres de rotacion"
 
-#: plugins/xrdb/msd-xrdb-manager.c:249 plugins/xrdb/msd-xrdb-manager.c:318
+#: plugins/xrdb/msd-xrdb-manager.c:248 plugins/xrdb/msd-xrdb-manager.c:317
 msgid "Cannot determine user's home directory"
 msgstr "Impossible de determinar lo repertòri personal de l’utilizaire"
 
