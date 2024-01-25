@@ -1,3 +1,19 @@
+### mate-settings-daemon 1.27.1
+
+  * translation update
+  * Open default application using async function
+  * replace deprecated gtk_image_menu_item*
+  * ci: remove dbus-glib
+  * remove dbus-glib from build system
+  * rfkill: change bus name to org.mate.SettingsDaemon
+  * rfkill: allow another message bus connection to claim the bus name.
+  * xrandr: migrate from dbus-glib to GDBus
+  * media-keys: migrate from dbus-glib to GDBus
+  * msd: migrate from dbus-glib to GDBus
+  * smartcard: migrate from dbus-glib to GDBus
+  * datetime: migrate from dbus-glib to gdbus
+  * a11y-keyboard-atspi: Fix memory leak
+
 ### mate-settings-daemon 1.27.0
 
   * configure.ac: The macro 'AC_HELP_STRING' is obsolete
