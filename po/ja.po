@@ -8,7 +8,7 @@
 # ABE Tsunehiko, 2019
 # fbc955180bc2b956cb4ef52d00eb80a0_91487f8, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Green <usergreen@users.osdn.me>, 2022
+# Green <usergreen@users.osdn.me>, 2024
 # 
 msgid ""
 msgstr ""
@@ -16,7 +16,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Green <usergreen@users.osdn.me>, 2022\n"
+"Last-Translator: Green <usergreen@users.osdn.me>, 2024\n"
 "Language-Team: Japanese (https://app.transifex.com/mate/teams/13566/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -167,7 +167,7 @@ msgstr "移動加速"
 msgid ""
 "Acceleration multiplier for mouse motion. A value of -1 is the system "
 "default."
-msgstr "マウスの動きを加速させる倍率を設定します。システムのデフォルト値は -1 です。"
+msgstr "マウスの動きを加速させる倍率を設定します。システムの既定値は -1 です。"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:20
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:90
@@ -178,7 +178,7 @@ msgstr "移動時のしきい値"
 msgid ""
 "Distance in pixels the pointer must move before accelerated mouse motion is "
 "activated. A value of -1 is the system default."
-msgstr "マウスの動きが加速されるまでのポインターが動く距離を指定します。システムのデフォルト値は -1 です。"
+msgstr "マウスの動きが加速されるまでのポインタが動く距離を指定します。システムの既定値は -1 です。"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:25
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:95
@@ -195,7 +195,7 @@ msgid ""
 "movement. If a mouse doesn't support the configured profile, 'default' will "
 "be used."
 msgstr ""
-"接続されたマウスに使用する加速度プロファイル。加速度プロファイルは、各デバイスのデフォルトの加速度プロファイルを使用するデフォルト「標準」、設定されたポインタ速度から導かれるデバイス固有の定数係数によって加速する「フラット」、またはマウスの動きに応じて加速度を適応させる「適応」のいずれかに設定できます。マウスが設定されたプロファイルをサポートしていない場合、「標準」が使用されます。"
+"接続されたマウスに使用する加速度プロファイル。加速度プロファイルは、各デバイスの既定の加速度プロファイルを使用する既定「既定」、設定されたポインタ速度から導かれるデバイス固有の定数係数によって加速する「フラット」、またはマウスの動きに応じて加速度を適応させる「適応」のいずれかに設定できます。マウスが設定されたプロファイルをサポートしていない場合、「既定」が使用されます。"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:30
 msgid "Drag Threshold"
@@ -385,13 +385,13 @@ msgstr "左手用のタッチパッドの左右のボタンを右手用マウス
 msgid ""
 "Acceleration multiplier for touchpad motion. A value of -1 is the system "
 "default."
-msgstr "タッチパッドの動作の加速度乗数。値 -1 がシステムのデフォルトです。"
+msgstr "タッチパッドの動作の加速度乗数。値 -1 がシステムの既定です。"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:91
 msgid ""
 "Distance in pixels the pointer must move before accelerated touchpad motion "
 "is activated. A value of -1 is the system default."
-msgstr "マウスの動きが加速されるまでの、マウスポインタが動く距離を指定します。システムのデフォルト値は -1 です。"
+msgstr "マウスの動きが加速されるまでの、マウスポインタが動く距離を指定します。システムの既定値は -1 です。"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:96
 msgid ""
@@ -403,7 +403,7 @@ msgid ""
 "movement. If a touchpad doesn't support the configured profile, 'default' "
 "will be used."
 msgstr ""
-"接続されたタッチパッドに使用する加速度プロファイル。加速度プロファイルは、各デバイスのデフォルトの加速度プロファイルを使用するデフォルト「標準」、設定されたポインタ速度から導かれるデバイス固有の定数係数によって加速する「フラット」、またはタッチパッドの動きに応じて加速度を適応させる「適応」のいずれかに設定できます。タッチパッドが設定されたプロファイルをサポートしていない場合、「標準」が使用されます。"
+"接続されたタッチパッドに使用する加速度プロファイル。加速度プロファイルは、各デバイスの既定の加速度プロファイルを使用する既定「既定」、設定されたポインタ速度から導かれるデバイス固有の定数係数によって加速する「フラット」、またはタッチパッドの動きに応じて加速度を適応させる「適応」のいずれかに設定できます。タッチパッドが設定されたプロファイルをサポートしていない場合、「既定」が使用されます。"
 
 #: data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in:5
 #: data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in:5
@@ -832,8 +832,7 @@ msgid ""
 "such a file, or has one that does not match the user's setup of monitors, "
 "then the file specified by this key will be used instead."
 msgstr ""
-"XRandR "
-"プラグインはこのキーで指定されたファイルをデフォルトの設定ファイルとして検索します。これはユーザのふつう、ホームディレクトリに保存されている "
+"XRandR プラグインはこのキーで指定されたファイルを既定の設定ファイルとして検索します。これはユーザのふつう、ホームディレクトリに保存されている "
 "~/.config/monitors.xml "
 "と同様のものです。もしそのようなファイルが無い場合、あるいはあったとしてもモニタの設定に合わない場合、このキーで指定されたファイルが代わりに使われます。"
 
@@ -1257,7 +1256,7 @@ msgid ""
 "Could not get default terminal. Verify that your default terminal command is"
 " set and points to a valid application."
 msgstr ""
-"デフォルトの端末を起動できませんでした。デフォルトの端末を起動するコマンドが指定され、それに対応するアプリケーションがインストールされているか確認して下さい。"
+"既定の端末を起動できませんでした。既定の端末を起動するコマンドが指定され、それに対応するアプリケーションがインストールされているか確認して下さい。"
 
 #: plugins/media-keys/msd-media-keys-manager.c:229
 #, c-format
@@ -1528,7 +1527,7 @@ msgstr "このモニタをオンにする"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2243
 msgid "Same output on all monitors"
-msgstr "すべてのモニターで同じ出力"
+msgstr "すべてのモニタで同じ出力"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2244
 msgid "Mirror same output to all monitors and turn them on"
