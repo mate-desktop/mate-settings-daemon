@@ -70,7 +70,9 @@ libxrandr_la_LDFLAGS = 			\
 libxrandr_la_LIBADD  =			\
 	$(SETTINGS_PLUGIN_LIBS)		\
 	$(LIBNOTIFY_LIBS)		\
-	$(MATE_DESKTOP_LIBS)
+	$(MATE_DESKTOP_LIBS)		\
+	$(X11_LIBS)			\
+	$(NULL)
 
 plugin_in_files =			\
 	xrandr.mate-settings-plugin.desktop.in

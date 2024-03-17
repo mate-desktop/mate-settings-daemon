@@ -31,6 +31,8 @@ libclipboard_la_LDFLAGS = 	\
 
 libclipboard_la_LIBADD  = 	\
 	$(SETTINGS_PLUGIN_LIBS)	\
+	$(X11_LIBS)		\
+	$(XINPUT_LIBS)		\
 	$(NULL)
 
 plugin_in_files = 		\

@@ -46,6 +46,8 @@ libkeyboard_la_LIBADD  = 	\
 	$(SETTINGS_PLUGIN_LIBS)	\
 	$(LIBMATEKBDUI_LIBS)	\
 	$(MATE_DESKTOP_LIBS)	\
+	$(X11_LIBS)		\
+	$(XINPUT_LIBS)		\
 	$(NULL)
 
 plugin_in_files = 		\

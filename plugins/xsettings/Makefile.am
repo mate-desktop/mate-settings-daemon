@@ -38,6 +38,7 @@ libxsettings_la_LDFLAGS = 	\
 libxsettings_la_LIBADD  = 	\
 	$(SETTINGS_PLUGIN_LIBS)	\
 	$(FONTCONFIG_LIBS)	\
+	$(X11_LIBS)		\
 	$(NULL)
 
 plugin_in_files = 		\
