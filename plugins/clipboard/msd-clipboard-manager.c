@@ -432,9 +432,9 @@ convert_clipboard_manager (MsdClipboardManager *manager,
                         if (gdk_x11_display_error_trap_pop (display) != Success)
                                 return;
 
-                        gdk_x11_display_error_trap_push (display);
-
                         if (xev->xselectionrequest.property != None) {
+                                gdk_x11_display_error_trap_push (display);
+
                                 XGetWindowProperty (manager->priv->display,
                                                     xev->xselectionrequest.requestor,
                                                     xev->xselectionrequest.property,
