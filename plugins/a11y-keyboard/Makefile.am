@@ -66,6 +66,8 @@ liba11y_keyboard_la_LDFLAGS = 		\
 liba11y_keyboard_la_LIBADD  = 		\
 	$(SETTINGS_PLUGIN_LIBS)		\
 	$(LIBNOTIFY_LIBS)		\
+	$(X11_LIBS)			\
+	$(XINPUT_LIBS)			\
 	$(NULL)
 
 if HAVE_LIBATSPI
