@@ -21,7 +21,7 @@ libmsd_profile_la_SOURCES =		\
 	$(NULL)
 
 libmsd_profile_la_CPPFLAGS = 		\
-	$(AM_CPPFLAGS)
+	$(AM_CPPFLAGS)			\
 	$(DISABLE_DEPRECATED_CFLAGS)	\
 	$(NULL)
 
