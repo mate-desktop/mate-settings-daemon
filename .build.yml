@@ -54,7 +54,8 @@ requires:
     - libxt-dev
     - make
     - mate-common
-    - policykit-1
+    - polkitd
+    - pkexec
     - x11proto-kb-dev
 
   fedora:
