@@ -75,7 +75,7 @@ PKG_CHECK_MODULES(SETTINGS_PLUGIN,
 	gio-2.0 >= $GIO_REQUIRED_VERSION
 )
 
-MSD_PLUGIN_LDFLAGS="-export_dynamic -module -avoid-version -no-undefined"
+MSD_PLUGIN_LDFLAGS="-export_dynamic -module -avoid-version"
 case $host_os in
   darwin*)
     MSD_PLUGIN_LDFLAGS="${MSD_PLUGIN_LDFLAGS} -Wl,-bundle_loader,\$(top_builddir)/mate-settings-daemon/mate-settings-daemon"
