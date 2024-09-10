@@ -156,7 +156,7 @@
       <description>Binding to show the screen magnifier</description>
     </key>
     <key name="screenreader" type="s">
-      <default>''</default>
+      <default>'&lt;Alt&gt;&lt;Mod4&gt;s'</default>
       <summary>Toggle screen reader</summary>
       <description>Binding to start the screen reader</description>
     </key>
