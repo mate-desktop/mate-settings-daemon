@@ -8,7 +8,7 @@ binary=${libexecdir}/mate-settings-daemon
 
 Name: mate-settings-daemon
 Description: Utility library for accessing mate-settings-daemon over DBUS
-Requires: glib-2.0 dbus-1 dbus-glib-1
+Requires: glib-2.0 dbus-1
 Version: @VERSION@
 Libs: -L${libdir}
 Cflags: -I${includedir}/mate-settings-daemon
