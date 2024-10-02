@@ -1,0 +1,146 @@
+<html>
+<head>
+<title>rootdir - scan-build results</title>
+<link type="text/css" rel="stylesheet" href="scanview.css"/>
+<script src="sorttable.js"></script>
+<script language='javascript' type="text/javascript">
+function SetDisplay(RowClass, DisplayVal)
+{
+  var Rows = document.getElementsByTagName("tr");
+  for ( var i = 0 ; i < Rows.length; ++i ) {
+    if (Rows[i].className == RowClass) {
+      Rows[i].style.display = DisplayVal;
+    }
+  }
+}
+
+function CopyCheckedStateToCheckButtons(SummaryCheckButton) {
+  var Inputs = document.getElementsByTagName("input");
+  for ( var i = 0 ; i < Inputs.length; ++i ) {
+    if (Inputs[i].type == "checkbox") {
+      if(Inputs[i] != SummaryCheckButton) {
+        Inputs[i].checked = SummaryCheckButton.checked;
+        Inputs[i].onclick();
+      }
+    }
+  }
+}
+
+function returnObjById( id ) {
+    if (document.getElementById)
+        var returnVar = document.getElementById(id);
+    else if (document.all)
+        var returnVar = document.all[id];
+    else if (document.layers)
+        var returnVar = document.layers[id];
+    return returnVar;
+}
+
+var NumUnchecked = 0;
+
+function ToggleDisplay(CheckButton, ClassName) {
+  if (CheckButton.checked) {
+    SetDisplay(ClassName, "");
+    if (--NumUnchecked == 0) {
+      returnObjById("AllBugsCheck").checked = true;
+    }
+  }
+  else {
+    SetDisplay(ClassName, "none");
+    NumUnchecked++;
+    returnObjById("AllBugsCheck").checked = false;
+  }
+}
+</script>
+<!-- SUMMARYENDHEAD -->
+</head>
+<body>
+<h1>rootdir - scan-build results</h1>
+
+<table>
+<tr><th>User:</th><td>root@3da32d72b77c</td></tr>
+<tr><th>Working Directory:</th><td>/rootdir</td></tr>
+<tr><th>Command Line:</th><td>make -j 2</td></tr>
+<tr><th>Clang Version:</th><td>clang version 16.0.6 (Fedora 16.0.6-3.fc38)
+</td></tr>
+<tr><th>Date:</th><td>Fri Oct 20 03:28:21 2023</td></tr>
+</table>
+<h2>Bug Summary</h2><table>
+<thead><tr><td>Bug Type</td><td>Quantity</td><td class="sorttable_nosort">Display?</td></tr></thead>
+<tr style="font-weight:bold"><td class="SUMM_DESC">All Bugs</td><td class="Q">16</td><td><center><input type="checkbox" id="AllBugsCheck" onClick="CopyCheckedStateToCheckButtons(this);" checked/></center></td></tr>
+<tr><th>Logic error</th><th colspan=2></th></tr>
+<tr><td class="SUMM_DESC">Assigned value is garbage or undefined</td><td class="Q">1</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_assigned_value_is_garbage_or_undefined');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Cast from non-struct type to struct type</td><td class="Q">3</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_cast_from_non-struct_type_to_struct_type');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Division by zero</td><td class="Q">2</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_division_by_zero');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Out-of-bound access</td><td class="Q">4</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_out-of-bound_access');" checked/></center></td></tr>
+<tr><th>Unix API</th><th colspan=2></th></tr>
+<tr><td class="SUMM_DESC">malloc() size overflow</td><td class="Q">1</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_unix_api_malloc_size_overflow');" checked/></center></td></tr>
+<tr><th>Unused code</th><th colspan=2></th></tr>
+<tr><td class="SUMM_DESC">Unreachable code</td><td class="Q">5</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_unused_code_unreachable_code');" checked/></center></td></tr>
+</table>
+<h2>Reports</h2>
+
+<table class="sortable" style="table-layout:automatic">
+<thead><tr>
+  <td>Bug Group</td>
+  <td class="sorttable_sorted">Bug Type<span id="sorttable_sortfwdind">&nbsp;&#x25BE;</span></td>
+  <td>File</td>
+  <td>Function/Method</td>
+  <td class="Q">Line</td>
+  <td class="Q">Path Length</td>
+  <td class="sorttable_nosort"></td>
+  <!-- REPORTBUGCOL -->
+</tr></thead>
+<tbody>
+<tr class="bt_logic_error_assigned_value_is_garbage_or_undefined"><td class="DESC">Logic error</td><td class="DESC">Assigned value is garbage or undefined</td><td>plugins/xsettings/xsettings-common.c</td><td class="DESC">xsettings_list_free</td><td class="Q">163</td><td class="Q">24</td><td><a href="report-1cf6f0.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-1cf6f0.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>plugins/mouse/msd-mouse-manager.c</td><td class="DESC">set_motion_legacy_driver</td><td class="Q">688</td><td class="Q">1</td><td><a href="report-2f3d26.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-2f3d26.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>plugins/mouse/msd-mouse-manager.c</td><td class="DESC">xinput_device_has_buttons</td><td class="Q">205</td><td class="Q">1</td><td><a href="report-482382.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-482382.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>plugins/clipboard/xutils.c</td><td class="DESC">timestamp_predicate</td><td class="Q">87</td><td class="Q">1</td><td><a href="report-de3178.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-de3178.html" -->
+</tr>
+<tr class="bt_logic_error_division_by_zero"><td class="DESC">Logic error</td><td class="DESC">Division by zero</td><td>plugins/clipboard/msd-clipboard-manager.c</td><td class="DESC">convert_clipboard_target</td><td class="Q">541</td><td class="Q">14</td><td><a href="report-81864f.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-81864f.html" -->
+</tr>
+<tr class="bt_logic_error_division_by_zero"><td class="DESC">Logic error</td><td class="DESC">Division by zero</td><td>plugins/clipboard/msd-clipboard-manager.c</td><td class="DESC">send_incrementally</td><td class="Q">385</td><td class="Q">14</td><td><a href="report-991306.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-991306.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>plugins/keybindings/msd-keybindings-manager.c</td><td class="DESC">get_exec_environment</td><td class="Q">436</td><td class="Q">40</td><td><a href="report-88d514.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-88d514.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>plugins/xsettings/xsettings-manager.c</td><td class="DESC">setting_store</td><td class="Q">328</td><td class="Q">6</td><td><a href="report-92a78e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-92a78e.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>plugins/xsettings/xsettings-manager.c</td><td class="DESC">setting_store</td><td class="Q">342</td><td class="Q">9</td><td><a href="report-e90348.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e90348.html" -->
+</tr>
+<tr class="bt_logic_error_out-of-bound_access"><td class="DESC">Logic error</td><td class="DESC">Out-of-bound access</td><td>plugins/keybindings/msd-keybindings-manager.c</td><td class="DESC">get_exec_environment</td><td class="Q">432</td><td class="Q">42</td><td><a href="report-fac127.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-fac127.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>mate-settings-daemon/main.c</td><td class="DESC">main</td><td class="Q">459</td><td class="Q">1</td><td><a href="report-0adfe2.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-0adfe2.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>mate-settings-daemon/main.c</td><td class="DESC">main</td><td class="Q">451</td><td class="Q">1</td><td><a href="report-71e991.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-71e991.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>plugins/xsettings/xsettings-common.c</td><td class="DESC">xsettings_setting_equal</td><td class="Q">143</td><td class="Q">1</td><td><a href="report-762ce8.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-762ce8.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>plugins/xsettings/xsettings-common.c</td><td class="DESC">xsettings_byte_order</td><td class="Q">264</td><td class="Q">1</td><td><a href="report-959c7a.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-959c7a.html" -->
+</tr>
+<tr class="bt_unused_code_unreachable_code"><td class="DESC">Unused code</td><td class="DESC">Unreachable code</td><td>mate-settings-daemon/main.c</td><td class="DESC">main</td><td class="Q">430</td><td class="Q">1</td><td><a href="report-e5e2ab.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e5e2ab.html" -->
+</tr>
+<tr class="bt_unix_api_malloc_size_overflow"><td class="DESC">Unix API</td><td class="DESC">malloc() size overflow</td><td>plugins/clipboard/msd-clipboard-manager.c</td><td class="DESC">save_targets</td><td class="Q">206</td><td class="Q">1</td><td><a href="report-36792a.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-36792a.html" -->
+</tr>
+</tbody>
+</table>
+
+</body></html>
