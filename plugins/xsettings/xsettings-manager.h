@@ -25,6 +25,7 @@
 #define XSETTINGS_MANAGER_H
 
 #include <X11/Xlib.h>
+#include <glib.h>
 #include "xsettings-common.h"
 
 #ifdef __cplusplus
@@ -62,6 +63,8 @@ XSettingsResult xsettings_manager_set_color      (XSettingsManager       *manage
                                                   const char             *name,
                                                   const XSettingsColor   *value);
 XSettingsResult xsettings_manager_notify         (XSettingsManager *manager);
+void            xsettings_manager_set_overrides  (XSettingsManager *manager,
+                                                  GVariant         *overrides);
 
 #ifdef __cplusplus
 }
