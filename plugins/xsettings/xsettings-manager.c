@@ -26,6 +26,7 @@
 #include <string.h>
 
 #include <X11/Xmd.h>		/* For CARD16 */
+#include <glib.h>
 
 #include "xsettings-manager.h"
 
@@ -44,6 +45,8 @@ struct _XSettingsManager
 
   XSettingsList *settings;
   unsigned long serial;
+
+  GVariant *overrides;
 };
 
 static XSettingsList *settings;
@@ -146,6 +149,7 @@ xsettings_manager_new (Display                *display,
 
   manager->settings = NULL;
   manager->serial = 0;
+  manager->overrides = NULL;
 
   manager->window = XCreateSimpleWindow (display,
 					 RootWindow (display, screen),
@@ -193,6 +197,10 @@ xsettings_manager_destroy (XSettingsManager *manager)
   XDestroyWindow (manager->display, manager->window);
 
   xsettings_list_free (manager->settings);
+
+  if (manager->overrides)
+    g_variant_unref (manager->overrides);
+
   free (manager);
 }
 
@@ -423,3 +431,70 @@ xsettings_manager_notify (XSettingsManager *manager)
   return XSETTINGS_SUCCESS;
 }
 
+#define XSETTINGS_VARIANT_TYPE_COLOR  (G_VARIANT_TYPE ("(qqqq)"))
+
+void
+xsettings_manager_set_overrides (XSettingsManager *manager,
+                                 GVariant         *overrides)
+{
+  GVariantIter iter;
+  const gchar *key;
+  GVariant *value;
+
+  g_return_if_fail (overrides != NULL && g_variant_is_of_type (overrides, G_VARIANT_TYPE_VARDICT));
+
+  if (manager->overrides)
+    {
+      /* unset the existing overrides */
+
+      g_variant_iter_init (&iter, manager->overrides);
+      while (g_variant_iter_next (&iter, "{&sv}", &key, NULL))
+        /* only unset it at this point if it's not in the new list */
+        if (!g_variant_lookup (overrides, key, "*", NULL))
+          xsettings_manager_delete_setting (manager, key);
+      g_variant_unref (manager->overrides);
+    }
+
+  /* save this so we can do the unsets next time */
+  manager->overrides = g_variant_ref_sink (overrides);
+
+  /* set the new values */
+  g_variant_iter_init (&iter, overrides);
+  while (g_variant_iter_loop (&iter, "{&sv}", &key, &value))
+    {
+      XSettingsSetting *setting;
+
+      /* only accept recognised types... */
+      if (!g_variant_is_of_type (value, G_VARIANT_TYPE_STRING) &&
+          !g_variant_is_of_type (value, G_VARIANT_TYPE_INT32) &&
+          !g_variant_is_of_type (value, XSETTINGS_VARIANT_TYPE_COLOR))
+        continue;
+
+      setting = g_new0 (XSettingsSetting, 1);
+      setting->name = g_strdup (key);
+
+      if (g_variant_is_of_type (value, G_VARIANT_TYPE_STRING))
+        {
+          setting->type = XSETTINGS_TYPE_STRING;
+          setting->data.v_string = g_strdup (g_variant_get_string (value, NULL));
+        }
+      else if (g_variant_is_of_type (value, G_VARIANT_TYPE_INT32))
+        {
+          setting->type = XSETTINGS_TYPE_INT;
+          setting->data.v_int = g_variant_get_int32 (value);
+        }
+      else if (g_variant_is_of_type (value, XSETTINGS_VARIANT_TYPE_COLOR))
+        {
+          guint16 red, green, blue, alpha;
+
+          g_variant_get (value, "(qqqq)", &red, &green, &blue, &alpha);
+          setting->type = XSETTINGS_TYPE_COLOR;
+          setting->data.v_color.red = red;
+          setting->data.v_color.green = green;
+          setting->data.v_color.blue = blue;
+          setting->data.v_color.alpha = alpha;
+        }
+
+      xsettings_manager_set_setting (manager, setting);
+    }
+}

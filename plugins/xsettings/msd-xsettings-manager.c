@@ -56,6 +56,10 @@
 #define SCALING_FACTOR_QT_KEY "window-scaling-factor-qt-sync"
 
 #define FONT_RENDER_SCHEMA    "org.mate.font-rendering"
+
+#define XSETTINGS_PLUGIN_SCHEMA "org.mate.SettingsDaemon.plugins.xsettings"
+#define XSETTINGS_OVERRIDE_KEY  "overrides"
+
 #define FONT_ANTIALIASING_KEY "antialiasing"
 #define FONT_HINTING_KEY      "hinting"
 #define FONT_RGBA_ORDER_KEY   "rgba-order"
@@ -106,6 +110,7 @@ struct MateXSettingsManagerPrivate
         XSettingsManager **managers;
         GHashTable *gsettings;
         GSettings *gsettings_font;
+        GSettings *plugin_settings;
         fontconfig_monitor_handle_t *fontconfig_handle;
         gint window_scale;
 };
@@ -744,6 +749,34 @@ xft_callback (GSettings            *gsettings G_GNUC_UNUSED,
 }
 
 static void
+override_callback (GSettings            *settings,
+                   const gchar          *key,
+                   MateXSettingsManager *manager)
+{
+        GVariant *value;
+        int i;
+
+        value = g_settings_get_value (settings, XSETTINGS_OVERRIDE_KEY);
+
+        for (i = 0; manager->priv->managers [i]; i++) {
+                xsettings_manager_set_overrides (manager->priv->managers [i], value);
+                xsettings_manager_notify (manager->priv->managers [i]);
+        }
+
+        g_variant_unref (value);
+}
+
+static void
+plugin_callback (GSettings            *settings,
+                 const char           *key,
+                 MateXSettingsManager *manager)
+{
+        if (g_str_equal (key, XSETTINGS_OVERRIDE_KEY)) {
+                override_callback (settings, key, manager);
+        }
+}
+
+static void
 fontconfig_callback (fontconfig_monitor_handle_t *handle,
                      MateXSettingsManager       *manager)
 {
@@ -972,6 +1005,10 @@ mate_xsettings_manager_start (MateXSettingsManager *manager,
         g_signal_connect (manager->priv->gsettings_font, "changed", G_CALLBACK (xft_callback), manager);
         update_xft_settings (manager);
 
+        /* Plugin settings (overrides) */
+        manager->priv->plugin_settings = g_settings_new (XSETTINGS_PLUGIN_SCHEMA);
+        g_signal_connect (manager->priv->plugin_settings, "changed", G_CALLBACK (plugin_callback), manager);
+
         start_fontconfig_monitor (manager);
 
         for (i = 0; manager->priv->managers [i]; i++)
@@ -982,6 +1019,14 @@ mate_xsettings_manager_start (MateXSettingsManager *manager,
         for (i = 0; manager->priv->managers [i]; i++) {
                 xsettings_manager_notify (manager->priv->managers [i]);
         }
+
+        /* Load initial overrides */
+        GVariant *overrides = g_settings_get_value (manager->priv->plugin_settings, XSETTINGS_OVERRIDE_KEY);
+        for (i = 0; manager->priv->managers [i]; i++) {
+                xsettings_manager_set_overrides (manager->priv->managers [i], overrides);
+                xsettings_manager_notify (manager->priv->managers [i]);
+        }
+        g_variant_unref (overrides);
 
         mate_settings_profile_end (NULL);
 
@@ -1012,6 +1057,11 @@ mate_xsettings_manager_stop (MateXSettingsManager *manager)
         if (p->gsettings_font != NULL) {
                 g_object_unref (p->gsettings_font);
                 p->gsettings_font = NULL;
+        }
+
+        if (p->plugin_settings != NULL) {
+                g_object_unref (p->plugin_settings);
+                p->plugin_settings = NULL;
         }
 
         stop_fontconfig_monitor (manager);
