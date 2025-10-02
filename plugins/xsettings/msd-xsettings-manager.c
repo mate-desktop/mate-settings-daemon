@@ -554,44 +554,6 @@ scale_change_workarounds (MateXSettingsManager *manager, int new_scale, int unsc
                                 g_clear_error (&error);
                         }
                 }
-        } else {
-                /* Restart marco */
-                /* FIXME: The ideal scenario would be for marco to respect window scaling and thus
-                 * resize itself. Currently this is not happening, so msd restarts it when the window
-                 * scaling factor changes so that it's visually correct. */
-                wm_common_update_window();
-                gchar *wm = wm_common_get_current_window_manager ();
-                if (g_strcmp0 (wm, WM_COMMON_MARCO) == 0) {
-                        gchar *marco[3] = {"marco", "--replace", NULL};
-                        if (!g_spawn_async (NULL, marco, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error)) {
-                                g_warning ("There was a problem restarting marco: %s", error->message);
-                                g_clear_error (&error);
-                        }
-                }
-                g_free (wm);
-
-                /* Restart mate-panel */
-                /* FIXME: The ideal scenario would be for mate-panel to respect window scaling and thus
-                 * resize itself. Currently this is not happening, so msd restarts it when the window
-                 * scaling factor changes so that it's visually correct. */
-                gchar *mate_panel[3] = {"killall", "mate-panel", NULL};
-                if (!g_spawn_async (NULL, mate_panel, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error)) {
-                        g_warning ("There was a problem restarting mate-panel: %s", error->message);
-                        g_clear_error (&error);
-                }
-
-                /* Toggle icons on desktop to fix size */
-                /* FIXME: The ideal scenario would be for caja to respect window scaling and thus
-                 * resize itself. Currently this is not happening, so msd restarts it when the window
-                 * scaling factor changes so that it's visually correct. */
-                GSettings *desktop_settings;
-                desktop_settings = g_settings_new ("org.mate.background");
-                if (g_settings_get_boolean (desktop_settings, "show-desktop-icons")) {
-                        /* Delay the toggle to allow enough time for the desktop to redraw */
-                        g_timeout_add_seconds (1, delayed_toggle_bg_draw, GBOOLEAN_TO_POINTER (FALSE));
-                        g_timeout_add_seconds (2, delayed_toggle_bg_draw, GBOOLEAN_TO_POINTER (TRUE));
-                }
-                g_object_unref (desktop_settings);
         }
 
         /* Store new scale value */
