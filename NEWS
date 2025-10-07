@@ -1,3 +1,14 @@
+### mate-settings-daemon 1.29.0
+
+  * xsettings: Remove HiDPI scale change workaround
+  * xsettings: Add gsettings for custom XSettings overrides
+  * Remove remaining unused references to dbus-glib
+  * Add a keyboard shortcut to start a screen reader (#416)
+  * configure.ac: don't link plugins with -no-undefined
+  * plugins: add missing x11 linker flags
+  * build: escape newline
+  * ci: fix Debian builds
+
 ### mate-settings-daemon 1.28.0
 
   * update Translations
