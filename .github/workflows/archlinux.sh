@@ -11,13 +11,17 @@ infoend() {
 # Required packages on Archlinux
 requires=(
 	ccache # Use ccache to speed up build
+	clang  # Build with clang on Archlinux
 )
 
+# https://gitlab.archlinux.org/archlinux/packaging/packages/mate-settings-daemon
 requires+=(
 	autoconf-archive
+	dbus-glib
 	gcc
+	gettext
 	git
-	intltool
+	glib2-devel
 	libcanberra
 	libmatekbd
 	libmatemixer
@@ -27,8 +31,7 @@ requires+=(
 	mate-desktop
 	nss
 	polkit
-	pulseaudio
-	python
+	python-packaging
 	which
 )
 
