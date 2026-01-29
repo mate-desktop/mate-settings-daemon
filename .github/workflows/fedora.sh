@@ -18,6 +18,7 @@ requires+=(
 	dconf-devel
 	desktop-file-utils
 	gcc
+	gcc-c++
 	git
 	gtk3-devel
 	iso-codes-devel
