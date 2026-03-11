@@ -849,6 +849,7 @@ _rh_update_etc_sysconfig_clock (const char *key,
                                 g_error_free (*error);
                                 g_propagate_error (error, error2);
                                 g_free (data);
+                                g_strfreev (lines);
                                 return FALSE;
                         }
                         g_free (data);
