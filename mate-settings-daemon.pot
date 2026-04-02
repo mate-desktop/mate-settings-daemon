@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-settings-daemon 1.26.0\n"
+"Project-Id-Version: mate-settings-daemon 1.29.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2022-10-29 15:35+0200\n"
+"POT-Creation-Date: 2026-04-02 21:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -810,6 +810,17 @@ msgid ""
 "then the file specified by this key will be used instead."
 msgstr ""
 
+#: data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in:15
+msgid "A dictionary of XSETTINGS to override"
+msgstr ""
+
+#: data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in:16
+msgid ""
+"This dictionary maps XSETTINGS names to overrides values. The values must be "
+"either strings, signed int32s or (in the case of colors), 4-tuples of uint16 "
+"(red, green, blue, alpha; 65535 is fully opaque)."
+msgstr ""
+
 #: data/mate-settings-daemon.desktop.in.in:4
 msgid "MATE Settings Daemon"
 msgstr ""
@@ -823,10 +834,6 @@ msgid "Replace the current daemon"
 msgstr ""
 
 #: mate-settings-daemon/main.c:68
-msgid "Don't become a daemon"
-msgstr ""
-
-#: mate-settings-daemon/main.c:69
 msgid "Exit after a time (for debugging)"
 msgstr ""
 
@@ -1170,7 +1177,7 @@ msgstr ""
 msgid "Keyboard plugin"
 msgstr ""
 
-#: plugins/keyboard/msd-keyboard-xkb.c:120
+#: plugins/keyboard/msd-keyboard-xkb.c:122
 #, c-format
 msgid ""
 "Error activating XKB configuration.\n"
@@ -1187,15 +1194,15 @@ msgid ""
 " • The result of <b>%s</b>"
 msgstr ""
 
-#: plugins/keyboard/msd-keyboard-xkb.c:285
+#: plugins/keyboard/msd-keyboard-xkb.c:287
 msgid "_Layouts"
 msgstr ""
 
-#: plugins/keyboard/msd-keyboard-xkb.c:292
+#: plugins/keyboard/msd-keyboard-xkb.c:294
 msgid "Keyboard _Preferences"
 msgstr ""
 
-#: plugins/keyboard/msd-keyboard-xkb.c:298
+#: plugins/keyboard/msd-keyboard-xkb.c:300
 msgid "Show _Current Layout"
 msgstr ""
 
@@ -1207,59 +1214,59 @@ msgstr ""
 msgid "Media keys plugin"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:189
+#: plugins/media-keys/msd-media-keys-manager.c:201
 msgid ""
 "Could not get default terminal. Verify that your default terminal command is "
 "set and points to a valid application."
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:229
+#: plugins/media-keys/msd-media-keys-manager.c:241
 #, c-format
 msgid ""
 "Couldn't execute command: %s\n"
 "Verify that this is a valid command."
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:642
+#: plugins/media-keys/msd-media-keys-manager.c:659
 #: plugins/media-keys/test-media-window.c:82
 msgid "Touchpad enabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:642
+#: plugins/media-keys/msd-media-keys-manager.c:659
 #: plugins/media-keys/test-media-window.c:75
 msgid "Touchpad disabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:963
+#: plugins/media-keys/msd-media-keys-manager.c:980
 #: plugins/media-keys/test-media-window.c:89
 msgid "Bluetooth disabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:966
+#: plugins/media-keys/msd-media-keys-manager.c:983
 #: plugins/media-keys/test-media-window.c:96
 msgid "Bluetooth enabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:970
+#: plugins/media-keys/msd-media-keys-manager.c:987
 #: plugins/media-keys/test-media-window.c:103
 msgid "Airplane mode enabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:973
+#: plugins/media-keys/msd-media-keys-manager.c:990
 #: plugins/media-keys/test-media-window.c:110
 msgid "Airplane mode disabled"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:1004
+#: plugins/media-keys/msd-media-keys-manager.c:1021
 msgid "Hardware Airplane Mode"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:1042
+#: plugins/media-keys/msd-media-keys-manager.c:1059
 #: plugins/media-keys/test-media-window.c:124
 msgid "Changing Screen Layout"
 msgstr ""
 
-#: plugins/media-keys/msd-media-keys-manager.c:1046
+#: plugins/media-keys/msd-media-keys-manager.c:1063
 #: plugins/media-keys/test-media-window.c:117
 msgid "No External Display"
 msgstr ""
@@ -1389,19 +1396,19 @@ msgstr ""
 msgid "Typing break plugin"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:370
+#: plugins/xrandr/msd-xrandr-manager.c:387
 msgid "Could not switch the monitor configuration"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:394
+#: plugins/xrandr/msd-xrandr-manager.c:411
 msgid "Could not restore the display's configuration"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:419
+#: plugins/xrandr/msd-xrandr-manager.c:436
 msgid "Could not restore the display's configuration from a backup"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:440
+#: plugins/xrandr/msd-xrandr-manager.c:457
 #, c-format
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
@@ -1409,97 +1416,97 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:491
+#: plugins/xrandr/msd-xrandr-manager.c:508
 msgid "Does the display look OK?"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:498
+#: plugins/xrandr/msd-xrandr-manager.c:515
 msgid "_Restore Previous Configuration"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:499
+#: plugins/xrandr/msd-xrandr-manager.c:516
 msgid "_Keep This Configuration"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:580
+#: plugins/xrandr/msd-xrandr-manager.c:597
 msgid "The selected configuration for displays could not be applied"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:1176
+#: plugins/xrandr/msd-xrandr-manager.c:1190
 #, c-format
 msgid "Could not refresh the screen information: %s"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:1180
+#: plugins/xrandr/msd-xrandr-manager.c:1194
 msgid "Trying to switch the monitor configuration anyway."
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:1937
+#: plugins/xrandr/msd-xrandr-manager.c:1951
 msgid "Rotation not supported"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2002
-#: plugins/xrandr/msd-xrandr-manager.c:2034
+#: plugins/xrandr/msd-xrandr-manager.c:2016
+#: plugins/xrandr/msd-xrandr-manager.c:2048
 msgid "Could not save monitor configuration"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2055
+#: plugins/xrandr/msd-xrandr-manager.c:2069
 msgid "Mirroring outputs not supported"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2086
+#: plugins/xrandr/msd-xrandr-manager.c:2100
 msgid "Normal"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2087
+#: plugins/xrandr/msd-xrandr-manager.c:2101
 msgid "Left"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2088
+#: plugins/xrandr/msd-xrandr-manager.c:2102
 msgid "Right"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2089
+#: plugins/xrandr/msd-xrandr-manager.c:2103
 msgid "Upside Down"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2178
+#: plugins/xrandr/msd-xrandr-manager.c:2192
 msgid "ON"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2179
+#: plugins/xrandr/msd-xrandr-manager.c:2193
 msgid "Turn this monitor off"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2182
+#: plugins/xrandr/msd-xrandr-manager.c:2196
 msgid "OFF"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2183
+#: plugins/xrandr/msd-xrandr-manager.c:2197
 msgid "Turn this monitor on"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2243
+#: plugins/xrandr/msd-xrandr-manager.c:2257
 msgid "Same output on all monitors"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2244
+#: plugins/xrandr/msd-xrandr-manager.c:2258
 msgid "Mirror same output to all monitors and turn them on"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2291
+#: plugins/xrandr/msd-xrandr-manager.c:2305
 msgid "_Configure Display Settings…"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2301
+#: plugins/xrandr/msd-xrandr-manager.c:2315
 msgid "Open the display configuration dialog (all settings)"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2358
+#: plugins/xrandr/msd-xrandr-manager.c:2372
 msgid "Configure display settings"
 msgstr ""
 
-#: plugins/xrandr/msd-xrandr-manager.c:2418
+#: plugins/xrandr/msd-xrandr-manager.c:2432
 msgid "Could not apply the stored configuration for monitors"
 msgstr ""
 
