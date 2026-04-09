@@ -5,8 +5,6 @@
 # 
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Benedikt Straub <benedikt-straub@web.de>, 2025
-# Transifex Bot <>, 2026
 # 
 msgid ""
 msgstr ""
@@ -14,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Transifex Bot <>, 2026\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
 "Language-Team: Low German (https://app.transifex.com/mate/teams/13566/nds/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -195,7 +193,7 @@ msgstr ""
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:35
 msgid "Double Click Time"
-msgstr "Dübbelklicktied"
+msgstr "Twejmol klicken"
 
 #: data/org.mate.peripherals-mouse.gschema.xml.in:36
 msgid "Length of a double click."
@@ -636,7 +634,7 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:85
 msgid "Search"
-msgstr "Söök"
+msgstr "Sök"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:86
 msgid "Binding to launch the search tool."
@@ -668,7 +666,7 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:105
 msgid "Launch help browser"
-msgstr "Hülpkieker starten"
+msgstr "Hölpkieker starten"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:106
 msgid "Binding to launch the help browser."
@@ -676,7 +674,7 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:110
 msgid "Launch calculator"
-msgstr "Reekner starten"
+msgstr "Rekner starten"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:111
 msgid "Binding to launch the calculator."
@@ -829,7 +827,7 @@ msgstr ""
 
 #: mate-settings-daemon/main.c:68
 msgid "Don't become a daemon"
-msgstr "Keen Achtergrundprozess worden"
+msgstr "Keen daemon to kregen"
 
 #: mate-settings-daemon/main.c:69
 msgid "Exit after a time (for debugging)"
@@ -846,7 +844,7 @@ msgstr ""
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:460
 #, c-format
 msgid "There was an error displaying help: %s"
-msgstr "Bi'm Opwiesen vun de Hülp is een Fehler optreten: %s"
+msgstr "Bi'm Opwiesen vun de Hölp is een Fehler optreten: %s"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:588
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:651
@@ -868,42 +866,42 @@ msgstr ""
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Don't activate"
-msgstr "Nich anknipsen"
+msgstr "Nich aktiveren"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:613
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:749
 msgid "Don't deactivate"
-msgstr "nich utknipsen"
+msgstr "nich deaktiveren"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:619
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:755
 msgid "Activate"
-msgstr "Anknipsen"
+msgstr "Aktiveren"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:619
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:755
 msgid "Deactivate"
-msgstr "Utknipsen"
+msgstr "Deaktiveren"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:674
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:813
 msgid "Do_n't activate"
-msgstr "_Nich anknipsen"
+msgstr "_Nich aktiveren"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:674
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:813
 msgid "Do_n't deactivate"
-msgstr "_Nich utknipsen"
+msgstr "_Nich deaktiveren"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:677
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:816
 msgid "_Activate"
-msgstr "_Anknipsen"
+msgstr "_Aktiveren"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:677
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:816
 msgid "_Deactivate"
-msgstr "_Utknipsen"
+msgstr "_Deaktiveren"
 
 #: plugins/a11y-keyboard/msd-a11y-keyboard-manager.c:681
 msgid "Slow Keys Alert"
@@ -997,11 +995,11 @@ msgstr "Achtergrundplugin"
 
 #: plugins/clipboard/clipboard.mate-settings-plugin.desktop.in:5
 msgid "Clipboard"
-msgstr "Tüskenavlag"
+msgstr "Twüschenavlag"
 
 #: plugins/clipboard/clipboard.mate-settings-plugin.desktop.in:6
 msgid "Clipboard plugin"
-msgstr "Tüskenavlagplugin"
+msgstr "Twüschenavlagplugin"
 
 #: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:12
 msgid "Change system time zone"
