@@ -13,7 +13,7 @@
 # Giuseppe Pignataro (Fastbyte01) <rogepix@gmail.com>, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Enrico B. <enricobe@hotmail.com>, 2019
-# Alessandro Volturno <alelvb@inwind.it>, 2022
+# Alessandro Volturno <alelvb@inwind.it>, 2024
 # 
 msgid ""
 msgstr ""
@@ -21,7 +21,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2022\n"
+"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2024\n"
 "Language-Team: Italian (https://app.transifex.com/mate/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1619,7 +1619,7 @@ msgstr "Non è stato possibile salvare la configurazione del monitor"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2055
 msgid "Mirroring outputs not supported"
-msgstr "Copiare gli output non è supportato"
+msgstr "Il mirroring degli output non è supportato"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2086
 msgid "Normal"
@@ -1655,7 +1655,7 @@ msgstr "Accendi questo monitor"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2243
 msgid "Same output on all monitors"
-msgstr "Stesso outpute su tutti i monitor"
+msgstr "Stesso output su tutti i monitor"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2244
 msgid "Mirror same output to all monitors and turn them on"
