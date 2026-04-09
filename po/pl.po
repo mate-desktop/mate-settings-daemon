@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Piotr Strębski <strebski@gmail.com>, 2018
+# Piotr Strebski <strebski@gmail.com>, 2018
 # marcin mikołajczak <me@mkljczk.pl>, 2018
 # Marcin Kralka <marcink96@gmail.com>, 2018
 # emariusek <wisniowy@g.pl>, 2018
