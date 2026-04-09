@@ -4,14 +4,12 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Lasse Liehu-Inui <larso@gmx.com>, 2018
+# Lasse Liehu <larso@gmx.com>, 2018
 # Eslam Ali <talvikahvi@gmail.com>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # nomen omen, 2019
-# Wolfgang Ulbrich <raveit65.sun@gmail.com>, 2019
+# Wolfgang Ulbrich <mate@raveit.de>, 2019
 # Kimmo Kujansuu <mrkujansuu@gmail.com>, 2020
-# Tommi Nieminen <translator@legisign.org>, 2026
-# Transifex Bot <>, 2026
 # 
 msgid ""
 msgstr ""
@@ -19,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Transifex Bot <>, 2026\n"
+"Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>, 2020\n"
 "Language-Team: Finnish (https://app.transifex.com/mate/teams/13566/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -329,7 +327,7 @@ msgstr "Aseta TOSI, niin sallit vaakasuuntaisen kahden sormen vierityksen"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:45
 msgid "Natural scrolling"
-msgstr "Luonnollinen vieritys"
+msgstr ""
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:46
 msgid "Set this to true to enable natural (reverse) scrolling for touchpads"
@@ -378,15 +376,13 @@ msgstr ""
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:75
 msgid "Three finger tap button"
-msgstr "Kolmen sormen napautuksen painike"
+msgstr ""
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:76
 msgid ""
 "Select the button mapping for three-finger tap. Supported values are: 1: "
 "left mouse button 2: middle mouse button 3: right mouse button"
 msgstr ""
-"Valitse kolmen sormen napautusta vastaava painike. Tuetut arvot ovat: 1 "
-"vasen hiiripainike, 2: hiiren keskipainike, 3: oikea hiiripainike"
 
 #: data/org.mate.peripherals-touchpad.gschema.xml.in:80
 msgid "Touchpad button orientation"
@@ -563,7 +559,7 @@ msgstr "Näytä OSD ilmoitus"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:11
 msgid "Whether an OSD notification is shown to notify about changes"
-msgstr "Näytetäänkö muutoksista ruutunäyttö"
+msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:20
 msgid "Volume step"
@@ -628,7 +624,7 @@ msgstr "Käännä äänenvoimakkuutta ylös hiljaa"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:56
 msgid "Binding to raise the system volume quietly."
-msgstr "Näppäinkytkös järjestelmän äänenvoimakkuuden nostamiseksi hieman."
+msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:60
 msgid "Microphone mute/unmute"
@@ -637,7 +633,6 @@ msgstr "Mikrofonin mykistys/vapautus"
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:61
 msgid "Binding to mute/unmute the microphone."
 msgstr ""
-"Näppäinkytkös mikrofonin vaimentamiseksi tai vaimennuksen poistamiseksi."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:65
 msgid "Shut down"
@@ -645,7 +640,7 @@ msgstr "Sammuta"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:66
 msgid "Binding to shut down."
-msgstr "Näppäinkytkös koneen sammuttamiseksi."
+msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:70
 msgid "Log out"
@@ -661,7 +656,7 @@ msgstr "Poista asemasta"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:76
 msgid "Binding to eject an optical disc."
-msgstr "Näppäinkytkös optisen levyn työntämiseksi pois asemasta."
+msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:80
 msgid "Home folder"
@@ -693,7 +688,7 @@ msgstr "Käynnistä asetukset"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:96
 msgid "Binding to launch MATE settings."
-msgstr "Näppäinkytkös MATEn asetuksiin siirtymiseksi."
+msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:100
 msgid "Lock screen"
@@ -804,11 +799,10 @@ msgid ""
 "Whether a notification icon with display-related things should be shown in "
 "the panel."
 msgstr ""
-"Tulisiko paneelissa näyttää näyttöön liittyvistä asioista ilmoituskuvake."
 
 #: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:20
 msgid "Do not touch monitor configuration"
-msgstr "Älä koske näyttöasetuksiin"
+msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:21
 msgid ""
@@ -829,12 +823,10 @@ msgid ""
 "Turn on external monitor after system boot if user plugs in external monitor"
 " on system boot."
 msgstr ""
-"Avaa ulkoinen näyttö järjestelmän käynnistyttyä, jos käyttäjä kytkee sen "
-"silloin."
 
 #: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:30
 msgid "Turn on laptop monitor after system boot"
-msgstr "Avaa kannettavan näyttö järjestelmän käynnistyessä"
+msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:31
 msgid ""
@@ -844,7 +836,7 @@ msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:35
 msgid "File for default configuration for RandR"
-msgstr "Etsi RandR-oletusmääritys"
+msgstr ""
 
 #: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:36
 msgid ""
@@ -1027,15 +1019,15 @@ msgstr ""
 
 #: plugins/a11y-keyboard/msd-a11y-preferences-dialog.ui:214
 msgid "_Beep when pressing a key while CapsLock is active"
-msgstr "P_iippaa painettaessa näppäintä vaihtolukon ollessa käytössä"
+msgstr ""
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:5
 msgid "Accessibility settings"
-msgstr "Esteettömyysasetukset"
+msgstr ""
 
 #: plugins/a11y-settings/a11y-settings.mate-settings-plugin.desktop.in:6
 msgid "Accessibility settings plugin"
-msgstr "Esteettömyysasetusliitännäinen"
+msgstr ""
 
 #: plugins/background/background.mate-settings-plugin.desktop.in:5
 msgid "Background"
@@ -1055,7 +1047,7 @@ msgstr "Leikepöytäliitännäinen"
 
 #: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:12
 msgid "Change system time zone"
-msgstr "Vaihda järjestelmän aikavyöhyke"
+msgstr ""
 
 #: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:13
 msgid "Privileges are required to change the system time zone."
@@ -1063,7 +1055,7 @@ msgstr "Järjestelmän aikavyöhykkeen muuttaminen vaatii lisäoikeuksia."
 
 #: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:21
 msgid "Change system time"
-msgstr "Muuta järjestelmän aikaa"
+msgstr ""
 
 #: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:22
 msgid "Privileges are required to change the system time."
@@ -1071,7 +1063,7 @@ msgstr "Järjestelmän ajan muuttaminen vaatii lisäoikeuksia."
 
 #: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:30
 msgid "Configure hardware clock"
-msgstr "Laitteistokellon asetukset"
+msgstr ""
 
 #: plugins/datetime/org.mate.settingsdaemon.datetimemechanism.policy.in:31
 msgid "Privileges are required to configure the hardware clock."
@@ -1087,19 +1079,17 @@ msgstr "Tyhjä liitännäinen"
 
 #: plugins/housekeeping/housekeeping.mate-settings-plugin.desktop.in:5
 msgid "Housekeeping"
-msgstr "Arkitoimet"
+msgstr ""
 
 #: plugins/housekeeping/housekeeping.mate-settings-plugin.desktop.in:6
 msgid ""
 "Automatically prunes thumbnail caches and other transient files, and warns "
 "about low disk space"
 msgstr ""
-"Siivoaa automaattisesti pienoiskuvavälimuistit ja muut väliaikaistiedostot "
-"ja varoittaa vähäisestä levytilasta"
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:61
 msgid "Don't show any warnings again for this file system"
-msgstr "Älä näytä tälle järjestelmälle enää mitään varoituksia"
+msgstr ""
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:63
 msgid "Don't show any warnings again"
@@ -1160,7 +1150,7 @@ msgstr "Tyhjennä roskakori"
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Examine…"
-msgstr "Tutki…"
+msgstr ""
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:451
 msgid "Ignore"
@@ -1183,7 +1173,7 @@ msgstr "Tyhjennetään roskakoria"
 
 #: plugins/housekeeping/msd-ldsm-trash-empty.c:277
 msgid "Preparing to empty trash…"
-msgstr "Valmistellaan roskakorin tyhjennystä…"
+msgstr ""
 
 #. Translators: "Emptying trash from <device>"
 #: plugins/housekeeping/msd-ldsm-trash-empty.c:304
@@ -1308,36 +1298,36 @@ msgstr ""
 #: plugins/media-keys/msd-media-keys-manager.c:963
 #: plugins/media-keys/test-media-window.c:89
 msgid "Bluetooth disabled"
-msgstr "Bluetooth käytössä"
+msgstr ""
 
 #: plugins/media-keys/msd-media-keys-manager.c:966
 #: plugins/media-keys/test-media-window.c:96
 msgid "Bluetooth enabled"
-msgstr "Bluetooth käytössä"
+msgstr ""
 
 #: plugins/media-keys/msd-media-keys-manager.c:970
 #: plugins/media-keys/test-media-window.c:103
 msgid "Airplane mode enabled"
-msgstr "Lentotila käytössä"
+msgstr ""
 
 #: plugins/media-keys/msd-media-keys-manager.c:973
 #: plugins/media-keys/test-media-window.c:110
 msgid "Airplane mode disabled"
-msgstr "Lentotila ei käytössä"
+msgstr ""
 
 #: plugins/media-keys/msd-media-keys-manager.c:1004
 msgid "Hardware Airplane Mode"
-msgstr "Laitteiston lentotila"
+msgstr ""
 
 #: plugins/media-keys/msd-media-keys-manager.c:1042
 #: plugins/media-keys/test-media-window.c:124
 msgid "Changing Screen Layout"
-msgstr "Vaihdetaan näyttöasettelua"
+msgstr ""
 
 #: plugins/media-keys/msd-media-keys-manager.c:1046
 #: plugins/media-keys/test-media-window.c:117
 msgid "No External Display"
-msgstr "Ei ulkoista näyttöä"
+msgstr ""
 
 #: plugins/mouse/mouse.mate-settings-plugin.desktop.in:5
 msgid "Mouse"
@@ -1354,7 +1344,7 @@ msgstr "Hiiren esteettömyystoimintoja ei voitu ottaa käyttöön"
 #: plugins/mouse/msd-mouse-manager.c:1650
 msgid ""
 "Mouse accessibility requires Mousetweaks to be installed on your system."
-msgstr "Hiiren esteettömyys vaatii Mousetweaksin asentamisen järjestelmään."
+msgstr ""
 
 #: plugins/mouse/msd-mouse-manager.c:1653
 msgid "Mouse Preferences"
@@ -1434,19 +1424,19 @@ msgstr "nimi"
 
 #: plugins/smartcard/msd-smartcard.c:168
 msgid "Module"
-msgstr "Moduuli"
+msgstr ""
 
 #: plugins/smartcard/msd-smartcard.c:169
 msgid "smartcard driver"
-msgstr "älykorttiajuri"
+msgstr ""
 
 #: plugins/smartcard/smartcard.mate-settings-plugin.desktop.in:5
 msgid "Smartcard"
-msgstr "Älykortti"
+msgstr ""
 
 #: plugins/smartcard/smartcard.mate-settings-plugin.desktop.in:6
 msgid "Smartcard plugin"
-msgstr "Älykorttiliitännäinen"
+msgstr ""
 
 #: plugins/sound/sound.mate-settings-plugin.desktop.in:5
 msgid "Sound"
@@ -1481,8 +1471,8 @@ msgstr "Näyttöasetuksia ei voitu palauttaa varmuuskopiosta"
 msgid "The display will be reset to its previous configuration in %d second"
 msgid_plural ""
 "The display will be reset to its previous configuration in %d seconds"
-msgstr[0] "Näyttö palaa oletusasetuksiinsa %d sekunnissa"
-msgstr[1] "Näyttö palaa oletusasetuksiinsa %d sekunnissa"
+msgstr[0] ""
+msgstr[1] ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:491
 msgid "Does the display look OK?"
@@ -1520,7 +1510,7 @@ msgstr "Näytön asetuksia ei voitu tallentaa"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2055
 msgid "Mirroring outputs not supported"
-msgstr "Ulostulojen peilausta ei tueta"
+msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:2086
 msgid "Normal"
@@ -1552,11 +1542,11 @@ msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:2183
 msgid "Turn this monitor on"
-msgstr "Ota tämä näyttö käyttöön"
+msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:2243
 msgid "Same output on all monitors"
-msgstr "Sama ulostulo kaikilla näytöillä"
+msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:2244
 msgid "Mirror same output to all monitors and turn them on"
@@ -1564,11 +1554,11 @@ msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:2291
 msgid "_Configure Display Settings…"
-msgstr "_Näyttöasetukset…"
+msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:2301
 msgid "Open the display configuration dialog (all settings)"
-msgstr "Avaa näyttöasetusikkuna (kaikki asetukset)"
+msgstr ""
 
 #: plugins/xrandr/msd-xrandr-manager.c:2358
 msgid "Configure display settings"
