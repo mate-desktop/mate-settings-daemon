@@ -1572,6 +1572,22 @@ apply_color_profiles (void)
         }
 }
 
+static gboolean
+has_hotplug_mode_update (MateRRScreen *screen)
+{
+        MateRROutput **outputs;
+        int i;
+
+        outputs = mate_rr_screen_list_outputs (screen);
+
+        for (i = 0; outputs[i] != NULL; i++) {
+                if (mate_rr_output_get_hotplug_mode_update (outputs[i]))
+                        return TRUE;
+        }
+
+        return FALSE;
+}
+
 static void
 on_randr_event (MateRRScreen *screen, gpointer data)
 {
@@ -1600,6 +1616,24 @@ on_randr_event (MateRRScreen *screen, gpointer data)
                  */
                 show_timestamps_dialog (manager, "ignoring since change > config");
                 log_msg ("  Ignoring event since change >= config\n");
+        } else if (has_hotplug_mode_update (screen)) {
+                /* An output has the hotplug_mode_update property, which
+                 * means that the driver is requesting that the desktop
+                 * environment apply a new preferred mode on hotplug events
+                 * to handle dynamic guest resizing (e.g. SPICE/QXL in VMs).
+                 *
+                 * In this case, always auto-configure to use the new
+                 * preferred mode rather than applying stored configurations.
+                 */
+
+                show_timestamps_dialog (manager, "hotplug_mode_update detected, auto-configuring");
+
+                if (config_timestamp != priv->last_config_timestamp) {
+                        priv->last_config_timestamp = config_timestamp;
+                        auto_configure_outputs (manager, config_timestamp);
+                        log_msg ("  Automatically configured outputs for hotplug_mode_update\n");
+                } else
+                        log_msg ("  Ignored hotplug_mode_update event as timestamps are the same\n");
         } else {
                 /* Here, config_timestamp > change_timestamp.  This means that
                  * the screen got reconfigured because of hotplug/unplug; the X
