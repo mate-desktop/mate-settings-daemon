@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  MATE_DESKTOP_VERSION: 1.28.2
+  MATE_DESKTOP_VERSION: 1.29.0
   CACHE_PATH: /tmp/.cache
 
 jobs:
