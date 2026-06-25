@@ -1,10 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
 # This file is distributed under the same license as the mate-settings-daemon package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-# Translators:
-# XRevan86, 2018
 # Dmitriy Kulikov <kulikov@dima.perm.ru>, 2018
 # Alex Puts, 2018
 # Дмитрий Михирев, 2019
@@ -16,20 +12,28 @@
 # Norbert X, 2020
 # Павел Коваленко, 2021
 # Olesya Gerasimenko <gammaray@basealt.ru>, 2021
-# 
+# "Sergey A." <Ser82-png@yandex.ru>, 2026.
+#
+# Translators:
+# XRevan86, 2018
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-settings-daemon 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2022-10-29 15:35+0200\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Olesya Gerasimenko <gammaray@basealt.ru>, 2021\n"
-"Language-Team: Russian (https://app.transifex.com/mate/teams/13566/ru/)\n"
+"PO-Revision-Date: 2026-06-20 17:10+0000\n"
+"Last-Translator: \"Sergey A.\" <Ser82-png@yandex.ru>\n"
+"Language-Team: Russian <https://translate.fedoraproject.org/projects/mate-"
+"desktop/applications/mate-settings-daemon/ru/>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Generator: Weblate 2026.6.1\n"
 
 #: data/50-accessibility.xml.in:2
 msgid "Accessibility"
@@ -501,7 +505,7 @@ msgstr "Активация этого модуля"
 #: data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in:6
 #: data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in:6
 msgid "Whether this plugin would be activated by mate-settings-daemon or not"
-msgstr "Будет ли активирован этот модуль mate-settings-daemon или нет."
+msgstr "Будет ли активирован этот модуль mate-settings-daemon или нет"
 
 #: data/org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml.in:10
 #: data/org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml.in:10
@@ -570,7 +574,7 @@ msgid ""
 "issuing a subsequent warning."
 msgstr ""
 "Укажите процент свободного места, при достижении ниже которого нужно "
-"отобразить повторное предупреждение"
+"отобразить повторное предупреждение."
 
 #: data/org.mate.SettingsDaemon.plugins.housekeeping.gschema.xml.in:25
 msgid "Free space no notify threshold"
@@ -660,7 +664,7 @@ msgstr "Бесшумно отключить звук"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:46
 msgid "Binding to mute the system volume quietly."
-msgstr "Комбинация клавиш для бесшумного приглушения системной громкости. "
+msgstr "Комбинация клавиш для бесшумного приглушения системной громкости."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:50
 msgid "Turn the volume down quietly"
@@ -692,7 +696,7 @@ msgstr "Выключить"
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:66
 msgid "Binding to shut down."
-msgstr "Комбинация клавиш для выключения"
+msgstr "Комбинация клавиш для выключения."
 
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:70
 msgid "Log out"
@@ -1647,7 +1651,7 @@ msgstr "Открыть диалог конфигурации монитора (�
 
 #: plugins/xrandr/msd-xrandr-manager.c:2358
 msgid "Configure display settings"
-msgstr "Настроить параметры "
+msgstr "Настроить параметры"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2418
 msgid "Could not apply the stored configuration for monitors"
