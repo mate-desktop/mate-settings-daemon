@@ -1,9 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
 # This file is distributed under the same license as the mate-settings-daemon package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-# Translators:
 # alexandros_ <alexandros.venn@gmail.com>, 2018
 # Petros Freris (Πέτρος Φρέρης) <petrosfreris@gmail.com>, 2018
 # 437c9d6e19936ed69f57bed9e0fe4716, 2018
@@ -11,24 +8,29 @@
 # Alexandros Kapetanios <alexandros@gnugr.org>, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Transifex Bot <>, 2026
-# 
+# Jim Spentzos <jimspentzos2000@gmail.com>, 2026.
+#
+# Translators:
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-settings-daemon 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2022-10-29 15:35+0200\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Transifex Bot <>, 2026\n"
-"Language-Team: Greek (https://app.transifex.com/mate/teams/13566/el/)\n"
+"PO-Revision-Date: 2026-07-29 00:18+0000\n"
+"Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
+"Language-Team: Greek <https://translate.fedoraproject.org/projects/mate-"
+"desktop/applications/mate-settings-daemon/el/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: el\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.7.1\n"
 
 #: data/50-accessibility.xml.in:2
 msgid "Accessibility"
-msgstr "Προσιτότητα"
+msgstr "Προσβασιμότητα"
 
 #: data/50-accessibility.xml.in:4
 #: data/org.mate.SettingsDaemon.plugins.media-keys.gschema.xml.in:155
@@ -1600,7 +1602,7 @@ msgstr "Κανονική"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2087
 msgid "Left"
-msgstr "Αριστερά"
+msgstr "Αριστερό βέλος"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2088
 msgid "Right"
