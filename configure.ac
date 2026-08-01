@@ -104,11 +104,27 @@ if test "x${enable_wayland}" != "xno"; then
 	CPPFLAGS="$save_CPPFLAGS"
 
 	if test "x${have_wayland}" = "xyes"; then
+		PKG_CHECK_MODULES(WAYLAND_CLIENT, wayland-client >= 1.18,
+			[have_wayland=yes],
+			[have_wayland=no])
+	fi
+
+	if test "x${have_wayland}" = "xyes"; then
+		WAYLAND_SCANNER=wayland-scanner
+		AC_SUBST(WAYLAND_SCANNER)
+		WAYLAND_PROTOCOLS_DATADIR=`$PKG_CONFIG --variable=pkgdatadir wayland-protocols`
+		AC_SUBST(WAYLAND_PROTOCOLS_DATADIR)
+		if test "x${WAYLAND_PROTOCOLS_DATADIR}" = "x"; then
+			have_wayland=no
+		fi
+	fi
+
+	if test "x${have_wayland}" = "xyes"; then
 		AC_DEFINE(HAVE_WAYLAND, 1, [Define if Wayland support is enabled])
 	fi
 
 	if test "x${have_wayland}" = "xno" -a "x${enable_wayland}" = "xyes"; then
-		AC_MSG_ERROR([Wayland support requested but the GTK+ library does not have the Wayland backend])
+		AC_MSG_ERROR([Wayland support requested but the required Wayland libraries (GTK+ Wayland backend, wayland-client or wayland-protocols) are missing])
 	fi
 fi
 AM_CONDITIONAL(BUILD_WAYLAND, test "x${have_wayland}" = "xyes")
@@ -530,6 +546,7 @@ Configure summary:
     Smartcard support .......: ${have_smartcard_support}
     RFKill support ..........: ${enable_rfkill}
     Wayland support .........: ${have_wayland}
+    Wayland protocols dir ...: ${WAYLAND_PROTOCOLS_DATADIR}
 ${NSS_DATABASE:+\
     System nssdb ............: ${NSS_DATABASE}
 }\
