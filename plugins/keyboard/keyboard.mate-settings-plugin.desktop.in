@@ -1,6 +1,7 @@
 [MATE Settings Plugin]
 Module=keyboard
 IAge=0
+X11Only=true
 Name=Keyboard
 Description=Keyboard plugin
 Authors=

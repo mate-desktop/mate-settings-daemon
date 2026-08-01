@@ -36,7 +36,9 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 #include <gdk/gdk.h>
+#ifdef GDK_WINDOWING_X11
 #include <gdk/gdkx.h>
+#endif /* GDK_WINDOWING_X11 */
 #include <gdk/gdkkeysyms.h>
 #include <X11/keysym.h>
 #include <X11/Xatom.h>
@@ -1795,6 +1797,20 @@ msd_mouse_manager_start (MsdMouseManager *manager,
 {
         mate_settings_profile_start (NULL);
 
+#ifdef GDK_WINDOWING_X11
+        if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
+                g_set_error (error, G_IO_ERROR, G_IO_ERROR_FAILED,
+                             "X11 display is required for the mouse plugin");
+                mate_settings_profile_end (NULL);
+                return FALSE;
+        }
+#else
+        g_set_error (error, G_IO_ERROR, G_IO_ERROR_FAILED,
+                     "The mouse plugin was built without X11 support");
+        mate_settings_profile_end (NULL);
+        return FALSE;
+#endif /* GDK_WINDOWING_X11 */
+
         if (!supports_xinput_devices ()) {
                 g_debug ("XInput is not supported, not applying any settings");
                 return TRUE;
@@ -1813,6 +1829,11 @@ msd_mouse_manager_stop (MsdMouseManager *manager)
         MsdMouseManagerPrivate *p = manager->priv;
 
         g_debug ("Stopping mouse manager");
+
+#ifdef GDK_WINDOWING_X11
+        if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+                return;
+#endif /* GDK_WINDOWING_X11 */
 
         if (p->settings_mouse != NULL) {
                 g_object_unref(p->settings_mouse);

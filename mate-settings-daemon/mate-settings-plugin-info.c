@@ -27,6 +27,10 @@
 #include <glib/gi18n.h>
 #include <gmodule.h>
 #include <gio/gio.h>
+#include <gdk/gdk.h>
+#ifdef GDK_WINDOWING_X11
+#include <gdk/gdkx.h>
+#endif /* GDK_WINDOWING_X11 */
 
 #include "mate-settings-plugin-info.h"
 #include "mate-settings-module.h"
@@ -56,6 +60,7 @@ struct MateSettingsPluginInfoPrivate
 
         guint                    enabled : 1;
         guint                    active : 1;
+        guint                    x11_only : 1;
 
         /* A plugin is unavailable if it is not possible to activate it
            due to an error loading the plugin module */
@@ -248,6 +253,10 @@ mate_settings_plugin_info_fill_from_file (MateSettingsPluginInfo *info,
                 info->priv->priority = PLUGIN_PRIORITY_DEFAULT;
         }
 
+        /* Get X11Only */
+        info->priv->x11_only =
+                g_key_file_get_boolean (plugin_file, PLUGIN_GROUP, "X11Only", NULL);
+
         g_key_file_free (plugin_file);
 
         debug_info (info);
@@ -405,6 +414,19 @@ mate_settings_plugin_info_activate (MateSettingsPluginInfo *info)
                 return TRUE;
         }
 
+        if (info->priv->x11_only) {
+#ifdef GDK_WINDOWING_X11
+                gboolean x11 = GDK_IS_X11_DISPLAY (gdk_display_get_default ());
+#else
+                gboolean x11 = FALSE;
+#endif
+                if (!x11) {
+                        g_debug ("Plugin '%s' requires X11; not loading on this display",
+                                 info->priv->name);
+                        return FALSE;
+                }
+        }
+
         if (_activate_plugin (info)) {
                 info->priv->active = TRUE;
                 return TRUE;
@@ -427,6 +449,14 @@ mate_settings_plugin_info_get_enabled (MateSettingsPluginInfo *info)
         g_return_val_if_fail (MATE_IS_SETTINGS_PLUGIN_INFO (info), FALSE);
 
         return (info->priv->enabled);
+}
+
+gboolean
+mate_settings_plugin_info_get_x11_only (MateSettingsPluginInfo *info)
+{
+        g_return_val_if_fail (MATE_IS_SETTINGS_PLUGIN_INFO (info), FALSE);
+
+        return (info->priv->x11_only);
 }
 
 gboolean

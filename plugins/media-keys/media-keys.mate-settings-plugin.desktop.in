@@ -1,6 +1,7 @@
 [MATE Settings Plugin]
 Module=media-keys
 IAge=0
+X11Only=true
 Name=Media keys
 Description=Media keys plugin
 Authors=

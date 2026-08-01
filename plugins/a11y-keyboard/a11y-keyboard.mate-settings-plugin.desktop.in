@@ -1,6 +1,7 @@
 [MATE Settings Plugin]
 Module=a11y-keyboard
 IAge=0
+X11Only=true
 Name=Accessibility Keyboard
 Description=Accessibility keyboard plugin
 Authors=Jody Goldberg

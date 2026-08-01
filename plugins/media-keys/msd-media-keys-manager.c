@@ -26,7 +26,9 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <gdk/gdk.h>
+#ifdef GDK_WINDOWING_X11
 #include <gdk/gdkx.h>
+#endif /* GDK_WINDOWING_X11 */
 #include <gtk/gtk.h>
 #include <gio/gio.h>
 
@@ -1605,6 +1607,20 @@ msd_media_keys_manager_start (MsdMediaKeysManager *manager, GError **error)
 {
         mate_settings_profile_start (NULL);
 
+#ifdef GDK_WINDOWING_X11
+        if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
+                g_set_error (error, G_IO_ERROR, G_IO_ERROR_FAILED,
+                             "X11 display is required for the media_keys plugin");
+                mate_settings_profile_end (NULL);
+                return FALSE;
+        }
+#else
+        g_set_error (error, G_IO_ERROR, G_IO_ERROR_FAILED,
+                     "The media_keys plugin was built without X11 support");
+        mate_settings_profile_end (NULL);
+        return FALSE;
+#endif /* GDK_WINDOWING_X11 */
+
 #ifdef HAVE_LIBMATEMIXER
         if (G_LIKELY (mate_mixer_is_initialized ())) {
                 mate_settings_profile_start ("mate_mixer_context_new");
@@ -1652,6 +1668,11 @@ msd_media_keys_manager_stop (MsdMediaKeysManager *manager)
         gboolean need_flush;
 
         g_debug ("Stopping media_keys manager");
+
+#ifdef GDK_WINDOWING_X11
+        if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+                return;
+#endif /* GDK_WINDOWING_X11 */
 
         for (ls = priv->screens; ls != NULL; ls = ls->next) {
                 gdk_window_remove_filter (gdk_screen_get_root_window (ls->data),

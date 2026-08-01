@@ -37,7 +37,9 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <gdk/gdk.h>
+#ifdef GDK_WINDOWING_X11
 #include <gdk/gdkx.h>
+#endif /* GDK_WINDOWING_X11 */
 #include <gio/gio.h>
 
 #define MATE_DESKTOP_USE_UNSTABLE_API
@@ -241,6 +243,20 @@ msd_background_manager_start (MsdBackgroundManager  *manager,
 	g_debug ("Starting background manager");
 	mate_settings_profile_start (NULL);
 
+#ifdef GDK_WINDOWING_X11
+	if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
+		g_set_error (error, G_IO_ERROR, G_IO_ERROR_FAILED,
+			     "X11 display is required for the background plugin");
+		mate_settings_profile_end (NULL);
+		return FALSE;
+	}
+#else
+	g_set_error (error, G_IO_ERROR, G_IO_ERROR_FAILED,
+		     "The background plugin was built without X11 support");
+	mate_settings_profile_end (NULL);
+	return FALSE;
+#endif /* GDK_WINDOWING_X11 */
+
 	manager->settings = g_settings_new (MATE_BG_SCHEMA);
 
 	manager->bg = mate_bg_new();
@@ -264,6 +280,11 @@ void
 msd_background_manager_stop (MsdBackgroundManager *manager)
 {
 	g_debug ("Stopping background manager");
+
+#ifdef GDK_WINDOWING_X11
+	if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+		return;
+#endif /* GDK_WINDOWING_X11 */
 
 	disconnect_screen_signals (manager);
 

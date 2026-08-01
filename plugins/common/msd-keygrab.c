@@ -24,7 +24,9 @@
 #include "config.h"
 
 #include <gdk/gdk.h>
+#ifdef GDK_WINDOWING_X11
 #include <gdk/gdkx.h>
+#endif /* GDK_WINDOWING_X11 */
 #ifdef HAVE_X11_EXTENSIONS_XKB_H
 #include <X11/XKBlib.h>
 #include <X11/extensions/XKB.h>
@@ -74,6 +76,10 @@ grab_key_real (guint      keycode,
                gboolean   grab,
                int        mask)
 {
+#ifdef GDK_WINDOWING_X11
+        if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+                return;
+
         if (grab) {
                 XGrabKey (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
                           keycode,
@@ -88,6 +94,9 @@ grab_key_real (guint      keycode,
                             mask,
                             GDK_WINDOW_XID (root));
         }
+#else
+        g_warning ("Key grabbing is not supported without X11");
+#endif /* GDK_WINDOWING_X11 */
 }
 
 /* Grab the key. In order to ignore MSD_IGNORED_MODS we need to grab
@@ -203,6 +212,7 @@ key_uses_keycode (const Key *key, guint keycode)
 	return FALSE;
 }
 
+#ifdef GDK_WINDOWING_X11
 gboolean
 match_key (Key *key, XEvent *event)
 {
@@ -215,11 +225,9 @@ match_key (Key *key, XEvent *event)
 
 	setup_modifiers ();
 
-#ifdef HAVE_X11_EXTENSIONS_XKB_H
 	if (have_xkb (event->xkey.display))
 		group = XkbGroupForCoreState (event->xkey.state);
 	else
-#endif
 		group = (event->xkey.state & GDK_KEY_Mode_switch) ? 1 : 0;
 
 	/* Check if we find a keysym that matches our current state */
@@ -244,3 +252,10 @@ match_key (Key *key, XEvent *event)
         return (key->state == (event->xkey.state & msd_used_mods)
                 && key_uses_keycode (key, event->xkey.keycode));
 }
+#else /* !GDK_WINDOWING_X11 */
+gboolean
+match_key (Key *key, XEvent *event)
+{
+	return FALSE;
+}
+#endif /* GDK_WINDOWING_X11 */

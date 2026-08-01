@@ -34,8 +34,11 @@
 
 #include <glib.h>
 #include <glib/gi18n.h>
+#include <gio/gio.h>
 #include <gdk/gdk.h>
+#ifdef GDK_WINDOWING_X11
 #include <gdk/gdkx.h>
+#endif /* GDK_WINDOWING_X11 */
 
 #ifdef HAVE_X11_EXTENSIONS_XKB_H
 #include <X11/XKBlib.h>
@@ -310,6 +313,20 @@ msd_keyboard_manager_start (MsdKeyboardManager *manager,
 {
         mate_settings_profile_start (NULL);
 
+#ifdef GDK_WINDOWING_X11
+        if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
+                g_set_error (error, G_IO_ERROR, G_IO_ERROR_FAILED,
+                             "X11 display is required for the keyboard plugin");
+                mate_settings_profile_end (NULL);
+                return FALSE;
+        }
+#else
+        g_set_error (error, G_IO_ERROR, G_IO_ERROR_FAILED,
+                     "The keyboard plugin was built without X11 support");
+        mate_settings_profile_end (NULL);
+        return FALSE;
+#endif /* GDK_WINDOWING_X11 */
+
         g_idle_add ((GSourceFunc) start_keyboard_idle_cb, manager);
 
         mate_settings_profile_end (NULL);
@@ -323,6 +340,11 @@ msd_keyboard_manager_stop (MsdKeyboardManager *manager)
         MsdKeyboardManagerPrivate *p = manager->priv;
 
         g_debug ("Stopping keyboard manager");
+
+#ifdef GDK_WINDOWING_X11
+        if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+                return;
+#endif /* GDK_WINDOWING_X11 */
 
         if (p->settings != NULL) {
                 g_object_unref (p->settings);

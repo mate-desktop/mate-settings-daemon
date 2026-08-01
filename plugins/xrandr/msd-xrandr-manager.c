@@ -36,7 +36,9 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <gdk/gdk.h>
+#ifdef GDK_WINDOWING_X11
 #include <gdk/gdkx.h>
+#endif /* GDK_WINDOWING_X11 */
 #include <gtk/gtk.h>
 #include <gio/gio.h>
 
@@ -2582,6 +2584,20 @@ msd_xrandr_manager_start (MsdXrandrManager *manager,
         g_debug ("Starting xrandr manager");
         mate_settings_profile_start (NULL);
 
+#ifdef GDK_WINDOWING_X11
+        if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
+                g_set_error (error, G_IO_ERROR, G_IO_ERROR_FAILED,
+                             "X11 display is required for the xrandr plugin");
+                mate_settings_profile_end (NULL);
+                return FALSE;
+        }
+#else
+        g_set_error (error, G_IO_ERROR, G_IO_ERROR_FAILED,
+                     "The xrandr plugin was built without X11 support");
+        mate_settings_profile_end (NULL);
+        return FALSE;
+#endif /* GDK_WINDOWING_X11 */
+
         log_open ();
         log_msg ("------------------------------------------------------------\nSTARTING XRANDR PLUGIN\n");
 
@@ -2662,6 +2678,11 @@ msd_xrandr_manager_stop (MsdXrandrManager *manager)
         GdkDisplay      *display;
 
         g_debug ("Stopping xrandr manager");
+
+#ifdef GDK_WINDOWING_X11
+        if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+                return;
+#endif /* GDK_WINDOWING_X11 */
 
         manager->priv->running = FALSE;
 

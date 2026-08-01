@@ -39,6 +39,10 @@
 #include <libnotify/notify.h>
 #endif /* HAVE_LIBNOTIFY */
 
+#ifdef HAVE_WAYLAND
+#include <gdk/gdkwayland.h>
+#endif /* HAVE_WAYLAND */
+
 #include "mate-settings-manager.h"
 #include "mate-settings-profile.h"
 
@@ -437,6 +441,12 @@ main (int argc, char *argv[])
                 exit (EXIT_FAILURE);
         }
         mate_settings_profile_end ("opening gtk display");
+
+#ifdef HAVE_WAYLAND
+        if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ())) {
+                g_debug ("Running in a Wayland session; only the xsettings plugin (for XWayland) will be active");
+        }
+#endif /* HAVE_WAYLAND */
 
         g_log_set_default_handler (msd_log_default_handler, NULL);
 

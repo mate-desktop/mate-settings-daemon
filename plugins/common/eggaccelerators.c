@@ -23,7 +23,9 @@
 
 #include <stdlib.h>
 #include <string.h>
+#ifdef GDK_WINDOWING_X11
 #include <gdk/gdkx.h>
+#endif /* GDK_WINDOWING_X11 */
 #include <gdk/gdkkeysyms.h>
 #include <gtk/gtk.h>
 
@@ -566,6 +568,7 @@ static void
 reload_modmap (GdkKeymap *keymap,
                EggModmap *modmap)
 {
+#ifdef GDK_WINDOWING_X11
   XModifierKeymap *xmodmap;
   int map_size;
   int i;
@@ -629,6 +632,11 @@ reload_modmap (GdkKeymap *keymap,
       g_free (keys);
     }
 
+  XFreeModifiermap (xmodmap);
+#else
+  memset (modmap->mapping, 0, sizeof (modmap->mapping));
+#endif /* GDK_WINDOWING_X11 */
+
   /* Add in the not-really-virtual fixed entries */
   modmap->mapping[EGG_MODMAP_ENTRY_SHIFT] |= EGG_VIRTUAL_SHIFT_MASK;
   modmap->mapping[EGG_MODMAP_ENTRY_CONTROL] |= EGG_VIRTUAL_CONTROL_MASK;
@@ -638,8 +646,6 @@ reload_modmap (GdkKeymap *keymap,
   modmap->mapping[EGG_MODMAP_ENTRY_MOD3] |= EGG_VIRTUAL_MOD3_MASK;
   modmap->mapping[EGG_MODMAP_ENTRY_MOD4] |= EGG_VIRTUAL_MOD4_MASK;
   modmap->mapping[EGG_MODMAP_ENTRY_MOD5] |= EGG_VIRTUAL_MOD5_MASK;
-
-  XFreeModifiermap (xmodmap);
 }
 
 const EggModmap*

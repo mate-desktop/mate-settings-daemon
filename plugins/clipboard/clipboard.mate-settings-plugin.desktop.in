@@ -1,6 +1,7 @@
 [MATE Settings Plugin]
 Module=clipboard
 IAge=0
+X11Only=true
 Name=Clipboard
 Description=Clipboard plugin
 Authors=Matthias Clasen

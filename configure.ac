@@ -82,6 +82,37 @@ case $host_os in
 esac
 AC_SUBST([MSD_PLUGIN_LDFLAGS])
 
+dnl ---------------------------------------------------------------------------
+dnl - Wayland
+dnl ---------------------------------------------------------------------------
+
+AC_ARG_ENABLE(wayland,
+	AS_HELP_STRING([--enable-wayland], [Enable Wayland support (default: auto)]),
+	[case "${enableval}" in
+	 yes|no|auto) enable_wayland=${enableval} ;;
+	 *) AC_MSG_ERROR(bad value ${enableval} for --enable-wayland) ;;
+	esac],
+	enable_wayland=auto)
+
+have_wayland=no
+if test "x${enable_wayland}" != "xno"; then
+	save_CPPFLAGS="$CPPFLAGS"
+	CPPFLAGS="$CPPFLAGS $SETTINGS_DAEMON_CFLAGS"
+	AC_CHECK_HEADER([gdk/gdkwayland.h],
+		[have_wayland=yes],
+		[have_wayland=no])
+	CPPFLAGS="$save_CPPFLAGS"
+
+	if test "x${have_wayland}" = "xyes"; then
+		AC_DEFINE(HAVE_WAYLAND, 1, [Define if Wayland support is enabled])
+	fi
+
+	if test "x${have_wayland}" = "xno" -a "x${enable_wayland}" = "xyes"; then
+		AC_MSG_ERROR([Wayland support requested but the GTK+ library does not have the Wayland backend])
+	fi
+fi
+AM_CONDITIONAL(BUILD_WAYLAND, test "x${have_wayland}" = "xyes")
+
 PKG_CHECK_MODULES(DCONF, dconf >= 0.13.4)
 
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
@@ -498,6 +529,7 @@ Configure summary:
     Libmatemixer support ....: ${have_libmatemixer}
     Smartcard support .......: ${have_smartcard_support}
     RFKill support ..........: ${enable_rfkill}
+    Wayland support .........: ${have_wayland}
 ${NSS_DATABASE:+\
     System nssdb ............: ${NSS_DATABASE}
 }\
