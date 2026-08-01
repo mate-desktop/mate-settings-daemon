@@ -41,6 +41,9 @@
 #ifdef GDK_WINDOWING_X11
 #include <gdk/gdkx.h>
 #endif /* GDK_WINDOWING_X11 */
+#ifdef GDK_WINDOWING_WAYLAND
+#include <gdk/gdkwayland.h>
+#endif /* GDK_WINDOWING_WAYLAND */
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
 
@@ -49,6 +52,9 @@
 
 #include "mate-settings-profile.h"
 #include "msd-clipboard-manager.h"
+#ifdef HAVE_WAYLAND
+#include "msd-clipboard-manager-wayland.h"
+#endif /* HAVE_WAYLAND */
 
 struct MsdClipboardManagerPrivate
 {
@@ -62,6 +68,10 @@ struct MsdClipboardManagerPrivate
         Window   requestor;
         Atom     property;
         Time     time;
+
+#ifdef HAVE_WAYLAND
+        MsdClipboardManagerWayland *wayland;
+#endif /* HAVE_WAYLAND */
 };
 
 typedef struct
@@ -939,24 +949,34 @@ gboolean
         mate_settings_profile_start (NULL);
 
 #ifdef GDK_WINDOWING_X11
-        if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
-                g_set_error (error, G_IO_ERROR, G_IO_ERROR_FAILED,
-                             "X11 display is required for the clipboard plugin");
+        if (GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
+                g_idle_add ((GSourceFunc) start_clipboard_idle_cb, manager);
+
                 mate_settings_profile_end (NULL);
-                return FALSE;
+
+                return TRUE;
         }
-#else
-        g_set_error (error, G_IO_ERROR, G_IO_ERROR_FAILED,
-                     "The clipboard plugin was built without X11 support");
-        mate_settings_profile_end (NULL);
-        return FALSE;
 #endif /* GDK_WINDOWING_X11 */
 
-        g_idle_add ((GSourceFunc) start_clipboard_idle_cb, manager);
+#if defined (HAVE_WAYLAND) && defined (GDK_WINDOWING_WAYLAND)
+        if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ())) {
+                manager->priv->wayland = msd_clipboard_manager_wayland_new (error);
+                if (manager->priv->wayland == NULL) {
+                        mate_settings_profile_end (NULL);
+                        return FALSE;
+                }
 
+                mate_settings_profile_end (NULL);
+
+                return TRUE;
+        }
+#endif /* HAVE_WAYLAND && GDK_WINDOWING_WAYLAND */
+
+        g_set_error (error, G_IO_ERROR, G_IO_ERROR_FAILED,
+                     "The clipboard plugin requires an X11 or a Wayland display with the ext-data-control protocol");
         mate_settings_profile_end (NULL);
 
-        return TRUE;
+        return FALSE;
 }
 
 void
@@ -965,22 +985,31 @@ msd_clipboard_manager_stop (MsdClipboardManager *manager)
         g_debug ("Stopping clipboard manager");
 
 #ifdef GDK_WINDOWING_X11
-        if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+        if (GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
+                clipboard_manager_watch_cb (manager,
+                                            manager->priv->window,
+                                            FALSE,
+                                            0,
+                                            NULL);
+                XDestroyWindow (manager->priv->display, manager->priv->window);
+
+                list_foreach (manager->priv->conversions, (Callback) conversion_free, NULL);
+                list_free (manager->priv->conversions);
+
+                list_foreach (manager->priv->contents, (Callback) target_data_unref, NULL);
+                list_free (manager->priv->contents);
+
                 return;
+        }
 #endif /* GDK_WINDOWING_X11 */
 
-        clipboard_manager_watch_cb (manager,
-                                    manager->priv->window,
-                                    FALSE,
-                                    0,
-                                    NULL);
-        XDestroyWindow (manager->priv->display, manager->priv->window);
-
-        list_foreach (manager->priv->conversions, (Callback) conversion_free, NULL);
-        list_free (manager->priv->conversions);
-
-        list_foreach (manager->priv->contents, (Callback) target_data_unref, NULL);
-        list_free (manager->priv->contents);
+#if defined (HAVE_WAYLAND) && defined (GDK_WINDOWING_WAYLAND)
+        if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ())) {
+                msd_clipboard_manager_wayland_destroy (manager->priv->wayland);
+                manager->priv->wayland = NULL;
+                return;
+        }
+#endif /* HAVE_WAYLAND && GDK_WINDOWING_WAYLAND */
 }
 
 static void
@@ -995,6 +1024,10 @@ static void
 msd_clipboard_manager_init (MsdClipboardManager *manager)
 {
         manager->priv = msd_clipboard_manager_get_instance_private (manager);
+
+#ifdef HAVE_WAYLAND
+        manager->priv->wayland = NULL;
+#endif /* HAVE_WAYLAND */
 
 #ifdef GDK_WINDOWING_X11
         if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
@@ -1017,6 +1050,13 @@ msd_clipboard_manager_finalize (GObject *object)
         clipboard_manager = MSD_CLIPBOARD_MANAGER (object);
 
         g_return_if_fail (clipboard_manager->priv != NULL);
+
+#if defined (HAVE_WAYLAND) && defined (GDK_WINDOWING_WAYLAND)
+        if (clipboard_manager->priv->wayland != NULL) {
+                msd_clipboard_manager_wayland_destroy (clipboard_manager->priv->wayland);
+                clipboard_manager->priv->wayland = NULL;
+        }
+#endif /* HAVE_WAYLAND && GDK_WINDOWING_WAYLAND */
 
         G_OBJECT_CLASS (msd_clipboard_manager_parent_class)->finalize (object);
 }
