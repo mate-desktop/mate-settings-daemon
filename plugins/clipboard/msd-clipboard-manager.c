@@ -36,8 +36,11 @@
 
 #include <glib.h>
 #include <glib/gi18n.h>
+#include <gio/gio.h>
 #include <gdk/gdk.h>
+#ifdef GDK_WINDOWING_X11
 #include <gdk/gdkx.h>
+#endif /* GDK_WINDOWING_X11 */
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
 
@@ -930,10 +933,24 @@ start_clipboard_idle_cb (MsdClipboardManager *manager)
 }
 
 gboolean
-msd_clipboard_manager_start (MsdClipboardManager *manager,
+ msd_clipboard_manager_start (MsdClipboardManager *manager,
                              GError             **error)
 {
         mate_settings_profile_start (NULL);
+
+#ifdef GDK_WINDOWING_X11
+        if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
+                g_set_error (error, G_IO_ERROR, G_IO_ERROR_FAILED,
+                             "X11 display is required for the clipboard plugin");
+                mate_settings_profile_end (NULL);
+                return FALSE;
+        }
+#else
+        g_set_error (error, G_IO_ERROR, G_IO_ERROR_FAILED,
+                     "The clipboard plugin was built without X11 support");
+        mate_settings_profile_end (NULL);
+        return FALSE;
+#endif /* GDK_WINDOWING_X11 */
 
         g_idle_add ((GSourceFunc) start_clipboard_idle_cb, manager);
 
@@ -946,6 +963,11 @@ void
 msd_clipboard_manager_stop (MsdClipboardManager *manager)
 {
         g_debug ("Stopping clipboard manager");
+
+#ifdef GDK_WINDOWING_X11
+        if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+                return;
+#endif /* GDK_WINDOWING_X11 */
 
         clipboard_manager_watch_cb (manager,
                                     manager->priv->window,
@@ -974,8 +996,14 @@ msd_clipboard_manager_init (MsdClipboardManager *manager)
 {
         manager->priv = msd_clipboard_manager_get_instance_private (manager);
 
-        manager->priv->display = GDK_DISPLAY_XDISPLAY (gdk_display_get_default ());
-
+#ifdef GDK_WINDOWING_X11
+        if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+                manager->priv->display = GDK_DISPLAY_XDISPLAY (gdk_display_get_default ());
+        else
+                manager->priv->display = NULL;
+#else
+        manager->priv->display = NULL;
+#endif /* GDK_WINDOWING_X11 */
 }
 
 static void

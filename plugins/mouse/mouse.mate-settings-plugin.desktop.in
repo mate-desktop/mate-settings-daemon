@@ -1,6 +1,7 @@
 [MATE Settings Plugin]
 Module=mouse
 IAge=0
+X11Only=true
 Name=Mouse
 Description=Mouse plugin
 Authors=

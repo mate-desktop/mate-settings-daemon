@@ -34,7 +34,9 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <gdk/gdk.h>
+#ifdef GDK_WINDOWING_X11
 #include <gdk/gdkx.h>
+#endif /* GDK_WINDOWING_X11 */
 #include <gtk/gtk.h>
 #include <X11/keysym.h>
 #include <gio/gio.h>
@@ -519,6 +521,7 @@ gboolean
 msd_keybindings_manager_start (MsdKeybindingsManager *manager,
                                GError               **error)
 {
+#ifdef GDK_WINDOWING_X11
         GdkDisplay  *dpy;
         GdkScreen   *screen;
         GdkWindow   *window;
@@ -530,6 +533,15 @@ msd_keybindings_manager_start (MsdKeybindingsManager *manager,
         mate_settings_profile_start (NULL);
 
         dpy = gdk_display_get_default ();
+
+        if (!GDK_IS_X11_DISPLAY (dpy)) {
+                g_set_error (error,
+                             G_IO_ERROR,
+                             G_IO_ERROR_FAILED,
+                             "Keybindings are only supported on X11");
+                return FALSE;
+        }
+
         xdpy = GDK_DISPLAY_XDISPLAY (dpy);
 
         screen = gdk_display_get_default_screen (dpy);
@@ -559,6 +571,13 @@ msd_keybindings_manager_start (MsdKeybindingsManager *manager,
         mate_settings_profile_end (NULL);
 
         return TRUE;
+#else /* !GDK_WINDOWING_X11 */
+        g_set_error (error,
+                     G_IO_ERROR,
+                     G_IO_ERROR_FAILED,
+                     "Keybindings are only supported on X11");
+        return FALSE;
+#endif /* GDK_WINDOWING_X11 */
 }
 
 void
@@ -568,6 +587,11 @@ msd_keybindings_manager_stop (MsdKeybindingsManager *manager)
         GSList *l;
 
         g_debug ("Stopping keybindings manager");
+
+#ifdef GDK_WINDOWING_X11
+        if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+                return;
+#endif /* GDK_WINDOWING_X11 */
 
         if (p->client != NULL) {
                 g_object_unref (p->client);

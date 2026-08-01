@@ -36,7 +36,9 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <gdk/gdk.h>
+#ifdef GDK_WINDOWING_X11
 #include <gdk/gdkx.h>
+#endif /* GDK_WINDOWING_X11 */
 #include <gtk/gtk.h>
 #include <gio/gio.h>
 
@@ -108,6 +110,7 @@ struct _TranslationEntry {
 struct MateXSettingsManagerPrivate
 {
         XSettingsManager **managers;
+        Display          *xdisplay;
         GHashTable *gsettings;
         GSettings *gsettings_font;
         GSettings *plugin_settings;
@@ -249,6 +252,10 @@ get_window_scale_auto (void)
         display = gdk_display_get_default ();
         monitor = gdk_display_get_primary_monitor (display);
 
+        /* If no monitor is available, use the current value as the default */
+        if (monitor == NULL)
+                return 1;
+
         /* Use current value as the default */
         window_scale = 1;
 
@@ -322,10 +329,10 @@ get_dpi_from_x_server (void)
         if (screen != NULL) {
                 double width_dpi, height_dpi;
 
-                Screen *xscreen = gdk_x11_screen_get_xscreen (screen);
-
-                width_dpi = dpi_from_pixels_and_mm (WidthOfScreen (xscreen), WidthMMOfScreen (xscreen));
-                height_dpi = dpi_from_pixels_and_mm (HeightOfScreen (xscreen), HeightMMOfScreen (xscreen));
+                width_dpi = dpi_from_pixels_and_mm (gdk_screen_get_width (screen),
+                                                    gdk_screen_get_width_mm (screen));
+                height_dpi = dpi_from_pixels_and_mm (gdk_screen_get_height (screen),
+                                                     gdk_screen_get_height_mm (screen));
 
                 if (width_dpi < DPI_LOW_REASONABLE_VALUE || width_dpi > DPI_HIGH_REASONABLE_VALUE
                     || height_dpi < DPI_LOW_REASONABLE_VALUE || height_dpi > DPI_HIGH_REASONABLE_VALUE) {
@@ -628,7 +635,11 @@ xft_settings_set_xresources (MateXftSettings *settings)
 
         /* get existing properties */
         dpy = XOpenDisplay (NULL);
-        g_return_if_fail (dpy != NULL);
+        if (dpy == NULL) {
+                g_warning ("Unable to open X display for X resources");
+                mate_settings_profile_end (NULL);
+                return;
+        }
         add_string = g_string_new (XResourceManagerString (dpy));
 
         g_debug("xft_settings_set_xresources: orig res '%s'", add_string->str);
@@ -871,29 +882,30 @@ terminate_cb (void *data)
 static gboolean
 setup_xsettings_managers (MateXSettingsManager *manager)
 {
-        GdkDisplay *display;
-        gboolean    res;
-        gboolean    terminated;
+        Display *xdisplay;
+        gboolean res;
+        gboolean terminated;
 
-        display = gdk_display_get_default ();
-
-        res = xsettings_manager_check_running (gdk_x11_display_get_xdisplay (display),
-                                               gdk_x11_screen_get_screen_number (gdk_screen_get_default ()));
-        if (res) {
-                g_warning ("You can only run one xsettings manager at a time; exiting");
+        xdisplay = XOpenDisplay (NULL);
+        if (xdisplay == NULL) {
+                g_warning ("Unable to open X display; xsettings manager disabled");
                 return FALSE;
         }
 
+        res = xsettings_manager_check_running (xdisplay, DefaultScreen (xdisplay));
+        if (res) {
+                g_warning ("You can only run one xsettings manager at a time; exiting");
+                XCloseDisplay (xdisplay);
+                return FALSE;
+        }
+
+        manager->priv->xdisplay = xdisplay;
         manager->priv->managers = g_new0 (XSettingsManager *, 2);
 
         terminated = FALSE;
 
-        GdkScreen *screen;
-
-        screen = gdk_display_get_default_screen (display);
-
-        manager->priv->managers [0] = xsettings_manager_new (gdk_x11_display_get_xdisplay (display),
-                                                             gdk_x11_screen_get_screen_number (screen),
+        manager->priv->managers [0] = xsettings_manager_new (xdisplay,
+                                                             DefaultScreen (xdisplay),
                                                              terminate_cb,
                                                              &terminated);
         if (! manager->priv->managers [0]) {
@@ -1009,6 +1021,11 @@ mate_xsettings_manager_stop (MateXSettingsManager *manager)
 
                 g_free (p->managers);
                 p->managers = NULL;
+        }
+
+        if (p->xdisplay != NULL) {
+                XCloseDisplay (p->xdisplay);
+                p->xdisplay = NULL;
         }
 
         if (p->gsettings != NULL) {

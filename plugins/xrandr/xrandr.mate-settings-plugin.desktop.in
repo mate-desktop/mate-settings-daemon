@@ -1,6 +1,7 @@
 [MATE Settings Plugin]
 Module=xrandr
 IAge=0
+X11Only=true
 Name=XRandR
 Description=Set up screen size and rotation settings
 Authors=Various

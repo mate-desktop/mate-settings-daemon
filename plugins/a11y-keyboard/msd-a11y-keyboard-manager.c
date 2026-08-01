@@ -35,7 +35,9 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <gdk/gdk.h>
+#ifdef GDK_WINDOWING_X11
 #include <gdk/gdkx.h>
+#endif /* GDK_WINDOWING_X11 */
 #include <gtk/gtk.h>
 #include <gio/gio.h>
 
@@ -1149,6 +1151,20 @@ msd_a11y_keyboard_manager_start (MsdA11yKeyboardManager *manager,
 {
         mate_settings_profile_start (NULL);
 
+#ifdef GDK_WINDOWING_X11
+        if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
+                g_set_error (error, G_IO_ERROR, G_IO_ERROR_FAILED,
+                             "X11 display is required for the a11y_keyboard plugin");
+                mate_settings_profile_end (NULL);
+                return FALSE;
+        }
+#else
+        g_set_error (error, G_IO_ERROR, G_IO_ERROR_FAILED,
+                     "The a11y_keyboard plugin was built without X11 support");
+        mate_settings_profile_end (NULL);
+        return FALSE;
+#endif /* GDK_WINDOWING_X11 */
+
         /* give our initialization a lower priority over msd-keyoboard so it
          * restores the numlock state before we might start monitoring it */
         g_idle_add_full (G_PRIORITY_LOW,
@@ -1194,6 +1210,11 @@ msd_a11y_keyboard_manager_stop (MsdA11yKeyboardManager *manager)
         MsdA11yKeyboardManagerPrivate *p = manager->priv;
 
         g_debug ("Stopping a11y_keyboard manager");
+
+#ifdef GDK_WINDOWING_X11
+        if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+                return;
+#endif /* GDK_WINDOWING_X11 */
 
         gdk_window_remove_filter (NULL, devicepresence_filter, manager);
 

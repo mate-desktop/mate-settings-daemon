@@ -22,7 +22,9 @@
 #include "config.h"
 
 #include <gdk/gdk.h>
+#ifdef GDK_WINDOWING_X11
 #include <gdk/gdkx.h>
+#endif /* GDK_WINDOWING_X11 */
 
 #include <sys/types.h>
 #include <X11/Xatom.h>
@@ -32,13 +34,20 @@
 gboolean
 supports_xinput_devices (void)
 {
+#ifdef GDK_WINDOWING_X11
         gint op_code, event, error;
+
+        if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+                return FALSE;
 
         return XQueryExtension (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
                                 "XInputExtension",
                                 &op_code,
                                 &event,
                                 &error);
+#else
+        return FALSE;
+#endif /* GDK_WINDOWING_X11 */
 }
 
 static gboolean
@@ -78,6 +87,9 @@ device_is_touchpad (XDeviceInfo *deviceinfo)
 
         display = gdk_display_get_default ();
 
+        if (!GDK_IS_X11_DISPLAY (display))
+                return NULL;
+
         if (deviceinfo->type != XInternAtom (GDK_DISPLAY_XDISPLAY (display), XI_TOUCHPAD, True))
                 return NULL;
 
@@ -102,6 +114,9 @@ touchpad_is_present (void)
         gint n_devices;
         guint i;
         gboolean retval;
+
+        if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+                return FALSE;
 
         if (supports_xinput_devices () == FALSE)
                 return TRUE;

@@ -1,6 +1,7 @@
 [MATE Settings Plugin]
 Module=keybindings
 IAge=0
+X11Only=true
 Name=Keybindings
 Description=Keybindings plugin
 Authors=AUTHOR

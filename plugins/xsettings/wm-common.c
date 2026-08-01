@@ -1,10 +1,12 @@
- #include <X11/Xatom.h>
-#include <gdk/gdkx.h>
-#include <gdk/gdk.h>
 #include <string.h>
 #include <glib.h>
 #include <glib-object.h>
 #include "wm-common.h"
+
+#ifdef GDK_WINDOWING_X11
+#include <X11/Xatom.h>
+#include <gdk/gdkx.h>
+#include <gdk/gdk.h>
 
 /* Our WM Window */
 static Window wm_window = None;
@@ -112,3 +114,18 @@ wm_common_update_window ()
 {
   update_wm_window();
 }
+
+#else /* !GDK_WINDOWING_X11 */
+
+gchar*
+wm_common_get_current_window_manager (void)
+{
+  return g_strdup (WM_COMMON_UNKNOWN);
+}
+
+void
+wm_common_update_window ()
+{
+}
+
+#endif /* GDK_WINDOWING_X11 */
