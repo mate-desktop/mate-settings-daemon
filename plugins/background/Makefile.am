@@ -1,5 +1,14 @@
 NULL =
 
+if BUILD_WAYLAND
+WAYLAND_BACKGROUND_SOURCES = \
+	msd-background-manager-wayland.c	\
+	msd-background-manager-wayland.h	\
+	$(NULL)
+else
+WAYLAND_BACKGROUND_SOURCES =
+endif
+
 noinst_PROGRAMS = 			\
 	test-background			\
 	$(NULL)
@@ -8,6 +17,7 @@ test_background_SOURCES = 		\
 	test-background.c		\
 	msd-background-manager.h	\
 	msd-background-manager.c	\
+	$(WAYLAND_BACKGROUND_SOURCES)	\
 	$(NULL)
 
 test_background_CPPFLAGS = \
@@ -18,6 +28,8 @@ test_background_CPPFLAGS = \
 test_background_CFLAGS =		\
 	$(SETTINGS_PLUGIN_CFLAGS)	\
 	$(MATE_DESKTOP_CFLAGS)		\
+	$(GTK_LAYER_SHELL_CFLAGS)	\
+	$(WAYLAND_CLIENT_CFLAGS)	\
 	$(AM_CFLAGS)			\
 	$(WARN_CFLAGS)
 
@@ -26,6 +38,8 @@ test_background_LDADD =		\
 	$(SETTINGS_PLUGIN_LIBS)	\
 	$(MATE_DESKTOP_LIBS)		\
 	$(X11_LIBS) \
+	$(GTK_LAYER_SHELL_LIBS) \
+	$(WAYLAND_CLIENT_LIBS) \
 	$(NULL)
 
 plugin_LTLIBRARIES = \
@@ -37,17 +51,22 @@ libbackground_la_SOURCES = 		\
 	msd-background-plugin.c		\
 	msd-background-manager.h	\
 	msd-background-manager.c	\
+	$(WAYLAND_BACKGROUND_SOURCES)	\
 	$(NULL)
 
 libbackground_la_CPPFLAGS = \
 	-I$(top_srcdir)/mate-settings-daemon		\
 	-I$(top_srcdir)/plugins/background/libbackground   \
 	-DMATE_SETTINGS_LOCALEDIR=\""$(datadir)/locale"\" \
+	$(GTK_LAYER_SHELL_CFLAGS) \
+	$(WAYLAND_CLIENT_CFLAGS) \
 	$(AM_CPPFLAGS)
 
 libbackground_la_CFLAGS =		\
 	$(SETTINGS_PLUGIN_CFLAGS)	\
 	$(MATE_DESKTOP_CFLAGS)		\
+	$(GTK_LAYER_SHELL_CFLAGS)	\
+	$(WAYLAND_CLIENT_CFLAGS)	\
 	$(AM_CFLAGS)			\
 	$(WARN_CFLAGS)
 
@@ -59,6 +78,8 @@ libbackground_la_LIBADD  = 		\
 	$(SETTINGS_PLUGIN_LIBS)		\
 	$(MATE_DESKTOP_LIBS)		\
 	$(X11_LIBS)			\
+	$(GTK_LAYER_SHELL_LIBS)		\
+	$(WAYLAND_CLIENT_LIBS)		\
 	$(NULL)
 
 plugin_in_files = 		\

@@ -120,11 +120,17 @@ if test "x${enable_wayland}" != "xno"; then
 	fi
 
 	if test "x${have_wayland}" = "xyes"; then
+		PKG_CHECK_MODULES(GTK_LAYER_SHELL, gtk-layer-shell-0 >= 0.6,
+			[have_wayland=yes],
+			[have_wayland=no])
+	fi
+
+	if test "x${have_wayland}" = "xyes"; then
 		AC_DEFINE(HAVE_WAYLAND, 1, [Define if Wayland support is enabled])
 	fi
 
 	if test "x${have_wayland}" = "xno" -a "x${enable_wayland}" = "xyes"; then
-		AC_MSG_ERROR([Wayland support requested but the required Wayland libraries (GTK+ Wayland backend, wayland-client or wayland-protocols) are missing])
+		AC_MSG_ERROR([Wayland support requested but the required Wayland libraries (GTK+ Wayland backend, wayland-client, wayland-protocols or gtk-layer-shell) are missing])
 	fi
 fi
 AM_CONDITIONAL(BUILD_WAYLAND, test "x${have_wayland}" = "xyes")
