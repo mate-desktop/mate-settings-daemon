@@ -1,7 +1,6 @@
 [MATE Settings Plugin]
 Module=background
 IAge=0
-X11Only=true
 Name=Background
 Description=Background plugin
 Authors=

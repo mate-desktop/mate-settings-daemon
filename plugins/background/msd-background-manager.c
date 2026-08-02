@@ -40,6 +40,9 @@
 #ifdef GDK_WINDOWING_X11
 #include <gdk/gdkx.h>
 #endif /* GDK_WINDOWING_X11 */
+#ifdef HAVE_WAYLAND
+#include <gdk/gdkwayland.h>
+#endif /* HAVE_WAYLAND */
 #include <gio/gio.h>
 
 #define MATE_DESKTOP_USE_UNSTABLE_API
@@ -49,6 +52,10 @@
 #include "mate-settings-profile.h"
 #include "msd-background-manager.h"
 
+#ifdef HAVE_WAYLAND
+#include "msd-background-manager-wayland.h"
+#endif /* HAVE_WAYLAND */
+
 struct _MsdBackgroundManager {
 	GObject          parent;
 
@@ -57,6 +64,10 @@ struct _MsdBackgroundManager {
 	cairo_surface_t *surface;
 
 	gboolean         draw_in_progress;
+
+#ifdef HAVE_WAYLAND
+	MsdBackgroundManagerWayland *wayland;
+#endif /* HAVE_WAYLAND */
 };
 
 G_DEFINE_TYPE (MsdBackgroundManager, msd_background_manager, G_TYPE_OBJECT)
@@ -243,6 +254,19 @@ msd_background_manager_start (MsdBackgroundManager  *manager,
 	g_debug ("Starting background manager");
 	mate_settings_profile_start (NULL);
 
+#ifdef HAVE_WAYLAND
+	if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ())) {
+		manager->wayland = msd_background_manager_wayland_new (error);
+		if (manager->wayland == NULL) {
+			mate_settings_profile_end (NULL);
+			return FALSE;
+		}
+
+		mate_settings_profile_end (NULL);
+		return TRUE;
+	}
+#endif /* HAVE_WAYLAND */
+
 #ifdef GDK_WINDOWING_X11
 	if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
 		g_set_error (error, G_IO_ERROR, G_IO_ERROR_FAILED,
@@ -280,6 +304,14 @@ void
 msd_background_manager_stop (MsdBackgroundManager *manager)
 {
 	g_debug ("Stopping background manager");
+
+#ifdef HAVE_WAYLAND
+	if (manager->wayland != NULL) {
+		msd_background_manager_wayland_destroy (manager->wayland);
+		manager->wayland = NULL;
+		return;
+	}
+#endif /* HAVE_WAYLAND */
 
 #ifdef GDK_WINDOWING_X11
 	if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
