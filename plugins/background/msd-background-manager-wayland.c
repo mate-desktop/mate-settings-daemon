@@ -46,17 +46,18 @@ struct _MsdBackgroundManagerWayland
 
 typedef struct
 {
-	GtkWidget       *window;
-	GdkMonitor      *monitor;
-	cairo_surface_t *surface;
-	cairo_surface_t *fading_surface;
-	cairo_surface_t *end_surface;
-	guint            fade_timeout_id;
-	gdouble          fade_start_time;
-	gdouble          fade_total_duration;
-	gboolean         fade_is_first_frame;
-	int              width;
-	int              height;
+	GtkWidget                 *window;
+	GdkMonitor                *monitor;
+	MsdBackgroundManagerWayland *manager;
+	cairo_surface_t           *surface;
+	cairo_surface_t           *fading_surface;
+	cairo_surface_t           *end_surface;
+	guint                      fade_timeout_id;
+	gdouble                    fade_start_time;
+	gdouble                    fade_total_duration;
+	gboolean                   fade_is_first_frame;
+	int                        width;
+	int                        height;
 } MonitorWindow;
 
 static void
@@ -194,6 +195,26 @@ on_fade_tick (MonitorWindow *mw)
 }
 
 static void
+set_surface_instantly (MonitorWindow *mw, cairo_surface_t *new_surface)
+{
+	if (mw->fade_timeout_id != 0) {
+		if (mw->fading_surface != NULL) {
+			cairo_surface_destroy (mw->fading_surface);
+			mw->fading_surface = NULL;
+		}
+		if (mw->end_surface != NULL) {
+			cairo_surface_destroy (mw->end_surface);
+			mw->end_surface = NULL;
+		}
+		g_source_remove (mw->fade_timeout_id);
+		mw->fade_timeout_id = 0;
+	}
+	free_monitor_window_surface (mw);
+	mw->surface = new_surface;
+	gtk_widget_queue_draw (mw->window);
+}
+
+static void
 start_or_continue_fade (MsdBackgroundManagerWayland *manager,
 			MonitorWindow               *mw,
 			cairo_surface_t             *new_surface)
@@ -208,24 +229,10 @@ start_or_continue_fade (MsdBackgroundManagerWayland *manager,
 	animations_enabled = !animations_are_disabled (mw);
 
 	if (!fade_enabled || !animations_enabled || mw->surface == NULL) {
-		/* No fade: cancel any in-flight one and swap instantly.
-		 * This also covers the first render after startup.
+		/* No fade: swap instantly. This also covers the first render
+		 * after startup.
 		 */
-		if (mw->fade_timeout_id != 0) {
-			if (mw->fading_surface != NULL) {
-				cairo_surface_destroy (mw->fading_surface);
-				mw->fading_surface = NULL;
-			}
-			if (mw->end_surface != NULL) {
-				cairo_surface_destroy (mw->end_surface);
-				mw->end_surface = NULL;
-			}
-			g_source_remove (mw->fade_timeout_id);
-			mw->fade_timeout_id = 0;
-		}
-		free_monitor_window_surface (mw);
-		mw->surface = new_surface;
-		gtk_widget_queue_draw (mw->window);
+		set_surface_instantly (mw, new_surface);
 		return;
 	}
 
@@ -257,28 +264,31 @@ start_or_continue_fade (MsdBackgroundManagerWayland *manager,
 }
 
 static void
-render_surface_for_monitor (MsdBackgroundManagerWayland *manager,
-			    MonitorWindow               *mw)
+render_surface_at_size (MsdBackgroundManagerWayland *manager,
+			MonitorWindow               *mw,
+			int                          width,
+			int                          height,
+			gboolean                     animate)
 {
-	GdkRectangle    rect;
-	GdkPixbuf      *pixbuf;
+	GdkPixbuf       *pixbuf;
 	cairo_surface_t *new_surface;
-	cairo_t        *cr;
+	cairo_t         *cr;
 
-	gdk_monitor_get_geometry (mw->monitor, &rect);
+	if (width <= 0 || height <= 0)
+		return;
 
 	pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8,
-				 rect.width, rect.height);
+				 width, height);
 	if (pixbuf == NULL) {
 		g_warning ("msd-background-wayland: unable to create %dx%d pixbuf",
-			   rect.width, rect.height);
+			   width, height);
 		return;
 	}
 
 	mate_bg_draw (manager->bg, pixbuf, NULL, FALSE);
 
 	new_surface = cairo_image_surface_create (CAIRO_FORMAT_ARGB32,
-						  rect.width, rect.height);
+						  width, height);
 	cr = cairo_create (new_surface);
 	gdk_cairo_set_source_pixbuf (cr, pixbuf, 0, 0);
 	cairo_paint (cr);
@@ -286,7 +296,49 @@ render_surface_for_monitor (MsdBackgroundManagerWayland *manager,
 
 	g_object_unref (pixbuf);
 
-	start_or_continue_fade (manager, mw, new_surface);
+	mw->width = width;
+	mw->height = height;
+
+	if (animate)
+		start_or_continue_fade (manager, mw, new_surface);
+	else
+		set_surface_instantly (mw, new_surface);
+}
+
+static void
+render_surface_for_monitor (MsdBackgroundManagerWayland *manager,
+			    MonitorWindow               *mw,
+			    gboolean                     animate)
+{
+	GdkRectangle rect;
+
+	gdk_monitor_get_geometry (mw->monitor, &rect);
+	render_surface_at_size (manager, mw, rect.width, rect.height, animate);
+}
+
+static void
+on_window_size_allocate (GtkWidget       *widget G_GNUC_UNUSED,
+			 GtkAllocation   *alloc,
+			 MonitorWindow   *mw)
+{
+	if (alloc->width <= 0 || alloc->height <= 0)
+		return;
+
+	if (mw->surface == NULL)
+		return;
+
+	/* The layer surface is anchored to the output edges, so when the
+	 * output resolution or scale changes the compositor resizes the
+	 * window. Re-render at the new size so the wallpaper adapts even
+	 * if no monitors-changed event arrives.
+	 */
+	if (alloc->width == mw->width && alloc->height == mw->height)
+		return;
+
+	g_debug ("msd-background-wayland: window resized to %dx%d, re-rendering",
+		 alloc->width, alloc->height);
+	render_surface_at_size (mw->manager, mw,
+				alloc->width, alloc->height, FALSE);
 }
 
 static gboolean
@@ -323,7 +375,7 @@ redraw_all (MsdBackgroundManagerWayland *manager)
 
 	for (i = 0; i < manager->monitor_windows->len; i++) {
 		MonitorWindow *mw = g_ptr_array_index (manager->monitor_windows, i);
-		render_surface_for_monitor (manager, mw);
+		render_surface_for_monitor (manager, mw, TRUE);
 		gtk_widget_queue_draw (mw->window);
 	}
 }
@@ -395,10 +447,12 @@ create_monitor_window (MsdBackgroundManagerWayland *manager G_GNUC_UNUSED,
 	mw = g_new0 (MonitorWindow, 1);
 	mw->window = window;
 	mw->monitor = monitor;
+	mw->manager = manager;
 	mw->width = rect.width;
 	mw->height = rect.height;
 
 	g_signal_connect (window, "draw", G_CALLBACK (on_window_draw), mw);
+	g_signal_connect (window, "size-allocate", G_CALLBACK (on_window_size_allocate), mw);
 	g_signal_connect (window, "destroy", G_CALLBACK (on_window_destroy), mw);
 
 	gtk_widget_show (window);
@@ -478,8 +532,32 @@ static void
 on_monitors_changed (GdkScreen                     *screen G_GNUC_UNUSED,
 		     MsdBackgroundManagerWayland *manager)
 {
-	rebuild_monitor_windows (manager);
-	redraw_all (manager);
+	guint n_monitors = gdk_display_get_n_monitors (manager->display);
+	guint i;
+
+	/* A monitor set change (added/removed) requires recreating the
+	 * layer windows. A pure geometry/scale change (e.g. the compositor
+	 * output is being resized) keeps the same window count, so just
+	 * re-render in place at the new size - destroying and recreating
+	 * windows mid-resize races with the compositor and leaves the
+	 * wallpaper missing.
+	 */
+	if (n_monitors != manager->monitor_windows->len) {
+		g_debug ("msd-background-wayland: monitors changed, rebuilding (%u monitors)",
+			 n_monitors);
+		rebuild_monitor_windows (manager);
+		redraw_all (manager);
+		return;
+	}
+
+	g_debug ("msd-background-wayland: monitors changed, re-rendering in place (%u monitors)",
+		 n_monitors);
+
+	for (i = 0; i < manager->monitor_windows->len; i++) {
+		MonitorWindow *mw = g_ptr_array_index (manager->monitor_windows, i);
+		render_surface_for_monitor (manager, mw, FALSE);
+		gtk_widget_queue_draw (mw->window);
+	}
 }
 
 static void
