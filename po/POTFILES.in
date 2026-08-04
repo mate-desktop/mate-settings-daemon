@@ -25,6 +25,7 @@ data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml.in
 data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in
 data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in
 data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in
+data/org.mate.SettingsDaemon.plugins.wlrandr.gschema.xml.in
 data/mate-settings-daemon.desktop.in.in
 mate-settings-daemon/main.c
 plugins/a11y-keyboard/a11y-keyboard.mate-settings-plugin.desktop.in
@@ -62,3 +63,5 @@ plugins/xrdb/msd-xrdb-manager.c
 plugins/xrdb/xrdb.mate-settings-plugin.desktop.in
 plugins/xsettings/msd-xsettings-manager.c
 plugins/xsettings/xsettings.mate-settings-plugin.desktop.in
+plugins/wlrandr/msd-wlrandr-manager.c
+plugins/wlrandr/wlrandr.mate-settings-plugin.desktop.in

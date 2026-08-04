@@ -25,6 +25,7 @@ msd_gschemas_in = \
 	org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in \
 	org.mate.SettingsDaemon.plugins.xrdb.gschema.xml.in \
 	org.mate.SettingsDaemon.plugins.xsettings.gschema.xml.in \
+	org.mate.SettingsDaemon.plugins.wlrandr.gschema.xml.in \
 	org.mate.SettingsDaemon.plugins.gschema.xml.in \
 	$(NULL)
 

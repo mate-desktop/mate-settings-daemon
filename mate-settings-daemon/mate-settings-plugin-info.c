@@ -31,6 +31,9 @@
 #ifdef GDK_WINDOWING_X11
 #include <gdk/gdkx.h>
 #endif /* GDK_WINDOWING_X11 */
+#ifdef GDK_WINDOWING_WAYLAND
+#include <gdk/gdkwayland.h>
+#endif /* GDK_WINDOWING_WAYLAND */
 
 #include "mate-settings-plugin-info.h"
 #include "mate-settings-module.h"
@@ -61,6 +64,7 @@ struct MateSettingsPluginInfoPrivate
         guint                    enabled : 1;
         guint                    active : 1;
         guint                    x11_only : 1;
+        guint                    wayland_only : 1;
 
         /* A plugin is unavailable if it is not possible to activate it
            due to an error loading the plugin module */
@@ -257,6 +261,10 @@ mate_settings_plugin_info_fill_from_file (MateSettingsPluginInfo *info,
         info->priv->x11_only =
                 g_key_file_get_boolean (plugin_file, PLUGIN_GROUP, "X11Only", NULL);
 
+        /* Get WaylandOnly */
+        info->priv->wayland_only =
+                g_key_file_get_boolean (plugin_file, PLUGIN_GROUP, "WaylandOnly", NULL);
+
         g_key_file_free (plugin_file);
 
         debug_info (info);
@@ -427,6 +435,19 @@ mate_settings_plugin_info_activate (MateSettingsPluginInfo *info)
                 }
         }
 
+        if (info->priv->wayland_only) {
+#ifdef GDK_WINDOWING_WAYLAND
+                gboolean wayland = GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ());
+#else
+                gboolean wayland = FALSE;
+#endif
+                if (!wayland) {
+                        g_debug ("Plugin '%s' requires Wayland; not loading on this display",
+                                 info->priv->name);
+                        return FALSE;
+                }
+        }
+
         if (_activate_plugin (info)) {
                 info->priv->active = TRUE;
                 return TRUE;
@@ -457,6 +478,14 @@ mate_settings_plugin_info_get_x11_only (MateSettingsPluginInfo *info)
         g_return_val_if_fail (MATE_IS_SETTINGS_PLUGIN_INFO (info), FALSE);
 
         return (info->priv->x11_only);
+}
+
+gboolean
+mate_settings_plugin_info_get_wayland_only (MateSettingsPluginInfo *info)
+{
+        g_return_val_if_fail (MATE_IS_SETTINGS_PLUGIN_INFO (info), FALSE);
+
+        return (info->priv->wayland_only);
 }
 
 gboolean
