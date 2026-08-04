@@ -1,0 +1,9 @@
+[MATE Settings Plugin]
+Module=wlrandr
+IAge=0
+WaylandOnly=true
+Name=WLrandr
+Description=Configure Wayland outputs
+Authors=Various
+Copyright=Copyright © 2026 MATE Developers
+Website=

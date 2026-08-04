@@ -126,11 +126,17 @@ if test "x${enable_wayland}" != "xno"; then
 	fi
 
 	if test "x${have_wayland}" = "xyes"; then
+		PKG_CHECK_MODULES(APPINDICATOR, ayatana-appindicator3-0.1,
+			[have_wayland=yes],
+			[have_wayland=no])
+	fi
+
+	if test "x${have_wayland}" = "xyes"; then
 		AC_DEFINE(HAVE_WAYLAND, 1, [Define if Wayland support is enabled])
 	fi
 
 	if test "x${have_wayland}" = "xno" -a "x${enable_wayland}" = "xyes"; then
-		AC_MSG_ERROR([Wayland support requested but the required Wayland libraries (GTK+ Wayland backend, wayland-client, wayland-protocols or gtk-layer-shell) are missing])
+		AC_MSG_ERROR([Wayland support requested but the required Wayland libraries (GTK+ Wayland backend, wayland-client, wayland-protocols, gtk-layer-shell or ayatana-appindicator) are missing])
 	fi
 fi
 AM_CONDITIONAL(BUILD_WAYLAND, test "x${have_wayland}" = "xyes")
@@ -482,6 +488,7 @@ plugins/xrandr/Makefile
 plugins/xrdb/Makefile
 plugins/xrdb/data/Makefile
 plugins/xsettings/Makefile
+plugins/wlrandr/Makefile
 data/Makefile
 data/mate-settings-daemon.desktop.in
 data/mate-settings-daemon.pc
@@ -510,6 +517,7 @@ data/org.mate.SettingsDaemon.plugins.typing-break.gschema.xml
 data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml
 data/org.mate.SettingsDaemon.plugins.xrdb.gschema.xml
 data/org.mate.SettingsDaemon.plugins.xsettings.gschema.xml
+data/org.mate.SettingsDaemon.plugins.wlrandr.gschema.xml
 data/org.mate.SettingsDaemon.plugins.gschema.xml
 po/Makefile.in
 ])

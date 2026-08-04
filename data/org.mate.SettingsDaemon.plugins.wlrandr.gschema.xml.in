@@ -1,0 +1,29 @@
+<schemalist>
+  <schema gettext-domain="mate-settings-daemon" id="org.mate.SettingsDaemon.plugins.wlrandr" path="/org/mate/settings-daemon/plugins/wlrandr/">
+    <key name="active" type="b">
+      <default>true</default>
+      <summary>Activation of this plugin</summary>
+      <description>Whether this plugin would be activated by mate-settings-daemon or not</description>
+    </key>
+    <key name="priority" type="i">
+      <default>1</default>
+      <summary>Priority to use for this plugin</summary>
+      <description>Priority to use for this plugin in mate-settings-daemon startup queue</description>
+    </key>
+    <key name="show-notification-icon" type="b">
+      <default>false</default>
+      <summary>Show Displays in Notification Area</summary>
+      <description>Whether a notification icon with display-related things should be shown in the panel.</description>
+    </key>
+    <key name="turn-on-external-monitors-at-startup" type="b">
+      <default>false</default>
+      <summary>Turn on external monitor after system boot</summary>
+      <description>Turn on external monitor after system boot if user plugs in external monitor on system boot.</description>
+    </key>
+    <key name="default-configuration-file" type="s">
+      <default>'/etc/monitors-wayland.xml'</default>
+      <summary>File for default configuration for Wayland outputs</summary>
+      <description>The wlrandr plugin will look for a default configuration in the file specified by this key.  This is similar to the ~/.config/monitors-wayland.xml that normally gets stored in users' home directories.  If a user does not have such a file, or has one that does not match the user's setup of monitors, then the file specified by this key will be used instead.</description>
+    </key>
+  </schema>
+</schemalist>

@@ -62,6 +62,7 @@ gboolean         mate_settings_plugin_info_is_active       (MateSettingsPluginIn
 gboolean         mate_settings_plugin_info_get_enabled     (MateSettingsPluginInfo *info);
 gboolean         mate_settings_plugin_info_is_available    (MateSettingsPluginInfo *info);
 gboolean         mate_settings_plugin_info_get_x11_only    (MateSettingsPluginInfo *info);
+gboolean         mate_settings_plugin_info_get_wayland_only (MateSettingsPluginInfo *info);
 
 const char      *mate_settings_plugin_info_get_name        (MateSettingsPluginInfo *info);
 const char      *mate_settings_plugin_info_get_description (MateSettingsPluginInfo *info);

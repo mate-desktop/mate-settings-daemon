@@ -34,6 +34,12 @@ else
 disabled_plugins += rfkill
 endif
 
+if BUILD_WAYLAND
+enabled_plugins += wlrandr
+else
+disabled_plugins += wlrandr
+endif
+
 SUBDIRS = common $(enabled_plugins)
 DIST_SUBDIRS = $(SUBDIRS) $(disabled_plugins)
 
