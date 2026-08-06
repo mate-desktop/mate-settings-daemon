@@ -188,6 +188,11 @@ xsettings_manager_new (Display                *display,
       manager->terminate (manager->cb_data);
     }
 
+  /* The display may not be watched by the main loop (e.g. when running on
+   * Wayland the XSettings manager uses its own connection to XWayland), so
+   * make sure the MANAGER message actually reaches the server. */
+  XFlush (manager->display);
+
   return manager;
 }
 
@@ -427,6 +432,11 @@ xsettings_manager_notify (XSettingsManager *manager)
 		   8, PropModeReplace, buffer.data, buffer.len);
 
   free (buffer.data);
+
+  /* See the note in xsettings_manager_new(): on Wayland nothing else
+   * flushes this connection, so without this clients never see the
+   * property and none of the settings are applied. */
+  XFlush (manager->display);
 
   return XSETTINGS_SUCCESS;
 }
