@@ -64,20 +64,37 @@
 #define MSD_DBUS_NAME  "org.mate.SettingsDaemon"
 
 #define MSD_WLRANDR_DBUS_NAME  MSD_DBUS_NAME ".WLRANDR"
+#define MSD_WLRANDR_DBUS_NAME_2  MSD_WLRANDR_DBUS_NAME "_2"
 #define MSD_WLRANDR_DBUS_PATH  MSD_DBUS_PATH "/WLRANDR"
 
 static const gchar introspection_xml[] =
 "<node>"
 "  <interface name='org.mate.SettingsDaemon.WLRANDR'>"
+"    <method name='GetConfiguration'>"
+"      <arg name='configuration' type='a(ssbiiidbb(iiii)a(iiii))' direction='out'/>"
+"    </method>"
+"    <method name='SetConfiguration'>"
+"      <arg name='configuration' type='a(sbiiiiidib)' direction='in'/>"
+"    </method>"
 "    <method name='ApplyConfiguration'>"
 "    </method>"
+"    <signal name='ConfigurationChanged'>"
+"    </signal>"
 "  </interface>"
 ""
 "  <interface name='org.mate.SettingsDaemon.WLRANDR_2'>"
+"    <method name='GetConfiguration'>"
+"      <arg name='configuration' type='a(ssbiiidbb(iiii)a(iiii))' direction='out'/>"
+"    </method>"
+"    <method name='SetConfiguration'>"
+"      <arg name='configuration' type='a(sbiiiiidib)' direction='in'/>"
+"    </method>"
 "    <method name='ApplyConfiguration'>"
 "      <arg name='parent_window_id' type='x' direction='in'/>"
 "      <arg name='timestamp' type='x' direction='in'/>"
 "    </method>"
+"    <signal name='ConfigurationChanged'>"
+"    </signal>"
 "  </interface>"
 "</node>";
 
@@ -159,6 +176,9 @@ struct MsdWlrandrManagerPrivate {
 
 static void
 rebuild_menu (MsdWlrandrManager *manager);
+
+static void
+emit_configuration_changed (MsdWlrandrManager *manager);
 
 static void
 save_current_configuration (MsdWlrandrManager *manager);
@@ -498,6 +518,7 @@ manager_done_handler (void *data, struct zwlr_output_manager_v1 *manager_obj, ui
         g_debug ("msd-wlrandr: output manager done, serial %u", serial);
 
         rebuild_menu (manager);
+        emit_configuration_changed (manager);
 
         if (!manager->priv->initial_config_applied) {
                 manager->priv->initial_config_applied = TRUE;
@@ -1683,6 +1704,291 @@ apply_initial_config (MsdWlrandrManager *manager)
  *  DBus interface                                                     *
  * ------------------------------------------------------------------ */
 
+#define HEAD_INFO_TYPE  "a(ssbiiidbb(iiii)a(iiii))"
+#define HEAD_SET_TYPE   "a(sbiiiiidib)"
+#define HEAD_INFO_FORMAT  "(ssbiiidbb(iiii)a(iiii))"
+#define HEAD_SET_FORMAT   "(sbiiiiidib)"
+#define MODE_FORMAT       "(iiii)"
+
+/* GVariant type strings cannot contain whitespace, so the compact forms
+ * above are required on the wire.  These enums document what each field
+ * means so the code below never has to be decoded from the string. */
+
+/* One head as reported by GetConfiguration:
+ * (name, description, enabled, x, y, transform, scale,
+ *  adaptive_sync_supported, adaptive_sync,
+ *  current_mode (width, height, refresh, preferred),
+ *  modes (width, height, refresh, preferred) ...) */
+typedef enum {
+        HEAD_INFO_FIELD_NAME,                   /* s      output name */
+        HEAD_INFO_FIELD_DESCRIPTION,            /* s      human-readable description */
+        HEAD_INFO_FIELD_ENABLED,                /* b      output enabled */
+        HEAD_INFO_FIELD_X,                      /* i      x position on the logical screen */
+        HEAD_INFO_FIELD_Y,                      /* i      y position on the logical screen */
+        HEAD_INFO_FIELD_TRANSFORM,              /* i      rotation (wl_output_transform) */
+        HEAD_INFO_FIELD_SCALE,                  /* d      fractional scale factor */
+        HEAD_INFO_FIELD_ADAPTIVE_SYNC_SUPPORTED, /* b     hardware supports adaptive sync */
+        HEAD_INFO_FIELD_ADAPTIVE_SYNC,          /* b      adaptive sync currently active */
+        HEAD_INFO_FIELD_CURRENT_MODE,           /* (iiii) the mode currently in use */
+        HEAD_INFO_FIELD_MODES,                  /* a(iiii) all modes the output supports */
+        HEAD_INFO_N_FIELDS
+} HeadInfoField;
+
+/* One entry of the modes array. */
+typedef enum {
+        MODE_FIELD_WIDTH,                       /* i      width in pixels */
+        MODE_FIELD_HEIGHT,                      /* i      height in pixels */
+        MODE_FIELD_REFRESH,                     /* i      refresh rate in mHz */
+        MODE_FIELD_PREFERRED,                   /* i      1 if this is the preferred mode */
+        MODE_N_FIELDS
+} ModeField;
+
+/* One head as sent to SetConfiguration:
+ * (name, enabled, width, height, refresh, x, y, scale, transform,
+ *  adaptive_sync) */
+typedef enum {
+        HEAD_SET_FIELD_NAME,                    /* s      output name */
+        HEAD_SET_FIELD_ENABLED,                 /* b      output enabled */
+        HEAD_SET_FIELD_WIDTH,                   /* i      desired width in pixels */
+        HEAD_SET_FIELD_HEIGHT,                  /* i      desired height in pixels */
+        HEAD_SET_FIELD_RATE,                    /* i      desired refresh rate in mHz */
+        HEAD_SET_FIELD_X,                       /* i      desired x position */
+        HEAD_SET_FIELD_Y,                       /* i      desired y position */
+        HEAD_SET_FIELD_SCALE,                   /* d      desired fractional scale */
+        HEAD_SET_FIELD_TRANSFORM,               /* i      desired rotation */
+        HEAD_SET_FIELD_ADAPTIVE_SYNC,           /* b      desired adaptive sync state */
+        HEAD_SET_N_FIELDS
+} HeadSetField;
+
+/* Notify interested parties (e.g. the display capplet) that the current
+ * output configuration may have changed.  The same object path is
+ * registered twice, once per interface, so the signal is emitted on both.
+ */
+static void
+emit_configuration_changed (MsdWlrandrManager *manager)
+{
+        GDBusConnection *connection;
+
+        if (manager->priv->connection == NULL)
+                return;
+
+        connection = manager->priv->connection;
+
+        g_dbus_connection_emit_signal (connection,
+                                       NULL,
+                                       MSD_WLRANDR_DBUS_PATH,
+                                       MSD_WLRANDR_DBUS_NAME,
+                                       "ConfigurationChanged",
+                                       NULL, NULL);
+        g_dbus_connection_emit_signal (connection,
+                                       NULL,
+                                       MSD_WLRANDR_DBUS_PATH,
+                                       MSD_WLRANDR_DBUS_NAME_2,
+                                       "ConfigurationChanged",
+                                       NULL, NULL);
+}
+
+/* Serialize the current state of the outputs so the display capplet can
+ * render and edit it.  Field order and meaning are documented by the
+ * HeadInfoField and ModeField enums above.
+ */
+static GVariant *
+build_configuration_variant (MsdWlrandrManager *manager)
+{
+        GVariantBuilder builder;
+        GList *l;
+
+        g_variant_builder_init (&builder, G_VARIANT_TYPE (HEAD_INFO_TYPE));
+
+        for (l = manager->priv->heads; l != NULL; l = l->next) {
+                WlOutputHead *head = l->data;
+                GVariantBuilder modes_builder;
+                GList *m;
+                int cur_w = 0, cur_h = 0, cur_rate = 0, cur_preferred = 0;
+
+                g_variant_builder_init (&modes_builder, G_VARIANT_TYPE ("a" MODE_FORMAT));
+
+                for (m = head->modes; m != NULL; m = m->next) {
+                        WlOutputMode *mode = m->data;
+
+                        g_variant_builder_add (&modes_builder, MODE_FORMAT,
+                                               mode->width,
+                                               mode->height,
+                                               mode->refresh,
+                                               mode->preferred ? 1 : 0);
+                }
+
+                if (head->enabled && head->current_mode != NULL) {
+                        cur_w = head->current_mode->width;
+                        cur_h = head->current_mode->height;
+                        cur_rate = head->current_mode->refresh;
+                        cur_preferred = head->current_mode->preferred ? 1 : 0;
+                }
+
+                g_variant_builder_add (&builder, HEAD_INFO_FORMAT,
+                                       head->name != NULL ? head->name : "",
+                                       head->description != NULL ? head->description : "",
+                                       head->enabled,
+                                       head->x,
+                                       head->y,
+                                       head->transform,
+                                       head->scale,
+                                       head->adaptive_sync_supported == 1,
+                                       head->adaptive_sync,
+                                       cur_w, cur_h, cur_rate, cur_preferred,
+                                       &modes_builder);
+        }
+
+        return g_variant_builder_end (&builder);
+}
+
+/* Deserialize a configuration sent by the display capplet.  Field order
+ * and meaning are documented by the HeadSetField enum above.
+ */
+static WlrConfig *
+parse_configuration_from_variant (GVariant *configuration)
+{
+        WlrConfig *config;
+        GVariantIter iter;
+        GPtrArray *outputs;
+
+        if (configuration == NULL ||
+            !g_variant_is_of_type (configuration, G_VARIANT_TYPE (HEAD_SET_TYPE)))
+                return NULL;
+
+        outputs = g_ptr_array_new ();
+
+        g_variant_iter_init (&iter, configuration);
+        while (TRUE) {
+                GVariant *head_var;
+                const char *name;
+                gboolean enabled;
+                gboolean adaptive_sync;
+                int width, height, rate, x, y, transform;
+                double scale;
+                WlrOutputInfo *info;
+
+                head_var = g_variant_iter_next_value (&iter);
+                if (head_var == NULL)
+                        break;
+
+                g_variant_get_child (head_var, HEAD_SET_FIELD_NAME,
+                                     "&s", &name);
+                g_variant_get_child (head_var, HEAD_SET_FIELD_ENABLED,
+                                     "b", &enabled);
+                g_variant_get_child (head_var, HEAD_SET_FIELD_WIDTH,
+                                     "i", &width);
+                g_variant_get_child (head_var, HEAD_SET_FIELD_HEIGHT,
+                                     "i", &height);
+                g_variant_get_child (head_var, HEAD_SET_FIELD_RATE,
+                                     "i", &rate);
+                g_variant_get_child (head_var, HEAD_SET_FIELD_X,
+                                     "i", &x);
+                g_variant_get_child (head_var, HEAD_SET_FIELD_Y,
+                                     "i", &y);
+                g_variant_get_child (head_var, HEAD_SET_FIELD_SCALE,
+                                     "d", &scale);
+                g_variant_get_child (head_var, HEAD_SET_FIELD_TRANSFORM,
+                                     "i", &transform);
+                g_variant_get_child (head_var, HEAD_SET_FIELD_ADAPTIVE_SYNC,
+                                     "b", &adaptive_sync);
+
+                /* wlr_output_info_new () duplicates the name, so it is
+                 * safe to release the tuple afterwards. */
+                info = wlr_output_info_new (name);
+                info->enabled = enabled;
+                info->width = width;
+                info->height = height;
+                info->rate = rate;
+                info->x = x;
+                info->y = y;
+                info->scale = scale;
+                info->transform = transform;
+                info->adaptive_sync = adaptive_sync;
+
+                g_variant_unref (head_var);
+
+                g_ptr_array_add (outputs, info);
+        }
+
+        if (outputs->len == 0) {
+                g_ptr_array_free (outputs, TRUE);
+                return NULL;
+        }
+
+        g_ptr_array_add (outputs, NULL);
+
+        config = g_new0 (WlrConfig, 1);
+        config->outputs = (WlrOutputInfo **) g_ptr_array_free (outputs, FALSE);
+
+        return config;
+}
+
+/* Pick the head whose adaptive sync state the caller wants to change, if
+ * any.  The zwlr-output-management protocol only lets the plugin set
+ * adaptive sync on the heads it explicitly marks, so only the head whose
+ * requested value differs from the current one is applied.
+ */
+static WlOutputHead *
+find_adaptive_sync_head_to_set (MsdWlrandrManager *manager,
+                                WlrConfig         *config)
+{
+        GList *l;
+
+        for (l = manager->priv->heads; l != NULL; l = l->next) {
+                WlOutputHead *head = l->data;
+                WlrOutputInfo *info = find_output_in_config (config, head->name);
+
+                if (info != NULL && info->enabled &&
+                    info->adaptive_sync != head->adaptive_sync)
+                        return head;
+        }
+
+        return NULL;
+}
+
+static gboolean
+msd_wlrandr_manager_set_configuration (MsdWlrandrManager *manager,
+                                       GVariant          *configuration,
+                                       GError           **error)
+{
+        WlrConfig *config;
+        WlrConfig *previous;
+        WlOutputHead *adaptive_sync_head;
+        gboolean res;
+
+        config = parse_configuration_from_variant (configuration);
+        if (config == NULL) {
+                g_set_error (error, G_DBUS_ERROR, G_DBUS_ERROR_INVALID_ARGS,
+                             "The supplied configuration is invalid");
+                return FALSE;
+        }
+
+        if (config_enabled_head_count (config) == 0) {
+                g_set_error (error, G_DBUS_ERROR, G_DBUS_ERROR_FAILED,
+                             "The last active output cannot be turned off");
+                wlr_config_free (config);
+                return FALSE;
+        }
+
+        previous = snapshot_config (manager);
+
+        adaptive_sync_head = find_adaptive_sync_head_to_set (manager, config);
+
+        res = apply_configuration (manager, config, TRUE, TRUE, previous, adaptive_sync_head);
+        if (!res) {
+                g_set_error (error, G_DBUS_ERROR, G_DBUS_ERROR_FAILED,
+                             "Could not apply the display configuration");
+                wlr_config_free (config);
+                wlr_config_free (previous);
+                return FALSE;
+        }
+
+        wlr_config_free (config);
+
+        return TRUE;
+}
+
 static gboolean
 msd_wlrandr_manager_apply_configuration (MsdWlrandrManager *manager,
                                          GError          **error)
@@ -1711,7 +2017,22 @@ handle_method_call (GDBusConnection       *connection,
 
         g_debug ("Calling method '%s' for wlrandr", method_name);
 
-        if (g_strcmp0 (method_name, "ApplyConfiguration") == 0) {
+        if (g_strcmp0 (method_name, "GetConfiguration") == 0) {
+                GVariant *configuration;
+
+                configuration = build_configuration_variant (manager);
+                g_dbus_method_invocation_return_value (invocation,
+                                                       g_variant_new ("(@a(ssbiiidbb(iiii)a(iiii)))",
+                                                                      configuration));
+        } else if (g_strcmp0 (method_name, "SetConfiguration") == 0) {
+                g_autoptr (GVariant) configuration = NULL;
+
+                g_variant_get (parameters, "(@a(sbiiiiidib))", &configuration);
+                if (!msd_wlrandr_manager_set_configuration (manager, configuration, &error))
+                        g_dbus_method_invocation_return_gerror (invocation, error);
+                else
+                        g_dbus_method_invocation_return_value (invocation, NULL);
+        } else if (g_strcmp0 (method_name, "ApplyConfiguration") == 0) {
                 if (!msd_wlrandr_manager_apply_configuration (manager, &error))
                         g_dbus_method_invocation_return_gerror (invocation, error);
                 else
@@ -1734,7 +2055,22 @@ handle_method_call2 (GDBusConnection       *connection,
 
         g_debug ("Calling method '%s' for wlrandr", method_name);
 
-        if (g_strcmp0 (method_name, "ApplyConfiguration") == 0) {
+        if (g_strcmp0 (method_name, "GetConfiguration") == 0) {
+                GVariant *configuration;
+
+                configuration = build_configuration_variant (manager);
+                g_dbus_method_invocation_return_value (invocation,
+                                                       g_variant_new ("(@a(ssbiiidbb(iiii)a(iiii)))",
+                                                                      configuration));
+        } else if (g_strcmp0 (method_name, "SetConfiguration") == 0) {
+                g_autoptr (GVariant) configuration = NULL;
+
+                g_variant_get (parameters, "(@a(sbiiiiidib))", &configuration);
+                if (!msd_wlrandr_manager_set_configuration (manager, configuration, &error))
+                        g_dbus_method_invocation_return_gerror (invocation, error);
+                else
+                        g_dbus_method_invocation_return_value (invocation, NULL);
+        } else if (g_strcmp0 (method_name, "ApplyConfiguration") == 0) {
                 gint64 parent_window_id;
                 gint64 timestamp;
 
