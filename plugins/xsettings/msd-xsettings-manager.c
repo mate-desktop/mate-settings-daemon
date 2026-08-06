@@ -39,6 +39,9 @@
 #ifdef GDK_WINDOWING_X11
 #include <gdk/gdkx.h>
 #endif /* GDK_WINDOWING_X11 */
+#ifdef GDK_WINDOWING_WAYLAND
+#include <gdk/gdkwayland.h>
+#endif /* GDK_WINDOWING_WAYLAND */
 #include <gtk/gtk.h>
 #include <gio/gio.h>
 
@@ -879,6 +882,19 @@ terminate_cb (void *data)
         gtk_main_quit ();
 }
 
+#ifdef GDK_WINDOWING_WAYLAND
+/* No-op Xlib IO error handler used when running on Wayland: the X connection
+ * only serves XSettings on XWayland, so the daemon should survive an
+ * XWayland restart instead of exiting. */
+static int
+wayland_x_io_error_handler (Display *display)
+{
+        g_warning ("Connection to the XWayland display lost; XSettings for "
+                   "X11 applications disabled");
+        return 0;
+}
+#endif /* GDK_WINDOWING_WAYLAND */
+
 static gboolean
 setup_xsettings_managers (MateXSettingsManager *manager)
 {
@@ -891,6 +907,16 @@ setup_xsettings_managers (MateXSettingsManager *manager)
                 g_warning ("Unable to open X display; xsettings manager disabled");
                 return FALSE;
         }
+
+#ifdef GDK_WINDOWING_WAYLAND
+        /* When running on Wayland the XSETTINGS manager uses its own Xlib
+         * connection to XWayland, which nothing else watches.  Now that we
+         * explicitly flush it, a disappearing XWayland would otherwise kill
+         * the whole daemon through the default Xlib IO error handler. */
+        if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ())) {
+                XSetIOErrorHandler (wayland_x_io_error_handler);
+        }
+#endif /* GDK_WINDOWING_WAYLAND */
 
         res = xsettings_manager_check_running (xdisplay, DefaultScreen (xdisplay));
         if (res) {
