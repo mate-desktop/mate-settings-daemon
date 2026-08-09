@@ -67,6 +67,8 @@ typedef struct
         GPtrArray                            *receives;
         struct ext_data_control_source_v1    *source;
         gboolean                              reoffer_pending;
+        guint                                 reoffer_timeout;
+        gint64                                last_activity_ms;
 } SelectionState;
 
 struct _MsdClipboardManagerWayland
@@ -113,6 +115,62 @@ state_from_kind (MsdClipboardManagerWayland *wl,
 
 static void
 start_reoffer (SelectionState *state);
+
+#define REOFFER_WINDOW_MS 2000
+#define REOFFER_QUIET_MS  1000
+
+static void
+cancel_reoffer (SelectionState *state)
+{
+        if (state->reoffer_timeout != 0) {
+                g_source_remove (state->reoffer_timeout);
+                state->reoffer_timeout = 0;
+        }
+}
+
+static gboolean
+reoffer_timeout_cb (gpointer data)
+{
+        SelectionState *state = data;
+
+        state->reoffer_timeout = 0;
+        start_reoffer (state);
+
+        return G_SOURCE_REMOVE;
+}
+
+static void
+schedule_reoffer (SelectionState *state)
+{
+        if (state->cache == NULL || state->cache->len == 0)
+                return;
+        if (state->wl->dc_manager == NULL || state->wl->device == NULL)
+                return;
+        if (state->source != NULL)
+                return;
+
+        if (state->reoffer_timeout == 0) {
+                gint64 now;
+                guint  delay;
+
+                now = g_get_monotonic_time () / 1000;
+
+                /* Keep a longer delay right after clipboard activity: an app
+                 * may be about to re-assert its selection (e.g. GTK re-serving
+                 * a torn copy if we steal ownership mid-store). Once the
+                 * selection has been quiet, fall back to a shorter delay so
+                 * pasting works soon after the source app is closed. */
+                delay = REOFFER_WINDOW_MS - (now - state->last_activity_ms);
+                if (delay > REOFFER_WINDOW_MS)
+                        delay = REOFFER_WINDOW_MS;
+                if (delay < REOFFER_QUIET_MS)
+                        delay = REOFFER_QUIET_MS;
+
+                state->reoffer_timeout = g_timeout_add (delay,
+                                                        reoffer_timeout_cb,
+                                                        state);
+        }
+}
 
 static void
 finalize_cache (SelectionState *state)
@@ -188,7 +246,7 @@ receive_finish (ClipReceive *recv)
 
         if (state->reoffer_pending) {
                 state->reoffer_pending = FALSE;
-                start_reoffer (state);
+                schedule_reoffer (state);
         }
 }
 
@@ -255,6 +313,8 @@ start_receives (SelectionState                          *state,
 
         if (mimes == NULL)
                 return;
+
+        state->last_activity_ms = g_get_monotonic_time () / 1000;
 
         for (i = 0; i < mimes->len; i++) {
                 ClipReceive *recv;
@@ -355,6 +415,8 @@ handle_source_cancelled (void                              *data,
                 ext_data_control_source_v1_destroy (source);
                 state->source = NULL;
         }
+
+        state->last_activity_ms = g_get_monotonic_time () / 1000;
 }
 
 static const struct ext_data_control_source_v1_listener source_listener = {
@@ -447,16 +509,18 @@ handle_selection_for (MsdClipboardManagerWayland      *wl,
         if (offer == NULL) {
                 state->offer = NULL;
 
-                if (state->receives != NULL && state->receives->len > 0)
+                if (state->receives != NULL && state->receives->len > 0) {
                         state->reoffer_pending = TRUE;
-                else
-                        start_reoffer (state);
+                } else {
+                        schedule_reoffer (state);
+                }
 
                 return;
         }
 
         state->offer = offer;
         state->reoffer_pending = FALSE;
+        cancel_reoffer (state);
 
         if (wl->pending_offer == offer && wl->pending_mimes != NULL) {
                 GPtrArray *mimes;
@@ -586,6 +650,8 @@ static void
 selection_state_clear (SelectionState *state)
 {
         guint i;
+
+        cancel_reoffer (state);
 
         if (state->source != NULL) {
                 ext_data_control_source_v1_destroy (state->source);
