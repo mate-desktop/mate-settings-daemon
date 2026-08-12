@@ -181,7 +181,7 @@ static void
 emit_configuration_changed (MsdWlrandrManager *manager);
 
 static void
-save_current_configuration (MsdWlrandrManager *manager);
+save_current_configuration (MsdWlrandrManager *manager, WlrConfig *config);
 
 static void
 queue_rollback_confirmation (MsdWlrandrManager *manager, WlrConfig *previous);
@@ -581,6 +581,7 @@ typedef struct {
         gboolean  save;
         gboolean  confirm_rollback;
         WlrConfig *previous;
+        WlrConfig *config;
         WlOutputHead *adaptive_sync_head;
 } ApplyData;
 
@@ -607,7 +608,7 @@ config_succeeded_handler (void *data, struct zwlr_output_configuration_v1 *confi
         g_debug ("msd-wlrandr: output configuration applied");
 
         if (ad->save)
-                save_current_configuration (ad->manager);
+                save_current_configuration (ad->manager, ad->config);
 
         if (ad->confirm_rollback)
                 queue_rollback_confirmation (ad->manager, ad->previous);
@@ -617,6 +618,7 @@ config_succeeded_handler (void *data, struct zwlr_output_configuration_v1 *confi
         ad->manager->priv->pending_config = NULL;
         g_idle_add (probe_idle_cb, ad->manager);
         zwlr_output_configuration_v1_destroy (config);
+        wlr_config_free (ad->config);
         g_free (ad);
 }
 
@@ -632,7 +634,11 @@ config_failed_handler (void *data, struct zwlr_output_configuration_v1 *config)
                 g_debug ("msd-wlrandr: adaptive sync rejected by the compositor on %s", head->name);
                 head->adaptive_sync_supported = 0;
                 head->adaptive_sync = 0;
-                save_current_configuration (ad->manager);
+
+                /* The configuration was rejected, so nothing was applied and
+                 * the live head state is unchanged; persist it as is.
+                 */
+                save_current_configuration (ad->manager, NULL);
                 rebuild_menu (ad->manager);
         } else {
                 notify_config_error (_("Could not apply the display configuration"));
@@ -642,6 +648,7 @@ config_failed_handler (void *data, struct zwlr_output_configuration_v1 *config)
         ad->manager->priv->pending_config = NULL;
         g_idle_add (probe_idle_cb, ad->manager);
         zwlr_output_configuration_v1_destroy (config);
+        wlr_config_free (ad->config);
         g_free (ad);
 }
 
@@ -656,6 +663,7 @@ config_cancelled_handler (void *data, struct zwlr_output_configuration_v1 *confi
         ad->manager->priv->pending_config = NULL;
         g_idle_add (probe_idle_cb, ad->manager);
         zwlr_output_configuration_v1_destroy (config);
+        wlr_config_free (ad->config);
         g_free (ad);
 }
 
@@ -912,6 +920,50 @@ fill_output_mode (WlOutputHead *head, WlrOutputInfo *info)
         }
 }
 
+/* Deep copy of a configuration.  Used to keep a reference to the
+ * configuration that was actually sent to the compositor, so that the file
+ * is saved with the intended values rather than whatever the compositor
+ * last reported (which may not have been updated yet when the
+ * "succeeded" event arrives).
+ */
+static WlrConfig *
+wlr_config_copy (const WlrConfig *config)
+{
+        WlrConfig *copy;
+        GPtrArray *outputs;
+        int i;
+
+        if (config == NULL)
+                return NULL;
+
+        outputs = g_ptr_array_new ();
+        for (i = 0; config->outputs != NULL && config->outputs[i] != NULL; i++) {
+                WlrOutputInfo *src = config->outputs[i];
+                WlrOutputInfo *dst = wlr_output_info_new (src->name);
+
+                dst->vendor = g_strdup (src->vendor);
+                dst->product = g_strdup (src->product);
+                dst->serial = g_strdup (src->serial);
+                dst->enabled = src->enabled;
+                dst->width = src->width;
+                dst->height = src->height;
+                dst->rate = src->rate;
+                dst->x = src->x;
+                dst->y = src->y;
+                dst->scale = src->scale;
+                dst->transform = src->transform;
+                dst->adaptive_sync = src->adaptive_sync;
+
+                g_ptr_array_add (outputs, dst);
+        }
+        g_ptr_array_add (outputs, NULL);
+
+        copy = g_new0 (WlrConfig, 1);
+        copy->outputs = (WlrOutputInfo **) g_ptr_array_free (outputs, FALSE);
+
+        return copy;
+}
+
 static gboolean
 apply_configuration (MsdWlrandrManager *manager,
                      WlrConfig         *config,
@@ -972,6 +1024,26 @@ apply_configuration (MsdWlrandrManager *manager,
         ad->confirm_rollback = confirm_rollback;
         ad->previous = previous;
         ad->adaptive_sync_head = adaptive_sync_head;
+
+        ad->config = wlr_config_copy (config);
+
+        /* Enrich the copy with the head identity fields; configurations that
+         * arrive over D-Bus do not carry them and they are useful when the
+         * file is inspected by hand.
+         */
+        for (l = priv->heads; l != NULL; l = l->next) {
+                WlOutputHead *head = l->data;
+                WlrOutputInfo *info = find_output_in_config (ad->config, head->name);
+
+                if (info == NULL)
+                        continue;
+                if (info->vendor == NULL || *info->vendor == '\0')
+                        info->vendor = g_strdup (head->make);
+                if (info->product == NULL || *info->product == '\0')
+                        info->product = g_strdup (head->model);
+                if (info->serial == NULL || *info->serial == '\0')
+                        info->serial = g_strdup (head->serial_number);
+        }
 
         zwlr_output_configuration_v1_add_listener (config_obj, &config_listener, ad);
         priv->pending_config = config_obj;
@@ -1190,6 +1262,34 @@ yes_no_to_boolean (const char *text)
         return FALSE;
 }
 
+/* Read a scale value from the configuration file.  g_ascii_strtod() is
+ * locale-independent and only accepts '.' as the decimal separator, so
+ * normalize any ',' left in the file by older versions of the plugin that
+ * wrote it with a locale-dependent "%f".  Without this, e.g. "1,500000"
+ * would silently come back as 1.0.
+ */
+static double
+parse_scale (const char *text)
+{
+        char *normalized;
+        char *p;
+        double value;
+
+        if (text == NULL)
+                return 1.0;
+
+        normalized = g_strdup (text);
+        for (p = normalized; *p != '\0'; p++) {
+                if (*p == ',')
+                        *p = '.';
+        }
+
+        value = g_ascii_strtod (normalized, NULL);
+        g_free (normalized);
+
+        return value;
+}
+
 static const char *
 transform_to_name (int transform)
 {
@@ -1332,7 +1432,7 @@ parser_end_element (GMarkupParseContext *context,
         } else if (strcmp (parser->current_element, "y") == 0) {
                 output->y = atoi (text);
         } else if (strcmp (parser->current_element, "scale") == 0) {
-                output->scale = g_ascii_strtod (text, NULL);
+                output->scale = parse_scale (text);
         } else if (strcmp (parser->current_element, "transform") == 0) {
                 output->transform = transform_from_name (text);
         } else if (strcmp (parser->current_element, "adaptive_sync") == 0) {
@@ -1512,7 +1612,19 @@ emit_configuration (WlrConfig *config, GString *string)
                         g_string_append_printf (string, "          <rate>%d</rate>\n", output->rate);
                         g_string_append_printf (string, "          <x>%d</x>\n", output->x);
                         g_string_append_printf (string, "          <y>%d</y>\n", output->y);
-                        g_string_append_printf (string, "          <scale>%.6f</scale>\n", output->scale);
+
+                        {
+                                /* "%f" is locale-dependent and would write
+                                 * e.g. "1,500000" in comma-decimal locales,
+                                 * while the parser always reads with the
+                                 * locale-independent g_ascii_strtod().  Use
+                                 * g_ascii_formatd() so the file is always
+                                 * written with a '.' decimal separator.
+                                 */
+                                char scale_buf[G_ASCII_DTOSTR_BUF_SIZE];
+                                g_ascii_formatd (scale_buf, sizeof (scale_buf), "%f", output->scale);
+                                g_string_append_printf (string, "          <scale>%s</scale>\n", scale_buf);
+                        }
                         g_string_append_printf (string, "          <transform>%s</transform>\n", transform_to_name (output->transform));
                 } else {
                         g_string_append (string, "          <enabled>no</enabled>\n");
@@ -1540,11 +1652,16 @@ configurations_match_current (WlrConfig **configs, GList *heads)
         return FALSE;
 }
 
+/* Persist the current output configuration to monitors-wayland.xml.  If
+ * `config` is non-NULL it is used as-is; otherwise the live head state is
+ * snapshotted (only used when nothing was applied and the state is known to
+ * be accurate, e.g. after a rejected adaptive sync toggle).
+ */
 static void
-save_current_configuration (MsdWlrandrManager *manager)
+save_current_configuration (MsdWlrandrManager *manager, WlrConfig *config)
 {
         struct MsdWlrandrManagerPrivate *priv = manager->priv;
-        WlrConfig *config;
+        WlrConfig *snapshot;
         WlrConfig **existing;
         GString *string;
         char *intended;
@@ -1552,7 +1669,10 @@ save_current_configuration (MsdWlrandrManager *manager)
         int i;
         GError *error = NULL;
 
-        config = snapshot_config (manager);
+        if (config == NULL)
+                config = snapshot = snapshot_config (manager);
+        else
+                snapshot = NULL;
 
         intended = g_build_filename (g_get_user_config_dir (), CONFIG_INTENDED_BASENAME, NULL);
         backup = g_build_filename (g_get_user_config_dir (), CONFIG_BACKUP_BASENAME, NULL);
@@ -1584,7 +1704,8 @@ save_current_configuration (MsdWlrandrManager *manager)
         g_string_free (string, TRUE);
         g_free (intended);
         g_free (backup);
-        wlr_config_free (config);
+        if (snapshot != NULL)
+                wlr_config_free (snapshot);
 }
 
 static gboolean
