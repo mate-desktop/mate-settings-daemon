@@ -284,20 +284,6 @@ wlr_output_head_free (WlOutputHead *head)
         g_free (head);
 }
 
-static WlOutputHead *
-find_head_by_proxy (MsdWlrandrManager *manager, struct zwlr_output_head_v1 *proxy)
-{
-        GList *l;
-
-        for (l = manager->priv->heads; l != NULL; l = l->next) {
-                WlOutputHead *head = l->data;
-                if (head->proxy == proxy)
-                        return head;
-        }
-
-        return NULL;
-}
-
 static WlOutputMode *
 find_mode_by_proxy (WlOutputHead *head, struct zwlr_output_mode_v1 *proxy)
 {
@@ -1461,18 +1447,6 @@ parser_new (void)
         return parser;
 }
 
-static void
-parser_free (WlrConfigParser *parser)
-{
-        g_ptr_array_free (parser->configs, FALSE);
-        if (parser->outputs != NULL)
-                g_ptr_array_free (parser->outputs, FALSE);
-        if (parser->text != NULL)
-                g_string_free (parser->text, TRUE);
-        g_free (parser->current_element);
-        g_free (parser);
-}
-
 static WlrConfig **
 configs_load_from_file (const char *filename)
 {
@@ -1637,19 +1611,6 @@ emit_configuration (WlrConfig *config, GString *string)
         }
 
         g_string_append (string, "  </configuration>\n");
-}
-
-static gboolean
-configurations_match_current (WlrConfig **configs, GList *heads)
-{
-        int i;
-
-        for (i = 0; configs[i] != NULL; i++) {
-                if (config_matches_heads (configs[i], heads))
-                        return TRUE;
-        }
-
-        return FALSE;
 }
 
 /* Persist the current output configuration to monitors-wayland.xml.  If
