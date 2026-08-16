@@ -23,7 +23,9 @@ requires+=(
 	gcc-c++
 	git
 	gtk3-devel
+	gtk-layer-shell-devel
 	iso-codes-devel
+	libayatana-appindicator-gtk3-devel
 	libSM-devel
 	libcanberra-devel
 	libmatekbd-devel
@@ -36,6 +38,7 @@ requires+=(
 	polkit-devel
 	pulseaudio-libs-devel
 	redhat-rpm-config
+	wayland-protocols-devel
 )
 
 infobegin "Update system"

@@ -24,6 +24,8 @@ requires+=(
 	gettext
 	git
 	glib2-devel
+	gtk-layer-shell
+	libayatana-appindicator
 	libcanberra
 	libmatekbd
 	libmatemixer
@@ -35,6 +37,7 @@ requires+=(
 	polkit
 	python-packaging
 	which
+	wayland-protocols
 )
 
 infobegin "Update system"
