@@ -20,11 +20,13 @@ requires+=(
 	gcc
 	g++
 	git
+	libayatana-appindicator3-dev
 	libcanberra-gtk3-dev
 	libdconf-dev
 	libfontconfig1-dev
 	libglib2.0-dev
 	libgtk-3-dev
+	libgtk-layer-shell-dev
 	libmate-desktop-dev
 	libmatekbd-dev
 	libmatemixer-dev
@@ -42,6 +44,7 @@ requires+=(
 	libxt-dev
 	make
 	mate-common
+	wayland-protocols
 	x11proto-kb-dev
 )
 
