@@ -112,7 +112,7 @@ if test "x${enable_wayland}" != "xno"; then
 	if test "x${have_wayland}" = "xyes"; then
 		WAYLAND_SCANNER=wayland-scanner
 		AC_SUBST(WAYLAND_SCANNER)
-		WAYLAND_PROTOCOLS_DATADIR=`$PKG_CONFIG --variable=pkgdatadir wayland-protocols`
+		WAYLAND_PROTOCOLS_DATADIR=`$PKG_CONFIG --variable=pkgdatadir wayland-protocols | sed 's|^//*|/|'`
 		AC_SUBST(WAYLAND_PROTOCOLS_DATADIR)
 		if test "x${WAYLAND_PROTOCOLS_DATADIR}" = "x"; then
 			have_wayland=no
