@@ -41,7 +41,6 @@ struct _MsdBackgroundManagerWayland
 	MateBG       *bg;
 	GPtrArray    *monitor_windows;
 	gboolean      caja_desktop_active;
-	guint         caja_check_timeout_id;
 };
 
 typedef struct
@@ -75,26 +74,14 @@ get_current_time (void)
 	return g_get_monotonic_time () / 1000000.0;
 }
 
-/* Caja manages the desktop in-process, so a running "caja" process with
- * the desktop enabled owns the layer-shell "desktop" surface. There is no
- * Wayland protocol to enumerate layer surfaces, so detect it via the process.
+/* Check the GSettings key that indicates whether Caja is configured to
+ * draw desktop icons. When this is enabled Caja draws the desktop itself
+ * so we must not create our own layer-shell background windows.
  */
 static gboolean
-caja_desktop_is_running (void)
+caja_desktop_is_showing (MsdBackgroundManagerWayland *manager)
 {
-	gchar    *stdout = NULL;
-	gboolean  running;
-
-	running = g_spawn_command_line_sync ("pgrep -x caja", &stdout,
-					     NULL, NULL, NULL);
-	if (!running || stdout == NULL || *stdout == '\0')
-		running = FALSE;
-	else
-		running = TRUE;
-
-	g_free (stdout);
-
-	return running;
+	return g_settings_get_boolean (manager->settings, MATE_BG_KEY_SHOW_DESKTOP);
 }
 
 static gboolean
@@ -484,10 +471,11 @@ rebuild_monitor_windows (MsdBackgroundManagerWayland *manager)
 	destroy_all_monitor_windows (manager);
 
 	/* Caja's desktop window (layer "desktop", BACKGROUND) owns the
-	 * wallpaper and icons. When it is running we must not map our own
-	 * layer windows, or we would cover it.
+	 * wallpaper and icons. When the "show-desktop-icons" setting is
+	 * enabled we must not map our own layer windows, or we would
+	 * cover it.
 	 */
-	if (caja_desktop_is_running ()) {
+	if (caja_desktop_is_showing (manager)) {
 		manager->caja_desktop_active = TRUE;
 		g_debug ("msd-background-wayland: caja desktop detected, background disabled");
 		return;
@@ -505,27 +493,27 @@ rebuild_monitor_windows (MsdBackgroundManagerWayland *manager)
 	}
 }
 
-static gboolean
-caja_check_timeout_cb (MsdBackgroundManagerWayland *manager)
+static void
+on_show_desktop_icons_changed (GSettings                  *settings G_GNUC_UNUSED,
+			       const gchar                *key G_GNUC_UNUSED,
+			       MsdBackgroundManagerWayland *manager)
 {
 	gboolean active;
 
-	active = caja_desktop_is_running ();
+	active = caja_desktop_is_showing (manager);
 	if (active == manager->caja_desktop_active)
-		return G_SOURCE_CONTINUE;
+		return;
 
 	manager->caja_desktop_active = active;
 
 	if (active) {
-		g_debug ("msd-background-wayland: caja desktop detected, hiding background");
+		g_debug ("msd-background-wayland: caja desktop icons enabled, hiding background");
 		destroy_all_monitor_windows (manager);
 	} else {
-		g_debug ("msd-background-wayland: caja desktop gone, showing background");
+		g_debug ("msd-background-wayland: caja desktop icons disabled, showing background");
 		rebuild_monitor_windows (manager);
 		redraw_all (manager);
 	}
-
-	return G_SOURCE_CONTINUE;
 }
 
 static void
@@ -626,9 +614,8 @@ msd_background_manager_wayland_new (GError **error)
 	rebuild_monitor_windows (manager);
 	redraw_all (manager);
 
-	/* Re-evaluate when caja starts or stops */
-	manager->caja_check_timeout_id =
-		g_timeout_add_seconds (2, (GSourceFunc) caja_check_timeout_cb, manager);
+	g_signal_connect (manager->settings, "changed::show-desktop-icons",
+			  G_CALLBACK (on_show_desktop_icons_changed), manager);
 
 	return manager;
 }
@@ -642,17 +629,14 @@ msd_background_manager_wayland_destroy (MsdBackgroundManagerWayland *manager)
 	g_signal_handlers_disconnect_by_func (gdk_screen_get_default (),
 					      G_CALLBACK (on_monitors_changed), manager);
 
-	if (manager->caja_check_timeout_id != 0) {
-		g_source_remove (manager->caja_check_timeout_id);
-		manager->caja_check_timeout_id = 0;
-	}
-
 	destroy_all_monitor_windows (manager);
 	g_ptr_array_free (manager->monitor_windows, TRUE);
 
 	if (manager->settings != NULL) {
 		g_signal_handlers_disconnect_by_func (manager->settings,
 						      G_CALLBACK (settings_change_event_cb), manager);
+		g_signal_handlers_disconnect_by_func (manager->settings,
+						      G_CALLBACK (on_show_desktop_icons_changed), manager);
 		g_object_unref (manager->settings);
 	}
 
