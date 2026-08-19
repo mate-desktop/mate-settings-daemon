@@ -1,3 +1,42 @@
+### mate-settings-daemon 1.29.1
+
+  * background: don't initialize alpha channel
+  * wayland/background: respect show-desktop-icons setting
+  * fix wayland-protocols path
+  * ci: add wayland related packages
+  * Remove dead code
+  * wlrandr: persist the applied configuration instead of a live snapshot
+  * clipboard: adjust offer timeout
+  * xsettings: flush Xlib output so settings reach X11/XWayland clients
+  * Remove dead code
+  * xsettings: flush Xlib output so settings reach X11/XWayland clients
+  * wlrandr: expose configuration over D-Bus for the display capplet
+  * Add wlrandr plugin
+  * Respect fade effect settings and fix redraw at resolution changes
+  * background: port to wayland via gtk-layer-shell
+  * clipboard-manager: add Wayland support
+  * Initial Wayland support
+  * Translated using Weblate (Greek)
+  * Translated using Weblate (Kabyle)
+  * Translated using Weblate (Russian)
+  * Translated using Weblate (Georgian)
+  * Translated using Weblate (Korean)
+  * Translated using Weblate (Occitan)
+  * build (deps) bump actions/checkout from 6 to 7
+  * build (deps) bump actions/cache from 5 to 76
+  * xrandr: Handle hotplug_mode_update for VM guest resizing
+  * background: simplify desktop detection to use EWMH standard
+  * correcting po with errors
+  * remove empty po file
+  * add translation coverage badge
+  * retrieve last transifex translations
+  * Revert "Retrieve last transifex translations"
+  * Retrieve last transifex translations
+  * build(deps): bump actions/checkout from 5 to 6
+  * ci: migrate from Travis CI to GitHub Actions
+  * fix memleak
+
+
 ### mate-settings-daemon 1.29.0
 
   * xsettings: Remove HiDPI scale change workaround
