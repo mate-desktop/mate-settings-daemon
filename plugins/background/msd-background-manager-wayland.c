@@ -264,7 +264,7 @@ render_surface_at_size (MsdBackgroundManagerWayland *manager,
 	if (width <= 0 || height <= 0)
 		return;
 
-	pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8,
+	pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8,
 				 width, height);
 	if (pixbuf == NULL) {
 		g_warning ("msd-background-wayland: unable to create %dx%d pixbuf",
