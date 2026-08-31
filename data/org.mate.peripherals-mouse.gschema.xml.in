@@ -10,6 +10,11 @@
       <summary>Mouse button orientation</summary>
       <description>Swap left and right mouse buttons for left-handed mice.</description>
     </key>
+    <key name="natural-scroll" type="b">
+      <default>false</default>
+      <summary>Natural scrolling</summary>
+      <description>Set this to true to enable natural (reverse) scrolling for mice</description>
+    </key>
     <key name="motion-acceleration" type="d">
       <default>-1</default>
       <summary>Motion Acceleration</summary>

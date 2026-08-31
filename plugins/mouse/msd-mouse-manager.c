@@ -60,6 +60,7 @@
 /* Mouse settings */
 #define MATE_MOUSE_SCHEMA                "org.mate.peripherals-mouse"
 #define KEY_MOUSE_LOCATE_POINTER         "locate-pointer"
+#define KEY_MOUSE_NATURAL_SCROLL         "natural-scroll"
 #define KEY_MIDDLE_BUTTON_EMULATION      "middle-button-enabled"
 
 /* Touchpad settings */
@@ -1391,8 +1392,8 @@ set_natural_scroll_libinput (XDeviceInfo *device_info,
 }
 
 static void
-set_natural_scroll (XDeviceInfo *device_info,
-                    gboolean     natural_scroll)
+set_touchpad_natural_scroll (XDeviceInfo *device_info,
+                             gboolean     natural_scroll)
 {
         if (property_from_name ("Synaptics Scrolling Distance"))
                 set_natural_scroll_synaptics (device_info, natural_scroll);
@@ -1402,7 +1403,7 @@ set_natural_scroll (XDeviceInfo *device_info,
 }
 
 static void
-set_natural_scroll_all (MsdMouseManager *manager)
+set_touchpad_natural_scroll_all (MsdMouseManager *manager)
 {
         int numdevices, i;
         XDeviceInfo *devicelist = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &numdevices);
@@ -1413,7 +1414,69 @@ set_natural_scroll_all (MsdMouseManager *manager)
         gboolean natural_scroll = g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_NATURAL_SCROLL);
 
         for (i = 0; i < numdevices; i++) {
-                set_natural_scroll (&devicelist[i], natural_scroll);
+                set_touchpad_natural_scroll (&devicelist[i], natural_scroll);
+        }
+
+        XFreeDeviceList (devicelist);
+}
+
+static void
+mouse_set_bool (XDeviceInfo *device_info,
+                const char  *property_name,
+                int          property_index,
+                gboolean     enabled)
+{
+        XDevice    *device;
+        GdkDisplay *display;
+
+        display = gdk_display_get_default ();
+
+        device = device_is_touchpad (device_info);
+        if (device != NULL) {
+                XCloseDevice (GDK_DISPLAY_XDISPLAY (display), device);
+                return;
+        }
+
+        if ((device_info->use == IsXPointer) ||
+            (device_info->use == IsXKeyboard) ||
+            (!xinput_device_has_buttons (device_info)))
+                return;
+
+        gdk_x11_display_error_trap_push (display);
+        device = XOpenDevice (GDK_DISPLAY_XDISPLAY (display), device_info->id);
+        if ((gdk_x11_display_error_trap_pop (display) != 0) || (device == NULL))
+                return;
+
+        property_set_bool (device_info, device, property_name, property_index, enabled);
+
+        gdk_x11_display_error_trap_push (display);
+        XCloseDevice (GDK_DISPLAY_XDISPLAY (display), device);
+        gdk_x11_display_error_trap_pop_ignored (display);
+}
+
+static void
+set_mouse_natural_scroll (XDeviceInfo *device_info,
+                          gboolean     natural_scroll)
+{
+        g_debug ("Trying to set %s for \"%s\"", natural_scroll ? "natural (reverse) scroll" : "normal scroll", device_info->name);
+
+        mouse_set_bool (device_info, "libinput Natural Scrolling Enabled", 0, natural_scroll);
+        mouse_set_bool (device_info, "Evdev Wheel Inversion", 0, natural_scroll);
+}
+
+static void
+set_mouse_natural_scroll_all (MsdMouseManager *manager)
+{
+        int numdevices, i;
+        XDeviceInfo *devicelist = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &numdevices);
+
+        if (devicelist == NULL)
+                return;
+
+        gboolean natural_scroll = g_settings_get_boolean (manager->priv->settings_mouse, KEY_MOUSE_NATURAL_SCROLL);
+
+        for (i = 0; i < numdevices; i++) {
+                set_mouse_natural_scroll (&devicelist[i], natural_scroll);
         }
 
         XFreeDeviceList (devicelist);
@@ -1679,7 +1742,8 @@ set_mouse_settings (MsdMouseManager *manager)
         set_tap_to_click_all (manager);
         set_click_actions_all (manager);
         set_scrolling_all (manager->priv->settings_touchpad);
-        set_natural_scroll_all (manager);
+        set_touchpad_natural_scroll_all (manager);
+        set_mouse_natural_scroll_all (manager);
         set_touchpad_enabled_all (g_settings_get_boolean (manager->priv->settings_touchpad, KEY_TOUCHPAD_ENABLED));
         set_accel_profile_all (manager);
 }
@@ -1700,6 +1764,8 @@ mouse_callback (GSettings          *settings,
                 set_accel_profile_all (manager);
         } else if (g_strcmp0 (key, KEY_MIDDLE_BUTTON_EMULATION) == 0) {
                 set_middle_button_all (g_settings_get_boolean (settings, key));
+        } else if (g_strcmp0 (key, KEY_MOUSE_NATURAL_SCROLL) == 0) {
+                set_mouse_natural_scroll_all (manager);
         } else if (g_strcmp0 (key, KEY_MOUSE_LOCATE_POINTER) == 0) {
                 set_locate_pointer (manager, g_settings_get_boolean (settings, key));
 #if 0   /* FIXME need to fork (?) mousetweaks for this to work */
@@ -1741,7 +1807,7 @@ touchpad_callback (GSettings          *settings,
                 || (g_strcmp0 (key, KEY_HORIZ_TWO_FINGER_SCROLL) == 0)) {
                 set_scrolling_all (manager->priv->settings_touchpad);
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_NATURAL_SCROLL) == 0) {
-                set_natural_scroll_all (manager);
+                set_touchpad_natural_scroll_all (manager);
         } else if (g_strcmp0 (key, KEY_TOUCHPAD_ENABLED) == 0) {
                 set_touchpad_enabled_all (g_settings_get_boolean (settings, key));
         } else if ((g_strcmp0 (key, KEY_MOTION_ACCELERATION) == 0)
