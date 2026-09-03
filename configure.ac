@@ -83,6 +83,28 @@ esac
 AC_SUBST([MSD_PLUGIN_LDFLAGS])
 
 dnl ---------------------------------------------------------------------------
+dnl - Ayatana AppIndicator
+dnl ---------------------------------------------------------------------------
+
+AC_ARG_ENABLE(appindicator,
+	AS_HELP_STRING([--enable-appindicator], [Enable ayatana appindicator support (default: auto)]),
+	[case "${enableval}" in
+	 yes|no|auto) enable_appindicator=${enableval} ;;
+	 *) AC_MSG_ERROR(bad value ${enableval} for --enable-appindicator) ;;
+	esac],
+	enable_appindicator=auto)
+
+have_appindicator=no
+if test "x${enable_appindicator}" != "xno"; then
+	PKG_CHECK_MODULES(APPINDICATOR, ayatana-appindicator3-0.1,
+		[have_appindicator=yes
+		AC_DEFINE(HAVE_APP_INDICATOR, 1, [Define if ayatana appindicator support is enabled])],
+		[if test "x${enable_appindicator}" = "xyes"; then
+			AC_MSG_ERROR([Ayatana appindicator support requested but ayatana-appindicator3-0.1 not found])
+		fi])
+fi
+
+dnl ---------------------------------------------------------------------------
 dnl - Wayland
 dnl ---------------------------------------------------------------------------
 
@@ -126,17 +148,11 @@ if test "x${enable_wayland}" != "xno"; then
 	fi
 
 	if test "x${have_wayland}" = "xyes"; then
-		PKG_CHECK_MODULES(APPINDICATOR, ayatana-appindicator3-0.1,
-			[have_wayland=yes],
-			[have_wayland=no])
-	fi
-
-	if test "x${have_wayland}" = "xyes"; then
 		AC_DEFINE(HAVE_WAYLAND, 1, [Define if Wayland support is enabled])
 	fi
 
 	if test "x${have_wayland}" = "xno" -a "x${enable_wayland}" = "xyes"; then
-		AC_MSG_ERROR([Wayland support requested but the required Wayland libraries (GTK+ Wayland backend, wayland-client, wayland-protocols, gtk-layer-shell or ayatana-appindicator) are missing])
+		AC_MSG_ERROR([Wayland support requested but the required Wayland libraries (GTK+ Wayland backend, wayland-client, wayland-protocols or gtk-layer-shell) are missing])
 	fi
 fi
 AM_CONDITIONAL(BUILD_WAYLAND, test "x${have_wayland}" = "xyes")
@@ -559,6 +575,7 @@ Configure summary:
     Libmatemixer support ....: ${have_libmatemixer}
     Smartcard support .......: ${have_smartcard_support}
     RFKill support ..........: ${enable_rfkill}
+    Appindicator support ....: ${have_appindicator}
     Wayland support .........: ${have_wayland}
     Wayland protocols dir ...: ${WAYLAND_PROTOCOLS_DATADIR}
 ${NSS_DATABASE:+\

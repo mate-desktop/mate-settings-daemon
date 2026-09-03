@@ -32,7 +32,9 @@
 #define MATE_DESKTOP_USE_UNSTABLE_API
 #include <libmate-desktop/mate-desktop-utils.h>
 
+#ifdef HAVE_APP_INDICATOR
 #include <libayatana-appindicator/app-indicator.h>
+#endif
 
 #include <wayland-client.h>
 #include "wlr-output-management-unstable-v1-client-protocol.h"
@@ -161,7 +163,9 @@ struct MsdWlrandrManagerPrivate {
         gboolean                 initial_config_applied;
         struct zwlr_output_configuration_v1 *pending_config;
         gboolean                 probing;
+#ifdef HAVE_APP_INDICATOR
         AppIndicator            *indicator;
+#endif
         GtkWidget               *menu;
         GtkWidget               *confirm_dialog;
         guint                    icon_changed_id;
@@ -2659,8 +2663,13 @@ rebuild_menu (MsdWlrandrManager *manager)
         GtkWidget *menu;
         GList *l;
 
+#ifndef HAVE_APP_INDICATOR
+        /* there is no tray icon to attach the menu to */
+        return;
+#else
         if (priv->indicator == NULL)
                 return;
+#endif
 
         menu = gtk_menu_new ();
 
@@ -2684,7 +2693,9 @@ rebuild_menu (MsdWlrandrManager *manager)
                 gtk_widget_destroy (priv->menu);
         priv->menu = menu;
 
+#ifdef HAVE_APP_INDICATOR
         app_indicator_set_menu (priv->indicator, GTK_MENU (menu));
+#endif
 }
 
 /* ------------------------------------------------------------------ *
@@ -2697,10 +2708,14 @@ start_or_stop_icon (MsdWlrandrManager *manager)
         gboolean show = g_settings_get_boolean (manager->priv->settings, CONF_KEY_SHOW_NOTIFICATION_ICON);
 
         if (show) {
+#ifdef HAVE_APP_INDICATOR
                 app_indicator_set_status (manager->priv->indicator, APP_INDICATOR_STATUS_ACTIVE);
+#endif
                 rebuild_menu (manager);
         } else {
+#ifdef HAVE_APP_INDICATOR
                 app_indicator_set_status (manager->priv->indicator, APP_INDICATOR_STATUS_PASSIVE);
+#endif
         }
 }
 
@@ -2755,8 +2770,10 @@ msd_wlrandr_manager_finalize (GObject *object)
                 g_object_unref (priv->settings);
         }
 
+#ifdef HAVE_APP_INDICATOR
         if (priv->indicator != NULL)
                 g_object_unref (priv->indicator);
+#endif
         if (priv->menu != NULL)
                 gtk_widget_destroy (priv->menu);
         if (priv->confirm_dialog != NULL)
@@ -2833,14 +2850,18 @@ msd_wlrandr_manager_start (MsdWlrandrManager *manager, GError **error)
         wl_registry_add_listener (priv->registry, &registry_listener, manager);
         wl_display_flush (priv->display);
 
+#ifdef HAVE_APP_INDICATOR
         priv->indicator = app_indicator_new ("org.mate.settingsdaemon.wlrandr",
                                              MSD_WLRANDR_ICON_NAME,
                                              APP_INDICATOR_CATEGORY_APPLICATION_STATUS);
         app_indicator_set_title (priv->indicator, _("Configure display settings"));
+#endif
 
         icon_settings = g_settings_new ("org.mate.interface");
+#ifdef HAVE_APP_INDICATOR
         if (g_settings_get_boolean (icon_settings, "menus-have-icons"))
                 app_indicator_set_icon_theme_path (priv->indicator, NULL);
+#endif
         g_object_unref (icon_settings);
 
         priv->icon_changed_id = g_signal_connect (priv->settings, "changed::" CONF_KEY_SHOW_NOTIFICATION_ICON,
@@ -2906,11 +2927,13 @@ msd_wlrandr_manager_stop (MsdWlrandrManager *manager)
                 priv->settings = NULL;
         }
 
+#ifdef HAVE_APP_INDICATOR
         if (priv->indicator != NULL) {
                 app_indicator_set_status (priv->indicator, APP_INDICATOR_STATUS_PASSIVE);
                 g_object_unref (priv->indicator);
                 priv->indicator = NULL;
         }
+#endif
 
         if (priv->menu != NULL) {
                 gtk_widget_destroy (priv->menu);
