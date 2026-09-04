@@ -18,6 +18,33 @@ EXTRA_DIST = \
 	ChangeLog		\
 	README			\
 	its			\
+	meson.build		\
+	meson_options.txt	\
+	data/meson.build	\
+	mate-settings-daemon/meson.build \
+	plugins/meson.build	\
+	plugins/a11y-keyboard/meson.build \
+	plugins/a11y-settings/meson.build \
+	plugins/background/meson.build \
+	plugins/clipboard/meson.build \
+	plugins/common/meson.build \
+	plugins/datetime/meson.build \
+	plugins/dummy/meson.build \
+	plugins/housekeeping/meson.build \
+	plugins/keybindings/meson.build \
+	plugins/keyboard/meson.build \
+	plugins/media-keys/meson.build \
+	plugins/mouse/meson.build \
+	plugins/mpris/meson.build \
+	plugins/rfkill/meson.build \
+	plugins/smartcard/meson.build \
+	plugins/sound/meson.build \
+	plugins/typing-break/meson.build \
+	plugins/wlrandr/meson.build \
+	plugins/xrandr/meson.build \
+	plugins/xrdb/meson.build \
+	plugins/xsettings/meson.build \
+	po/meson.build		\
 	$(NULL)
 
 DISTCLEANFILES = \

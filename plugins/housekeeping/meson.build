@@ -1,0 +1,26 @@
+libhousekeeping = shared_module('housekeeping',
+  'msd-ldsm-dialog.h',
+  'msd-ldsm-dialog.c',
+  'msd-ldsm-trash-empty.h',
+  'msd-ldsm-trash-empty.c',
+  'msd-disk-space.h',
+  'msd-disk-space.c',
+  'msd-housekeeping-manager.h',
+  'msd-housekeeping-manager.c',
+  'msd-housekeeping-plugin.h',
+  'msd-housekeeping-plugin.c',
+  include_directories: [top_inc, msd_daemon_inc],
+  dependencies: settings_plugin_deps + [gio_unix_dep, libnotify_dep],
+  name_suffix: 'so',
+  install: true,
+  install_dir: msd_plugindir,
+)
+
+i18n.merge_file(
+  input: 'housekeeping.mate-settings-plugin.desktop.in',
+  output: 'housekeeping.mate-settings-plugin',
+  type: 'desktop',
+  po_dir: '../../po',
+  install: true,
+  install_dir: msd_plugindir,
+)
