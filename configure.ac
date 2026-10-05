@@ -60,6 +60,7 @@ LIBMATEKBD_REQUIRED_VERSION=1.17.0
 LIBNOTIFY_REQUIRED_VERSION=0.7.0
 LIBATSPI_REQUIRED_VERSION=2.0
 LIBMATEMIXER_REQUIRED_VERSION=1.10.0
+APPINDICATOR_REQUIRED=0.0.13
 
 PKG_CHECK_MODULES(SETTINGS_DAEMON,
 	glib-2.0 >= $GLIB_REQUIRED_VERSION
@@ -86,22 +87,47 @@ dnl ---------------------------------------------------------------------------
 dnl - Ayatana AppIndicator
 dnl ---------------------------------------------------------------------------
 
-AC_ARG_ENABLE(appindicator,
-	AS_HELP_STRING([--enable-appindicator], [Enable ayatana appindicator support (default: auto)]),
-	[case "${enableval}" in
-	 yes|no|auto) enable_appindicator=${enableval} ;;
-	 *) AC_MSG_ERROR(bad value ${enableval} for --enable-appindicator) ;;
-	esac],
-	enable_appindicator=auto)
+AYATANA_APPINDICATOR_PKG=ayatana-appindicator3-0.1
+UBUNTU_APPINDICATOR_PKG=appindicator3-0.1
 
-have_appindicator=no
-if test "x${enable_appindicator}" != "xno"; then
-	PKG_CHECK_MODULES(APPINDICATOR, ayatana-appindicator3-0.1,
-		[have_appindicator=yes
-		AC_DEFINE(HAVE_APP_INDICATOR, 1, [Define if ayatana appindicator support is enabled])],
-		[if test "x${enable_appindicator}" = "xyes"; then
-			AC_MSG_ERROR([Ayatana appindicator support requested but ayatana-appindicator3-0.1 not found])
-		fi])
+PKG_CHECK_EXISTS($AYATANA_APPINDICATOR_PKG >= $APPINDICATOR_REQUIRED,
+		 [have_appindicator_ayatana="yes"],
+		 [have_appindicator_ayatana="no"])
+PKG_CHECK_EXISTS($UBUNTU_APPINDICATOR_PKG >= $APPINDICATOR_REQUIRED,
+		 [have_appindicator_ubuntu="yes"],
+		 [have_appindicator_ubuntu="no"])
+
+AC_ARG_ENABLE([appindicator],
+	      AS_HELP_STRING([--enable-appindicator[=@<:@no/auto/yes@:>@]],[Build support for application indicators]),
+	      [enable_appindicator=$enableval],
+	      [enable_appindicator="auto"])
+
+
+if  test "x$enable_appindicator" = "xauto" &&
+   (test "x$have_appindicator_ayatana" = "xyes" ||
+    test "x$have_appindicator_ubuntu" = "xyes"); then
+	AC_MSG_NOTICE([Enabling AppIndicator support (as --enable-appindicator=auto was used).])
+	enable_appindicator="yes"
+fi
+
+if test "x$enable_appindicator" = "xyes"; then
+	if test "x$have_appindicator_ayatana" = "xyes"; then
+		AC_MSG_NOTICE([Buidling against Ayatana AppIndicator.])
+		PKG_CHECK_MODULES(AYATANA_APPINDICATOR,
+				  [$AYATANA_APPINDICATOR_PKG >= $APPINDICATOR_REQUIRED],
+				  [AC_DEFINE(HAVE_AYATANA_APPINDICATOR, 1, [Have Ayatana AppIndicator])])
+		AC_SUBST(AYATANA_APPINDICATOR_CFLAGS)
+		AC_SUBST(AYATANA_APPINDICATOR_LIBS)
+	elif test "x$have_appindicator_ubuntu" = "xyes"; then
+		AC_MSG_NOTICE([Buidling against Ubuntu AppIndicator.])
+		PKG_CHECK_MODULES(UBUNTU_APPINDICATOR,
+				  [$UBUNTU_APPINDICATOR_PKG >= $APPINDICATOR_REQUIRED],
+				  [AC_DEFINE(HAVE_UBUNTU_APPINDICATOR, 1, [Have Ubuntu AppIndicator])])
+		AC_SUBST(UBUNTU_APPINDICATOR_CFLAGS)
+		AC_SUBST(UBUNTU_APPINDICATOR_LIBS)
+	else
+		AC_MSG_ERROR([Neither Ayatana AppIndicator nor Ubuntu AppIndicator library is present, but you enabled AppIndicator support.])
+	fi
 fi
 
 dnl ---------------------------------------------------------------------------
@@ -575,7 +601,11 @@ Configure summary:
     Libmatemixer support ....: ${have_libmatemixer}
     Smartcard support .......: ${have_smartcard_support}
     RFKill support ..........: ${enable_rfkill}
-    Appindicator support ....: ${have_appindicator}
+
+    AppIndicator enabled:              ${enable_appindicator}
+    Ayatana AppIndicator (preferred)   ${have_appindicator_ayatana}
+    Ubuntu AppIndicator (legacy)       ${have_appindicator_ubuntu}
+
     Wayland support .........: ${have_wayland}
     Wayland protocols dir ...: ${WAYLAND_PROTOCOLS_DATADIR}
 ${NSS_DATABASE:+\
