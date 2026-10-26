@@ -39,6 +39,7 @@ libmedia_keys_la_CFLAGS =		\
 	$(SETTINGS_PLUGIN_CFLAGS)	\
 	$(LIBMATEMIXER_CFLAGS)		\
 	$(LIBCANBERRA_CFLAGS)		\
+	$(MATE_DESKTOP_CFLAGS)		\
 	$(AM_CFLAGS)			\
 	$(WARN_CFLAGS)			\
 	$(NULL)
@@ -51,6 +52,7 @@ libmedia_keys_la_LIBADD  = \
 	$(SETTINGS_PLUGIN_LIBS) \
 	$(LIBMATEMIXER_LIBS) \
 	$(LIBCANBERRA_LIBS) \
+	$(MATE_DESKTOP_LIBS) \
 	-lm
 
 plugin_in_files = 		\
@@ -112,6 +114,7 @@ test_media_keys_CFLAGS =		\
 	$(SETTINGS_PLUGIN_CFLAGS)	\
 	$(LIBMATEMIXER_CFLAGS)		\
 	$(LIBCANBERRA_CFLAGS)		\
+	$(MATE_DESKTOP_CFLAGS)		\
 	$(AM_CFLAGS)			\
 	$(WARN_CFLAGS)			\
 	$(NULL)
@@ -123,6 +126,7 @@ test_media_keys_LDADD = \
 	$(SETTINGS_PLUGIN_LIBS) \
 	$(LIBMATEMIXER_LIBS) \
 	$(LIBCANBERRA_LIBS) \
+	$(MATE_DESKTOP_LIBS) \
 	-lm
 
 gtkbuilderdir = $(pkgdatadir)
