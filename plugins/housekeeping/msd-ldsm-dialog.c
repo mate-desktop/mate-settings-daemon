@@ -435,7 +435,7 @@ msd_ldsm_dialog_new (gboolean     other_usable_partitions,
                 button_empty_trash = gtk_dialog_add_button (GTK_DIALOG (dialog),
                                                             _("Empty Trash"),
                                                             MSD_LDSM_DIALOG_RESPONSE_EMPTY_TRASH);
-                empty_trash_image = gtk_image_new_from_icon_name ("edit-clear", GTK_ICON_SIZE_BUTTON);
+                empty_trash_image = gtk_image_new_from_icon_name ("edit-clear-all", GTK_ICON_SIZE_BUTTON);
                 gtk_button_set_image (GTK_BUTTON (button_empty_trash), empty_trash_image);
         }
 
