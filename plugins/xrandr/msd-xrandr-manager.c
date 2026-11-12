@@ -1464,10 +1464,23 @@ auto_configure_outputs (MsdXrandrManager *manager, guint32 timestamp)
                         continue;
 
                 if (mate_rr_output_info_is_active (output)) {
+                        MateRROutput *rr_output;
                         int width, height;
                         g_assert (mate_rr_output_info_is_connected (output));
 
                         mate_rr_output_info_get_geometry (output, NULL, NULL, &width, &height);
+
+                        /* Virtual outputs (hotplug_mode_update) change their
+                         * preferred mode to follow the host window, so switch
+                         * to it instead of keeping the current mode.
+                         */
+                        rr_output = mate_rr_screen_get_output_by_name (priv->rw_screen,
+                                                                       mate_rr_output_info_get_name (output));
+                        if (rr_output && mate_rr_output_get_hotplug_mode_update (rr_output)) {
+                                width = mate_rr_output_info_get_preferred_width (output);
+                                height = mate_rr_output_info_get_preferred_height (output);
+                        }
+
 			mate_rr_output_info_set_geometry (output, x, 0, width, height);
 
                         x += width;
@@ -2651,7 +2664,14 @@ msd_xrandr_manager_start (MsdXrandrManager *manager,
         }
 
         show_timestamps_dialog (manager, "Startup");
-        if (!apply_stored_configuration_at_startup (manager, GDK_CURRENT_TIME)) /* we don't have a real timestamp at startup anyway */
+        if (has_hotplug_mode_update (manager->priv->rw_screen)) {
+                /* Virtual displays follow the host window; a stored
+                 * configuration would pin a stale size, so use the
+                 * preferred mode as on_randr_event() does.
+                 */
+                auto_configure_outputs (manager, GDK_CURRENT_TIME);
+                log_msg ("  Automatically configured outputs for hotplug_mode_update at startup\n");
+        } else if (!apply_stored_configuration_at_startup (manager, GDK_CURRENT_TIME)) /* we don't have a real timestamp at startup anyway */
                 if (!apply_default_configuration_from_file (manager, GDK_CURRENT_TIME))
                         if (!g_settings_get_boolean (manager->priv->settings, CONF_KEY_USE_XORG_MONITOR_SETTINGS))
                                 apply_default_boot_configuration (manager, GDK_CURRENT_TIME);
