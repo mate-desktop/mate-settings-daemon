@@ -1,9 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
 # This file is distributed under the same license as the mate-settings-daemon package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-# Translators:
 # Kristoffer Grundström <lovaren@gmail.com>, 2018
 # efef6ec5b435a041fce803c7f8af77d2_2341d43, 2018
 # Patrik Nilsson <asavartzeth@gmail.com>, 2018
@@ -12,21 +9,25 @@
 # Tobias Lekare <lekare@linux.com>, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Luna Jernberg <droidbittin@gmail.com>, 2024
-# Daniel Nylander <po@danielnylander.se>, 2025
-# 
+# Daniel Nylander <po@danielnylander.se>, 2025, 2026.
+#
+# Translators:
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-settings-daemon 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2022-10-29 15:35+0200\n"
-"PO-Revision-Date: 2018-03-12 08:16+0000\n"
-"Last-Translator: Daniel Nylander <po@danielnylander.se>, 2025\n"
-"Language-Team: Swedish (https://app.transifex.com/mate/teams/13566/sv/)\n"
+"PO-Revision-Date: 2026-10-25 11:18+0000\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <https://translate.fedoraproject.org/projects/mate-"
+"desktop/applications/mate-settings-daemon/sv/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sv\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.10.1\n"
 
 #: data/50-accessibility.xml.in:2
 msgid "Accessibility"
@@ -863,7 +864,7 @@ msgstr ""
 "enligt turn_on_external_monitors_at_startup och "
 "turn_on_laptop_monitor_at_startup inställningarna och avgör ett lämpligt "
 "kloning/sida-vid-sida läge. Omställning av denna nyckeln till Sant "
-"inaktiverar detta, och skärminställningarna rörs inte alls (såvida det inte "
+"inaktiverar detta och skärminställningarna rörs inte alls (såvida det inte "
 "är en explicit användarkonfiguration)."
 
 #: data/org.mate.SettingsDaemon.plugins.xrandr.gschema.xml.in:25
@@ -922,7 +923,7 @@ msgstr "Ersätt den aktuella daemonen"
 
 #: mate-settings-daemon/main.c:68
 msgid "Don't become a daemon"
-msgstr "Bli inte en demon"
+msgstr "Kör inte som en bakgrundsprocess"
 
 #: mate-settings-daemon/main.c:69
 msgid "Exit after a time (for debugging)"
@@ -1209,7 +1210,7 @@ msgstr "Töm papperskorgen"
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:444
 msgid "Examine…"
-msgstr "Undersök..."
+msgstr "Undersök…"
 
 #: plugins/housekeeping/msd-ldsm-dialog.c:451
 msgid "Ignore"
@@ -1232,7 +1233,7 @@ msgstr "Tömmer papperskorgen"
 
 #: plugins/housekeeping/msd-ldsm-trash-empty.c:277
 msgid "Preparing to empty trash…"
-msgstr "Förbereder att tömma papperskorgen..."
+msgstr "Förbereder att tömma papperskorgen…"
 
 #. Translators: "Emptying trash from <device>"
 #: plugins/housekeeping/msd-ldsm-trash-empty.c:304
@@ -1556,7 +1557,7 @@ msgstr "Ser skärmen bra ut?"
 
 #: plugins/xrandr/msd-xrandr-manager.c:498
 msgid "_Restore Previous Configuration"
-msgstr "_Återställ tidigare konfiguration"
+msgstr "Å_terställ tidigare konfiguration"
 
 #: plugins/xrandr/msd-xrandr-manager.c:499
 msgid "_Keep This Configuration"
@@ -1630,7 +1631,7 @@ msgstr "Spegla samma utdata till alla monitorer och slå på dem"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2291
 msgid "_Configure Display Settings…"
-msgstr "_Konfigurera skärminställningar..."
+msgstr "_Konfigurera skärminställningar…"
 
 #: plugins/xrandr/msd-xrandr-manager.c:2301
 msgid "Open the display configuration dialog (all settings)"
