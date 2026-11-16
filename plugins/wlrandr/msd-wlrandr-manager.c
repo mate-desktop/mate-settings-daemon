@@ -67,6 +67,7 @@
 
 #define MSD_WLRANDR_DBUS_NAME  MSD_DBUS_NAME ".WLRANDR"
 #define MSD_WLRANDR_DBUS_NAME_2  MSD_WLRANDR_DBUS_NAME "_2"
+#define MSD_WLRANDR_DBUS_NAME_3  MSD_WLRANDR_DBUS_NAME "_3"
 #define MSD_WLRANDR_DBUS_PATH  MSD_DBUS_PATH "/WLRANDR"
 
 static const gchar introspection_xml[] =
@@ -98,6 +99,21 @@ static const gchar introspection_xml[] =
 "    <signal name='ConfigurationChanged'>"
 "    </signal>"
 "  </interface>"
+""
+"  <interface name='org.mate.SettingsDaemon.WLRANDR_3'>"
+"    <method name='GetConfiguration'>"
+"      <arg name='configuration' type='a(ssbiiidbb(iiii)a(iiii)sb)' direction='out'/>"
+"    </method>"
+"    <method name='SetConfiguration'>"
+"      <arg name='configuration' type='a(sbiiiiidibb)' direction='in'/>"
+"    </method>"
+"    <method name='ApplyConfiguration'>"
+"      <arg name='parent_window_id' type='x' direction='in'/>"
+"      <arg name='timestamp' type='x' direction='in'/>"
+"    </method>"
+"    <signal name='ConfigurationChanged'>"
+"    </signal>"
+"  </interface>"
 "</node>";
 
 typedef struct {
@@ -114,6 +130,7 @@ typedef struct {
         double    scale;
         int       transform;
         gboolean  adaptive_sync;
+        gboolean  primary;
 } WlrOutputInfo;
 
 typedef struct {
@@ -176,6 +193,8 @@ struct MsdWlrandrManagerPrivate {
         guint                    owner_id;
         guint                    registration_id;
         guint                    registration_id_2;
+        guint                    registration_id_3;
+        char                    *primary;
 };
 
 static void
@@ -208,6 +227,9 @@ find_output_in_config (WlrConfig *config, const char *name);
 
 static struct zwlr_output_mode_v1 *
 find_mode_for_output (WlOutputHead *head, WlrOutputInfo *info);
+
+static WlrOutputInfo *
+config_primary (WlrConfig *config);
 
 static WlrOutputInfo *
 wlr_output_info_new (const char *name)
@@ -594,8 +616,17 @@ static void
 config_succeeded_handler (void *data, struct zwlr_output_configuration_v1 *config)
 {
         ApplyData *ad = data;
+        struct MsdWlrandrManagerPrivate *priv = ad->manager->priv;
+        WlrOutputInfo *primary = config_primary (ad->config);
+        gboolean primary_changed = FALSE;
 
         g_debug ("msd-wlrandr: output configuration applied");
+
+        if (primary != NULL && g_strcmp0 (primary->name, priv->primary) != 0) {
+                g_free (priv->primary);
+                priv->primary = g_strdup (primary->name);
+                primary_changed = TRUE;
+        }
 
         if (ad->save)
                 save_current_configuration (ad->manager, ad->config);
@@ -605,9 +636,11 @@ config_succeeded_handler (void *data, struct zwlr_output_configuration_v1 *confi
         else
                 wlr_config_free (ad->previous);
 
-        ad->manager->priv->pending_config = NULL;
+        priv->pending_config = NULL;
         g_idle_add (probe_idle_cb, ad->manager);
         zwlr_output_configuration_v1_destroy (config);
+        if (primary_changed)
+                emit_configuration_changed (ad->manager);
         wlr_config_free (ad->config);
         g_free (ad);
 }
@@ -943,6 +976,7 @@ wlr_config_copy (const WlrConfig *config)
                 dst->scale = src->scale;
                 dst->transform = src->transform;
                 dst->adaptive_sync = src->adaptive_sync;
+                dst->primary = src->primary;
 
                 g_ptr_array_add (outputs, dst);
         }
@@ -952,6 +986,39 @@ wlr_config_copy (const WlrConfig *config)
         copy->outputs = (WlrOutputInfo **) g_ptr_array_free (outputs, FALSE);
 
         return copy;
+}
+
+static const char *
+primary_head_name (MsdWlrandrManager *manager)
+{
+        WlOutputHead *first = NULL;
+        GList *l;
+
+        for (l = manager->priv->heads; l != NULL; l = l->next) {
+                WlOutputHead *head = l->data;
+
+                if (!head->enabled)
+                        continue;
+                if (g_strcmp0 (head->name, manager->priv->primary) == 0)
+                        return head->name;
+                if (first == NULL)
+                        first = head;
+        }
+
+        return first != NULL ? first->name : NULL;
+}
+
+static WlrOutputInfo *
+config_primary (WlrConfig *config)
+{
+        int i;
+
+        for (i = 0; config->outputs != NULL && config->outputs[i] != NULL; i++) {
+                if (config->outputs[i]->enabled && config->outputs[i]->primary)
+                        return config->outputs[i];
+        }
+
+        return NULL;
 }
 
 static gboolean
@@ -1033,6 +1100,13 @@ apply_configuration (MsdWlrandrManager *manager,
                         info->product = g_strdup (head->model);
                 if (info->serial == NULL || *info->serial == '\0')
                         info->serial = g_strdup (head->serial_number);
+        }
+
+        if (config_primary (ad->config) == NULL) {
+                WlrOutputInfo *info = find_output_in_config (ad->config, primary_head_name (manager));
+
+                if (info != NULL && info->enabled)
+                        info->primary = TRUE;
         }
 
         zwlr_output_configuration_v1_add_listener (config_obj, &config_listener, ad);
@@ -1196,6 +1270,8 @@ snapshot_head (WlOutputHead *head)
         info->scale = head->scale;
         info->transform = head->transform;
         info->adaptive_sync = head->adaptive_sync;
+        info->primary = head->manager != NULL &&
+                        g_strcmp0 (head->name, primary_head_name (head->manager)) == 0;
 
         if (head->enabled && head->current_mode != NULL) {
                 info->width = head->current_mode->width;
@@ -1427,6 +1503,8 @@ parser_end_element (GMarkupParseContext *context,
                 output->transform = transform_from_name (text);
         } else if (strcmp (parser->current_element, "adaptive_sync") == 0) {
                 output->adaptive_sync = yes_no_to_boolean (text);
+        } else if (strcmp (parser->current_element, "primary") == 0) {
+                output->primary = yes_no_to_boolean (text);
         }
 }
 
@@ -1604,6 +1682,8 @@ emit_configuration (WlrConfig *config, GString *string)
                                 g_string_append_printf (string, "          <scale>%s</scale>\n", scale_buf);
                         }
                         g_string_append_printf (string, "          <transform>%s</transform>\n", transform_to_name (output->transform));
+                        if (output->primary)
+                                g_string_append (string, "          <primary>yes</primary>\n");
                 } else {
                         g_string_append (string, "          <enabled>no</enabled>\n");
                 }
@@ -1794,6 +1874,9 @@ apply_initial_config (MsdWlrandrManager *manager)
 #define HEAD_SET_TYPE   "a(sbiiiiidib)"
 #define HEAD_INFO_FORMAT  "(ssbiiidbb(iiii)a(iiii))"
 #define HEAD_SET_FORMAT   "(sbiiiiidib)"
+#define HEAD_INFO_TYPE_3  "a(ssbiiidbb(iiii)a(iiii)sb)"
+#define HEAD_SET_TYPE_3   "a(sbiiiiidibb)"
+#define HEAD_INFO_FORMAT_3  "(ssbiiidbb(iiii)a(iiii)sb)"
 #define MODE_FORMAT       "(iiii)"
 
 /* GVariant type strings cannot contain whitespace, so the compact forms
@@ -1804,7 +1887,8 @@ apply_initial_config (MsdWlrandrManager *manager)
  * (name, description, enabled, x, y, transform, scale,
  *  adaptive_sync_supported, adaptive_sync,
  *  current_mode (width, height, refresh, preferred),
- *  modes (width, height, refresh, preferred) ...) */
+ *  modes (width, height, refresh, preferred) ...),
+ * and on WLRANDR_3 also (id, primary). */
 typedef enum {
         HEAD_INFO_FIELD_NAME,                   /* s      output name */
         HEAD_INFO_FIELD_DESCRIPTION,            /* s      human-readable description */
@@ -1817,6 +1901,8 @@ typedef enum {
         HEAD_INFO_FIELD_ADAPTIVE_SYNC,          /* b      adaptive sync currently active */
         HEAD_INFO_FIELD_CURRENT_MODE,           /* (iiii) the mode currently in use */
         HEAD_INFO_FIELD_MODES,                  /* a(iiii) all modes the output supports */
+        HEAD_INFO_FIELD_ID,                     /* s      stable monitor id (WLRANDR_3) */
+        HEAD_INFO_FIELD_PRIMARY,                /* b      the primary monitor (WLRANDR_3) */
         HEAD_INFO_N_FIELDS
 } HeadInfoField;
 
@@ -1831,7 +1917,7 @@ typedef enum {
 
 /* One head as sent to SetConfiguration:
  * (name, enabled, width, height, refresh, x, y, scale, transform,
- *  adaptive_sync) */
+ *  adaptive_sync), and on WLRANDR_3 also (primary). */
 typedef enum {
         HEAD_SET_FIELD_NAME,                    /* s      output name */
         HEAD_SET_FIELD_ENABLED,                 /* b      output enabled */
@@ -1843,12 +1929,13 @@ typedef enum {
         HEAD_SET_FIELD_SCALE,                   /* d      desired fractional scale */
         HEAD_SET_FIELD_TRANSFORM,               /* i      desired rotation */
         HEAD_SET_FIELD_ADAPTIVE_SYNC,           /* b      desired adaptive sync state */
+        HEAD_SET_FIELD_PRIMARY,                 /* b      make it the primary (WLRANDR_3) */
         HEAD_SET_N_FIELDS
 } HeadSetField;
 
 /* Notify interested parties (e.g. the display capplet) that the current
  * output configuration may have changed.  The same object path is
- * registered twice, once per interface, so the signal is emitted on both.
+ * registered once per interface, so the signal is emitted on each.
  */
 static void
 emit_configuration_changed (MsdWlrandrManager *manager)
@@ -1872,6 +1959,73 @@ emit_configuration_changed (MsdWlrandrManager *manager)
                                        MSD_WLRANDR_DBUS_NAME_2,
                                        "ConfigurationChanged",
                                        NULL, NULL);
+        g_dbus_connection_emit_signal (connection,
+                                       NULL,
+                                       MSD_WLRANDR_DBUS_PATH,
+                                       MSD_WLRANDR_DBUS_NAME_3,
+                                       "ConfigurationChanged",
+                                       NULL, NULL);
+}
+
+static char *
+sanitize_id (const char *text)
+{
+        char *id = g_strdup (text != NULL ? text : "");
+        char *c;
+
+        for (c = id; *c != '\0'; c++) {
+                if (!g_ascii_isalnum (*c) && *c != '_' && *c != '.' && *c != '-')
+                        *c = '_';
+        }
+
+        return id;
+}
+
+static char *
+head_base_id (WlOutputHead *head)
+{
+        g_autofree char *make = sanitize_id (head->make);
+        g_autofree char *model = sanitize_id (head->model);
+
+        if (*make == '\0' && *model == '\0')
+                return g_strdup ("monitor");
+
+        return g_strconcat (make, *make != '\0' && *model != '\0' ? "-" : "", model, NULL);
+}
+
+static char *
+head_monitor_id (MsdWlrandrManager *manager, WlOutputHead *head)
+{
+        g_autofree char *base = head_base_id (head);
+        g_autofree char *key = sanitize_id (head->serial_number);
+        g_autofree char *connector = NULL;
+        gboolean twin = FALSE;
+        gboolean same_key = FALSE;
+        GList *l;
+
+        for (l = manager->priv->heads; l != NULL; l = l->next) {
+                WlOutputHead *other = l->data;
+                g_autofree char *other_base = NULL;
+                g_autofree char *other_key = NULL;
+
+                if (other == head)
+                        continue;
+                other_base = head_base_id (other);
+                if (strcmp (other_base, base) != 0)
+                        continue;
+                twin = TRUE;
+                other_key = sanitize_id (other->serial_number);
+                if (*key == '\0' || strcmp (other_key, key) == 0)
+                        same_key = TRUE;
+        }
+
+        if (!twin)
+                return g_steal_pointer (&base);
+        if (!same_key)
+                return g_strdup_printf ("%s-s%s", base, key);
+
+        connector = sanitize_id (head->name);
+        return g_strdup_printf ("%s@%s", base, connector);
 }
 
 /* Serialize the current state of the outputs so the display capplet can
@@ -1879,12 +2033,13 @@ emit_configuration_changed (MsdWlrandrManager *manager)
  * HeadInfoField and ModeField enums above.
  */
 static GVariant *
-build_configuration_variant (MsdWlrandrManager *manager)
+build_configuration_variant (MsdWlrandrManager *manager, gboolean with_primary)
 {
         GVariantBuilder builder;
+        const char *primary = primary_head_name (manager);
         GList *l;
 
-        g_variant_builder_init (&builder, G_VARIANT_TYPE (HEAD_INFO_TYPE));
+        g_variant_builder_init (&builder, G_VARIANT_TYPE (with_primary ? HEAD_INFO_TYPE_3 : HEAD_INFO_TYPE));
 
         for (l = manager->priv->heads; l != NULL; l = l->next) {
                 WlOutputHead *head = l->data;
@@ -1911,18 +2066,37 @@ build_configuration_variant (MsdWlrandrManager *manager)
                         cur_preferred = head->current_mode->preferred ? 1 : 0;
                 }
 
-                g_variant_builder_add (&builder, HEAD_INFO_FORMAT,
-                                       head->name != NULL ? head->name : "",
-                                       head->description != NULL ? head->description : "",
-                                       head->enabled,
-                                       head->x,
-                                       head->y,
-                                       head->transform,
-                                       head->scale,
-                                       head->adaptive_sync_supported == 1,
-                                       head->adaptive_sync,
-                                       cur_w, cur_h, cur_rate, cur_preferred,
-                                       &modes_builder);
+                if (with_primary) {
+                        g_autofree char *id = head_monitor_id (manager, head);
+
+                        g_variant_builder_add (&builder, HEAD_INFO_FORMAT_3,
+                                               head->name != NULL ? head->name : "",
+                                               head->description != NULL ? head->description : "",
+                                               head->enabled,
+                                               head->x,
+                                               head->y,
+                                               head->transform,
+                                               head->scale,
+                                               head->adaptive_sync_supported == 1,
+                                               head->adaptive_sync,
+                                               cur_w, cur_h, cur_rate, cur_preferred,
+                                               &modes_builder,
+                                               id,
+                                               g_strcmp0 (head->name, primary) == 0);
+                } else {
+                        g_variant_builder_add (&builder, HEAD_INFO_FORMAT,
+                                               head->name != NULL ? head->name : "",
+                                               head->description != NULL ? head->description : "",
+                                               head->enabled,
+                                               head->x,
+                                               head->y,
+                                               head->transform,
+                                               head->scale,
+                                               head->adaptive_sync_supported == 1,
+                                               head->adaptive_sync,
+                                               cur_w, cur_h, cur_rate, cur_preferred,
+                                               &modes_builder);
+                }
         }
 
         return g_variant_builder_end (&builder);
@@ -1932,14 +2106,16 @@ build_configuration_variant (MsdWlrandrManager *manager)
  * and meaning are documented by the HeadSetField enum above.
  */
 static WlrConfig *
-parse_configuration_from_variant (GVariant *configuration)
+parse_configuration_from_variant (GVariant *configuration, gboolean with_primary)
 {
         WlrConfig *config;
         GVariantIter iter;
         GPtrArray *outputs;
+        gboolean primary_seen = FALSE;
 
         if (configuration == NULL ||
-            !g_variant_is_of_type (configuration, G_VARIANT_TYPE (HEAD_SET_TYPE)))
+            !g_variant_is_of_type (configuration,
+                                   G_VARIANT_TYPE (with_primary ? HEAD_SET_TYPE_3 : HEAD_SET_TYPE)))
                 return NULL;
 
         outputs = g_ptr_array_new ();
@@ -1950,6 +2126,7 @@ parse_configuration_from_variant (GVariant *configuration)
                 const char *name;
                 gboolean enabled;
                 gboolean adaptive_sync;
+                gboolean primary = FALSE;
                 int width, height, rate, x, y, transform;
                 double scale;
                 WlrOutputInfo *info;
@@ -1978,6 +2155,9 @@ parse_configuration_from_variant (GVariant *configuration)
                                      "i", &transform);
                 g_variant_get_child (head_var, HEAD_SET_FIELD_ADAPTIVE_SYNC,
                                      "b", &adaptive_sync);
+                if (with_primary)
+                        g_variant_get_child (head_var, HEAD_SET_FIELD_PRIMARY,
+                                             "b", &primary);
 
                 /* wlr_output_info_new () duplicates the name, so it is
                  * safe to release the tuple afterwards. */
@@ -1991,6 +2171,8 @@ parse_configuration_from_variant (GVariant *configuration)
                 info->scale = scale;
                 info->transform = transform;
                 info->adaptive_sync = adaptive_sync;
+                info->primary = primary && enabled && !primary_seen;
+                primary_seen = primary_seen || info->primary;
 
                 g_variant_unref (head_var);
 
@@ -2036,6 +2218,7 @@ find_adaptive_sync_head_to_set (MsdWlrandrManager *manager,
 static gboolean
 msd_wlrandr_manager_set_configuration (MsdWlrandrManager *manager,
                                        GVariant          *configuration,
+                                       gboolean           with_primary,
                                        GError           **error)
 {
         WlrConfig *config;
@@ -2043,7 +2226,7 @@ msd_wlrandr_manager_set_configuration (MsdWlrandrManager *manager,
         WlOutputHead *adaptive_sync_head;
         gboolean res;
 
-        config = parse_configuration_from_variant (configuration);
+        config = parse_configuration_from_variant (configuration, with_primary);
         if (config == NULL) {
                 g_set_error (error, G_DBUS_ERROR, G_DBUS_ERROR_INVALID_ARGS,
                              "The supplied configuration is invalid");
@@ -2106,7 +2289,7 @@ handle_method_call (GDBusConnection       *connection,
         if (g_strcmp0 (method_name, "GetConfiguration") == 0) {
                 GVariant *configuration;
 
-                configuration = build_configuration_variant (manager);
+                configuration = build_configuration_variant (manager, FALSE);
                 g_dbus_method_invocation_return_value (invocation,
                                                        g_variant_new ("(@a(ssbiiidbb(iiii)a(iiii)))",
                                                                       configuration));
@@ -2114,7 +2297,7 @@ handle_method_call (GDBusConnection       *connection,
                 g_autoptr (GVariant) configuration = NULL;
 
                 g_variant_get (parameters, "(@a(sbiiiiidib))", &configuration);
-                if (!msd_wlrandr_manager_set_configuration (manager, configuration, &error))
+                if (!msd_wlrandr_manager_set_configuration (manager, configuration, FALSE, &error))
                         g_dbus_method_invocation_return_gerror (invocation, error);
                 else
                         g_dbus_method_invocation_return_value (invocation, NULL);
@@ -2137,6 +2320,7 @@ handle_method_call2 (GDBusConnection       *connection,
                      gpointer               user_data)
 {
         MsdWlrandrManager *manager = (MsdWlrandrManager *) user_data;
+        gboolean with_primary = g_strcmp0 (interface_name, MSD_WLRANDR_DBUS_NAME_3) == 0;
         g_autoptr (GError) error = NULL;
 
         g_debug ("Calling method '%s' for wlrandr", method_name);
@@ -2144,15 +2328,14 @@ handle_method_call2 (GDBusConnection       *connection,
         if (g_strcmp0 (method_name, "GetConfiguration") == 0) {
                 GVariant *configuration;
 
-                configuration = build_configuration_variant (manager);
+                configuration = build_configuration_variant (manager, with_primary);
                 g_dbus_method_invocation_return_value (invocation,
-                                                       g_variant_new ("(@a(ssbiiidbb(iiii)a(iiii)))",
-                                                                      configuration));
+                                                       g_variant_new_tuple (&configuration, 1));
         } else if (g_strcmp0 (method_name, "SetConfiguration") == 0) {
                 g_autoptr (GVariant) configuration = NULL;
 
-                g_variant_get (parameters, "(@a(sbiiiiidib))", &configuration);
-                if (!msd_wlrandr_manager_set_configuration (manager, configuration, &error))
+                configuration = g_variant_get_child_value (parameters, 0);
+                if (!msd_wlrandr_manager_set_configuration (manager, configuration, with_primary, &error))
                         g_dbus_method_invocation_return_gerror (invocation, error);
                 else
                         g_dbus_method_invocation_return_value (invocation, NULL);
@@ -2218,6 +2401,14 @@ on_bus_gotten (GObject           *source_object,
                 g_dbus_connection_register_object (connection,
                                                    MSD_WLRANDR_DBUS_PATH,
                                                    manager->priv->introspection_data->interfaces[1],
+                                                   &interface_vtable2,
+                                                   manager,
+                                                   NULL,
+                                                   NULL);
+        manager->priv->registration_id_3 =
+                g_dbus_connection_register_object (connection,
+                                                   MSD_WLRANDR_DBUS_PATH,
+                                                   manager->priv->introspection_data->interfaces[2],
                                                    &interface_vtable2,
                                                    manager,
                                                    NULL,
@@ -2749,6 +2940,8 @@ msd_wlrandr_manager_finalize (GObject *object)
                         g_dbus_connection_unregister_object (priv->connection, priv->registration_id);
                 if (priv->registration_id_2 > 0)
                         g_dbus_connection_unregister_object (priv->connection, priv->registration_id_2);
+                if (priv->registration_id_3 > 0)
+                        g_dbus_connection_unregister_object (priv->connection, priv->registration_id_3);
                 g_object_unref (priv->connection);
                 priv->connection = NULL;
         }
@@ -2782,6 +2975,7 @@ msd_wlrandr_manager_finalize (GObject *object)
         for (l = priv->heads; l != NULL; l = l->next)
                 wlr_output_head_free (l->data);
         g_list_free (priv->heads);
+        g_free (priv->primary);
 
         if (priv->manager != NULL)
                 zwlr_output_manager_v1_destroy (priv->manager);
@@ -2904,6 +3098,10 @@ msd_wlrandr_manager_stop (MsdWlrandrManager *manager)
                 if (priv->registration_id_2 > 0) {
                         g_dbus_connection_unregister_object (priv->connection, priv->registration_id_2);
                         priv->registration_id_2 = 0;
+                }
+                if (priv->registration_id_3 > 0) {
+                        g_dbus_connection_unregister_object (priv->connection, priv->registration_id_3);
+                        priv->registration_id_3 = 0;
                 }
                 g_object_unref (priv->connection);
                 priv->connection = NULL;
