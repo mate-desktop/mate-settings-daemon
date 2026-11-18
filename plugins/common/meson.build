@@ -1,0 +1,12 @@
+libcommon = static_library('common',
+  'eggaccelerators.c',
+  'eggaccelerators.h',
+  'msd-keygrab.c',
+  'msd-keygrab.h',
+  'msd-input-helper.c',
+  'msd-input-helper.h',
+  'msd-osd-window.c',
+  'msd-osd-window.h',
+  include_directories: top_inc,
+  dependencies: settings_plugin_deps + [xinput_dep] + x11_libs,
+)
