@@ -40,6 +40,9 @@
 #include <canberra-gtk.h>
 #endif
 
+#define MATE_DESKTOP_USE_UNSTABLE_API
+#include <libmate-desktop/mate-systemd.h>
+
 #include "mate-settings-profile.h"
 #include "msd-marshal.h"
 #include "msd-media-keys-manager.h"
@@ -194,6 +197,7 @@ execute (MsdMediaKeysManager *manager,
         int      argc;
         char    *exec;
         char    *term = NULL;
+        GPid     pid;
 
         retval = FALSE;
 
@@ -232,8 +236,17 @@ execute (MsdMediaKeysManager *manager,
                                                 G_SPAWN_SEARCH_PATH,
                                                 NULL,
                                                 NULL,
-                                                NULL,
+                                                &pid,
                                                 NULL);
+
+                        if (retval)
+                                mate_start_systemd_scope (argv[0],
+                                                          pid,
+                                                          NULL,
+                                                          manager->priv->connection,
+                                                          NULL,
+                                                          NULL,
+                                                          NULL);
                 }
                 g_strfreev (argv);
         }
@@ -523,24 +536,64 @@ do_url_action (MsdMediaKeysManager *manager,
 }
 
 static void
+media_app_launched_cb (GAppLaunchContext *context,
+                       GAppInfo          *info,
+                       GVariant          *platform_data,
+                       gpointer           user_data)
+{
+        MsdMediaKeysManager *manager = MSD_MEDIA_KEYS_MANAGER (user_data);
+        gint32 pid;
+        const gchar *app_name;
+
+        if (platform_data == NULL || !g_variant_lookup (platform_data, "pid", "i", &pid) || pid <= 0)
+                return;
+
+        app_name = g_app_info_get_id (info);
+        if (app_name == NULL)
+                app_name = g_app_info_get_executable (info);
+
+        mate_start_systemd_scope (app_name,
+                                  pid,
+                                  NULL,
+                                  manager->priv->connection,
+                                  NULL,
+                                  NULL,
+                                  NULL);
+}
+
+static void
 do_media_action (MsdMediaKeysManager *manager)
 {
         GError *error = NULL;
         GAppInfo *app_info;
+        GdkAppLaunchContext *launch_context;
 
         app_info = g_app_info_get_default_for_type ("audio/x-vorbis+ogg", FALSE);
 
-        if (app_info != NULL) {
-           if (!g_app_info_launch (app_info, NULL, NULL, &error)) {
+        if (app_info == NULL) {
+                g_warning ("Could not find default application for '%s'",
+                           "audio/x-vorbis+ogg");
+                return;
+        }
+
+        launch_context = gdk_display_get_app_launch_context (gdk_display_get_default ());
+
+        g_signal_connect (launch_context,
+                          "launched",
+                          G_CALLBACK (media_app_launched_cb),
+                          manager);
+
+        if (!g_app_info_launch (app_info, NULL,
+                                G_APP_LAUNCH_CONTEXT (launch_context),
+                                &error)) {
                 g_warning ("Could not launch '%s': %s",
-                    g_app_info_get_commandline (app_info),
-                    error->message);
+                           g_app_info_get_commandline (app_info),
+                           error->message);
                 g_error_free (error);
-            }
         }
-        else {
-            g_warning ("Could not find default application for '%s' mime-type", "audio/x-vorbis+ogg");
-        }
+
+        g_object_unref (launch_context);
+        g_object_unref (app_info);
 }
 
 static void
