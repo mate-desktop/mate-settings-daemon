@@ -1,3 +1,13 @@
+### mate-settings-daemon 1.29.2
+
+  * wlrandr: add WLRANDR_3 with a monitor id and the primary monitor
+  * Add support for building with Ubuntu AppIndicator
+  * Use 'edit-clear-all' icon for Empty Trash
+  * clipboard: Fix possibly missing trap popping
+  * xrandr: follow preferred mode on hotplug_mode_update outputs
+  * Make ayatana-appindicator dependency optional
+  * mouse: Add natural scrolling support for mice
+
 ### mate-settings-daemon 1.29.1
 
   * background: don't initialize alpha channel
