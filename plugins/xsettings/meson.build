@@ -1,0 +1,28 @@
+libxsettings = shared_module('xsettings',
+  'msd-xsettings-plugin.h',
+  'msd-xsettings-plugin.c',
+  'msd-xsettings-manager.h',
+  'msd-xsettings-manager.c',
+  'xsettings-common.h',
+  'xsettings-common.c',
+  'xsettings-manager.h',
+  'xsettings-manager.c',
+  'fontconfig-monitor.h',
+  'fontconfig-monitor.c',
+  'wm-common.h',
+  'wm-common.c',
+  include_directories: [top_inc, msd_daemon_inc],
+  dependencies: settings_plugin_deps + [fontconfig_dep] + x11_libs,
+  name_suffix: 'so',
+  install: true,
+  install_dir: msd_plugindir,
+)
+
+i18n.merge_file(
+  input: 'xsettings.mate-settings-plugin.desktop.in',
+  output: 'xsettings.mate-settings-plugin',
+  type: 'desktop',
+  po_dir: '../../po',
+  install: true,
+  install_dir: msd_plugindir,
+)
